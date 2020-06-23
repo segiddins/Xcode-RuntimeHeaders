@@ -15,8 +15,8 @@
     NSView<DVTTableCellViewStatusView> *_view;
 }
 
-@property(readonly) NSView<DVTTableCellViewStatusView> *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly) NSView<DVTTableCellViewStatusView> *view; // @synthesize view=_view;
 - (void)dealloc;
 - (id)initWithView:(id)arg1;
 

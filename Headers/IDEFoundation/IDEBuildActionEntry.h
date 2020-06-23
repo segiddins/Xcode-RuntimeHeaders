@@ -34,6 +34,7 @@
 + (id)keyPathsForValuesAffectingShouldBuildForProfiling;
 + (id)keyPathsForValuesAffectingShouldBuildForTesting;
 + (id)keyPathsForValuesAffectingShouldBuildForRunning;
+- (void).cxx_destruct;
 @property(retain) IDEBuildSchemeAction *buildAction; // @synthesize buildAction=_buildAction;
 @property(readonly) _TtC13IDEFoundation26IDESchemeTestPlanReference *testPlanReference; // @synthesize testPlanReference=_testPlanReference;
 @property(readonly) IDESchemeBuildableReference *primaryBuildableReference; // @synthesize primaryBuildableReference=_primaryBuildableReference;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL mustBuildForTesting; // @synthesize mustBuildForTesting=_mustBuildForTesting;
 @property(nonatomic) BOOL mustBuildForRunning; // @synthesize mustBuildForRunning=_mustBuildForRunning;
 @property(readonly) BOOL isExplicitEntry; // @synthesize isExplicitEntry=_isExplicitEntry;
-- (void).cxx_destruct;
 - (void)addTestPlanReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setHideIssuesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

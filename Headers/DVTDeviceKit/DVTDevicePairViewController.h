@@ -39,6 +39,7 @@
     DVTObservingToken *_nameObservingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *nameObservingToken; // @synthesize nameObservingToken=_nameObservingToken;
 @property BOOL hasSetupConstraints; // @synthesize hasSetupConstraints=_hasSetupConstraints;
 @property(copy) CDUnknownBlockType infoRequestCallback; // @synthesize infoRequestCallback=_infoRequestCallback;
@@ -62,7 +63,6 @@
 @property(retain) NSImageView *waitingToStartDeviceImageView; // @synthesize waitingToStartDeviceImageView=_waitingToStartDeviceImageView;
 @property(retain) NSView *waitToStartCenteringView; // @synthesize waitToStartCenteringView=_waitToStartCenteringView;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_transitionToState:(long long)arg1;
 - (void)_resetPinView;
 - (void)_beginPairing;

@@ -20,12 +20,12 @@
 + (id)keyPathsForValuesAffectingCanCancel;
 + (id)keyPathsForValuesAffectingWantsCancelAction;
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
+- (void).cxx_destruct;
 @property BOOL cancelable; // @synthesize cancelable=_cancelable;
 @property BOOL wantsCancel; // @synthesize wantsCancel=_wantsCancel;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-- (void).cxx_destruct;
 - (void)takeCancelAction;
 - (BOOL)canCancel;
 - (BOOL)wantsCancelAction;

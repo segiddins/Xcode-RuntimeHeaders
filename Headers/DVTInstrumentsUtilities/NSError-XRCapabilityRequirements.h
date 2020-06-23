@@ -12,6 +12,7 @@
 + (id)dvtiuErrorWithCode:(unsigned long long)arg1;
 - (void)enumerateFailedCapabilityRequirements:(CDUnknownBlockType)arg1;
 - (BOOL)isCapabilityRequirementFailure;
+- (BOOL)dvtiu_isNoSuchFileOrDirectoryError;
 - (BOOL)dvtiu_isURLAlreadyExistsError;
 - (BOOL)getRecommendedRecoveryAction:(id *)arg1 parameter:(id *)arg2;
 @end

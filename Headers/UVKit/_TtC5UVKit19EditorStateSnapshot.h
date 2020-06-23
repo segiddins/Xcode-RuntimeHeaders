@@ -22,6 +22,8 @@
     MISSING_TYPE *setNeedsUpdatePreviews;
     MISSING_TYPE *collectDiagnostics;
     MISSING_TYPE *isActivelyDragging;
+    MISSING_TYPE *createPreviewProvider;
+    MISSING_TYPE *suggestCreatingPreview;
     MISSING_TYPE *effectiveSelectionCache;
 }
 

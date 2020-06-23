@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSRuleEditor *ruleEditor; // @synthesize ruleEditor=_ruleEditor;
 @property(readonly) IDEWorkspace *hostWorkspace; // @synthesize hostWorkspace=_hostWorkspace;
-- (void).cxx_destruct;
 - (id)ruleEditor:(id)arg1 displayValueForCriterion:(id)arg2 inRow:(long long)arg3;
 - (id)ruleEditor:(id)arg1 child:(long long)arg2 forCriterion:(id)arg3 withRowType:(unsigned long long)arg4;
 - (long long)ruleEditor:(id)arg1 numberOfChildrenForCriterion:(id)arg2 withRowType:(unsigned long long)arg3;

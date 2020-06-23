@@ -23,8 +23,8 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-@property(retain, nonatomic) IBICDetailDocumentView *detailDocumentView; // @synthesize detailDocumentView=_detailDocumentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBICDetailDocumentView *detailDocumentView; // @synthesize detailDocumentView=_detailDocumentView;
 - (BOOL)view:(id)arg1 prepareForDragOperation:(id)arg2;
 - (BOOL)view:(id)arg1 performDragOperation:(id)arg2;
 - (unsigned long long)view:(id)arg1 draggingEntered:(id)arg2;

@@ -22,8 +22,8 @@
     id <_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_> _delegate;
 }
 
-@property(retain, nonatomic) id <_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_> delegate; // @synthesize delegate=_delegate;
 - (void)updateHelp;
 - (void)sourceChanged;
 - (long long)numberOfChildren;

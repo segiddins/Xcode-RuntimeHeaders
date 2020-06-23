@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_current;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *current; // @synthesize current=_current;
 @property(retain) NSArray *base; // @synthesize base=_base;
 @property(retain) NSNumber *maximum; // @synthesize maximum=_maximum;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

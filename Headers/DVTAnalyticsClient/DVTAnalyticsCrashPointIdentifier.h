@@ -20,9 +20,9 @@
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)crashPointIdentifierWithAppIdentifier:(id)arg1 crashPointId:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *analyticsPointIdentifier; // @synthesize analyticsPointIdentifier=_analyticsPointIdentifier;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)JSONRepresentation;
 @property(readonly) NSDictionary *parameters;

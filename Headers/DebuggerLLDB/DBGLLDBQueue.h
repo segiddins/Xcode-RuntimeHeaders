@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsInvalidationPrevention;
-- (unsigned long long)numberOfPendingBlocks;
 - (void).cxx_destruct;
+- (unsigned long long)numberOfPendingBlocks;
 - (void)primitiveInvalidate;
 - (id)pendingBlocksThreads;
 - (id)lldbSession;

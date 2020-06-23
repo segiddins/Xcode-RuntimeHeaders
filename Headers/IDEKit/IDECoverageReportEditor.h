@@ -19,9 +19,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
+- (void).cxx_destruct;
 @property(copy) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (id)lineCoverageOfDevicesNotMatchingID:(id)arg1 inCoverageItem:(id)arg2;
 - (id)coverageForDeviceWithIdentifier:(id)arg1 inCoverageItem:(id)arg2;
 - (void)installReport;

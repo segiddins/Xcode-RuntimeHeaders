@@ -35,6 +35,7 @@
 + (id)imageNamed:(id)arg1;
 + (void)initialize;
 + (BOOL)ide_initializeWithOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) IBHardwarePreviewConfiguration *previewConfiguration; // @synthesize previewConfiguration=_previewConfiguration;
 @property(retain) DVTDelayedInvocation *updateAutolayoutButtonsInvocation; // @synthesize updateAutolayoutButtonsInvocation=_updateAutolayoutButtonsInvocation;
 @property(retain) IBInvalidationToken *eventMonitorToken; // @synthesize eventMonitorToken=_eventMonitorToken;
@@ -49,7 +50,6 @@
 @property(retain) NSButton *updateFrameButton; // @synthesize updateFrameButton=_updateFrameButton;
 @property(retain) NSButton *updateConstraintsButton; // @synthesize updateConstraintsButton=_updateConstraintsButton;
 @property(retain) NSTouchBar *canvasEditingTouchBar; // @synthesize canvasEditingTouchBar=_canvasEditingTouchBar;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 
 // Remaining properties

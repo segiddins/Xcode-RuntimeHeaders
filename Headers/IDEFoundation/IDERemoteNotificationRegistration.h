@@ -15,9 +15,9 @@
 }
 
 + (id)registrationForDisabledState;
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSData *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)remoteNotificationToken:(id *)arg1;
 - (id)initWithToken:(id)arg1 tokenRegistrationError:(id)arg2;
 

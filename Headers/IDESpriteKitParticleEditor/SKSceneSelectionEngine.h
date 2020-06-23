@@ -18,16 +18,16 @@
 }
 
 + (id)selectionEngineInView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectableItems; // @synthesize selectableItems=_selectableItems;
 @property(retain, nonatomic) SKScene *selectableScene; // @synthesize selectableScene=_selectableScene;
 @property(retain, nonatomic) id <SKSelectionView> view; // @synthesize view=_view;
-- (void).cxx_destruct;
-- (struct NSObject *)_selectableAtLocation:(struct CGPoint)arg1 ignoreLock:(BOOL)arg2;
+- (id)_selectableAtLocation:(struct CGPoint)arg1 ignoreLock:(BOOL)arg2;
 - (id)_nodeAtLocationInView:(struct CGPoint)arg1 andLocationInScene:(struct CGPoint)arg2 ignoreLock:(BOOL)arg3;
 - (id)selectionInRect:(struct CGRect)arg1 ignoreLock:(BOOL)arg2;
-- (struct NSObject *)selectionAtLocation:(struct CGPoint)arg1 ignoreLock:(BOOL)arg2;
-- (void)removeSelectable:(struct NSObject *)arg1;
-- (void)addSelectable:(struct NSObject *)arg1;
+- (id)selectionAtLocation:(struct CGPoint)arg1 ignoreLock:(BOOL)arg2;
+- (void)removeSelectable:(id)arg1;
+- (void)addSelectable:(id)arg1;
 - (id)initInView:(id)arg1;
 
 @end

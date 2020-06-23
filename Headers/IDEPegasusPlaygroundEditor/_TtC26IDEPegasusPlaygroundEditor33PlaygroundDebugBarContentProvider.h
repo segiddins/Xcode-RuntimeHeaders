@@ -8,10 +8,12 @@
 
 #import <IDEPegasusPlaygroundEditor/DVTDelayedMenuButtonDelegate-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/NSMenuDelegate-Protocol.h>
+#import <IDEPegasusPlaygroundEditor/NSMenuItemValidation-Protocol.h>
 
 @class MISSING_TYPE, _TtC26IDEPegasusPlaygroundEditor16PlaygroundEditor, _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument;
 
-@interface _TtC26IDEPegasusPlaygroundEditor33PlaygroundDebugBarContentProvider : PlaygroundDebugBarContentProviderBase <DVTDelayedMenuButtonDelegate, NSMenuDelegate>
+__attribute__((visibility("hidden")))
+@interface _TtC26IDEPegasusPlaygroundEditor33PlaygroundDebugBarContentProvider : PlaygroundDebugBarContentProviderBase <DVTDelayedMenuButtonDelegate, NSMenuDelegate, NSMenuItemValidation>
 {
     MISSING_TYPE *runStopDelayedMenuButton;
     MISSING_TYPE *globalTimeSlider;

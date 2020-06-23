@@ -25,9 +25,9 @@
     _TtC13IDEFoundation31IDEActivityLogEventStreamWriter *_eventStreamWriter;
 }
 
+- (void).cxx_destruct;
 @property(retain) _TtC13IDEFoundation31IDEActivityLogEventStreamWriter *eventStreamWriter; // @synthesize eventStreamWriter=_eventStreamWriter;
 @property BOOL hasAddedAnyErrorMessages; // @synthesize hasAddedAnyErrorMessages=_hasAddedAnyErrorMessages;
-- (void).cxx_destruct;
 - (id)addObserverUsingBlock:(CDUnknownBlockType)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setCommandDetailDescription:(id)arg1;

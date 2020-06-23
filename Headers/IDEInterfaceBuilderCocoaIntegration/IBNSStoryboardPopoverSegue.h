@@ -17,10 +17,10 @@
 + (BOOL)isObjectValidSource:(id)arg1;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preferredEdge; // @synthesize preferredEdge=_preferredEdge;
 @property(nonatomic) long long popoverBehavior; // @synthesize popoverBehavior=_popoverBehavior;
 @property(retain, nonatomic) id anchorView; // @synthesize anchorView=_anchorView;
-- (void).cxx_destruct;
 - (id)ibInspectedAnchorViewCandidateFilterPredicate;
 - (id)instantiateSegueTemplate;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;

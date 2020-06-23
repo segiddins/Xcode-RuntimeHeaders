@@ -19,9 +19,9 @@
 + (id)nibFileSettings;
 + (id)fileInNoIndexables;
 + (id)noBuildSettingsFound;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *headerMappings; // @synthesize headerMappings=_headerMappings;
 @property int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)pathForFileName:(id)arg1 includedByFiles:(id)arg2 usingQuotes:(BOOL)arg3;
 @property(readonly) BOOL alwaysSearchUserPaths;
 @property(readonly) NSNumber *arcMode;

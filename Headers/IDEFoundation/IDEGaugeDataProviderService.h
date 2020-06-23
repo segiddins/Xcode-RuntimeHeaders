@@ -21,8 +21,8 @@
 
 + (id)observableAttributes;
 + (id)capability;
-@property BOOL useProxiedDevice; // @synthesize useProxiedDevice=_useProxiedDevice;
 - (void).cxx_destruct;
+@property BOOL useProxiedDevice; // @synthesize useProxiedDevice=_useProxiedDevice;
 - (id)stopSamplingForPIDs:(id)arg1;
 - (id)sampleAttributes:(id)arg1 forPIDs:(id)arg2;
 - (id)startSamplingForPIDs:(id)arg1;

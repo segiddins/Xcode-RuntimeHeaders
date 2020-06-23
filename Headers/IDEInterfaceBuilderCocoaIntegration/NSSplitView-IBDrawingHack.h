@@ -57,7 +57,7 @@
 - (void)setInitingDesignableSplitView:(BOOL)arg1;
 - (BOOL)isInitingDesignableSplitView;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibDefaultImage;
 - (void)ibSuggestLayoutAllowingResizingTopLevelView:(BOOL)arg1;

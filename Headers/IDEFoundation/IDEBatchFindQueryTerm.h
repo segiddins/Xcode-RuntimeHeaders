@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *explicitDisplayString; // @synthesize explicitDisplayString=_explicitDisplayString;
 @property(readonly) DVTFindPatternComponents *patternComponents; // @synthesize patternComponents=_patternComponents;
 @property(readonly) NSString *text; // @synthesize text=_text;
 @property(readonly) NSString *symbolResolution; // @synthesize symbolResolution=_symbolResolution;
 @property(readonly) long long termType; // @synthesize termType=_termType;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToQueryTerm:(id)arg1;
 - (BOOL)isEmpty;

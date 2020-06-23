@@ -22,9 +22,9 @@
     id _cachedCapitalizedRoleValuesOrNull;
 }
 
+- (void).cxx_destruct;
 @property BOOL validRoleValues; // @synthesize validRoleValues=_validRoleValues;
 @property BOOL validOption; // @synthesize validOption=_validOption;
-- (void).cxx_destruct;
 - (void)_removeObservers;
 - (void)setRoleValue:(id)arg1;
 - (id)recomputeRoleValue;

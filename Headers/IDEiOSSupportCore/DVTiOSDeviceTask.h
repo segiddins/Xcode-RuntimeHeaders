@@ -16,10 +16,10 @@
 }
 
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remoteLaunchPath; // @synthesize remoteLaunchPath=_remoteLaunchPath;
 @property(copy, nonatomic) NSArray *remoteArguments; // @synthesize remoteArguments=_remoteArguments;
 @property(retain, nonatomic) DVTiOSDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)launchRunningTerminationHandlerOnQueue:(id)arg1 error:(id *)arg2 terminationHandler:(CDUnknownBlockType)arg3;
 - (id)description;
 - (id)initWithDevice:(id)arg1 launchPath:(id)arg2 arguments:(id)arg3 error:(id *)arg4;

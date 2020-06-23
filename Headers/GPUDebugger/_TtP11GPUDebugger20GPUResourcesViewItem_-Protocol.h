@@ -16,8 +16,8 @@
 @property(nonatomic, readonly) NSNumber *nanoSecondsSinceLastBound;
 @property(nonatomic, readonly) NSString *cpuAccess;
 @property(nonatomic, readonly) NSNumber *aliasable;
-@property(nonatomic, readonly) NSString *labelSuffix;
 @property(nonatomic, readonly) NSString *subType;
+@property(nonatomic, readonly) NSString *labelSuffix;
 @property(nonatomic, readonly) unsigned long long issueCount;
 @property(nonatomic, readonly) NSString *purgeableState;
 @property(nonatomic, readonly) NSString *storageMode;

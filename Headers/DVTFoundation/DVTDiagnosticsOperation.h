@@ -17,12 +17,12 @@
     NSString *_outputFilename;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *outputFilename; // @synthesize outputFilename=_outputFilename;
 @property(copy, nonatomic) DVTFilePath *outputFilePath; // @synthesize outputFilePath=_outputFilePath;
 @property(nonatomic) BOOL forceSaveToSharedDirectory; // @synthesize forceSaveToSharedDirectory=_forceSaveToSharedDirectory;
 @property(copy, nonatomic) DVTFilePath *path; // @synthesize path=_path;
 @property(retain, nonatomic) DVTDiagnosticsCollector *collector; // @synthesize collector=_collector;
-- (void).cxx_destruct;
 - (void)start;
 - (id)initWithCollector:(id)arg1;
 

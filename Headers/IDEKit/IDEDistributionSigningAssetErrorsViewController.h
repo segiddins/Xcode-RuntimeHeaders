@@ -27,6 +27,7 @@
 + (id)stringWithTitle:(id)arg1 subTitle:(id)arg2 icon:(id)arg3 additionalIndent:(double)arg4;
 + (id)keyPathsForValuesAffectingOnlyError;
 + (id)keyPathsForValuesAffectingAdditionalActionTitle;
+- (void).cxx_destruct;
 @property(retain) NSTextField *multipleErrorMessageField; // @synthesize multipleErrorMessageField=_multipleErrorMessageField;
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) DVTTableView *errorTable; // @synthesize errorTable=_errorTable;
@@ -34,7 +35,6 @@
 @property(retain) IDEDistributionLogging *logging; // @synthesize logging=_logging;
 @property(retain, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

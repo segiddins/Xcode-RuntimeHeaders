@@ -18,12 +18,12 @@
 }
 
 + (id)itemForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *shortLastOpenedDate; // @synthesize shortLastOpenedDate=_shortLastOpenedDate;
 @property(readonly) NSString *truncatedPath; // @synthesize truncatedPath=_truncatedPath;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 image:(id)arg2 name:(id)arg3 truncatedPath:(id)arg4 shortLastOpenedDate:(id)arg5;
 
 @end

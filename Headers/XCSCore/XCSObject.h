@@ -27,6 +27,7 @@
 + (void)_setupObservablePropertiesForClass:(Class)arg1;
 + (void)_setupAccessorsForClass:(Class)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL skipBindHierarchy; // @synthesize skipBindHierarchy=_skipBindHierarchy;
 @property(nonatomic) BOOL skipValidation; // @synthesize skipValidation=_skipValidation;
 @property(retain, nonatomic) NSMutableDictionary *infoRemoved; // @synthesize infoRemoved=_infoRemoved;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSDictionary *infoSaved; // @synthesize infoSaved=_infoSaved;
 @property(retain, nonatomic) NSString *classString; // @synthesize classString=_classString;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)_instantiateInfoRemovedIfNeeded;
 - (id)_instantiateInfoModifiedIfNeeded;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

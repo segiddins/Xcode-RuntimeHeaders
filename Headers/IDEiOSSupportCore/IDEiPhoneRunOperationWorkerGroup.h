@@ -13,8 +13,8 @@
     DVTiOSDevice *_device;
 }
 
-@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void)allSubworkersDidFinishWithError:(id)arg1;
 
 @end

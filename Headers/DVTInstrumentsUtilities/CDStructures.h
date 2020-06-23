@@ -108,7 +108,9 @@ struct array<xray::internal::RangeImp<unsigned long long>, 4> {
 };
 
 struct atomic<int> {
-    _Atomic int __a_;
+    struct __cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int>> {
+        _Atomic int __a_value;
+    } __a_;
 };
 
 struct multiset<xray::internal::RangeImp<unsigned long long>, std::__1::less<xray::internal::RangeImp<unsigned long long>>, std::__1::allocator<xray::internal::RangeImp<unsigned long long>>> {

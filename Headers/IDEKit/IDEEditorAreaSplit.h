@@ -28,8 +28,6 @@
     BOOL _isSettingEditorMode;
     BOOL _didInstall;
     BOOL _didRestoreState;
-    int _userVisibleVersionEditorSubmode;
-    int _versionEditorSubmode;
     IDEEditorMultipleSplit *parentEditorMultipleSplit;
     IDEEditorArea *editorArea;
     IDEEditorModeViewController *_editorModeViewController;
@@ -40,25 +38,20 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForEditorMode;
-+ (int)defaultVersionEditorSubmode;
 + (int)defaultEditorMode;
 + (id)keyPathsForValuesAffectingEditorContexts;
 + (id)keyPathsForValuesAffectingIsPrimaryEditorAreaSplit;
 + (id)keyPathsForValuesAffectingPrimaryEditorContext;
+- (void).cxx_destruct;
 @property unsigned long long subEditorLayout; // @synthesize subEditorLayout=_subEditorLayout;
 @property(retain) IDEEditorContext *lastActiveEditorContext; // @synthesize lastActiveEditorContext=_lastActiveEditorContext;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property(nonatomic) long long subEditorOrientation; // @synthesize subEditorOrientation=_subEditorOrientation;
 @property(readonly) IDENavigableItemArchivableRepresentation *selectedNavigableItemArchivedRepresentation; // @synthesize selectedNavigableItemArchivedRepresentation=_selectedNavigableItemArchivedRepresentation;
 @property(retain) IDEEditorModeViewController *editorModeViewController; // @synthesize editorModeViewController=_editorModeViewController;
-@property(nonatomic) int versionEditorSubmode; // @synthesize versionEditorSubmode=_versionEditorSubmode;
-@property(readonly, nonatomic) int userVisibleVersionEditorSubmode; // @synthesize userVisibleVersionEditorSubmode=_userVisibleVersionEditorSubmode;
-- (void)setEditorArea:(id)arg1;
-@property(readonly) IDEEditorArea *editorArea;
-- (void)setParentEditorMultipleSplit:(id)arg1;
-@property(readonly) IDEEditorMultipleSplit *parentEditorMultipleSplit;
+@property(retain) IDEEditorArea *editorArea; // @synthesize editorArea;
+@property(retain) IDEEditorMultipleSplit *parentEditorMultipleSplit; // @synthesize parentEditorMultipleSplit;
 @property(readonly) BOOL isRefreshingContexts; // @synthesize isRefreshingContexts=_isRefreshingContexts;
-- (void).cxx_destruct;
 @property(readonly) NSArray *editorAreaSplits;
 @property(readonly) struct CGSize minimumContentViewFrameSize;
 - (void)resetEditorSizes;
@@ -80,7 +73,6 @@
 - (void)_updateStateSavingRegistrations;
 - (void)_refreshEditorContextsAndPreserveCurrentEditorHistoryStack:(BOOL)arg1;
 @property(nonatomic) int editorMode;
-- (int)validateComparisonEditorSubmode:(int)arg1;
 - (int)validateEditorMode:(int)arg1;
 - (void)setUserVisibleEditorMode:(int)arg1 client:(unsigned long long)arg2;
 - (void)_updateDefaultModeForEditorIDWithEditorMode:(int)arg1 client:(unsigned long long)arg2;
@@ -88,9 +80,6 @@
 - (void)setUserVisibleEditorMode:(int)arg1;
 @property(readonly, nonatomic) int userVisibleEditorMode;
 - (void)_setEditorMode:(int)arg1;
-- (void)setUserVisibleVersionEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
-- (void)showVersionEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
-- (void)showVersionEditorSubmode:(int)arg1;
 - (void)_reportChangedFromOldEditorMode:(int)arg1 newEditorMode:(int)arg2 client:(unsigned long long)arg3;
 - (void)_setEditorModeViewControllerWithPrimaryEditorContext:(id)arg1;
 - (void)_resetAssistantEditorSelection;

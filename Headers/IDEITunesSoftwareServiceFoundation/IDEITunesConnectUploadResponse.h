@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSArray *logFileURLs; // @synthesize logFileURLs=_logFileURLs;
 - (void).cxx_destruct;
+@property(readonly) NSArray *logFileURLs; // @synthesize logFileURLs=_logFileURLs;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

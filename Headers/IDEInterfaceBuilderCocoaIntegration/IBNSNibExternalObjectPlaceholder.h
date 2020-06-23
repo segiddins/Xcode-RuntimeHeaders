@@ -20,8 +20,8 @@
 
 + (id)externalReferenceWithIdentifier:(id)arg1 targetRuntime:(id)arg2;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
+@property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy) NSString *externalReferenceIdentifier;
 @property(readonly, copy) NSString *description;
 - (BOOL)ibIsPlaceholder;

@@ -16,9 +16,9 @@
     NSArray *_pasteboardTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *pasteboardTypes; // @synthesize pasteboardTypes=_pasteboardTypes;
 @property unsigned long long dragIdx; // @synthesize dragIdx=_dragIdx;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 

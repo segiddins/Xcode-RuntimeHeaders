@@ -17,8 +17,8 @@
     XCSUIDataSource *_dataSource;
 }
 
-@property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (id)serviceSnapshotForService:(id)arg1;
 - (void)purgeSnapshotsForService:(id)arg1;
 - (void)purgeSnapshot:(id)arg1;

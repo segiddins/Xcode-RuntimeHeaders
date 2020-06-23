@@ -24,6 +24,7 @@
     NSString *_ibSceneName;
 }
 
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(nonatomic) int ibPreferredRenderingAPI; // @synthesize ibPreferredRenderingAPI=_ibPreferredRenderingAPI;
 @property(nonatomic) BOOL ibWantsMultisampling; // @synthesize ibWantsMultisampling=_ibWantsMultisampling;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL loops; // @synthesize loops=_loops;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled; // @synthesize jitteringEnabled=_jitteringEnabled;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

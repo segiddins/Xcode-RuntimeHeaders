@@ -12,7 +12,7 @@
 #import <DebuggerUI/NSMenuDelegate-Protocol.h>
 #import <DebuggerUI/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTObservingToken, IDEBreakpointManager, IDEBreakpointNavigatorModel, NSArray, NSMutableSet, NSPasteboard, NSString;
+@class DVTObservingToken, IDEBreakpointManager, IDEBreakpointNavigatorModel, NSArray, NSMutableArray, NSMutableSet, NSPasteboard, NSString;
 
 @interface IDEBreakpointNavigableNavigator : IDEOutlineBasedNavigator <IDEBreakpointObserver, IDEBreakpointNavigatorModelObserver, IDEBreakpointNavigatorSupport, NSOutlineViewDelegate, NSMenuDelegate>
 {
@@ -22,6 +22,7 @@
     BOOL _restoringState;
     DVTObservingToken *_selectedObjectsListToken;
     DVTObservingToken *_systemRowSizeStyleToken;
+    NSMutableArray *_copiedBreakpoints;
     NSArray *_draggedItems;
     NSPasteboard *_draggedPasteboard;
     BOOL _filterOnModifiedBreakpoints;
@@ -32,11 +33,11 @@
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic) BOOL filterOnEnabledBreakpoints; // @synthesize filterOnEnabledBreakpoints=_filterOnEnabledBreakpoints;
 @property(nonatomic) BOOL filterOnModifiedBreakpoints; // @synthesize filterOnModifiedBreakpoints=_filterOnModifiedBreakpoints;
 @property(retain, nonatomic) IDEBreakpointManager *breakpointManager; // @synthesize breakpointManager=_breakpointManager;
-- (void).cxx_destruct;
 - (id)_collapsedItemsAsNameTree;
 - (void)_setCollapsedItemsFromNameTree:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
@@ -81,7 +82,7 @@
 - (id)_nonWatchpointItems:(id)arg1;
 - (void)_moveBreakpointsForNavigableItems:(id)arg1 toBucket:(id)arg2;
 - (void)_moveRightClickedBreakpointsToBucket:(id)arg1;
-- (void)breakpointWasRemoved:(id)arg1;
+- (void)breakpointsWereRemoved:(id)arg1;
 - (void)breakpointWasAdded:(id)arg1;
 - (void)breakpointLocationsAdded:(id)arg1 removed:(id)arg2;
 - (void)_clearDraggedItems;
@@ -112,6 +113,10 @@
 - (id)filterDefinitionIdentifier;
 - (id)domainIdentifier;
 - (void)_updateBreakpointButtonSizesForAllRows;
+- (void)paste:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)cut:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (void)loadView;
 
 // Remaining properties

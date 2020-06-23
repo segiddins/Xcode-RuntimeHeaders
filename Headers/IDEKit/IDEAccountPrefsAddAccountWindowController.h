@@ -27,6 +27,7 @@
     NSArray *_accountTypesSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *accountTypesSnapshot; // @synthesize accountTypesSnapshot=_accountTypesSnapshot;
 @property(retain) DVTBorderedView *accountTypeListBorderView; // @synthesize accountTypeListBorderView=_accountTypeListBorderView;
 @property __weak NSButton *continueButton; // @synthesize continueButton=_continueButton;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(nonatomic) BOOL hostedAccountsOnly; // @synthesize hostedAccountsOnly=_hostedAccountsOnly;
-- (void).cxx_destruct;
 - (void)cancelClick:(id)arg1;
 - (void)_endSheet:(long long)arg1;
 - (void)continueClick:(id)arg1;

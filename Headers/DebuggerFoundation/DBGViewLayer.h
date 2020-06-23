@@ -16,13 +16,14 @@
     NSDictionary *_layerInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *layerInfo; // @synthesize layerInfo=_layerInfo;
 @property(retain) NSString *viewIdentifier; // @synthesize viewIdentifier=_viewIdentifier;
 @property(nonatomic) __weak DBGViewSurface *hostingView; // @synthesize hostingView=_hostingView;
 @property(retain, nonatomic) CALayer *representedLayer; // @synthesize representedLayer=_representedLayer;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)supportsCALayerInspectorProperties;
+- (BOOL)representsLayer;
 - (id)representedObjectClassName;
 - (id)identifier;
 - (struct CATransform3D)transform;

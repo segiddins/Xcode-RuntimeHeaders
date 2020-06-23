@@ -15,9 +15,9 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (void)openSelectedContent;
 - (BOOL)alwaysTargetsOriginatingEditor;
 - (id)locationToOpen;

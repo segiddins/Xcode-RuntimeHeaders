@@ -17,12 +17,12 @@
     NSArrayController *_groupsController;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArrayController *groupsController; // @synthesize groupsController=_groupsController;
 @property(retain) DVTGradientImageButton *deleteGroupButton; // @synthesize deleteGroupButton=_deleteGroupButton;
 @property(retain) DVTGradientImageButton *addGroupButton; // @synthesize addGroupButton=_addGroupButton;
 @property(retain) DVTTableView *groupsTable; // @synthesize groupsTable=_groupsTable;
 @property(retain) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
-- (void).cxx_destruct;
 - (void)removeSelectedGroups:(id)arg1;
 - (void)addGroup:(id)arg1;
 - (void)loadView;

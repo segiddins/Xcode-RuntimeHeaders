@@ -14,9 +14,9 @@
     IBUIMetricRepresentation *_navigationBar;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL forcePrompt; // @synthesize forcePrompt=_forcePrompt;
 @property(readonly, nonatomic) IBUIMetricRepresentation *navigationBar; // @synthesize navigationBar=_navigationBar;
-- (void).cxx_destruct;
 - (id)singleLinkPrettyDescription;
 - (id)copyWithPrecedingMetric:(id)arg1;
 - (BOOL)isEqualToMetricChain:(id)arg1;

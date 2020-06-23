@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GPUFramebufferAttachmentInfo *_attachmentInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUFramebufferAttachmentInfo *attachmentInfo; // @synthesize attachmentInfo=_attachmentInfo;
 @property(readonly, nonatomic) unsigned int attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;

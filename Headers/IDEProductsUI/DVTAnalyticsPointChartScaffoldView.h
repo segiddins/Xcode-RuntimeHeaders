@@ -13,8 +13,8 @@
     NSColor *_debugColor;
 }
 
-@property(copy) NSColor *debugColor; // @synthesize debugColor=_debugColor;
 - (void).cxx_destruct;
+@property(copy) NSColor *debugColor; // @synthesize debugColor=_debugColor;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

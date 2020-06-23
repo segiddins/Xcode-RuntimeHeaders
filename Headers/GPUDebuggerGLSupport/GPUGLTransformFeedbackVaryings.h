@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     int _maxNumberOfVertices;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int maxNumberOfVertices; // @synthesize maxNumberOfVertices=_maxNumberOfVertices;
 @property(nonatomic) int minNumberOfVertices; // @synthesize minNumberOfVertices=_minNumberOfVertices;
-- (void).cxx_destruct;
 - (void)populateObjectFromResource:(id)arg1;
 - (id)formattedAttributeData:(int)arg1 forComponent:(int)arg2 forIndex:(int)arg3;
 - (unsigned int)attributeFormat:(int)arg1 forComponent:(int)arg2;

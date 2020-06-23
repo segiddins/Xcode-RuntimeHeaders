@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation33SigningEditorProvisionableManager.h>
 
-#import <IDEFoundation/_TtP13IDEFoundation34SigningEditorProvisionableDelegate_-Protocol.h>
-
-@interface _TtC13IDEFoundation33SigningEditorProvisionableManager (IDEFoundation1) <_TtP13IDEFoundation34SigningEditorProvisionableDelegate_>
+@interface _TtC13IDEFoundation33SigningEditorProvisionableManager (IDEFoundation1)
 - (void)didChangeWithProvisionable:(id)arg1;
 @end
 

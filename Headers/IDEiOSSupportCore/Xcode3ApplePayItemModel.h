@@ -14,8 +14,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(retain) IDEAppIDItemIdentifiersItemModelSet *merchantIDs; // @synthesize merchantIDs=_merchantIDs;
 - (void).cxx_destruct;
+@property(retain) IDEAppIDItemIdentifiersItemModelSet *merchantIDs; // @synthesize merchantIDs=_merchantIDs;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

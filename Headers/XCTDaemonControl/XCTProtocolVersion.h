@@ -21,8 +21,8 @@
 + (id)currentVersion;
 + (id)versionWithNumber:(id)arg1;
 + (id)validateRemoteProtocolVersion:(id)arg1 minimumControlProtocolVersion:(id)arg2 minimumRemoteProtocolVersion:(id)arg3 remoteName:(id)arg4;
-@property(readonly) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 - (void).cxx_destruct;
+@property(readonly) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) BOOL supportsRecording;
 @property(readonly) XCTProtocolVersion *previousVersion;

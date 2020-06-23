@@ -22,6 +22,7 @@
     NSLayoutConstraint *_currentStatusTextTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *currentStatusTextTrailingConstraint; // @synthesize currentStatusTextTrailingConstraint=_currentStatusTextTrailingConstraint;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long statusValue; // @synthesize statusValue=_statusValue;
 @property(retain, nonatomic) NSString *statusToolTip; // @synthesize statusToolTip=_statusToolTip;
 @property(retain, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
-- (void).cxx_destruct;
 - (void)userDidSelectActionButton:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)_updateActionButton;

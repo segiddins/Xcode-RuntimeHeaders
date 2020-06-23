@@ -47,12 +47,12 @@
 }
 
 + (id)keyPathsForValuesAffectingSearchWords;
+- (void).cxx_destruct;
 @property(copy) NSString *statusText; // @synthesize statusText=_statusText;
 @property(nonatomic) int searchScope; // @synthesize searchScope=_searchScope;
 @property(nonatomic) int displayScope; // @synthesize displayScope=_displayScope;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy, nonatomic) NSArray *keyBindingItems; // @synthesize keyBindingItems=_keyBindingItems;
-- (void).cxx_destruct;
 - (BOOL)outlineView:(id)arg1 shouldShowOutlineCellForItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;

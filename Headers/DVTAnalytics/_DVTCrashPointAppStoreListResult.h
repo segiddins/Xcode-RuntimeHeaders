@@ -16,10 +16,10 @@
 }
 
 + (id)resultWithAppIdentifier:(id)arg1 listOrNil:(id)arg2 errorOrNil:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) DVTAnalyticsCrashPointList *list; // @synthesize list=_list;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
-- (void).cxx_destruct;
 
 @end
 

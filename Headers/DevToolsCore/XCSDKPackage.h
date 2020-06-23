@@ -41,13 +41,13 @@
 + (id)sdkPackageForUnderlyingSDK:(id)arg1;
 + (id)loadSdkPackagesForPlatform:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
 @property(readonly) XCCommandLineToolSpecificationRegistry *commandLineToolSpecificationRegistry; // @synthesize commandLineToolSpecificationRegistry=_commandLineToolSpecificationRegistry;
 @property(readonly) NSDictionary *variantBuildSettings; // @synthesize variantBuildSettings=_variantBuildSettings;
 @property(retain) NSString *digest; // @synthesize digest=_digest;
 @property(readonly) NSString *systemVersionPlistPath; // @synthesize systemVersionPlistPath=_systemVersionPlistPath;
 @property(readonly) DVTSDK *underlyingSDK; // @synthesize underlyingSDK=_underlyingSDK;
-- (void).cxx_destruct;
 - (id)description;
 - (id)compilerSpecificationForIdentifier:(id)arg1;
 - (id)commandLineToolSpecificationForIdentifier:(id)arg1;

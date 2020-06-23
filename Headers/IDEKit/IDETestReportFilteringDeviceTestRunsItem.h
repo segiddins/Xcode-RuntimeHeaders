@@ -17,13 +17,15 @@
     NSArray *_ide_testReport_deviceTestRuns_testRuns;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ide_testReport_deviceTestRuns_testRuns; // @synthesize ide_testReport_deviceTestRuns_testRuns=_ide_testReport_deviceTestRuns_testRuns;
 @property(retain) id <IDETestReport_DeviceTestRuns> deviceTestRuns; // @synthesize deviceTestRuns=_deviceTestRuns;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 @property(readonly, nonatomic) id <IDETestReport_Device> ide_testReport_deviceTestRuns_device;
 @property(readonly, nonatomic) NSNumber *ide_testReport_common_duration;
 @property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
+@property(readonly, nonatomic) BOOL ide_testReport_common_skipped;
+@property(readonly, nonatomic) BOOL ide_testReport_common_failed;
 @property(readonly, nonatomic) BOOL ide_testReport_common_passed;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;

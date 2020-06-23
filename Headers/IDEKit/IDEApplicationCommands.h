@@ -28,8 +28,8 @@
 + (id)_activeWorkspaceTabController:(id)arg1;
 + (id)_applicationURLForDocumentURL:(id)arg1;
 + (id)_fileURLsInSelectionSource:(id)arg1 useContextualMenuSelection:(BOOL)arg2;
-@property(readonly) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
 - (void).cxx_destruct;
+@property(readonly) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
 - (void)showTutorialWindow:(id)arg1;
 - (void)showAllBezels:(id)arg1;
 - (void)showSuddenTerminationCount:(id)arg1;
@@ -73,7 +73,6 @@
 - (void)newWorkspace:(id)arg1;
 - (void)closeOtherWindows:(id)arg1;
 - (void)closeAllWindows:(id)arg1;
-- (void)showOrganizer:(id)arg1;
 - (void)finishLoggingPowerConsumption:(id)arg1;
 - (void)logPowerConsumption:(id)arg1;
 - (void)triggerFailedAssertion:(id)arg1;

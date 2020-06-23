@@ -17,9 +17,9 @@
     IBICAssetOverviewCapsuleController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBICAssetOverviewCapsuleController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) IBICAbstractCatalogItem *catalogItem; // @synthesize catalogItem=_catalogItem;
-- (void).cxx_destruct;
 - (void)assetCollectionViewItemContainerDidCompleteLayout:(id)arg1;
 - (void)installViewFromController;
 - (void)loadView;

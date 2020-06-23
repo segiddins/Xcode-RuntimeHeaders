@@ -15,10 +15,10 @@
     NSScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) NSView *bottomBar; // @synthesize bottomBar=_bottomBar;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (BOOL)isFlipped;
 - (void)layoutTopDown;

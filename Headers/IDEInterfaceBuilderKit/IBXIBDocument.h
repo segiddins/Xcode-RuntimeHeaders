@@ -12,6 +12,7 @@
 
 + (Class)metricsInferrerClass;
 + (Class)libraryAssetProviderClassForIdiom:(id)arg1;
++ (int)libraryInclusionStatusForMainMenu;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
 + (BOOL)supportsPrototypeObjects;
@@ -36,7 +37,6 @@
 - (id)classNamesForForcingPersistenceOfClassDescriptions;
 - (void)classDescriber:(id)arg1 didModifyClasses:(id)arg2;
 - (double)automaticGeniusResultScoreForObject:(id)arg1 givenSelectedObject:(id)arg2;
-- (BOOL)isObjectCandidateForAutomaticGeniusResults:(id)arg1 givenSelectedObject:(id)arg2;
 - (id)fallbackControllersForSelectedMemberIDs:(id)arg1;
 - (id)primaryControllerForGeniusFinder;
 - (id)filesOwner;

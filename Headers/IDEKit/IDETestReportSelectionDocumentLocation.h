@@ -18,12 +18,12 @@
     IDETest *_ide_test;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDETest *ide_test; // @synthesize ide_test=_ide_test;
 @property(retain, nonatomic) id <IDETestReport_Test> test; // @synthesize test=_test;
 @property(retain, nonatomic) id <IDETestReport_TestActivity> activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) id <IDETestReport_TestAttachment> attachment; // @synthesize attachment=_attachment;
 @property(nonatomic) BOOL attachmentsHaveBeenPruned; // @synthesize attachmentsHaveBeenPruned=_attachmentsHaveBeenPruned;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *testName;
 @property(readonly, nonatomic) NSString *testClassName;
 - (id)description;

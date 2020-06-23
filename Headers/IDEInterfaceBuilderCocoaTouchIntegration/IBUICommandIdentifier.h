@@ -20,10 +20,10 @@
 
 + (void)registerMarshallingRecordHandlers;
 + (id)identifierWithActionName:(id)arg1 propertyList:(id)arg2 targetRuntime:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (id)description;
 - (id)ibLocalAttributeKeyPaths;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;

@@ -25,13 +25,13 @@
 + (id)keyPathsForValuesAffectingIbInspectedProportionalLayout;
 + (id)keyPathsForValuesAffectingIbInspectedLayoutMode;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property BOOL showsAdditionalContentIndicators; // @synthesize showsAdditionalContentIndicators=_showsAdditionalContentIndicators;
 @property BOOL showsArrowButtons; // @synthesize showsArrowButtons=_showsArrowButtons;
 @property(retain) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain) NSScrubberLayout *scrubberLayout; // @synthesize scrubberLayout=_scrubberLayout;
 @property long long itemAlignment; // @synthesize itemAlignment=_itemAlignment;
 @property long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

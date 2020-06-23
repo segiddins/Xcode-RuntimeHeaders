@@ -16,10 +16,10 @@
     NSString *_appExtensionPointIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
 @property BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(copy) DVTAnalyticsLogProvider *analyticsLogProvider; // @synthesize analyticsLogProvider=_analyticsLogProvider;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly) id <DVTAnalyticsPointIdentifierProtocol> analyticsPointIdentifier; // @dynamic analyticsPointIdentifier;

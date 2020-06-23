@@ -14,8 +14,8 @@
     NSDatePicker *_datePicker;
 }
 
-@property(retain, nonatomic) NSDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)userDidChangeValue:(id)arg1;

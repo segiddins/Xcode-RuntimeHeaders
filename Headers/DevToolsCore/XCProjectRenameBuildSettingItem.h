@@ -13,8 +13,8 @@
     NSString *_settingName;
 }
 
-@property(copy) NSString *settingName; // @synthesize settingName=_settingName;
 - (void).cxx_destruct;
+@property(copy) NSString *settingName; // @synthesize settingName=_settingName;
 - (void)rename;
 
 @end

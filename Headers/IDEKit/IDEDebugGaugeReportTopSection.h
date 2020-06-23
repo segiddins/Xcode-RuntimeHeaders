@@ -28,6 +28,7 @@
 }
 
 + (id)descriptionFont;
+- (void).cxx_destruct;
 @property __weak NSView *v1Look; // @synthesize v1Look=_v1Look;
 @property __weak NSView *v2Look; // @synthesize v2Look=_v2Look;
 @property __weak NSView *contentContainer; // @synthesize contentContainer=_contentContainer;
@@ -41,7 +42,6 @@
 @property __weak NSView *titleAccessoryContainer; // @synthesize titleAccessoryContainer=_titleAccessoryContainer;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)_addContentSubviews;
 - (BOOL)useV2Look;

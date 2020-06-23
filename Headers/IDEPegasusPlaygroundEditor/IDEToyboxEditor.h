@@ -31,9 +31,9 @@
 
 + (id)keyPathsForValuesAffectingSelectedToy;
 + (BOOL)automaticallyNotifiesObserversOfSelectedToy;
+- (void).cxx_destruct;
 @property(retain) IDEToyboxTimelineLoadingView *launchingIndicatorView; // @synthesize launchingIndicatorView=_launchingIndicatorView;
 @property(retain, nonatomic) NSDate *selectedResultDisplayDate; // @synthesize selectedResultDisplayDate=_selectedResultDisplayDate;
-- (void).cxx_destruct;
 - (void)_removeLaunchingIndicatorView;
 - (void)_showLaunchingIndicatorView;
 - (long long)countToysInTimeline;

@@ -19,8 +19,8 @@
     DTKPCPU *_cpu;
 }
 
-@property(readonly, retain, nonatomic) DTKPCPU *cpu; // @synthesize cpu=_cpu;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DTKPCPU *cpu; // @synthesize cpu=_cpu;
 - (int)stopHardwareCounters:(id *)arg1;
 - (int)startHardwareCounters:(id *)arg1;
 - (int)unforceCounters:(id *)arg1;

@@ -26,8 +26,8 @@
 + (id)_THREADSAFE_injectDiagnosticsHandlerWithFailureContext:(id)arg1 intoError:(id)arg2 forLaunchingToolWithError:(CDUnknownBlockType)arg3;
 + (void)initialize;
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 - (void)enumerateToolsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long toolsCount;
 - (void)didShutdownTool:(id)arg1;

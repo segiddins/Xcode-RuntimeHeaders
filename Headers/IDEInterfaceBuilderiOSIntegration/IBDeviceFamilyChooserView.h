@@ -14,8 +14,8 @@
 }
 
 + (id)deviceFamilyChooserView;
-@property(retain, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 - (id)selectedIdiom;
 - (void)awakeFromNib;
 

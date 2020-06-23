@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRemoved, setter=_setRemoved:) BOOL removed; // @synthesize removed=_removed;
 @property(copy, nonatomic, setter=_setOriginalClassPrefix:) NSString *_originalClassPrefix; // @synthesize _originalClassPrefix=__originalClassPrefix;
 @property(nonatomic, getter=isInternal, setter=_setInternal:) BOOL internal; // @synthesize internal=_internal;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic, setter=_setOriginalGeneratedName:) NSString *_originalGeneratedName; // @synthesize _originalGeneratedName;
 @property(copy, nonatomic, setter=_setOriginalName:) NSString *_originalName; // @synthesize _originalName;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy, nonatomic) NSString *keyPrefix;
@@ -50,6 +50,7 @@
 @property(readonly, copy, nonatomic) NSString *path;
 @property(readonly, copy, nonatomic) NSString *className;
 @property(readonly, copy, nonatomic) NSString *classPrefix; // @synthesize classPrefix=_classPrefix;
+- (id)initWithName:(id)arg1 generatedName:(id)arg2;
 - (id)init;
 - (id)codegen_implementationFileSuffixForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_implementationFilePrefixForSourceLanguage:(unsigned long long)arg1;

@@ -17,10 +17,10 @@
 
 + (id)sortedComponentsForLabels:(id)arg1;
 + (id)componentWithTitle:(id)arg1 keyPath:(id)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 keyPath:(id)arg2 value:(id)arg3;
 
 @end

@@ -39,6 +39,7 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)rootWithChildren:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL dataValueWasUnsetAfterGoingInvalid; // @synthesize dataValueWasUnsetAfterGoingInvalid=_dataValueWasUnsetAfterGoingInvalid;
 @property(copy) NSString *manuallySetName; // @synthesize manuallySetName=_manuallySetName;
 @property(copy, nonatomic) NSArray *childSortDescriptors; // @synthesize childSortDescriptors=_childSortDescriptors;
@@ -48,7 +49,6 @@
 @property __weak IDEVariablesViewNode *parent; // @synthesize parent=_parent;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(readonly) id <IDEDataValue> dataValue; // @synthesize dataValue=_dataValue;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_cancelObservers;
 - (long long)compareType:(id)arg1;

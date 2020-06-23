@@ -15,10 +15,10 @@
     DVTDocumentLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDocumentLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fullName;
 
 @end

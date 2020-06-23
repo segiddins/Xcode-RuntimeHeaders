@@ -12,8 +12,8 @@
     double _aspectRatio;
 }
 
-@property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void).cxx_destruct;
+@property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void)layout;
 - (void)commonInit;
 - (id)initWithCoder:(id)arg1;

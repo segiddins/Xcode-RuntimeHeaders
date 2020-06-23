@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_stopReason;
 }
 
-@property(retain, nonatomic) NSString *stopReason; // @synthesize stopReason=_stopReason;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *stopReason; // @synthesize stopReason=_stopReason;
 - (void)performActionUsingContext:(id)arg1 andBreakpoint:(id)arg2;
 - (void)_buildStopReasonWithError:(int)arg1 log:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;

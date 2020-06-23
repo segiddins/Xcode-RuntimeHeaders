@@ -6,21 +6,22 @@
 
 #import <IDEIntentBuilderEditor/IDEIntentBuilderComponentView.h>
 
-@class DVTObservingToken, IDEIntentBuilderResourceManager, NSArray, NSButton, NSComboBox, NSLayoutConstraint;
+@class DVTObservingToken, IDEIntentBuilderResourceManager, NSArray, NSButton, NSComboBox, NSLayoutConstraint, NSObject;
+@protocol DVTInvalidation;
 
 @interface IDEIntentBuilderImagePickerComponentView : IDEIntentBuilderComponentView
 {
     NSArray *_availableImageNames;
-    struct NSObject *_resourcesKVOToken;
+    NSObject<DVTInvalidation> *_resourcesKVOToken;
     IDEIntentBuilderResourceManager *_resourceManager;
     DVTObservingToken *_imageObservingToken;
     NSButton *_revealImageLocationInEditorButton;
     NSLayoutConstraint *_revealImageLocationInEditorButtonWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *revealImageLocationInEditorButtonWidthConstraint; // @synthesize revealImageLocationInEditorButtonWidthConstraint=_revealImageLocationInEditorButtonWidthConstraint;
 @property __weak NSButton *revealImageLocationInEditorButton; // @synthesize revealImageLocationInEditorButton=_revealImageLocationInEditorButton;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_beginObservingWorkspaceImageResources;
 - (id)_imageDocumentLocation;

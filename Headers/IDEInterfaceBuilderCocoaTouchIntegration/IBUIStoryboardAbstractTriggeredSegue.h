@@ -46,6 +46,7 @@
 + (BOOL)wantsDefaultAnimatesCompatibilityWarning;
 + (BOOL)wantsDefaultCustomClassCompatibilityWarning;
 + (BOOL)isAbstractType;
+- (void).cxx_destruct;
 @property(copy) NSString *customSegueClassModuleProvider; // @synthesize customSegueClassModuleProvider=_customSegueClassModuleProvider;
 @property(copy) NSString *customSegueClassName; // @synthesize customSegueClassName=_customSegueClassName;
 @property(nonatomic) unsigned long long phase; // @synthesize phase=_phase;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) IBUIStoryboardAbstractTriggeredSegue *preview; // @synthesize preview=_preview;
 @property(nonatomic) unsigned long long triggerMode; // @synthesize triggerMode=_triggerMode;
 @property(nonatomic) BOOL animates; // @synthesize animates=_animates;
-- (void).cxx_destruct;
 - (id)ibInspectedModalPresentationOverStyleValues;
 - (id)ibInspectedModalPresentationOverStyleTitles;
 @property unsigned long long ibInspectedTriggerMode;

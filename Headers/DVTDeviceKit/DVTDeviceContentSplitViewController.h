@@ -17,9 +17,9 @@
     DVTEmptyContentPlaceholder *_emptyContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTEmptyContentPlaceholder *emptyContentView; // @synthesize emptyContentView=_emptyContentView;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_detailViewControllerInfoDictionaryForDevice:(id)arg1;
 - (void)_hideEmptySelectionView;
 - (void)_showEmptySelectionView;

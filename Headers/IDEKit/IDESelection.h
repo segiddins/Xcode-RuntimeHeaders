@@ -17,8 +17,8 @@
 
 + (id)selectionWithNavigableItemArchivableRepresentations:(id)arg1;
 + (id)selectionWithNavigableItems:(id)arg1;
-@property(readonly, nonatomic) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 @property(readonly, nonatomic) NSArray *navigableItemArchivableRepresentationsForTemporaryCompatibility;
 - (id)navigableItemArchivableRepresentations;
 - (id)description;

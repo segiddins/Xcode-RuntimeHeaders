@@ -16,9 +16,9 @@
     IDECapsuleView *_capsuleView;
 }
 
+- (void).cxx_destruct;
 @property IDECapsuleView *capsuleView; // @synthesize capsuleView=_capsuleView;
 @property(retain, nonatomic) NSView *capsuleHeaderContentView; // @synthesize capsuleHeaderContentView=_capsuleHeaderContentView;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)defaultCloseButton;

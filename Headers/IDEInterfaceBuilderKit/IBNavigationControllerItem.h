@@ -22,12 +22,12 @@
 + (id)keyPathsForValuesAffectingEffectiveBackTitle;
 + (id)keyPathsForValuesAffectingEffectiveCurrentTitle;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL automaticallyInvalidatesWhenPopping; // @synthesize automaticallyInvalidatesWhenPopping=_automaticallyInvalidatesWhenPopping;
 @property(copy, nonatomic) NSString *explicitBackTitle; // @synthesize explicitBackTitle=_explicitBackTitle;
 @property(copy, nonatomic) NSString *explicitCurrentTitle; // @synthesize explicitCurrentTitle=_explicitCurrentTitle;
 @property(nonatomic) BOOL wantsNavigationBar; // @synthesize wantsNavigationBar=_wantsNavigationBar;
 @property(readonly, nonatomic) __weak IDEViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *effectiveBackTitle;
 @property(readonly, nonatomic) NSString *effectiveCurrentTitle;
 - (id)initWithViewController:(id)arg1;

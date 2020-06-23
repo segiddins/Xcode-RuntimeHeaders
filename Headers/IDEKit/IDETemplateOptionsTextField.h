@@ -15,9 +15,9 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(copy) NSString *suffix; // @synthesize suffix=_suffix;
 @property(copy) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (void)validateSelectionStart:(long long *)arg1 length:(long long *)arg2 string:(id)arg3;
 
 @end

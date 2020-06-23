@@ -16,8 +16,8 @@
     SCNGeometry *_geometry;
 }
 
-@property(readonly) unsigned long long index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long index; // @synthesize index=_index;
 - (id)ske_document;
 @property(readonly) SCNGeometry *target;
 @property(readonly) SCNMorpher *morpher;

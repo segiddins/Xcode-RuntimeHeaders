@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_childrenAccessibilityRows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *childrenAccessibilityRows; // @synthesize childrenAccessibilityRows=_childrenAccessibilityRows;
 @property(nonatomic) __weak DTTimelineGraph *timelineGraph; // @synthesize timelineGraph=_timelineGraph;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)rebuildAccessibilitySelection;
 - (void)rebuildAccessibility;

@@ -15,8 +15,8 @@
     CDUnknownBlockType _handlerBlock;
 }
 
-@property(readonly, copy) CDUnknownBlockType handlerBlock; // @synthesize handlerBlock=_handlerBlock;
 - (void).cxx_destruct;
+@property(readonly, copy) CDUnknownBlockType handlerBlock; // @synthesize handlerBlock=_handlerBlock;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (void)cancel;
 - (id)initWithHandlerBlock:(CDUnknownBlockType)arg1;

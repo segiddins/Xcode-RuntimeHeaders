@@ -14,7 +14,6 @@
     MISSING_TYPE *preflightCompletion;
     MISSING_TYPE *workingCopiesWithUncommittedChanges;
     MISSING_TYPE *modifiedWorkingCopiesPipeline;
-    MISSING_TYPE *buildWorkingCopyMenusPipeline;
     MISSING_TYPE *preflightPipeline;
     MISSING_TYPE *preflightWindow;
 }
@@ -23,9 +22,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)primaryAction;
-- (void)willBeginSheet;
 - (void)preflightSheetOnWindow:(id)arg1;
 @property(nonatomic, copy) CDUnknownBlockType preflightCompletion;
+@property(nonatomic, readonly) double preferredViewHeight;
 @property(nonatomic, readonly) BOOL showIcon;
 @property(nonatomic, readonly) NSString *windowSubtitle;
 @property(nonatomic, readonly) NSString *windowTitle;

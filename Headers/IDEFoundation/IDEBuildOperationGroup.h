@@ -16,9 +16,9 @@
     IDEActivityLogSection *_buildLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEActivityLogSection *buildLog; // @synthesize buildLog=_buildLog;
 @property(readonly) DVTOperationGroup *buildOperations; // @synthesize buildOperations=_buildOperations;
-- (void).cxx_destruct;
 @property(readonly) NSArray *buildables;
 @property(readonly, copy) NSDate *startTime;
 @property(readonly) long long result;

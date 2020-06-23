@@ -38,6 +38,7 @@
 }
 
 + (BOOL)isIssueTypeRuntime:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(getter=_isVended) BOOL _vended; // @synthesize _vended=__vended;
 @property(getter=_isCoalesced) BOOL _coalesced; // @synthesize _coalesced=__coalesced;
 @property(retain, nonatomic) id <NSCopying> coalescingIdentifier; // @synthesize coalescingIdentifier=_coalescingIdentifier;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) IDEIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
 @property(getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(readonly) __weak IDEIssue *parentIssue; // @synthesize parentIssue=_parentIssue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEIssue *representativeSubIssue;
 - (BOOL)isEqualDisregardingLocationTimestamps:(id)arg1;
 - (id)_firstCommonLocationFromArray:(id)arg1 andArray:(id)arg2;

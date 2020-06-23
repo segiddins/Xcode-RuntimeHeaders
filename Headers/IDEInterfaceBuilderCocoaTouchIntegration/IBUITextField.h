@@ -10,7 +10,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIAttributedTextContainer-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUITextInputTraits-Protocol.h>
 
-@class IBUIColor, IBUIFontDescription, IBUITextInputTraits, NSAttributedString, NSImage, NSString;
+@class IBColor, IBUIFontDescription, IBUITextInputTraits, NSAttributedString, NSImage, NSString;
 
 @interface IBUITextField : IBUIControl <IBDocumentArchiving, IBUIAttributedTextContainer, IBUITextInputTraits>
 {
@@ -25,7 +25,7 @@
     IBUIFontDescription *_fontDescription;
     NSString *_text;
     long long _textAlignment;
-    IBUIColor *_textColor;
+    IBColor *_textColor;
     IBUITextInputTraits *_textInputTraits;
     NSString *_placeholder;
     double _minimumFontSize;
@@ -40,6 +40,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedUsesAttributedText;
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) int clearButtonMode; // @synthesize clearButtonMode=_clearButtonMode;
 @property(retain, nonatomic) NSImage *disabledBackground; // @synthesize disabledBackground=_disabledBackground;
 @property(retain, nonatomic) NSImage *background; // @synthesize background=_background;
@@ -51,11 +52,10 @@
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) int borderStyle; // @synthesize borderStyle=_borderStyle;
 @property(nonatomic) BOOL usesAttributedText; // @synthesize usesAttributedText=_usesAttributedText;
-@property(copy, nonatomic) IBUIColor *textColor; // @synthesize textColor=_textColor;
+@property(copy, nonatomic) IBColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)unarchiveTextColor:(id)arg1;
 - (void)archiveTextColor:(id)arg1;
 - (void)unarchiveFont:(id)arg1;
@@ -70,9 +70,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;
 @property(retain, nonatomic) IBUITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
-- (void)setFontDescription:(id)arg1;
-@property(readonly, copy, nonatomic) IBUIFontDescription *fontDescription;
+@property(copy, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
 @property(readonly) IBUIFontDescription *defaultFontDescription;
+- (id)ibDocumentationProtocolNames;
 - (unsigned long long)ibDefaultAccessibilityTraits;
 - (BOOL)ibIsAccessibilityElementByDefault;
 - (id)ibInspectedAttributedText;

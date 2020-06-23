@@ -20,12 +20,12 @@
 
 + (id)selectionContextIndicatingMakeVisible:(BOOL)arg1 zoom:(BOOL)arg2 animate:(BOOL)arg3;
 + (id)contextWithIdentifier:(id)arg1 makeVisible:(BOOL)arg2 zoom:(BOOL)arg3 animate:(BOOL)arg4;
+- (void).cxx_destruct;
 @property BOOL animate; // @synthesize animate=_animate;
 @property BOOL makeVisible; // @synthesize makeVisible=_makeVisible;
 @property BOOL zoom; // @synthesize zoom=_zoom;
 @property(retain) IBSelectionChannel *source; // @synthesize source=_source;
 @property(copy) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *userInfo;
 
 @end

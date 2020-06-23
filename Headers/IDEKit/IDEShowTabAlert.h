@@ -14,9 +14,9 @@
     NSString *_tabName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int tabTarget; // @synthesize tabTarget=_tabTarget;
 @property(retain, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
-- (void).cxx_destruct;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPropertyList:(id)arg1;

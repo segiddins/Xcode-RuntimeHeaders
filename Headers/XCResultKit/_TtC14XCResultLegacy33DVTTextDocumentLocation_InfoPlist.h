@@ -13,6 +13,7 @@
     MISSING_TYPE *lineNumber;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithCoder:(id)arg1;
 

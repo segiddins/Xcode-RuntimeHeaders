@@ -31,8 +31,8 @@
 + (id)macroNameRegistry;
 + (id)empty;
 + (id)newWithLabel:(id)arg1;
-@property BOOL postsChangeNotifications; // @synthesize postsChangeNotifications=_postsChangeNotifications;
 - (void).cxx_destruct;
+@property BOOL postsChangeNotifications; // @synthesize postsChangeNotifications=_postsChangeNotifications;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (void)assertInternalConsistency;

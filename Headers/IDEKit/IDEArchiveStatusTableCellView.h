@@ -14,9 +14,9 @@
     NSTextField *_dateField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *dateField; // @synthesize dateField=_dateField;
 @property(retain) NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
-- (void).cxx_destruct;
 
 @end
 

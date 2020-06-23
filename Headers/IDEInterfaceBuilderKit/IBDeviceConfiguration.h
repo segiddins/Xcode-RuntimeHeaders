@@ -19,10 +19,10 @@
 
 + (id)deviceConfigurationWithDeviceSubtype:(id)arg1 adaptation:(id)arg2;
 + (id)deviceConfigurationWithPropertyList:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *stateSavingTuple; // @synthesize stateSavingTuple=_stateSavingTuple;
 @property(readonly, nonatomic) IBDeviceAdaptation *adaptation; // @synthesize adaptation=_adaptation;
 @property(readonly, nonatomic) IBDeviceSubtype *subtype; // @synthesize subtype=_subtype;
-- (void).cxx_destruct;
 - (id)configurationByRotatingToOrientation:(id)arg1;
 - (long long)compareAdaptationDisplayOrderSizesByReverseHeightReverseWidth:(id)arg1;
 @property(readonly, nonatomic) NSString *displayName;

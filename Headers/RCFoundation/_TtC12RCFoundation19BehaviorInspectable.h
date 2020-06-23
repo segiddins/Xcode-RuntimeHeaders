@@ -14,6 +14,7 @@
     MISSING_TYPE *scope;
     MISSING_TYPE *triggerDidChangeEventSource;
     MISSING_TYPE *actionDidChangeEventSource;
+    MISSING_TYPE *accessibilityDidChangeEventSource;
     MISSING_TYPE *allActionsDidChangeEventSource;
     MISSING_TYPE *nameDidChangeEventSource;
     MISSING_TYPE *colorDidChangeEventSource;

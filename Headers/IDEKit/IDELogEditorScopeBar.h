@@ -31,12 +31,12 @@
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *containerView; // @synthesize containerView=_containerView;
 @property __weak NSLayoutConstraint *filterFieldHeight; // @synthesize filterFieldHeight=_filterFieldHeight;
 @property __weak NSLayoutConstraint *scopeBarHeight; // @synthesize scopeBarHeight=_scopeBarHeight;
 @property double preferredViewHeight; // @synthesize preferredViewHeight=_preferredViewHeight;
 @property(retain) id <IDELogEditorScopeBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)saveButtonAction:(id)arg1;
 - (void)searchFieldAction:(id)arg1;
 - (void)showErrorsOnly:(id)arg1;

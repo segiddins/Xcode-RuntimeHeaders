@@ -18,10 +18,10 @@
 }
 
 + (id)sharedProductsWindowController;
+- (void).cxx_destruct;
 @property __weak NSToolbarItem *segmentControlToolbarItem; // @synthesize segmentControlToolbarItem=_segmentControlToolbarItem;
 @property(retain) IDEProductsViewController *productsViewController; // @synthesize productsViewController=_productsViewController;
 @property __weak NSSegmentedControl *segmentControl; // @synthesize segmentControl=_segmentControl;
-- (void).cxx_destruct;
 - (void)_configureSegmentedControl;
 - (void)showProductsSectionWithIdentifier:(id)arg1 forProductIdentifier:(id)arg2 didShowProduct:(CDUnknownBlockType)arg3;
 - (void)refresh;

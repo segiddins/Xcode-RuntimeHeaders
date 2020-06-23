@@ -15,8 +15,8 @@
     NSFileHandle *_fileHandle;
 }
 
-@property(readonly, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 - (void)finish;
 - (void)writeString:(id)arg1;
 - (id)initWithFileHandle:(id)arg1;

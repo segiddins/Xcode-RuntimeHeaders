@@ -25,8 +25,8 @@
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
-@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (void).cxx_destruct;
+@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (id)createBuilderForBuildCommand:(long long)arg1 withBuildTaskQueueSet:(id)arg2 parameters:(id)arg3 buildOnlyTheseFiles:(id)arg4 restorePersistedBuildResults:(BOOL)arg5 withManager:(id)arg6;
 - (void)resetCachedImplicitDependencies;
 - (id)implicitDependenciesForBuildParameters:(id)arg1 executionEnvironment:(id)arg2 returningMessages:(id *)arg3;

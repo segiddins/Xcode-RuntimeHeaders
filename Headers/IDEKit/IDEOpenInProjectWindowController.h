@@ -17,10 +17,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) IDEOpenInProjectViewController *openInProjectViewController; // @synthesize openInProjectViewController=_openInProjectViewController;
 @property(retain, nonatomic) NSString *openInProjectDescription; // @synthesize openInProjectDescription=_openInProjectDescription;
-- (void).cxx_destruct;
 - (void)cancelledViewController:(id)arg1;
 - (void)projectSelectedInViewController:(id)arg1;
 - (void)beginModalWindowWithCompletionBlock:(CDUnknownBlockType)arg1;

@@ -29,12 +29,12 @@
 + (id)_accountWithPropertyListRepresentation:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
 + (id)accountWithIdentity:(struct __SecIdentity *)arg1;
 + (id)accountWithCredentials:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property long long accountType; // @synthesize accountType=_accountType;
 @property(retain) NSString *credentialsErrorDescription; // @synthesize credentialsErrorDescription=_credentialsErrorDescription;
 @property(copy) DVTDeveloperAccountCredentials *accountCredentials; // @synthesize accountCredentials=_accountCredentials;
-- (void).cxx_destruct;
 - (void)checkForValidCredentials:(CDUnknownBlockType)arg1;
 - (void)validateCredentialsWithCallback:(CDUnknownBlockType)arg1;
 @property(readonly) NSDictionary *propertyListRepresentation;

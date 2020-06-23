@@ -34,7 +34,6 @@
     BOOL _insertingPartialCompletion;
     BOOL _hidingCompletions;
     BOOL _autoCompleteTimerExpired;
-    BOOL _shownExplicitly;
     NSDictionary *_currentCompletionContext;
     NSArray *_highlyLikelyCompletions;
 }
@@ -50,9 +49,9 @@
 + (void)_appendFrequentTextCompletions:(id)arg1 named:(id)arg2 inBundle:(id)arg3;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingReadyToShowCompletions;
+- (void).cxx_destruct;
 @property(copy) NSString *filteringPrefix; // @synthesize filteringPrefix=_filteringPrefix;
 @property(retain) NSArray *highlyLikelyCompletions; // @synthesize highlyLikelyCompletions=_highlyLikelyCompletions;
-@property(getter=isShownExplicitly) BOOL shownExplicitly; // @synthesize shownExplicitly=_shownExplicitly;
 @property(readonly, nonatomic) NSDictionary *currentCompletionContext; // @synthesize currentCompletionContext=_currentCompletionContext;
 @property BOOL autoCompleteTimerExpired; // @synthesize autoCompleteTimerExpired=_autoCompleteTimerExpired;
 @property(nonatomic) long long selectedCompletionIndex; // @synthesize selectedCompletionIndex=_selectedCompletionIndex;
@@ -63,7 +62,6 @@
 @property(readonly) unsigned long long wordStartLocation; // @synthesize wordStartLocation=_wordStartLocation;
 @property(readonly) DVTTextCompletionListWindowController *listWindowController; // @synthesize listWindowController=_listWindowController;
 @property(readonly) NSView<DVTTextCompletionSupportingTextView> *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 @property(readonly) NSString *debugStateString;
 - (void)primitiveInvalidate;
 - (BOOL)showInfoPanelForSelectedCompletion;
@@ -108,6 +106,7 @@
 - (void)showTemporarilyHiddenCompletionsForReasonMask:(unsigned long long)arg1;
 - (void)showCompletionsExplicitly:(BOOL)arg1;
 - (void)_autoCompletionWaitIsOver;
+@property(readonly, getter=isShownExplicitly) BOOL shownExplicitly;
 @property(readonly) BOOL readyToShowCompletions;
 - (id)_listWindowController;
 - (void)setPendingRequestState:(int)arg1;

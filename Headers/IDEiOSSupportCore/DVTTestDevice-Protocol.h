@@ -9,6 +9,7 @@
 @class DVTDevice, NSString;
 
 @protocol DVTTestDevice <NSObject>
+@property(readonly) unsigned long long state;
 @property(readonly) DVTDevice *dvtDevice;
 @property(readonly, copy) NSString *name;
 @property(readonly, copy) NSString *identifier;

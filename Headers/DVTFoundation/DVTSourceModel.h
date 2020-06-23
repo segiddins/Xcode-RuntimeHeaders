@@ -21,13 +21,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isDoingBatchEdit; // @synthesize isDoingBatchEdit=_isDoingBatchEdit;
 @property struct _NSRange dirtyRange; // @synthesize dirtyRange=_dirtyRange;
 @property(retain) DVTSourceScanner *scanner; // @synthesize scanner=_scanner;
 @property(retain) DVTSourceModelItem *sourceItems; // @synthesize sourceItems=_sourceItems;
 @property(retain) DVTCharStream *inputStream; // @synthesize inputStream=_inputStream;
 @property id <DVTSourceBufferProvider> sourceBufferProvider; // @synthesize sourceBufferProvider=_sourceBufferProvider;
-- (void).cxx_destruct;
 - (id)objCMethodNameForItem:(id)arg1 nameRanges:(id *)arg2;
 - (BOOL)isItemDictionaryLiteral:(id)arg1;
 - (BOOL)isItemObjectLiteral:(id)arg1;

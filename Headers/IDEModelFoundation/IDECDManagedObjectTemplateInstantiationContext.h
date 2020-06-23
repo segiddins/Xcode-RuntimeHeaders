@@ -22,6 +22,7 @@
     DVTFilePath *_modelFilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
 @property(getter=isAutomaticInvocation) BOOL automaticInvocation; // @synthesize automaticInvocation=_automaticInvocation;
 @property(retain) DVTVersion *swiftVersion; // @synthesize swiftVersion=_swiftVersion;
@@ -30,7 +31,6 @@
 @property(retain) CDMModel *model; // @synthesize model=_model;
 @property(retain) NSSet *entities; // @synthesize entities=_entities;
 @property(retain) NSSet *files; // @synthesize files=_files;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -31,10 +31,10 @@
 + (void)deferActivity:(id)arg1 untilDate:(id)arg2 gracePeriod:(double)arg3 allowBattery:(BOOL)arg4 block:(CDUnknownBlockType)arg5;
 + (void)initialize;
 + (id)defaultDownloadableManager;
+- (void).cxx_destruct;
 @property(retain) NSDate *doNotPromptAboutUpdatesUntilDate; // @synthesize doNotPromptAboutUpdatesUntilDate=_doNotPromptAboutUpdatesUntilDate;
 @property BOOL automaticUpdate; // @synthesize automaticUpdate=_automaticUpdate;
 @property(copy) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forMacroName:(id)arg2;
 - (void)updateOutdatedDownloadables:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)download:(id)arg1 authorization:(struct AuthorizationOpaqueRef *)arg2 error:(id *)arg3;

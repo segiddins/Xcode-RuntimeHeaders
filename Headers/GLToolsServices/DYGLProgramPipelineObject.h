@@ -20,6 +20,7 @@
     NSString *_infoLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) unsigned int tessEvaluationProgram; // @synthesize tessEvaluationProgram=_tessEvaluationProgram;
 @property(readonly, nonatomic) unsigned int tessControlProgram; // @synthesize tessControlProgram=_tessControlProgram;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned int vertexProgram; // @synthesize vertexProgram=_vertexProgram;
 @property(readonly, nonatomic) unsigned int activeProgram; // @synthesize activeProgram=_activeProgram;
 @property(readonly, copy, nonatomic) NSString *infoLog; // @synthesize infoLog=_infoLog;
-- (void).cxx_destruct;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 

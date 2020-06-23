@@ -39,6 +39,7 @@
     id <DYTextureImage> _firstValidTextureImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int immutableLevels; // @synthesize immutableLevels=_immutableLevels;
 @property(readonly, nonatomic, getter=isImmutableFormat) BOOL immutableFormat; // @synthesize immutableFormat=_immutableFormat;
 @property(readonly, nonatomic) float maxLod; // @synthesize maxLod=_maxLod;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) unsigned int minFilter; // @synthesize minFilter=_minFilter;
 @property(readonly, nonatomic) id <DYTextureImage> firstValidTextureImage; // @synthesize firstValidTextureImage=_firstValidTextureImage;
 @property(readonly, nonatomic) unsigned int mipmapLevelsUsedMask; // @synthesize mipmapLevelsUsedMask=_mipmapLevelsUsedMask;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cachingCost;
 - (id)cubemapLabelForFaceIndex:(int)arg1;
 @property(readonly, nonatomic) BOOL isFlipped;

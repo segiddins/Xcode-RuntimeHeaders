@@ -23,11 +23,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentBrushIndex; // @synthesize currentBrushIndex=_currentBrushIndex;
 @property(nonatomic) BOOL notifyOnClose; // @synthesize notifyOnClose=_notifyOnClose;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak id <SKSceneTileMapEditBrushPopoverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

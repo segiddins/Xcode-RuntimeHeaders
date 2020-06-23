@@ -15,8 +15,8 @@
     BOOL _hasOnlyLiveThreads;
 }
 
-@property(readonly) BOOL hasOnlyLiveThreads; // @synthesize hasOnlyLiveThreads=_hasOnlyLiveThreads;
 - (void).cxx_destruct;
+@property(readonly) BOOL hasOnlyLiveThreads; // @synthesize hasOnlyLiveThreads=_hasOnlyLiveThreads;
 - (id)liveThreadChildItems;
 - (void)invalidateChildItems;
 - (id)childRepresentedObjects;

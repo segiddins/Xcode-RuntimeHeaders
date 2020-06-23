@@ -17,9 +17,9 @@
     id <IDEProjectItem> _item;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDEProjectItem> item; // @synthesize item=_item;
 @property(nonatomic) __weak id <IDEPortalInfoDelegate> portalInfoDelegate; // @synthesize portalInfoDelegate=_portalInfoDelegate;
-- (void).cxx_destruct;
 - (id)initWithPortalInfoDelegate:(id)arg1 item:(id)arg2;
 
 // Remaining properties

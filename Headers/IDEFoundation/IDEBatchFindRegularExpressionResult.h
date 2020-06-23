@@ -14,9 +14,9 @@
     NSTextCheckingResult *_textCheckingResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSTextCheckingResult *textCheckingResult; // @synthesize textCheckingResult=_textCheckingResult;
 @property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
-- (void).cxx_destruct;
 - (id)generateFindResult;
 - (id)initWithDocumentLocation:(id)arg1 contextText:(id)arg2 contextTextMatchingRange:(struct _NSRange)arg3 regularExpression:(id)arg4 textCheckingResult:(id)arg5 initialNumberOfLinesCalculator:(CDUnknownBlockType)arg6 parent:(id)arg7 queryIdentifier:(long long)arg8 resultIdentifier:(long long)arg9;
 

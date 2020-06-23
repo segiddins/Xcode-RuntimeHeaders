@@ -25,6 +25,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRemoved, setter=_setRemoved:) BOOL removed; // @synthesize removed=_removed;
 @property(nonatomic, setter=_setIntentResponse:) __weak IDEIntentBuilderIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
 @property(copy, nonatomic, setter=_setConciseFormatStringID:) NSString *conciseFormatStringID; // @synthesize conciseFormatStringID=_conciseFormatStringID;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isSuccess) BOOL success; // @synthesize success=_success;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locationDescription;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;

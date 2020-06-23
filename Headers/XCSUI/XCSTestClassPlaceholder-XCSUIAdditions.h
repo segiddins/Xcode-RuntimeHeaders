@@ -17,6 +17,8 @@
 - (id)ide_sharedTests_testGroup_includePassingTests:(BOOL)arg1 includeFailingTests:(BOOL)arg2 includeOnlyPerfTests:(BOOL)arg3;
 - (id)ide_sharedTests_testGroup_perfTests;
 - (id)testsIncludePassing:(BOOL)arg1 includeFailing:(BOOL)arg2 perfOnly:(BOOL)arg3;
+- (id)ide_sharedTests_skippedTests;
+- (id)ide_sharedTests_mixedTests;
 - (id)ide_sharedTests_failingTests;
 - (id)ide_sharedTests_passingTests;
 - (id)ide_sharedTests_testGroup_allTests;

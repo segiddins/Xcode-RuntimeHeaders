@@ -51,9 +51,9 @@
 
 + (id)_toolTipForHideActionEditorViewButton;
 + (id)_toolTipForShowActionEditorButton;
+- (void).cxx_destruct;
 @property(copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(nonatomic) __weak id <SKActionPreviewViewControllerDelegate> previewDelegate; // @synthesize previewDelegate=_previewDelegate;
-- (void).cxx_destruct;
 - (void)previewPauseResumeButtonPressed:(id)arg1;
 - (void)previewPlayStopButtonPressed:(id)arg1;
 - (void)updateActionPreview;

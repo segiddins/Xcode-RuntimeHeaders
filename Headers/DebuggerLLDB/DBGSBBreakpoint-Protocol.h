@@ -6,7 +6,7 @@
 
 #import <DebuggerLLDB/NSObject-Protocol.h>
 
-@protocol DBGSBBreakpointLocation, DBGSBStream;
+@protocol DBGSBBreakpointLocation, DBGSBStream, DBGSBStringList;
 
 @protocol DBGSBBreakpoint <NSObject>
 - (void)SetCallbackToNull;
@@ -14,6 +14,9 @@
 - (id <DBGSBBreakpointLocation>)GetLocationAtIndex:(unsigned int)arg1;
 - (id <DBGSBBreakpointLocation>)FindLocationByID:(int)arg1;
 - (unsigned long long)GetNumLocations;
+- (void)GetNames:(id <DBGSBStringList>)arg1;
+- (void)RemoveName:(const char *)arg1;
+- (_Bool)AddName:(const char *)arg1;
 - (_Bool)IsEnabled;
 - (void)SetEnabled:(_Bool)arg1;
 - (_Bool)GetDescription:(id <DBGSBStream>)arg1;

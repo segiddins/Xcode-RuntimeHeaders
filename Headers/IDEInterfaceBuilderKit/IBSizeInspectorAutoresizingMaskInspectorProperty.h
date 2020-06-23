@@ -35,6 +35,7 @@
     NSButton *_heightSpring;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *heightSpring; // @synthesize heightSpring=_heightSpring;
 @property(retain) NSButton *widthSpring; // @synthesize widthSpring=_widthSpring;
 @property(retain) NSButton *maxYStrut; // @synthesize maxYStrut=_maxYStrut;
@@ -45,7 +46,6 @@
 @property(retain) NSView *autosizingControlArea; // @synthesize autosizingControlArea=_autosizingControlArea;
 @property(retain) NSImageView *desktopBackgroundImageView; // @synthesize desktopBackgroundImageView=_desktopBackgroundImageView;
 @property(retain) IBFillView *animationStageFrame; // @synthesize animationStageFrame=_animationStageFrame;
-- (void).cxx_destruct;
 - (void)resetAutoresizingDemonstrationAnimation:(id)arg1;
 - (void)appDidDeactivate:(id)arg1;
 - (void)appDidActivate:(id)arg1;

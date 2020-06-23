@@ -15,8 +15,8 @@
 
 + (void)initialize;
 + (id)comparisonWithLocalizationFrameworkComparison:(id)arg1 projectDirectory:(id)arg2 localizedContentsDirectory:(id)arg3 sourceLocale:(id)arg4;
-@property(readonly, copy) NSArray *filesWithChanges; // @synthesize filesWithChanges=_filesWithChanges;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *filesWithChanges; // @synthesize filesWithChanges=_filesWithChanges;
 - (id)description;
 - (id)initWithFilesWithChanges:(id)arg1;
 

@@ -16,9 +16,9 @@
 
 + (id)_elementNameToKVCMap;
 + (id)_elementNameToClassMap;
+- (void).cxx_destruct;
 @property(nonatomic) long long bitWidth; // @synthesize bitWidth=_bitWidth;
 @property(retain, nonatomic) NSString *sentinel; // @synthesize sentinel=_sentinel;
-- (void).cxx_destruct;
 - (void)_handleCompletion;
 - (void)_handleStart;
 

@@ -11,7 +11,7 @@
 #import <IDESourceCodeComparisonEditor/NSMenuDelegate-Protocol.h>
 #import <IDESourceCodeComparisonEditor/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTBorderedView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, DVTStateToken, NSDictionary, NSString;
+@class DVTBorderedView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, DVTStateToken, NSDictionary, NSString, NSView;
 
 @interface IDESourceCodeComparisonEditor : IDEComparisonEditor <IDESourceExpressionSource, NSUserInterfaceValidations, NSMenuDelegate, IDEJumpToLineDestination>
 {
@@ -20,12 +20,19 @@
     DVTBorderedView *_borderedView;
 }
 
++ (id)keyPathsForValuesAffectingMouseOverExpression;
++ (id)keyPathsForValuesAffectingCurrentSelectionFrame;
++ (id)keyPathsForValuesAffectingSelectedExpression;
++ (id)keyPathsForValuesAffectingContextMenuExpression;
++ (id)keyPathsForValuesAffectingQuickHelpTargetView;
++ (id)keyPathsForValuesAffectingQuickHelpExpression;
++ (id)keyPathsForValuesAffectingSourceCodeEditorOrNil;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultViewNibName;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
-@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void).cxx_destruct;
+@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void)menuNeedsUpdate:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
@@ -37,6 +44,8 @@
 - (void)setStateToken:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)commitEditingAndReturnError:(id *)arg1;
+@property(readonly) NSView *quickHelpTargetView;
+@property(readonly) DVTSourceExpression *quickHelpExpression;
 - (void)symbolsForExpression:(id)arg1 queue:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)isExpressionPoundImport:(id)arg1;
 - (BOOL)isExpressionModuleImport:(id)arg1;
@@ -55,13 +64,15 @@
 - (id)_transientStateDictionaryForDocument:(id)arg1;
 - (void)restoreInternalComparisonDocumentLocationWithStateDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
-- (void)setEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
+- (id)sourceCodeEditorOrNil;
 - (void)_updateViewBasedOnSubmode;
 - (struct CGRect)overlayFrameForView:(id)arg1;
 - (id)pathCell:(id)arg1 menuItemForItem:(id)arg2 defaultMenuItem:(id)arg3;
 - (BOOL)pathCell:(id)arg1 shouldInitiallyShowMenuSearch:(id)arg2;
 - (BOOL)pathCell:(id)arg1 shouldSeparateDisplayOfChildItemsForItem:(id)arg2;
+- (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (BOOL)canBecomeMainViewController;
+- (void)primitiveInvalidate;
 - (void)viewDidLoad;
 
 // Remaining properties
@@ -71,7 +82,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) DVTSourceLanguageService *languageService;
-@property(readonly) DVTSourceExpression *quickHelpExpression;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) NSString *selectedText;
 @property(readonly) Class superclass;

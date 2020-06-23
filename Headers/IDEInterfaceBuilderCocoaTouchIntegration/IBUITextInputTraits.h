@@ -33,6 +33,7 @@
 
 + (id)keyPathsForValuesAffectingIbShowsPasswordRulesInspector;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) BOOL allowsPasswordRules; // @synthesize allowsPasswordRules=_allowsPasswordRules;
 @property(copy, nonatomic) IBUITextInputPasswordRules *passwordRules; // @synthesize passwordRules=_passwordRules;
@@ -48,7 +49,6 @@
 @property(nonatomic) int spellCheckingType; // @synthesize spellCheckingType=_spellCheckingType;
 @property(nonatomic) int autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(nonatomic) int autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
-- (void).cxx_destruct;
 - (BOOL)ibShowsPasswordRulesInspector;
 @property(copy, nonatomic) NSString *ibInspectedPasswordRulesDescriptor;
 - (void)verifyDecodedValues:(id)arg1;

@@ -21,11 +21,11 @@
     CDUnknownBlockType _terminationSignpost;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType terminationSignpost; // @synthesize terminationSignpost=_terminationSignpost;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(retain) DVTSystemActivityToken *systemActivityToken; // @synthesize systemActivityToken=_systemActivityToken;
 @property(readonly) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (void)cancelClient;
 - (id)initWithClientName:(id)arg1 clientTracker:(id)arg2 terminationSignpost:(CDUnknownBlockType)arg3 cancellationBlock:(CDUnknownBlockType)arg4;
 @property(readonly, copy) NSString *description;

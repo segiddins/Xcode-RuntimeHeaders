@@ -17,9 +17,9 @@
 }
 
 + (id)minimumProtocolVersion;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy) CDUnknownBlockType sendToDaemonProxyBlock; // @synthesize sendToDaemonProxyBlock=_sendToDaemonProxyBlock;
-- (void).cxx_destruct;
 - (void)handleConnectionFailure:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
 - (id)initWithSendToDaemonProxyBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2;

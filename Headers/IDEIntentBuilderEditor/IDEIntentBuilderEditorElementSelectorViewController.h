@@ -22,6 +22,7 @@
     NSTextField *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak NSButton *addButton; // @synthesize addButton=_addButton;
 @property __weak NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <IDEIntentBuilderEditorElementSelectorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *elements; // @synthesize elements=_elements;
-- (void).cxx_destruct;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)addButtonPressed:(id)arg1;
 - (void)primitiveInvalidate;

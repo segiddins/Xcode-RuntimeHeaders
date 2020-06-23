@@ -37,6 +37,7 @@
     MISSING_TYPE *defaultConfigurationNamePerTarget;
     MISSING_TYPE *settingsPerTarget;
     MISSING_TYPE *workspace;
+    MISSING_TYPE *capturedBuildInfo;
 }
 
 @end

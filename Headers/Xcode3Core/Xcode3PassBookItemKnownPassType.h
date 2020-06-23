@@ -14,9 +14,9 @@
     NSString *_passTypeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(readonly, nonatomic) NSString *passTypeIdentifierWithPrefix; // @synthesize passTypeIdentifierWithPrefix=_passTypeIdentifierWithPrefix;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithPassTypeIdentifierWithPrefix:(id)arg1 passTypeIdentifier:(id)arg2;

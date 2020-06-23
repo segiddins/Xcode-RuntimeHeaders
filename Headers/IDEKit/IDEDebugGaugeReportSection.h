@@ -18,12 +18,12 @@
 }
 
 + (id)labelFont;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *widthConstraintToRemoveAtRuntime; // @synthesize widthConstraintToRemoveAtRuntime=_widthConstraintToRemoveAtRuntime;
 @property __weak IDEDebugGaugeReportContentBackground *contentContainer; // @synthesize contentContainer=_contentContainer;
 @property __weak NSView *accessoryContainerView; // @synthesize accessoryContainerView=_accessoryContainerView;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak NSView *headerContainer; // @synthesize headerContainer=_headerContainer;
-- (void).cxx_destruct;
 - (void)_installTitleAccessoryView:(id)arg1;
 - (void)addContentView:(id)arg1;
 - (void)_addContentView:(id)arg1 topSpaceOffset:(long long)arg2 bottomSpaceOffset:(long long)arg3;

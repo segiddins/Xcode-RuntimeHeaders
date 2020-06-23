@@ -19,10 +19,10 @@
 
 + (id)_orientationWithExtension:(id)arg1;
 + (id)orientationForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)nextOrientationForPreview;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 archivingName:(id)arg2 displayName:(id)arg3;

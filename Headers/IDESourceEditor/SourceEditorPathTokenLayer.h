@@ -22,10 +22,10 @@
 }
 
 + (id)defaultActionForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SourceEditorPathTokenLayerDelegate> pathTokenDelegate; // @synthesize pathTokenDelegate=_pathTokenDelegate;
 @property(readonly) NSDictionary *requestedColumnBreaks; // @synthesize requestedColumnBreaks=_requestedColumnBreaks;
 @property(copy, nonatomic) NSString *representedString; // @synthesize representedString=_representedString;
-- (void).cxx_destruct;
 - (void)_selectedMenuItem:(id)arg1;
 - (unsigned long long)_addMenuItemsForChildrenOfNode:(id)arg1 toMenu:(id)arg2;
 - (long long)_columnIndexForSegment:(long long)arg1;

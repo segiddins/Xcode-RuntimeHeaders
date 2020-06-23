@@ -16,9 +16,9 @@
     IBMemberConfiguration *_selectedConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBMemberConfiguration *selectedConfiguration; // @synthesize selectedConfiguration=_selectedConfiguration;
 @property(readonly) NSButton *okButton; // @synthesize okButton=_okButton;
-- (void).cxx_destruct;
 - (void)refreshPopUpButtons;
 - (void)userDidSelectVariableValue:(id)arg1;
 - (void)loadView;

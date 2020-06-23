@@ -16,11 +16,11 @@
     DVTLocale *_fromLocale;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTLocale *fromLocale; // @synthesize fromLocale=_fromLocale;
 @property BOOL localize; // @synthesize localize=_localize;
 @property(retain) DVTFileDataType *localizableFileType; // @synthesize localizableFileType=_localizableFileType;
 @property(readonly) Xcode3VariantGroup *variantGroup; // @synthesize variantGroup=_variantGroup;
-- (void).cxx_destruct;
 @property(readonly) NSArray *availableFileTypes;
 - (id)initWithVariantGroup:(id)arg1 fromLocale:(id)arg2;
 

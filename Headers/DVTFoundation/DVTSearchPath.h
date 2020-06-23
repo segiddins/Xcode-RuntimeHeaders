@@ -17,9 +17,9 @@
 }
 
 + (id)searchPathWithSearchDirectoryFilePaths:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *unixShellSearchPathRepresentation; // @synthesize unixShellSearchPathRepresentation=_unixShellSearchPathRepresentation;
 @property(readonly) NSArray *searchDirectoryFilePaths; // @synthesize searchDirectoryFilePaths=_searchDirectoryFilePaths;
-- (void).cxx_destruct;
 - (id)description;
 - (id)pathForFileWithRelativePathString:(id)arg1;
 - (id)pathForFileWithRelativePathString:(id)arg1 matchingPredicate:(CDUnknownBlockType)arg2;

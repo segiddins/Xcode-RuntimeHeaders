@@ -14,19 +14,16 @@
 
 @interface DTTapService : DTXService <DTTapAuthorizedAPI, DTTapBulkDataReceiver>
 {
-    unsigned int _tapServiceID;
-    BOOL _tapIsRunning;
     id <DTTapServiceDelegate> _delegate;
     DTTapConfig *_config;
     DTTapLocal *_tap;
-    BOOL _useExpiredPidCache;
+    BOOL _tapIsRunning;
+    unsigned int _tapServiceID;
     NSObject<OS_dispatch_queue> *_serialQueue;
     DTTapServiceMessageSender *_messageSender;
 }
 
 + (void)registerCapabilities:(id)arg1 forDelegateClass:(Class)arg2 forConnection:(id)arg3;
-+ (id)playbackServiceName;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)sendHeartbeatTime:(unsigned long long)arg1;
 - (void)sendFrameMessage:(id)arg1;

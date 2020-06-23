@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)handleLazyKVOUpdate:(id)arg1;
 - (id)initWithObject:(id)arg1 observer:(id)arg2;
 

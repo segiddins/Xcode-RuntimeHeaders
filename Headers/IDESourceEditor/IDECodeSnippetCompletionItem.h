@@ -24,6 +24,7 @@
 }
 
 + (id)infoViewControllerFont;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *action; // @synthesize action=_action;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property(readonly) NSImage *icon; // @synthesize icon=_icon;
@@ -32,7 +33,6 @@
 @property(readonly, copy) NSString *displayText; // @synthesize displayText=_displayText;
 @property double priority; // @synthesize priority=_priority;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly) unsigned long long priorityComparatorKind;

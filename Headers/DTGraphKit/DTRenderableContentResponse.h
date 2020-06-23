@@ -17,12 +17,12 @@
     NSObject<OS_dispatch_group> *_group;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(nonatomic) unsigned long long serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain, nonatomic) id content; // @synthesize content=_content;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (BOOL)_isFinished;
 - (void)_cancel;
 

@@ -23,10 +23,10 @@
     NSSet *_highlightedRows;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(retain, nonatomic) NSSet *highlightedRows; // @synthesize highlightedRows=_highlightedRows;
 @property(copy, nonatomic) NSNumber *rowIndicatingPotentialConnection; // @synthesize rowIndicatingPotentialConnection=_rowIndicatingPotentialConnection;
-- (void).cxx_destruct;
 - (void)drawRow:(long long)arg1 clipRect:(struct CGRect)arg2;
 - (void)drawPotentialConnectionIndicatorInRect:(struct CGRect)arg1;
 - (struct CGRect)rectOfRow:(long long)arg1;

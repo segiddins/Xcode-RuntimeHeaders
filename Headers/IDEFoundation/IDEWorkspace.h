@@ -6,14 +6,15 @@
 
 #import <IDEFoundation/IDEXMLPackageContainer.h>
 
+#import <IDEFoundation/IDEBuildNoticeWorkspace-Protocol.h>
 #import <IDEFoundation/IDEClientTracking-Protocol.h>
 #import <IDEFoundation/IDEIssueLogDataSource-Protocol.h>
 #import <IDEFoundation/IDEProvisionableProvider-Protocol.h>
 
-@class DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEActivityLogMessage, IDEActivityLogSection, IDEBreakpointManager, IDEConcreteClientTracker, IDEContainer, IDEContainerQuery, IDEDeviceInstallWorkspaceMonitor, IDEDynamicContentRootGroup, IDEExecutionEnvironment, IDEIndex, IDEIssueManager, IDELocalizationManager, IDELogManager, IDEProvisioningManager, IDEProvisioningWorkspaceMonitor, IDERefactoring, IDERunContextManager, IDESourceControlWorkspaceMonitor, IDETestManager, IDETextFragmentIndex, IDEWorkspaceArena, IDEWorkspaceSharedSettings, IDEWorkspaceUpgradeTasksController, IDEWorkspaceUserSettings, NSArray, NSDate, NSDictionary, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSet, NSString, _TtC13IDEFoundation30IDEStructureEditingCoordinator, _TtC16DVTDocumentation23DVTDocumentationManager;
-@protocol IDEActiveRunContextStoring, IDEBuildSystemServiceProvider, IDECustomDataStoring, IDEWorkspaceDelegate;
+@class DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEActivityLogMessage, IDEActivityLogSection, IDEBreakpointManager, IDEConcreteClientTracker, IDEContainer, IDEContainerQuery, IDEDeviceInstallWorkspaceMonitor, IDEDynamicContentRootGroup, IDEExecutionEnvironment, IDEIndex, IDEIssueManager, IDELocalizationManager, IDELogManager, IDENoticeCollator, IDEProvisioningManager, IDEProvisioningWorkspaceMonitor, IDERefactoring, IDERunContextManager, IDESourceControlWorkspaceMonitor, IDETestManager, IDETextFragmentIndex, IDEWorkspaceArena, IDEWorkspaceSharedSettings, IDEWorkspaceUpgradeTasksController, IDEWorkspaceUserSettings, NSArray, NSDate, NSDictionary, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSet, NSString, _TtC13IDEFoundation22IDEBuildNoticeProvider, _TtC13IDEFoundation30IDEStructureEditingCoordinator, _TtC16DVTDocumentation23DVTDocumentationManager;
+@protocol IDEActiveRunContextStoring, IDEBuildNoticeLogSection, IDEBuildSystemServiceProvider, IDECustomDataStoring, IDEWorkspaceDelegate;
 
-@interface IDEWorkspace : IDEXMLPackageContainer <IDEClientTracking, IDEIssueLogDataSource, IDEProvisionableProvider>
+@interface IDEWorkspace : IDEXMLPackageContainer <IDEBuildNoticeWorkspace, IDEClientTracking, IDEIssueLogDataSource, IDEProvisionableProvider>
 {
     NSString *_untitledName;
     IDEWorkspaceArena *_workspaceArena;
@@ -35,6 +36,8 @@
     IDERunContextManager *_runContextManager;
     IDELogManager *_logManager;
     IDEIssueManager *_issueManager;
+    IDENoticeCollator *_noticeCollator;
+    _TtC13IDEFoundation22IDEBuildNoticeProvider *_buildNoticeProvider;
     IDEBreakpointManager *_breakpointManager;
     IDETestManager *_testManager;
     _TtC16DVTDocumentation23DVTDocumentationManager *_documentationManager;
@@ -49,7 +52,6 @@
     IDEProvisioningManager *_provisioningManager;
     IDELocalizationManager *_localizationManager;
     _TtC13IDEFoundation30IDEStructureEditingCoordinator *_structureEditingMoveCoordinator;
-    NSMutableArray *_createMLActivities;
     NSNumber *_shouldUseLegacyBuildSystem;
     id <IDEBuildSystemServiceProvider> _buildSystemServiceProvider;
     DVTNotificationToken *_buildSystemSettingsNotificationToken;
@@ -120,6 +122,7 @@
 + (void)initialize;
 + (id)globalScopeStore;
 + (id)createGlobalScopeStore;
+- (void).cxx_destruct;
 @property(retain) id <IDEActiveRunContextStoring> activeRunContextStore; // @synthesize activeRunContextStore=_activeRunContextStore;
 @property(nonatomic) BOOL isPotentiallyClosing; // @synthesize isPotentiallyClosing=_isPotentiallyClosing;
 @property(copy) NSDate *icloudDriveLastHeldDate; // @synthesize icloudDriveLastHeldDate=_icloudDriveLastHeldDate;
@@ -144,13 +147,13 @@
 @property(readonly) IDERefactoring *refactoring; // @synthesize refactoring=_refactoring;
 @property(readonly) IDETextFragmentIndex *textFragmentIndex; // @synthesize textFragmentIndex=_textFragmentIndex;
 @property(retain) IDEIndex *index; // @synthesize index=_index;
+@property(readonly) IDENoticeCollator *noticeCollator; // @synthesize noticeCollator=_noticeCollator;
 @property(retain) IDERunContextManager *runContextManager; // @synthesize runContextManager=_runContextManager;
 @property BOOL initialContainerScanComplete; // @synthesize initialContainerScanComplete=_initialContainerScanComplete;
 @property(copy) IDEActivityLogSection *sourcePackageResolutionIssueLog; // @synthesize sourcePackageResolutionIssueLog=_sourcePackageResolutionIssueLog;
 @property(copy) NSArray *sourcePackageLoadingErrors; // @synthesize sourcePackageLoadingErrors=_sourcePackageLoadingErrors;
 @property BOOL isWaitingForSourcePackages; // @synthesize isWaitingForSourcePackages=_isWaitingForSourcePackages;
 @property(retain) IDEDynamicContentRootGroup *dynamicContentRootGroup; // @synthesize dynamicContentRootGroup=_dynamicContentRootGroup;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *provisionableDevices;
 @property(readonly, nonatomic) NSSet *provisionables;
 - (void)notifyBuildSystemServiceProviderThatBlueprintProviderDidChange:(id)arg1;
@@ -191,7 +194,6 @@
 @property(readonly) BOOL usesModernBuildSystem;
 - (void)_invalidateBuildSystemServiceProvider;
 @property(retain, nonatomic) NSNumber *shouldUseLegacyBuildSystem; // @dynamic shouldUseLegacyBuildSystem;
-@property(readonly) NSMutableArray *createMLActivities;
 @property(readonly) _TtC13IDEFoundation30IDEStructureEditingCoordinator *structureEditingMoveCoordinator;
 @property(readonly) IDELocalizationManager *localizationManager;
 @property(retain) _TtC16DVTDocumentation23DVTDocumentationManager *documentationManager; // @dynamic documentationManager;
@@ -282,6 +284,14 @@
 - (id)newScriptingObjectOfClass:(Class)arg1 forValueForKey:(id)arg2 withContentsValue:(id)arg3 properties:(id)arg4;
 @property(retain) NSArray *namedBatchFindScopes;
 - (id)localScopeStore;
+- (id)observeActiveRunDestinationDidChange:(CDUnknownBlockType)arg1;
+- (id)observeBuildImplicitDependenciesDidChange:(CDUnknownBlockType)arg1;
+- (id)observeActiveSchemeDidChange:(CDUnknownBlockType)arg1;
+- (id)observeActiveBlueprintLogSectionIDs:(CDUnknownBlockType)arg1;
+- (id)makeLogStoreForNoticeLogs;
+- (id)activeBlueprintLogSectionIDs;
+- (id)observeLatestBuildLogIdentityDidChange:(CDUnknownBlockType)arg1;
+@property(readonly) id <IDEBuildNoticeLogSection> latestBuildLogForBuildNoticeProvider;
 - (void)endSourcePackagePreflightResolution:(id)arg1;
 - (id)beginSourcePackagePreflightResolutionWithReference:(id)arg1 delegate:(id)arg2 error:(out id *)arg3;
 - (id)latestSourcePackageVersionFromTags:(id)arg1;

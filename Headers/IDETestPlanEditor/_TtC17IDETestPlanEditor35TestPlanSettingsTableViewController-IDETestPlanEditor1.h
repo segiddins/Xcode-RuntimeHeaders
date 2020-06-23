@@ -9,7 +9,7 @@
 #import <IDETestPlanEditor/DVTOutlineViewDelegate-Protocol.h>
 
 @interface _TtC17IDETestPlanEditor35TestPlanSettingsTableViewController (IDETestPlanEditor1) <DVTOutlineViewDelegate>
-- (void)doubleClickedOutlineView:(id)arg1;
+- (void)clickedOutlineView:(id)arg1;
 - (BOOL)outlineView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;

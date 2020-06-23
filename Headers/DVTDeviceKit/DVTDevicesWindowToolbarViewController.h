@@ -13,8 +13,8 @@
     DVTSegmentedControl *_segmentedControl;
 }
 
-@property(retain) DVTSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+@property(retain) DVTSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void)selectSegment:(long long)arg1;
 - (void)_segmentStateDidChange:(id)arg1;
 - (void)_setStateForTag:(unsigned long long)arg1;

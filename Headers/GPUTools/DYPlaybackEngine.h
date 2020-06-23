@@ -28,6 +28,7 @@
     unsigned int _currentFunctionIndex;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) BOOL verbose; // @synthesize verbose=_verbose;
 @property(nonatomic) BOOL waitUntilCompleteAfterEveryFrame; // @synthesize waitUntilCompleteAfterEveryFrame=_waitUntilCompleteAfterEveryFrame;
 @property(readonly, nonatomic) unsigned int currentFunctionIndex; // @synthesize currentFunctionIndex=_currentFunctionIndex;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned int targetFunctionIndex; // @synthesize targetFunctionIndex=_targetFunctionIndex;
 @property(readonly, nonatomic) DYCaptureFile *currentFile; // @synthesize currentFile=_currentFile;
 @property(readonly, retain, nonatomic) id <DYCaptureStore> captureStore; // @synthesize captureStore=_captureStore;
-- (id).cxx_construct;
 - (BOOL)shouldPerformPlaybackLoopIteration:(unsigned int)arg1;
 - (void)performPlaybackLoopIterationPostCaptureActions:(unsigned int)arg1;
 - (void)performPlaybackLoopIterationPreCaptureActions:(unsigned int)arg1;

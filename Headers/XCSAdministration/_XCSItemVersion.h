@@ -15,9 +15,9 @@
 }
 
 + (id)justBuildNumber:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *version; // @synthesize version=_version;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 version:(id)arg2;
 

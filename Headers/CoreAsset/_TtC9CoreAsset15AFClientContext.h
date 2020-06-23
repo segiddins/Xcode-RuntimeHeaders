@@ -14,6 +14,7 @@
     MISSING_TYPE *serviceLocator;
     MISSING_TYPE *engineQueueManager;
     MISSING_TYPE *cache;
+    MISSING_TYPE *fileHashCache;
     MISSING_TYPE *realityAssetManager;
     MISSING_TYPE *assetResolver;
     MISSING_TYPE *options;

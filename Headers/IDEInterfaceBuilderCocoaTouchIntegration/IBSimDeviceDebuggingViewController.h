@@ -21,11 +21,11 @@
     NSTextView *_deviceConsoleTextView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextView *deviceConsoleTextView; // @synthesize deviceConsoleTextView=_deviceConsoleTextView;
 @property(retain) NSImageView *deviceImageView; // @synthesize deviceImageView=_deviceImageView;
 @property(retain, nonatomic) NSImage *deviceImage; // @synthesize deviceImage=_deviceImage;
 @property(nonatomic) __weak id <IBSimDeviceDebuggingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)openScreenshotInPreview:(id)arg1;
 - (void)resetDataMigration:(id)arg1;
 - (void)saveDiagnostics:(id)arg1;

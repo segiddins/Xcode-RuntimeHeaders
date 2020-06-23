@@ -31,13 +31,13 @@
 
 + (id)keyPathsForValuesAffectingIcon;
 + (id)keyPathsForValuesAffecting_customPropertiesTitle;
+- (void).cxx_destruct;
 @property BOOL shouldShowIcon; // @synthesize shouldShowIcon=_shouldShowIcon;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSColor *alternateBackgroundColor; // @synthesize alternateBackgroundColor=_alternateBackgroundColor;
 @property(readonly) NSString *customPropertyString; // @synthesize customPropertyString=_customPropertiesTitleString;
 @property(copy, nonatomic) NSString *_titleKey; // @synthesize _titleKey;
 @property(retain) Xcode3InfoArraySliceController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 - (void)capsuleViewDidClickRemoveButton:(id)arg1;
 @property(readonly) NSImage *icon;
 @property(readonly) Xcode3ImageView *_iconView;

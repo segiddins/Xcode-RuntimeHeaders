@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) CDMModel *model; // @synthesize model=_model;
 @property(retain) CDMEntity *entity; // @synthesize entity=_entity;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain) CDMEntity *parentEntity; // @synthesize parentEntity=_parentEntity;
-- (void).cxx_destruct;
 - (id)name;
 - (id)init;
 - (void)primitiveInvalidate;

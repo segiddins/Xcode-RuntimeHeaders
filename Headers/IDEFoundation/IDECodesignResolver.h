@@ -29,10 +29,10 @@
 + (id)_signingCertificateForManualSpecifier:(id)arg1 signingCertificates:(id)arg2 team:(id)arg3 platform:(id)arg4 errorProvider:(id)arg5 error:(id *)arg6;
 + (id)signingCertificateForIdentifier:(id)arg1 platform:(id)arg2 signingCertificates:(id)arg3 team:(id)arg4 errorProvider:(id)arg5 error:(id *)arg6;
 + (id)profileQualificationForProfile:(id)arg1 team:(id)arg2 bundleID:(id)arg3 platform:(id)arg4 signingCertificate:(id)arg5 appIDFeatures:(id)arg6 entitlements:(id)arg7 devices:(id)arg8 profileType:(id)arg9 allowTeamProfiles:(BOOL)arg10 verboseErrors:(BOOL)arg11;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisioningInputs *inputs; // @synthesize inputs=_inputs;
 @property(nonatomic) long long automaticLocationStyle; // @synthesize automaticLocationStyle=_automaticLocationStyle;
 @property(retain, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
-- (void).cxx_destruct;
 - (id)_errorForSigningCertificateOverrideInManual;
 - (id)_errorForProfile:(id)arg1 qualification:(id)arg2;
 - (id)_signingCertificateWithError:(id *)arg1;

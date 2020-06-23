@@ -27,11 +27,11 @@
     NSDictionary *_stashedAuxiliaryStateDictionary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL auxiliaryEditorIsRegisteredWithPrincipalEditorStateToken; // @synthesize auxiliaryEditorIsRegisteredWithPrincipalEditorStateToken=_auxiliaryEditorIsRegisteredWithPrincipalEditorStateToken;
 @property(nonatomic) BOOL previewEditorIsRegisteredWithPrincipalEditorStateToken; // @synthesize previewEditorIsRegisteredWithPrincipalEditorStateToken=_previewEditorIsRegisteredWithPrincipalEditorStateToken;
 @property(copy, nonatomic) NSDictionary *stashedAuxiliaryStateDictionary; // @synthesize stashedAuxiliaryStateDictionary=_stashedAuxiliaryStateDictionary;
 @property(copy, nonatomic) NSDictionary *stashedPreviewStateDictionary; // @synthesize stashedPreviewStateDictionary=_stashedPreviewStateDictionary;
-- (void).cxx_destruct;
 - (BOOL)_showAuxiliaryEditorContextForEditor:(id)arg1 workspaceDocument:(id)arg2 previewViewControllerProvidingBlock:(CDUnknownBlockType)arg3;
 - (void)applyStateDictionary:(id)arg1 forEditor:(id)arg2;
 - (void)_setStateTokenForAuxiliaryEditor:(id)arg1 withPrimaryEditor:(id)arg2;

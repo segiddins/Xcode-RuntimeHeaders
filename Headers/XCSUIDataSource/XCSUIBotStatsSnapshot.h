@@ -20,6 +20,7 @@
 }
 
 + (id)snapshotWithBotName:(id)arg1 botID:(id)arg2 service:(id)arg3 testAdditionRate:(id)arg4 regressedPerf:(id)arg5 improvedPerf:(id)arg6 coverageChange:(id)arg7;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *coverageChange; // @synthesize coverageChange=_coverageChange;
 @property(copy, nonatomic) NSNumber *improvedPerf; // @synthesize improvedPerf=_improvedPerf;
 @property(copy, nonatomic) NSNumber *regressedPerf; // @synthesize regressedPerf=_regressedPerf;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *botID; // @synthesize botID=_botID;
 @property(copy, nonatomic) NSString *botName; // @synthesize botName=_botName;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 
 @end
 

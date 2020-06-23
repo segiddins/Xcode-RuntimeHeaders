@@ -14,8 +14,8 @@
     double _dividerThickness;
 }
 
-@property double dividerThickness; // @synthesize dividerThickness=_dividerThickness;
 - (void).cxx_destruct;
+@property double dividerThickness; // @synthesize dividerThickness=_dividerThickness;
 - (void)setDividerStyle:(long long)arg1;
 - (long long)dividerStyle;
 - (id)dividerColor;

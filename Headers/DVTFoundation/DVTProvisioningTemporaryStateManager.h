@@ -16,9 +16,9 @@
 
 + (id)provisioningProfileSearchPath;
 + (id)defaultTemporaryStateManager;
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *provisioningProfileSearchPath; // @synthesize provisioningProfileSearchPath=_provisioningProfileSearchPath;
 @property struct __SecKeychain *keychain; // @synthesize keychain=_keychain;
-- (void).cxx_destruct;
 - (id)initWithKeychain:(struct __SecKeychain *)arg1 provisioningProfileSearchPath:(id)arg2;
 
 @end

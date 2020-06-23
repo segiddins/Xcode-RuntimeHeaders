@@ -16,9 +16,9 @@
     NSDictionary *_simulatedEntitlements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *simulatedEntitlements; // @synthesize simulatedEntitlements=_simulatedEntitlements;
 @property(readonly, nonatomic) NSDictionary *signedEntitlements; // @synthesize signedEntitlements=_signedEntitlements;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

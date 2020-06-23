@@ -14,9 +14,9 @@
     IDEOpenQuicklyQueryContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEOpenQuicklyQueryContext *context; // @synthesize context=_context;
 @property(readonly) IDEOpenQuicklyQueryUserInput *userInput; // @synthesize userInput=_userInput;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) IDEOpenQuicklyQueryPattern *pattern;
 - (id)initWithUserInput:(id)arg1 context:(id)arg2;

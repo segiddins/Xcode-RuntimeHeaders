@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class NSArray, _TtC13IDEFoundation28IDEXCTestRunFileTestPlanInfo;
 
 @interface IDEXCTestRunFileSerialization : NSObject
 {
+    _TtC13IDEFoundation28IDEXCTestRunFileTestPlanInfo *_testPlanInfo;
     NSArray *_testRunSpecificationGroups;
     NSArray *_codeCoverageBuildableInfos;
     long long _version;
@@ -18,13 +19,14 @@
 + (id)fileNameForTestRunFileWithSchemeName:(id)arg1 testPlanName:(id)arg2 runDestinationIdentifier:(id)arg3;
 + (id)testRunFileWithContentsOfURL:(id)arg1 derivedDataPath:(id)arg2 error:(id *)arg3;
 + (id)testRunFileWithDictionaryRepresentation:(id)arg1 removingPathPlaceholdersForTestRootPath:(id)arg2 derivedDataPath:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly) long long version; // @synthesize version=_version;
 @property(readonly, copy) NSArray *codeCoverageBuildableInfos; // @synthesize codeCoverageBuildableInfos=_codeCoverageBuildableInfos;
 @property(readonly, copy) NSArray *testRunSpecificationGroups; // @synthesize testRunSpecificationGroups=_testRunSpecificationGroups;
-- (void).cxx_destruct;
+@property(readonly) _TtC13IDEFoundation28IDEXCTestRunFileTestPlanInfo *testPlanInfo; // @synthesize testPlanInfo=_testPlanInfo;
 - (BOOL)writeToURL:(id)arg1 derivedDataPath:(id)arg2 error:(id *)arg3;
 - (id)dictionaryRepresentationWithPlaceholdersForTestRootPath:(id)arg1 derivedDataPath:(id)arg2;
-- (id)initWithTestRunSpecificationGroups:(id)arg1 codeCoverageBuildableInfos:(id)arg2 version:(long long)arg3;
+- (id)initWithTestPlanInfo:(id)arg1 testRunSpecificationGroups:(id)arg2 codeCoverageBuildableInfos:(id)arg3 version:(long long)arg4;
 
 @end
 

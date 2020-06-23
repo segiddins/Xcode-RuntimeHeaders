@@ -14,9 +14,9 @@
     NSString *_geniusCategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *geniusCategory; // @synthesize geniusCategory=_geniusCategory;
 @property(readonly) NSArray *geniusResults; // @synthesize geniusResults=_geniusResults;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

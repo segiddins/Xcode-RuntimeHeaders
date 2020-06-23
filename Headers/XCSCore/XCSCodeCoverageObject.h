@@ -17,11 +17,11 @@
     id _parent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) NSNumber *lineCoveragePercentageDeltaAggregate; // @synthesize lineCoveragePercentageDeltaAggregate=_lineCoveragePercentageDeltaAggregate;
 @property(retain, nonatomic) NSNumber *lineCoveragePercentageAggregate; // @synthesize lineCoveragePercentageAggregate=_lineCoveragePercentageAggregate;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_deviceTinyIDs;
 - (void)_bindHierarchyWithIntegration:(id)arg1 parentObject:(id)arg2;
 - (BOOL)_validateWithDevice:(id)arg1 lineCoveragePercentage:(id)arg2 lineCoveragePercentageDelta:(id)arg3 validationErrors:(id *)arg4;

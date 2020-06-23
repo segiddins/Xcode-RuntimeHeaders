@@ -9,7 +9,7 @@
 #import <XCSourceControl/NSCopying-Protocol.h>
 #import <XCSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString, NSURL, XCSourceControlHostParticipant, XCSourceControlHostRenderableContent, XCSourceControlHostRepository, _TtC15XCSourceControl25XCSourceControlHostBranch;
+@class NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL, XCSourceControlHostMilestone, XCSourceControlHostParticipant, XCSourceControlHostRenderableContent, XCSourceControlHostRepository, _TtC15XCSourceControl25XCSourceControlHostBranch;
 
 @interface XCSourceControlHostPullRequest : NSObject <NSSecureCoding, NSCopying>
 {
@@ -26,11 +26,17 @@
     NSArray *_events;
     unsigned long long _permittedAbilities;
     NSArray *_permittedWorkflowActions;
+    NSSet *_labels;
+    XCSourceControlHostMilestone *_milestone;
     NSDictionary *_info;
 }
 
++ (id)updatedPullRequest:(id)arg1 title:(id)arg2 description:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *info; // @synthesize info=_info;
+@property(readonly, copy, nonatomic) XCSourceControlHostMilestone *milestone; // @synthesize milestone=_milestone;
+@property(readonly, copy, nonatomic) NSSet *labels; // @synthesize labels=_labels;
 @property(readonly, copy, nonatomic) NSArray *permittedWorkflowActions; // @synthesize permittedWorkflowActions=_permittedWorkflowActions;
 @property(readonly, nonatomic) unsigned long long permittedAbilities; // @synthesize permittedAbilities=_permittedAbilities;
 @property(readonly, copy, nonatomic) NSArray *events; // @synthesize events=_events;
@@ -44,16 +50,16 @@
 @property(readonly, copy, nonatomic) XCSourceControlHostRenderableContent *content; // @synthesize content=_content;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)setMilestone:(id)arg1 labels:(id)arg2;
 @property(readonly, copy, nonatomic) XCSourceControlHostParticipant *owner;
 @property(readonly, copy, nonatomic) XCSourceControlHostRepository *repository;
-- (id)initWithName:(id)arg1 identifier:(id)arg2 content:(id)arg3 url:(id)arg4 dateCreated:(id)arg5 dateUpdated:(id)arg6 status:(unsigned long long)arg7 source:(id)arg8 target:(id)arg9 participants:(id)arg10 events:(id)arg11 permittedAbilities:(unsigned long long)arg12 permittedWorkflowActions:(id)arg13 info:(id)arg14;
+- (id)initWithName:(id)arg1 identifier:(id)arg2 content:(id)arg3 url:(id)arg4 dateCreated:(id)arg5 dateUpdated:(id)arg6 status:(unsigned long long)arg7 source:(id)arg8 target:(id)arg9 participants:(id)arg10 events:(id)arg11 permittedAbilities:(unsigned long long)arg12 permittedWorkflowActions:(id)arg13 labels:(id)arg14 milestone:(id)arg15 info:(id)arg16;
 - (id)initWithName:(id)arg1 content:(id)arg2 source:(id)arg3 target:(id)arg4 participants:(id)arg5 attachments:(id)arg6;
 
 @end

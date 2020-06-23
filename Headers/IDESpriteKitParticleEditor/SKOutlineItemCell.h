@@ -14,8 +14,8 @@
     BOOL _reference;
 }
 
-@property(nonatomic, getter=isReference) BOOL reference; // @synthesize reference=_reference;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isReference) BOOL reference; // @synthesize reference=_reference;
 - (id)titleTextColor;
 - (id)init;
 

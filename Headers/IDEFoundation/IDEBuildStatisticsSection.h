@@ -27,12 +27,12 @@
     CDUnknownBlockType _contentsEmissionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType contentsEmissionBlock; // @synthesize contentsEmissionBlock=_contentsEmissionBlock;
 @property unsigned long long ordinal; // @synthesize ordinal=_ordinal;
 @property(retain) DVTSystemStatisticsMeasurement *endSystemStats; // @synthesize endSystemStats=_endSystemStats;
 @property(retain) DVTSystemStatisticsMeasurement *startSystemStats; // @synthesize startSystemStats=_startSystemStats;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)emitContentsForAspect:(id)arg1 logLevel:(unsigned long long)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)defaultEmissionStringWithIndentLevel:(unsigned long long)arg1;

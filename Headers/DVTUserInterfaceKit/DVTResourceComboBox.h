@@ -25,11 +25,14 @@
     NSScrollView *_popupFilterScrollView;
 }
 
++ (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSScrollView *popupFilterScrollView; // @synthesize popupFilterScrollView=_popupFilterScrollView;
 @property(retain) DVTResourceComboBoxFilterTableView *popupFilterTableView; // @synthesize popupFilterTableView=_popupFilterTableView;
 @property(nonatomic) double trailingTextEditAreaInset; // @synthesize trailingTextEditAreaInset=_trailingTextEditAreaInset;
 @property __weak NSObject<DVTResourceComboBoxDataSource> *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
+- (id)textView:(id)arg1 completions:(id)arg2 forPartialWordRange:(struct _NSRange)arg3 indexOfSelectedItem:(long long *)arg4;
+- (BOOL)textView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)makePlaceholderCellWithName:(id)arg1;
 - (id)makeColorCellWithName:(id)arg1 color:(id)arg2;
@@ -45,7 +48,9 @@
 - (void)prepareWindowNotifications:(BOOL)arg1;
 - (BOOL)popupIfNeeded;
 - (void)refreshPopupWindowHeight;
-- (double)computePopupHeight;
+- (struct CGRect)computePopupWindowScreenRect;
+- (double)allowedHeightBelowComboBoxInScreen;
+- (double)desiredPopupHeight;
 - (void)popupMenu:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (double)popupButtonAlignmentWidth;

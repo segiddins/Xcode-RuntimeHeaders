@@ -33,11 +33,11 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)standardDebugBarButtonWithImage:(id)arg1 alternateImage:(id)arg2 toolTip:(id)arg3 accessibilityDescription:(id)arg4;
 + (struct CGSize)standardDebugBarButtonSize;
+- (void).cxx_destruct;
 @property BOOL prefersToAlwaysBeShown; // @synthesize prefersToAlwaysBeShown=_prefersToAlwaysBeShown;
 @property(retain) id selectedModelObject; // @synthesize selectedModelObject=_selectedModelObject;
 @property(retain) id <IDEDebuggerBarEditorInfoProvider> editorInfoProvider; // @synthesize editorInfoProvider=_editorInfoProvider;
 @property(retain, nonatomic) NSArray *contentProviders; // @synthesize contentProviders=_contentProviders;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)showSharedLibrariesPopUp;
 - (double)_sharedLibrariesPopUpXOffset;

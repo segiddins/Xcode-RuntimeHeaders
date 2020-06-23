@@ -15,8 +15,8 @@
     NSString *_parameter;
 }
 
-@property(copy, nonatomic) NSString *parameter; // @synthesize parameter=_parameter;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *parameter; // @synthesize parameter=_parameter;
 - (id)initWithParameter:(id)arg1;
 
 // Remaining properties

@@ -20,8 +20,8 @@
 + (id)developerSDKForPlatform:(int)arg1 internal:(BOOL)arg2;
 + (id)developerSDKForGPUSession:(id)arg1;
 + (id)developerSDKForPlatform:(int)arg1;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)fileURLForExecutableBinary:(id)arg1;
 @property(readonly, nonatomic) NSURL *fileURL;
 @property(readonly, nonatomic) NSString *operatingSystemVersion;

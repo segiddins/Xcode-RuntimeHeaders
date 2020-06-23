@@ -14,9 +14,9 @@
     NSTextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property NSTextView *textView; // @synthesize textView=_textView;
 @property(copy, nonatomic) NSArray *validationErrors; // @synthesize validationErrors=_validationErrors;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 
 @end

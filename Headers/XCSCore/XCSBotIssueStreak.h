@@ -15,9 +15,9 @@
 }
 
 + (id)issueStreakWithRecords:(id)arg1 open:(BOOL)arg2 validationErrors:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, nonatomic, getter=isOpen) BOOL open; // @synthesize open=_open;
-- (void).cxx_destruct;
 - (BOOL)_validateRecords:(id)arg1 validationErrors:(id *)arg2;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithRecords:(id)arg1 open:(BOOL)arg2 validationErrors:(id *)arg3;

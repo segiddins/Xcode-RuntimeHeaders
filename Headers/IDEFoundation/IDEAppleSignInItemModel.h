@@ -16,8 +16,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(retain, nonatomic) NSSet *appleSignInEntitlementValues; // @synthesize appleSignInEntitlementValues=_appleSignInEntitlementValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *appleSignInEntitlementValues; // @synthesize appleSignInEntitlementValues=_appleSignInEntitlementValues;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (void)primitiveInvalidate;
 - (BOOL)hasDisclosableContent;

@@ -8,56 +8,64 @@
 
 #import <IDEProductsUI/IDEGraphDelegate-Protocol.h>
 
-@class IDEAnalyticsMetricsSingleBarGraphInfoPaneData, IDEAnalyticsMetricsStackedBarGraph, IDEAnalyticsStackBarLegendView, NSArray, NSDictionary, NSNumber, NSString, NSTextField, NSView;
+@class IDEAnalyticsMetricsStackedBarGraph, IDEAnalyticsStackBarLegendView, NSArray, NSButton, NSDictionary, NSNumber, NSString, NSTextField, NSView, _TtC12DVTAnalytics23AnalyticsMetricsDataset;
 
 @interface IDEAnalyticsMetricsStackedBarGraphViewController : DVTViewController <IDEGraphDelegate>
 {
-    BOOL _isBackgroundGraph;
-    BOOL _showSingleBarGraphLegendView;
-    IDEAnalyticsMetricsSingleBarGraphInfoPaneData *_singleBarGraphInfo;
+    NSTextField *_graphTitleField;
+    NSTextField *_graphSubTitleField;
+    NSTextField *_errorField;
     NSString *_metricsName;
     NSString *_appName;
+    NSString *_helpBookAnchorID;
     NSView *_graphContentView;
     IDEAnalyticsStackBarLegendView *_legendView;
     NSTextField *_graphXAxisLabel;
-    NSTextField *_errorLabel;
-    NSDictionary *_dataSeries;
+    NSButton *_helpButton;
+    _TtC12DVTAnalytics23AnalyticsMetricsDataset *_fullDataSet;
+    NSDictionary *_dataToGraph;
     NSArray *_versions;
     NSArray *_values;
     NSNumber *_valueChange;
     NSDictionary *_colorMap;
     NSArray *_stackOrder;
+    NSString *_unitString;
+    NSString *_legendUnitString;
     IDEAnalyticsMetricsStackedBarGraph *_barGraph;
 }
 
-+ (id)backgroundBarGraphInsufficientUsageString;
-+ (id)barGraphXAxisString;
+- (void).cxx_destruct;
 @property(retain) IDEAnalyticsMetricsStackedBarGraph *barGraph; // @synthesize barGraph=_barGraph;
+@property(retain) NSString *legendUnitString; // @synthesize legendUnitString=_legendUnitString;
+@property(retain) NSString *unitString; // @synthesize unitString=_unitString;
 @property(retain) NSArray *stackOrder; // @synthesize stackOrder=_stackOrder;
 @property(retain) NSDictionary *colorMap; // @synthesize colorMap=_colorMap;
 @property(retain) NSNumber *valueChange; // @synthesize valueChange=_valueChange;
 @property(retain) NSArray *values; // @synthesize values=_values;
 @property(retain) NSArray *versions; // @synthesize versions=_versions;
-@property(retain) NSDictionary *dataSeries; // @synthesize dataSeries=_dataSeries;
-@property __weak NSTextField *errorLabel; // @synthesize errorLabel=_errorLabel;
+@property(retain) NSDictionary *dataToGraph; // @synthesize dataToGraph=_dataToGraph;
+@property(retain) _TtC12DVTAnalytics23AnalyticsMetricsDataset *fullDataSet; // @synthesize fullDataSet=_fullDataSet;
+@property __weak NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property __weak NSTextField *graphXAxisLabel; // @synthesize graphXAxisLabel=_graphXAxisLabel;
 @property __weak IDEAnalyticsStackBarLegendView *legendView; // @synthesize legendView=_legendView;
 @property __weak NSView *graphContentView; // @synthesize graphContentView=_graphContentView;
+@property(retain, nonatomic) NSString *helpBookAnchorID; // @synthesize helpBookAnchorID=_helpBookAnchorID;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) NSString *metricsName; // @synthesize metricsName=_metricsName;
-@property(retain, nonatomic) IDEAnalyticsMetricsSingleBarGraphInfoPaneData *singleBarGraphInfo; // @synthesize singleBarGraphInfo=_singleBarGraphInfo;
-@property(nonatomic) BOOL showSingleBarGraphLegendView; // @synthesize showSingleBarGraphLegendView=_showSingleBarGraphLegendView;
-@property(nonatomic) BOOL isBackgroundGraph; // @synthesize isBackgroundGraph=_isBackgroundGraph;
-- (void).cxx_destruct;
+@property __weak NSTextField *errorField; // @synthesize errorField=_errorField;
+@property __weak NSTextField *graphSubTitleField; // @synthesize graphSubTitleField=_graphSubTitleField;
+@property __weak NSTextField *graphTitleField; // @synthesize graphTitleField=_graphTitleField;
 - (id)dataUnavailableString;
 - (id)colorForChartNamed:(id)arg1;
 - (BOOL)lineFilledForGraph:(id)arg1 entry:(id)arg2;
-- (void)updateLabels;
+- (void)updateLegendData;
 - (void)viewDidLoad;
+- (void)updateBarGraphView;
 - (void)removeBarGraphView;
 - (void)addBarGraphView;
-- (void)updateWithDataSeries:(id)arg1 versions:(id)arg2 values:(id)arg3 colorMap:(id)arg4 stackOrder:(id)arg5;
-- (id)initWithDataSeries:(id)arg1 versions:(id)arg2 values:(id)arg3 colorMap:(id)arg4 stackOrder:(id)arg5;
+- (void)helpButtonClicked:(id)arg1;
+- (void)updateWithFullDataSet:(id)arg1 dataToGraph:(id)arg2 versions:(id)arg3 values:(id)arg4 colorMap:(id)arg5 stackOrder:(id)arg6 unitString:(id)arg7 legendUnitString:(id)arg8;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -14,9 +14,9 @@
     NSView *_sourceListHeaderCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *sourceListHeaderCell; // @synthesize sourceListHeaderCell=_sourceListHeaderCell;
 @property(retain, nonatomic) NSView *sourceListDataCell; // @synthesize sourceListDataCell=_sourceListDataCell;
-- (void).cxx_destruct;
 
 @end
 

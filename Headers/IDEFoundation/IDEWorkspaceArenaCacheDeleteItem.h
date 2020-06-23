@@ -13,8 +13,8 @@
     IDEWorkspaceArenaInfo *_info;
 }
 
-@property(readonly) IDEWorkspaceArenaInfo *info; // @synthesize info=_info;
 - (void).cxx_destruct;
+@property(readonly) IDEWorkspaceArenaInfo *info; // @synthesize info=_info;
 - (BOOL)isOrphaned;
 - (id)lastAccessedDate;
 - (id)initWithWorkspaceArenaInfo:(id)arg1 workspaceArenaPath:(id)arg2;

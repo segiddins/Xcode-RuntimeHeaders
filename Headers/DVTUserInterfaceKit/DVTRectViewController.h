@@ -26,6 +26,7 @@
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *heightTitleLabel; // @synthesize heightTitleLabel=_heightTitleLabel;
 @property __weak NSTextField *widthTitleLabel; // @synthesize widthTitleLabel=_widthTitleLabel;
 @property __weak NSTextField *xyTitleLabel; // @synthesize xyTitleLabel=_xyTitleLabel;
@@ -40,7 +41,6 @@
 @property(nonatomic, getter=shouldAdaptToTheme) BOOL adaptToTheme; // @synthesize adaptToTheme=_adaptToTheme;
 @property(nonatomic) BOOL showsBorder; // @synthesize showsBorder=_showsBorder;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
-- (void).cxx_destruct;
 - (id)quickLookViewForUnadornedView;
 - (void)_updateForCurrentTheme;
 - (void)_updateBorder;

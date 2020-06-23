@@ -37,6 +37,7 @@
     double _annotationToolTipChangeFlag;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long lastLineNumberControlClicked; // @synthesize lastLineNumberControlClicked=_hitLineNumberForContextualMenu;
 @property(readonly) struct CGPoint lastPointControlClicked; // @synthesize lastPointControlClicked=_mouseLocationForContextualMenu;
 @property(copy, nonatomic) NSColor *foldbarBackgroundColor; // @synthesize foldbarBackgroundColor=_foldbarBackgroundColor;
@@ -48,7 +49,6 @@
 @property(nonatomic) double sidebarWidth; // @synthesize sidebarWidth=_sidebarWidth;
 @property(nonatomic) BOOL showsFoldbar; // @synthesize showsFoldbar=_showsFoldbar;
 @property(nonatomic) BOOL showsSidebar; // @synthesize showsSidebar=_showsSidebar;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;

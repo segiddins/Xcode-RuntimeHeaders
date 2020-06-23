@@ -20,10 +20,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)objectWithValue:(id)arg1 ofClassName:(id)arg2;
 + (id)primitiveWithValue:(id)arg1 ofType:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)convertToType:(long long)arg1 typeName:(id)arg2;
 - (void)encodeValueAsPrimitiveType:(id)arg1 forKey:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

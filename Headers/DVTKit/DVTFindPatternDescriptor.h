@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingDisplayAttributedString;
+- (void).cxx_destruct;
 @property(readonly) DVTFindPatternComponents *findPatternComponents; // @synthesize findPatternComponents=_findPatternComponents;
 @property(readonly) unsigned long long matchStyle; // @synthesize matchStyle=_matchStyle;
-- (void).cxx_destruct;
 - (id)displayAttributedString;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

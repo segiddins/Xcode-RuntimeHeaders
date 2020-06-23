@@ -27,10 +27,10 @@
 + (id)outboundPrototypeConnectionsForObject:(id)arg1 inDocument:(id)arg2;
 + (id)inboundPrototypeConnectionsForObject:(id)arg1 inDocument:(id)arg2;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSObject *controller; // @synthesize controller=_controller;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) NSString *binding; // @synthesize binding=_binding;
-- (void).cxx_destruct;
 - (BOOL)canHaveSourceSeparatedWithSeparationType:(int)arg1;
 - (BOOL)canHaveDestinationSeparatedWithSeparationType:(int)arg1;
 - (id)connectionByCompletingWithConnectionContext:(id)arg1;

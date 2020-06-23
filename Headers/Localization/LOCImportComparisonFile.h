@@ -14,9 +14,9 @@
     NSMutableString *_comparisonViewString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSMutableString *comparisonViewString; // @synthesize comparisonViewString=_comparisonViewString;
 @property(copy) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (struct _NSRange)appendAllTransUnitsFromGlossary:(id)arg1;
 - (struct _NSRange)appendTransUnit:(id)arg1 fromGlossary:(id)arg2;
 - (BOOL)writeWithError:(id *)arg1;

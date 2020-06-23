@@ -18,13 +18,13 @@
     NSNumber *_avg;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *avg; // @synthesize avg=_avg;
 @property(retain, nonatomic) NSNumber *sumsqr; // @synthesize sumsqr=_sumsqr;
 @property(retain, nonatomic) NSNumber *max; // @synthesize max=_max;
 @property(retain, nonatomic) NSNumber *min; // @synthesize min=_min;
 @property(retain, nonatomic) NSNumber *count; // @synthesize count=_count;
 @property(retain, nonatomic) NSNumber *sum; // @synthesize sum=_sum;
-- (void).cxx_destruct;
 - (BOOL)_validateStatsWithSum:(id)arg1 count:(id)arg2 min:(id)arg3 max:(id)arg4 sumsqr:(id)arg5 avg:(id)arg6 errors:(id *)arg7;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 

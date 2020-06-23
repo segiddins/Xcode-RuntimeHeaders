@@ -17,8 +17,8 @@
 + (id)helperWithTokenTypeIDs:(id)arg1 comparisonTypeIDs:(id)arg2 defaultType:(id)arg3 defaultComparison:(id)arg4;
 + (id)_findComparisonWithID:(id)arg1;
 + (id)_findTypeWithID:(id)arg1;
-@property(readonly) NSArray *supportedTokenIDs; // @synthesize supportedTokenIDs=_supportedTokenIDs;
 - (void).cxx_destruct;
+@property(readonly) NSArray *supportedTokenIDs; // @synthesize supportedTokenIDs=_supportedTokenIDs;
 - (id)filterStringsForValuelessToken:(id)arg1;
 - (id)predicateByAdding:(id)arg1 toPrediciate:(id)arg2;
 - (id)predicateForTokens:(id)arg1 editingString:(id)arg2 globalOperator:(int)arg3;

@@ -14,8 +14,8 @@
     id <DBGLazyObservableDictionaryDelegate> _delegate;
 }
 
-@property(readonly) id <DBGLazyObservableDictionaryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) id <DBGLazyObservableDictionaryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)keyEnumerator;

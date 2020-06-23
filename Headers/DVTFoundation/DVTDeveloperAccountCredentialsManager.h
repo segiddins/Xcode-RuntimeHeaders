@@ -15,9 +15,9 @@
 }
 
 + (id)defaultAccountCredentialsManager;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsAllApplicationsToAccessKeychainItems; // @synthesize wantsAllApplicationsToAccessKeychainItems=_wantsAllApplicationsToAccessKeychainItems;
 @property(retain) DVTKeychain *keychain; // @synthesize keychain=_keychain;
-- (void).cxx_destruct;
 - (BOOL)deleteCredential:(id)arg1 error:(id *)arg2;
 - (id)accountCredentialsFromUsername:(id)arg1 alternateDSID:(id)arg2 token:(id)arg3 successfullyPersisted:(char *)arg4 error:(id *)arg5;
 - (id)accountCredentialsFromUsername:(id)arg1 password:(id)arg2 successfullyPersisted:(char *)arg3 error:(id *)arg4;

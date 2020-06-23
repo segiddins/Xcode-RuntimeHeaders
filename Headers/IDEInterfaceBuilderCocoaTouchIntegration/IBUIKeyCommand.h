@@ -24,12 +24,12 @@
 
 + (void)registerMarshallingRecordHandlers;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *segueName; // @synthesize segueName=_segueName;
 @property(copy, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(nonatomic) int modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 @property(retain, nonatomic) IBKeyEquivalent *keyEquivalent;
 @property(copy, nonatomic) NSString *title;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;

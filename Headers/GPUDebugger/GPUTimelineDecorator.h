@@ -20,6 +20,7 @@
     unsigned long long _decorationColorState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long decorationColorState; // @synthesize decorationColorState=_decorationColorState;
 @property(nonatomic) unsigned long long nanosecondsPerPoint; // @synthesize nanosecondsPerPoint=_nanosecondsPerPoint;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) unsigned long long plane; // @synthesize plane=_plane;
 @property(readonly, nonatomic) GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)decorateInspectionRanges:(id)arg1;
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
 - (id)_lerpHSV:(id)arg1 end:(id)arg2 ratio:(float)arg3;

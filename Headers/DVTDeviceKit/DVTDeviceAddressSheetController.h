@@ -22,6 +22,7 @@
     id <DVTDeviceAction> _connectAction;
 }
 
+- (void).cxx_destruct;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain) id <DVTDeviceAction> connectAction; // @synthesize connectAction=_connectAction;
 @property(retain) NSTextField *errorLabel; // @synthesize errorLabel=_errorLabel;
@@ -31,7 +32,6 @@
 @property(retain) NSTextField *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property(retain) DVTDevice *device; // @synthesize device=_device;
 @property(retain) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (void)connect:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)viewWillAppear;

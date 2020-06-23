@@ -23,6 +23,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRemoved, setter=_setRemoved:) BOOL removed; // @synthesize removed=_removed;
 @property(nonatomic, setter=_setEnumValue:) __weak IDEIntentBuilderEnumValue *enumValue; // @synthesize enumValue=_enumValue;
 @property(copy, nonatomic, setter=_setPronunciationHintID:) NSString *pronunciationHintID; // @synthesize pronunciationHintID=_pronunciationHintID;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic, setter=_setSynonymID:) NSString *synonymID; // @synthesize synonymID=_synonymID;
 @property(copy, nonatomic) NSString *synonym; // @synthesize synonym=_synonym;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;

@@ -16,8 +16,8 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 + (double)displayOrderPriority;
-@property(copy, nonatomic) NSNumber *splitViewControllerTargetIndex; // @synthesize splitViewControllerTargetIndex=_splitViewControllerTargetIndex;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *splitViewControllerTargetIndex; // @synthesize splitViewControllerTargetIndex=_splitViewControllerTargetIndex;
 - (BOOL)isFlowTerminatingSegue;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (id)badgeImage;

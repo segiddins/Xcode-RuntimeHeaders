@@ -22,11 +22,11 @@
 }
 
 + (void)registerNibWithOutlineView:(id)arg1 forIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property __weak IDEDebugGaugeTrayChartView *chartView; // @synthesize chartView=_chartView;
 @property __weak NSTextField *labelField; // @synthesize labelField=_labelField;
 @property __weak NSTextField *lastValueField; // @synthesize lastValueField=_lastValueField;
 @property(retain, nonatomic) id <IDEDebugGaugeDataSource> gaugeDataSource; // @synthesize gaugeDataSource=_gaugeDataSource;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)updateLastValueColors;
 - (BOOL)_isWarning:(double)arg1;

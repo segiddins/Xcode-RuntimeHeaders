@@ -16,11 +16,11 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) BOOL displayOutlineWhenZoomed; // @synthesize displayOutlineWhenZoomed=_displayOutlineWhenZoomed;
 @property(readonly, nonatomic) BOOL visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) DYImage2D *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 visible:(BOOL)arg2 displayOutlineWhenZoomed:(BOOL)arg3 color:(id)arg4;
 
 @end

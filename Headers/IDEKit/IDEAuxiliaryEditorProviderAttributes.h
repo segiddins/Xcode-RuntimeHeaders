@@ -16,10 +16,10 @@
 }
 
 + (id)sharedAttributes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class editorClass; // @synthesize editorClass=_editorClass;
 @property(readonly, nonatomic) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 tooltip:(id)arg2 providerClass:(Class)arg3;
 
 @end

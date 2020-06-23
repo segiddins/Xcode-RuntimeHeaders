@@ -40,6 +40,7 @@
     NSError *_keychainError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *keychainError; // @synthesize keychainError=_keychainError;
 @property(retain, nonatomic) DVTKeychain *keychain; // @synthesize keychain=_keychain;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
@@ -68,7 +69,6 @@
 @property(copy, nonatomic) NSFileHandle *standardInput; // @synthesize standardInput=_standardInput;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (long long)_commandFromString:(id)arg1 error:(id *)arg2;
 - (BOOL)_parseArgumentsWithError:(id *)arg1;
 - (id)_pathRequiredError;

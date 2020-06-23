@@ -15,8 +15,8 @@
     DVTFilePath *_path;
 }
 
-@property(readonly) DVTFilePath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly) DVTFilePath *path; // @synthesize path=_path;
 @property(readonly, copy) NSString *description;
 - (BOOL)deleteWithError:(id *)arg1;
 @property(readonly) BOOL isOrphaned;

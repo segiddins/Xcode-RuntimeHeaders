@@ -13,8 +13,8 @@
     NSSet *_members;
 }
 
-@property(readonly, nonatomic) NSSet *members; // @synthesize members=_members;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *members; // @synthesize members=_members;
 - (id)init;
 - (id)initWithMembers:(id)arg1;
 

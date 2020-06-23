@@ -40,8 +40,8 @@
 }
 
 + (id)newNodeWithNumber:(unsigned int)arg1 nameCStr:(const char *)arg2 length:(unsigned long long)arg3 supernode:(id)arg4 isVirtual:(BOOL)arg5 inDependencyGraph:(id)arg6;
-@property BOOL performDeepScanForModificationTimes; // @synthesize performDeepScanForModificationTimes=_performDeepScanForModificationTimes;
 - (void).cxx_destruct;
+@property BOOL performDeepScanForModificationTimes; // @synthesize performDeepScanForModificationTimes=_performDeepScanForModificationTimes;
 - (void)dvt_provideFileSystemRepresentationToBlock:(CDUnknownBlockType)arg1;
 - (_Bool)removeRecursively;
 - (_Bool)createDirectoryRecursively;

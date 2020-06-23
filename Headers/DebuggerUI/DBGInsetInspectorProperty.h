@@ -17,12 +17,12 @@
     IDEInspectorKeyPath *_valueKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
 @property __weak NSTextField *bottomInsetField; // @synthesize bottomInsetField=_bottomInsetField;
 @property __weak NSTextField *topInsetField; // @synthesize topInsetField=_topInsetField;
 @property __weak NSTextField *trailingInsetField; // @synthesize trailingInsetField=_trailingInsetField;
 @property __weak NSTextField *leadingInsetField; // @synthesize leadingInsetField=_leadingInsetField;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (BOOL)_updateValuesForInspectorProperty:(id)arg1;
 - (void)_setPlaceholderString:(id)arg1;

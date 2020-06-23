@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCanMove;
-@property(retain) id <IDEEditorMenuStepperViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <IDEEditorMenuStepperViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)primitiveInvalidate;
 - (void)selectPrevious:(id)arg1;
 - (void)selectNext:(id)arg1;

@@ -16,9 +16,9 @@
     NSString *_endpointOverride;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *endpointOverride; // @synthesize endpointOverride=_endpointOverride;
 @property(readonly) NSString *hostnameOverride; // @synthesize hostnameOverride=_hostnameOverride;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *portalServiceEndpoint;
 @property(readonly, copy, nonatomic) NSString *portalServiceProtocolVersion;
 @property(readonly, copy, nonatomic) NSString *portalServiceHostDescription;

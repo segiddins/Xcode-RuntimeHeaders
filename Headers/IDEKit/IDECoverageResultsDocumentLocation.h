@@ -15,9 +15,9 @@
 }
 
 + (id)coverageDocumentLocationForLogURL:(id)arg1 coverageData:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *line; // @synthesize line=_line;
 @property(retain, nonatomic) NSURL *file; // @synthesize file=_file;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

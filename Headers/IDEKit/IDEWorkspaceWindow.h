@@ -18,8 +18,8 @@
 }
 
 + (id)lastActiveWorkspaceWindowController;
-@property BOOL _isOverridingEscapeInsteadOfExitingFullscreen; // @synthesize _isOverridingEscapeInsteadOfExitingFullscreen=__isOverridingEscapeInsteadOfExitingFullscreen;
 - (void).cxx_destruct;
+@property BOOL _isOverridingEscapeInsteadOfExitingFullscreen; // @synthesize _isOverridingEscapeInsteadOfExitingFullscreen=__isOverridingEscapeInsteadOfExitingFullscreen;
 - (void)_invalidateCursorRectsForView:(id)arg1 force:(BOOL)arg2;
 - (void)_invalidateCursorRectsForViewsWithNoTrackingAreas;
 - (BOOL)_addCursorRect:(struct CGRect)arg1 cursor:(id)arg2 forView:(id)arg3;

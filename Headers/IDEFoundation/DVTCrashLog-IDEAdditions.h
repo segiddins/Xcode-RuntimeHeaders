@@ -7,11 +7,10 @@
 #import <DVTAnalytics/DVTCrashLog.h>
 
 #import <IDEFoundation/DVTAnalyticsLogProtocol_IDEAdditions-Protocol.h>
-#import <IDEFoundation/_TtP13IDEFoundation26IDETestingDiagnosticReport_-Protocol.h>
 
 @class DVTCrashLogThread, NSString;
 
-@interface DVTCrashLog (IDEAdditions) <DVTAnalyticsLogProtocol_IDEAdditions, _TtP13IDEFoundation26IDETestingDiagnosticReport_>
+@interface DVTCrashLog (IDEAdditions) <DVTAnalyticsLogProtocol_IDEAdditions>
 - (void)demangleUsingToolchains:(id)arg1 toolchainRegistry:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (id)debuggerPointForWorkspace:(id)arg1 error:(id *)arg2;
 - (id)debuggerLogWithAnalyticsPoint:(id)arg1 usingContext:(id)arg2;

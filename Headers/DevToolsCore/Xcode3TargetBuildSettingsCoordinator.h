@@ -17,9 +17,9 @@
     IDEBuildParameters *_buildParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
 @property(retain, nonatomic) PBXTarget *pbxTarget; // @synthesize pbxTarget=_pbxTarget;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forBuildSettingsKey:(id)arg2;
 - (id)expandedValueForString:(id)arg1;
 - (BOOL)boolValueForBuildSetting:(id)arg1 buildParameters:(id)arg2;

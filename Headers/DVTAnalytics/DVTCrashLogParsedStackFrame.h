@@ -24,6 +24,7 @@
     NSString *_parserIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
 @property unsigned long long sourceLine; // @synthesize sourceLine=_sourceLine;
 @property(retain) NSString *sourceFile; // @synthesize sourceFile=_sourceFile;
@@ -34,7 +35,6 @@
 @property(getter=isSymbolicated) BOOL symbolicated; // @synthesize symbolicated=_symbolicated;
 @property(retain) NSString *comment; // @synthesize comment=_comment;
 @property(retain) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly) NSString *instructionPointerAddressString;
 @property(readonly) unsigned long long stackFrameOffset;
 @property(readonly, copy) NSString *description;

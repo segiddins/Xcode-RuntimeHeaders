@@ -1,295 +1,4 @@
-%"\
-%$\
-%&\
-%(\
-%*\
-%,\
-%.\
-%0\
-%2\
-%4\
-%6\
-%8\
-%:\
-%<\
-%>\
-%@\
-%B\
-%D\
-%F\
-%H\
-%J\
-%L\
-%N\
-%P\
-%R\
-%T\
-%V\
-%X\
-%Z\
-%\\
-%^\
-%`\
-%b\
-%d\
-%f\
-%h\
-%j\
-%l\
-%n\
-%p\
-%r\
-%t\
-%v\
-%x\
-%z\
-%|\
-%~\
-%]
-% ]
-%"]
-%$]
-%&]
-%(]
-%*]
-%,]
-%.]
-%0]
-%2]
-%4]
-%6]
-%8]
-%:]
-%<]
-%>]
-%@]
-%B]
-%D]
-%F]
-%H]
-%J]
-%L]
-%N]
-%P]
-%R]
-%T]
-%V]
-%X]
-%Z]
-%\]
-%^]
-%`]
-%b]
-%d]
-%f]
-%h]
-%j]
-%l]
-%n]
-%p]
-%r]
-%t]
-%v]
-%x]
-%z]
-%|]
-%~]
-%^
-% ^
-%"^
-%$^
-%&^
-%(^
-%*^
-%,^
-%.^
-%0^
-%2^
-%4^
-%6^
-%8^
-%:^
-%<^
-%>^
-%@^
-%B^
-%D^
-%F^
-%H^
-%J^
-%L^
-%N^
-%P^
-%R^
-%T^
-%V^
-%X^
-%Z^
-%\^
-%^^
-%`^
-%b^
-%d^
-%f^
-%h^
-%j^
-%l^
-%n^
-%p^
-%r^
-%t^
-%v^
-%x^
-%z^
-%|^
-%~^
-%_
-% _
-%"_
-%$_
-%&_
-%(_
-%*_
-%,_
-%._
-%0_
-%2_
-%4_
-%6_
-%8_
-%:_
-%<_
-%>_
-%@_
-%B_
-%D_
-%F_
-%H_
-%J_
-%L_
-%N_
-%P_
-%R_
-%T_
-%V_
-%X_
-%Z_
-%\_
-%^_
-%`_
-%b_
-%d_
-%f_
-%h_
-%j_
-%l_
-%n_
-%p_
-%r_
-%t_
-%v_
-%x_
-%z_
-%|_
-%~_
-%`
-% `
-%"`
-%$`
-%&`
-%(`
-%*`
-%,`
-%.`
-%0`
-%2`
-%4`
-%6`
-%8`
-%:`
-%<`
-%>`
-%@`
-%B`
-%D`
-%F`
-%H`
-%J`
-%L`
-%N`
-%P`
-%R`
-%T`
-%V`
-%X`
-%Z`
-%\`
-%^`
-%``
-%b`
-%d`
-%f`
-%h`
-%j`
-%l`
-%n`
-%p`
-%r`
-%t`
-%v`
-%x`
-%z`
-%|`
-%~`
-%a
-% a
-%"a
-%$a
-%&a
-%(a
-%*a
-%,a
-%.a
-%0a
-%2a
-%4a
-%6a
-%8a
-%:a
-%<a
-%>a
-%@a
-%Ba
-%Da
-%Fa
-%Ha
-%Ja
-%La
-%Na
-%Pa
-%Ra
-%Ta
-%Va
-%Xa
-%Za
-%\a
-%^a
-%`a
-%ba
-%da
-%fa
-%ha
-%ja
-%la
-%na
-%pa
-%ra
-%ta
-%va
-%xa
-%za
-%|a
-%~a
+@(#)PROGRAM:GPUDebugger  PROJECT:GPUDebugger-26091
 Mbp?
 MbP?
 |?5^
@@ -302,7 +11,7 @@ St12length_error
 ?NSt3__117bad_function_callE
 L=fff?33s?
 333333
-$tI(knN
+n@(knN
 F@ffffff
 ?333333
 ?333333
@@ -317,14 +26,15 @@ simd_float4x4
 Uniforms
 MTLPixelFormat
 DYTextureChannelMappings
-DYPixelFormat
 CGPoint
 CGRect
 GPUMemoryResourceItemType
+DYPixelFormat
 DYPShaderDebuggerExecutionHistoryNodeType
 NNSAttributedStringKey
 Options
 NNSPointerFunctionsOptions
+DYResourceType
 MTLResourceOptions
 EventTypeMask
 NNSEventMask
@@ -388,6 +98,7 @@ GPUImageRenderView
 GPUImageRenderViewError
 4@GPUDebugger
 GPUMemoryResourceSummaryViewController
+?i'
 GPUDebugger
 GPUTraceSourceSubEditorSidebarInteractionDelegate
 GPUTraceSourceSubEditorSidebarLayoutDelegate
@@ -491,7 +202,7 @@ TagKind
 GPUResourcesViewItemType
 GPUDebugger
 GPUTraceSourceSubEditorSidebarAnnotation
-@GPUDebugger
+GPUDebugger
 GPUTraceShaderProfilerPerformancePieViewDelegate
 GPUTraceShaderProfilerPerformancePieView
 GPUDebugger
@@ -547,7 +258,7 @@ GPUDebugger
 GPUShaderDebuggerFragmentMaskInspectorViewController
 GPUDebugger
 GPUShaderDebuggerImageSelectionValue
-GPUDebugger
+CGPUDebugger
 GPUShaderDebuggerVariableSnapshotImageCellView
 GPUDebugger
 GPUMemoryReportSubEditor
@@ -577,21 +288,25 @@ GPUTraceShaderProfilerAuxiliaryPopoverViewController
 GPUTraceShaderProfilerAuxiliaryContainerView
 GPUTraceShaderProfilerInlineAuxiliaryViewController
 GPUDebugger
-@(#)PROGRAM:GPUDebugger  PROJECT:GPUDebugger-25510
-@__swift5_proto
+__swift5_proto
 setWantsLayer:
 layer
 setBorderWidth:
 setCornerRadius:
 setMasksToBounds:
-label
-itemTitle
+apiItem
+commandBufferLabel
 setStringValue:
+encoderLabel
+encoderData
+setHidden:
+label
 modelFactory
 locateDisplayableItemToDraw:
 thumbnailStatus
 isMainThread
 size
+frame
 setFrameSize:
 setImage:
 notifyWithSender:onThumbnail:
@@ -602,7 +317,6 @@ dataItems
 count
 objectAtIndexedSubscript:
 isEmptyEncoder
-apiItem
 isEqual:
 class
 self
@@ -624,16 +338,21 @@ superclass
 description
 debugDescription
 updateThumbnailForItem:atIndex:
-.cxx_destruct
 dataSource
 setDataSource:
 imageView
 setImageView:
-setItemTitle:
-_item
+setCommandBufferLabel:
+setEncoderLabel:
+drawLabel
+setDrawLabel:
+.cxx_destruct
+_dataItem
 _dataSource
 _imageView
-_itemTitle
+_commandBufferLabel
+_encoderLabel
+_drawLabel
 initWithRepresentedObject:
 representedObject
 type
@@ -713,7 +432,6 @@ listFont
 dictionaryWithObject:forKey:
 indentationPerLevel
 levelForItem:
-frame
 initWithString:attributes:
 initWithFrame:
 textStorage
@@ -831,7 +549,6 @@ sortedArrayUsingComparator:
 recommendations
 targets
 valueWithNonretainedObject:
-setHidden:
 gotoButton
 intValue
 numberWithUnsignedInt:
@@ -858,6 +575,7 @@ numberOfItems
 outlineView:heightOfItem:
 isGroupItem:
 _editor
+_item
 _statistics
 _remarks
 _remarkShaderLocation
@@ -908,6 +626,7 @@ boldListFont
 appendAttributedString:
 _getShaderInfo:
 setAttributedStringValue:
+setUsesSingleLineMode:
 boolValue
 ratioView
 colorWithDeviceRed:green:blue:alpha:
@@ -1179,7 +898,6 @@ backgroundColor
 setFill
 _backgroundColor
 navigableItem_name
-alloc
 initWithRole:parent:
 isEqualToString:
 initWithObjects:
@@ -1209,12 +927,13 @@ reportData
 unsignedLongValue
 isMacOSXDevice
 arrayWithObjects:
+isSimulatorDevice
 numberWithUnsignedLong:
 unsignedLongLongValue
 initWithInvestigatorCaseConfigData:controller:
 archive
-utilizationPercentages
-cpuGPUActiveTimeTimes:
+utilizationPercentagesAndGetAvailableFields:
+cpuGPUActiveTimeTimes:getAvailableFields:
 investigatorCaseConfigData
 setInvestigatorCaseConfigData:
 investigatorCase
@@ -1352,6 +1071,7 @@ initialize
 providePrimaryMenuItems:
 provideHelpMenuItem:
 primitiveInvalidate
+addAutoInvalidatedObject:
 invalidationBacktrace
 creationBacktrace
 setCreationBacktrace:
@@ -1720,16 +1440,19 @@ _viewState
 _document
 _storage
 _userInfo
-initWithCurrentData:columnTitles:
+initWithCurrentData:columnTitles:availableFields:
 currentData
 setCurrentData:
 baselineData
 setBaselineData:
 columnTitles
 setColumnTitles:
+availableFields
+setAvailableFields:
 _currentData
 _baselineData
 _columnTitles
+_availableFields
 reportColorLightGray
 reportTopSectionDescriptionFont
 fontDescriptor
@@ -1748,11 +1471,13 @@ reportColorGreen
 objectAtIndex:
 backingAlignedRect:options:
 fillRect:
+isEqualToNumber:
 dataLabel
 colorWithGenericGamma22White:alpha:
 setChartData:
 updateChartCurrentData:
 updateChartBaselineData:
+updateChartAvailableFields:
 maxRange
 setMaxRange:
 setDataLabel:
@@ -1766,6 +1491,7 @@ _showSubColumnTitles
 _maxRange
 _chartData
 _dataLabel
+_platformIdentifierOnlySupportsMetal:
 isLinkedToOtherGraphicsFrameworks:
 launchParameters
 productType
@@ -1781,6 +1507,11 @@ sharedTrace
 reportMTLAPIValidationType:
 selectedDebuggerIdentifier
 shouldInstantiateForReportEditorOnly:
+device
+runtime
+root
+stringByAppendingPathComponent:
+fileExistsAtPath:
 toolsInfo
 isRuntimeOSAppleInternal
 launchStyle
@@ -1798,6 +1529,8 @@ prepareForLaunch:error:
 currentDebugSession
 guestAppSession
 appTransportAddress
+needsAttachNotification
+sessionWillAttach
 evaluateExpression:threadID:stackFrameID:queue:options:resultBlock:
 setMessageText:
 setInformativeText:
@@ -1984,10 +1717,10 @@ GPUDebugger_setRenderTargetArrayIndex:
 minimumZoomScale
 maximumZoomScale
 GPUDebugger_zoomToScale:
-setEnabled:
 setEnabled:forSegment:
 zoomScale
 setLabel:forSegment:
+setEnabled:
 selectedSegment
 _changeVisibleBufferViews:
 removeIndex:
@@ -2159,6 +1892,7 @@ _memoryGaugeDataSource
 _memoryGaugeLocationWithLaunchSession:
 resourceMemoryDataSource
 doesCaptureHaveFeature:
+rootMemoryResources
 removeTrackingArea:
 initWithRect:options:owner:userInfo:
 addTrackingArea:
@@ -2330,7 +2064,7 @@ copy:
 delete:
 setCompactTextMode:
 setProgramMetricsAsPercentage:
-_refreshNavigator
+_invalidateStatusCells
 setProgramMetricsShaderPerformanceDifference:
 _updateForNewProgramSortMode:
 setIssueFilterLevel:
@@ -2391,7 +2125,7 @@ setFailingPoint:
 setValueButtonFormat:
 displayImage
 setIcon:
-rootMemoryResources
+allocationID
 isPurgeable
 allocatedSize
 enqueueBarValue:
@@ -2802,26 +2536,24 @@ setMinimalDynamicRange:
 setMaximumDynamicRange:
 setDefaultDrawableColor:
 duration
-labelForItemAtIndex:
 xAxis
 _decorateUsingTimestamp:
 _decorateUsingLabel:
 referencePlaneIndex
 enumerateOverlappingEntriesInTimeline:timeEnd:forPlane:callback:
 numberOfEntries
+labelForItemAtIndex:
 setTheme:
 setDefaultsForPlane:
 setNanosecondPerPoint:
 decorateContainer:qualityOfService:priority:group:
 theme
 nanosecondPerPoint
-decorationInterval
 _attributes
 _highlightedAttributes
 _formatter
 _theme
 _nanosecondPerPoint
-_decorationInterval
 typeIdentifierForStringRepresentation:
 initWithOutlineItem:
 fileDataTypeWithIdentifier:
@@ -2843,7 +2575,6 @@ sharedThumbnailFactory
 thumbnailWithResourceItem:withContentsScale:nocache:
 result
 dy_writetoPNGFileName:error:
-fileExistsAtPath:
 stringByDeletingLastPathComponent
 stringByDeletingPathExtension
 pathExtension
@@ -3044,7 +2775,6 @@ futureWithResult:error:
 future
 _displaySetLoadIsComplete:
 numElements
-stringByAppendingPathComponent:
 TIFFRepresentation
 writeToFile:atomically:
 _thumbnailToImage:
@@ -4308,7 +4038,6 @@ removeAllPlanes
 commitChangesAnimated:
 setPlaneHandleWidth:
 setNanosecondOffset:
-initWithHeight:decorator:
 overlayTimeFormatter
 setOverlayTimeFormatter:
 visibleIndexesChanged:
@@ -4323,6 +4052,7 @@ sharedInstance
 synchronize
 referencePlane
 planeHeight
+initWithHeight:decorator:
 setResizable:
 setIntervalDisplayType:
 setDisplayName:
@@ -4389,7 +4119,6 @@ reset
 invalidateCellsAtIndicies:
 rulerHeight
 setShowReferencePlane:
-timelineInterval
 scrollToEndOfTimeline
 selectIndex:
 clearSelection
@@ -4432,6 +4161,7 @@ _lastMousePosition
 _isZooming
 _timelineDecorator
 _tooltipTimer
+_extraDuration
 _showReferencePlane
 _showTimeRuler
 _contextMenuProvider
@@ -4442,21 +4172,18 @@ _rulerGraph
 _minNanosecondsPerPoint
 _maxNanosecondsPerPoint
 _timelineSelectionRange
-GPUDebugger_checkerboardColor0
+checkerboardColor0
 GPUDebugger_checkerboardGridSize
-GPUDebugger_checkerboardColor1
+checkerboardColor1
 tableView
 dataType
 rangeOfString:
 stringByReplacingCharactersInRange:withString:
 batchFilteredDataLoaded
 availablePerDraw
-encoderData
 timelineDataSource
 formatValue:forPlane:usesGroupingSeparator:
 _addRowIfNeeded:name:
-encoderLabel
-commandBufferLabel
 debugMarkers
 _fitSize
 planeItems
@@ -4532,25 +4259,9 @@ _outlineMode_forProgramMode_JumpBar_fix
 _shaderDebuggerGroup
 copyAdjunctDataForFilename:error:
 initWithData:
-setSelectable:
-setImageAlignment:
-setImageFrameStyle:
-setAllowsCutCopyPaste:
-setContentCompressionResistancePriority:forOrientation:
-setContentHuggingPriority:forOrientation:
 setShadowOpacity:
 setShadowRadius:
 setShadowOffset:
-onTraceSessionActivated:
-setButtonType:
-setKeyEquivalent:
-setStyle:
-setControlSize:
-onProfilerCheckboxStatusChange:
-GPUDebugger_profileOnTraceLoad
-addConstraint:
-boldSystemFontOfSize:
-secondaryLabelColor
 fileName
 _documentDescription
 graphicsApi
@@ -4568,6 +4279,7 @@ initWithTitle:
 addItemWithTitle:action:keyEquivalent:
 toolsDeviceFromDVTDevice:error:
 supportsPlaybackOfCaptureWithInfo:limitBackwardsCompatibility:isInternal:
+_switchToProgressViewWithMessage:
 toolbar
 isVisible
 toggleToolbarShown:
@@ -4581,23 +4293,44 @@ endSheet:
 orderOut:
 _activateTraceSessionWithDevice:toolDevice:
 _shouldRunOnIncompatibleDevice:
+online
 unlocked
 beginSheet:completionHandler:
+_switchToReplayView
 _buildDevicesMenu
 _handleTraceSessionActivation:
+_isSimulatorDVTDevice:
+_hasOnlySimulatorUsableDevices
+setProfilerButtonEnabled:
+selectTabViewItemWithIdentifier:
+_switchToWarningView
+GPUDebugger_profileOnTraceLoad
+setProfilerButtonState:
+isSimulatorPlatform:
+mainScreenDescriptor
+platformIdentifier
+displayOrder
 availableDevices
-isAvailable
+_sortUsableDevices:
 isGenericDevice
+isAvailable
+isIgnored
+isUsedForDevelopment
+_shouldShowDevice:captureSessionInfo:
 setUsableDevices:
+setPendingDevices:
 valueForKey:error:
 GPUToolsDeviceFromDVTDevice:error:
 GPUDebugger_replayCapture:
 usableDevices
+onTraceSessionActivated:
 GPUDebugger_setProfileOnTraceLoad:
 lockPanel:didCancelWithDevice:
 lockPanel:didUnlockDevice:
 onDeviceSelected:
 onDeviceSelectionCancelled:
+onProfilerCheckboxStatusChange:
+pendingDevices
 _devicePopup
 _activateButton
 _chooseButton
@@ -4608,16 +4341,19 @@ _incompatibleTextField
 _incompatibleDescTextField
 _deviceSelectionSheet
 _deviceLockedSheet
-_boxView
+_progressTextField
 _progressIndicator
 _profilerButton
+_containerLine
 _traceSessionActivated
 _appname
 _usableDevices
+_pendingDevices
 _tabController
 _deviceManager
 _selectedDevice
 _usableDevicesObservation
+_pendingDevicesObservation
 _isKojakFile
 _disableDeviceCompabilityCheck
 commitStateTo:
@@ -4739,6 +4475,7 @@ _alphaComponent
 _backgroundLowerColor
 _backgroundUpperColor
 _borderColor
+setButtonType:
 GPUDebugger_navigateToResourceValue:
 resourceItem
 _nameView
@@ -4982,12 +4719,10 @@ _resetNOGPUWorkloadDetectedStatusWithForceRestoreMessage:
 _handleBreakpointHit
 startGPUTraceSessionInitiatedByInferior:
 setReadyToCapture:
-setIsLocalSession:
 finalLaunchEnvironment
 queryForGraphicsAPIUsage
 _recursivePollForGraphicsAPIUsage
 readyToCapture
-device
 createNewArchiveWithInferiorName:error:
 captureArchiveForURL:
 createNextCaptureArchive
@@ -5068,8 +4803,6 @@ deviceInterposeVersionGL
 deviceInterposeVersionMetal
 captureUnavailabilityReason
 setIsRemoteDebuggingEnabled:
-isOSXSession
-setIsOSXSession:
 inferiorAppName
 sessionID
 deploymentTargetVersion
@@ -5095,7 +4828,6 @@ _isDeferredHarvested
 _captureMessage
 _captureStart
 _isRemoteDebuggingEnabled
-_isOSXSession
 _deviceInterposeVersionGL
 _deviceInterposeVersionMetal
 _updatedResourcesChangeCount
@@ -5162,6 +4894,7 @@ _refreshToFilteredResourcesMainThread
 _categorizeResourceItems:ofType:deferredResourceItems:
 _observeDeferredHarvest
 _reloadAllResourceItems
+secondaryLabelColor
 cachedThumbnailForResourceItem:
 defaultThumbnailForResourceItem:
 thumbnailWithResourceItem:withContentsScale:
@@ -5254,6 +4987,7 @@ setReportResource:
 setShowBaseline:
 totalFramePercent
 removeConstraint:
+addConstraint:
 prototypeNibForViewItem:
 stringValueForItem:
 heightForItem:givenContentHeight:dynamicHeightViewIdentifier:willSetupDynamicHeightBlock:
@@ -5388,6 +5122,8 @@ GPUDebugger_samplerOuterSizeWithMin:max:
 GPUDebugger_samplerColor0
 GPUDebugger_samplerColor1
 GPUDebugger_samplerGridColor
+GPUDebugger_checkerboardColor0
+GPUDebugger_checkerboardColor1
 GPUDebugger_showFunctionIndex
 systemOrangeColor
 systemRedColor
@@ -5477,6 +5213,7 @@ invalidateCache
 currentTraceInferiorSession
 alertMessageKey
 alertInfoKey
+requiresXcodeSelect
 traceAPIItemCategoryIdentifier
 defaultOutlineItem
 setTraceAPIItemCategoryIdentifier:
@@ -5505,14 +5242,11 @@ profilerScopeBarWithController:scopeBarsManager:
 appendScopeBar:animate:
 appendScopeBarWithMessage:action:icon:
 viewControllerUsingDefaultNib
-setPhrases:
-setShowsActionButton:
-setActionButtonTitle:
-closeButtonImage
-setActionButtonImage:
 initWithContentViewController:
+setShowActionButton:
 removeScopeBar:animate:
 setActionBlock:
+setDismissActionBlock:
 dvtFindBar:didUpdateResults:
 dvtFindBar:didUpdateCurrentResult:
 startingLocationForFindBar:findingBackwards:
@@ -5578,6 +5312,7 @@ splitViewItems
 setContentProvider:
 setSelectedScopeTag:
 installedViewController
+setControlSize:
 setSegmentCount:
 setSegmentStyle:
 _comparisonSelectorClicked:
@@ -5682,6 +5417,7 @@ _sendShaderProfilerMessageTracerData:
 shaderProfilerResult:
 totalFrameRateArray
 intersectsIndexesInRange:
+hostProductType
 compare:options:
 shaderDebuggerDataSourceProviderDelegate
 shaderDebuggerDataSourceProviderWithDelegate:
@@ -5753,6 +5489,7 @@ _isInvestigatorReady
 _shouldProfileOnGPUTraceLoad
 _didDismissRunProfilerScopeBar
 _noRecentGPUWorkloadDetected
+_requiresXcodeSelect
 _shadersUpdatable
 _debugState
 _profilerState
@@ -5833,10 +5570,10 @@ setRangeInfoBackgroundColor:
 setZoomIndicatorBorderColor:
 setZoomIndicatorColor:
 setSummaryInspectionPointColor:
+setIsVisible:
 counterGraph:itemClicked:atIndex:
 counterGraphClearSelection
 inputHandlerForGraph:requestsCurrentInspectionTime:
-setIsVisible:
 inputHandlerRequestsToClearCurrentInspectionTimeForGraph:
 counterGraph:nanosecondsPerPointChanged:
 inputHandlerForGraph:requestsExpandingGroupPlane:
@@ -5868,6 +5605,7 @@ inputHandlerForGraph:canReorderPlane:afterPlane:withParent:
 inputHandlerForGraph:didReorderPlane:afterPlane:withParent:
 inputHandlerForGraph:didChangeMouseInteractionInProgress:
 setupColors
+viewWillDisappear
 inputHandlerForGraph:rightMouseClicked:
 _viewForTooltip:point:
 _viewForGPUTimeTooltip:
@@ -5877,6 +5615,7 @@ tooltipPanel
 setTooltipPanel:
 setRulerHeight:
 _itemIndexUnderMouse
+_disppearing
 _tooltipPanel
 _rulerHeight
 setCharacterWidth:
@@ -5912,33 +5651,25 @@ setTextView:
 statusMessageImageOfSize:
 textView
 _textView
-cellSize
-refresh:
+_shaderProfilerWillBegin:
+_invalidateContent:
 dvt_layoutState
+invalidateLayoutWithFrameChangesToView:
+dvt_invalidateLayout
+refresh:
+cellSize
 dvt_configureSubviewsBeforeSubviewLayout
 dvt_positionSubviewsAndSizeSelfAfterSubviewLayout
 dvt_willLayoutSubview:
 dvt_didLayoutSubview:
 dvt_didCompleteLayout
-dvt_invalidateLayout
 previousRepresentedObject
 labelFontSize
 attributedStringValue
 backgroundStyle
-statusBadgeBackgroundColorForView:selected:
 drawWithRect:options:
-initWithAttributedString:
-addTextContainer:
-addLayoutManager:
-redraw
 _drawStatusStringInPathRect:view:
-_cellTextSize
 drawTextStatusWithFrame:inView:
-attributedStringSize
-hasString
-textContainer
-layoutManager
-glyphRange
 finding
 identifierForTableColumn:
 setTableColumn:
@@ -6079,20 +5810,25 @@ csvRecord
 setThumbnailImage:
 isResourceLabelDuplicate
 setIsResourceLabelDuplicate:
+allocationGroupID
+setAllocationGroupID:
 setCommandEncoders:
 setCommandBuffers:
 setMutableChildItems:
 setFilterItems:
 _commandEncoderInfo
 _commandBufferInfo
+_uniqueLabel
 _isResourceLabelDuplicate
 _parentItem
+_allocationGroupID
 _commandEncoders
 _commandBuffers
 _mutableChildItems
 _offset
 setPreviousDisplayableItem:
 versionIsOlderThan:
+setDataIndex:
 stackFramesWithBacktrace:count:
 initWithStackFrame:parent:
 stackFrames
@@ -6130,6 +5866,7 @@ resetReportEditorStateThatDependsOnTheInvestigatorCase
 setupObservers
 _setupFrameBreakdownObserver
 analysisProgressGauge
+setStyle:
 setIndicatorStyle:
 resetFrameBreakdown
 redisplayReport
@@ -6237,6 +5974,7 @@ topSectionComponentEntries
 resetReportEditor
 analyzePerformance:
 stopAnalyzePerformance:
+_availableCPUAndGPUChartFields
 updateInvalidView
 updateReportWithResultAndFindingsInfo
 addDetailsToSection:forRecommendationSection:fromFinding:
@@ -6307,7 +6045,6 @@ setContentSize:
 setPositioningRect:
 setAllowsImplicitAnimation:
 runAnimationGroup:completionHandler:
-setUsesSingleLineMode:
 contentSize
 sizeThatFits:
 displayRect
@@ -6451,6 +6188,7 @@ _updateLevelViewWithTexture:
 selectLayer:
 selectFace:
 selectLevel:
+refocusCenter
 GPUDebugger_exportTexture:
 _updateLoupePositionViewsPosition
 _getLoupePositionViewsPosition
@@ -6467,6 +6205,8 @@ _levelView
 _slice
 _depthPlane
 _attachmentIndex
+_prevMipmapLevel
+_prevLayer
 _imageLabel
 animationTimingFunction
 animationDuration
@@ -6490,6 +6230,7 @@ setActionButton:
 _textField
 _actionButton
 _finding
+pasteboardString
 setFunctionName:
 valueString
 setValueString:
@@ -6522,8 +6263,9 @@ _encoderValueString
 _tooltip
 _unit
 _group
-setItems:
+stringWithString:
 filteredItems
+setItems:
 setFilteredItems:
 resourceName
 setResourceName:
@@ -6536,9 +6278,10 @@ _groupItem
 _linkedResource
 sharedDataProviderForController:
 _refreshToFilteredItems
-_createGroups:
 dataStorePerEncoder
 dataStoreForPerfEditor
+counterDataIndexFromAPIItem:
+_createGroups:
 values
 valuesBase
 hasPerDrawData
@@ -6551,8 +6294,7 @@ _updateAdditionalValuesForItem:dataStore:plane:
 encoderDataIndex
 planeIndex
 _updateRawCounters:
-counterDataIndexFromAPIItem:
-_updateFromDataIndex:isEmptyEncoder:
+_updateFromDataIndex:isEncoder:
 dataStorePerDraw
 maxCounterValueInSelectionForPlaneIndex:
 averageCounterValueInSelectionForPlaneIndex:
@@ -6584,6 +6326,7 @@ refreshData:
 contextMenuItemForSelectedItem:
 secondaryLabelForItem
 valueLabelForItem
+outlineView:writeRowsWithIndexes:toPasteboard:
 _platform
 _parentEditor
 _selectionRange
@@ -6903,19 +6646,23 @@ setProgressView:
 progressTextView
 setProgressTextView:
 _progressTextView
-resources
-accessibilityFrame
-numPorts
-attachmentIndex
 accessibilityParent
-performSelectDependencyViewerVertex:
+accessibilityFrame
 isAccessibilityFocused
 accessibilityIdentifier
+accessibilityValue
+accessibilityAttributedStringForRange:
+accessibilityVisibleCharacterRange
+initWithParent:
 accessibilityLabel
 accessibilityPerformPress
-initWithParent:slot:
 isAccessibilitySelected
+resources
+attachmentIndex
+performSelectDependencyViewerVertex:
+initWithParent:slot:
 _slot
+numPorts
 initWithDependencyView:node:
 accessibilitySelectedChildren
 selectedSlotIndex
@@ -7158,7 +6905,6 @@ _historyNode
 apiItemSelected
 setApiItemSelected:
 setIsEmptyEncoder:
-setDataIndex:
 graphDataSource
 setGraphDataSource:
 setSelectionRange:
@@ -7167,10 +6913,10 @@ _isEmptyEncoder
 _dataIndex
 _graphDataSource
 _constructCountersEditor
-updateView
+selectOutlineItemWithUUID:dataIndex:
+selectOutlineItemWithUUID:
 setDebuggerController:andDocument:andFrame:
 setParentEditor:
-selectOutlineItemWithUUID:
 showEncoderData
 isCounterGraphAvailable
 setAllowsOtherFileTypes:
@@ -7427,6 +7173,7 @@ hasData
 _addStatusView
 loadingShaderProfilerResult
 _heightOfOutlineView:
+numberOfSelectedRows
 dataStoreLoaded:
 dataStoreLoadingData:
 dataStoreUpdated:updatedIndicies:
@@ -7474,7 +7221,6 @@ sortChildrenByCost
 allDiassemblyInfo
 flatten
 callSitesForFunction:
-stringWithString:
 insertString:atIndex:
 inlineBlockAndDiassemblyInfo
 isInlined
@@ -7587,6 +7333,7 @@ setContextMenuItem:
 _subPlaneIndexes
 _contextMenuItem
 _updateLabel
+_cleanNavigatorLabel:
 commandBufferIndex
 samples
 samplesBase
@@ -7604,7 +7351,6 @@ performanceAnalyzer
 emptyResult
 performanceAnalyzer:exportContext:
 performanceAnalyzer:finish:
-summaryOfValueAtPlane:
 initWithDrawCallInfo:index:sampleProvider:encoderData:
 setTraceInfo:
 updateData:
@@ -7619,8 +7365,6 @@ _encoderData
 _batchFilteredDataLoaded
 _encoderDataIndex
 _drawCallInfo
-_encoderLabel
-_commandBufferLabel
 _debugMarkers
 _performanceAnalysisResult
 _queueUpdatedDrawcalls:highPriority:done:
@@ -7839,6 +7583,7 @@ labelLayerStringWidth
 _marker
 _labelLayer
 _labelLayerStringWidth
+closeButtonImage
 setShowsDismissButton:
 defaultViewNibName
 preferredViewHeight
@@ -7848,20 +7593,22 @@ shouldCloseOnEscape
 shouldCloseOnEscap
 runProfiler:
 dismiss:
-profileActionBlock
-setProfileActionBlock:
+setActionButtonText:
+actionBlock
 dismissActionBlock
-setDismissActionBlock:
+showActionButton
+messageText
+actionButtonText
 messageLabel
 setMessageLabel:
-runProfilerButton
-setRunProfilerButton:
 dismissButton
 setDismissButton:
-_profileActionBlock
+_showActionButton
+_actionBlock
 _dismissActionBlock
+_messageText
+_actionButtonText
 _messageLabel
-_runProfilerButton
 _dismissButton
 setAbstractController:
 abstractDisplayableItem
@@ -7893,8 +7640,6 @@ currentAppearance
 bestMatchFromAppearancesWithNames:
 labelDisabledColor
 reportTopSectionDescriptionColor
-checkerboardColor0
-checkerboardColor1
 updatedValueTextColor
 mixColor:withColor:percentage:
 invertColor:
@@ -8016,6 +7761,7 @@ _emptyEncoderItem
 showGroupDisplayableCallCount
 _forwardToChildAPIItem:
 _setParentItem:
+_shouldPerformInvalidatableParentChildCoherencyChecks
 _returnNilForChildRepresentedObjects
 _indexValueAtRow:
 _smallestIndexValue
@@ -8036,13 +7782,13 @@ _constraintView:toParentView:
 _updateStateControls
 _maxPlaneHandleWidth:
 _buildCounterGraphFilterTokens
-_restoreStateFromDictionary:
 _updateProfilerStatusView
 _buildPipelineSubMenu:encoderIndex:
 encoderProgramInfoList
 getPipelineLabel:
 snapToEncoderForCurrentSelectedItem
 rangeValue
+_restoreStateFromDictionary:
 valueWithRange:
 yOffset
 parentEditor
@@ -8079,7 +7825,6 @@ setProfilingStatusTextView:
 filterByDrawCall
 setFilterByDrawCall:
 _counterGraphController
-_initialFrameWidth
 _stateDictionary
 _counterGraphFilterPlaneItems
 _ignoreEditorState
@@ -8195,6 +7940,219 @@ _preFilterExpandedItemTokens
 _filterState
 curveToPoint:controlPoint1:controlPoint2:
 controlAccentColor
+nodeType
+addressSpace
+memoryAddress
+offsetInBits
+globalOffsetInBits
+previousDataAvailable
+previousData
+dataUpdated
+showPreviewWithSidebarViewController:
+hidePreviewWithSidebarViewController:
+toggleQuicklookWithSidebarViewController:
+locationType
+thread
+eventId
+allMemoryResources
+rootResource
+parentTexture
+parentRelativeLevel
+parentRelativeSlice
+buffer
+bufferOffset
+bufferBytesPerRow
+iosurface
+iosurfacePlane
+textureType
+pixelFormat
+mipmapLevelCount
+arrayLength
+isShareable
+isFramebufferOnly
+allowGPUOptimizedContents
+getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:
+replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:
+getBytes:bytesPerRow:fromRegion:mipmapLevel:
+replaceRegion:mipmapLevel:withBytes:bytesPerRow:
+newTextureViewWithPixelFormat:
+newTextureViewWithPixelFormat:textureType:levels:slices:
+newSharedTextureHandle
+remoteStorageTexture
+newRemoteTextureViewForDevice:
+swizzle
+newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:
+filterViewController:didClearTokenField:
+filterViewController:willBeginFiltering:objects:
+filterViewController:didFinishFiltering:result:
+filterableObjects
+present
+presentAtTime:
+presentAfterMinimumDuration:
+addPresentedHandler:
+presentedTime
+drawableID
+didModifyRange:
+newTextureWithDescriptor:offset:bytesPerRow:
+addDebugMarker:range:
+removeAllDebugMarkers
+remoteStorageBuffer
+newRemoteBufferViewForDevice:
+registryID
+maxThreadsPerThreadgroup
+isLowPower
+isHeadless
+isRemovable
+hasUnifiedMemory
+recommendedMaxWorkingSetSize
+location
+locationNumber
+maxTransferRate
+isDepth24Stencil8PixelFormatSupported
+readWriteTextureSupport
+argumentBuffersSupport
+areRasterOrderGroupsSupported
+areBarycentricCoordsSupported
+supportsShaderBarycentricCoordinates
+currentAllocatedSize
+newCommandQueueWithMaxCommandBufferCount:
+heapTextureSizeAndAlignWithDescriptor:
+heapBufferSizeAndAlignWithLength:options:
+newHeapWithDescriptor:
+newBufferWithLength:options:
+newBufferWithBytes:length:options:
+newBufferWithBytesNoCopy:length:options:deallocator:
+newDepthStencilStateWithDescriptor:
+newTextureWithDescriptor:
+newTextureWithDescriptor:iosurface:plane:
+newSharedTextureWithDescriptor:
+newSharedTextureWithHandle:
+newSamplerStateWithDescriptor:
+newDefaultLibrary
+newDefaultLibraryWithBundle:error:
+newLibraryWithFile:error:
+newLibraryWithURL:error:
+newLibraryWithData:error:
+newLibraryWithSource:options:error:
+newLibraryWithSource:options:completionHandler:
+newRenderPipelineStateWithDescriptor:error:
+newRenderPipelineStateWithDescriptor:options:reflection:error:
+newRenderPipelineStateWithDescriptor:completionHandler:
+newRenderPipelineStateWithDescriptor:options:completionHandler:
+newComputePipelineStateWithFunction:error:
+newComputePipelineStateWithFunction:options:reflection:error:
+newComputePipelineStateWithFunction:completionHandler:
+newComputePipelineStateWithFunction:options:completionHandler:
+newComputePipelineStateWithDescriptor:options:reflection:error:
+newComputePipelineStateWithDescriptor:options:completionHandler:
+newFence
+supportsFamily:
+supportsTextureSampleCount:
+minimumLinearTextureAlignmentForPixelFormat:
+minimumTextureBufferAlignmentForPixelFormat:
+maxThreadgroupMemoryLength
+maxArgumentBufferSamplerCount
+areProgrammableSamplePositionsSupported
+getDefaultSamplePositions:count:
+newArgumentEncoderWithArguments:
+supportsRasterizationRateMapWithLayerCount:
+newRasterizationRateMapWithDescriptor:
+newIndirectCommandBufferWithDescriptor:maxCommandCount:options:
+newEvent
+newSharedEvent
+newSharedEventWithHandle:
+peerGroupID
+peerIndex
+peerCount
+maxBufferLength
+counterSets
+newCounterSampleBufferWithDescriptor:error:
+sampleTimestamps:gpuTimestamp:
+supportsVertexAmplificationCount:
+commandBufferWithUnretainedReferences
+insertDebugCaptureBoundary
+supportIndirectCommandBuffers
+details
+viewDidResizeWithSnapshotViewController:
+navigateToResourceItemWithSnapshotViewController:resourceItem:
+selectExecutionHistoryNode:from:
+didSelectNodeWithIterationViewController:node:
+resourcesViewController:shouldEnableGroup:
+resourcesViewController:contextMenuItemsForItem:
+resourcesViewController:openLocationForItems:
+resourcesViewController:showIssueForItem:atClickedView:
+resourcesViewControllerSelectionDidChange:
+dataItem
+setDataItem:
+sourceCode
+languageIdentifier
+editable:
+requestProfilerData
+requestWorkspaceIndex
+shaderAnnotations
+shaderBinaryCostForShaderType:
+perLineSourceInfoDictForShaderType:baseData:
+allDiassemblyInfoForShaderType:baseData:
+shaderAnalyzerResultForShaderType:baseData:
+shaderTimingForShaderType:
+remarks
+shaderSourceChanged:
+retainedEditorDocumentWithWorkspaceDocument:
+minFilter
+magFilter
+mipFilter
+maxAnisotropy
+sAddressMode
+tAddressMode
+rAddressMode
+normalizedCoordinates
+lodMinClamp
+lodMaxClamp
+lodAverage
+compareFunction
+reductionMode
+viewDidResizeWithAuxiliaryViewController:
+setupContextMenuWithAuxiliaryViewController:selectedSymbol:menu:
+setFilepath:
+setColumn:
+setReason:
+setTargets:
+setRecommendations:
+initWithName:dataURL:
+initWithCustomDataSpecifier:basePreferenceSet:
+dataRepresentationWithError:
+localizedName
+customDataSpecifier
+setCustomDataSpecifier:
+isBuiltIn
+contentNeedsSaving
+setContentNeedsSaving:
+preferenceSetsManager
+preferenceSetGroupingName
+systemPreferenceSet
+builtInPreferenceSetsDirectoryURL
+defaultKeyForCurrentPreferenceSet
+defaultKeyForExcludedBuiltInPreferenceSets
+preferenceSetsFileExtension
+upgradablePreferenceSetsFileExtensions
+preferenceSetsListHeader
+titleForNewPreferenceSetFromTemplate
+titleForManagePreferenceSets
+initialPreferenceSetName
+isDestroyed
+isCreated
+cpuCacheMode
+lastDisplayableFunctionIndex
+isBlockCompressed
+encoders
+usedResources
+boundResources
+hazardTrackingMode
+resourceOptions
+setPurgeableState:
+heap
+heapOffset
+makeAliasable
 descriptionView
 setDescriptionView:
 previewView
@@ -8203,11 +8161,7 @@ togglePreviewWithSender:
 showPreviewWithSender:
 hidePreviewWithSender:
 toggleQuicklookWithSender:
-hidePreviewWithSidebarViewController:
-showPreviewWithSidebarViewController:
-toggleQuicklookWithSidebarViewController:
 alternateImage
-eventId
 setShared:
 irSource
 binaryRangeInfo
@@ -8228,29 +8182,14 @@ setMinValue:forChannel:
 setMaxValue:forChannel:
 setClip
 compositingOperation
-encoders
-boundResources
 mapTableWithKeyOptions:valueOptions:
 realizeResourceBatch:withCompression:priority:functionIndex:
 initWithTexture:level:layer:textureImageGroupComponent:
-lastDisplayableFunctionIndex
-isDestroyed
-isCreated
-cpuCacheMode
-isBlockCompressed
-details
-usedResources
 defaultActionForKey:
 initWithLayer:
 setLayer:
-nodeType
-offsetInBits
-dataUpdated
-addressSpace
-memoryAddress
-globalOffsetInBits
-previousDataAvailable
-previousData
+sourceTextSidebarBackgroundColor
+sourceTextSidebarEdgeColor
 textureView
 setTextureView:
 pixelFormatView
@@ -8350,7 +8289,6 @@ setPremultipliedAlpha:
 setChannelMapping:forChannel:
 setHasUserDefinedChannelMappings:
 setEnabledState:forChannel:
-pixelFormat
 premultipliedAlpha
 minValues
 maxValues
@@ -8374,7 +8312,6 @@ popoverWillShow:
 popoverDidShow:
 popoverWillClose:
 popoverDidClose:
-thread
 viewportRect
 debugROI
 debugROIColor
@@ -8395,42 +8332,9 @@ setColorPixelFormat:
 setColorspace:
 texture2DDescriptorWithPixelFormat:width:height:mipmapped:
 setSampleCount:
-newTextureWithDescriptor:
 bytesPerRow
-replaceRegion:mipmapLevel:withBytes:bytesPerRow:
 isChannelEnabledForIndex:
 setCurrentAppearance:
-rootResource
-parentTexture
-parentRelativeLevel
-parentRelativeSlice
-buffer
-bufferOffset
-bufferBytesPerRow
-iosurface
-iosurfacePlane
-textureType
-mipmapLevelCount
-arrayLength
-isShareable
-isFramebufferOnly
-allowGPUOptimizedContents
-getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:
-replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:
-getBytes:bytesPerRow:fromRegion:mipmapLevel:
-newTextureViewWithPixelFormat:
-newTextureViewWithPixelFormat:textureType:levels:slices:
-newSharedTextureHandle
-remoteStorageTexture
-newRemoteTextureViewForDevice:
-swizzle
-newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:
-hazardTrackingMode
-resourceOptions
-setPurgeableState:
-heap
-heapOffset
-makeAliasable
 setRowSpacing:
 setColumnSpacing:
 labelWithString:
@@ -8441,8 +8345,7 @@ cellAtIndex:
 setXPlacement:
 fittingSize
 imageViewWithImage:
-sourceTextSidebarBackgroundColor
-sourceTextSidebarEdgeColor
+setImageAlignment:
 startPeriodicEventsAfterDelay:withPeriod:
 nextEventMatchingMask:
 stopPeriodicEvents
@@ -8478,19 +8381,6 @@ compareFunctionView
 setCompareFunctionView:
 samplerView
 setSamplerView:
-minFilter
-magFilter
-mipFilter
-maxAnisotropy
-sAddressMode
-tAddressMode
-rAddressMode
-normalizedCoordinates
-lodMinClamp
-lodMaxClamp
-lodAverage
-compareFunction
-reductionMode
 metalBufferICBIcon
 quaternaryLabelColor
 filter:
@@ -8498,12 +8388,9 @@ lightGrayColor
 stringFromByteCount:
 setZeroPadsFractionDigits:
 buttonWithTitle:image:target:action:
-filterableObjects
+boldSystemFontOfSize:
 filterTokenHelper
-filterViewController:didClearTokenField:
 clearTokens
-filterViewController:willBeginFiltering:objects:
-filterViewController:didFinishFiltering:result:
 addFilterTokens:
 vertexID0View
 setVertexID0View:
@@ -8525,15 +8412,20 @@ changeThread2View
 setChangeThread2View:
 viewWillMoveToSuperview:
 selectThreadWithSender:
-selectExecutionHistoryNode:from:
 setLoadAction:
 setStoreAction:
 colorAttachments
 initWithIOSurface:options:
 initWithCIImage:
 waitUntilCompleted
-newTextureWithDescriptor:iosurface:plane:
 visualRepresentation
+renderCommandEncoderWithDescriptor:
+pushDebugGroup:
+setRenderPipelineState:
+setFrontFacingWinding:
+setCullMode:
+popDebugGroup
+endEncoding
 setFragmentBuffer:offset:atIndex:
 setVertexBuffer:offset:atIndex:
 setViewport:
@@ -8543,48 +8435,28 @@ setResourceOptions:
 setResolveTexture:
 setClearColor:
 setStencilAttachment:
-newBufferWithBytes:length:options:
 edges
 maxPortHeight
 maxThumbnailHeight
 portThumbnailSize:
 edgeControlPoints:
 emphasized
-renderCommandEncoderWithDescriptor:
-pushDebugGroup:
-setRenderPipelineState:
-setFrontFacingWinding:
-setCullMode:
-popDebugGroup
-endEncoding
-newBufferWithLength:options:
 setDepthCompareFunction:
 setDepthWriteEnabled:
-newDepthStencilStateWithDescriptor:
-newDefaultLibraryWithBundle:error:
 setVertexFunction:
 setFragmentFunction:
 setVertexDescriptor:
 setPixelFormat:
 setDepthAttachmentPixelFormat:
 setStencilAttachmentPixelFormat:
-newRenderPipelineStateWithDescriptor:error:
 newFunctionWithName:
 setFormat:
 setStride:
-didModifyRange:
-newTextureWithDescriptor:offset:bytesPerRow:
-addDebugMarker:range:
-removeAllDebugMarkers
-remoteStorageBuffer
-newRemoteBufferViewForDevice:
 setSubItems:
 viewDidAppear
 navigateToResourceWithSender:
-navigateToResourceItemWithSnapshotViewController:resourceItem:
 viewAtColumn:
 setSelectionHighlightStyle:
-viewDidResizeWithSnapshotViewController:
 positionXKeyView
 setPositionXKeyView:
 positionYKeyView
@@ -8616,7 +8488,6 @@ setIterationCountView:
 iconView
 setIconView:
 selectIterationWithSender:
-didSelectNodeWithIterationViewController:node:
 columnMenu
 setColumnMenu:
 groupMenuItem
@@ -8643,23 +8514,13 @@ setSortDescriptors:
 setShowsStateColumn:
 sortDescriptorPrototype
 removeItem:
-resourcesViewController:contextMenuItemsForItem:
-resourcesViewControllerSelectionDidChange:
 purpleColor
 blueColor
 orangeColor
-resourcesViewController:showIssueForItem:atClickedView:
-resourcesViewController:openLocationForItems:
-resourcesViewController:shouldEnableGroup:
 setHeight:
 setData:
 setBytesPerRow:
-blueGlassTextAnnotationThemeForVariant:
-hasLightBackground
-darkVariant
-messageBubbleFillColor
 setMaximumNumberOfLines:
-viewWillDisappear
 changeTheme:
 editThemes:
 jumpToLine:
@@ -8673,11 +8534,13 @@ __swift_setObject:forKeyedSubscript:
 purgeCount
 initWithIcon:message:controlView:duration:
 initWithInteger:
-shaderSourceChanged:
 jumpToFunctionDefinition:
 exportISA:
 greenTextAnnotationBaseHighlightColor
+hasLightBackground
 highlightedRangeBorderColor
+messageBubbleFillColor
+darkVariant
 statusErrorFixitImageOfSize:
 statusWarningFixitImageOfSize:
 grayGlassTextAnnotationThemeForVariant:
@@ -8687,7 +8550,6 @@ ide_displayName
 canResetFontSize
 canDecreaseFontSize
 canIncreaseFontSize
-dataItem
 saveForOperation:withCompletionHandler:
 showWindow
 resetFontSize
@@ -8696,19 +8558,13 @@ increaseFontSize
 defaultPreferencesController
 showPreferencesPanel:
 selectPreferencePaneWithIdentifier:
-preferenceSetsManager
 setCurrentPreferenceSet:
 supermenu
 indexOfItemWithSubmenu:
 availablePreferenceSets
 currentPreferenceSet
-localizedName
 setRefusesFirstResponder:
-locationType
-requestWorkspaceIndex
 initWithContentsOfURL:options:error:
-requestProfilerData
-editable:
 newIssueObserverForDocumentURL:options:withHandlerBlock:
 issuesForDocumentURL:
 isLiveIssue
@@ -8719,36 +8575,6 @@ setAutoCompletionEnabled:
 setFireDate:
 dvt_isEscapeKeyDown
 trackingArea
-initWithName:dataURL:
-initWithCustomDataSpecifier:basePreferenceSet:
-dataRepresentationWithError:
-customDataSpecifier
-setCustomDataSpecifier:
-isBuiltIn
-contentNeedsSaving
-setContentNeedsSaving:
-preferenceSetGroupingName
-systemPreferenceSet
-builtInPreferenceSetsDirectoryURL
-defaultKeyForCurrentPreferenceSet
-defaultKeyForExcludedBuiltInPreferenceSets
-preferenceSetsFileExtension
-upgradablePreferenceSetsFileExtensions
-preferenceSetsListHeader
-titleForNewPreferenceSetFromTemplate
-titleForManagePreferenceSets
-initialPreferenceSetName
-setDataItem:
-sourceCode
-languageIdentifier
-shaderAnnotations
-shaderBinaryCostForShaderType:
-perLineSourceInfoDictForShaderType:baseData:
-allDiassemblyInfoForShaderType:baseData:
-shaderAnalyzerResultForShaderType:baseData:
-shaderTimingForShaderType:
-remarks
-retainedEditorDocumentWithWorkspaceDocument:
 columnAtIndex:
 iterationButton
 setIterationButton:
@@ -8776,15 +8602,8 @@ saveWithCompletionHandler:
 editedSource
 isDocumentEdited
 readFromData:ofType:error:
-viewDidResizeWithAuxiliaryViewController:
-setupContextMenuWithAuxiliaryViewController:selectedSymbol:menu:
 beginWithCompletionHandler:
 opcodeSubType
-setFilepath:
-setColumn:
-setReason:
-setTargets:
-setRecommendations:
 loadAndProcessWithImage:renderingAttributes:error:
 setHistogram:forChannel:
 setHistogramMinValues:
@@ -8817,6 +8636,7 @@ setTableViewScrollView:
 pieGraph
 setPieGraph:
 getHue:saturation:brightness:alpha:
+blueGlassTextAnnotationThemeForVariant:
 sourcePlainTextColor
 setNeedsDisplayInRect:
 opcode
@@ -8879,22 +8699,27 @@ setContainerViewXConstraint:
 sourceTextBackgroundColor
 whitespaceAndNewlineCharacterSet
 -[GPUTraceCounterGraphThumbnailView _update]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUTraceCounterGraphThumbnailView.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUTraceCounterGraphThumbnailView.mm
 [NSThread isMainThread]
 v16@?0@"NSImage"8
+hash
 TQ,R
 T#,R
 T@"NSString",R,C
 imageView
 T@"NSImageView",W,V_imageView
-itemTitle
-T@"NSTextField",W,V_itemTitle
+commandBufferLabel
+T@"NSTextField",W,V_commandBufferLabel
+encoderLabel
+T@"NSTextField",W,V_encoderLabel
+drawLabel
+T@"NSTextField",W,V_drawLabel
 T@"GPUTimelineGraphDataSource",W,N,V_dataSource
 GLType_ProgramObject.pdf
 GLType_ProgramPipelineObject.pdf
 GLType_ShaderObject.pdf
 -[GPUTraceProgramGroupNavigableItem image]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUTraceProgramGroupNavigableItem.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUTraceProgramGroupNavigableItem.mm
 We need an icon for this resource, currently using the sync object resource icon as default: %@
 __objc_no
 Called DVTWarn
@@ -8912,7 +8737,6 @@ T@"GPUIssueCategory",W,V_category
 issue
 T@"<GPUIssuesViewItem>",W,N,V_issue
 T@"NSString",R,N
-synopsis
 Category
 %ld issue%c
 Issue
@@ -9003,7 +8827,6 @@ Percentage of temporary registers that are used.
 Uniform Register Pressure
 Percentage of uniform registers that are used.
 [Just-In-Time]:%@
-TI,N
 metrics
 T@"NSDictionary",&,N
 OverviewGroupView
@@ -9088,7 +8911,6 @@ representedObject.name
 Captured GPU Frame
 representedObject.image
 icon
-image
 v32@?0@8@"NSDictionary"16^c24
 q24@?0@8@16
 showsGauges
@@ -9189,7 +9011,7 @@ GPUVariablesViewDocumentLocationKey
 GPUVariablesViewLocationChangedNotification
 %@ComparisonMode
 -[GPUVariablesViewContentProvider updateFilteredList]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUVariablesViewContentProvider.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUVariablesViewContentProvider.mm
 method %@ is a responsibility of subclasses of %@
 -[GPUVariablesViewContentProvider updateCurrentLocation:]
 -[GPUVariablesViewContentProvider addAnalyzerFindingContent:toArray:]
@@ -9256,7 +9078,7 @@ isViewLoaded
 Tc,R,V_isViewLoaded
 Global/%@
 -[GPUTraceStorage _storageKeyForKey:item:context:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceStorage.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceStorage.mm
 ((item)) != nil
 (item)
 Item-%@/%@
@@ -9284,10 +9106,6 @@ GPUShaderDebuggerEditorSessionKey
 GPUShaderDebuggerSession.queue
 T@"<DYPShaderDebuggerExecutionHistoryNode>",R,N
 Tf,R,N
-positionY
-positionZ
-positionW
-sampleId
 isFrontMost
 Tc,R,N
 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_
@@ -9342,7 +9160,7 @@ GPUTestReportDirectory
 /var/tmp/TestReports
 executionEnvironment.currentLaunchSession.debuggingAdditions
 -[GPUDebugMenuActionHandler _openLocation:withEventType:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUDebugMenuActionHandler.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUDebugMenuActionHandler.m
 Error:%@
 %@/report.xml
 GPUTraceMainEditor
@@ -9383,6 +9201,8 @@ baselineData
 T@"NSArray",&,N,V_baselineData
 columnTitles
 T@"NSArray",&,N,V_columnTitles
+availableFields
+T@"NSArray",&,N,V_availableFields
 %.0f %@
 %.0f
 %.1f %@
@@ -9410,22 +9230,25 @@ ARKit.framework
 Validation Disabled
 Validation Enabled
 MTLTextureDescriptor
+Developer/usr/libexec/gputoolsd
 initializing debug addition %@
 launchSession: %@
  appName:%@
  rundestination:%@
  extension:%@
 -[GPUDebuggingAddition initInLaunchSession:withAppDisplayName:runDestination:fromExtension:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebugger/GPUDebuggingAddition.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebugger/GPUDebuggingAddition.mm
 (launchSession) != nil
 %@ should be an instance inheriting from %@, but it is nil
 launchSession
 [(id)(launchSession) isKindOfClass:[IDELaunchSession class]]
 %@ should be an instance inheriting from %@, but it is %@
 currentDebugSession.state
-GTMTLGuestAppClient_initGlobalTransportWithHostURL("%@")
+(BOOL)GTMTLGuestAppClient_initGlobalTransportWithHostURL("%@")
+Failed to attach to process later: %s
 v32@?0@"NSString"8@"NSString"16@"NSError"24
 v32@?0@"IDELaunchSession"8@"NSDictionary"16^c24
+currentDebugSession
 Error Occured
 lastActiveTimestamp
 v32@?0@"GPUDebuggerController"8@"NSDictionary"16^c24
@@ -9545,7 +9368,7 @@ shaderDebuggerRegion
 T@"GPUShaderDebuggerFragmentRegion",&,D,N
 T@"GPUTraceFramebufferItem",&,D
 -[IDEGFXGaugeDebuggingAdditionUIController(GPUEditorIntegration) reportItem]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUGFXGaugeDebuggingAdditionSupport.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUGFXGaugeDebuggingAdditionSupport.mm
 (_castedResult) != nil
 _castedResult
 [(id)(_castedResult) isKindOfClass:[GPUInvestigatorReportItem class]]
@@ -9586,7 +9409,7 @@ Call
 Program
 ShaderDebugger
 -[GPUTraceContentDelegate initWithTopNavigableModel:debugNavigator:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUTraceContentDelegate.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUTraceContentDelegate.mm
 (processItem) != nil
 processItem
 [(id)(processItem) isKindOfClass:[GPUTraceProcessItem class]]
@@ -9711,7 +9534,7 @@ T@"NSString",R,N,V_filePath
 Tc,R,N,V_isOnlineCompiled
 TQ,R,N,V_functionID
 -[GPUTraceShaderItem initFunctionWithParent:shaderType:functionInfo:identifier:sharegroupID:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceShaderItem.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceShaderItem.mm
 (parent) != nil
 [(id)(parent) isKindOfClass:[GPUTraceProgramItem class]]
 -[GPUTraceShaderItem initShaderWithParent:shaderType:infoLog:identifier:sharegroupID:]
@@ -9723,11 +9546,9 @@ Unsupported
 TI,R,N
 stateMirrorObject
 Tr^v,R,N
-functionIndex
 subCommandIndex
 T@"NSString",&,N
 generatesThumbnail
-properties
 T@"NSMutableDictionary",R,N
 placeholder
 infoLog
@@ -9884,10 +9705,8 @@ T@"<GPUTimelineGraphTheme>",&,N,V_theme
 T@"GPUTimelineGraphDataSource",&,N,V_dataSource
 nanosecondPerPoint
 TQ,N,V_nanosecondPerPoint
-decorationInterval
-TQ,R,N,V_decorationInterval
 -[GPUTraceOutlineItem(IDEKeyDrivenNavigableItemRepresentedObject) ideModelObjectTypeIdentifier]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUTraceOutlineItem+IDEKeyDrivenNavigableItemRepresentedObject.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUTraceOutlineItem+IDEKeyDrivenNavigableItemRepresentedObject.m
 GPUTraceOutlineItem ideModelObjectTypeIdentifier tried to make an IDETypeIdentifier typeIdentifierForStringRepresentation: with a parameter of: %@ has returned nil
 T@"_TtC13DVTFoundation9DVTSymbol",R,N
 filterStrings
@@ -9900,7 +9719,7 @@ Unnamed%d
 Could not simplify image label. No image file dumped.
 %@%@.png
 void GPUTools::Utils::dumpThumbnails(NSArray *__strong, NSString *__strong, CGFloat)_block_invoke_2
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceResourcesImageDump.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceResourcesImageDump.mm
 Error dumping file %@: %@
 Dumped image to file %@
 v32@?0@"GPUTraceOutlineItem"8Q16^c24
@@ -9953,6 +9772,7 @@ apiTitle
 T@"NSTextField",W,N,V_apiTitle
 TQ,R,N,V_type
 <%@ %p, instanceId: %lu,  amplificationId: %lu, vertexIds:%@ vertexId:%lu>
+amplificationId
 vertexIds
 TQ,R,N,V_instanceId
 TQ,R,N,V_amplificationId
@@ -9987,6 +9807,7 @@ TQ,R,N,V_threadPositionX
 TQ,R,N,V_threadPositionY
 TQ,R,N,V_threadPositionZ
 <%@ %p, instanceId: %lu, amplificationId: %lu, patchIds:%@ patchId:%lu>
+patchIds
 T@"NSArray",R,N,V_patchIds
 TQ,R,N,V_patchId
 T@"GPUTraceAPIItem",R,W,D,N
@@ -10004,7 +9825,7 @@ subTitle
 T@"NSString",C,N,V_subTitle
 %@: _displayableCallIndex: %d
 -[GPUTraceDisplayableItem createRenderJobsForDisplaySetWithRenderTargetArrayIndex:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceDisplayableItem.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceDisplayableItem.mm
 v32@?0@"NSNumber"8Q16^c24
 -[GPUTraceDisplayableItem updateDisplaySet]_block_invoke
 Couldn't get display set for displayable item
@@ -10198,7 +10019,7 @@ Tc,N,V_displayOutlineWhenZoomed
 overlayColor
 T@"NSColor",&,N,V_overlayColor
 -[GPURenderJob isDepthDisplayElement]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPURenderJob.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPURenderJob.mm
 -[GPURenderJob isStencilDisplayElement]
 T{?=QQQ},R,N
 baseMipmapLevel
@@ -10247,7 +10068,7 @@ Xcode.GPUDebugger.debuggerBarScrubberAXDescription
 GPUDebuggerScrubberThumbnails
 GPUDebuggerDisableScrubberThumbnails
 -[GPUFrameScrubberDebugBarContentProvider _postScrubberNotificationWithType:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUFrameScrubberDebugBarContentProvider.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUFrameScrubberDebugBarContentProvider.mm
 DVTIsMainThread()
 code should be running on main thread
 scrubberDidMouseDown:%i
@@ -10289,7 +10110,7 @@ Depth.
 First
 Stencil.
 -[GPUTraceReplayController initWithController:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceReplayController.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceReplayController.mm
 No device or not connected, GPUTools service not available.
 GPUTraceReplayControllerModel
 GPUTraceReplayControllerHarvest
@@ -10464,7 +10285,6 @@ T@"<GPUTextureLoupeViewDelegate>",W,V_delegate
 64 bits
 Special
 supportsOffset
-TQ,N
 0x%llX
 layoutView
 T@"NSPopUpButton",W,N,V_layoutView
@@ -10502,7 +10322,7 @@ T@"GPUTraceDisplayableItem",R,N,V_associatedDisplaybleItem
 gputools.GPUShaderDebuggerExecutionHistoryDataSource
 T@"GPUShaderDebuggerSession",R,W,N,V_shaderDebuggerSession
 -[GPUMatrixQuickLookProvider initWithDataValue:options:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUMatrixQuickLookProvider.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUMatrixQuickLookProvider.mm
 ((dataValue)) != nil
 (dataValue)
 -[GPUMatrixQuickLookProvider _parseData]
@@ -10537,7 +10357,7 @@ T@"NSImage",&,V_image
 activeGPUSession.currentTraceSession
 v16@?0@"GPUDebuggingAddition"8
 -[GPUIssueProvider _createAnalyzerIssues]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/ResourceEditors/GPUIssueProvider.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/ResourceEditors/GPUIssueProvider.mm
 ((_controller)) != nil
 (_controller)
 v32@?0@"NSString"8@"NSMutableArray"16^c24
@@ -10777,7 +10597,7 @@ stopReason
 T@"NSString",&,N,V_stopReason
 T@"GPUTraceAPIItem",R,D,N
 -[GPUTraceProcessItem setName:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceProcessItem.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceProcessItem.m
 %@'s name cannot be set.
 T@"NSString",C,N
 parentDebugSession
@@ -10787,25 +10607,12 @@ TQ,N,V_outlineMode_forProgramMode_JumpBar_fix
 shaderDebuggerGroup
 T@"GPUTraceGroupItem",&,N,V_shaderDebuggerGroup
 NSBundle *_GPUDebuggerUIBundle(void)
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUNSBundleAdditions.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUNSBundleAdditions.m
 ((bundle)) != nil
 (bundle)
 bundle != [NSBundle mainBundle]
 (KJCaseSummaries)
 MTLDisableCaptureArchiveCompability
-Xcode.GPURenderTargetEditor.QuicklookActivateButtonTitle
-Xcode.GPURenderTargetEditor.ProfilerButtonTitle
-filename
-activate
-progress
-incompatibleImage
-incompatibleTitle
-incompatibleDesc
-profiler
-|-(>=8)-[imageView]-(>=8)-|
-V:|-[imageView]-[filename][description]-[profiler]-(==8)-[activate]-[incompatibleTitle][incompatibleDesc]-(>=8)-|
-[incompatibleImage][incompatibleTitle]
-[activate]-[progress]
 Xcode.GPURenderTargetEditor.QuicklookIncompatibleKojakFileTitle
 Xcode.GPURenderTargetEditor.QuicklookIncompatibleKojakFileDesc
 Xcode.GPURenderTargetEditor.QuicklookIncompatibleTitle
@@ -10815,8 +10622,9 @@ iOS App
 Xcode.GPURenderTargetEditor.CapturedFromText
  | %@
 usableDevices
+pendingDevices
 -[GPUQuicklooksEditor _buildDevicesMenu]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUQuicklooksEditor.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUQuicklooksEditor.mm
 Xcode.GPURenderTargetEditor.noConnectedDevicesMenuItem
 v32@?0@"DVTDevice"8Q16^c24
 Incompatible Device
@@ -10824,18 +10632,25 @@ Device might have lower resolution or older Metal.framework. You might experienc
 Continue
 Stop
 v24@?0@8@"NSError"16
+Device Unavailable
+The device is not available. Please try again later.
 v24@?0@"NSNumber"8@"NSError"16
-v24@?0@"DVTDevice"8^c16
+Xcode.GPURenderTargetEditor.SimulatorProfilingUnavailableText
+Warning
+Empty
+DVTiPhoneSimulator
+q24@?0@"DVTDevice"8@"DVTDevice"16
 OSXDevice
 iOSDevice
 Xcode.GPUDebugger.PlatformSupport
 T@"NSArray",&,N,V_usableDevices
+T@"NSArray",&,N,V_pendingDevices
 No Data
 Memory data not available
 %@. Capture on %@ or later.
 currentSelectedItem
 -[GPUMemoryReportEditor navigateToOutlineItem:userInfo:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUMemoryReportEditor.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUMemoryReportEditor.m
 Unable to create openSpecifier for %@: %@
 T@"GPUDebuggerController",W,N,V_debuggerController
 T@"GPUMemoryResourceItem",&,V_currentSelectedItem
@@ -10845,7 +10660,7 @@ tvOS 13.0
 watchOS 6.0
 activeTraceSession
 -[GPUTraceSession setPresentWireframeOnDevice:]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceSession.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceSession.mm
 [future.result boolValue]==__objc_yes
 enable wireframe presenting on device failed
 -[GPUTraceSession setWireframeLineWidth:]_block_invoke
@@ -10908,6 +10723,7 @@ gpudebugger-gpu-counters
 gpudebugger-memory-report
 com.apple.platform.iphonesimulator
 com.apple.platform.iphoneos
+com.apple.platform.appletvsimulator
 com.apple.platform.appletvos
 com.apple.platform.watchos
 tvOSDevice
@@ -10925,7 +10741,6 @@ Xcode.GPUToolsKit.DebugNavigator.TraceContentDelegate
 Xcode.DebuggerFoundation.DebuggingAdditioniOS.GPU
 Xcode.DebuggerFoundation.DebuggingAdditiontvOS.GPU
 Xcode.DebuggerFoundation.DebuggingAdditionwatchOS.GPU
-Xcode.DebuggerFoundation.DebuggingAdditioniOSSimulator.GPU
 __GPUTOOLS_HAS_DETECTED_AN_OPENGL_ERROR__
 libglInterpose.dylib
 com.apple.gputools.gputrace
@@ -10992,6 +10807,7 @@ kGPUShaderDebuggerThreadPickerItemKey
 kGPUShaderDebuggerThreadPickerPopoverControllerViewKey
 kGPUShaderDebuggerThreadPickerPopoverControllerRectKey
 kGPUDebugNavigatorRequestFilterStringNotification
+kGPUDebugNavigatorInvalidateStatusCellNotification
 Resource
 GPUBufferViewerResourceLink
 resourceItem
@@ -11074,7 +10890,7 @@ T@"DYContinuation",R,N,V_job
 GPUInferiorSession
 GPUProfilerEnabled
 +[GPUInferiorSession GPUToolsDeviceFromDVTDevice:error:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUInferiorSession.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUInferiorSession.mm
 -[GPUInferiorSession GPUToolsDeviceFromDVTDevice:error:]
 inferior session invalidated.
 v16@?0@"NSMutableDictionary"8
@@ -11157,8 +10973,6 @@ progressDigest
 T@"DYProgressDigest",&,N,V_progressDigest
 isRemoteDebuggingEnabled
 Tc,V_isRemoteDebuggingEnabled
-isOSXSession
-Tc,V_isOSXSession
 T@"IDELaunchSession",R,V_launchSession
 captureSessionInfo
 T@"DYCaptureSessionInfo",R
@@ -11213,7 +11027,7 @@ GPUSubEditorBoundResources
 v24@?0@"NSArray"8@"NSError"16
 Xcode.GPUDebugger.GPUTraceResourcesSubEditor
 -[GPUTraceResourcesSubEditor outlineView:shouldSelectItem:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceResourcesSubEditor.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceResourcesSubEditor.mm
 ((resourceItem)) != nil
 (resourceItem)
 GroupCell
@@ -11391,7 +11205,7 @@ GLES
 Breakpoint
 currentTraceSession.debuggerController.debugState
 -[GPUTraceMainEditor _openSpecifierForItem:userInfo:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceMainEditor.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceMainEditor.m
 -[GPUTraceMainEditor selectDocumentLocations:]
 (documentLocations) != nil
 %@ should be a non-empty array, but it is nil
@@ -11409,6 +11223,7 @@ Function Selection
 -[GPUTraceMainEditor _replayToTraceAPIItem:]_block_invoke
 Could not replay to %@, %@
 -[GPUTraceMainEditor _requestUpdateToAPIItem:withCompletionHandler:]
+You may also need to change the version of your Command Line Tools to match this version of Xcode. To do so, go to the Locations tab of Xcode Preferences
 v12@?0c8
 Could not scrub to requested location
 -[GPUTraceMainEditor _preloadSubEditorWithIdentifier:item:userInfo:]
@@ -11427,7 +11242,6 @@ creationBacktrace:
 SelectedDocumentLocations
 subeditorClass == %@
 editorMenuExtension
-Dismiss
 currentDisplayableItem
 T@"GPUTraceDisplayableItem",&,V_currentDisplayableItem
 T@"GPUTraceOutlineItem",&,V_currentSelectedItem
@@ -11452,7 +11266,7 @@ Image Renderer rendering image for %@.
 Xcode.IDEKit.Console.DefaultConsole
 Xcode.IDEKit.Console
 -[GPUDebugArea loadView]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUDebugArea.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUDebugArea.m
 [consoleExtension isValid]
 The default Console extension %@ is not valid.
 currentConsoleExtension.identifier
@@ -11484,7 +11298,7 @@ GPUIssueFilterLevel
 kShaderDebuggerIsFromShaderReload
 GPUDebuggerControllerShaderDebuggerSessionDidChangeNotification
 -[GPUDebuggerController newGuestAppSessionWithGuestApp:device:deferLaunch:error:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUDebuggerController.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUDebuggerController.mm
 -[GPUDebuggerController captureArchive]
 Couldn't find requested capture archive with url: %@
 extensions
@@ -11526,9 +11340,14 @@ MacBookPro9,2
 MacBookPro10,2
 MacBookPro11,1
 MacBookPro11,2
+MacBookPro11,4
 iMac13,1
 iMac14,1
 iMac14,4
+MacBookAir5,1
+MacBookAir5,2
+MacBookAir6,1
+MacBookAir6,2
 iPhone6,1
 iPhone6,2
 iPhone7,2
@@ -11553,10 +11372,14 @@ Watch2,3
 Watch2,4
 Watch3,1
 Watch3,2
+Watch3,3
 Watch3,4
 Shader Debugger is not supported.
 Shader Debugger requires Intel (Broadwell or newer), AMD, Nvidia; or an iOS / tvOS device with Apple A9 or newer.
 10.14
+GPUToolsEnableSimulatorShaderDebuggerSupport
+Shader Debugger is not supported in Simulator.
+Use a physical device to use the shader debugger.
 Update your operating system in order to support the shader debugger.
 SDK and Xcode not aligned. The installed platform SDK is too old for this Xcode. Update your platform SDK to support the shader debugger.
 SDK and Xcode not aligned. The installed Xcode is too old for the installed platform SDK. Update Xcode to support the shader debugger.
@@ -11620,6 +11443,7 @@ resourceMemoryDataSource
 T@"<DYPResourceMemoryDataSource>",R,N,V_resourceMemoryDataSource
 isRuntimeOSAppleInternal
 isMacOSXDevice
+isSimulatorDevice
 T@"DYShaderProfilerResult",R,V_shaderProfilerResults
 T@"DYShaderProfilerResult",R,V_shaderProfilerResultsBase
 isDeploymentTargetOlderThanDeviceVersionForiOS
@@ -11635,6 +11459,8 @@ Tc,V_noRecentGPUWorkloadDetected
 invalidOverrides
 issueFilterLevel
 Ti,N
+requiresXcodeSelect
+Tc,R,V_requiresXcodeSelect
 shadersUpdatable
 Tc,V_shadersUpdatable
 T@"GPUShaderDebuggerSession",&,V_shaderDebuggerSession
@@ -11647,7 +11473,7 @@ Reloading Shaders: This may take a while...
 titleString
 labelString
 -[GPUTraceDocument initForURL:withContentsOfURL:ofType:error:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceDocument.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceDocument.mm
 [inContentsURL ide_isSameDocumentAsURL:inURLOrNil]
 GPUTraceDocument does not support mismatch of parameters inContentsURL and inURLOrNil.
 -[GPUTraceDocument captureSessionInfo]
@@ -11671,10 +11497,12 @@ GPUDebugger.DisableThumbnailGeneration
 macosx
 iphoneos
 appletvos
+appletvsimulator
 watchos
 iphonesimulator
 .platform
 .internal
+internal
 canonicalName
 operatingSystemVersion
 isInternal
@@ -11692,7 +11520,7 @@ T@"NSNumber",C,N,V_value
 outlineItemUUID
 <%@: %p URL:%@ UUID:%@ userInfo:%@>
 -[GPUTraceDocumentLocation compare:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUTraceDocumentLocation.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUTraceDocumentLocation.m
 (location) != nil
 location
 [(id)(location) isKindOfClass:[GPUTraceDocumentLocation.class class]]
@@ -11799,7 +11627,7 @@ GPUDebugger_shaderDebuggerShowIndividualVectorComponents
 markerLine
 Tc,N,V_markerLine
 -[GPUGaugeDocument traceSession]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUGaugeDocument.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUGaugeDocument.m
 Capturing screenshot
 -[GPUGaugeDocument writeSafelyToURL:ofType:forSaveOperation:error:]
 Failed to archive a screenshot
@@ -11810,7 +11638,7 @@ Finishing
 Name
 Element
 -[GPUBufferViewerOutlineViewController outlineView:child:ofItem:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUBufferViewerOutlineViewController.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUBufferViewerOutlineViewController.m
 code which should be unreachable has been reached
 Name
 Type
@@ -11826,7 +11654,6 @@ T@"<GPUBufferViewerDataSource>",&,D
 Shared
 Managed
 Private
-Empty
 Read
 Write
 BufferLength
@@ -11844,12 +11671,10 @@ T@"NSNumber",R,N
 cpuAccess
 T@"NSDictionary",R,C,N
 T@"NSArray",R,C,N
-bufferLength
 heapSize
 T@"<DYPMemoryResource>",&,N,V_resource
 commandEncoders
 T@"NSArray",&,N,V_commandEncoders
-commandBuffers
 T@"NSArray",&,N,V_commandBuffers
 mutableChildItems
 T@"NSMutableArray",&,N,V_mutableChildItems
@@ -11863,6 +11688,8 @@ pasteBoardString
 T@"NSImage",&,N,V_thumbnailImage
 isResourceLabelDuplicate
 Tc,N,V_isResourceLabelDuplicate
+allocationGroupID
+TQ,N,V_allocationGroupID
 Never
 Issues
 Subtype
@@ -11892,7 +11719,7 @@ libMTLInterpose.dylib
 MetalTools
 GPUToolsCore
 -[GPUTraceAPIItem generateLabel]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceAPIItem.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceAPIItem.mm
 -[GPUTraceAPIItem stateMirror]
 stateMirror
 T@"<DYPStateMirror>",R,N
@@ -11940,7 +11767,7 @@ overviewSamples
 compactTextMode
 Problems & Solutions
 -[GPUReportEditor redisplayReport]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUReportEditor.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUReportEditor.mm
 %s must run on main thread
 -[GPUReportEditor observeInvestigatorCaseEvents]
 _investigatorCaseEventObservingToken == nullptr
@@ -12079,7 +11906,7 @@ invalid program item resource type
 GPUTraceContentPopover
 v16@?0@"NSAnimationContext"8
 -[GPUTracePopover _update]_block_invoke_2
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUTracePopover.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUTracePopover.m
 alias
 T@"GPUTraceAPIItem",&,N,V_alias
 T@"GPUTraceAPIItem",&,N,V_item
@@ -12097,7 +11924,7 @@ usePadding
 Tc,N,V_usePadding
 Indexing
 v32@?0@"<DYPFilterItem>"8@"NSNumber"16^c24
-v32@?0@"NSString"8^{NSMutableDictionary=#}16^c24
+v32@?0@"NSString"8@"NSMutableDictionary"16^c24
 self
 maxCompletionsCount
 TQ,N,V_maxCompletionsCount
@@ -12114,7 +11941,7 @@ T@"GPUBufferViewerMarkerTableColumnView",&,N,V_view
 color
 colour
 -[GPUTraceOutline notifyUnusedResourcesStreamAvailable]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceOutline.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceOutline.mm
 -[GPUTraceOutline addDisplayableItem:]
 ((displayableItem)) != nil
 (displayableItem)
@@ -12220,6 +12047,7 @@ T@"NSButton",W,V_actionButton
 -[GPUBufferViewerBufferResourceElementTableCellView setValue:forComponent:row:]
 finding
 T@"DYAnalyzerFinding",W,N,V_finding
+%@, %@
 T@"NSString",&,N,V_functionName
 valueString
 T@"NSString",&,N,V_valueString
@@ -12263,7 +12091,8 @@ attachment
 attachments
 No attachments
 %lu bound resources
-%@ - %@
+(%@ - %@)
+(%@ - %@ - %@)
 v24@?0@"GPUTraceOutlineItem"8@"NSString"16
 v32@?0@"GPUTraceCounterGraphGroupItem"8Q16^c24
 Raw Counters
@@ -12285,7 +12114,6 @@ associatedItems
 T@"NSArray",&,N,V_associatedItems
 v32@?0@"DYPPerformanceBottleneck"8Q16^c24
 q24@?0@"GPUTracePerformanceBottleneck"8@"GPUTracePerformanceBottleneck"16
-Empty Encoder
 BottleneckCellView
 BottleneckGroupCellView
 No potential bottlenecks detected
@@ -12398,6 +12226,7 @@ T@"<GPUBufferViewerDataSourceProvider>",R,W,N
 titleForRowColumn
 titleForMarkersColumn
 defaultWidthForMarkersColumn
+elements
 markers
 numberOfRows
 rowsPerInstance
@@ -12468,15 +12297,15 @@ TI,R,N,V_resourceType
 heapName
 T@"NSString",R,N,V_heapName
 NSString *ResourceCategoryForType(DYResourceType)
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUResourceListOutlineNode.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUResourceListOutlineNode.mm
 -[GPUIssueQuickLookProvider initWithDataValue:options:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUIssueQuickLookProvider.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUIssueQuickLookProvider.mm
 Menlo
 T@"NSTextView",&,V_textView
 heightConstraint
 T@"NSLayoutConstraint",&,V_heightConstraint
 -[GPUStackFrame navigableItem_image]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUStackFrame.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUStackFrame.mm
 Could not retrieve icon for stack frame %@
 %lu 0x%llx
 %lu %@
@@ -12484,7 +12313,7 @@ stackFrame
 T@"DYStackFrame",R,N
 _TtC13DVTFoundation9DVTSymbol
 -[GPUTraceContentDelegate(APIDoc) showAPIDocForItem:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUTraceContentDelegate+APIDoc.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUTraceContentDelegate+APIDoc.m
 Failed to find DVTSymbol for [%@ %@]
 Xcode.SourceCodeLanguage.Objective-C
 _TtC6IDEKit30IDEDocumentationWindowCommands
@@ -12501,7 +12330,9 @@ progressView
 T@"NSProgressIndicator",W,V_progressView
 progressTextView
 T@"NSTextField",W,V_progressTextView
+progress
 T@"NSString",&
+Title
 Attachment %@: %@
 Texture 
 Buffer 
@@ -12523,7 +12354,7 @@ gputrace
 readArchive
 .GPUDebugger-XXXXXX
 -[GPUCaptureArchiveManager _copyAndOpenArchiveAtURL:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUCaptureArchiveManager.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUCaptureArchiveManager.mm
 Couldn't open a copy of capture archive %@
 writeArchive
 -[GPUCaptureArchiveManager _writeCaptureArchiveForURL:createIfNeeded:]
@@ -12561,7 +12392,7 @@ Attachments
 TraceOutlineAttachments
 categoryIdentifier
 -[GPUTextureScrollView initWithCoder:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTextureScrollView.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTextureScrollView.m
 [self.contentView isKindOfClass:GPUTextureClipView.class]
 ScrollRect
 ContentRect
@@ -12678,7 +12509,7 @@ selectionRange
 T{_NSRange=QQ},N,V_selectionRange
 v32@?0@"GPUDebuggingAddition"8@"NSDictionary"16^c24
 -[GPUTraceCountersEditor showOutlineItemInCurrentEditor:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUTraceCountersEditor.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUTraceCountersEditor.mm
 selectedDocumentLocations
 %@ Counters
 Export GPU Counters
@@ -12768,11 +12599,12 @@ q24@?0@"GPUIssue"8@"GPUIssue"16
 matches
 match
 Xcode.GPUDebugger.GPUTraceDependencySubEditor
+Performance data is not available in Simulator
 Performance data not available
 Profile
 T@"GPUDebuggerController",W,V_debuggerController
 -[GPUTraceStateItem isGroupMarkerCall]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceStateItem.m
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceStateItem.m
 markerColumn
 T@"GPUBufferViewerMarkerTableColumn",&,N,V_markerColumn
 markerColumnView
@@ -12782,8 +12614,7 @@ RenderPipelineState
 ComputePipelineState
 IndirectCommandBuffer
 -[GPUReportDocument writeSafelyToURL:ofType:forSaveOperation:error:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUReportDocument.mm
-Graphics
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUReportDocument.mm
 sharedTabUIState
 T@"GPUSharedTabUIState",W,N,V_sharedTabUIState
 T@"GPUReportEditor",W,N,V_editor
@@ -12796,7 +12627,7 @@ Tc,N,V_drawsTitle
 drawsIcon
 Tc,N,V_drawsIcon
 -[GPUTracePerformanceSubEditor setRepresentedObject:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTracePerformanceSubEditor.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTracePerformanceSubEditor.mm
 (representedObject) != nil
 [(id)(representedObject) isKindOfClass:[GPUTracePerformanceItem class]]
 Xcode.GPUDebugger.GPUTracePerformanceSubEditor
@@ -12855,7 +12686,7 @@ false
 T@"NSString",R,N,V_identifier
 tabController-%@
 -[GPUSharedTabUIState setCurrentMainEditorLocation:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUSharedUIStateManager.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUSharedUIStateManager.mm
 (currentMainEditorLocation) == nil || [(id)(currentMainEditorLocation) isKindOfClass:[GPUTraceDocumentLocation class]]
 T@"GPUTraceDocumentLocation",&,N,V_currentMainEditorLocation
 T@"GPUTraceSession",R,W,N,V_currentTraceSession
@@ -12926,8 +12757,10 @@ subPlaneIndexes
 T@"NSArray",&,N,V_subPlaneIndexes
 contextMenuItem
 T@"NSMenuItem",&,N,V_contextMenuItem
+%d Draw
 Encoder %d
 CommandBuffer %d
+Empty Encoder
 Draw %lu
 Dispatch %lu
 Tile Dispatch %lu
@@ -12942,9 +12775,7 @@ drawCallInfo
 T@"DYShaderProfilerDrawCallInfo",W,N,V_drawCallInfo
 TQ,R,N,V_functionIndex
 T@"NSString",R,N,V_label
-encoderLabel
 T@"NSString",R,N,V_encoderLabel
-commandBufferLabel
 T@"NSString",R,N,V_commandBufferLabel
 debugMarkers
 T@"NSString",R,N,V_debugMarkers
@@ -13042,6 +12873,7 @@ activityReports
 _activityReports
 executionEnvironment.currentLaunchSession
 GPUDebuggingAddition
+%@ - %@
 Debugging Frame
 activityReporter
 T@"GPUCaptureActivityReporter",R,W,V_activityReporter
@@ -13113,14 +12945,20 @@ GPUTraceProfilerStatusScopeBar
 preferredViewHeight
 messageLabel
 T@"NSTextField",W,N,V_messageLabel
-runProfilerButton
-T@"NSSegmentedControl",W,N,V_runProfilerButton
+T@"NSSegmentedControl",W,N,V_actionButton
 dismissButton
 T@"NSButton",W,N,V_dismissButton
-profileActionBlock
-T@?,C,N,V_profileActionBlock
+actionBlock
+T@?,C,N,V_actionBlock
 dismissActionBlock
 T@?,C,N,V_dismissActionBlock
+showActionButton
+Tc,N,V_showActionButton
+messageText
+T@"NSString",&,N,V_messageText
+actionButtonText
+T@"NSString",&,N,V_actionButtonText
+Generate
 abstractController
 T@"<GPUAbstractDebuggerController>",W,N
 abstractDisplayableItem
@@ -13142,7 +12980,7 @@ isExpanded
 Tc,N,V_isExpanded
 Ti,R,N,V_functionIndex
 -[GPUTraceProgramGroup associatedDisplayableItem]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceProgramGroup.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceProgramGroup.mm
 relatedDisplayablesGroupItem
 T@"GPUTraceGroupItem",R,N,V_relatedDisplayablesGroupItem
 Checkerboard0
@@ -13196,7 +13034,7 @@ T@"GPUInvestigatorReportResource",W,N,V_reportResource
 showBaseline
 Tc,N,V_showBaseline
 -[GPUReportOutlineView prototypeTableCellViewForIdentifier:]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUReportOutlineView.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUReportOutlineView.mm
 topLevelView != nullptr
 tableViewMarkersLabelContainer
 T@"NSView",&,N,V_tableViewMarkersLabelContainer
@@ -13217,7 +13055,7 @@ T@"GPUTraceAPIItem",R,W,N,V_parent
 T@"NSString",C,N,V_outlineItemUUID
 T@"NSString",C,N,V_associatedProcessUUID
 -[GPUTraceModelFactory addModelItem:]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerFoundation/GPUTraceModelFactory.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerFoundation/GPUTraceModelFactory.mm
 ((UUID)) != nil
 (UUID)
 existingItem==nullptr
@@ -13372,7 +13210,7 @@ T@"<DYResource>",&,V_loadedResource
 T@"GPUStackFrame",R,D,N
 GPUDebugAdditionUIController
 -[GPUDebuggingAdditionUIController _reopenStandaloneTraceDocument]
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUDebuggingAdditionUIController.mm
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUDebuggingAdditionUIController.mm
 _currentTraceSession.captureArchiveURL
 _currentTraceSession.captureArchiveURL must not be nil.
 ((openSpecifier)) != nil
@@ -13450,12 +13288,425 @@ green
 blue
 purple
 gray
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/DYPShaderDebuggerROI+Size.swift
+DYPShaderDebuggerVariableSnapshotNode
+snapshot
+T@"<DYPShaderDebuggerVariableSnapshot>",N,R
+parent
+T@"<DYPShaderDebuggerVariableSnapshotNode>",N,R
+nodeType
+flags
+T@"NSString",N,R
+addressSpace
+memoryAddress
+sizeInBits
+offsetInBits
+globalOffsetInBits
+previousDataAvailable
+previousData
+dataAvailable
+data
+dataUpdated
+T@"NSArray",N,R
+@"<DYPShaderDebuggerVariableSnapshot>"16@0:8
+@"<DYPShaderDebuggerVariableSnapshotNode>"16@0:8
+@"NSString"16@0:8
+@"NSArray"16@0:8
+_TtP11GPUDebugger46GPUShaderDebuggerSidebarViewControllerDelegate_
+v24@0:8@"_TtC11GPUDebugger38GPUShaderDebuggerSidebarViewController"16
+DYPShaderDebuggerExecutedLocation
+filePath
+column
+DYPShaderDebuggerExecutionHistoryNode
+T@"<DYPShaderDebuggerThread>",N,R
+T@"<DYPShaderDebuggerExecutionHistoryNode>",N,R
+children
+@"<DYPShaderDebuggerThread>"16@0:8
+@"<DYPShaderDebuggerExecutionHistoryNode>"16@0:8
+DYPShaderDebuggerVariableSnapshot
+node
+eventId
+DYPResourceMemoryDataSource
+c24@0:8Q16
+allMemoryResources
+rootMemoryResources
+commandBuffers
+MTLTexture
+^{__IOSurface=}16@0:8
+v104@0:8^v16q24q32{?={?=QQQ}{?=QQQ}}40q88q96
+v104@0:8{?={?=QQQ}{?=QQQ}}16q64q72^v80q88q96
+v88@0:8^v16q24{?={?=QQQ}{?=QQQ}}32q80
+v88@0:8{?={?=QQQ}{?=QQQ}}16q64^v72q80
+@64@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48
+{?=CCCC}16@0:8
+@68@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48{?=CCCC}64
+rootResource
+T@"<MTLResource>",N,R
+parentTexture
+T@"<MTLTexture>",N,R
+parentRelativeLevel
+Tq,N,R
+parentRelativeSlice
+buffer
+T@"<MTLBuffer>",N,R
+bufferOffset
+bufferBytesPerRow
+iosurface
+T^{__IOSurface=},N,R
+iosurfacePlane
+textureType
+pixelFormat
+width
+height
+depth
+mipmapLevelCount
+sampleCount
+arrayLength
+shareable
+framebufferOnly
+allowGPUOptimizedContents
+remoteStorageTexture
+swizzle
+T{?=CCCC},N,R
+@"<MTLResource>"16@0:8
+@"<MTLTexture>"16@0:8
+@"<MTLBuffer>"16@0:8
+@"<MTLTexture>"24@0:8Q16
+@"<MTLTexture>"64@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48
+@"MTLSharedTextureHandle"16@0:8
+@"<MTLTexture>"24@0:8@"<MTLDevice>"16
+@"<MTLTexture>"68@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48{?=CCCC}64
+#16@0:8
+^@24@0:8:16
+^@40@0:8:16@24@32
+c24@0:8#16
+c24@0:8:16
+^v16@0:8
+superclass
+description
+debugDescription
+c24@0:8@"Protocol"16
+_TtP11GPUDebugger31GPUFilterViewControllerDelegate_
+v40@0:8@16@24@32
+v32@0:8@"_TtC11GPUDebugger23GPUFilterViewController"16@"IDETokenFilterControlBar"24
+v40@0:8@"_TtC11GPUDebugger23GPUFilterViewController"16@"GPUFilterTokenPredicate"24@"NSArray"32
+_TtP11GPUDebugger33GPUFilterViewControllerDataSource_
+filterableObjects
+tokenHelper
+T@"GPUFilterTokenHelper",N,R
+@"GPUFilterTokenHelper"16@0:8
+MTLDrawable
+v24@0:8d16
+d16@0:8
+presentedTime
+Td,N,R
+drawableID
+v24@0:8@?<v@?@"<MTLDrawable>">16
+MTLBuffer
+v32@0:8{_NSRange=QQ}16
+@40@0:8@16q24q32
+v40@0:8@16{_NSRange=QQ}24
+length
+remoteStorageBuffer
+@"<MTLTexture>"40@0:8@"MTLTextureDescriptor"16q24q32
+v40@0:8@"NSString"16{_NSRange=QQ}24
+@"<MTLBuffer>"24@0:8@"<MTLDevice>"16
+MTLDevice
+{?=QQ}24@0:8@16
+{?=QQ}32@0:8q16Q24
+@32@0:8q16Q24
+@40@0:8^v16q24Q32
+@48@0:8^v16q24Q32@?40
+@40@0:8@16^{__IOSurface=}24q32
+@32@0:8@16^@24
+@40@0:8@16@24^@32
+v40@0:8@16@24@?32
+@48@0:8@16Q24^@32^@40
+v32@0:8@16@?24
+v40@0:8@16Q24@?32
+c24@0:8q16
+q24@0:8Q16
+v32@0:8^{?=ff}16q24
+@40@0:8@16q24Q32
+v32@0:8^q16^q24
+registryID
+maxThreadsPerThreadgroup
+T{?=QQQ},N,R
+lowPower
+headless
+removable
+hasUnifiedMemory
+recommendedMaxWorkingSetSize
+locationNumber
+maxTransferRate
+depth24Stencil8PixelFormatSupported
+readWriteTextureSupport
+argumentBuffersSupport
+rasterOrderGroupsSupported
+barycentricCoordsSupported
+supportsShaderBarycentricCoordinates
+currentAllocatedSize
+maxThreadgroupMemoryLength
+maxArgumentBufferSamplerCount
+programmableSamplePositionsSupported
+peerGroupID
+peerIndex
+TI,N,R
+peerCount
+maxBufferLength
+counterSets
+@"<MTLCommandQueue>"16@0:8
+@"<MTLCommandQueue>"24@0:8q16
+{?=QQ}24@0:8@"MTLTextureDescriptor"16
+@"<MTLHeap>"24@0:8@"MTLHeapDescriptor"16
+@"<MTLBuffer>"32@0:8q16Q24
+@"<MTLBuffer>"40@0:8^v16q24Q32
+@"<MTLBuffer>"48@0:8^v16q24Q32@?<v@?^vq>40
+@"<MTLDepthStencilState>"24@0:8@"MTLDepthStencilDescriptor"16
+@"<MTLTexture>"24@0:8@"MTLTextureDescriptor"16
+@"<MTLTexture>"40@0:8@"MTLTextureDescriptor"16^{__IOSurface=}24q32
+@"<MTLTexture>"24@0:8@"MTLSharedTextureHandle"16
+@"<MTLSamplerState>"24@0:8@"MTLSamplerDescriptor"16
+@"<MTLLibrary>"16@0:8
+@"<MTLLibrary>"32@0:8@"NSBundle"16^@24
+@"<MTLLibrary>"32@0:8@"NSString"16^@24
+@"<MTLLibrary>"32@0:8@"NSURL"16^@24
+@"<MTLLibrary>"32@0:8@"OS_dispatch_data"16^@24
+@"<MTLLibrary>"40@0:8@"NSString"16@"MTLCompileOptions"24^@32
+v40@0:8@"NSString"16@"MTLCompileOptions"24@?<v@?@"<MTLLibrary>"@"NSError">32
+@"<MTLRenderPipelineState>"32@0:8@"MTLRenderPipelineDescriptor"16^@24
+@"<MTLRenderPipelineState>"48@0:8@"MTLRenderPipelineDescriptor"16Q24^@32^@40
+v32@0:8@"MTLRenderPipelineDescriptor"16@?<v@?@"<MTLRenderPipelineState>"@"NSError">24
+v40@0:8@"MTLRenderPipelineDescriptor"16Q24@?<v@?@"<MTLRenderPipelineState>"@"MTLRenderPipelineReflection"@"NSError">32
+@"<MTLComputePipelineState>"32@0:8@"<MTLFunction>"16^@24
+@"<MTLComputePipelineState>"48@0:8@"<MTLFunction>"16Q24^@32^@40
+v32@0:8@"<MTLFunction>"16@?<v@?@"<MTLComputePipelineState>"@"NSError">24
+v40@0:8@"<MTLFunction>"16Q24@?<v@?@"<MTLComputePipelineState>"@"MTLComputePipelineReflection"@"NSError">32
+@"<MTLComputePipelineState>"48@0:8@"MTLComputePipelineDescriptor"16Q24^@32^@40
+v40@0:8@"MTLComputePipelineDescriptor"16Q24@?<v@?@"<MTLComputePipelineState>"@"MTLComputePipelineReflection"@"NSError">32
+@"<MTLFence>"16@0:8
+@"<MTLArgumentEncoder>"24@0:8@"NSArray"16
+@"<MTLRasterizationRateMap>"24@0:8@"MTLRasterizationRateMapDescriptor"16
+@"<MTLIndirectCommandBuffer>"40@0:8@"MTLIndirectCommandBufferDescriptor"16q24Q32
+@"<MTLEvent>"16@0:8
+@"<MTLSharedEvent>"16@0:8
+@"<MTLSharedEvent>"24@0:8@"MTLSharedEventHandle"16
+@"<MTLCounterSampleBuffer>"32@0:8@"MTLCounterSampleBufferDescriptor"16^@24
+MTLCommandQueue
+T@"NSString",N,C
+T@"<MTLDevice>",N,R
+v24@0:8@"NSString"16
+@"<MTLDevice>"16@0:8
+@"<MTLCommandBuffer>"16@0:8
+MTLRenderPipelineState
+supportIndirectCommandBuffers
+MTLDepthStencilState
+DYPMemoryFinding
+kind
+synopsis
+T@"<DYPMemoryResource>",N,R
+functionIndex
+Ti,N,R
+@"<DYPMemoryResource>"16@0:8
+GPUIssuesViewItem
+category
+_TtP11GPUDebugger55GPUShaderDebuggerVariableSnapshotViewControllerDelegate_
+v24@0:8@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"16
+v32@0:8@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"16@"GPUTraceResourceItem"24
+v32@0:8@"<DYPShaderDebuggerExecutionHistoryNode>"16@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"24
+_TtP11GPUDebugger48GPUShaderDebuggerIterationViewControllerDelegate_
+v32@0:8@"_TtC11GPUDebugger40GPUShaderDebuggerIterationViewController"16@"<DYPShaderDebuggerExecutionHistoryNode>"24
+DYPShaderDebuggerThreadKernel
+threadPositionX
+threadPositionY
+threadPositionZ
+_TtP11GPUDebugger34GPUResourcesViewControllerDelegate_
+c32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16q24
+@"NSArray"32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"<_TtP11GPUDebugger20GPUResourcesViewItem_>"24
+v32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"NSArray"24
+v40@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"<_TtP11GPUDebugger20GPUResourcesViewItem_>"24@"NSView"32
+v24@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16
+_TtP11GPUDebugger20GPUResourcesViewItem_
+allocatedSize
+labelSuffix
+subType
+aliasable
+T@"NSNumber",N,R
+nanoSecondsSinceLastBound
+associatedCommandEncoders
+T@"NSDictionary",N,R
+associatedCommandBuffers
+T@"NSImage",N,R
+bufferLength
+texturePixelFormat
+textureHeight
+textureDepth
+textureMipmapCount
+textureSampleCount
+heapUsedSize
+indirectCommandBufferSize
+@"NSNumber"16@0:8
+@"NSDictionary"16@0:8
+@"NSImage"16@0:8
+GPUTraceShaderDataProvider
+c24@0:8^@16
+f20@0:8I16
+@24@0:8I16c20
+d20@0:8I16
+T@"<GPUTraceShaderDataProviderDelegate>",N,W
+T@"<DYPShaderSourceDocument>",N,W
+dataItem
+T@"GPUTraceShaderDataItem",N,W
+T@"IDEEditorDocument",N,R
+index
+T@"IDEIndex",N,R
+@"<GPUTraceShaderDataProviderDelegate>"16@0:8
+v24@0:8@"<GPUTraceShaderDataProviderDelegate>"16
+@"<DYPShaderSourceDocument>"16@0:8
+v24@0:8@"<DYPShaderSourceDocument>"16
+@"GPUTraceShaderDataItem"16@0:8
+v24@0:8@"GPUTraceShaderDataItem"16
+@"IDEEditorDocument"16@0:8
+@"IDEIndex"16@0:8
+@"NSDictionary"24@0:8I16c20
+@"NSArray"24@0:8I16c20
+@"GPUTraceShaderSampleInfo"24@0:8I16c20
+@"DYShaderAnalyzerResult"24@0:8I16c20
+@"IDEEditorDocument"24@0:8@"IDEWorkspaceDocument"16
+DVTCancellable
+{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])}16@0:8
+minFilter
+sAddressMode
+tAddressMode
+rAddressMode
+T{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])},N,R
+normalizedCoordinates
+lodMinClamp
+Tf,N,R
+compareFunction
+reductionMode
+DYPShaderDebuggerThreadFragment
+positionX
+positionY
+positionZ
+positionW
+sampleId
+_TtP11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegate_
+v24@0:8@"_TtC11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewController"16
+v40@0:8@"_TtC11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewController"16@"NSString"24@"NSMenu"32
+GPUFilterableObject
+filterItems
+T@"NSSet",N,R
+filterableChildObjects
+parentFilterItems
+@"NSSet"16@0:8
+NSCopying
+@24@0:8^v16
+supportsSecureCoding
+DYPRemark
+v20@0:8I16
+v24@0:8Q16
+v24@0:8q16
+TI,N
+TQ,N
+Tq,N
+reason
+targets
+T@"NSArray",N,C
+recommendations
+v24@0:8@"NSArray"16
+DVTPreferenceSet
+@24@0:8^@16
+localizedName
+image
+T@"NSImage",N,&
+customDataSpecifier
+T@"DVTCustomDataSpecifier",N,&
+builtIn
+contentNeedsSaving
+@32@0:8@"NSString"16@"NSURL"24
+@32@0:8@"DVTCustomDataSpecifier"16@"<DVTPreferenceSet>"24
+@"NSData"24@0:8^@16
+v24@0:8@"NSImage"16
+@"DVTCustomDataSpecifier"16@0:8
+v24@0:8@"DVTCustomDataSpecifier"16
+@"DVTPreferenceSetManager"16@0:8
+@"<DVTPreferenceSet>"16@0:8
+NSPasteboardWriting
+Q32@0:8@16@24
+@"NSArray"24@0:8@"NSPasteboard"16
+@24@0:8@"NSString"16
+Q32@0:8@"NSString"16@"NSPasteboard"24
+DYPMemoryResource
+B16@0:8
+@20@0:8I16
+isCreated
+nanoSecondsSinceBound
+cpuCacheMode
+lastDisplayableFunctionIndex
+isPurgeable
+@"NSString"24@0:8Q16
+@"NSNumber"20@0:8I16
+DYPMemoryCommandBuffer
+functionIndexBegin
+functionIndexEnd
+encoders
+DYPMemoryCommandEncoder
+encoderType
+commandBuffer
+T@"<DYPMemoryCommandBuffer>",N,R
+usedResources
+boundResources
+@"<DYPMemoryCommandBuffer>"16@0:8
+@44@0:8I16Q20Q28@36
+@36@0:8Q16I24Q28
+containerID
+properties
+T@"NSMutableDictionary",N,R
+resolution
+@"NSMutableDictionary"16@0:8
+@44@0:8I16Q20Q28@"NSDictionary"36
+@"NSString"36@0:8Q16I24Q28
+@"NSDictionary"24@0:8Q16
+@24@0:8i16i20
+@20@0:8i16
+(DYTextureChannelMappings={?=CCCC}[4C]I)16@0:8
+mipmapLevelsUsedMask
+firstValidTextureImage
+T@"<DYTextureImage>",N,R
+T(DYTextureChannelMappings={?=CCCC}[4C]I),N,R
+IOSurfacePlane
+IOSurfacePixelFormat
+IOSurfaceYCbCrMatrix
+@"<DYTextureImage>"16@0:8
+@"<DYTextureImage>"24@0:8i16i20
+@"NSString"20@0:8i16
+MTLResource
+Q24@0:8Q16
+hazardTrackingMode
+resourceOptions
+heap
+T@"<MTLHeap>",N,R
+heapOffset
+@"<MTLHeap>"16@0:8
+DYPShaderDebuggerThread
+DYCacheableResource
+cachingCost
+NSCoding
+v24@0:8@"NSCoder"16
+@24@0:8@"NSCoder"16
+DVTInvalidation
+Q24@0:8:16
+invalidationBacktrace
+T@"DVTStackBacktrace",N,R
+creationBacktrace
+T@"DVTStackBacktrace",N,&
+@"DVTStackBacktrace"16@0:8
+v24@0:8@"DVTStackBacktrace"16
+v24@0:8@"<DVTInvalidation>"16
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/DYPShaderDebuggerROI+Size.swift
 Unhandled ROI type
 DYPShaderDebuggerROIVertex
-@"NSArray"16@0:8
 DYPShaderDebuggerROIFragment
-Tf,N,R
 minPositionZ
 minSampleId
 maxPositionX
@@ -13471,14 +13722,7 @@ maxThreadPositionY
 maxThreadPositionZ
 DYPShaderDebuggerROIPostTessellationVertex
 DYPShaderDebuggerROI
-^@40@0:8:16@24@32
-c24@0:8#16
-c24@0:8:16
 v16@0:8
-T@"NSString",N,R
-debugDescription
-c24@0:8@"Protocol"16
-@"NSString"16@0:8
 _TtC11GPUDebugger38GPUShaderDebuggerSidebarViewController
 executedLocation
 executionHistoryNodes
@@ -13490,18 +13734,6 @@ T@"NSButton",N,&,VpreviewView
 OS_dispatch_queue
 v8@?0
 GPUShaderDebugger
-_TtP11GPUDebugger46GPUShaderDebuggerSidebarViewControllerDelegate_
-v24@0:8@"_TtC11GPUDebugger38GPUShaderDebuggerSidebarViewController"16
-DYPShaderDebuggerVariableSnapshot
-node
-T@"<DYPShaderDebuggerExecutionHistoryNode>",N,R
-rootNode
-T@"<DYPShaderDebuggerVariableSnapshotNode>",N,R
-eventId
-@"<DYPShaderDebuggerExecutionHistoryNode>"16@0:8
-@"<DYPShaderDebuggerVariableSnapshotNode>"16@0:8
-^v16@0:8
-T#,N,R
 GPUDebugger.GPUHistogram
 _TtC11GPUDebugger12GPUHistogram
 @16@0:8
@@ -13548,7 +13780,6 @@ maxValue
 minLimit
 maxLimit
 mouseDownCanMoveWindow
-path color 
 _TtC11GPUDebugger27GPUMemoryReportDataProvider
 debuggerController
 topLevelResourceItems
@@ -13557,76 +13788,23 @@ resourceIDIssuesMap
 resourceItemTypeCount
 isThumbnailGenerated
 T@"GPUDebuggerController",N,R,VdebuggerController
-No data to export
 GPUDebugger.GPUMemoryReportDataProvider
-DYPMemoryResource
-B16@0:8
 i16@0:8
-@20@0:8I16
 objectID
 isUsed
 isAliasable
 isDestroyed
 TB,N,R
-isCreated
-nanoSecondsSinceBound
-allocatedSize
-cpuCacheMode
-parent
-T@"<DYPMemoryResource>",N,R
-lastDisplayableFunctionIndex
-Ti,N,R
+allocationID
 memoryFindings
-isPurgeable
-@"<DYPMemoryResource>"16@0:8
-@"NSString"24@0:8Q16
-@"NSNumber"20@0:8I16
-@"NSNumber"16@0:8
-DYPMemoryFinding
-kind
 details
 resource
-DYPMemoryCommandBuffer
-functionIndexBegin
-functionIndexEnd
-encoders
-DYPMemoryCommandEncoder
-encoderType
-commandBuffer
-T@"<DYPMemoryCommandBuffer>",N,R
-usedResources
-boundResources
-@"<DYPMemoryCommandBuffer>"16@0:8
-@44@0:8I16Q20Q28@36
-@36@0:8Q16I24Q28
-TI,N,R
-T@"NSMutableDictionary",N,R
-resolution
-T{?=QQQ},N,R
+DYTexture
+I16@0:8
+I20@0:8I16
+{?=QQQ}16@0:8
 isStatic
-@"NSMutableDictionary"16@0:8
-@44@0:8I16Q20Q28@"NSDictionary"36
-@"NSString"36@0:8Q16I24Q28
-@"NSDictionary"24@0:8Q16
-@24@0:8i16i20
-@20@0:8i16
-(DYTextureChannelMappings={?=CCCC}[4C]I)16@0:8
-mipmapLevelsUsedMask
-firstValidTextureImage
-T@"<DYTextureImage>",N,R
-T(DYTextureChannelMappings={?=CCCC}[4C]I),N,R
-IOSurfacePlane
-IOSurfacePixelFormat
-IOSurfaceYCbCrMatrix
-@"<DYTextureImage>"16@0:8
-@"<DYTextureImage>"24@0:8i16i20
-@"NSString"20@0:8i16
-supportsSecureCoding
-DYCacheableResource
-cachingCost
-NSCoding
-v24@0:8@"NSCoder"16
-@24@0:8@"NSCoder"16
+NSSecureCoding
 _TtC11GPUDebugger34GPUTraceSourceSubEditorSidebarView
 drawDividerLine
 dividerLineLayer
@@ -13637,23 +13815,10 @@ annotations
 lineIdentifierToAnnotation
 currentDisplayedAnnotations
 hoveringAnnotation
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceSourceSubEditorSidebarView.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceSourceSubEditorSidebarView.swift
 init(coder:) has not been implemented
  cyclic pointer loop
-DYPShaderDebuggerVariableSnapshotNode
-snapshot
-T@"<DYPShaderDebuggerVariableSnapshot>",N,R
-nodeType
-flags
-memoryAddress
-sizeInBits
-offsetInBits
-globalOffsetInBits
-previousDataAvailable
-dataAvailable
-data
-T@"NSArray",N,R
-@"<DYPShaderDebuggerVariableSnapshot>"16@0:8
+T#,N,R
 _TtC11GPUDebugger48GPUShaderDebuggerVariableSnapshotTextureCellView
 textureView
 pixelFormatView
@@ -13748,7 +13913,7 @@ T@"NSImageView",N,W,ValphaTargetImageView
 T@"NSButton",N,W,VpremultipliedAlphaView
 T@"DYRenderingAttributes",N,&,VrenderingAttributes
 tonemappingChannelRGB
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPURenderingAttributesViewController.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPURenderingAttributesViewController.swift
 Invalid channel 
 tonemappingChannelDepth
 tonemappingChannelAlpha
@@ -13761,14 +13926,7 @@ v24@0:8@"NSPopover"16
 @"NSWindow"24@0:8@"NSPopover"16
 v24@0:8@"NSNotification"16
 q16@0:8
-#16@0:8
-^@24@0:8:16
 ^@32@0:8:16@24
-DYPShaderDebuggerExecutionHistoryNode
-T@"<DYPShaderDebuggerThread>",N,R
-children
-column
-@"<DYPShaderDebuggerThread>"16@0:8
 _TtC11GPUDebugger18GPUImageRenderView
 @64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56
 @24@0:8@16
@@ -13779,6 +13937,7 @@ v20@0:8c16
 c64@0:8@16@24@32@40@48^@56
 @40@0:8q16q24^@32
 @56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48
+label
 clearColors
 imageRenderer
 imageInspector
@@ -13812,69 +13971,10 @@ GPUDebugger.ImageRenderer.WantsExtendedDynamicRangeContent
 Failed to read pixel
 failed to read pixel
 v16@?0@"NSNotification"8
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUImageRenderView.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUImageRenderView.swift
 No Rendering Attributes
-rect color stencil 
-texture color 
 GPUDebugger.GPUImageRenderView
 init(frame:device:)
-MTLTexture
-^{__IOSurface=}16@0:8
-v104@0:8^v16q24q32{?={?=QQQ}{?=QQQ}}40q88q96
-v104@0:8{?={?=QQQ}{?=QQQ}}16q64q72^v80q88q96
-v88@0:8^v16q24{?={?=QQQ}{?=QQQ}}32q80
-v88@0:8{?={?=QQQ}{?=QQQ}}16q64^v72q80
-@64@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48
-{?=CCCC}16@0:8
-@68@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48{?=CCCC}64
-rootResource
-T@"<MTLResource>",N,R
-parentTexture
-T@"<MTLTexture>",N,R
-parentRelativeLevel
-Tq,N,R
-parentRelativeSlice
-buffer
-T@"<MTLBuffer>",N,R
-bufferOffset
-bufferBytesPerRow
-iosurface
-T^{__IOSurface=},N,R
-iosurfacePlane
-textureType
-TQ,N,R
-pixelFormat
-depth
-mipmapLevelCount
-sampleCount
-arrayLength
-shareable
-framebufferOnly
-allowGPUOptimizedContents
-remoteStorageTexture
-swizzle
-T{?=CCCC},N,R
-@"<MTLResource>"16@0:8
-@"<MTLTexture>"16@0:8
-@"<MTLBuffer>"16@0:8
-@"<MTLTexture>"24@0:8Q16
-@"<MTLTexture>"64@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48
-@"MTLSharedTextureHandle"16@0:8
-@"<MTLTexture>"24@0:8@"<MTLDevice>"16
-@"<MTLTexture>"68@0:8Q16Q24{_NSRange=QQ}32{_NSRange=QQ}48{?=CCCC}64
-MTLResource
-Q24@0:8Q16
-T@"NSString",N,C
-T@"<MTLDevice>",N,R
-hazardTrackingMode
-resourceOptions
-heap
-T@"<MTLHeap>",N,R
-heapOffset
-v24@0:8@"NSString"16
-@"<MTLDevice>"16@0:8
-@"<MTLHeap>"16@0:8
-superclass
 _TtC11GPUDebugger38GPUMemoryResourceSummaryViewController
 gridView
 _TtC11GPUDebugger30GPUTraceSourceSubEditorSidebar
@@ -13892,13 +13992,10 @@ callSiteStack
 lineInfo
 _TtC11GPUDebugger34GPUTraceShaderProfilerFunctionInfo
 displayName
-filePath
 callSites
 _TtC11GPUDebugger41GPUTraceShaderProfilerFunctionInfoBuilder
 _TtC11GPUDebugger26GPUShaderDebuggerImageView
 selectionView
-width
-height
 accessibilityChildrenCache
 selectedPosition
 highlightedPosition
@@ -13950,24 +14047,14 @@ T@"NSTextField",N,&,VlodAverageView
 T@"NSTextField",N,&,VcompareFunctionView
 T@"_TtC11GPUDebugger16GPUGLSamplerView",N,&,VsamplerView
 DYSampler
-I16@0:8
-{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])}16@0:8
-minFilter
 mipFilter
 maxAnisotropy
-sAddressMode
-tAddressMode
-rAddressMode
-T{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])},N,R
-normalizedCoordinates
 lodMaxClamp
 lodAverage
-{?=QQQ}16@0:8
 resourceType
 NSObject
 GPUDebugger
 metalBufferICBIcon
-T@"NSImage",N,R
 metalICBIcon
 metalBufferIcon
 metalFenceIcon
@@ -13994,7 +14081,7 @@ titleView
 valueView
 barView
 filteredBarView
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceDebuggerUI/GPUBarGraphView.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceDebuggerUI/GPUBarGraphView.swift
 memoryFilterNoneIcon
 MemoryViewerFilteredFill
 MemoryFilterIcon
@@ -14032,15 +14119,6 @@ filterButtonAccessibilityDescription
 GPUDebugger.GPUFilterViewControlBarTarget
 Xcode.GPUDebugger.GPUFilterViewControlBarTarget
 GPUDebugger.GPUFilterViewTokenDescriptor
-_TtP11GPUDebugger31GPUFilterViewControllerDelegate_
-v40@0:8@16@24@32
-v32@0:8@"_TtC11GPUDebugger23GPUFilterViewController"16@"IDETokenFilterControlBar"24
-v40@0:8@"_TtC11GPUDebugger23GPUFilterViewController"16@"GPUFilterTokenPredicate"24@"NSArray"32
-_TtP11GPUDebugger33GPUFilterViewControllerDataSource_
-filterableObjects
-tokenHelper
-T@"GPUFilterTokenHelper",N,R
-@"GPUFilterTokenHelper"16@0:8
 DVTFilterTokenFieldControllerDelegate
 v28@0:8@16i24
 i24@0:8@16
@@ -14055,15 +14133,6 @@ i24@0:8@"DVTFilterTokenFieldController"16
 DVTFilterControlBarTarget
 @"NSView"16@0:8
 @"NSMenu"16@0:8
-NSCopying
-@24@0:8^v16
-NSSecureCoding
-GPUFilterableObject
-filterItems
-T@"NSSet",N,R
-filterableChildObjects
-parentFilterItems
-@"NSSet"16@0:8
 _TtC11GPUDebugger31GPUShaderDebuggerIterationState
 iterations
 selectedIterationIndex
@@ -14092,7 +14161,6 @@ switch|vertexid|
 DYPShaderDebuggerThreadVertex
 vertexId
 instanceId
-DYPShaderDebuggerThread
 _TtC11GPUDebugger18GPUImage2DRenderer
 @40@0:8@16{CGSize=dd}24
 context
@@ -14130,34 +14198,20 @@ selectionUniforms
 projectionMatrix
 T@"DependencyGraphVisualRepresentation",N,&,VvisualRepresentation
 Tc,N,Vready
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUDependencyRenderer.swift
+Primary Render Encoder
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUDependencyRenderer.swift
 canvas is invalid color
 Error: failed to create vertex buffer
 Error: failed to create index buffer
 All nodes should inherit from GVBaseNode
 GPUDebugger.GPUDependencyRenderer
-Primary Render Encoder
 Unable to compile render pipeline state.  Error info: 
-MTLBuffer
-v32@0:8{_NSRange=QQ}16
-@40@0:8@16q24q32
-v40@0:8@16{_NSRange=QQ}24
-length
-remoteStorageBuffer
-@"<MTLTexture>"40@0:8@"MTLTextureDescriptor"16q24q32
-v40@0:8@"NSString"16{_NSRange=QQ}24
-@"<MTLBuffer>"24@0:8@"<MTLDevice>"16
-label
-storageMode
-hash
 _TtC11GPUDebugger14GPUMemoryIssue
 messageOverrideString
-category
 _TtC11GPUDebugger19GPUMemoryIssueScope
 GPUDebugger.GPUMemoryIssueScope
 init()
 GPUDebugger.GPUMemoryIssue
-GPUIssuesViewItem
 IndexPathStateKey
 _TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController
 q32@0:8@16@24
@@ -14175,7 +14229,7 @@ ignoreOutlineViewBoundsDidChangeNotification
 SpecialCellIndex
 T@"NSOutlineView",N,&,VoutlineView
 v16@?0@"NSArray"8
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUShaderDebuggerVariableSnapshotViewController.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUShaderDebuggerVariableSnapshotViewController.swift
 item is not an IndexPath
 no item at indexPath: 
 Unknown DYPShaderDebuggerROIType: 
@@ -14191,10 +14245,6 @@ GPUShaderDebuggerVariableSnapshotListCellView
 GPUShaderDebuggerVariableSnapshotImageCellView
 GPUShaderDebuggerVariableSnapshotSamplerCellView
 GPUShaderDebuggerVariableSnapshotTextureCellView
-_TtP11GPUDebugger55GPUShaderDebuggerVariableSnapshotViewControllerDelegate_
-v24@0:8@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"16
-v32@0:8@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"16@"GPUTraceResourceItem"24
-v32@0:8@"<DYPShaderDebuggerExecutionHistoryNode>"16@"_TtC11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewController"24
 NSOutlineViewDataSource
 v48@0:8@16@24@32@40
 v56@0:8@16@24{CGPoint=dd}32@48
@@ -14241,9 +14291,6 @@ c48@0:8@"NSOutlineView"16@"NSCell"24@"NSTableColumn"32@40
 @"NSCell"40@0:8@"NSOutlineView"16@"NSTableColumn"24@32
 d32@0:8@"NSOutlineView"16q24
 c40@0:8@"NSOutlineView"16q24q32
-amplificationId
-patchIds
-addressSpace
 DYPShaderDebuggerThreadPostTessellationVertex
 patchId
 positionInPatchX
@@ -14295,8 +14342,6 @@ T@"NSPopUpButton",N,&,VselectedIterationView
 T@"NSTextField",N,&,ViterationCountView
 T@"NSImageView",N,&,ViconView
 OutlineItemFunction
-_TtP11GPUDebugger48GPUShaderDebuggerIterationViewControllerDelegate_
-v32@0:8@"_TtC11GPUDebugger40GPUShaderDebuggerIterationViewController"16@"<DYPShaderDebuggerExecutionHistoryNode>"24
 DYPShaderDebuggerExecutionHistoryNodeFunctionCall
 functionName
 _TtC11GPUDebugger50GPUShaderDebuggerKernelMaskInspectorViewController
@@ -14319,8 +14364,8 @@ tagMenuItem
 delegateMenuItems
 itemTags
 groupSubTitles
-disabledOutlineItems
-expandedOutlineItems
+disabledItemPaths
+expandedItemPaths
 ignoreUpdates
 currentTopLevelItems
 groupOrderKind
@@ -14349,48 +14394,20 @@ _TtC11GPUDebugger23GPUResourcesIssueButton
 _TtC11GPUDebugger30GPUResourcesIssueTableCellView
 button
 T@"_TtC11GPUDebugger23GPUResourcesIssueButton",N,&,Vbutton
-indirectCommandBufferSize
-textureSampleCount
-textureMipmapCount
-texturePixelFormat
-kind ascending 
 Indirect Command Buffer
 Time since Last Bound
 indirectCommandBuffer
 .GPUDebugger.apple.com
 Indirect Command Buffer 
-_TtP11GPUDebugger20GPUResourcesViewItem_
+storageMode
 purgeableState
-subType
-labelSuffix
-aliasable
-T@"NSNumber",N,R
-nanoSecondsSinceLastBound
-associatedCommandEncoders
-T@"NSDictionary",N,R
-associatedCommandBuffers
 thumbnailImage
 textureWidth
 textureUsage
-heapUsedSize
-@"NSDictionary"16@0:8
-@"NSImage"16@0:8
-_TtP11GPUDebugger34GPUResourcesViewControllerDelegate_
-c32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16q24
-@"NSArray"32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"<_TtP11GPUDebugger20GPUResourcesViewItem_>"24
-v32@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"NSArray"24
-v40@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16@"<_TtP11GPUDebugger20GPUResourcesViewItem_>"24@"NSView"32
-v24@0:8@"_TtC11GPUDebugger26GPUResourcesViewController"16
 NSMenuItemValidation
 c24@0:8@"NSMenuItem"16
-NSPasteboardWriting
-Q32@0:8@16@24
-@"NSArray"24@0:8@"NSPasteboard"16
-@24@0:8@"NSString"16
-Q32@0:8@"NSString"16@"NSPasteboard"24
-description
 v32@?0@"NSArray"8@"NSData"16@"NSData"24
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUShaderDebuggerSession+DYImage2D.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUShaderDebuggerSession+DYImage2D.swift
 Unhandled nodeType: 
 Unhandled count: 
 Unhandled sizeInBits: 
@@ -14450,7 +14467,7 @@ No shader source document
 No data provider
 Source Unavailable
 v24@?0@8@"NSDictionary"16
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUTraceEditor/GPUTraceSourceSubEditor.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUTraceEditor/GPUTraceSourceSubEditor.swift
 IDEActivityLogMessageSeverity unknown
 autoSuggestCompletions
 v32@?0@8@"NSDictionary"16*24
@@ -14463,60 +14480,9 @@ SourceEditorSelectedSourceRangeChangedNotification
 GPUTraceShaderDataProviderDelegate
 IDEJumpToLineDestination
 @"DVTDocumentLocation"24@0:8@"NSString"16
-DVTPreferenceSet
-@24@0:8^@16
 name
-localizedName
-T@"NSImage",N,&
-customDataSpecifier
-T@"DVTCustomDataSpecifier",N,&
-builtIn
-contentNeedsSaving
-@32@0:8@"NSString"16@"NSURL"24
-@32@0:8@"DVTCustomDataSpecifier"16@"<DVTPreferenceSet>"24
-@"NSData"24@0:8^@16
-v24@0:8@"NSImage"16
-@"DVTCustomDataSpecifier"16@0:8
-v24@0:8@"DVTCustomDataSpecifier"16
-@"DVTPreferenceSetManager"16@0:8
-@"<DVTPreferenceSet>"16@0:8
-DYPShaderDebuggerExecutedLocation
 locationType
-GPUTraceShaderDataProvider
-c24@0:8^@16
-f20@0:8I16
-@24@0:8I16c20
-d20@0:8I16
-T@"<GPUTraceShaderDataProviderDelegate>",N,W
-T@"<DYPShaderSourceDocument>",N,W
-dataItem
-T@"GPUTraceShaderDataItem",N,W
-T@"IDEEditorDocument",N,R
-index
-T@"IDEIndex",N,R
-@"<GPUTraceShaderDataProviderDelegate>"16@0:8
-v24@0:8@"<GPUTraceShaderDataProviderDelegate>"16
-@"<DYPShaderSourceDocument>"16@0:8
-v24@0:8@"<DYPShaderSourceDocument>"16
-@"GPUTraceShaderDataItem"16@0:8
-v24@0:8@"GPUTraceShaderDataItem"16
-@"IDEEditorDocument"16@0:8
-@"IDEIndex"16@0:8
-@"NSDictionary"24@0:8I16c20
-@"NSArray"24@0:8I16c20
-@"GPUTraceShaderSampleInfo"24@0:8I16c20
-@"DYShaderAnalyzerResult"24@0:8I16c20
-@"IDEEditorDocument"24@0:8@"IDEWorkspaceDocument"16
-DVTCancellable
-DVTInvalidation
-Q24@0:8:16
 valid
-invalidationBacktrace
-T@"DVTStackBacktrace",N,R
-creationBacktrace
-T@"DVTStackBacktrace",N,&
-@"DVTStackBacktrace"16@0:8
-v24@0:8@"DVTStackBacktrace"16
 _TtC11GPUDebugger29GPUResourceInfoViewController
 _TtC11GPUDebugger25GPUResourcesViewFormatter
 _TtC11GPUDebugger36GPUTraceShaderProfilerClickableLabel
@@ -14542,7 +14508,6 @@ q24@0:8@16
 _TtC11GPUDebugger23GPUTraceSamplerClipView
 _TtC11GPUDebugger24GPUTraceSamplerSubEditor
 boxView
-reductionMode
 reductionModeView
 T@"NSBox",N,&,VboxView
 T@"NSTextField",N,&,VreductionMode
@@ -14555,8 +14520,6 @@ Clamp to Border Color
 Mirror Clamp to Edge
 magFilter
 borderColor
-lodMinClamp
-compareFunction
 DYResource
 _TtC11GPUDebugger16GPUGLSamplerView
 color0
@@ -14605,35 +14568,21 @@ key value
 A relatively high amount of floating-point operations use 32-bit float data types.
 Instead, use 16-bit half data types to increase performance.
 High Float-to-Half Ratio
-GPUDebugger.ShaderProfiler.SidebarWidth
 Deployment Target is lower than device OS version. Shader performance data may not be available.
-_TtP11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegate_
-v24@0:8@"_TtC11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewController"16
-v40@0:8@"_TtC11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewController"16@"NSString"24@"NSMenu"32
-DYPRemark
-v20@0:8I16
-v24@0:8Q16
-v24@0:8q16
+GPUDebugger.ShaderProfiler.SidebarWidth
 type
 severity
 filepath
-Tq,N
-reason
-targets
-T@"NSArray",N,C
-recommendations
-v24@0:8@"NSArray"16
 _TtC11GPUDebuggerP33_17258BD4B7FE5432559A2050CA439FFA15IOSurfaceHelper
 _TtC11GPUDebugger14GPUImageLoader
 I32@0:8@16Q24
 @64@0:8@16q24q32Q40@48^@56
-@40@0:8@16@24^@32
 @88@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32{CGSize=dd}64^@80
 No Command Buffer
 Failed to create color space with name: 
 No Drawable Texture
 Invalid resource
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUImageLoader.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUImageLoader.swift
 Fatal error
 unknown DYTextureImageGroupComponent: 
 Invalid pixelformat
@@ -14642,8 +14591,6 @@ No stencil plane
 No stencil image
 Invalid sample count
 No depth/stencil format
-DYTexture
-I20@0:8I16
 maxMipmapLevel
 isFlipped
 channelMappings
@@ -14656,8 +14603,8 @@ DYTextureImageGroup
 @24@0:8Q16
 I24@0:8Q16
 numComponents
+TQ,N,R
 @"<DYTextureImage>"24@0:8Q16
-containerID
 _TtC11GPUDebugger49GPUTraceShaderProfilerAnnotationTooltipLegendView
 _TtC11GPUDebugger36GPUTraceShaderProfilerOpcodeTypeInfo
 opcodeType
@@ -14758,14 +14705,8 @@ GPUShaderDebuggerImageView-MinValue
 GPUShaderDebuggerImageView-MaxValue
 GPUShaderDebuggerImageView-Value
 GPUShaderDebuggerImageView-Mask
-DYPShaderDebuggerThreadFragment
 f16@0:8
 Q16@0:8
-positionX
-DYPShaderDebuggerThreadKernel
-threadPositionX
-threadPositionY
-threadPositionZ
 minPositionY
 minPositionW
 maxPositionY
@@ -14798,9 +14739,9 @@ GPUDebugger5
 GPUDebugger6
 Mipmap Level Count
 Filter In Debug Navigator
+No data to export
 Failed to export memory report
 GPUFilterTokenID_
-container controller 
 GPUResourcesViewController
 GPUFilterViewController
 NSSplitViewDelegate
@@ -14818,8 +14759,6 @@ GPUIssuesViewControllerDelegate
 v32@0:8@"GPUIssuesViewController"16@"NSArray"24
 v24@0:8@"GPUIssuesViewController"16
 v40@0:8@"GPUIssuesViewController"16{CGSize=dd}24
-textureHeight
-textureDepth
 message
 subItems
 _TtC11GPUDebugger45GPUTraceShaderProfilerAnnotationContainerView
@@ -14857,7 +14796,6 @@ Variables in Scope
 IDEVariablesViewContentProvider
 @24@0:8q16
 v40@0:8@16q24q32
-v32@0:8@16@?24
 i32@0:8@16q24
 loadingNewVariablesInBackground
 recordedStackFrameSelected
@@ -14873,6 +14811,7 @@ v40@0:8@"IDEVariablesViewNode"16q24q32
 v32@0:8@"<IDEDataValue>"16@?<v@?@"<IDEVariablesViewQuickLookProvider>"@"NSError">24
 i32@0:8@"IDEVariablesViewNode"16q24
 IDEVariablesViewContextMenuDelegate
+rootNode
 _TtC11GPUDebugger21GPUResourceItemButton
 _TtC11GPUDebugger41GPUShaderDebuggerVariableSnapshotCellView
 descriptionView
@@ -14890,13 +14829,10 @@ hasChildValues
 childValuesCountValid
 isMemoryFault
 GPUDebugger.GPUShaderDebuggerVariableSnapshotNodeDataValue
-/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-25510/GPUDebugger/GPUDebuggerKit/GPUShaderDebuggerVariableSnapshotNodeDataValue.swift
+/Library/Caches/com.apple.xbs/Sources/GPUToolsXcode/GPUToolsXcode-26091/GPUDebugger/GPUDebuggerKit/GPUShaderDebuggerVariableSnapshotNodeDataValue.swift
 variableSnapshot is nil
 IDEDataValue
 @"IDEStackFrame"16@0:8
-previousData
-dataUpdated
-elements
 _TtC11GPUDebugger7GPUTest
 _TtC11GPUDebugger47GPUTraceShaderProfilerAuxiliaryVerticleLineView
 _TtC11GPUDebuggerP33_B36E6DF50DEACB4A16981618BD05577C49GPUTraceShaderProfilerAuxiliaryNoScrollScrollView
@@ -14921,6 +14857,7 @@ T@"NSLayoutConstraint",N,W,VcontainerViewXConstraint
 Xcode.SourceCodeLanguage.MetalISA
 _TtCs12_SwiftObject
 __TEXT
+swift_getObjCClassMetadata
 GPUTraceCounterGraphThumbnailView
 GPUTimelineGraphThumbnailView
 NSObject
@@ -15324,9 +15261,11 @@ GPUDYAnalyzerFindingAdditions
 GPUNavigatorFilterControlBar
 NSDraggingDestination
 GPUTraceDocumentExportController
+GPUDependencyAccessibilityTitleItem
+NSAccessibilityStaticText
+NSAccessibilityElement
 GPUDependencyAccessibilityResourceItem
 NSAccessibilityButton
-NSAccessibilityElement
 GPUDependencyAccessibilityItem
 NSAccessibilityGroup
 NSAccessibility
@@ -15408,7 +15347,7 @@ DYPVariablesViewGPUStateValue
 GPUUniformBlockStateValue
 GPUUniformStateValue
 GPUBufferViewerMarkerView
-GPUTraceProfilerStatusScopeBarController
+GPUTraceScopeBarController
 DVTScopeBarContentController
 Profiler
 GPUTraceGroupItem
@@ -15449,7 +15388,7 @@ GPUTimelineGraphDelegate
 GPUTimelineGraphContextMenuProvider
 GPUTracePerformanceItem
 GPUTraceGlobalPerformanceItem
-GPUTraceEmptyEncoderPerformanceItem
+GPUTraceEncoderPerformanceItem
 GPUTraceSamplerItem
 GPUTracePostVertexTransformItem
 GPUStackFrameNavigableItem
@@ -15476,9 +15415,9 @@ Q16@0:8
 c24@0:8@"Protocol"16
 @"NSString"16@0:8
 c32@0:8r^{GPUTimelineGraphReferencePlaneCell=QQQ@Q}16Q24
-v16@0:8
 v24@0:8@16
-@"GPUTraceAPIItem"
+v16@0:8
+@"GPUTraceCounterGraphDataItem"
 @"GPUTimelineGraphDataSource"
 @"NSImageView"
 @"NSTextField"
@@ -15600,7 +15539,8 @@ v24@0:8d16
 v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16
 @"NSColor"
 @32@0:8{CGPoint=dd}16
-@20@0:8c16
+@24@0:8^@16
+@28@0:8c16^@20
 @"DYInvestigatorCaseConfigData"
 @"DYInvestigatorCase"
 v56@0:8{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])}16
@@ -15616,6 +15556,7 @@ v32@0:8{CGSize=dd}16
 v24@0:8@"<DYPResourceManager>"16
 v24@0:8@"NSMenu"16
 Q24@0:8:16
+v24@0:8@"<DVTInvalidation>"16
 @"DVTStackBacktrace"16@0:8
 v24@0:8@"DVTStackBacktrace"16
 @?16@0:8
@@ -15972,6 +15913,7 @@ v40@0:8I16i20@24@32
 v28@0:8c16@20
 v28@0:8f16@20
 v56@0:8@16@24{?=QQQ}32
+@20@0:8c16
 {DYInterposeVersion=i*}16@0:8
 v32@0:8{DYInterposeVersion=i*}16
 @"DYDevice"
@@ -16121,6 +16063,7 @@ v32@0:8@"GPUDeviceLockedPanel"16@"DYDevice"24
 @"NSWindow"
 @"GPUDeviceLockedPanel"
 @"NSBox"
+@"NSTabView"
 @"IDEWorkspaceTabController"
 @"DVTDeviceManager"
 @"DVTDevice"
@@ -16233,6 +16176,7 @@ Q32@0:8Q16^@24
 @"GPUTraceAPIItem"16@0:8
 @64@0:8{Buffer=*IQ^{__CFString}}16@48@56
 {Struct=^{__CFString}iIIiiQ{BufferSource=IQQiI}{vector<GPUToolsPlatformSupport::Common::GPUDebugger::Struct, std::__1::allocator<GPUToolsPlatformSupport::Common::GPUDebugger::Struct> >=^{Struct}^{Struct}{__compressed_pair<GPUToolsPlatformSupport::Common::GPUDebugger::Struct *, std::__1::allocator<GPUToolsPlatformSupport::Common::GPUDebugger::Struct> >=^{Struct}}}}48@0:8Q16Q24Q32Q40
+@"GPUTraceAPIItem"
 @"<GPUBufferViewerAdaptorTypeNameProvider>"
 @32@0:8@16#24
 @44@0:8@16#24@32c40
@@ -16259,7 +16203,7 @@ v32@0:8@"DVTFindBar"16@"NSArray"24
 v32@0:8@"DVTFindBar"16@"DVTFindResult"24
 @"DVTDocumentLocation"28@0:8@"DVTFindBar"16c24
 {_NSRange=QQ}24@0:8@"DVTFindBar"16
-v36@0:8@16^{NSDictionary=#}24c32
+v36@0:8@16@24c32
 v48@0:8@16@24@32@?40
 @40@0:8@16@?24@32
 @"GPUTraceSubEditor"
@@ -16333,10 +16277,6 @@ v28@0:8@"DTTimelineGraph"16c24
 @40@0:8Q16{CGPoint=dd}24
 @"<GPUTimelineGraphDelegate>"
 @"NSPanel"
-@32@0:8@16^{NSDictionary=#}24
-@24@0:8^{NSDictionary=#}16
-^{NSDictionary=#}16@0:8
-^{NSDictionary=#}
 c32@0:8Q16Q24
 @"DVSKTouchEvent"36@0:8{CGPoint=dd}16c32
 @"NSMenu"32@0:8{CGPoint=dd}16
@@ -16344,9 +16284,6 @@ c32@0:8Q16Q24
 @"DVTStructuredLayoutViewState"16@0:8
 v24@0:8@"NSView"16
 @"DVTStructuredLayoutViewState"
-@"NSTextContainer"
-@"NSTextStorage"
-@"NSLayoutManager"
 @"GPUBufferViewerElementTableColumn"
 @?32@0:8@16@24
 @?36@0:8@?16c24@28
@@ -16384,7 +16321,6 @@ I24@0:8@16
 @"DVTGauge"
 @32@0:8d16@24
 @"GPUTraceContentPopover"
-^{NSMutableDictionary=#}
 @48@0:8Q16@24@32@40
 @"GPUBufferViewerMarkerTableColumnView"
 @24@0:8I16i20
@@ -16448,6 +16384,7 @@ v32@0:8*16@24
 Q24@0:8@"<NSDraggingInfo>"16
 v24@0:8@"<NSDraggingInfo>"16
 c24@0:8@"<NSDraggingInfo>"16
+@"NSAttributedString"32@0:8{_NSRange=QQ}16
 @"GPUDependencyAccessibilityItem"
 c40@0:8@"NSFileManager"16@"NSString"24@"NSString"32
 c40@0:8@"NSFileManager"16@"NSURL"24@"NSURL"32
@@ -16558,8 +16495,6 @@ c40@0:8@16Q24Q32
 @"GPUTraceTitleElement"
 @"IDEStackFrame"16@0:8
 v52@0:8@16@24@32@40c48
-^{NSArray=#}16@0:8
-v24@0:8^{NSArray=#}16
 v52@0:8@"NSString"16@"NSString"24@"NSString"32@"NSString"40c48
 v24@0:8@"<DYPVariablesViewGPUStateValue>"16
 q24@0:8@"<DYPVariablesViewGPUStateValue>"16
@@ -16589,7 +16524,6 @@ v24@0:8@"NSTabView"16
 @40@0:8@16#24@32
 @28@0:8Q16i24
 @28@0:8@16I24
-^{NSArray=#}32@0:8@16i24i28
 @52@0:8Q16I24@28@36^@44
 @"<DYPPluginFactory>"
 v24@0:8@"GPUTextureScrollView"16
@@ -16601,7 +16535,7 @@ c20@0:8c16
 @"<GPURenderBufferViewStateCoordinationProtocol>"
 v40@0:8{_NSRange=QQ}16@32
 @"GPUTraceGlobalPerformanceItem"
-@"GPUTraceEmptyEncoderPerformanceItem"
+@"GPUTraceEncoderPerformanceItem"
 @"GPUBufferViewerAdaptorDataSource"
 v40@0:8@16r^{GPUTimelineGraphReferencePlaneCell=QQQ@Q}24Q32
 Q40@0:8@16r^{GPUTimelineGraphReferencePlaneCell=QQQ@Q}24Q32
@@ -16644,41 +16578,9 @@ IDETraceInferiorSessionReplayerBusy
 IDETraceInferiorSessionReplayerIdle
 TraceSessionFinalization
 RecordGraphicsAPIUsage
-So21NSAttributedStringKeya
 So8NSStringC
-So41DYPShaderDebuggerExecutionHistoryNodeTypeV
-So25GPUMemoryResourceItemTypeV
-So6CGRectV
-So7CGPointV
-So6CGSizeV
-12CoreGraphics7CGFloatV
-So24DYTextureChannelMappingsV
-So14MTLPixelFormatV
-So8Uniformsa
-So13simd_float4x4a
 Sf_S3ft
-s5SIMD4VySfG_A3Ct
-So12DYPixelValueV
-So13DYPixelFormatV
-So12DYPixelValueV34__Unnamed_union___Anonymous_field1V
-So29DYShaderInstructionOpcodeTypeV
-s6UInt32V
-So25NSAutoresizingMaskOptionsV
-So21NSTrackingAreaOptionsV
-So13CIImageOptiona
-So21DYSamplerMinMagFilterV
-So20DYSamplerAddressModeV
-So18DYSamplerMipFilterV
-So22DYSamplerReductionModeV
-So17DYCompareFunctionV
-So32DYPPerformanceBottleneckSeverityV
-So19NSKeyValueChangeKeya
-So11NSEventMaskV
-s6UInt64V
-So18MTLResourceOptionsV
-So25NSPointerFunctionsOptionsV
-So14DYResourceTypeV
-So13DYPShaderTypeV
+ySfG_A3Bt
 $sSY
 $ss21_ObjectiveCBridgeableP
 $ss25ExpressibleByArrayLiteralP
@@ -16689,76 +16591,82 @@ So16NSViewControllerC
 11GPUDebugger46GPUShaderDebuggerSidebarViewControllerDelegate_pSgXw
 So24GPUShaderDebuggerSessionCSg
 So33DYPShaderDebuggerExecutedLocation_pSg
-12SourceEditor0aB14LineIdentifierVSg
 SaySo37DYPShaderDebuggerExecutionHistoryNode_pGSg
 SaySo33DYPShaderDebuggerVariableSnapshot_pGSg
 So11NSTextFieldCSg
 So8NSButtonCSg
 SaySo33DYPShaderDebuggerVariableSnapshot_pG
 So24GPUShaderDebuggerSessionC
-11GPUDebugger38GPUShaderDebuggerSidebarViewControllerC
 So25NSMutableAttributedStringC
+_yptG
+_ypt
 So8NSObjectC
-Says6UInt32VG
 So7NSCacheCySo8NSStringCSo7NSImageCG
-So6CGRectVIegy_
-11GPUDebugger40GPUTraceShaderProfilerAnnotationDataTypeO
+Iegy_
 So21DYShaderDiassemlyInfoC
 SaySo21DYShaderDiassemlyInfoCG
 So25DYShaderPerLineSourceInfoC
+ySo21DYShaderDiassemlyInfoCG
+ySS_
+SS_SaySo21DYShaderDiassemlyInfoCGt
+ySS_SaySo21DYShaderDiassemlyInfoCGtG
+_Sf_SittG
+Sf_SitG
 $s11GPUDebugger44GPUMemoryReportSummaryViewControllerDelegateP
 _pSgXw
-11GPUDebugger15GPUBarGraphViewCSg
 SaySo21GPUMemoryResourceItemCG
-11GPUDebugger19GPUFilterDescriptorV
-11GPUDebugger13BarIdentifierO
-Say11GPUDebugger13BarIdentifierOG
+ySo21GPUMemoryResourceItemCG
+ySo21GPUMemoryResourceItemCG
 $ss12CaseIterableP
 $s11GPUDebugger43GPURenderingAttributesHistogramViewDelegateP
 So6NSViewC
-Say11GPUDebugger12GPUHistogramCG
 SaySo7NSColorCG
 So14NSTrackingAreaCSg
 _pSg
-11GPUDebugger35GPURenderingAttributesHistogramViewC0bcdE7ControlO
+So12NSBezierPathC4path_So7NSColorC5colort
+ySo12NSBezierPathC4path_So7NSColorC5colortG
 So21GPUDebuggerControllerC
 So27DYPResourceMemoryDataSource_p
 SDySSSo21GPUMemoryResourceItemCG
-SDys6UInt64VSay11GPUDebugger14GPUMemoryIssueCGG
-SDySo25GPUMemoryResourceItemTypeVSuG
-SaySo23DYPMemoryCommandEncoder_pGIgo_
-SaySo22DYPMemoryCommandBuffer_pGIgo_
+So21GPUMemoryResourceItemCG
+So17DYPMemoryResource_p
+So16DYPMemoryFinding_p
+ySSSo21GPUMemoryResourceItemCG
+So21GPUMemoryResourceItemCG
+So22DYPMemoryCommandBuffer_p
+So23DYPMemoryCommandEncoder_p
+ySo22DYPMemoryCommandBuffer_pG
+SaySo22DYPMemoryCommandBuffer_pGG
+ySo23DYPMemoryCommandEncoder_pG
+SaySo23DYPMemoryCommandEncoder_pGG
 So8DYFutureCyyXlG
-11GPUDebugger27GPUMemoryReportDataProviderC
 SaySo21GPUMemoryResourceItemCGz_Xx
 So15GPUTraceAPIItemC
 So17OS_dispatch_queueC
 SaySo21GPUMemoryResourceItemCGIegg_
-11GPUDebugger27GPUMemoryReportDataProviderCSgXw
-11GPUDebugger27GPUMemoryReportDataProviderCSgXwz_Xx
-11GPUDebugger20GPUMemoryReportErrorO
+SgXw
+SgXwz_Xx
+So10DYResource_p
+SaySo9DYTexture_pG
+ySo10DYResource_pG
+SaySo10DYResource_pGG
 So7CALayerC
-11GPUDebugger30GPUTraceSourceSubEditorSidebarCSgXw
-11GPUDebugger44GPUTraceSourceSubEditorSidebarLayoutDelegate_pSgXw
-Shy11GPUDebugger40GPUTraceSourceSubEditorSidebarAnnotationVG
-SDy12SourceEditor0aB14LineIdentifierV11GPUDebugger08GPUTracea3SubB17SidebarAnnotationVG
-11GPUDebugger40GPUTraceSourceSubEditorSidebarAnnotationVSg
+SgXw
+_pSgXw
+So37DYPShaderDebuggerVariableSnapshotNode_p
 So15NSTableCellViewC
-11GPUDebugger18GPUImageRenderViewCSg
 So18NSLayoutConstraintCSg
 So37DYPShaderDebuggerVariableSnapshotNode_pSg
 So33DYPShaderDebuggerVariableSnapshot_pSg
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotTextureCellViewCSgXw
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotTextureCellViewCSgXwz_Xx
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotTextureCellViewC
+SgXw
+SgXwz_Xx
 SiSg
 So10MTLTexture_p
 So21DYRenderingAttributesC
 So20GPUTraceResourceItemCSg
 So8NSButtonCSgXw
 So10NSGridViewCSgXw
-11GPUDebugger35GPURenderingAttributesHistogramViewCSgXw
-Say11GPUDebugger35GPURenderingAttributesHistogramViewCGSg
+SgXw
 So11NSTextFieldCSgXw
 SaySo11NSTextFieldCGSg
 SaySo8NSButtonCGSg
@@ -16767,45 +16675,53 @@ SaySo13NSPopUpButtonCGSg
 So11NSImageViewCSgXw
 SaySnySiGG
 So21DYRenderingAttributesCSg
-11GPUDebugger0A12ImageFactoryC
+ySo7NSColorCG
+ySnySiGG
+ySo8NSButtonCG
+ySo11NSTextFieldCG
+ySo13NSPopUpButtonCG
+So37DYPShaderDebuggerExecutionHistoryNode_p
 So7MTKViewC
-16GPUToolsRenderer7ContextC
 SSSg
-16GPUToolsRenderer05ImageB0CSg
-16GPUToolsRenderer14ImageInspectorCSg
 So10MTLTexture_pSg
 So8NSObject_pSg
 So12NSAppearanceCSg
 So7NSColorC
 So9DYImage2DCSg
-11GPUDebugger18GPUImageRenderViewCSgXw
-11GPUDebugger23GPUImageRenderViewErrorO
+yypG
+SgXw
+ySfGG
+4rect_
+ySfG5colorSo10MTLTexture_pSg7stencilt
+4rect_
+ySfG5colorSo10MTLTexture_pSg7stenciltG
+So10MTLTexture_p7texture_
+ySfG5colort
+ySo10MTLTexture_p7texture_
+ySfG5colortG
 So10NSGridViewCSg
+ySo6NSViewCG
 $s11GPUDebugger49GPUTraceSourceSubEditorSidebarInteractionDelegateP
 $s11GPUDebugger44GPUTraceSourceSubEditorSidebarLayoutDelegateP
-12CoreGraphics7CGFloatV3min_AC3maxt
+3min_AA3maxt
 _pSgXw
-_pSgXw
-11GPUDebugger34GPUTraceSourceSubEditorSidebarViewC
-11GPUDebugger41GPUTraceSourceSubEditorSidebarContentViewC
-12SourceEditor0aB4ViewCSgXw
+SgXw
 So24GPUTraceShaderSampleInfoCSg
 SDySi
-11GPUDebugger36GPUShaderDebuggerImageSelectionValueCSg
-So7CGPointVSg
+Si_SaySo21DYShaderDiassemlyInfoCGt
+ySi_SaySo21DYShaderDiassemlyInfoCGtG
+ySiSaySo21DYShaderDiassemlyInfoCGG
+ySSSny
+ySSG
+ySiSfG
 So22NSAccessibilityElementC
 So11NSColorWellCSg
-11GPUDebugger16GPUGLSamplerViewCSg
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotSamplerCellViewCSgXw
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotSamplerCellViewCSgXwz_Xx
-So37DYPShaderDebuggerVariableSnapshotNode_p
-11GPUDebugger48GPUShaderDebuggerVariableSnapshotSamplerCellViewC
+SgXw
+SgXwz_Xx
 So9DYSampler_p
 $s11GPUDebugger23GPUBarGraphViewDelegateP
 $s11GPUDebugger28GPUBarGraphSelectionDelegate33_3BA2AE7ACF513199045B0D71927DADA2LLP
 So8NSButtonC
-11GPUDebugger19GPUFilterDescriptorVSg
-12CoreGraphics7CGFloatVSg
 _pSgXw
 So9NSPopoverCSg
 So21GPUMemoryResourceItemCSg
@@ -16820,22 +16736,31 @@ So26GPUFilterCompletionsEngineCSg
 So23GPUFilterTokenPredicateCSg
 SgXw
 ypSg
+So9NSCopying_So14NSSecureCodingp
+So19GPUFilterableObject_p
 So23GPUFilterTokenPredicateC
 SaySo19GPUFilterableObject_pG
 11GPUDebugger31GPUFilterViewControllerDelegate_p
-11GPUDebugger23GPUFilterViewControllerC
+ySo19GPUFilterableObject_pG
+ySo14DVTFilterTokenCG
 SaySo37DYPShaderDebuggerExecutionHistoryNode_pG
-11GPUDebugger49GPUShaderDebuggerVariableSnapshotCellViewDelegate_pSgXw
-11GPUDebugger45GPUShaderDebuggerVariableSnapshotListCellViewCSgXw
-11GPUDebugger45GPUShaderDebuggerVariableSnapshotListCellViewCSgXwz_Xx
+_pSgXw
+ySo11NSTextFieldCSgG
+ySo8NSButtonCSgG
+SgXw
+SgXwz_Xx
 SaySo11NSTextFieldCSgG
 SaySo8NSButtonCSgG
 So26DYPShaderDebuggerROIVertex_p
 So29DYPShaderDebuggerThreadVertex_p
-s5SIMD4VySfG
+SaySSG
+ySfG
 So11MTLDrawable_pSg
 So21OS_dispatch_semaphoreC
-So6CGRectVSg
+_yptG
+_ypt
+_yptG
+_ypt
 So35DependencyGraphVisualRepresentationCSg
 So9MTLBuffer_pG
 So9MTLDevice_p
@@ -16844,25 +16769,28 @@ So9MTLBuffer_p
 So22MTLRenderPipelineState_p
 So20MTLDepthStencilState_p
 So23MTLRenderPassDescriptorC
-SpySo8UniformsaG
-11GPUDebugger17LineConfigurationO
+So9MTLBuffer_pG
+ySfG
 So16DYPMemoryFinding_pSg
 SaySo17GPUIssuesViewItem_pG
 So21GPUMemoryResourceItemC
+So17GPUIssuesViewItem_p
+ySo17GPUIssuesViewItem_pG
 $s11GPUDebugger55GPUShaderDebuggerVariableSnapshotViewControllerDelegateP
 So9NSPopoverCSgXw
 11GPUDebugger55GPUShaderDebuggerVariableSnapshotViewControllerDelegate_pSgXw
-Shy10Foundation9IndexPathVG
-SDy10Foundation9IndexPathVypSgGSg
+ypSgGSg
 So13NSOutlineViewCSg
-11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewControllerCSgXw
+SgXw
+SDySSypG
+ypSgG
+ypSgG
 Su1x_Su1yt
 SaySSGSg
 $s11GPUDebugger48GPUShaderDebuggerIterationViewControllerDelegateP
 11GPUDebugger48GPUShaderDebuggerIterationViewControllerDelegate_pSgXw
 So13NSPopUpButtonCSg
 So11NSImageViewCSg
-11GPUDebugger31GPUShaderDebuggerIterationStateCSg
 So29DYPShaderDebuggerThreadKernel_pSg
 $s11GPUDebugger20GPUResourcesViewItemP
 $s11GPUDebugger34GPUResourcesViewControllerDelegateP
@@ -16877,14 +16805,26 @@ SayypGSg
 So7NSImageCSg
 So11NSFormatterCSg
 11GPUDebugger20GPUResourcesViewItem_pSg
-s5Int64V
-11GPUDebugger25GPUResourcesViewGroupKindO
-11GPUDebugger26GPUResourcesViewColumnKindO
-Say11GPUDebugger25GPUResourcesViewGroupKindOG
-Say11GPUDebugger26GPUResourcesViewColumnKindOG
-11GPUDebugger24GPUResourcesViewItemTypeO
-Say11GPUDebugger24GPUResourcesViewItemTypeOG
-12SourceEditor0aB14LineIdentifierV
+11GPUDebugger20GPUResourcesViewItem_p
+SaySbG
+ySo16NSSortDescriptorCG
+_Sbt
+4kind_Sb9ascendingt
+4kind_Sb9ascendingtG
+_SbtG
+SaySiG
+y11GPUDebugger20GPUResourcesViewItem_pG
+y11GPUDebugger20GPUResourcesViewItem_pG
+Say11GPUDebugger20GPUResourcesViewItem_pGG
+Say11GPUDebugger20GPUResourcesViewItem_pG
+ySiG
+ySaySiGG
+ySS_yptG
+SS_ypt
+ySSG
+ySbG
+So19NSPasteboardWriting_p
+ySo7NSColorCSo7NSImageCG
 So7NSColorC5color_Sb18includeLineSpacingtSg
 yXlSgXw
 Si5width_Si6heightSi5deptht
@@ -16894,123 +16834,142 @@ SaySo7NSColorC_SftG
 _pSgXw
 So11NSTextFieldC
 So17GPUTraceSubEditorC
-12SourceEditor0ab4DataA0CSg
-15IDESourceEditor0aB4ViewCSg
-11GPUDebugger28GPUTraceShaderSourceDocumentCSg
 So26GPUTraceShaderDataProvider_pSg
-11GPUDebugger30GPUTraceSourceSubEditorSidebarC
-11GPUDebugger44GPUTraceSourceSubEditorShaderProfilerContextC
 SDySSypGSg
 So14DVTCancellable_pSg
-Say12SourceEditor0aB14LineAnnotationVG
 So33DYPShaderDebuggerVariableSnapshot_pSgXw
-SDy12SourceEditor0aB14LineIdentifierV11GPUDebugger47GPUShaderDebuggerVariableSnapshotViewControllerCG
-SDy11GPUDebugger33GPUShaderDebuggerExecutedLocationVAA0bC23IterationViewControllerCG
-SDy11GPUDebugger33GPUShaderDebuggerExecutedLocationVAA0bC14IterationStateCG
 SDySSSaySo37DYPShaderDebuggerExecutionHistoryNode_pGG
 So7NSTimerCSg
 So37DYPShaderDebuggerExecutionHistoryNode_pSg
 SgXw
-Say12SourceEditor0aB16NavigationTargetVG
-11GPUDebugger23GPUTraceSourceSubEditorCSgXw
-11GPUDebugger23GPUTraceSourceSubEditorCSgXwz_Xx
+ySSypG
+SgXwz_Xx
 Sbz_Xx
-Say12SourceEditor0aB16NavigationTargetVGz_Xx
+Gz_Xx
 So11NSSavePanelC
-11GPUDebugger23GPUTraceSourceSubEditorC
 So8NSWindowC
-10Foundation3URLVz_Xx
-s5Error_p
+z_Xx
+So16DVTPreferenceSet_p
+ySo20DVTFontAndColorThemeCG
+SaySo20DVTFontAndColorThemeCG
+ySo20DVTFontAndColorThemeCG
+So20IDEWorkspaceDocumentCSg
 So20IDEWorkspaceDocumentC
-10Foundation4DataV
-12SourceEditor0ab4DataA0C
+So33DYPShaderDebuggerExecutedLocation_p
 So23DYPShaderDebuggerThread_p
-So37DYPShaderDebuggerExecutionHistoryNode_p
-SDy12SourceEditor0aB14LineIdentifierVSaySo37DYPShaderDebuggerExecutionHistoryNode_pGG
-11GPUDebugger38GPUShaderDebuggerSidebarViewControllerCSgXw
-12SourceEditor0aB9SelectionV
+SaySo37DYPShaderDebuggerExecutionHistoryNode_pGG
+SgXw
+ySo37DYPShaderDebuggerExecutionHistoryNode_pG
+SaySo37DYPShaderDebuggerExecutionHistoryNode_pGG
+ySSSaySo37DYPShaderDebuggerExecutionHistoryNode_pGG
+_yptG
+SDySiSDySSypSgGG
+_ypt
+ySS_ypSgtG
+SS_ypSgt
+ySiSDySSypSgGG
+ySSypSgG
 So26GPUTraceShaderDataProvider_p
-15IDESourceEditor0aB4ViewC
+So14DVTCancellable_p
+So18GPUTraceShaderItemCSg
+ySo33DYPShaderDebuggerVariableSnapshot_pG
 So42GPUTraceShaderDebuggerExecutionHistoryItemC
+SaySDyS2SGG
 $s11GPUDebugger60GPUTraceShaderProfilerFunctionCallSiteViewControllerDelegateP
-11GPUDebugger46GPUTraceShaderProfilerAnnotationViewControllerC
 _pSgXw
-11GPUDebugger38GPUTraceShaderProfilerFunctionCallSiteCSg
-Say11GPUDebugger46GPUTraceShaderProfilerAnnotationViewControllerCG
 So18NSLayoutConstraintCSgXw
-SDys6UInt64VSSG
+_So6NSFontCtG
+_So6NSFontCt
+So25NSMutableAttributedStringC_ypSgSft
+ySo25NSMutableAttributedStringC_ypSgSftG
+So6NSFontCG
+ySay
 So10NSClipViewC
 So5NSBoxCSg
-11GPUDebugger24GPUTraceSamplerSubEditorC
 So12NSOpenGLViewC
 So9DYSampler_pSg
-15IDESourceEditor18SourceCodeDocumentC
 So9IDEEditorCSg
+ySo9IDEEditorCG
 So7NSErrorCSgIeyBy_
 SfSg
-SDySo29DYShaderInstructionOpcodeTypeVSf_SitGSg
-SaySS_11GPUDebugger40GPUTraceShaderProfilerAnnotationDataTypeOtGSg
-11GPUDebugger40GPUTraceShaderProfilerAnnotationDataTypeOSg
-SDy12SourceEditor0aB14LineIdentifierV
-Say11GPUDebugger61GPUTraceShaderProfilerFunctionCallSiteAuxiliaryViewControllerCG
+Sf_SitGSg
+SaySS_
+tGSg
+_SftG
+_SftG
+_Sft
+3key_
+5valuetG
+3key_
+5valuetG
+3key_
+5valuet
+So9DYPRemark_p
 So18GPUTraceShaderItemC
-SaySS_Sny12SourceEditor0aB8PositionVGtG
-SDySiSo13DYPShaderTypeV_So25DYShaderPerLineSourceInfoCtG
-SaySo13DYPShaderTypeV_So24GPUTraceShaderSampleInfoCSay11GPUDebugger0cd16ProfilerFunctionF0CGSDySiSaySo017DYShaderDiassemlyF0CGGtG
+SaySS_Sny
+SDySi
+_So25DYShaderPerLineSourceInfoCtG
+_So24GPUTraceShaderSampleInfoCSay
+GSDySiSaySo017DYShaderDiassemlyD0CGGtG
+_So25DYShaderPerLineSourceInfoCtG
+_So24GPUTraceShaderSampleInfoCSay
+GSDySiSaySo017DYShaderDiassemlyD0CGGt
+_So24GPUTraceShaderSampleInfoCSay
+GSDySiSaySo017DYShaderDiassemlyD0CGGtG
 So23MTLRenderPassDescriptorCSg
 So7NSColorCSg
 So11NSTableViewCSgXw
 _SdtG
-11GPUDebugger40GPUTraceShaderProfilerDataViewControllerC
 So12NSScrollViewCSgXw
-11GPUDebugger40GPUTraceShaderProfilerPerformancePieViewCSgXw
-SDySo29DYShaderInstructionOpcodeTypeV
-11GPUDebugger35GPUTraceShaderProfilerOpCodeSubTypeO
+SgXw
+So7NSColorC_Sft
+ySo7NSColorC_SftG
+_SdtG
+_SdtG
+_Sdt
 So31DYPShaderDebuggerThreadFragment_pSg
 So6NSViewCSg
-Say11GPUDebugger26GPUShaderDebuggerImageViewCG
-11GPUDebugger46GPUShaderDebuggerVariableSnapshotImageCellViewCSgXw
-11GPUDebugger46GPUShaderDebuggerVariableSnapshotImageCellViewCSgXwz_Xx
+SgXw
+SgXwz_Xx
 So20DYPShaderDebuggerROI_p
 So9DYImage2DC
 So11NSSplitViewCSgXw
 So6NSViewCSgXw
 So11NSStackViewCSgXw
-11GPUDebugger36GPUMemoryReportSummaryViewControllerCSg
-11GPUDebugger26GPUResourcesViewControllerCSg
-11GPUDebugger23GPUFilterViewControllerCSg
 So23GPUIssuesViewControllerCSg
-11GPUDebugger29GPUResourceInfoViewControllerCSg
-11GPUDebugger24GPUMemoryReportSubEditorCSgXw
+SgXw
+ySo21GPUMemoryResourceItemCG
+_SStG
+_SSt
 So23GPUIssuesViewControllerC
-11GPUDebugger26GPUResourcesViewControllerC
+SDyS2SG
+ySS_SStG
+SS_SSt
+ySDyS2SGG
+yS2SG
+ySo10NSMenuItemCG
+ySo6NSViewC9container_So0A10ControllerC10controllertG
+So6NSViewC9container_So0A10ControllerC10controllert
 $s11GPUDebugger40GPUTraceShaderProfilerAnnotationDelegateP
-11GPUDebugger36GPUTraceShaderProfilerPerLineContextCSg
 _pSgXw
-11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewControllerCSg
-11GPUDebugger34GPUTraceShaderProfilerFunctionInfoCSg
-11GPUDebugger46GPUTraceShaderProfilerAnnotationViewControllerCSgXw
-11GPUDebugger46GPUTraceShaderProfilerAnnotationViewControllerCSgXwz_Xx
-11GPUDebugger40GPUTraceShaderProfilerPerformancePieViewC
-11GPUDebugger33GPUShaderDebuggerExecutedLocationV
+SgXw
+SgXwz_Xx
 So24DVTInvalidation_NSObjectC
 So16IDEVariablesViewCSgXw
 SaySo37DYPShaderDebuggerVariableSnapshotNode_pG
-11GPUDebugger45GPUShaderDebuggerVariablesViewContentProviderCSgXw
-$s11GPUDebugger49GPUShaderDebuggerVariableSnapshotCellViewDelegateP
-11GPUDebugger23GPUTraceSourceSubEditorCSg
-11GPUDebugger41GPUShaderDebuggerVariableSnapshotCellViewCSgXw
-11GPUDebugger41GPUShaderDebuggerVariableSnapshotCellViewC
-So20GPUTraceResourceItemC
+SgXw
 So33DYPShaderDebuggerVariableSnapshot_p
+$s11GPUDebugger49GPUShaderDebuggerVariableSnapshotCellViewDelegateP
+SgXw
+So20GPUTraceResourceItemC
 So22SourceEditorScrollViewC
 $s11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegateP
 11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegate_pSgXw
-15DVTSourceEditor016DVTPegasusSourceB4ViewCSg
 So24GPUTraceShaderAnnotationCSg
 SgXw
-Say11GPUDebugger40GPUTraceSourceSubEditorSidebarAnnotationVG
-11GPUDebugger45GPUTraceShaderProfilerAuxiliaryViewControllerCSgXw
+SgXw
+SS_Sny
+ySS_Sny
 _rawValue
 origin
 size
@@ -17369,8 +17328,8 @@ tagMenuItem
 delegateMenuItems
 itemTags
 groupSubTitles
-disabledOutlineItems
-expandedOutlineItems
+disabledItemPaths
+expandedItemPaths
 ignoreUpdates
 currentTopLevelItems
 groupOrderKind

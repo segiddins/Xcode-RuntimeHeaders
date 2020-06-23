@@ -21,9 +21,9 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property(retain) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (double)locationWithPoint:(struct CGPoint)arg1;
 - (struct CGRect)borderRect;

@@ -18,12 +18,12 @@
     NSURL *_identityDataURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *identityDataURL; // @synthesize identityDataURL=_identityDataURL;
 @property(retain, nonatomic) XCSDeveloperTeam *serverTeam; // @synthesize serverTeam=_serverTeam;
 @property(retain, nonatomic) id <XCSDataProvider> identityDataProvider; // @synthesize identityDataProvider=_identityDataProvider;
 @property(retain, nonatomic) id <XCSPortalTeamProvider> teamProvider; // @synthesize teamProvider=_teamProvider;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
-- (void).cxx_destruct;
 @property(readonly) NSData *identityData;
 @property(readonly) DVTPortalTeam *team;
 - (void)removeIdentityFile;

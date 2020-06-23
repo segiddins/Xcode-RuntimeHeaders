@@ -19,12 +19,12 @@
     DVTCircularCapacityViewController *_controller;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTCircularCapacityViewController *controller; // @synthesize controller=_controller;
 @property double ringWidth; // @synthesize ringWidth=_ringWidth;
 @property(retain) NSAttributedString *donutCenterText; // @synthesize donutCenterText=_donutCenterText;
 @property BOOL leaveRemainderEmpty; // @synthesize leaveRemainderEmpty=_leaveRemainderEmpty;
 @property BOOL useDonutStyle; // @synthesize useDonutStyle=_useDonutStyle;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (double)_drawSegmentValue:(double)arg1 color:(id)arg2 startAngle:(double)arg3;
 

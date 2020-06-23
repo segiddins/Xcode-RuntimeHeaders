@@ -21,6 +21,7 @@
 
 + (id)encodeSubrangesForLines:(id)arg1;
 + (id)encodeLines:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL initializedSuccessfully; // @synthesize initializedSuccessfully=_initializedSuccessfully;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSMutableDictionary *index; // @synthesize index=_index;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSFileHandle *dataFileHandle; // @synthesize dataFileHandle=_dataFileHandle;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(getter=isFinished) BOOL finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (void)cancel;
 - (BOOL)finish:(id *)arg1;
 - (BOOL)archiveCoverageLines:(id)arg1 error:(id *)arg2;

@@ -57,6 +57,7 @@
 + (id)keyPathsForValuesAffectingTitle;
 + (id)keyPathsForValuesAffectingImage;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesSecondarySelectionStyle; // @synthesize usesSecondarySelectionStyle=_usesSecondarySelectionStyle;
 @property(nonatomic) BOOL usesEdgeToEdgeImages; // @synthesize usesEdgeToEdgeImages=_usesEdgeToEdgeImages;
 @property(retain) _DVTTableCellViewTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
@@ -82,7 +83,6 @@
 @property(nonatomic) double titleInsetWithoutImage; // @synthesize titleInsetWithoutImage=_titleInsetWithoutImage;
 @property __weak id <DVTTableCellViewTitleEditingDelegate> titleEditingDelegate; // @synthesize titleEditingDelegate=_titleEditingDelegate;
 @property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState=_dvt_layoutState;
-- (void).cxx_destruct;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_positionEdgeViewsHorizontally;
 - (void)sizeSelfVertically;
@@ -96,8 +96,8 @@
 - (void)positionImageViewHorizontally;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)dvt_willLayoutSubview:(id)arg1;
-- (CDStruct_2b6e6e30)rangeForContentAfterLayingOutEdgeViewsConstrainingToStatusViews:(BOOL)arg1;
-- (double)minContentPositionAfterLayingOutImageView;
+- (CDStruct_2b6e6e30)_rangeForContentAfterLayingOutEdgeViewsConstrainingToStatusViews:(BOOL)arg1;
+- (double)_minContentPositionAfterLayingOutImageView;
 - (BOOL)imageViewShouldBeInstalled;
 - (id)leftMostInstalledStatusView;
 - (void)invalidateSubviewOrder;

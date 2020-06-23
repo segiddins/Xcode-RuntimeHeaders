@@ -21,12 +21,12 @@
     IBOffsetWrapper *_textShadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) IBOffsetWrapper *textShadowOffset; // @synthesize textShadowOffset=_textShadowOffset;
 @property(readonly, copy, nonatomic) NSColor<IBBinaryArchiving> *textShadowColor; // @synthesize textShadowColor=_textShadowColor;
 @property(readonly, copy, nonatomic) NSColor<IBBinaryArchiving> *textColor; // @synthesize textColor=_textColor;
 @property(readonly, copy, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
-- (void).cxx_destruct;
-- (id)traitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
+- (id)ibAdditionalTraitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
 - (BOOL)isEmpty;
 - (id)textAttributesWithTextShadowOffset:(id)arg1;
 - (id)textAttributesWithTextShadowColor:(id)arg1;

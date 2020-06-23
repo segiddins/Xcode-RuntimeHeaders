@@ -14,9 +14,9 @@
     CDUnknownBlockType _statsFetcherCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statsFetcherCallback; // @synthesize statsFetcherCallback=_statsFetcherCallback;
 @property(retain) XCSBot *bot; // @synthesize bot=_bot;
-- (void).cxx_destruct;
 - (void)fetchStatsForTimePeriod:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)fetchStatsSinceDate:(id)arg1;
 

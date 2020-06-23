@@ -16,8 +16,8 @@
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
-@property(readonly) NSArray *generationsOfBinaryUUIDs; // @synthesize generationsOfBinaryUUIDs=_generationsOfBinaryUUIDs;
 - (void).cxx_destruct;
+@property(readonly) NSArray *generationsOfBinaryUUIDs; // @synthesize generationsOfBinaryUUIDs=_generationsOfBinaryUUIDs;
 - (id)JSONRepresentation;
 - (id)UUIDs;
 @property(readonly) unsigned long long hash;

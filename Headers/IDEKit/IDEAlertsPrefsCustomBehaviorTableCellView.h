@@ -14,9 +14,9 @@
     NSTableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) IDEKeyBindingField *keyBindingField; // @synthesize keyBindingField=_keyBindingField;
-- (void).cxx_destruct;
 - (void)beginEditingFromEvent:(id)arg1 inTableView:(id)arg2 column:(long long)arg3 row:(long long)arg4;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidBeginEditing:(id)arg1;

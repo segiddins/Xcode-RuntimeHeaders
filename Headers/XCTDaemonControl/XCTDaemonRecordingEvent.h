@@ -21,6 +21,7 @@
     XCElementSnapshot *_endApplicationSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(readonly) XCElementSnapshot *endApplicationSnapshot; // @synthesize endApplicationSnapshot=_endApplicationSnapshot;
 @property(readonly) XCElementSnapshot *endElementSnapshot; // @synthesize endElementSnapshot=_endElementSnapshot;
 @property(readonly) NSDictionary *endLocation; // @synthesize endLocation=_endLocation;
@@ -30,7 +31,6 @@
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSArray *eventNames; // @synthesize eventNames=_eventNames;
-- (void).cxx_destruct;
 - (id)initWithEventNames:(id)arg1 timestamp:(double)arg2 duration:(double)arg3 startLocation:(id)arg4 startElementSnapshot:(id)arg5 startApplicationSnapshot:(id)arg6 endLocation:(id)arg7 endElementSnapshot:(id)arg8 endApplicationSnapshot:(id)arg9;
 
 @end

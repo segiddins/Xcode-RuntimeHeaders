@@ -17,8 +17,8 @@
     DBGBreakpointEditorTextField *_messageField;
 }
 
-@property __weak DBGBreakpointEditorTextField *messageField; // @synthesize messageField=_messageField;
 - (void).cxx_destruct;
+@property __weak DBGBreakpointEditorTextField *messageField; // @synthesize messageField=_messageField;
 - (void)commandDidChange:(id)arg1;
 - (void)awakeFromNib;
 - (id)initWithAction:(id)arg1 breakpointLocation:(id)arg2;

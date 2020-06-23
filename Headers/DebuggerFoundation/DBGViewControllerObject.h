@@ -17,8 +17,8 @@
     DBGViewSurface *_view;
 }
 
-@property __weak DBGViewSurface *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property __weak DBGViewSurface *view; // @synthesize view=_view;
 - (void)_recursivelyUpdateAddressesToViewObjectsWithMapTable:(id)arg1;
 - (id)_createAddressesToViewObjectsMap;
 @property(readonly) struct CGRect bounds;

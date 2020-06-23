@@ -25,7 +25,6 @@
     MISSING_TYPE *lockedManipulationSpace;
     MISSING_TYPE *interactionManipulationSpace;
     MISSING_TYPE *manipulationMode;
-    MISSING_TYPE *transformMode;
     MISSING_TYPE *commandController;
     MISSING_TYPE *animationManager;
     MISSING_TYPE *hitTester;

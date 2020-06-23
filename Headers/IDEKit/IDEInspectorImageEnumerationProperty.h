@@ -16,10 +16,10 @@
     NSTextField *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) IDEInspectorResizableSegmentedControlView *resizableSegmentedControlView; // @synthesize resizableSegmentedControlView=_resizableSegmentedControlView;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)configureEnumeratedOptions;
 - (void)userDidChangeValue:(id)arg1;

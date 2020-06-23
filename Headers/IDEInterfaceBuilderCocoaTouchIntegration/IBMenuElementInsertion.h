@@ -19,10 +19,10 @@
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) __weak NSObject<IBUIMenuChild> *child; // @synthesize child=_child;
 @property(nonatomic) __weak NSObject<IBUIMenuChild> *anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

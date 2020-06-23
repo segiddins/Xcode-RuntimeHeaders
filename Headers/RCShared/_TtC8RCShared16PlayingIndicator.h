@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSLayoutYAxisAnchor;
 
 __attribute__((visibility("hidden")))
 @interface _TtC8RCShared16PlayingIndicator : NSView
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) NSLayoutYAxisAnchor *firstBaselineAnchor;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (void)viewDidMoveToWindow;
 - (void)layout;

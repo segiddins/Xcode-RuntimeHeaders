@@ -12,6 +12,7 @@
 
 @interface PDFThumbnailView (PDFThumbnailViewIBIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedMaximumNumberOfColumns;
+- (void)ibSwizzledSetBackgroundColor:(id)arg1;
 - (void)setIbInspectedMaximumNumberOfColumns:(id)arg1;
 - (id)ibInspectedMaximumNumberOfColumns;
 - (id)ibInspectedDefaultMaximumNumberOfColumns;

@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
 + (id)_notConclusion:(id)arg1;
 + (id)relOpString:(int)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dominantLimitConclusionName; // @synthesize dominantLimitConclusionName=_dominantLimitConclusionName;
 @property(readonly, nonatomic) DYGLExpertConclusion *lastCreatedConclusion; // @synthesize lastCreatedConclusion=_lastCreatedConclusion;
 @property(readonly, nonatomic) BOOL valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (void)translateConclusionAndSupportingConclusions:(id)arg1 intoArray:(id)arg2;
 - (void)resetVisitStatus;
 - (void)translateFindings;

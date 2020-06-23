@@ -15,9 +15,9 @@
 }
 
 + (id)viewsInDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *reduce; // @synthesize reduce=_reduce;
 @property(readonly) NSString *map; // @synthesize map=_map;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initWithMap:(id)arg1 reduce:(id)arg2;
 - (id)initWithBasePath:(id)arg1;

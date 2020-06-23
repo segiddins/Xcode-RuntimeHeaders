@@ -18,10 +18,10 @@
 }
 
 + (id)basicTeamWithID:(id)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFreeProvisioningTeam) BOOL freeProvisioningTeam; // @synthesize freeProvisioningTeam=_freeProvisioningTeam;
 @property(readonly, nonatomic) NSString *teamName; // @synthesize teamName=_teamName;
 @property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

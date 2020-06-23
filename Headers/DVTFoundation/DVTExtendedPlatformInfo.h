@@ -12,8 +12,7 @@
 {
     BOOL _requiresProxiedDevicesToBeRegistered;
     BOOL _requiresPortalAppGroups;
-    BOOL _requiresExplicitAppIDForGameCenter;
-    BOOL _requiresLocalGameCenterEntitlement;
+    BOOL _deprecatedRequiresLocalGameCenterEntitlement;
     BOOL _useFallbackEntitlementsInXBS;
     BOOL _supportsUnrestrictedEntitlements;
     BOOL _allowsAdHocSigning;
@@ -23,6 +22,8 @@
     BOOL _signForLocalExecutionUsingCertificate;
     BOOL _ignoreDevices;
     unsigned char _platformMachOHeaderValue;
+    unsigned char _macCatalystPlatformMachOHeaderValue;
+    BOOL _wantsIsMachOHeaderValuesUniqueCheck;
     BOOL _requiresSRPForNetworkDevelopment;
     NSString *_platformIdentifier;
     NSArray *_provisioningProfileUTIs;
@@ -49,6 +50,7 @@
     NSString *_minimumOSForDebugOverrides;
     NSString *_minimumOSForLaunchActivateSuspended;
     NSString *_minimumOSForSensorReplay;
+    NSString *_minimumOSForDaemonDebugging;
     NSString *_analyticsPlatformIdentifier;
     NSSet *_destinationSpecifierAliases;
     NSDictionary *_sdkVariantDisplayNames;
@@ -57,15 +59,19 @@
 
 + (id)extendedPlatformInfoForPlatformIdentifier:(id)arg1 error:(id *)arg2;
 + (id)extendedPlatformInfoForPlatformIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *sdkVariantSupportedSettings; // @synthesize sdkVariantSupportedSettings=_sdkVariantSupportedSettings;
 @property(readonly) NSDictionary *sdkVariantDisplayNames; // @synthesize sdkVariantDisplayNames=_sdkVariantDisplayNames;
 @property(readonly) BOOL requiresSRPForNetworkDevelopment; // @synthesize requiresSRPForNetworkDevelopment=_requiresSRPForNetworkDevelopment;
 @property(readonly) NSSet *destinationSpecifierAliases; // @synthesize destinationSpecifierAliases=_destinationSpecifierAliases;
 @property(readonly) NSString *analyticsPlatformIdentifier; // @synthesize analyticsPlatformIdentifier=_analyticsPlatformIdentifier;
+@property(readonly) NSString *minimumOSForDaemonDebugging; // @synthesize minimumOSForDaemonDebugging=_minimumOSForDaemonDebugging;
 @property(readonly) NSString *minimumOSForSensorReplay; // @synthesize minimumOSForSensorReplay=_minimumOSForSensorReplay;
 @property(readonly) NSString *minimumOSForLaunchActivateSuspended; // @synthesize minimumOSForLaunchActivateSuspended=_minimumOSForLaunchActivateSuspended;
 @property(readonly) NSString *minimumOSForDebugOverrides; // @synthesize minimumOSForDebugOverrides=_minimumOSForDebugOverrides;
 @property(readonly) NSString *minimumOSForNetworkedDevelopment; // @synthesize minimumOSForNetworkedDevelopment=_minimumOSForNetworkedDevelopment;
+@property(readonly) BOOL wantsIsMachOHeaderValuesUniqueCheck; // @synthesize wantsIsMachOHeaderValuesUniqueCheck=_wantsIsMachOHeaderValuesUniqueCheck;
+@property(readonly) unsigned char macCatalystPlatformMachOHeaderValue; // @synthesize macCatalystPlatformMachOHeaderValue=_macCatalystPlatformMachOHeaderValue;
 @property(readonly) unsigned char platformMachOHeaderValue; // @synthesize platformMachOHeaderValue=_platformMachOHeaderValue;
 @property(readonly) NSNumber *machOMinOSLoadCommand; // @synthesize machOMinOSLoadCommand=_machOMinOSLoadCommand;
 @property(readonly) unsigned long long backgroundFetchSupportStyle; // @synthesize backgroundFetchSupportStyle=_backgroundFetchSupportStyle;
@@ -93,14 +99,12 @@
 @property(readonly) BOOL allowsAdHocSigning; // @synthesize allowsAdHocSigning=_allowsAdHocSigning;
 @property(readonly) BOOL supportsUnrestrictedEntitlements; // @synthesize supportsUnrestrictedEntitlements=_supportsUnrestrictedEntitlements;
 @property(readonly) BOOL useFallbackEntitlementsInXBS; // @synthesize useFallbackEntitlementsInXBS=_useFallbackEntitlementsInXBS;
+@property(readonly) BOOL deprecatedRequiresLocalGameCenterEntitlement; // @synthesize deprecatedRequiresLocalGameCenterEntitlement=_deprecatedRequiresLocalGameCenterEntitlement;
 @property(readonly) NSString *pushNotificationServiceEntitlement; // @synthesize pushNotificationServiceEntitlement=_pushNotificationServiceEntitlement;
-@property(readonly) BOOL requiresLocalGameCenterEntitlement; // @synthesize requiresLocalGameCenterEntitlement=_requiresLocalGameCenterEntitlement;
-@property(readonly) BOOL requiresExplicitAppIDForGameCenter; // @synthesize requiresExplicitAppIDForGameCenter=_requiresExplicitAppIDForGameCenter;
 @property(readonly) BOOL requiresPortalAppGroups; // @synthesize requiresPortalAppGroups=_requiresPortalAppGroups;
 @property(readonly) NSArray *provisioningProfileUTIs; // @synthesize provisioningProfileUTIs=_provisioningProfileUTIs;
 @property(readonly) BOOL requiresProxiedDevicesToBeRegistered; // @synthesize requiresProxiedDevicesToBeRegistered=_requiresProxiedDevicesToBeRegistered;
 @property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
-- (void).cxx_destruct;
 @property(readonly) DVTPlatform *primaryPlatform;
 @property(readonly) BOOL isSimulatorPlatform;
 @property(readonly) DVTPlatform *correspondingSimulatorPlatform;

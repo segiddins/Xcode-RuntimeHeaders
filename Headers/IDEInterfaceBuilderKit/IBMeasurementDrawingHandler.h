@@ -26,12 +26,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *viewsToExcludeFromBorderDrawing; // @synthesize viewsToExcludeFromBorderDrawing=_viewsToExcludeFromBorderDrawing;
 @property(copy, nonatomic) NSSet *viewsUnconditionallyDrawingLayoutRectangles; // @synthesize viewsUnconditionallyDrawingLayoutRectangles=_viewsUnconditionallyDrawingLayoutRectangles;
 @property(nonatomic, getter=isShowingBoundsRectangles) BOOL showingBoundsRectangles; // @synthesize showingBoundsRectangles=_showingBoundsRectangles;
 @property(nonatomic, getter=isShowingLayoutRectangles) BOOL showingLayoutRectangles; // @synthesize showingLayoutRectangles=_showingLayoutRectangles;
 @property(readonly, nonatomic) IBViewEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
-- (void).cxx_destruct;
 - (void)drawTrackingLayoutRectangle;
 - (void)drawTrackingSizeText;
 - (void)drawTrackingKnob;

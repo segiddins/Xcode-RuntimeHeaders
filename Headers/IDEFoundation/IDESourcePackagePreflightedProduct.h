@@ -17,9 +17,9 @@
 }
 
 + (id)displayNameForProductType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long productType; // @synthesize productType=_productType;
 @property(readonly) NSString *productName; // @synthesize productName=_productName;
-- (void).cxx_destruct;
 - (id)initWithProductName:(id)arg1 productType:(long long)arg2;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

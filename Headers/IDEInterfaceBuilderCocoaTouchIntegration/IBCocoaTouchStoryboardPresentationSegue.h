@@ -22,9 +22,9 @@
 + (id)classIdentifier;
 + (BOOL)wantsDefaultAnimatesCompatibilityWarning;
 + (double)displayOrderPriority;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
 @property(copy, nonatomic) NSNumber *modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
-- (void).cxx_destruct;
 - (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (BOOL)isFlowTerminatingSegue;

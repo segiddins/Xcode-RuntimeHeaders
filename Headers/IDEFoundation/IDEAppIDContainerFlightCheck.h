@@ -15,9 +15,9 @@
     DVTPortalContainerType *_containerType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTPortalContainerType *containerType; // @synthesize containerType=_containerType;
 @property(nonatomic) __weak id <IDEAppIDContainerFlightCheckDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)validate;
 - (void)unresolve;
 - (id)resolvingTitle;

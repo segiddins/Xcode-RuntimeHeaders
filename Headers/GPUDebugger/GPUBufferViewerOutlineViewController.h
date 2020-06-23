@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     GPUBufferViewerDefaults *_defaults;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL performedInitialScroll; // @synthesize performedInitialScroll=_performedInitialScroll;
 @property(retain, nonatomic) GPUBufferViewerDefaults *defaults; // @synthesize defaults=_defaults;
 @property(nonatomic) unsigned long long maxComponents; // @synthesize maxComponents=_maxComponents;
 @property(nonatomic) __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;

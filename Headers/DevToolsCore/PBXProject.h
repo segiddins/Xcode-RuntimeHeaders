@@ -101,6 +101,7 @@
 + (id)_formatForIdentifier:(id)arg1;
 + (id)_latestKnownFormat;
 + (id)_defaultFormat;
++ (id)_xcode11_4Format;
 + (id)_xcode11_0Format;
 + (id)_xcode10_0Format;
 + (id)_xcode9_3Format;
@@ -131,9 +132,9 @@
 + (id)sourceFileTypes;
 + (id)headerFileTypes;
 + (void)renamedFileAtPath:(id)arg1 to:(id)arg2 callbackTarget:(id)arg3 selector:(SEL)arg4 error:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly) NSDate *projectArchiveModTime; // @synthesize projectArchiveModTime=_projectArchiveModTime;
 @property(readonly) PBXProjectAutoregenerator *projectAutoregenerator; // @synthesize projectAutoregenerator=_projectAutoregenerator;
-- (void).cxx_destruct;
 - (void)collectMessageTracerStatisticsIntoDictionary:(id)arg1;
 - (void)cancelPendingActivities;
 - (BOOL)_hasScannedForEncodings;
@@ -301,7 +302,7 @@
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
 - (void)_setCompatibilityVersion:(id)arg1;
 - (id)_compatibilityVersion;
-- (id)savedProjectFormat;
+@property(readonly) XCArchiveFormat *savedProjectFormat;
 - (void)setPreferredProjectFormat:(id)arg1;
 - (id)preferredProjectFormat;
 - (void)_updateCurrentFeatureUsage;
@@ -322,8 +323,7 @@
 @property(copy) NSString *lastSwiftUpdateCheck;
 - (void)setLastUpgradeCheck:(id)arg1;
 - (id)lastUpgradeCheck;
-- (void)setBuildIndependentTargetsInParallel:(BOOL)arg1;
-- (BOOL)buildIndependentTargetsInParallel;
+@property BOOL buildIndependentTargetsInParallel;
 - (id)attributes;
 - (BOOL)allowsEditingOfChildren;
 - (BOOL)isClosed;

@@ -15,9 +15,9 @@
     BOOL _operationFinished;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL operationFinished; // @synthesize operationFinished=_operationFinished;
 @property(retain) DVTOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (BOOL)isFinished;
 - (void)cancelWithReason:(int)arg1;

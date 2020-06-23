@@ -19,9 +19,9 @@
 
 + (id)keyPathsForValuesAffectingBuildableProduct;
 + (id)remoteRunnableWithBundleIdentifier:(id)arg1 filePath:(id)arg2 mode:(int)arg3 buildableReference:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
 - (id)remotePath;
-- (void).cxx_destruct;
 - (void)addBuildableReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

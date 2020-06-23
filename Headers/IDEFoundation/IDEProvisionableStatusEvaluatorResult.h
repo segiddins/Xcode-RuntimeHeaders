@@ -16,10 +16,10 @@
 }
 
 + (id)resultWithConfiguration:(id)arg1 evaluation:(id)arg2 iOSMacEvaluation:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisionableStatusEvaluation *iOSMacEvaluation; // @synthesize iOSMacEvaluation=_iOSMacEvaluation;
 @property(readonly, nonatomic) IDEProvisionableStatusEvaluation *evaluation; // @synthesize evaluation=_evaluation;
 @property(readonly, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 
 @end
 

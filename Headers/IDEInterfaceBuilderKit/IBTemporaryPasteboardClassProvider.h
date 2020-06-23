@@ -13,8 +13,8 @@
     NSSet *_partialClassDescriptions;
 }
 
-- (id)partialClassDescriptions;
 - (void).cxx_destruct;
+- (id)partialClassDescriptions;
 - (id)initWithPartialClassDescriptions:(id)arg1;
 
 @end

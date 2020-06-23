@@ -39,6 +39,7 @@
 + (id)keyPathsForValuesAffectingChildren;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
+- (void).cxx_destruct;
 @property(retain) DVTDispatchLock *resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(retain) id <DVTCancellable> indexCreationToken; // @synthesize indexCreationToken=_indexCreationToken;
 @property(retain) DVTFuture *instrumentsServerFuture; // @synthesize instrumentsServerFuture=_instrumentsServerFuture;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSURL *memoryGraphPath; // @synthesize memoryGraphPath=_memoryGraphPath;
 @property(retain, nonatomic) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(retain, nonatomic) XRMemoryGraphDebuggerIndex *memoryGraphIndex; // @synthesize memoryGraphIndex=_unfilteredIndex;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)mallocStackLogFromGraphForNode:(unsigned int)arg1 isLiteZone:(BOOL)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSError *mallocStackLoggingStateError;

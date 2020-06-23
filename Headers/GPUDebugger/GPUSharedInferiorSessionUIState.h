@@ -18,8 +18,8 @@
     BOOL _displayedOnceInNavigator;
 }
 
-@property(nonatomic) BOOL displayedOnceInNavigator; // @synthesize displayedOnceInNavigator=_displayedOnceInNavigator;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL displayedOnceInNavigator; // @synthesize displayedOnceInNavigator=_displayedOnceInNavigator;
 - (id)attributesForResourceWithID:(unsigned int)arg1 type:(unsigned int)arg2 containerID:(unsigned long long)arg3;
 - (BOOL)programHasBeenEdited:(id)arg1;
 - (id)textStorageForProgram:(unsigned int)arg1 shaderType:(unsigned int)arg2 sharegroup:(unsigned long long)arg3;

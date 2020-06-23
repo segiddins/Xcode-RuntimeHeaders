@@ -16,11 +16,11 @@
     long long _lineNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isPerformanceFailure; // @synthesize isPerformanceFailure=_isPerformanceFailure;
 @property(readonly) long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, copy) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (BOOL)isEqualToTestFailureSummary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

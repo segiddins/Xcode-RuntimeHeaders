@@ -14,9 +14,9 @@
     GPUTreeNode *_node;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUTreeNode *node; // @synthesize node=_node;
 @property(readonly, nonatomic) NSMutableArray *findings; // @synthesize findings=_findings;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

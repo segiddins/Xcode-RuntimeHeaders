@@ -14,8 +14,8 @@
     int _controlType;
 }
 
-@property(readonly) id <Xcode3InfoEditorListContentProvider> listContentProvider; // @synthesize listContentProvider=_contentProvider;
 - (void).cxx_destruct;
+@property(readonly) id <Xcode3InfoEditorListContentProvider> listContentProvider; // @synthesize listContentProvider=_contentProvider;
 - (id)inspectorValue;
 - (void)setInspectorValue:(id)arg1;
 - (id)inspectorXML;

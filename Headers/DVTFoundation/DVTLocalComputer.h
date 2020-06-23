@@ -27,6 +27,7 @@
 
 + (id)provisioningManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long logicalCPUCoresPerPackage; // @synthesize logicalCPUCoresPerPackage=_logicalCPUCoresPerPackage;
 @property unsigned long long physicalCPUCoresPerPackage; // @synthesize physicalCPUCoresPerPackage=_physicalCPUCoresPerPackage;
 @property unsigned long long ramSizeInMegabytes; // @synthesize ramSizeInMegabytes=_ramSizeInMegabytes;
@@ -34,15 +35,15 @@
 @property unsigned long long cpuSpeedInMHz; // @synthesize cpuSpeedInMHz=_cpuSpeedInMHz;
 @property unsigned long long cpuCount; // @synthesize cpuCount=_cpuCount;
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
-- (void).cxx_destruct;
 - (void)cancelPrimaryInstrumentsServer;
 - (id)primaryInstrumentsServer;
 - (id)listenForInstallOfAppExtensionIdentifiers:(id)arg1 onPairedDevice:(BOOL)arg2;
+- (void)requestDebugLaunchOfDaemon:(id)arg1 onPairedDevice:(BOOL)arg2;
 - (void)stopDebuggingXPCServices:(id)arg1 forPairedDevice:(BOOL)arg2;
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
 - (void)_enableExtension:(id)arg1;
 - (void)attachToServiceName:(id)arg1 pid:(int)arg2 parentPID:(int)arg3 stdoutFH:(id)arg4 stderrFH:(id)arg5;
-- (id)_xpcDebugConnectionForPid:(id)arg1 create:(BOOL)arg2;
+- (id)_xpcDebugConnectionForPid:(id)arg1 create:(BOOL)arg2 needsRoot:(BOOL)arg3;
 - (id)_keyForPid:(int)arg1;
 - (BOOL)supportsLocationSimulation;
 - (void)uninstallProvisioningProfile:(id)arg1;

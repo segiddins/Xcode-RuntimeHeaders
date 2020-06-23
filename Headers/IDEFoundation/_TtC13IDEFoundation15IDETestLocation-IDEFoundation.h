@@ -6,11 +6,9 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation15IDETestLocation.h>
 
-#import <IDEFoundation/IDETestCollection-Protocol.h>
-
 @class NSSet;
 
-@interface _TtC13IDEFoundation15IDETestLocation (IDEFoundation) <IDETestCollection>
+@interface _TtC13IDEFoundation15IDETestLocation (IDEFoundation)
 @property(nonatomic, readonly) _TtC13IDEFoundation15IDETestLocation *testLocation;
 @property(nonatomic, readonly) NSSet *testContainers;
 @end

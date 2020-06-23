@@ -20,11 +20,11 @@
     NSTimer *_progressTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTimer *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property double progressBarValue; // @synthesize progressBarValue=_progressBarValue;
 @property(retain) XCSUIProgressViewController *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)shareScreen:(id)arg1;
 - (void)cancelIntegration:(id)arg1;

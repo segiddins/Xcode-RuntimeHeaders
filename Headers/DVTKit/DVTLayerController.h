@@ -13,8 +13,8 @@
     CALayer *_layer;
 }
 
-@property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 - (void)loadLayer;
 
 @end

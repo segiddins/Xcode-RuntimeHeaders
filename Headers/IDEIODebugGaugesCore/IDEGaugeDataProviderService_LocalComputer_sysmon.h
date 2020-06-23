@@ -15,8 +15,8 @@
 }
 
 + (id)observableAttributes;
-@property(retain, nonatomic) NSObject<OS_sysmon_request> *sysmonRequest; // @synthesize sysmonRequest=_sysmonRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_sysmon_request> *sysmonRequest; // @synthesize sysmonRequest=_sysmonRequest;
 - (void)resume;
 - (void)suspend;
 

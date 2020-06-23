@@ -20,8 +20,8 @@
 }
 
 + (id)keyPathsForValuesAffectingSelectedRequests;
-@property(retain) IDEDataModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (void).cxx_destruct;
+@property(retain) IDEDataModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)takeFocus;

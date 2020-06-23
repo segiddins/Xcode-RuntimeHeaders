@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) DYInvestigatorRecommendationInfo *summary; // @synthesize summary=_summary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DYInvestigatorRecommendationInfo *summary; // @synthesize summary=_summary;
 - (void)printFormatted;
 - (void)addAdditionalSectionItem:(id)arg1;
 - (void)addSpecificSectionItem:(id)arg1;

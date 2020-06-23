@@ -25,6 +25,7 @@
 
 + (id)deviceTraitInfoForProductType:(id)arg1 deviceOSVersion:(id)arg2 firstVersionForOSVariants:(id)arg3 fromPlatform:(id)arg4 error:(id *)arg5;
 + (id)findAppropriateMatchForDeploymentVersionInResults:(id)arg1 deviceOSVersion:(id)arg2 firstVersionForOSVariants:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *deploymentTargetVersion; // @synthesize deploymentTargetVersion=_deploymentTargetVersion;
 @property(readonly) NSString *artworkDynamicDisplayMode; // @synthesize artworkDynamicDisplayMode=_artworkDynamicDisplayMode;
 @property(readonly) NSString *displayGamut; // @synthesize displayGamut=_displayGamut;
@@ -36,7 +37,6 @@
 @property(readonly) long long artworkDeviceScaleFactor; // @synthesize artworkDeviceScaleFactor=_artworkDeviceScaleFactor;
 @property(readonly) NSString *artworkDeviceIdiom; // @synthesize artworkDeviceIdiom=_artworkDeviceIdiom;
 @property(readonly) NSString *productType; // @synthesize productType=_productType;
-- (void).cxx_destruct;
 - (id)initWithProductType:(id)arg1 artworkDeviceIdiom:(id)arg2 artworkDeviceScaleFactor:(long long)arg3 artworkDeviceSubtype:(long long)arg4 devicePerformanceMemoryClass:(long long)arg5 deviceGraphicsFeatureSetClass:(id)arg6 deviceGraphicsFeatureSetFallbacks:(id)arg7 artworkHostedIdioms:(id)arg8 displayGamut:(id)arg9 artworkDynamicDisplayMode:(id)arg10 deploymentTargetVersion:(id)arg11;
 
 @end

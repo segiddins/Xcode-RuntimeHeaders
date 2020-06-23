@@ -21,9 +21,9 @@
 + (id)filesystemPermissionsIndexedByName;
 + (id)filesystemPermissionNames;
 + (id)filesystemKeys;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *filesystemPermissions; // @synthesize filesystemPermissions=_filesystemPermissions;
 @property(retain) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

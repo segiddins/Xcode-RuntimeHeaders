@@ -20,6 +20,7 @@
     NSMutableArray *_testFailures;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *testFailures; // @synthesize testFailures=_testFailures;
 @property(readonly) NSMutableArray *analyzerIssues; // @synthesize analyzerIssues=_analyzerIssues;
 @property(readonly) NSMutableArray *buildWarnings; // @synthesize buildWarnings=_buildWarnings;
@@ -28,7 +29,6 @@
 @property(readonly) IDESchemeActionsInvocationRecord *invocationRecord; // @synthesize invocationRecord=_invocationRecord;
 @property BOOL didCancelEnqueuingAction; // @synthesize didCancelEnqueuingAction=_didCancelEnqueuingAction;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)sdefSupport_testFailures;
 - (id)sdefSupport_analyzerIssues;
 - (id)sdefSupport_buildWarnings;

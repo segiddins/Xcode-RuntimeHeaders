@@ -39,11 +39,11 @@
 + (BOOL)_mouseOverDataTipInWindow:(id)arg1 includeBuffer:(BOOL)arg2 mouseLocation:(struct CGPoint)arg3;
 + (BOOL)mouseOverWindow:(id)arg1;
 + (id)_indexSymbolForDVTSourceExpression:(id)arg1 contents:(id)arg2 index:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) DVTSourceExpression *pendingExpression; // @synthesize pendingExpression=_pendingExpression;
 @property(retain) DVTSourceExpression *currentMousedOverExpression; // @synthesize currentMousedOverExpression=_currentMousedOverExpression;
 @property(retain, nonatomic) IDEViewController<IDESourceExpressionSource> *expressionSource; // @synthesize expressionSource=_expressionSource;
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)mouseOverDataTip:(BOOL)arg1;
 - (void)_monitorMouseEvents;

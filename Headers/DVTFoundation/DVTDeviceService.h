@@ -16,9 +16,9 @@
 }
 
 + (id)capability;
+- (void).cxx_destruct;
 @property(readonly) DVTDeviceCapability *currentCapability; // @synthesize currentCapability=_currentCapability;
 @property(readonly) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)initForDevice:(id)arg1 extension:(id)arg2 capability:(id)arg3;
 
 @end

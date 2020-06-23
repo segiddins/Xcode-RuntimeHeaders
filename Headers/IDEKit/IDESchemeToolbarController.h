@@ -28,10 +28,10 @@
 + (id)keyPathsForValuesAffectingPathControlIsEnabled;
 + (id)keyPathsForValuesAffectingActiveWorkspaceTabController;
 + (id)keyPathsForValuesAffectingWorkspace;
+- (void).cxx_destruct;
 @property BOOL backgroundButtonHighlighted; // @synthesize backgroundButtonHighlighted=_backgroundButtonHighlighted;
 @property(retain) IDESchemeManagerNavigable *rootNavigable; // @synthesize rootNavigable=_rootNavigable;
 @property(nonatomic) __weak NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
-- (void).cxx_destruct;
 - (void)_newContextAction:(id)arg1;
 - (void)_manageContextsAction:(id)arg1;
 - (void)_editActiveContextAction:(id)arg1;

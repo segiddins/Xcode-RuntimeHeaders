@@ -31,13 +31,13 @@
 + (id)menuForTestPlanRunSummary:(id)arg1 inTestSchemeAction:(id)arg2 forTestTargetsMatchingName:(id)arg3 menuItemTarget:(id)arg4;
 + (id)menuForTestSchemeAction:(id)arg1 forTestTargetsMatchingName:(id)arg2 menuItemTarget:(id)arg3;
 + (id)menuForResultBundle:(id)arg1 forTestTargetsMatchingName:(id)arg2 menuItemTarget:(id)arg3;
+- (void).cxx_destruct;
 @property __weak NSTextField *selectedLogLabel; // @synthesize selectedLogLabel=_selectedLogLabel;
 @property __weak NSButton *showDiagnosticsButton; // @synthesize showDiagnosticsButton=_showDiagnosticsButton;
 @property(copy) NSString *unfilteredLogText; // @synthesize unfilteredLogText=_unfilteredLogText;
 @property __weak NSPopUpButton *logsPopUp; // @synthesize logsPopUp=_logsPopUp;
 @property DVTSourceTextView *textView; // @synthesize textView=_textView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-- (void).cxx_destruct;
 - (void)showLogInFinder:(id)arg1;
 - (void)decreaseFontSize:(id)arg1;
 - (void)increaseFontSize:(id)arg1;

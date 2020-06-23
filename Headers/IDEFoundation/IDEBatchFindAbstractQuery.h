@@ -31,6 +31,7 @@
 + (BOOL)supportsAnchorning;
 + (BOOL)supportsQueryAction:(long long)arg1;
 + (id)displayName;
+- (void).cxx_destruct;
 @property(readonly) long long queryIdentifier; // @synthesize queryIdentifier=_queryIdentifier;
 @property(readonly, getter=isCanceled) BOOL canceled; // @synthesize canceled=_canceled;
 @property(readonly) long long priority; // @synthesize priority=_priority;
@@ -40,9 +41,10 @@
 @property(readonly) __weak id <IDEBatchFindQueryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) IDEBatchFindQuerySpecification *specification; // @synthesize specification=_specification;
-- (void).cxx_destruct;
 - (void)userIsAttemptingToViewFaultedChildrenOfItem:(id)arg1;
 @property(readonly) NSString *customContextMenuID;
+- (id)emptyResultSetPlaceholderForTerm:(id)arg1 scope:(id)arg2;
+- (id)emptyResultSetPlaceholderResultKind;
 - (long long)acquireResultIdentifier;
 @property(readonly) BOOL lazilyFaultsChildren;
 - (void)execute;

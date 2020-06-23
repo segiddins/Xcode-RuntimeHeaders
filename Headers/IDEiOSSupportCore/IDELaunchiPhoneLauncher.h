@@ -22,9 +22,9 @@
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+- (void).cxx_destruct;
 @property(getter=isLaunchingToDebug) BOOL launchingToDebug; // @synthesize launchingToDebug=_launchingToDebug;
 @property(retain) DVTiOSDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_assetServerChannel;
 - (id)_assetServerConnection;
 - (void)setupAssetServerWithCompletion:(CDUnknownBlockType)arg1;

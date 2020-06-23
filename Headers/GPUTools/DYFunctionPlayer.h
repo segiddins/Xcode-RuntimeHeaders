@@ -42,6 +42,8 @@
 }
 
 + (struct CGSize)shrinkSourceSize:(struct CGSize)arg1 toDestSize:(struct CGSize)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int currentExecutionModeFunctionIndex; // @synthesize currentExecutionModeFunctionIndex=_currentExecutionModeFunctionIndex;
 @property(readonly, nonatomic) unsigned int currentFileFunctionIndex; // @synthesize currentFileFunctionIndex=_currentFileFunctionIndex;
 @property(readonly, nonatomic) BOOL mainExecutionMode; // @synthesize mainExecutionMode=_mainExecutionMode;
@@ -51,8 +53,6 @@
 @property(readonly, nonatomic) struct CoreFunction *function; // @synthesize function=_function;
 @property(readonly, nonatomic) unsigned long long ctxID; // @synthesize ctxID=_ctxID;
 @property(readonly, retain, nonatomic) id <DYCaptureStore> captureStore; // @synthesize captureStore=_captureStore;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setCurrentContext:(unsigned long long)arg1;
 - (void)executeGraphicsFunction;
 - (void)executePlatformFunction;

@@ -31,6 +31,7 @@
     CDStruct_c519178c _margins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL alwaysUseMaxWidth; // @synthesize alwaysUseMaxWidth=_alwaysUseMaxWidth;
 @property(copy, nonatomic) NSNumber *singleRowAlignment; // @synthesize singleRowAlignment=_singleRowAlignment;
 @property(nonatomic) long long rowAlignment; // @synthesize rowAlignment=_rowAlignment;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSNumber *horizontalSpacing; // @synthesize horizontalSpacing=_horizontalSpacing;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 @property(readonly, copy) NSString *debugDescription;

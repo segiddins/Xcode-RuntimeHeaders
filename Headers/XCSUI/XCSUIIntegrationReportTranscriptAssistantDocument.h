@@ -16,9 +16,9 @@
 
 + (BOOL)autosavesInPlace;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *testIdentifier; // @synthesize testIdentifier=_testIdentifier;
 @property(retain, nonatomic) NSString *invocationRecordFilePath; // @synthesize invocationRecordFilePath=_invocationRecordFilePath;
-- (void).cxx_destruct;
 - (id)testIdentifierFromURL:(id)arg1;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (int)readOnlyStatus;

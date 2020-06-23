@@ -14,9 +14,9 @@
     IBDocumentUnarchiver *_unarchiver;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBDocumentUnarchiver *unarchiver; // @synthesize unarchiver=_unarchiver;
 @property(copy) NSXMLElement *element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (id)key;
 - (id)elementName;
 - (id)copyWithZone:(struct _NSZone *)arg1;

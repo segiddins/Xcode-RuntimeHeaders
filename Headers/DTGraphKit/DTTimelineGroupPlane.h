@@ -20,13 +20,13 @@
     DTTimelineGroupPlaneChanges *_changes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTTimelineGroupPlaneChanges *changes; // @synthesize changes=_changes;
 @property(readonly, nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double interplanePadding; // @synthesize interplanePadding=_interplanePadding;
 @property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(readonly, nonatomic) NSArray *subplanes; // @synthesize subplanes=_subplanes;
-- (void).cxx_destruct;
 - (void)rebuildAccessibility;
 - (id)accessibilityRows;
 - (void)_populateAccessibilityChildrenElements;

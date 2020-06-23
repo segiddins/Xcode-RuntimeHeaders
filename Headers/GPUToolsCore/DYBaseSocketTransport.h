@@ -22,8 +22,8 @@
 - (BOOL)relayMessageOverSharedMemoryTransport:(id)arg1 error:(id *)arg2;
 - (void)destroySharedMemoryTransport;
 - (void)_destroySharedMemoryTransport;
-- (id)createNewSharedMemoryTransportWithURL:(id)arg1;
-- (id)createNewSharedMemoryTransport;
+- (id)createNewSharedMemoryTransportWithURL:(id)arg1 uniqueIdentifier:(id)arg2;
+- (id)createNewSharedMemoryTransportWithUniqueIdentifier:(id)arg1;
 - (void)_invalidate;
 - (void)setPrioritizeOutgoingMessages:(BOOL)arg1;
 - (BOOL)connected;

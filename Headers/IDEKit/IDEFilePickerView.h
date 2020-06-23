@@ -63,6 +63,7 @@
 + (BOOL)automaticallyNotifiesObserversOfNavigableItemCoordinator;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSPredicate *_selectableItemPredicate; // @synthesize _selectableItemPredicate=__selectableItemPredicate;
 @property(copy) NSArray *_realExpandedItems; // @synthesize _realExpandedItems=__realExpandedItems;
 @property(copy) NSString *_fileNameFilterString; // @synthesize _fileNameFilterString=__fileNameFilterString;
@@ -85,7 +86,6 @@
 @property BOOL showsCancelButton; // @synthesize showsCancelButton=_showsCancelButton;
 @property(copy, nonatomic) NSPredicate *selectableNavigableItemFilter; // @synthesize selectableNavigableItemFilter=_selectableFileFilterPredicate;
 @property(copy, nonatomic) NSPredicate *allowedNavigableItemFilter; // @synthesize allowedNavigableItemFilter=_allowedFileFilterPredicate;
-- (void).cxx_destruct;
 - (id)_defaultEmptyContentString;
 - (id)outlineView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 item:(id)arg5 mouseLocation:(struct CGPoint)arg6;
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;

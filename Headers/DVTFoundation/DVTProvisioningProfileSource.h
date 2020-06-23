@@ -32,11 +32,11 @@
 + (id)allProviders;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateCallbackQueue; // @synthesize delegateCallbackQueue=_delegateCallbackQueue;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) NSArray *searchPaths; // @synthesize searchPaths=_searchPaths;
 @property(retain, nonatomic) id <DVTProvisioningProfileSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)uninstallProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)installProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)profileWithData:(id)arg1 platform:(id)arg2 error:(id *)arg3;

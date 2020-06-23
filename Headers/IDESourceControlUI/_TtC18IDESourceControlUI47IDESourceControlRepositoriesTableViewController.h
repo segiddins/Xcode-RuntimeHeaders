@@ -6,14 +6,12 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-#import <IDESourceControlUI/DVTTableViewDelegate-Protocol.h>
 #import <IDESourceControlUI/DVTTableViewFloatingRowViewController-Protocol.h>
-#import <IDESourceControlUI/NSTableViewDataSource-Protocol.h>
 #import <IDESourceControlUI/_TtP18IDESourceControlUI45IDESourceControlRepositoriesTableViewDelegate_-Protocol.h>
 
 @class DVTTableView, MISSING_TYPE, NSTableRowView, NSTableView;
 
-@interface _TtC18IDESourceControlUI47IDESourceControlRepositoriesTableViewController : DVTViewController <NSTableViewDataSource, DVTTableViewDelegate, DVTTableViewFloatingRowViewController, _TtP18IDESourceControlUI45IDESourceControlRepositoriesTableViewDelegate_>
+@interface _TtC18IDESourceControlUI47IDESourceControlRepositoriesTableViewController : DVTViewController <DVTTableViewFloatingRowViewController, _TtP18IDESourceControlUI45IDESourceControlRepositoriesTableViewDelegate_>
 {
     MISSING_TYPE *previousSelectedRow;
     MISSING_TYPE *changingSelectionThroughKeyPress;

@@ -15,10 +15,10 @@
     NSArrayController *_localizationArrayController;
 }
 
+- (void).cxx_destruct;
 @property __weak NSArrayController *localizationArrayController; // @synthesize localizationArrayController=_localizationArrayController;
 @property(copy) DVTLocale *baseDestinationLocale; // @synthesize baseDestinationLocale=_baseDestinationLocale;
 @property(copy) NSArray *baseDestinationLocales; // @synthesize baseDestinationLocales=_baseDestinationLocales;
-- (void).cxx_destruct;
 - (BOOL)canBecomeMainViewController;
 - (void)primitiveInvalidate;
 

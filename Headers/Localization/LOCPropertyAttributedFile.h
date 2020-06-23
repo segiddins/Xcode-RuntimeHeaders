@@ -6,12 +6,11 @@
 
 #import <Localization/LOCProperty.h>
 
-@class NSAttributedString, NSString;
+@class NSAttributedString;
 
 @interface LOCPropertyAttributedFile : LOCProperty
 {
     NSAttributedString *attributedString;
-    NSString *localeCode;
     unsigned long long segmentUnit;
     BOOL createdFromData;
     id reserved1;
@@ -19,11 +18,10 @@
     id reserved3;
 }
 
+- (void).cxx_destruct;
 @property BOOL createdFromData; // @synthesize createdFromData;
 @property unsigned long long segmentUnit; // @synthesize segmentUnit;
-@property(retain) NSString *localeCode; // @synthesize localeCode;
 @property(retain) NSAttributedString *attributedString; // @synthesize attributedString;
-- (void).cxx_destruct;
 - (id)createTranslatedInternalGlossaryWith:(id)arg1 segmentWithMrkElement:(BOOL)arg2 error:(id *)arg3;
 - (id)localizedFileContentsDataWithGlossary:(id)arg1 forLocale:(id)arg2 error:(id *)arg3;
 - (void)dealloc;

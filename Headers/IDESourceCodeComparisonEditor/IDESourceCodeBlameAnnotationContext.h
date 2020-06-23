@@ -13,8 +13,8 @@
     IDESourceCodeBlameController *_blameController;
 }
 
-@property(readonly) IDESourceCodeBlameController *blameController; // @synthesize blameController=_blameController;
 - (void).cxx_destruct;
+@property(readonly) IDESourceCodeBlameController *blameController; // @synthesize blameController=_blameController;
 - (id)initWithEditor:(id)arg1 document:(id)arg2 fileDataType:(id)arg3 blameController:(id)arg4 workspaceTabController:(id)arg5;
 
 @end

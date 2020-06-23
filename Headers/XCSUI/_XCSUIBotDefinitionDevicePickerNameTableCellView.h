@@ -13,8 +13,8 @@
     XCSDevice *_theDevice;
 }
 
-@property(retain) XCSDevice *theDevice; // @synthesize theDevice=_theDevice;
 - (void).cxx_destruct;
+@property(retain) XCSDevice *theDevice; // @synthesize theDevice=_theDevice;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)attributedStringWithStyle:(long long)arg1;
 

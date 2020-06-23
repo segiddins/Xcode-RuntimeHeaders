@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)instantiateFromStoryboard;
+- (void).cxx_destruct;
 @property __weak NSTextField *progressTextView; // @synthesize progressTextView=_progressTextView;
 @property __weak NSProgressIndicator *progressView; // @synthesize progressView=_progressView;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 @property(retain) NSString *text;
 @property float progress;

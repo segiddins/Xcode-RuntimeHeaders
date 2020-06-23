@@ -14,9 +14,9 @@
     NSString *_productName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *productName; // @synthesize productName=_productName;
 @property(readonly) IDESourcePackageReference *packageReference; // @synthesize packageReference=_packageReference;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithPackageReference:(id)arg1 productName:(id)arg2;
 

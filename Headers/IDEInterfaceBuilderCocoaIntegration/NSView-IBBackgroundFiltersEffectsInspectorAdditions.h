@@ -38,7 +38,7 @@
 - (id)ibViewsRelevantToPriorityOfKeyPath:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)ibDescriptiveTextOfCustomPriorityType:(id)arg1 withPriority:(long long)arg2;
 - (id)ibLabelForPriorityOfKeyPath:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)ibSwizzledNSViewPopulateResourceReferences:(id)arg1 withValueToVariantSetMap:(id)arg2;
+- (void)ibSwizzledNSViewPopulateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (BOOL)ibCanEmbedDirectlyInSplitView;
 - (Class)ibSwizzledNSViewTrackerClass;
 - (Class)ibSwizzledNSViewEditorClass;
@@ -98,7 +98,7 @@
 - (void)ibSwizzledNSView_ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibLocalAttributeKeyPaths;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
-- (id)ibSwizzledNSViewDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (BOOL)ibIgnoreFixedWidthConstraintsForLocalizationWarnings;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalLocalizableGeometryAttributeKeyPaths;

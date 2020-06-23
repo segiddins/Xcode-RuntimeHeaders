@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NSSwitch (IBNSSwitchIntegration) <IBDocumentArchiving>
++ (BOOL)ibIsCellBasedControl;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibInspectedCell;
 - (BOOL)ibIsUserSizable;

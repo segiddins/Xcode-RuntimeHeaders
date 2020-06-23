@@ -17,9 +17,9 @@
 }
 
 + (Class)ibDropTargetResolverClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSValue *targetFrame; // @synthesize targetFrame=_targetFrame;
 @property(copy) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
-- (void).cxx_destruct;
 - (BOOL)dvt_autoscrollWithExternalDragEvent:(id)arg1 animate:(BOOL)arg2;
 - (BOOL)interceptEvent:(id)arg1;
 - (BOOL)handleDragForChild:(id)arg1 forDragEvent:(id)arg2;

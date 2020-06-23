@@ -14,9 +14,9 @@
     NSLayoutConstraint *_topLayoutConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *topLayoutConstraint; // @synthesize topLayoutConstraint=_topLayoutConstraint;
 @property(retain) NSLayoutConstraint *leadingLayoutConstraint; // @synthesize leadingLayoutConstraint=_leadingLayoutConstraint;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *textColor;
 @property(retain, nonatomic) NSFont *font;
 @property(nonatomic) double topOffset;

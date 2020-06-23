@@ -17,9 +17,9 @@
     long long _optimisationLevel;
 }
 
+- (void).cxx_destruct;
 @property long long optimisationLevel; // @synthesize optimisationLevel=_optimisationLevel;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void *)loadSymbol:(id)arg1;
 - (BOOL)updateFromSourceCode:(id)arg1;
 - (BOOL)updateFromFile:(id)arg1;

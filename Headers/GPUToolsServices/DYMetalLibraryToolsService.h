@@ -31,8 +31,8 @@
 - (void)_writeBuildLog:(id)arg1 atURL:(id)arg2;
 - (id)_addBuildOptionsToCompileOptions:(id)arg1 buildFlags:(unsigned long long)arg2;
 - (id)_sanitizeCompileOptions:(id)arg1 buildFlags:(unsigned long long)arg2;
-- (id)_dependencyTargetsForFile:(id)arg1 sourceURL:(id)arg2 dependencyTargetMap:(struct NSMutableDictionary *)arg3;
-- (struct NSMutableDictionary *)_loadDependencyTargetMapAtPath:(id)arg1 sourceURL:(id)arg2 error:(id *)arg3;
+- (id)_dependencyTargetsForFile:(id)arg1 sourceURL:(id)arg2 dependencyTargetMap:(id)arg3;
+- (id)_loadDependencyTargetMapAtPath:(id)arg1 sourceURL:(id)arg2 error:(id *)arg3;
 - (id)_retrieveMetallibOptionsAtURL:(id)arg1 error:(id *)arg2;
 - (id)_retrieveBuildOptionsAndCompileTargetsForFunction:(id)arg1 sourceAtURL:(id)arg2 error:(id *)arg3;
 - (id)_retrieveBuildOptionsAndCompileTargetsForSourceAtURL:(id)arg1 modifiedFileURLs:(id)arg2 error:(id *)arg3;

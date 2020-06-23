@@ -21,6 +21,7 @@
     SKESceneDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKESceneDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) NSString *imageDestination; // @synthesize imageDestination=_imageDestination;
 @property(nonatomic) BOOL shouldCopyImages; // @synthesize shouldCopyImages=_shouldCopyImages;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL shouldPreserveOriginalTopology; // @synthesize shouldPreserveOriginalTopology=_shouldPreserveOriginalTopology;
 @property(nonatomic) BOOL shouldConvertUnits; // @synthesize shouldConvertUnits=_shouldConvertUnits;
 @property(nonatomic) BOOL shouldConvertToYUp; // @synthesize shouldConvertToYUp=_shouldConvertToYUp;
-- (void).cxx_destruct;
 - (id)scenekitLoadingOptions;
 - (id)init;
 - (void)serializeAttributes:(id)arg1;

@@ -21,12 +21,12 @@
 
 + (id)decodeSubranges:(id)arg1;
 + (id)decodeLines:(id)arg1 withSubranges:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(nonatomic) unsigned int recordsCount; // @synthesize recordsCount=_recordsCount;
 @property(retain, nonatomic) NSFileHandle *indexFileHandle; // @synthesize indexFileHandle=_indexFileHandle;
 @property(retain, nonatomic) NSFileHandle *dataFileHandle; // @synthesize dataFileHandle=_dataFileHandle;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)unarchiveAllCoverageLines:(id *)arg1;
 - (id)unarchiveCoverageLinesForKey:(id)arg1 error:(id *)arg2;

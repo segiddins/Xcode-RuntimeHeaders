@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEDocViewer/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSImage, NSString;
 
-@interface _TtC12IDEDocViewer27IDEDocumentationPlaceholder : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface _TtC12IDEDocViewer27IDEDocumentationPlaceholder : NSObject
 {
     MISSING_TYPE *representsHeading;
     MISSING_TYPE *_text;

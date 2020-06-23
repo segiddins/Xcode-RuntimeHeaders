@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *packageReferencesToRemove; // @synthesize packageReferencesToRemove=_packageReferencesToRemove;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 - (void)primitiveInvalidate;

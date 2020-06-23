@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <XCResultKit/NSCoding-Protocol.h>
+#import <XCResultKit/NSSecureCoding-Protocol.h>
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC14XCResultLegacy29DVTDocumentLocation_InfoPlist : NSObject <NSCoding>
+@interface _TtC14XCResultLegacy29DVTDocumentLocation_InfoPlist : NSObject <NSSecureCoding>
 {
     MISSING_TYPE *documentURL;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;

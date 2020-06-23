@@ -27,6 +27,7 @@
 }
 
 + (void)registerDefaultXcconfigCommandLineOverridingProperties:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL collectTimelineMetrics; // @synthesize collectTimelineMetrics=_collectTimelineMetrics;
 @property(readonly) BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
 @property(readonly) IDEXBSBuildParameters *xbsBuildParameters; // @synthesize xbsBuildParameters=_xbsBuildParameters;
@@ -37,7 +38,6 @@
 @property(readonly) IDESchemeCommand<IDEPrimitiveSchemeCommand> *schemeCommand; // @synthesize schemeCommand=_schemeCommand;
 @property(readonly, copy) NSString *buildAction; // @synthesize buildAction=_buildAction;
 @property(readonly, copy) IDEWorkspaceArenaSnapshot *workspaceArenaSnapshot; // @synthesize workspaceArenaSnapshot=_workspaceArenaSnapshot;
-- (void).cxx_destruct;
 - (id)dvt_detailedDebugDescription;
 - (id)description;
 - (unsigned long long)hash;

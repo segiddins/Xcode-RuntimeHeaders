@@ -23,6 +23,7 @@
     struct _NSRange _highlightedTextRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long suggestedOrder; // @synthesize suggestedOrder=_suggestedOrder;
 @property(readonly) NSNumber *initialSuggestedNumberOfLines; // @synthesize initialSuggestedNumberOfLines=_initialSuggestedNumberOfLines;
 @property(readonly) struct _NSRange highlightedTextRange; // @synthesize highlightedTextRange=_highlightedTextRange;
@@ -33,7 +34,6 @@
 @property(readonly) IDEBatchFindAbstractResult *parent; // @synthesize parent=_parent;
 @property(readonly) SEL childOrderingSelector; // @synthesize childOrderingSelector=_childOrderingSelector;
 @property(readonly) DVTDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (long long)compareSuggestedOrder:(id)arg1;
 - (BOOL)textRepresentationForPasteboardIsFileName;
 @property(readonly) NSString *contextualSuffix;

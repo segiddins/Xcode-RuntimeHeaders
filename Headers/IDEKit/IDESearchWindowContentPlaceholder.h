@@ -16,16 +16,18 @@
     BOOL _hasContent;
     NSString *_emptyContentString;
     NSString *_emptyContentSubtitle;
+    NSString *_emptyContentButtonTitle;
     long long _emptyContentStringStyle;
     NSFont *_emptyContentFont;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasContent; // @synthesize hasContent=_hasContent;
 @property(copy, nonatomic) NSFont *emptyContentFont; // @synthesize emptyContentFont=_emptyContentFont;
 @property(nonatomic) long long emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
+@property(copy, nonatomic) NSString *emptyContentButtonTitle; // @synthesize emptyContentButtonTitle=_emptyContentButtonTitle;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 

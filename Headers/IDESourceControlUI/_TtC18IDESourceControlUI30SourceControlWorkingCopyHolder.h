@@ -20,7 +20,6 @@
     MISSING_TYPE *tagsTreeNode;
     MISSING_TYPE *remotesTreeNode;
     MISSING_TYPE *stashesTreeNode;
-    MISSING_TYPE *pullRequestsTreeNode;
     MISSING_TYPE *contentDocumentLocation;
     MISSING_TYPE *treeCompletion;
     MISSING_TYPE *rootNodes;
@@ -42,8 +41,6 @@
 @property(nonatomic, readonly) NSArray *navigableItem_childRepresentedObjects;
 - (BOOL)isEqual:(id)arg1;
 - (void)primitiveInvalidate;
-- (void)pullRequestDataSourceDidUpdatePullRequests;
-@property(nonatomic, readonly) NSString *pullRequestDataSourceListenerIdentifier;
 @property(nonatomic) unsigned long long status; // @synthesize status;
 @property(nonatomic, readonly) NSURL *workingCopyFileURL;
 @property(nonatomic, readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;

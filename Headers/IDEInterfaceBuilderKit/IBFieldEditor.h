@@ -31,6 +31,7 @@
     DVTNotificationToken *_textViewFrameChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long conclusion; // @synthesize conclusion=_conclusion;
 @property(readonly) NSNumber *concludingTextMovement; // @synthesize concludingTextMovement=_concludingTextMovement;
 @property(copy) CDUnknownBlockType titleRectCalculator; // @synthesize titleRectCalculator=_titleRectCalculator;
@@ -41,7 +42,6 @@
 @property(readonly) IBFieldEditorTextView *textView; // @synthesize textView=_textView;
 @property(readonly) IBFieldEditorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) id userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)textViewDidChangeAttributes:(id)arg1;
 - (void)textDidEndEditing:(id)arg1;
 - (void)textDidChange:(id)arg1;

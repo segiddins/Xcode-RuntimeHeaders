@@ -22,10 +22,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)locationsWithPrimaryBranchPath:(id)arg1 branchesPath:(id)arg2 tagsPath:(id)arg3;
 + (id)locationsWithStandardLayout;
+- (void).cxx_destruct;
 @property(copy) DVTSourceControlPathLocation *relativeTagsLocation; // @synthesize relativeTagsLocation=_relativeTagsLocation;
 @property(copy) DVTSourceControlPathLocation *relativeBranchesLocation; // @synthesize relativeBranchesLocation=_relativeBranchesLocation;
 @property(copy) DVTSourceControlPathLocation *relativePrimaryBranchLocation; // @synthesize relativePrimaryBranchLocation=_relativePrimaryBranchLocation;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, getter=isCompleteForTags) BOOL completeForTags;

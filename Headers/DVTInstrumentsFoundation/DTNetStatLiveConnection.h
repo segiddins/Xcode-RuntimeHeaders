@@ -17,12 +17,12 @@
     NSString *_kind;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *kind; // @synthesize kind=_kind;
 @property(retain) NSData *remoteAddress; // @synthesize remoteAddress=_remoteAddress;
 @property(retain) NSData *localAddress; // @synthesize localAddress=_localAddress;
 @property unsigned int ifaceIndex; // @synthesize ifaceIndex=_ifaceIndex;
 @property unsigned long long pidOrRoute; // @synthesize pidOrRoute=_pidOrRoute;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,9 +17,9 @@
     NSDate *_lastUpdate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly) SCNMaterial *material; // @synthesize material=_material;
-- (void).cxx_destruct;
 - (id)previewForItem:(id)arg1;
 - (id)computePreview;
 - (void)encodeWithCoder:(id)arg1;

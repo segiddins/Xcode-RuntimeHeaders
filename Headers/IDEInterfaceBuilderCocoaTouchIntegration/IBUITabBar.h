@@ -8,13 +8,13 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, IBUITabBarItem, NSArray, NSImage, NSMutableArray, NSNumber, NSString;
+@class IBColor, IBUITabBarItem, NSArray, NSImage, NSMutableArray, NSNumber, NSString;
 
 @interface IBUITabBar : IBUIView <IBDocumentArchiving>
 {
     NSMutableArray *_items;
     BOOL _translucent;
-    IBUIColor *_selectedImageTintColor;
+    IBColor *_selectedImageTintColor;
     NSImage *_backgroundImage;
     NSImage *_selectionIndicatorImage;
     NSImage *_shadowImage;
@@ -22,7 +22,7 @@
     NSNumber *_itemWidth;
     NSNumber *_itemSpacing;
     long long _barStyle;
-    IBUIColor *_barTintColor;
+    IBColor *_barTintColor;
     IBUITabBarItem *_selectedItem;
 }
 
@@ -33,8 +33,9 @@
 + (id)keyPathsForValuesAffectingIbInspectedItemPositioning;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUITabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
-@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(copy, nonatomic) IBColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
 @property(retain, nonatomic) NSNumber *itemSpacing; // @synthesize itemSpacing=_itemSpacing;
@@ -43,8 +44,7 @@
 @property(retain, nonatomic) NSImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(retain, nonatomic) NSImage *selectionIndicatorImage; // @synthesize selectionIndicatorImage=_selectionIndicatorImage;
 @property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
-@property(copy, nonatomic) IBUIColor *selectedImageTintColor; // @synthesize selectedImageTintColor=_selectedImageTintColor;
-- (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *selectedImageTintColor; // @synthesize selectedImageTintColor=_selectedImageTintColor;
 @property(retain, nonatomic) NSArray *items;
 - (void)removeTabBarItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

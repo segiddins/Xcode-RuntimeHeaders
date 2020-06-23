@@ -13,8 +13,8 @@
     id <IDEIndexSymbol> _symbol;
 }
 
-@property(readonly) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
 - (void).cxx_destruct;
+@property(readonly) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
 - (id)initWithDocumentLocation:(id)arg1 contextText:(id)arg2 contextTextMatchingRange:(struct _NSRange)arg3 initialNumberOfLinesCalculator:(CDUnknownBlockType)arg4 parent:(id)arg5 symbol:(id)arg6 queryIdentifier:(long long)arg7 resultIdentifier:(long long)arg8;
 
 @end

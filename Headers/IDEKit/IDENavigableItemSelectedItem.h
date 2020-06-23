@@ -15,8 +15,8 @@
     IDENavigableItemArchivableRepresentation *_archivableRepresentation;
 }
 
-@property(readonly, nonatomic) IDENavigableItemArchivableRepresentation *archivableRepresentation; // @synthesize archivableRepresentation=_archivableRepresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDENavigableItemArchivableRepresentation *archivableRepresentation; // @synthesize archivableRepresentation=_archivableRepresentation;
 - (void)navigableItemForTemporaryCompatibilityInWorkspace:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)editorOpenSpecifierWithDocumentExtensionIdentifier:(id)arg1 error:(id *)arg2;
 - (id)editorOpenSpecifierWithError:(id *)arg1;

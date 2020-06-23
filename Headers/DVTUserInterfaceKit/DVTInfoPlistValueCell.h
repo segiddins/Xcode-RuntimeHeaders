@@ -15,9 +15,9 @@
     NSMutableArray *_tokens;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *_tokens; // @synthesize _tokens;
 @property(retain) id <DVTInfoPlistValueCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (struct _NSRange)textView:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange)arg2 toCharacterRange:(struct _NSRange)arg3;
 - (id)_tokenContainingCharacterLocation:(unsigned long long)arg1;

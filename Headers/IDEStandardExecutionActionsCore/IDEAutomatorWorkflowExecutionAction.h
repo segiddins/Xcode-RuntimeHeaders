@@ -14,8 +14,8 @@
 }
 
 + (id)actionType;
-@property(retain) IDEFileReference *workflowFileReference; // @synthesize workflowFileReference=_workflowFileReference;
 - (void).cxx_destruct;
+@property(retain) IDEFileReference *workflowFileReference; // @synthesize workflowFileReference=_workflowFileReference;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;

@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *sliceUUIDs; // @synthesize sliceUUIDs=_sliceUUIDs;
 @property(readonly) NSNumber *generationNumber; // @synthesize generationNumber=_generationNumber;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

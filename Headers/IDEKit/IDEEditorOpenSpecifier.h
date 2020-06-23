@@ -26,6 +26,7 @@
 + (id)structureEditorOpenSpecifierForDocumentURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
 + (id)structureEditorOpenSpecifierForDocumentLocation:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
 + (id)structureEditorOpenSpecifiersForNavigableItems:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property BOOL highlightSelection; // @synthesize highlightSelection=_highlightSelection;
 @property(readonly) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
@@ -36,7 +37,6 @@
 @property(readonly) id exploreAnnotationRepresentedObject; // @synthesize exploreAnnotationRepresentedObject=_exploreAnnotationRepresentedObject;
 @property(readonly) id annotationRepresentedObject; // @synthesize annotationRepresentedObject=_annotationRepresentedObject;
 @property(readonly) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
-- (void).cxx_destruct;
 - (id)initWithNavigableItemArchivableRepresentation:(id)arg1 documentExtensionIdentifier:(id)arg2 error:(id *)arg3;
 - (id)initWithNavigableItemArchivableRepresentation:(id)arg1 locationToSelect:(id)arg2 error:(id *)arg3;
 - (id)initWithNavigableItemArchivableRepresentation:(id)arg1 error:(id *)arg2;

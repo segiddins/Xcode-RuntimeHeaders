@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *label;
     MISSING_TYPE *aspectRatio;
     MISSING_TYPE *thumbnailProvider;
+    MISSING_TYPE *_actionTarget;
 }
 
 - (void).cxx_destruct;

@@ -31,6 +31,7 @@
     MISSING_TYPE *deploymentTargetLdEnvName;
     MISSING_TYPE *deploymentTargetLdFlagName;
     MISSING_TYPE *swiftTargetPrefix;
+    MISSING_TYPE *minimumOSForSwiftInTheOS;
     MISSING_TYPE *embeddedProvisioningProfileName;
     MISSING_TYPE *sdkCanonicalNamePublic;
     MISSING_TYPE *sdkCanonicalNameInternal;

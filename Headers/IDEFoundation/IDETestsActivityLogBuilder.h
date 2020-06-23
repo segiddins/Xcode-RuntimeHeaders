@@ -26,6 +26,7 @@
 }
 
 + (id)recursiveDescriptionForError:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *testPlanName; // @synthesize testPlanName=_testPlanName;
 @property(retain) IDEActivityLogSectionRecorder *currentTestRunSpecificationGroupRecorder; // @synthesize currentTestRunSpecificationGroupRecorder=_currentTestRunSpecificationGroupRecorder;
 @property(retain) _TtC13IDEFoundation28IDETestRunSpecificationGroup *currentTestRunSpecificationGroup; // @synthesize currentTestRunSpecificationGroup=_currentTestRunSpecificationGroup;
@@ -35,15 +36,15 @@
 @property __weak id <IDETestsActivityLogBuilderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
 @property BOOL testsFinishedSuccessfully; // @synthesize testsFinishedSuccessfully=_testsFinishedSuccessfully;
-- (void).cxx_destruct;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didSkipTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didFinishActivity:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 willStartActivity:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testDidOutput:(id)arg3;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 withRawOutput:(id)arg4;
-- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(id)arg8;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinishWithRunCount:(unsigned long long)arg3 skipCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8 rawOutput:(id)arg9;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 didStartAt:(id)arg4 rawOutput:(id)arg5;
 - (void)testRunSessionDidFinish:(id)arg1 withCancellation:(BOOL)arg2;

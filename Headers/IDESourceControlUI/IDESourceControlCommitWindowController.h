@@ -52,6 +52,7 @@
 }
 
 + (id)sourceControlCommitWindowLogAspect;
+- (void).cxx_destruct;
 @property(retain) id <DVTSourceControlCancellable> commitToken; // @synthesize commitToken=_commitToken;
 @property(retain) NSString *statusText; // @synthesize statusText=_statusText;
 @property(getter=isPushToRemoteEnabled) BOOL pushToRemoteEnabled; // @synthesize pushToRemoteEnabled=_pushToRemoteEnabled;
@@ -60,7 +61,6 @@
 @property(retain) IDESourceControlWorkspaceUIHandler *workspaceUIHandler; // @synthesize workspaceUIHandler=_workspaceUIHandler;
 @property(retain) _TtC18IDESourceControlUI43IDESourceControlCommitAndPushMenuController *singlePushMenuController; // @synthesize singlePushMenuController=_singlePushMenuController;
 @property(copy) NSString *commitMessage; // @synthesize commitMessage=_commitMessage;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
@@ -118,8 +118,9 @@
 - (id)_navigationItemWithIdentifier:(id)arg1;
 - (void)_updateDFRCommitFilesButton:(id)arg1;
 - (id)_modeActionItemWithIdentifier:(id)arg1;
-- (id)_commitItem;
+- (id)_commitItemWithIdentifier:(id)arg1;
 - (id)_cancelItemWithIdentifier:(id)arg1;
+- (id)_cancelCommitGroupWithIdentifier:(id)arg1;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
 

@@ -16,8 +16,8 @@
     IDEActivityLogSection *_issueLog;
 }
 
-@property(retain, nonatomic) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 - (void)setTarget:(id)arg1 andAction:(SEL)arg2;
 - (id)view;
 - (void)propagateState;

@@ -55,6 +55,7 @@
 + (void)_setSDK:(id)arg1 forResolvedAbsolutePath:(id)arg2;
 + (id)knownSDKs;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSSet *aliases; // @synthesize aliases=_aliases;
 @property(readonly) DVTSDKVariant *defaultVariant; // @synthesize defaultVariant=_defaultVariant;
 @property(readonly) NSDictionary *variants; // @synthesize variants=_variants;
@@ -76,7 +77,6 @@
 @property(readonly, copy) DVTFilePath *sdkPath; // @synthesize sdkPath=_sdkPath;
 @property(readonly, copy) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 @property(readonly, copy) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

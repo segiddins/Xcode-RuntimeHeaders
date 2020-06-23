@@ -21,11 +21,11 @@
 + (id)_snapshotWithProvisioningProfile:(id)arg1 andSigningCertificate:(id)arg2 profileQualification:(id)arg3;
 + (id)_snapshotWithSigningCertificate:(id)arg1;
 + (id)_snapshotWithIdentityHash:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProfileQualification *profileQualification; // @synthesize profileQualification=_profileQualification;
 @property(copy) NSString *identityHash; // @synthesize identityHash=_identityHash;
 @property(retain) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
 @property(retain) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly) _Bool willSign;

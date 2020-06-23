@@ -21,10 +21,10 @@
 
 + (id)defaultKeychainWithError:(id *)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *password; // @synthesize password=_password;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) BOOL isDefaultKeychain; // @synthesize isDefaultKeychain=_isDefaultKeychain;
-- (void).cxx_destruct;
 - (struct __SecKeychain *)keychainRefWithError:(id *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     NSString *_displayType;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldAppearInSuggestions; // @synthesize shouldAppearInSuggestions=_shouldAppearInSuggestions;
 @property(readonly) NSString *displayType; // @synthesize displayType=_displayType;
 @property(readonly) NSString *displayText; // @synthesize displayText=_displayText;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 type:(id)arg2;

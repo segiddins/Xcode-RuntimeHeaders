@@ -16,11 +16,11 @@
     NSTextField *_testStatus;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *testStatus; // @synthesize testStatus=_testStatus;
 @property __weak NSTextField *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 @property __weak NSTextField *deviceModelName; // @synthesize deviceModelName=_deviceModelName;
 @property __weak NSTextField *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

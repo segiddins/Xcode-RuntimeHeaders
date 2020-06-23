@@ -14,9 +14,9 @@
     NSTextField *_progressField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *progressField; // @synthesize progressField=_progressField;
 @property(retain, nonatomic) IDECoverageReportMeterBar *meterBar; // @synthesize meterBar=_meterBar;
-- (void).cxx_destruct;
 
 @end
 

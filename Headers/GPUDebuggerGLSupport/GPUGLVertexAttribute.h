@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *components; // @synthesize components=_components;
 @property(nonatomic) int divisor; // @synthesize divisor=_divisor;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

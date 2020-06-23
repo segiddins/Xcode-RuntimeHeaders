@@ -19,9 +19,9 @@
 
 + (id)activityReporterWithExtension:(id)arg1 workspace:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2;
 - (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 isUserVisible:(BOOL)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;

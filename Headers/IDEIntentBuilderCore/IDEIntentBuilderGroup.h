@@ -23,13 +23,13 @@
 
 + (id)defaultItemName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic, setter=_setModel:) __weak IDEIntentBuilderModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *keyPrefix; // @synthesize keyPrefix=_keyPrefix;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locationDescription;
 - (id)generateIssues;
 - (void)_clearTransientGroupItems;

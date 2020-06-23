@@ -19,13 +19,13 @@
     NSObject<OS_sysmon_row> *_currentRow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDisconnected; // @synthesize isDisconnected=_isDisconnected;
 @property(nonatomic) BOOL hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(nonatomic) NSObject<OS_sysmon_row> *currentRow; // @synthesize currentRow=_currentRow;
 @property(retain, nonatomic) NSObject<OS_sysmon_request> *sysmonRequest; // @synthesize sysmonRequest=_sysmonRequest;
 @property(retain, nonatomic) NSDate *currentSampleTimestamp; // @synthesize currentSampleTimestamp=_currentSampleTimestamp;
 @property(nonatomic) __weak id <DVTSysmonBridgeDelegate><DVTInvalidation> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)disconnect;
 - (void)startUpdates;

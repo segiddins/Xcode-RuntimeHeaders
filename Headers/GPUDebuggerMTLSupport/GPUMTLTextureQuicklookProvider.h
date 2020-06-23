@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSSlider *_imageSliceSlider;
 }
 
+- (void).cxx_destruct;
 @property __weak NSSlider *imageSliceSlider; // @synthesize imageSliceSlider=_imageSliceSlider;
 @property __weak NSView *bottomBarView; // @synthesize bottomBarView=_bottomBarView;
 @property __weak NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property(retain, nonatomic) GPUMTLTextureQuicklookView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <DYPResourceManager> resourceManager; // @synthesize resourceManager=_resourceManager;
-- (void).cxx_destruct;
 - (id)dataRepresentation;
 @property(readonly) NSString *extensionForTemporaryFile;
 - (void)cancelLoading;

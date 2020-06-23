@@ -18,11 +18,11 @@
 
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
 @property __weak NSTextField *lozengeTextField; // @synthesize lozengeTextField=_lozengeTextField;
 @property(retain, nonatomic) XCSBot *reflightBot; // @synthesize reflightBot=_reflightBot;
-- (void).cxx_destruct;
 - (void)upgradeBot:(id)arg1;
 - (void)loadView;
 

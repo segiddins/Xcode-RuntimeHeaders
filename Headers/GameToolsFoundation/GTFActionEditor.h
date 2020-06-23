@@ -79,6 +79,7 @@
 + (void)setLastEditorVisibility:(BOOL)arg1;
 + (BOOL)lastEditorVisibility;
 + (id)dataCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filterCategoryName; // @synthesize filterCategoryName=_filterCategoryName;
 @property(retain, nonatomic) NSDictionary *imageAssetLookup; // @synthesize imageAssetLookup=_imageAssetLookup;
 @property(retain, nonatomic) GTFActionMapper *mapper; // @synthesize mapper=_mapper;
@@ -101,7 +102,6 @@
 @property(copy, nonatomic) NSDictionary *filteredTargets; // @synthesize filteredTargets=_filteredTargets;
 @property(copy, nonatomic) NSArray *selectedActions; // @synthesize selectedActions=_selectedActions;
 @property(nonatomic) __weak id <GTFActionEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)nodeTrackView:(id)arg1 reverseActions:(id)arg2;
 - (void)nodeTrackView:(id)arg1 duplicateActions:(id)arg2;
 - (void)pasteActionsIntoNodeTrackView:(id)arg1;

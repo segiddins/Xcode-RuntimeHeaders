@@ -32,12 +32,12 @@
 + (id)_extensionsFilteredByPlatformIdentifier:(id)arg1 productType:(id)arg2 target:(id)arg3;
 + (id)keyPathsForValuesAffectingSelectedProvisioningTeam;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *enqueuedCoordinatorBroadcastNames; // @synthesize enqueuedCoordinatorBroadcastNames=_enqueuedCoordinatorBroadcastNames;
 @property(retain, nonatomic) DVTDelayedInvocation *coordinatorNotificationProcessingInvocation; // @synthesize coordinatorNotificationProcessingInvocation=_coordinatorNotificationProcessingInvocation;
 @property(readonly) Xcode3Target *target; // @synthesize target=_target;
 - (id)buildConfiguration;
 - (id)platformIdentifier;
-- (void).cxx_destruct;
 - (void)_processCoordinatorNotifications;
 - (void)_coordinatorChanged:(id)arg1;
 - (void)runFlightChecks;

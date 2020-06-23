@@ -21,12 +21,12 @@
 
 + (id)allTestActivitiesForWorkspace:(id)arg1 error:(id *)arg2 destinationLanguages:(id)arg3;
 + (id)mergePlistWithAttachmentsFromAttachments:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *languages; // @synthesize languages=_languages;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(readonly, copy, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly, copy, nonatomic) NSString *device; // @synthesize device=_device;
 @property(readonly, copy, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (id)referenceFilesForLocale:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *formattedLanguage;
 @property(readonly, nonatomic, getter=isIncludedEnabled) BOOL includedEnabled;

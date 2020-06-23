@@ -13,8 +13,8 @@
     id <IDENoteAnnotationExplorableItem> _note;
 }
 
-@property(readonly) id <IDENoteAnnotationExplorableItem> note; // @synthesize note=_note;
 - (void).cxx_destruct;
+@property(readonly) id <IDENoteAnnotationExplorableItem> note; // @synthesize note=_note;
 - (int)explorationType;
 - (id)initWithNote:(id)arg1;
 

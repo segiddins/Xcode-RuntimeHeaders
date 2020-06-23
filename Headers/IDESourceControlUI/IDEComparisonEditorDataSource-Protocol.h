@@ -18,8 +18,8 @@
 - (BOOL)primaryEditorShowsDocumentPreview;
 - (NSString *)contentStringForSecondaryEmptyEditorWithDocumentLocation:(DVTDocumentLocation *)arg1;
 - (NSString *)contentStringForPrimaryEmptyEditorWithDocumentLocation:(DVTDocumentLocation *)arg1;
-- (BOOL)shouldShowEmptyEditorForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 submodeType:(int)arg2;
-- (BOOL)shouldShowEmptyEditorForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 submodeType:(int)arg2;
+- (BOOL)shouldShowEmptyEditorForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1;
+- (BOOL)shouldShowEmptyEditorForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1;
 - (id <DVTInvalidation>)documentForAncestorDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, long long, NSError *))arg2;
 - (id <DVTInvalidation>)navigableItemsForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 usingNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg2 completionBlock:(void (^)(IDENavigableItem *, IDENavigableItem *, NSError *))arg3;
 - (id <DVTInvalidation>)navigableItemsForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 usingNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg2 completionBlock:(void (^)(IDENavigableItem *, IDENavigableItem *, NSError *))arg3;

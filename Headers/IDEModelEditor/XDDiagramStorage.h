@@ -24,8 +24,8 @@
 }
 
 + (void)initialize;
-@property BOOL needsSetup; // @synthesize needsSetup=_needsSetup;
 - (void).cxx_destruct;
+@property BOOL needsSetup; // @synthesize needsSetup=_needsSetup;
 - (id)userInfo;
 - (void)setUserInfo:(id)arg1;
 - (id)delegate;

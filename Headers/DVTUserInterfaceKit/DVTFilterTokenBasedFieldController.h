@@ -33,6 +33,7 @@
     NSMutableDictionary *_completionData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *completionData; // @synthesize completionData=_completionData;
 @property(copy, nonatomic) NSSet *allowedClassesForArchivingState; // @synthesize allowedClassesForArchivingState=_allowedClassesForArchivingState;
 @property(nonatomic) __weak id <DVTFilterTokenFieldControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSArray *additionalIconMenuItems; // @synthesize additionalIconMenuItems=_additionalIconMenuItems;
 @property(nonatomic, getter=isRecentFiltersEnabled) BOOL recentFiltersEnabled; // @synthesize recentFiltersEnabled=_recentFiltersEnabled;
 @property(readonly, nonatomic) DVTFilterTokenField *tokenField; // @synthesize tokenField=_tokenField;
-- (void).cxx_destruct;
 - (void)tokenFieldCompletion:(id)arg1 didSelectRow:(unsigned long long)arg2 inSection:(unsigned long long)arg3;
 - (id)tokenFieldCompletion:(id)arg1 rowStringFor:(unsigned long long)arg2 inSection:(unsigned long long)arg3;
 - (unsigned long long)tokenFieldCompletion:(id)arg1 numOfRowsForSection:(unsigned long long)arg2;

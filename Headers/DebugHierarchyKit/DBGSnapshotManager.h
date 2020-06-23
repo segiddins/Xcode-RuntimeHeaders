@@ -17,11 +17,11 @@
 }
 
 + (id)snapshotManagerWithSnapshot:(id)arg1 primaryDataCoordinator:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) DBGDataCoordinator *primaryDataCoordinator; // @synthesize primaryDataCoordinator=_primaryDataCoordinator;
 @property(readonly) DebugHierarchyRuntimeInfo *runtimeInfo; // @synthesize runtimeInfo=_runtimeInfo;
 @property(readonly) DBGSnapshotAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(readonly) DBGSnapshot *snapshot; // @synthesize snapshot=_snapshot;
-- (void).cxx_destruct;
 - (void)logMessage:(id)arg1 userFacing:(BOOL)arg2;
 - (void)setPrimaryDataCoordinator:(id)arg1;
 - (void)cancelAllRequests;

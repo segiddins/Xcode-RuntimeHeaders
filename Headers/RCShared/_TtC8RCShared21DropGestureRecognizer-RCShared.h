@@ -6,9 +6,7 @@
 
 #import <RCShared/_TtC8RCShared21DropGestureRecognizer.h>
 
-#import <RCShared/NSDraggingDestination-Protocol.h>
-
-@interface _TtC8RCShared21DropGestureRecognizer (RCShared) <NSDraggingDestination>
+@interface _TtC8RCShared21DropGestureRecognizer (RCShared)
 - (BOOL)performDragOperation:(id)arg1;
 - (void)draggingEnded:(id)arg1;
 - (void)draggingExited:(id)arg1;

@@ -36,8 +36,8 @@
     NSTextField *_progressField;
 }
 
-@property BOOL processing; // @synthesize processing=_processing;
 - (void).cxx_destruct;
+@property BOOL processing; // @synthesize processing=_processing;
 - (void)cancelAction:(id)arg1;
 - (void)okAction:(id)arg1;
 - (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;

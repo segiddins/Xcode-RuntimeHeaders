@@ -31,10 +31,10 @@ __attribute__((visibility("hidden")))
     AUAudioUnit *_target;
 }
 
-@property(retain, nonatomic) AUAudioUnit *target; // @synthesize target=_target;
-@property(nonatomic) unsigned int desiredLayoutTag; // @synthesize desiredLayoutTag=_desiredLayoutTag;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AUAudioUnit *target; // @synthesize target=_target;
+@property(nonatomic) unsigned int desiredLayoutTag; // @synthesize desiredLayoutTag=_desiredLayoutTag;
 - (id)outputBusses;
 - (id)inputBusses;
 - (id)channelCapabilities;

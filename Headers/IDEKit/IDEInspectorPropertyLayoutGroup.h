@@ -17,9 +17,9 @@
     BOOL propertyViewsAreInstalled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEInspectorProperty *rightProperty; // @synthesize rightProperty;
 @property(readonly, nonatomic) IDEInspectorProperty *leftProperty; // @synthesize leftProperty;
-- (void).cxx_destruct;
 - (void)inspectorContentViewDidMoveToWindow;
 - (void)inspectorContentViewWillMoveToWindow:(id)arg1;
 - (void)uninstallFromInspectorContentView;

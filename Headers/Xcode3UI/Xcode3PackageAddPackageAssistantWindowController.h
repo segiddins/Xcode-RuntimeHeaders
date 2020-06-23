@@ -14,9 +14,9 @@
     NSMutableArray *_completionPreprocessorExecutionStack;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *completionPreprocessorExecutionStack; // @synthesize completionPreprocessorExecutionStack=_completionPreprocessorExecutionStack;
 @property(retain) NSMutableArray *completionPreprocessors; // @synthesize completionPreprocessors=_completionPreprocessors;
-- (void).cxx_destruct;
 - (void)goBack:(id)arg1;
 
 @end

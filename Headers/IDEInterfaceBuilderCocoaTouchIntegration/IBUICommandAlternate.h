@@ -22,11 +22,11 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) int modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) IBKeyEquivalent *keyEquivalent;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

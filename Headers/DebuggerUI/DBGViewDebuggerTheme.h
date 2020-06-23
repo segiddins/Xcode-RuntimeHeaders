@@ -30,8 +30,8 @@
     NSView *_view;
 }
 
-@property __weak NSView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property __weak NSView *view; // @synthesize view=_view;
 - (id)_colorForDefaultKey:(id)arg1;
 - (id)_effectiveComponentBasedColorForColor:(id)arg1;
 @property(readonly) NSColor *trueSpacingBoxFillColor_Highlighted; // @synthesize trueSpacingBoxFillColor_Highlighted=_trueSpacingBoxFillColor_Highlighted;

@@ -31,6 +31,7 @@
     XCSUIInsetHorizontalDividerLine *_dividerLine;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIInsetHorizontalDividerLine *dividerLine; // @synthesize dividerLine=_dividerLine;
 @property __weak DVTOutlineView *olv; // @synthesize olv=_olv;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) XCSIntegrationIssues *integrationIssues; // @synthesize integrationIssues=_integrationIssues;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 @property(copy, nonatomic) NSArray *issueSections; // @synthesize issueSections=_issueSections;
-- (void).cxx_destruct;
 - (void)copy:(id)arg1;
 - (id)issuesTableCellViewFromSuperview:(id)arg1;
 - (void)fixIt:(id)arg1 editingMode:(long long)arg2;

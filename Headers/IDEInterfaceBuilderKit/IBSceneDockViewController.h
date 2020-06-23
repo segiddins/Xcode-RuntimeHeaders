@@ -31,12 +31,12 @@
     IBStructureAreaDockView *_dockView;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBStructureAreaDockView *dockView; // @synthesize dockView=_dockView;
 @property(copy, nonatomic) DVTMutableOrderedSet *selectedObjects; // @synthesize selectedObjects=_selectedObjects;
 @property(readonly) id <IBHighlightProvider> highlightProvider; // @synthesize highlightProvider=_highlightProvider;
 @property(readonly) NSObject<IBPrimarySceneObject> *primarySceneObject; // @synthesize primarySceneObject=_primarySceneObject;
 @property(nonatomic) __weak IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 - (void)incrementHighlightGeneration;
 - (long long)highlightGeneration;
 - (id)groupForObject:(id)arg1;

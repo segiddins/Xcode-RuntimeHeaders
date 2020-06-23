@@ -21,13 +21,13 @@
 }
 
 + (BOOL)canShowContentForProduct:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTDelayedInvocation *delayedHideSpinner; // @synthesize delayedHideSpinner=_delayedHideSpinner;
 @property(retain) DVTObservingToken *hasCompletedInitialLoadingObserver; // @synthesize hasCompletedInitialLoadingObserver=_hasCompletedInitialLoadingObserver;
 @property(retain) DVTObservingToken *selectedProductObserver; // @synthesize selectedProductObserver=_selectedProductObserver;
 @property(retain) DVTObservingToken *inspectableObserver; // @synthesize inspectableObserver=_inspectableObserver;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (BOOL)vendorIsBusy;
-- (void).cxx_destruct;
 - (BOOL)shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;

@@ -41,6 +41,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isRunningTests; // @synthesize isRunningTests=_isRunningTests;
 @property(retain, nonatomic) NSString *testNamePatternString; // @synthesize testNamePatternString=_testNamePatternString;
 @property(nonatomic) BOOL showSchemeTestablesOnly; // @synthesize showSchemeTestablesOnly=_showSchemeTestablesOnly;
@@ -51,7 +52,6 @@
 @property(retain) NSLayoutConstraint *activeTestPlanPopUpButtonWidthConstraint; // @synthesize activeTestPlanPopUpButtonWidthConstraint=_activeTestPlanPopUpButtonWidthConstraint;
 @property(retain) NSPopUpButton *activeTestPlanPopUpButton; // @synthesize activeTestPlanPopUpButton=_activeTestPlanPopUpButton;
 @property(readonly) long long loadingProgress; // @synthesize loadingProgress=_loadingProgress;
-- (void).cxx_destruct;
 - (void)tableRowView:(id)arg1 mouseInside:(BOOL)arg2;
 - (void)_handleRunTestButtonPressed:(id)arg1;
 - (void)_updateStatusViewForTableCellView:(id)arg1;

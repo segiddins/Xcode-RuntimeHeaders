@@ -7,8 +7,8 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (PlistNumberExtensions)
-- (id)stringValue;
-- (id)numberValue;
+- (id)plist_stringValue;
+- (id)plist_numberValue;
 - (BOOL)isPlistCommentNode;
 - (id)plistStringWithIndent:(id)arg1;
 - (id)plistString;

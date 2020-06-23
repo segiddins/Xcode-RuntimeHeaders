@@ -15,9 +15,9 @@
     NSMutableArray *_childItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEKeyBinding *keyBinding; // @synthesize keyBinding=_keyBinding;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)removeObjectFromChildItemsAtIndex:(unsigned long long)arg1;

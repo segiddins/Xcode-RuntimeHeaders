@@ -16,11 +16,11 @@
     DVTPortalPermissionsReason *_reason;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPortalPermissionsReason *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSNumber *resultCode; // @synthesize resultCode=_resultCode;
 @property(retain, nonatomic) NSNumber *accessAllowed; // @synthesize accessAllowed=_accessAllowed;
 @property(retain, nonatomic) NSString *permission; // @synthesize permission=_permission;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long plaStatus;
 @property(readonly, nonatomic) BOOL isRegisteredAppleDeveloper;
 

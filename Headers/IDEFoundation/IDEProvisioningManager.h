@@ -44,6 +44,7 @@
 + (id)keyPathsForValuesAffectingFinishedLoading;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateCallbackQueue; // @synthesize delegateCallbackQueue=_delegateCallbackQueue;
 @property(nonatomic) __weak id <IDEProvisioningManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <IDEProvisionableProvider> provisionableProvider; // @synthesize provisionableProvider=_provisionableProvider;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) NSMapTable *provisionablesToManagers; // @synthesize provisionablesToManagers=_provisionablesToManagers;
 @property(readonly, nonatomic) IDEProvisioningLedger *ledger; // @synthesize ledger=_ledger;
 @property(retain, nonatomic) IDEProvisioningManagerContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)setDelegate:(id)arg1 callbackQueue:(id)arg2;
 - (void)repairForRepairable:(id)arg1 userAction:(id)arg2 didFailWithError:(id)arg3;
 - (void)repairUserAction:(id)arg1 didFinishForRepairable:(id)arg2;

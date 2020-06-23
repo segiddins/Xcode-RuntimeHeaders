@@ -17,11 +17,11 @@
     id <IDEProductsInspectable> _inspectable;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideBottomBorder; // @synthesize hideBottomBorder=_hideBottomBorder;
 @property(readonly) BOOL hidden; // @synthesize hidden=_hidden;
 @property(readonly) id <IDEProductsInspectable> inspectable; // @synthesize inspectable=_inspectable;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)initWithInspectable:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -16,11 +16,11 @@
     NSColor *_strokeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 fillColor:(id)arg3 strokeColor:(id)arg4;
 
 @end

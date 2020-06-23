@@ -15,10 +15,10 @@
     NSMutableDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject *member; // @synthesize member=_member;
 @property(retain) IBMemberID *memberID; // @synthesize memberID=_memberID;
 @property(retain) NSMutableDictionary *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (id)metadataCreatingIfNeeded;
 - (id)metadataForKey:(id)arg1;
 - (void)setMetadata:(id)arg1 forKey:(id)arg2;

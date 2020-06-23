@@ -47,6 +47,7 @@
 }
 
 + (id)swatchImageForColor:(id)arg1 withSize:(struct CGSize)arg2 appearanceToUse:(id)arg3 noColorStrokeWidth:(double)arg4 isShowingMultipleValues:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenuItem *selectedMenuItem; // @synthesize selectedMenuItem=_selectedMenuItem;
 @property(retain) DVTMutableOrderedDictionary *colorGroups; // @synthesize colorGroups=_colorGroups;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
@@ -63,7 +64,6 @@
 @property(nonatomic) int defaultColorMode; // @synthesize defaultColorMode=_defaultColorMode;
 @property(retain, nonatomic) NSColor *defaultColor; // @synthesize defaultColor=_defaultColor;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)unbind:(id)arg1;
 - (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (void)observedColorValueDidChangeToValue:(id)arg1;

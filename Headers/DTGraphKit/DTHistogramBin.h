@@ -17,12 +17,12 @@
     NSMutableArray *bars;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *bars; // @synthesize bars;
 @property(nonatomic) _Bool isFake; // @synthesize isFake;
 @property(nonatomic) double end; // @synthesize end;
 @property(nonatomic) double start; // @synthesize start;
 @property(retain, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

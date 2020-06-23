@@ -20,10 +20,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *supportedGPUFamilies; // @synthesize supportedGPUFamilies=_supportedGPUFamilies;
 @property(readonly, nonatomic) NSArray *supportedFeatureSets; // @synthesize supportedFeatureSets=_supportedFeatureSets;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)supportsCapabilitiesOfGraphicsAPI:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

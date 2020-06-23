@@ -16,9 +16,9 @@
 
 + (id)dictionaryFromOptions:(id)arg1;
 + (id)optionWithName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *value; // @synthesize value=_value;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

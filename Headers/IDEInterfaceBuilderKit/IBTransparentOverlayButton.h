@@ -11,8 +11,8 @@
     NSButton *_delegate;
 }
 
-@property(nonatomic) __weak NSButton *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSButton *delegate; // @synthesize delegate=_delegate;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 

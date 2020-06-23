@@ -45,8 +45,8 @@ __attribute__((visibility("hidden")))
 + (id)iconImage_stepForward;
 + (id)iconImage_stepBack;
 + (id)assetBundle;
-@property __weak GPUSharedTabUIState *tabUIState; // @synthesize tabUIState=_tabUIState;
 - (void).cxx_destruct;
+@property __weak GPUSharedTabUIState *tabUIState; // @synthesize tabUIState=_tabUIState;
 - (void)updateShaderDebuggerButton;
 - (void)updateShaderControls;
 - (void)updateControls;

@@ -30,6 +30,7 @@
     IDESchemeActionPlatformRecord *_platformRecord;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDESchemeActionPlatformRecord *platformRecord; // @synthesize platformRecord=_platformRecord;
 @property unsigned long long logicalCPUCoresPerPackage; // @synthesize logicalCPUCoresPerPackage=_logicalCPUCoresPerPackage;
 @property unsigned long long physicalCPUCoresPerPackage; // @synthesize physicalCPUCoresPerPackage=_physicalCPUCoresPerPackage;
@@ -48,7 +49,6 @@
 @property(readonly, copy) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(readonly, getter=isConcreteDevice) BOOL concreteDevice; // @synthesize concreteDevice=_concreteDevice;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithDevice:(id)arg1;

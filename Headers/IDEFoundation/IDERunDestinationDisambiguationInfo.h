@@ -21,6 +21,7 @@
     DVTSDKVariant *_targetSDKVariant;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTSDKVariant *targetSDKVariant; // @synthesize targetSDKVariant=_targetSDKVariant;
 @property(readonly) DVTSDK *targetSDK; // @synthesize targetSDK=_targetSDK;
 @property(readonly) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
@@ -28,7 +29,6 @@
 @property(readonly) NSString *deviceModelName; // @synthesize deviceModelName=_deviceModelName;
 @property(readonly) NSString *deviceOperatingSystemBuild; // @synthesize deviceOperatingSystemBuild=_deviceOperatingSystemBuild;
 @property(readonly) NSString *deviceOperatingSystemVersion; // @synthesize deviceOperatingSystemVersion=_deviceOperatingSystemVersion;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRunDestination:(id)arg1;

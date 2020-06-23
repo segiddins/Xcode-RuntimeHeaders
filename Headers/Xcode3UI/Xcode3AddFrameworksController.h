@@ -29,6 +29,7 @@
     BOOL _showPlatformBadging;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 @property BOOL showPlatformBadging; // @synthesize showPlatformBadging=_showPlatformBadging;
 @property BOOL showsEmbeddableContent; // @synthesize showsEmbeddableContent=_showsEmbeddableContent;
@@ -39,7 +40,6 @@
 @property BOOL showsLocalPackageContent; // @synthesize showsLocalPackageContent=_showsLocalPackageContent;
 @property BOOL showsWorkspaceContent; // @synthesize showsWorkspaceContent=_showsWorkspaceContent;
 @property BOOL showsProjectContent; // @synthesize showsProjectContent=_showsProjectContent;
-- (void).cxx_destruct;
 - (id)filePickerView:(id)arg1 outlineView:(id)arg2 toolTipForCell:(id)arg3 rect:(struct CGRect *)arg4 tableColumn:(id)arg5 item:(id)arg6 mouseLocation:(struct CGPoint)arg7;
 - (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
 - (void)populateLibraryGroupsInBackground;

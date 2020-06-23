@@ -8,18 +8,19 @@
 
 #import <DVTSourceControl/DVTSourceControlCancellable-Protocol.h>
 
-@class NSString;
+@class NSString, NSUUID;
 @protocol DVTSourceControlCancellable;
 
 @interface DVTSourceControlMultiCancellable : NSBlockOperation <DVTSourceControlCancellable>
 {
     id <DVTSourceControlCancellable> _currentCancellable;
+    NSUUID *identifier;
 }
 
 - (void).cxx_destruct;
+@property(readonly) NSUUID *identifier; // @synthesize identifier;
 - (void)cancel;
 @property(retain) id <DVTSourceControlCancellable> currentCancellable;
-@property(readonly) unsigned long long authenticationOptions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

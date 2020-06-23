@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property(nonatomic) int resultsIndex; // @synthesize resultsIndex=_resultsIndex;
 @property(retain, nonatomic) NSMutableArray *filteredResources; // @synthesize filteredResources=_filteredResources;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
@@ -104,7 +105,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *filterButtonToolTip;
 @property(readonly, nonatomic) NSMenu *filterButtonMenu;
 @property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
-- (void).cxx_destruct;
 - (void)menuNeedsUpdate:(id)arg1;
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;

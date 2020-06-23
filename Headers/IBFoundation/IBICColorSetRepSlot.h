@@ -27,6 +27,7 @@
 + (Class)assetSetClass;
 + (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 subtypes:(id)arg3 colorSpaces:(id)arg4 luminositySlots:(id)arg5 contrastSlots:(id)arg6 vibrancySlots:(id)arg7 includeLocales:(BOOL)arg8;
 + (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 subtypes:(id)arg3 colorSpaces:(id)arg4 luminositySlots:(id)arg5 contrastSlots:(id)arg6 vibrancySlots:(id)arg7 includeLocales:(BOOL)arg8;
+- (void).cxx_destruct;
 @property(readonly) IBICLocale *locale; // @synthesize locale=_locale;
 @property(readonly) IBICVibrancyAppearance *vibrancyAppearance; // @synthesize vibrancyAppearance=_vibrancyAppearance;
 @property(readonly) IBICContrastAppearance *contrastAppearance; // @synthesize contrastAppearance=_contrastAppearance;
@@ -34,7 +35,6 @@
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (BOOL)hasUnspecifiedLocale;
 - (BOOL)hasUnspecifiedAppearance;
 - (id)detailAreaPath;

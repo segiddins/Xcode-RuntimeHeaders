@@ -23,8 +23,8 @@
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(readonly) IBUIViewControllerEditor *rootViewControllerEditor; // @synthesize rootViewControllerEditor=_rootViewControllerEditor;
 - (void).cxx_destruct;
+@property(readonly) IBUIViewControllerEditor *rootViewControllerEditor; // @synthesize rootViewControllerEditor=_rootViewControllerEditor;
 - (id)draggedImageState:(id)arg1;
 - (id)initialDragImageState:(id)arg1;
 - (BOOL)interceptEvent:(id)arg1;

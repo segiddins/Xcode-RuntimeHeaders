@@ -21,6 +21,7 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) BOOL flipped; // @synthesize flipped=_flipped;
 @property(nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
-- (void).cxx_destruct;
 -     // Error parsing type: {DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])}40@0:8Q16Q24Q32, name: pixelAtX:y:sample:
 - (BOOL)isPixelInRenderMaskNotZeroAtX:(unsigned long long)arg1 y:(unsigned long long)arg2;
 - (id)description;

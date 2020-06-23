@@ -16,11 +16,11 @@
     NSRegularExpression *_twoComponentRegex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSRegularExpression *twoComponentRegex; // @synthesize twoComponentRegex=_twoComponentRegex;
 @property(readonly, nonatomic) NSRegularExpression *oneComponentRegex; // @synthesize oneComponentRegex=_oneComponentRegex;
 @property(readonly, nonatomic) NSRegularExpression *nextMinorVersionRegex; // @synthesize nextMinorVersionRegex=_nextMinorVersionRegex;
 @property(readonly, nonatomic) NSRegularExpression *nextMajorVersionRegex; // @synthesize nextMajorVersionRegex=_nextMajorVersionRegex;
-- (void).cxx_destruct;
 - (id)nextMinorVersionForVersion:(id)arg1;
 - (id)nextMajorVersionForVersion:(id)arg1;
 - (id)makeValidSemVerIfPossible:(id)arg1;

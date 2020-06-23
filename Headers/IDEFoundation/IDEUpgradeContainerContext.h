@@ -13,8 +13,8 @@
     IDEContainer *_container;
 }
 
-@property(readonly) IDEContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+@property(readonly) IDEContainer *container; // @synthesize container=_container;
 - (id)description;
 - (id)initWithContainer:(id)arg1;
 

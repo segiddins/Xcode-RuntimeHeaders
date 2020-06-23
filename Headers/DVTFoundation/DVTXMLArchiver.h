@@ -22,8 +22,8 @@
 + (void)setElementNamePrefix:(id)arg1;
 + (id)elementNameForClass:(Class)arg1;
 + (void)setElementName:(id)arg1 forClass:(Class)arg2;
-@property(retain) id context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) id context; // @synthesize context=_context;
 - (void)_encodeExtraRelationshipsForObject:(id)arg1;
 - (void)_finishEncodingAttributes;
 - (void)_beginEncodingAttributesForObject:(id)arg1;

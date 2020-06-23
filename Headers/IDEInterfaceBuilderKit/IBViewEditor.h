@@ -52,12 +52,14 @@
 
 + (void)resetCursorRectsForObject:(id)arg1 inFrameController:(id)arg2;
 + (struct CGRect)rectForDefaultCursorForChildView:(id)arg1 ofEditedObject:(id)arg2 inFrameController:(id)arg3;
++ (id)viewPropertiesAffectingFrame;
 + (id)keyPathsForInvalidatingConstraints;
 + (struct CGSize)knobSize;
 + (id)lockedKnobImage;
 + (id)inactiveKnobImage;
 + (id)knobImage;
 + (Class)ibDropTargetResolverClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect bandSelectionRect; // @synthesize bandSelectionRect=_bandSelectionRect;
 @property(retain, nonatomic) IBViewTracker *activeTracker; // @synthesize activeTracker=_activeTracker;
 @property(copy) NSSet *selectedConstraints; // @synthesize selectedConstraints=_selectedConstraints;
@@ -70,7 +72,6 @@
 @property(copy) NSSet *viewsInvolvedWithSelectedConstraints; // @synthesize viewsInvolvedWithSelectedConstraints=_viewsInvolvedWithSelectedConstraints;
 @property(copy) NSValue *nextPasteTarget; // @synthesize nextPasteTarget=_nextPasteTarget;
 @property(retain, nonatomic) IBPerformanceFrameRateMetric *bandSelectionFrameRateMetric; // @synthesize bandSelectionFrameRateMetric=_bandSelectionFrameRateMetric;
-- (void).cxx_destruct;
 - (id)objectsForSelectingAll;
 - (void)didClose;
 - (void)didOpen;

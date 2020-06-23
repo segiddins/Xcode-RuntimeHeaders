@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/DVTCancellable-Protocol.h>
-
 @class MISSING_TYPE;
 
 __attribute__((visibility("hidden")))
-@interface _TtC13IDEFoundation31IDEDocumentationSearchOperation : NSObject <DVTCancellable>
+@interface _TtC13IDEFoundation31IDEDocumentationSearchOperation : NSObject
 {
     MISSING_TYPE *_manager;
     MISSING_TYPE *_future;

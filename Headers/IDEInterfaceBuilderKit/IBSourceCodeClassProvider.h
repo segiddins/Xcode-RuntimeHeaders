@@ -31,12 +31,12 @@
 }
 
 + (double)timeout;
+- (void).cxx_destruct;
 @property(readonly) long long lastCompletedGeneration; // @synthesize lastCompletedGeneration=_lastCompletedGeneration;
 @property(readonly) long long lastStartedGeneration; // @synthesize lastStartedGeneration=_lastStartedGeneration;
 @property(readonly) long long generation; // @synthesize generation=_generation;
 @property(copy) NSString *proximityPriorityHintingPath; // @synthesize proximityPriorityHintingPath=_proximityPriorityHintingPath;
 @property(nonatomic) double throttleFactor; // @synthesize throttleFactor=_throttleFactor;
-- (void).cxx_destruct;
 - (void)_notifyObserversOfAffectedFilePaths:(id)arg1 andAffectedClassNames:(id)arg2;
 - (id)addParsingObserver:(CDUnknownBlockType)arg1;
 - (void)openEditorDocumentDidChange:(id)arg1;

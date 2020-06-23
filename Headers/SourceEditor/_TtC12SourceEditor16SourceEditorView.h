@@ -35,6 +35,7 @@
     MISSING_TYPE *overscroll;
     MISSING_TYPE *structuredEditingController;
     MISSING_TYPE *trimTrailingWhitespaceController;
+    MISSING_TYPE *docCommentEditAssistant;
     MISSING_TYPE *automaticallyAdjustsContentMargins;
     MISSING_TYPE *cursorRectOverrideProviders;
     MISSING_TYPE *lineAnnotationManager;

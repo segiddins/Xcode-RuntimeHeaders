@@ -15,8 +15,8 @@
     id _assertionRef;
 }
 
-@property(retain) id assertionRef; // @synthesize assertionRef=_assertionRef;
 - (void).cxx_destruct;
+@property(retain) id assertionRef; // @synthesize assertionRef=_assertionRef;
 - (void)cancel;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (void)dealloc;

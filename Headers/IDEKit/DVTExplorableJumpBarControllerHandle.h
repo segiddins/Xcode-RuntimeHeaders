@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEKit/DVTPathCellItem-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSImage, NSString, NSURL;
 @protocol DVTPathCellItem;
 
-@interface DVTExplorableJumpBarControllerHandle : NSObject <DVTPathCellItem>
+@interface DVTExplorableJumpBarControllerHandle : NSObject
 {
     MISSING_TYPE *controller;
     MISSING_TYPE *mirrorID;

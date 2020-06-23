@@ -14,9 +14,9 @@
     IDEComparisonEditor *_comparisonEditor;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEComparisonEditor *comparisonEditor; // @synthesize comparisonEditor=_comparisonEditor;
 @property(retain) IDEComparisonEditorTimelineNavBar *navTimelineBarContainerView; // @synthesize navTimelineBarContainerView=_navTimelineBarContainerView;
-- (void).cxx_destruct;
 - (void)layoutContainerView;
 @property(readonly) IDEComparisonEditorChangesStepperView *changesStepperControl;
 @property(readonly) DVTPathControl *secondaryPathControl;

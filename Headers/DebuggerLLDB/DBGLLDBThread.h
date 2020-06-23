@@ -30,11 +30,10 @@
 + (id)queryRecordedStackFramesForThread:(id)arg1 withParentProcess:(id)arg2 queue:(id)arg3 lldbThread:(id)arg4;
 + (BOOL)_isLookingForNSOperationInStackFrames:(id)arg1;
 + (BOOL)supportsInvalidationPrevention;
-+ (void)initialize;
+- (void).cxx_destruct;
 @property BOOL delayToAllowFastPCDrawing; // @synthesize delayToAllowFastPCDrawing=_delayToAllowFastPCDrawing;
 @property(getter=isCurrentThread) BOOL currentThread; // @synthesize currentThread=_currentThread;
 @property(readonly) NSArray *backingStackFrames; // @synthesize backingStackFrames=_backingStackFrames;
-- (void).cxx_destruct;
 - (void)_invalidateAndClearBackingStackFrames:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)invalidateUnusedStackFramesAfterCallToSetStackFrames:(id)arg1;
@@ -53,6 +52,7 @@
 - (void)_assertOnSessionThread;
 - (void)_setLLDBQueueItem:(id)arg1;
 - (id)lldbThread;
+- (id)initWithParentProcess:(id)arg1 uniqueID:(id)arg2 lldbThread:(id)arg3 recorded:(BOOL)arg4;
 - (id)initWithParentProcess:(id)arg1 uniqueID:(id)arg2 lldbThread:(id)arg3;
 
 // Remaining properties

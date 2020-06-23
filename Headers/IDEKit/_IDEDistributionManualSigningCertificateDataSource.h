@@ -20,9 +20,9 @@
 }
 
 + (id)keyPathsForValuesAffectingSigningIdentity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *signingIdentities; // @synthesize signingIdentities=_signingIdentities;
 @property(readonly, nonatomic) IDEDistributionContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly) BOOL wantsTeamSelectionRegardlessOfSigningStyle;
 @property(nonatomic) long long provisioningStyle;
 @property(readonly) long long signingStyle;

@@ -30,6 +30,7 @@
 }
 
 + (id)keyPathsForValuesAffectingVisibleStatus;
+- (void).cxx_destruct;
 @property(retain) CALayer *emptyRootContainerLayer; // @synthesize emptyRootContainerLayer=_emptyRootContainerLayer;
 @property(retain) IDEActivityView *activityView; // @synthesize activityView=_activityView;
 @property(readonly, nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *emptyRootContainerLabel; // @synthesize emptyRootContainerLabel=_emptyRootContainerLabel;
 @property(copy, nonatomic) NSString *rootContainerLabel; // @synthesize rootContainerLabel=_rootContainerLabel;
 @property(copy, nonatomic) NSArray *statusCategories; // @synthesize statusCategories=_statusCategories;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)dvt_view;
 @property BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;

@@ -26,11 +26,11 @@
 + (id)projectProductItemExtensions;
 + (id)projectPlatformItemExtensions;
 + (id)projectItemExtensions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contextToResult; // @synthesize contextToResult=_contextToResult;
 @property(retain, nonatomic) NSArray *allItems; // @synthesize allItems=_allItems;
 @property(retain, nonatomic) NSOperationQueue *refreshQueue; // @synthesize refreshQueue=_refreshQueue;
 @property(nonatomic) __weak id <IDESigningEditorCapabilityItemLibraryAssetManagerSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)refreshForContext:(id)arg1;
 - (BOOL)wantsRefreshForContext:(id)arg1;
 - (BOOL)isBusyForContext:(id)arg1;

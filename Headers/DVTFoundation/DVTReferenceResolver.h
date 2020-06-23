@@ -18,8 +18,8 @@
 + (id)backgroundResolutionQueue;
 + (id)resolverWithStrategy:(id)arg1;
 + (void)initialize;
-@property(retain) id <DVTReferenceResolverClient> client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain) id <DVTReferenceResolverClient> client; // @synthesize client=_client;
 - (id)description;
 - (id)configureWithPersistentRepresentationsOfInput:(id)arg1;
 - (id)persistentRepresentationsOfInput:(id)arg1;

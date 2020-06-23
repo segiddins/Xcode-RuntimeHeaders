@@ -17,6 +17,7 @@
     MISSING_TYPE *uiTestingScreenshotsLifetime;
     MISSING_TYPE *areLocalizationScreenshotsEnabled;
     MISSING_TYPE *userAttachmentLifetime;
+    MISSING_TYPE *testTimeoutsEnabled;
 }
 
 - (void).cxx_destruct;

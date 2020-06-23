@@ -15,9 +15,9 @@
 }
 
 + (id)teamIDWithProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCountedSet *profileNamesWithTeamsCountedSet; // @synthesize profileNamesWithTeamsCountedSet=_profileNamesWithTeamsCountedSet;
 @property(retain, nonatomic) NSCountedSet *profileNamesCountedSet; // @synthesize profileNamesCountedSet=_profileNamesCountedSet;
-- (void).cxx_destruct;
 - (id)nameForProfile:(id)arg1;
 - (id)initWithProfileNamesCountedSetWithProfiles:(id)arg1 ineligibleProfiles:(id)arg2;
 

@@ -16,9 +16,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSArray *fileNames; // @synthesize fileNames=_fileNames;
 @property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)_updateContentsFromFileSystem;
 - (void)_teardown;
 - (id)initWithFilePath:(id)arg1 folder:(id)arg2;

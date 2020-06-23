@@ -26,6 +26,7 @@
     NSPopover *_popover;
 }
 
+- (void).cxx_destruct;
 @property NSPopover *popover; // @synthesize popover=_popover;
 @property NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(copy) CDUnknownBlockType doneButtonHandler; // @synthesize doneButtonHandler=_doneButtonHandler;
@@ -34,7 +35,6 @@
 @property(retain) NSArray *types; // @synthesize types=_types;
 @property(copy) NSString *displayedSummaryFormat; // @synthesize displayedSummaryFormat=_displayedSummaryFormat;
 @property(retain) DBGDataValue *dataValue; // @synthesize dataValue=_dataValue;
-- (void).cxx_destruct;
 - (void)doneButtonPressed:(id)arg1;
 - (void)revert;
 - (void)_updateSummaryFormatValidity;

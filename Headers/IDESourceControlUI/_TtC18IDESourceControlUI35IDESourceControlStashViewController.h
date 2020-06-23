@@ -16,7 +16,6 @@
     MISSING_TYPE *preflightCompletion;
     MISSING_TYPE *workingCopiesWithUncommittedChanges;
     MISSING_TYPE *modifiedWorkingCopiesPipeline;
-    MISSING_TYPE *buildWorkingCopyMenusPipeline;
     MISSING_TYPE *preflightPipeline;
     MISSING_TYPE *preflightWindow;
 }

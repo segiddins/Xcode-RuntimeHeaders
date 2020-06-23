@@ -21,12 +21,12 @@
 + (id)failureHandlerWithContext:(id)arg1 failure:(id)arg2 diagnosticsHandlerBlock:(CDUnknownBlockType)arg3;
 + (id)waitForMostRecentCrashLogForToolNamed:(id)arg1 crashDate:(id)arg2;
 + (id)mostRecentCrashLogForToolNamed:(id)arg1 withinDurationThreshhold:(double)arg2 ofCrashDate:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBDiagnosticsHandler *diagnosticsHandler; // @synthesize diagnosticsHandler=_diagnosticsHandler;
 @property(retain, nonatomic) DVTStackBacktrace *xcodeBacktrace; // @synthesize xcodeBacktrace=_xcodeBacktrace;
 @property(copy, nonatomic) NSDate *failureDate; // @synthesize failureDate=_failureDate;
 @property(retain, nonatomic) IBPlatformToolFailure *failure; // @synthesize failure=_failure;
 @property(retain, nonatomic) IBPlatformToolFailureContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)writeDiagnosticsAndGenerateErrorWithUnderlyingError:(id)arg1;
 - (id)writeDiagnosticsToDiskWaitingForCrashLog:(BOOL)arg1 returningCrashLog:(id *)arg2;
 - (id)waitForMostRecentCrashLog;

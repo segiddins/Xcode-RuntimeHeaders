@@ -25,6 +25,7 @@
 }
 
 + (id)downloadHelperWithURLRequest:(id)arg1 expectedDownloadSizeInBytes:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property unsigned long long expectedDownloadSizeInBytes; // @synthesize expectedDownloadSizeInBytes=_expectedDownloadSizeInBytes;
 @property(retain) NSURLRequest *request; // @synthesize request=_request;
 @property float percentComplete; // @synthesize percentComplete=_percentComplete;
@@ -33,7 +34,6 @@
 @property(retain) NSURLConnection *URLConnection; // @synthesize URLConnection=_URLConnection;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-- (void).cxx_destruct;
 @property(readonly) BOOL userCanceled;
 - (void)cancel;
 - (void)beginDownload;

@@ -13,8 +13,8 @@
     NSTextField *_groupNameTextField;
 }
 
-@property __weak NSTextField *groupNameTextField; // @synthesize groupNameTextField=_groupNameTextField;
 - (void).cxx_destruct;
+@property __weak NSTextField *groupNameTextField; // @synthesize groupNameTextField=_groupNameTextField;
 - (void)setName:(id)arg1;
 - (id)name;
 

@@ -10,13 +10,15 @@
 #import <DVTDeviceKit/DVTTableViewDelegate-Protocol.h>
 #import <DVTDeviceKit/NSTableViewDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTDevice, DVTDeviceSummaryAboutViewController, DVTDeviceSummaryAppsViewController, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSScrollView, NSSet, NSStackView, NSString, NSTextField, NSView;
+@class DVTBorderedView, DVTDevice, DVTDeviceErrorsAndWarningsController, DVTDeviceSummaryAboutViewController, DVTDeviceSummaryAppsViewController, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSScrollView, NSSet, NSStackView, NSString, NSTextField, NSView;
+@protocol NSObject;
 
 @interface DVTDeviceSummaryViewController : DVTViewController <DVTDevicesWindowDetailViewController, NSTableViewDataSource, DVTTableViewDelegate>
 {
     NSArray *_additionalSliceControllers;
     NSMutableArray *_deviceObservationTokens;
     NSMutableArray *_proxiedDevicesObservingTokens;
+    id <NSObject> _devicePrepErrorsObserver;
     BOOL _showViolator;
     BOOL _updateViolatorPending;
     BOOL _rebuildStackViewPending;
@@ -41,6 +43,7 @@
     NSButton *_takeScreenshotButton;
     DVTGradientImageButton *_addPairedDeviceButton;
     DVTGradientImageButton *_deletePairedDeviceButton;
+    DVTDeviceErrorsAndWarningsController *_errorsController;
     DVTDeviceSummaryAppsViewController *_appsViewController;
     NSString *_violatorMessage;
     NSString *_violatorDescription;
@@ -53,6 +56,7 @@
 + (id)keyPathsForValuesAffectingShowProxiedDeviceSlice;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property BOOL addedConstraints; // @synthesize addedConstraints=_addedConstraints;
 @property(retain) NSMutableDictionary *proxyInfo; // @synthesize proxyInfo=_proxyInfo;
 @property(copy) NSArray *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
@@ -62,6 +66,7 @@
 @property BOOL updateViolatorPending; // @synthesize updateViolatorPending=_updateViolatorPending;
 @property BOOL showViolator; // @synthesize showViolator=_showViolator;
 @property(retain) DVTDeviceSummaryAppsViewController *appsViewController; // @synthesize appsViewController=_appsViewController;
+@property(retain) DVTDeviceErrorsAndWarningsController *errorsController; // @synthesize errorsController=_errorsController;
 @property(retain) DVTGradientImageButton *deletePairedDeviceButton; // @synthesize deletePairedDeviceButton=_deletePairedDeviceButton;
 @property(retain) DVTGradientImageButton *addPairedDeviceButton; // @synthesize addPairedDeviceButton=_addPairedDeviceButton;
 @property(retain) NSButton *takeScreenshotButton; // @synthesize takeScreenshotButton=_takeScreenshotButton;
@@ -82,7 +87,6 @@
 @property(readonly) Class deviceLogsViewControllerClass; // @synthesize deviceLogsViewControllerClass=_deviceLogsViewControllerClass;
 @property(readonly) NSArray *additionalSliceViewControllerClasses; // @synthesize additionalSliceViewControllerClasses=_additionalSliceViewControllerClasses;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_simulatorLocator;
 - (void)_reloadProxiedDevices;
 - (id)_proxiedDeviceForIdentifier:(id)arg1;

@@ -30,6 +30,7 @@
     BOOL _emptyContentPlaceholderFollowsFontAndColorTheme;
     NSString *_emptyContentString;
     NSString *_emptyContentSubtitle;
+    NSString *_emptyContentButtonTitle;
     long long _emptyContentStringStyle;
     NSFont *_emptyContentFont;
     NSIndexSet *_draggedRows;
@@ -37,6 +38,7 @@
     CDStruct_2b6e6e30 _gridLineInset;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSEvent *event; // @synthesize event=_event;
 @property CDStruct_2b6e6e30 gridLineInset; // @synthesize gridLineInset=_gridLineInset;
 @property(nonatomic) BOOL emptyContentPlaceholderFollowsFontAndColorTheme; // @synthesize emptyContentPlaceholderFollowsFontAndColorTheme=_emptyContentPlaceholderFollowsFontAndColorTheme;
@@ -46,9 +48,9 @@
 @property(nonatomic) BOOL hasContent; // @synthesize hasContent=_hasContent;
 @property(copy, nonatomic) NSFont *emptyContentFont; // @synthesize emptyContentFont=_emptyContentFont;
 @property(nonatomic) long long emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
+@property(copy, nonatomic) NSString *emptyContentButtonTitle; // @synthesize emptyContentButtonTitle=_emptyContentButtonTitle;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
-- (void).cxx_destruct;
 - (void)drawGridInClipRect:(struct CGRect)arg1;
 - (void)_drawBackgroundForGroupRow:(long long)arg1 clipRect:(struct CGRect)arg2 isButtedUpRow:(BOOL)arg3;
 - (id)progressIndicatorForItem:(id)arg1 createIfNecessary:(BOOL)arg2 progressIndicatorStyle:(unsigned long long)arg3;

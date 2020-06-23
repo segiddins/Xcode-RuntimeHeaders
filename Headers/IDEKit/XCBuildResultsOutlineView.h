@@ -28,6 +28,7 @@
     BOOL _allowsSizingShorterThanClipView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsSizingShorterThanClipView; // @synthesize allowsSizingShorterThanClipView=_allowsSizingShorterThanClipView;
 @property(nonatomic) BOOL scrollerIsPinnedToBottomLatestResults; // @synthesize scrollerIsPinnedToBottomLatestResults=_scrollerIsPinnedToBottomLatestResults;
 @property(nonatomic) struct CGPoint scrollPositionLatestResults; // @synthesize scrollPositionLatestResults=_scrollPositionLatestResults;
@@ -39,7 +40,6 @@
 @property(retain) NSArray *collapsedItems; // @synthesize collapsedItems=_collapsedItems;
 @property(retain, nonatomic) XCTranscriptTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) long long mouseRow; // @synthesize mouseRow=_mouseRow;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)clearOutlineView;
 - (BOOL)becomeFirstResponder;

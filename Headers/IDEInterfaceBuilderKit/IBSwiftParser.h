@@ -16,8 +16,8 @@
 + (id)secondaryParsableFileTypeIdentifiers;
 + (id)primaryParsableFileTypeIdentifiers;
 + (id)supportedFileExtensions;
-@property(retain) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
 - (id)parseData:(id)arg1 fromFile:(id)arg2 withToolchainIdentifiers:(id)arg3 errors:(id *)arg4;
 - (id)partialDescriptionsForDocumentAtPath:(id)arg1 withContents:(id)arg2 toolchainIdentifiers:(id)arg3;
 - (void)enumerateMembersOfClass:(CDStruct_68506f87)arg1 inDocumentWithContents:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

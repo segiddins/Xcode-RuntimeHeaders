@@ -13,8 +13,8 @@
     DVTiPhoneSimulator *_device;
 }
 
-@property(retain) DVTiPhoneSimulator *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain) DVTiPhoneSimulator *device; // @synthesize device=_device;
 - (void)terminate;
 - (void)_willInstallWatchAppForCompanion:(id)arg1 maxTries:(unsigned long long)arg2;
 - (void)_performInstall;

@@ -17,12 +17,12 @@
     XCSwiftPackageReference *_packageReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly) XCSwiftPackageReference *packageReference; // @synthesize packageReference=_packageReference;
 @property(readonly) NSArray *products; // @synthesize products=_products;
 @property(readonly) BOOL isRemote; // @synthesize isRemote=_isRemote;
 @property(readonly) NSString *displayLocation; // @synthesize displayLocation=_displayLocation;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDisplayName:(id)arg1 displayLocation:(id)arg2 isRemote:(BOOL)arg3 products:(id)arg4 packageReference:(id)arg5;
 
 @end

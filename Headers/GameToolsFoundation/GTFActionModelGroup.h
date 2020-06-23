@@ -25,12 +25,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL actionsLocked; // @synthesize actionsLocked=_actionsLocked;
 @property(nonatomic) int groupId; // @synthesize groupId=_groupId;
 @property(nonatomic) __weak GTFActionTimelineModel *ownerTimeline; // @synthesize ownerTimeline=_ownerTimeline;
 @property(readonly, nonatomic) NSArray *tracks; // @synthesize tracks=_tracks;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_getSKActionForPreview:(BOOL)arg1 withStartTime:(double)arg2 activeAnimationFound:(char *)arg3 ignoreScrubSensitiveActions:(BOOL)arg4;

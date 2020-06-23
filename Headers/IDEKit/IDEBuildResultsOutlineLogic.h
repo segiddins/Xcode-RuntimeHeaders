@@ -104,6 +104,7 @@
 + (id)buildFileSuccessIconImage;
 + (id)fixItErrorIconImage;
 + (id)fixItWarningIconImage;
++ (id)testSkippedIconImage;
 + (id)testFailureIconImage;
 + (id)testSuccessIconImage;
 + (id)errorIconImage;
@@ -121,6 +122,7 @@
 + (void)setAttributesForTranscript:(id)arg1;
 + (id)attributesForTranscript;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IDEBuildResultsOutlineDelegate> buildResultsOutlineDelegate; // @synthesize buildResultsOutlineDelegate=_buildResultsOutlineDelegate;
 @property(copy, nonatomic) NSString *searchFieldValue; // @synthesize searchFieldValue=_searchFieldValue;
 @property(readonly, nonatomic) BOOL showAllResults; // @synthesize showAllResults=_showAllResults;
@@ -129,7 +131,6 @@
 @property(readonly, nonatomic) BOOL showErrors; // @synthesize showErrors=_showErrors;
 @property(readonly, nonatomic) BOOL showWarnings; // @synthesize showWarnings=_showWarnings;
 @property(readonly, nonatomic) BOOL showSteps; // @synthesize showSteps=_showSteps;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 outlineView:(id)arg2 outlineIssuesView:(id)arg3;
 - (void)primitiveInvalidate;

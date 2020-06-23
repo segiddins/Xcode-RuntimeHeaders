@@ -16,11 +16,11 @@
     NSMutableArray *_mutableElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *mutableElements; // @synthesize mutableElements=_mutableElements;
 @property(readonly) NSMutableArray *mutableAttributeValues; // @synthesize mutableAttributeValues=_mutableAttributeValues;
 @property(readonly) NSMutableArray *mutableAttributeNames; // @synthesize mutableAttributeNames=_mutableAttributeNames;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

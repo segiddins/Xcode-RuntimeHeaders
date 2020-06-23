@@ -12,7 +12,7 @@
 {
     MISSING_TYPE *group;
     MISSING_TYPE *channelInitializer;
-    MISSING_TYPE *channelOptions;
+    MISSING_TYPE *_channelOptions;
     MISSING_TYPE *connectTimeout;
     MISSING_TYPE *resolver;
 }

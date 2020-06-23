@@ -15,8 +15,8 @@
 }
 
 + (id)libraryForLibraryDescriptor:(id)arg1;
-@property(readonly) XCLibraryDescriptor *libraryDescriptor; // @synthesize libraryDescriptor=_libraryDescriptor;
 - (void).cxx_destruct;
+@property(readonly) XCLibraryDescriptor *libraryDescriptor; // @synthesize libraryDescriptor=_libraryDescriptor;
 - (void)_setDisambiguationString:(id)arg1;
 - (void)_computeDisambiguationString;
 - (id)disambiguationString;

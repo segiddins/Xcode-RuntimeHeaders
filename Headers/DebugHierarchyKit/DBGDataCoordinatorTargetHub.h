@@ -13,8 +13,8 @@
     NSMutableDictionary *_pendingChildNodes;
 }
 
-@property(retain) NSMutableDictionary *pendingChildNodes; // @synthesize pendingChildNodes=_pendingChildNodes;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *pendingChildNodes; // @synthesize pendingChildNodes=_pendingChildNodes;
 - (id)compatibility_modernizedPropertyDescription:(id)arg1 targetVersion:(float)arg2;
 - (void)_writeRequestResponseToDiskIfNecessary:(id)arg1 request:(id)arg2 compressedSize:(unsigned long long)arg3;
 - (void)_updateComputedPropertiesOfNode:(id)arg1;

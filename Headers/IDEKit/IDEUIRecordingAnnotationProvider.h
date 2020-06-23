@@ -19,8 +19,8 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-@property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void)providerWillUninstall;
 - (BOOL)_doesURLResolveToContextURL:(id)arg1;
 - (void)_invalidateAnnotation:(id)arg1;

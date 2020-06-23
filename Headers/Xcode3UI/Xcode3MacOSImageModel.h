@@ -17,10 +17,10 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain) NSString *scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (id)minimumOSVersion;
 - (id)orientation;
 - (id)nameSuffix;

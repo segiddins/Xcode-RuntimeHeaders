@@ -23,9 +23,9 @@
 }
 
 + (void)runWhenOperationFinishes:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL supportsOpNames; // @synthesize supportsOpNames=_supportsOpNames;
-- (void).cxx_destruct;
 - (void)setupVisitAfterOperation:(id)arg1 itinerary:(id)arg2 mode:(id)arg3;
 - (void)receiveMobileAgent:(id)arg1;
 - (void)_removeNotificationShim:(id)arg1;

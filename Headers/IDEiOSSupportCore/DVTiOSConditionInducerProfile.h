@@ -15,10 +15,10 @@
     NSString *_profileDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *profileDescription; // @synthesize profileDescription=_profileDescription;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 description:(id)arg3;
 

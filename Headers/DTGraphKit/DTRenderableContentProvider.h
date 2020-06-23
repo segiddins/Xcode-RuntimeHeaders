@@ -40,9 +40,9 @@
 }
 
 + (BOOL)providesProgress;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) __weak id <DTRenderableContentProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)_exposeToMainThread;
 - (void)_markAsFulfilled;
 - (void)_markAsFrameMissed;

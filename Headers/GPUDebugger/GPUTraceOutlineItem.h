@@ -29,14 +29,14 @@
     BOOL _filterItemsGenerated;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak GPUTraceOutlineItem *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) NSSet *parentFilterItems; // @synthesize parentFilterItems=_parentFilterItems;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak GPUDebuggerController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)pathToAncestorItem:(id)arg1;
 - (id)childAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfChildren;

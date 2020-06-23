@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingDoesNonActionWork;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) Class analysisToolServiceClass; // @synthesize analysisToolServiceClass=_analysisToolServiceClass;
 @property BOOL enableTestabilityWhenProfilingTests; // @synthesize enableTestabilityWhenProfilingTests=_enableTestabilityWhenProfilingTests;
 @property(nonatomic) unsigned long long launchAutomaticallySubstyle; // @synthesize launchAutomaticallySubstyle=_launchAutomaticallySubstyle;
@@ -44,7 +45,6 @@
 @property BOOL ignoresPersistentStateOnLaunch; // @synthesize ignoresPersistentStateOnLaunch=_ignoresPersistentStateOnLaunch;
 @property BOOL debugDocumentVersioning; // @synthesize debugDocumentVersioning=_debugDocumentVersioning;
 @property(copy, nonatomic) NSString *customWorkingDirectory; // @synthesize customWorkingDirectory=_customWorkingDirectory;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)addMacroExpansion:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addEnvironmentVariables:(id)arg1 fromXMLUnarchiver:(id)arg2;

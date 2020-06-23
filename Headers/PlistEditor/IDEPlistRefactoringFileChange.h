@@ -15,10 +15,10 @@
     DVTFindResult *_findResult;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFindResult *findResult; // @synthesize findResult=_findResult;
 @property(retain) NSString *originalValueName; // @synthesize originalValueName=_originalValueName;
 @property(retain) NSString *keyName; // @synthesize keyName=_keyName;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GPUInvestigatorReportResource *_reportResource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showBaseline; // @synthesize showBaseline=_showBaseline;
 @property(nonatomic) __weak GPUInvestigatorReportResource *reportResource; // @synthesize reportResource=_reportResource;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

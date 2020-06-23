@@ -22,12 +22,12 @@
 
 + (id)keyPathsForValuesAffectingCurrentLocalizationProgress;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) DVTObservingToken *controllerCompleteObserver; // @synthesize controllerCompleteObserver=_controllerCompleteObserver;
 @property(retain) id <IDEClientTrackingToken> token; // @synthesize token=_token;
 @property(retain) NSObject<IDELocalizationController> *controller; // @synthesize controller=_controller;
 @property(retain) IDELocalizationAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_complete;
 @property(readonly) NSObject<IDELocalizationWorkProgress> *currentLocalizationProgress;
 - (BOOL)startLocalizationAction:(id)arg1 withBuildParameters:(id)arg2 error:(id *)arg3;

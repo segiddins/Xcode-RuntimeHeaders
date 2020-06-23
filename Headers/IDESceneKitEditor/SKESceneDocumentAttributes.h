@@ -38,6 +38,7 @@
     SKESceneDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKESceneDocument *document; // @synthesize document=_document;
 @property(nonatomic) unsigned long long materialSyncPolicy; // @synthesize materialSyncPolicy=_materialSyncPolicy;
 @property(nonatomic) BOOL shouldSyncLights; // @synthesize shouldSyncLights=_shouldSyncLights;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL keepsInSync; // @synthesize keepsInSync=_keepsInSync;
 @property(readonly) SKESceneImportOptions *importOptions; // @synthesize importOptions=_importOptions;
 @property(retain, nonatomic) NSString *sourceDocumentAbsolutePath; // @synthesize sourceDocumentAbsolutePath=_sourceDocumentAbsolutePath;
-- (void).cxx_destruct;
 - (void)resetWithSourceDocument;
 - (void)synchronize;
 - (void)collectOrphanNodes:(id)arg1;

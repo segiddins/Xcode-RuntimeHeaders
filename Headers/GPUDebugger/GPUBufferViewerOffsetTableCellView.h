@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUBufferViewerDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) GPUBufferViewerTableTextField *offsetView; // @synthesize offsetView=_offsetView;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (id)init;
 

@@ -19,6 +19,7 @@
     NSString *_unfilteredLogText;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *unfilteredLogText; // @synthesize unfilteredLogText=_unfilteredLogText;
 @property(copy) NSString *filteredLogText; // @synthesize filteredLogText=_filteredLogText;
 @property __weak NSButton *filterToTest; // @synthesize filterToTest=_filterToTest;
@@ -26,7 +27,6 @@
 @property __weak NSPopUpButton *destinationPopUp; // @synthesize destinationPopUp=_destinationPopUp;
 @property DVTSourceTextView *textView; // @synthesize textView=_textView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-- (void).cxx_destruct;
 - (void)filterLogText;
 - (void)filterToTestAction:(id)arg1;
 - (void)updateLogText;

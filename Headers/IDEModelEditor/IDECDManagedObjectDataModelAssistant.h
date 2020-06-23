@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(retain) NSSet *selectedFileItems; // @synthesize selectedFileItems=_selectedFileItems;
 @property(retain) NSArray *availableFiles; // @synthesize availableFiles=_availableFiles;
-- (void).cxx_destruct;
 - (id)nextAssistantIdentifier;
 - (BOOL)canGoForward;
 - (BOOL)canGoBack;

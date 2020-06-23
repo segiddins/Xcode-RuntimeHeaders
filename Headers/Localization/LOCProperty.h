@@ -11,6 +11,7 @@
 @interface LOCProperty : NSObject
 {
     NSString *filePath;
+    NSString *locale;
     NSMutableDictionary *fileInfo;
     NSMutableDictionary *debugInfo;
     NSMutableDictionary *warningInfo;
@@ -26,11 +27,12 @@
 + (BOOL)fileIsIn_OldBase:(id)arg1;
 + (BOOL)fileIsIn_NewBase:(id)arg1;
 + (BOOL)fileIsInBaseLproj:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *warningInfo; // @synthesize warningInfo;
 @property(retain) NSMutableDictionary *debugInfo; // @synthesize debugInfo;
 @property(retain) NSMutableDictionary *fileInfo; // @synthesize fileInfo;
+@property(copy) NSString *locale; // @synthesize locale;
 @property(retain) NSString *filePath; // @synthesize filePath;
-- (void).cxx_destruct;
 - (BOOL)isEnvironmentVariableTrue:(id)arg1;
 - (id)getEnvironmentVariable:(id)arg1;
 - (id)deducedGlotEnvPath;
@@ -47,6 +49,7 @@
 - (id)url;
 - (id)debugString;
 - (id)warningString;
+- (id)initWithContentsOfFile:(id)arg1 locale:(id)arg2 error:(id *)arg3;
 - (id)initWithContentsOfFile:(id)arg1 error:(id *)arg2;
 
 @end

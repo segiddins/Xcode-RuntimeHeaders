@@ -25,6 +25,7 @@
 }
 
 + (id)snapshotWithIntegrationID:(id)arg1 botID:(id)arg2 service:(id)arg3 step:(long long)arg4 result:(long long)arg5 advisoryMessage:(id)arg6 currentProgress:(double)arg7 buildResultSummary:(id)arg8 integrationEndedTime:(id)arg9;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endedTime; // @synthesize endedTime=_endedTime;
 @property(readonly, nonatomic) XCSBuildResultSummary *buildResultSummary; // @synthesize buildResultSummary=_buildResultSummary;
 @property(readonly, nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) NSString *integrationID; // @synthesize integrationID=_integrationID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) BOOL isPending;
 @property(readonly, nonatomic) BOOL isFinished;

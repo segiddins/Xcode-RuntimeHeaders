@@ -20,6 +20,7 @@
     NSArray *_titleLabelEndingConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *titleLabelEndingConstraints; // @synthesize titleLabelEndingConstraints=_titleLabelEndingConstraints;
 @property(retain, nonatomic) NSArray *titleLabelStartingConstraints; // @synthesize titleLabelStartingConstraints=_titleLabelStartingConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *backButtonEndingLeadingConstraint; // @synthesize backButtonEndingLeadingConstraint=_backButtonEndingLeadingConstraint;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) IBNavigationBarBackButton *backButton; // @synthesize backButton=_backButton;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 
 @end
 

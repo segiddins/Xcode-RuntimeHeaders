@@ -6,21 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLogAspect, IDEMemoryFootprintMonitorProgressWindowController, NSTimer;
+#import <IDEFoundation/DVTMemoryFootprintMonitor-Protocol.h>
+
+@class NSTimer;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface IDEMemoryFootprintMonitor : NSObject
+@interface IDEMemoryFootprintMonitor : NSObject <DVTMemoryFootprintMonitor>
 {
     int _pid;
     NSObject<OS_dispatch_queue> *_physFootprintMonitorQueue;
     NSObject<OS_dispatch_source> *_timer;
-    DVTLogAspect *_logAspect;
     unsigned long long _thresholdInGB;
-    IDEMemoryFootprintMonitorProgressWindowController *progressWindowController;
     NSTimer *_testMemoryTimer;
 }
 
-+ (id)sharedXcodeFootprintMonitor;
++ (id)sharedFootprintMonitor;
++ (void)initialize;
 - (void).cxx_destruct;
 - (void)_startMonitorWithInterval:(unsigned long long)arg1 thresholdInGB:(unsigned long long)arg2 consecutiveSampleThreshold:(unsigned long long)arg3;
 - (void)_disableMallocStackLogging;
@@ -28,9 +29,11 @@
 - (void)startMonitorWithThresholdInGB:(unsigned long long)arg1;
 - (void)startMonitor;
 - (BOOL)_isTestingEnabled;
+- (id)_leaksFilePath;
+- (id)_memoryGraphCollector;
 - (void)showAlertWithCurrentUsage:(id)arg1;
+- (void)showAlertForAbandonedObjectAfterDuration:(double)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)useMemoryForTesting;
-- (void)_captureMemoryGraphAtPath:(id)arg1;
 - (id)_initForCurrentProcess;
 
 @end

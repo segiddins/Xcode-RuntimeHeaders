@@ -29,9 +29,9 @@
 + (id)keyPathsForValuesAffectingSelectedProperties;
 + (id)keyPathsForValuesAffectingSelectedEntities;
 + (id)keyPathsForValuesAffectingRootEditor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDataModelPropertiesTableController *activePropertiesController; // @synthesize activePropertiesController=_activePropertiesController;
 @property(retain) IDEDataModelEntityContentsEditor *parentEditor; // @synthesize parentEditor;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)commitStateToDictionary:(id)arg1;

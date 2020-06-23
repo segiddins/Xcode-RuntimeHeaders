@@ -18,8 +18,8 @@
 
 + (BOOL)eventWouldToggleSelection:(id)arg1;
 + (BOOL)eventWouldExtendSelection:(id)arg1;
-@property __weak id <IBSelectionOwnerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBSelectionOwnerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)firstSelectedObject;
 - (id)lastSelectedObject;
 @property(readonly) NSSet *selection;

@@ -22,13 +22,13 @@
 }
 
 + (id)keyPathsForValuesAffectingSelectedBlueprint;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDENavigableItem *selectedBlueprintNavigable; // @synthesize selectedBlueprintNavigable=_selectedBlueprintNavigable;
 @property(retain, nonatomic) NSArray *blueprintProviderNavigables; // @synthesize blueprintProviderNavigables=_blueprintProviderNavigables;
 @property(retain, nonatomic) NSArray *blueprintProviderWrappers; // @synthesize blueprintProviderWrappers=_blueprintProviderWrappers;
 @property(readonly, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(readonly, nonatomic) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
 @property(readonly, nonatomic) IDEWorkspace *rootWorkspace; // @synthesize rootWorkspace=_rootWorkspace;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(retain, nonatomic) id <IDEBlueprint> selectedBlueprint;
 - (void)loadView;

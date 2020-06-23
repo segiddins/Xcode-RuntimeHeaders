@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class DYBaseSocketTransport, NSString;
+@class DYBaseSocketTransport, DYTransportSource, NSString;
 @protocol DYCaptureAPISupport;
 
 @interface DYBaseDaemon : NSObject
 {
+    DYTransportSource *_source;
+    struct dispatch_source_s *_process_source;
+    BOOL _invalidated;
     _Bool _ownsInferior;
     _Bool _capturingInferior;
     int _inferiorPid;
@@ -25,16 +28,17 @@
 @property(nonatomic) _Bool ownsInferior; // @synthesize ownsInferior=_ownsInferior;
 @property(nonatomic) int inferiorPid; // @synthesize inferiorPid=_inferiorPid;
 @property(retain, nonatomic) DYBaseSocketTransport *transport; // @synthesize transport=_transport;
-- (void)dealloc;
 - (id)getAppIconData:(id)arg1;
 - (BOOL)launchInferior:(id)arg1 finalEnvironment:(id *)arg2 error:(id *)arg3;
 - (id)getApplications;
 - (void)setApplications:(id)arg1;
-- (BOOL)createInferiorTransportAndSetEnvironment:(id)arg1 error:(id *)arg2;
+- (BOOL)createInferiorTransportAndSetEnvironment:(id)arg1 uniqueIdentifier:(id)arg2 error:(id *)arg3;
 - (void)terminate:(int)arg1;
+- (void)invalidate;
+- (void)dealloc;
 - (void)handleMessage:(id)arg1;
 - (void)run;
-- (BOOL)createInferiorTransportAndSetEnvironment:(id)arg1 withAPI:(unsigned int)arg2 error:(id *)arg3;
+- (BOOL)createInferiorTransportAndSetEnvironment:(id)arg1 withAPI:(unsigned int)arg2 uniqueIdentifier:(id)arg3 error:(id *)arg4;
 - (id)captureAPISupportForAPI:(unsigned int)arg1;
 - (void)loadPluginsFromBundle:(id)arg1 pathExtension:(id)arg2;
 - (void)observeInferior;

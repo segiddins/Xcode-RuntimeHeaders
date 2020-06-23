@@ -18,8 +18,8 @@
 }
 
 + (id)inspectedArrayControllerKeys;
-@property(readonly) id <IDEInspectorContentController> localContentController; // @synthesize localContentController=_localContentController;
 - (void).cxx_destruct;
+@property(readonly) id <IDEInspectorContentController> localContentController; // @synthesize localContentController=_localContentController;
 - (BOOL)showSuggestionSets;
 - (id)generateSlotSlivers:(id)arg1;
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;

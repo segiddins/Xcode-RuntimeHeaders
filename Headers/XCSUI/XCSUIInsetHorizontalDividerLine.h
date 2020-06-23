@@ -14,9 +14,9 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldInset; // @synthesize shouldInset=_shouldInset;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)configureDefaults;
 - (void)awakeFromNib;

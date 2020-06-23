@@ -31,6 +31,7 @@
 + (id)projectItemExtensionsForPlatform:(id)arg1;
 + (id)allCapabilityItems;
 + (id)projectItemExtensions;
+- (void).cxx_destruct;
 @property(readonly) NSString *buildConfiguration; // @synthesize buildConfiguration=_buildConfiguration;
 @property(readonly) NSArray *capabilityItemModels; // @synthesize capabilityItemModels=_capabilityItemModels;
 @property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
@@ -42,7 +43,6 @@
 @property(readonly) NSObject<IDEBuildSettingsCoordination> *buildSettingsCoordinator; // @synthesize buildSettingsCoordinator=_buildSettingsCoordinator;
 @property(readonly) NSObject<IDEInfoPlistCoordination> *infoPlistCoordinator; // @synthesize infoPlistCoordinator=_infoPlistCoordinator;
 @property(readonly) NSObject<IDEEntitlementsCoordination> *entitlementsCoordinator; // @synthesize entitlementsCoordinator=_entitlementsCoordinator;
-- (void).cxx_destruct;
 - (id)appIDFeatureStateBasedOnCapabilitiesAndEntitlementsForEntitlements:(id)arg1 expansion:(id)arg2;
 - (id)appIDFeatureStateBasedOnCapabilitiesAndEntitlements;
 - (id)expandEntitlements:(id)arg1 expansion:(id)arg2 error:(id *)arg3;

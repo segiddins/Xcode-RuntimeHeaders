@@ -14,8 +14,8 @@
     BOOL _representsDynamicContent;
 }
 
-@property(readonly) BOOL representsDynamicContent; // @synthesize representsDynamicContent=_representsDynamicContent;
 - (void).cxx_destruct;
+@property(readonly) BOOL representsDynamicContent; // @synthesize representsDynamicContent=_representsDynamicContent;
 - (id)candidateBlockForQuery:(id)arg1;
 - (id)workspaceRelativeStyleCandidates;
 - (BOOL)supportsLineNumberMatches;

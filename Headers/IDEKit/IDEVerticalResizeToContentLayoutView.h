@@ -15,10 +15,10 @@
     NSView *_resizingContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *resizingContentView; // @synthesize resizingContentView=_resizingContentView;
 @property(nonatomic) double bottomSpace; // @synthesize bottomSpace=_bottomSpace;
 @property(nonatomic) double topSpace; // @synthesize topSpace=_topSpace;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 
 @end

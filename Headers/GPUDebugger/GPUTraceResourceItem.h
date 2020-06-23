@@ -32,6 +32,7 @@
 
 + (id)sharedByteFormatter;
 + (BOOL)disableAssertMainThread;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_b00b4bef resolution; // @synthesize resolution=_resolution;
 @property(nonatomic) BOOL harvested; // @synthesize harvested=_harvested;
 @property(readonly, nonatomic) BOOL placeholder; // @synthesize placeholder=_placeholder;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) const void *stateMirrorObject; // @synthesize stateMirrorObject=_stateMirrorObject;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)_loadResourceObjectWithResolution:(CDStruct_b00b4bef)arg1;

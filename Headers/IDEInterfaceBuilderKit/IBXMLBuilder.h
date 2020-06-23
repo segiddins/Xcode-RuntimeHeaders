@@ -14,8 +14,8 @@
 }
 
 + (id)elementWithName:(id)arg1 scope:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NSXMLElement *currentElement; // @synthesize currentElement=_currentElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXMLElement *currentElement; // @synthesize currentElement=_currentElement;
 - (id)push:(id)arg1 scope:(CDUnknownBlockType)arg2;
 
 @end

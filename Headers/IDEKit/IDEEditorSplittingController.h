@@ -31,11 +31,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isOptionKeyDown; // @synthesize isOptionKeyDown=_isOptionKeyDown;
 @property BOOL canSelectToggleSizeButton; // @synthesize canSelectToggleSizeButton=_canSelectToggleSizeButton;
 @property BOOL canSelectRemoveSplitButton; // @synthesize canSelectRemoveSplitButton=_canSelectRemoveSplitButton;
 @property BOOL canSelectAddSplitButton; // @synthesize canSelectAddSplitButton=_canSelectAddSplitButton;
-- (void).cxx_destruct;
 - (void)maximizeSplitAction:(id)arg1;
 - (void)removeSplitAction:(id)arg1;
 - (void)addSplitAction:(id)arg1;

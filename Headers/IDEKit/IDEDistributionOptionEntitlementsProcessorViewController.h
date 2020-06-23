@@ -13,8 +13,8 @@
     NSDictionary *_itemToProcessorMap;
 }
 
-@property(readonly, nonatomic) NSDictionary *itemToProcessorMap; // @synthesize itemToProcessorMap=_itemToProcessorMap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *itemToProcessorMap; // @synthesize itemToProcessorMap=_itemToProcessorMap;
 - (BOOL)needsInteraction;
 - (id)initWithOption:(id)arg1;
 

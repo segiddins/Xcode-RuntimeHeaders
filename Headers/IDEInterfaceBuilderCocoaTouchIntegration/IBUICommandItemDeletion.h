@@ -19,9 +19,9 @@
 
 + (void)registerMarshallingRecordHandlers;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)unarchiveAnchor:(id)arg1;
 - (void)archiveAnchor:(id)arg1;

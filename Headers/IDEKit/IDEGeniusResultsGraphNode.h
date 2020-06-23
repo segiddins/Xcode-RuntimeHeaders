@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
 + (id)_rootNodeForGeniusResults:(id)arg1 editor:(id)arg2 includeJumpToCounterpartCategory:(BOOL)arg3 emptyCategoriesNavigateToEmptyEditor:(BOOL)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showHierarchyForSingleResultsCategory; // @synthesize showHierarchyForSingleResultsCategory=_showHierarchyForSingleResultsCategory;
 @property(readonly, nonatomic) BOOL hideSubItemCount; // @synthesize hideSubItemCount=_hideSubItemCount;
 @property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
@@ -36,7 +37,6 @@
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;
 - (unsigned long long)navigableItem_indexOfRepresentedObjectForIdentifier:(id)arg1 inRelationshipKeyPath:(id)arg2;

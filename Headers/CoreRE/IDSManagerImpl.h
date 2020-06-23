@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     struct Config _config;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isListeningForInvites; // @synthesize isListeningForInvites=_isListeningForInvites;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
 @property(nonatomic) struct Config config; // @synthesize config=_config;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (BOOL)parseMessage:(id)arg1 payload:(id *)arg2 objectGUID:(id *)arg3 type:(id *)arg4;
 - (void)sendMessage:(id)arg1 type:(id)arg2 objectGUID:(id)arg3 to:(id)arg4;

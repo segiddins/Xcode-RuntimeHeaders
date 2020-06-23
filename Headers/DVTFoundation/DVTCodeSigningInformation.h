@@ -19,9 +19,9 @@
 + (id)codeSigningInformationForProcessID:(int)arg1 error:(id *)arg2;
 + (id)codeSigningInformationForFilePath:(id)arg1 error:(id *)arg2;
 + (id)codeSigningDictionaryForCode:(struct __SecCode *)arg1 additionalCSFlags:(unsigned int)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *codesigningInfo; // @synthesize codesigningInfo=_codesigningInfo;
 @property(readonly) BOOL isAppleSigned; // @synthesize isAppleSigned=_isAppleSigned;
-- (void).cxx_destruct;
 - (id)architecturesWithError:(id *)arg1;
 @property(readonly) NSString *designatedRequirement; // @synthesize designatedRequirement=_designatedRequirement;
 - (id)codeSigningDictionaryWithAdditionalCSFlags:(unsigned int)arg1 architecture:(id)arg2 error:(id *)arg3;

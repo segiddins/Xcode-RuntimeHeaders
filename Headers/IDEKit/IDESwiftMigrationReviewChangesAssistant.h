@@ -30,10 +30,10 @@
 }
 
 + (id)keyPathsForValuesAffectingCanFinish;
+- (void).cxx_destruct;
 @property(retain) NSArray *originalFilePaths; // @synthesize originalFilePaths=_originalFilePaths;
 @property(retain) IDENavigableItem *flatNavigableItem; // @synthesize flatNavigableItem=_flatNavigableItem;
 @property(retain) IDENavigableItem *workspaceNavigableItem; // @synthesize workspaceNavigableItem=_workspaceNavigableItem;
-- (void).cxx_destruct;
 - (BOOL)shouldSelectFirstDiff;
 - (id)navigableItemsForSecondaryDocumentLocation:(id)arg1 usingNavigableItemCoordinator:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)navigableItemsForPrimaryDocumentLocation:(id)arg1 usingNavigableItemCoordinator:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

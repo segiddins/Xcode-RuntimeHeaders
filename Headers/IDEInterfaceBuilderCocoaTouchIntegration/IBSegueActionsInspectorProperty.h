@@ -18,8 +18,8 @@
     NSArray *_availableSegueActions;
 }
 
-@property(copy, nonatomic) NSArray *availableSegueActions; // @synthesize availableSegueActions=_availableSegueActions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *availableSegueActions; // @synthesize availableSegueActions=_availableSegueActions;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)awakeFromNib;
 - (void)setupRefreshTriggersAndConfigure;

@@ -10,6 +10,7 @@
 {
 }
 
+- (id)accessibilityTitle;
 - (BOOL)canBecomeKeyWindow;
 
 @end

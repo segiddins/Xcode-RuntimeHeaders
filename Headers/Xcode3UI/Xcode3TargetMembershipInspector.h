@@ -21,8 +21,8 @@
     NSArray *_cachedReferences;
 }
 
-@property(retain) NSArray *targetMemberships; // @synthesize targetMemberships=_targetMemberships;
 - (void).cxx_destruct;
+@property(retain) NSArray *targetMemberships; // @synthesize targetMemberships=_targetMemberships;
 - (id)nibBundle;
 - (id)nibName;
 - (void)primitiveInvalidate;

@@ -20,13 +20,13 @@
     IDEActivityLogSection *_commandLogSection;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEActivityLogSection *commandLogSection; // @synthesize commandLogSection=_commandLogSection;
 @property(readonly) NSString *errorString; // @synthesize errorString=_errorString;
 @property(readonly) long long commandResult; // @synthesize commandResult=_commandResult;
 @property(readonly) DVTFilePath *generatedFilePath; // @synthesize generatedFilePath=_generatedFilePath;
 @property(readonly) DVTFilePath *sourceFilePath; // @synthesize sourceFilePath=_sourceFilePath;
 @property(readonly) long long buildCommand; // @synthesize buildCommand=_buildCommand;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_blueprints;
 }
 
-@property(copy, nonatomic) NSArray *blueprints; // @synthesize blueprints=_blueprints;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *blueprints; // @synthesize blueprints=_blueprints;
 - (void)configureForCombinedColumn;
 - (void)configureColumnTitleAndImage;
 - (id)blueprint;

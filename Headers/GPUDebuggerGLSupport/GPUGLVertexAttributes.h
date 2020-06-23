@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     int _primitiveCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int primitiveCount; // @synthesize primitiveCount=_primitiveCount;
 @property(nonatomic) int elementCount; // @synthesize elementCount=_elementCount;
 @property(nonatomic) unsigned int elementType; // @synthesize elementType=_elementType;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isIndexed) BOOL indexed; // @synthesize indexed=_indexed;
 @property(nonatomic) int maxNumberOfVertices; // @synthesize maxNumberOfVertices=_maxNumberOfVertices;
 @property(nonatomic) int minNumberOfVertices; // @synthesize minNumberOfVertices=_minNumberOfVertices;
-- (void).cxx_destruct;
 - (void)populateObjectFromResource:(id)arg1;
 - (unsigned int)elementIndex:(int)arg1;
 - (id)formattedAttributeData:(int)arg1 forComponent:(int)arg2 forIndex:(int)arg3;

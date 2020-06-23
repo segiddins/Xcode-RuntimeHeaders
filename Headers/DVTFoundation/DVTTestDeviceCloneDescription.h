@@ -15,9 +15,9 @@
     NSDate *_dateCreated;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(readonly) id <DVTTestDevice> clone; // @synthesize clone=_clone;
-- (void).cxx_destruct;
 - (id)initWithClone:(id)arg1 dateCreated:(id)arg2;
 
 @end

@@ -27,11 +27,11 @@
     IBDocumentArchivingSchema *_schema;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *classesBeingDecoded; // @synthesize classesBeingDecoded=_classesBeingDecoded;
 @property(readonly) IBDocumentArchivingSchema *schema; // @synthesize schema=_schema;
 @property(readonly) id <IBUnarchivableDocument> unarchivedDocument; // @synthesize unarchivedDocument=_unarchivedDocument;
 @property(readonly) NSMutableDictionary *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)duplicateValuesForAttributeName:(id)arg1;
 - (id)description;
 - (id)unarchiveTextWithBase64EncodingIndicatorAttributeName:(id)arg1;

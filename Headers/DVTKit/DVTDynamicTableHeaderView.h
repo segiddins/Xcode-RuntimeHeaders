@@ -17,11 +17,11 @@
 }
 
 + (id)matchAttributedStringForCount:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSButton *disclosureButton; // @synthesize disclosureButton=_disclosureButton;
 @property(nonatomic) BOOL showDisclosureButton; // @synthesize showDisclosureButton=_showDisclosureButton;
 @property(retain) DVTImageAndTextCell *imageAndTextCell; // @synthesize imageAndTextCell=_imageAndTextCell;
 @property(retain) NSTextFieldCell *textCell; // @synthesize textCell=_textCell;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

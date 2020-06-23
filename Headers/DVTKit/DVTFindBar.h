@@ -56,6 +56,7 @@
 + (id)keyPathsForValuesAffectingReplaceString;
 + (id)keyPathsForValuesAffectingFindString;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfMatches; // @synthesize numberOfMatches=_numberOfMatches;
 @property(nonatomic) BOOL hasResults; // @synthesize hasResults=_hasResults;
 @property(copy, nonatomic) DVTFindPatternComponents *replacePatternComponents; // @synthesize replacePatternComponents=_replacePatternComponents;
@@ -73,7 +74,6 @@
 @property BOOL canReplace; // @synthesize canReplace=_canReplace;
 @property(retain, nonatomic) id findObject; // @synthesize findObject=_findObject;
 @property(retain) NSObject<DVTFindBarHostable> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)didPressDismissOnScopeBar:(id)arg1;

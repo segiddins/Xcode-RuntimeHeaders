@@ -26,6 +26,7 @@
 + (id)keyPathsForValuesAffectingTimeStoppedRecording;
 + (id)keyPathsForValuesAffectingIsRecording;
 + (id)keyPathsForValuesAffectingPrimaryObservable;
+- (void).cxx_destruct;
 @property(retain) id <IDELogStoreManageable> fullLog; // @synthesize fullLog=_fullLog;
 - (BOOL)disablesSourceIntegration;
 - (void)setIsImported:(BOOL)arg1;
@@ -36,7 +37,6 @@
 - (BOOL)hasAuxiliaryLog;
 - (BOOL)hasPrimaryLog;
 - (id)primaryObservable;
-- (void).cxx_destruct;
 - (id)description;
 - (id)onDiskPath;
 - (double)timeStoppedRecording;

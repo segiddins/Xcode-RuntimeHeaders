@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL drawBackground; // @synthesize drawBackground=_drawBackground;
 @property(readonly, nonatomic) IDEInspectorLayoutGroup *layoutStack; // @synthesize layoutStack=_layoutStack;
-- (void).cxx_destruct;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)updateBorderViews;

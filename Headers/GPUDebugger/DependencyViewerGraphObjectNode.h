@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) double magnification; // @synthesize magnification=_magnification;
 @property(readonly, nonatomic) __weak DependencyViewerGraphObject *graphObject; // @synthesize graphObject=_graphObject;
-- (void).cxx_destruct;
 - (BOOL)isSelected;
 - (BOOL)isResourceSelected:(unsigned long long)arg1 atAttachmentIndex:(unsigned long long)arg2;
 - (id)contextMenuAtLocation:(struct CGPoint)arg1;

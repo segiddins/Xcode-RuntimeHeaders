@@ -27,6 +27,7 @@
     unsigned long long _attachmentsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attachmentsCount; // @synthesize attachmentsCount=_attachmentsCount;
 @property(nonatomic) __weak id <IDETestReport_TestActivity> activity; // @synthesize activity=_activity;
 @property(nonatomic) __weak IDETestReportViewController *reportViewController; // @synthesize reportViewController=_reportViewController;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *durationString; // @synthesize durationString=_durationString;
 @property(copy, nonatomic) NSString *activityString; // @synthesize activityString=_activityString;
 @property(retain, nonatomic) id assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseExited:(id)arg1;

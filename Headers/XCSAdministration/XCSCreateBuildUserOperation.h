@@ -13,8 +13,8 @@
     _TtC17XCSAdministration14NewUserAccount *_userToCreate;
 }
 
-@property(retain, nonatomic) _TtC17XCSAdministration14NewUserAccount *userToCreate; // @synthesize userToCreate=_userToCreate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TtC17XCSAdministration14NewUserAccount *userToCreate; // @synthesize userToCreate=_userToCreate;
 - (void)run;
 - (id)statusDescription;
 

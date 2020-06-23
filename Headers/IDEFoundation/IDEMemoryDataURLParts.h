@@ -16,9 +16,9 @@
 
 + (id)urlParts:(id)arg1;
 + (BOOL)isMemoryDataURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *memoryDataUUID; // @synthesize memoryDataUUID=_memoryDataUUID;
 @property(readonly) int processID; // @synthesize processID=_processID;
-- (void).cxx_destruct;
 - (id)_initWithProcessID:(int)arg1 memoryDataUUID:(id)arg2;
 
 @end

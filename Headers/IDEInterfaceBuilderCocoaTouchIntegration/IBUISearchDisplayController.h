@@ -18,9 +18,9 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy) NSString *searchResultsTitle; // @synthesize searchResultsTitle=_searchResultsTitle;
-- (void).cxx_destruct;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

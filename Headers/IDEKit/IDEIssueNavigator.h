@@ -60,6 +60,7 @@
 + (id)keyPathsForValuesAffectingNavigableIssueItems;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak DVTScrollView *issueNavigatorScrollView; // @synthesize issueNavigatorScrollView=_issueNavigatorScrollView;
 @property struct _NSRange visibleRows; // @synthesize visibleRows=_visibleRows;
 @property(copy, nonatomic) NSMutableSet *expandedModelObjects; // @synthesize expandedModelObjects=_expandedModelObjects;
@@ -74,7 +75,6 @@
 @property(nonatomic) long long showByType; // @synthesize showByType=_showByType;
 @property(retain, nonatomic) NSArray *navigableIssueItems; // @synthesize navigableIssueItems=_navigableIssueItems;
 @property(nonatomic) BOOL showByRuntime; // @synthesize showByRuntime=_showByRuntime;
-- (void).cxx_destruct;
 - (void)revealNavigableItems:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)configureStateSavingObservers;

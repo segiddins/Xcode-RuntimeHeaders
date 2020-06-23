@@ -35,16 +35,15 @@
 
 + (id)createCSR:(id)arg1 email:(id)arg2 error:(id *)arg3;
 + (id)_dateFromCertificateValues:(id)arg1 forOID:(id)arg2;
-+ (id)serialNumberFromCertificateValues:(id)arg1;
 + (id)serialNumberFromCertificate:(struct __SecCertificate *)arg1;
 + (id)issueDateForCertificateValues:(id)arg1;
 + (id)issueDateForCertificate:(struct __SecCertificate *)arg1;
 + (id)certificateKindsFromCertificateValues:(id)arg1;
 + (id)certificateKindsFromCertificate:(struct __SecCertificate *)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *keychainSearchList; // @synthesize keychainSearchList=_keychainSearchList;
 @property(readonly) id underlyingType; // @synthesize underlyingType=_underlyingType;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
-- (void).cxx_destruct;
 - (BOOL)writeToFile:(id)arg1 error:(id *)arg2;
 - (BOOL)repairTrustSettings:(id *)arg1;
 - (BOOL)deleteFromKeychain:(id *)arg1;

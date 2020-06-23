@@ -14,9 +14,9 @@
     DVTSourceControlHostedAccount *_remoteRepositoryHostedAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTSourceControlHostedAccount *remoteRepositoryHostedAccount; // @synthesize remoteRepositoryHostedAccount=_remoteRepositoryHostedAccount;
 @property(readonly, nonatomic) DVTSourceControlRemoteRepository *remoteRepository; // @synthesize remoteRepository=_remoteRepository;
-- (void).cxx_destruct;
 - (void)reloadDataSource;
 - (void)setPackageFilter:(BOOL)arg1;
 - (void)setNextActionBlock:(CDUnknownBlockType)arg1;

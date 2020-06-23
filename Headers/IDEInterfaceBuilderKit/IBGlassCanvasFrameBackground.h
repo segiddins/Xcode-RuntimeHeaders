@@ -23,8 +23,8 @@
     id <IBGlassCanvasFrameBackgroundDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IBGlassCanvasFrameBackgroundDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IBGlassCanvasFrameBackgroundDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)drawInRect:(struct CGRect)arg1 unflip:(BOOL)arg2 drawCenterComponent:(BOOL)arg3;
 @property(nonatomic) CDStruct_c519178c glassToContentInset;
 @property(nonatomic) CDStruct_c519178c insetToGlass;

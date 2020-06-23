@@ -18,9 +18,9 @@
 
 + (id)_knownConfigurations;
 + (id)configurationForScreenShape:(long long)arg1;
+- (void).cxx_destruct;
 @property long long screenShape; // @synthesize screenShape=_screenShape;
 @property(retain) NSString *deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initWithScreenShape:(long long)arg1 deviceType:(id)arg2;
 

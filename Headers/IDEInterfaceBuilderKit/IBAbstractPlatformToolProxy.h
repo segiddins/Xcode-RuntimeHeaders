@@ -33,16 +33,16 @@
     NSObject<IBAbstractPlatformToolProxyDelegate> *_proxyDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldRaiseOnFailures; // @synthesize shouldRaiseOnFailures=_shouldRaiseOnFailures;
 @property BOOL isAlive; // @synthesize isAlive=_isAlive;
 @property(readonly, nonatomic) __weak NSObject<IBAbstractPlatformToolProxyDelegate> *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType terminationHandler; // @synthesize terminationHandler=_terminationHandler;
 @property(readonly, nonatomic) IBPlatformToolLaunchContext *launchContext; // @synthesize launchContext=_launchContext;
 @property(readonly, nonatomic) IBAbstractPlatformToolExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
-- (void).cxx_destruct;
 - (void)shutdownAndForceToolProxyKill;
 - (void)shutdown;
-- (void)loadExtensions:(id)arg1;
+- (id)loadExtensions:(id)arg1;
 - (id)_ON_QUEUE_sendMessage:(SEL)arg1 toChannelReturningError:(id *)arg2 during:(CDUnknownBlockType)arg3;
 - (id)sendMessage:(SEL)arg1 toChannelReturningError:(id *)arg2 during:(CDUnknownBlockType)arg3;
 - (id)sendMessage:(SEL)arg1 toChannelDuring:(CDUnknownBlockType)arg2;
@@ -65,7 +65,8 @@
 - (id)initWithWriteDescriptor:(int)arg1 readDescriptor:(int)arg2 executionContext:(id)arg3 launchContext:(id)arg4 proxyDelegate:(id)arg5 shouldRaiseOnFailures:(BOOL)arg6 terminationHandler:(CDUnknownBlockType)arg7 error:(id *)arg8;
 - (id)initWithSocket:(int)arg1 executionContext:(id)arg2 launchContext:(id)arg3 proxyDelegate:(id)arg4 shouldRaiseOnFailures:(BOOL)arg5 terminationHandler:(CDUnknownBlockType)arg6 error:(id *)arg7;
 - (void)setupToolExitDispatchSource;
-- (void)didLaunchWithPipeToKeepAlive:(id)arg1;
+- (void)suppressRaisingExceptionOnFailureDuring:(CDUnknownBlockType)arg1;
+- (void)didLaunchWithPipeToKeepAlive:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

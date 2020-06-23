@@ -33,8 +33,8 @@
 + (id)archivableRelationships;
 + (id)archivableAttributes;
 + (id)buildFileWithReference:(id)arg1;
-@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
 - (void).cxx_destruct;
+@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
 - (BOOL)archiveInPlistOnSingleLine;
 - (id)gidCommentForArchive;
 - (id)buildFileForAbsolutePath:(id)arg1;
@@ -84,7 +84,7 @@
 - (id)target;
 - (void)_setBuildPhase:(id)arg1;
 - (id)buildPhase;
-- (id)name;
+@property(readonly) NSString *name;
 - (void)_unsetFileReference;
 @property(readonly) PBXReference *fileReference;
 - (id)innerDescription;

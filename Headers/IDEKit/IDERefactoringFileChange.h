@@ -17,10 +17,10 @@
     NSString *_valueName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *valueName; // @synthesize valueName=_valueName;
 @property BOOL shouldBeApplied; // @synthesize shouldBeApplied=_shouldBeApplied;
 @property(readonly) __weak IDERefactoringFileChangeSet *fileChangeSet; // @synthesize fileChangeSet=_fileChangeSet;
-- (void).cxx_destruct;
 @property(readonly) NSString *categoryName;
 @property(readonly) NSString *originalValueName;
 @property(readonly) NSString *keyName;

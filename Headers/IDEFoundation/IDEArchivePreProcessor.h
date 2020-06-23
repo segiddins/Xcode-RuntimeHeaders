@@ -15,9 +15,9 @@
 }
 
 + (id)defaultStore;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *archivePathToPreProcessingResult; // @synthesize archivePathToPreProcessingResult=_archivePathToPreProcessingResult;
 @property(retain, nonatomic) NSOperationQueue *archiveProcessingQueue; // @synthesize archiveProcessingQueue=_archiveProcessingQueue;
-- (void).cxx_destruct;
 - (void)processArchiveSnapshots:(id)arg1;
 - (id)processArchiveSnapshot:(id)arg1;
 

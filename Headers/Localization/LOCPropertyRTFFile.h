@@ -23,9 +23,9 @@
 + (id)sentencePositionKeysOrganizedByParagraphNumber:(id)arg1;
 + (id)linkKeys:(id)arg1;
 + (id)sentencePositionKeys:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *attributeRuns; // @synthesize attributeRuns;
 @property(retain) NSDictionary *docAttributes; // @synthesize docAttributes;
-- (void).cxx_destruct;
 - (id)sentenceRangesPerParagraphWithSegmentedNodes:(id)arg1;
 - (id)sentenceRanges;
 - (id)paragraphRanges;

@@ -28,9 +28,9 @@
 + (Class)_markupViewAttachmentCellClass;
 + (Class)_inlineTokenAttachmentCellClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly) unsigned long long foldStyle; // @synthesize foldStyle=_foldStyle;
-- (void).cxx_destruct;
 - (struct _NSRange)fixedSelectionRangeForRange:(struct _NSRange)arg1 affinity:(unsigned long long)arg2 inTextView:(id)arg3;
 - (unsigned long long)foldingTypesetter:(id)arg1 shouldUseControlCharacterAction:(unsigned long long)arg2 remainingNominalParagraphRange:(struct _NSRange *)arg3 andParagraphSeparatorRange:(struct _NSRange *)arg4 charactarIndex:(unsigned long long)arg5 layoutManager:(id)arg6 string:(id)arg7;
 - (struct CGRect)foldingTypesetter:(id)arg1 shouldUseBoundingBox:(struct CGRect)arg2 forControlGlyphAtIndex:(unsigned long long)arg3 textContainer:(id)arg4 proposedLineFragment:(struct CGRect)arg5 glyphPosition:(struct CGPoint)arg6 characterIndex:(unsigned long long)arg7;

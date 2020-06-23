@@ -16,9 +16,9 @@
     NSArray *_currentTestableReferences;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *currentTestableReferences; // @synthesize currentTestableReferences=_currentTestableReferences;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
 - (void)presentSheetOnWindow:(id)arg1 withMessage:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_shouldEnableFilePickerItem:(id)arg1;

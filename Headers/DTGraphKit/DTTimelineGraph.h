@@ -34,6 +34,7 @@
     DTTimelinePlane *_reorderingSpacePlane;
     BOOL _showsScrollers;
     BOOL _planeBorderIsResizable;
+    BOOL _isInvisibleForAccessibility;
     BOOL _topPinnedPlaneRejectsFirstResponder;
     BOOL _suppressYAxisScrolling;
     BOOL _isFirstResponder;
@@ -62,6 +63,8 @@
 
 + (void)_tileDynamicRangeBecameValid:(id)arg1;
 + (BOOL)dt_shouldAllowImplicitAction:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak DTTimelineGraphLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(readonly, nonatomic) BOOL isFirstResponder; // @synthesize isFirstResponder=_isFirstResponder;
 @property(nonatomic) unsigned long long rangeIndicatorState; // @synthesize rangeIndicatorState=_rangeIndicatorState;
@@ -70,6 +73,7 @@
 @property(nonatomic) BOOL suppressYAxisScrolling; // @synthesize suppressYAxisScrolling=_suppressYAxisScrolling;
 @property(nonatomic) long long initialDynamicRangeHigh; // @synthesize initialDynamicRangeHigh=_initialDynamicRangeHigh;
 @property(nonatomic) BOOL topPinnedPlaneRejectsFirstResponder; // @synthesize topPinnedPlaneRejectsFirstResponder=_topPinnedPlaneRejectsFirstResponder;
+@property BOOL isInvisibleForAccessibility; // @synthesize isInvisibleForAccessibility=_isInvisibleForAccessibility;
 @property(readonly, nonatomic) DTTimelineGraphPlaneManager *planeManager; // @synthesize planeManager=_planeManager;
 @property(copy, nonatomic) NSSet *selectedPlanes; // @synthesize selectedPlanes=_selectedPlanes;
 @property(nonatomic) unsigned long long nanosecondsPerPoint; // @synthesize nanosecondsPerPoint=_nanosecondsPerPoint;
@@ -95,8 +99,6 @@
 @property(readonly, nonatomic) DTTimelinePlane *backgroundPlane; // @synthesize backgroundPlane=_backgroundPlane;
 @property(readonly, nonatomic) DTTimelinePlane *bottomPinnedPlane; // @synthesize bottomPinnedPlane=_bottomPinnedPlane;
 @property(readonly, nonatomic) DTTimelinePlane *topPinnedPlane; // @synthesize topPinnedPlane=_topPinnedPlane;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)displayInspectionInfoForLocalPosition:(struct CGPoint)arg1;
 - (void)updateMouseHoverStatusForPosition:(struct CGPoint)arg1;
 - (void)rebuildAccessibilitySelection;

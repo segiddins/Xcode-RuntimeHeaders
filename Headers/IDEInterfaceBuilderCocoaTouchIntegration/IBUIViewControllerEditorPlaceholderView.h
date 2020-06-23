@@ -13,8 +13,8 @@
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
-@property(readonly, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 
 @end

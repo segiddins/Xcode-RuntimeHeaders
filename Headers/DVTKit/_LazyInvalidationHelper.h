@@ -13,8 +13,8 @@
     DVTTextStorage *_textStorage;
 }
 
-@property(nonatomic) __weak DVTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DVTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void)_invalidateCallback:(id)arg1;
 
 @end

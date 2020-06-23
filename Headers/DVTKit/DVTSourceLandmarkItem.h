@@ -30,6 +30,7 @@
 }
 
 + (unsigned long long)sourceLandmarkItemTypeForNodeType:(long long)arg1;
+- (void).cxx_destruct;
 @property long long indentLevel; // @synthesize indentLevel=_indentLevel;
 @property long long nestingLevel; // @synthesize nestingLevel=_nestingLevel;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
@@ -39,7 +40,6 @@
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property DVTSourceLandmarkItem *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)landmarkItemTypeName;
 - (unsigned long long)landmarkItemType;
 - (struct _NSRange)landmarkItemNameRange;

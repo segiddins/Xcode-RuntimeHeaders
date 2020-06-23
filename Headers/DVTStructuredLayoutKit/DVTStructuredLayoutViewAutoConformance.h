@@ -19,6 +19,7 @@
 - (void)swizzled_dvtStructuredLayoutViewStateCallbacks_viewDidChangeBackingProperties;
 - (void)swizzled_dvtStructuredLayoutViewStateCallbacks_viewWillDraw;
 - (void)swizzled_dvtStructuredLayoutViewStateCallbacks_viewDidMoveToWindow;
+- (void)swizzled_dvtStructuredLayoutViewStateCallbacks_viewDidMoveToSuperview;
 - (id)dvt_layoutState;
 
 @end

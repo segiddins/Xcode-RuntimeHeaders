@@ -79,6 +79,7 @@
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
 + (void)initialize;
 + (long long)topUndoGroupingLevel;
+- (void).cxx_destruct;
 @property(retain) DVTDocumentLocation *previewDocumentLocation; // @synthesize previewDocumentLocation=_previewDocumentLocation;
 @property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
@@ -87,7 +88,6 @@
 @property int readOnlyStatus; // @synthesize readOnlyStatus=_readOnlyStatus;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace; // @synthesize invalidationBacktrace=_invalidationBacktrace;
 @property BOOL trackFileSystemChanges; // @synthesize trackFileSystemChanges=_trackFileSystemChanges;
-- (void).cxx_destruct;
 - (id)derivedContentProviderForType:(id)arg1;
 - (void)restoreStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;

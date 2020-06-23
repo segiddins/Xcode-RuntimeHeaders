@@ -60,9 +60,9 @@
 + (id)keyPathsForValuesAffectingDerivedDataFolderForWorkspace;
 + (id)nameForWorkspaceArenaWithBaseName:(id)arg1 gristInput:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL hasWorkspaceRelativeDerivedDataLocation; // @synthesize hasWorkspaceRelativeDerivedDataLocation=_hasWorkspaceRelativeDerivedDataLocation;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)createWorkspaceArenaFolderIfNecessary;
 - (BOOL)createWorkspaceArenaFolderIfNecessaryWithError:(id *)arg1;

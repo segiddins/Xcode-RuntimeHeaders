@@ -15,8 +15,8 @@
     IDEExecutionOperationTracker *_tracker;
 }
 
-@property(readonly) IDEExecutionOperationTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly) IDEExecutionOperationTracker *tracker; // @synthesize tracker=_tracker;
 - (void)registerTracker:(id)arg1;
 
 // Remaining properties

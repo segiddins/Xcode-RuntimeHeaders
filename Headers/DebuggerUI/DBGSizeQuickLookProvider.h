@@ -17,8 +17,8 @@
     int _loadedState;
 }
 
-@property int loadedState; // @synthesize loadedState=_loadedState;
 - (void).cxx_destruct;
+@property int loadedState; // @synthesize loadedState=_loadedState;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)_startRetrieval;

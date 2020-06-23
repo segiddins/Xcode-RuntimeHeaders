@@ -26,6 +26,7 @@
 
 + (long long)fieldTypeForUnichar:(unsigned short)arg1;
 + (id)_possibleFieldTypes;
+- (void).cxx_destruct;
 @property(retain) NSArray *eraOptions; // @synthesize eraOptions=_eraOptions;
 @property(retain) NSArray *dayOptions; // @synthesize dayOptions=_dayOptions;
 @property(retain) NSArray *zoneOptions; // @synthesize zoneOptions=_zoneOptions;
@@ -38,7 +39,6 @@
 @property(retain) NSArray *periodOptions; // @synthesize periodOptions=_periodOptions;
 @property(retain) NSArray *weekdayOptions; // @synthesize weekdayOptions=_weekdayOptions;
 @property(retain) NSArray *quarterOptions; // @synthesize quarterOptions=_quarterOptions;
-- (void).cxx_destruct;
 - (void)_regenerateTokenOptions;
 - (void)setDelegate:(id)arg1;
 - (id)_zoneTokenWithType:(id)arg1 count:(id)arg2;

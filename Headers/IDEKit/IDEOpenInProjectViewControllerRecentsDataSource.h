@@ -15,8 +15,8 @@
     IDERecentsHelper *_helper;
 }
 
-@property(retain) IDERecentsHelper *helper; // @synthesize helper=_helper;
 - (void).cxx_destruct;
+@property(retain) IDERecentsHelper *helper; // @synthesize helper=_helper;
 - (void)updateWithPreUpdateCallback:(CDUnknownBlockType)arg1 postUpdateCallback:(CDUnknownBlockType)arg2;
 - (void)primitiveInvalidate;
 

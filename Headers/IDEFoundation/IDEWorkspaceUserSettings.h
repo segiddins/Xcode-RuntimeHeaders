@@ -14,6 +14,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForShouldUseLegacyBuildSystem;
 + (BOOL)automaticallyNotifiesObserversForIssueFilterStyle;
++ (BOOL)automaticallyNotifiesObserversForShowSharedSchemesAutomatically;
 + (BOOL)automaticallyNotifiesObserversForLiveSourceIssuesEnabled;
 + (BOOL)automaticallyNotifiesObserversForHasAskedToTakeAutomaticSnapshotBeforeSignificantChanges;
 + (BOOL)automaticallyNotifiesObserversForTakeSnapshotsBeforeSignificantChanges;
@@ -33,6 +34,7 @@
 - (void)loadSettings;
 - (void)saveSettings;
 @property int issueFilterStyle;
+@property BOOL showSharedSchemesAutomatically;
 @property BOOL liveSourceIssuesEnabled;
 @property BOOL hasAskedToTakeAutomaticSnapshotBeforeSignificantChanges;
 @property BOOL takeSnapshotsBeforeSignificantChanges;

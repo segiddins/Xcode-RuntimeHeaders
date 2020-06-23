@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSTextField *_apiTitle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *apiTitle; // @synthesize apiTitle=_apiTitle;
 @property(nonatomic) __weak NSImageView *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(nonatomic) __weak NSTableView *content; // @synthesize content=_content;
 @property(nonatomic) __weak NSStackView *stack; // @synthesize stack=_stack;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)setAPIItem:(id)arg1 usingWidth:(double)arg2;

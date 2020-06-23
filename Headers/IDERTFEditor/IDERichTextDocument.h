@@ -41,6 +41,7 @@
 
 + (id)readableTypeForType:(id)arg1;
 + (BOOL)isRichTextType:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *keywords; // @synthesize keywords;
 @property(copy) NSString *comment; // @synthesize comment;
 @property(copy) NSString *subject; // @synthesize subject;
@@ -62,7 +63,6 @@
 @property unsigned long long encoding; // @synthesize encoding=documentEncoding;
 @property(copy) NSColor *backgroundColor; // @synthesize backgroundColor;
 @property(getter=isReadOnly) BOOL readOnly; // @synthesize readOnly=isReadOnly;
-- (void).cxx_destruct;
 - (BOOL)replaceFindResults:(id)arg1 withString:(id)arg2 withError:(id *)arg3;
 - (void)_undoReplaceFindResults:(id)arg1;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;

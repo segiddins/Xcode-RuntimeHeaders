@@ -16,8 +16,8 @@
     id _representedObject;
 }
 
-@property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
+@property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

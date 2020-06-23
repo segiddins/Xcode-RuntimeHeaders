@@ -24,10 +24,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL summaryContainsChangeAttribute; // @synthesize summaryContainsChangeAttribute=_summaryContainsChangeAttribute;
 @property(retain) NSAttributedString *attributedSummaryValue; // @synthesize attributedSummaryValue=_attributedSummaryValue;
 @property(readonly) DBGDataValueSummaryFormat *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSString *formatString;
 - (BOOL)_attributedStringContainsChangeAttribute:(id)arg1;

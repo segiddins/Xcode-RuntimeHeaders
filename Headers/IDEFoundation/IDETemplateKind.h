@@ -26,9 +26,9 @@
 + (id)templateKindForIdentifier:(id)arg1;
 + (id)_templateKindForExtension:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *assistantIdentifier; // @synthesize assistantIdentifier=_assistantIdentifier;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (id)nextAssistantIdentifierForWorkspace:(id)arg1;
 - (id)newTemplateInstantiationContext;
 - (Class)instantiationContextClass;

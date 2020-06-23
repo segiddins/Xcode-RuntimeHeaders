@@ -35,6 +35,7 @@
 }
 
 + (struct CGPoint)pointDirectionForEdge:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property __weak id <IBStoryboardCanvasLinkPathDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) BOOL badgeShouldBeRinged; // @synthesize badgeShouldBeRinged=_badgeShouldBeRinged;
@@ -46,7 +47,6 @@
 @property(readonly) long long packIndex; // @synthesize packIndex=_packIndex;
 @property(readonly) struct CGPoint endingPoint; // @synthesize endingPoint=_endingPoint;
 @property(readonly) struct CGPoint startingPoint; // @synthesize startingPoint=_startingPoint;
-- (void).cxx_destruct;
 - (void)updateBadgeLayer:(id)arg1;
 - (id)effectiveBadgeImage;
 - (void)updateArrowLayer:(id)arg1;

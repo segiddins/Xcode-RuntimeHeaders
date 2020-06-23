@@ -20,10 +20,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned int coveredLines; // @synthesize coveredLines=_coveredLines;
 @property(readonly, nonatomic) unsigned int executableLines; // @synthesize executableLines=_executableLines;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *lineCoverage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

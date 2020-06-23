@@ -18,7 +18,7 @@
 + (id)expirationDateForOrphanedItemsWithAnchorDate:(id)arg1;
 - (id)purgeVolume:(id)arg1 amount:(unsigned long long)arg2 urgency:(int)arg3 error:(id *)arg4;
 - (id)purgeableSizeOnVolume:(id)arg1 urgency:(int)arg2 error:(id *)arg3;
-- (struct NSSet *)itemsWithError:(id *)arg1;
+- (id)itemsWithError:(id *)arg1;
 - (id)anchorDate;
 
 // Remaining properties

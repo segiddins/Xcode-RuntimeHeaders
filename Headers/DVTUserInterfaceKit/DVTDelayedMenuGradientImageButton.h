@@ -19,8 +19,8 @@
 
 + (void)initialize;
 + (Class)cellClass;
-@property struct CGSize menuOffset; // @synthesize menuOffset=_menuOffset;
 - (void).cxx_destruct;
+@property struct CGSize menuOffset; // @synthesize menuOffset=_menuOffset;
 - (void)primitiveInvalidate;
 - (void)showMenu:(id)arg1;
 - (void)_runPopUp;

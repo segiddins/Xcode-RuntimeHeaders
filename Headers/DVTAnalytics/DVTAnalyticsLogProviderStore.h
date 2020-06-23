@@ -14,8 +14,8 @@
 }
 
 + (id)defaultStore;
-@property(retain, nonatomic) NSMutableDictionary *providers; // @synthesize providers=_providers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *providers; // @synthesize providers=_providers;
 - (id)description;
 - (id)providerForCacheDirectory:(id)arg1 logProviderClass:(Class)arg2;
 - (id)init;

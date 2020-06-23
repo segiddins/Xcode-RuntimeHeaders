@@ -17,11 +17,11 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *initialStringValue; // @synthesize initialStringValue=_initialStringValue;
 @property(retain) NSMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(retain) DVTSearchField *searchField; // @synthesize searchField=_searchField;
-- (void).cxx_destruct;
 - (void)viewDidMoveToWindow;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)awakeFromNib;

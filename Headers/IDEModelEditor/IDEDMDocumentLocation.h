@@ -19,8 +19,8 @@
 + (id)firstModelObjectWithRoot:(id)arg1;
 + (id)arrayByTraversingModelInLocationOrderWithRoot:(id)arg1;
 + (id)documentLocationWithURL:(id)arg1 modelObject:(id)arg2;
-@property(readonly) IDEDMSelection *modelSelection; // @synthesize modelSelection=_modelSelection;
 - (void).cxx_destruct;
+@property(readonly) IDEDMSelection *modelSelection; // @synthesize modelSelection=_modelSelection;
 @property(readonly, copy) NSString *stringRepresentation;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNearLocation:(id)arg1 inModel:(id)arg2;

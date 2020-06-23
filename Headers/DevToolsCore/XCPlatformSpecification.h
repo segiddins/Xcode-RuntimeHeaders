@@ -38,9 +38,9 @@
 + (id)platformForUnderlyingPlatform:(id)arg1;
 + (id)defaultPlatform;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) XCCommandLineToolSpecificationRegistry *commandLineToolSpecificationRegistry; // @synthesize commandLineToolSpecificationRegistry=_commandLineToolSpecificationRegistry;
 @property(readonly) DVTPlatform *underlyingPlatform; // @synthesize underlyingPlatform=_underlyingPlatform;
-- (void).cxx_destruct;
 - (id)defaultSDK;
 - (id)SDKs;
 - (id)deviceProperties;

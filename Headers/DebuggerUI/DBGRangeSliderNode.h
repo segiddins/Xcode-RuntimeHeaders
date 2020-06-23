@@ -50,13 +50,13 @@
     long long _highlightedTickIndexFromSelection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long highlightedTickIndexFromSelection; // @synthesize highlightedTickIndexFromSelection=_highlightedTickIndexFromSelection;
 @property(readonly) BOOL isFadedIn; // @synthesize isFadedIn=_isFadedIn;
 @property(nonatomic) __weak id <DBGRangeSliderDelegate> delegate; // @synthesize delegate=_delegate;
 @property double spacingValue; // @synthesize spacingValue=_spacingValue;
 @property double positionOffsetY; // @synthesize positionOffsetY=_positionOffsetY;
 @property double positionOffsetX; // @synthesize positionOffsetX=_positionOffsetX;
-- (void).cxx_destruct;
 - (id)rotatedImage:(id)arg1 degrees:(double)arg2;
 - (double)angleOfLineBetweenPointOne:(struct CGPoint)arg1 pointTwo:(struct CGPoint)arg2;
 - (double)currentSliderScreenSpaceAngle;

@@ -18,9 +18,9 @@
     id <GPUAbstractTraceGroupItem> _outlineItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <GPUAbstractTraceGroupItem> outlineItem; // @synthesize outlineItem=_outlineItem;
 @property(readonly, nonatomic) NSArray *ports; // @synthesize ports=_ports;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)hasEdgeFromResource:(id)arg1 toVertex:(id)arg2;
 - (void)markAdjacencyActiveForEdge:(id)arg1;

@@ -11,6 +11,7 @@
 @interface _TtC8RCShared21TextInspectableEditor : _TtCs12_SwiftObject
 {
     MISSING_TYPE *title;
+    MISSING_TYPE *hasLabel;
     MISSING_TYPE *editorContextCreator;
     MISSING_TYPE *inspectable;
     MISSING_TYPE *controllerResolver;

@@ -34,13 +34,13 @@
 + (void)initialize;
 + (id)performanceLogAspect;
 + (id)populationQueue;
+- (void).cxx_destruct;
 @property BOOL disclosed; // @synthesize disclosed=_disclosed;
 @property(retain) DVTDispatchLock *cacheLock; // @synthesize cacheLock=_cacheLock;
 @property(copy, nonatomic) NSIndexSet *replaceResultsIndexSet; // @synthesize replaceResultsIndexSet=_replaceResultsIndexSet;
 @property(retain, nonatomic) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) IDENavigableItem *batchFindNavigable; // @synthesize batchFindNavigable=_navigable;
-- (void).cxx_destruct;
 - (void)didReplaceFindResults;
 - (void)willReplaceFindResults;
 - (void)updateSelectedLocation:(id)arg1 forView:(id)arg2 atIndex:(long long)arg3 preview:(BOOL)arg4;

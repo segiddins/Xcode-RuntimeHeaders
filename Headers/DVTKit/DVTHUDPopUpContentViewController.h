@@ -15,9 +15,9 @@
 }
 
 + (id)HUDPopUpContentViewController;
+- (void).cxx_destruct;
 @property(retain) DVTHUDPopUpController *windowController; // @synthesize windowController=_windowController;
 @property CDStruct_bf6d4a14 contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)alternateButtonAction:(id)arg1;
 - (id)alternateButtonLabel;
 - (BOOL)shouldShowDoneButton;

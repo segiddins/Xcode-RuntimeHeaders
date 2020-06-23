@@ -24,11 +24,11 @@
 + (BOOL)automaticallyNotifiesObserversOfAllDiffDescriptorsToggledState;
 + (id)keyPathsForValuesAffectingComparisonEditorSubmode;
 + (id)keyPathsForValuesAffectingComparisonEditor;
+- (void).cxx_destruct;
 @property(nonatomic) int allDiffDescriptorsToggledState; // @synthesize allDiffDescriptorsToggledState=_allDiffDescriptorsToggledState;
 @property unsigned long long conflictCount; // @synthesize conflictCount=_conflictCount;
 @property(retain) DVTDiffDescriptor *selectedMergeDescriptor; // @synthesize selectedMergeDescriptor=_selectedMergeDescriptor;
 @property(copy) CDUnknownBlockType editorCustomizationBlock; // @synthesize editorCustomizationBlock=_editorCustomizationBlock;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (id)_stealPrimaryEditorContext;

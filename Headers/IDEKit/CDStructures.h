@@ -15,11 +15,6 @@ struct AEDesc {
     struct OpaqueAEDataStorageType **_field2;
 };
 
-struct CAShapeLayer {
-    Class _field1;
-    struct _CALayerIvars _field2;
-};
-
 struct CGPoint {
     double x;
     double y;
@@ -42,24 +37,7 @@ struct NSEdgeInsets {
     double right;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct OpaqueAEDataStorageType;
-
-struct _CALayerIvars {
-    int _field1;
-    unsigned int _field2;
-    void *_field3;
-};
-
-struct _DVTGraphBounds {
-    double minX;
-    double maxX;
-    double minY;
-    double maxY;
-};
 
 struct _IDEKeyBindingFieldCellFlags {
     unsigned int delegateRespondsToKeyboardShortcutIsPrefix:1;
@@ -122,6 +100,10 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned long long data[4];
+} CDStruct_4c46f3f5;
 
 typedef struct {
     double minX;

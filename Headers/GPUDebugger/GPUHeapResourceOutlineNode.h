@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_heapName;
 }
 
-@property(readonly, nonatomic) NSString *heapName; // @synthesize heapName=_heapName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *heapName; // @synthesize heapName=_heapName;
 - (id)title;
 - (id)initWithHeapName:(id)arg1;
 

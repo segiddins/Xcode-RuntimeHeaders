@@ -14,8 +14,8 @@
     XCSUIBotIntegrationPopoverStatusBadgeView *_codeCoverageBadgeView;
 }
 
-@property __weak XCSUIBotIntegrationPopoverStatusBadgeView *codeCoverageBadgeView; // @synthesize codeCoverageBadgeView=_codeCoverageBadgeView;
 - (void).cxx_destruct;
+@property __weak XCSUIBotIntegrationPopoverStatusBadgeView *codeCoverageBadgeView; // @synthesize codeCoverageBadgeView=_codeCoverageBadgeView;
 - (void)updateBadgesWithCodeCoverage:(unsigned long long)arg1;
 
 @end

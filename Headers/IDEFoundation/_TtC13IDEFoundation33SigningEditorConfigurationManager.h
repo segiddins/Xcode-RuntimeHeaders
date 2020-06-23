@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDESigningEditorConfigurationManagerProtocol-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSString;
 
-@interface _TtC13IDEFoundation33SigningEditorConfigurationManager : NSObject <IDESigningEditorConfigurationManagerProtocol>
+@interface _TtC13IDEFoundation33SigningEditorConfigurationManager : NSObject
 {
     MISSING_TYPE *center;
     MISSING_TYPE *projectName;

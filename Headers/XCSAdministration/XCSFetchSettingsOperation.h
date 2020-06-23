@@ -13,8 +13,8 @@
     XCSSettings *_settings;
 }
 
-@property(retain, nonatomic) XCSSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSSettings *settings; // @synthesize settings=_settings;
 - (void)run;
 - (id)statusDescription;
 

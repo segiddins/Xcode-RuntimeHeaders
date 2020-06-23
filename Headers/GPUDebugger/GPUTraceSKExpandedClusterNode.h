@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _titleLayoutRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL drawsIcon; // @synthesize drawsIcon=_drawsIcon;
 @property(nonatomic) BOOL drawsTitle; // @synthesize drawsTitle=_drawsTitle;
 @property(readonly, nonatomic) GPUTraceSKTruncatedLabel *title; // @synthesize title=_title;
 @property(readonly, nonatomic) struct CGRect titleLayoutRect; // @synthesize titleLayoutRect=_titleLayoutRect;
 @property(readonly) DependencyViewerCluster *cluster; // @synthesize cluster=_cluster;
-- (void).cxx_destruct;
 - (void)removeHighlightStyle:(unsigned long long)arg1;
 - (void)addHighlightStyle:(unsigned long long)arg1;
 - (void)updateHighlight;

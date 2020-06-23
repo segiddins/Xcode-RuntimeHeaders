@@ -18,10 +18,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *categories; // @synthesize categories=_categories;
 @property(retain) NSArray *intentRepresentations; // @synthesize intentRepresentations=_intentRepresentations;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)deleteIntentRepresentation:(id)arg1;
 - (void)addIntentRepresentation:(id)arg1;

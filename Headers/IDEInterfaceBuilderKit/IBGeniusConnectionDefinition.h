@@ -17,11 +17,11 @@
 }
 
 + (id)connectionDefinitionForClass:(id)arg1 member:(id)arg2 kind:(id)arg3 category:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) NSString *geniusCategory; // @synthesize geniusCategory=_geniusCategory;
 @property(retain) DVTSourceCodeSymbolKind *kind; // @synthesize kind=_kind;
 @property(retain) NSString *memberName; // @synthesize memberName=_memberName;
 @property(retain) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)description;
 - (id)symbolFromIndex:(id)arg1;
 - (id)propertySymbolForName:(id)arg1 inClass:(id)arg2;

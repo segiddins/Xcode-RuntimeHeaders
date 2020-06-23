@@ -20,13 +20,13 @@
     IDETestTargetSelectorViewController *_testTargetSelector;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDETestTargetSelectorViewController *testTargetSelector; // @synthesize testTargetSelector=_testTargetSelector;
 @property(retain) NSView *testTargetCapsuleBottomPadding; // @synthesize testTargetCapsuleBottomPadding=_testTargetCapsuleBottomPadding;
 @property(retain) DVTStackView_ML *testTargetCapsuleStackView; // @synthesize testTargetCapsuleStackView=_testTargetCapsuleStackView;
 @property(retain) Xcode3TargetEditorCapsuleViewController *testTargetCapsuleViewController; // @synthesize testTargetCapsuleViewController=_testTargetCapsuleViewController;
 @property(retain) IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
 @property(retain, nonatomic) Xcode3TargetEditor *targetViewController; // @synthesize targetViewController=_targetViewController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;

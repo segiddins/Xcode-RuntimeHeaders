@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
     IDEEditorDocument *_editorDocument;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUTraceShaderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(readonly, nonatomic) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
 @property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 @property(nonatomic) __weak id <DYPShaderSourceDocument> document; // @synthesize document;
 @property(nonatomic) __weak id <GPUTraceShaderDataProviderDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (double)shaderTimingForShaderType:(unsigned int)arg1;
 - (id)retainedEditorDocumentWithWorkspaceDocument:(id)arg1;
 - (id)remarks;

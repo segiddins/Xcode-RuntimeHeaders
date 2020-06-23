@@ -38,6 +38,7 @@
 + (id)reservedNamesForMethodAtLocation:(id)arg1 document:(id)arg2 workspace:(id)arg3;
 + (void)recordUIAtLocation:(id)arg1 afterRunningUITest:(id)arg2 forWorkspaceTabController:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long language; // @synthesize language=_language;
 @property(retain) XCUIRecorder *recorder; // @synthesize recorder=_recorder;
 @property(retain) XCSourceCodeRecording *recording; // @synthesize recording=_recording;
@@ -52,7 +53,6 @@
 @property(retain) DVTTextDocumentLocation *recordingSessionOutputLinesLocation; // @synthesize recordingSessionOutputLinesLocation=_recordingSessionOutputLinesLocation;
 @property(retain) DVTTextDocumentLocation *recordingHeadLineLocation; // @synthesize recordingHeadLineLocation=_recordingHeadLineLocation;
 @property unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)stopRecording;
 - (void)_startRecordingWithLaunchSession:(id)arg1 alwaysAskForAPIAccess:(BOOL)arg2 reservedNames:(id)arg3;
 - (void)_asyncAskUserToGrantXcodeHelperPermissionToUseAccessibilityAPIToRecorder:(id)arg1 recorderPID:(int)arg2 launchSession:(id)arg3 reservedNames:(id)arg4;

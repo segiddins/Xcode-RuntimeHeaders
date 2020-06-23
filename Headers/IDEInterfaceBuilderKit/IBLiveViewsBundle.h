@@ -22,8 +22,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) __weak IBLiveViewsManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IBLiveViewsManager *manager; // @synthesize manager=_manager;
 - (id)effectivePlatform;
 - (void)performLockedBlock:(CDUnknownBlockType)arg1;
 - (void)setBuiltFilePath:(id)arg1 withBuildSettings:(id)arg2;

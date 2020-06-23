@@ -52,11 +52,11 @@
     NSImage *_placeholderIcon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tileGroupType; // @synthesize tileGroupType=_tileGroupType;
 @property(retain, nonatomic) NSImage *placeholderIcon; // @synthesize placeholderIcon=_placeholderIcon;
 @property(retain, nonatomic) NSMutableArray *tileSets; // @synthesize tileSets=_tileSets;
 @property(nonatomic) __weak id <SKTileSetEditorOutlineViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addButtonPressed:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

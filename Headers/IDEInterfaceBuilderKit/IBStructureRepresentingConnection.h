@@ -15,10 +15,10 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(copy) IBMemberID *destinationOID; // @synthesize destinationOID=_destinationOID;
 @property(copy) IBMemberID *sourceOID; // @synthesize sourceOID=_sourceOID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceOID:(id)arg1 destinationOID:(id)arg2 label:(id)arg3;
 

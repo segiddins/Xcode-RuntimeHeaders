@@ -16,8 +16,8 @@
 }
 
 + (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 sourceSDKFilePath:(id)arg2 filePath:(id)arg3 isFromInterestingFramework:(BOOL)arg4 query:(id)arg5;
-@property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (id)alternateTitleGivenParentResult:(id)arg1;
 - (id)valueStandingInForForAlternateIdentity;
 - (unsigned long long)hashForAlternateIdentity;

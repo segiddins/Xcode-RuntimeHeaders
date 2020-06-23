@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL colorOffscreenRenderedYellow; // @synthesize colorOffscreenRenderedYellow=_colorOffscreenRenderedYellow;
 @property(nonatomic) BOOL colorCached; // @synthesize colorCached=_colorCached;
 @property(nonatomic) BOOL colorFormats; // @synthesize colorFormats=_colorFormats;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_valueForSwitchName:(id)arg1;
 - (void)_setValue:(BOOL)arg1 forSwitchName:(id)arg2;

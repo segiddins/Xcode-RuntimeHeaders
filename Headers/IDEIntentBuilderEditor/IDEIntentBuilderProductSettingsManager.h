@@ -14,9 +14,9 @@
     IDEIntentBuilderDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IDEIntentBuilderDocument *document; // @synthesize document=_document;
 @property(nonatomic) __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (id)_appExtensionBuildableProducts;
 - (id)_appBuildableProducts;
 - (void)_updateAppExtensionBuildableProductExtensionAttributesDictionary:(id)arg1 forKey:(id)arg2 withIntents:(id)arg3;

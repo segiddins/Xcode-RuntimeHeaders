@@ -24,10 +24,10 @@
 + (Class)dataSourceConnectionLibViewDebuggerHelperClass;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DBGTargetConfiguration *targetConfiguration; // @synthesize targetConfiguration=_targetConfiguration;
 @property __weak id <DBGDataSourceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)computedPropertyWithName:(id)arg1 onNode:(id)arg2;
 - (void)_invokeCompletionHandlerForFailedConfigurationRetrieval:(CDUnknownBlockType)arg1 withErrorMessage:(id)arg2;

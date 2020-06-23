@@ -10,8 +10,8 @@
 
 @interface _TtC17CoreDocumentation7Article : _TtC17CoreDocumentation8Semantic
 {
-    MISSING_TYPE *originalMarkup;
-    MISSING_TYPE *title;
+    MISSING_TYPE *markup;
+    MISSING_TYPE *discussionStore;
 }
 
 @end

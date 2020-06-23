@@ -26,12 +26,12 @@
 + (id)keyPathForAvailableObjectsBindingWithMetadataName:(id)arg1 componentName:(id)arg2;
 + (id)keyPathForHiddenBindingWithMetadataName:(id)arg1 componentName:(id)arg2;
 + (id)keyPathForEnabledBindingWithMetadataName:(id)arg1 componentName:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setProperty:) __weak IDEIntentBuilderProperty *property; // @synthesize property=_property;
 @property(readonly, nonatomic) double popoverWidth; // @synthesize popoverWidth=_popoverWidth;
 @property(readonly, nonatomic) double popoverTitleLabelWidth; // @synthesize popoverTitleLabelWidth=_popoverTitleLabelWidth;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSArray *_components; // @synthesize _components;
-- (void).cxx_destruct;
 - (id)propertyForPropertyMetadataComponent:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;

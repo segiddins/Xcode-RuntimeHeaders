@@ -23,12 +23,15 @@
     MISSING_TYPE *editorScenes;
     MISSING_TYPE *workspaceSchemeBuildingQueue;
     MISSING_TYPE *environmentCoalescer;
+    MISSING_TYPE *previewUpdateCoalescer;
     MISSING_TYPE *lastWorkspaceBuilder;
     MISSING_TYPE *buildProductsCache;
     MISSING_TYPE *previewUpdateReasons;
     MISSING_TYPE *sessionQueue;
     MISSING_TYPE *previewUpdateTracker;
     MISSING_TYPE *previewUpdateState;
+    MISSING_TYPE *analyticsLogger;
+    MISSING_TYPE *shouldInvalidatePreviewsOnExternalFileChanges;
     MISSING_TYPE *didChangeXcodeBuildingState;
     MISSING_TYPE *notifyAccessibilityToken;
     MISSING_TYPE *debuggerAttachedCallback;

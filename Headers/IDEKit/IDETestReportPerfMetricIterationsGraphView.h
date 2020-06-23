@@ -25,8 +25,8 @@
 + (void)barHeightsForIterations:(id)arg1 compareToAverage:(double)arg2 maxBarHeight:(double)arg3 graphViewBounds:(struct CGRect)arg4 graphView:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 + (double)minBarHeight;
 + (double)percentChangedBetweenIterationValueAndAverage:(double)arg1 average:(double)arg2;
-@property(retain, nonatomic) id <IDETestReport_PerfMetric> testPerfMetric; // @synthesize testPerfMetric=_testPerfMetric;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IDETestReport_PerfMetric> testPerfMetric; // @synthesize testPerfMetric=_testPerfMetric;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseExited:(id)arg1;

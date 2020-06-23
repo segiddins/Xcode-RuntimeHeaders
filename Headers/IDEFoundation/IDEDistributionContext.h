@@ -53,6 +53,7 @@
     NSMutableOrderedSet *_certificatesCreated;
     NSDictionary *_cachedDeviceDisplayNameToCoalescedThinningVariantSet;
     NSNumber *_registerRequiredDevices;
+    NSDictionary *_infoPlistOverrides;
     NSSet *_allowedInputs;
     NSSet *_allowedOutputs;
     NSArray *_stepClasses;
@@ -60,10 +61,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *itemsWithProfileSelection; // @synthesize itemsWithProfileSelection=_itemsWithProfileSelection;
 @property(readonly, nonatomic) NSArray *stepClasses; // @synthesize stepClasses=_stepClasses;
 @property(readonly, nonatomic) NSSet *allowedOutputs; // @synthesize allowedOutputs=_allowedOutputs;
 @property(readonly, nonatomic) NSSet *allowedInputs; // @synthesize allowedInputs=_allowedInputs;
+@property(retain, nonatomic) NSDictionary *infoPlistOverrides; // @synthesize infoPlistOverrides=_infoPlistOverrides;
 @property(retain, nonatomic) NSNumber *registerRequiredDevices; // @synthesize registerRequiredDevices=_registerRequiredDevices;
 @property(retain, nonatomic) NSDictionary *cachedDeviceDisplayNameToCoalescedThinningVariantSet; // @synthesize cachedDeviceDisplayNameToCoalescedThinningVariantSet=_cachedDeviceDisplayNameToCoalescedThinningVariantSet;
 @property(retain, nonatomic) NSMutableOrderedSet *certificatesCreated; // @synthesize certificatesCreated=_certificatesCreated;
@@ -105,7 +108,6 @@
 @property(retain, nonatomic) id <IDEDistributable> archive; // @synthesize archive=_archive;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) IDEDistributionContext *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)propertyListRepresentation;
 - (BOOL)strictTeamIDMatch;
 - (BOOL)isInAppContent;

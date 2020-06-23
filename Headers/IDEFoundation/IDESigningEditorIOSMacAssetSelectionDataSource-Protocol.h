@@ -4,10 +4,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEFoundation/IDESigningEditorBundleIdentifierDataSource-Protocol.h>
 #import <IDEFoundation/IDESigningEditorCertificateDataSource-Protocol.h>
 #import <IDEFoundation/IDESigningEditorProfileDataSource-Protocol.h>
+#import <IDEFoundation/IDESigningEditoriOSMacBundleIdentifierDataSource-Protocol.h>
 
-@protocol IDESigningEditorIOSMacAssetSelectionDataSource <IDESigningEditorBundleIdentifierDataSource, IDESigningEditorProfileDataSource, IDESigningEditorCertificateDataSource>
+@protocol IDESigningEditorIOSMacAssetSelectionDataSource <IDESigningEditoriOSMacBundleIdentifierDataSource, IDESigningEditorProfileDataSource, IDESigningEditorCertificateDataSource>
 @end
 

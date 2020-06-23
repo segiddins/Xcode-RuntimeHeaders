@@ -13,7 +13,7 @@
 - (void)setSigningCertificateIdentifier:(NSString *)arg1 forConfigurationNamed:(NSString *)arg2 sdk:(DVTSDK *)arg3;
 - (void)setProvisioningProfile:(id <IDEProvisioningBasicProfile>)arg1 forConfigurationNamed:(NSString *)arg2 sdk:(DVTSDK *)arg3;
 - (void)setTeam:(id <IDEProvisioningBasicTeam>)arg1 forConfigurationNamed:(NSString *)arg2;
-- (void)setBundleIdentifier:(NSString *)arg1 forConfigurationNamed:(NSString *)arg2;
+- (void)setBundleIdentifier:(NSString *)arg1 forConfigurationNamed:(NSString *)arg2 sdk:(DVTSDK *)arg3;
 - (void)setProvisioningStyle:(long long)arg1 forConfigurationNamed:(NSString *)arg2;
 @end
 

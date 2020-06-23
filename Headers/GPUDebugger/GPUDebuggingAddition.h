@@ -34,7 +34,9 @@
 + (BOOL)shouldInstantiateForReportEditorOnly:(id)arg1;
 + (BOOL)isLinkedToOtherGraphicsFrameworks:(id)arg1;
 + (BOOL)_isLinkedToCapturableFrameworks:(id)arg1 withPlatformID:(id)arg2;
++ (BOOL)_platformIdentifierOnlySupportsMetal:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property BOOL isFakeDebugSession; // @synthesize isFakeDebugSession=_isFakeDebugSession;
 @property BOOL breakpointsActiveBeforeCapture; // @synthesize breakpointsActiveBeforeCapture=_breakpointsActiveBeforeCapture;
@@ -47,7 +49,6 @@
 @property(retain, nonatomic) id <GPUPerformanceDataProvider> performanceDataSource; // @synthesize performanceDataSource=_performanceDataSource;
 @property(readonly) BOOL isAttachedLater; // @synthesize isAttachedLater=_isAttachedLater;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL isDebuggingLoadedArchive;
 - (void)primitiveInvalidate;
 - (void)updateActiveController:(id)arg1;

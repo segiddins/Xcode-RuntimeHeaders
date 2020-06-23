@@ -22,12 +22,12 @@
 + (id)backingType;
 + (id)defaultType;
 + (id)stateEnum;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(nonatomic) BOOL generatesHeader; // @synthesize generatesHeader=_generatesHeader;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *displayNameID; // @synthesize displayNameID=_displayNameID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;

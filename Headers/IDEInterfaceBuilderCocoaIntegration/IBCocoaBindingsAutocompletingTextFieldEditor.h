@@ -24,12 +24,12 @@
     NSCharacterSet *_separatorChars;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCharacterSet *separatorChars; // @synthesize separatorChars=_separatorChars;
 @property(retain) NSTextField *completionsUnavailableField; // @synthesize completionsUnavailableField=_completionsUnavailableField;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain) NSView *view; // @synthesize view=_view;
 @property(retain) NSTableView *completionsTableView; // @synthesize completionsTableView=_completionsTableView;
-- (void).cxx_destruct;
 - (void)doubleClick:(id)arg1;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

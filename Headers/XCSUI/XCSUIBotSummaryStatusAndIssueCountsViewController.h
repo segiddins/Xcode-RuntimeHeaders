@@ -29,6 +29,7 @@
     NSProgressIndicator *_statsLoadingProgressView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSProgressIndicator *statsLoadingProgressView; // @synthesize statsLoadingProgressView=_statsLoadingProgressView;
 @property __weak NSPopUpButton *statsTimePeriodPopUpButton; // @synthesize statsTimePeriodPopUpButton=_statsTimePeriodPopUpButton;
 @property __weak XCSUIStatusBadgesView *issuesBadgeView; // @synthesize issuesBadgeView=_issuesBadgeView;
@@ -39,7 +40,6 @@
 @property __weak NSTextField *scheduleLabel; // @synthesize scheduleLabel=_scheduleLabel;
 @property __weak NSView *detailsAndSummaryView; // @synthesize detailsAndSummaryView=_detailsAndSummaryView;
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
-- (void).cxx_destruct;
 - (void)statsTimePeriodPopupChanged:(id)arg1;
 - (void)fetchStatsSinceDate:(id)arg1;
 - (void)_updateBotStatsBadgesWithStats:(id)arg1;

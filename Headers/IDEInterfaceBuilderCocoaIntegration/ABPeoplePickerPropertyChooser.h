@@ -19,6 +19,7 @@
     DVTGradientImageButton *_removeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) DVTBorderedView *controlBar; // @synthesize controlBar=_controlBar;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArrayController *propertyNamesAndTitlesArrayController; // @synthesize propertyNamesAndTitlesArrayController=_propertyNamesAndTitlesArrayController;
 @property(retain, nonatomic) NSMenu *propertyMenu; // @synthesize propertyMenu=_propertyMenu;
 @property(retain, nonatomic) NSTableView *propertyTableView; // @synthesize propertyTableView=_propertyTableView;
-- (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;

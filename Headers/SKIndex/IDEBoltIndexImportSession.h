@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     IDEBoltIndexDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasEnded; // @synthesize hasEnded=_hasEnded;
 @property(readonly, nonatomic) IDEBoltIndexDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)didEnd;
 - (void)endSession;

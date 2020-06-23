@@ -27,6 +27,7 @@
 + (id)keyBindingWithTitle:(id)arg1 parentTitle:(id)arg2 group:(id)arg3 actions:(id)arg4 keyboardShortcuts:(id)arg5;
 + (id)_stringFromModifierMask:(unsigned long long)arg1;
 + (unsigned long long)_defaultMaxNumberOfShortcuts;
+- (void).cxx_destruct;
 @property unsigned long long maxNumberOfShortcuts; // @synthesize maxNumberOfShortcuts=_maxNumberOfShortcuts;
 @property(copy, nonatomic) NSArray *keyboardShortcuts; // @synthesize keyboardShortcuts=_keyboardShortcuts;
 @property(readonly) NSArray *actions; // @synthesize actions=_actions;
@@ -34,7 +35,6 @@
 @property(readonly) NSString *parentTitle; // @synthesize parentTitle=_parentTitle;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(retain) IDEKeyBindingSet *keyBindingSet; // @synthesize keyBindingSet=_keyBindingSet;
-- (void).cxx_destruct;
 @property(readonly) long long tag;
 @property(readonly) SEL action;
 @property(setter=setControlModifierMaskLocked:) BOOL isControlModifierMaskLocked;

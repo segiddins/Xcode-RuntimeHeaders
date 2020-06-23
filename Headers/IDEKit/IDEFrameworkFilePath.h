@@ -26,12 +26,12 @@
 + (void)_setAllSDKFrameworksFilePaths:(id)arg1;
 + (BOOL)isFrameworkURL:(id)arg1;
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long frameworkFilePathType; // @synthesize frameworkFilePathType=_frameworkFilePathType;
 @property(retain) DVTSDK *SDK; // @synthesize SDK=_SDK;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(copy, nonatomic) NSArray *childPathComponents; // @synthesize childPathComponents=_childPathComponents;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) IDETypeIdentifier *ideModelObjectTypeIdentifier;

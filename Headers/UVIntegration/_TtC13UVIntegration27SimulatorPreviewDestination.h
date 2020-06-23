@@ -18,7 +18,6 @@
     MISSING_TYPE *concreteDevice;
     MISSING_TYPE *compositeDeviceHint;
     MISSING_TYPE *sdk;
-    MISSING_TYPE *cliAgentPath;
     MISSING_TYPE *appAgentBundle;
     MISSING_TYPE *appAgentConfiguration;
     MISSING_TYPE *agentKitPath;

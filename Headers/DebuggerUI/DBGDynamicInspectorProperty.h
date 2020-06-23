@@ -18,10 +18,10 @@
     DBGSnapshotProperty *_property;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak DBGSnapshotProperty *property; // @synthesize property=_property;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
 @property __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (void)outlineViewItemDidCollapse:(id)arg1;
 - (void)outlineViewItemDidExpand:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;

@@ -17,8 +17,8 @@
     Xcode3TargetMembershipDataSource *_dataSource;
 }
 
-@property(retain) DVTTableView *targetsTableView; // @synthesize targetsTableView=_targetsTableView;
 - (void).cxx_destruct;
+@property(retain) DVTTableView *targetsTableView; // @synthesize targetsTableView=_targetsTableView;
 - (void)didFinishSaveSuccessfully:(BOOL)arg1 shouldEdit:(BOOL)arg2;
 - (void)destinationManagerGroupDidChange:(id)arg1;
 - (void)loadView;

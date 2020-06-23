@@ -55,6 +55,7 @@
 }
 
 + (id)currentTime;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *stopAnalyzePerformanceButton; // @synthesize stopAnalyzePerformanceButton=_stopAnalyzePerformanceButton;
 @property(retain, nonatomic) DVTGauge *analysisProgressGauge; // @synthesize analysisProgressGauge=_analysisProgressGauge;
 @property(retain, nonatomic) NSButton *analyzePerformanceButton; // @synthesize analyzePerformanceButton=_analyzePerformanceButton;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) NSView *topSectionShortDescription; // @synthesize topSectionShortDescription=_topSectionShortDescription;
 @property(retain, nonatomic) NSView *topSectionButtonsView; // @synthesize topSectionButtonsView=_topSectionButtonsView;
 @property(retain, nonatomic) GPUReportResults *reportResults; // @synthesize reportResults=_reportResults;
-- (void).cxx_destruct;
 - (void)reportSectionRowClicked:(unsigned long long)arg1 node:(id)arg2;
 @property(readonly, nonatomic) id <GPUProgramPerformanceReportProvider> programPerformanceReportProvider;
 @property(readonly, nonatomic) id <GPUInvestigatorReportProvider> investigatorReportProvider;
@@ -99,6 +99,7 @@
 - (void)updateReportWithTargetFrameRate;
 - (id)_setupCPUGPUActiveTimeGraphView;
 - (id)cpuGPUActiveTimeGraphData;
+- (id)_availableCPUAndGPUChartFields;
 - (id)_setupUtilizationGraphView;
 - (id)utilizationGraphData;
 - (void)_setupFPSMeterView;

@@ -34,13 +34,13 @@
 + (Class)classForElementName:(id)arg1;
 + (void)setClass:(Class)arg1 forElementName:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSError *xmlParserError; // @synthesize xmlParserError=_xmlParserError;
 @property(copy) NSError *decodingError; // @synthesize decodingError=_decodingError;
 @property(retain, nonatomic) id <DVTXMLUnarchiverDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL archiveContainedUnsupportedNodes; // @synthesize archiveContainedUnsupportedNodes=_archiveContainedUnsupportedNodes;
 @property(copy) CDUnknownBlockType versionChecker; // @synthesize versionChecker=_versionChecker;
 @property(retain) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_corruptedDocumentErrorWithUnderlyingErrorCode:(unsigned long long)arg1 reason:(id)arg2;
 - (id)_genericUnreadableDocumentError;
 - (void)finishDecoding;

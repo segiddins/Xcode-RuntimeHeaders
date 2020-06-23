@@ -26,10 +26,10 @@
     IBStructureAreaDockView *_dockView;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBStructureAreaDockView *dockView; // @synthesize dockView=_dockView;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(nonatomic) __weak IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 - (BOOL)shouldFilterConstraintChoicesBasedUponAngleOfLine;
 - (void)indicateConnectionSuccessForTarget:(id)arg1;
 - (id)showTargetIdentifierForEndPoint:(id)arg1;

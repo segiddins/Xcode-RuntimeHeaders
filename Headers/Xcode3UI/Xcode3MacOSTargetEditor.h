@@ -51,6 +51,7 @@
 + (id)keyPathsForValuesAffectingTargetIdentifier;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDETargetEditorAppCategorySelectionViewController *appCategorySelectionViewController; // @synthesize appCategorySelectionViewController=_appCategorySelectionViewController;
 @property(retain, nonatomic) _TtC13IDEFoundation28TargetEditorBundleIdentifier *targetEditorBundleIdentifier; // @synthesize targetEditorBundleIdentifier=_targetEditorBundleIdentifier;
 @property(retain) NSView *appExtensionAPISlice; // @synthesize appExtensionAPISlice=_appExtensionAPISlice;
@@ -64,7 +65,6 @@
 @property(retain) DVTStackView_ML *appIconStackView; // @synthesize appIconStackView=_appIconStackView;
 @property(copy) NSString *selectedAppCategory; // @synthesize selectedAppCategory=_selectedAppCategory;
 @property(retain, nonatomic) id targetViewController; // @synthesize targetViewController=_targetViewController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;

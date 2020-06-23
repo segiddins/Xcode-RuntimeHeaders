@@ -21,8 +21,8 @@
 + (id)keyPathsForValuesAffectingPath;
 + (id)supportedCustomResolutionStrategies;
 + (id)supportedResolutionStrategies;
-@property(readonly) PBXFileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (void).cxx_destruct;
+@property(readonly) PBXFileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (id)ideInspectedAssetTagPlaceholder;
 - (id)knownAssetTags;
 - (void)setAssetTags:(id)arg1;

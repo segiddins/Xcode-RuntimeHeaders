@@ -21,6 +21,7 @@
     NSStepper *_wStepper;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSStepper *wStepper; // @synthesize wStepper=_wStepper;
 @property(retain) NSStepper *zStepper; // @synthesize zStepper=_zStepper;
 @property(retain) NSStepper *yStepper; // @synthesize yStepper=_yStepper;
@@ -29,7 +30,6 @@
 @property(retain) NSTextField *zTextField; // @synthesize zTextField=_zTextField;
 @property(retain) NSTextField *yTextField; // @synthesize yTextField=_yTextField;
 @property(retain) NSTextField *xTextField; // @synthesize xTextField=_xTextField;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)applyComponentValue:(id)arg1;
 - (void)incrementComponentValue:(id)arg1;

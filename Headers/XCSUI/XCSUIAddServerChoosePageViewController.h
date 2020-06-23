@@ -28,6 +28,7 @@
 
 + (BOOL)automaticallyNotifiesObserversOfDiscoveredServers;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL resolvingService; // @synthesize resolvingService=_resolvingService;
 @property(retain) DVTObservingToken *arrayControllerSelectionObservingToken; // @synthesize arrayControllerSelectionObservingToken=_arrayControllerSelectionObservingToken;
 @property(copy, nonatomic) NSSet *discoveredServers; // @synthesize discoveredServers=_discoveredServers;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArrayController *discoveredServersArrayController; // @synthesize discoveredServersArrayController=_discoveredServersArrayController;
 @property(copy, nonatomic) NSString *connectionAddress; // @synthesize connectionAddress=_connectionAddress;
 @property(retain, nonatomic) XCSUIAddServerWindowController *pagingSheetWindowController; // @synthesize pagingSheetWindowController=_pagingSheetWindowController;
-- (void).cxx_destruct;
 - (void)showXcodeCIGuide:(id)arg1;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;

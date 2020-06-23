@@ -16,9 +16,9 @@
     NSString *_videoGravity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic) BOOL showsPlaybackControls; // @synthesize showsPlaybackControls=_showsPlaybackControls;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTargetRuntime:(id)arg1;

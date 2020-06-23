@@ -21,10 +21,10 @@
 + (void)registerMarshallingRecordHandlers;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 + (BOOL)ibExistsAtRuntime;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *referencedControllerIdentifier; // @synthesize referencedControllerIdentifier=_referencedControllerIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *storyboardName; // @synthesize storyboardName=_storyboardName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;

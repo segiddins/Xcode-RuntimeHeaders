@@ -35,6 +35,7 @@
 
 + (id)txColor;
 + (id)rxColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *profileButton; // @synthesize profileButton=_profileButton;
 @property(nonatomic) BOOL showPackets; // @synthesize showPackets=_showPackets;
 @property(retain, nonatomic) NSSegmentedControl *unitSelector; // @synthesize unitSelector=_unitSelector;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) IDEDebugGaugeReportByteStatisticsViewController *outputStatsViewController; // @synthesize outputStatsViewController=_outputStatsViewController;
 @property(retain, nonatomic) IDEDebugGaugeReportByteStatisticsViewController *inputStatsViewController; // @synthesize inputStatsViewController=_inputStatsViewController;
 @property(retain, nonatomic) IDENetworkIOGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
-- (void).cxx_destruct;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;

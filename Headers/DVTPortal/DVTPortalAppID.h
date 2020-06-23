@@ -10,6 +10,7 @@
 
 @interface DVTPortalAppID : NSObject
 {
+    BOOL _isWildcard;
     DVTPortalProgram *_portalProgram;
     DVTPortalAppIDFeatures *_features;
     NSString *_appID;
@@ -31,21 +32,26 @@
 + (id)createAppIDWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 bundleID:(id)arg4 features:(id)arg5 requiresExplicitAppID:(BOOL)arg6 xcodeManaged:(BOOL)arg7 error:(id *)arg8;
 + (id)createAppIDWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 bundleID:(id)arg4 features:(id)arg5 requiresExplicitAppID:(BOOL)arg6 error:(id *)arg7;
 + (id)_listAppIDsServiceWithTeam:(id)arg1 program:(id)arg2;
++ (id)_legacyAppIDsWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
 + (id)appIDsWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
++ (BOOL)_usePortalDeveloperAPI;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL isWildcard; // @synthesize isWildcard=_isWildcard;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 @property(copy, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *features; // @synthesize features=_features;
 @property(readonly, nonatomic) DVTPortalProgram *portalProgram; // @synthesize portalProgram=_portalProgram;
-- (void).cxx_destruct;
 - (BOOL)isManagedByXcode;
 - (BOOL)matchesBundleID:(id)arg1;
-- (BOOL)isWildcard;
 - (BOOL)removeWithSession:(id)arg1 error:(id *)arg2;
 - (BOOL)enableFeatures:(id)arg1 session:(id)arg2 error:(id *)arg3;
+- (BOOL)removeFeatures:(id)arg1 session:(id)arg2 error:(id *)arg3;
 - (id)description;
+@property(nonatomic, readonly) NSString *identifier;
 @property(nonatomic, readonly) NSString *portalIdentifier;
+- (id)featuresWithSession:(id)arg1 error:(id *)arg2;
 
 @end
 

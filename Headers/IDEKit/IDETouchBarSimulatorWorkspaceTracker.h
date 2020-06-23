@@ -18,11 +18,11 @@
     CDUnknownBlockType _workspaceTrackerCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType workspaceTrackerCallback; // @synthesize workspaceTrackerCallback=_workspaceTrackerCallback;
 @property(retain) NSMapTable *executionReporterTable; // @synthesize executionReporterTable=_executionReporterTable;
 @property(retain) DVTNotificationToken *windowDidOrderOffScreenNotificationToken; // @synthesize windowDidOrderOffScreenNotificationToken=_windowDidOrderOffScreenNotificationToken;
 @property(retain) DVTNotificationToken *windowDidOrderOnScreenNotificationToken; // @synthesize windowDidOrderOnScreenNotificationToken=_windowDidOrderOnScreenNotificationToken;
-- (void).cxx_destruct;
 - (void)touchBarSimulatorWorkspaceExecutionReporter:(id)arg1 workspace:(id)arg2 didChangeActiveExecutionsCount:(long long)arg3;
 - (void)_reportExecutionActivityForWorkspaces:(id)arg1;
 - (id)_activeWorkspacesForWindows:(id)arg1;

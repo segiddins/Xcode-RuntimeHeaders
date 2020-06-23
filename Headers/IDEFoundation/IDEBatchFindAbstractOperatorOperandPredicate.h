@@ -17,9 +17,9 @@
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)operatorToString:(long long)arg1;
 + (long long)operatorFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *operand; // @synthesize operand=_operand;
 @property(readonly) long long operatorValue; // @synthesize operatorValue=_operatorValue;
-- (void).cxx_destruct;
 - (id)propertyListRepresentation;
 - (BOOL)isWorkspaceSpecific;
 - (BOOL)isEqualToFilePathPredicateWithIdenticalClass:(id)arg1;

@@ -24,13 +24,13 @@
 }
 
 + (void)initialize;
-@property(nonatomic) BOOL relatedItemsButtonEnabled; // @synthesize relatedItemsButtonEnabled=_relatedItemsButtonEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL relatedItemsButtonEnabled; // @synthesize relatedItemsButtonEnabled=_relatedItemsButtonEnabled;
 - (id)_relatedItemsMenuItems;
 - (id)_locallyModifiedFilesMenuItem;
 - (id)_locallyModifiedDocumentFilePaths;
 - (id)_recentFilesMenuItem;
-- (id)_addSubmenuForDocumentURLs:(id)arg1 submenuTitle:(id)arg2 failureDescription:(id)arg3;
+- (id)_addSubmenuForDocumentURLs:(id)arg1 submenuTitle:(id)arg2 failureDescription:(id)arg3 showCheckmarkForOpenDocument:(BOOL)arg4;
 - (id)_addMenuItemForNavigableItem:(id)arg1 parentMenuDescription:(id)arg2;
 - (void)_clearRecentEditorDocumentsList:(id)arg1;
 - (void)_changeMaximumRecentFilesLimit:(id)arg1;

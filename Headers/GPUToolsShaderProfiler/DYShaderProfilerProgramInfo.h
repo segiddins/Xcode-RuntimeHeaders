@@ -34,6 +34,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long computeProgramId; // @synthesize computeProgramId=_computeProgramId;
 @property(nonatomic) unsigned long long fragmentProgramId; // @synthesize fragmentProgramId=_fragmentProgramId;
 @property(nonatomic) unsigned long long vertexProgramId; // @synthesize vertexProgramId=_vertexProgramId;
@@ -52,8 +54,6 @@
 @property(retain, nonatomic) NSMutableArray *drawCallInfoIndices; // @synthesize drawCallInfoIndices=_drawCallInfoIndices;
 @property(nonatomic) unsigned long long programId; // @synthesize programId=_programId;
 @property(nonatomic) unsigned int programIndex; // @synthesize programIndex=_programIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isFragmentShaderMostExpensive;
 - (id)description;
 - (id)init;

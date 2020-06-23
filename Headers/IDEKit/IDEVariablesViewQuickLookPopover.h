@@ -39,6 +39,7 @@
     NSTextField *_errorMessageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *errorMessageLabel; // @synthesize errorMessageLabel=_errorMessageLabel;
 @property(retain) NSTextField *errorViewVariableName; // @synthesize errorViewVariableName=_errorViewVariableName;
 @property(retain) NSImageView *errorViewVariableTypeIcon; // @synthesize errorViewVariableTypeIcon=_errorViewVariableTypeIcon;
@@ -58,7 +59,6 @@
 @property(retain) NSView *defaultQuickLookView; // @synthesize defaultQuickLookView=_defaultQuickLookView;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(retain) id <IDEDataValue> dataValue; // @synthesize dataValue=_dataValue;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;

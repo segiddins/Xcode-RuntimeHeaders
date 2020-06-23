@@ -15,9 +15,9 @@
 }
 
 + (id)actionType;
+- (void).cxx_destruct;
 @property(copy) NSString *outputDestinationSpecifier; // @synthesize outputDestinationSpecifier=_outputDestinationSpecifier;
 @property(retain) IDEFileReference *scriptFileReference; // @synthesize scriptFileReference=_scriptFileReference;
-- (void).cxx_destruct;
 - (void)addOutputDestinationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

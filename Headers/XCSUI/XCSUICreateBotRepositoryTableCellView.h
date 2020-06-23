@@ -20,13 +20,13 @@
     NSButton *_changeButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *changeButton; // @synthesize changeButton=_changeButton;
 @property __weak NSTextField *resolutionStatusView; // @synthesize resolutionStatusView=_resolutionStatusView;
 @property __weak NSView *actionsView; // @synthesize actionsView=_actionsView;
 @property __weak NSTextField *repositoryIssueField; // @synthesize repositoryIssueField=_repositoryIssueField;
 @property __weak NSTextField *repositoryTitleField; // @synthesize repositoryTitleField=_repositoryTitleField;
 @property __weak id <XCSUICreateBotRepositoryTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateResolutionField;
 @property(retain) XCSUICreateBotRepositoryIssue *issue;

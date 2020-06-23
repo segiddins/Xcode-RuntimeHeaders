@@ -16,6 +16,7 @@
     MISSING_TYPE *renderView;
     MISSING_TYPE *workspacePlaneVisualCue;
     MISSING_TYPE *renderer;
+    MISSING_TYPE *screenshotUserDefaults;
 }
 
 - (void).cxx_destruct;

@@ -17,10 +17,10 @@
     id <GPUTraceShaderDebuggerSessionSubEditorDelegate> _shaderDebuggerSessionSubEditorDelegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL forceSelection; // @synthesize forceSelection=_forceSelection;
 @property(retain, nonatomic) id <GPUTraceShaderDebuggerSessionSubEditorDelegate> shaderDebuggerSessionSubEditorDelegate; // @synthesize shaderDebuggerSessionSubEditorDelegate=_shaderDebuggerSessionSubEditorDelegate;
 @property(retain, nonatomic) GPUShaderDebuggerRegion *shaderDebuggerRegion; // @synthesize shaderDebuggerRegion=_shaderDebuggerRegion;
-- (void).cxx_destruct;
 - (BOOL)takeFocus;
 - (BOOL)_switchPostTessellationVertexThreadInRegion:(id)arg1 forSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_switchKernelThreadInRegion:(id)arg1 forSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -19,6 +19,7 @@
     NSFileHandle *_standardError;
 }
 
+- (void).cxx_destruct;
 @property int exitStatus; // @synthesize exitStatus=_exitStatus;
 @property(retain) NSFileHandle *standardError; // @synthesize standardError=_standardError;
 @property(retain) NSFileHandle *standardOutput; // @synthesize standardOutput=_standardOutput;
@@ -26,7 +27,6 @@
 @property(copy) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)main;
 - (void)parseOptions;
 - (void)start;

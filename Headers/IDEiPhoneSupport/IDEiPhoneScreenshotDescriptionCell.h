@@ -13,8 +13,8 @@
     DTDKScreenshot *_screenshot;
 }
 
-@property(retain) DTDKScreenshot *screenshot; // @synthesize screenshot=_screenshot;
 - (void).cxx_destruct;
+@property(retain) DTDKScreenshot *screenshot; // @synthesize screenshot=_screenshot;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end

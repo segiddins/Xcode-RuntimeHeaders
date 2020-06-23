@@ -18,13 +18,13 @@
     NSSet *_stalledFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *stalledFilePaths; // @synthesize stalledFilePaths=_stalledFilePaths;
 @property long long progress; // @synthesize progress=_progress;
 @property BOOL throttled; // @synthesize throttled=_throttled;
 @property(readonly) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly) IDEActivityReport *report; // @synthesize report=_report;
 @property(readonly) IDEBatchFindAbstractQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)updateReport;
 - (id)initWithReport:(id)arg1 forQuery:(id)arg2;
 

@@ -18,11 +18,11 @@
     BOOL _metaDataProviderClassesForOptionsAreExclusive;
 }
 
+- (void).cxx_destruct;
 @property BOOL metaDataProviderClassesForOptionsAreExclusive; // @synthesize metaDataProviderClassesForOptionsAreExclusive=_metaDataProviderClassesForOptionsAreExclusive;
 @property(retain) NSArray *metaDataProviderClassesForOptions; // @synthesize metaDataProviderClassesForOptions=_metaDataProviderClassesForOptions;
 @property BOOL metaDataProviderClassesForEnumsAreExclusive; // @synthesize metaDataProviderClassesForEnumsAreExclusive=_metaDataProviderClassesForEnumsAreExclusive;
 @property(retain) NSArray *metaDataProviderClassesForEnums; // @synthesize metaDataProviderClassesForEnums=_metaDataProviderClassesForEnums;
-- (void).cxx_destruct;
 - (BOOL)matchesOptionsForProviderClass:(Class)arg1;
 - (BOOL)matchesEnumsForProviderClass:(Class)arg1;
 - (void)performInContext:(id)arg1;

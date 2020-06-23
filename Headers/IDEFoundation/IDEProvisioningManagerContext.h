@@ -18,8 +18,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) IDEProvisioningMechanic *mechanic; // @synthesize mechanic=_mechanic;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEProvisioningMechanic *mechanic; // @synthesize mechanic=_mechanic;
 @property(readonly, nonatomic) id <IDEProvisioningErrorProvider> errorProvider;
 @property(readonly, nonatomic) long long automaticLocationStyle;
 @property(readonly, nonatomic) long long repairMode;

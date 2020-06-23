@@ -18,11 +18,11 @@
 }
 
 + (id)crashPointUpdateForSession:(id)arg1 crashPointIdentifier:(id)arg2 moreLogsOptions:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain) NSArray *logData; // @synthesize logData=_logData;
 @property(retain) NSString *lastCrashReporterKey; // @synthesize lastCrashReporterKey=_lastCrashReporterKey;
 @property(retain) NSString *lastCrashPointTime; // @synthesize lastCrashPointTime=_lastCrashPointTime;
 @property(retain) NSString *moreLogs; // @synthesize moreLogs=_moreLogs;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 @property(readonly) DVTAnalyticsCrashPointLogList *logList; // @synthesize logList=_logList;
 

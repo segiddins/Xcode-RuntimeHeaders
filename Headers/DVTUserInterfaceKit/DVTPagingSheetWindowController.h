@@ -4,13 +4,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <AppKit/NSWindowController.h>
+#import <DVTCocoaAdditionsKit/DVTDealloc2Main_WindowController.h>
 
 #import <DVTUserInterfaceKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, DVTViewController, NSString;
 
-@interface DVTPagingSheetWindowController : NSWindowController <DVTInvalidation>
+@interface DVTPagingSheetWindowController : DVTDealloc2Main_WindowController <DVTInvalidation>
 {
     DVTViewController *_currentPageViewController;
     CDUnknownBlockType _completionBlock;
@@ -19,9 +19,9 @@
 + (BOOL)automaticallyNotifiesObserversOfCurrentPageViewController;
 + (void)initialize;
 + (id)defaultWindowNibName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) DVTViewController *currentPageViewController; // @synthesize currentPageViewController=_currentPageViewController;
-- (void).cxx_destruct;
 - (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)configureWindowForContentView:(id)arg1;
 - (void)didEndSheetWithReturnCode:(long long)arg1;

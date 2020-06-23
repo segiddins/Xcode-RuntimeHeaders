@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) NSString *typeName; // @synthesize typeName=_typeName;
 @property(readonly) NSSet *allBitNames; // @synthesize allBitNames=_allBitNames;
-- (void).cxx_destruct;
 - (id)descriptionWithIndentationLevel:(long long)arg1;
 - (void)insertIntoSchema:(id)arg1;
 - (id)bitNamesForBitmask:(long long)arg1;

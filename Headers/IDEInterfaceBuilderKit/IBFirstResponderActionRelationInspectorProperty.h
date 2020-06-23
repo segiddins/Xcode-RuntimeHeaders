@@ -18,8 +18,8 @@
     NSComboBoxCell *_comboBoxCell;
 }
 
-@property(retain) NSComboBoxCell *comboBoxCell; // @synthesize comboBoxCell=_comboBoxCell;
 - (void).cxx_destruct;
+@property(retain) NSComboBoxCell *comboBoxCell; // @synthesize comboBoxCell=_comboBoxCell;
 - (void)tearDownRefreshTriggers;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

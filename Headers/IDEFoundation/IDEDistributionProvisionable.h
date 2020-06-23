@@ -25,6 +25,7 @@
     DVTLogAspect *_logAspect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly, nonatomic) NSArray *entitlementsProcessors; // @synthesize entitlementsProcessors=_entitlementsProcessors;
 @property(readonly, nonatomic) long long provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) IDEProfileSpecifier *profileSpecifier; // @synthesize profileSpecifier=_profileSpecifier;
 @property(copy, nonatomic) NSString *certificateSpecifier; // @synthesize certificateSpecifier=_certificateSpecifier;
 @property(readonly, nonatomic) IDEDistributionItem *distributionItem; // @synthesize distributionItem=_distributionItem;
-- (void).cxx_destruct;
 - (BOOL)supportsIOSMacForBuildParameters:(id)arg1;
 - (BOOL)wantsBundleIdentifierEditingForBuildParameters:(id)arg1;
 - (unsigned long long)entitlementsDestinationForBuildParameters:(id)arg1;

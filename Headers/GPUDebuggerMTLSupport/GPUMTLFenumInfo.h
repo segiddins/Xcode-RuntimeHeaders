@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_selectorName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isClassMethod; // @synthesize isClassMethod=_isClassMethod;
 @property(retain, nonatomic) NSString *selectorName; // @synthesize selectorName=_selectorName;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 
 @end
 

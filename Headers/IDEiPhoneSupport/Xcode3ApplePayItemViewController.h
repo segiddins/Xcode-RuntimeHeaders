@@ -14,9 +14,9 @@
     IDEAppIDItemIdentifiersTableViewController *_identifiersTableViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEAppIDItemIdentifiersTableViewController *identifiersTableViewController; // @synthesize identifiersTableViewController=_identifiersTableViewController;
 @property(retain) NSView *identifiersSlice; // @synthesize identifiersSlice=_identifiersSlice;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

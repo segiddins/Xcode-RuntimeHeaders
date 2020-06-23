@@ -17,8 +17,8 @@
 + (id)customAlertEventForIdentifier:(id)arg1;
 + (id)customAlertEvents;
 + (void)initialize;
-@property(retain, nonatomic) IDEKeyboardShortcut *keyboardShortcut; // @synthesize keyboardShortcut=_keyboardShortcut;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEKeyboardShortcut *keyboardShortcut; // @synthesize keyboardShortcut=_keyboardShortcut;
 - (id)description;
 - (void)remove;
 - (void)saveToUserDefaults;

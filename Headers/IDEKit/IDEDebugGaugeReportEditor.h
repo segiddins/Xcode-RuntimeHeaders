@@ -24,13 +24,13 @@
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)_profileWithToolIdentifer:(id)arg1 detachOrNew:(unsigned long long)arg2 launchSession:(id)arg3 tabController:(id)arg4;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *minimumWidthConstraint; // @synthesize minimumWidthConstraint=_minimumWidthConstraint;
 @property __weak NSLayoutConstraint *stackViewHeightConstraintToBeRemoved; // @synthesize stackViewHeightConstraintToBeRemoved=_stackViewHeightConstraintToBeRemoved;
 @property __weak DVTStackView_AppKitAutolayout *stackView; // @synthesize stackView=_stackView;
 @property __weak NSScrollView *mainContentScrollView; // @synthesize mainContentScrollView=_mainContentScrollView;
 @property(readonly) double minimumWidth; // @synthesize minimumWidth=_minimumWidth;
 @property(retain, nonatomic) id <IDEDebugGaugeReportContentDelegate> contentDelegate; // @synthesize contentDelegate=_contentDelegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)attachInstrumentsWithToolIdentifer:(id)arg1;
 - (void)loadView;

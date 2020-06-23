@@ -24,6 +24,7 @@
     NSString *_captureOSVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *captureOSVersion; // @synthesize captureOSVersion=_captureOSVersion;
 @property(copy) NSString *xcodeVersion; // @synthesize xcodeVersion=_xcodeVersion;
 @property(copy) NSString *error; // @synthesize error=_error;
@@ -35,7 +36,6 @@
 @property unsigned long long resourceCount; // @synthesize resourceCount=_resourceCount;
 @property unsigned long long commandEncoderCount; // @synthesize commandEncoderCount=_commandEncoderCount;
 @property unsigned long long commandBufferCount; // @synthesize commandBufferCount=_commandBufferCount;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

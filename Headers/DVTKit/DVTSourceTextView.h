@@ -94,6 +94,7 @@
 + (id)foldingLogAspect;
 + (id)drawingLogAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property id <DVTSourceTextViewQuickEditDataSource> quickEditDataSource; // @synthesize quickEditDataSource=_quickEditDataSource;
 @property BOOL postsLayoutManagerNotifications; // @synthesize postsLayoutManagerNotifications=_postsLayoutManagerNotifications;
 @property(nonatomic) unsigned long long pageGuideColumn; // @synthesize pageGuideColumn=_pageGuideColumn;
@@ -102,7 +103,6 @@
 @property unsigned long long temporaryLinkHoverAltModifierFlags; // @synthesize temporaryLinkHoverAltModifierFlags=_temporaryLinkHoverAltModifierFlags;
 @property unsigned long long temporaryLinkHoverModifierFlags; // @synthesize temporaryLinkHoverModifierFlags=_temporaryLinkHoverModifierFlags;
 @property(nonatomic) BOOL wrapsLines; // @synthesize wrapsLines=_wrapsLines;
-- (void).cxx_destruct;
 - (id)mediaResourceProviderForLiteralInLayoutManager:(id)arg1;
 - (id)directoriesForLiteralInLayoutManager:(id)arg1;
 - (id)foldingTokenTypesForLayoutManager:(id)arg1;

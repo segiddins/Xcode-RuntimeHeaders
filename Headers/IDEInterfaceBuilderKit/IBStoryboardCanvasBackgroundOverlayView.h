@@ -20,12 +20,12 @@
     IBMutableIdentityDictionary *_seguesToBadgeLayers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) IBMutableIdentityDictionary *seguesToBadgeLayers; // @synthesize seguesToBadgeLayers=_seguesToBadgeLayers;
 @property(copy, nonatomic) IBMutableIdentityDictionary *seguesToArrowLayers; // @synthesize seguesToArrowLayers=_seguesToArrowLayers;
 @property(copy, nonatomic) DVTMutableOrderedSet *canvasLinkPaths; // @synthesize canvasLinkPaths=_canvasLinkPaths;
 @property __weak id <IBStoryboardCanvasBackgroundOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) CDUnknownBlockType canvasLinkPathProducer; // @synthesize canvasLinkPathProducer=_canvasLinkPathProducer;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (void)layoutBottomUp;
 - (struct CGRect)frameForCanvasLinkPath:(id)arg1;

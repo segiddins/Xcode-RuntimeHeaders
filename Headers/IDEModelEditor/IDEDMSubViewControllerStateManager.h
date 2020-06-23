@@ -18,8 +18,8 @@
 }
 
 + (void)initialize;
-@property(retain) DVTStateToken *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(retain) DVTStateToken *token; // @synthesize token=_token;
 - (void)primitiveInvalidate;
 - (id)initWithToken:(id)arg1 parent:(id)arg2;
 - (void)_setupStateToken;

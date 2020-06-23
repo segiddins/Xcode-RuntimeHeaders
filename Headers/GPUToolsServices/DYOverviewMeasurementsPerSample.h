@@ -37,6 +37,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)frameDurationStatistics:(id)arg1;
 + (double)averageFPS:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *drawCommandStatistics; // @synthesize drawCommandStatistics=_drawCommandStatistics;
 @property(nonatomic) unsigned long long graphicsCommandNum; // @synthesize graphicsCommandNum=_graphicsCommandNum;
 @property(nonatomic) unsigned long long caWaitTime; // @synthesize caWaitTime=_caWaitTime;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned long long framesDuration; // @synthesize framesDuration=_framesDuration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int sampleIndex; // @synthesize sampleIndex=_sampleIndex;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL waitOnGPU;
 - (void)log;
 - (id)initWithDictionary:(id)arg1;

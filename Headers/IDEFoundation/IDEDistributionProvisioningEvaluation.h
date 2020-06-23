@@ -14,9 +14,9 @@
     NSMutableDictionary *_distributionItemToEvaluationMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *distributionItemToEvaluationMap; // @synthesize distributionItemToEvaluationMap=_distributionItemToEvaluationMap;
 @property(retain, nonatomic) IDEProvisionableStatusEvaluation *installerPackageEvaluation; // @synthesize installerPackageEvaluation=_installerPackageEvaluation;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSArray *allEvaluationErrors;
 @property(readonly) NSArray *allItemEvaluations;

@@ -29,9 +29,9 @@
 + (id)keyPathsForValuesAffectingSelection;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCanRemoveItems;
+- (void).cxx_destruct;
 @property(retain) IDEDataModelConfigurationEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 @property(copy) NSIndexSet *selectedInnerEntityIndexes; // @synthesize selectedInnerEntityIndexes=_selectedInnerEntityIndexes;
-- (void).cxx_destruct;
 - (void)numberOfEntitiesShownChanged;
 - (void)_resize;
 - (void)selectModelObjects:(id)arg1;

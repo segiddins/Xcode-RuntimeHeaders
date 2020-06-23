@@ -21,6 +21,8 @@
     NSMutableArray *tokens;
 }
 
++ (unsigned long long)segmentOptions;
+- (void).cxx_destruct;
 @property unsigned long long plistFormat; // @synthesize plistFormat;
 @property BOOL processedAsXMLFormatStringsFile; // @synthesize processedAsXMLFormatStringsFile;
 @property BOOL allowMinorError; // @synthesize allowMinorError;
@@ -30,7 +32,6 @@
 @property(retain) NSDictionary *legacyKeyMapping; // @synthesize legacyKeyMapping;
 @property(retain) NSDictionary *stringKeyValueCommentDictionary; // @synthesize stringKeyValueCommentDictionary;
 @property(retain) NSDictionary *stringDictionaryWithStandardAPI; // @synthesize stringDictionaryWithStandardAPI;
-- (void).cxx_destruct;
 - (id)mergedStringKeyValueCommentDictionaryPreferring:(id)arg1;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 relativeTo:(id)arg2 error:(id *)arg3;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 error:(id *)arg2;
@@ -51,6 +52,7 @@
 - (void)traversePlistTree:(id)arg1 path:(id)arg2 backwardCompatiblePath:(id)arg3 extractedStringDictionary:(id)arg4 backwardCompatibleExtractedStringDictionary:(id)arg5;
 - (void)processXMLFormatStringsFile:(id)arg1;
 - (void)parseStringsFile:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1 locale:(id)arg2 allowMinorError:(BOOL)arg3 error:(id *)arg4;
 - (id)initWithContentsOfFile:(id)arg1 allowMinorError:(BOOL)arg2 error:(id *)arg3;
 
 @end

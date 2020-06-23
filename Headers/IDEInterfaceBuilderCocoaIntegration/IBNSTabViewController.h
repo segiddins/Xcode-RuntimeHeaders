@@ -23,12 +23,12 @@
 + (id)keyPathsForValuesAffectingIbInspectedTabStyle;
 + (id)keyPathsForValuesAffectingIbSelectedTabViewItem;
 + (Class)ibViewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTabView *tabView; // @synthesize tabView=_tabView;
 @property(nonatomic) BOOL canPropagateSelectedChildViewControllerTitle; // @synthesize canPropagateSelectedChildViewControllerTitle=_canPropagateSelectedChildViewControllerTitle;
 @property(nonatomic) unsigned long long transitionOptions; // @synthesize transitionOptions=_transitionOptions;
 @property(nonatomic) long long tabStyle; // @synthesize tabStyle=_tabStyle;
 @property(nonatomic) long long selectedTabViewItemIndex; // @synthesize selectedTabViewItemIndex=_selectedTabViewItemIndex;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

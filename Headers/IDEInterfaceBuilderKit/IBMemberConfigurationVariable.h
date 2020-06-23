@@ -26,6 +26,7 @@
 
 + (id)variableWithIdentifier:(id)arg1;
 + (id)registerVariableWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6 unspecifiedValueSpecification:(id)arg7;
+- (void).cxx_destruct;
 @property(readonly) IBMemberConfigurationVariableValueSpecification *unspecifiedValueSpecification; // @synthesize unspecifiedValueSpecification=_unspecifiedValueSpecification;
 @property(readonly) NSSet *legalValues; // @synthesize legalValues=_legalValues;
 @property(readonly) double precedence; // @synthesize precedence=_precedence;
@@ -34,7 +35,6 @@
 @property(readonly) NSString *verboseTitle; // @synthesize verboseTitle=_verboseTitle;
 @property(readonly) NSString *succinctTitle; // @synthesize succinctTitle=_succinctTitle;
 @property(readonly) NSString *variableIdentifier; // @synthesize variableIdentifier=_variableIdentifier;
-- (void).cxx_destruct;
 - (id)specificationForValue:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -25,13 +25,13 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property __weak NSButton *okButton; // @synthesize okButton=_okButton;
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property __weak NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) DVTSourceControlRemoteRepository *remoteRepository; // @synthesize remoteRepository=_remoteRepository;
-- (void).cxx_destruct;
 - (void)close;
 - (void)cancelCredentialSheet:(id)arg1;
 - (void)_completeOperation:(id)arg1;

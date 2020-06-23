@@ -23,6 +23,7 @@
     IDEProvisioningSliceConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DVTObservingToken *dataSourceTeamsObserver; // @synthesize dataSourceTeamsObserver=_dataSourceTeamsObserver;
 @property(retain) NSLayoutConstraint *popUpWidthConstraint; // @synthesize popUpWidthConstraint=_popUpWidthConstraint;
@@ -33,7 +34,6 @@
 @property __weak NSButton *addAccountButton; // @synthesize addAccountButton=_addAccountButton;
 @property __weak NSPopUpButton *teamPopUpButton; // @synthesize teamPopUpButton=_teamPopUpButton;
 @property(retain, nonatomic) id <IDESigningEditorTeamDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)startObservations;
 - (void)selectionChangedForProvisoningTeamPopUpButton:(id)arg1;

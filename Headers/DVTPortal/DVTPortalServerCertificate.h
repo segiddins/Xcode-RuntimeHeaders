@@ -22,13 +22,13 @@
 + (BOOL)revokeTeamMembershipWithSession:(id)arg1 team:(id)arg2 clientName:(id)arg3 clientHardwareUUID:(id)arg4 error:(id *)arg5;
 + (id)teamClientCertificateWithSession:(id)arg1 team:(id)arg2 clientHardwareUUID:(id)arg3 error:(id *)arg4;
 + (id)joinTeamWithSession:(id)arg1 team:(id)arg2 clientName:(id)arg3 clientHardwareUUID:(id)arg4 certificateSigningRequest:(id)arg5 error:(id *)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
-- (void).cxx_destruct;
 
 @end
 

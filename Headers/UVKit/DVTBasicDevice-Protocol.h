@@ -11,6 +11,7 @@
 @protocol DVTBasicDevice <DVTCodesignableDevice>
 @property(nonatomic, readonly) _Bool deviceIsBusy;
 @property(nonatomic, readonly) NSError *unavailabilityError;
+- (BOOL)isAvailableWithError:(id *)arg1;
 - (BOOL)isAvailable;
 @property(nonatomic, readonly) BOOL isProxiedDevice;
 @property(nonatomic, readonly) NSString *nativeArchitecture;

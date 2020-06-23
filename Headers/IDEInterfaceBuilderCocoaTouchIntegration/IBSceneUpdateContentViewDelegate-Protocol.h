@@ -10,7 +10,7 @@
 
 @protocol IBSceneUpdateContentViewDelegate <NSObject>
 @property(nonatomic) __weak IBSceneUpdateContentView *owningSceneUpdateContentView;
-- (BOOL)isLandscapeForContentView:(IBSceneUpdateContentView *)arg1;
+- (double)maskRotationInRadiansForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSImage *)maskImageForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSBezierPath *)normalizedMaskPathForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSString *)maskIdentifierForContentView:(IBSceneUpdateContentView *)arg1;

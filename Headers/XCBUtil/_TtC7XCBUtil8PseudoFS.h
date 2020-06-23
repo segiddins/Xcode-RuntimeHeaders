@@ -11,8 +11,12 @@
 @interface _TtC7XCBUtil8PseudoFS : _TtCs12_SwiftObject
 {
     MISSING_TYPE *queue;
+    MISSING_TYPE *inodeQueue;
+    MISSING_TYPE *ignoreFileSystemDeviceInodeChanges;
     MISSING_TYPE *root;
     MISSING_TYPE *writeEpoch;
+    MISSING_TYPE *rootInodeValue;
+    MISSING_TYPE *nextInodeValue;
     MISSING_TYPE *lockedPaths;
 }
 

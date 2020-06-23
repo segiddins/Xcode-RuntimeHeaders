@@ -20,9 +20,9 @@
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)keyPathsForValuesAffectingBot;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSBot *fetchedBot; // @synthesize fetchedBot=_fetchedBot;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)displayName;
 - (id)botIntegration;
 - (id)bot;

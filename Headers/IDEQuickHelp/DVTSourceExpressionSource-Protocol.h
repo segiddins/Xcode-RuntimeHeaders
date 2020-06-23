@@ -7,7 +7,7 @@
 #import <IDEQuickHelp/DVTInvalidation-Protocol.h>
 #import <IDEQuickHelp/NSObject-Protocol.h>
 
-@class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString;
+@class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString, NSView;
 
 @protocol DVTSourceExpressionSource <NSObject, DVTInvalidation>
 - (struct CGRect)expressionFrameForExpression:(DVTSourceExpression *)arg1;
@@ -20,6 +20,7 @@
 @property(nonatomic, readonly) DVTSDK *sdk;
 @property(nonatomic, readonly) DVTSourceLanguageService *languageService;
 @property(nonatomic, readonly) NSString *selectedText;
+@property(nonatomic, readonly) NSView *quickHelpTargetView;
 @property(nonatomic, readonly) DVTSourceExpression *quickHelpExpression;
 @end
 

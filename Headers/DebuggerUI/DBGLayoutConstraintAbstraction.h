@@ -14,8 +14,8 @@
     DBGLayoutConstraint *_constraintModel;
 }
 
-@property(readonly, nonatomic) DBGLayoutConstraint *constraintModel; // @synthesize constraintModel=_constraintModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DBGLayoutConstraint *constraintModel; // @synthesize constraintModel=_constraintModel;
 - (id)constraintInDocument;
 - (id)makeRepresentingConstraintWithProvider:(id)arg1;
 - (double)priority;

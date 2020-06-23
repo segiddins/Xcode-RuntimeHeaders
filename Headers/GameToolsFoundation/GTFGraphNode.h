@@ -18,13 +18,13 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int index; // @synthesize index=_index;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct CGPoint pos; // @synthesize pos=_pos;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMutableArray *outEdges; // @synthesize outEdges=_outEdges;
 @property(retain, nonatomic) NSMutableArray *inEdges; // @synthesize inEdges=_inEdges;
-- (void).cxx_destruct;
 - (long long)compareNodeIndices:(id)arg1;
 - (long long)compareNodeDegrees:(id)arg1;
 - (id)description;

@@ -17,9 +17,9 @@
     NSString *_toolTip;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL arrowIsVisible; // @synthesize arrowIsVisible=_arrowIsVisible;
 @property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)setMenu:(id)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;

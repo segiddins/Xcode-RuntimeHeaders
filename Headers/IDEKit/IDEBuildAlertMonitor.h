@@ -30,8 +30,8 @@
 }
 
 + (void)initialize;
-@property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
+@property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void)primitiveInvalidate;
 - (void)_buildExistingIssues;
 - (void)issueManager:(id)arg1 didAddIssues:(id)arg2 forDocumentURL:(id)arg3;

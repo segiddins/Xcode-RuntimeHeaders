@@ -20,10 +20,10 @@
     IBConnectionsInspectorLayoutView *_layoutView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBConnectionsInspectorLayoutView *layoutView; // @synthesize layoutView=_layoutView;
 @property(retain, nonatomic) DVTBorderedView *statusAreaView; // @synthesize statusAreaView=_statusAreaView;
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewForInspectedKeyPath:(id)arg1 withContext:(id)arg2;
 - (void)setContent:(id)arg1;
 - (void)primitiveInvalidate;

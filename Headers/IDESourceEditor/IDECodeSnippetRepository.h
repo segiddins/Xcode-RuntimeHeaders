@@ -18,8 +18,8 @@
 }
 
 + (id)sharedRepository;
-@property(readonly) NSSet *codeSnippets; // @synthesize codeSnippets=_codeSnippets;
 - (void).cxx_destruct;
+@property(readonly) NSSet *codeSnippets; // @synthesize codeSnippets=_codeSnippets;
 - (void)removeCodeSnippet:(id)arg1;
 - (void)addCodeSnippet:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

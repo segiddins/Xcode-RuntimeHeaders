@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *diagnosticsEngine;
     MISSING_TYPE *xcodeIsAppleInternalOverride;
+    MISSING_TYPE *enableSerializedDiagnosticsParsing;
 }
 
 @end

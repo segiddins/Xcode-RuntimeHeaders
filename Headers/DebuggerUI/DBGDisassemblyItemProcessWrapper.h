@@ -22,9 +22,9 @@
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain) NSArray *threadWrappers; // @synthesize threadWrappers=_threadWrappers;
 @property(retain) IDEDebugProcess *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_invalidatePreviousThreadWrappers;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

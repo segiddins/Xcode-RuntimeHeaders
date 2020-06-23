@@ -18,13 +18,13 @@
     NSHashTable *_didForgetItemsHashTable;
 }
 
+- (void).cxx_destruct;
 @property BOOL didBeginTransactionBeforeWillForgetItems; // @synthesize didBeginTransactionBeforeWillForgetItems=_didBeginTransactionBeforeWillForgetItems;
 @property BOOL isRespondingToDidForget; // @synthesize isRespondingToDidForget=_isRespondingToDidForget;
 @property(retain) NSHashTable *didForgetItemsHashTable; // @synthesize didForgetItemsHashTable=_didForgetItemsHashTable;
 @property(retain) IDEEditorHistoryItem *preCoalescingHistoryItem; // @synthesize preCoalescingHistoryItem=_preCoalescingHistoryItem;
 @property(retain) NSNotification *willCloseDocumentNotification; // @synthesize willCloseDocumentNotification=_willCloseDocumentNotification;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long overviewDuration; // @synthesize overviewDuration=_overviewDuration;
 @property(readonly, nonatomic) unsigned long long overviewSampleCount; // @synthesize overviewSampleCount=_overviewSampleCount;
 @property(readonly, nonatomic) unsigned long long overviewSamplePeriod; // @synthesize overviewSamplePeriod=_overviewSamplePeriod;
 @property(readonly, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long profilingFlags;
 @property(readonly, nonatomic) int traceMode;
 @property(readonly, nonatomic) BOOL isLegacyDevice;

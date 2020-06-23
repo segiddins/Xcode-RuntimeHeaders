@@ -20,6 +20,7 @@
     double _currentX;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double currentX; // @synthesize currentX=_currentX;
 @property(nonatomic) int track; // @synthesize track=_track;
 @property(nonatomic) BOOL showNeedle; // @synthesize showNeedle=_showNeedle;
@@ -27,7 +28,6 @@
 @property(nonatomic) double tabOffsetFromTop; // @synthesize tabOffsetFromTop=_tabOffsetFromTop;
 @property(nonatomic) double tabHeight; // @synthesize tabHeight=_tabHeight;
 @property(retain, nonatomic) NSColor *needleColor; // @synthesize needleColor=_needleColor;
-- (void).cxx_destruct;
 - (BOOL)isAnimating;
 - (void)pauseAnimation;
 - (void)startAnimation:(double)arg1 playbackSpeed:(double)arg2;

@@ -33,6 +33,7 @@
 + (id)_loadTypeDescriptors;
 + (id)_typeDescriptors;
 + (id)descriptorForType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DBGSwiftTypeDescriptor *typeTreeDescriptor; // @synthesize typeTreeDescriptor=_typeTreeDescriptor;
 @property(retain, nonatomic) NSArray *dynamicInspectorStrategies; // @synthesize dynamicInspectorStrategies=_dynamicInspectorStrategies;
 @property(nonatomic) unsigned long long secondaryDisplayNameBehavior; // @synthesize secondaryDisplayNameBehavior=_secondaryDisplayNameBehavior;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *qualifiedTypeName; // @synthesize qualifiedTypeName=_qualifiedTypeName;
 @property(retain, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(retain, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
-- (void).cxx_destruct;
 
 @end
 

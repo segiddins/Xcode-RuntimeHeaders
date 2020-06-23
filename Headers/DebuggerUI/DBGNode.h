@@ -20,12 +20,12 @@
 + (id)nodeWithGeometry:(id)arg1;
 + (id)nodeWithIdentifier:(id)arg1;
 + (id)node;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *nodesPositionInfluenced; // @synthesize nodesPositionInfluenced=_nodesPositionInfluenced;
 @property BOOL ignoreForRepositioning; // @synthesize ignoreForRepositioning=_ignoreForRepositioning;
 @property int zIndex; // @synthesize zIndex=_zIndex;
 @property(retain, nonatomic) DBGSimpleNode *attachmentHostNode; // @synthesize attachmentHostNode=_attachmentHostNode;
 @property(retain, nonatomic) DBGSimpleNode *contentHostNode; // @synthesize contentHostNode=_contentHostNode;
-- (void).cxx_destruct;
 - (BOOL)getAttachmentsBoundingBoxMin:(struct SCNVector3 *)arg1 max:(struct SCNVector3 *)arg2;
 - (BOOL)getContentBoundingBoxMin:(struct SCNVector3 *)arg1 max:(struct SCNVector3 *)arg2;
 - (id)attachmentNodes;

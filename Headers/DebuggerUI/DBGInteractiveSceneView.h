@@ -31,6 +31,7 @@
     struct CGRect _boundsThreadSafe;
 }
 
+- (void).cxx_destruct;
 @property __weak DBGRenderingDestinationHelper *renderingDestinationHelper; // @synthesize renderingDestinationHelper=_renderingDestinationHelper;
 @property(retain) SCNMaterialProperty *screenMaskMaterialProperty; // @synthesize screenMaskMaterialProperty=_screenMaskMaterialProperty;
 @property(nonatomic) double backingScaleThreadSafe; // @synthesize backingScaleThreadSafe=_backingScaleThreadSafe;
@@ -39,7 +40,6 @@
 @property(nonatomic) int nodeContentMode; // @synthesize nodeContentMode=_nodeContentMode;
 @property __weak id <DBGInteractiveSceneViewDelegate> eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 @property __weak DBGSceneViewController *sceneViewController; // @synthesize sceneViewController=_sceneViewController;
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)keyDown:(id)arg1;
 - (float)projectedAreaOfNode:(id)arg1;

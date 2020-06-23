@@ -16,9 +16,9 @@
     CDStruct_f6143a38 _canvasLinkPathLine;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) CDStruct_f6143a38 canvasLinkPathLine; // @synthesize canvasLinkPathLine=_canvasLinkPathLine;
-- (void).cxx_destruct;
 - (void)layoutTopDown;
 - (BOOL)scalesWithCanvasFrameChrome;
 - (BOOL)isFlipped;

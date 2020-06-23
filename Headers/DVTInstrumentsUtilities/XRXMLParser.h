@@ -23,9 +23,9 @@
 
 + (BOOL)parseStream:(id)arg1 topLevelParser:(id)arg2 delegate:(id)arg3;
 + (id)commonXMLSchemaRepositoryURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <XRIssueResponder> issueResponder; // @synthesize issueResponder=_issueResponder;
 @property(nonatomic) __weak id <XRXMLParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;

@@ -44,6 +44,7 @@
 }
 
 + (id)_deviceActionsToSkip;
+- (void).cxx_destruct;
 @property(retain) id <DVTDeviceAction> forgetDeviceAction; // @synthesize forgetDeviceAction=_forgetDeviceAction;
 @property(readonly) NSMutableDictionary *indexPathForDeviceIdentifier; // @synthesize indexPathForDeviceIdentifier=_indexPathForDeviceIdentifier;
 @property(readonly) NSMutableDictionary *deviceItems; // @synthesize deviceItems=_deviceItems;
@@ -66,7 +67,6 @@
 @property(retain) NSTreeController *devicesTreeController; // @synthesize devicesTreeController=_devicesTreeController;
 @property __weak id <DVTDevicesListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)_deviceWithIdentifier:(id)arg1;
 - (void)_removeDevices:(id)arg1;
 - (void)_addDevices:(id)arg1;

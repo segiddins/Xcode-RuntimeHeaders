@@ -13,8 +13,8 @@
     IBAbstractLayoutConstraintAbstraction *_abstraction;
 }
 
-@property(readonly, nonatomic) IBAbstractLayoutConstraintAbstraction *abstraction; // @synthesize abstraction=_abstraction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBAbstractLayoutConstraintAbstraction *abstraction; // @synthesize abstraction=_abstraction;
 - (id)initWithConstraintAbstraction:(id)arg1;
 
 @end

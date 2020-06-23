@@ -17,9 +17,9 @@
     long long _stackFrameFilter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long stackFrameFilter; // @synthesize stackFrameFilter=_stackFrameFilter;
 @property(readonly, nonatomic) __weak GPUTraceAPIItem *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;

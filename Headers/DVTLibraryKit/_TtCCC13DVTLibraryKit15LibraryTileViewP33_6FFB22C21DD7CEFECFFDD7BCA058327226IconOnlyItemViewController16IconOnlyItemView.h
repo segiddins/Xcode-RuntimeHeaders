@@ -13,6 +13,7 @@
     MISSING_TYPE *backgroundInset;
     MISSING_TYPE *selectionBackground;
     MISSING_TYPE *informationTextButton;
+    MISSING_TYPE *_toolTip;
 }
 
 - (void).cxx_destruct;

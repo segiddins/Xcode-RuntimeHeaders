@@ -7,13 +7,14 @@
 #import <IDEiOSSupportCore/DVTAbstractiOSDevice.h>
 
 #import <IDEiOSSupportCore/DVTDeviceApplicationInstaller-Protocol.h>
+#import <IDEiOSSupportCore/DVTPreparableDevice-Protocol.h>
 #import <IDEiOSSupportCore/IDERunDestinationFallbackSelectorDeviceInfo-Protocol.h>
 #import <IDEiOSSupportCore/XCDTMobileIS_XPCDebuggingProcotol-Protocol.h>
 
-@class DTXChannel, DVTConditionInducerSession, DVTDeviceOperation, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPlatform, IDELaunchParametersSnapshot, NSArray, NSError, NSMutableArray, NSMutableSet, NSObject, NSOrderedSet, NSSet, NSString;
+@class DTXChannel, DVTConditionInducerSession, DVTDeviceOperation, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPlatform, IDELaunchParametersSnapshot, NSArray, NSMutableArray, NSMutableSet, NSObject, NSOrderedSet, NSSet, NSString;
 @protocol DTDKRemoteDeviceToken, DVTCancellable, OS_dispatch_queue;
 
-@interface DVTiOSDevice : DVTAbstractiOSDevice <DVTDeviceApplicationInstaller, IDERunDestinationFallbackSelectorDeviceInfo, XCDTMobileIS_XPCDebuggingProcotol>
+@interface DVTiOSDevice : DVTAbstractiOSDevice <DVTDeviceApplicationInstaller, IDERunDestinationFallbackSelectorDeviceInfo, DVTPreparableDevice, XCDTMobileIS_XPCDebuggingProcotol>
 {
     DVTConditionInducerSession *_conditionInducerSession;
     NSObject<OS_dispatch_queue> *_deviceInstallQueue;
@@ -44,7 +45,6 @@
     NSObject<DTDKRemoteDeviceToken> *_token;
     NSString *_nextBootArgs;
     NSString *_mountOptions;
-    NSError *_developerPrepError;
     IDELaunchParametersSnapshot *_scriptLaunchParameters;
     DTXChannel *_xpcAttachServiceChannel;
     DTXChannel *_xpcProxyAttachServiceChannel;
@@ -86,13 +86,13 @@
 + (id)keyPathsForValuesAffectingCanExecute;
 + (id)allDeveloperDiskImagePathsForPlatform:(id)arg1;
 + (id)pathForInternalExecutable:(id)arg1 searchInPlatform:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) DTXChannel *xpcProxyAttachServiceChannel; // @synthesize xpcProxyAttachServiceChannel=_xpcProxyAttachServiceChannel;
 @property(retain) DTXChannel *xpcAttachServiceChannel; // @synthesize xpcAttachServiceChannel=_xpcAttachServiceChannel;
 @property BOOL deviceIsTransient; // @synthesize deviceIsTransient=_deviceIsTransient;
 @property(retain) IDELaunchParametersSnapshot *scriptLaunchParameters; // @synthesize scriptLaunchParameters=_scriptLaunchParameters;
 @property BOOL deviceInstallIsCancelled; // @synthesize deviceInstallIsCancelled=_deviceInstallIsCancelled;
 @property(retain) NSObject<OS_dispatch_queue> *deviceInstallQueue; // @synthesize deviceInstallQueue=_deviceInstallQueue;
-@property(copy) NSError *developerPrepError; // @synthesize developerPrepError=_developerPrepError;
 @property _Bool inHasConnected; // @synthesize inHasConnected=_inHasConnected;
 @property _Bool deviceReady; // @synthesize deviceReady=_deviceReady;
 @property(readonly, copy) NSString *mountOptions; // @synthesize mountOptions=_mountOptions;
@@ -106,7 +106,6 @@
 @property(retain, nonatomic) DVTDispatchLock *deviceProgressOperationLock; // @synthesize deviceProgressOperationLock;
 @property(retain) DVTDeviceOperation *deviceProgressOperation; // @synthesize deviceProgressOperation;
 @property(retain) NSString *bootArgs; // @synthesize bootArgs;
-- (void).cxx_destruct;
 @property(readonly) DVTConditionInducerSession *conditionInducerSession;
 - (void)_syncDeviceCrashLogsDirectoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)wantsDeviceOperationActivityReporting;
@@ -144,6 +143,7 @@
 @property(readonly) NSSet *applications;
 - (BOOL)canChangeDeviceSoftwareVersion;
 - (_Bool)deviceIsPaired;
+- (BOOL)isAvailableWithError:(id *)arg1;
 - (BOOL)isAvailable;
 - (void)renameDevice:(id)arg1;
 - (void)setName:(id)arg1;
@@ -169,6 +169,7 @@
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)supportedDeviceFamilies;
 - (BOOL)canBeRunDestination;
+- (unsigned long long)prepErrorsAndWarningsCount;
 @property(readonly) NSArray *developerPrepWarnings;
 @property(readonly) NSArray *developerPrepErrors;
 - (void)addPrepWarning:(id)arg1;
@@ -220,7 +221,9 @@
 - (void)stopDebuggingXPCServices:(id)arg1 forPairedDevice:(BOOL)arg2;
 - (void)xpcServiceObserved:(id)arg1 withProcessIdentifier:(int)arg2 requestedByProcess:(int)arg3 options:(id)arg4;
 - (void)outputReceived:(id)arg1 fromProcess:(int)arg2 atTime:(unsigned long long)arg3;
+- (void)requestDebugLaunchOfDaemon:(id)arg1 onPairedDevice:(BOOL)arg2;
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
+- (id)_optionsForService:(id)arg1;
 - (void)_setXPCAttachChannel:(id)arg1 ForPairedDevice:(BOOL)arg2;
 - (id)_xpcChannelForPairedDevice:(BOOL)arg1;
 - (BOOL)supportsDYLDPrintToStdErr;
@@ -306,6 +309,7 @@
 - (id)validateApplicationAtPath:(id)arg1 forInstallationToToken:(id)arg2;
 - (BOOL)_checkForARM64SliceAtPath:(id)arg1 executableName:(id)arg2 zipFile:(id)arg3 subpath:(id)arg4;
 - (id)installedApplicationWithBundleIdentifier:(id)arg1;
+- (long long)maxConcurrentTestingProcesses;
 - (id)crashReportsDirectoryPaths;
 - (BOOL)supportsTestHostStyle:(long long)arg1 withError:(id *)arg2;
 - (id)testRunnerSessionForConfiguration:(id)arg1;

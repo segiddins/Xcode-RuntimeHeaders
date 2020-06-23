@@ -19,12 +19,12 @@
 
 + (id)snapshotForDeletionWithFilePath:(id)arg1 childSnapshots:(id)arg2;
 + (id)snapshotWithFilePath:(id)arg1 data:(id)arg2 childSnapshots:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly, nonatomic) NSArray *childSnapshots; // @synthesize childSnapshots=_childSnapshots;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)writeToCachePathWithError:(id *)arg1;
 - (id)initWithFilePath:(id)arg1 data:(id)arg2 operation:(long long)arg3 childSnapshots:(id)arg4;

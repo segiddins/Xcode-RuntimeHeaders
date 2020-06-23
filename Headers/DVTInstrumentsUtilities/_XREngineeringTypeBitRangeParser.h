@@ -16,10 +16,10 @@
 }
 
 + (id)_elementNameToClassMap;
+- (void).cxx_destruct;
 @property(nonatomic) long long end; // @synthesize end=_end;
 @property(nonatomic) long long start; // @synthesize start=_start;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_handleCompletion;
 
 @end

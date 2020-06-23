@@ -43,6 +43,7 @@
 + (id)keyPathsForValuesAffectingConnectWiFiButtonTooltip;
 + (id)keyPathsForValuesAffectingEnableConnectWiFiButton;
 + (id)keyPathsForValuesAffectingHideConnectWiFiButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAppleScript *openConsoleScript; // @synthesize openConsoleScript=_openConsoleScript;
 @property(retain) id <DVTDeviceAction> networkAccessAction; // @synthesize networkAccessAction=_networkAccessAction;
 @property BOOL stackViewsComplete; // @synthesize stackViewsComplete=_stackViewsComplete;
@@ -67,7 +68,6 @@
 @property(retain) NSView *gridViewPlaceholder; // @synthesize gridViewPlaceholder=_gridViewPlaceholder;
 @property(retain) Class deviceLogsViewControllerClass; // @synthesize deviceLogsViewControllerClass=_deviceLogsViewControllerClass;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_completeStackViews:(id)arg1;
 - (void)_buildStackViews;
 - (void)openConsole:(id)arg1;

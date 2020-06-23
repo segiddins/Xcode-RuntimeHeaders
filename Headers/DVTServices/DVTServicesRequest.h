@@ -14,8 +14,8 @@
     id <DVTServicesSession> _session;
 }
 
-@property(readonly, nonatomic) id <DVTServicesSession> session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DVTServicesSession> session; // @synthesize session=_session;
 - (id)_userAgentForExecutionContext:(long long)arg1;
 - (id)userAgent;
 @property(readonly) NSDictionary *standardXcodeHeaders;

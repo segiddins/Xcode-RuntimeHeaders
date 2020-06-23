@@ -18,8 +18,8 @@
 + (id)sharedPluginManager;
 + (id)metalPluginForArchive:(id)arg1;
 + (id)metalPluginForPlatform:(int)arg1;
-@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (id)_pluginForPlatform:(int)arg1 andAPI:(unsigned int)arg2;
 - (id)_createPlatformPluginFromExtensionForPlatform:(int)arg1;
 - (id)_loadPlatformPluginFromBaseExtension:(id)arg1 andPlatform:(int)arg2;

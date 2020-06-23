@@ -43,6 +43,7 @@
 + (void)_unregisterForHeartBeatNotifications:(id)arg1;
 + (void)_registerForHeartBeatNotifications:(id)arg1;
 + (id)_cellsWantingHeartBeatNotification;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressSuddenIncreases; // @synthesize suppressSuddenIncreases=_suppressSuddenIncreases;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) double warningPoint; // @synthesize warningPoint=_warningPoint;
@@ -60,7 +61,6 @@
 @property(nonatomic) double realMaxValue; // @synthesize realMaxValue;
 @property(nonatomic) double maxValueFromValues; // @synthesize maxValueFromValues=_maxValueFromValues;
 @property __weak id <IDEDataSourceReloadable> visualDelegate; // @synthesize visualDelegate;
-- (void).cxx_destruct;
 @property(getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 - (void)_resetMaxValue;
 - (void)_setControlViewNeedsDisplayInChartArea;

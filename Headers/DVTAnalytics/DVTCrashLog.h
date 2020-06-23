@@ -39,6 +39,7 @@
 + (id)escapedDateTimeForDateTimeSectionContents:(id)arg1;
 + (id)crashLogFromFile:(id)arg1 error:(id *)arg2;
 + (id)crashLogFromText:(id)arg1 cachePath:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *sections; // @synthesize sections=_sections;
 @property(readonly) NSArray *orderedSections; // @synthesize orderedSections=_orderedSections;
 @property(retain) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
@@ -53,7 +54,6 @@
 @property(readonly) NSArray *threads; // @synthesize threads=_threads;
 @property(readonly) NSData *rawData; // @synthesize rawData=_rawData;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *longUserDescription;
 @property(readonly) NSString *hardwareModelDescription;
 @property(readonly) NSString *blameThreadDescription;

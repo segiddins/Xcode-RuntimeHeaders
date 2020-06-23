@@ -13,8 +13,8 @@
     NSTextField *_downloadLabel;
 }
 
-@property(nonatomic) __weak NSTextField *downloadLabel; // @synthesize downloadLabel=_downloadLabel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *downloadLabel; // @synthesize downloadLabel=_downloadLabel;
 - (void)punchOutToDownloadWebPage:(id)arg1;
 - (void)viewDidInstall;
 - (id)initWithEditorItemModel:(id)arg1 portalInfoDelegate:(id)arg2;

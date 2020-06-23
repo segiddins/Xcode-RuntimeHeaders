@@ -25,6 +25,7 @@
     double _headerCornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double headerCornerRadius; // @synthesize headerCornerRadius=_headerCornerRadius;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
 @property(retain, nonatomic) NSView *headerView; // @synthesize headerView=_headerView;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long borderType; // @synthesize borderType=_borderType;
 @property(nonatomic) BOOL fillsContentRect; // @synthesize fillsContentRect=_fillsContentRect;
 @property(nonatomic) BOOL drawsShadow; // @synthesize drawsShadow=_drawsShadow;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForKnob:(CDUnion_31865a80)arg1;
 - (struct CGRect)knobPerimeter;
 - (id)strokePath;

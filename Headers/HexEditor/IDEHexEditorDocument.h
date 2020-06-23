@@ -14,8 +14,8 @@
 }
 
 + (BOOL)isNativeType:(id)arg1;
-@property(readonly) HFByteArray *byteArray; // @synthesize byteArray=_byteArray;
 - (void).cxx_destruct;
+@property(readonly) HFByteArray *byteArray; // @synthesize byteArray=_byteArray;
 - (id)ideTopLevelStructureObjects;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (BOOL)readFromData:(id)arg1 ofType:(id)arg2 error:(id *)arg3;

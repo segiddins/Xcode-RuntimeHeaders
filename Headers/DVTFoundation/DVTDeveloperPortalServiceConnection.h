@@ -21,13 +21,13 @@
 }
 
 + (id)urlSessionForCredential:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSMutableData *responseData; // @synthesize responseData=_responseData;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSURLCredential *credential; // @synthesize credential=_credential;
 @property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void)connectionDidFinishLoading:(id)arg1;

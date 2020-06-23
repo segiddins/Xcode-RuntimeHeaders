@@ -22,11 +22,11 @@
     NSArray *_menuItemViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *menuItemViews; // @synthesize menuItemViews=_menuItemViews;
 @property(nonatomic) double minimumFixedDimensionMagnitude; // @synthesize minimumFixedDimensionMagnitude=_minimumFixedDimensionMagnitude;
 @property(copy, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) IBEditedMenu *editedMenu; // @synthesize editedMenu=_editedMenu;
-- (void).cxx_destruct;
 - (id)copyForDisplayingMenu:(id)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

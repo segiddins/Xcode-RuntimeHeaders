@@ -20,9 +20,9 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property(retain) XCSUIBotDefinition_SCMEditor *scmEditor; // @synthesize scmEditor=_scmEditor;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (void)cancelSession;
 - (void)goNextOrFinish:(id)arg1;
 - (void)goBack:(id)arg1;

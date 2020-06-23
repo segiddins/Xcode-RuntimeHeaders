@@ -14,8 +14,8 @@
 }
 
 + (id)elementName;
-@property(readonly) NSString *interpretedNameValue; // @synthesize interpretedNameValue=_interpretedNameValue;
 - (void).cxx_destruct;
+@property(readonly) NSString *interpretedNameValue; // @synthesize interpretedNameValue=_interpretedNameValue;
 - (BOOL)acceptsData;
 - (BOOL)interpretDataReturningError:(id *)arg1;
 - (BOOL)requestInsertionIntoParent:(id)arg1 error:(id *)arg2;

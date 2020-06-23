@@ -33,12 +33,12 @@
     IBCanvasOverlay *_constraintPositioningOverlayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showSceneMask; // @synthesize showSceneMask=_showSceneMask;
 @property(nonatomic) BOOL shouldDrawHiddenViews; // @synthesize shouldDrawHiddenViews=_shouldDrawHiddenViews;
 @property(readonly, nonatomic) IBCanvasOverlay *constraintPositioningOverlayView; // @synthesize constraintPositioningOverlayView=_constraintPositioningOverlayView;
 @property(retain) IBViewTracker *activeViewTracker; // @synthesize activeViewTracker=_activeViewTracker;
 @property(readonly) IBEditorFrameLayoutGuideGeneratorDelegate *layoutGuideGeneratorDelegate; // @synthesize layoutGuideGeneratorDelegate=_layoutGuideGeneratorDelegate;
-- (void).cxx_destruct;
 - (void)resetCursorRects;
 @property(readonly, nonatomic) IBLayoutManager *layoutManager;
 - (unsigned long long)dragObjects:(id)arg1 withImage:(id)arg2 inMouseDownEvent:(id)arg3 mouseDraggedEvent:(id)arg4 imageLocation:(struct CGPoint)arg5 allowedOperations:(unsigned long long)arg6 editor:(id)arg7 draggingSourceContext:(id)arg8;

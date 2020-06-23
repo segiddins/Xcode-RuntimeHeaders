@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _components;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long components; // @synthesize components=_components;
 @property(nonatomic) unsigned long long rows; // @synthesize rows=_rows;
 @property(copy, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setValue:(id)arg1 forComponent:(unsigned long long)arg2 row:(unsigned long long)arg3;
 - (void)setBackgroundStyle:(long long)arg1;

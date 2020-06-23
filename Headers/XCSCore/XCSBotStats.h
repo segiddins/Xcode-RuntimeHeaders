@@ -64,6 +64,7 @@
     NSNumber *_codeCoveragePercentageDelta;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *codeCoveragePercentageDelta; // @synthesize codeCoveragePercentageDelta=_codeCoveragePercentageDelta;
 @property(retain, nonatomic) NSNumber *testsStdDev; // @synthesize testsStdDev=_testsStdDev;
 @property(retain, nonatomic) NSNumber *testsMinimum; // @synthesize testsMinimum=_testsMinimum;
@@ -116,7 +117,6 @@
 @property(retain, nonatomic) NSString *lastCleanIntegrationID; // @synthesize lastCleanIntegrationID=_lastCleanIntegrationID;
 @property(nonatomic) unsigned long long requestedDateType; // @synthesize requestedDateType=_requestedDateType;
 @property(retain, nonatomic) NSDate *requestedDate; // @synthesize requestedDate=_requestedDate;
-- (void).cxx_destruct;
 - (BOOL)_validateWithContents:(id)arg1 validationErrors:(id *)arg2;
 - (id)description;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

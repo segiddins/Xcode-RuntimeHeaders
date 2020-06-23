@@ -37,6 +37,7 @@
 + (id)subtitleTextField;
 + (id)titleTextField;
 + (id)textFieldWithFont:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL titleIsEditing; // @synthesize titleIsEditing=_titleIsEditing;
 @property(nonatomic) BOOL drawsBottomBorder; // @synthesize drawsBottomBorder=_drawsBottomBorder;
 @property(nonatomic) BOOL wholeAssetShowsContextFocus; // @synthesize wholeAssetShowsContextFocus=_wholeAssetShowsContextFocus;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <IBICAssetCapsuleDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (void)trackBandSelectionWithInitialMouseDown:(id)arg1 currentMouseEvent:(id)arg2 initialSelection:(id)arg3;

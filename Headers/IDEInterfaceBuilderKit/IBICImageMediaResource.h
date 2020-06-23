@@ -16,12 +16,12 @@
     NSString *_variantSetName;
 }
 
-+ (id)imageForImageSetRepSlot:(id)arg1 assetData:(id)arg2 fileExtension:(id)arg3 alignmentInsets:(CDStruct_c519178c)arg4 resizingBehavior:(id)arg5;
++ (id)imageForImageSetRepSlot:(id)arg1 assetData:(id)arg2 alignmentInsets:(CDStruct_c519178c)arg3 resizingBehavior:(id)arg4 preservesVectorRepresentation:(BOOL)arg5 populatingRepInfo:(id)arg6;
 + (id)generateContentWithContext:(id)arg1;
 + (id)resourceWithImageSetRep:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *variantSetName; // @synthesize variantSetName=_variantSetName;
 @property(retain, nonatomic) IBICImageSetRep *imageSetRep; // @synthesize imageSetRep=_imageSetRep;
-- (void).cxx_destruct;
 - (id)detailViewAlternateWithTitle:(id)arg1;
 - (BOOL)needsContentForDetailViewAlternate;
 - (long long)compareForVariantMatching:(id)arg1;

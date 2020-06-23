@@ -34,6 +34,7 @@
     NSColor *_trackBorderColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTrackingKnob) BOOL trackingKnob; // @synthesize trackingKnob=_trackingKnob;
 @property(copy, nonatomic) NSColor *trackBorderColor; // @synthesize trackBorderColor=_trackBorderColor;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -54,7 +55,6 @@
 @property(nonatomic) double knobPosition; // @synthesize knobPosition=_knobPosition;
 @property(nonatomic) double knobPortion; // @synthesize knobPortion=_knobPortion;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (id)effectiveTrackedKnobColor;

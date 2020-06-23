@@ -31,9 +31,9 @@
 
 + (id)templateWithElement:(id)arg1 inspector:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IBIdiom *idiom; // @synthesize idiom=_idiom;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)addVariationForConfigurationFromPopOver:(id)arg1;
 - (void)addVariationForConfigurationFromMenuItem:(id)arg1;
 - (void)turnOnConfiguration:(id)arg1;

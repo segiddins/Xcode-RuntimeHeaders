@@ -13,8 +13,8 @@
     PBXTarget *_target;
 }
 
-@property(retain) PBXTarget *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain) PBXTarget *target; // @synthesize target=_target;
 - (void)copyToCustomRule:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 target:(id)arg3;
 

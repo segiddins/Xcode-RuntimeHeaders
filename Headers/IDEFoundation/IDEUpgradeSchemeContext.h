@@ -13,8 +13,8 @@
     IDEScheme *_scheme;
 }
 
-@property(readonly) IDEScheme *scheme; // @synthesize scheme=_scheme;
 - (void).cxx_destruct;
+@property(readonly) IDEScheme *scheme; // @synthesize scheme=_scheme;
 - (id)description;
 - (id)initWithScheme:(id)arg1;
 

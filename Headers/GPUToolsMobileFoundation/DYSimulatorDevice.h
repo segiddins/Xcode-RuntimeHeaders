@@ -6,10 +6,17 @@
 
 #import <GPUToolsServices/DYDevice.h>
 
-@class DYSimulatorDaemonInstance, NSString;
+@class DYSimulatorDaemonInstance, NSError, NSString;
+@protocol DYSimDevice;
 
 @interface DYSimulatorDevice : DYDevice
 {
+    id <DYSimDevice> _simDevice;
+    struct dispatch_queue_s *_queue;
+    struct dispatch_queue_s *_requestsQueue;
+    BOOL _gputoolsServiceAvailable;
+    NSError *_gputoolsServiceAvailabilityError;
+    BOOL _communicationAvailable;
     DYSimulatorDaemonInstance *_daemon;
     NSString *_sdkRoot;
 }
@@ -19,18 +26,28 @@
 + (Class)deferredLaunchStrategyClass;
 + (Class)launchStrategyClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sdkRoot; // @synthesize sdkRoot=_sdkRoot;
 @property(retain, nonatomic) DYSimulatorDaemonInstance *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
-- (BOOL)supportsPlaybackOfCaptureWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;
+- (id)unlocked;
+- (id)streamArchiveWithTransport:(id)arg1 atURL:(id)arg2 destinationName:(id)arg3;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;
 - (id)gputoolsServiceAvailabilityError;
+- (id)_checkGPUToolsServiceAvailabilityWithTransport:(id)arg1;
+- (BOOL)needsGPUToolsServiceBeforePlayback;
 - (BOOL)gputoolsServiceAvailable;
 - (id)mobileReplayerGuestApp;
 - (id)guestAppWithPath:(id)arg1;
 - (id)guestAppWithIdentifier:(id)arg1;
-- (id)guestAppWithURL:(id)arg1;
-- (id)initWithRootPath:(id)arg1;
+- (BOOL)connected;
+- (id)retrieveDeviceProperties;
+- (void)applicationWillAttachWithTransport:(id)arg1;
+- (BOOL)needsAttachNotification;
+- (id)createTransport;
+- (id)_createTransportWithDeferringMessages:(BOOL)arg1;
+- (BOOL)online;
+- (BOOL)simulatorBooted;
+- (id)initWithAMDIdentifier:(id)arg1 simDevice:(id)arg2;
 - (id)init;
 
 @end

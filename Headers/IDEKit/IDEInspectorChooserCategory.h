@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSString *title; // @synthesize title;
 @property(readonly) NSArray *choices; // @synthesize choices;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithTitle:(id)arg1 choices:(id)arg2;
 

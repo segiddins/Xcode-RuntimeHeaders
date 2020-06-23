@@ -13,8 +13,8 @@
     NSString *_itemUUID;
 }
 
-@property(readonly, copy, nonatomic) NSString *itemUUID; // @synthesize itemUUID=_itemUUID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *itemUUID; // @synthesize itemUUID=_itemUUID;
 - (id)initWithItem:(id)arg1 documentURL:(id)arg2;
 
 @end

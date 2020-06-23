@@ -33,6 +33,7 @@
 }
 
 + (void)initialze;
+- (void).cxx_destruct;
 @property(retain) NSString *savedConsoleSelectedChoiceTitle; // @synthesize savedConsoleSelectedChoiceTitle=_savedConsoleSelectedChoiceTitle;
 @property(retain) NSArray *savedConsoleChoices; // @synthesize savedConsoleChoices=_savedConsoleChoices;
 @property(nonatomic, getter=isConsoleVisible) BOOL consoleVisible; // @synthesize consoleVisible=_consoleVisible;
@@ -46,7 +47,6 @@
 @property __weak DVTDeviceContentSplitViewController *splitViewController; // @synthesize splitViewController=_splitViewController;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_syncConsoleTabSelectedChoice;
 - (void)_syncConsoleTabChoices;
 - (void)_restoreConsoleState;

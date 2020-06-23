@@ -14,8 +14,8 @@
     id _representedObject;
 }
 
-@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
+@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

@@ -15,10 +15,10 @@
     NSWindow *_issueResolutionWindowControllerHostWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSWindow *issueResolutionWindowControllerHostWindow; // @synthesize issueResolutionWindowControllerHostWindow=_issueResolutionWindowControllerHostWindow;
 @property(retain, nonatomic) IDEProvisioningIssueResolutionWindowController *issueResolutionWindowController; // @synthesize issueResolutionWindowController=_issueResolutionWindowController;
 @property(retain, nonatomic) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)didSelectIssueAction:(id)arg1;
 - (BOOL)requiresAdditionalUserInteraction;

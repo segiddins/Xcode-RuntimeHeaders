@@ -15,8 +15,8 @@
     NSArray *_toolchainIdentifiers;
 }
 
-@property(retain) NSArray *toolchainIdentifiers; // @synthesize toolchainIdentifiers=_toolchainIdentifiers;
 - (void).cxx_destruct;
+@property(retain) NSArray *toolchainIdentifiers; // @synthesize toolchainIdentifiers=_toolchainIdentifiers;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToReferenceKey:(id)arg1;

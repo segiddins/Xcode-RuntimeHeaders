@@ -5,10 +5,12 @@
 //
 
 @class DBGViewDebuggerAdditionUIController, DBGViewInstance, DBGViewSurface, NSArray, NSString;
+@protocol DBGCanvasRenderable;
 
 @protocol DBGSceneViewControllerDataSourceProtocol
-- (NSArray *)allViews;
-- (DBGViewInstance *)viewWithIdentifier:(NSString *)arg1;
+- (NSArray *)allRenderables;
+- (DBGViewInstance *)viewInstanceWithIdentifier:(NSString *)arg1;
+- (id <DBGCanvasRenderable>)renderableWithIdentifier:(NSString *)arg1;
 - (DBGViewInstance *)rootViewForHierarchyToDisplay;
 - (void)prepareDataWithRootViewSurface:(DBGViewSurface *)arg1 debuggerUIController:(DBGViewDebuggerAdditionUIController *)arg2;
 @end

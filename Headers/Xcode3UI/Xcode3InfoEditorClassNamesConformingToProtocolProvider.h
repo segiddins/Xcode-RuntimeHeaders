@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *indexDidChangeObserver; // @synthesize indexDidChangeObserver=_indexDidChangeObserver;
 @property(retain, nonatomic) NSString *protocolName; // @synthesize protocolName=_protocolName;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)indexChanged:(id)arg1;
 @property(readonly) NSArray *listContents;

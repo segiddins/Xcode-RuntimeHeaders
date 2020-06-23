@@ -25,11 +25,11 @@
 + (id)keyPathsForValuesAffectingPrompt;
 + (id)keyPathsForValuesAffectingOutput;
 + (id)keyPathsForValuesAffectingInput;
+- (void).cxx_destruct;
 @property int kind; // @synthesize kind=_kind;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSString *content; // @synthesize content=_content;
 @property(readonly) unsigned long long adaptorType; // @synthesize adaptorType=_adaptorType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dvt_writeToSerializer:(id)arg1;

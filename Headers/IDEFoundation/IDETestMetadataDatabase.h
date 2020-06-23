@@ -15,17 +15,17 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     DVTFuture *_ensureStoreLoaded;
-    struct NSMutableDictionary *_store;
+    NSMutableDictionary *_store;
     NSURL *_databaseURL;
     NSError *_loadError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *loadError; // @synthesize loadError=_loadError;
 @property(readonly) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(retain) NSMutableDictionary *store; // @synthesize store=_store;
 @property(readonly) DVTFuture *ensureStoreLoaded; // @synthesize ensureStoreLoaded=_ensureStoreLoaded;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)classBasedLPTPrioritizerWithFallbackExecutionOrdering:(long long)arg1;
 - (void)updateWithSchemeActionRecord:(id)arg1;
 - (id)metadataRecordsForIdentifier:(id)arg1;
@@ -36,8 +36,8 @@
 - (BOOL)loadStoreIfNecessary:(id *)arg1;
 - (BOOL)loadStoreFromPlistWithError:(id *)arg1;
 - (BOOL)validateDatabaseSchemaForStore:(id)arg1;
-- (struct NSMutableDictionary *)copyStore:(struct NSMutableDictionary *)arg1 transformingLeavesUsingBlock:(CDUnknownBlockType)arg2;
-- (void)transformLeavesInStore:(struct NSMutableDictionary *)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)copyStore:(id)arg1 transformingLeavesUsingBlock:(CDUnknownBlockType)arg2;
+- (void)transformLeavesInStore:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 - (id)initWithURL:(id)arg1;
 

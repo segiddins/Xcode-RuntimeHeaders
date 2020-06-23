@@ -13,10 +13,10 @@
     CDUnknownBlockType _libraryNameForIndexQueryBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType libraryNameForIndexQueryBlock; // @synthesize libraryNameForIndexQueryBlock=_libraryNameForIndexQueryBlock;
 @property(copy) CDUnknownBlockType swiftGeneratedFunctionForIndexQueryBlock; // @synthesize swiftGeneratedFunctionForIndexQueryBlock=_swiftGeneratedFunctionForIndexQueryBlock;
 @property(readonly) CDUnknownBlockType debugInfoForIndexQueryBlock; // @synthesize debugInfoForIndexQueryBlock=_debugInfoForIndexQueryBlock;
-- (void).cxx_destruct;
 - (id)initWithDebugInfoQueryBlock:(CDUnknownBlockType)arg1 libraryNameQueryBlock:(CDUnknownBlockType)arg2;
 
 @end

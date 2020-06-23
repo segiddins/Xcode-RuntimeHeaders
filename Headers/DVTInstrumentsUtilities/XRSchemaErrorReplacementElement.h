@@ -15,10 +15,10 @@
     NSString *_replacementString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 key:(id)arg2 replacementString:(id)arg3;
 
 @end

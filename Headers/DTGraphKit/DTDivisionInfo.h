@@ -16,10 +16,10 @@
 }
 
 + (id)infoWithPosition:(double)arg1 label:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSNumber *originalValue; // @synthesize originalValue=_originalValue;
 @property(readonly) NSString *label; // @synthesize label=_label;
 @property(readonly) double position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithPosition:(double)arg1 label:(id)arg2;
 

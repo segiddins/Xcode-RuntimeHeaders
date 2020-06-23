@@ -24,22 +24,22 @@
     NSArray *_systemLayoutGuides;
 }
 
+- (void).cxx_destruct;
 @property(getter=isShowingGuides) BOOL showingGuides; // @synthesize showingGuides=_showingGuides;
 @property(copy, nonatomic) NSArray *systemLayoutGuides; // @synthesize systemLayoutGuides=_systemLayoutGuides;
 @property(copy, nonatomic) NSArray *liveLayoutGuides; // @synthesize liveLayoutGuides=_liveLayoutGuides;
 @property(copy, nonatomic) NSArray *drawableUserLayoutGuides; // @synthesize drawableUserLayoutGuides=_drawableUserLayoutGuides;
 @property(retain, nonatomic) NSObject<IBAutolayoutItem> *coordinateSpaceView; // @synthesize coordinateSpaceView=_coordinateSpaceView;
 @property(readonly, nonatomic) __weak IBViewEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
-- (void).cxx_destruct;
 - (void)updateLiveLayoutGuides;
 - (id)_liveLayoutGuidePatternColorVertical:(BOOL)arg1;
 - (id)liveLayoutGuideVerticalPatternColor;
 - (id)liveLayoutGuideHorizontalPatternColor;
-- (void)layoutLabelGroupLayer:(id)arg1 forGuideLayer:(struct CAShapeLayer *)arg2;
-- (void)layoutGuideLayer:(struct CAShapeLayer *)arg1 forGuide:(id)arg2;
+- (void)layoutLabelGroupLayer:(id)arg1 forGuideLayer:(id)arg2;
+- (void)layoutGuideLayer:(id)arg1 forGuide:(id)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (id)makeLabelGroupLayerForUserGuide:(id)arg1;
-- (struct CAShapeLayer *)makeLayerForGuide:(id)arg1;
+- (id)makeLayerForGuide:(id)arg1;
 - (id)makeBackingLayer;
 - (BOOL)isFlipped;
 - (void)dealloc;

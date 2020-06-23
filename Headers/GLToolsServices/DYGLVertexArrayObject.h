@@ -14,9 +14,9 @@
     NSArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int elementArrayBuffer; // @synthesize elementArrayBuffer=_elementArrayBuffer;
 @property(readonly, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 

@@ -8,7 +8,7 @@
 
 #import <IDEQuickHelp/DVTInvalidation-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, IDEQuickHelpCompletionInfoViewController, NSAttributedString, NSString, _TtC12IDEQuickHelp22IDEQuickHelpController, _TtC16DVTDocumentation23DVTDocumentationManager;
+@class DVTObservingToken, DVTStackBacktrace, IDEQuickHelpCompletionInfoViewController, NSAttributedString, NSString, _TtC12IDEQuickHelp22IDEQuickHelpController;
 
 @interface IDEQuickHelpTextCompletionController : NSObject <DVTInvalidation>
 {
@@ -18,14 +18,12 @@
     double _width;
     CDUnknownBlockType _completionBlock;
     BOOL _shouldInvalidateInfoViewController;
-    _TtC16DVTDocumentation23DVTDocumentationManager *_documentationManager;
     _TtC12IDEQuickHelp22IDEQuickHelpController *_quickHelpController;
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) _TtC12IDEQuickHelp22IDEQuickHelpController *quickHelpController; // @synthesize quickHelpController=_quickHelpController;
-@property(retain, nonatomic) _TtC16DVTDocumentation23DVTDocumentationManager *documentationManager; // @synthesize documentationManager=_documentationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _TtC12IDEQuickHelp22IDEQuickHelpController *quickHelpController; // @synthesize quickHelpController=_quickHelpController;
 - (void)_updateQuickHelpContent:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)_initWithQuickHelpController:(id)arg1 altContent:(id)arg2 width:(double)arg3 completionBlock:(CDUnknownBlockType)arg4;

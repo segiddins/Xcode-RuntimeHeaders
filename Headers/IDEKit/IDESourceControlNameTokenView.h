@@ -26,10 +26,10 @@
     NSColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic, getter=isMiniStyle) BOOL miniStyle; // @synthesize miniStyle=_miniStyle;
 @property __weak NSObject<IDESourceControlNameTokenViewDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawWholeTokenWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;
 - (void)_drawInteriorWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;

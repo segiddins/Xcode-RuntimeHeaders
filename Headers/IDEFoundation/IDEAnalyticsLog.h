@@ -14,8 +14,8 @@
     IDEStackFrame *_blameStackFrame;
 }
 
-@property(retain, nonatomic) IDEStackFrame *blameStackFrame; // @synthesize blameStackFrame=_blameStackFrame;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEStackFrame *blameStackFrame; // @synthesize blameStackFrame=_blameStackFrame;
 - (void)primitiveInvalidate;
 - (BOOL)isPaused;
 - (id)parentDebugSession;

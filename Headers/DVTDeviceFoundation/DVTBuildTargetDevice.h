@@ -20,6 +20,7 @@
 - (id)deviceType;
 - (unsigned long long)supportsFetchEvents;
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
+- (BOOL)supportsDaemonDebugging;
 - (BOOL)supportsMainThreadChecker;
 - (BOOL)supportsRecordedFrames;
 - (BOOL)supportsPGOReturningError:(id *)arg1;

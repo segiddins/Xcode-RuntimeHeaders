@@ -18,11 +18,11 @@
 
 + (id)loginIssueForAccount:(id)arg1;
 + (id)roleIssueForAccount:(id)arg1 issue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *issue; // @synthesize issue=_issue;
 @property(retain, nonatomic) DVTDeveloperAccount *account; // @synthesize account=_account;
 @property(nonatomic) BOOL isLoginIssue; // @synthesize isLoginIssue=_isLoginIssue;
 @property(copy) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

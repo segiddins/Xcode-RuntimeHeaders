@@ -25,6 +25,7 @@
     NSDictionary *_teamIdentifierToError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *teamIdentifierToError; // @synthesize teamIdentifierToError=_teamIdentifierToError;
 @property(retain, nonatomic) id <IDEProvisioningProfileDownloaderSourceListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEProvisioningCompoundProfile *selectedProfile; // @synthesize selectedProfile=_selectedProfile;
@@ -35,7 +36,6 @@
 @property(retain) NSArrayController *profilesArrayController; // @synthesize profilesArrayController=_profilesArrayController;
 @property __weak DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) IDEProvisioningProfileDownloader *downloader; // @synthesize downloader=_downloader;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

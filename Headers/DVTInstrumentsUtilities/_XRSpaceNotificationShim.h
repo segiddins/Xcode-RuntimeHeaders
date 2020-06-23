@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     XRSpace *_space;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak XRSpace *space; // @synthesize space=_space;
 @property(retain, nonatomic) id <NSObject> token; // @synthesize token=_token;
 @property(nonatomic) BOOL targetIsSet; // @synthesize targetIsSet=_targetIsSet;
 @property(nonatomic) __weak id <NSObject> target; // @synthesize target=_target;
 @property(nonatomic) __weak id <NSObject> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

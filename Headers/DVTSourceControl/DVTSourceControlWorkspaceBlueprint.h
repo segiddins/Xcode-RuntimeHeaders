@@ -34,6 +34,7 @@
 }
 
 + (BOOL)validateDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isFavorite) BOOL favorite; // @synthesize favorite=_favorite;
 @property(retain) NSDictionary *authenticationStrategies; // @synthesize authenticationStrategies=_authenticationStrategies;
 @property(retain) NSMapTable *locations; // @synthesize locations=_locations;
@@ -46,7 +47,6 @@
 @property(copy) NSString *relativePathToProject; // @synthesize relativePathToProject=_relativePathToProject;
 @property(retain) DVTSourceControlRemoteRepository *primaryRemoteRepository; // @synthesize primaryRemoteRepository=_primaryRemoteRepository;
 @property(copy) NSString *_id; // @synthesize _id=__id;
-- (void).cxx_destruct;
 - (void)handleAuthenticationFailure:(id)arg1 forRepository:(id)arg2 withForce:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)unregisterAsAuthenticationFailureHandler;
 - (void)registerAsAuthenticationFailureHandler;
@@ -123,7 +123,6 @@
 - (id)validateAuthenticationAndListBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)validateAuthenticationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)listBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)updateRepositoryURLRootsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)workspaceForWorkingCopiesCreatedAtURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)createWorkingCopiesAtURL:(id)arg1 useRevisions:(BOOL)arg2 reusingWorkingCopiesFromBlueprints:(id)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)createWorkingCopiesAtURL:(id)arg1 useRevisions:(BOOL)arg2 progressBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;

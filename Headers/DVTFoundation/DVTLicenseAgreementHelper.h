@@ -15,9 +15,9 @@
 }
 
 + (BOOL)shouldShowLicenseAgreementForInstalledXcodeLicenseID:(id)arg1 lastAgreedToLicenseID:(id)arg2 installedXcodeVersion:(id)arg3 xcodeVersionForLastAgreedToLicense:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSString *installedLicenseID; // @synthesize installedLicenseID=_installedLicenseID;
 @property(readonly) int installedLicenseType; // @synthesize installedLicenseType=_installedLicenseType;
-- (void).cxx_destruct;
 - (BOOL)shouldShowLicenseAgreement;
 @property(readonly) NSString *installedLicensePlistPath;
 - (BOOL)agreeToLicense;

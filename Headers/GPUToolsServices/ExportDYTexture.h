@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     DYTextureSizeInfo *_info;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDepth; // @synthesize isDepth=_isDepth;
 @property(readonly, nonatomic) DYTextureSizeInfo *info; // @synthesize info=_info;
 @property(readonly, nonatomic) id <DYTexture> texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (id)uncompressedData;
 - (id)dataForMipmapLevel:(int)arg1 layer:(int)arg2;
 - (unsigned int)pixelFormat;

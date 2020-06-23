@@ -23,6 +23,7 @@
 
 + (id)keyPathsForValuesAffectingIsExecuting;
 + (id)keyPathsForValuesAffectingIsFinished;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType finishedHandler; // @synthesize finishedHandler=_finishedHandler;
 @property(copy, nonatomic) NSURL *destinationDirectory; // @synthesize destinationDirectory=_destinationDirectory;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) id <IDETestReport_Test> test; // @synthesize test=_test;
 @property(retain, nonatomic) id <IDETestReport_RemoteAsset> asset; // @synthesize asset=_asset;
 @property(nonatomic, getter=isDownloading) BOOL downloading; // @synthesize downloading=_downloading;
-- (void).cxx_destruct;
 - (BOOL)isAsynchronous;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

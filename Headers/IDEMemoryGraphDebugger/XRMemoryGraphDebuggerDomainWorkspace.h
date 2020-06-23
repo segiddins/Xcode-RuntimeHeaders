@@ -20,9 +20,9 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(nonatomic) __weak id <XRMemoryGraphDebuggerDomainWorkspaceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleMemoryGraphDebuggerRemoved:(id)arg1;
 - (void)_handleMemoryGraphDebuggerAdded:(id)arg1;
 - (void)_handleMemoryGraphDebuggingAdditionAdded:(id)arg1;

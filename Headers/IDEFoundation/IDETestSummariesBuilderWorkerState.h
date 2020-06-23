@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IDETestIdentifier, NSMutableArray;
+@class IDESchemeActionTestNoticeSummary, IDETestIdentifier, NSMutableArray;
 
 @interface IDETestSummariesBuilderWorkerState : NSObject
 {
@@ -15,18 +15,20 @@
     NSMutableArray *_testSuiteStack;
     NSMutableArray *_performanceMetricSummaries;
     NSMutableArray *_failureSummaries;
+    IDESchemeActionTestNoticeSummary *_skipNoticeSummary;
     NSMutableArray *_activitySummaries;
     NSMutableArray *_currentActivityStack;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *currentActivityStack; // @synthesize currentActivityStack=_currentActivityStack;
 @property(readonly) NSMutableArray *activitySummaries; // @synthesize activitySummaries=_activitySummaries;
+@property(retain) IDESchemeActionTestNoticeSummary *skipNoticeSummary; // @synthesize skipNoticeSummary=_skipNoticeSummary;
 @property(readonly) NSMutableArray *failureSummaries; // @synthesize failureSummaries=_failureSummaries;
 @property(readonly) NSMutableArray *performanceMetricSummaries; // @synthesize performanceMetricSummaries=_performanceMetricSummaries;
 @property(readonly) NSMutableArray *testSuiteStack; // @synthesize testSuiteStack=_testSuiteStack;
 @property(retain) IDETestIdentifier *currentTestIdentifier; // @synthesize currentTestIdentifier=_currentTestIdentifier;
 @property double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

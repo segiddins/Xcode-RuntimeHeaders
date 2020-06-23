@@ -12,6 +12,7 @@
 - (NSArray *)flushRemainingData;
 - (NSNumber *)stopCollectingCounters;
 - (void)startCollectingCounters;
+- (void)enableShaderProfiler;
 - (void)configureCounters:(unsigned long long)arg1 counterProfile:(unsigned int)arg2 interval:(unsigned long long)arg3 windowLimit:(unsigned long long)arg4 tracingPID:(int)arg5;
 - (NSArray *)requestDeviceGPUInfo;
 @end

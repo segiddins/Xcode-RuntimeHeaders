@@ -22,6 +22,7 @@
     NSOutputStream *_rawOutputStream;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOutputStream *rawOutputStream; // @synthesize rawOutputStream=_rawOutputStream;
 @property(retain) NSString *unprintedConsoleOutput; // @synthesize unprintedConsoleOutput=_unprintedConsoleOutput;
 @property(retain) NSMutableString *unconsumedOutputNotTerminatedByToken; // @synthesize unconsumedOutputNotTerminatedByToken=_unconsumedOutputNotTerminatedByToken;
@@ -31,7 +32,6 @@
 @property(retain) NSCharacterSet *safeCharacterSet; // @synthesize safeCharacterSet=_safeCharacterSet;
 @property(retain) NSCharacterSet *barrierStringCharacterSet; // @synthesize barrierStringCharacterSet=_barrierStringCharacterSet;
 @property(retain) NSString *barrierString; // @synthesize barrierString=_barrierString;
-- (void).cxx_destruct;
 - (id)_subStringToLastCharacterInSet:(id)arg1 ofString:(id *)arg2;
 - (BOOL)_isStringPossiblyTerminatedByBarrier:(id)arg1;
 - (id)outputResultForRawOutput:(id)arg1;

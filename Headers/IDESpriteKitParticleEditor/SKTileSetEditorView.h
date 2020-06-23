@@ -18,10 +18,10 @@
     id <SKTileSetEditorViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKTileSetEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *tileSets; // @synthesize tileSets=_tileSets;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)frameDidChange:(id)arg1;
 - (id)iconForImagePlaceholder;
 - (void)drawRect:(struct CGRect)arg1;

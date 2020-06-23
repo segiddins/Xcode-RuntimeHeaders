@@ -18,8 +18,8 @@
 + (BOOL)enableDeveloperMode:(id *)arg1;
 + (id)isDeveloperModeEnabled:(id *)arg1;
 + (void)initialize;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)primitiveInvalidate;
 - (id)init;
 

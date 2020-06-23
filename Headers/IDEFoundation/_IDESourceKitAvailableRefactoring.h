@@ -17,10 +17,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) long long ident; // @synthesize ident=_ident;
 @property(readonly) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)initWithKind:(long long)arg1 ident:(long long)arg2 name:(id)arg3;
 
 @end

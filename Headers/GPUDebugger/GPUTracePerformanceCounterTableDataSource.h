@@ -38,8 +38,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)resourceFromResourceLink:(int)arg1 apiItem:(id)arg2 callback:(CDUnknownBlockType)arg3;
-@property(nonatomic) unsigned long long drawcallOrEncoderIndex; // @synthesize drawcallOrEncoderIndex=_drawcallOrEncoderIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long drawcallOrEncoderIndex; // @synthesize drawcallOrEncoderIndex=_drawcallOrEncoderIndex;
+- (BOOL)outlineView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (id)_filterTokenHighlightStrings;
 - (void)_clearFilteredItems;
 - (void)_refreshToFilteredItems;
@@ -65,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (void)_resolveResourceLink:(id)arg1;
 - (void)_updateAdditionalValuesForItem:(id)arg1 dataStore:(id)arg2 plane:(unsigned long long)arg3;
 - (void)_updateFromAPIItem:(id)arg1;
-- (void)_updateFromDataIndex:(unsigned long long)arg1 isEmptyEncoder:(BOOL)arg2;
+- (void)_updateFromDataIndex:(unsigned long long)arg1 isEncoder:(BOOL)arg2;
 - (void)setupFilter:(id)arg1;
 - (id)initWithPerformanceItem:(id)arg1 editor:(id)arg2;
 

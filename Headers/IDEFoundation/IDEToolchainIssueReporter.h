@@ -23,10 +23,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property __weak id <IDEToolchainIssueReporterDelegate> signatureObserver; // @synthesize signatureObserver=_signatureObserver;
 @property __weak id <IDEToolchainIssueReporterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTFilePath *toolchainInvocationLoggingPath; // @synthesize toolchainInvocationLoggingPath=_toolchainInvocationLoggingPath;
-- (void).cxx_destruct;
 - (void)onIndexCompileDidFinish:(id)arg1;
 - (void)onIndexCompileWillStart:(id)arg1;
 - (void)onToolchainCompilerCrashed:(id)arg1;

@@ -16,10 +16,10 @@
     NSArray *_ownedOperations;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <IDEIndexClassSymbol> classSymbol; // @synthesize classSymbol=_classSymbol;
 @property(readonly) NSArray *ownedOperations; // @synthesize ownedOperations=_ownedOperations;
 @property(readonly) NSArray *ownedAttributes; // @synthesize ownedAttributes=_ownedAttributes;
-- (void).cxx_destruct;
 @property(readonly) IDEDataModelClassUMLRepresentation *parentClass;
 @property(readonly) NSString *name;
 - (id)initWithClassSymbol:(id)arg1;

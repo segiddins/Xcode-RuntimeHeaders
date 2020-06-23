@@ -28,6 +28,7 @@
 }
 
 + (id)separatorItem;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL drawsRoundedBackground; // @synthesize drawsRoundedBackground=_drawsRoundedBackground;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) unsigned long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)effectiveMaskedImage;
 - (id)attributedTitle;

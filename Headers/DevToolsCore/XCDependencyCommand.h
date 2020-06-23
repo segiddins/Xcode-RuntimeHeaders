@@ -59,6 +59,8 @@
     NSString<DVTMacroExpansion> *_progressDescription;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy) NSString<DVTMacroExpansion> *progressDescription; // @synthesize progressDescription=_progressDescription;
 @property(copy) NSString<DVTMacroExpansion> *executionDescription; // @synthesize executionDescription=_executionDescription;
 @property(copy) DVTSearchPath *commandLineToolSearchPath; // @synthesize commandLineToolSearchPath=_commandLineToolSearchPath;
@@ -71,8 +73,6 @@
 @property(readonly, nonatomic) NSString *variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) NSString *architecture; // @synthesize architecture=_architecture;
 @property BOOL canRunInParallelWithOtherCommands; // @synthesize canRunInParallelWithOtherCommands=_canRunInParallelWithOtherCommands;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)successExitCodes;
 - (BOOL)isValid;
 - (void)invalidate;

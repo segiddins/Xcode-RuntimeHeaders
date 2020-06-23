@@ -16,8 +16,8 @@
     DVTExpressionTextField *_expressionField;
 }
 
-@property(retain, nonatomic) DVTExpressionTextField *expressionField; // @synthesize expressionField=_expressionField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTExpressionTextField *expressionField; // @synthesize expressionField=_expressionField;
 - (void)userDidChangeValue:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)setupRefreshTriggersAndConfigure;

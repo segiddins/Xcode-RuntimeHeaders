@@ -103,14 +103,6 @@ struct DVTStringBuilder {
     unsigned long long _field4;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
-struct NSSet {
-    Class _field1;
-};
-
 struct UParseError {
     int _field1;
     int _field2;

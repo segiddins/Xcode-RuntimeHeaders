@@ -8,6 +8,7 @@
 
 @interface NSKeyedArchiver (XRSecureArchiving)
 + (id)xr_archiveSecureCodingObject:(id)arg1 withError:(id *)arg2;
++ (id)xr_deepCopy:(id)arg1 classes:(id)arg2;
 + (id)xr_deepCopy:(id)arg1;
 @end
 

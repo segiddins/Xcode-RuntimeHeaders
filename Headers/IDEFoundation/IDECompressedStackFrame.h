@@ -17,9 +17,9 @@
     NSArray *_representedStackFrames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *representedStackFrames; // @synthesize representedStackFrames=_representedStackFrames;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) IDELaunchSession *launchSession;

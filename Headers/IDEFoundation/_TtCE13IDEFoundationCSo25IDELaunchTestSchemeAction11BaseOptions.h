@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDELaunchTestSchemeActionOptions-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSString, _TtC13IDEFoundation21IDEBuildableReference;
 
-@interface _TtCE13IDEFoundationCSo25IDELaunchTestSchemeAction11BaseOptions : NSObject <IDELaunchTestSchemeActionOptions>
+@interface _TtCE13IDEFoundationCSo25IDELaunchTestSchemeAction11BaseOptions : NSObject
 {
     MISSING_TYPE *commandLineArgumentEntries;
     MISSING_TYPE *environmentVariableEntries;

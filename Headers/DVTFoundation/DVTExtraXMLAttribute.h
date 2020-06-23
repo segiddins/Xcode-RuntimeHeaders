@@ -15,10 +15,10 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *previousAttributeName; // @synthesize previousAttributeName=_previousAttributeName;
 @property(copy) NSString *value; // @synthesize value=_value;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

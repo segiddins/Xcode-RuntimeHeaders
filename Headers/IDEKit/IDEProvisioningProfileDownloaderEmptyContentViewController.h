@@ -25,6 +25,7 @@
 
 + (id)keyPathsForValuesAffectingShowSubtitleField;
 + (id)keyPathsForValuesAffectingShowTitleField;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resolutionButtonTitle; // @synthesize resolutionButtonTitle=_resolutionButtonTitle;
 @property(nonatomic) BOOL showResolutionButton; // @synthesize showResolutionButton=_showResolutionButton;
 @property(copy, nonatomic) CDUnknownBlockType resolutionBlock; // @synthesize resolutionBlock=_resolutionBlock;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL busy; // @synthesize busy=_busy;
 @property(retain, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(retain, nonatomic) NSString *emptyContentTitle; // @synthesize emptyContentTitle=_emptyContentTitle;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)clickedResolutionButton:(id)arg1;
 - (void)disableResolutionButton;

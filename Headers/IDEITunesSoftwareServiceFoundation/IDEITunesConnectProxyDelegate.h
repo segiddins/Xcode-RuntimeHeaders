@@ -20,13 +20,13 @@
     CDUnknownBlockType _didCompleteCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType didCompleteCallback; // @synthesize didCompleteCallback=_didCompleteCallback;
 @property(copy) CDUnknownBlockType shouldContinueCallback; // @synthesize shouldContinueCallback=_shouldContinueCallback;
 @property(copy) CDUnknownBlockType updateMessageCallback; // @synthesize updateMessageCallback=_updateMessageCallback;
 @property(copy) CDUnknownBlockType updatePercentageCallback; // @synthesize updatePercentageCallback=_updatePercentageCallback;
 @property(copy) CDUnknownBlockType willBeginCallback; // @synthesize willBeginCallback=_willBeginCallback;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
-- (void).cxx_destruct;
 - (void)softwareService:(id)arg1 didCompleteUploadForApplication:(id)arg2;
 - (BOOL)softwareService:(id)arg1 shouldContinueUploadForApplication:(id)arg2;
 - (void)softwareService:(id)arg1 didUpdateStatusMessage:(id)arg2 forApplication:(id)arg3;

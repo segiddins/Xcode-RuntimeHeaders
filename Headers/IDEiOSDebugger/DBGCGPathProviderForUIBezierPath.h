@@ -29,6 +29,7 @@
     double _lineDashPhase;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasPathBeenRetrieved; // @synthesize hasPathBeenRetrieved=_hasPathBeenRetrieved;
 @property double lineDashPhase; // @synthesize lineDashPhase=_lineDashPhase;
 @property(retain) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;
@@ -39,7 +40,6 @@
 @property int lineCapStyle; // @synthesize lineCapStyle=_lineCapStyle;
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) struct CGPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (struct CGPath *)_createMutablePathByDecodingData:(id)arg1 addressSize:(unsigned long long)arg2;
 - (void)_updateCGPathAndPropertiesFromNSData;
 - (void)cancel;

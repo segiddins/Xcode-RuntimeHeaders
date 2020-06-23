@@ -19,9 +19,9 @@
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *inputTextField; // @synthesize inputTextField=_inputTextField;
 @property(retain, nonatomic) NSTextView *logTextView; // @synthesize logTextView=_logTextView;
-- (void).cxx_destruct;
 - (void)inputTextFieldDidChange:(id)arg1;
 - (void)_scrollToBottom;
 - (void)_appendCommandResult:(id)arg1;

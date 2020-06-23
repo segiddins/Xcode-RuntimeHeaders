@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingState;
-@property __weak IDESwiftMigrationAssistantContext *assistantContext; // @synthesize assistantContext=_assistantContext;
 - (void).cxx_destruct;
+@property __weak IDESwiftMigrationAssistantContext *assistantContext; // @synthesize assistantContext=_assistantContext;
 - (double)rowHeight;
 - (id)warningMessage;
 - (id)iconImage;

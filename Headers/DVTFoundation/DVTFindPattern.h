@@ -27,6 +27,7 @@
 
 + (id)placeholderFindPattern;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *replacementString; // @synthesize replacementString;
 @property int repeatedPatternID; // @synthesize repeatedPatternID;
 @property(readonly) NSString *uniqueID; // @synthesize uniqueID;
@@ -37,7 +38,6 @@
 @property(copy) NSString *tokenString; // @synthesize tokenString;
 @property(copy) NSString *regularExpression; // @synthesize regularExpression;
 @property(copy) NSString *displayString; // @synthesize displayString;
-- (void).cxx_destruct;
 - (id)backreferenceExpression;
 - (id)replaceExpression;
 - (id)copyWithZone:(struct _NSZone *)arg1;

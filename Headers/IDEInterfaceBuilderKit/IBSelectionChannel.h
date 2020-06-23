@@ -23,10 +23,10 @@
 }
 
 + (id)defaultSelectionContext;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *childChannels; // @synthesize childChannels=_childChannels;
 @property(nonatomic) __weak IBSelectionChannel *parentChannel; // @synthesize parentChannel=_parentChannel;
 @property(readonly, nonatomic) __weak id <IBSelectionChannelApplicator> applicator; // @synthesize applicator=_applicator;
-- (void).cxx_destruct;
 - (BOOL)validateAndSetValue:(id)arg1 context:(id)arg2;
 - (void)applyValue:(id)arg1 previousValue:(id)arg2 context:(id)arg3;
 - (void)_pullDownValue:(id)arg1 context:(id)arg2;

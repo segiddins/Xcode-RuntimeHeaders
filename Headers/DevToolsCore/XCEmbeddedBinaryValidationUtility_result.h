@@ -18,10 +18,10 @@
 + (id)resultWithWarning:(id)arg1;
 + (id)resultWithError:(id)arg1;
 + (id)success;
+- (void).cxx_destruct;
 @property(copy) NSString *warning; // @synthesize warning=_warning;
 @property(copy) NSString *error; // @synthesize error=_error;
 @property int exitCode; // @synthesize exitCode=_exitCode;
-- (void).cxx_destruct;
 - (id)initWithExitCode:(int)arg1 error:(id)arg2 warning:(id)arg3;
 
 @end

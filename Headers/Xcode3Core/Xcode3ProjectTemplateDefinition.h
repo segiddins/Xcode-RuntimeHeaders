@@ -36,6 +36,7 @@
 }
 
 + (void)addFileReference:(id)arg1 toTarget:(id)arg2 usingExtension:(id)arg3 buildAttributes:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) id groups; // @synthesize groups=_groups;
 @property(retain) NSArray *buildAttributes; // @synthesize buildAttributes=_buildAttributes;
 @property(retain) id wrapsLines; // @synthesize wrapsLines=_wrapsLines;
@@ -59,7 +60,6 @@
 @property(copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(copy) NSString *path; // @synthesize path=_path;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)addFileReferenceToPath:(id)arg1 rootGroup:(id)arg2 targets:(id)arg3 basedOn:(id)arg4 deferredTargetAdditions:(id)arg5;
 - (id)addFileReferenceForPath:(id)arg1 toGroup:(id)arg2 absolute:(BOOL)arg3;
 - (void)applyPropertiesToReference:(id)arg1;

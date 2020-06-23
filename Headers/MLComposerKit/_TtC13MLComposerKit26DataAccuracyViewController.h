@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *resultStats;
     MISSING_TYPE *averagePrecisions;
     MISSING_TYPE *generalRegressorStats;
+    MISSING_TYPE *recommenderStats;
 }
 
 - (void).cxx_destruct;

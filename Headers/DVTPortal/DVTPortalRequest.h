@@ -15,9 +15,9 @@
     id <DVTPortalSerialization> _payloadSerializer;
 }
 
-@property(readonly, nonatomic) id <DVTPortalSerialization> payloadSerializer; // @synthesize payloadSerializer=_payloadSerializer;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *portalURLPrefix;
+@property(readonly, nonatomic) id <DVTPortalSerialization> payloadSerializer; // @synthesize payloadSerializer=_payloadSerializer;
+@property(readonly, nonatomic) NSURL *portalBaseURL;
 - (id)serializedPayload:(id *)arg1;
 - (id)sendRequestAndReceiveResponse:(id *)arg1;
 - (id)_sendRequestAndReceiveResponseWithPayload:(id)arg1 error:(id *)arg2;

@@ -15,11 +15,11 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)containsItem:(struct NSObject *)arg1;
+- (BOOL)containsItem:(id)arg1;
 - (void)showPopoverInView:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithItems:(id)arg1;
-- (id)initWithItem:(struct NSObject *)arg1;
+- (id)initWithItem:(id)arg1;
 
 @end
 

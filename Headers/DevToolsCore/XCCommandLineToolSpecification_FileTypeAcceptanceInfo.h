@@ -16,10 +16,10 @@
     NSString<DVTMacroExpansion> *_errorString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString<DVTMacroExpansion> *errorString; // @synthesize errorString=_errorString;
 @property(retain) XCPropertyMacroExpression *conditionExpression; // @synthesize conditionExpression=_conditionExpression;
 @property(retain) PBXFileType *fileType; // @synthesize fileType=_fileType;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)shouldProcessInputFileType:(id)arg1 withMacroExpansionScope:(id)arg2 errorString:(id *)arg3;
 - (BOOL)acceptsFileType:(id)arg1;

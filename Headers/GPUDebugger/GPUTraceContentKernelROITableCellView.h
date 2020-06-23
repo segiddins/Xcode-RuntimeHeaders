@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (double)height;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property __weak NSTextField *zView; // @synthesize zView=_zView;
 @property __weak NSTextField *yView; // @synthesize yView=_yView;
 @property __weak NSTextField *xView; // @synthesize xView=_xView;
-- (void).cxx_destruct;
 @property(retain) id <DYPShaderDebuggerThreadKernel> objectValue; // @dynamic objectValue;
 
 @end

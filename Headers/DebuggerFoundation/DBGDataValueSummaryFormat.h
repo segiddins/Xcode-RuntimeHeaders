@@ -20,12 +20,12 @@
 + (id)zombieFormatForType:(id)arg1;
 + (BOOL)writeSummaryFormats:(id)arg1 toPath:(id)arg2;
 + (id)legacySummaryFormatsAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DBGSummaryPart *formatRoot; // @synthesize formatRoot=_formatRoot;
 @property BOOL userDefined; // @synthesize userDefined=_userDefined;
 @property(readonly, copy) DVTFilePath *dylibPath; // @synthesize dylibPath=_dylibPath;
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property(readonly, copy) NSString *formatString; // @synthesize formatString=_formatString;
-- (void).cxx_destruct;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setType:(id)arg1;

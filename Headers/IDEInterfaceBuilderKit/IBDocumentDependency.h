@@ -27,6 +27,7 @@
 + (id)documentDependencyWithExtension:(id)arg1;
 + (id)documentDependencyWithIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL requiresDowngradePrompt; // @synthesize requiresDowngradePrompt=_requiresDowngradePrompt;
 @property(readonly, nonatomic) NSArray *versions; // @synthesize versions=_versions;
 @property(readonly, nonatomic) NSString *dependencyType; // @synthesize dependencyType=_dependencyType;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) long long defaultVersionNumber; // @synthesize defaultVersionNumber=_defaultVersionNumber;
 @property(readonly, nonatomic) NSString *dependencyLabel; // @synthesize dependencyLabel=_dependencyLabel;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)closestVersionLessThanOrEqualToMarketingVersion:(id)arg1;
 - (id)defaultVersion;
 - (id)initWithExtension:(id)arg1;

@@ -21,6 +21,7 @@
 }
 
 + (int)reinitializeKperf:(id *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <DTKPTriggerCounterAllocatorProvider> counterAllocatorProvider; // @synthesize counterAllocatorProvider=_counterAllocatorProvider;
 @property(nonatomic) unsigned int samplers; // @synthesize samplers=_samplers;
 @property(nonatomic) unsigned int actionID; // @synthesize actionID=_actionID;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL collectKernelStacks; // @synthesize collectKernelStacks=_collectKernelStacks;
 @property(nonatomic) BOOL collectUserStacks; // @synthesize collectUserStacks=_collectUserStacks;
 @property(readonly, nonatomic) unsigned int triggerID; // @synthesize triggerID=_triggerID;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) DTKPCPUCounterAllocator *queryCounterAllocator;
 @property(readonly, retain, nonatomic) DTKPCPUCounterAllocator *counterAllocator;
 - (int)_setFilterByTask:(unsigned int)arg1 forAction:(unsigned int)arg2;

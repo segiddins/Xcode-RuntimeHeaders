@@ -22,6 +22,7 @@
     XCSUIBotIntegrationCodeCoveragePopoverBadgesView *_countsView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIBotIntegrationCodeCoveragePopoverBadgesView *countsView; // @synthesize countsView=_countsView;
 @property __weak NSTextField *integrationTextField; // @synthesize integrationTextField=_integrationTextField;
 @property(retain) NSImage *coverageSucceededIcon; // @synthesize coverageSucceededIcon=_coverageSucceededIcon;
@@ -32,7 +33,6 @@
 @property(copy) NSString *codeCoverageSuccessText; // @synthesize codeCoverageSuccessText=_codeCoverageSuccessText;
 @property(copy) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy) NSString *integrationTitle; // @synthesize integrationTitle=_integrationTitle;
-- (void).cxx_destruct;
 - (void)updateBadges;
 - (void)showIntegrationCodeCoverageResults:(id)arg1;
 

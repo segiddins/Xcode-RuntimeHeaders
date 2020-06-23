@@ -24,11 +24,11 @@
 
 + (void)initialize;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL persistLayerTree; // @synthesize persistLayerTree=_persistLayerTree;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSDictionary *inferiorClassMap; // @synthesize inferiorClassMap=_inferiorClassMap;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
 - (id)uniqueViewObjectForIdentifier:(id)arg1 withCreateViewObjectCallback:(CDUnknownBlockType)arg2;
@@ -61,8 +61,6 @@
 - (void)_fetchPropertyValueForPropertyEntry:(id)arg1 onDataValue:(id)arg2 object:(id)arg3 list:(id)arg4 lastIteration:(BOOL)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)populatePropertyList:(id)arg1 forObject:(id)arg2 notify:(CDUnknownBlockType)arg3;
 - (id)_parentWindowForViewObject:(id)arg1;
-- (id)constraintsReferencingViewObject:(id)arg1;
-- (id)constraintsAffectingViewObject:(id)arg1;
 - (id)customNavigableIconForObject:(id)arg1 withClassHierarchy:(id)arg2;
 @property(readonly) NSString *classNameForDefaultViewIcon;
 - (id)_primaryWindowFromWindows:(id)arg1 keyWindowPointer:(id)arg2;

@@ -17,12 +17,12 @@
     NSView *_actionArrowImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *actionArrowImageView; // @synthesize actionArrowImageView=_actionArrowImageView;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 @property(retain) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(readonly) IDEIntentBuilderTokenTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
 @property(readonly) IDEIntentBuilderTokenTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (struct CGRect)_containerViewFrameThatFitsWidth:(double)arg1;
 - (double)_containerViewWidthThatFitsWidth:(double)arg1;
 - (double)_containerViewLeadingOffset;

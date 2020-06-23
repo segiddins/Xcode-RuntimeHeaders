@@ -24,12 +24,12 @@
     NSDictionary *_defaultAttributes;
 }
 
+- (void).cxx_destruct;
 @property BOOL needsUpdateTextLayer; // @synthesize needsUpdateTextLayer=_needsUpdateTextLayer;
 @property(retain) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
 @property(nonatomic) BOOL isLightBackground; // @synthesize isLightBackground=_isLightBackground;
 @property(copy, nonatomic) NSString *textAlignmentMode; // @synthesize textAlignmentMode=_textAlignmentMode;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;

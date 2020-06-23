@@ -25,6 +25,11 @@
 + (id)ide_sourceControlRevision;
 + (id)ide_sourceControlTag;
 + (id)ide_sourceControlMerged;
++ (id)ide_sourceControlPullRequestFolder;
++ (id)ide_sourceControlPullRequestCommits;
++ (id)ide_sourceControlPullRequest;
++ (id)ide_sourceControlPullRequestChanges;
++ (id)ide_sourceControlPullRequestActivity;
 + (id)ide_sourceControlBranch;
 + (id)ide_sourceControlWorkingCopy;
 + (id)ide_sourceControlRepositoryStarredSelected;

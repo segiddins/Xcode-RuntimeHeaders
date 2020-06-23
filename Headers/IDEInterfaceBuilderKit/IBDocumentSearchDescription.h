@@ -18,9 +18,9 @@
 }
 
 + (id)emptyDocumentSearchDescription;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy, nonatomic) NSArray *memberDescriptions; // @synthesize memberDescriptions=_memberDescriptions;
-- (void).cxx_destruct;
 - (long long)compareMemberID:(id)arg1 toMemberID:(id)arg2;
 - (id)memberDescriptionBeforeMemberID:(id)arg1;
 - (id)memberDescriptionAfterMemberID:(id)arg1;

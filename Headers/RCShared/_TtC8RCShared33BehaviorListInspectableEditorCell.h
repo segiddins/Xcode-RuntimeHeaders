@@ -15,10 +15,14 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *backgroundEffectView;
     MISSING_TYPE *colorButton;
     MISSING_TYPE *warningButton;
+    MISSING_TYPE *tapGesture;
     MISSING_TYPE *_actionTarget;
+    MISSING_TYPE *renameDelay;
 }
 
 - (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)renameGesture:(id)arg1;
 @property(nonatomic) BOOL selected;
 - (BOOL)isSelected;
 - (id)initWithCoder:(id)arg1;

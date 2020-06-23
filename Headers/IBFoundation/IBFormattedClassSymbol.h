@@ -19,10 +19,10 @@
 + (id)formattedClassSymbolWithUnformattedName:(id)arg1 namespaceProvider:(id)arg2;
 + (id)formattedClassSymbolWithName:(id)arg1 inNamespace:(id)arg2 withNamespaceProvider:(id)arg3;
 + (id)formattedClassSymbolWithUnformattedName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *namespaceProvider; // @synthesize namespaceProvider=_namespaceProvider;
 @property(readonly) NSString *classNamespace; // @synthesize classNamespace=_classNamespace;
 @property(readonly) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)description;
 - (id)formattedClassSymbolWithNamespaceProvider:(id)arg1;
 - (id)formattedClassSymbolWithNamespace:(id)arg1;

@@ -35,10 +35,10 @@
 + (id)imageMediaTypes;
 + (id)resourceManagerForSKWorkspace:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(getter=isDirectoryCacheBuilt) BOOL directoryCacheBuilt; // @synthesize directoryCacheBuilt=_directoryCacheBuilt;
 @property(getter=isBuildingCache) BOOL buildingCache; // @synthesize buildingCache=_buildingCache;
 @property(readonly, nonatomic) SKWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
 @property(readonly, nonatomic) SKWorkspaceBundle *bundle; // @synthesize bundle=_bundle;
 - (long long)scaleFactorForResource:(id)arg1;
@@ -48,9 +48,9 @@
 - (id)resourceNamed:(id)arg1 ofMediaType:(id)arg2;
 - (id)_searchDirectoryForResource:(id)arg1 withExtension:(id)arg2;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2;
-- (struct NSObject *)registerSoundResourceObserver:(CDUnknownBlockType)arg1;
+- (id)registerSoundResourceObserver:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *currentSoundNames;
-- (struct NSObject *)registerImageResourceObserver:(CDUnknownBlockType)arg1;
+- (id)registerImageResourceObserver:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *currentImageNames;
 - (void)_checkFilePathRequiresTextureCacheReload:(id)arg1;
 - (void)fileSystemEventStream:(id)arg1 notedChangeAtPath:(id)arg2 scanRecursively:(BOOL)arg3;

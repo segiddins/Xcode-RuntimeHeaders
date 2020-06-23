@@ -14,9 +14,9 @@
     NSProgressIndicator *_loadingProgress;
 }
 
+- (void).cxx_destruct;
 @property __weak NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property __weak NSButton *quickLookButton; // @synthesize quickLookButton=_quickLookButton;
-- (void).cxx_destruct;
 - (void)stopLoading;
 - (void)startLoading;
 - (void)setBackgroundStyle:(long long)arg1;

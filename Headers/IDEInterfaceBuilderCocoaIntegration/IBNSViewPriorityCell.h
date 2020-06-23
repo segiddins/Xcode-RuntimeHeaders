@@ -18,12 +18,12 @@
     NSNumber *_trackingRectTag;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *trackingRectTag; // @synthesize trackingRectTag=_trackingRectTag;
 @property(nonatomic) id <IBNSViewPriorityCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(nonatomic) NSTextField *numberField; // @synthesize numberField=_numberField;
 @property(nonatomic) IBNSViewPrioritySlider *slider; // @synthesize slider=_slider;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;

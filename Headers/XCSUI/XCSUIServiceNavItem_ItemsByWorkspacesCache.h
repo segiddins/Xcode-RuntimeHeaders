@@ -16,9 +16,9 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *botIdentifiersNotMatching; // @synthesize botIdentifiersNotMatching=_botIdentifiersNotMatching;
 @property(copy, nonatomic) NSArray *botIdentifiersMatching; // @synthesize botIdentifiersMatching=_botIdentifiersMatching;
-- (void).cxx_destruct;
 - (void)clear;
 - (id)cacheForIdentifier:(id)arg1;
 - (void)updateCache:(id)arg1 forIdentifier:(id)arg2;

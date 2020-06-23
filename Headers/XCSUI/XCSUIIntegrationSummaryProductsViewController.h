@@ -17,10 +17,10 @@
     NSTextField *_totalFileSizeField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *totalFileSizeField; // @synthesize totalFileSizeField=_totalFileSizeField;
 @property __weak NSTextField *numberOfFilesField; // @synthesize numberOfFilesField=_numberOfFilesField;
 @property __weak NSView *assetContainerView; // @synthesize assetContainerView=_assetContainerView;
-- (void).cxx_destruct;
 - (void)repopulateAssets;
 - (id)createAssetViewWithAsset:(id)arg1 type:(unsigned long long)arg2;
 @property(retain, nonatomic) XCSIntegration *integration;

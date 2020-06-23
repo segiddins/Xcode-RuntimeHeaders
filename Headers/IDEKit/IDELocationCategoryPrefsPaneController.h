@@ -17,10 +17,10 @@
 
 + (id)cachedExtensionsByIdentifier;
 + (id)cachedExtensions;
+- (void).cxx_destruct;
 @property __weak DVTTabChooserView *tabChooserView; // @synthesize tabChooserView=_tabChooserView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)tabView:(id)arg1 didSelectTabViewItem:(id)arg2;
 - (void)_handleTabChanged;

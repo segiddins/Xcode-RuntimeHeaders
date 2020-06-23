@@ -21,6 +21,7 @@
 }
 
 + (id)queryResultWithSymbolDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly, copy, nonatomic) NSURL *documentationURL; // @synthesize documentationURL=_documentationURL;
 @property(readonly, copy, nonatomic) NSString *infoPlistType; // @synthesize infoPlistType=_infoPlistType;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *declaration; // @synthesize declaration=_declaration;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSDictionary *symbolDictionary; // @synthesize symbolDictionary=_symbolDictionary;
-- (void).cxx_destruct;
 - (void)reportToMessageTracer;
 @property(readonly, copy, nonatomic) NSString *abstract;
 @property(readonly, copy, nonatomic) NSURL *declaredInURL;

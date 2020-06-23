@@ -14,8 +14,8 @@
     IBConnectionInterfaceStyle *_connectionInterfaceStyle;
 }
 
-@property(readonly) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (void).cxx_destruct;
+@property(readonly) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (void)disclosureClicked:(id)arg1;
 - (void)layoutBottomUp;
 - (double)preferredHeight;

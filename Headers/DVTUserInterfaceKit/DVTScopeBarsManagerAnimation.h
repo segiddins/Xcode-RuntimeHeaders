@@ -16,10 +16,10 @@
     NSView *_baseView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL inAnimationProgress; // @synthesize inAnimationProgress=_inAnimationProgress;
 @property(retain, nonatomic) NSView *baseView; // @synthesize baseView=_baseView;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)setCurrentProgress:(float)arg1;
 
 @end

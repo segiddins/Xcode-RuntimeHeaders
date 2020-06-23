@@ -13,8 +13,8 @@
     IBDocument *_document;
 }
 
-@property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
 - (void)redo;
 - (void)undo;
 - (void)primitiveInvalidate;

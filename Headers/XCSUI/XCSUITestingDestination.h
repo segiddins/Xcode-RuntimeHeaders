@@ -15,9 +15,9 @@
 }
 
 + (id)destinationWithType:(unsigned long long)arg1 deviceIdentifiers:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *deviceIdentifiers; // @synthesize deviceIdentifiers=_deviceIdentifiers;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

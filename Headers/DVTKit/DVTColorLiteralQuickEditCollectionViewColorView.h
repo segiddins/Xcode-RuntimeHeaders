@@ -13,8 +13,8 @@
     NSColor *_color;
 }
 
-@property(retain) NSColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain) NSColor *color; // @synthesize color=_color;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

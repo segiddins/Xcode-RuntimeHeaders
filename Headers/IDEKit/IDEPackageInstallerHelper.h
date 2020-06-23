@@ -16,8 +16,8 @@
 }
 
 + (void)initialize;
-@property(readonly) BOOL backgroundDownloadInProgress; // @synthesize backgroundDownloadInProgress=_backgroundDownloadInProgress;
 - (void).cxx_destruct;
+@property(readonly) BOOL backgroundDownloadInProgress; // @synthesize backgroundDownloadInProgress=_backgroundDownloadInProgress;
 - (id)_genericErrorMessage;
 - (id)_badPackageErrorMessage;
 - (id)_notEnoughSpaceErrorMessage;

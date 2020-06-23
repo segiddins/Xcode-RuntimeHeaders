@@ -13,8 +13,8 @@
     NSMutableDictionary *_selection;
 }
 
-@property(readonly) NSDictionary *selection; // @synthesize selection=_selection;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *selection; // @synthesize selection=_selection;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

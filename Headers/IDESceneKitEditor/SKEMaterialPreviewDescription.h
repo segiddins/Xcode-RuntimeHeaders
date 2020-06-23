@@ -14,9 +14,9 @@
     SCNGeometry *_geometry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCNGeometry *geometry; // @synthesize geometry=_geometry;
 @property(retain, nonatomic) SCNScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,10 +17,10 @@
     NSString *_comment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)stringsFileRepresentation;
 - (long long)compare:(id)arg1;
 - (BOOL)isEqualToLocalizationStringsFileElement:(id)arg1;

@@ -26,6 +26,7 @@
 + (BOOL)isLabelAppleInternal:(const char *)arg1;
 + (id)capturableObjectType;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isInternalQueue; // @synthesize isInternalQueue=_isInternalQueue;
 @property(nonatomic) BOOL isOpenGLQueue; // @synthesize isOpenGLQueue=_isOpenGLQueue;
 @property(nonatomic) BOOL canBeCaptured; // @synthesize canBeCaptured=_canBeCaptured;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) unsigned long long toolsQueueAddress; // @synthesize toolsQueueAddress=_toolsQueueAddress;
 @property(readonly, nonatomic) unsigned long long queueAddress; // @synthesize queueAddress=_queueAddress;
 @property(readonly, nonatomic) unsigned long long deviceAddress; // @synthesize deviceAddress=_deviceAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

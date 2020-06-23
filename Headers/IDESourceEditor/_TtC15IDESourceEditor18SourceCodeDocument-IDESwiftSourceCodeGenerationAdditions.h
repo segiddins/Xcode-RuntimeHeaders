@@ -20,5 +20,6 @@
 - (id)_primitiveAddSwiftSourceCode:(id)arg1 toClassItem:(id)arg2 withOptions:(id)arg3 insertAdditionalNewlineWhenInsertingWithAfterBeforeHint:(BOOL)arg4 insertAtEndWhenInsertingWithoutHint:(BOOL)arg5 error:(id *)arg6;
 - (id)_insertSwiftSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 error:(id *)arg4;
 - (id)_insertSwiftSourceCode:(id)arg1 inContainingSourceLandmarkItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 firstPossibleItemToInsertBefore:(id)arg4 error:(id *)arg5;
+- (unsigned long long)_insertionLineForInsertingIntoContainerItem:(id)arg1 firstPossibleItemToInsertBefore:(id)arg2 suggestedLineNumber:(long long)arg3;
 @end
 

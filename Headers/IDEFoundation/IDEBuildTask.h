@@ -23,6 +23,7 @@
 + (id)defaultProperties;
 + (id)buildTaskWithIdentifier:(id)arg1 restorePersistedBuildResults:(BOOL)arg2 properties:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak id <IDEBuildTaskCallbacks> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 @property BOOL dontActuallyRun; // @synthesize dontActuallyRun=_dontActuallyRun;
 @property(nonatomic) int exitCode; // @synthesize exitCode=_exitCode;
@@ -30,7 +31,6 @@
 @property(readonly) BOOL restorePersistedBuildResults; // @synthesize restorePersistedBuildResults=_restorePersistedBuildResults;
 @property(readonly) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)longDescription;
 - (id)description;
 - (void)main;

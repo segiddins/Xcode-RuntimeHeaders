@@ -21,11 +21,11 @@
     NSArray *_attributeDescriptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions; // @synthesize attributeDescriptions=_attributeDescriptions;
 @property(readonly, copy, nonatomic) NSString *contextLabel; // @synthesize contextLabel=_contextLabel;
 @property(readonly, copy, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, copy, nonatomic) IBMemberID *memberID; // @synthesize memberID=_memberID;
-- (void).cxx_destruct;
 - (long long)compareAttributeSearchLocation:(id)arg1 toLocation:(id)arg2;
 - (id)attributeDescriptionForSearchLocation:(id)arg1;
 - (unsigned long long)indexOfAttributeSearchLocation:(id)arg1;

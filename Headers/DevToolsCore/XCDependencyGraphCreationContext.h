@@ -32,10 +32,10 @@
     NSMutableSet *_outputNodesOfGeneratedHeaders;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasReportedEmptyBundleIdentifierWithAssetPacks; // @synthesize hasReportedEmptyBundleIdentifierWithAssetPacks=_hasReportedEmptyBundleIdentifierWithAssetPacks;
 @property(nonatomic) BOOL needsVFSConstruction; // @synthesize needsVFSConstruction=_needsVFSConstruction;
 @property(readonly, nonatomic) NSMutableSet *outputNodesOfGeneratedHeaders; // @synthesize outputNodesOfGeneratedHeaders=_outputNodesOfGeneratedHeaders;
-- (void).cxx_destruct;
 - (void)debugPrintWellKnownDependencyNodes;
 - (id)dependencyGraphCreationMetric;
 - (id)dependencyGraphCreationTimingSection;

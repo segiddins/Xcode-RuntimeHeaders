@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     OSLogEventStreamPosition *_currentPosition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OSLogEventStreamPosition *currentPosition; // @synthesize currentPosition=_currentPosition;
 @property(nonatomic) double windowInSeconds; // @synthesize windowInSeconds=_windowInSeconds;
-- (void).cxx_destruct;
 - (void)prepareAgent:(id)arg1 loader:(id)arg2;
 - (void)holdAgent:(id)arg1 loader:(id)arg2;
 

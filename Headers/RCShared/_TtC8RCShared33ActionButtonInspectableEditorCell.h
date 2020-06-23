@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (void)buttonPressed:(id)arg1;
 
 @end
 

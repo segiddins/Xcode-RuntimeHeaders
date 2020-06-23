@@ -13,7 +13,10 @@
     MISSING_TYPE *hostViewController;
     MISSING_TYPE *topicSchemeHandler;
     MISSING_TYPE *imageSchemeHandler;
+    MISSING_TYPE *snapshotView;
     MISSING_TYPE *webView;
+    MISSING_TYPE *communicationBridge;
+    MISSING_TYPE *_fontAndColorThemeChangedObserver;
     MISSING_TYPE *baseURL;
     MISSING_TYPE *_webViewURLObservation;
     MISSING_TYPE *_inFlightRequest;
@@ -30,6 +33,7 @@
 @property(nonatomic, readonly) BOOL isDisplayingContent;
 - (void)viewWillLayout;
 - (void)viewDidLoad;
+- (void)primitiveInvalidate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, retain) WKWebView *webView; // @synthesize webView;

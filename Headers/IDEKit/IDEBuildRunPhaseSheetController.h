@@ -29,6 +29,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *filterFieldHeightConstraint; // @synthesize filterFieldHeightConstraint=_filterFieldHeightConstraint;
 @property __weak NSLayoutConstraint *controlBarHeightConstraint; // @synthesize controlBarHeightConstraint=_controlBarHeightConstraint;
 @property __weak IDEBuildRunPhaseOptionsView *buildOptionsView; // @synthesize buildOptionsView=_buildOptionsView;
@@ -37,7 +38,6 @@
 @property(retain) IDEBuildSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-- (void).cxx_destruct;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (BOOL)outlineView:(id)arg1 shouldEditTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;

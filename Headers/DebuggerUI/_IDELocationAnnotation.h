@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCoordinate;
-@property(retain) IDELocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
+@property(retain) IDELocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
 
 // Remaining properties

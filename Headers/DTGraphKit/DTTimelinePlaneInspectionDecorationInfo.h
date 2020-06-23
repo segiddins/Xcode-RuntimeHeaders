@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _yPosition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double yPosition; // @synthesize yPosition=_yPosition;
 @property(readonly, nonatomic) DTTimelineInspectionDecoration *inspectionDecoration; // @synthesize inspectionDecoration=_inspectionDecoration;
 @property(readonly, nonatomic) DTTimelinePlane *plane; // @synthesize plane=_plane;
-- (void).cxx_destruct;
 - (id)initWithPlane:(id)arg1 inspectionDecoration:(id)arg2 yPosition:(double)arg3;
 
 @end

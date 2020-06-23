@@ -19,8 +19,8 @@
 
 + (id)assetNamesInFileAtPath:(id)arg1;
 + (void)initialize;
-@property(readonly, nonatomic) __weak SKWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SKWorkspace *workspace; // @synthesize workspace=_workspace;
 - (id)allAssetNamesInWorkspaceInDocumentType:(id)arg1;
 - (id)_urlForAssetNamed:(id)arg1 inDocumentType:(id)arg2;
 - (void)_autoreleaseEditorDocument:(id)arg1;

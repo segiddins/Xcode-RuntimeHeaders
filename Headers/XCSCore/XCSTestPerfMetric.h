@@ -23,9 +23,10 @@
     NSNumber *baseline;
     NSNumber *maxPercentRegression;
     NSNumber *maxPercentRelativeStandardDeviation;
-    struct NSArray *iterations;
+    NSArray *iterations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *iterations; // @synthesize iterations;
 @property(readonly, nonatomic) NSNumber *maxPercentRelativeStandardDeviation; // @synthesize maxPercentRelativeStandardDeviation;
 @property(readonly, nonatomic) NSNumber *maxPercentRegression; // @synthesize maxPercentRegression;
@@ -40,8 +41,7 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name;
 @property(nonatomic) __weak XCSTest *test; // @synthesize test;
-- (void).cxx_destruct;
-- (BOOL)_validateWithName:(id)arg1 identifier:(id)arg2 type:(unsigned long long)arg3 unit:(id)arg4 passed:(BOOL)arg5 avg:(double)arg6 min:(double)arg7 max:(double)arg8 rsd:(double)arg9 baseline:(id)arg10 maxPercentRegression:(id)arg11 maxPercentRelativeStandardDeviation:(id)arg12 iterations:(struct NSArray *)arg13 errors:(id *)arg14;
+- (BOOL)_validateWithName:(id)arg1 identifier:(id)arg2 type:(unsigned long long)arg3 unit:(id)arg4 passed:(BOOL)arg5 avg:(double)arg6 min:(double)arg7 max:(double)arg8 rsd:(double)arg9 baseline:(id)arg10 maxPercentRegression:(id)arg11 maxPercentRelativeStandardDeviation:(id)arg12 iterations:(id)arg13 errors:(id *)arg14;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)saveRepresentation;
 - (id)description;

@@ -13,8 +13,8 @@
     NSString *_count;
 }
 
-@property(copy, nonatomic) NSString *count; // @synthesize count=_count;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *count; // @synthesize count=_count;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

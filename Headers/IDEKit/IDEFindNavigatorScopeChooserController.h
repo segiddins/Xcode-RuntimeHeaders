@@ -6,17 +6,17 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/IDEAbstractFindNavigatorOutlineViewDelegate-Protocol.h>
 #import <IDEKit/IDEFindNavigatorQueryParametersPresentedController-Protocol.h>
 #import <IDEKit/IDEFindNavigatorRolloverRowViewDelegate-Protocol.h>
 #import <IDEKit/IDEFindNavigatorScopeEditorDelegate-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
-#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 #import <IDEKit/NSPopoverDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, IDEBatchFindNamedScope, IDEFindNavigatorAbstractScopeOutlineItem, IDEFindNavigatorScopeEditor, IDENavigableItemFilter, NSArray, NSDictionary, NSOutlineView, NSPopover, NSString;
 @protocol IDEFindNavigatorScopeChooserControllerDelegate;
 
-@interface IDEFindNavigatorScopeChooserController : IDEViewController <NSOutlineViewDelegate, NSOutlineViewDataSource, NSPopoverDelegate, IDEFindNavigatorScopeEditorDelegate, IDEFindNavigatorRolloverRowViewDelegate, IDEFindNavigatorQueryParametersPresentedController>
+@interface IDEFindNavigatorScopeChooserController : IDEViewController <IDEAbstractFindNavigatorOutlineViewDelegate, NSOutlineViewDataSource, NSPopoverDelegate, IDEFindNavigatorScopeEditorDelegate, IDEFindNavigatorRolloverRowViewDelegate, IDEFindNavigatorQueryParametersPresentedController>
 {
     NSOutlineView *_scopeChooserOutlineView;
     IDEFindNavigatorAbstractScopeOutlineItem *_unfilteredRootItem;
@@ -34,9 +34,9 @@
     IDEBatchFindNamedScope *_namedScopeValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEBatchFindNamedScope *namedScopeValue; // @synthesize namedScopeValue=_namedScopeValue;
 @property(retain) id <IDEFindNavigatorScopeChooserControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)findNavigatorRolloverRowView:(id)arg1 updateMouseInside:(BOOL)arg2;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (void)pullNamedScopeFromOutline;
@@ -53,6 +53,7 @@
 - (void)reloadOutline:(long long)arg1;
 - (void)updateFilterText:(id)arg1;
 - (void)expandItemAfterFiltering:(id)arg1;
+- (void)outlineView:(id)arg1 batchSelectionDidChangeEventsDuring:(CDUnknownBlockType)arg2;
 - (BOOL)outlineView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)filterItem:(id)arg1 filter:(id)arg2 ancestorPassedFilter:(BOOL)arg3 descendantPassedFilter:(char *)arg4;
 - (id)generateWorkspaceItem;

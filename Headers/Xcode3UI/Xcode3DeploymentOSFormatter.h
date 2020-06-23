@@ -13,8 +13,8 @@
     NSString *_defaultValue;
 }
 
-@property(copy) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 - (void).cxx_destruct;
+@property(copy) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 - (id)editingStringForObjectValue:(id)arg1;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;

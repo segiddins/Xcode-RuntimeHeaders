@@ -20,8 +20,8 @@
     DVTTestDeviceClonePool *_clonePool;
 }
 
-@property(readonly) DVTTestDeviceClonePool *clonePool; // @synthesize clonePool=_clonePool;
 - (void).cxx_destruct;
+@property(readonly) DVTTestDeviceClonePool *clonePool; // @synthesize clonePool=_clonePool;
 - (void)clonePool:(id)arg1 didUpdate:(id)arg2;
 - (void)_stopObservingDevices:(id)arg1;
 - (void)_observeDevice:(id)arg1;

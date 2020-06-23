@@ -15,9 +15,9 @@
     NSDictionary *_statusCellsByCategoryName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *statusCategoryNames; // @synthesize statusCategoryNames=_statusCategoryNames;
 @property BOOL showsStatusItems; // @synthesize showsStatusItems=_showsStatusItems;
-- (void).cxx_destruct;
 - (void)selectWithFrame:(struct CGRect)arg1 inView:(id)arg2 editor:(id)arg3 delegate:(id)arg4 start:(long long)arg5 length:(long long)arg6;
 - (void)editWithFrame:(struct CGRect)arg1 inView:(id)arg2 editor:(id)arg3 delegate:(id)arg4 event:(id)arg5;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;

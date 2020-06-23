@@ -24,12 +24,12 @@
 
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *customizationIdentifier; // @synthesize customizationIdentifier=_customizationIdentifier;
 @property(retain) IBNSTouchBarItem *principalItem; // @synthesize principalItem=_principalItem;
 @property(retain, nonatomic) IBHardwarePreviewConfiguration *ibHardwarePreviewConfiguration; // @synthesize ibHardwarePreviewConfiguration=_ibHardwarePreviewConfiguration;
 @property(nonatomic) BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(retain, nonatomic) NSArray *touchBarItems; // @synthesize touchBarItems=_touchBarItems;
-- (void).cxx_destruct;
 - (id)_nestingTouchBar;
 - (id)rootNestingTouchBar;
 - (BOOL)isNestedTouchBar;

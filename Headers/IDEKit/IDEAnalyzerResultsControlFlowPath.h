@@ -16,9 +16,9 @@
     IDEAnalyzerResultsVisualization *_visualization;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEAnalyzerResultsVisualization *visualization; // @synthesize visualization=_visualization;
 @property(readonly) IDEActivityLogAnalyzerControlFlowStepEdge *edge; // @synthesize edge=_edge;
-- (void).cxx_destruct;
 - (id)drawableInRect:(struct CGRect)arg1 withUIHint:(int)arg2;
 - (void)drawInRect:(struct CGRect)arg1 withUIHint:(int)arg2;
 - (id)outgoingControlFlowPathsFromEndRange;

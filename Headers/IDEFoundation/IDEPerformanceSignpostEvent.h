@@ -20,10 +20,10 @@
 + (id)firstEventOfName:(id)arg1 fromEvents:(id)arg2;
 + (id)eventsLoadedFromPath:(id)arg1 error:(id *)arg2;
 + (BOOL)saveEvents:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *serializedRepresentation;
 - (id)initFromSerialized:(id)arg1;
 - (id)initWithName:(id)arg1 userInfo:(id)arg2;

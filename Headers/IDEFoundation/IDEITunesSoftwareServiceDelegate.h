@@ -16,11 +16,11 @@
     CDUnknownBlockType _uploadDidCompleteCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType uploadDidCompleteCallback; // @synthesize uploadDidCompleteCallback=_uploadDidCompleteCallback;
 @property(copy) CDUnknownBlockType updateUploadMessageCallback; // @synthesize updateUploadMessageCallback=_updateUploadMessageCallback;
 @property(copy) CDUnknownBlockType updateUploadPercentageCallback; // @synthesize updateUploadPercentageCallback=_updateUploadPercentageCallback;
 @property(copy) CDUnknownBlockType uploadWillBeginCallback; // @synthesize uploadWillBeginCallback=_uploadWillBeginCallback;
-- (void).cxx_destruct;
 - (void)uploadDidComplete;
 - (void)updateUploadMessage:(id)arg1;
 - (void)updateUploadPercentage:(double)arg1;

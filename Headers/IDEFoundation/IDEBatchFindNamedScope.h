@@ -17,6 +17,8 @@
 
 + (id)plistDecoder;
 + (id)propertyListIdentifier;
++ (id)titleForNamedScope:(id)arg1 inWorkspace:(id)arg2 isDefaultTopLevelScope:(char *)arg3;
++ (id)defaultScopeForWorkspace:(id)arg1;
 + (id)titleForNamedScope:(id)arg1 inWorkspace:(id)arg2;
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 - (id)description;

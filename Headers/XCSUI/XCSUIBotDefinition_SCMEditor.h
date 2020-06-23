@@ -46,6 +46,7 @@
     XCSListBranchesResult *_listBranchesResult;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSListBranchesResult *listBranchesResult; // @synthesize listBranchesResult=_listBranchesResult;
 @property(retain) IDESourceControlCredentialAbstractWindowController *credentialSheetController; // @synthesize credentialSheetController=_credentialSheetController;
 @property(copy, nonatomic) NSArray *additionalValidationRepositories; // @synthesize additionalValidationRepositories=_additionalValidationRepositories;
@@ -74,7 +75,6 @@
 @property(readonly) BOOL skippingPreflight; // @synthesize skippingPreflight=_skippingPreflight;
 @property __weak id <XCSUIBotDefinition_SCMEditor_AssistantCallback> assistantCallback; // @synthesize assistantCallback=_assistantCallback;
 @property(retain) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

@@ -16,9 +16,9 @@
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
 + (id)changeSetForFileAtPath:(id)arg1 request:(id)arg2 inWorkspaceDocument:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly) IBRenameRefactoringRequest *request; // @synthesize request=_request;
 @property(readonly) __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (BOOL)commitChangesWithError:(id *)arg1;
 - (BOOL)commitChangesToDocument:(id)arg1 error:(id *)arg2;
 - (id)initWithFilePath:(id)arg1 workspaceDocument:(id)arg2 request:(id)arg3;

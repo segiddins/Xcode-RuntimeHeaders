@@ -24,13 +24,14 @@
 }
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showStatusView; // @synthesize showStatusView=_showStatusView;
 @property(nonatomic) BOOL mouseOverEnclosingRow; // @synthesize mouseOverEnclosingRow=_mouseOverEnclosingRow;
 @property(nonatomic) BOOL testEnabled; // @synthesize testEnabled=_testEnabled;
 @property(nonatomic) BOOL showProgressIndicator; // @synthesize showProgressIndicator=_showProgressIndicator;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasDisplayableStatus;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureProgressIndicatorUsingBackgroundStyle:(long long)arg1;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)setState:(unsigned long long)arg1 pendingRun:(BOOL)arg2;
 @property(nonatomic) BOOL enableRunIcon;

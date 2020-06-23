@@ -24,6 +24,7 @@
     XCSUIStatusBadgeView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIStatusBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property long long countOfResolvedIssues; // @synthesize countOfResolvedIssues=_countOfResolvedIssues;
 @property long long countOfNewIssues; // @synthesize countOfNewIssues=_countOfNewIssues;
@@ -36,7 +37,6 @@
 @property double preferredFontSize; // @synthesize preferredFontSize=_preferredFontSize;
 @property(copy) NSImage *badgeIcon; // @synthesize badgeIcon=_badgeIcon;
 @property(copy) NSString *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
-- (void).cxx_destruct;
 
 @end
 

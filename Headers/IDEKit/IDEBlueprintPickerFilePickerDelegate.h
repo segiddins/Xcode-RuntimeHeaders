@@ -15,8 +15,8 @@
     CDUnknownBlockType _enabledBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType enabledBlock; // @synthesize enabledBlock=_enabledBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType enabledBlock; // @synthesize enabledBlock=_enabledBlock;
 - (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
 
 // Remaining properties

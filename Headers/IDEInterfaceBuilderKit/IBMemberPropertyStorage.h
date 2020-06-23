@@ -23,8 +23,8 @@
 
 + (SEL)selectorForLazilyBoundSetter:(CDUnknownFunctionPointerType)arg1 withIdentifier:(id)arg2 forConfiguration:(id)arg3;
 + (void)enumerateValuesForAttributeKeyPath:(id)arg1 withUnarchiver:(id)arg2 during:(CDUnknownBlockType)arg3;
-@property(retain, nonatomic) NSObject *documentObject; // @synthesize documentObject=_documentObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject *documentObject; // @synthesize documentObject=_documentObject;
 - (void)enumerateObservers:(CDUnknownBlockType)arg1;
 - (id)addPropertyStorageObserver:(id)arg1;
 - (void)unarchivePropertyValuesWithUnarchiver:(id)arg1;

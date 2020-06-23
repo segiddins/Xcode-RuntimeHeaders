@@ -14,9 +14,9 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isProjectChange) BOOL projectChange; // @synthesize projectChange=_projectChange;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMessage:(id)arg1 projectChange:(BOOL)arg2;
 

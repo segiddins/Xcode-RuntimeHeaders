@@ -20,11 +20,11 @@
     NSArray *_noteItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *noteItems; // @synthesize noteItems=_noteItems;
 @property(nonatomic) long long currentNoteIndex; // @synthesize currentNoteIndex=_currentNoteIndex;
 @property(retain, nonatomic) id <IDENoteAnnotationExplorableItem> exploreItem; // @synthesize exploreItem=_exploreItem;
 @property(readonly) IDEEditor<IDELocalAnnotationHostingEditor> *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (BOOL)shouldMoveCursorForAnnotation:(id)arg1;
 - (void)willBeDismissed;
 - (void)setCurrentNoteItem:(id)arg1;

@@ -17,11 +17,11 @@
     NSError *_launchError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *launchError; // @synthesize launchError=_launchError;
 @property(retain, nonatomic) NSDictionary *capturedEnvironmentVariables; // @synthesize capturedEnvironmentVariables=_capturedEnvironmentVariables;
 @property(retain, nonatomic) IBCocoaTouchImageCatalogToolProxy<IBCocoaTouchImageCatalogTool> *toolProxy; // @synthesize toolProxy=_toolProxy;
 @property(retain, nonatomic) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
-- (void).cxx_destruct;
 
 @end
 

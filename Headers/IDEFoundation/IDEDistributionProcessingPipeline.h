@@ -19,11 +19,11 @@
 + (id)pipelineWithInAppPurchaseContext:(id)arg1;
 + (id)pipelineWithAppContext:(id)arg1;
 + (id)pipelineWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain) IDEDistributionProcessingPipelineContext *context; // @synthesize context=_context;
 @property(retain) IDEDistributionProcessingStep *currentStep; // @synthesize currentStep=_currentStep;
 @property(readonly) NSArray *pipelineSteps; // @synthesize pipelineSteps=_pipelineSteps;
-- (void).cxx_destruct;
 - (void)_reportDistributionUsageWithElapsedTime:(double)arg1;
 - (_Bool)process:(id *)arg1;
 - (void)cancel;

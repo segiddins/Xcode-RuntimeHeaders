@@ -29,12 +29,14 @@
     MISSING_TYPE *provisioningProfiles;
     MISSING_TYPE *appStoreConnectAccountUsername;
     MISSING_TYPE *testDevices;
+    MISSING_TYPE *buildNumber;
 }
 
 + (id)loadFromURL:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithTeamID:(id)arg1 method:(id)arg2 destination:(id)arg3 compileBitcode:(BOOL)arg4 uploadBitcode:(id)arg5 generateAppStoreInformation:(BOOL)arg6 manifest:(id)arg7 onDemandResourcesAssetPacksBaseURL:(id)arg8 embedOnDemandResourcesAssetPacksInBundle:(BOOL)arg9 stripSwiftSymbols:(BOOL)arg10 uploadSymbols:(BOOL)arg11 thinning:(id)arg12 iCloudContainerEnvironment:(id)arg13 signingStyle:(id)arg14 signingCertificate:(id)arg15 installerSigningCertificate:(id)arg16 provisioningProfiles:(id)arg17 appStoreConnectAccountUsername:(id)arg18 testDevices:(id)arg19;
+- (id)initWithTeamID:(id)arg1 method:(id)arg2 destination:(id)arg3 compileBitcode:(BOOL)arg4 uploadBitcode:(id)arg5 generateAppStoreInformation:(BOOL)arg6 manifest:(id)arg7 onDemandResourcesAssetPacksBaseURL:(id)arg8 embedOnDemandResourcesAssetPacksInBundle:(BOOL)arg9 stripSwiftSymbols:(BOOL)arg10 uploadSymbols:(BOOL)arg11 thinning:(id)arg12 iCloudContainerEnvironment:(id)arg13 signingStyle:(id)arg14 signingCertificate:(id)arg15 installerSigningCertificate:(id)arg16 provisioningProfiles:(id)arg17 appStoreConnectAccountUsername:(id)arg18 testDevices:(id)arg19 buildNumber:(id)arg20;
+@property(nonatomic, readonly) NSString *buildNumber;
 @property(nonatomic, readonly) NSArray *testDevices;
 @property(nonatomic, readonly) NSString *appStoreConnectAccountUsername;
 @property(nonatomic, readonly) _TtC13IDEFoundation48IDEDistributionExportOptionsProvisioningProfiles *provisioningProfiles; // @synthesize provisioningProfiles;

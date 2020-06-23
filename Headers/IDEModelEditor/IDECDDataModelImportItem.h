@@ -15,9 +15,9 @@
     BOOL _shouldImport;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldImport; // @synthesize shouldImport=_shouldImport;
 @property(readonly) id <IDEIndexClassSymbol> classSymbol; // @synthesize classSymbol=_classSymbol;
-- (void).cxx_destruct;
 @property(readonly) NSString *name;
 - (id)initWithClassSymbol:(id)arg1;
 

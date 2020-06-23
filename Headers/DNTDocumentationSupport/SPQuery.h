@@ -27,6 +27,7 @@
     NSArray *_foundAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *foundAttributes; // @synthesize foundAttributes=_foundAttributes;
 @property(nonatomic) struct __SIJobRef *job; // @synthesize job=_job;
 @property(retain, nonatomic) SPIndex *index; // @synthesize index=_index;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 @property(readonly, nonatomic) BOOL cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 @property(readonly, nonatomic) NSString *spotlightQueryString; // @synthesize spotlightQueryString=_spotlightQueryString;

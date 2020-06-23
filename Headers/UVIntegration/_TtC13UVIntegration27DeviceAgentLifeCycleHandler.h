@@ -12,7 +12,9 @@
 {
     MISSING_TYPE *deviceName;
     MISSING_TYPE *pid;
+    MISSING_TYPE *channel;
     MISSING_TYPE *processControlChannel;
+    MISSING_TYPE *remoteServiceInterface;
     MISSING_TYPE *pidListener;
     MISSING_TYPE *listeningToken;
 }

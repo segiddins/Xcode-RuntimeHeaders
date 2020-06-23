@@ -26,13 +26,13 @@
 + (id)_parseListOfTypesInName:(id)arg1 currentCharacterIndex:(long long *)arg2;
 + (id)_parseTypeName:(id)arg1 currentCharacterIndex:(long long *)arg2;
 + (id)typeDescriptorWithDemangledName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *descendants; // @synthesize descendants=_descendants;
 @property(copy, nonatomic) NSArray *genericParameters; // @synthesize genericParameters=_genericParameters;
 @property(copy, nonatomic) NSString *modifier; // @synthesize modifier=_modifier;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *module; // @synthesize module=_module;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isWildcard) BOOL wildcard;
 - (double)_matchRatioWithSubtypes:(id)arg1 andSubtypes:(id)arg2 maxPossibleValue:(double)arg3;
 - (double)_matchRatioWithType:(id)arg1 maxPossibleValue:(double)arg2;

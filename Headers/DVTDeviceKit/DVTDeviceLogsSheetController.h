@@ -15,8 +15,8 @@
     DVTReplacementView *_replacementView;
 }
 
-@property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void).cxx_destruct;
+@property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void)primitiveInvalidate;
 - (void)done:(id)arg1;
 - (void)endSheet;

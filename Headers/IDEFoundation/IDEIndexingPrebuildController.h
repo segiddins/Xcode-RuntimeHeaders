@@ -17,8 +17,8 @@
     BOOL _hasPerformedPrebuild;
 }
 
-@property BOOL hasPerformedPrebuild; // @synthesize hasPerformedPrebuild=_hasPerformedPrebuild;
 - (void).cxx_destruct;
+@property BOOL hasPerformedPrebuild; // @synthesize hasPerformedPrebuild=_hasPerformedPrebuild;
 - (void)cancelAnyPrebuild;
 - (void)needsPrebuild;
 - (void)initiatePrebuild;

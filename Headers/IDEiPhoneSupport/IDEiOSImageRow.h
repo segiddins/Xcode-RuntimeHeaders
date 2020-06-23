@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingStatusMessage;
 + (id)keyPathsForValuesAffectingStatusImage;
 + (id)rowForDictionary:(id)arg1 withSectionType:(int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property BOOL foundCandidateImageFileWithWrongSize; // @synthesize foundCandidateImageFileWithWrongSize=_foundCandidateImageFileWithWrongSize;
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *device; // @synthesize device=_device;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) struct CGSize imageSizeInPoints;
 - (int)imageType;

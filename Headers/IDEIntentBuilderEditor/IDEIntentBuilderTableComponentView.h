@@ -26,6 +26,7 @@
     DVTBorderedView *_bottomBar;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property __weak DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak IDEIntentBuilderEditorImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
@@ -37,7 +38,6 @@
 @property(retain) Class itemClass; // @synthesize itemClass=_itemClass;
 @property(retain) NSArray *tableColumns; // @synthesize tableColumns=_tableColumns;
 @property(retain) IDEIntentBuilderArrayController *primaryControl; // @synthesize primaryControl;
-- (void).cxx_destruct;
 - (void)_resize;
 - (void)_updateContentViewFrame;
 - (void)_removeTableColumns;

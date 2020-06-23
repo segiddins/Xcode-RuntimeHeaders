@@ -27,6 +27,7 @@
     DependencyViewerEvent *_outgoingEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int cID; // @synthesize cID=_cID;
 @property(nonatomic) int depth; // @synthesize depth=_depth;
 @property(nonatomic) BOOL hidden; // @synthesize hidden=_hidden;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak DependencyViewerGraph *graph; // @synthesize graph=_graph;
 @property(nonatomic) unsigned long long ID; // @synthesize ID=_ID;
 @property(readonly, nonatomic) NSString *hashString; // @synthesize hashString=_hashString;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

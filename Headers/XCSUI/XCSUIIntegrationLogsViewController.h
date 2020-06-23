@@ -47,6 +47,7 @@
     NSTextView *_rawLogTextView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cancelShowProgressView; // @synthesize cancelShowProgressView=_cancelShowProgressView;
 @property NSTextView *rawLogTextView; // @synthesize rawLogTextView=_rawLogTextView;
 @property __weak NSScrollView *rawLogScrollView; // @synthesize rawLogScrollView=_rawLogScrollView;
@@ -69,7 +70,6 @@
 @property(nonatomic) __weak XCSUIIntegrationReportDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)dismissFindBar:(id)arg1 andRestoreSelection:(BOOL)arg2;
 - (void)hideFindBar;

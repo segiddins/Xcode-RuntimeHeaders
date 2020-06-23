@@ -10,17 +10,19 @@
 
 @interface IBCanvasScrollView : IBAccessorizedScrollView
 {
-    IBCanvasView *_canvasView;
     BOOL _scrollWheelEventStartedWithZoomModifierKey;
     BOOL _canUpdateScrollers;
+    IBCanvasView *_canvasView;
     struct CGSize _scrollerDimensions;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+- (void).cxx_destruct;
+@property(nonatomic) __weak IBCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(readonly) struct CGSize scrollerDimensions; // @synthesize scrollerDimensions=_scrollerDimensions;
 @property(nonatomic) BOOL canUpdateScrollers; // @synthesize canUpdateScrollers=_canUpdateScrollers;
-- (void).cxx_destruct;
 - (void)scrollWheel:(id)arg1;
+- (void)updateCanvasViewTrackingAreaSupressionForScrollPhase:(unsigned long long)arg1;
 - (void)magnifyWithEvent:(id)arg1;
 - (void)smartMagnifyWithEvent:(id)arg1;
 - (void)preferredScrollerStyleDidChange:(id)arg1;

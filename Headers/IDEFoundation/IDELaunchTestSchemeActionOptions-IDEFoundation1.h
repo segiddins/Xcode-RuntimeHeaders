@@ -6,8 +6,6 @@
 
 #import <IDEFoundation/IDELaunchTestSchemeActionOptions.h>
 
-#import <IDEFoundation/IDELaunchTestSchemeActionResolvedOptions-Protocol.h>
-
-@interface IDELaunchTestSchemeActionOptions (IDEFoundation1) <IDELaunchTestSchemeActionResolvedOptions>
+@interface IDELaunchTestSchemeActionOptions (IDEFoundation1)
 @end
 

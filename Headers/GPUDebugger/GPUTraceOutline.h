@@ -34,6 +34,8 @@
 }
 
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) DYFunctionTracer *tracer; // @synthesize tracer=_tracer;
 @property(readonly) GPUTraceProgramGroup *rootProgramGroup; // @synthesize rootProgramGroup=_rootProgramGroup;
 @property(retain) NSMutableArray *allAPIItems; // @synthesize allAPIItems=_allAPIItems;
@@ -42,8 +44,6 @@
 @property(readonly) NSMutableDictionary *editorsDict; // @synthesize editorsDict=_editorsDict;
 @property(readonly) DYCaptureSessionInfo *captureSessionInfo; // @synthesize captureSessionInfo=_captureSessionInfo;
 @property(retain) GPUTraceSession *traceSession; // @synthesize traceSession=_traceSession;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
 - (id)apiItemForTrueFunctionIndex:(unsigned int)arg1 subCommandIndex:(int)arg2;
 - (id)apiItemForTrueFunctionIndex:(unsigned int)arg1;

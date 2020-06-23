@@ -26,10 +26,10 @@
     BOOL _allowsSelection;
 }
 
+- (void).cxx_destruct;
 @property BOOL allowsSelection; // @synthesize allowsSelection=_allowsSelection;
 @property BOOL hasSectionHeaders; // @synthesize hasSectionHeaders=_hasSectionHeaders;
 @property(retain) id <DVTDynamicTableViewDataSource> dynamicDataSource; // @synthesize dynamicDataSource=_dynamicDataSource;
-- (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (BOOL)validateProposedFirstResponder:(id)arg1 forEvent:(id)arg2;

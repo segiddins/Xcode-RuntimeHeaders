@@ -32,11 +32,10 @@
 - (void)allCurrentLocations:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)createLocalRepositoryFromRepository:(id)arg1 localAddress:(id)arg2 mirrored:(BOOL)arg3 progressIdentifier:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)createWorkingCopyFromRepository:(id)arg1 location:(id)arg2 useRevision:(BOOL)arg3 localAddress:(id)arg4 existingAddress:(id)arg5 progressIdentifier:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (void)validateAuthenticationOfRemoteRepository:(id)arg1 location:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)validateAuthenticationOfRemoteRepository:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)createRepositoryAtFileURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)uploadCommitsToRemoteRepository:(id)arg1 fromLocalRepository:(id)arg2 remoteBranch:(id)arg3 pushTags:(BOOL)arg4 progressIdentifier:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)downloadUpdatesFromRemoteRepository:(id)arg1 toRepository:(id)arg2 removeDeletedLocations:(BOOL)arg3 progressIdentifier:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (void)repositoryURLRootForRepository:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)removeRemoteRepositoryNamed:(id)arg1 fromRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)addRemoteRepository:(id)arg1 withName:(id)arg2 toRepository:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)remoteBranchFromRepository:(id)arg1 forBranch:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -50,12 +49,10 @@
 - (void)parentBranchesOfBranch:(id)arg1 inRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)listRemoteBranchesOfRepository:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)listBranchesOfRepository:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)listSubpathsOfRepository:(id)arg1 atPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)revisionOfLocation:(id)arg1 inRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)headRevisionOfRepository:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)identifierOfRepositoryForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)baseRevisionOfWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)logItemWithParentsForIdentifier:(id)arg1 ofWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)visualLogItemWithParentsForIdentifier:(id)arg1 ofWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)switchLocation:(id)arg1 ofWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentLocationOfWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)historyOfWorkingCopy:(id)arg1 location:(id)arg2 progressIdentifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -69,7 +66,8 @@
 - (void)abortConflictOperationInWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)continueOrFinishConflictOperationInWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)stateOfWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)commitDetails:(id)arg1 revision:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)visualLogItemForWorkingCopy:(id)arg1 revision:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)logItemForWorkingCopy:(id)arg1 revision:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)commitDetails:(id)arg1 revisions:(id)arg2 progressIdentifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)commitDetailsWithParents:(id)arg1 forRevision:(id)arg2 path:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)historyOfFile:(id)arg1 inWorkingCopy:(id)arg2 fromRevisionLocation:(id)arg3 showMergeCommits:(BOOL)arg4 maxLogItems:(long long)arg5 progressIdentifier:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;
@@ -89,7 +87,6 @@
 - (void)filesAndStatusOfWorkingCopy:(id)arg1 withRemoteStatus:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)scanForRepositoryInFolderPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)scanForWorkingCopiesInPotentialWorkingCopies:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)scanForWorkingCopiesInFolderPaths:(id)arg1 traversingUp:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)setRebaseState:(unsigned long long)arg1 forWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)rebaseStateForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -97,8 +94,6 @@
 - (void)defaultAuthorForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setAuthor:(id)arg1 forWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)authorForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)keychainNameFromURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)sourceControlSystemWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)receivedLogItems;
 - (void)operationsFinished;
 - (void)waitForLogItemsReceivedWithTimeout:(double)arg1 completionBlock:(CDUnknownBlockType)arg2;

@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDESourceEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC15IDESourceEditor19CodeRollNavItemRoot : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface _TtC15IDESourceEditor19CodeRollNavItemRoot : NSObject
 {
     MISSING_TYPE *workspace;
     MISSING_TYPE *parent;

@@ -19,13 +19,13 @@
     NSURL *_ibFileURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *ibFileURL; // @synthesize ibFileURL=_ibFileURL;
 @property(copy) NSDictionary *metaInfoDictionary; // @synthesize metaInfoDictionary=_metaInfoDictionary;
 @property(copy) NSDictionary *keyCommentDictionary; // @synthesize keyCommentDictionary=_keyCommentDictionary;
 @property(copy) NSDictionary *outputStrings; // @synthesize outputStrings=_outputStrings;
 @property(copy) NSDictionary *outputPlist; // @synthesize outputPlist=_outputPlist;
 @property(copy) NSURL *stringsFilePath; // @synthesize stringsFilePath=_stringsFilePath;
-- (void).cxx_destruct;
 - (id)metainfoDictionaryForStrings;
 - (void)setKeyCommentDictionary;
 - (void)setStringsFileContentsDictionary;

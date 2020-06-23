@@ -16,11 +16,11 @@
     NSMutableDictionary *_cachedPathsForKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *cachedPathsForKey; // @synthesize cachedPathsForKey=_cachedPathsForKey;
 @property(copy, nonatomic) DVTFilePath *storagePath; // @synthesize storagePath=_storagePath;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)saveWithError:(id *)arg1;
 @property(readonly, copy, nonatomic) NSArray *cachedItemIdentifiers;
 - (void)purgeItemIdentifier:(id)arg1;

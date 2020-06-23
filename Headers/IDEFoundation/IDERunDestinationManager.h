@@ -18,8 +18,8 @@
 
 + (id)sharedRunDestinationManager;
 + (void)initialize;
-@property(readonly) IDERunDestination *fallbackRunDestination; // @synthesize fallbackRunDestination=_fallbackRunDestination;
 - (void).cxx_destruct;
+@property(readonly) IDERunDestination *fallbackRunDestination; // @synthesize fallbackRunDestination=_fallbackRunDestination;
 - (id)genericDeploymentRunDestinationForRunDestination:(id)arg1 scheme:(id)arg2 schemeCommands:(id)arg3 executionEnvironment:(id)arg4 allowNonConcreteDevices:(BOOL)arg5;
 - (id)genericRunDestinationForRunDestination:(id)arg1 scheme:(id)arg2 schemeCommands:(id)arg3 executionEnvironment:(id)arg4 requiresSupportsArchiving:(BOOL)arg5 requiresDeploymentPlatformMatches:(BOOL)arg6 allowMultipleRunDestinationMatches:(BOOL)arg7 allowNoRunDestinationMatches:(BOOL)arg8 error:(id *)arg9;
 - (id)resolvedBuildDestinationsForRunDestinations:(id)arg1 scheme:(id)arg2 schemeCommands:(id)arg3 executionEnvironment:(id)arg4 allowNoRunDestinationMatches:(BOOL)arg5 error:(id *)arg6;

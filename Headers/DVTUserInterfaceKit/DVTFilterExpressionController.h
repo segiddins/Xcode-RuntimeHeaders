@@ -23,12 +23,12 @@
 + (id)keyPathsForValuesAffectingFilterProgress;
 + (id)filterExpressionControlllerWithDataSource:(id)arg1 presentationDelegate:(id)arg2 viewingContext:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) _DVTFilterSession *currentFilterSession; // @synthesize currentFilterSession=_currentFilterSession;
 @property(retain) NSSet *matches; // @synthesize matches=_matches;
 @property(readonly) id <DVTFilteredDataSource> filteredDataSource; // @synthesize filteredDataSource=_filteredDataSource;
 @property(retain) id <DVTFilterExpressionPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(retain) id <DVTFilteredDataViewingContext> viewingContext; // @synthesize viewingContext=_viewingContext;
-- (void).cxx_destruct;
 - (void)setHighlightFragmentsForExpression:(id)arg1;
 @property(readonly) long long filterProgress;
 - (void)_clearFilter;

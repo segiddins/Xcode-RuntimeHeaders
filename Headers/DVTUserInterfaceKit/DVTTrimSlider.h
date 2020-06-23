@@ -35,6 +35,7 @@
     DVTTrimSliderInternalInteractionState *_trailingHandleDragInteractionState;
 }
 
+- (void).cxx_destruct;
 @property BOOL animateSelectionChange; // @synthesize animateSelectionChange=_animateSelectionChange;
 @property(retain) DVTTrimSliderInternalInteractionState *trailingHandleDragInteractionState; // @synthesize trailingHandleDragInteractionState=_trailingHandleDragInteractionState;
 @property(retain) DVTTrimSliderInternalInteractionState *leadingHandleDragInteractionState; // @synthesize leadingHandleDragInteractionState=_leadingHandleDragInteractionState;
@@ -56,7 +57,6 @@
 @property(nonatomic) long long trailingHandlePosition; // @synthesize trailingHandlePosition=_trailingHandlePosition;
 @property(nonatomic) long long leadingHandlePosition; // @synthesize leadingHandlePosition=_leadingHandlePosition;
 @property(nonatomic) long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;
-- (void).cxx_destruct;
 - (void)_sendActionToTarget;
 - (void)_coalesceCallsToSelector:(SEL)arg1;
 - (void)_notifyTarget;

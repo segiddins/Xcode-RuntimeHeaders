@@ -16,10 +16,10 @@
     NSString *_originalDeviceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *originalDeviceIdentifier; // @synthesize originalDeviceIdentifier=_originalDeviceIdentifier;
 @property(readonly) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly) __weak id <DVTTestDeviceClonePoolObserving> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithObserver:(id)arg1 forClonesOfDeviceWithIdentifier:(id)arg2 callbackQueue:(id)arg3;
 
 @end

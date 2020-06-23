@@ -27,12 +27,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTLibraryController *libraryController; // @synthesize libraryController=_libraryController;
 @property(copy, nonatomic) CDUnknownBlockType assetComparator; // @synthesize assetComparator=_assetComparator;
 @property(readonly) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)arrangeSections:(id)arg1;
 - (id)sectionWithIdentifier:(id)arg1;
 - (void)removeSection:(id)arg1;

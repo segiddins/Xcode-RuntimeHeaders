@@ -15,9 +15,9 @@
     NSTableColumn *_column;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTableColumn *column; // @synthesize column=_column;
 @property(nonatomic) BOOL floating; // @synthesize floating=_floating;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateLayer;
 @property(nonatomic) BOOL separatorHidden;

@@ -14,9 +14,9 @@
     DTTapMemo *_memo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTTapMemo *memo; // @synthesize memo=_memo;
 @property(retain, nonatomic) DTKPSessionRecordEnumerator *enumerator; // @synthesize enumerator=_enumerator;
-- (void).cxx_destruct;
 
 @end
 

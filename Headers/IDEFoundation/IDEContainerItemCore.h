@@ -17,9 +17,9 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *path; // @synthesize path=_path;
 @property(retain) id <IDEGroupCore> parentGroup; // @synthesize parentGroup=_parentGroup;
-- (void).cxx_destruct;
 @property(readonly) id <IDEContainerCore> parentContainer;
 
 // Remaining properties

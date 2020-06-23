@@ -18,8 +18,8 @@
 
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
 + (id)wrapperByCopyingContentsAtPath:(id)arg1 error:(id *)arg2;
-@property(retain) XDMappingModelManager *modelManager; // @synthesize modelManager=_modelManager;
 - (void).cxx_destruct;
+@property(retain) XDMappingModelManager *modelManager; // @synthesize modelManager=_modelManager;
 @property(readonly) NSURL *mappingModelURL;
 - (void)reloadDestinationModel;
 @property(retain) NSURL *destinationModelURL;

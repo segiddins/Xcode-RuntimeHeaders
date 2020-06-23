@@ -15,8 +15,8 @@
     NSArray *_availableTokens;
 }
 
-@property(retain) NSArray *availableTokens; // @synthesize availableTokens=_availableTokens;
 - (void).cxx_destruct;
+@property(retain) NSArray *availableTokens; // @synthesize availableTokens=_availableTokens;
 - (id)availableTokensForTextField:(id)arg1;
 - (id)makeTableCellViewWithOwner:(id)arg1 inTableView:(id)arg2;
 - (id)type;

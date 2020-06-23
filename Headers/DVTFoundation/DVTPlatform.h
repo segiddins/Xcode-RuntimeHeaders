@@ -47,6 +47,7 @@
 + (id)platformForName:(id)arg1;
 + (void)_mapPlatformName:(id)arg1 toPlatform:(id)arg2 isAlias:(BOOL)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *platformVersion; // @synthesize platformVersion=_platformVersion;
 @property(readonly, copy) NSDictionary *deviceProperties; // @synthesize deviceProperties=_deviceProperties;
 @property(readonly) DVTFilePath *iconPath; // @synthesize iconPath=_iconPath;
@@ -59,7 +60,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSArray *alternateNames; // @synthesize alternateNames=_alternateNames;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

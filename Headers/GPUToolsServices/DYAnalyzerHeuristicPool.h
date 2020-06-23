@@ -20,13 +20,13 @@
     unsigned long long _graphicsEngineID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long graphicsEngineID; // @synthesize graphicsEngineID=_graphicsEngineID;
 @property(nonatomic) unsigned int stateMirrorRetCode; // @synthesize stateMirrorRetCode=_stateMirrorRetCode;
 @property(readonly, nonatomic) int functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(readonly, retain, nonatomic) DYAnalyzerFinding *perFrameFindingStats; // @synthesize perFrameFindingStats=_perFrameFindingStats;
 @property(readonly, retain, nonatomic) NSMutableArray *heuristicPool; // @synthesize heuristicPool=_heuristicPool;
 @property(readonly, nonatomic) __weak DYAnalyzerEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (void)notifyCompletion;
 - (void)endBlock;
 - (void)startBlock:(int)arg1;

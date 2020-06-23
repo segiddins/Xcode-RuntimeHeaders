@@ -14,6 +14,7 @@
 }
 
 @property(nonatomic) BOOL returnNilForChildRepresentedObjects; // @synthesize returnNilForChildRepresentedObjects=_returnNilForChildRepresentedObjects;
+- (BOOL)_shouldPerformInvalidatableParentChildCoherencyChecks;
 @property(readonly, nonatomic) GPUProcessNavigableItem *processItem;
 - (void)_setParentItem:(id)arg1;
 - (id)initWithRepresentedObject:(id)arg1;

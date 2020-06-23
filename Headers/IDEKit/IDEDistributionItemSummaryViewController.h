@@ -16,11 +16,11 @@
     IDEDistributionContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDistributionContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) IDEDistributionItemSummaryNode *node; // @synthesize node=_node;
 @property __weak DVTBorderedView *summaryHeaderView; // @synthesize summaryHeaderView=_summaryHeaderView;
 @property(retain, nonatomic) NSTextView *detailTextView; // @synthesize detailTextView=_detailTextView;
-- (void).cxx_destruct;
 - (void)revealProfile:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithNode:(id)arg1 context:(id)arg2;

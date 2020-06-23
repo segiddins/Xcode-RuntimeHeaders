@@ -13,6 +13,7 @@
     MISSING_TYPE *summary;
     MISSING_TYPE *performanceTestOutput;
     MISSING_TYPE *testsPassedString;
+    MISSING_TYPE *wasSkipped;
 }
 
 @end

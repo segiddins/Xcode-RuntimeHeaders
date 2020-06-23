@@ -16,10 +16,10 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSGradient *gradient; // @synthesize gradient=_gradient;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 
 // Remaining properties

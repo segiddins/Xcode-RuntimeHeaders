@@ -20,13 +20,13 @@
     NSNumber *_signalStatus;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *signalStatus; // @synthesize signalStatus=_signalStatus;
 @property(copy, nonatomic) NSNumber *exitStatus; // @synthesize exitStatus=_exitStatus;
 @property(copy, nonatomic) NSNumber *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) NSArray *frameworkSearchPaths; // @synthesize frameworkSearchPaths=_frameworkSearchPaths;
 @property(readonly, nonatomic) NSString *launchPath; // @synthesize launchPath=_launchPath;
 @property(readonly, nonatomic) IBPlatformToolDescription *toolDescription; // @synthesize toolDescription=_toolDescription;
-- (void).cxx_destruct;
 - (id)ib_verboseDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isApplicationTool) BOOL applicationTool;

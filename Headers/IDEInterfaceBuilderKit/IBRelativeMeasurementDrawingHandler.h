@@ -26,12 +26,12 @@
 
 + (id)calculateMeasurementLinesWithStartRect:(struct CGRect)arg1 andEndRect:(struct CGRect)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBRelativeMeasurement *relativeMeasurement; // @synthesize relativeMeasurement=_relativeMeasurement;
 @property(retain, nonatomic) IBRelativeMeasurementDescriptor *relativeMeasurementDescriptor; // @synthesize relativeMeasurementDescriptor=_relativeMeasurementDescriptor;
 @property(nonatomic, getter=isShowingRelativeMeasurement) BOOL showingRelativeMeasurement; // @synthesize showingRelativeMeasurement=_showingRelativeMeasurement;
 @property(readonly, nonatomic) IBDelegatedCanvasOverlay *canvasOverlay; // @synthesize canvasOverlay=_canvasOverlay;
 @property(readonly, nonatomic) IBViewEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
-- (void).cxx_destruct;
 - (void)drawRelativeMeasurementLines;
 - (void)drawRelativeMeasurementText;
 - (BOOL)relativeMeasurementIsVisible:(id)arg1;

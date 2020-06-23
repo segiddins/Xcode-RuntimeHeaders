@@ -11,12 +11,6 @@
 @interface _TtC6IDEKit44IDESourceControlWorkingCopyOperationCellInfo : _TtCs12_SwiftObject
 {
     MISSING_TYPE *selected;
-    MISSING_TYPE *enabled;
-    MISSING_TYPE *menu;
-    MISSING_TYPE *selectedItem;
-    MISSING_TYPE *selectedBranch;
-    MISSING_TYPE *selectedRemote;
-    MISSING_TYPE *remotes;
 }
 
 @end

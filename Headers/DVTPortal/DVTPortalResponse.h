@@ -15,10 +15,10 @@
     NSDictionary *_headers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(readonly, nonatomic) NSData *payloadData; // @synthesize payloadData=_payloadData;
 @property(readonly, nonatomic) NSHTTPURLResponse *urlResponse; // @synthesize urlResponse=_urlResponse;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initFromURLResponse:(id)arg1 payload:(id)arg2 expectedHTTPStatusCode:(unsigned long long)arg3 error:(id *)arg4;
 - (id)initFromURLResponse:(id)arg1 payload:(id)arg2 expectedHTTPStatusCode:(unsigned long long)arg3 failOnUnexpectedStatusCode:(BOOL)arg4 error:(id *)arg5;

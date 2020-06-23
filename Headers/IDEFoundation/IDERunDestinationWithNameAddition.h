@@ -19,10 +19,10 @@
 
 + (id)keyPathsForValuesAffectingFullDisplayName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSString *nameAddition; // @synthesize nameAddition=_nameAddition;
 @property(readonly) BOOL isWatchDestination; // @synthesize isWatchDestination=_isWatchDestination;
 @property(readonly) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
-- (void).cxx_destruct;
 @property(readonly) NSString *fullDisplayName;
 - (id)_baseName;
 - (id)_nameWithAddition;

@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation27IDETestingMultiOutputStream.h>
 
-#import <IDEFoundation/IDETestingOutputStream-Protocol.h>
-
-@interface _TtC13IDEFoundation27IDETestingMultiOutputStream (IDEFoundation) <IDETestingOutputStream>
+@interface _TtC13IDEFoundation27IDETestingMultiOutputStream (IDEFoundation)
 - (void)finish;
 - (void)writeString:(id)arg1;
 @end

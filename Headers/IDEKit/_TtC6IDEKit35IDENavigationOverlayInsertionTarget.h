@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEKit/_TtP6IDEKit26IDENavigationOverlayTarget_-Protocol.h>
-
 @class MISSING_TYPE, NSString;
 @protocol _TtP6IDEKit26IDENavigationOverlayTarget_;
 
-@interface _TtC6IDEKit35IDENavigationOverlayInsertionTarget : NSObject <_TtP6IDEKit26IDENavigationOverlayTarget_>
+@interface _TtC6IDEKit35IDENavigationOverlayInsertionTarget : NSObject
 {
     MISSING_TYPE *edge;
     MISSING_TYPE *edgeOffset;

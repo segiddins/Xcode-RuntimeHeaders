@@ -13,8 +13,8 @@
     NSView *_view;
 }
 
-@property(readonly) NSView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly) NSView *view; // @synthesize view=_view;
 - (id)initWithView:(id)arg1;
 
 @end

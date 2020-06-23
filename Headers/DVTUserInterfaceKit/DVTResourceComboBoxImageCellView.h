@@ -17,11 +17,11 @@
     NSButton *_informationBadgeButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *informationBadgeButton; // @synthesize informationBadgeButton=_informationBadgeButton;
 @property __weak NSImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property(copy, nonatomic) NSString *informationBadgeText; // @synthesize informationBadgeText=_informationBadgeText;
-- (void).cxx_destruct;
 - (void)informationBadgePressed:(id)arg1;
 @property(copy, nonatomic) NSImage *image;
 - (void)setName:(id)arg1;

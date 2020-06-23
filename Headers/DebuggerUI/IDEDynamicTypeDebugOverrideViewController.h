@@ -17,12 +17,12 @@
     NSTextField *_titleTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property __weak NSTextField *selectedValueNameTextField; // @synthesize selectedValueNameTextField=_selectedValueNameTextField;
 @property __weak NSTextField *largeATextField; // @synthesize largeATextField=_largeATextField;
 @property __weak NSTextField *smallATextField; // @synthesize smallATextField=_smallATextField;
 @property __weak NSSlider *sizeSlider; // @synthesize sizeSlider=_sizeSlider;
-- (void).cxx_destruct;
 - (void)sizeSliderChanged:(id)arg1;
 - (void)updateUIWithOverrideState;
 - (void)_updateSelectedValueNameTextField;

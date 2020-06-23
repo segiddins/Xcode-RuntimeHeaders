@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (double)height;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property __weak NSTextField *instanceIDView; // @synthesize instanceIDView=_instanceIDView;
 @property __weak NSTextField *patchIDView; // @synthesize patchIDView=_patchIDView;
-- (void).cxx_destruct;
 @property(retain) id <DYPShaderDebuggerThreadPostTessellationVertex> objectValue; // @dynamic objectValue;
 
 @end

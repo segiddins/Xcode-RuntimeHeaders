@@ -22,10 +22,10 @@
 + (Class)ibViewClass;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 + (BOOL)ibExistsAtRuntime;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *referencedControllerIdentifier; // @synthesize referencedControllerIdentifier=_referencedControllerIdentifier;
 @property(copy, nonatomic) NSString *storyboardName; // @synthesize storyboardName=_storyboardName;
-- (void).cxx_destruct;
 - (void)setExternalObjectsTableForViewLoading:(id)arg1;
 - (void)setShowSeguePresentationStyle:(unsigned long long)arg1;
 - (void)setNibName:(id)arg1;

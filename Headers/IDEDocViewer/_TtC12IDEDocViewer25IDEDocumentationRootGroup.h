@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEDocViewer/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSString;
 
-@interface _TtC12IDEDocViewer25IDEDocumentationRootGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface _TtC12IDEDocViewer25IDEDocumentationRootGroup : NSObject
 {
     MISSING_TYPE *_languages;
     MISSING_TYPE *navigableItem_name;

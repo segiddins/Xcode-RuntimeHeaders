@@ -17,8 +17,8 @@
 + (id)loggingBundlePaths;
 + (void)_addLoggingBundlePath:(id)arg1;
 + (id)_loggingBundlePathsLock;
-@property(readonly, copy) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *path; // @synthesize path=_path;
 - (BOOL)copyLogsForSubtaskNamed:(id)arg1 fromURLs:(id)arg2 errors:(id *)arg3;
 - (id)logAspectWithName:(id)arg1 wantsDistinctFilesPerLogLevel:(BOOL)arg2;
 - (BOOL)_createLoggingBundleAtPath:(id)arg1;

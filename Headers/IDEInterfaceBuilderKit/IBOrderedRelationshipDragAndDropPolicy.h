@@ -23,6 +23,7 @@
     NSSet *_pasteboardTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *pasteboardTypes; // @synthesize pasteboardTypes=_pasteboardTypes;
 @property(nonatomic) long long orderedRelationInsertionIndex; // @synthesize orderedRelationInsertionIndex=_orderedRelationInsertionIndex;
 @property(nonatomic) BOOL usesConfinementRectForDropIndicatorRect; // @synthesize usesConfinementRectForDropIndicatorRect=_usesConfinementRectForDropIndicatorRect;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long primaryGrowthDirection; // @synthesize primaryGrowthDirection=_primaryGrowthDirection;
 @property(readonly) NSString *relationKeyPath; // @synthesize relationKeyPath=_relationKeyPath;
 @property __weak id <IBDragAndDropPolicyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)failToAcceptDragInfo:(id)arg1;
 - (void)finishAcceptingDragInfo:(id)arg1;
 - (void)prepareToAcceptDragInfo:(id)arg1;

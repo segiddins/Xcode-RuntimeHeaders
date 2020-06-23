@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *delay;
     MISSING_TYPE *eventLoop;
+    MISSING_TYPE *cancellationPromise;
     MISSING_TYPE *scheduled;
     MISSING_TYPE *task;
 }

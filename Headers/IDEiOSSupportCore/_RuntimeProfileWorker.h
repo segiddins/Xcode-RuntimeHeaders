@@ -15,9 +15,9 @@
 }
 
 + (id)workerForDevice:(id)arg1 applicationBundleID:(id)arg2 outError:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) DTDKApplication *app; // @synthesize app=_app;
 @property(readonly) DVTiOSDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)downloadRuntimeProfilesFromDeviceDirectories:(id)arg1 toLocalDirectory:(id)arg2 error:(id *)arg3;
 - (id)createRuntimeProfileDirectory:(id *)arg1;
 - (id)initWithDevice:(id)arg1 app:(id)arg2;

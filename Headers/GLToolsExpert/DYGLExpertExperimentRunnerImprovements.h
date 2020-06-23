@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _numExperimentsRun;
 }
 
-@property(readonly, nonatomic) __weak NSDictionary *results; // @synthesize results;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSDictionary *results; // @synthesize results;
 - (void)processFinishedExperiments;
 - (id)executeAndWait;
 - (id)numberOfExperiments;

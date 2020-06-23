@@ -20,8 +20,8 @@
     double _atomicXSpacing;
 }
 
-@property double atomicXSpacing; // @synthesize atomicXSpacing=_atomicXSpacing;
 - (void).cxx_destruct;
+@property double atomicXSpacing; // @synthesize atomicXSpacing=_atomicXSpacing;
 - (void)mouseDown:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;

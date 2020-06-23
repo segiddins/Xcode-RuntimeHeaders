@@ -19,9 +19,9 @@
     unsigned long long _duration;
 }
 
+- (void).cxx_destruct;
 @property BOOL prefersMainThreadDecorations; // @synthesize prefersMainThreadDecorations=_prefersMainThreadDecorations;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
 - (id)stackDataAtTime:(unsigned long long)arg1;
 - (void)addStackData:(id)arg1 atTime:(unsigned long long)arg2;

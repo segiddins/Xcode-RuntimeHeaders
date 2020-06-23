@@ -23,10 +23,10 @@
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(retain, nonatomic) DVTFilterTokenComparisonType *comparisonType; // @synthesize comparisonType=_comparisonType;
 @property(retain, nonatomic) DVTFilterTokenType *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)stringForm;

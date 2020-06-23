@@ -14,9 +14,9 @@
     CDUnknownBlockType _resolutionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType resolutionBlock; // @synthesize resolutionBlock=_resolutionBlock;
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)ibTransformValueBeforeApplyingFromUndoStack;
 - (id)ibTransformValueBeforePushingOntoUndoStackWithDocument:(id)arg1;
 - (id)resolveResource;

@@ -30,10 +30,10 @@
     BOOL _failed;
 }
 
-@property(readonly, nonatomic, getter=hasFailed) BOOL failed; // @synthesize failed=_failed;
-@property(readonly, nonatomic, getter=isOutOfData) BOOL outOfData; // @synthesize outOfData=_outOfData;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=hasFailed) BOOL failed; // @synthesize failed=_failed;
+@property(readonly, nonatomic, getter=isOutOfData) BOOL outOfData; // @synthesize outOfData=_outOfData;
 @property(readonly, nonatomic) XRConstantEngineeringValue *message;
 @property(readonly, nonatomic) XRConstantEngineeringValue *backtrace;
 @property(readonly, nonatomic) NSString *format;

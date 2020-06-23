@@ -17,8 +17,8 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 + (BOOL)isObjectValidSource:(id)arg1;
-@property(retain, nonatomic) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *containerView; // @synthesize containerView=_containerView;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)instantiateSegueTemplate;

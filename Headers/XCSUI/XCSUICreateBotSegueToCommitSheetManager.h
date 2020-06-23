@@ -23,6 +23,7 @@
 + (void)doIntegrateImmediatelyForServer:(id)arg1 andBotGUID:(id)arg2;
 + (void)showWillNeedToCommitAlertForWindow:(id)arg1 schemeWithName:(id)arg2 error:(id)arg3;
 + (void)showWillNeedToCommitAlertForWindow:(id)arg1 schemeWithName:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldIntegrateImmediately; // @synthesize shouldIntegrateImmediately=_shouldIntegrateImmediately;
 @property(retain, nonatomic) IDEScheme *scheme; // @synthesize scheme=_scheme;
 @property(retain, nonatomic) NSString *botGUID; // @synthesize botGUID=_botGUID;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSWindow *workspaceWindow; // @synthesize workspaceWindow=_workspaceWindow;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)_prepareAndRunCommitSheetWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)prepareAndRunCommitSheet;
 - (id)init;

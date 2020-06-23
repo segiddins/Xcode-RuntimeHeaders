@@ -14,8 +14,8 @@
 }
 
 + (id)blueprintWithContents:(id)arg1 validationErrors:(id *)arg2;
-@property(retain, nonatomic) NSDictionary *sourceControlBlueprint; // @synthesize sourceControlBlueprint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *sourceControlBlueprint; // @synthesize sourceControlBlueprint;
 - (BOOL)_validateWithContents:(id)arg1 validationErrors:(id *)arg2;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)saveRepresentation;

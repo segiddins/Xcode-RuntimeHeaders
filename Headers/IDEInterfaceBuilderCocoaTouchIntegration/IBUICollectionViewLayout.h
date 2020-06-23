@@ -19,9 +19,9 @@
 
 + (id)dvt_keysToSkipWeakReferenceObservingValidation;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) __weak IBUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (long long)cellsGrowthDirection;

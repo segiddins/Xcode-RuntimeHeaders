@@ -22,11 +22,11 @@
 + (int)providerType;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL canCreateBreakpoint; // @synthesize canCreateBreakpoint=_canCreateBreakpoint;
 @property(retain) IDEIssueProviderSession *currentProviderSession; // @synthesize currentProviderSession=_currentProviderSession;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain) IDEIssueManager *issueManager; // @synthesize issueManager=_issueManager;
-- (void).cxx_destruct;
 - (id)createBreakpointIfNecessaryIgnoreExisting:(BOOL)arg1;
 - (BOOL)allowsExistingIssuesToBeCoalesced;
 - (BOOL)allowsNewIssuesToBeCoalesced;

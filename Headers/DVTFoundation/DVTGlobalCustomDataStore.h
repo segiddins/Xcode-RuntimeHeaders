@@ -16,8 +16,8 @@
 }
 
 + (id)defaultStore;
-@property(readonly) DVTDirectoryBasedCustomDataStore *dataArchiver; // @synthesize dataArchiver=_dataArchiver;
 - (void).cxx_destruct;
+@property(readonly) DVTDirectoryBasedCustomDataStore *dataArchiver; // @synthesize dataArchiver=_dataArchiver;
 @property(readonly) NSString *displayName;
 - (BOOL)supportsCustomDataForOwnership:(id)arg1;
 - (void)moveCustomDataWithSpecifier:(id)arg1 toSpecifier:(id)arg2 completionQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

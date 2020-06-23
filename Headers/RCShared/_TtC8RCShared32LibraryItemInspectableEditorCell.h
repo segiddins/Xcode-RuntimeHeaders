@@ -4,25 +4,26 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <RCShared/_TtC8RCShared21InspectableEditorCell.h>
+#import <RCShared/_TtC8RCShared30InspectableEditorCellFromClass.h>
 
-@class MISSING_TYPE, _TtC8RCShared24LibraryItemCellImageView;
+@class MISSING_TYPE;
 
-@interface _TtC8RCShared32LibraryItemInspectableEditorCell : _TtC8RCShared21InspectableEditorCell
+@interface _TtC8RCShared32LibraryItemInspectableEditorCell : _TtC8RCShared30InspectableEditorCellFromClass
 {
+    MISSING_TYPE *item;
+    MISSING_TYPE *titleView;
+    MISSING_TYPE *thumbnailView;
     MISSING_TYPE *badgeView;
     MISSING_TYPE *onDoubleActionEventSource;
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)handleDoubleTapWithGestureRecognizer:(id)arg1;
 - (void)viewDidLayout;
 @property(nonatomic) BOOL selected;
 - (BOOL)isSelected;
-- (void)awakeFromNib;
-@property(nonatomic) __weak _TtC8RCShared24LibraryItemCellImageView *badgeView; // @synthesize badgeView;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

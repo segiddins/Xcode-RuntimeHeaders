@@ -17,9 +17,9 @@
     unsigned long long _index;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long index; // @synthesize index=_index;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

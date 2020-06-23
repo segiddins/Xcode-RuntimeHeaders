@@ -7,8 +7,10 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class DVTFilePath, IDENavigableItem, IDEStructureEditingAssistantContext;
+@protocol IDEStructureEditingItem;
 
 @protocol IDEStructureEditingDropTarget <NSObject>
+- (id <IDEStructureEditingItem>)actualTargetStructureEditingItem;
 - (IDENavigableItem *)actualNavigableItem;
 - (long long)actualChildIndex;
 - (BOOL)structureEditingAcceptInsertionOfSubitemsForContext:(IDEStructureEditingAssistantContext *)arg1;

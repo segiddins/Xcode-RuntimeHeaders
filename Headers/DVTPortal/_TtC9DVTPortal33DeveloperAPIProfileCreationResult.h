@@ -6,11 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTPortal/DVTPortalProfileProtocol-Protocol.h>
-
 @class DVTPlatform, DVTPortalTeam, DVTProvisioningProfile, MISSING_TYPE, NSData, NSDate, NSString, _TtC9DVTPortal19DeveloperAPIProfile;
+@protocol _TtP9DVTPortal28DeveloperAPIBundleIDProtocol_;
 
-@interface _TtC9DVTPortal33DeveloperAPIProfileCreationResult : NSObject <DVTPortalProfileProtocol>
+@interface _TtC9DVTPortal33DeveloperAPIProfileCreationResult : NSObject
 {
     MISSING_TYPE *portalProfile;
     MISSING_TYPE *provisioningProfile;
@@ -18,8 +17,10 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (BOOL)matchesUUID:(id)arg1;
 - (BOOL)removeWithSession:(id)arg1 error:(id *)arg2;
 - (BOOL)downloadWithSession:(id)arg1 error:(id *)arg2;
+- (BOOL)isXcodeManaged;
 - (BOOL)isTeamProfile;
 @property(nonatomic, readonly) DVTPlatform *platform;
 @property(nonatomic, readonly) DVTPortalTeam *team;
@@ -28,6 +29,7 @@
 @property(nonatomic, readonly) NSString *portalID;
 @property(nonatomic, readonly) NSDate *expirationDate;
 @property(nonatomic, readonly) NSString *UUID;
+@property(nonatomic, readonly) id <_TtP9DVTPortal28DeveloperAPIBundleIDProtocol_> appID;
 @property(nonatomic, readonly) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile;
 @property(nonatomic, readonly) _TtC9DVTPortal19DeveloperAPIProfile *portalProfile; // @synthesize portalProfile;
 

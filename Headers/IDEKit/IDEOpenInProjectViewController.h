@@ -28,6 +28,7 @@
 }
 
 + (id)keyPathsForValuesAffectingSearchStrings;
+- (void).cxx_destruct;
 @property __weak NSTextField *openProjectDescriptionTextField; // @synthesize openProjectDescriptionTextField=_openProjectDescriptionTextField;
 @property(retain, nonatomic) NSString *openInProjectDescription; // @synthesize openInProjectDescription=_openInProjectDescription;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
@@ -40,7 +41,6 @@
 @property(retain) NSURL *projectURL; // @synthesize projectURL=_projectURL;
 @property(retain) id <IDEOpenInProjectViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property __weak id <IDEOpenInProjectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 @property(readonly) NSArray *searchStrings;
 - (void)tableDoubleClicked:(id)arg1;

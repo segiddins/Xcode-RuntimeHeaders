@@ -32,6 +32,7 @@
 }
 
 + (id)fieldEditorConfigurationFromCell:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property long long typesetterBehavior; // @synthesize typesetterBehavior=_typesetterBehavior;
 @property BOOL allowsEditingTextAttributes; // @synthesize allowsEditingTextAttributes=_allowsEditingTextAttributes;
@@ -49,7 +50,6 @@
 @property long long alignment; // @synthesize alignment=_alignment;
 @property(copy) NSString *initialValue; // @synthesize initialValue=_initialValue;
 @property(copy) NSAttributedString *initialAttributedValue; // @synthesize initialAttributedValue=_initialAttributedValue;
-- (void).cxx_destruct;
 - (id)effectiveInitalAttributedValue;
 - (CDUnion_31865a80)effectiveAnchor;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,9 +21,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double spaceNeededForActionIndicator; // @synthesize spaceNeededForActionIndicator=_spaceNeededForActionIndicator;
 @property(readonly) IDEActivityPopUpWindowController *popUpController; // @synthesize popUpController=_popUpController;
-- (void).cxx_destruct;
 - (void)animateToBoundsHeight:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)animateCloseToFinalBoundsHeight:(double)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)animateOpenToPreferredHeightFromBoundsHeight:(double)arg1;

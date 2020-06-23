@@ -18,8 +18,8 @@
     NSCollectionViewFlowLayout *_flowLayout;
 }
 
-@property(readonly) SKEAssetCatalogDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) SKEAssetCatalogDocument *document; // @synthesize document=_document;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;

@@ -25,8 +25,8 @@
 + (id)propertyIdentifierForProxiedKey:(id)arg1;
 + (BOOL)getPropertyIdentifier:(id *)arg1 andConfiguration:(id *)arg2 fromProxiedKey:(id)arg3;
 + (void)initialize;
-@property(readonly) NSObject *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly) NSObject *object; // @synthesize object=_object;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;

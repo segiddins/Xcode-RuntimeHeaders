@@ -7,7 +7,8 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (PListEditor)
-- (id)numberValue;
+- (id)plist_stringValue;
+- (id)plist_numberValue;
 - (BOOL)isFloat;
 - (BOOL)isBoolean;
 @end

@@ -30,11 +30,11 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 @property(readonly) BOOL deprecatedError; // @synthesize deprecatedError=_deprecatedError;
 @property(readonly) BOOL deprecated; // @synthesize deprecated=_deprecated;
 @property(readonly) BOOL errorOutsideDeploymentTargetRange; // @synthesize errorOutsideDeploymentTargetRange=_errorOutsideDeploymentTargetRange;
 @property(readonly) NSArray *deploymentTargetRange; // @synthesize deploymentTargetRange=_deploymentTargetRange;
-- (void).cxx_destruct;
 @property(readonly) NSArray *compatibilityArchitectures;
 @property(readonly) long long sortNumber;
 @property(readonly) BOOL isShownInPopup;

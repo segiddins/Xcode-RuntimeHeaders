@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *binaryRangeInfo; // @synthesize binaryRangeInfo=_binaryRangeInfo;
 @property(nonatomic) int lineIndex; // @synthesize lineIndex=_lineIndex;
 @property(retain, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allDiassemblyInfo;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

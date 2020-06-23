@@ -26,10 +26,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property DVTFilePath *pathToCreateLocalGitRepository; // @synthesize pathToCreateLocalGitRepository=_pathToCreateLocalGitRepository;
 @property BOOL shouldCreateLocalRepository; // @synthesize shouldCreateLocalRepository=_shouldCreateLocalRepository;
 @property(copy) CDUnknownBlockType sourceControlCommandContinuationBlock; // @synthesize sourceControlCommandContinuationBlock=_sourceControlCommandContinuationBlock;
-- (void).cxx_destruct;
 - (void)windowDidCloseForWindowController:(id)arg1;
 - (void)addWindowController:(id)arg1;
 - (void)finishedCreateGitRepositoryWithWorkingCopy:(id)arg1;

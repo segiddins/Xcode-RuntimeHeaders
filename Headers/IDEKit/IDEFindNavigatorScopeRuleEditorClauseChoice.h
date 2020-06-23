@@ -14,9 +14,9 @@
     id _displayValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id displayValue; // @synthesize displayValue=_displayValue;
 @property(readonly) IDEFindNavigatorScopeRuleEditorClause *clause; // @synthesize clause=_clause;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithClause:(id)arg1 displayValue:(id)arg2;
 

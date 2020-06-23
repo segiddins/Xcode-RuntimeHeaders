@@ -24,12 +24,12 @@
 
 + (id)assistantForContext:(id)arg1;
 + (Class)assistantClassForContext:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) IDESaveDestinationContext *context; // @synthesize context=_context;
 @property(retain) NSView *formatView; // @synthesize formatView=_formatView;
 @property(retain) NSPopUpButton *formatPopUp; // @synthesize formatPopUp=_formatPopUp;
 @property(retain) NSPopUpButton *destinationPopUp; // @synthesize destinationPopUp=_destinationPopUp;
-- (void).cxx_destruct;
 - (id)targetWorkspacesForDestinationManager:(id)arg1;
 - (void)destinationManagerWorkspaceDidChange:(id)arg1;
 - (void)destinationManagerGroupDidChange:(id)arg1;

@@ -17,9 +17,9 @@
 
 + (id)keyPathsForValuesAffectingAllowEnablingQueueDebugging;
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSButton *queueDebuggingInfoButton; // @synthesize queueDebuggingInfoButton=_queueDebuggingInfoButton;
 @property __weak NSButton *enableQueueDebuggingCheckBox; // @synthesize enableQueueDebuggingCheckBox=_enableQueueDebuggingCheckBox;
-- (void).cxx_destruct;
 - (BOOL)allowEnablingQueueDebugging;
 - (void)enableQueueDebuggingClicked:(id)arg1;
 - (void)showInfoView:(id)arg1;

@@ -16,10 +16,10 @@
     NSError *_locationError;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *locationError; // @synthesize locationError=_locationError;
 @property(readonly) id <DVTAnalyticsLogProtocol> locatedAnalyticsLog; // @synthesize locatedAnalyticsLog=_locatedAnalyticsLog;
 @property(readonly) NSString *analyticsLogIdentifier; // @synthesize analyticsLogIdentifier=_analyticsLogIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAnalyticsLogIdentifier:(id)arg1 locatedAnalyticsLog:(id)arg2 locationError:(id)arg3;
 

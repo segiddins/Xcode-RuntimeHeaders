@@ -27,12 +27,12 @@
 + (id)iOSIdiomVariantVariable;
 + (id)iOSImageScaleFactorVariantVariable;
 + (id)iOSImageResolutionVariantVariable;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *expression; // @synthesize expression=_expression;
 @property(retain, nonatomic) NSSet *validValues; // @synthesize validValues=_validValues;
 @property(nonatomic) long long valueEndOffset; // @synthesize valueEndOffset=_valueEndOffset;
 @property(nonatomic) long long valueStartOffset; // @synthesize valueStartOffset=_valueStartOffset;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (BOOL)value:(id)arg1 matches:(id)arg2;
 - (id)description;
 - (id)searchValuesForValue:(id)arg1;

@@ -22,6 +22,7 @@
     MISSING_TYPE *overrideSettingsTable;
     MISSING_TYPE *variants;
     MISSING_TYPE *defaultVariant;
+    MISSING_TYPE *defaultDeploymentTarget;
     MISSING_TYPE *headerSearchPaths;
     MISSING_TYPE *frameworkSearchPaths;
     MISSING_TYPE *librarySearchPaths;
@@ -33,6 +34,7 @@
     MISSING_TYPE *maximumDeploymentTarget;
     MISSING_TYPE *knownFrameworkNamesCache;
     MISSING_TYPE *perVariantKnownFrameworkNamesCache;
+    MISSING_TYPE *associatedTypesForKeysMatching;
 }
 
 @end

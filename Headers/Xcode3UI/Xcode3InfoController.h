@@ -14,8 +14,8 @@
     id <IDEBlueprint> _blueprint;
 }
 
-@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (void).cxx_destruct;
+@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (id)initWithBlueprint:(id)arg1;
 
 // Remaining properties

@@ -16,8 +16,8 @@
 
 + (id)_validStateTransistions;
 + (id)descriptionForState:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long currentState; // @synthesize currentState=_currentState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long currentState; // @synthesize currentState=_currentState;
 - (void)transitionToState:(unsigned long long)arg1 event:(id)arg2;
 - (void)_assertOrLogOldState:(unsigned long long)arg1 newState:(unsigned long long)arg2;
 - (id)initWithDelegate:(id)arg1;

@@ -26,6 +26,7 @@
     unsigned long long _selectedStampIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedStampIndex; // @synthesize selectedStampIndex=_selectedStampIndex;
 @property(nonatomic) unsigned long long selectedBrushIndex; // @synthesize selectedBrushIndex=_selectedBrushIndex;
 @property(nonatomic) unsigned long long selectedTileIconIndex; // @synthesize selectedTileIconIndex=_selectedTileIconIndex;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long selectedTool; // @synthesize selectedTool=_selectedTool;
 @property(nonatomic) unsigned long long selectedTileEditUIButton; // @synthesize selectedTileEditUIButton=_selectedTileEditUIButton;
 @property(retain, nonatomic) SKTileMapNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)_drawTileHighlight;
 - (void)_drawTileMapGridLines;
 - (void)drawRect:(struct CGRect)arg1;

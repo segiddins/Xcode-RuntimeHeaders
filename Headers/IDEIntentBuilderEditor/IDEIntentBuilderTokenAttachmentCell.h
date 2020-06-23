@@ -17,12 +17,12 @@
     id <IDEIntentBuilderTokenAttachmentCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEIntentBuilderTokenAttachmentCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(getter=isGrayedOut) BOOL grayedOut; // @synthesize grayedOut=_grayedOut;
 @property(getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property BOOL shouldOverrideInteriorBackgroundStyle; // @synthesize shouldOverrideInteriorBackgroundStyle=_shouldOverrideInteriorBackgroundStyle;
 @property long long customInteriorBackgroundStyle; // @synthesize customInteriorBackgroundStyle=_customInteriorBackgroundStyle;
-- (void).cxx_destruct;
 - (void)drawTokenWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)tokenTintColor;
 - (void)_updateTextColorWithBackgroundStyle:(long long)arg1 selected:(BOOL)arg2;

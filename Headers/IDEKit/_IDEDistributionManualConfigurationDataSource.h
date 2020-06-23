@@ -16,8 +16,8 @@
     id <IDESigningEditorConfigurationDataSourceDelegate> _configurationDataSourceDelegate;
 }
 
-@property __weak id <IDESigningEditorConfigurationDataSourceDelegate> configurationDataSourceDelegate; // @synthesize configurationDataSourceDelegate=_configurationDataSourceDelegate;
 - (void).cxx_destruct;
+@property __weak id <IDESigningEditorConfigurationDataSourceDelegate> configurationDataSourceDelegate; // @synthesize configurationDataSourceDelegate=_configurationDataSourceDelegate;
 @property(readonly) SigningEditorConfiguration *configuration;
 
 @end

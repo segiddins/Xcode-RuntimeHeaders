@@ -22,12 +22,12 @@
 
 + (id)keyPathsForValuesAffectingModernizerOptions;
 + (id)keyPathsForValuesAffectingArrangedChildOptionItems;
+- (void).cxx_destruct;
 @property long long state; // @synthesize state=_state;
 @property(readonly, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property IDEObjCModernizationOptionChooserOptionItem *parentOptionItem; // @synthesize parentOptionItem=_parentOptionItem;
 @property IDEObjCModernizationOptionChooserAssistant *optionChooserAssistant; // @synthesize optionChooserAssistant=_optionChooserAssistant;
 @property(readonly) XCPropertyDefinition *propertyDefinition; // @synthesize propertyDefinition=_propertyDefinition;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *modernizerOptions;
 - (void)_valuePopUpButtonCellMenuItemAction:(id)arg1;
 @property(readonly, copy) DVTPopUpButtonCell *valuePopUpButtonCell;

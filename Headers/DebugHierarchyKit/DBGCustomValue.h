@@ -18,8 +18,8 @@
 
 + (id)withValue:(id)arg1;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
-@property(retain) id customValue; // @synthesize customValue=_customValue;
 - (void).cxx_destruct;
+@property(retain) id customValue; // @synthesize customValue=_customValue;
 @property(readonly, copy) NSString *description;
 - (id)objectValue;
 - (id)initWithCustomValue:(id)arg1;

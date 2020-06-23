@@ -20,9 +20,9 @@
 
 + (id)simulatorApplication;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly) DVTFilePath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)sendStopSimulateLocationNotification;
 - (void)sendSimulateLocationNotificationWithLatitude:(id)arg1 longitude:(id)arg2;
 - (void)sendApplicationEventNotificationWithUserInfo:(id)arg1;

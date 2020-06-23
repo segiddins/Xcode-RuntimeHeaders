@@ -12,9 +12,9 @@
     CDUnknownBlockType _mouseUpCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType mouseUpCallback; // @synthesize mouseUpCallback=_mouseUpCallback;
 @property(copy) CDUnknownBlockType mouseDownCallback; // @synthesize mouseDownCallback=_mouseDownCallback;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 

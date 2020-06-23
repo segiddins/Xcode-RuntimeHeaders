@@ -21,10 +21,10 @@
     DVTTableView *_downloadsTableView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTTableView *downloadsTableView; // @synthesize downloadsTableView=_downloadsTableView;
 @property(retain) NSArrayController *downloadsController; // @synthesize downloadsController=_downloadsController;
 @property BOOL canClearDownloads; // @synthesize canClearDownloads=_canClearDownloads;
-- (void).cxx_destruct;
 - (void)deleteDownloadsAtIndexes:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)clearDownloads:(id)arg1;

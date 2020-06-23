@@ -30,7 +30,6 @@
     BOOL _hidesInsertionPoint;
 }
 
-+ (long long)scrollerKnobStyleForBackgroundColor:(id)arg1;
 + (id)readableTextPasteboardTypes;
 + (void)initialize;
 + (id)_operatorChars;
@@ -38,6 +37,7 @@
 + (id)identifierCharacters;
 + (id)_identifierCharsForImportStatements;
 + (BOOL)appSupportsActionMonitoring;
+- (void).cxx_destruct;
 @property BOOL hidesInsertionPoint; // @synthesize hidesInsertionPoint=_hidesInsertionPoint;
 @property(nonatomic) BOOL highlightsCurrentLine; // @synthesize highlightsCurrentLine=_highlightsCurrentLine;
 @property(copy, nonatomic) NSColor *secondarySelectedTextBackgroundColor; // @synthesize secondarySelectedTextBackgroundColor=_secondarySelectedTextBackgroundColor;
@@ -46,7 +46,6 @@
 @property(getter=isCurrentlyDoingNonUserEditing) BOOL currentlyDoingNonUserEditing; // @synthesize currentlyDoingNonUserEditing=_currentlyDoingNonUserEditing;
 @property unsigned long long modifierFlagsAtLastSingleMouseDown; // @synthesize modifierFlagsAtLastSingleMouseDown=_modifierFlagsAtLastSingleMouseDown;
 @property double accessoryAnnotationWidth; // @synthesize accessoryAnnotationWidth=_accessoryAnnotationWidth;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;

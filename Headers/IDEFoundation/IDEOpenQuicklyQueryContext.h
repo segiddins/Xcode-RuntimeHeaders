@@ -19,13 +19,13 @@
     long long _swiftUsage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long swiftUsage; // @synthesize swiftUsage=_swiftUsage;
 @property(readonly) NSSet *interestingFrameworkNames; // @synthesize interestingFrameworkNames=_interestingFrameworkNames;
 @property(readonly) NSSet *referencedSDKPaths; // @synthesize referencedSDKPaths=_referencedSDKPaths;
 @property(readonly) DVTFilePath *primarySDKPath; // @synthesize primarySDKPath=_primarySDKPath;
 @property(readonly) DVTFilePath *workspaceDirectory; // @synthesize workspaceDirectory=_workspaceDirectory;
 @property(readonly) DVTFilePath *developerDirectory; // @synthesize developerDirectory=_developerDirectory;
-- (void).cxx_destruct;
 - (double)recentlyOpenedBonusForFilePathOrURL:(id)arg1;
 - (id)initWithPrimarySDKPath:(id)arg1 referencedSDKPaths:(id)arg2 swiftUsage:(long long)arg3 workspaceDirectory:(id)arg4 developerDirectory:(id)arg5 recentDocumentFilePathOrURLScoreBonuses:(id)arg6 interestingFrameworkNames:(id)arg7;
 

@@ -13,12 +13,12 @@
     IBCocoaTouchPlatform *_platform;
 }
 
-+ (id)fetchContentForSystemImageName:(id)arg1 platform:(id)arg2 minimumSize:(struct CGSize)arg3 maximumSize:(struct CGSize)arg4;
++ (id)fetchContentForSystemImageName:(id)arg1 systemNamespace:(long long)arg2 platform:(id)arg3 minimumPixelSize:(struct CGSize)arg4 maximumPixelSize:(struct CGSize)arg5 scale:(double)arg6;
 + (id)createPlaceholderImage;
 + (id)generateContentWithContext:(id)arg1;
 + (id)generateIconWithContext:(id)arg1;
-@property(readonly) IBCocoaTouchPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+@property(readonly) IBCocoaTouchPlatform *platform; // @synthesize platform=_platform;
 - (id)detailViewHeading;
 - (BOOL)detailViewShowsAlternates;
 - (BOOL)alwaysShowsIconAsLibraryDetailViewPreview;

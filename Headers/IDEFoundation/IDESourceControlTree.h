@@ -19,11 +19,11 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 + (id)treeLoadingModelObjectGraph;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *location; // @synthesize location=_location;
 @property(readonly) IDESourceControlManager *sourceControlManager; // @synthesize sourceControlManager=_sourceControlManager;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setName:(id)arg1 updateUserDefaults:(BOOL)arg2;
 - (id)subclass_createRootNode;

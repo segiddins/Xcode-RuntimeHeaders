@@ -16,8 +16,8 @@
     _Atomic char *_mustYield;
 }
 
-@property(nonatomic) _Atomic char *mustYield; // @synthesize mustYield=_mustYield;
 - (void).cxx_destruct;
+@property(nonatomic) _Atomic char *mustYield; // @synthesize mustYield=_mustYield;
 - (unsigned long long)yield;
 - (void)cancel;
 - (unsigned long long)run;

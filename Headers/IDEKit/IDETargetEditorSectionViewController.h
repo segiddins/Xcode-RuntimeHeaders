@@ -15,8 +15,8 @@
     id _targetViewController;
 }
 
-@property(retain) id targetViewController; // @synthesize targetViewController=_targetViewController;
 - (void).cxx_destruct;
+@property(retain) id targetViewController; // @synthesize targetViewController=_targetViewController;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canSelect;
 @property(readonly) BOOL disclosedByDefault;

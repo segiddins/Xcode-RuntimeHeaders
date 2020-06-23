@@ -24,6 +24,7 @@
     NSLayoutConstraint *_okButtonConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *okButtonConstraint; // @synthesize okButtonConstraint=_okButtonConstraint;
 @property __weak NSButton *applyToAllButton; // @synthesize applyToAllButton=_applyToAllButton;
 @property __weak NSButton *okButton; // @synthesize okButton=_okButton;
@@ -31,7 +32,6 @@
 @property(retain) NSWindow *sheetOwner; // @synthesize sheetOwner=_sheetOwner;
 @property unsigned long long otherSimilarRepos; // @synthesize otherSimilarRepos=_otherSimilarRepos;
 @property(retain) DVTSourceControlRemoteRepository *remoteRepository; // @synthesize remoteRepository=_remoteRepository;
-- (void).cxx_destruct;
 - (void)close;
 - (void)cancelCredentialSheet:(id)arg1;
 - (void)_completeOperation:(id)arg1;

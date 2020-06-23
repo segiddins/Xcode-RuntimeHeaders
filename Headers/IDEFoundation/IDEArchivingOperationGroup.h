@@ -16,9 +16,9 @@
 
 + (id)operationGroupWithSuboperations:(id)arg1;
 + (id)operationGroupWithArchivingOperation:(id)arg1 otherOperations:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) IDEBuildOperationGroup *buildForArchiveOperation; // @synthesize buildForArchiveOperation=_buildForArchiveOperation;
 @property(readonly) IDEArchivingOperation *archivingOperation; // @synthesize archivingOperation=_archivingOperation;
-- (void).cxx_destruct;
 
 @end
 

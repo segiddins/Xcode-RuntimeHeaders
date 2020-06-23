@@ -22,11 +22,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSProgressIndicator *loadingProgressView; // @synthesize loadingProgressView=_loadingProgressView;
 @property(retain, nonatomic) NSView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) __weak NSTextField *errorTextField; // @synthesize errorTextField=_errorTextField;
 @property(retain, nonatomic) NSView *errorView; // @synthesize errorView=_errorView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_addLoadingView;
 - (void)_displayFramesFromThread:(id)arg1;

@@ -37,6 +37,7 @@
     CDUnknownBlockType _menuSetupBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsMenu; // @synthesize needsMenu=_needsMenu;
 @property(copy, nonatomic) CDUnknownBlockType menuSetupBlock; // @synthesize menuSetupBlock=_menuSetupBlock;
 @property(copy, nonatomic) CDUnknownBlockType comparisonChangedBlock; // @synthesize comparisonChangedBlock=_comparisonChangedBlock;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) BOOL isExpandedState; // @synthesize isExpandedState=_isExpandedState;
 @property(nonatomic) BOOL pullsDown; // @synthesize pullsDown=_pullsDown;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (struct CGRect)_drawRect;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)_filterIconContainerWithOrigin:(struct CGPoint)arg1;

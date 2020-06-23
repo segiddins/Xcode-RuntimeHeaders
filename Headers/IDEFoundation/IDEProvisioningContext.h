@@ -24,6 +24,7 @@
 
 + (long long)currentEnvironment;
 + (id)newContextWithDefaultManagers;
+- (void).cxx_destruct;
 @property(nonatomic) long long provisioningTask; // @synthesize provisioningTask=_provisioningTask;
 @property(nonatomic) long long provisioningEnvironment; // @synthesize provisioningEnvironment=_provisioningEnvironment;
 @property(nonatomic) long long evaluationMode; // @synthesize evaluationMode=_evaluationMode;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) DVTSigningCertificateManager *certificateManager; // @synthesize certificateManager=_certificateManager;
 @property(retain, nonatomic) DVTProvisioningProfileManager *profileManager; // @synthesize profileManager=_profileManager;
 @property(retain, nonatomic) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IDEProvisioningErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;
 - (id)initWithTeamManager:(id)arg1 profileManager:(id)arg2 certificateManager:(id)arg3;
 

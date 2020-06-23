@@ -13,8 +13,8 @@
     NSArray *_arguments;
 }
 
-@property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 - (void)start;
 - (id)initWithFilePath:(id)arg1 arguments:(id)arg2 forceSaveToSharedDirectory:(BOOL)arg3 collector:(id)arg4;
 

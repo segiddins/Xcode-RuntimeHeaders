@@ -11,6 +11,7 @@
 @interface _TtC8RCShared21InfoHubViewController : _TtC8RCShared21InfoHubControllerBase
 {
     MISSING_TYPE *$__lazy_storage_$_tableView;
+    MISSING_TYPE *$__lazy_storage_$_tableViewWrapper;
     MISSING_TYPE *$__lazy_storage_$_scrollView;
     MISSING_TYPE *scrollConstraints;
     MISSING_TYPE *tableViewItems;

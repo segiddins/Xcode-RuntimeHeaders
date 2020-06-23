@@ -18,13 +18,13 @@
     NSArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) NSData *remoteAddress; // @synthesize remoteAddress=_remoteAddress;
 @property(nonatomic) NSData *localAddress; // @synthesize localAddress=_localAddress;
 @property(nonatomic) unsigned int ifaceIndex; // @synthesize ifaceIndex=_ifaceIndex;
 @property(nonatomic) long long routeID; // @synthesize routeID=_routeID;
 @property(nonatomic) unsigned long long serialNumber; // @synthesize serialNumber=_serialNumber;
-- (void).cxx_destruct;
 
 @end
 

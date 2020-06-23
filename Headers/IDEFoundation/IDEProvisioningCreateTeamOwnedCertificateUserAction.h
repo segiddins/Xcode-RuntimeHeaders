@@ -14,8 +14,8 @@
 }
 
 + (id)userActionWithType:(id)arg1 context:(id)arg2;
-@property(readonly, nonatomic) DVTPortalCertificateType *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTPortalCertificateType *type; // @synthesize type=_type;
 - (id)executionMessage;
 - (id)userActionName;
 - (id)userActionMessage;

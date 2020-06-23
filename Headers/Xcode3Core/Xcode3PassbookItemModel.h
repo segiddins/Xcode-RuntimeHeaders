@@ -20,10 +20,10 @@
 
 + (id)coalescableReadOnlyKeyPaths;
 + (id)passTypeIdentifiersJobCache;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRefreshing; // @synthesize isRefreshing=_isRefreshing;
 @property(retain, nonatomic) NSSet *customPassTypeIdentifiersWithPrefix; // @synthesize customPassTypeIdentifiersWithPrefix=_customPassTypeIdentifiersWithPrefix;
 @property(retain, nonatomic) NSSet *knownPassTypes; // @synthesize knownPassTypes=_knownPassTypes;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (void)updateKnownPassTypesWithProvisioningPassTypes:(id)arg1;
 - (BOOL)isEnabledUsingEducatedGuess;

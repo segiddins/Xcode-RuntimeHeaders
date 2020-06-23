@@ -13,8 +13,8 @@
     NSArray *_commands;
 }
 
-@property(readonly) NSArray *commands; // @synthesize commands=_commands;
 - (void).cxx_destruct;
+@property(readonly) NSArray *commands; // @synthesize commands=_commands;
 - (id)initWithExtension:(id)arg1;
 
 @end

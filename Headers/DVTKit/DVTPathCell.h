@@ -55,11 +55,11 @@
 + (double)navigationPopoverDefaultCapacity;
 + (id)navigationPopoverDefaultTitle;
 + (id)navigationPopoverIdentifier;
+- (void).cxx_destruct;
 @property(readonly) BOOL _delegateProvidesMenuItems; // @synthesize _delegateProvidesMenuItems=__delegateProvidesMenuItems;
 @property unsigned long long preferredNavigationPopoverEdge; // @synthesize preferredNavigationPopoverEdge=_preferredNavigationPopoverEdge;
 @property(retain, nonatomic) _TtC6DVTKit30DVTNavigationPopoverController *currentNavigationPopoverController; // @synthesize currentNavigationPopoverController=_currentNavigationPopoverController;
 @property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
-- (void).cxx_destruct;
 - (id)dvt_accessibilityPopUpMenuParent:(id)arg1;
 - (id)dvt_accessibilityChildMenuForChild:(id)arg1;
 - (void)dvt_accessibilityPerformPressForChild:(id)arg1;

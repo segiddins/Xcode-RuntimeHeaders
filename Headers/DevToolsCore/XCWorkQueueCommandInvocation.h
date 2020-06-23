@@ -23,9 +23,9 @@
     DVTSystemStatisticsMeasurement *_systemStatsAtFinish;
 }
 
+- (void).cxx_destruct;
 @property(copy) XCWorkQueueCommandInvocationParameters *invocationParameters; // @synthesize invocationParameters=_invocationParameters;
 @property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (double)elapsedSystemTime;
 - (double)elapsedUserTime;

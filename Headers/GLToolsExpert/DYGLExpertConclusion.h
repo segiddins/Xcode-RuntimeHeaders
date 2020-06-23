@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL visited; // @synthesize visited=_visited;
 @property(retain, nonatomic) NSMutableArray *evidences; // @synthesize evidences=_evidences;
 @property(readonly, nonatomic) NSNumber *lineNum; // @synthesize lineNum=_lineNum;
 @property(readonly, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isResult;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

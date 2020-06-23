@@ -21,11 +21,11 @@
 + (id)issueWithUserAction:(id)arg1 errorProvider:(id)arg2;
 + (id)issueWithError:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(nonatomic) BOOL hasSubTitleAction; // @synthesize hasSubTitleAction=_hasSubTitleAction;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)didSelectSubtitleAction:(id)arg1;
 - (void)_performEnableDevleopmentSigningAction;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (double)height;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property __weak NSTextField *instanceIDView; // @synthesize instanceIDView=_instanceIDView;
 @property __weak NSTextField *vertexIDView; // @synthesize vertexIDView=_vertexIDView;
-- (void).cxx_destruct;
 @property(retain) id <DYPShaderDebuggerThreadVertex> objectValue; // @dynamic objectValue;
 
 @end

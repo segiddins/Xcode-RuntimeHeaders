@@ -28,6 +28,7 @@
     NSDictionary *_memoryReportStateDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *memoryReportStateDictionary; // @synthesize memoryReportStateDictionary=_memoryReportStateDictionary;
 @property(retain) GPUTraceOutlineItem *currentSelectedOutlineItem; // @synthesize currentSelectedOutlineItem=_currentSelectedOutlineItem;
 @property(copy) NSString *traceAPIItemCategoryIdentifier; // @synthesize traceAPIItemCategoryIdentifier=_traceAPIItemCategoryIdentifier;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) GPUTraceDocumentLocation *currentMainEditorLocation; // @synthesize currentMainEditorLocation=_currentMainEditorLocation;
 @property(nonatomic) __weak GPUInvestigatorReportItem *currentReport; // @synthesize currentReport=_currentReport;
 @property(readonly, nonatomic) __weak GPUTraceSession *currentTraceSession; // @synthesize currentTraceSession=_currentTraceSession;
-- (void).cxx_destruct;
 - (BOOL)tabUIModeIsADebuggerMode;
 - (void)_unarchiveState;
 - (void)_archiveState;

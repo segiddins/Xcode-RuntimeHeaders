@@ -41,11 +41,11 @@
 + (id)_finderExtensionsForEditorDocumentIdentifier:(id)arg1 fileDataType:(id)arg2;
 + (id)indexRequestsQueue;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *editorDocumentIdentifier; // @synthesize editorDocumentIdentifier=_editorDocumentIdentifier;
 @property BOOL idle; // @synthesize idle=_idle;
 @property(readonly) unsigned long long numberOfGeniusResults; // @synthesize numberOfGeniusResults=_numberOfGeniusResults;
 @property(readonly, copy) NSDictionary *geniusResults; // @synthesize geniusResults=_geniusResults;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_updateGeniusResults;
 - (void)_setGeniusResults:(id)arg1;

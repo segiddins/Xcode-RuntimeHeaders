@@ -24,9 +24,9 @@
     NSButton *_leftMostButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *leftMostButton; // @synthesize leftMostButton=_leftMostButton;
 @property(retain) NSString *statusText; // @synthesize statusText=_statusText;
-- (void).cxx_destruct;
 - (void)close;
 @property double progress;
 @property BOOL showDeterminateProgress;

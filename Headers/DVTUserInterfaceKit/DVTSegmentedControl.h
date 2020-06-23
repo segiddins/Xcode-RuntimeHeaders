@@ -24,10 +24,10 @@
 + (id)_toolbarSegmentedControlWithImages:(id)arg1 orLabels:(id)arg2 trackingMode:(unsigned long long)arg3;
 + (id)toolbarSegmentedControlWithLabels:(id)arg1 trackingMode:(unsigned long long)arg2;
 + (id)toolbarSegmentedControlWithImages:(id)arg1 trackingMode:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(getter=isBordered) BOOL bordered; // @synthesize bordered=_bordered;
 @property struct CGPoint menuIndicatorInset; // @synthesize menuIndicatorInset=_menuIndicatorInset;
 @property BOOL shouldDrawMenuIndicators; // @synthesize shouldDrawMenuIndicators=_shouldDrawMenuIndicators;
-- (void).cxx_destruct;
 - (id)_getImageInArray:(id)arg1 forSegment:(long long)arg2;
 - (void)_setImage:(id)arg1 inArray:(id)arg2 forSegment:(long long)arg3;
 - (void)setAlternateImage:(id)arg1 forSegment:(long long)arg2;

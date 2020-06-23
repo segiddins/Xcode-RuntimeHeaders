@@ -13,6 +13,7 @@
 + (id)sharedClient;
 @property id <DVTRadar_AttachmentDownloadDelegate> attachmentDownloadDelegate;
 - (void)setUpToolchainIssueReporter;
+- (void)fetchRadarNumbersForSignatures:(NSArray *)arg1 completionBlock:(void (^)(NSDictionary *))arg2;
 - (void)reportSelfDiagnosisIssueWithSignature:(NSString *)arg1 title:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 description:(NSString *)arg5 keywords:(NSArray *)arg6 classification:(unsigned long long)arg7 ownerProblemID:(NSNumber *)arg8 canFileNewProblem:(BOOL)arg9 pathsToAttachments:(NSArray *)arg10 completionBlock:(void (^)(unsigned long long, unsigned long long))arg11;
 - (void)reportSelfDiagnosisIssueWithSignature:(NSString *)arg1 title:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 description:(NSString *)arg5 keywords:(NSArray *)arg6 classification:(unsigned long long)arg7 ownerProblemID:(NSNumber *)arg8 completionBlock:(void (^)(unsigned long long, unsigned long long))arg9;
 - (void)asyncPrepareToReportSelfDiagnosisIssueWithBlock:(void (^)(void))arg1;

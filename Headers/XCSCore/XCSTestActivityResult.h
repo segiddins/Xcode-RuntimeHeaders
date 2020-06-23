@@ -19,6 +19,7 @@
     NSArray *_attachments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *subactivityResults; // @synthesize subactivityResults=_subactivityResults;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(readonly, nonatomic) NSDate *finish; // @synthesize finish=_finish;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)_saveLegacyAttachmentMetadata:(id)arg1;
 - (id)activityResultWithTitle:(id)arg1 activityType:(id)arg2 UUID:(id)arg3 start:(id)arg4 finish:(id)arg5 attachments:(id)arg6 validationErrors:(id *)arg7;

@@ -14,8 +14,8 @@
     long long _progress;
 }
 
-@property(nonatomic) long long progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) long long progress; // @synthesize progress=_progress;
 - (id)view;
 - (void)propagateState;
 

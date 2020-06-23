@@ -18,12 +18,12 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain) NSTouchBar *systemModalDebugBar; // @synthesize systemModalDebugBar=_systemModalDebugBar;
 @property(retain) NSTouchBarItem *debuggerSystemTrayBarItem; // @synthesize debuggerSystemTrayBarItem=_debuggerSystemTrayBarItem;
 @property(retain) NSMapTable *trackedDebugBars; // @synthesize trackedDebugBars=_trackedDebugBars;
 @property(retain) NSPointerArray *recentKeyWindowsStack; // @synthesize recentKeyWindowsStack=_recentKeyWindowsStack;
 @property(nonatomic, getter=isModalDebugBarEnabled) BOOL modalDebugBarEnabled; // @synthesize modalDebugBarEnabled=_modalDebugBarEnabled;
-- (void).cxx_destruct;
 - (void)_dismissSystemModalDebugBar;
 - (void)_minimizeSystemModalDebugBar;
 - (void)_presentSystemModalDebugBar;

@@ -9,7 +9,7 @@
 @class IDEBreakpoint, NSArray;
 
 @protocol IDEBreakpointNavigatorModelObserver <NSObject>
-- (void)breakpointWasRemoved:(IDEBreakpoint *)arg1;
+- (void)breakpointsWereRemoved:(NSArray *)arg1;
 - (void)breakpointWasAdded:(IDEBreakpoint *)arg1;
 
 @optional

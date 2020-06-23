@@ -20,8 +20,8 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
-@property __weak IDESymbolNavigator *navigator; // @synthesize navigator=_navigator;
 - (void).cxx_destruct;
+@property __weak IDESymbolNavigator *navigator; // @synthesize navigator=_navigator;
 - (id)ideModelObjectTypeIdentifier;
 - (void)fetchSymbols:(id)arg1 generation:(unsigned long long)arg2 lastOperation:(id)arg3;
 - (id)navigableItem_childRepresentedObjects;

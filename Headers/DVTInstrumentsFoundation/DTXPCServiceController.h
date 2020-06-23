@@ -21,6 +21,8 @@
 - (void)unregisterClient:(id)arg1 withIdentifier:(id)arg2 parent:(int)arg3;
 - (void)_matchRemove:(CDUnknownBlockType)arg1;
 - (void)_registryModify:(BOOL)arg1 identifier:(id)arg2 parent:(int)arg3 client:(id)arg4 block:(CDUnknownBlockType)arg5;
+- (void)requestDebugLaunchOfDaemonWithSpecifier:(id)arg1 programPath:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (int)_configureInstance:(id)arg1 identifier:(id)arg2 servicePid:(int)arg3 environment:(id)arg4 arguments:(id)arg5 options:(id)arg6;
 - (void)registerClient:(id)arg1 forXPCService:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)releaseAssertionsMadeByClient:(id)arg1;
 - (id)init;

@@ -26,6 +26,7 @@
 + (unsigned long long)_sizeModeForString:(id)arg1 toolbarIdentifier:(id)arg2;
 + (unsigned long long)_displayModeForString:(id)arg1 toolbarIdentifier:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSSet *sizeModes; // @synthesize sizeModes=_sizeModes;
 @property(copy) NSSet *displayModes; // @synthesize displayModes=_displayModes;
 @property(copy) NSDictionary *toolbarItemProviders; // @synthesize toolbarItemProviders=_toolbarItemProviders;
@@ -33,7 +34,6 @@
 @property(copy) NSArray *defaultItemIdentifiers; // @synthesize defaultItemIdentifiers=_defaultItemIdentifiers;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 @property(copy) NSString *toolbarDefinitionIdentifier; // @synthesize toolbarDefinitionIdentifier=_toolbarDefinitionIdentifier;
-- (void).cxx_destruct;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;

@@ -20,11 +20,11 @@
 + (id)keyPathsForValuesAffectingTeamError;
 + (id)keyPathsForValuesAffectingCanGoNext;
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *teamsObserver; // @synthesize teamsObserver=_teamsObserver;
 @property(retain) NSTextField *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(retain) NSImageView *errorImage; // @synthesize errorImage=_errorImage;
 @property(retain) NSPopUpButton *teamPopUp; // @synthesize teamPopUp=_teamPopUp;
-- (void).cxx_destruct;
 - (void)addAccount:(id)arg1;
 - (void)teamSelected:(id)arg1;
 @property(readonly, nonatomic) NSString *teamError; // @synthesize teamError=_teamError;

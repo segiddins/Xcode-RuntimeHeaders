@@ -28,10 +28,10 @@
 
 + (id)workspaceForIDEWorkspace:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) IDEWorkspace *ideWorkspace; // @synthesize ideWorkspace=_ideWorkspace;
 @property(readonly, nonatomic) NSSet *workspaceFilePaths; // @synthesize workspaceFilePaths=_workspaceFilePaths;
-- (void).cxx_destruct;
 - (id)editorDocumentForURL:(id)arg1;
 - (id)retainedDocumentWithFileNamed:(id)arg1;
 - (id)retainedDocumentForURL:(id)arg1;

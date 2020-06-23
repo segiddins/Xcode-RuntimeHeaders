@@ -13,8 +13,8 @@
     DVTOnboardingTutorialController *_tutorialController;
 }
 
-@property(retain) DVTOnboardingTutorialController *tutorialController; // @synthesize tutorialController=_tutorialController;
 - (void).cxx_destruct;
+@property(retain) DVTOnboardingTutorialController *tutorialController; // @synthesize tutorialController=_tutorialController;
 - (BOOL)willNavigateToNextPage;
 - (BOOL)readyForNextPage;
 

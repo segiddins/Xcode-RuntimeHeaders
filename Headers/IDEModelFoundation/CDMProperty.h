@@ -35,6 +35,7 @@
 
 + (id)keyPathsForValuesAffectingInspectedOptional;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) CDMEntity *entity; // @synthesize entity=_entity;
 @property(retain) CDMModel *model; // @synthesize model=_model;
@@ -50,7 +51,6 @@
 @property(readonly) BOOL optionalFlagEnabled; // @synthesize optionalFlagEnabled=_optionalFlagEnabled;
 @property(nonatomic) BOOL optional; // @synthesize optional=_optional;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)userInfoXMLElementTree;
 - (id)xmlElementAttributesByType;

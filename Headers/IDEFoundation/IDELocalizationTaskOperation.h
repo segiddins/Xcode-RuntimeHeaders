@@ -21,12 +21,12 @@
     NSNumber *_signalStatus;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *signalStatus; // @synthesize signalStatus=_signalStatus;
 @property(copy) NSNumber *exitStatus; // @synthesize exitStatus=_exitStatus;
 @property(readonly, copy) NSDictionary *environment; // @synthesize environment=_environment;
 @property(readonly, copy) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, copy) DVTFilePath *launchPath; // @synthesize launchPath=_launchPath;
-- (void).cxx_destruct;
 - (void)taskDidFinish;
 - (BOOL)startTask:(id *)arg1;
 - (void)main;

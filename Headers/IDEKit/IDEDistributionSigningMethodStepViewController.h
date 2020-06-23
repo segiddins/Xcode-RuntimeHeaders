@@ -16,10 +16,10 @@
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
+- (void).cxx_destruct;
 @property(retain) NSButton *manualRadio; // @synthesize manualRadio=_manualRadio;
 @property(retain) NSButton *automaticRadio; // @synthesize automaticRadio=_automaticRadio;
 @property(retain) NSTextField *messageField; // @synthesize messageField=_messageField;
-- (void).cxx_destruct;
 - (id)helpID;
 @property(nonatomic) BOOL useAutomatic;
 - (id)title;

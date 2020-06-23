@@ -17,10 +17,10 @@
     NSString *_pickerReason;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pickerReason; // @synthesize pickerReason=_pickerReason;
 @property(retain, nonatomic) NSPopUpButton *teamPopUp; // @synthesize teamPopUp=_teamPopUp;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (void)select:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 pickerReason:(id)arg2 callback:(CDUnknownBlockType)arg3;

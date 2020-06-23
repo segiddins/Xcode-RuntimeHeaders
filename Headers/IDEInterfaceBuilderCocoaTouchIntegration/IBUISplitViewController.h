@@ -26,13 +26,13 @@
 + (double)defaultMasterColumnWidth;
 + (id)ibObservedPropertiesForEditorViewInvalidation;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL presentsWithGesture; // @synthesize presentsWithGesture=_presentsWithGesture;
 @property(retain, nonatomic) NSNumber *preferredPrimaryColumnWidthFraction; // @synthesize preferredPrimaryColumnWidthFraction=_preferredPrimaryColumnWidthFraction;
 @property(retain, nonatomic) NSNumber *minimumPrimaryColumnWidth; // @synthesize minimumPrimaryColumnWidth=_minimumPrimaryColumnWidth;
 @property(retain, nonatomic) NSNumber *maximumPrimaryColumnWidth; // @synthesize maximumPrimaryColumnWidth=_maximumPrimaryColumnWidth;
 @property(retain, nonatomic) IBUIViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) IBUIViewController *masterViewController; // @synthesize masterViewController=_masterViewController;
-- (void).cxx_destruct;
 - (void)decodeLegacyViewControllers:(id)arg1;
 - (id)effectiveSimulatedBottomBarMetrics;
 - (id)effectiveSimulatedTopBarMetrics;

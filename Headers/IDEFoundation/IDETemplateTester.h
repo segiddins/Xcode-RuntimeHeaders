@@ -25,6 +25,7 @@
 }
 
 + (id)platformForString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain) DVTPromise *teamsLoadingPromise; // @synthesize teamsLoadingPromise=_teamsLoadingPromise;
 @property(retain) DVTFuture *teamsLoadingFuture; // @synthesize teamsLoadingFuture=_teamsLoadingFuture;
@@ -36,7 +37,6 @@
 @property BOOL crossPlatformOnly; // @synthesize crossPlatformOnly=_crossPlatformOnly;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(copy) NSString *outputPath; // @synthesize outputPath=_outputPath;
-- (void).cxx_destruct;
 - (id)_templateNamed:(id)arg1 forPlatform:(id)arg2;
 - (void)runTemplateTests;
 - (BOOL)runCreateNewProjectWithTemplateNamed:(id)arg1 platform:(id)arg2 options:(id)arg3 error:(id *)arg4;

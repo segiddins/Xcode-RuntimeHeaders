@@ -6,9 +6,7 @@
 
 #import <DVTSourceEditor/_TtC15DVTSourceEditor23DVTSourceEditorLandmark.h>
 
-#import <DVTSourceEditor/DVTSourceLandmarkItemProtocol-Protocol.h>
-
-@interface _TtC15DVTSourceEditor23DVTSourceEditorLandmark (DVTSourceEditor) <DVTSourceLandmarkItemProtocol>
+@interface _TtC15DVTSourceEditor23DVTSourceEditorLandmark (DVTSourceEditor)
 - (unsigned long long)landmarkItemType;
 - (BOOL)needsUpdate;
 - (id)landmarkItemTypeName;

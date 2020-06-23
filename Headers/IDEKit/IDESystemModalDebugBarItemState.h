@@ -19,6 +19,7 @@
     CDUnknownBlockType _stateDidChangeCallback;
 }
 
+- (void).cxx_destruct;
 @property BOOL stateChanged; // @synthesize stateChanged=_stateChanged;
 @property(copy) CDUnknownBlockType stateDidChangeCallback; // @synthesize stateDidChangeCallback=_stateDidChangeCallback;
 @property(nonatomic) long long stateValue; // @synthesize stateValue=_stateValue;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_actualNotifyStateChanged;
 - (void)_coalescedNotifyStateChanged;
 - (void)setNeedsStateChangeNotification;

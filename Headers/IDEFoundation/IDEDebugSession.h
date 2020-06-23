@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTDispatchLock, DVTMutableOrderedDictionary, DVTObservingToken, DVTStackBacktrace, DVTTextDocumentLocation, IDEBreakpointManager, IDEConsoleAdaptor, IDEDebugProcess, IDEDebugSessionRuntimeGroup, IDELaunchSession, IDERunOperationWorker, NSArray, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTDispatchLock, DVTMutableOrderedDictionary, DVTObservingToken, DVTStackBacktrace, DVTTextDocumentLocation, DVTTimeSlicedMainThreadWorkQueue, IDEBreakpointManager, IDEConsoleAdaptor, IDEDebugProcess, IDEDebugSessionRuntimeGroup, IDELaunchSession, IDERunOperationWorker, NSArray, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol DBGDebugSessionBreakpointLifeCycleDelegate, IDEDebugTopNavigableModel;
 
 @interface IDEDebugSession : NSObject <DVTInvalidation>
@@ -20,6 +20,7 @@
     NSMapTable *_locationsToIdentifiers;
     NSMapTable *_watchpointsToIdentifiers;
     DVTDispatchLock *_breakpointsAndWatchpointsToIdentifiersLock;
+    DVTTimeSlicedMainThreadWorkQueue *_breakpointIdentifierChangedQueue;
     NSMutableSet *_profileDataObservers;
     BOOL _touchedProfileDataObserversRegistration;
     struct __CFSet *_stackFramesForDisassembly;
@@ -79,6 +80,7 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)keyPathsForValuesAffectingTotalRunningTime;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL shouldPostStateChangedDistributedNotifications; // @synthesize shouldPostStateChangedDistributedNotifications=_shouldPostStateChangedDistributedNotifications;
 @property unsigned long long memoryPhysicalFootprintLow; // @synthesize memoryPhysicalFootprintLow=_memoryPhysicalFootprintLow;
 @property unsigned long long memoryPhysicalFootprintHigh; // @synthesize memoryPhysicalFootprintHigh=_memoryPhysicalFootprintHigh;
@@ -120,7 +122,6 @@
 @property(retain) IDERunOperationWorker *debugLauncher; // @synthesize debugLauncher=_debugLauncher;
 @property(retain) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain, nonatomic) id <IDEDebugTopNavigableModel> topNavigableModel; // @synthesize topNavigableModel=_topNavigableModel;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSString *totalRunningTime;
 - (void)setCurrentCPUCapAverageMeasurement:(id)arg1;
@@ -194,10 +195,13 @@
 - (id)_breakpointFromContainer:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (BOOL)_isBreakpointValid:(id)arg1;
 - (BOOL)_isWatchpointValid:(id)arg1;
+- (void)_handleSanitizerBreakpoint:(id)arg1 typeChange:(id)arg2;
 - (void)_recreateBreakpointIfNeccessary:(id)arg1;
 - (void)_createBreakpointIfNeccessary:(id)arg1;
+- (BOOL)_shouldCreateBreakpoint:(id)arg1;
 - (void)_handleBreakpointIgnoreCountChanged:(id)arg1;
 - (void)_handleBreakpointConditionChanged:(id)arg1;
+- (void)_handleBreakpointNameChanged:(id)arg1;
 - (void)_handleBreakpointEnablementChanged:(id)arg1;
 - (void)_handleBreakpointActivationChanged;
 - (void)_handleBreakpointLocationsRemoved:(id)arg1;

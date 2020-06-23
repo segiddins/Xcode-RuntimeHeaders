@@ -15,10 +15,10 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) BOOL wantsPlatformInRequestURL; // @synthesize wantsPlatformInRequestURL=_wantsPlatformInRequestURL;
 @property(readonly, nonatomic) NSString *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (unsigned long long)expectedHTTPStatusCode;
 - (id)serializedPayload:(id *)arg1;
 - (id)_payloadWithStandardItems:(id)arg1;

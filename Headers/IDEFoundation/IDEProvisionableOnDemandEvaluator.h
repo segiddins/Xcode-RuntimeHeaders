@@ -26,6 +26,7 @@
 
 + (id)evaluatorWithEvaluationInputs:(id)arg1 configuration:(id)arg2 shouldRepair:(BOOL)arg3 provisioningManager:(id)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEProvisioningUserAction *repairUserAction; // @synthesize repairUserAction=_repairUserAction;
 @property(retain) NSError *repairError; // @synthesize repairError=_repairError;
 @property(retain) IDEProvisionableStatusEvaluation *evaluation; // @synthesize evaluation=_evaluation;
@@ -35,7 +36,6 @@
 @property BOOL shouldRepair; // @synthesize shouldRepair=_shouldRepair;
 @property(retain) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain) IDEProvisionableStatusEvalutorInputs *evaluationInputs; // @synthesize evaluationInputs=_evaluationInputs;
-- (void).cxx_destruct;
 @property(readonly) BOOL requiresImmediateUserActionResolution;
 - (BOOL)_actuallyShouldRepair;
 - (void)_waitForEvaluationWithForcedAssetRefresh:(BOOL)arg1;

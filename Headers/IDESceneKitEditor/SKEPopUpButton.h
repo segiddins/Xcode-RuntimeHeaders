@@ -18,8 +18,8 @@
 }
 
 + (Class)cellClass;
-@property(nonatomic) BOOL showIconOnly; // @synthesize showIconOnly=_showIconOnly;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showIconOnly; // @synthesize showIconOnly=_showIconOnly;
 - (struct CGSize)intrinsicContentSize;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawInRect:(struct CGRect)arg1;

@@ -15,9 +15,9 @@
     DVTLogAspect *_logAspect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)writeValues;
 - (void)removeAllSandboxValues;
 - (BOOL)hasSandboxValues;

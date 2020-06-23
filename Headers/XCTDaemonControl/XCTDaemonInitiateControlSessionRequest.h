@@ -18,9 +18,9 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)_attemptVersion13APIWithDaemonProxy:(id)arg1;
 - (void)_attemptVersion16APIWithDaemonProxy:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 timeout:(double)arg2;

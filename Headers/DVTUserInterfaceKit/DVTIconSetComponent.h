@@ -17,10 +17,10 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly) long long scale; // @synthesize scale=_scale;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)image;
 @property(readonly) struct CGImage *cgImage;
 - (id)description;

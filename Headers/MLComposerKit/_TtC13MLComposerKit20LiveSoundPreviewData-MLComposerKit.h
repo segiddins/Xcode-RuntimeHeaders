@@ -6,9 +6,7 @@
 
 #import <MLComposerKit/_TtC13MLComposerKit20LiveSoundPreviewData.h>
 
-#import <MLComposerKit/SNResultsObserving-Protocol.h>
-
-@interface _TtC13MLComposerKit20LiveSoundPreviewData (MLComposerKit) <SNResultsObserving>
+@interface _TtC13MLComposerKit20LiveSoundPreviewData (MLComposerKit)
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidComplete:(id)arg1;
 - (void)request:(id)arg1 didProduceResult:(id)arg2;

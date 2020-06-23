@@ -16,8 +16,8 @@
 }
 
 + (void)initialize;
-@property(retain) DVTFilePath *stateFilePath; // @synthesize stateFilePath=_stateFilePath;
 - (void).cxx_destruct;
+@property(retain) DVTFilePath *stateFilePath; // @synthesize stateFilePath=_stateFilePath;
 - (id)loadStateData;
 - (void)saveStateData:(id)arg1;
 - (id)mergeStateData:(id)arg1;

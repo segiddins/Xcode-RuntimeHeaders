@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIAttributedTextContainer-Protocol.h>
 
-@class IBUIColor, IBUIFontDescription, NSAttributedString, NSNumber, NSString;
+@class IBColor, IBUIFontDescription, NSAttributedString, NSNumber, NSString;
 
 @interface IBUILabel : IBUIView <IBDocumentArchiving, IBUIAttributedTextContainer>
 {
@@ -26,9 +26,9 @@
     IBUIFontDescription *_fontDescription;
     NSString *_text;
     long long _textAlignment;
-    IBUIColor *_textColor;
-    IBUIColor *_highlightedColor;
-    IBUIColor *_shadowColor;
+    IBColor *_textColor;
+    IBColor *_highlightedColor;
+    IBColor *_shadowColor;
     double _minimumFontSize;
     double _minimumScaleFactor;
     long long _numberOfLines;
@@ -49,6 +49,7 @@
 + (long long)ibInstantiationSizeBehavior;
 + (id)keyPathsForValuesAffectingIbPlainTextContent;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 @property(nonatomic) BOOL enablesMarqueeWhenAncestorFocused; // @synthesize enablesMarqueeWhenAncestorFocused=_enablesMarqueeWhenAncestorFocused;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
@@ -62,14 +63,13 @@
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
 @property(nonatomic) double minimumFontSize; // @synthesize minimumFontSize=_minimumFontSize;
 @property(nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
-@property(copy, nonatomic) IBUIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
-@property(copy, nonatomic) IBUIColor *highlightedColor; // @synthesize highlightedColor=_highlightedColor;
+@property(copy, nonatomic) IBColor *shadowColor; // @synthesize shadowColor=_shadowColor;
+@property(copy, nonatomic) IBColor *highlightedColor; // @synthesize highlightedColor=_highlightedColor;
 @property(nonatomic) BOOL usesAttributedText; // @synthesize usesAttributedText=_usesAttributedText;
-@property(copy, nonatomic) IBUIColor *textColor; // @synthesize textColor=_textColor;
+@property(copy, nonatomic) IBColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)unarchiveTextColor:(id)arg1;
 - (void)archiveTextColor:(id)arg1;
 - (void)unarchiveFont:(id)arg1;
@@ -94,8 +94,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly) long long autoshrinkMode;
 @property(readonly, nonatomic, getter=isMultiline) BOOL multiline;
-- (void)setFontDescription:(id)arg1;
-@property(readonly, copy, nonatomic) IBUIFontDescription *fontDescription;
+@property(copy, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
 @property(readonly) IBUIFontDescription *defaultFontDescription;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 - (unsigned long long)ibDefaultAccessibilityTraits;

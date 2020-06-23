@@ -29,6 +29,7 @@
     IDESchemeActionsInvocationRecord *_schemeActionsInvocationRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDESchemeActionsInvocationRecord *schemeActionsInvocationRecord; // @synthesize schemeActionsInvocationRecord=_schemeActionsInvocationRecord;
 @property(retain, nonatomic) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 @property(copy, nonatomic) NSString *buildConfiguration; // @synthesize buildConfiguration=_buildConfiguration;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) DVTFilePath *workingDirectory; // @synthesize workingDirectory=_workingDirectory;
 @property(copy, nonatomic) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *recentFilterItems; // @synthesize recentFilterItems=_recentFilterItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *recentFilterItems; // @synthesize recentFilterItems=_recentFilterItems;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

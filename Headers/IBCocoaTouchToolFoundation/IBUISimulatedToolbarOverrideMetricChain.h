@@ -13,8 +13,8 @@
     IBUIMetricRepresentation *_toolbar;
 }
 
-@property(readonly, nonatomic) IBUIMetricRepresentation *toolbar; // @synthesize toolbar=_toolbar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBUIMetricRepresentation *toolbar; // @synthesize toolbar=_toolbar;
 - (id)singleLinkPrettyDescription;
 - (id)copyWithPrecedingMetric:(id)arg1;
 - (BOOL)isEqualToMetricChain:(id)arg1;

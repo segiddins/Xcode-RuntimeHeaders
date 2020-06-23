@@ -19,12 +19,12 @@
     NSLayoutConstraint *_imageHeight;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *imageHeight; // @synthesize imageHeight=_imageHeight;
 @property __weak NSLayoutConstraint *imageWidth; // @synthesize imageWidth=_imageWidth;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 - (void)setLoadedState:(int)arg1;
 - (int)loadedState;
-- (void).cxx_destruct;
 - (id)dataRepresentation;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;

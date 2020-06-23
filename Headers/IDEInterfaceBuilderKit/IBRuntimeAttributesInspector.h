@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsMultipleObjectInspection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenu *typeMenu; // @synthesize typeMenu=_typeMenu;
 @property(retain, nonatomic) IBPasteboardAwareTableView *attributesTableView; // @synthesize attributesTableView=_attributesTableView;
 @property(retain, nonatomic) DVTBorderedView *controlBar; // @synthesize controlBar=_controlBar;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *currentPasteboardDragMarker; // @synthesize currentPasteboardDragMarker=_currentPasteboardDragMarker;
 @property(copy, nonatomic) NSArray *userDefinedRuntimeAttributes; // @synthesize userDefinedRuntimeAttributes=_userDefinedRuntimeAttributes;
 @property(copy, nonatomic) NSIndexSet *draggedAttributeIndexes; // @synthesize draggedAttributeIndexes=_draggedAttributeIndexes;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;

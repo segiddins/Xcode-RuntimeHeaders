@@ -31,12 +31,12 @@
 
 + (BOOL)applyModifiersToArchive:(id)arg1 modifiers:(id)arg2;
 + (id)createTemporaryModifiedArchive:(id)arg1 modifiers:(id)arg2 copyDataFiles:(BOOL)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) DYCaptureFile *currentFile; // @synthesize currentFile=_currentFile;
 @property(readonly, nonatomic) struct Function *currentFunction; // @synthesize currentFunction=_currentFunction;
 @property(readonly, nonatomic) NSMutableArray *functionStreamModifiers; // @synthesize functionStreamModifiers=_functionStreamModifiers;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_processFunction:(const struct Function *)arg1 functionIndex:(int)arg2;
 - (void)_restoreAPIState;
 - (void)_saveAPIState;

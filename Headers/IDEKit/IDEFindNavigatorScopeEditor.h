@@ -23,9 +23,9 @@
     IDEWorkspace *_hostWorkspace;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEWorkspace *hostWorkspace; // @synthesize hostWorkspace=_hostWorkspace;
 @property __weak id <IDEFindNavigatorScopeEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestResize:(id)arg1;
 - (void)sizeToFitScreen:(id)arg1;
 - (void)applyResizingToRuleEditor:(id)arg1 maxRows:(double)arg2;

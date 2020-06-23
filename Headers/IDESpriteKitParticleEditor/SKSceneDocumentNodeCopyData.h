@@ -22,9 +22,9 @@
 + (id)readableTypesForPasteboard:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)copyDataForNavNode:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSValue *parentUID; // @synthesize parentUID=_parentUID;
 @property(readonly, nonatomic) SKNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)initWithCoder:(id)arg1;

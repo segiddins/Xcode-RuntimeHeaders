@@ -16,9 +16,9 @@
 
 + (id)propertyListIdentifier;
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long root; // @synthesize root=_root;
 @property(readonly) NSArray *pathComponents; // @synthesize pathComponents=_pathComponents;
-- (void).cxx_destruct;
 - (BOOL)isWorkspaceSpecific;
 - (id)propertyListRepresentation;
 - (CDUnknownBlockType)filterBoundToWorkspace:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) DVTFilePath *outputStringsFilePath; // @synthesize outputStringsFilePath=_outputStringsFilePath;
 @property(readonly, copy) DVTFilePath *outputDirectoryFilePath; // @synthesize outputDirectoryFilePath=_outputDirectoryFilePath;
 @property(readonly, copy) NSDictionary *infoPlistDictionary; // @synthesize infoPlistDictionary=_infoPlistDictionary;
-- (void).cxx_destruct;
 - (id)stringsFileElementsForKey:(id)arg1 arrayValue:(id)arg2;
 - (id)stringsFileElementForKey:(id)arg1 stringValue:(id)arg2;
 - (void)main;

@@ -14,9 +14,9 @@
     long long _sourceUpdateStrategy;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long sourceUpdateStrategy; // @synthesize sourceUpdateStrategy=_sourceUpdateStrategy;
 @property(readonly) NSSet *focusedItems; // @synthesize focusedItems=_focusedItems;
-- (void).cxx_destruct;
 - (id)initWithFocusedItems:(id)arg1 sourceUpdateStrategy:(long long)arg2;
 
 @end

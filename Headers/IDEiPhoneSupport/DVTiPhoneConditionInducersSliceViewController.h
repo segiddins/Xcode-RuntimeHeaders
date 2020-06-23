@@ -30,6 +30,7 @@
     DVTObservingToken *_deviceAllowsSecureServicesObservingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *deviceAllowsSecureServicesObservingToken; // @synthesize deviceAllowsSecureServicesObservingToken=_deviceAllowsSecureServicesObservingToken;
 @property(retain) NSTextField *setupStatusLabel; // @synthesize setupStatusLabel=_setupStatusLabel;
 @property(retain) NSProgressIndicator *setupProgressIndicator; // @synthesize setupProgressIndicator=_setupProgressIndicator;
@@ -48,7 +49,6 @@
 @property(retain) DVTBorderedView *contentBorderedView; // @synthesize contentBorderedView=_contentBorderedView;
 @property __weak DVTiOSConditionInducerProfile *selectedProfile; // @synthesize selectedProfile=_selectedProfile;
 @property __weak DVTiOSConditionInducer *selectedConditionInducer; // @synthesize selectedConditionInducer=_selectedConditionInducer;
-- (void).cxx_destruct;
 - (void)_updateViewStateForConditionInducer:(id)arg1;
 - (void)_updateConditionViewState;
 - (void)_updateConditionInducerAvailability;

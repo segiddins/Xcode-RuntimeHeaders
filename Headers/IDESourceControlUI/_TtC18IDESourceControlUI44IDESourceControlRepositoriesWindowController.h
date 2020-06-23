@@ -6,7 +6,6 @@
 
 #import <AppKit/NSWindowController.h>
 
-#import <IDESourceControlUI/IDESourceControlRepositoriesWindowControllerProtocol-Protocol.h>
 #import <IDESourceControlUI/NSObject-Protocol.h>
 #import <IDESourceControlUI/NSSearchFieldDelegate-Protocol.h>
 #import <IDESourceControlUI/NSWindowDelegate-Protocol.h>
@@ -14,7 +13,7 @@
 
 @class DVTReplacementView, MISSING_TYPE, NSButton, NSProgressIndicator, NSSearchField, NSString;
 
-@interface _TtC18IDESourceControlUI44IDESourceControlRepositoriesWindowController : NSWindowController <IDESourceControlRepositoriesWindowControllerProtocol, NSObject, NSWindowDelegate, NSSearchFieldDelegate, _TtP6IDEKit37IDESourceControlAuthenticationContext_>
+@interface _TtC18IDESourceControlUI44IDESourceControlRepositoriesWindowController : NSWindowController <NSObject, NSWindowDelegate, NSSearchFieldDelegate, _TtP6IDEKit37IDESourceControlAuthenticationContext_>
 {
     MISSING_TYPE *cloneButton;
     MISSING_TYPE *searchField;

@@ -33,8 +33,8 @@
 
 + (id)profileTypeWithPortalIdentifier:(id)arg1;
 + (id)profileTypeWithIdentifier:(id)arg1;
-+ (id)profileTypesForPlatform:(id)arg1;
 + (id)profileTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long devicesStyle; // @synthesize devicesStyle=_devicesStyle;
 @property(readonly, nonatomic) BOOL canBeCreatedByFreeTeams; // @synthesize canBeCreatedByFreeTeams=_canBeCreatedByFreeTeams;
 @property(readonly, nonatomic) BOOL canBeCreatedByUniversityTeams; // @synthesize canBeCreatedByUniversityTeams=_canBeCreatedByUniversityTeams;
@@ -54,7 +54,6 @@
 @property(readonly, nonatomic) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
 @property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)supportsFeatures:(id)arg1 error:(id *)arg2;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -24,11 +24,11 @@
 }
 
 + (id)windowViewForWindow:(id)arg1 andContentView:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL liveResizing; // @synthesize liveResizing=_liveResizing;
 @property(nonatomic) int contentResizingMode; // @synthesize contentResizingMode=_contentResizingMode;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSWindow *windowToMimic; // @synthesize windowToMimic=_windowToMimic;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)applyAndInvalidateAppearance;
 - (void)effectiveAppearanceDidChange;

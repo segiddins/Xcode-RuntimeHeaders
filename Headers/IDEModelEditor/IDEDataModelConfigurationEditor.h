@@ -20,8 +20,8 @@
 
 + (id)keyPathsForValuesAffectingSelectedConfigurations;
 + (id)keyPathsForValuesAffectingSelection;
-@property(retain) IDEDataModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (void).cxx_destruct;
+@property(retain) IDEDataModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (id)allSubViewControllers;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;

@@ -17,12 +17,12 @@
     NSGradient *_disabledGradient;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGradient *disabledGradient; // @synthesize disabledGradient=_disabledGradient;
 @property(retain, nonatomic) NSGradient *selectedGradient; // @synthesize selectedGradient=_selectedGradient;
 @property(retain, nonatomic) NSGradient *pressedGradient; // @synthesize pressedGradient=_pressedGradient;
 @property(retain, nonatomic) NSGradient *normalGradient; // @synthesize normalGradient=_normalGradient;
 @property(nonatomic) int buttonStyle; // @synthesize buttonStyle=_buttonStyle;
-- (void).cxx_destruct;
 - (void)_drawRect:(struct CGRect)arg1;
 - (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 - (void)drawImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;

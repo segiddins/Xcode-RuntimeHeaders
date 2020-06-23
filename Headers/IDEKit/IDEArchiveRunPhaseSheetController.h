@@ -22,9 +22,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEArchiveSchemeAction *schemeAction; // @synthesize schemeAction=_schemeAction;
 @property(retain) IDEScheme *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 @property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
 - (void)loadView;

@@ -24,10 +24,10 @@
     struct CGSize _buttonOffet;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize buttonOffet; // @synthesize buttonOffet=_buttonOffet;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(readonly) IDEKeyBindingFieldCell *editingCell; // @synthesize editingCell=_editingCell;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)shouldDrawInsertionPoint;
 - (void)drawRect:(struct CGRect)arg1;

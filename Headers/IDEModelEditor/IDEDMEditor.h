@@ -23,8 +23,8 @@
 
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
-@property(retain) IDEDMEditorController *currentActiveController; // @synthesize currentActiveController=_currentActiveController;
 - (void).cxx_destruct;
+@property(retain) IDEDMEditorController *currentActiveController; // @synthesize currentActiveController=_currentActiveController;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (void)selectPreviousContentSibling:(id)arg1;

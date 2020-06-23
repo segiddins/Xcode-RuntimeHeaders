@@ -15,9 +15,9 @@
     DVTLayerImageExporter *_exporter;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTLayerImageExporter *exporter; // @synthesize exporter=_exporter;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 
 @end
 

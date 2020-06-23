@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC8RCShared27VolumeInspectableEditorCell : _TtC8RCShared30InspectableEditorCellFromClass
 {
-    MISSING_TYPE *slider;
+    MISSING_TYPE *volumeSliderView;
 }
 
 - (void).cxx_destruct;

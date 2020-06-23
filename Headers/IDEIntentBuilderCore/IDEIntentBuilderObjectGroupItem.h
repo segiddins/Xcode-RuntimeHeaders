@@ -16,9 +16,9 @@
 
 + (Class)propertyClass;
 + (id)defaultPropertyName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(nonatomic) unsigned long long lastPropertyTag; // @synthesize lastPropertyTag=_lastPropertyTag;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)primitiveInvalidate;
@@ -37,7 +37,9 @@
 - (void)addProperty:(id)arg1;
 - (id)codegen_importStatementsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_forwardDeclarationsForSourceLanguage:(unsigned long long)arg1;
-- (id)codegen_allProperties;
+@property(readonly, copy, nonatomic) NSArray *codegen_customProperties;
+@property(readonly, copy, nonatomic) NSArray *codegen_allCustomProperties;
+@property(readonly, copy, nonatomic) NSArray *codegen_allProperties;
 - (id)codegen_propertyImplementationsForSourceLanguage:(unsigned long long)arg1 readonly:(BOOL)arg2 dynamic:(BOOL)arg3;
 - (id)codegen_propertyDeclarationsForSourceLanguage:(unsigned long long)arg1 readonly:(BOOL)arg2;
 

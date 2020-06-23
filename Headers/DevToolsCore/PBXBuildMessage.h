@@ -20,8 +20,8 @@
 + (id)buildErrorMessageWithFormat:(id)arg1;
 + (id)buildWarningMessageWithFormat:(id)arg1;
 + (id)buildNoticeMessageWithFormat:(id)arg1;
-@property(nonatomic) unsigned long long buildLogItemIdentifier; // @synthesize buildLogItemIdentifier=_buildLogItemIdentifier;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long buildLogItemIdentifier; // @synthesize buildLogItemIdentifier=_buildLogItemIdentifier;
 - (id)description;
 - (BOOL)isError;
 - (BOOL)isAnalyzerResult;

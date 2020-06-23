@@ -21,8 +21,8 @@
     BOOL _allowsConditionalizeSDK;
 }
 
-@property __weak Xcode3BuildSettingsEditor *buildSettingsEditor; // @synthesize buildSettingsEditor=_buildSettingsEditor;
 - (void).cxx_destruct;
+@property __weak Xcode3BuildSettingsEditor *buildSettingsEditor; // @synthesize buildSettingsEditor=_buildSettingsEditor;
 - (void)_sdkMenuItemAction:(id)arg1;
 - (void)_architectureMenuItemAction:(id)arg1;
 - (void)_editBuildConfigurationMenuItemAction:(id)arg1;

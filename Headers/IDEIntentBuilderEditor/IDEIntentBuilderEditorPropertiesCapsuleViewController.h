@@ -19,8 +19,8 @@
     NSArrayController *_typesArrayController;
 }
 
-@property __weak NSArrayController *typesArrayController; // @synthesize typesArrayController=_typesArrayController;
 - (void).cxx_destruct;
+@property __weak NSArrayController *typesArrayController; // @synthesize typesArrayController=_typesArrayController;
 - (id)_propertiesColumnTitle;
 - (void)_addItemToGroup:(id)arg1;
 - (void)selectPropertyType:(id)arg1;

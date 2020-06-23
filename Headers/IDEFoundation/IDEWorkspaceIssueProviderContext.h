@@ -16,9 +16,9 @@
     unsigned long long _hash;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <IDEIssueLogDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) IDEIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

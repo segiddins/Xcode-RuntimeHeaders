@@ -15,9 +15,9 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) IDESchemeAction *schemeAction; // @synthesize schemeAction=_schemeAction;
 @property(readonly) IDEScheme *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithScheme:(id)arg1 schemeAction:(id)arg2;
 - (id)initUsingDefaultNib;

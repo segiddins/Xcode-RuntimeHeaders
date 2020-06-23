@@ -47,6 +47,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSTextField *disabledMessageText; // @synthesize disabledMessageText=_disabledMessageText;
 @property __weak NSView *disabledMessageContainer; // @synthesize disabledMessageContainer=_disabledMessageContainer;
 @property __weak NSTextField *bottomGraphLow; // @synthesize bottomGraphLow=_bottomGraphLow;
@@ -69,7 +70,6 @@
 @property __weak NSTextField *topSectionSpeedTopNumberLabel; // @synthesize topSectionSpeedTopNumberLabel=_topSectionSpeedTopNumberLabel;
 @property __weak DVTMeterView *topSectionSpeedometer; // @synthesize topSectionSpeedometer=_topSectionSpeedometer;
 @property __weak NSView *topSectionSpeedometerView; // @synthesize topSectionSpeedometerView=_topSectionSpeedometerView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;
 - (void)setPathStyleForGraph:(id)arg1 entry:(id)arg2 path:(id)arg3;

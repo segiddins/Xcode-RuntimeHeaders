@@ -16,11 +16,11 @@
     struct _NSRange _lineRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
 @property(nonatomic) __weak IDESchemeActionCodeCoverageFile *sourceFile; // @synthesize sourceFile=_sourceFile;
 @property(readonly, nonatomic) struct _NSRange lineRange; // @synthesize lineRange=_lineRange;
 @property(readonly, nonatomic) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
-- (void).cxx_destruct;
 - (id)description;
 - (id)wrappedContainer;
 - (id)initWithName:(id)arg1 lineRange:(struct _NSRange)arg2 executionCount:(unsigned long long)arg3 executableLines:(unsigned int)arg4 coveredLines:(unsigned int)arg5;

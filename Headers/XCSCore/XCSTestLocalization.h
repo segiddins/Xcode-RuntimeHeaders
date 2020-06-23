@@ -15,9 +15,9 @@
 }
 
 + (id)testLocalizationWithLanguage:(id)arg1 region:(id)arg2 validationErrors:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *region; // @synthesize region=_region;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;
 - (BOOL)_validateLanguage:(id)arg1 region:(id)arg2 validationErrors:(id *)arg3;

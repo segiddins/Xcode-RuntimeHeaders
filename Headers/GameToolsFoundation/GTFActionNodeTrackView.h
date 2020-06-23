@@ -74,6 +74,7 @@
 + (double)defaultTimelineWidth;
 + (double)defaultTimelineWidthInSeconds;
 + (double)defaultPixelsPerSecond;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) __weak id <GTFActionNodeTrackViewDelegate> timelineViewDelegate; // @synthesize timelineViewDelegate=_timelineViewDelegate;
 @property(retain, nonatomic) id <NSCopying> targetID; // @synthesize targetID=_targetID;
@@ -83,7 +84,6 @@
 @property(nonatomic) BOOL isOverviewTimeline; // @synthesize isOverviewTimeline=_isOverviewTimeline;
 @property(retain, nonatomic) NSTextField *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(readonly, nonatomic) NSArray *selectedActions; // @synthesize selectedActions=_selectedActions;
-- (void).cxx_destruct;
 - (void)startDragForSelectedActions:(id)arg1 atPosition:(struct CGPoint)arg2 withXOffset:(double)arg3;
 - (void)endDrag;
 - (BOOL)isDraggingNonGroupActions;

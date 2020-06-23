@@ -17,11 +17,11 @@
     NSArray *_allowedAssistantIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL preserveExistingServerBlueprint; // @synthesize preserveExistingServerBlueprint=_preserveExistingServerBlueprint;
 @property(retain, nonatomic) NSArray *allowedAssistantIdentifiers; // @synthesize allowedAssistantIdentifiers=_allowedAssistantIdentifiers;
 @property(retain, nonatomic) XCSUICreateBotAssistantContextWindowController *assistantContextWindowController; // @synthesize assistantContextWindowController=_assistantContextWindowController;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL schemeSupportsAnalyzeAction;
 @property(readonly, nonatomic) BOOL schemeSupportsTestAction;
 @property(readonly, nonatomic) BOOL schemeSupportsArchiveAction;

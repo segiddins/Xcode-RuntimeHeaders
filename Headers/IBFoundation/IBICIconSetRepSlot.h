@@ -24,10 +24,10 @@
 + (Class)assetRepClass;
 + (Class)assetSetClass;
 + (id)slotFilterWithSizeFilter:(id)arg1 scaleFilter:(id)arg2 colorSpaceFilter:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly) IBICSize *size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasColorSpace;
 - (id)requiredPixelSize;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;

@@ -21,13 +21,13 @@
     unsigned long long _registrationID;
 }
 
+- (void).cxx_destruct;
 @property BOOL booted; // @synthesize booted=_booted;
 @property unsigned long long registrationID; // @synthesize registrationID=_registrationID;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) SimDevice *device; // @synthesize device=_device;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)finalizeAndCallBlockWithError:(id)arg1;
 - (void)setupTimeoutHandler;
 - (void)deviceDidBoot;

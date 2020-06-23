@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDESigningEditorIOSMacAssetSelectionDataSource-Protocol.h>
-
 @class IDEProfileQualification, MISSING_TYPE, NSOrderedSet, NSString, _TtC13IDEFoundation26SigningEditorConfiguration, _TtC13IDEFoundation26SigningEditorProvisionable;
 @protocol IDEProvisioningBasicProfile, IDEProvisioningBasicSigningIdentity, IDEProvisioningBasicTeam, IDESigningEditorConfigurationDataSourceDelegate;
 
-@interface _TtC13IDEFoundation32SigningEditoriOSMacProvisionable : NSObject <IDESigningEditorIOSMacAssetSelectionDataSource>
+@interface _TtC13IDEFoundation32SigningEditoriOSMacProvisionable : NSObject
 {
     MISSING_TYPE *configurationDataSourceDelegate;
     MISSING_TYPE *provisionable;
@@ -25,6 +23,10 @@
 @property(nonatomic, readonly) long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic, readonly) _TtC13IDEFoundation26SigningEditorConfiguration *configuration;
+@property(nonatomic, readonly) BOOL wantsUniversalBundleIdentifierOption;
+@property(nonatomic) BOOL useIOSAppID;
+@property(nonatomic, readonly) NSString *bundleIdentifierPlaceholder;
+@property(nonatomic, readonly) BOOL wantsBundleIdentifierEditingLabel;
 @property(nonatomic, copy) NSString *bundleIdentifier;
 @property(nonatomic, readonly) BOOL wantsBundleIdentifierEditing;
 @property(nonatomic, readonly) BOOL isBundleIdentifierReadOnly;

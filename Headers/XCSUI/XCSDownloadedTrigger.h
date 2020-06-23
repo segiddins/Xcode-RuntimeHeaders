@@ -15,10 +15,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *filename; // @synthesize filename=_filename;
 @property(copy) NSString *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 
 @end
 

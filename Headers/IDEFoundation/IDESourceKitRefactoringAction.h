@@ -22,9 +22,9 @@
 }
 
 + (BOOL)getRemappedFiles:(id)arg1 callback:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *failureReason; // @synthesize failureReason=_failureReason;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)refactoringUnhandledURLs:(id)arg1;
 - (void)refactoringProgressUpdated:(id)arg1;
 - (void)refactoringRenameRangesFound:(id)arg1;

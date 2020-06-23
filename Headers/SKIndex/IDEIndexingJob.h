@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct IndexModificationTime _outOfDateModTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct IndexModificationTime outOfDateModTime; // @synthesize outOfDateModTime=_outOfDateModTime;
 @property(nonatomic, getter=isHighPriority) BOOL highPriority; // @synthesize highPriority=_highPriority;
 @property(nonatomic, getter=isOnHold) BOOL onHold; // @synthesize onHold=_onHold;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) DVTFilePath *file; // @synthesize file=_file;
 @property(readonly, nonatomic) id <IDEIndexable> indexable; // @synthesize indexable=_indexable;
 @property(readonly, nonatomic) __weak IDEIndexingEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (void)didComplete;
 - (BOOL)shouldContinue;
 - (id)outputFilePath;

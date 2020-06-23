@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _modificationTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double modificationTime; // @synthesize modificationTime=_modificationTime;
 @property(readonly, nonatomic) BOOL hasAccurateTestCaseSubClass; // @synthesize hasAccurateTestCaseSubClass=_hasAccurateTestCaseSubClass;
 @property(readonly, nonatomic) NSArray *symbols; // @synthesize symbols=_symbols;
-- (void).cxx_destruct;
 - (id)initWithSymbols:(id)arg1 hasAccurateTestCaseSubClass:(BOOL)arg2 modificationTime:(double)arg3;
 
 @end

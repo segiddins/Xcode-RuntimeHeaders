@@ -17,11 +17,11 @@
     id <_TtP17XCSAdministration14LaunchdService_> _launchdService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14LaunchdService_> launchdService; // @synthesize launchdService=_launchdService;
 @property(copy, nonatomic) NSString *destinationDirectory; // @synthesize destinationDirectory=_destinationDirectory;
 @property(copy, nonatomic) NSString *sourceDirectory; // @synthesize sourceDirectory=_sourceDirectory;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (BOOL)removeItemAtPathAndCheckIfDeleted:(id)arg1 error:(id *)arg2;
 - (BOOL)restartWithError:(id *)arg1;
 - (BOOL)stopWithError:(id *)arg1;

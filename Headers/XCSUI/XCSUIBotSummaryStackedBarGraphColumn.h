@@ -24,6 +24,7 @@
 }
 
 + (id)columnDataWithColumnNumber:(id)arg1 bars:(id)arg2 columnViewType:(unsigned long long)arg3 integrationResultsOverview:(unsigned long long)arg4 buildResultSummary:(id)arg5 graphType:(unsigned long long)arg6 integrationId:(id)arg7;
+- (void).cxx_destruct;
 @property struct CGRect hitTestRect; // @synthesize hitTestRect=_hitTestRect;
 @property(retain) NSString *integrationId; // @synthesize integrationId=_integrationId;
 @property unsigned long long graphType; // @synthesize graphType=_graphType;
@@ -35,7 +36,6 @@
 @property unsigned long long totalBarHeight; // @synthesize totalBarHeight=_totalBarHeight;
 @property(copy) NSArray *bars; // @synthesize bars=_bars;
 @property(copy) NSString *columnNumber; // @synthesize columnNumber=_columnNumber;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (long long)cumulativeValueOfBars;

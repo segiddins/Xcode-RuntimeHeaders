@@ -22,6 +22,7 @@
     MISSING_TYPE *workspaceSettingsDidChangeToken;
     MISSING_TYPE *indexBecameValidToken;
     MISSING_TYPE *buildStartedToken;
+    MISSING_TYPE *lastActiveRunDestinationIdentifier;
 }
 
 @end

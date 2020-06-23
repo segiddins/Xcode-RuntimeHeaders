@@ -14,8 +14,8 @@
 }
 
 + (id)keyForEntriesInJson:(id)arg1;
-@property(copy) NSDictionary *locFileSetsByJson; // @synthesize locFileSetsByJson=_locFileSetsByJson;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *locFileSetsByJson; // @synthesize locFileSetsByJson=_locFileSetsByJson;
 - (id)locFileSetForSlot:(id)arg1 inJson:(id)arg2;
 - (id)slotInfoForAllSourceFiles;
 - (id)slotInfoForSourceFile:(id)arg1 inJson:(id)arg2;

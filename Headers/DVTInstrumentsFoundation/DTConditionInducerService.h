@@ -17,8 +17,8 @@
 }
 
 + (void)registerCapabilities:(id)arg1;
-@property(retain) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
 - (void)activeConditionsDidStop;
 - (void)activeConditionsWillStop;
 - (void)_requestDisableActiveConditionInducerWithCompletion:(CDUnknownBlockType)arg1;

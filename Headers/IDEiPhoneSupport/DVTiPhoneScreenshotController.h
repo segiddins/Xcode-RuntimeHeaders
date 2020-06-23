@@ -20,10 +20,10 @@
 }
 
 + (id)keyPathsForValuesAffectingScreenshots;
+- (void).cxx_destruct;
 @property BOOL screenshotPending; // @synthesize screenshotPending=_screenshotPending;
 @property(retain) DVTiOSScreenshotClient *screenshotClient; // @synthesize screenshotClient=_screenshotClient;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (id)initWithDevice:(id)arg1;
 - (void)addCapturedScreenshot:(id)arg1;
 - (void)sendFileError:(id)arg1;

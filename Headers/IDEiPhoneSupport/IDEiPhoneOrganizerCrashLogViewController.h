@@ -34,6 +34,7 @@
 + (id)defaultViewNibName;
 + (id)nibName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSButton *allLogsButton; // @synthesize allLogsButton=_allLogsButton;
 @property(retain) NSButton *deviceLogsButton; // @synthesize deviceLogsButton=_deviceLogsButton;
 @property(retain) NSView *listContainerView; // @synthesize listContainerView=_listContainerView;
@@ -42,7 +43,6 @@
 @property(retain) NSSearchField *searchField; // @synthesize searchField=_searchField;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
 @property(retain) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
-- (void).cxx_destruct;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;

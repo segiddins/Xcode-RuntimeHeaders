@@ -17,9 +17,9 @@
     IBAttributeSearchLocation *_attributeSearchLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) IBAttributeSearchLocation *attributeSearchLocation; // @synthesize attributeSearchLocation=_attributeSearchLocation;
 @property(readonly, copy) IBMemberID *memberIdentifier; // @synthesize memberIdentifier=_memberIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSCopying> issueCoalescingIdentifier;
 - (id)description;
 - (BOOL)ibDocumentMemberLocationAttributesAreEqualForDocumentLocation:(id)arg1;

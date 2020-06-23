@@ -40,6 +40,7 @@
     _IDESourceCodePlaygroundSectionAnnotationView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain) _IDESourceCodePlaygroundSectionAnnotationView *containerView; // @synthesize containerView=_containerView;
 @property(readonly) DVTGradientImageButton *valueHistoryButton; // @synthesize valueHistoryButton=_valueHistoryButton;
 @property(readonly) NSButton *quickLookButton; // @synthesize quickLookButton=_quickLookButton;
@@ -55,7 +56,6 @@
 @property(copy) CDUnknownBlockType valueHistoryClickHandler; // @synthesize valueHistoryClickHandler=_valueHistoryClickHandler;
 @property(retain) IDESourceCodePlaygroundSection *playgroundSection; // @synthesize playgroundSection=_playgroundSection;
 @property(retain) IDESourceCodePlaygroundSectionAccessoryViewAnnotation *accessoryViewAnnotation; // @synthesize accessoryViewAnnotation=_accessoryViewAnnotation;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;

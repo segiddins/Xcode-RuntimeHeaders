@@ -21,6 +21,7 @@
     NSObject<IBIDEAutolayoutItem> *_ancestor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(readonly, nonatomic) CDStruct_92d5623e lineOrientation; // @synthesize lineOrientation=_lineOrientation;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *descendant; // @synthesize descendant=_descendant;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *secondItem; // @synthesize secondItem=_secondItem;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *firstItem; // @synthesize firstItem=_firstItem;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)addAlternateMenuItemInGroup:(unsigned long long)arg1 withTitle:(id)arg2 existingMatch:(long long)arg3 shouldSwapWithPreviousMenuItem:(BOOL)arg4 constraintCreationBlock:(CDUnknownBlockType)arg5;
 - (void)addAlternateMenuItem:(id)arg1 inGroup:(unsigned long long)arg2 shouldSwapWithPreviousMenuItem:(BOOL)arg3;

@@ -16,9 +16,9 @@
     id <DVTServicesSession> _session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DVTServicesSession> session; // @synthesize session=_session;
 @property(retain, nonatomic) id <DVTServicesSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
-- (void).cxx_destruct;
 - (void)run;
 - (id)statusDescription;
 

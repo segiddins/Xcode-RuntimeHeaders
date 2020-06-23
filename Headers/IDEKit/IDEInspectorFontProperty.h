@@ -18,9 +18,9 @@
     NSStepper *_stepper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(retain, nonatomic) DVTFontTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)tearDownRefreshTriggers;
 - (void)setupRefreshTriggersAndConfigure;

@@ -24,8 +24,8 @@
     id <IDEFindNavigatorPathControlDelegate> _delegate;
 }
 
-@property(retain) id <IDEFindNavigatorPathControlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <IDEFindNavigatorPathControlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)userChoseSegmentValue:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;

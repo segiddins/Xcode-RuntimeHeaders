@@ -22,6 +22,7 @@
 
 + (Class)migrationContextClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSURL *savedPlaygroundURL; // @synthesize savedPlaygroundURL=_savedPlaygroundURL;
 @property(readonly) DVTFilePath *migrationBuildFolder; // @synthesize migrationBuildFolder=_migrationBuildFolder;
 @property BOOL remindMe; // @synthesize remindMe=_remindMe;
@@ -29,7 +30,6 @@
 @property long long numberOfIncompatibilityErrors; // @synthesize numberOfIncompatibilityErrors=_numIncompatibilityErrors;
 @property(readonly, copy) NSArray *targets; // @synthesize targets=_targets;
 @property(copy) NSArray *migrationBuildOptions; // @synthesize migrationBuildOptions=_migrationBuildOptions;
-- (void).cxx_destruct;
 - (void)endPerformingContextTask;
 - (void)beginPerformingContextTask;
 - (void)reopenPlaygroundIfNecessary;

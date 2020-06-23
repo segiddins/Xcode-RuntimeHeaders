@@ -13,8 +13,8 @@
     NSString *_moduleMapFilePath;
 }
 
-@property(retain) NSString *moduleMapFilePath; // @synthesize moduleMapFilePath=_moduleMapFilePath;
 - (void).cxx_destruct;
+@property(retain) NSString *moduleMapFilePath; // @synthesize moduleMapFilePath=_moduleMapFilePath;
 - (BOOL)supportsArchitecture:(id)arg1 inDomain:(id)arg2 allArchitectures:(id)arg3 withMacroExpansionScope:(id)arg4;
 - (id)hashStringForCommandLineComponents:(id)arg1 inputFilePaths:(id)arg2 withMacroExpansionScope:(id)arg3;
 - (id)standardFlagsWithMacroExpansionScope:(id)arg1;

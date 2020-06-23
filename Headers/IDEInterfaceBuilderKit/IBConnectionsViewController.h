@@ -27,8 +27,8 @@
 }
 
 + (void)initialize;
-@property(retain) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (void).cxx_destruct;
+@property(retain) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (id)findIndicatorContentViewForConnection:(id)arg1;
 - (void)refreshConnectionsData:(id)arg1;
 - (void)syncPrototypeStack:(id)arg1 withPrototypeData:(id)arg2;

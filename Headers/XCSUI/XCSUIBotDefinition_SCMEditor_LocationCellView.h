@@ -32,6 +32,7 @@
     CDUnknownBlockType _repositoryBranchChanged;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showingUnlistedBranch; // @synthesize showingUnlistedBranch=_showingUnlistedBranch;
 @property(nonatomic) BOOL credentialCheckingInProgress; // @synthesize credentialCheckingInProgress=_credentialCheckingInProgress;
 @property(copy, nonatomic) CDUnknownBlockType repositoryBranchChanged; // @synthesize repositoryBranchChanged=_repositoryBranchChanged;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSArray *branches; // @synthesize branches=_branches;
 @property(retain, nonatomic) XCSUICreateBotRepositoryIssue *issue; // @synthesize issue=_issue;
 @property(retain, nonatomic) DVTSourceControlRemoteRepository *repository; // @synthesize repository=_repository;
-- (void).cxx_destruct;
 - (void)selectRepository:(id)arg1;
 - (void)selectBranch:(id)arg1;
 - (void)_refreshUI;

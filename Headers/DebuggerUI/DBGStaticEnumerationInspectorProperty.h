@@ -18,10 +18,10 @@
     long long _bitMask;
 }
 
+- (void).cxx_destruct;
 @property long long bitMask; // @synthesize bitMask=_bitMask;
 @property BOOL hasBitMask; // @synthesize hasBitMask=_hasBitMask;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)_configureEnumeratedOptions;
 - (void)_extractOptionGroupsFromElement:(id)arg1 intoDictionary:(id)arg2;
 - (void)_extractOptionsFromElement:(id)arg1 intoDictionary:(id)arg2;

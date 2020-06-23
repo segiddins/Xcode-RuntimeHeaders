@@ -13,8 +13,8 @@
     NSArray *strategies;
 }
 
-@property(copy) NSArray *strategies; // @synthesize strategies;
 - (void).cxx_destruct;
+@property(copy) NSArray *strategies; // @synthesize strategies;
 
 @end
 

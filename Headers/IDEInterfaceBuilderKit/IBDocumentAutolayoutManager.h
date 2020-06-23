@@ -30,11 +30,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldOnlyUpdateAutolayoutStatusDuringSceneUpdates; // @synthesize shouldOnlyUpdateAutolayoutStatusDuringSceneUpdates=_shouldOnlyUpdateAutolayoutStatusDuringSceneUpdates;
 @property(nonatomic, getter=isAutolayoutStatusUpdatingEnabled) BOOL autolayoutStatusUpdatingEnabled; // @synthesize autolayoutStatusUpdatingEnabled=_autolayoutStatusUpdatingEnabled;
 @property(nonatomic) BOOL usesAutolayout; // @synthesize usesAutolayout=_usesAutolayout;
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (double)priorityForPlaceholderAmbiguousSubviewVerticalConstraintsForView:(id)arg1;
 - (double)priorityForPlaceholderAmbiguousSubviewHorizontalConstraintsForView:(id)arg1;
 - (double)priorityForPlaceholderUninitializedSubviewVerticalConstraintsForView:(id)arg1;

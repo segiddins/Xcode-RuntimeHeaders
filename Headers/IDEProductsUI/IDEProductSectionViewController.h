@@ -23,6 +23,7 @@
 }
 
 + (BOOL)canShowContentForProduct:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) id <IDEProductsInspectable> currentInspectable; // @synthesize currentInspectable=_currentInspectable;
 @property(readonly, nonatomic) NSString *busyReason; // @synthesize busyReason=_busyReason;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
 @property __weak IDEProductsViewController *productsViewController; // @synthesize productsViewController=_productsViewController;
 @property(retain, nonatomic) IDEProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
-- (void).cxx_destruct;
 @property(readonly) BOOL shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
 - (void)productManager:(id)arg1 receivedErrors:(id)arg2 fromSource:(id)arg3;

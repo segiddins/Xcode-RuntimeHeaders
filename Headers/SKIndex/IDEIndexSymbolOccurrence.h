@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newSymbolOccurrenceForSymbol:(id)arg1 role:(long long)arg2 isImplicit:(BOOL)arg3 location:(id)arg4 forQueryProvider:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) int symbolProviderKind; // @synthesize symbolProviderKind=_symbolProviderKind;
 @property(readonly, nonatomic) NSObject<IDEIndexGlobalQueryProvider> *queryProvider; // @synthesize queryProvider=_queryProvider;
 @property(readonly, nonatomic) long long column; // @synthesize column=_column;
 @property(readonly, nonatomic) long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, nonatomic) BOOL isImplicit; // @synthesize isImplicit=_isImplicit;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
-- (void).cxx_destruct;
 - (id)callees;
 @property(readonly, nonatomic) DVTDocumentLocation *location;
 @property(readonly, nonatomic) NSURL *moduleURL;

@@ -14,9 +14,9 @@
 @interface SKSceneNavigableBase : NSObject <SKSceneNavigating>
 {
     NSMutableArray *_internalChildren;
-    struct NSObject *_greatestAncestorReference;
+    NSObject<SKSceneNavigating> *_greatestAncestorReference;
     SKSceneDocument *_document;
-    struct NSObject *_parent;
+    NSObject<SKSceneNavigating> *_parent;
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_contentDocumentLocation;
@@ -26,9 +26,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingChildren;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<SKSceneNavigating> *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) __weak SKSceneDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 @property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) SKSceneNavigableBase *greatestReferenceAncestor;
 @property(readonly, nonatomic) BOOL isReferenced;
-- (struct NSObject *)childFromIndexPath:(id)arg1;
+- (id)childFromIndexPath:(id)arg1;
 - (unsigned long long)indexOfChild:(id)arg1;
 - (void)_moveChild:(id)arg1 toParent:(id)arg2;
 - (void)moveChild:(id)arg1 toParent:(id)arg2;

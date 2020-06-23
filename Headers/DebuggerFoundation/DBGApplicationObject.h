@@ -26,6 +26,7 @@
     DBGViewWindow *_legacyPrimaryWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain) DBGViewWindow *legacyPrimaryWindow; // @synthesize legacyPrimaryWindow=_legacyPrimaryWindow;
 @property(retain, nonatomic) DBGViewWindow *mainWindow; // @synthesize mainWindow=_mainWindow;
 @property(retain, nonatomic) DBGViewWindow *keyWindow; // @synthesize keyWindow=_keyWindow;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArray *windowControllers; // @synthesize windowControllers=_windowControllers;
 @property(retain, nonatomic) NSArray *screens; // @synthesize screens=_screens;
 @property(retain, nonatomic) NSArray *rootViewControllers; // @synthesize rootViewControllers=_rootViewControllers;
-- (void).cxx_destruct;
 - (void)updateSelectableViewObjectsCache;
 - (id)selectableViewObjectForIdentifier:(id)arg1;
 - (id)childObjectWithIdentifier:(id)arg1;

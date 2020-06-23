@@ -22,6 +22,7 @@
 
 + (id)typeWithName:(id)arg1;
 + (id)typeWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *additionalGroupingIDs; // @synthesize additionalGroupingIDs=_additionalGroupingIDs;
 @property(retain) NSString *childGroupingID; // @synthesize childGroupingID=_childGroupingID;
 @property(retain) NSSet *subtypes; // @synthesize subtypes=_subtypes;
@@ -29,7 +30,6 @@
 @property(retain) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(retain) NSString *nameIncludingModules; // @synthesize nameIncludingModules=_nameIncludingModules;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (id)dictionaryRepresentation;

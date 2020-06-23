@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDESchemeActionTestIdentifiable-Protocol.h>
 
-@class NSArray, NSString;
+@class IDESchemeActionTestNoticeSummary, NSArray, NSString;
 
 @interface IDESchemeActionTestSummary : IDESchemeActionAbstractTestSummaryObject <IDESchemeActionTestIdentifiable>
 {
@@ -17,27 +17,29 @@
     NSString *_identifier;
     NSString *_testSummaryGUID;
     NSArray *_failureSummaries;
+    IDESchemeActionTestNoticeSummary *_skipNoticeSummary;
     NSArray *_performanceMetrics;
     NSArray *_activitySummaries;
     id __metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain) id _metadata; // @synthesize _metadata=__metadata;
 @property(copy) NSArray *activitySummaries; // @synthesize activitySummaries=_activitySummaries;
 @property(copy) NSArray *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
+@property(readonly) IDESchemeActionTestNoticeSummary *skipNoticeSummary; // @synthesize skipNoticeSummary=_skipNoticeSummary;
 @property(copy) NSArray *failureSummaries; // @synthesize failureSummaries=_failureSummaries;
 @property(copy) NSString *testSummaryGUID; // @synthesize testSummaryGUID=_testSummaryGUID;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property double duration; // @synthesize duration=_duration;
 @property unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)loadDiagnosticsFromFilePromise:(id)arg1;
 - (void)loadAttachmentsFromDirectory:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithName:(id)arg1 identifier:(id)arg2 status:(unsigned long long)arg3 duration:(double)arg4 activitySummaries:(id)arg5;
-- (id)initWithName:(id)arg1 identifier:(id)arg2 status:(unsigned long long)arg3 duration:(double)arg4 failureSummaries:(id)arg5 performanceMetrics:(id)arg6 activitySummaries:(id)arg7;
+- (id)initWithName:(id)arg1 identifier:(id)arg2 status:(unsigned long long)arg3 duration:(double)arg4 failureSummaries:(id)arg5 skipNoticeSummary:(id)arg6 performanceMetrics:(id)arg7 activitySummaries:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

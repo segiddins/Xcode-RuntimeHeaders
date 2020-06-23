@@ -15,8 +15,8 @@
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
 + (Class)cellClass;
-@property(retain, nonatomic) NSString *textValue; // @synthesize textValue=_textValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *textValue; // @synthesize textValue=_textValue;
 - (BOOL)hasDisplayableStatus;
 - (void)setup;
 - (id)initWithCoder:(id)arg1;

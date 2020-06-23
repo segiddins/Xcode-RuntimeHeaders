@@ -16,9 +16,9 @@
     NSString *_qualityOfServiceValue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *qualityOfServiceValue; // @synthesize qualityOfServiceValue=_qualityOfServiceValue;
 @property(readonly, copy, nonatomic) NSNumber *threadID; // @synthesize threadID=_threadID;
-- (void).cxx_destruct;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;
 - (id)colorForChartNamed:(id)arg1;
 - (void)_internalSetQoSValue:(id)arg1;

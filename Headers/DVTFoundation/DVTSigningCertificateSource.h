@@ -22,11 +22,11 @@
 + (BOOL)supportsInvalidationPrevention;
 + (id)_defaultKeychainSearchList;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsAllApplicationsToAccessKeychainItems; // @synthesize wantsAllApplicationsToAccessKeychainItems=_wantsAllApplicationsToAccessKeychainItems;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) NSArray *keychainSearchList; // @synthesize keychainSearchList=_keychainSearchList;
 @property(retain, nonatomic) id <DVTSigningCertificateSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_keychainUnknownEvent;
 - (void)_keychainCertificateTrustChanged:(struct __SecCertificate *)arg1;
 - (void)_keychainKeyAddedOrDeleted;

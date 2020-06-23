@@ -14,8 +14,8 @@
     IBKeyEquivalentEntryField *_keyEquivalentEntryField;
 }
 
-@property(retain) IBKeyEquivalentEntryField *keyEquivalentEntryField; // @synthesize keyEquivalentEntryField=_keyEquivalentEntryField;
 - (void).cxx_destruct;
+@property(retain) IBKeyEquivalentEntryField *keyEquivalentEntryField; // @synthesize keyEquivalentEntryField=_keyEquivalentEntryField;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)userDidChangeValue:(id)arg1;

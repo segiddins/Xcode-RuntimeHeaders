@@ -23,6 +23,7 @@
 }
 
 + (id)borderNodeWithRect:(struct CGRect)arg1 addToParentNode:(id)arg2 sceneView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DBGNode *rightEdgeNode; // @synthesize rightEdgeNode=_rightEdgeNode;
 @property(retain, nonatomic) DBGNode *bottomEdgeNode; // @synthesize bottomEdgeNode=_bottomEdgeNode;
 @property(retain, nonatomic) DBGNode *leftEdgeNode; // @synthesize leftEdgeNode=_leftEdgeNode;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) SCNNode *topLeft; // @synthesize topLeft=_topLeft;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(nonatomic) struct CGRect borderRect; // @synthesize borderRect=_borderRect;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect effectiveBorderRect;
 - (void)updateEffectiveBorderRect;
 - (id)lineNodes;

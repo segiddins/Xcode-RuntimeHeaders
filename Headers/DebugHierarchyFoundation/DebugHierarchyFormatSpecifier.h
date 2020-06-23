@@ -15,9 +15,9 @@
 }
 
 + (id)specifierWithFormat:(id)arg1 label:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *label; // @synthesize label=_label;
 @property(retain) NSString *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)initWithFormat:(id)arg1 label:(id)arg2;
 
 @end

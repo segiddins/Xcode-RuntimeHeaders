@@ -17,8 +17,8 @@
     SKSceneDocument *_document;
 }
 
-@property(readonly, nonatomic) SKSceneDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKSceneDocument *document; // @synthesize document=_document;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (void)finishDecoding;
 - (id)initForReadingWithData:(id)arg1;

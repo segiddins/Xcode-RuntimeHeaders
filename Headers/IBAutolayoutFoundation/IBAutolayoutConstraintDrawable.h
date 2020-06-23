@@ -34,6 +34,7 @@
 }
 
 + (void)determineConstraintDrawablesAndGuideLinesForOrderedConstraintAbstractions:(id)arg1 withStatus:(id)arg2 concreteConstraintProvider:(id)arg3 constraintStatusProvider:(id)arg4 drawingDestination:(id)arg5 constraintsByAbstraction:(id)arg6 constantsByConstraint:(id)arg7 populatingConstraintDrawables:(id)arg8 populatingWrappedGuideLines:(id)arg9;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *guideLines; // @synthesize guideLines=_guideLines;
 @property(nonatomic) unsigned long long representingSizeAttribute; // @synthesize representingSizeAttribute=_representingSizeAttribute;
 @property(copy, nonatomic) NSNumber *edgeBias; // @synthesize edgeBias=_edgeBias;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) CDStruct_f6143a38 line; // @synthesize line=_line;
 @property(retain, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
-- (void).cxx_destruct;
 - (BOOL)isPointingUpOrRightInCoordinateSpaceOfView:(id)arg1;
 @property(readonly, nonatomic) BOOL supportsInsettingToAvoidOtherDrawablesOrGuidelines;
 @property(readonly) BOOL constraintIsVertical;

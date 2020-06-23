@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     GPUInferiorSession *_inferiorSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak GPUInferiorSession *inferiorSession; // @synthesize inferiorSession=_inferiorSession;
 @property(readonly) __weak GPUCaptureActivityReporter *activityReporter; // @synthesize activityReporter=_activityReporter;
-- (void).cxx_destruct;
 - (void)digestWillTerminate;
 - (void)digestWillReset;
 - (void)digestDidUpdateMessage:(id)arg1;

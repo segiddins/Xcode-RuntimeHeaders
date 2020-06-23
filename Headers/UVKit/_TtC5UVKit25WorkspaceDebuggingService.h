@@ -13,6 +13,7 @@
     MISSING_TYPE *workspace;
     MISSING_TYPE *buildPaths;
     MISSING_TYPE *onDebuggingStateChange;
+    MISSING_TYPE *waitForDetachBeforeKilling;
     MISSING_TYPE *outputTerminal;
     MISSING_TYPE *observingTokensByLaunchSession;
 }

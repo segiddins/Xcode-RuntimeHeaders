@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <DNTDocumentationSupport/DNTDisplayTreeIndexItem-Protocol.h>
-
 @class MISSING_TYPE, NSString, NSURL;
 @protocol DNTDisplayTreeIndexItem;
 
-@interface DNTDisplayTreeItem : NSObject <DNTDisplayTreeIndexItem>
+@interface DNTDisplayTreeItem : NSObject
 {
     MISSING_TYPE *info;
     MISSING_TYPE *$__lazy_storage_$__hash;
@@ -19,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *coreDocumentationKind;
 @property(nonatomic, readonly) unsigned int availabilityItemID;
 @property(nonatomic, readonly) unsigned int platformAvailabilityMask;
 - (BOOL)isGroup;

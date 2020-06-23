@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSNumber *_line;
 }
 
-@property(retain, nonatomic) NSNumber *line; // @synthesize line=_line;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *line; // @synthesize line=_line;
 
 @end
 

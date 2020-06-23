@@ -20,10 +20,10 @@
 - (void)restoreInternalComparisonDocumentLocationWithStateDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (BOOL)disableBlame;
-- (void)setEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
 - (void)_updateViewBasedOnSubmode;
 - (struct CGRect)overlayFrameForView:(id)arg1;
 - (BOOL)pathCell:(id)arg1 shouldSeparateDisplayOfChildItemsForItem:(id)arg2;
+- (void)loadView;
 
 @end
 

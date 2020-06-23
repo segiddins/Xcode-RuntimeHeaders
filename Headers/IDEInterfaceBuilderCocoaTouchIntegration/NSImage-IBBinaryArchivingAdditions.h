@@ -13,12 +13,7 @@
 @interface NSImage (IBBinaryArchivingAdditions) <IBBinaryArchiving>
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 - (const char *)cStringClassNameForBinaryArchiver:(id)arg1;
-- (BOOL)populateDictionaryWithPDFRepresentationIfFound:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
-- (void)setIbURLsByAppearanceForUIImageInstantiation:(id)arg1;
-- (id)ibURLsByAppearanceForUIImageInstantiation;
-- (void)setIbURLForUIImageInstantiation:(id)arg1;
-- (id)ibURLForUIImageInstantiation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

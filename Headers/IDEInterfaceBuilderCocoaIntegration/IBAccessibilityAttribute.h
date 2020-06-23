@@ -13,8 +13,8 @@
     NSString *_accessibilityValue;
 }
 
-@property(retain) NSString *accessibilityValue; // @synthesize accessibilityValue=_accessibilityValue;
 - (void).cxx_destruct;
+@property(retain) NSString *accessibilityValue; // @synthesize accessibilityValue=_accessibilityValue;
 - (id)description;
 - (id)archiveConnection;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,8 +14,8 @@
     NSTabViewItem *_initialTabViewItem;
 }
 
-@property(readonly) NSTabViewItem *initialTabViewItem; // @synthesize initialTabViewItem=_initialTabViewItem;
 - (void).cxx_destruct;
+@property(readonly) NSTabViewItem *initialTabViewItem; // @synthesize initialTabViewItem=_initialTabViewItem;
 - (void)didCompileDocument:(id)arg1;
 - (void)willCompileDocument:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -25,13 +25,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) DVTSourceControlAuthor *author; // @synthesize author=_author;
 @property(retain, nonatomic) NSArray *fileStatuses; // @synthesize fileStatuses=_fileStatuses;
 @property(retain, nonatomic) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *displayName;
 - (id)loadCompleteStash:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

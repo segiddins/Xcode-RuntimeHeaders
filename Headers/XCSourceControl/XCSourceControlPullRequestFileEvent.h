@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *renamedRelativeFilePath; // @synthesize renamedRelativeFilePath=_renamedRelativeFilePath;
 @property(readonly, copy, nonatomic) NSString *relativeFilePath; // @synthesize relativeFilePath=_relativeFilePath;
 @property(readonly, copy, nonatomic) XCSourceControlHostRevision *headRevision; // @synthesize headRevision=_headRevision;
 @property(readonly, copy, nonatomic) XCSourceControlHostRevision *baseRevision; // @synthesize baseRevision=_baseRevision;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

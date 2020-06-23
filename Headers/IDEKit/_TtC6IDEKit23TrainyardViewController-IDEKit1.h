@@ -6,9 +6,7 @@
 
 #import <IDEKit/_TtC6IDEKit23TrainyardViewController.h>
 
-#import <IDEKit/NSTableViewDelegate-Protocol.h>
-
-@interface _TtC6IDEKit23TrainyardViewController (IDEKit1) <NSTableViewDelegate>
+@interface _TtC6IDEKit23TrainyardViewController (IDEKit1)
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;

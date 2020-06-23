@@ -20,13 +20,13 @@
 }
 
 + (id)defaultStatistics;
+- (void).cxx_destruct;
 @property(readonly) NSCountedSet *macroNameFirstDefnRetrievalCounts; // @synthesize macroNameFirstDefnRetrievalCounts=_macroNameFirstDefnRetrievalCounts;
 @property(readonly) unsigned long long numFirstDefinitionRetrievals; // @synthesize numFirstDefinitionRetrievals=_numFirstDefinitionRetrievals;
 @property(readonly) NSCountedSet *macroNameLookupCursorCreationCounts; // @synthesize macroNameLookupCursorCreationCounts=_macroNameLookupCursorCreationCounts;
 @property(readonly) unsigned long long numMacroLookupCursorsCreated; // @synthesize numMacroLookupCursorsCreated=_numMacroLookupCursorsCreated;
 @property(readonly) NSCountedSet *macroNameLookupCounts; // @synthesize macroNameLookupCounts=_macroNameLookupCounts;
 @property(readonly) unsigned long long numMacroDefinitionLookups; // @synthesize numMacroDefinitionLookups=_numMacroDefinitionLookups;
-- (void).cxx_destruct;
 - (void)recordRetrievalOfFirstDefinitionForMacroName:(id)arg1;
 - (void)recordLookupCursorCreationForMacroName:(id)arg1;
 - (void)recordLookupEventForMacroName:(id)arg1;

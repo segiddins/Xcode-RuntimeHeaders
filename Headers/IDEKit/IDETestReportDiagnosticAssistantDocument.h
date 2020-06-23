@@ -15,8 +15,8 @@
 
 + (BOOL)autosavesInPlace;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
-@property(retain) IDETestReportDiagnosticAssistantNavigableItem *navigableItem; // @synthesize navigableItem=_navigableItem;
 - (void).cxx_destruct;
+@property(retain) IDETestReportDiagnosticAssistantNavigableItem *navigableItem; // @synthesize navigableItem=_navigableItem;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (int)readOnlyStatus;
 - (BOOL)canSave;

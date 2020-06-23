@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTracePipelineStatisticsSubEditorOverviewView *_ratioView;
 }
 
-@property __weak GPUTracePipelineStatisticsSubEditorOverviewView *ratioView; // @synthesize ratioView=_ratioView;
 - (void).cxx_destruct;
+@property __weak GPUTracePipelineStatisticsSubEditorOverviewView *ratioView; // @synthesize ratioView=_ratioView;
 
 @end
 

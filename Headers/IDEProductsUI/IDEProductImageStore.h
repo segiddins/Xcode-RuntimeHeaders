@@ -16,10 +16,10 @@
 }
 
 + (id)defaultStore;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *productImageQueue; // @synthesize productImageQueue=_productImageQueue;
 @property(retain) NSMutableSet *currentImageProcessingSet; // @synthesize currentImageProcessingSet=_currentImageProcessingSet;
 @property(retain) NSCache *productIdentifierToProductImage; // @synthesize productIdentifierToProductImage=_productIdentifierToProductImage;
-- (void).cxx_destruct;
 - (void)addProductImage:(id)arg1;
 - (BOOL)containsImageURL:(id)arg1 productIdentifier:(id)arg2;
 - (void)stoppedProcessingImageForProductIdentifier:(id)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUTraceGroupItem *shaderDebuggerGroup; // @synthesize shaderDebuggerGroup=_shaderDebuggerGroup;
 @property(nonatomic) unsigned long long outlineMode_forProgramMode_JumpBar_fix; // @synthesize outlineMode_forProgramMode_JumpBar_fix=_outlineMode_forProgramMode_JumpBar_fix;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *associatedProcessUUID;
 - (id)contentDelegateUIExtensionIdentifier;

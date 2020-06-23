@@ -15,8 +15,8 @@
     IDEContainerItem *_reference;
 }
 
-@property(retain, nonatomic) IDEContainerItem *reference; // @synthesize reference=_reference;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEContainerItem *reference; // @synthesize reference=_reference;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) BOOL isValid;
 @property(readonly, nonatomic) unsigned long long size;

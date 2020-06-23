@@ -15,10 +15,10 @@
     id _endPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 @property(readonly, copy) NSArray *displayValues; // @synthesize displayValues=_displayValues;
-- (void).cxx_destruct;
 - (void)disconnect;
 - (BOOL)canDisconnect;
 - (id)initWithEndPoint:(id)arg1 displayValues:(id)arg2 document:(id)arg3;

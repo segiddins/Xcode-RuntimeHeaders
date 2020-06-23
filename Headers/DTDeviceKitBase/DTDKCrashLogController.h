@@ -16,8 +16,8 @@
 
 + (id)keyPathsForValuesAffectingStatusMessage;
 + (id)controller;
-@property(copy) NSString *symbolicationStatus; // @synthesize symbolicationStatus=_symbolicationStatus;
 - (void).cxx_destruct;
+@property(copy) NSString *symbolicationStatus; // @synthesize symbolicationStatus=_symbolicationStatus;
 - (void)enqueueLogForSymbolication:(id)arg1;
 - (id)crashLogs;
 - (void)copyExternalCrashLog:(id)arg1;

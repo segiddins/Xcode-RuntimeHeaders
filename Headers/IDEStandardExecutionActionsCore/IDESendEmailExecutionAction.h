@@ -17,11 +17,11 @@
 }
 
 + (id)actionType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *emailBody; // @synthesize emailBody=_emailBody;
 @property(copy, nonatomic) NSString *emailSubject; // @synthesize emailSubject=_emailSubject;
 @property(copy, nonatomic) NSString *emailRecipient; // @synthesize emailRecipient=_emailRecipient;
 @property(nonatomic) BOOL attachLogToEmail; // @synthesize attachLogToEmail=_attachLogToEmail;
-- (void).cxx_destruct;
 - (void)setAttachLogToEmailFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setEmailBodyFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setEmailSubjectFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

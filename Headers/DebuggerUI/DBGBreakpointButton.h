@@ -21,6 +21,7 @@
     struct CGSize _breakpointImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *breakpointModifiedDescription; // @synthesize breakpointModifiedDescription=_breakpointModifiedDescription;
 @property(nonatomic) BOOL breakpointModified; // @synthesize breakpointModified=_breakpointModified;
 @property(nonatomic) BOOL breakpointEnabled; // @synthesize breakpointEnabled=_breakpointEnabled;
@@ -28,7 +29,6 @@
 @property(nonatomic) struct CGSize breakpointImageSize; // @synthesize breakpointImageSize=_breakpointImageSize;
 @property __weak IDEBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 @property(copy) CDUnknownBlockType commandOptionClickHander; // @synthesize commandOptionClickHander=_commandOptionClickHander;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)mouseDown:(id)arg1;
 - (void)_updateImage;

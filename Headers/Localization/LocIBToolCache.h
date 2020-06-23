@@ -34,6 +34,7 @@
     double pollingInterval;
 }
 
+- (void).cxx_destruct;
 @property double pollingInterval; // @synthesize pollingInterval;
 @property BOOL onMemoryOperation; // @synthesize onMemoryOperation;
 @property BOOL suppressIbtoolError; // @synthesize suppressIbtoolError;
@@ -56,7 +57,6 @@
 @property(retain) NSString *ibtoolPath; // @synthesize ibtoolPath;
 @property(retain) NSString *cacheDirectoryPath; // @synthesize cacheDirectoryPath;
 @property(retain) NSArray *ibFilePaths; // @synthesize ibFilePaths;
-- (void).cxx_destruct;
 - (id)ibFilePathsNotToHaveValidCache:(id)arg1 ibFilePathsWithValidCache:(id *)arg2;
 - (void)restoreCoreDumpLimit;
 - (void)disableCoreDump;

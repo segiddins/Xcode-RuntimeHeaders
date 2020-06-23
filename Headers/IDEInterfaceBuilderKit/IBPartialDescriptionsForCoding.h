@@ -14,9 +14,9 @@
     NSSet *_unmergablePartials;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *unmergablePartials; // @synthesize unmergablePartials=_unmergablePartials;
 @property(retain, nonatomic) NSSet *unmergedPartials; // @synthesize unmergedPartials=_unmergedPartials;
-- (void).cxx_destruct;
 
 @end
 

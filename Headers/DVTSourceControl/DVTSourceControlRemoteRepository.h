@@ -6,33 +6,25 @@
 
 #import <DVTSourceControl/DVTSourceControlRepository.h>
 
-@class DVTSourceControlAuthenticationStrategy, DVTSourceControlPathLocation, NSString, NSURL;
+@class DVTSourceControlAuthenticationStrategy, NSString, NSURL;
 @protocol DVTSourceControlAccount;
 
 @interface DVTSourceControlRemoteRepository : DVTSourceControlRepository
 {
     BOOL _enforceTrustedServerFingerprint;
     id <DVTSourceControlAccount> _account;
-    DVTSourceControlPathLocation *_defaultAuthenticationPath;
     unsigned long long _state;
     NSString *_trustedServerFingerprint;
 }
 
 + (id)keyPathsForValuesAffectingAuthenticationStrategy;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *trustedServerFingerprint; // @synthesize trustedServerFingerprint=_trustedServerFingerprint;
 @property BOOL enforceTrustedServerFingerprint; // @synthesize enforceTrustedServerFingerprint=_enforceTrustedServerFingerprint;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain) id <DVTSourceControlAccount> account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(retain) DVTSourceControlAuthenticationStrategy *authenticationStrategy;
-- (id)createLocalRepositoryAtURL:(id)arg1 mirrored:(BOOL)arg2 authenticationOptions:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (id)createWorkingCopyAtURL:(id)arg1 usingExistingWorkingCopyAtURL:(id)arg2 location:(id)arg3 useRevision:(BOOL)arg4 authenticationOptions:(unsigned long long)arg5 progressBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (id)createWorkingCopyAtURL:(id)arg1 location:(id)arg2 useRevision:(BOOL)arg3 authenticationOptions:(unsigned long long)arg4 progressBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
-- (id)validateAuthenticationForLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)listTagsWithCompletionBlock:(CDUnknownBlockType)arg1;
-@property(copy) DVTSourceControlPathLocation *defaultAuthenticationPath; // @synthesize defaultAuthenticationPath=_defaultAuthenticationPath;
-- (id)updateRepositoryURLRootWithCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly) NSURL *anonymousURL;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -58,6 +50,13 @@
 - (id)_initWithURL:(id)arg1 sourceControlSystem:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)listTagsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)createLocalRepositoryAtURL:(id)arg1 mirrored:(BOOL)arg2 authenticationOptions:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)createLocalRepositoryAtURL:(id)arg1 mirrored:(BOOL)arg2 progressBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)createWorkingCopyAtURL:(id)arg1 usingExistingWorkingCopyAtURL:(id)arg2 location:(id)arg3 useRevision:(BOOL)arg4 authenticationOptions:(unsigned long long)arg5 progressBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (id)createWorkingCopyAt:(id)arg1 usingExistingWorkingCopyAt:(id)arg2 location:(id)arg3 useRevision:(BOOL)arg4 authenticationOptions:(unsigned long long)arg5 progressBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (id)createWorkingCopyAtURL:(id)arg1 location:(id)arg2 useRevision:(BOOL)arg3 authenticationOptions:(unsigned long long)arg4 progressBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)validateAuthenticationWithCompletionBlock:(CDUnknownBlockType)arg1;
 
 @end
 

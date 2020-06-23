@@ -39,13 +39,13 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property NSView *centeredDocumentView; // @synthesize centeredDocumentView=_centeredDocumentView;
 @property IBAccessorizedScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) NSArray *recipes; // @synthesize recipes=_recipes;
 @property(readonly) IBSelectionOwner *selection; // @synthesize selection=_selection;
 @property(retain, nonatomic) IBAbstractDocumentEditor *observedEditor; // @synthesize observedEditor=_observedEditor;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateRecipes:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

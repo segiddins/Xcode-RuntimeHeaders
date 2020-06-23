@@ -20,8 +20,8 @@
 + (BOOL)autosavesInPlace;
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
 + (Class)_modelClass;
-@property(retain, nonatomic) IDEIntentBuilderModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEIntentBuilderModel *model; // @synthesize model=_model;
 - (void)convertToDocumentAtFilePath:(id)arg1 forFileDataType:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)isReadOnly;
 - (BOOL)isDocumentEdited;

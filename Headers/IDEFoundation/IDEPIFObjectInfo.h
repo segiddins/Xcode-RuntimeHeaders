@@ -14,9 +14,9 @@
     CDUnknownBlockType _generatePIF;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType generatePIF; // @synthesize generatePIF=_generatePIF;
 @property(readonly) NSString *signature; // @synthesize signature=_signature;
-- (void).cxx_destruct;
 - (id)initWithSignature:(id)arg1 generator:(CDUnknownBlockType)arg2;
 
 @end

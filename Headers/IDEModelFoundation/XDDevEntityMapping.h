@@ -25,9 +25,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingUserInfoDictionary;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID;
 @property(retain) IDEMappingModelDocument *document; // @synthesize document;
-- (void).cxx_destruct;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1;
 - (void)addMissingPropertyMappings;
 - (id)sortedRelationshipMappings;

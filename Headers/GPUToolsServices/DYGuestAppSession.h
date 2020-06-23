@@ -41,7 +41,6 @@
     BOOL _invalid;
     BOOL _includeBacktracesInTrace;
     BOOL _includeDriverEventsInTrace;
-    BOOL _isLocalSession;
     int _traceMode;
     DYGuestApp *_guestApp;
     DYDevice *_device;
@@ -59,9 +58,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DYGuestAppControlStrategy *controlStrategy; // @synthesize controlStrategy=_controlStrategy;
 @property(readonly, nonatomic) DYGuestAppLaunchStrategy *launchStrategy; // @synthesize launchStrategy=_launchStrategy;
-@property(nonatomic) BOOL isLocalSession; // @synthesize isLocalSession=_isLocalSession;
 @property(retain, nonatomic) NSDictionary *hardwareCountersConfiguration; // @synthesize hardwareCountersConfiguration=_hardwareCountersConfiguration;
 @property(nonatomic) unsigned long long profilingFlags; // @synthesize profilingFlags=_profilingFlags;
 @property(nonatomic) unsigned long long profilingSendPeriod; // @synthesize profilingSendPeriod=_profilingSendPeriod;
@@ -83,7 +82,6 @@
 @property(readonly, retain, nonatomic) DYTransport *transport; // @synthesize transport=_transport;
 @property(readonly, retain, nonatomic) DYDevice *device; // @synthesize device=_device;
 @property(readonly, retain, nonatomic) DYGuestApp *guestApp; // @synthesize guestApp=_guestApp;
-- (void).cxx_destruct;
 - (id)newCaptureSessionWithArchive:(id)arg1;
 - (void)setValue:(id)arg1 forOverride:(id)arg2;
 @property(readonly, nonatomic) struct dy_timebase appTimebase;
@@ -107,6 +105,8 @@
 - (void)_postEvent:(int)arg1 info:(id)arg2;
 - (void)removeTraceHandler:(id)arg1;
 - (id)handleTraceOnQueue:(struct dispatch_queue_s *)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)sessionWillAttach;
+@property(readonly, nonatomic) BOOL needsAttachNotification;
 - (void)dispatchInTransaction:(CDUnknownBlockType)arg1;
 - (BOOL)_isDirectTransactionAllowed;
 - (void)drainQueue;

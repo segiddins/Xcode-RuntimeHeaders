@@ -18,9 +18,9 @@
     id <IDEIntentBuilderTokenTextFieldComponentViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDEIntentBuilderTokenTextFieldComponentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <IDEIntentBuilderTokenTextFieldComponentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)tokenTextField:(id)arg1 tokenClicked:(id)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 atCharacterIndex:(unsigned long long)arg5;
 - (id)availableTokensForTextField:(id)arg1;
 - (void)reloadData;

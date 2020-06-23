@@ -25,6 +25,7 @@
 }
 
 + (struct CGSize)defaultContentSize;
+- (void).cxx_destruct;
 @property(retain) NSView *footerView; // @synthesize footerView=_footerView;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSArray *sortedFileNames; // @synthesize sortedFileNames=_sortedFileNames;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) DVTFilePath *selectedFilePath; // @synthesize selectedFilePath=_selectedFilePath;
 @property(nonatomic) id <DVTFileLiteralQuickEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPopover *presentingPopover; // @synthesize presentingPopover=_presentingPopover;
-- (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;

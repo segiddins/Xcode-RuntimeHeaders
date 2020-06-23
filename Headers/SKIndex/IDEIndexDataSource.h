@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 + (id)appendNewArguments:(id)arg1 inArray:(id)arg2;
 + (id)substituteNewArgument:(id)arg1 forOldArgument:(id)arg2 inArray:(id)arg3;
 + (BOOL)invokeCompilerForIndexingWithArguments:(id)arg1 tool:(int)arg2 toolchain:(id)arg3 job:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPerformanceMetric *generatorMetric; // @synthesize generatorMetric=_generatorMetric;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (BOOL)generateDataForJob:(id)arg1;
 - (BOOL)processJob:(id)arg1;
 - (id)initWithSource:(id)arg1;

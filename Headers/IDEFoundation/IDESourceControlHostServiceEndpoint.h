@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDESourceControlHostServiceEndpointProtocol-Protocol.h>
 
-@class IDESourceControlHostService, NSMutableDictionary, NSString, NSURL;
+@class IDESourceControlHostService, NSDictionary, NSMutableDictionary, NSString, NSURL;
 
 @interface IDESourceControlHostServiceEndpoint : NSObject <IDESourceControlHostServiceEndpointProtocol>
 {
@@ -17,20 +17,27 @@
     NSString *_name;
     NSString *_identifier;
     NSURL *_forcedURL;
+    NSDictionary *_links;
     unsigned long long _staticCapabilities;
     unsigned long long _capabilities;
 }
 
 + (double)cancellationDelay;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) unsigned long long staticCapabilities; // @synthesize staticCapabilities=_staticCapabilities;
+@property(readonly, copy) NSDictionary *links; // @synthesize links=_links;
 @property(readonly, copy) NSURL *forcedURL; // @synthesize forcedURL=_forcedURL;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak IDESourceControlHostService *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (id)_setupOperation:(CDUnknownBlockType)arg1;
+- (id)setLabels:(id)arg1 on:(id)arg2 account:(id)arg3 repository:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)fetchLabels:(id)arg1 repository:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)setMilestone:(id)arg1 on:(id)arg2 account:(id)arg3 repository:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)fetchMilestones:(id)arg1 repository:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)statusAnnotation:(id)arg1 repository:(id)arg2 commit:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)listChanges:(id)arg1 pullRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)exportFile:(id)arg1 file:(id)arg2 revisionLocation:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)listCommits:(id)arg1 pullRequest:(id)arg2 file:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -41,6 +48,7 @@
 - (id)fetchEventsIn:(id)arg1 account:(id)arg2 repository:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)delete:(id)arg1 inPullRequest:(id)arg2 account:(id)arg3 repository:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)replyTo:(id)arg1 withComment:(id)arg2 inPullRequest:(id)arg3 account:(id)arg4 repository:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)repositoryForURL:(id)arg1 account:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)add:(id)arg1 toPullRequest:(id)arg2 account:(id)arg3 repository:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)updateRepositoryPermissions:(id)arg1 repository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)actionPullRequest:(id)arg1 pullRequest:(id)arg2 action:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -48,6 +56,7 @@
 - (id)addParticipants:(id)arg1 pullRequest:(id)arg2 participants:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)uploadPullRequestAttachments:(id)arg1 repository:(id)arg2 pullRequest:(id)arg3 fileURLs:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)updatePullRequest:(id)arg1 pullRequest:(id)arg2 force:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)repositoryBranches:(id)arg1 repository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)createPullRequest:(id)arg1 pullRequest:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)pullRequest:(id)arg1 repository:(id)arg2 identifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)pullRequests:(id)arg1 repository:(id)arg2 filter:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

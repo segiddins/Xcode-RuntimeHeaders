@@ -15,9 +15,9 @@
     NSString *_sharedSecretPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *sharedSecretPath; // @synthesize sharedSecretPath=_sharedSecretPath;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)deleteWithError:(id *)arg1;
 - (BOOL)createIfNeededWithAllowedApplications:(id)arg1 error:(id *)arg2;
 @property(readonly) NSData *password; // @synthesize password=_password;

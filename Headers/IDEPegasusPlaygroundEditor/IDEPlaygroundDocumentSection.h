@@ -19,9 +19,9 @@
 
 + (id)contentPathsToPreserveOnSave;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IDEEditorDocument<IDEPlaygroundHostingDocument> *playgroundDocument; // @synthesize playgroundDocument=_playgroundDocument;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)content;
 - (id)initWithIdentifier:(id)arg1 inPlaygroundDocument:(id)arg2;

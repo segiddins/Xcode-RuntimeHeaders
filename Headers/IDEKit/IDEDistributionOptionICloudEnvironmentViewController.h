@@ -16,11 +16,11 @@
     NSLayoutConstraint *_environmentLeadingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *environmentLeadingConstraint; // @synthesize environmentLeadingConstraint=_environmentLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *environmentWidth; // @synthesize environmentWidth=_environmentWidth;
 @property(retain, nonatomic) NSArrayController *availableEnvironmentsController; // @synthesize availableEnvironmentsController=_availableEnvironmentsController;
 @property(retain, nonatomic) NSArray *availableEnvironments; // @synthesize availableEnvironments=_availableEnvironments;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 
 @end

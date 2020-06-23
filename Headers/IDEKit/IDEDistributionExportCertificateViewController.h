@@ -17,9 +17,9 @@
     NSString *_teamName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *teamName; // @synthesize teamName=_teamName;
 @property(retain, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
-- (void).cxx_destruct;
 - (void)export:(id)arg1;
 - (void)help:(id)arg1;
 - (void)takeAdditionalAction;

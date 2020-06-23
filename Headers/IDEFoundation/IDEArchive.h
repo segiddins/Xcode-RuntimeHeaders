@@ -56,10 +56,10 @@
 + (id)keyPathsForValuesAffectingProducts_hideDeveloperIDStatus;
 + (id)keyPathsForValuesAffectingProducts_hideShowStatusLog;
 + (id)largestImageInFilePaths:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(readonly) IDEArchivedContent *archivedContent; // @synthesize archivedContent=_archivedContent;
 @property(retain) DVTFilePath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 @property(readonly) NSString *toolchainDisplayName;
 @property(readonly) NSString *toolchainIdentifier;
 - (id)_toolchainInfo;

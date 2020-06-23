@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _attachmentIndex;
 }
 
-@property(readonly, nonatomic) unsigned long long attachmentIndex; // @synthesize attachmentIndex=_attachmentIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long attachmentIndex; // @synthesize attachmentIndex=_attachmentIndex;
 - (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;

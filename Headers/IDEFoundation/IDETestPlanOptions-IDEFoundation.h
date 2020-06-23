@@ -6,8 +6,6 @@
 
 #import <IDEFoundation/IDETestPlanOptions.h>
 
-#import <IDEFoundation/IDETestPlanResolvedOptions-Protocol.h>
-
-@interface IDETestPlanOptions (IDEFoundation) <IDETestPlanResolvedOptions>
+@interface IDETestPlanOptions (IDEFoundation)
 @end
 

@@ -6,12 +6,9 @@
 
 #import <IDEFoundation/IDELaunchTestSchemeActionOptions.h>
 
-#import <IDEFoundation/IDELaunchTestSchemeActionOptions-Protocol.h>
-#import <IDEFoundation/IDELaunchTestSchemeActionResolvedOptions-Protocol.h>
-
 @class NSString;
 
-@interface IDELaunchTestSchemeActionOptions (IDEFoundation) <IDELaunchTestSchemeActionOptions, IDELaunchTestSchemeActionResolvedOptions>
+@interface IDELaunchTestSchemeActionOptions (IDEFoundation)
 - (id)buildableForMacroExpansionUsing:(id)arg1;
 - (id)environmentVariablesForScheme:(id)arg1 expandedUsingBuildParameters:(id)arg2;
 - (id)commandLineArgumentsForScheme:(id)arg1 expandedUsingBuildParameters:(id)arg2;

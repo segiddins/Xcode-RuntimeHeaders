@@ -45,6 +45,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double gpuTime; // @synthesize gpuTime=_gpuTime;
 @property(nonatomic) unsigned int rendererUtilization; // @synthesize rendererUtilization=_rendererUtilization;
 @property(nonatomic) unsigned int tilerUtilization; // @synthesize tilerUtilization=_tilerUtilization;
@@ -67,8 +69,6 @@
 @property(readonly, nonatomic) NSMutableArray *encoderProgramInfoList; // @synthesize encoderProgramInfoList=_encoderProgramInfoList;
 @property(readonly, nonatomic) NSMutableArray *encoderInfoList; // @synthesize encoderInfoList=_encoderInfoList;
 @property(retain, nonatomic) NSMutableArray *drawCallInfoList; // @synthesize drawCallInfoList=_drawCallInfoList;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)exportDerivedCounterDataAtPath:(id)arg1 renameWhenConflict:(BOOL)arg2;
 - (id)perLineInfoForProgramInfo:(id)arg1 atFunctionIndex:(unsigned int)arg2 fragShader:(BOOL)arg3 totalCost:(BOOL)arg4;
 - (id)shaderSourceForProgramInfo:(id)arg1 atFunctionIndex:(unsigned int)arg2;

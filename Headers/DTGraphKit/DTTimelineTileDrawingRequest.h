@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
     struct TileMetrics _currentTileMetrics;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTTimelineTileDrawingContent *oldContent; // @synthesize oldContent=_oldContent;
 @property(retain, nonatomic) DTTimelineDecorator *decorator; // @synthesize decorator=_decorator;
 @property(nonatomic) struct TileMetrics currentTileMetrics; // @synthesize currentTileMetrics=_currentTileMetrics;
 @property(nonatomic) shared_ptr_1f7ca383 containerPtr; // @synthesize containerPtr=_containerPtr;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

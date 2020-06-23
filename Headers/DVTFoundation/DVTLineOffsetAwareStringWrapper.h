@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *string; // @synthesize string=_string;
 - (id)debugDescription;
 - (void)dealloc;
 - (struct _NSRange)characterRangeFromDocumentLocation:(id)arg1;

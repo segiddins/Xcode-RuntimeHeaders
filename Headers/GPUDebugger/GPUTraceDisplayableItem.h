@@ -32,13 +32,13 @@
     NSSet *_precomputedFilterItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *precomputedFilterItems; // @synthesize precomputedFilterItems=_precomputedFilterItems;
 @property(retain) DYFuture *updateDisplaySetFuture; // @synthesize updateDisplaySetFuture=_updateDisplaySetFuture;
 @property(nonatomic) unsigned char dependencyGraphThumbnailStatus; // @synthesize dependencyGraphThumbnailStatus=_dependencyGraphThumbnailStatus;
 @property(nonatomic) unsigned char thumbnailStatus; // @synthesize thumbnailStatus=_thumbnailStatus;
 @property int displayableCallIndex; // @synthesize displayableCallIndex=_displayableCallIndex;
 @property(readonly) id <GPUTraceDisplaySet> displaySet; // @synthesize displaySet=_displaySet;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showAsAPIItem;
 - (void)_connectSolidTextureToDisplaySet:(id)arg1;
 - (void)_connectOutlineTextureToDisplaySet:(id)arg1;

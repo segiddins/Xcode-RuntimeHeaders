@@ -32,6 +32,7 @@
 
 + (id)keyPathsForValuesAffectingBakeryNeedsAttenuation;
 + (id)sharedPreferencesManager;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL materialInspectorShow_clearCoatRoughness; // @synthesize materialInspectorShow_clearCoatRoughness=_materialInspectorShow_clearCoatRoughness;
 @property(nonatomic) BOOL materialInspectorShow_clearCoatNormal; // @synthesize materialInspectorShow_clearCoatNormal=_materialInspectorShow_clearCoatNormal;
 @property(nonatomic) BOOL materialInspectorShow_clearCoat; // @synthesize materialInspectorShow_clearCoat=_materialInspectorShow_clearCoat;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL materialInspectorShow_specular; // @synthesize materialInspectorShow_specular=_materialInspectorShow_specular;
 @property(nonatomic) BOOL materialInspectorShow_ambient; // @synthesize materialInspectorShow_ambient=_materialInspectorShow_ambient;
 @property(nonatomic) BOOL materialInspectorShow_diffuse; // @synthesize materialInspectorShow_diffuse=_materialInspectorShow_diffuse;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL bakeryNeedsAttenuation;
 @property(nonatomic) float bakeryAttenuationFactor;
 @property(nonatomic) float bakeryQuality;

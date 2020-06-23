@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEFoundation/IDEBuildNoticeLogSection-Protocol.h>
 #import <IDEFoundation/IDELogStoreManageable-Protocol.h>
 #import <IDEFoundation/IDELogStoreObservable-Protocol.h>
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTDocumentLocation, DVTFilePath, DVTFilePromise, IDEActivityLogSectionRecorder, IDETypeIdentifier, NSArray, NSData, NSMapTable, NSMutableArray, NSMutableString, NSString, NSURL;
+@class DVTDocumentLocation, DVTFilePath, DVTFilePromise, IDEActivityLogSectionRecorder, IDENoticeBlueprintID, IDETypeIdentifier, NSArray, NSData, NSMapTable, NSMutableArray, NSMutableString, NSString, NSURL;
 @protocol IDELogStoreObservable;
 
-@interface IDEActivityLogSection : NSObject <IDELogStoreManageable, IDELogStoreObservable, NSCopying>
+@interface IDEActivityLogSection : NSObject <IDEBuildNoticeLogSection, IDELogStoreManageable, IDELogStoreObservable, NSCopying>
 {
     IDEActivityLogSectionRecorder *_recorder;
     IDETypeIdentifier *_domainType;
@@ -64,6 +65,7 @@
 + (Class)logRecorderClass;
 + (void)initialize;
 + (id)makeInstanceWithContentsOfFile:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property BOOL hideTimingInformation; // @synthesize hideTimingInformation=_hideTimingInformation;
 @property(copy) NSData *xcbuildSignature; // @synthesize xcbuildSignature=_xcbuildSignature;
 @property(readonly, copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -73,7 +75,6 @@
 @property(readonly) IDETypeIdentifier *domainType; // @synthesize domainType=_domainType;
 @property(copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property unsigned short sectionAuthority; // @synthesize sectionAuthority=_sectionAuthority;
-- (void).cxx_destruct;
 - (id)indexPathForMessageOrSection:(id)arg1;
 - (id)indexPathForMessageOrSection:(id)arg1 messageOrSectionEqualityTest:(CDUnknownBlockType)arg2;
 - (id)messageOrSectionAtIndexPath:(id)arg1;
@@ -138,6 +139,11 @@
 - (id)initWithSectionType:(long long)arg1 domainType:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5 startTime:(id)arg6;
 - (id)initWithSectionType:(long long)arg1 domainType:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5;
 - (id)initWithSectionType:(long long)arg1 domainType:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5 signature:(id)arg6 timeStartedRecording:(double)arg7 timeStoppedRecording:(double)arg8 subsections:(id)arg9 text:(id)arg10 messages:(id)arg11 wasCancelled:(BOOL)arg12 wasFetchedFromCache:(BOOL)arg13 commandDetailDescription:(id)arg14 resultCode:(long long)arg15 uniqueIdentifier:(id)arg16 localizedResultString:(id)arg17 xcbuildSignature:(id)arg18;
+@property(readonly) IDENoticeBlueprintID *buildNoticeLogSectionBlueprintID;
+- (id)observeSealedSections:(CDUnknownBlockType)arg1;
+- (id)observeAddedSections:(CDUnknownBlockType)arg1;
+- (id)observeSectionsLifetimes:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL isSealed;
 @property(readonly, copy) DVTFilePromise *coverageArchiveFilePromise;
 @property(readonly, copy) DVTFilePromise *coverageReportFilePromise;
 @property(readonly) BOOL hasCoverageData;

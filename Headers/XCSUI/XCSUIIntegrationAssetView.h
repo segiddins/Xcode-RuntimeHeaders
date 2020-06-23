@@ -24,6 +24,7 @@
     NSMenu *_genericMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMenu *genericMenu; // @synthesize genericMenu=_genericMenu;
 @property(retain) NSMenu *productMenu; // @synthesize productMenu=_productMenu;
 @property __weak NSImageView *iconView; // @synthesize iconView=_iconView;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) XCSIntegrationAsset *asset; // @synthesize asset=_asset;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)refreshUI;
 - (id)applicationIconForExtension:(id)arg1;
 

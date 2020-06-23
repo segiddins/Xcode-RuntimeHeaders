@@ -8,7 +8,8 @@
 
 #import <DebuggerFoundation/IBLayoutConstraintRepresentation-Protocol.h>
 
-@class DBGViewSurface, NSString;
+@class NSString;
+@protocol DBGLayoutConstraintItem;
 
 @interface DBGLayoutConstraint : DBGViewObject <IBLayoutConstraintRepresentation>
 {
@@ -21,12 +22,13 @@
     long long _secondAttribute;
     long long _relation;
     NSString *_constraintIdentifier;
-    DBGViewSurface *_firstItem;
-    DBGViewSurface *_secondItem;
+    id <DBGLayoutConstraintItem> _firstItem;
+    id <DBGLayoutConstraintItem> _secondItem;
 }
 
-@property(retain, nonatomic) DBGViewSurface *secondItem; // @synthesize secondItem=_secondItem;
-@property(retain, nonatomic) DBGViewSurface *firstItem; // @synthesize firstItem=_firstItem;
+- (void).cxx_destruct;
+@property(retain, nonatomic) id <DBGLayoutConstraintItem> secondItem; // @synthesize secondItem=_secondItem;
+@property(retain, nonatomic) id <DBGLayoutConstraintItem> firstItem; // @synthesize firstItem=_firstItem;
 @property(retain) NSString *constraintIdentifier; // @synthesize constraintIdentifier=_constraintIdentifier;
 @property long long relation; // @synthesize relation=_relation;
 @property long long secondAttribute; // @synthesize secondAttribute=_secondAttribute;
@@ -34,7 +36,6 @@
 @property double priority; // @synthesize priority=_priority;
 @property double multiplier; // @synthesize multiplier=_multiplier;
 @property double constant; // @synthesize constant=_constant;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) long long contentType;
 - (id)displayName;

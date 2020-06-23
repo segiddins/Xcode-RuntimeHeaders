@@ -13,10 +13,10 @@
 
 @interface IDEFileBreakpointGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, DVTInvalidation>
 {
-    IDEBreakpointBucket *_bucket;
     NSArray *_breakpoints;
     NSMutableArray *_mutableBreakpoints;
     DVTObservingToken *_breakpointFileNameObserver;
+    IDEBreakpointBucket *_bucket;
     NSString *_displayName;
     NSImage *_displayImage;
     DVTFilePath *_filePath;
@@ -29,13 +29,13 @@
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)keyPathsForValuesAffectingNavigableItem_referencedContentExists;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain) IDEFileBreakpoint *breakpointObservingTheNameOf; // @synthesize breakpointObservingTheNameOf=_breakpointObservingTheNameOf;
 @property(retain) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 @property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(copy, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
-@property(retain) IDEBreakpointBucket *bucket; // @synthesize bucket=_bucket;
-- (void).cxx_destruct;
+@property(copy) IDEBreakpointBucket *bucket; // @synthesize bucket=_bucket;
 - (void)primitiveInvalidate;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) unsigned long long hash;
@@ -45,7 +45,7 @@
 - (BOOL)containsBreakpoint:(id)arg1;
 - (void)_assertBreakpointsFileIsSameAsGroup:(id)arg1;
 - (void)_observeFileBreakpointsNameToUseAsOurOwn:(id)arg1;
-- (void)removeFileBreakpoint:(id)arg1;
+- (void)removeFileBreakpoints:(id)arg1;
 - (void)addFileBreakpointInSortedOrder:(id)arg1;
 - (id)initWithBucket:(id)arg1;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;

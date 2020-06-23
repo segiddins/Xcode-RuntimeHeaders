@@ -24,11 +24,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSArray *emails; // @synthesize emails=_emails;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) NSImage *defaultImage;
 @property(readonly) NSImage *contactsImage;
 @property(retain) CNContact *pairedPerson;

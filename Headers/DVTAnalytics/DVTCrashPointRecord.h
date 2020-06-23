@@ -24,6 +24,7 @@
 }
 
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property unsigned long long locallySymbolicatedSourceFileLine; // @synthesize locallySymbolicatedSourceFileLine=_locallySymbolicatedSourceFileLine;
 @property(copy) NSString *locallySymbolicatedSourceFileName; // @synthesize locallySymbolicatedSourceFileName=_locallySymbolicatedSourceFileName;
 @property(copy) NSString *locallySymbolicatedCrashPointName; // @synthesize locallySymbolicatedCrashPointName=_locallySymbolicatedCrashPointName;
@@ -33,7 +34,6 @@
 @property(copy) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
 @property(readonly) DVTAnalyticsPointUserData *userData; // @synthesize userData=_userData;
 @property(readonly) DVTAnalyticsCrashPointIdentifier *crashPointIdentifier; // @synthesize crashPointIdentifier=_crashPointIdentifier;
-- (void).cxx_destruct;
 - (id)snapshotWithError:(id *)arg1;
 - (id)_crashPointSnapshotsWithError:(id *)arg1;
 - (id)_infoJSON;

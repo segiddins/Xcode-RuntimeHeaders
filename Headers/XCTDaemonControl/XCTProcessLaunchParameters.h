@@ -16,11 +16,11 @@
     NSDictionary *_environmentVariables;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *environmentVariables; // @synthesize environmentVariables=_environmentVariables;
 @property(readonly) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

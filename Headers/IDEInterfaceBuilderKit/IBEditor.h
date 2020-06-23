@@ -49,6 +49,7 @@
 + (void)resetCursorRectsForObject:(id)arg1 inFrameController:(id)arg2;
 + (Class)ibDropTargetResolverClass;
 + (Class)ibDragAndDropInsertionIndicatorClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *selectionPriorToEventRouting; // @synthesize selectionPriorToEventRouting=_selectionPriorToEventRouting;
 @property(nonatomic, getter=isFrameControllerDragAndDropInProgress) BOOL frameControllerDragAndDropInProgress; // @synthesize frameControllerDragAndDropInProgress=_frameControllerDragAndDropInProgress;
 @property(readonly) IBEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
@@ -58,7 +59,6 @@
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly) IBEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 @property(readonly) NSObject *editedObject; // @synthesize editedObject=_editedObject;
-- (void).cxx_destruct;
 - (BOOL)canDisplayHoverDecorators;
 - (BOOL)hasAnyDescendentEditorSupportsHoverDecorators;
 - (BOOL)supportsHoverDecorators;

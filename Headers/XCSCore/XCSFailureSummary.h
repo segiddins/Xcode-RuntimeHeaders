@@ -18,11 +18,11 @@
 
 + (id)failureSummaryWithXCSTestResultDictionaryRepresentation:(id)arg1 validationErrors:(id *)arg2;
 + (id)failureSummaryWithMessage:(id)arg1 lineNumber:(id)arg2 fileName:(id)arg3 isPerformanceFailure:(BOOL)arg4 validationErrors:(id *)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPerformanceFailure; // @synthesize isPerformanceFailure=_isPerformanceFailure;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (BOOL)_validateWithMessage:(id)arg1 lineNumber:(id)arg2 fileName:(id)arg3 isPerformanceFailure:(BOOL)arg4 validationErrors:(id *)arg5;
 - (id)dictionaryRepresentation;
 - (id)description;

@@ -55,6 +55,8 @@
     GPUTimelineGraphDataSource *_timelineDataSource;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL loadingShaderProfilerResult; // @synthesize loadingShaderProfilerResult=_loadingShaderProfilerResult;
 @property(readonly, nonatomic) BOOL encoderData; // @synthesize encoderData=_encoderData;
 @property(readonly, nonatomic) NSArray *toolsCounterNames; // @synthesize toolsCounterNames=_toolsCounterNames;
@@ -66,8 +68,6 @@
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisConfigurationVariables; // @synthesize vendorAnalysisConfigurationVariables=_vendorAnalysisConfigurationVariables;
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisFunctions; // @synthesize vendorAnalysisFunctions=_vendorAnalysisFunctions;
 @property(readonly, nonatomic) NSString *vendorAnalysisScript; // @synthesize vendorAnalysisScript=_vendorAnalysisScript;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float profilingProgress;
 @property(readonly, nonatomic) BOOL isProfilerRunning;
 @property(readonly, nonatomic) unsigned long long miscGroupIndex;

@@ -13,8 +13,8 @@
     NSString *plistTitle;
 }
 
-@property(copy) NSString *plistTitle; // @synthesize plistTitle;
 - (void).cxx_destruct;
+@property(copy) NSString *plistTitle; // @synthesize plistTitle;
 - (BOOL)pullsDown;
 - (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;

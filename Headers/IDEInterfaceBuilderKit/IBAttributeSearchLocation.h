@@ -20,9 +20,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *locationData; // @synthesize locationData=_locationData;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (struct _NSRange)effectiveRangeForAttributeStringValue:(id)arg1;
 - (id)locationWithRange:(struct _NSRange)arg1 forStringValue:(id)arg2;

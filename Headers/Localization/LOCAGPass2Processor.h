@@ -13,8 +13,8 @@
     NSDictionary *_translationChangedFiles;
 }
 
-@property(retain) NSDictionary *translationChangedFiles; // @synthesize translationChangedFiles=_translationChangedFiles;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *translationChangedFiles; // @synthesize translationChangedFiles=_translationChangedFiles;
 - (id)splitNibGlossary:(id)arg1;
 - (BOOL)cleanUp;
 - (id)createLOCXLIFFDocumentFromXLIFFatPath:(id)arg1;

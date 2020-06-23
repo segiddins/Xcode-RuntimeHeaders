@@ -17,8 +17,8 @@
     CDUnknownBlockType _completionBlock;
 }
 
-@property(readonly) __weak NSDocument<SKEDocumentProtocol> *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) __weak NSDocument<SKEDocumentProtocol> *document; // @synthesize document=_document;
 - (void)cancel;
 - (void)start;
 @property(readonly) long long progress;

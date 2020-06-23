@@ -37,6 +37,7 @@
 + (id)keyPathsForValuesAffectingTeams;
 + (id)defaultTeamManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <DVTInvalidation> certificatesToken; // @synthesize certificatesToken=_certificatesToken;
 @property(retain) id <DVTInvalidation> profilesToken; // @synthesize profilesToken=_profilesToken;
 @property(retain) id <DVTInvalidation> accountsToken; // @synthesize accountsToken=_accountsToken;
@@ -53,7 +54,6 @@
 @property BOOL areTeamsLoaded; // @synthesize areTeamsLoaded=_areTeamsLoaded;
 @property(retain, nonatomic) NSOrderedSet *disambiguatedTeamsIncludingLocallyDerived; // @synthesize disambiguatedTeamsIncludingLocallyDerived=_disambiguatedTeamsIncludingLocallyDerived;
 @property(retain, nonatomic) NSOrderedSet *disambiguatedTeams; // @synthesize disambiguatedTeams=_disambiguatedTeams;
-- (void).cxx_destruct;
 - (id)sessionProviderForTeam:(id)arg1 error:(id *)arg2;
 - (id)teamWithID:(id)arg1;
 - (void)_purgeErstwhileUsernamesFromCache:(id)arg1;

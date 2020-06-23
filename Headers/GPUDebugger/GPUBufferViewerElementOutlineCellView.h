@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifierForElement:(id)arg1 maxComponents:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long components; // @synthesize components=_components;
 @property(nonatomic) unsigned long long rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) GPUBufferViewerErrorView *errorView; // @synthesize errorView=_errorView;
 @property(copy, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
 @property(nonatomic) __weak id <GPUBufferViewerElement> element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setError:(id)arg1;
 - (void)resetValues;

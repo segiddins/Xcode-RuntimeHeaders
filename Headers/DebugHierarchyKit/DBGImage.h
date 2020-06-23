@@ -21,10 +21,10 @@
 
 + (id)withImageData:(id)arg1 type:(struct __CFString *)arg2 metadata:(id)arg3;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly) struct __CFString *imageType; // @synthesize imageType=_imageType;
 @property(readonly) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)objectValue;

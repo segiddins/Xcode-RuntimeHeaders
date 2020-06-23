@@ -6,6 +6,7 @@
 
 @protocol IDETouchBarSimulatorServiceProtocol
 - (void)disableTouchBar;
+- (void)enableTouchBarWithStyle:(long long)arg1;
 - (void)enableTouchBar;
 @end
 

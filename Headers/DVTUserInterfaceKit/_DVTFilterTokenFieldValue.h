@@ -16,9 +16,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int operatorType; // @synthesize operatorType=_operatorType;
 @property(retain, nonatomic) id tokenFieldObjectValue; // @synthesize tokenFieldObjectValue=_tokenFieldObjectValue;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

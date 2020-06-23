@@ -15,9 +15,9 @@
 }
 
 + (id)payloadWithContributors:(id)arg1 issues:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *issuesByContributor; // @synthesize issuesByContributor=_issuesByContributor;
 @property(copy, nonatomic) NSArray *orderedContributors; // @synthesize orderedContributors=_orderedContributors;
-- (void).cxx_destruct;
 
 @end
 

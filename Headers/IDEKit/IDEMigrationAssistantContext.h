@@ -17,8 +17,8 @@
 
 + (Class)migrationContextClass;
 + (void)initialize;
-@property(readonly) IDEMigrationContext *migrationContext; // @synthesize migrationContext=_migrationContext;
 - (void).cxx_destruct;
+@property(readonly) IDEMigrationContext *migrationContext; // @synthesize migrationContext=_migrationContext;
 - (void)setWorkspaceTabController:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;

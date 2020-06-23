@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     NSTableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)updateTooltipForPlane:(unsigned long long)arg1;
 - (void)updateTooltipForItem:(const struct GPUTimelineGraphDataPlaneCell *)arg1 atIndex:(unsigned long long)arg2 plane:(unsigned long long)arg3;
 - (void)_fitSize;

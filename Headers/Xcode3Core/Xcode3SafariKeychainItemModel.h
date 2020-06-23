@@ -14,8 +14,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

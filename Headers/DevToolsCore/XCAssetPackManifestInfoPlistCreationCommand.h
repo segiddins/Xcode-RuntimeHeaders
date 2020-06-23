@@ -14,9 +14,9 @@
     NSArray *_assetPackInfoDicts;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *assetPackInfoDicts; // @synthesize assetPackInfoDicts=_assetPackInfoDicts;
 @property(retain) XCDependencyNode *assetPackManifestNode; // @synthesize assetPackManifestNode=_assetPackManifestNode;
-- (void).cxx_destruct;
 - (BOOL)shouldUniqueOnOutputFiles;
 - (id)workingDirectoryNode;
 - (id)environmentAssignments;

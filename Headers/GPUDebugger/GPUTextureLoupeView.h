@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     struct CGPoint _selectedPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint selectedPoint; // @synthesize selectedPoint=_selectedPoint;
 @property __weak id <GPUTextureLoupeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) GPUTextureLoupeOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(readonly, nonatomic) _TtC11GPUDebugger18GPUImageRenderView *imageRenderView; // @synthesize imageRenderView=_imageRenderView;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (void)update;
 - (void)_reflectScrollViewToShowLoupe;
 - (void)setSelectedPoint:(struct CGPoint)arg1 notifyDelegate:(BOOL)arg2;

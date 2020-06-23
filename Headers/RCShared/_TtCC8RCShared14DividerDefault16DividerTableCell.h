@@ -6,19 +6,12 @@
 
 #import <RCShared/_TtC8RCShared16ControlTableCell.h>
 
-@class MISSING_TYPE;
-
 __attribute__((visibility("hidden")))
 @interface _TtCC8RCShared14DividerDefault16DividerTableCell : _TtC8RCShared16ControlTableCell
 {
-    MISSING_TYPE *divider;
-    MISSING_TYPE *divTop;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
-- (void)layout;
-- (void)viewDidMoveToWindow;
 
 @end
 

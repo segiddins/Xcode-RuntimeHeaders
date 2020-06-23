@@ -15,9 +15,9 @@
 }
 
 + (id)disambiguationPropertyWithKey:(id)arg1 emptyValue:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *emptyValue; // @synthesize emptyValue=_emptyValue;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)valueForTeam:(id)arg1;
 
 @end

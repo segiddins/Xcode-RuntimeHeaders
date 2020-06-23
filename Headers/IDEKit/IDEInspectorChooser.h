@@ -35,8 +35,8 @@
 + (id)categoryForXMLElement:(id)arg1 choiceType:(id)arg2 owner:(id)arg3;
 + (id)choiceForXMLElement:(id)arg1 choiceType:(id)arg2 owner:(id)arg3;
 + (id)choiceValueForElement:(id)arg1 type:(id)arg2;
-@property(retain, nonatomic) IDEInspectorLayoutGroup *selectedChoiceLayoutGroup; // @synthesize selectedChoiceLayoutGroup=_selectedChoiceLayoutGroup;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEInspectorLayoutGroup *selectedChoiceLayoutGroup; // @synthesize selectedChoiceLayoutGroup=_selectedChoiceLayoutGroup;
 - (void)uninstallFromInspectorContentView;
 - (void)installIntoInspectorContentView:(id)arg1;
 - (void)userMadeSelection:(id)arg1;

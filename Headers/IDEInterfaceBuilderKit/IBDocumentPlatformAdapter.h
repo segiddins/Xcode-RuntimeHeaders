@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly) IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) IBDocument *document; // @synthesize document=_document;
 - (void)didFinishUpdatingScenesWithRootObjects:(id)arg1;
 - (void)didUpdateSceneWithRootObject:(id)arg1;
 - (void)applyPlatformSpecificInstanceStateToPasteboardClone:(id)arg1;
@@ -38,7 +38,7 @@
 - (struct CGSize)canvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
 - (void)documentDidDisableMemberConfigurations;
 - (void)documentDidEnableMemberConfigurations;
-- (void)updateDocumentWithDeviceConfiguration:(id)arg1;
+- (void)refreshDocumentAppearance;
 - (void)documentDidSwitchToDevice:(id)arg1 orientation:(id)arg2 adaptation:(id)arg3;
 - (void)updateConfigurations;
 - (id)desiredConfigurationBasedOnEditorWindow:(id)arg1;
@@ -54,10 +54,12 @@
 - (id)forcedUpgradeFileTypeForFileType:(id)arg1;
 - (id)intrinsicPackageContentForNewlyGeneratedPackageWithFileType:(id)arg1;
 - (id)archiveTypeForFileType:(id)arg1;
+- (void)populateDocumentResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (id)documentCIImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2;
 - (id)documentFallbackColorForSystemColor:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1 fallbackColor:(id)arg2;
+- (id)effectiveAppearanceForEditorCanvasFrameController:(id)arg1;
 - (id)effectiveAppearanceForConfiguration:(id)arg1;
 - (void)frameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;
 - (void)frameDecider:(id)arg1 didPropagateFrame:(struct CGRect)arg2 toView:(id)arg3;

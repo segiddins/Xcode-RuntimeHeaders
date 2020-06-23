@@ -19,12 +19,12 @@
     XCSUIProgressViewController *_pvc;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSUIProgressViewController *pvc; // @synthesize pvc=_pvc;
 @property(retain) DVTObservingToken *currentMaintenanceTasksObserver; // @synthesize currentMaintenanceTasksObserver=_currentMaintenanceTasksObserver;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain, nonatomic) XCSUIService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)observeMaintenanceTasks;
 - (void)configureMaintenanceUI;
 - (id)serviceDocument;

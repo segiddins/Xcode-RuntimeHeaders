@@ -20,6 +20,7 @@
     BOOL _skipUnsupportedDestinations;
     BOOL _parallelizeTargets;
     BOOL _hideShellScriptEnvironment;
+    BOOL _parallelizeTestsAmongDestinations;
     BOOL _dontActuallyRunCommands;
     BOOL _skipUnavailableActions;
     BOOL _quieterOutput;
@@ -87,6 +88,9 @@
     NSArray *_testPlanNames;
     NSArray *_skipTestIdentifiers;
     NSArray *_onlyTestIdentifiers;
+    NSNumber *_testTimeoutsEnabled;
+    NSNumber *_defaultTestExecutionTimeAllowance;
+    NSNumber *_maximumTestExecutionTimeAllowance;
     NSArray *_skipTestConfigurations;
     NSArray *_onlyTestConfigurations;
     NSMutableDictionary *_testApplicationMappingOverrides;
@@ -100,6 +104,7 @@
     NSDictionary *_templateNonPermutedOptionValues;
     NSArray *_templateRequiredOptions;
     NSString *_clonedSourcePackagesDirPath;
+    NSArray *_xcrootPaths;
     DVTMacroDefinitionTable *_synthesizedMacros;
     DVTMacroDefinitionTable *_macrosFromCommandLine;
     DVTMacroDefinitionTable *_macrosFromXcconfigOption;
@@ -129,6 +134,7 @@
 + (id)timingLogAspect;
 + (BOOL)enableInstallLocAction;
 + (BOOL)useArchiveActionForInstall;
+- (void).cxx_destruct;
 @property(retain) IDEScheme *scheme; // @synthesize scheme=_scheme;
 @property BOOL includeLocalizedScreenshots; // @synthesize includeLocalizedScreenshots=_includeLocalizedScreenshots;
 @property BOOL allowProvisioningDeviceRegistration; // @synthesize allowProvisioningDeviceRegistration=_allowProvisioningDeviceRegistration;
@@ -155,6 +161,7 @@
 @property(retain) DVTMacroDefinitionTable *macrosFromXcconfigOption; // @synthesize macrosFromXcconfigOption=_macrosFromXcconfigOption;
 @property(retain) DVTMacroDefinitionTable *macrosFromCommandLine; // @synthesize macrosFromCommandLine=_macrosFromCommandLine;
 @property(retain) DVTMacroDefinitionTable *synthesizedMacros; // @synthesize synthesizedMacros=_synthesizedMacros;
+@property(retain) NSArray *xcrootPaths; // @synthesize xcrootPaths=_xcrootPaths;
 @property BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
 @property BOOL usePackageSupportBuiltinSCM; // @synthesize usePackageSupportBuiltinSCM=_usePackageSupportBuiltinSCM;
 @property BOOL disableAutomaticPackageResolution; // @synthesize disableAutomaticPackageResolution=_disableAutomaticPackageResolution;
@@ -173,6 +180,9 @@
 @property BOOL runSkippedTestsOnly; // @synthesize runSkippedTestsOnly=_runSkippedTestsOnly;
 @property(retain) NSArray *onlyTestConfigurations; // @synthesize onlyTestConfigurations=_onlyTestConfigurations;
 @property(retain) NSArray *skipTestConfigurations; // @synthesize skipTestConfigurations=_skipTestConfigurations;
+@property(copy) NSNumber *maximumTestExecutionTimeAllowance; // @synthesize maximumTestExecutionTimeAllowance=_maximumTestExecutionTimeAllowance;
+@property(copy) NSNumber *defaultTestExecutionTimeAllowance; // @synthesize defaultTestExecutionTimeAllowance=_defaultTestExecutionTimeAllowance;
+@property(copy) NSNumber *testTimeoutsEnabled; // @synthesize testTimeoutsEnabled=_testTimeoutsEnabled;
 @property(retain) NSArray *onlyTestIdentifiers; // @synthesize onlyTestIdentifiers=_onlyTestIdentifiers;
 @property(retain) NSArray *skipTestIdentifiers; // @synthesize skipTestIdentifiers=_skipTestIdentifiers;
 @property(retain) NSArray *testPlanNames; // @synthesize testPlanNames=_testPlanNames;
@@ -187,6 +197,7 @@
 @property BOOL quieterOutput; // @synthesize quieterOutput=_quieterOutput;
 @property BOOL skipUnavailableActions; // @synthesize skipUnavailableActions=_skipUnavailableActions;
 @property BOOL dontActuallyRunCommands; // @synthesize dontActuallyRunCommands=_dontActuallyRunCommands;
+@property BOOL parallelizeTestsAmongDestinations; // @synthesize parallelizeTestsAmongDestinations=_parallelizeTestsAmongDestinations;
 @property(retain) NSNumber *parallelTestingMaximumWorkerCount; // @synthesize parallelTestingMaximumWorkerCount=_parallelTestingMaximumWorkerCount;
 @property(retain) NSNumber *parallelTestingWorkerCountOverride; // @synthesize parallelTestingWorkerCountOverride=_parallelTestingWorkerCountOverride;
 @property(retain) NSNumber *parallelTestingEnabledOverride; // @synthesize parallelTestingEnabledOverride=_parallelTestingEnabledOverride;
@@ -233,7 +244,6 @@
 @property(copy) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)workspaceLocalizationEnabled;
 - (long long)_buildLogVerbosity;
 - (void)run;
@@ -267,13 +277,14 @@
 - (void)_printContainerInformationAndExit;
 - (id)schemeNamesInWorkspace:(id)arg1;
 - (void)_printVersionInfoAndExit;
+- (void)_showBuildSettingsForIndex;
 - (void)_showBuildSettings;
 - (void)_buildWithTimingSection:(id)arg1;
 - (BOOL)writeSourcePackageIndexFileToPath:(id)arg1 error:(out id *)arg2;
 - (void)_printTestingSummariesFromInvocationRecord:(id)arg1;
 - (void)_printIssueSummariesGroupedByTargetFromInvocationRecord:(id)arg1 issueSummariesKeyPath:(id)arg2 messageKeyPath:(id)arg3;
-- (id)_concurrentTestOperations:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 invocationRecord:(id)arg5 buildLog:(id)arg6 restorePersistedBuildResults:(BOOL)arg7 deviceOperationLimit:(long long)arg8 simulatorOperationLimit:(long long)arg9 schemeOperationParametersGenerator:(CDUnknownBlockType)arg10 outError:(id *)arg11;
-- (BOOL)_shouldTestConcurrentlyForRunDestinations:(id)arg1;
+- (id)_testOperationForRunDestinations:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 invocationRecord:(id)arg5 buildLog:(id)arg6 restorePersistedBuildResults:(BOOL)arg7 deviceOperationLimit:(long long)arg8 simulatorOperationLimit:(long long)arg9 schemeOperationParametersGenerator:(CDUnknownBlockType)arg10 outError:(id *)arg11;
+- (BOOL)_concurrentDestinationTestingEnabledForRunDestinations:(id)arg1;
 - (void)unableToOpenProjectAtPath:(id)arg1 reason:(id)arg2;
 - (void)_workspace:(id)arg1 failedToResolveContainerForProjectFile:(id)arg2;
 - (void)_resolveInputOptionsWithTimingSection:(id)arg1;

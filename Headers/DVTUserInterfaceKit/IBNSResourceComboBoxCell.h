@@ -13,8 +13,8 @@
     DVTResourceComboBox *_controlComboBox;
 }
 
-@property __weak DVTResourceComboBox *controlComboBox; // @synthesize controlComboBox=_controlComboBox;
 - (void).cxx_destruct;
+@property __weak DVTResourceComboBox *controlComboBox; // @synthesize controlComboBox=_controlComboBox;
 - (struct CGRect)textFieldCellFrameForRect:(struct CGRect)arg1;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 

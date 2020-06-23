@@ -18,9 +18,9 @@
     NSNumber *_colorNameToolTipTag;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *colorName; // @synthesize colorName=_colorName;
 @property(retain) NSColor *color; // @synthesize color;
-- (void).cxx_destruct;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
 - (id)description;
 - (void)drawSwatchForColor:(id)arg1 inRect:(struct CGRect)arg2;

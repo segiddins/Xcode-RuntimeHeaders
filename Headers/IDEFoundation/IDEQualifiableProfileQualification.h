@@ -19,13 +19,13 @@
     DVTPlatform *_platform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain, nonatomic) id <DVTQualifiableProfile> profile; // @synthesize profile=_profile;
 @property(nonatomic) BOOL verboseErrors; // @synthesize verboseErrors=_verboseErrors;
 @property(nonatomic) BOOL allowTeamProfiles; // @synthesize allowTeamProfiles=_allowTeamProfiles;
-- (void).cxx_destruct;
 - (id)activeQualifier;
 - (id)notExpiredQualifier;
 - (id)manuallyManagedQualifier;

@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
 @interface IBUIPageControl : IBUIControl <IBDocumentArchiving>
 {
@@ -16,21 +16,21 @@
     BOOL _defersCurrentPageDisplay;
     long long _numberOfPages;
     long long _currentPage;
-    IBUIColor *_pageIndicatorTintColor;
-    IBUIColor *_currentPageIndicatorTintColor;
+    IBColor *_pageIndicatorTintColor;
+    IBColor *_currentPageIndicatorTintColor;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingCurrentPage;
 + (BOOL)ibSupportsCocoaTouchAccessibility;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) IBUIColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
-@property(copy, nonatomic) IBUIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
+- (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
+@property(copy, nonatomic) IBColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
 @property(nonatomic) BOOL defersCurrentPageDisplay; // @synthesize defersCurrentPageDisplay=_defersCurrentPageDisplay;
 @property(nonatomic) BOOL hidesForSinglePage; // @synthesize hidesForSinglePage=_hidesForSinglePage;
 @property(nonatomic) long long currentPage; // @synthesize currentPage=_currentPage;
 @property(nonatomic) long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
-- (void).cxx_destruct;
 - (void)willChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 - (double)adjustWidthAmountForRuntimeMutationContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -27,6 +27,7 @@
 }
 
 + (id)underlyingObject;
+- (void).cxx_destruct;
 @property BOOL isForServerMock; // @synthesize isForServerMock=_isForServerMock;
 @property BOOL isValidForCodesigningMock; // @synthesize isValidForCodesigningMock=_isValidForCodesigningMock;
 @property(copy) NSString *serialNumberMock; // @synthesize serialNumberMock=_serialNumberMock;
@@ -40,7 +41,6 @@
 @property(copy) NSString *portalTeamIDMock; // @synthesize portalTeamIDMock=_portalTeamIDMock;
 @property(copy) NSString *commonNameMock; // @synthesize commonNameMock=_commonNameMock;
 @property(copy) NSSet *certificateKindsMock; // @synthesize certificateKindsMock=_certificateKindsMock;
-- (void).cxx_destruct;
 - (id)defaultDesignatedRequirementsForIdentifier:(id)arg1;
 - (struct __SecCertificate *)certificateRef;
 - (BOOL)isForServer;

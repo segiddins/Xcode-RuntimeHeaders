@@ -13,11 +13,11 @@
     NSString *_username;
 }
 
-+ (id)agentHasValidKeyForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)defaultSSHAgentAuthStrategy;
-@property(copy) NSString *username; // @synthesize username=_username;
++ (id)agentHasValidKeyForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
+@property(copy) NSString *username; // @synthesize username=_username;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, DVTTableView, IDEControlGroup, IDEWorkspace, NSArrayController, NSButton, NSWindow;
+@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, DVTTableView, IDEControlGroup, IDEWorkspace, NSArrayController, NSButton, NSSearchField, NSString, NSWindow;
 @protocol IDEClientTrackingToken;
 
 @interface IDEManageRunContextsSheetController : IDEViewController
@@ -21,16 +21,19 @@
     DVTGradientImageButton *_deleteButton;
     DVTGradientImagePopUpButton *_actionPopUpButton;
     IDEControlGroup *_controlGroup;
+    NSSearchField *_schemesSearchField;
     NSWindow *_hostWindow;
     IDEWorkspace *_workspace;
     BOOL _didSheetEnd;
     DVTObservingToken *_selectionObserverToken;
     id <IDEClientTrackingToken> _clientTrackingToken;
+    NSString *_filterString;
 }
 
 + (id)keyPathsForValuesAffectingShouldAutocreateSchemes;
 + (void)runSheetForWindow:(id)arg1;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 - (void)windowDidResize:(id)arg1;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
@@ -43,6 +46,10 @@
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)checkToggleAction:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)unshareSchemesAction:(id)arg1;
+- (void)shareSchemesAction:(id)arg1;
+- (void)hideSchemesAction:(id)arg1;
+- (void)showSchemesAction:(id)arg1;
 - (void)editAction:(id)arg1;
 - (void)_updateEditEnabledState;
 - (void)convertToTestPlansAction:(id)arg1;

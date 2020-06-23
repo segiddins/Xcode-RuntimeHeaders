@@ -33,9 +33,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanDeleteActivePreferenceSet;
+- (void).cxx_destruct;
 @property(retain) DVTPreferenceSetManager *preferenceSetManager; // @synthesize preferenceSetManager=_preferenceSetManager;
 @property(readonly) NSTableView *preferenceSetTableView; // @synthesize preferenceSetTableView=_tableView;
-- (void).cxx_destruct;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)deleteActivePreferenceSet:(id)arg1;
 - (void)duplicateSelectedDefaultThemeFromMenu:(id)arg1;

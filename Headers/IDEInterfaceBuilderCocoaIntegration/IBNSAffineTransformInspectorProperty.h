@@ -25,6 +25,7 @@
     NSStepper *_scaleStepper;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSStepper *scaleStepper; // @synthesize scaleStepper=_scaleStepper;
 @property(retain) NSStepper *stretchStepper; // @synthesize stretchStepper=_stretchStepper;
 @property(retain) NSStepper *rotateStepper; // @synthesize rotateStepper=_rotateStepper;
@@ -37,7 +38,6 @@
 @property(retain) NSTextField *skewTextField; // @synthesize skewTextField=_skewTextField;
 @property(retain) NSTextField *yOffsetTextField; // @synthesize yOffsetTextField=_yOffsetTextField;
 @property(retain) NSTextField *xOffsetTextField; // @synthesize xOffsetTextField=_xOffsetTextField;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)remplaceTransformComponent:(id)arg1;

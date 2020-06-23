@@ -17,9 +17,9 @@
     NSArray *_ide_testReport_test_testRunsByDevice;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ide_testReport_test_testRunsByDevice; // @synthesize ide_testReport_test_testRunsByDevice=_ide_testReport_test_testRunsByDevice;
 @property(readonly) id <IDETestReport_Test> test; // @synthesize test=_test;
-- (void).cxx_destruct;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)ide_testReport_test_fetchTestsWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *ide_testReport_test_allTestRunsAcrossDevices;
@@ -28,6 +28,8 @@
 @property(readonly, nonatomic) BOOL ide_testReport_test_fetchesTestRunsLazily;
 @property(readonly, nonatomic) NSNumber *ide_testReport_common_duration;
 @property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
+@property(readonly, nonatomic) BOOL ide_testReport_common_skipped;
+@property(readonly, nonatomic) BOOL ide_testReport_common_failed;
 @property(readonly, nonatomic) BOOL ide_testReport_common_passed;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;

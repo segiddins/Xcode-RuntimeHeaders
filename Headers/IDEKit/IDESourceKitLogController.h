@@ -22,9 +22,9 @@
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextView *logTextView; // @synthesize logTextView=_logTextView;
 @property(retain, nonatomic) NSPopUpButton *logLevelPopUp; // @synthesize logLevelPopUp=_logLevelPopUp;
-- (void).cxx_destruct;
 - (void)logLevelPopUpDidChange:(id)arg1;
 - (void)windowWillClose:(id)arg1;
 - (void)loadSourceKitLog:(id)arg1;

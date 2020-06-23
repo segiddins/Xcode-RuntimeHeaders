@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <DYSampler> _quicklookSamplerItem;
 }
 
-@property(nonatomic) __weak id <DYSampler> quicklookSamplerItem; // @synthesize quicklookSamplerItem=_quicklookSamplerItem;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DYSampler> quicklookSamplerItem; // @synthesize quicklookSamplerItem=_quicklookSamplerItem;
 - (void)resourceObjectResolution:(CDStruct_14f26992)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)resourceObject;
 - (id)samplerResourceObject;

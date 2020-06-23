@@ -16,8 +16,8 @@
     id _ideEventDelegate;
 }
 
-@property(retain) id <IDEApplicationEventDelegate> eventDelegate; // @synthesize eventDelegate=_ideEventDelegate;
 - (void).cxx_destruct;
+@property(retain) id <IDEApplicationEventDelegate> eventDelegate; // @synthesize eventDelegate=_ideEventDelegate;
 - (void)_openDocumentURLs:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;

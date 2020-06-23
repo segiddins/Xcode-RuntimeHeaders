@@ -17,12 +17,12 @@
     long long _line;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int severity; // @synthesize severity=_severity;
 @property(nonatomic) float percentage; // @synthesize percentage=_percentage;
 @property(nonatomic) long long line; // @synthesize line=_line;
 @property(retain, nonatomic) NSString *messageTooltip; // @synthesize messageTooltip=_messageTooltip;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)initWithLine:(long long)arg1 percentage:(float)arg2;
 
 @end

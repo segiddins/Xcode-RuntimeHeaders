@@ -21,9 +21,9 @@
 + (void)synthesizeCoverAPIWithKeyForRootNode:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfObjectGraph;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTModelObjectGraph *objectGraph; // @synthesize objectGraph=_objectGraph;
 @property(readonly) DVTModelTreeNode *subclass_rootNode; // @synthesize subclass_rootNode=_rootNode;
-- (void).cxx_destruct;
 - (id)subclass_createRootNode;
 - (void)_recursivelyMoveNode:(id)arg1 fromObjectGraph:(id)arg2 toObjectGraph:(id)arg3;
 - (void)primitiveInvalidate;

@@ -10,18 +10,22 @@
 
 @interface IDELaunchRunPhaseSheetController : IDELaunchTestRunPhaseSheetController
 {
-    DVTBorderedView *_optionsBorderedView;
-    NSMatrix *_debugProcessAsMatrix;
-    NSButtonCell *_debugProcessAsMeButtonCell;
-    NSMatrix *_launchStyleMatrix;
-    NSButtonCell *_waitForAppToLaunchButtonCell;
-    NSTextView *_customLaunchCommandsTextView;
-    NSButton *_debugExecutableCheckbox;
     DVTStackView_AppKitAutolayout *_infoStackView;
     NSView *_executable_buildConfiguration;
     NSView *_executable_runnable;
     NSView *_executable_user;
+    NSView *_executable_customLLDBInitFile;
     NSView *_executable_launchStyle;
+    NSButton *_debugExecutableCheckbox;
+    NSMatrix *_debugProcessAsMatrix;
+    NSButtonCell *_debugProcessAsMeButtonCell;
+    NSButton *_launchStyleAutomaticRadioButton;
+    NSButton *_launchStyleWaitRadioButton;
+    NSButton *_launchStyleCustomCommandRadioButton;
+    NSButton *_launchStyleDaemonRadioButton;
+    NSButtonCell *_waitForAppToLaunchButtonCell;
+    NSTextView *_customLaunchCommandsTextView;
+    DVTBorderedView *_optionsBorderedView;
     NSView *_watchLaunchSettingsView;
     NSPopUpButton *_watchInterfacePopup;
     NSPopUpButton *_notificationPayloadPopup;
@@ -38,13 +42,14 @@
     BOOL _supportsDebugAsDifferentUser;
 }
 
++ (id)keyPathsForValuesAffectingLaunchStyleIsLaunchdService;
 + (id)keyPathsForValuesAffectingLaunchStyleIsCustomLaunchCommands;
 + (id)keyPathsForValuesAffectingExecutableHasBeenSelected;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
 @property BOOL supportsDebugAsDifferentUser; // @synthesize supportsDebugAsDifferentUser=_supportsDebugAsDifferentUser;
 @property(nonatomic) BOOL executableHasBeenSelected; // @synthesize executableHasBeenSelected=_executableHasBeenSelected;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)createSanitizerBreakpoint:(id)arg1;
 - (void)_enableMallocStackLoggingLite;
@@ -61,7 +66,9 @@
 - (void)watchInterfaceSelected:(id)arg1;
 - (void)_validateNotificationPopupForTag:(long long)arg1;
 - (id)customLaunchCommandsFont;
+- (BOOL)launchStyleIsLaunchdService;
 - (BOOL)launchStyleIsCustomLaunchCommands;
+- (void)chooseLaunchStyle:(id)arg1;
 - (void)chooseDebugProcessAs:(id)arg1;
 - (void)_runnableDidUpdate;
 @property(retain) IDEDebuggerSpecifier *selectedDebuggerSpecifier;

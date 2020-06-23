@@ -27,6 +27,7 @@
     BOOL _containsFunctionExpressions;
     int _valueValidity;
     IDEStackFrame *_stackFrame;
+    NSString *name;
     NSString *address;
     NSString *pointeeAddress;
     DBGDataType *_dynamicType;
@@ -42,6 +43,7 @@
 + (id)keyPathsForValuesAffectingLogicalValueHasChanged;
 + (id)keyPathsForValuesAffectingLogicalValue;
 + (id)kvoChildPathForValuePath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DBGLazyObservableDictionary *lazyChildValuesByName; // @synthesize lazyChildValuesByName=_lazyChildValuesByName;
 @property(retain, nonatomic) DBGDataValueSummaryFormatter *summaryFormatter; // @synthesize summaryFormatter=_summaryFormatter;
 @property BOOL containsFunctionExpressions; // @synthesize containsFunctionExpressions=_containsFunctionExpressions;
@@ -49,8 +51,8 @@
 @property(readonly) DBGDataType *dynamicType; // @synthesize dynamicType=_dynamicType;
 @property(readonly, copy) NSString *pointeeAddress; // @synthesize pointeeAddress;
 @property(readonly, copy) NSString *address; // @synthesize address;
+@property(copy) NSString *name; // @synthesize name;
 @property(readonly) IDEStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) BOOL isMemoryFault;
 - (id)_contentDescription;
@@ -97,7 +99,6 @@
 - (BOOL)isNilPointer;
 - (BOOL)isPointer;
 @property(readonly, copy) NSString *logicalValue;
-@property(readonly, copy) NSString *name;
 @property(readonly) DBGDataValue *parent;
 @property(readonly) BOOL dynamicTypeHasChanged;
 @property(readonly) BOOL summaryHasChanged;

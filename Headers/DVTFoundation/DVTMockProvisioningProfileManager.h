@@ -21,11 +21,11 @@
 }
 
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mockDataToProvisioningProfileError; // @synthesize mockDataToProvisioningProfileError=_mockDataToProvisioningProfileError;
 @property(retain, nonatomic) NSMutableDictionary *mockDataToProvisioningProfile; // @synthesize mockDataToProvisioningProfile=_mockDataToProvisioningProfile;
 @property(retain, nonatomic) NSError *installProfilesError; // @synthesize installProfilesError=_installProfilesError;
 @property(retain, nonatomic) id <DVTMockProvisioningProfileManagerDelegate> testDelegate; // @synthesize testDelegate=_testDelegate;
-- (void).cxx_destruct;
 - (id)profileMatchingUUID:(id)arg1;
 - (void)forceProfileLoading;
 - (id)provisioningProfiles;

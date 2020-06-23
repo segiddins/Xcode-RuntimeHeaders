@@ -16,11 +16,11 @@
     CDStruct_bf6d4a14 _inset;
 }
 
+- (void).cxx_destruct;
 @property int verticalResizingMode; // @synthesize verticalResizingMode=_verticalResizingMode;
 @property int horizontalResizingMode; // @synthesize horizontalResizingMode=_horizontalResizingMode;
 @property(nonatomic) CDStruct_bf6d4a14 inset; // @synthesize inset=_inset;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -25,6 +25,7 @@
     IDEResultReference *_payloadReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL hasPayload; // @synthesize hasPayload=_hasPayload;
 @property(retain, nonatomic) IDEResultReference *payloadReference; // @synthesize payloadReference=_payloadReference;
 @property(retain, nonatomic) _TtC13DVTFoundation14DVTFilePromise *payloadFilePromise; // @synthesize payloadFilePromise=_payloadFilePromise;
@@ -37,7 +38,6 @@
 @property(copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 activityUUID:(id)arg2;
 - (void)deletePayload;

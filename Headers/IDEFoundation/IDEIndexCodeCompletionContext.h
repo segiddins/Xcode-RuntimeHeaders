@@ -18,13 +18,13 @@
     NSSet *_includedFiles;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *includedFiles; // @synthesize includedFiles=_includedFiles;
 @property(copy) NSString *partialSelector; // @synthesize partialSelector=_partialSelector;
 @property BOOL containerIsIncomplete; // @synthesize containerIsIncomplete=_containerIsIncomplete;
 @property(copy) NSString *containerResolution; // @synthesize containerResolution=_containerUSR;
 @property unsigned int containerKind; // @synthesize containerKind=_containerKind;
 @property unsigned long long contexts; // @synthesize contexts=_contexts;
-- (void).cxx_destruct;
 
 @end
 

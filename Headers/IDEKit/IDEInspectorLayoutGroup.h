@@ -21,12 +21,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property struct CGRect frame; // @synthesize frame=_frame;
 @property(copy) NSString *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(retain) IDEDeclarativeInspectorDynamicVisibilityManager *visibilityManager; // @synthesize visibilityManager=_visibilityManager;
 @property(readonly, nonatomic) NSOrderedSet *subgroups; // @synthesize subgroups=_subgroups;
 @property(retain, nonatomic) IDEInspectorContentView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)inspectorContentViewDidMoveToWindow;
 - (void)inspectorContentViewWillMoveToWindow:(id)arg1;
 - (void)uninstallFromInspectorContentView;

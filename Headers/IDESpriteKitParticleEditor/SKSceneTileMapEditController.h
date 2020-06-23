@@ -50,8 +50,8 @@
     SKTileMapNode *_node;
 }
 
-@property(retain, nonatomic) SKTileMapNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKTileMapNode *node; // @synthesize node=_node;
 - (void)sceneTileMapEditBrushPopoverDidClose;
 - (void)sceneTileMapEditBrushPopoverSelectedIndex:(unsigned long long)arg1;
 - (void)sceneTileMapEditPopoverDidClose;
@@ -96,9 +96,9 @@
 - (void)sceneEditController:(id)arg1 multiTouchMovedAtLocation:(struct CGPoint)arg2;
 - (BOOL)sceneEditController:(id)arg1 multiTouchBeganAtLocation:(struct CGPoint)arg2;
 - (void)sceneEditController:(id)arg1 touchHoverMoveAtLocation:(struct CGPoint)arg2;
-- (void)sceneEditController:(id)arg1 touchEndedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
-- (void)sceneEditController:(id)arg1 touchMovedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
-- (BOOL)sceneEditController:(id)arg1 touchBeganAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (void)sceneEditController:(id)arg1 touchEndedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(id)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (void)sceneEditController:(id)arg1 touchMovedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(id)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (BOOL)sceneEditController:(id)arg1 touchBeganAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(id)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
 - (void)sceneEditControllerWillDeactivate:(id)arg1;
 - (void)sceneEditControllerDidActivate:(id)arg1;
 - (id)viewInEditController:(id)arg1;

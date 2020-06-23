@@ -16,8 +16,8 @@
 }
 
 + (id)operatorWithDataSource:(id)arg1;
-@property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void)invokeForIntegrationFinished:(id)arg1;
 - (void)invokeForBuildAgentsChangedOnService:(id)arg1;
 - (void)invokeForVersionInfoChangedOnService:(id)arg1;

@@ -23,6 +23,7 @@
     IDEOpenQuicklyQueryContext *_queryContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEOpenQuicklyQueryContext *queryContext; // @synthesize queryContext=_queryContext;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) IDEOpenQuicklyQueryUserInput *requestedUserInput; // @synthesize requestedUserInput=_requestedUserInput;
@@ -30,7 +31,6 @@
 @property(readonly) NSArray *completedResults; // @synthesize completedResults=_completedResults;
 @property(readonly) long long completedGeneration; // @synthesize completedGeneration=_completedGeneration;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)pushResults:(id)arg1 generation:(long long)arg2;
 - (void)updateUserInput:(id)arg1 generation:(long long)arg2;
 - (void)asyncAccessConsumerOnConsumerQueueIfNotNil:(CDUnknownBlockType)arg1;

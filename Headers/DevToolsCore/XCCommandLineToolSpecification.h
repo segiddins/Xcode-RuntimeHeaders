@@ -62,11 +62,11 @@
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isUnsafeToInterrupt; // @synthesize isUnsafeToInterrupt=_isUnsafeToInterrupt;
 @property(readonly, nonatomic) NSString<DVTMacroExpansion> *dependencyInfoFile; // @synthesize dependencyInfoFile=_dependencyInfoFile;
 @property(readonly) NSIndexSet *successExitCodes; // @synthesize successExitCodes=_successExitCodes;
 @property(readonly) unsigned long long messageLimit; // @synthesize messageLimit=_messageLimit;
-- (void).cxx_destruct;
 - (id)instantiatedCommandResultsPostprocessorForCommand:(id)arg1;
 - (unsigned long long)concurrentExecutionCountWithMacroExpansionScope:(id)arg1;
 - (id)createCommandsforInputs:(id)arg1 withMacroExpansionScope:(id)arg2;

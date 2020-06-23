@@ -19,9 +19,9 @@
     IDEDebugBar *_debugBar;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEDebugBar *debugBar; // @synthesize debugBar=_debugBar;
 @property(copy) NSArray *debugBarControlViews; // @synthesize debugBarControlViews=_debugBarControlViews;
-- (void).cxx_destruct;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (void)currentDebugSessionStateDidChange;

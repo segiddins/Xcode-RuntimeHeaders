@@ -52,6 +52,7 @@
     NSTextField *_titleField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property __weak NSView *labelsHostView; // @synthesize labelsHostView=_labelsHostView;
 @property __weak NSButton *jumpToReportButton; // @synthesize jumpToReportButton=_jumpToReportButton;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) id <IDETestReport_TestRun> testRun; // @synthesize testRun=_testRun;
 @property(retain, nonatomic) NSArray *testPerfMetrics; // @synthesize testPerfMetrics=_testPerfMetrics;
 @property(nonatomic) BOOL enableUpdating; // @synthesize enableUpdating=_enableUpdating;
-- (void).cxx_destruct;
 - (void)refreshUI;
 - (double)baselineAverageValueFromTextField;
 - (id)precisionFormatter;

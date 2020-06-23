@@ -6,12 +6,13 @@
 
 #import <DebuggerFoundation/DBGDataValue.h>
 
-@class DBGLLDBDataType, NSArray, NSMutableArray, NSMutableIndexSet, NSString;
+@class DBGLLDBDataType, DBGLLDBStackFrame, DBGLLDBThread, NSArray, NSMutableArray, NSMutableIndexSet, NSString;
 @protocol DBGSBValue;
 
 @interface DBGLLDBDataValue : DBGDataValue
 {
     BOOL _isDictionarySynthesizedParent;
+    DBGLLDBThread *_thread;
     DBGLLDBDataType *_dbgStaticType;
     id <DBGSBValue> _lldbValueObject;
     int _lldbFormat;
@@ -44,10 +45,9 @@
 + (id)_dataValueWithDisplayName:(id)arg1 tag:(unsigned long long)arg2;
 + (id)supportedDataValueFormats;
 + (int)dynamicValueType;
-+ (id)_persistenceKeyForValueWithName:(id)arg1 inStackFrame:(id)arg2;
-+ (int)_persistedLLDBFormatForValueName:(id)arg1 inStackFrame:(id)arg2;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)staticType;
 - (BOOL)inScope;
 - (id)parent;
@@ -58,11 +58,12 @@
 - (BOOL)valueHasChanged;
 - (id)pointeeAddress;
 - (id)address;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
+- (id)name;
 - (void)primitiveInvalidate;
 - (BOOL)isMemoryFault;
 - (id)_dataValueFormatForLLDBFormat:(int)arg1;
+- (id)_persistenceKeyForValueWithName:(id)arg1;
+- (int)_persistedLLDBFormatForValueName:(id)arg1;
 - (void)_persistLLDBFormat:(id)arg1;
 - (id)_classNameHierarchyStartingWithType:(id)arg1;
 - (void)classNameHierarchy:(CDUnknownBlockType)arg1;
@@ -84,7 +85,6 @@
 - (id)lldbDescription;
 - (void)setFormat:(id)arg1;
 - (id)format;
-- (const char *)valueAsCString;
 - (void)_rawDataWithHandler:(CDUnknownBlockType)arg1;
 - (id)primitiveChildValues;
 - (void)_faultNextSetOfChildValuesStartingAtIndex:(unsigned long long)arg1;
@@ -101,6 +101,7 @@
 - (id)_calculateSummary;
 - (void)_fetchSummaryFromLLDBOnSessionThreadIfNecessary;
 - (id)value;
+- (void)setName:(id)arg1;
 - (BOOL)dynamicTypeHasChanged;
 - (BOOL)summaryHasChanged;
 - (void)setValue:(id)arg1;
@@ -110,9 +111,10 @@
 - (BOOL)_isSessionThread;
 - (void)_assertOnSessionThread;
 - (void)_refreshValue;
-- (id)lldbStackFrame;
-- (id)initWithLLDBValueObject:(id)arg1 forStackFrame:(id)arg2 withParent:(id)arg3 updateSummary:(BOOL)arg4;
-- (id)initWithLLDBValueObject:(id)arg1 forStackFrame:(id)arg2 withParent:(id)arg3;
+@property(readonly, nonatomic) DBGLLDBStackFrame *stackFrame;
+@property(readonly, nonatomic) DBGLLDBThread *thread;
+- (id)initWithLLDBValueObject:(id)arg1 thread:(id)arg2 stackFrame:(id)arg3 withParent:(id)arg4 updateSummary:(BOOL)arg5;
+- (id)initWithLLDBValueObject:(id)arg1 stackFrame:(id)arg2 withParent:(id)arg3;
 
 @end
 

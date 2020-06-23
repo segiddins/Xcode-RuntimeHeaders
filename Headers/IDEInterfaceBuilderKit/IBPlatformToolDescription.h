@@ -19,10 +19,10 @@
 }
 
 + (id)descriptionForTargetRuntime:(id)arg1 role:(long long)arg2 deviceTypeDescription:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBGenericDeviceTypeDescription *deviceTypeDescription; // @synthesize deviceTypeDescription=_deviceTypeDescription;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
 @property(readonly, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (id)ib_verboseDescription;
 - (id)toolName;
 @property(readonly, copy) NSString *description;

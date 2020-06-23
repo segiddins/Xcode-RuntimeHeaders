@@ -27,6 +27,7 @@
 + (id)launchAtPath:(id)arg1 arguments:(id)arg2 outputFilePath:(id)arg3 captureOutput:(BOOL)arg4;
 + (id)sharedDirectoryPath;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *toolsInFlight; // @synthesize toolsInFlight=_toolsInFlight;
 @property(nonatomic) unsigned long long toolCounter; // @synthesize toolCounter=_toolCounter;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableDictionary *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSOperationQueue *toolsQueue; // @synthesize toolsQueue=_toolsQueue;
 @property(retain, nonatomic) NSOperationQueue *extensionsQueue; // @synthesize extensionsQueue=_extensionsQueue;
-- (void).cxx_destruct;
 - (void)sendDiagnosticsFinalizedNotification;
 - (void)_taskCompleted:(id)arg1;
 - (void)_launchTool:(id)arg1 collectors:(id)arg2;

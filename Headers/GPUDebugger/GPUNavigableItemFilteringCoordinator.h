@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     GPUFilterTokenPredicate *_filterPredicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(readonly, nonatomic) unsigned long long filterState; // @synthesize filterState=_filterState;
-- (void).cxx_destruct;
 - (void)_recursivelyExpandItem:(id)arg1;
 - (void)stopFiltering:(id)arg1;
 - (void)startFiltering:(id)arg1 withFilterPredicate:(id)arg2 andCompletionBlock:(CDUnknownBlockType)arg3;

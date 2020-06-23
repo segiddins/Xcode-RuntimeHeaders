@@ -19,6 +19,7 @@
     NSArray *_catalogClasses;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *catalogClasses; // @synthesize catalogClasses=_catalogClasses;
 @property(readonly) long long insertionStyle; // @synthesize insertionStyle=_insertionStyle;
 @property(readonly) BOOL embedsSelectedItems; // @synthesize embedsSelectedItems=_embedsSelectedItems;
@@ -26,7 +27,6 @@
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) IBICAssetInstantiationCommandMenu *submenu; // @synthesize submenu=_submenu;
 @property(readonly) Class itemClass; // @synthesize itemClass=_itemClass;
-- (void).cxx_destruct;
 - (id)initWithExtension:(id)arg1;
 
 @end

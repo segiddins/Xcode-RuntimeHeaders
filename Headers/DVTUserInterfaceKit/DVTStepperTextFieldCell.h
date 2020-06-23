@@ -19,10 +19,10 @@
 }
 
 + (id)_textFieldPathForFrame:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAccessibilityElement *accessibilityStepperElement; // @synthesize accessibilityStepperElement=_accessibilityStepperElement;
 @property(readonly) NSCell *plusButtonCell; // @synthesize plusButtonCell=_plusButtonCell;
 @property(readonly) NSCell *minusButtonCell; // @synthesize minusButtonCell=_minusButtonCell;
-- (void).cxx_destruct;
 - (id)_stepperImageIsSelected:(BOOL)arg1 isIncrement:(BOOL)arg2;
 @property BOOL hasButtons;
 - (void)setBackgroundStyle:(long long)arg1;

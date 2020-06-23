@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)computeElementTypeForStruct:(const struct Struct *)arg1;
 + (struct GPUBufferViewerAdaptorElementComponentsRows)computeComponentsAndRowsForTypeAlias:(int)arg1;
 + (unsigned char)computeShiftForMask:(unsigned long long)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char shift; // @synthesize shift=_shift;
 @property(nonatomic) unsigned long long mask; // @synthesize mask=_mask;
 @property(nonatomic) unsigned long long stepRate; // @synthesize stepRate=_stepRate;
@@ -49,8 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) map_b7e40c1f encodedResources; // @synthesize encodedResources=_encodedResources;
 @property(nonatomic) struct Buffer dataBuffer; // @synthesize dataBuffer=_dataBuffer;
 @property(nonatomic) struct Struct dataStruct; // @synthesize dataStruct=_dataStruct;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithStruct:(const struct Struct *)arg1 buffer:(const struct Buffer *)arg2 encodedResources:(const map_b7e40c1f *)arg3 dataSource:(id)arg4;
 

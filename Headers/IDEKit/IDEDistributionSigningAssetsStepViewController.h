@@ -19,8 +19,8 @@
 + (id)keyPathsForValuesAffectingCanGoNext;
 + (id)keyPathsForValuesAffectingTitle;
 + (Class)actualViewControllerClassForContext:(id)arg1;
-@property(retain, nonatomic) IDEDistributionStepViewController *actualViewController; // @synthesize actualViewController=_actualViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEDistributionStepViewController *actualViewController; // @synthesize actualViewController=_actualViewController;
 - (void)takeAdditionalAction;
 - (id)additionalActionTitle;
 - (void)takePreviousAction;

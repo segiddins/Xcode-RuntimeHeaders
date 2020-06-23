@@ -14,9 +14,9 @@
     DVTResourceComboBoxColorSwatchView *_colorSwatch;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTResourceComboBoxColorSwatchView *colorSwatch; // @synthesize colorSwatch=_colorSwatch;
 @property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color;
 - (void)setName:(id)arg1;
 - (id)name;

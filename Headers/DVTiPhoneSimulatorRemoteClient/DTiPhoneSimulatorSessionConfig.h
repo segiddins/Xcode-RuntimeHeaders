@@ -29,6 +29,7 @@
 }
 
 + (id)displayNameForDeviceFamily:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL launchForBackgroundFetch; // @synthesize launchForBackgroundFetch=_launchForBackgroundFetch;
 @property(retain) NSFileHandle *stderrFileHandle; // @synthesize stderrFileHandle=_stderrFileHandle;
 @property(retain) NSFileHandle *stdoutFileHandle; // @synthesize stdoutFileHandle=_stdoutFileHandle;
@@ -42,7 +43,6 @@
 @property BOOL shouldInstallApplicationToSimulate; // @synthesize shouldInstallApplicationToSimulate=_shouldInstallApplicationToSimulate;
 @property(copy) DTiPhoneSimulatorApplicationSpecifier *applicationToSimulateOnStart; // @synthesize applicationToSimulateOnStart=_applicationToSimulateOnStart;
 @property(copy) NSString *simulatedArchitecture; // @synthesize simulatedArchitecture=_simulatedArchitecture;
-- (void).cxx_destruct;
 - (id)description;
 @property(retain, nonatomic) SimDevice *device; // @synthesize device=_device;
 @property(readonly, copy) NSDictionary *toolSpawnOptions;

@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     NSString *_sessionID;
 }
 
-@property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
+@property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (id)imageToUseInDefaultQuickLookForNode:(id)arg1;
 - (id)imageForNode:(id)arg1;
 - (void)provideScopeChoices:(id)arg1;

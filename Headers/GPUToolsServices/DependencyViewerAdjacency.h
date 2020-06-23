@@ -16,11 +16,11 @@
     DependencyViewerVertex *_twin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
 @property(readonly, nonatomic) BOOL outgoing; // @synthesize outgoing=_outgoing;
 @property(readonly, nonatomic) __weak DependencyViewerVertex *twin; // @synthesize twin=_twin;
 @property(readonly, nonatomic) __weak DependencyViewerEdge *edge; // @synthesize edge=_edge;
-- (void).cxx_destruct;
 - (id)initWithEdge:(id)arg1 twin:(id)arg2 outgoing:(BOOL)arg3;
 
 @end

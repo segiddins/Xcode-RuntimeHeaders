@@ -22,8 +22,8 @@
 }
 
 + (Class)outlineViewControllerClass;
-@property(readonly, nonatomic) IBOutlineViewController *outlineViewController; // @synthesize outlineViewController=_outlineViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBOutlineViewController *outlineViewController; // @synthesize outlineViewController=_outlineViewController;
 - (void)didPopNavigationItem:(id)arg1;
 - (void)didPushNavigationItem:(id)arg1 previousItem:(id)arg2;
 - (void)autolayoutSidebar:(id)arg1 isFinishedWithResolvingViewController:(id)arg2;

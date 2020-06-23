@@ -30,6 +30,7 @@
 + (id)documentLocationForMember:(id)arg1;
 + (id)symbolNameForType:(long long)arg1;
 + (id)displayNameForType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSSet *affectedObjects; // @synthesize affectedObjects=_affectedObjects;
 @property(readonly) NSObject *source; // @synthesize source=_source;
 @property(readonly) __weak IBDocument *document; // @synthesize document=_document;
@@ -37,7 +38,6 @@
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) IDEActivityLogMessage *activityLogMessage; // @synthesize activityLogMessage=_activityLogMessage;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)description;
 - (id)ideIssueRepresentationForIssueProvider:(id)arg1;
 - (unsigned long long)hash;

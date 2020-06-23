@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     DYContinuation *_job;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DYContinuation *job; // @synthesize job=_job;
 @property(readonly, nonatomic) NSString *jobId; // @synthesize jobId=_jobId;
-- (void).cxx_destruct;
 - (id)initWithId:(id)arg1 job:(id)arg2;
 - (id)init;
 

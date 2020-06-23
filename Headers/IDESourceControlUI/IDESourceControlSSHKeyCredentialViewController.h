@@ -30,6 +30,7 @@
     NSImageView *_sshKeyValidationStatusImageView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSImageView *sshKeyValidationStatusImageView; // @synthesize sshKeyValidationStatusImageView=_sshKeyValidationStatusImageView;
 @property __weak NSPopUpButton *sshKeyActionButton; // @synthesize sshKeyActionButton=_sshKeyActionButton;
 @property __weak NSProgressIndicator *sshKeyValidationProgressIndicator; // @synthesize sshKeyValidationProgressIndicator=_sshKeyValidationProgressIndicator;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) DVTSourceControlHostedAccount *hostedAccount; // @synthesize hostedAccount=_hostedAccount;
 @property(nonatomic) __weak id <IDESourceControlSSHKeyCredentialViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *URLDerivedUsername; // @synthesize URLDerivedUsername=_URLDerivedUsername;
-- (void).cxx_destruct;
 - (id)_actionTooltip:(long long)arg1;
 - (id)_actionTitle:(long long)arg1;
 - (id)_sshKeyStatusImage:(long long)arg1;

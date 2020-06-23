@@ -55,8 +55,8 @@
 }
 
 + (void)initialize;
-@property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 - (void).cxx_destruct;
+@property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (double)_outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;

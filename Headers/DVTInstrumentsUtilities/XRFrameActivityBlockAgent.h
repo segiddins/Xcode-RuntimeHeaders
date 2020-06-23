@@ -15,11 +15,11 @@
     _Atomic char *_yieldNow;
 }
 
-@property(nonatomic) _Atomic char *yieldNow; // @synthesize yieldNow=_yieldNow;
 - (void).cxx_destruct;
+@property(nonatomic) _Atomic char *yieldNow; // @synthesize yieldNow=_yieldNow;
 - (id)operationRepresentation;
 - (void)executeStopOnItinerary:(id)arg1;
-- (int)agentDiagnosticsTypeCode;
+- (id)agentDiagnosticsName;
 - (void)dealloc;
 - (id)init;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

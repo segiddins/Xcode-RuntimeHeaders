@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     GPUFilterTokenPredicate *_filterPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(retain, nonatomic) GPUFilterCompletionsEngine *tokenCompletionsEngine; // @synthesize tokenCompletionsEngine=_tokenCompletionsEngine;
 @property(readonly, nonatomic) GPUFilterTokenHelper *tokenHelper; // @synthesize tokenHelper=_tokenHelper;
 @property(copy, nonatomic) NSString *storageID; // @synthesize storageID=_storageID;
-- (void).cxx_destruct;
 - (id)initWithStorageID:(id)arg1 helper:(id)arg2;
 
 @end

@@ -14,8 +14,8 @@
 }
 
 + (id)registerDevicesUserActionWithDevices:(id)arg1 context:(id)arg2;
-@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 - (id)executionMessage;
 - (id)userActionName;
 - (id)userActionMessage;

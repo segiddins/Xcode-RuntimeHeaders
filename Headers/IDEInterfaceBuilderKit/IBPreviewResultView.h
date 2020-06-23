@@ -36,6 +36,7 @@
 }
 
 + (id)titleTextField;
+- (void).cxx_destruct;
 @property(readonly) double defaultActionButtonToTitleFieldHorizontalSpacing; // @synthesize defaultActionButtonToTitleFieldHorizontalSpacing=_defaultActionButtonToTitleFieldHorizontalSpacing;
 @property __weak id <IBPreviewResultViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL showsFirstResponder; // @synthesize showsFirstResponder=_showsFirstResponder;
@@ -44,7 +45,6 @@
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain) IBImageButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) IBDeviceBezel *deviceBezel; // @synthesize deviceBezel=_deviceBezel;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)effectiveBorderColor;
 - (void)updateTrackingAreas;

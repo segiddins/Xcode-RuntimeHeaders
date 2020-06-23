@@ -21,11 +21,11 @@
     unsigned long long _lineNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <GPUTraceShaderDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, nonatomic) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
 @property(readonly, nonatomic) __weak GPUTraceShaderItem *shaderItem; // @synthesize shaderItem=_shaderItem;
-- (void).cxx_destruct;
 - (id)sourceURL;
 - (id)APIItem;
 - (id)dataProvider_private;

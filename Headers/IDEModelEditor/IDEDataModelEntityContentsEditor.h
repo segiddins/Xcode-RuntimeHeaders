@@ -22,8 +22,8 @@
 
 + (id)keyPathsForValuesAffectingSelection;
 + (id)keyPathsForValuesAffectingModel;
-@property(retain) id <IDEDataModelEditorController> activeEditor; // @synthesize activeEditor=_activeEditor;
 - (void).cxx_destruct;
+@property(retain) id <IDEDataModelEditorController> activeEditor; // @synthesize activeEditor=_activeEditor;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)selectModelObjects:(id)arg1;

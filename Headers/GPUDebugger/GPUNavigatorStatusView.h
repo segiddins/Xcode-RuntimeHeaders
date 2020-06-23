@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     DVTStructuredLayoutViewState *dvt_layoutState;
 }
 
-@property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState;
++ (void)initialize;
 - (void).cxx_destruct;
+@property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
+- (void)_invalidateContent:(id)arg1;
+- (void)_shaderProfilerWillBegin:(id)arg1;
 - (void)_shaderProfilerDataUpdated:(id)arg1;
 - (void)refresh:(BOOL)arg1;
-- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

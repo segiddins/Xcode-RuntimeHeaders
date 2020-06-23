@@ -21,6 +21,7 @@
     double _elapsedSystemTime;
 }
 
+- (void).cxx_destruct;
 @property double elapsedSystemTime; // @synthesize elapsedSystemTime=_elapsedSystemTime;
 @property double elapsedUserTime; // @synthesize elapsedUserTime=_elapsedUserTime;
 @property(retain) DVTSystemStatisticsMeasurement *endSystemStats; // @synthesize endSystemStats=_endSystemStats;
@@ -28,7 +29,6 @@
 @property unsigned long long ordinal; // @synthesize ordinal=_ordinal;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *commandString; // @synthesize commandString=_commandString;
-- (void).cxx_destruct;
 - (void)emitContentsForAspect:(id)arg1 logLevel:(unsigned long long)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)defaultEmissionStringWithIndentLevel:(unsigned long long)arg1;
 @property(readonly) long long numberOfVMPageouts;

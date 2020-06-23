@@ -15,8 +15,8 @@
 
 + (id)triggerSCMOptionsWithRepositories:(id)arg1 validationErrors:(id *)arg2;
 + (id)emptyTriggerSCMOptions;
-@property(retain, nonatomic) NSDictionary *repositories; // @synthesize repositories=_repositories;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *repositories; // @synthesize repositories=_repositories;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (BOOL)shouldSendEmailForRepositoryWithID:(id)arg1;

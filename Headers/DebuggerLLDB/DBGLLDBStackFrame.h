@@ -28,13 +28,13 @@
 }
 
 + (BOOL)supportsInvalidationPrevention;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *globals; // @synthesize globals=_globals;
 @property(copy, nonatomic) NSArray *fileStatics; // @synthesize fileStatics=_fileStatics;
 @property(copy, nonatomic) NSArray *registers; // @synthesize registers=_registers;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) NSArray *locals; // @synthesize locals=_locals;
 - (BOOL)isSwiftThunk;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)disassemblyString;
 - (void)updateForLineEntry:(id)arg1;

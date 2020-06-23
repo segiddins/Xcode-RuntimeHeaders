@@ -15,9 +15,9 @@
 }
 
 + (id)textAnnotationProxyItemWithAnnotation:(id)arg1 parent:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) DVTTextSidebarView *parent; // @synthesize parent=_parent;
 @property(readonly) DVTTextAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;

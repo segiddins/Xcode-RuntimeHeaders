@@ -27,8 +27,8 @@
 + (id)wrappingXcode3BuildFileForPBXBuildFile:(id)arg1;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
-@property(readonly) PBXBuildFile *pbxBuildFile; // @synthesize pbxBuildFile=_buildFile;
 - (void).cxx_destruct;
+@property(readonly) PBXBuildFile *pbxBuildFile; // @synthesize pbxBuildFile=_buildFile;
 - (long long)compareToBuildFile:(id)arg1;
 @property(readonly) NSString *parentPathForDisplay;
 @property(readonly, copy) NSString *description;

@@ -35,10 +35,10 @@
 + (id)_createContainerWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 identifier:(id)arg4 containerType:(id)arg5 error:(id *)arg6;
 + (id)_listContainersServiceWithTeam:(id)arg1 program:(id)arg2 containerType:(id)arg3;
 + (id)containersWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 containerType:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

@@ -15,8 +15,8 @@
 
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-@property(readonly) IDEDistributionContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) IDEDistributionContext *context; // @synthesize context=_context;
 @property(readonly) NSSet *providedOutputContextPropertyNames;
 @property(readonly) NSSet *requiredInputContextPropertyNames;
 - (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;

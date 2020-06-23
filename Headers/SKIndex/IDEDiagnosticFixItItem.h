@@ -14,9 +14,9 @@
     DVTTextDocumentLocation *_replacementLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTTextDocumentLocation *replacementLocation; // @synthesize replacementLocation=_replacementLocation;
 @property(readonly, nonatomic) NSString *fixItString; // @synthesize fixItString=_fixItString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFixItString:(id)arg1 replacementLocation:(id)arg2;
 

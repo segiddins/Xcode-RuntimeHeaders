@@ -21,6 +21,7 @@
     XCSDeveloperTeam *_fetchedTeam;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSDeveloperTeam *fetchedTeam; // @synthesize fetchedTeam=_fetchedTeam;
 @property __weak NSImageView *errorImageView; // @synthesize errorImageView=_errorImageView;
 @property __weak NSProgressIndicator *joinProgress; // @synthesize joinProgress=_joinProgress;
@@ -30,7 +31,6 @@
 @property __weak NSButton *signInButton; // @synthesize signInButton=_signInButton;
 @property __weak NSTextField *errorField; // @synthesize errorField=_errorField;
 @property __weak NSTextField *teamIDField; // @synthesize teamIDField=_teamIDField;
-- (void).cxx_destruct;
 
 @end
 

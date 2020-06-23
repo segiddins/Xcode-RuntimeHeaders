@@ -18,13 +18,13 @@
     NSString *_allowedKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *allowedKeyPath; // @synthesize allowedKeyPath=_allowedKeyPath;
 @property(readonly) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
 @property(readonly) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property(readonly) NSImage *onStateImage; // @synthesize onStateImage=_onStateImage;
 @property(readonly) NSImage *offStateImage; // @synthesize offStateImage=_offStateImage;
 @property(readonly) NSString *expressionIdentifier; // @synthesize expressionIdentifier=_expressionIdentifier;
-- (void).cxx_destruct;
 - (id)initWithFilterExpressionIdentifier:(id)arg1 image:(id)arg2 alternateImage:(id)arg3 toolTip:(id)arg4 accessibilityDescription:(id)arg5 allowedKeyPath:(id)arg6;
 
 @end

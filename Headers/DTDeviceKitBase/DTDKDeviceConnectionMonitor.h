@@ -18,8 +18,8 @@
 + (id)keyPathsForValuesAffectingPacketRatio;
 + (id)keyPathsForValuesAffectingAverageLatency;
 + (id)monitorWithConnection:(id)arg1;
-@property(retain) DTDKRemoteDeviceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) DTDKRemoteDeviceConnection *connection; // @synthesize connection=_connection;
 @property(readonly) double packetRatio;
 @property(readonly) double averageLatency;
 - (void)cancel;

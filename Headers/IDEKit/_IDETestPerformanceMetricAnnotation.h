@@ -19,12 +19,12 @@
 
 + (id)locationForTest:(id)arg1 inDocument:(id)arg2 performanceMetric:(id)arg3;
 + (id)defaultTheme;
+- (void).cxx_destruct;
 @property(retain) NSArray *performanceMetricsForPreviousRun; // @synthesize performanceMetricsForPreviousRun=_performanceMetricsForPreviousRun;
 @property(retain) DVTTestPerformanceMetricOutput *performanceMetric; // @synthesize performanceMetric=_performanceMetric;
 @property __weak IDETest *test; // @synthesize test=_test;
 @property(copy) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
 @property(retain) DVTDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)contextMenu_revealInReport:(id)arg1;
 - (void)contextMenu_acceptPreviousAverage:(id)arg1;

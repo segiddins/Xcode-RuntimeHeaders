@@ -24,8 +24,8 @@
 + (id)_specifierWithIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)specifierWithIdentifierInAllDebuggerSpecifiersIncludingNone:(id)arg1;
 + (id)specifierWithIdentifierInAllSpecifiers:(id)arg1;
-@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(readonly) NSString *correspondingLauncherIdentifier;
 @property(readonly) NSString *identifier;
 @property(readonly) NSString *displayName;

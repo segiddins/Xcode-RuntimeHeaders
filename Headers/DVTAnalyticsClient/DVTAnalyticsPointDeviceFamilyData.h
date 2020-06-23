@@ -17,9 +17,9 @@
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *value; // @synthesize value=_value;
 @property(readonly) NSString *deviceFamily; // @synthesize deviceFamily=_deviceFamily;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

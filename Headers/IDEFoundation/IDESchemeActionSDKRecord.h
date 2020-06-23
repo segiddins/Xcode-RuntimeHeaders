@@ -16,11 +16,11 @@
     NSString *_operatingSystemVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isInternal) BOOL internal; // @synthesize internal=_internal;
 @property(readonly, copy) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(readonly, copy) NSString *canonicalName; // @synthesize canonicalName=_canonicalName;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSDK:(id)arg1;

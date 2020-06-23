@@ -19,9 +19,9 @@
     NSMutableArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) SKNode *representedNode; // @synthesize representedNode=_representedNode;
-- (void).cxx_destruct;
 @property(nonatomic) __weak SKEditorDocument *document;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 - (id)ideModelObjectTypeIdentifier;

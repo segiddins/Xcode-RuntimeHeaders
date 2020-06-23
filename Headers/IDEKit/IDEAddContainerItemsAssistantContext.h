@@ -27,6 +27,7 @@
 + (id)contextWithTargetGroup:(id)arg1;
 + (id)_containerAddingItemsAssistantExtensionForContainer:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType prepareBlock; // @synthesize prepareBlock=_prepareBlock;
 @property(copy) CDUnknownBlockType validationBlock; // @synthesize validationBlock=_validationBlock;
 @property(copy) NSString *buildArgumentsString; // @synthesize buildArgumentsString=_buildArgumentsString;
@@ -36,7 +37,6 @@
 @property BOOL stripOutBuildProductContainerItems; // @synthesize stripOutBuildProductContainerItems=_stripOutBuildProductContainerItems;
 @property(copy) NSArray *containerItems; // @synthesize containerItems=_containerItems;
 @property(retain, nonatomic) IDEGroup *targetGroup; // @synthesize targetGroup=_targetGroup;
-- (void).cxx_destruct;
 - (void)_addItemsFromDraggingInfo:(id)arg1;
 - (void)_configureForOnlyDraggingProjects;
 - (id)assistantIdentifier;

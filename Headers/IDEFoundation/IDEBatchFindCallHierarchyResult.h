@@ -14,9 +14,9 @@
     id <IDEIndexSymbol> _symbol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isRecursive) BOOL recursive; // @synthesize recursive=_recursive;
 @property(readonly) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (BOOL)textRepresentationForPasteboardIsFileName;
 - (id)textRepresentationForPasteboard;
 - (BOOL)allowsSummarization;

@@ -53,12 +53,13 @@
     BOOL _runnablePopUpHasCustomRunnable;
 }
 
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultViewNibName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEProfileSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
 @property(retain) DVTTabChooserView *tabChooser; // @synthesize tabChooser=_tabChooser;
-- (void).cxx_destruct;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 @property(readonly) IDEWorkspace *workspace;
@@ -85,6 +86,8 @@
 - (void)runnablePopUpAction:(id)arg1;
 - (void)_updateMacroExpansionRunnablePopUpEnablement;
 - (void)_runnableDidUpdate;
+- (void)revertStateWithDictionary:(id)arg1;
+- (void)commitStateToDictionary:(id)arg1;
 - (void)_analysisToolSelected:(id)arg1;
 - (void)_addMenuItemForAnalysisTool:(id)arg1;
 - (void)_addMenuItemForAnalysisTools:(id)arg1;

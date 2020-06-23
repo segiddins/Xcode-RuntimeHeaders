@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingTitleForDisplay;
+- (void).cxx_destruct;
 @property BOOL disclosedByDefault; // @synthesize disclosedByDefault=_disclosedByDefault;
 @property(readonly) Xcode3InfoEditor *infoEditor; // @synthesize infoEditor=_infoEditor;
 @property(readonly) NSString *sliceIdentifier; // @synthesize sliceIdentifier=_sliceIdentifier;
-- (void).cxx_destruct;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
 @property(readonly) BOOL hasContent;
 @property(readonly, copy) NSString *titleForDisplay;

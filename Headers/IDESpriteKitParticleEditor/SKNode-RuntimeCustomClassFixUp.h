@@ -139,7 +139,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) struct CGRect frame;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) struct CGPoint position;
+@property(nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize size;
 @property(nonatomic) double sk_xScale_commit;
 @property(nonatomic) double sk_yScale_commit;

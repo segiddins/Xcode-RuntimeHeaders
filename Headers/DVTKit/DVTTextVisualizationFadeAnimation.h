@@ -16,10 +16,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property double targetOpacity; // @synthesize targetOpacity=_targetOpacity;
 @property(retain) DVTTextVisualization *visualization; // @synthesize visualization=_visualization;
-- (void).cxx_destruct;
 - (void)setCurrentProgress:(float)arg1;
 - (id)initWithVisualization:(id)arg1;
 

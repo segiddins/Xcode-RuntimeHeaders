@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, readonly) BOOL testTimeoutsEnabled;
 @property(nonatomic, readonly) long long userAttachmentLifetime;
 @property(nonatomic, readonly) BOOL areLocalizationScreenshotsEnabled;
 @property(nonatomic, readonly) long long uiTestingScreenshotsLifetime;

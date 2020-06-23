@@ -15,10 +15,10 @@
     unsigned long long _kind;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long kind; // @synthesize kind=_kind;
 @property(readonly, copy) NSArray *cloneDescriptions; // @synthesize cloneDescriptions=_cloneDescriptions;
 @property(readonly, copy) NSString *originalDeviceIdentifier; // @synthesize originalDeviceIdentifier=_originalDeviceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithKind:(unsigned long long)arg1 cloneDescriptions:(id)arg2 originalDeviceIdentifier:(id)arg3;
 
 @end

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedScreenshots;
-@property(retain) NSArray *screenshots; // @synthesize screenshots=_screenshots;
 - (void).cxx_destruct;
+@property(retain) NSArray *screenshots; // @synthesize screenshots=_screenshots;
 - (id)init;
 - (BOOL)removeScreenshotForDictionary:(id)arg1;
 - (void)addScreenshotForPath:(id)arg1;

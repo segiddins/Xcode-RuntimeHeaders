@@ -16,10 +16,10 @@
 }
 
 + (void)initialize;
-@property(retain) IDESourceCodePlaygroundSectionAnnotationViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)accessibilityIsIgnored;
+@property(retain) IDESourceCodePlaygroundSectionAnnotationViewController *viewController; // @synthesize viewController=_viewController;
+- (id)accessibilityRole;
+- (BOOL)isAccessibilityElement;
 - (void)primitiveInvalidate;
 - (void)resetCursorRects;
 

@@ -14,9 +14,9 @@
     NSError *_underlyingError;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(readonly) DVTSourceControlRemoteRepository *remoteRepository; // @synthesize remoteRepository=_remoteRepository;
-- (void).cxx_destruct;
 - (int)explorationType;
 - (id)initWithRemoteRepository:(id)arg1 underlyingError:(id)arg2;
 

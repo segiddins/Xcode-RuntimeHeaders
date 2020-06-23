@@ -22,8 +22,8 @@
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCanMove;
 + (id)_arrowButtonWithDirection:(BOOL)arg1;
-@property(retain) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
 - (void).cxx_destruct;
+@property(retain) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
 - (void)primitiveInvalidate;
 - (void)selectPrevious:(id)arg1;
 - (void)selectNext:(id)arg1;

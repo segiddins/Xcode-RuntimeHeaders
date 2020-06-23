@@ -50,6 +50,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedContentInsetMaxX;
 + (id)keyPathsForValuesAffectingIbInspectedContentInsetMinX;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIViewAutolayoutGuide *frameLayoutGuide; // @synthesize frameLayoutGuide=_frameLayoutGuide;
 @property(retain, nonatomic) IBUIViewAutolayoutGuide *contentLayoutGuide; // @synthesize contentLayoutGuide=_contentLayoutGuide;
 @property(nonatomic) int keyboardDismissMode; // @synthesize keyboardDismissMode=_keyboardDismissMode;
@@ -71,7 +72,6 @@
 @property(nonatomic) BOOL alwaysBounceVertical; // @synthesize alwaysBounceVertical=_alwaysBounceVertical;
 @property(nonatomic) BOOL directionalLockEnabled; // @synthesize directionalLockEnabled=_directionalLockEnabled;
 @property(nonatomic) CDStruct_c519178c contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (BOOL)canPresentSimulatedMetrics;
 - (id)ibEffectiveViewLayoutGuides;
 - (void)unarchiveFrameLayoutGuide:(id)arg1;

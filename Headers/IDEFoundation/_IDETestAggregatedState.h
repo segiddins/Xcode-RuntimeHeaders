@@ -13,13 +13,15 @@
     unsigned long long _sessionGeneration;
     unsigned long long _state;
     NSArray *_performanceMetrics;
+    NSArray *_notices;
 }
 
+- (void).cxx_destruct;
+@property(readonly, copy) NSArray *notices; // @synthesize notices=_notices;
 @property(readonly, copy) NSArray *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly) unsigned long long sessionGeneration; // @synthesize sessionGeneration=_sessionGeneration;
-- (void).cxx_destruct;
-- (id)initWithSessionGeneration:(unsigned long long)arg1 state:(unsigned long long)arg2 performanceMetrics:(id)arg3;
+- (id)initWithSessionGeneration:(unsigned long long)arg1 state:(unsigned long long)arg2 performanceMetrics:(id)arg3 notices:(id)arg4;
 
 @end
 

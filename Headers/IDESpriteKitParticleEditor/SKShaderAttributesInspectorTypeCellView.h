@@ -13,8 +13,8 @@
     NSPopUpButton *_popUpButton;
 }
 
-@property(retain, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 
 @end
 

@@ -25,6 +25,7 @@
 }
 
 + (id)snapshotWithBot:(id)arg1 dataSource:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSArray *integrations; // @synthesize integrations=_integrations;
 @property(retain, nonatomic) XCSUIIntegrationStatus *runningIntegrationStatus; // @synthesize runningIntegrationStatus=_runningIntegrationStatus;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) XCSBotConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
-- (void).cxx_destruct;
 - (void)dataSource:(id)arg1 integrationStepChanged:(id)arg2 serviceSnapshot:(id)arg3 botSnapshot:(id)arg4 integrationSnapshot:(id)arg5;
 - (void)dataSource:(id)arg1 integrationSnapshotsChanged:(id)arg2 botSnapshot:(id)arg3;
 - (void)dataSource:(id)arg1 botDefinitionChanged:(id)arg2 newSnapshot:(id)arg3;

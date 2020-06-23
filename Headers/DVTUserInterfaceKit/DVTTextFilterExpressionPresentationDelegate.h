@@ -17,9 +17,9 @@
 }
 
 + (id)sharedPresentationDelegate;
+- (void).cxx_destruct;
 @property(readonly) NSString *filterFieldToolTip; // @synthesize filterFieldToolTip;
 @property(readonly) NSString *filterFieldAccessibilityDescription; // @synthesize filterFieldAccessibilityDescription;
-- (void).cxx_destruct;
 - (id)relatedFilterExpressionsIncludingExpression:(id)arg1;
 - (id)_alternateOperatorsForTextExpression:(id)arg1;
 - (id)menuDisplayStringForFilterExpression:(id)arg1;

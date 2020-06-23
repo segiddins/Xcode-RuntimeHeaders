@@ -17,20 +17,20 @@
     long long _startingLineNumber;
     long long _endingLineNumber;
     NSString *_characterRangeString;
+    DVTTextDocumentLocation *_location;
     NSString *_landmarkName;
     unsigned long long _landmarkType;
-    DVTTextDocumentLocation *_location;
 }
 
-+ (id)keyPathsForValuesAffectingDisplayName;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (id)keyPathsForValuesAffectingDisplayName;
 + (id)propertiesAffectingPersistenceState;
+- (void).cxx_destruct;
 @property unsigned long long landmarkType; // @synthesize landmarkType=_landmarkType;
 @property(copy) NSString *landmarkName; // @synthesize landmarkName=_landmarkName;
 @property(copy, nonatomic) DVTTextDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (id)ideModelObjectTypeIdentifier;
-- (id)zeroBasedLocation;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 @property(readonly) NSString *filePathStringForArchiving;
@@ -38,12 +38,12 @@
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (id)accessibilityDescription;
 - (id)description;
-- (void)setLocationFromZeroBasedLocation:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)zeroBasedLocation;
+- (void)setLocationFromZeroBasedLocation:(id)arg1 newTimestamp:(BOOL)arg2;
 - (id)displayName;
 @property(readonly) BOOL associatedFileExists;
 - (void)_createDVTFilePathFromLocationAndWatchIt;
-- (void)primitiveInvalidate;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDocumentTextLocation:(id)arg1;
 
 @end

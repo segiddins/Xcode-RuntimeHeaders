@@ -13,13 +13,14 @@
 #import <DevToolsCore/IDESigningEditorCapabilityItemEditingConsolidatedContextDelegatingSourceProvider-Protocol.h>
 #import <DevToolsCore/IDESigningEditorCapabilityItemLibraryAssetManagerContextProvider-Protocol.h>
 #import <DevToolsCore/IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate-Protocol.h>
+#import <DevToolsCore/IDESigningEditorCapabilityItemProvisioningConsolidatedContextSourceDelegate-Protocol.h>
 #import <DevToolsCore/IDETargetEditorBundleIdentifierSource-Protocol.h>
 #import <DevToolsCore/Xcode3SourceListItemEditing-Protocol.h>
 
 @class DVTFilePath, DVTNotificationToken, DVTStackBacktrace, DVTToolsVersion, IDEActivityLogSection, IDEPIFGUID, IDETestBlueprintHostSettings, IDETypeIdentifier, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber, NSOrderedSet, NSSet, NSString, PBXTarget, Xcode3Project, Xcode3SigningEditorConfigurationsSource, Xcode3TargetConsolidatedCapabilitiesContextSource, _TtC13IDEFoundation21CoordinatorCollection, _TtC13IDEFoundation31ConsolidatedCapabilitiesContext, _TtC13IDEFoundation33SigningEditorConfigurationManager, _TtC13IDEFoundation34TargetCapabilitiesCoordinatorStore, _TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager;
 @protocol IDEBuildable, IDEIndexable, IDEProvisionable, IDESigningEditorCapabilityItemEditingConsolidatedContextSource, IDESigningEditorCapabilityItemEditingConsolidatedContextSourceProviderDelegate;
 
-@interface Xcode3Target : DVTModelObject <IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemEditingConsolidatedContextDelegatingSourceProvider, IDEBlueprint, IDEIndexable, Xcode3SourceListItemEditing, DVTInvalidation, IDEMutableProvisionable, IDETargetEditorBundleIdentifierSource, IDESigningEditorCapabilityItemLibraryAssetManagerContextProvider>
+@interface Xcode3Target : DVTModelObject <IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemProvisioningConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemEditingConsolidatedContextDelegatingSourceProvider, IDEBlueprint, IDEIndexable, Xcode3SourceListItemEditing, DVTInvalidation, IDEMutableProvisionable, IDETargetEditorBundleIdentifierSource, IDESigningEditorCapabilityItemLibraryAssetManagerContextProvider>
 {
     PBXTarget *_pbxTarget;
     Xcode3Project *_project;
@@ -77,6 +78,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager *capabilityEditingItemManager; // @synthesize capabilityEditingItemManager=_capabilityEditingItemManager;
 @property(retain, nonatomic) _TtC13IDEFoundation33SigningEditorConfigurationManager *signingEditorConfigurationManager; // @synthesize signingEditorConfigurationManager=_signingEditorConfigurationManager;
 @property(retain, nonatomic) Xcode3SigningEditorConfigurationsSource *signingEditorConfigurationsSource; // @synthesize signingEditorConfigurationsSource=_signingEditorConfigurationsSource;
@@ -90,7 +92,7 @@
 @property(retain) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 @property(readonly) Xcode3Project *project; // @synthesize project=_project;
 @property(retain) PBXTarget *pbxTarget; // @synthesize pbxTarget=_pbxTarget;
-- (void).cxx_destruct;
+- (BOOL)canSupportMacCatalyst;
 @property(readonly) BOOL isTransparentForRunDestinations;
 - (BOOL)setEnabledForMacCatalyst:(BOOL)arg1 error:(id *)arg2;
 - (id)sourceFileBuildInfoForFileAtPath:(id)arg1;
@@ -106,6 +108,7 @@
 - (id)_baseEntitlementsFromMacroExpansionScope:(id)arg1;
 - (id)entitlementsFilePathForBuildParameters:(id)arg1;
 - (id)_entitlementsFilePathFromMacroExpansionScope:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1 forConfigurationNamed:(id)arg2 sdk:(id)arg3;
 - (void)setBundleIdentifier:(id)arg1 forConfigurationNamed:(id)arg2;
 - (id)bundleIdentifierForBuildParameters:(id)arg1;
 - (id)_bundleIdentifierFromMacroExpansionScope:(id)arg1 configuration:(id)arg2;
@@ -135,6 +138,7 @@
 @property(readonly) id <IDEProvisionable> provisionable;
 @property(readonly, nonatomic) _TtC13IDEFoundation21CoordinatorCollection *defaultCoordinatorCollection; // @synthesize defaultCoordinatorCollection=_defaultCoordinatorCollection;
 - (void)didUpdate:(id)arg1 configurationToContext:(id)arg2;
+- (void)provisioningConsolidatedContextSourceDidUpdate:(id)arg1;
 @property(readonly, nonatomic) NSArray *signingEditorCapabilityItemLibraryAssetManagerUnvalidatedContexts;
 - (id)unvalidatedContextForCapabilitiesContext:(id)arg1;
 - (void)removeTagsFromKnownAssetTags:(id)arg1;

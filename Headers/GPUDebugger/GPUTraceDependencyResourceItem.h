@@ -13,8 +13,8 @@
     GPUTraceResourceItem *_wrappedResource;
 }
 
-@property(nonatomic) __weak GPUTraceResourceItem *wrappedResource; // @synthesize wrappedResource=_wrappedResource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUTraceResourceItem *wrappedResource; // @synthesize wrappedResource=_wrappedResource;
 - (id)APIItem;
 - (id)label;
 - (id)initWithResourceItem:(id)arg1 withParent:(id)arg2;

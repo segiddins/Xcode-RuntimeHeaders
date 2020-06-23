@@ -49,8 +49,8 @@
     DVTObservingToken *_scmMonitorObservingToken;
 }
 
-@property(retain) DVTObservingToken *scmMonitorObservingToken; // @synthesize scmMonitorObservingToken=_scmMonitorObservingToken;
 - (void).cxx_destruct;
+@property(retain) DVTObservingToken *scmMonitorObservingToken; // @synthesize scmMonitorObservingToken=_scmMonitorObservingToken;
 - (void)primitiveInvalidate;
 - (void)_postWorkspaceScanningCompletedActivity;
 - (void)publishActivityReport:(id)arg1;

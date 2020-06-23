@@ -15,9 +15,9 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *possibleExtensions; // @synthesize possibleExtensions=_possibleExtensions;
 @property(retain) NSComboBox *extensionCombobox; // @synthesize extensionCombobox=_extensionCombobox;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)_extensionComboboxAction:(id)arg1;
 

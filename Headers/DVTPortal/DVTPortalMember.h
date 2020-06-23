@@ -24,6 +24,7 @@
     NSArray *_roles;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *roles; // @synthesize roles=_roles;
 @property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(copy, nonatomic) NSString *teamMemberID; // @synthesize teamMemberID=_teamMemberID;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSNumber *personID; // @synthesize personID=_personID;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (BOOL)dvt_servicesTypeInstanceDidFinishLoadingWithContext:(id)arg1 error:(id *)arg2;
 - (id)isRegisteredAppleDeveloperWithSession:(id)arg1 error:(id *)arg2;
 - (id)developerIDWithSession:(id)arg1 error:(id *)arg2;

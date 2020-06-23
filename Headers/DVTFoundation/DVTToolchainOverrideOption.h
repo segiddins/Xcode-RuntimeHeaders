@@ -25,6 +25,7 @@
     DVTToolchainRegistry *_registry;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTToolchainRegistry *registry; // @synthesize registry=_registry;
 @property(readonly) BOOL isActive; // @synthesize isActive=_isActive;
 @property(readonly) BOOL isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
@@ -37,7 +38,6 @@
 @property(readonly) DVTToolchain *toolchainForXcodebuildCommandLine; // @synthesize toolchainForXcodebuildCommandLine=_toolchainForXcodebuildCommandLine;
 @property(readonly) DVTToolchain *toolchainForToolchainRegistryDefaultOverride; // @synthesize toolchainForToolchainRegistryDefaultOverride=_toolchainForToolchainRegistryDefaultOverride;
 @property(readonly) DVTToolchain *toolchainForDisplay; // @synthesize toolchainForDisplay=_toolchainForDisplay;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)activateWithError:(id *)arg1;
 @property(readonly) NSString *origin;

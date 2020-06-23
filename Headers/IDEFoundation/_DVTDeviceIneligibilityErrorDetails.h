@@ -15,10 +15,10 @@
     NSString *_suggestion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *suggestion; // @synthesize suggestion=_suggestion;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 
 @end
 

@@ -1,3 +1,52 @@
+@(#)PROGRAM:IDEProductsUI  PROJECT:DVTProducts-1
+?333333
+IDEProductsUI
+ProcessorUsageLogStackFramePercentageTableCellView
+Name
+NNSNotificationName
+NNSAttributedStringKey
+NSKeyValueChangeKey
+BookName
+NNSHelpBookName
+Foundation
+AppKit
+IDEProductsUI
+ProcessorUsageLogStackFrameTableCellView
+IDEProductsUI
+AnalyticsMetricsCategoryViewController
+IDEProductsUI
+AnalyticsMetricsRootViewController
+IDEProductsUI
+AnalyticsMetricsDiskUsageViewController
+IDEProductsUI
+AnalyticsMetricsDetailViewControllerDelegate
+FlippedView
+AnalyticsMetricsDetailViewController
+IDEProductsUI
+IDEArchiveURLHandler
+IDEProductsUI
+AnalyticsMetricsLaunchHangMemoryViewController
+IDEProductsUI
+SynchronizedScrollView
+IDEProductsUI
+ProcessorUsageLogStackFrameBinaryTypeTableCellView
+IDEProductsUI
+ProcessorUsageLogStackFrameTableRowViewDelegate
+ProcessorUsageLogStackFrameTableRowView
+IDEProductsUI
+AnalyticsMetricsCategoryTypeSources
+AnalyticsMetricsCategoryType
+AnalyticsMetricsPercentilesType
+AnalyticsMetricsTelemetryFilterCriterionType
+IDEProductsUI
+ProcessorUsageLogViewController
+=IDEProductsUI
+AnalyticsMetricsBatteryViewController
+*@IDEProductsUI
+AnalyticsMetricsCategoriesSourceListViewDelegate
+AnalyticsMetricsContextualMenuDelegate
+AnalyticsMetricsCategoriesSourceListViewController
+__swift5_proto
 initWithString:
 currentTheme
 reportColorGray
@@ -137,10 +186,10 @@ setHidden:
 buttonClicked:
 setProgressIndicatorBusyKeyPath:
 setProgressIndicatorAccessibilityTitle:
-.cxx_destruct
 setProgressIndicator:
 setButtonToProgressIndicatorConstraint:
 setButtonToContainerConstraint:
+.cxx_destruct
 _progressIndicatorHiddenBindingToken
 _progressIndicatorAnimateBindingToken
 _updateConstraintsToken
@@ -580,7 +629,6 @@ dvt_viewController
 _singleButtonPaneWithButton:busyIndicatorKeyPath:progressIndicatorAccessibilityTitle:isLarge:isHighlighted:removeBottomMargin:
 _singleButtonPaneWithButton:isLarge:isHighlighted:removeBottomMargin:
 _doubleButtonPaneWithButtons:
-alloc
 initWithInspectable:vendor:
 setButtonTitle:
 setButtonTitleKeyPath:
@@ -748,38 +796,6 @@ _analyticsPointDetailViewController
 _replacementView
 _crashLogViewController
 _processorUsageLogViewController
-setNeedsDisplay:
-setChevronDirection:
-value
-unit
-currentContext
-CGContext
-color
-bezierPathWithRoundedRect:xRadius:yRadius:
-fill
-setLineCapStyle:
-setLineJoinStyle:
-setLineWidth:
-chevronDirection
-drawArrow
-appendBezierPathWithPoints:count:
-stroke
-blackColor
-useAdaptableColor
-appendAttributedString:
-size
-drawAtPoint:
-setColor:
-setValue:
-setUnit:
-setDrawArrow:
-setUseAdaptableColor:
-_drawArrow
-_useAdaptableColor
-_color
-_value
-_unit
-_chevronDirection
 setShouldShowDelayedTitleAndSubtitle:
 setDelayedShowTitleAndSubtitle:
 delayedShowTitleAndSubtitle
@@ -935,11 +951,14 @@ workspaceDocument
 structureEditorOpenSpecifierForDocumentLocation:inWorkspace:error:
 openEditorOpenSpecifier:forWorkspaceTabController:eventType:
 showSymbolInDebugNavigator:
+setNeedsDisplay:
 analyticsLogs_blameThreadHighlightColor
 drawBackgroundInRect:
 drawCrashingThreadHighlight
 isLastChildRowInParent
+bezierPathWithRoundedRect:xRadius:yRadius:
 _crashingThreadHighlightColor
+fill
 gridColor
 drawBottomSeparator
 drawDashedSeparator
@@ -970,11 +989,17 @@ frameOfCellAtColumn:row:
 isExpandable:
 setLabel:
 setRawValue:
-initWithLabel:rawValue:color:
+setMetric:
+setColor:
+initWithLabel:rawValue:metric:color:
 label
 rawValue
+metric
+color
 _label
 _rawValue
+_metric
+_color
 buttonTitle
 bindButtonTitleKeyPath
 bindButtonEnabledKeyPath
@@ -1076,6 +1101,7 @@ navigableItem_groupIdentifier
 navigableItem_filtered
 navigableItem_childRepresentedObjectsKeyPath
 navigableItem_childRepresentedObjectsKeyPathForConformance:
+initWithLabel:rawValue:color:
 displayValue
 setDisplayValue:
 relativeValueToDataSeries
@@ -1444,68 +1470,52 @@ didIncrease
 setDidIncrease:
 didChange
 setDidChange:
-singleBarGraphChevronTopString
-setSingleBarGraphChevronTopString:
-singleBarGraphChevronBottomString
-setSingleBarGraphChevronBottomString:
+valueChange
+setValueChange:
+legendItems
+setLegendItems:
+graphLegendTopString
+setGraphLegendTopString:
+graphLegendBottomString
+setGraphLegendBottomString:
 _showComparison
 _didIncrease
 _didChange
-_singleBarGraphChevronTopString
-_singleBarGraphChevronBottomString
-chevronView
-doubleValue
-bottomString:
-setValueChange:
-systemRedColor
-systemGreenColor
-metricsPrimaryTextFont
-boundingRectForFont
+_valueChange
+_legendItems
+_graphLegendTopString
+_graphLegendBottomString
+legendData
+currentContext
+CGContext
 setGraphAXElements:
-isSingleBarGraphView
-singleBarGraphInfo
-drawChevronViewInRect:withDirection:andColor:scaleFactor:
-dataSet
+size
+drawAtPoint:
+accessibilityElementWithRole:frame:label:parent:
+setAccessibilityFrameInParentSpace:
+drawChevronViewInRect:withDirection:andColor:
+tertiaryLabelColor
 metricsLegendViewValueTextFont
 sharedFontManager
 convertFont:toHaveTrait:
+doubleValue
 bezierPathWithRect:
 metricsPrimaryTextColor
 metricsSecondaryTextColor
+appendAttributedString:
 drawInRect:withAttributes:
-setNumberStyle:
-setMaximumFractionDigits:
-setRoundingMode:
-stringFromNumber:
-initWithFormat:
-metricsLegendViewPrimaryTextFont
-metricsLegendViewSecondaryTextFont
-valueChange
-metricsSecondaryTextFont
-tertiaryLabelColor
-setupAXElements
 graphAXElements
-accessibilityElementWithRole:frame:label:parent:
-setAccessibilityFrameInParentSpace:
-setDataSet:withValueChange:
+setLegendData:
 isFlipped
 isAccessibilityElement
 accessibilityLabel
 accessibilityRole
 accessibilityChildren
-setDataSet:
-showBorder
-setShowBorder:
-setIsSingleBarGraphView:
-setSingleBarGraphInfo:
+chevronView
 setChevronView:
-_showBorder
-_isSingleBarGraphView
-_dataSet
 _graphAXElements
-_singleBarGraphInfo
-_valueChange
 _chevronView
+_legendData
 bottomSpaceHeightConstraint
 detailsTitleKeyPath
 clearColor
@@ -1554,9 +1564,13 @@ _detailsObservingToken
 revealArchiveNotification:
 addObserver:selector:name:object:
 object
-revealArchive:
+revealArchive:action:
 productIdentifierOrMalformedProductIdentifierForArchive:
 archivesViewController
+revealArchive:
+attachedSheet
+ide_exportNotarizedAppWithHostWindow:
+beginSheetWithArchive:modalForWindow:
 archiveProductSource
 showProductsSectionWithIdentifier:forProductIdentifier:didShowProduct:
 refreshProductsWithCompletion:
@@ -1636,8 +1650,6 @@ iTunesConnectAccountForTeamID:teamName:iTunesConnectProxy:
 account
 initiateDownloadWithAccount:
 observeFinishOnQueue:withBlock:
-beginSheetWithArchive:modalForWindow:
-ide_exportNotarizedAppWithHostWindow:
 postNotificationName:object:userInfo:
 sharedAppController
 remoteNotificationRegistration
@@ -1724,6 +1736,7 @@ _contentBorderedView
 _archiveStatusObservers
 _testPushNotificationObserver
 bezelColor
+stroke
 _bezelColor
 systemGrayColor
 setBezelStyle:
@@ -1827,9 +1840,11 @@ analyticsLogDetails
 markAsResolvedButtonTitle
 _analyticsLog
 _productCategory
+setNumberStyle:
 uniqueDeviceCount
 uniqueDeviceCountFormatter
 numberWithInteger:
+stringFromNumber:
 productExtensionCategoryForExtensionPointIdentifier:
 productExtensionCategory
 imageName
@@ -1851,9 +1866,6 @@ keyPathsForValuesAffectingOccurenceCountDisplayString
 keyPathsForValuesAffectingResolvedImage
 keyPathsForValuesAffectingAnalyticsPointTitle
 keyPathsForValuesAffectingAnalyticsPointSubtitle
-attributesForGraph
-setValue:forKey:
-graphClass
 _updateSectionView
 setSelectedProductObserver:
 setHasCompletedInitialLoadingObserver:
@@ -1870,66 +1882,6 @@ _inspectableObserver
 _selectedProductObserver
 _hasCompletedInitialLoadingObserver
 _delayedHideSpinner
-setDataSeries:
-currentLineGraph
-clearChartNamed:
-addLabeledEntries:onChartNamed:
-addLineGraph
-updateLabels
-headerTitle
-setHeaderTitle:
-titleLabel
-headerSubTitle
-setHeaderSubTitle:
-subtitleLabel
-graphContentView
-setCurrentLineGraph:
-setModelDelegate:
-setVisibleAxisMask:
-setShowsLabels:
-dataSeries
-setWantsLayer:
-setTranslatesAutoresizingMaskIntoConstraints:
-leadingAnchor
-constraintEqualToAnchor:
-trailingAnchor
-topAnchor
-bottomAnchor
-topLegendView
-bottomLegendView
-unitTitle
-systemBlueColor
-colorForChartNamed:
-colorForEntryValue:
-keyColorForChartNamed:
-lineFilledForGraph:entry:
-lineWidthForGraphChart:
-translateValue:keypath:
-setPathStyleForGraph:entry:path:
-useFlatColorForGraphChart:
-gradientForColor:
-borderColorForBorder:
-userClickedOnGraphEntry:
-userMousedOverOnGraphEntry:event:
-userMouseExitedGraph:event:
-initWithDataSeries:
-updateWithDataSeries:
-setUnitTitle:
-setTitleLabel:
-setSubtitleLabel:
-setTopLegendView:
-setBottomLegendView:
-setGraphContentView:
-_headerTitle
-_headerSubTitle
-_unitTitle
-_titleLabel
-_subtitleLabel
-_topLegendView
-_bottomLegendView
-_graphContentView
-_dataSeries
-_currentLineGraph
 initWithSize:
 lockFocus
 unlockFocus
@@ -1947,6 +1899,7 @@ _iconKeyPath
 debugColor
 setDebugColor:
 _debugColor
+setTranslatesAutoresizingMaskIntoConstraints:
 setControlSize:
 setBordered:
 initTextCell:pullsDown:
@@ -1976,6 +1929,7 @@ _switcher
 currentHandler
 handleFailureInMethod:object:file:lineNumber:description:
 distributionData
+systemBlueColor
 addToolTipRect:owner:userData:
 intValue
 toolTipTagToBarValue
@@ -1985,6 +1939,7 @@ view:stringForToolTip:point:userData:
 setToolTipTagToBarValue:
 _distributionData
 _toolTipTagToBarValue
+setWantsLayer:
 setBezeled:
 setEditable:
 setDrawsBackground:
@@ -1998,17 +1953,21 @@ setFillColor:
 setStrokeColor:
 contentsRect
 setPath:
+setLineWidth:
 setOpacity:
 setStrokeStart:
 setStrokeEnd:
 setAffineTransform:
 setPosition:
+dataSet
 insertSublayer:above:
 colorWithCalibratedRed:green:blue:alpha:
+setDataSet:
 viewDidChangeBackingProperties
 wantsUpdateLayer
 updateLayer
 _needsLayerUpdate
+_dataSet
 fontWithName:size:
 setCount:
 _count
@@ -2023,6 +1982,7 @@ distributionTable
 occurrenceCircle
 setInteger:forKey:
 setOccurrenceCircle:
+blackColor
 setDistributionTable:
 orangeColor
 setBarChart:
@@ -2042,6 +2002,7 @@ _barDateInputFormatter
 periodStart
 dateFromString:
 _barDateFormatter
+value
 compare:
 lastRefresh
 dateByAddingTimeInterval:
@@ -2060,6 +2021,8 @@ setDeviceDataSet:
 deviceDataSet
 osDataSet
 systemYellowColor
+systemRedColor
+systemGreenColor
 systemPinkColor
 systemPurpleColor
 redColor
@@ -2114,62 +2077,121 @@ _issueButton
 _issueTitleTextField
 _issueSubtitleTextField
 isKnownError:
+setFullDataSet:
+setDataToGraph:
 setVersions:
 setValues:
 setColorMap:
 setStackOrder:
+setUnitString:
+setLegendUnitString:
+updateLegendData
 barGraph
 removeBarGraphView
 addBarGraphView
+updateBarGraphView
+mainBundle
+objectForInfoDictionaryKey:
+sharedHelpManager
+helpBookAnchorID
+openHelpAnchor:inBook:
+graphContentView
+setModelDelegate:
+setVisibleAxisMask:
+setShowsLabels:
+graphXAxisLabel
+errorField
+leadingAnchor
+constraintEqualToAnchor:
+trailingAnchor
+topAnchor
+bottomAnchor
 setBarGraph:
-isBackgroundGraph
-values
-setHideBars:
-updateAttributes
+removeFromSuperviewWithoutNeedingDisplay
 stackOrder
+dataToGraph
 versions
 addMetricsEntries:onChartNamed:withLabels:
-dvt_secondToLastObject
-barGraphXAxisString
-graphXAxisLabel
-errorLabel
-backgroundBarGraphInsufficientUsageString
+values
+addLabeledEntries:onChartNamed:
 dataUnavailableString
-constraintEqualToAnchor:constant:
-removeFromSuperviewWithoutNeedingDisplay
+helpButton
+legendUnitString
+colorForChartNamed:
+fullDataSet
+unitString
+topStringForGraphLegendWithUnit:
+bottomStringForGraphLegend
+hasComparisonData
+numberWithFloat:
 legendView
-showSingleBarGraphLegendView
 colorMap
 metricsName
-initWithDataSeries:versions:values:colorMap:stackOrder:
-updateWithDataSeries:versions:values:colorMap:stackOrder:
-setIsBackgroundGraph:
-setShowSingleBarGraphLegendView:
+colorForEntryValue:
+keyColorForChartNamed:
+lineFilledForGraph:entry:
+lineWidthForGraphChart:
+translateValue:keypath:
+setPathStyleForGraph:entry:path:
+useFlatColorForGraphChart:
+gradientForColor:
+borderColorForBorder:
+userClickedOnGraphEntry:
+userMousedOverOnGraphEntry:event:
+userMouseExitedGraph:event:
+setHelpBookAnchorID:
+updateWithFullDataSet:dataToGraph:versions:values:colorMap:stackOrder:unitString:legendUnitString:
+helpButtonClicked:
+graphTitleField
+setGraphTitleField:
+graphSubTitleField
+setGraphSubTitleField:
+setErrorField:
 setMetricsName:
 setAppName:
+setGraphContentView:
 setLegendView:
 setGraphXAxisLabel:
-setErrorLabel:
-_isBackgroundGraph
-_showSingleBarGraphLegendView
+setHelpButton:
+_graphTitleField
+_graphSubTitleField
+_errorField
 _metricsName
 _appName
+_helpBookAnchorID
+_graphContentView
 _legendView
 _graphXAxisLabel
-_errorLabel
+_helpButton
+_fullDataSet
+_dataToGraph
 _versions
 _values
 _colorMap
 _stackOrder
+_unitString
+_legendUnitString
 _barGraph
 dvt_cachedStackFrameIconForLibraryPath:isUser:hasSymbols:withStyle:
 analyticsPointBlameLineMatchesFrame:
 imageTextFindMatchingSubranges
 frameTextFindMatchingSubranges
+chevronDirection
 bezierPathWithOvalInRect:
+setLineCapStyle:
+setLineJoinStyle:
+appendBezierPathWithPoints:count:
+setChevronDirection:
+_chevronDirection
+attributesForGraph
 dvt_setBool:forKey:
+setValue:forKey:
+metricsSecondaryTextFont
 metricsMonospacedSecondaryTextFont
+metricsPrimaryTextFont
 hideBars
+graphClass
+setHideBars:
 xAxisLabelString
 setXAxisLabelString:
 _hideBars
@@ -2376,19 +2398,22 @@ frameDescription
 setFrameDescription:
 initWithAttributedString:
 initWithFloat:
+metricsLegendViewPrimaryTextFont
+metricsLegendViewSecondaryTextFont
 productVersionsAvailableForSale
+stackView
+setStackView:
 updateWith:filterCriteria:allAvailableVersions:isCurrentVersionForSalePresent:
 updateWith:filterCriteria:withSection:allAvailableVersions:isCurrentVersionForSalePresent:
-metricsGraphTitleFont
-setFirstLineHeadIndent:
-boundingRectForCGGlyph:
-heightAnchor
-constraintEqualToConstant:
+addView:inGravity:
 widthAnchor
 setPriority:
-addArrangedSubview:
-setSpacing:
-constraintGreaterThanOrEqualToConstant:
+heightAnchor
+constraintEqualToConstant:
+leftAnchor
+constraintEqualToAnchor:constant:
+rightAnchor
+layoutSubtreeIfNeeded
 supportsInvalidationPrevention
 refreshProductsWithSender:
 showInsufficientDataHelp:
@@ -2398,14 +2423,8 @@ supportsAnalyticsMetricsData
 menuForMenuDefinitionIdentifier:extensionIdToMenuMap:
 isNotEqualTo:
 initWithWindow:
-mainBundle
-objectForInfoDictionaryKey:
-sharedHelpManager
-openHelpAnchor:inBook:
 ensureProductHasAnalyticsMetricsSource:
 isAvailableForSale
-detailStackView
-setDetailStackView:
 headerView
 setHeaderView:
 devicePopUp
@@ -2414,13 +2433,10 @@ percentilePopUp
 setPercentilePopUp:
 lastUpdatedField
 setLastUpdatedField:
-helpButton
-setHelpButton:
 deviceButtonCell
 setDeviceButtonCell:
 percentileButtonCell
 setPercentileButtonCell:
-helpButtonClicked:
 deviceSelected:
 percentileSelected:
 versionWithStringValue:
@@ -2435,8 +2451,13 @@ stringForKey:
 indexOfItemWithRepresentedObject:
 selectItemAtIndex:
 separatorItem
+setHorizontalScrollElasticity:
 setDoesRelativeDateFormatting:
 setUsesAutoLayout:
+archiveWithSubmissionIdentifier:
+handleURL:completionHandler:
+initWithDomain:code:userInfo:
+shouldHandleURL:
 arrangedSubviews
 removeArrangedSubview:
 systemOrangeColor
@@ -2462,7 +2483,6 @@ processorUsageLog
 outlineTableColumn
 setWidth:
 systemBrownColor
-setNeedsDisplayInRect:
 borderView
 setBorderView:
 rowViewAtRow:makeIfNecessary:
@@ -2504,7 +2524,7 @@ IDEProductsButton_left%@
 IDEProductsButton_center%@
 IDEProductsButton_right%@
 -[IDEProductsPrimaryButtonUtilityPane viewDidLoad]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsPrimaryButtonUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsPrimaryButtonUtilityPane.m
 (_castedResult) != nil
 %@ should be an instance inheriting from %@, but it is nil
 _castedResult
@@ -2513,7 +2533,7 @@ _castedResult
 hidden
 v32@?0@8@"NSDictionary"16^c24
 -[IDEProductsSingleButtonBusyUtilityPane buttonClicked:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsSingleButtonBusyUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsSingleButtonBusyUtilityPane.m
 ((self.vendor)) != nil
 %@ should not be nil.
 (self.vendor)
@@ -2527,7 +2547,6 @@ progressIndicatorAccessibilityTitle
 T@"NSString",&,N,V_progressIndicatorAccessibilityTitle
 progressIndicatorBusyKeyPath
 T@"NSString",&,N,V_progressIndicatorBusyKeyPath
-v8@?0
 Try Again
 Cancel
 ITunesConnectionOperationErrorDomain
@@ -2537,7 +2556,7 @@ Energy
 %@ information cannot be downloaded because your computer is offline.
 App record information cannot be downloaded because your computer is offline.
 +[NSError(IDEProductsUI) ide_logInErrorForFailedSessionAccountNames:accountsCount:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/NSError+IDEProductsUI.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/NSError+IDEProductsUI.m
 accountsCount == 0 || failedSessionAccountNamesCount > 0
 We have a non-zero accounts count, but no failed account names were provided.
 Unable to Log In
@@ -2552,7 +2571,7 @@ Unable to download %@ information.
 None of your developer accounts are authorized to access %@ information for "%@". Verify that your developer accounts are correctly configured in Xcode, then try again.
 An error occurred preventing Xcode from downloading updated %@ information. %@Please try again later.
 -[IDEProductsUtilityPane initUsingDefaultNib]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsUtilityPane.m
 method %@ is inappropriate for instances of %@
 -[IDEProductsUtilityPane initWithNibName:bundle:]
 -[IDEProductsUtilityPane initWithCoder:]
@@ -2564,7 +2583,7 @@ Tc,R,V_hidden
 hideBottomBorder
 Tc,V_hideBottomBorder
 -[IDECrashReportDocument initForURL:withContentsOfURL:ofType:error:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDECrashReportDocument.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDECrashReportDocument.m
 [inContentsURL ide_isSameDocumentAsURL:inURLOrNil]
 IDECrashReportDocument does not support mismatch of parameters inContentsURL and inURLOrNil.
 Failed to open crash log %@%@ %@ %@
@@ -2581,7 +2600,7 @@ No Threads
 Compression May Be Hiding Threads
 Xcode.IDEProductsUI.CrashPoints.CrashLogContextualMenu
 -[DVTCrashLogViewController crashLogProvider]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/DVTCrashLogViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/DVTCrashLogViewController.m
 [(id)(_castedResult) isKindOfClass:[DVTCrashLogProvider class]]
 crashPoint.analyticsLogProvider.analyticsLogIdentifiersSymbolicating
 -[DVTCrashLogViewController symbolicateWithCompletion:]
@@ -2651,7 +2670,7 @@ T@"IDEAnalyticsPointLogViewController",W,N,V_analyticsPointLogViewController
 @16@?0@"IDEProductVersion"8
 inspectableVendor.currentInspectable
 -[IDEProductsUtilityViewController loadView]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductsUtilityViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductsUtilityViewController.m
 (_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[NSObject class]]
 (_castedResult) == nil || [(id)(_castedResult) conformsToProtocol:@protocol(IDEProductsInspectable)]
 %@ should conform to protocol %@, but %@ doesn't
@@ -2720,7 +2739,7 @@ selectedNavigable
 currentError
 selectedNavigable.representedObject
 -[IDEAnalyticsPointSourceCollectionSelector selectedAnalyticsPointSourceCollection]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceCollectionSelector.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceCollectionSelector.m
 (_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[DVTAnalyticsPointSourceCollection class]]
 v32@?0@"IDENavigableItem"8Q16^c24
 App Store
@@ -2757,7 +2776,7 @@ T@"NSError",&,V_currentError
 Tc,N,V_busy
 analyticsLogRecord
 -[IDEAnalyticsPointLogViewController loadView]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointLogViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointLogViewController.m
 -[IDEAnalyticsPointLogViewController crashLogViewController]
 [(id)(_castedResult) isKindOfClass:[DVTCrashLogViewController class]]
 -[IDEAnalyticsPointLogViewController processorUsageLogViewController]
@@ -2786,19 +2805,6 @@ analyticsPoint
 T@"DVTAnalyticsPointAbstractClass",&,N,V_analyticsPoint
 analyticsPointDetailViewController
 T@"IDEAnalyticsPointDetailViewController",W,N,V_analyticsPointDetailViewController
-%.1f
-chevronDirection
-TQ,N,V_chevronDirection
-color
-T@"NSColor",C,N,V_color
-value
-Td,N,V_value
-unit
-T@"NSString",C,N,V_unit
-drawArrow
-Tc,N,V_drawArrow
-useAdaptableColor
-Tc,N,V_useAdaptableColor
 spinner
 T@"NSProgressIndicator",W,V_spinner
 titleField
@@ -2833,7 +2839,7 @@ v32@?0@"NSString"8Q16^c24
 v32@?0@"IDEAnalyticsPointDetailViewController"8@"NSDictionary"16^c24
 popUpButtonPagerViewController.selectedIndex
 -[IDEAnalyticsPointDetailViewController setAnalyticsLogSelectorToAnalyticsLogWithIdentifier:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointDetailViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointDetailViewController.m
 Index with identifier %@ not found in analytics log selector
 __objc_no
 Called DVTWarn
@@ -2880,7 +2886,7 @@ T@"DVTAnalyticsPointAbstractClass",&,V_analyticsPoint
 analyticsPointsViewController
 T@"IDEAnalyticsPointsViewController",W,N,V_analyticsPointsViewController
 -[IDECrashReportEditor replacementView:didInstallViewController:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDECrashReportEditor.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDECrashReportEditor.m
 v24@?0@"IDEFileReference"8^c16
 -[IDECrashReportEditor showSymbolInDebugNavigator:]
 Error: %@
@@ -2892,8 +2898,8 @@ drawDashedSeparator
 Tc,N,V_drawDashedSeparator
 isLastChildRowInParent
 Tc,N,V_isLastChildRowInParent
--[IDEAnalyticsMetricsStackBarLegend initWithLabel:rawValue:color:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsMetricsStackBarLegend.m
+-[IDEAnalyticsMetricsStackBarLegendItem initWithLabel:rawValue:metric:color:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsMetricsStackBarLegendItem.m
 (label) != nil
 %@ should be a string, but it is nil
 label
@@ -2903,11 +2909,15 @@ CFGetTypeID((CFStringRef)label) == CFStringGetTypeID()
 rawValue
 [(id)(rawValue) isKindOfClass:[NSNumber class]]
 (color) != nil
+color
 [(id)(color) isKindOfClass:[NSColor class]]
 T@"NSString",C,N,V_label
 T@"NSNumber",C,N,V_rawValue
+metric
+T@"NSString",C,N,V_metric
+T@"NSColor",C,N,V_color
 -[IDEProductsSingleButtonUtilityPane initWithInspectable:vendor:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsSingleButtonUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsSingleButtonUtilityPane.m
 ((vendor)) != nil
 (vendor)
 -[IDEProductsSingleButtonUtilityPane buttonClicked:]
@@ -2933,7 +2943,7 @@ T@"NSButton",&,V_button
 vendor
 T@"<IDEProductsInspectableVending>",W,V_vendor
 -[IDEProductImage initWithImage:imageURL:productIdentifer:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProduct+ProductImage.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProduct+ProductImage.m
 productIdentifier
 T@"NSImage",&,N,V_image
 imageURL
@@ -2997,7 +3007,7 @@ navigableItem_groupIdentifier
 navigableItem_filtered
 T@"NSNull",R,N
 -[DVTAnalyticsPointChartView_ViewData initWithLabel:rawValue:color:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/DVTAnalyticsPointChartView_ViewData.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/DVTAnalyticsPointChartView_ViewData.m
 displayValue
 T@"NSString",C,N,V_displayValue
 relativeValueToDataSeries
@@ -3010,7 +3020,7 @@ IDEAnalyticsPointSourceListViewControllerShowsSystemTerminationEventsOnly
 IDEAnalyticsPointsTableCellView
 IDEAnalyticsPointsGroupTableCellView
 -[IDEAnalyticsPointSourceListViewController primitiveInvalidate]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceListViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceListViewController.m
 -[IDEAnalyticsPointSourceListViewController loadView]
 No Energy Logs
 Xcode.IDEProductsUI.CrashPoints.CrashPointListContextualMenu
@@ -3130,7 +3140,7 @@ imageView
 T@"NSImageView",R,V_imageView
 Tc,V_hasDisplayableStatus
 -[IDEAnalyticsPointDistributionUtilityPane initWithInspectable:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEAnalyticsPointDistributionUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEAnalyticsPointDistributionUtilityPane.m
 (inspectable) != nil
 [(id)(inspectable) isKindOfClass:[IDEAnalyticsPointInspectable class]]
 -[IDEAnalyticsPointDistributionUtilityPane analyticsPoint]
@@ -3142,7 +3152,7 @@ analyticsPointChartView
 T@"DVTAnalyticsPointChartView",W,V_analyticsPointChartView
 IDEAnalyticsPointsViewControllerSourceListSplitPosition
 +[IDEAnalyticsPointsViewController type]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointsViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointsViewController.m
 method %@ is a responsibility of subclasses of %@
 Analytics Points Source List
 sourceListViewController.selectedAnalyticsPoint.placeholder
@@ -3204,7 +3214,7 @@ T@"DVTObservingToken",&,V_appStoreAnalyticsPointSourceBusyObserver
 currentLaunchSession
 T@"IDELaunchSession",&,V_currentLaunchSession
 -[IDEProductsDoubleButtonUtilityPane secondButtonClicked:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDoubleButtonUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDoubleButtonUtilityPane.m
 secondButton
 T@"NSButton",&,V_secondButton
 secondButtonTitle
@@ -3221,35 +3231,29 @@ didIncrease
 Tc,N,V_didIncrease
 didChange
 Tc,N,V_didChange
-T@"NSColor",&,N,V_color
-singleBarGraphChevronTopString
-T@"NSAttributedString",&,N,V_singleBarGraphChevronTopString
-singleBarGraphChevronBottomString
-T@"NSAttributedString",&,N,V_singleBarGraphChevronBottomString
-%.2f
-No Change
--[IDEAnalyticsStackBarLegendView bottomString:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsStackBarLegendView.m
-Graph Legend
-dataSet
-T@"NSArray",C,N,V_dataSet
-showBorder
-Tc,N,V_showBorder
-graphAXElements
-T@"NSArray",&,V_graphAXElements
-isSingleBarGraphView
-Tc,N,V_isSingleBarGraphView
-singleBarGraphInfo
-T@"IDEAnalyticsMetricsSingleBarGraphInfoPaneData",&,N,V_singleBarGraphInfo
 valueChange
 T@"NSNumber",&,N,V_valueChange
+legendItems
+T@"NSArray",&,N,V_legendItems
+T@"NSColor",&,N,V_color
+graphLegendTopString
+T@"NSAttributedString",&,N,V_graphLegendTopString
+graphLegendBottomString
+T@"NSAttributedString",&,N,V_graphLegendBottomString
+%.2f
+Graph Legend
+graphAXElements
+T@"NSArray",&,V_graphAXElements
 chevronView
 T@"IDEAnalyticsMetricsRoundChevronView",&,V_chevronView
+legendData
+T@"IDEAnalyticsMetricsStackBarLegendData",&,N,V_legendData
 name
+value
 longValue
 longValueCharWrapped
 -[IDEProductsDetailUtilityPane initWithInspectable:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDetailUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDetailUtilityPane.m
 DetailKeyCellView
 DetailValueColumn
 SingleLineDetailValueCellView
@@ -3275,9 +3279,9 @@ IDEArchiveSourceListCreationDateColumnIdentifier
 IDEArchiveSourceListVersionColumnIdentifier
 IDEArchiveSourceListStatusColumnIdentifier
 +[IDEArchivesViewController revealArchiveNotification:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchivesViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchivesViewController.m
 [(id)(_castedResult) isKindOfClass:[IDEArchive class]]
-+[IDEArchivesViewController revealArchive:]_block_invoke
++[IDEArchivesViewController revealArchive:action:]_block_invoke
 [(id)(_castedResult) isKindOfClass:[IDEArchivesSectionViewController class]]
 archivesViewController
 v16@?0@"IDEProductSectionViewController"8
@@ -3405,7 +3409,7 @@ T@"NSColor",&,N,V_textColor
 T@"NSColor",&,N,V_bezelColor
 Xcode.IDEFoundation.Products.ProductCategoryUI
 NSObject<IDEProductCategoryUIProvider> *IDEProductCategoryUIProviderForProductCategory(IDEProductCategory *__strong)_block_invoke_2
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductCategoryUIProviders.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductCategoryUIProviders.m
 ((extensionPoint)) != nil
 (extensionPoint)
 [extensions count] > 0
@@ -3437,7 +3441,7 @@ T@"NSButton",W,V_resolvedButton
 resolvedButtonToolTip
 T@"NSString",&,N,V_resolvedButtonToolTip
 -[IDEProductsDescriptionUtilityPane initWithInspectable:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDescriptionUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/IDEProductsDescriptionUtilityPane.m
 Description
 No %@
 attributedCommentsString
@@ -3469,15 +3473,9 @@ occurenceCountDisplayString
 productExtensionCategory
 T@"IDEProductExtensionCategory",R
 T@"NSAttributedString",R
-DTGraphPreferredYAxisWidth
-DTGraphMaxXValue
-DTGraphDrawLastDot
-DTGraphRightMargin
-DTGraphXAxisAutoSpacing
-DTGraphYAxisLabelOnRight
 hasCompletedInitialLoading
 -[IDEArchivesSectionViewController _updateSectionView]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchivesSectionViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchivesSectionViewController.m
 [(id)(_castedResult) isKindOfClass:[IDEArchivesViewController class]]
 in the %@ project
 within an Xcode project
@@ -3492,29 +3490,6 @@ T@"DVTObservingToken",&,V_hasCompletedInitialLoadingObserver
 delayedHideSpinner
 T@"DVTDelayedInvocation",&,V_delayedHideSpinner
 T@"IDEArchivesViewController",R
-LineChart
-yValue
-StackedBarChart
-titleLabel
-T@"NSTextField",W,V_titleLabel
-subtitleLabel
-T@"NSTextField",W,V_subtitleLabel
-topLegendView
-T@"IDEAnalyticsMetricsChevronView",W,V_topLegendView
-bottomLegendView
-T@"IDEAnalyticsMetricsChevronView",W,V_bottomLegendView
-graphContentView
-T@"NSView",W,V_graphContentView
-dataSeries
-T@"NSArray",&,V_dataSeries
-currentLineGraph
-T@"IDEAnalyticsMetricsLineGraph",&,V_currentLineGraph
-headerTitle
-T@"NSString",C,N,V_headerTitle
-headerSubTitle
-T@"NSString",C,N,V_headerSubTitle
-unitTitle
-T@"NSString",C,N,V_unitTitle
 T@"NSTextField",&,V_titleField
 T@"NSTextField",&,V_subtitleField
 T@"NSImageView",&,V_imageView
@@ -3533,7 +3508,7 @@ T@?,C,N,V_switcherCallback
 T@"NSPopUpButton",&,N,V_switcher
 showDeviceTypeOption
 Tc,N,V_showDeviceTypeOption
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/DVTAnalyticsPointChartView.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/CrashPointUtilityPanes/DVTAnalyticsPointChartView.m
 <Unknown File>
 Chart distribution data must have no more than 14 items.
 %d device%@
@@ -3544,6 +3519,8 @@ T@"NSMutableDictionary",&,N,V_toolTipTagToBarValue
 TOTAL
 Last 2 Weeks
 @"CAShapeLayer"32@?0^{CGColor=}8d16d24
+dataSet
+T@"NSArray",C,N,V_dataSet
 Helvetica Neue Light
 count
 T@"NSString",C,N,V_count
@@ -3596,7 +3573,7 @@ totalOSAnalyticsPointCount
 TQ,N,V_totalOSAnalyticsPointCount
 shouldShowDeviceData
 -[IDEArchiveDistributionTaskIssueUtilityPane initWithInspectable:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchiveDistributionTaskIssueUtilityPane.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEArchiveDistributionTaskIssueUtilityPane.m
 [(id)(inspectable) isKindOfClass:[IDEArchive class]]
 -[IDEArchiveDistributionTaskIssueUtilityPane archive]
 issueTitle
@@ -3614,19 +3591,23 @@ T@"NSTextField",W,V_issueTitleTextField
 issueSubtitleTextField
 T@"NSTextField",W,V_issueSubtitleTextField
 hasKnownDistributionTaskIssue
-c16@?0@"NSNumber"8
+yValue
 DTGraphStackBarHeightChartName
 App Versions with Significant Usage
-No significant background battery usage.
-Insufficient usage data is available to generate %@ metrics for %@.
-the app
+Not enough usage data to generate %@ metrics for %@
+application
+graphContentView
+T@"NSView",W,V_graphContentView
 legendView
 T@"IDEAnalyticsStackBarLegendView",W,V_legendView
 graphXAxisLabel
 T@"NSTextField",W,V_graphXAxisLabel
-errorLabel
-T@"NSTextField",W,V_errorLabel
-T@"NSDictionary",&,V_dataSeries
+helpButton
+T@"NSButton",W,V_helpButton
+fullDataSet
+T@"_TtC12DVTAnalytics23AnalyticsMetricsDataset",&,V_fullDataSet
+dataToGraph
+T@"NSDictionary",&,V_dataToGraph
 versions
 T@"NSArray",&,V_versions
 values
@@ -3636,19 +3617,26 @@ colorMap
 T@"NSDictionary",&,V_colorMap
 stackOrder
 T@"NSArray",&,V_stackOrder
+unitString
+T@"NSString",&,V_unitString
+legendUnitString
+T@"NSString",&,V_legendUnitString
 barGraph
 T@"IDEAnalyticsMetricsStackedBarGraph",&,V_barGraph
-isBackgroundGraph
-Tc,N,V_isBackgroundGraph
-showSingleBarGraphLegendView
-Tc,N,V_showSingleBarGraphLegendView
+graphTitleField
+T@"NSTextField",W,V_graphTitleField
+graphSubTitleField
+T@"NSTextField",W,V_graphSubTitleField
+errorField
+T@"NSTextField",W,V_errorField
 metricsName
 T@"NSString",&,N,V_metricsName
-appName
 T@"NSString",&,N,V_appName
+helpBookAnchorID
+T@"NSString",&,N,V_helpBookAnchorID
 /%@.framework/
 -[DVTCrashLogParsedStackFrame(UIAdditions) ide_hasSymbolsWithAppName:andBundleIdentifier:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/DVTCrashLogParsedStackFrame+UIAdditions.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/DVTCrashLogParsedStackFrame+UIAdditions.m
 (applicationName) != nil
 applicationName
 CFGetTypeID((CFStringRef)applicationName) == CFStringGetTypeID()
@@ -3657,10 +3645,16 @@ imageTextFindMatchingSubranges
 T@"NSArray",&,D,N
 allFindHighlightRanges
 T@"NSArray",R,C,N
+chevronDirection
+TQ,N,V_chevronDirection
 DTGraphStackBarSetXAxisOffset
 DTGraphStackBarXAxisOffset
 DTGraphHideStackBarYAxisBorder
+DTGraphPreferredYAxisWidth
+DTGraphMaxXValue
 DTGraphHideStackBarSegmentBorder
+DTGraphRightMargin
+DTGraphXAxisAutoSpacing
 DTGraphStackBarHasVariableHeight
 DTGraphStackBarHighlightLastBar
 DTGraphFont
@@ -3704,7 +3698,7 @@ dvt_app_name
 _defaultReportFields
 T@"NSDictionary",R
 +[IDEProductSectionViewController canShowContentForProduct:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductSectionViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductSectionViewController.m
 -[IDEProductSectionViewController handleAction:fromInspectable:]
 T@"<IDEProductsInspectable>",&,N,V_currentInspectable
 empty
@@ -3722,7 +3716,7 @@ analyticsPointSourceCollections
 T@"NSArray",R,V_analyticsPointSourceCollections
 T@"NSString",R,V_name
 -[IDEAnalyticsPointSourceCollectionBetaGroup initWithSourceCollections:type:]
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceCollectionGroup.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEAnalyticsPointSourceCollectionGroup.m
 (sourceSollections) != nil
 %@ should be a non-empty array, but it is nil
 sourceSollections
@@ -3743,7 +3737,7 @@ productsForDisplay
 utilityViewController.inspectable
 currentSectionViewController.empty
 -[IDEProductsViewController updateProductsDelayedInvocation]_block_invoke
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductsViewController.m
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/IDEProductsViewController.m
 -[IDEProductsViewController updateProductsDisplay]
 identifier.productCategory.sortOrder
 identifier.bundleIdentifier
@@ -3848,18 +3842,22 @@ T@"NSArray",R,V_productSectionSegments
 Tq,N,V_selectedSegmentIndex
 NSViewBoundsDidChangeNotification
 batteryUsage
-performance
-diskUsage
 diskWrites
 launchTime
 hangTime
 memory
+Continue Offline
+performance
+diskUsage
 com.apple.dt.metrics.percentile.fifty
 com.apple.dt.metrics.percentile.ninetyFive
+processorUsageLog
+processorUsagePoint.analyticsLogProvider.analyticsLogIdentifiersSymbolicating
 _TtC13IDEProductsUI50ProcessorUsageLogStackFramePercentageTableCellView
 @16@0:8
 v24@0:8@16
 @48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16
+@24@0:8@16
 samplePercentageTextField
 samplePercentageColorView
 samplePercentage
@@ -3873,17 +3871,22 @@ frameDescription
 stackFrame
 T@"NSTextField",N,W,VframeDescription
 T@"NSButton",N,W,VjumpButton
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/ProcessorUsageLogStackFrameTableCellView.swift
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/ProcessorUsageLogStackFrameTableCellView.swift
 missing necessary properties
-_TtC13IDEProductsUI40AnalyticsMetricsDetailViewControllerBase
+_TtC13IDEProductsUI38AnalyticsMetricsCategoryViewController
 v44@0:8@16@24@32c40
 v52@0:8@16@24@32@40c48
 v16@0:8
+stackView
+defaultHelpAnchorID
 category
 searchCriteria
-onScreenGraphSubTitle
-bottomTextBox
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsDetailViewControllerBase.swift
+allVersions
+appName
+lastHeightAnchor
+T@"NSStackView",N,W,VstackView
+f16@0:8
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsCategoryViewController.swift
 updateGraphsWithCurrentCategoryAndSearchCriteria(isFilterUpdate:section:isCurrentVersionForSalePresent:)
 _TtP13IDEProductsUI44AnalyticsMetricsDetailViewControllerProtocol_
 v44@0:8@"_TtC12DVTAnalytics24AnalyticsMetricsCategory"16@"_TtC12DVTAnalytics30AnalyticsMetricsFilterCriteria"24@"NSArray"32c40
@@ -3894,6 +3897,7 @@ c24@0:8@16
 v20@0:8c16
 v40@0:8@16@24@32
 v24@0:8#16
+@32@0:8@16@24
 sourceListViewController
 analyticsMetricsViewControllerSelectedCategoryKey
 localUpdateDispatchQueue
@@ -3916,6 +3920,7 @@ d40@0:8@16d24q32
 v32@0:8@16@24
 IDEProductsUI2
 v16@?0@"IDEProductsUICAReport"8
+Downloading App Records
 No metrics are available for 
 Insufficient usage data is available to generate metrics for 
 Unable to Read Metrics
@@ -3924,23 +3929,22 @@ No app records are associated with your accounts.
 Downloading Metrics
  on the App Store to see metrics data.
 Open Accounts
-Downloading App Records
 Metrics are not available for 
 Xcode.IDEProductsUI.AnalyticsMetrics.AnalyticsMetricsDetailViewContextualMenu
-Continue Offline
 Xcode is currently offline.
 Metrics data was not updated. Check your Internet connection and try again.
 c24@?0@"NSError"8q16
 Xcode.IDEProductsUI.AnalyticsMetrics.AnalyticsMetricsEmptyViewContextualMenu
 Update Product Data From Network Callback
+v8@?0
 Update Product Data From Cache Callback
 Skipping analytics metrics network refresh since it is not allowed.
 Unable to download metrics for 
-An error occurred preventing Xcode from downloading updated metrics. 
- Please try again later.
-Unable to read metrics for 
 None of your developer accounts are authorized to access metrics for 
 . Verify that your developer accounts are correctly configured in Xcode, then try again.
+Unable to read metrics for 
+An error occurred preventing Xcode from downloading updated metrics. 
+ Please try again later.
 Updating metrics from network for bundle identifier 
 IDEAnalyticsMetricsViewControllerSelectedCategoryKey
 OS_dispatch_queue
@@ -3976,7 +3980,6 @@ c32@0:8@"NSSplitView"16q24
 {CGRect={CGPoint=dd}{CGSize=dd}}96@0:8@"NSSplitView"16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56q88
 {CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@"NSSplitView"16q24
 v24@0:8@"NSNotification"16
-NSObject
 q16@0:8
 #16@0:8
 ^@24@0:8:16
@@ -3988,24 +3991,23 @@ Tq,N,R
 debugDescription
 c24@0:8@"Protocol"16
 @"NSString"16@0:8
-_TtC13IDEProductsUI45AnalyticsMetricsDiskUsageDetailViewController
-@24@0:8@16
-detailStackView
+_TtC13IDEProductsUI39AnalyticsMetricsDiskUsageViewController
 diskUsageSingleBarViewController
-T@"NSStackView",N,&,VdetailStackView
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsDiskUsageDetailViewController.swift
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsDiskUsageViewController.swift
 Incorrect category type passed in. Expecting 
 Logical disk writes by app in a day (MB / day)
-(90th percentile)
 (50th percentile)
+(90th percentile)
 IDEAnalyticsMetricsViewControllerSelectedDeviceKey
 IDEAnalyticsMetricsViewControllerSelectedPercentileKey
+_TtC13IDEProductsUI11FlippedView
+flipped
+Tc,N,R
 _TtC13IDEProductsUI36AnalyticsMetricsDetailViewController
 headerView
 devicePopUp
 percentilePopUp
 lastUpdatedField
-helpButton
 deviceButtonCell
 percentileButtonCell
 updatingPopups
@@ -4014,33 +4016,43 @@ currentProduct
 lastUpdatedDateFormatter
 selectedCategoryType
 productData
-allVersions
 T@"NSView",N,&,VheaderView
 T@"NSPopUpButton",N,&,VdevicePopUp
 T@"NSPopUpButton",N,&,VpercentilePopUp
 T@"NSTextField",N,&,VlastUpdatedField
 T@"DVTReplacementView",N,&,VreplacementView
-T@"NSButton",N,&,VhelpButton
+T@"NSScrollView",N,W,VscrollView
 T@"DVTPopUpButtonCell",N,&,VdeviceButtonCell
 T@"DVTPopUpButtonCell",N,&,VpercentileButtonCell
 T@"NSButton",N,&,VerrorButton
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsBatteryDetailViewController.swift
-^v16@0:8
-T#,N,R
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/AnalyticsMetricsBatteryViewController.swift
+com.apple.UNNotificationDefaultActionIdentifier
+submission_identifier
+_TtC13IDEProductsUI20IDEArchiveURLHandler
+v32@0:8@16@?24
+No archive can be found from the data processed in the xcarchive URL.
+IDEArchiveURLHandlerError
+Error opening archive in organizer. Open Xcode organizer window to find archive.
+xcarchive URL is missing host, which is used to specify which archive action to perform.
+xcarchive URL is missing archive submission identifier value.
+xcarchive URL is missing archive submission identifier key.
+xcarchive URL is missing query items needed for performing archive actions.
+IDEURLHandler
+v32@0:8@"NSURL"16@?<v@?c@"NSError">24
+c24@0:8@"NSURL"16
+NSObject
 memory at suspension
-_TtC13IDEProductsUI47AnalyticsMetricsPerformanceDetailViewController
-@32@0:8@16@24
+_TtC13IDEProductsUI46AnalyticsMetricsLaunchHangMemoryViewController
 launchTimeController
 hangRateController
 peakMemoryController
 avgMemoryController
 currentSelectedSectionIdentifier
-reloadedViews
 Memory at Suspension
 Memory footprint of the app at the time of app suspension (MB)
 Peak memory consumed by app during its lifetime (MB)
 Amount of time the app was not responsive to input normalized to on screen usage (seconds / hour)
-Time to first frame (milliseconds)
+Time to first frame (ms)
 _TtC13IDEProductsUI22SynchronizedScrollView
 notificationName
 forwardScrollEventsToView
@@ -4057,7 +4069,7 @@ Xcode.IDEProductsUI.ProcessorUsagePoints.ProcessorUsageLogContextualMenu
 ProcessorUsageLogViewControllerCollapsedItemStateRestorationCache
 ProcessorUsageLogViewControllerScrollPositionStateRestorationCache
 Compression May Be Hiding Sampled Stack Frames
-/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/ProcessorUsageLogViewController.swift
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-16139/IDEProducts/DVTProducts/DVTProducts/IDEProductsUI/ProcessorUsageLogViewController.swift
 Fatal error
 Unreachable: Index = 
 SamplePercentageColumn
@@ -4082,7 +4094,6 @@ restoringOutlineViewCollapsedItems
 collapsedItemStateRestorationCache
 scrollPositionStateRestorationCache
 mouseInsideTreeNodeStackFrame
-processorUsageLog
 T@"_TtC12DVTAnalytics19ProcessorUsagePoint",N,&,VprocessorUsagePoint
 T@"IDEAnalyticsPointLogViewController",N,W,VanalyticsPointLogViewController
 T@"NSOutlineView",N,W,VoutlineView
@@ -4093,7 +4104,6 @@ T@"DVTBorderedView",N,W,VborderedView
 T@"NSTextField",N,W,VemptyContentTitle
 T@"NSTextField",N,W,VemptyContentSubtitle
 T@"_TtC12DVTAnalytics17ProcessorUsageLog",N,&,VprocessorUsageLog
-Tc,N,R
 IDEProductsUI1
 q32@0:8@16@24
 @40@0:8@16q24@32
@@ -4103,7 +4113,6 @@ IDEProductsUI4
 compressLibraryFrames
 Tc,N
 compressLowSampleCountFrames
-processorUsagePoint.analyticsLogProvider.analyticsLogIdentifiersSymbolicating
 Attempted restoring scroll position without log.
 Failed to locate collapsed node at path 
 Attempted restoring collapsed state without log.
@@ -4177,19 +4186,19 @@ v40@0:8@"NSControl"16@"NSString"24@"NSString"32
 c32@0:8@"NSControl"16@24
 c40@0:8@"NSControl"16@"NSTextView"24:32
 @"NSArray"64@0:8@"NSControl"16@"NSTextView"24@"NSArray"32{_NSRange=QQ}40^q56
-On Screen Battery Usage
 on screen battery usage
 background battery usage
-_TtC13IDEProductsUI43AnalyticsMetricsBatteryDetailViewController
+_TtC13IDEProductsUI37AnalyticsMetricsBatteryViewController
 circularCapacityViewController
 onScreenBarGraphController
 offScreenBarGraphController
 onScreenStackOrder
 backgroundStackOrder
-Normalized to the most recent version
-s unplugged usage of 
+No significant background battery usage
+Normalized to the usage of the most recent version when unplugged (
 Background Battery Usage
-Amount of battery used by app in background (% battery / day) 
+Amount of battery used by app in background
+On-Screen Battery Usage
 _TtC13IDEProductsUI50AnalyticsMetricsCategoriesSourceListViewController
 tableView
 borderView
@@ -4252,8 +4261,11 @@ q48@0:8@"NSTableView"16q24q32@"NSString"40
 c40@0:8@"NSTableView"16@"NSEvent"24@"NSString"32
 c40@0:8@"NSTableView"16q24q32
 @"NSArray"40@0:8@"NSTableView"16q24q32
+^v16@0:8
+T#,N,R
 _TtCs12_SwiftObject
 __TEXT
+swift_getObjCClassMetadata
 IDEDistributionArchiveReformatter
 ProductsUI
 IDEProductsInspectable
@@ -4285,7 +4297,6 @@ DVTPathCellDelegate
 NSPathCellDelegate
 IDEAnalyticsPointLogViewController
 DVTReplacementViewDelegate
-IDEAnalyticsMetricsChevronView
 IDEProductsEmptyContentViewController
 IDEProductsEmptyView
 IDEProductWindowCommandHandler
@@ -4295,7 +4306,7 @@ IDEAnalyticsPointDetailViewController
 IDECrashReportEditor
 DVTCrashLogTableRowView
 DVTCrashLogOutlineView
-IDEAnalyticsMetricsStackBarLegend
+IDEAnalyticsMetricsStackBarLegendItem
 IDEProcessorUsagePointsViewController
 IDEProductsSingleButtonUtilityPane
 IDEProductImage
@@ -4316,7 +4327,7 @@ IDEAnalyticsPointsViewController
 DVTSplitViewDelegate
 NSSplitViewDelegate
 IDEProductsDoubleButtonUtilityPane
-IDEAnalyticsMetricsSingleBarGraphInfoPaneData
+IDEAnalyticsMetricsStackBarLegendData
 IDEAnalyticsStackBarLegendView
 IDEProductsDetailUtilityPane
 NSTableViewDataSource
@@ -4339,10 +4350,7 @@ IDEAnalyticsPointOverviewViewController
 IDEProductsDescriptionUtilityPane
 IDEAnalyticsPointInspectable
 UIAdditions
-IDEAnalyticsMetricsLineGraph
 IDEArchivesSectionViewController
-IDEAnalyticsMetricsLineGraphViewController
-IDEGraphDelegate
 IDEProductsBillboardUtilityPane
 DVTAnalyticsPointChartScaffoldView
 DVTAnalyticsPointChartSwitcherView
@@ -4356,6 +4364,7 @@ DVTAnalyticsPointChartView
 IDEArchiveDistributionTaskIssueUtilityPane
 DistributionTaskIssueUtilityAdditions
 IDEAnalyticsMetricsStackedBarGraphViewController
+IDEGraphDelegate
 IDEAnalyticsMetricsRoundChevronView
 IDEAnalyticsMetricsStackedBarGraph
 IDECrashPointsViewController
@@ -4562,10 +4571,6 @@ v56@0:8@"DVTReplacementView"16{CGRect={CGPoint=dd}{CGSize=dd}}24
 @"DVTReplacementView"
 @"DVTCrashLogViewController"
 @"_TtC13IDEProductsUI31ProcessorUsageLogViewController"
-v24@0:8Q16
-v24@0:8d16
-d16@0:8
-@"NSColor"
 v40@0:8@16@24:32
 :16@0:8
 v24@0:8:16
@@ -4575,10 +4580,12 @@ c24@0:8@"<NSValidatedUserInterfaceItem>"16
 @"IDEAnalyticsPointsViewController"
 @"DVTPopUpButtonPagerViewController"
 @"DVTGradientImageButton"
+d16@0:8
 @"NSTrackingArea"
 {CGRect={CGPoint=dd}{CGSize=dd}}24@0:8q16
 {CGRect={CGPoint=dd}{CGSize=dd}}32@0:8q16q24
 @"NSNumber"
+@"NSColor"
 @"NSImage"
 @"NSURL"
 @"IDEProductIdentifier"
@@ -4595,6 +4602,7 @@ c24@0:8@"<NSValidatedUserInterfaceItem>"16
 @"_TtC13DVTFoundation9DVTSymbol"16@0:8
 @"NSNull"16@0:8
 @"NSString"24@0:8@"NSString"16
+v24@0:8d16
 @"NSMenu"16@0:8
 @40@0:8@16@24q32
 v48@0:8@16@24@32q40
@@ -4675,9 +4683,8 @@ v32@0:8{CGSize=dd}16
 @"IDEAnalyticsPointSourceListViewController"
 @"IDEOpenInProjectSheetController"
 @"IDELaunchSession"
-@24@0:8d16
-@"IDEAnalyticsMetricsSingleBarGraphInfoPaneData"
 @"IDEAnalyticsMetricsRoundChevronView"
+@"IDEAnalyticsMetricsStackBarLegendData"
 d48@0:8@16@24d32Q40
 Q48@0:8@16@24q32Q40
 c48@0:8@16@24q32Q40
@@ -4694,6 +4701,7 @@ c48@0:8@"NSTableView"16@"<NSDraggingInfo>"24q32Q40
 @"NSArray"40@0:8@"NSTableView"16@"NSURL"24@"NSIndexSet"32
 @"NSTableView"
 c32@0:8Q16^@24
+v32@0:8@16q24
 {_NSRange=QQ}40@0:8@16{_NSRange=QQ}24
 {_NSRange=QQ}40@0:8@"DVTTableCellView"16{_NSRange=QQ}24
 v24@0:8@"DVTTableCellView"16
@@ -4716,6 +4724,18 @@ v32@0:8Q16@24
 @"DVTTextViewWithPlaceholder"
 @"<DVTAnalyticsLogProtocol>"
 @"IDEProductCategory"
+@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16
+{CGSize=dd}16@0:8
+@"NSPopUpButton"
+@56@0:8@16q24{CGPoint=dd}32^v48
+v24@0:8Q16
+@"DVTAnalyticsPointChartOccurrenceCircleView"
+@"DVTAnalyticsPointChartBarChartView"
+@"DVTAnalyticsPointChartDistributionTable"
+@"DVTAnalyticsPointChartTimestampView"
+@"DVTAnalyticsPointChartSwitcherView"
+@"DVTAnalyticsPointChartCircleCountView"
+@"DVTAnalyticsPointChartScaffoldView"
 d24@0:8@16
 @"NSColor"24@0:8@"NSString"16
 @"NSColor"24@0:8@"NSNumber"16
@@ -4727,24 +4747,11 @@ c24@0:8@"IDEGraphChart"16
 @"NSGradient"24@0:8@"NSColor"16
 @"NSColor"24@0:8@"NSColor"16
 v32@0:8@16@"NSEvent"24
-@"IDEAnalyticsMetricsChevronView"
-@"IDEAnalyticsMetricsLineGraph"
-@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16
-{CGSize=dd}16@0:8
-@"NSPopUpButton"
-@56@0:8@16q24{CGPoint=dd}32^v48
-@"DVTAnalyticsPointChartOccurrenceCircleView"
-@"DVTAnalyticsPointChartBarChartView"
-@"DVTAnalyticsPointChartDistributionTable"
-@"DVTAnalyticsPointChartTimestampView"
-@"DVTAnalyticsPointChartSwitcherView"
-@"DVTAnalyticsPointChartCircleCountView"
-@"DVTAnalyticsPointChartScaffoldView"
-@56@0:8@16@24@32@40@48
-v56@0:8@16@24@32@40@48
+v80@0:8@16@24@32@40@48@56@64@72
 @"IDEAnalyticsStackBarLegendView"
+@"_TtC12DVTAnalytics23AnalyticsMetricsDataset"
 @"IDEAnalyticsMetricsStackedBarGraph"
-v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16Q48@56f64
+v64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16Q48@56
 @"DVTCrashLogStackFrame"
 {_NSRange=QQ}16@0:8
 v32@0:8{_NSRange=QQ}16
@@ -4759,144 +4766,104 @@ v28@0:8q16c24
 @"DVTSplitViewDividerLine"
 @"IDEProductsUtilityViewController"
 @"IDEProductSectionViewController"
-c?q=J?
-?333333
-IDEProductsUI
-ProcessorUsageLogStackFramePercentageTableCellView
-Name
-NNSNotificationName
-NSKeyValueChangeKey
-BookName
-NNSHelpBookName
-NNSAttributedStringKey
-Foundation
-AppKit
-IDEProductsUI
-ProcessorUsageLogStackFrameTableCellView
-Camera
-Bluetoot
-Audio
-Location
-Display
-Processi
-Network
-Other
-IDEProductsUI
-AnalyticsMetricsDetailViewControllerBase
-IDEProductsUI
-AnalyticsMetricsCategoryTypeSources
-AnalyticsMetricsCategoryType
-AnalyticsMetricsRootViewController
-IDEProductsUI
-AnalyticsMetricsDiskUsageDetailViewController
-IDEProductsUI
-AnalyticsMetricsDetailViewControllerDelegate
-AnalyticsMetricsPercentilesType
-AnalyticsMetricsDetailViewController
-IDEProductsUI
-AnalyticsMetricsPerformanceDetailViewController
-IDEProductsUI
-SynchronizedScrollView
-IDEProductsUI
-ProcessorUsageLogStackFrameBinaryTypeTableCellView
-IDEProductsUI
-ProcessorUsageLogStackFrameTableRowViewDelegate
-ProcessorUsageLogStackFrameTableRowView
-IDEProductsUI
-ProcessorUsageLogViewController
-IDEProductsUI
-AnalyticsMetricsBatteryDetailViewController
-IDEProductsUI
-AnalyticsMetricsCategoriesSourceListViewDelegate
-AnalyticsMetricsContextualMenuDelegate
-AnalyticsMetricsCategoriesSourceListViewController
-@(#)PROGRAM:IDEProductsUI  PROJECT:DVTProducts-1
-?__swift5_proto
 So15NSTableCellViewC
 So11NSTextFieldCSgXw
 So6NSViewCSgXw
 SdSg
-So18NSNotificationNamea
 So8NSStringC
-So21NSAttributedStringKeya
-So14NSHelpBookNamea
-So19NSKeyValueChangeKeya
+_yptG
+_ypt
 $sSY
 $ss21_ObjectiveCBridgeableP
-13IDEProductsUI31ProcessorUsageLogViewControllerCSgXw
+SgXw
 SbSg
 So8NSButtonCSgXw
-12DVTAnalytics27ProcessorUsageLogStackFrameCSg
+SS_SSt
+ySS_SStG
+ySS_SaySo8NSNumberCGtG
+SS_SaySo8NSNumberCGt
 So17DVTViewControllerC
-12DVTAnalytics24AnalyticsMetricsCategoryCSg
-12DVTAnalytics30AnalyticsMetricsFilterCriteriaCSg
+So11NSStackViewCSgXw
 SaySSGSg
 SSSg
-So11NSTextFieldCSg
-So11NSTextFieldC
+So18NSLayoutConstraintCSg
+ySS_SitG
+ySSSiG
+ySo8NSNumberCG
+ySfG
+ySSG
+ySSSaySo8NSNumberCGG
+SDyS2SG
+ySDyS2SGG
+yS2SG
 So31IDEProductSectionViewControllerC
 So12DVTSplitViewCSgXw
-13IDEProductsUI50AnalyticsMetricsCategoriesSourceListViewControllerCSg
 So18DVTReplacementViewCSg
 So17OS_dispatch_queueC
 So17DVTObservingTokenCSg
 So20DVTDelayedInvocationCSg
 So7NSErrorCSg
 SDySo20IDEProductIdentifierCSbG
-12CoreGraphics7CGFloatV
-13IDEProductsUI28AnalyticsMetricsCategoryTypeO
-13IDEProductsUI34AnalyticsMetricsRootViewControllerC
+yypG
+ySo7NSErrorCG
 So10IDEProductC
-12DVTAnalytics34AnalyticsMetricsConsolidatedSourceC
-s6ResultOySSs5Error_pGIegg_
-Says5Error_pG
-s6ResultOySSs5Error_pG
-So7NSErrorCSi10ObjectiveC8ObjCBoolVIeyByyd_
+ySo20IDEProductIdentifierCSbG
+ySo7NSErrorCG
+So7NSErrorCSi
+IeyByyd_
 So8NSWindowC
-Says5Error_pGIegg_
-13IDEProductsUI35AnalyticsMetricsCategoryTypeSourcesO
-13IDEProductsUI40AnalyticsMetricsDetailViewControllerBaseC
-So11NSStackViewCSg
+_pGIegg_
+_pGIegg_
+So12DVTSplitViewCSg
 So48IDEAnalyticsMetricsStackedBarGraphViewControllerCSg
+SaySo8NSNumberCG
+ySS_So7NSColorCtG
+SS_So7NSColorCt
 $s13IDEProductsUI44AnalyticsMetricsDetailViewControllerDelegateP
 $s13IDEProductsUI44AnalyticsMetricsDetailViewControllerProtocolP
+So10NSClipViewC
 So6NSViewCSg
 So13NSPopUpButtonCSg
-So8NSButtonCSg
+So11NSTextFieldCSg
+So12NSScrollViewCSgXw
 So18DVTPopUpButtonCellCSg
+So8NSButtonCSg
 So10IDEProductCSg
 So15NSDateFormatterC
-12DVTAnalytics27AnalyticsMetricsProductDataCSg
 _pSgXw
-13IDEProductsUI44AnalyticsMetricsTelemetryFilterCriterionTypeO
-13IDEProductsUI31AnalyticsMetricsPercentilesTypeO
+SaySay
+So8NSObjectC
+ySS_yptG
+SS_ypt
 So12NSScrollViewC
 SgXw
-So12NSScrollViewCSgXw
 $s13IDEProductsUI47ProcessorUsageLogStackFrameTableRowViewDelegateP
 So14NSTableRowViewC
-13DVTFoundation8TreeNodeCy12DVTAnalytics27ProcessorUsageLogStackFrameCGSg
 _pSgXw
 So14NSTrackingAreaCSg
+ypSg
 So17IDEViewControllerC
-12DVTAnalytics19ProcessorUsagePointCSg
 So34IDEAnalyticsPointLogViewControllerCSgXw
 So12DVTLogAspectC
 So13NSOutlineViewCSgXw
-13IDEProductsUI22SynchronizedScrollViewCSgXw
 So15DVTBorderedViewCSgXw
 So37DVTUserDefaultsLeastRecentlyUsedCacheCSg
-13DVTFoundation8TreeNodeCy12DVTAnalytics27ProcessorUsageLogStackFrameCGSgXw
-12DVTAnalytics17ProcessorUsageLogCSg
-13IDEProductsUI31ProcessorUsageLogViewControllerC
-12DVTAnalytics17ProcessorUsageLogC
-s5Error_pSgIegg_
+GSgXw
+ySSG
+ySSypG
+ySaySiGG
+ySaySiGG
+SaySiG
+SDySSSaySiGG
+ySSSaySiGG
+_pSgIegg_
 So33DVTCircularCapacityViewControllerCSg
 SaySSG
+ySSSo7NSColorCG
+ySnySiGG
 $s13IDEProductsUI48AnalyticsMetricsCategoriesSourceListViewDelegateP
 $s13IDEProductsUI38AnalyticsMetricsContextualMenuDelegateP
 So12DVTTableViewCSg
-Say13IDEProductsUI28AnalyticsMetricsCategoryTypeOG
 _pSgXw
 _pSgXw
 samplePercentageTextField
@@ -4910,19 +4877,13 @@ isUserFrame
 frameDescription
 jumpButton
 stackFrame
+stackView
+defaultHelpAnchorID
 category
 searchCriteria
 allVersions
 appName
-onScreenGraphSubTitle
-bottomTextBox
-batteryUsage
-performance
-diskUsage
-diskWrites
-launchTime
-hangTime
-memory
+lastHeightAnchor
 splitView
 sourceListViewController
 replacementView
@@ -4939,16 +4900,13 @@ minimumMetricsSourceListWidth
 maximumMetricsSourceListWidth
 analyticsMetricsViewControllerCategoriesSourceListIndex
 analyticsMetricsViewControllerSourceListSplitPositionKey
-RawValue
-detailStackView
 diskUsageSingleBarViewController
-typical
 headerView
 devicePopUp
 percentilePopUp
 lastUpdatedField
 replacementView
-helpButton
+scrollView
 deviceButtonCell
 percentileButtonCell
 updatingPopups
@@ -4961,16 +4919,11 @@ selectedCategoryType
 productData
 delegate
 allVersions
-deviceCode
-percentile
-RawValue
-detailStackView
 launchTimeController
 hangRateController
 peakMemoryController
 avgMemoryController
 currentSelectedSectionIdentifier
-reloadedViews
 notificationName
 forwardScrollEventsToView
 synchronizeToScrollView
@@ -4981,6 +4934,17 @@ delegate
 isMouseInside
 frameDescriptionColumn
 $__lazy_storage_$_trackingArea
+batteryUsage
+performance
+diskUsage
+diskWrites
+launchTime
+hangTime
+memory
+typical
+deviceCode
+percentile
+RawValue
 processorUsagePoint
 analyticsPointLogViewController
 logAspect
@@ -4997,7 +4961,6 @@ collapsedItemStateRestorationCache
 scrollPositionStateRestorationCache
 mouseInsideTreeNodeStackFrame
 processorUsageLog
-detailStackView
 circularCapacityViewController
 onScreenBarGraphController
 offScreenBarGraphController
@@ -5030,8 +4993,18 @@ Other
 Other
 Other
 Other
-?ffffff
-4@all_iphones
+Torch
+Camera
+Bluetooth
+Audio
+Location
+Display
+Processing
+Network
+Networking
+Other
+Try Again
+all_iphones
 disk writes
 launch time
 hang rate

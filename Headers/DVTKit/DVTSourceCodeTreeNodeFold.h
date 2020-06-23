@@ -16,10 +16,10 @@
 }
 
 + (Class)_inlineTokenAttachmentCellClass;
+- (void).cxx_destruct;
 @property(retain) XCSourceCodeTreeNode *sourceCodeTreeNode; // @synthesize sourceCodeTreeNode=_sourceCodeTreeNode;
 @property struct _NSRange rootSourceCodeTreeRange; // @synthesize rootSourceCodeTreeRange=_rootSourceCodeTreeRange;
 @property(retain) XCSourceCodeTreeNode *rootSourceCodeTreeNode; // @synthesize rootSourceCodeTreeNode=_rootSourceCodeTreeNode;
-- (void).cxx_destruct;
 - (struct _NSRange)fixedSelectionRangeForRange:(struct _NSRange)arg1 affinity:(unsigned long long)arg2 inTextView:(id)arg3;
 - (void)offsetBy:(long long)arg1;
 - (struct _NSRange)replacementRange;

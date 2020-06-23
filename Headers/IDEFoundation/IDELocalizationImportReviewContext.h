@@ -13,8 +13,8 @@
     IDELocalizationComparison *_comparison;
 }
 
-@property(readonly) IDELocalizationComparison *comparison; // @synthesize comparison=_comparison;
 - (void).cxx_destruct;
+@property(readonly) IDELocalizationComparison *comparison; // @synthesize comparison=_comparison;
 - (id)initWithComparison:(id)arg1;
 
 @end

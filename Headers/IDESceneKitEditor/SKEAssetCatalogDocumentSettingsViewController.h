@@ -19,8 +19,8 @@
     SKEAssetCatalogDocument *_document;
 }
 
-@property(readonly) SKEAssetCatalogDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) SKEAssetCatalogDocument *document; // @synthesize document=_document;
 - (void)selectDocumentLocations:(id)arg1;
 - (BOOL)canBecomeMainViewController;
 - (void)loadView;

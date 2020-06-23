@@ -21,7 +21,7 @@
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)versionNumberForArchiver;
+@property(readonly) unsigned long long versionNumberForArchiver;
 - (id)displayName;
 - (id)identifier;
 - (id)minimumVersionSupportedName;

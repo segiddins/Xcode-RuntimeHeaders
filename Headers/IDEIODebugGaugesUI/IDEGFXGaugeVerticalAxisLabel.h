@@ -23,8 +23,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) long long targetFramerate; // @synthesize targetFramerate=_targetFramerate;
 - (void).cxx_destruct;
+@property(nonatomic) long long targetFramerate; // @synthesize targetFramerate=_targetFramerate;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)addAxisForPlane:(id)arg1 hasLabel:(BOOL)arg2;
 - (void)primitiveInvalidate;

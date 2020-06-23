@@ -33,6 +33,7 @@
 }
 
 + (id)commandLineArgumentsForLanguage:(id)arg1 andRegion:(id)arg2;
++ (void)updateSearchPathSettingsInEnvironment:(id)arg1 withBuildProducts:(id)arg2 runDestination:(id)arg3 workspace:(id)arg4;
 + (void)updateSearchPathSettingsInEnvironment:(id)arg1 withBuildProducts:(id)arg2 runDestination:(id)arg3;
 + (void)modifyEnvironmentForLogging:(id)arg1 buildParameters:(id)arg2;
 + (id)bundleIdentifierFromBuildableProduct:(id)arg1 withBuildParameters:(id)arg2;
@@ -54,6 +55,7 @@
 + (void)setAddressSanitizerEnabledOverride:(id)arg1;
 + (id)addressSanitizerEnabledOverride;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *intentQueryString; // @synthesize intentQueryString=_intentQueryString;
 @property(readonly) DVTToolchain *llvmProfdataToolchain; // @synthesize llvmProfdataToolchain=_llvmProfdataToolchain;
 @property(retain) DVTToolchain *lldbToolchain; // @synthesize lldbToolchain=_lldbToolchain;
@@ -63,15 +65,13 @@
 @property(retain) IDESchemeBuildableReference *buildableReferenceToUseForMacroExpansion; // @synthesize buildableReferenceToUseForMacroExpansion=_buildableReferenceToUseForMacroExpansion;
 @property(retain) IDEFileReference *notificationPayloadFile; // @synthesize notificationPayloadFile=_notificationPayloadFile;
 @property(readonly) IDEScheme *runContext; // @synthesize runContext=_runContext;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)swiftVersionOfRunnableForSchemeCommand:(id)arg1;
 - (id)llvmProfdataToolchainForSchemeCommand:(id)arg1;
 - (id)bestLLDBToolchainForSchemeCommand:(id)arg1 preferBuildProductToolchain:(BOOL)arg2;
-- (id)buildProductToolchainForSchemeCommand:(id)arg1;
-- (id)lldbToolchainNameForSchemeCommand:(id)arg1 buildable:(id)arg2 performanceMetric:(id)arg3;
-- (BOOL)useInternalDebuggerToolchainSelectionLogic;
-- (BOOL)runnableUsesInternalSDK;
+- (id)_buildProductToolchainForSchemeCommand:(id)arg1;
+- (BOOL)_useInternalDebuggerToolchainSelectionLogic;
+@property(readonly, nonatomic) BOOL runnableUsesInternalSDK;
 - (id)_buildProductToolchainIdentifiersForSchemeCommand:(id)arg1;
 - (id)_resolvedRunnableBuildableForToolchainDetection;
 - (BOOL)isDeprecatedOption:(id)arg1;

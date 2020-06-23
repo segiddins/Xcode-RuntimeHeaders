@@ -20,12 +20,12 @@
 + (BOOL)localMachineSupportsPMI;
 + (BOOL)localMachineSupportsPMC;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int kdebugTriggerIndex; // @synthesize kdebugTriggerIndex=_kdebugTriggerIndex;
 @property(readonly, nonatomic) BOOL hasAtLeastOneRecordHandler; // @synthesize hasAtLeastOneRecordHandler=_hasAtLeastOneRecordHandler;
 @property(retain, nonatomic) NSMutableArray *recordHandlers; // @synthesize recordHandlers=_recordHandlers;
 @property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(nonatomic) BOOL spoolToDiskWhenPossible; // @synthesize spoolToDiskWhenPossible=_spoolToDiskWhenPossible;
-- (void).cxx_destruct;
 - (int)addTriggerConfig:(id)arg1 withRecordHandler:(CDUnknownBlockType)arg2;
 - (int)addTriggerConfig:(id)arg1;
 - (int)_addTriggerConfig:(id)arg1 withRecordHandler:(id)arg2;

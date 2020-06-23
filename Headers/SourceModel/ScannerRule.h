@@ -17,10 +17,10 @@
     SourceScanner *_scanner;
 }
 
+- (void).cxx_destruct;
 @property(readonly) SourceScanner *scanner; // @synthesize scanner=_scanner;
 @property(readonly) BOOL allowMultiple; // @synthesize allowMultiple=_allowMultiple;
 @property(readonly) BOOL optional; // @synthesize optional=_optional;
-- (void).cxx_destruct;
 - (BOOL)matchesToken:(long long)arg1;
 - (id)initWithString:(id)arg1;
 

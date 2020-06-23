@@ -15,9 +15,9 @@
 }
 
 + (id)computePackageIdentityOfURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) IDESourcePackageRequirement *requirement; // @synthesize requirement=_requirement;
 @property(readonly) NSString *packageURL; // @synthesize packageURL=_packageURL;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithURL:(id)arg1 requirement:(id)arg2;
 

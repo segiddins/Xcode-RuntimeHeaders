@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingDeviceIdentifier;
 + (void)initialize;
-@property(retain) DVTAbstractiOSDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain) DVTAbstractiOSDevice *device; // @synthesize device=_device;
 @property(readonly) NSString *deviceIdentifier;
 - (void)primitiveInvalidate;
 - (id)init;

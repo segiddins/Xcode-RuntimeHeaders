@@ -19,12 +19,12 @@
 
 + (id)analyzeInContext:(id)arg1;
 + (id)metricLogAspect;
+- (void).cxx_destruct;
 @property BOOL selected; // @synthesize selected=_selected;
 @property(readonly) IDEUpgradeContext *context; // @synthesize context=_context;
 @property(copy) NSString *category; // @synthesize category=_category;
 @property(readonly, copy) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)upgrade;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 context:(id)arg3;
 

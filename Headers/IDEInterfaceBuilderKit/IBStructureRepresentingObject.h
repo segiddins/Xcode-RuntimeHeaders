@@ -19,13 +19,13 @@
     IBStructureRepresentingObject *_parentObject;
 }
 
+- (void).cxx_destruct;
 @property __weak IBStructureRepresentingObject *parentObject; // @synthesize parentObject=_parentObject;
 @property(copy) IBMemberID *containingGroupID; // @synthesize containingGroupID=_containingGroupID;
 @property(copy) IBMemberID *objectID; // @synthesize objectID=_objectID;
 @property(copy) NSString *effectiveClassName; // @synthesize effectiveClassName=_effectiveClassName;
 @property(copy) NSString *externalClassName; // @synthesize externalClassName=_externalClassName;
 @property(copy) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)description;
 - (id)children;
 - (void)addChild:(id)arg1;

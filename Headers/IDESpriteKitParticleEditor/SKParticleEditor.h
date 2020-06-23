@@ -19,9 +19,9 @@
     NSArray *_currentSelectedItems;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(readonly, nonatomic) SKEmitterNode *emitter; // @synthesize emitter=_emitter;
-- (void).cxx_destruct;
 - (void)windowDidChangeOcclusionState:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;

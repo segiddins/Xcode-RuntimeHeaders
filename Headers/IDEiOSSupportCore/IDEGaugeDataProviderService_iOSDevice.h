@@ -16,8 +16,8 @@
 
 + (id)remoteServerChannelIdentifier;
 + (id)observableAttributes;
-@property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
+@property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 - (BOOL)_isTargetOSVersion:(id)arg1 atLeastSupportedVersion:(id)arg2;
 - (void)didStopSampling;
 - (id)stopSamplingForPIDs:(id)arg1;

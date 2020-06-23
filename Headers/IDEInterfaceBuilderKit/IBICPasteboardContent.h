@@ -16,9 +16,9 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBICPasteboardContext *context; // @synthesize context=_context;
 @property(readonly) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItems:(id)arg1;

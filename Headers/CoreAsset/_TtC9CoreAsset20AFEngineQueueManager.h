@@ -13,6 +13,7 @@
     MISSING_TYPE *queue;
     MISSING_TYPE *isMain;
     MISSING_TYPE *enableAsync;
+    MISSING_TYPE *tearDownState;
 }
 
 @end

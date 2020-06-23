@@ -18,11 +18,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long options; // @synthesize options=_options;
 @property(retain) DVTSourceControlAuthor *author; // @synthesize author=_author;
 @property(retain) NSString *message; // @synthesize message=_message;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, getter=isNewTag) BOOL newTag;
 - (id)displayName;

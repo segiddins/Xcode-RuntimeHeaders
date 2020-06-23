@@ -13,8 +13,8 @@
     DVTStackView_ML *_stackView;
 }
 
-@property __weak DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property __weak DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
 - (void)removeFromStackView:(id)arg1;
 - (void)addToStackView:(id)arg1;
 - (void)loadView;

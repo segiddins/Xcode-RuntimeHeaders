@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *softwareCounterInfo; // @synthesize softwareCounterInfo=_softwareCounterInfo;
 @property(retain, nonatomic) NSDictionary *parameterBufferPercentFullDict; // @synthesize parameterBufferPercentFullDict=_parameterBufferPercentFullDict;
 @property(retain, nonatomic) NSNumber *parameterBufferMaxSizeNeverMemless; // @synthesize parameterBufferMaxSizeNeverMemless=_parameterBufferMaxSizeNeverMemless;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSNumber *parameterBufferMaxSize; // @synthesize parameterBufferMaxSize=_parameterBufferMaxSize;
 @property(retain, nonatomic) NSArray *encoderTilerParamBufBytesUsedArray; // @synthesize encoderTilerParamBufBytesUsedArray=_encoderTilerParamBufBytesUsedArray;
 @property(nonatomic) unsigned int encoderCount; // @synthesize encoderCount=_encoderCount;
-- (void).cxx_destruct;
 - (id)exportDerivedCounterDataAtPath:(id)arg1 renameWhenConflict:(BOOL)arg2;
 - (id)perLineInfoForFunctionFilePath:(id)arg1 withLibraryIdSet:(unordered_set_ef4c6246 *)arg2 atFunctionIndex:(unsigned int)arg3;
 - (void)calculateRealTimeInfoWithGPUTime:(double)arg1;

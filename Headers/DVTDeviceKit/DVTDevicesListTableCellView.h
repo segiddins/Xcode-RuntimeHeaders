@@ -13,8 +13,8 @@
     NSProgressIndicator *_busyIndicator;
 }
 
-@property(retain) NSProgressIndicator *busyIndicator; // @synthesize busyIndicator=_busyIndicator;
 - (void).cxx_destruct;
+@property(retain) NSProgressIndicator *busyIndicator; // @synthesize busyIndicator=_busyIndicator;
 - (void)_updateBusyIndicator;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)setBackgroundStyle:(long long)arg1;

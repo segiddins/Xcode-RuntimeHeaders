@@ -17,10 +17,10 @@
 
 + (id)providerWithVersion:(id)arg1 emojiRepresentation:(id)arg2 aliases:(id)arg3;
 + (id)providerWithPlatformName:(id)arg1 emojiRepresentation:(id)arg2 aliases:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *emojiRepresentation; // @synthesize emojiRepresentation=_emojiRepresentation;
 @property(readonly) NSArray *versionStrings; // @synthesize versionStrings=_versionStrings;
 @property(readonly) NSArray *validNamesForSDK; // @synthesize validNamesForSDK=_validNamesForSDK;
-- (void).cxx_destruct;
 - (id)_initWithValidNamesForSDK:(id)arg1 emojiRepresentation:(id)arg2 versionStrings:(id)arg3;
 
 @end

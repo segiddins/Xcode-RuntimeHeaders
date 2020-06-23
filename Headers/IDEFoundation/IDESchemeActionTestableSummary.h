@@ -36,6 +36,7 @@
 + (id)coalescedTestableSummaryForTestableSummariesForSameTestable:(id)arg1;
 + (BOOL)includeDummyTestSummaryInTestableSummary;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *mutableFailureSummaries; // @synthesize mutableFailureSummaries=_mutableFailureSummaries;
 @property(copy) NSString *testKind; // @synthesize testKind=_testKind;
 @property(readonly, copy) NSString *testRegion; // @synthesize testRegion=_testRegion;
@@ -49,7 +50,6 @@
 @property(copy) NSArray *diagnosticLogPaths; // @synthesize diagnosticLogPaths=_diagnosticLogPaths;
 @property(copy) NSString *blueprintName; // @synthesize blueprintName=_blueprintName;
 @property(copy) NSString *blueprintProviderRelativePath; // @synthesize blueprintProviderRelativePath=_blueprintProviderRelativePath;
-- (void).cxx_destruct;
 - (id)sparseTestableSummaryForTestIdentifiers:(id)arg1;
 - (void)enumerateTestsUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)isSummaryForSameTestableAsSummary:(id)arg1;

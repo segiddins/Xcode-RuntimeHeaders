@@ -17,9 +17,9 @@
     XCSUIBotIntegrationPopoverStatusBadgeView *_testsFailedBadgeView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIBotIntegrationPopoverStatusBadgeView *testsFailedBadgeView; // @synthesize testsFailedBadgeView=_testsFailedBadgeView;
 @property __weak XCSUIBotIntegrationPopoverStatusBadgeView *testsPassedBadgeView; // @synthesize testsPassedBadgeView=_testsPassedBadgeView;
-- (void).cxx_destruct;
 - (void)updateBadgesWithTestsPassed:(unsigned long long)arg1 testsFailed:(unsigned long long)arg2;
 
 @end

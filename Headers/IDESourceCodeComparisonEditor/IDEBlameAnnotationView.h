@@ -8,17 +8,11 @@
 
 #import <IDESourceCodeComparisonEditor/NSAccessibilityButton-Protocol.h>
 
-@class CALayer, CAShapeLayer, CATextLayer, DVTFontAndColorTheme, IDEBlameAnnotationBackgroundView, NSColor, NSDictionary, NSFont, NSString, _TtC6IDEKit32IDESourceControlMessageFieldView;
+@class CALayer, CAShapeLayer, CATextLayer, DVTFontAndColorTheme, IDEBlameAnnotationBackgroundView, NSDictionary, NSString, _TtC6IDEKit32IDESourceControlMessageFieldView;
 @protocol IDEBlameAnnotationViewDelegate;
 
 @interface IDEBlameAnnotationView : NSView <NSAccessibilityButton>
 {
-    NSFont *_defaultFont;
-    NSFont *_defaultBoldFont;
-    double _defaultFontSize;
-    NSColor *_titleColor;
-    NSColor *_subtitleColor;
-    NSColor *_subtitleLinkColor;
     IDEBlameAnnotationBackgroundView *_backgroundView;
     CALayer *_highlightLayer;
     CALayer *_hoverLayer;
@@ -41,15 +35,11 @@
 }
 
 + (id)annotationActiveHighlightColor;
-+ (BOOL)_hasLightBackround;
 + (double)defaultWidthWithFontSize:(double)arg1;
 + (double)defaultWidth;
-+ (id)_boldFontWithSize:(double)arg1;
-+ (id)_fontWithFontSize:(double)arg1;
-+ (double)_defaultFontSize;
 + (id)annotationHighlightColor;
 + (id)annotationHighlightGradient;
-+ (id)annotationActiveHighlightGradient;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideTopBorder; // @synthesize hideTopBorder=_hideTopBorder;
 @property(nonatomic) BOOL uncommitted; // @synthesize uncommitted=_uncommitted;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
@@ -58,7 +48,16 @@
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) _TtC6IDEKit32IDESourceControlMessageFieldView *messageTextField; // @synthesize messageTextField=_messageTextField;
 @property(nonatomic) __weak id <IDEBlameAnnotationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (id)titleColor;
+- (id)borderColor;
+- (id)boldFont;
+- (id)subtitleLinkColor;
+- (id)subtitleColor;
+- (id)_titleColor;
+- (double)defaultFontSize;
+- (id)defaultFont;
+- (id)uncommittedCircleColor;
+- (id)appearanceManager;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (void)dealloc;
@@ -67,8 +66,9 @@
 - (void)viewDidChangeEffectiveAppearance;
 - (void)updateHighlightLayerBackgroundColor;
 - (void)updateLayer;
+- (void)invalidate;
 - (void)reloadMessageTextField;
-- (void)_updateFontAndTheme;
+- (void)_updateBorderColor;
 - (id)urlFromClickBounds;
 - (void)_updateAuthorDateAgeAndBorderFrames;
 - (void)_updateMessageFrame;

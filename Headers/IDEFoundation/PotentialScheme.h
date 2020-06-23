@@ -16,10 +16,10 @@
     NSMutableArray *_buildables;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *buildables; // @synthesize buildables=_buildables;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) id <IDEBuildable> mainBuildable; // @synthesize mainBuildable=_mainBuildable;
-- (void).cxx_destruct;
 - (id)initWithBuildable:(id)arg1;
 - (id)initWithBuildable:(id)arg1 name:(id)arg2;
 

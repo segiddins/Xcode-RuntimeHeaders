@@ -20,12 +20,12 @@
 }
 
 + (id)_NSErrorForUErrorCode:(int)arg1 withDescription:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSData *rangeData; // @synthesize rangeData=_rangeData;
 @property struct _NSRange *ranges; // @synthesize ranges=_ranges;
 @property unsigned long long groupCount; // @synthesize groupCount=_groupCount;
 @property(copy) NSString *candidateString; // @synthesize candidateString=_candidateString;
 @property struct _NSRange searchRange; // @synthesize searchRange=_searchRange;
-- (void).cxx_destruct;
 - (id)description;
 - (id)stringByExpandingTemplate:(id)arg1;
 - (struct _NSRange)rangeForGroupAtIndex:(unsigned long long)arg1;

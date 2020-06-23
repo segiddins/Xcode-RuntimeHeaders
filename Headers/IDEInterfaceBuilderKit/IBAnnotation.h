@@ -22,6 +22,7 @@
 
 + (id)invertedAnnotationInterfaceStyle;
 + (id)normalAnnotationInterfaceStyle;
+- (void).cxx_destruct;
 @property struct CGRect lastRectDrawnIn; // @synthesize lastRectDrawnIn=_lastRectDrawnIn;
 @property unsigned long long kind; // @synthesize kind=_kind;
 @property(nonatomic) BOOL shouldDisplayInverted; // @synthesize shouldDisplayInverted=_shouldDisplayInverted;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *expectedEndPointClassName; // @synthesize expectedEndPointClassName=_expectedEndPointClassName;
 @property(retain) NSString *containingClassName; // @synthesize containingClassName=_containingClassName;
 @property(retain) NSString *annotationName; // @synthesize annotationName=_annotationName;
-- (void).cxx_destruct;
 - (id)toolTip;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;

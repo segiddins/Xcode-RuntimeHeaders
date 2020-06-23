@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(readonly, nonatomic) struct CGRect layoutFrame; // @synthesize layoutFrame=_layoutFrame;
 @property(readonly, nonatomic) BOOL hasIssues; // @synthesize hasIssues=_hasIssues;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) __weak SKNode *incomingEventBtn; // @synthesize incomingEventBtn=_incomingEventBtn;
 @property(nonatomic) double magnification; // @synthesize magnification=_magnification;
 @property(readonly) __weak DependencyViewerVertex *encoderNode; // @synthesize encoderNode=_encoderNode;
-- (void).cxx_destruct;
 - (void)_shaderProfilerDataUpdated:(id)arg1;
 - (void)hideStats;
 - (void)showStats;

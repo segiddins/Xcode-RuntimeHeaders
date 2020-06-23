@@ -35,6 +35,12 @@
     MISSING_TYPE *notes;
     MISSING_TYPE *macroConfigPaths;
     MISSING_TYPE *macroConfigSignatureCache;
+    MISSING_TYPE *projectXcconfigPath;
+    MISSING_TYPE *projectXcconfigSettings;
+    MISSING_TYPE *projectSettings;
+    MISSING_TYPE *targetXcconfigPath;
+    MISSING_TYPE *targetXcconfigSettings;
+    MISSING_TYPE *targetSettings;
 }
 
 @end

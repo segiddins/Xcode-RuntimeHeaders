@@ -16,11 +16,11 @@
     Xcode3TargetMembershipDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Xcode3TargetMembershipDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) DVTTableView *targetsTableView; // @synthesize targetsTableView=_targetsTableView;
 @property(retain, nonatomic) NSStackView *targetStackView; // @synthesize targetStackView=_targetStackView;
-- (void).cxx_destruct;
 - (id)selectedBuildables;
 - (void)didInstantiateItems:(id)arg1;
 - (void)instantiateFileTemplatesWithCompletionBlock:(CDUnknownBlockType)arg1;

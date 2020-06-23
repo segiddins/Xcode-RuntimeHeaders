@@ -28,7 +28,6 @@
     BOOL _clickableGlyphOnlyOnHover;
     unsigned long long _clickableGlyphLocation;
     BOOL _shouldPresentDisclosure;
-    BOOL _labelAreaIsHovered;
     DTTimelineGraphAccessorySubtree *_accessorySubtree;
     BOOL _resizable;
     BOOL _suppressTopBorder;
@@ -71,6 +70,8 @@
 }
 
 + (BOOL)_baseClassCanAskForDefaultsDuringInit;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accessibilityChildrenElements; // @synthesize accessibilityChildrenElements=_accessibilityChildrenElements;
 @property(retain, nonatomic) DTTimelinePlaneBorderSubtree *bottomBorderSubtree; // @synthesize bottomBorderSubtree=_bottomBorderSubtree;
 @property(retain, nonatomic) DTTimelinePlaneBorderSubtree *topBorderSubtree; // @synthesize topBorderSubtree=_topBorderSubtree;
@@ -109,8 +110,6 @@
 @property(copy, nonatomic) NSString *displayBadge; // @synthesize displayBadge=_displayBadge;
 @property(copy, nonatomic) NSString *displayDescription; // @synthesize displayDescription=_displayDescription;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)rebuildAccessibility;
 - (id)accessibilityChildren;
@@ -167,7 +166,7 @@
 @property(readonly, nonatomic) double height;
 - (void)_removeFromSuperlayer;
 - (void)_addTilingLayerToSuperlayer:(id)arg1;
-@property(nonatomic) BOOL labelAreaIsHovered;
+- (void)_setLabelAreaIsHovered:(BOOL)arg1 planeRelativePosition:(struct CGPoint)arg2;
 @property(readonly, nonatomic) CALayer *layer;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

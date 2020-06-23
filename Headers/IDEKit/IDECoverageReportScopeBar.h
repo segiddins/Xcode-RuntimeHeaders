@@ -18,13 +18,13 @@
     NSButton *_showErrorsButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *showErrorsButton; // @synthesize showErrorsButton=_showErrorsButton;
 @property __weak NSButton *showDeviceDifferencesButton; // @synthesize showDeviceDifferencesButton=_showDeviceDifferencesButton;
 @property __weak NSButton *showTestBundlesCheckBox; // @synthesize showTestBundlesCheckBox=_showTestBundlesCheckBox;
 @property __weak DVTSearchField *filterField; // @synthesize filterField=_filterField;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic) __weak IDECoverageReportViewController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)setFilterFieldValue:(id)arg1;
 - (void)hideTestBundlesCheckBox:(BOOL)arg1;
 - (void)hideDeviceDifferencesButton:(BOOL)arg1;

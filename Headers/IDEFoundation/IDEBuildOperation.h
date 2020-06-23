@@ -67,6 +67,7 @@
 + (long long)defaultQualityOfServiceClass;
 + (void)setDefaultBuildStatisticsSectionParent:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *buildMetricsData; // @synthesize buildMetricsData=_buildMetricsData;
 @property(readonly) IDEBuildOperationQueueSet *buildTaskQueueSet; // @synthesize buildTaskQueueSet=_buildTaskQueueSet;
 @property(retain) DVTDynamicLogController *builderTimingDataLogController; // @synthesize builderTimingDataLogController=_builderTimingDataLogController;
@@ -95,7 +96,6 @@
 @property(readonly) IDEBuildOperationConfiguration *config; // @synthesize config=_config;
 @property long long result; // @synthesize result=_result;
 @property(readonly) NSArray *buildables; // @synthesize buildables=_buildables;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)registerTracker:(id)arg1;
 @property(retain) IDEBuildStatisticsSection *topLevelStatisticsSection;

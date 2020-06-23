@@ -19,6 +19,7 @@
     NSMenuItem *_copyMenuItem;
     IDENavigatorSearchFilterControlBar *_filterControl;
     NSMapTable *_processHeaderCellViewsForContentDelegateTable;
+    DVTGradientImageButton *_gaugesToggleButton;
     IDENavigableItem *_itemToSelectBasedOnItemBeingEdited;
     NSMutableArray *_cachedNavigableDebugItems;
     NSMapTable *_contentDelegateForIdentifierTable;
@@ -49,6 +50,7 @@
 + (id)createProcessActionPopUpMenuItemWithPopUpImage:(id)arg1 menuItemImage:(id)arg2 action:(SEL)arg3;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigatorFilterContextsForFunctionBar;
+- (void).cxx_destruct;
 @property __weak NSView *filterContainerView; // @synthesize filterContainerView=_filterContainerView;
 @property(nonatomic) BOOL showsOnlyRunningBlocks; // @synthesize showsOnlyRunningBlocks=_showsOnlyRunningBlocks;
 @property(nonatomic) BOOL showsOnlyInterestingContent; // @synthesize showsOnlyInterestingContent=_showsOnlyInterestingContent;
@@ -58,7 +60,6 @@
 @property(readonly, nonatomic) BOOL isInUserDirectSelection; // @synthesize isInUserDirectSelection=_isInUserDirectSelection;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(readonly) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (struct CGRect)frameOfCellForRow:(unsigned long long)arg1 proposedRect:(struct CGRect)arg2;
 - (void)_updateGaugesButtonToolTip:(id)arg1;
 - (void)_drawSeparatorForProcessItem:(id)arg1;

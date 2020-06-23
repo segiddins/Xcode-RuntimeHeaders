@@ -17,12 +17,10 @@
     struct CGSize _renderedTextSize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize renderedTextSize; // @synthesize renderedTextSize=_renderedTextSize;
 @property(retain) IDEQuickHelpTextCompletionController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
 - (void)primitiveInvalidate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

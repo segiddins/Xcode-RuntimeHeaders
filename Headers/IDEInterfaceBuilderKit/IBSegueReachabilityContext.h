@@ -13,8 +13,8 @@
     IBDocument *_document;
 }
 
-@property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 - (id)splitViewSideIndexForReachingPrimarySceneObject:(id)arg1 error:(id *)arg2;
 - (BOOL)canReachPrimarySceneObjectFromSplitViewDetail:(id)arg1 error:(id *)arg2;
 - (BOOL)canReachPrimarySceneObjectFromSplitViewMaster:(id)arg1 error:(id *)arg2;

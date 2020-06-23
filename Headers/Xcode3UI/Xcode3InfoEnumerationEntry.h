@@ -13,8 +13,8 @@
     NSArray *_items;
 }
 
-@property(readonly) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly) NSArray *items; // @synthesize items=_items;
 - (void)setInfoValue:(id)arg1;
 - (void)setInspectorValue:(id)arg1;
 - (id)inspectorValue;

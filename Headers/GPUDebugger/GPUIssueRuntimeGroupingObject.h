@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(copy) NSArray *subgroupTypeIdentifiers; // @synthesize subgroupTypeIdentifiers=_subgroupTypeIdentifiers;
 @property(copy) id issueTypeIdentifier; // @synthesize issueTypeIdentifier=_issueTypeIdentifier;
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 

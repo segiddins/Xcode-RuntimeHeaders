@@ -19,9 +19,9 @@
     id <XCSEventStreamDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <XCSEventStreamDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) XCSMessageChannel *messageChannel; // @synthesize messageChannel=_messageChannel;
-- (void).cxx_destruct;
 - (void)messageChannel:(id)arg1 didUpdatePrivilegesWithUsername:(id)arg2;
 - (void)messageChannelDidRejectClientCertificate:(id)arg1;
 - (void)messageChannelDidConnect:(id)arg1;

@@ -14,12 +14,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property __weak DVTSourceControlRemoteRepository *repository; // @synthesize repository=_repository;
 - (void).cxx_destruct;
+@property __weak DVTSourceControlRemoteRepository *repository; // @synthesize repository=_repository;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)listRepositoriesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)validateAuthenticationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithRepository:(id)arg1 authenticationStrategy:(id)arg2;
 

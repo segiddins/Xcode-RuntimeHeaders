@@ -28,6 +28,7 @@
 + (id)alertEventForIdentifier:(id)arg1;
 + (void)_cacheAlertEvents;
 + (void)_registerAlertEventExtension:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL showInPreferences; // @synthesize showInPreferences=_showInPreferences;
 @property(retain) NSString *iconName; // @synthesize iconName=_iconName;
 @property(readonly) NSDictionary *alerts; // @synthesize alerts=_alerts;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *titleSortKey; // @synthesize titleSortKey=_titleSortKey;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)ide_setIdentifier:(id)arg1;
 - (void)saveToUserDefaults;
 - (id)propertyList;

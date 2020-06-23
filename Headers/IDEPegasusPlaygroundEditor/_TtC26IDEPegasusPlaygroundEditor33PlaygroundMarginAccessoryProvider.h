@@ -8,6 +8,7 @@
 
 @class MISSING_TYPE;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor33PlaygroundMarginAccessoryProvider : NSObject
 {
     MISSING_TYPE *installed;

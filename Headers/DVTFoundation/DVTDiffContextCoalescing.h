@@ -15,10 +15,10 @@
     struct _NSRange _coalescedRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange coalescedRange; // @synthesize coalescedRange=_coalescedRange;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (void)reset;
 - (BOOL)isCoalescing;
 - (BOOL)throttleTextEventWithLineRange:(struct _NSRange)arg1 unthrottledHandler:(CDUnknownBlockType)arg2;

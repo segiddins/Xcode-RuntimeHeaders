@@ -29,8 +29,8 @@
 + (id)keyPathsForValuesAffectingBus;
 + (id)keyPathsForValuesAffectingBike;
 + (id)keyPathsForValuesAffectingAirplane;
-@property(retain, nonatomic) NSSet *enabledRoutingTypes; // @synthesize enabledRoutingTypes=_enabledRoutingTypes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *enabledRoutingTypes; // @synthesize enabledRoutingTypes=_enabledRoutingTypes;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)hasDisclosableContent;
 @property(readonly, nonatomic) BOOL wantsMapsRoutingOptions;

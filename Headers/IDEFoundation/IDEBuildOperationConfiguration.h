@@ -25,6 +25,7 @@
     id <IDEBuildOperationClientInfo> _clientInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <IDEBuildOperationClientInfo> clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain, nonatomic) IDEScheme *scheme; // @synthesize scheme=_scheme;
 @property(retain, nonatomic) NSArray *buildables; // @synthesize buildables=_buildables;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
 @property(retain, nonatomic) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
 @property(nonatomic) long long buildCommand; // @synthesize buildCommand=_buildCommand;
-- (void).cxx_destruct;
 - (id)initWithBuildCommand:(long long)arg1 buildParameters:(id)arg2 executionEnvironment:(id)arg3 singleFileToBuild:(id)arg4 buildLog:(id)arg5 parallelizeBuildables:(BOOL)arg6 dontActuallyRunCommands:(BOOL)arg7 buildImplicitDependencies:(BOOL)arg8 restorePersistedBuildResults:(BOOL)arg9;
 
 @end

@@ -18,8 +18,8 @@
 + (id)genericMessageMatchPatternList;
 + (id)messagePatternListDefinitionFilename;
 + (id)messageMatchPatternListNamed:(id)arg1;
-@property BOOL appendInformationalLines; // @synthesize appendInformationalLines=_appendInformationalLines;
 - (void).cxx_destruct;
+@property BOOL appendInformationalLines; // @synthesize appendInformationalLines=_appendInformationalLines;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (BOOL)parseOutputLineBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (id)_messageTitleFromBytes:(const char *)arg1 length:(unsigned long long)arg2;

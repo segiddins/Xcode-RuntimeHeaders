@@ -17,10 +17,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBox *box; // @synthesize box=_box;
 @property(retain, nonatomic) IDEIntegrateSchemeAction *schemeAction; // @synthesize schemeAction=_schemeAction;
 @property(retain, nonatomic) IDEScheme *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)loadView;
 - (void)updateBoundContent;

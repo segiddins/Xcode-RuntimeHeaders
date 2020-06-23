@@ -20,8 +20,8 @@
 + (id)keyPathsForValuesAffectingBuildableProduct;
 + (id)keyPathsForValuesAffectingHasRunnablePath;
 + (id)keyPathsForValuesAffectingDisplayName;
-@property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
 - (void).cxx_destruct;
+@property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)addBuildableProductReference:(id)arg1 fromXMLUnarchiver:(id)arg2;

@@ -31,10 +31,10 @@
 + (BOOL)automaticallyNotifiesObserversOfSearchString;
 + (id)keyPathsForValuesAffectingArrangedTargetItems;
 + (id)keyPathsForValuesAffectingCanFinish;
+- (void).cxx_destruct;
 - (id)assistantTitle;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy) NSArray *targetItems; // @synthesize targetItems=_targetItems;
-- (void).cxx_destruct;
 - (void)loadUIState;
 - (id)stateRepositoryFilePath;
 - (void)_toggleCheckboxButton:(id)arg1;

@@ -20,10 +20,10 @@
 + (id)archiveNameForKey:(id)arg1;
 + (id)archivableRelationships;
 + (id)archivableAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productName; // @synthesize productName=_productName;
 @property(retain, nonatomic) XCSwiftPackageReference *packageReference; // @synthesize packageReference=_packageReference;
 @property(retain, nonatomic) PBXTarget *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)awakeFromPListUnarchiver:(id)arg1;
 - (id)gidCommentForArchive;
 - (BOOL)shouldArchivePackageReference;

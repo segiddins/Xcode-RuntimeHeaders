@@ -13,8 +13,8 @@
     NSButton *_checkBoxButton;
 }
 
-@property __weak NSButton *checkBoxButton; // @synthesize checkBoxButton=_checkBoxButton;
 - (void).cxx_destruct;
+@property __weak NSButton *checkBoxButton; // @synthesize checkBoxButton=_checkBoxButton;
 - (id)_checkBoxTooltip;
 - (void)checkBoxButtonPressed:(id)arg1;
 - (void)updateUIWithOverrideState;

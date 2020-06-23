@@ -18,11 +18,11 @@
     NSString *_contextLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsPartialMatches; // @synthesize supportsPartialMatches=_supportsPartialMatches;
 @property(readonly, copy, nonatomic) NSString *contextLabel; // @synthesize contextLabel=_contextLabel;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, copy, nonatomic) IBAttributeSearchLocation *attributeSearchLocation; // @synthesize attributeSearchLocation=_attributeSearchLocation;
-- (void).cxx_destruct;
 - (void)awakeWithPropertyList:(id)arg1;
 - (void)encodeIntoPropertyList:(id)arg1;
 - (id)initWithPropertyList:(id)arg1 owner:(id)arg2;

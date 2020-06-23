@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSArray *enabledButtonFilterIdentifiers; // @synthesize enabledButtonFilterIdentifiers=_enabledButtonFilterIdentifiers;
 - (void).cxx_destruct;
+@property(readonly) NSArray *enabledButtonFilterIdentifiers; // @synthesize enabledButtonFilterIdentifiers=_enabledButtonFilterIdentifiers;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

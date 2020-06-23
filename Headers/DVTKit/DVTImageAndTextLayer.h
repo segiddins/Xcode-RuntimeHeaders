@@ -18,9 +18,9 @@
 
 + (struct CGColor *)defaultTextShadowColor;
 + (id)defaultAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) double imageToTextSpacing; // @synthesize imageToTextSpacing=_imageToTextSpacing;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 @property(readonly) struct CGRect stringRect;
 @property(readonly) struct CGRect imageRect;

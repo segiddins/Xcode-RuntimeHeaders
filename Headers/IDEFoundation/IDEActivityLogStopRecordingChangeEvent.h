@@ -13,8 +13,8 @@
     NSSet *_supersections;
 }
 
-@property(readonly) NSSet *supersections; // @synthesize supersections=_supersections;
 - (void).cxx_destruct;
+@property(readonly) NSSet *supersections; // @synthesize supersections=_supersections;
 - (id)description;
 - (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 supersections:(id)arg2;

@@ -15,12 +15,12 @@
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long orderingTieBreaker; // @synthesize orderingTieBreaker=_orderingTieBreaker;
 @property(readonly, nonatomic) unsigned long long layer; // @synthesize layer=_layer;
 @property(readonly, nonatomic) id orderingKey; // @synthesize orderingKey=_orderingKey;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRect:(struct CGRect)arg1 representedObject:(id)arg2 orderingKey:(id)arg3 layer:(unsigned long long)arg4 orderingTieBreaker:(long long)arg5;
 

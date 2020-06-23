@@ -7,6 +7,7 @@
 #import <IDEMLModelEditorKit/NSObject-Protocol.h>
 
 @class DVTStackBacktrace;
+@protocol DVTInvalidation;
 
 @protocol DVTInvalidation <NSObject>
 - (void)primitiveInvalidate;
@@ -15,6 +16,7 @@
 + (BOOL)supportsInvalidationPrevention;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+- (void)addAutoInvalidatedObject:(id <DVTInvalidation>)arg1;
 @property(nonatomic, retain) DVTStackBacktrace *creationBacktrace;
 @property(nonatomic, readonly) DVTStackBacktrace *invalidationBacktrace;
 - (BOOL)isValid;

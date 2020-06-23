@@ -15,9 +15,9 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) double extraHorizontalPadding; // @synthesize extraHorizontalPadding=_extraHorizontalPadding;
 @property(nonatomic) __weak id <DVTScopeBarButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layout;
 - (struct CGSize)intrinsicContentSize;
 - (struct NSEdgeInsets)alignmentRectInsets;

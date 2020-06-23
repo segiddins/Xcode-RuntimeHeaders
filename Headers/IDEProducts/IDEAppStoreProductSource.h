@@ -28,6 +28,7 @@
 + (BOOL)isAdamIdWhitelisted:(id)arg1;
 + (id)blackListedAdamIDs;
 + (id)whiteListedAdamIDs;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *productsRootDirectory; // @synthesize productsRootDirectory=_productsRootDirectory;
 @property(retain, nonatomic) NSArray *lastNetworkRefreshErrors; // @synthesize lastNetworkRefreshErrors=_lastNetworkRefreshErrors;
 @property(retain, nonatomic) NSMutableDictionary *rateLimiters; // @synthesize rateLimiters=_rateLimiters;
@@ -37,7 +38,6 @@
 @property(retain) id <DVTInvalidation> developerAccountsObserver; // @synthesize developerAccountsObserver=_developerAccountsObserver;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedRefreshInvocation; // @synthesize delayedRefreshInvocation=_delayedRefreshInvocation;
 @property BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
-- (void).cxx_destruct;
 - (id)binaryInfosForVersion:(id)arg1;
 - (id)supportedDeviceTypesForAppVersion:(id)arg1 productCategory:(id)arg2;
 - (id)productFromAppDescription:(id)arg1 versionDescriptions:(id)arg2 session:(id)arg3 coordinator:(id)arg4 errors:(id *)arg5;

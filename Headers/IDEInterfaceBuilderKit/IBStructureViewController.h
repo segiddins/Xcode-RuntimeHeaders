@@ -28,6 +28,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCurrentFilterFieldWantingStructureProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *filterFieldHeightConstraint; // @synthesize filterFieldHeightConstraint=_filterFieldHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *barHeightConstraint; // @synthesize barHeightConstraint=_barHeightConstraint;
 @property(retain, nonatomic) DVTSearchField *filterField; // @synthesize filterField=_filterField;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) IBStructureAreaDockLabelContainer *dockItemLabelPopUpContainer; // @synthesize dockItemLabelPopUpContainer=_dockItemLabelPopUpContainer;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(retain, nonatomic) IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *selectionProviders; // @synthesize selectionProviders=_selectionProviders;
 - (void)_ensureSelectionProvidersAreCreated;
 - (void)makeAndPopulateSelectionProviders:(id)arg1;

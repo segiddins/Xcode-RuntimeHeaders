@@ -18,10 +18,10 @@
     NSArray *_generatedFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *generatedFilePaths; // @synthesize generatedFilePaths=_generatedFilePaths;
 @property __weak IDEIntentBuilderClassTextField *textField; // @synthesize textField=_textField;
 @property __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (void)_unbind;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (double)baseline;

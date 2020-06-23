@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     id <DYPLiveDebuggingHelper> _liveDebuggingHelper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <DYPLiveDebuggingHelper> liveDebuggingHelper; // @synthesize liveDebuggingHelper=_liveDebuggingHelper;
 @property(retain, nonatomic) id <IDEDataValue> dataValue; // @synthesize dataValue=_dataValue;
 @property(nonatomic) BOOL shouldCancel; // @synthesize shouldCancel=_shouldCancel;
-- (void).cxx_destruct;
 - (void)evaluateExpression:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)prepareExpression:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_requestChild:(id)arg1 callback:(CDUnknownBlockType)arg2;

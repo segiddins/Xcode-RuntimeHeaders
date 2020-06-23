@@ -26,6 +26,7 @@
     NSString *_appExtensionPointIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMacCatalystException; // @synthesize isMacCatalystException=_isMacCatalystException;
 @property(retain, nonatomic) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
 @property(retain, nonatomic) IDEProductType *productType; // @synthesize productType=_productType;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 @property(readonly, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
 @property(retain, nonatomic) NSSet *entitlementsWithoutPortalFeature; // @synthesize entitlementsWithoutPortalFeature=_entitlementsWithoutPortalFeature;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) DVTPortalContainerType *containerType;
 @property(readonly, nonatomic) BOOL isAvailableWithFreeProvisioningTeam;

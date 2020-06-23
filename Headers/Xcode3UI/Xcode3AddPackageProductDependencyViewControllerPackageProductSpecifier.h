@@ -15,10 +15,10 @@
     NSString *_productName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *productName; // @synthesize productName=_productName;
 @property(readonly) IDEProductType *productType; // @synthesize productType=_productType;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDisplayName:(id)arg1 productType:(id)arg2 productName:(id)arg3;
 
 @end

@@ -21,8 +21,8 @@
     BOOL _useSourceTextBackgroundColor;
 }
 
-@property BOOL hideWorkspaceLoadingProgressIndicator; // @synthesize hideWorkspaceLoadingProgressIndicator=_hideWorkspaceLoadingProgressIndicator;
 - (void).cxx_destruct;
+@property BOOL hideWorkspaceLoadingProgressIndicator; // @synthesize hideWorkspaceLoadingProgressIndicator=_hideWorkspaceLoadingProgressIndicator;
 - (void)setEmptyContentString:(id)arg1;
 @property BOOL useSourceTextBackgroundColor; // @synthesize useSourceTextBackgroundColor=_useSourceTextBackgroundColor;
 - (void)_observeThemes;

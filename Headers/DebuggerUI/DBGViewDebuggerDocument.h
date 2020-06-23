@@ -17,9 +17,9 @@
 }
 
 + (id)documentForViewDebugger:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DBGViewDebuggerDocumentIssueGenerator *issueGenerator; // @synthesize issueGenerator=_issueGenerator;
 @property(retain) DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
-- (void).cxx_destruct;
 - (id)_viewDebuggerForURL:(id)arg1 inWorkspace:(id)arg2;
 - (id)_viewDebuggerForURL:(id)arg1;
 - (id)viewObjectForLocation:(id)arg1;

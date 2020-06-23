@@ -20,6 +20,7 @@
     NSNumber *_logicalCPUCoresPerPackage;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *logicalCPUCoresPerPackage; // @synthesize logicalCPUCoresPerPackage=_logicalCPUCoresPerPackage;
 @property(copy) NSNumber *physicalCPUCoresPerPackage; // @synthesize physicalCPUCoresPerPackage=_physicalCPUCoresPerPackage;
 @property(copy) NSNumber *busSpeedInMHz; // @synthesize busSpeedInMHz=_busSpeedInMHz;
@@ -28,7 +29,6 @@
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
 @property(copy) NSString *modelCode; // @synthesize modelCode=_modelCode;
 @property(copy) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -16,9 +16,9 @@
     NSView *_hostingView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *hostingView; // @synthesize hostingView=_hostingView;
 @property __weak IDEAnalyzerResultsExplorer *explorer; // @synthesize explorer=_explorer;
-- (void).cxx_destruct;
 - (id)drawablesInRect:(struct CGRect)arg1;
 - (void)drawOverTextInRect:(struct CGRect)arg1;
 - (struct CGRect)bounds;

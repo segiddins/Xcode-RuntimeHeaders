@@ -19,6 +19,7 @@
     NSArray *_instantiatedItems;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *instantiatedItems; // @synthesize instantiatedItems=_instantiatedItems;
 @property unsigned long long destinationIndex; // @synthesize destinationIndex=_destinationIndex;
 @property(retain) IDEGroup *destinationGroup; // @synthesize destinationGroup=_destinationGroup;
@@ -26,7 +27,6 @@
 @property(copy) NSString *destinationType; // @synthesize destinationType=_destinationType;
 @property(retain) DVTFilePath *destinationFilePath; // @synthesize destinationFilePath=_destinationFilePath;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (id)workspaceWindow;
 @property(readonly) IDEWorkspace *workspace;
 

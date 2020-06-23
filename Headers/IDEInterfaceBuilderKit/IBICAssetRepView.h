@@ -52,6 +52,7 @@
 + (id)placeholderTextField;
 + (CDStruct_c519178c)defaultTextPadding;
 + (CDStruct_c519178c)defaultImagePadding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IBICAssetRepViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL showsRevealContentButton; // @synthesize showsRevealContentButton=_showsRevealContentButton;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) NSImage *statusImage; // @synthesize statusImage=_statusImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 @property(readonly, copy) NSString *debugDescription;
 - (void)userDidPressRevealButton:(id)arg1;
@@ -117,7 +117,7 @@
 @property(readonly, nonatomic) struct CGRect statusImageRect;
 - (id)playPauseButtonCreatingIfNeeded:(BOOL)arg1;
 - (void)setMaximumTitleWidthToCurrentImageWidth;
-- (void)setTitleHighlightCornerMask:(BOOL)arg1;
+- (void)setTitleHighlightCornerMask:(unsigned long long)arg1;
 - (void)setTitleTextNeedsDisplayAndLayout;
 - (id)initWithFrame:(struct CGRect)arg1;
 

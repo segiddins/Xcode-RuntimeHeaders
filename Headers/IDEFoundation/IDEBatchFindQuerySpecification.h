@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) IDEBatchFindNamedScope *namedScope; // @synthesize namedScope=_namedScope;
 @property(readonly) Class queryClass; // @synthesize queryClass=_queryClass;
 @property(readonly) long long anchoring; // @synthesize anchoring=_anchoring;
 @property(readonly) BOOL matchCase; // @synthesize matchCase=_matchCase;
 @property(readonly) IDEBatchFindQueryTerm *queryTerm; // @synthesize queryTerm=_queryTerm;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSpecification:(id)arg1;
 - (unsigned long long)hash;

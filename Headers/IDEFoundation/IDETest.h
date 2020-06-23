@@ -33,6 +33,7 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL indexLocationWasSet; // @synthesize indexLocationWasSet=_indexLocationWasSet;
 @property(copy) NSArray *recentErrorLocations; // @synthesize recentErrorLocations=_recentErrorLocations;
 @property(copy, nonatomic) DVTTextDocumentLocation *indexLocation; // @synthesize indexLocation=_indexLocation;
@@ -42,7 +43,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) IDETestIdentifier *testIdentifier; // @synthesize testIdentifier=_testIdentifier;
 @property(readonly) id <IDETestable> testable; // @synthesize testable=_testable;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *arrangedSubtests; // @dynamic arrangedSubtests;
 - (void)_primitiveRemoveSubtest:(id)arg1;
 - (void)_primitiveAddSubtest:(id)arg1;

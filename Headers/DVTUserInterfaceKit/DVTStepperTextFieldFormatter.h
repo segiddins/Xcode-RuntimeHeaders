@@ -16,10 +16,10 @@
 }
 
 + (id)_labelAttributes;
+- (void).cxx_destruct;
 @property(copy) NSString *suffix; // @synthesize suffix=_suffix;
 @property(copy) NSString *prefix; // @synthesize prefix=_prefix;
 @property(copy) NSFormatter *wrappedFormatter; // @synthesize wrappedFormatter=_wrappedFormatter;
-- (void).cxx_destruct;
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)stringForObjectValue:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     struct _AMDServiceConnection *_servConn;
 }
 
-@property(readonly, nonatomic) DYMobileDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DYMobileDevice *device; // @synthesize device=_device;
 - (id)connect;
 - (void)closeSocketDescriptor;
 - (long long)_write:(const void *)arg1 size:(unsigned long long)arg2;

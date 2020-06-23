@@ -23,12 +23,12 @@
     NSView *_actionSourceView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *actionSourceView; // @synthesize actionSourceView=_actionSourceView;
 @property(retain) GTFActionRefPopoverView *actionPreviewView; // @synthesize actionPreviewView=_actionPreviewView;
 @property(retain) DVTStackView_AppKitAutolayout *stackView; // @synthesize stackView=_stackView;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak id <GTFActionRefPopoverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

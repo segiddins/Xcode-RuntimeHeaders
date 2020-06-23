@@ -17,9 +17,9 @@
 
 + (unsigned long long)segmentOptions;
 + (BOOL)convertHTMLAtPath:(id)arg1 toRTFPath:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property BOOL wellFormedXML; // @synthesize wellFormedXML;
 @property struct _xmlDoc *htmlDocument; // @synthesize htmlDocument;
-- (void).cxx_destruct;
 - (id)attributesForElement:(id)arg1;
 - (BOOL)isXPATHForTextNode:(id)arg1;
 - (id)xpathForParagraphElement:(id)arg1;

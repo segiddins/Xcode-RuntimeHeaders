@@ -13,8 +13,8 @@
     DVTLogAspect *_logAspect;
 }
 
-@property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 - (id)_localExecutionCodesignParametersForEvaluationInputs:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 - (id)_provisioningInputsForEvaluationInputs:(id)arg1 configuration:(id)arg2 entitlements:(id)arg3 error:(id *)arg4;
 - (long long)_signingStyleForProvisionableSnapshot:(id)arg1 configuration:(id)arg2;

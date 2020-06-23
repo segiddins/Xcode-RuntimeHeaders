@@ -27,9 +27,9 @@
 
 + (id)keyPathsForValuesAffectingSelection;
 + (id)keyPathsForValuesAffectingDiagramStorage;
+- (void).cxx_destruct;
 @property BOOL _hasDoneInitialLayout; // @synthesize _hasDoneInitialLayout;
 @property(copy) NSString *lastGraphLayouterIdentifier; // @synthesize lastGraphLayouterIdentifier=_lastGraphLayouterIdentifier;
-- (void).cxx_destruct;
 - (void)loadStateFromDictionary:(id)arg1;
 - (id)stateDictionary;
 - (void)createAndLayoutGraphicsForElements:(id)arg1;

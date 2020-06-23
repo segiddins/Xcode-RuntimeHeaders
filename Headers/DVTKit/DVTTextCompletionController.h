@@ -24,11 +24,11 @@
 
 + (id)performanceLogAspect;
 + (id)completionUILogAspect;
+- (void).cxx_destruct;
 @property(retain) DVTTextCompletionSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(readonly) BOOL sessionInProgress; // @synthesize sessionInProgress=_sessionInProgress;
 @property(getter=isAutoCompletionEnabled) BOOL autoCompletionEnabled; // @synthesize autoCompletionEnabled=_autoCompletionEnabled;
 @property(readonly) NSView<DVTTextCompletionSupportingTextView> *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (id)debugStateString;
 - (BOOL)showInfoPanelForSelectedCompletion;
 - (id)attributesForCompletionAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;

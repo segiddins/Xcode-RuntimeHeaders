@@ -14,9 +14,9 @@
     NSArray *_observationTokens;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *observationTokens; // @synthesize observationTokens=_observationTokens;
 @property(readonly) DVTCrashPointRecord *crashPointRecord; // @synthesize crashPointRecord=_crashPointRecord;
-- (void).cxx_destruct;
 - (id)initWithCrashPointRecord:(id)arg1 observationTokens:(id)arg2;
 
 @end

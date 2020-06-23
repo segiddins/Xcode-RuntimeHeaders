@@ -16,10 +16,10 @@
     NSString *_suffixText;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *suffixText; // @synthesize suffixText=_suffixText;
 @property(copy) NSString *prefixText; // @synthesize prefixText=_prefixText;
 @property(retain, nonatomic) NSError *displayedError; // @synthesize displayedError=_displayedError;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

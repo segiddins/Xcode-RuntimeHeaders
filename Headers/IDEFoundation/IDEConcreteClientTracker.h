@@ -18,8 +18,8 @@
     BOOL _isCancelling;
 }
 
-@property(readonly) BOOL isCancelling; // @synthesize isCancelling=_isCancelling;
 - (void).cxx_destruct;
+@property(readonly) BOOL isCancelling; // @synthesize isCancelling=_isCancelling;
 - (void)_clientCancellationTimeout;
 - (void)cancelTrackedClients;
 - (void)_callSignpostForClientsBlockingCancellation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

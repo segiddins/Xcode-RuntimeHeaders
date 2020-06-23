@@ -37,12 +37,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesAutoLayout; // @synthesize usesAutoLayout=_usesAutoLayout;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
 @property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
 @property(retain, nonatomic) Class controllerClass; // @synthesize controllerClass=_controllerClass;
-- (void).cxx_destruct;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (void)discardEditing;

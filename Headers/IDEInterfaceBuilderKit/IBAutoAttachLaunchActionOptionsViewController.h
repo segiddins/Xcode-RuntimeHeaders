@@ -14,8 +14,8 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
-@property(retain) NSButton *autoAttachToRemoteToolsCheckBox; // @synthesize autoAttachToRemoteToolsCheckBox=_autoAttachToRemoteToolsCheckBox;
 - (void).cxx_destruct;
+@property(retain) NSButton *autoAttachToRemoteToolsCheckBox; // @synthesize autoAttachToRemoteToolsCheckBox=_autoAttachToRemoteToolsCheckBox;
 - (void)didToggleAutoAttachToRemoteTools:(id)arg1;
 - (void)loadView;
 

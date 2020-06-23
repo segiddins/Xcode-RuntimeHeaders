@@ -15,10 +15,10 @@
     NSSet *_downloadables;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *downloadables; // @synthesize downloadables=_downloadables;
 @property(readonly) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
 @property(readonly) double refreshInterval; // @synthesize refreshInterval=_refreshInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (id)propertyList;
 - (BOOL)upToDate;

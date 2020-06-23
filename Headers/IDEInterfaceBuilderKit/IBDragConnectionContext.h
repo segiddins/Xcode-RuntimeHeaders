@@ -19,6 +19,7 @@
     NSSet *_endPointProvidingDocuments;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *endPointProvidingDocuments; // @synthesize endPointProvidingDocuments=_endPointProvidingDocuments;
 @property(readonly) BOOL limitToInterfaceBuilder; // @synthesize limitToInterfaceBuilder=_limitToInterfaceBuilder;
 @property(readonly) IBConnection *prototype; // @synthesize prototype=_prototype;
@@ -26,7 +27,6 @@
 @property(readonly) NSString *sourceClassName; // @synthesize sourceClassName=_sourceClassName;
 @property(readonly) long long relationshipType; // @synthesize relationshipType=_relationshipType;
 @property(readonly) NSString *connectionName; // @synthesize connectionName=_connectionName;
-- (void).cxx_destruct;
 - (id)initWithConnectionName:(id)arg1 relationshipType:(long long)arg2 sourceClassName:(id)arg3 endPointProvidingDocuments:(id)arg4 limitedToInterfaceBuilder:(BOOL)arg5;
 - (id)initWithPrototype:(id)arg1 endPointProvidingDocuments:(id)arg2;
 - (id)initWithSource:(id)arg1 endPointProvidingDocuments:(id)arg2;

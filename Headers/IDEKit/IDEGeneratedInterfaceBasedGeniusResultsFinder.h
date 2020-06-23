@@ -10,7 +10,8 @@
 {
 }
 
-+ (Class)swiftLanguageService;
++ (id)originalURLForGeneratedURL:(id)arg1;
++ (id)generatedURLForOriginalURL:(id)arg1;
 + (id)logAspect;
 - (BOOL)isBridgingHeader;
 - (id)originalURLForGeneratedURL;

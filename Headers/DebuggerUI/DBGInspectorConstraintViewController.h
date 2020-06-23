@@ -7,6 +7,7 @@
 #import <DVTViewControllerKit/DVTViewController.h>
 
 @class DBGLayoutConstraint, DBGRoundedBox, DVTObservingToken, NSButton, NSImageView, NSTextField, NSTrackingArea;
+@protocol DBGLayoutConstraintItem;
 
 @interface DBGInspectorConstraintViewController : DVTViewController
 {
@@ -21,18 +22,18 @@
     NSTextField *_constraintCategoryField;
     NSButton *_moreInfoButton;
     NSImageView *_constraintIconImageView;
-    id _relativeToItem;
+    id <DBGLayoutConstraintItem> _relativeToItem;
     DBGRoundedBox *_borderView;
 }
 
+- (void).cxx_destruct;
 @property __weak DBGRoundedBox *borderView; // @synthesize borderView=_borderView;
 @property BOOL mouseIsOver; // @synthesize mouseIsOver=_mouseIsOver;
-@property(retain, nonatomic) id relativeToItem; // @synthesize relativeToItem=_relativeToItem;
+@property(retain, nonatomic) id <DBGLayoutConstraintItem> relativeToItem; // @synthesize relativeToItem=_relativeToItem;
 @property(retain) NSImageView *constraintIconImageView; // @synthesize constraintIconImageView=_constraintIconImageView;
 @property(retain, nonatomic) NSButton *moreInfoButton; // @synthesize moreInfoButton=_moreInfoButton;
 @property(retain, nonatomic) NSTextField *constraintCategoryField; // @synthesize constraintCategoryField=_constraintCategoryField;
 @property(retain, nonatomic) NSTextField *constraintFormulaField; // @synthesize constraintFormulaField=_constraintFormulaField;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property BOOL constraintIsFilteredOut;
 @property BOOL constraintIsAffecting;

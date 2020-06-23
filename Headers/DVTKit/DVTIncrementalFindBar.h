@@ -16,9 +16,9 @@
     DVTFindResult *_currentResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFindResult *currentResult; // @synthesize currentResult=_currentResult;
 @property(copy) DVTDocumentLocation *_findAnchor; // @synthesize _findAnchor;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)_finder;
 - (void)_tellDelegateAboutFoundResults:(id)arg1;

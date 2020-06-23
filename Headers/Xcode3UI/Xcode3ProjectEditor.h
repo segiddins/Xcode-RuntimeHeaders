@@ -70,6 +70,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)metricLogAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRefreshingTabChooserView; // @synthesize isRefreshingTabChooserView=_isRefreshingTabChooserView;
 @property(retain) DVTScrollView *sourceListScrollView; // @synthesize sourceListScrollView=_sourceListScrollView;
 @property(retain) DVTBorderedView *filterBarContainerView; // @synthesize filterBarContainerView=_filterBarContainerView;
@@ -87,7 +88,6 @@
 @property(copy) NSArray *draggingTreeNodes; // @synthesize draggingTreeNodes=_draggingTreeNodes;
 @property(retain, nonatomic) DVTChoice *selectedChoice; // @synthesize selectedChoice=_selectedChoice;
 @property(copy, nonatomic) NSMutableArray *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 - (void)didUpdateConfiguration:(id)arg1;
 - (void)updateConfiguration:(id)arg1;
 - (void)updateContextProvider;
@@ -176,6 +176,7 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) DVTSourceLanguageService *languageService;
 @property(readonly) DVTSourceExpression *quickHelpExpression;
+@property(readonly) NSView *quickHelpTargetView;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) NSString *selectedText;
 @property(retain) DVTStateToken *stateToken; // @dynamic stateToken;

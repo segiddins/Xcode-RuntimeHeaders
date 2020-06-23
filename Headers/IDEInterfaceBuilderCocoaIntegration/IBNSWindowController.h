@@ -26,6 +26,7 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(copy) NSString *uniqueIdentifierForStoryboardCompilation; // @synthesize uniqueIdentifierForStoryboardCompilation=_uniqueIdentifierForStoryboardCompilation;
 @property unsigned long long showSeguePresentationStyle; // @synthesize showSeguePresentationStyle=_showSeguePresentationStyle;
@@ -33,7 +34,6 @@
 @property(copy) NSDictionary *externalObjectsTableForWindowLoading; // @synthesize externalObjectsTableForWindowLoading=_externalObjectsTableForWindowLoading;
 @property(copy) NSArray *storyboardSegueTemplates; // @synthesize storyboardSegueTemplates=_storyboardSegueTemplates;
 @property(retain) NSWindowTemplate *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 @property(copy) NSString *explicitStoryboardIdentifier;
 - (void)unarchivePlaceholderTable:(id)arg1;
 - (void)archivePlaceholderTable:(id)arg1;

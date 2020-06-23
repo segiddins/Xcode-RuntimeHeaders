@@ -16,9 +16,9 @@
     DVTNotificationToken *_indexDidChangeNotificationObserver;
 }
 
+- (void).cxx_destruct;
 @property BOOL animateProgressIndicator; // @synthesize animateProgressIndicator=_animateProgressIndicator;
 @property(retain) NSArray *availibleImportItems; // @synthesize availibleImportItems=_availibleImportItems;
-- (void).cxx_destruct;
 - (id)nextAssistantIdentifier;
 - (BOOL)canGoForward;
 - (BOOL)canGoBack;

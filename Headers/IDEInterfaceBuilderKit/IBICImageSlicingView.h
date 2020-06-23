@@ -32,6 +32,7 @@
 + (id)selectedBorderColor;
 + (id)normalBorderColor;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSValue *selectedDivider; // @synthesize selectedDivider=_selectedDivider;
 @property(nonatomic) BOOL drawsWithKeyAppearance; // @synthesize drawsWithKeyAppearance=_drawsWithKeyAppearance;
 @property(nonatomic) BOOL drawsSelected; // @synthesize drawsSelected=_drawsSelected;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) IBICImageResizingBehavior *resizingBehavior; // @synthesize resizingBehavior=_resizingBehavior;
 @property(retain, nonatomic) NSBitmapImageRep *bitmap; // @synthesize bitmap=_bitmap;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)accessibilityHelp;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityChildren;

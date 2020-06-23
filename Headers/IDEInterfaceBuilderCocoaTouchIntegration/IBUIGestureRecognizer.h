@@ -24,13 +24,13 @@
 + (void)registerMarshallingRecordHandlers;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property unsigned long long allowedPressTypes; // @synthesize allowedPressTypes=_allowedPressTypes;
 @property BOOL delaysTouchesEnded; // @synthesize delaysTouchesEnded=_delaysTouchesEnded;
 @property BOOL delaysTouchesBegan; // @synthesize delaysTouchesBegan=_delaysTouchesBegan;
 @property BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTargetRuntime:(id)arg1;

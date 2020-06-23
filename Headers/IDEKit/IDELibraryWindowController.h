@@ -42,8 +42,8 @@
 + (id)lastSelectedLibraryExtensionIDByEditorID;
 + (id)sharedInstance;
 + (void)initialize;
-@property(readonly) DVTLibraryController *displayedLibraryController; // @synthesize displayedLibraryController=_displayedLibraryController;
 - (void).cxx_destruct;
+@property(readonly) DVTLibraryController *displayedLibraryController; // @synthesize displayedLibraryController=_displayedLibraryController;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)selectNextTab:(id)arg1;
 - (void)selectPreviousTab:(id)arg1;
@@ -63,6 +63,7 @@
 - (void)updateBannerLayout;
 - (void)libraryControllerDidCancel:(id)arg1;
 - (BOOL)libraryControllerShouldSlideBackFailedDrags:(id)arg1;
+- (id)searchFieldIcon;
 - (void)toggleAssetDisplayStyle:(id)arg1;
 - (void)setShowingDetails:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)toggleDetailVisibility:(id)arg1;

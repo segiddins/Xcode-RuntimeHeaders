@@ -15,8 +15,8 @@
     NSArray *_navigableItem_childRepresentedObjects;
 }
 
-@property(retain, nonatomic) NSArray *navigableItem_childRepresentedObjects; // @synthesize navigableItem_childRepresentedObjects=_navigableItem_childRepresentedObjects;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *navigableItem_childRepresentedObjects; // @synthesize navigableItem_childRepresentedObjects=_navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 
 // Remaining properties

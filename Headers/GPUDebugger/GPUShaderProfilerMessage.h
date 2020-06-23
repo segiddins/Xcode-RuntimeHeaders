@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSString *_deviceCapturedOSVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *deviceCapturedOSVersion; // @synthesize deviceCapturedOSVersion=_deviceCapturedOSVersion;
 @property(copy) NSString *hostXcodeVersion; // @synthesize hostXcodeVersion=_hostXcodeVersion;
 @property(copy) NSString *gpuVendor; // @synthesize gpuVendor=_gpuVendor;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSNumber *shaderCount; // @synthesize shaderCount=_shaderCount;
 @property(copy) NSNumber *psoCount; // @synthesize psoCount=_psoCount;
 @property(copy) NSNumber *success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

@@ -15,8 +15,8 @@
 }
 
 + (id)libraryForFileReference:(id)arg1;
-@property(readonly) Xcode3FileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (void).cxx_destruct;
+@property(readonly) Xcode3FileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (void)_setDisambiguationString:(id)arg1;
 - (void)_computeDisambiguationString;
 - (id)disambiguationString;

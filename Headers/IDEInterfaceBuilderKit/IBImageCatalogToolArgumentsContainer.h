@@ -44,6 +44,7 @@
     NSDictionary *_assetPackOutputSpecifications;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *assetPackOutputSpecifications; // @synthesize assetPackOutputSpecifications=_assetPackOutputSpecifications;
 @property(retain, nonatomic) NSMutableDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
 @property(copy) NSString *productType; // @synthesize productType=_productType;
@@ -76,7 +77,6 @@
 @property BOOL printContents; // @synthesize printContents=_printContents;
 @property BOOL includeDebugOutput; // @synthesize includeDebugOutput=_includeDebugOutput;
 @property BOOL printVersion; // @synthesize printVersion=_printVersion;
-- (void).cxx_destruct;
 - (BOOL)supportsMultipleInputDocuments;
 - (id)objectOptionsThatRequireInputDocuments;
 - (id)booleanOptionsThatRequireInputDocuments;

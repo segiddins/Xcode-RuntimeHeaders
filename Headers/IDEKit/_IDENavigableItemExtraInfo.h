@@ -16,11 +16,11 @@
     NSMapTable *_navigableItemsByRepresentedObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMapTable *navigableItemsByRepresentedObject; // @synthesize navigableItemsByRepresentedObject=_navigableItemsByRepresentedObject;
 @property(retain) Class representedObjectClass; // @synthesize representedObjectClass=_representedObjectClass;
 @property(copy) NSString *childItemsKeyPath; // @synthesize childItemsKeyPath=_childItemsKeyPath;
 @property(retain) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

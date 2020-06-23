@@ -8,17 +8,18 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSArray, NSMutableArray, NSString;
+@class IBColor, NSArray, NSMutableArray, NSString;
 
 @interface IBUISegmentedControl : IBUIControl <IBDocumentArchiving>
 {
     NSMutableArray *_segmentConfigurations;
     BOOL _apportionsSegmentWidthsByContent;
     BOOL _momentary;
+    BOOL _shouldSuppressCompilingSelectedSegmentTintColor;
     BOOL _springLoaded;
     int _segmentControlStyle;
     long long _selectedSegmentIndex;
-    IBUIColor *_selectedSegmentTintColor;
+    IBColor *_selectedSegmentTintColor;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -36,13 +37,14 @@
 + (id)keyPathsForValuesAffectingIbInspectedSegmentValue;
 + (id)keyPathsForValuesAffectingIbInspectedSegmentControlStyle;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
-@property(copy, nonatomic) IBUIColor *selectedSegmentTintColor; // @synthesize selectedSegmentTintColor=_selectedSegmentTintColor;
+@property(nonatomic) BOOL shouldSuppressCompilingSelectedSegmentTintColor; // @synthesize shouldSuppressCompilingSelectedSegmentTintColor=_shouldSuppressCompilingSelectedSegmentTintColor;
+@property(copy, nonatomic) IBColor *selectedSegmentTintColor; // @synthesize selectedSegmentTintColor=_selectedSegmentTintColor;
 @property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
 @property(nonatomic) BOOL momentary; // @synthesize momentary=_momentary;
 @property(nonatomic) int segmentControlStyle; // @synthesize segmentControlStyle=_segmentControlStyle;
 @property(nonatomic) BOOL apportionsSegmentWidthsByContent; // @synthesize apportionsSegmentWidthsByContent=_apportionsSegmentWidthsByContent;
-- (void).cxx_destruct;
 - (void)willChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 @property(copy) NSArray *segmentImages;
 @property(copy) NSArray *segmentContentOffsetsAsStrings;
@@ -95,8 +97,11 @@
 - (id)ibExternalInspectedSegment;
 - (void)setIbInspectedSegmentControlStyle:(int)arg1;
 - (int)ibInspectedSegmentControlStyle;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
+- (id)ibCompiledKeyPathForDesignTimeConfigurableKeyPath:(id)arg1;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIToolbar:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;

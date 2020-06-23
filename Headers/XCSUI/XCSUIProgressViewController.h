@@ -33,6 +33,7 @@
     NSStackView *_upcomingStackView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSStackView *upcomingStackView; // @synthesize upcomingStackView=_upcomingStackView;
 @property __weak NSTextField *additionalIntegrationsLabel; // @synthesize additionalIntegrationsLabel=_additionalIntegrationsLabel;
 @property(retain) NSView *upcomingFooterView; // @synthesize upcomingFooterView=_upcomingFooterView;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(retain, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
 @property(retain, nonatomic) NSString *headlineText; // @synthesize headlineText=_headlineText;
-- (void).cxx_destruct;
 - (void)shareScreen:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)accessibilityLabel;

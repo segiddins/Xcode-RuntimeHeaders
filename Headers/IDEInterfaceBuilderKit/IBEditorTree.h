@@ -17,10 +17,10 @@
     IBEditor *_activeEditor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBEditor *activeEditor; // @synthesize activeEditor=_activeEditor;
 @property(readonly) IBEditorCanvasFrameController *baseFrameController; // @synthesize baseFrameController=_baseFrameController;
 @property id <IBEditorTreeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)closeAllEditorsForEditorFrameController:(id)arg1;
 - (void)closeAllEditors;
 - (void)_closeOneEditor:(id)arg1;

@@ -14,9 +14,9 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property BOOL enableScrolling; // @synthesize enableScrolling=_enableScrolling;
-- (void).cxx_destruct;
 - (id)enclosingScrollView;
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 

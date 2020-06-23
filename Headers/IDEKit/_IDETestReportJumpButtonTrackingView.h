@@ -14,8 +14,8 @@
     NSButton *_jumpButton;
 }
 
-@property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 - (void).cxx_destruct;
+@property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

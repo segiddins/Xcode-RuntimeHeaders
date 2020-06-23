@@ -14,8 +14,8 @@
 }
 
 + (id)specifierWithToolPath:(id)arg1;
-- (id)toolPath;
 - (void).cxx_destruct;
+- (id)toolPath;
 - (id)description;
 - (BOOL)isTool;
 

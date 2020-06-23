@@ -19,11 +19,11 @@
 + (unsigned long long)_deviceFamilyWithDeviceIdentifier:(id)arg1;
 + (id)configurationWithDeviceIdentifier:(id)arg1 platform:(id)arg2 appearance:(unsigned long long)arg3;
 + (id)configurationWithDebugSession:(id)arg1 appearance:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) unsigned long long deviceFamily; // @synthesize deviceFamily=_deviceFamily;
 @property(copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (id)identifier;
 - (id)initWithDeviceIdentifier:(id)arg1 platform:(id)arg2 appearance:(unsigned long long)arg3;
 

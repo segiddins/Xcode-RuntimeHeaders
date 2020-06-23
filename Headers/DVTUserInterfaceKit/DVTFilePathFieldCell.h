@@ -26,18 +26,18 @@
 }
 
 + (id)linkButtonImage;
+- (void).cxx_destruct;
 @property unsigned long long linkButtonBehavior; // @synthesize linkButtonBehavior=_linkButtonBehavior;
 @property BOOL showChooserButton; // @synthesize showChooserButton=_showChooserButton;
 @property BOOL chooseDir; // @synthesize chooseDir=_chooseDir;
 @property BOOL chooseFile; // @synthesize chooseFile=_chooseFile;
 @property BOOL showLinkButton; // @synthesize showLinkButton=_showLinkButton;
 @property BOOL alwaysShowChooser; // @synthesize alwaysShowChooser=_alwaysShowChooser;
-@property(retain) id delegate; // @synthesize delegate=_delegate;
+@property __weak id delegate; // @synthesize delegate=_delegate;
 @property(copy) NSArray *absoluteLinkPaths; // @synthesize absoluteLinkPaths=_absoluteLinkPaths;
 @property(copy) NSString *choosePathMessage; // @synthesize choosePathMessage=_choosePathMessage;
 @property(copy) NSString *choosePathDefaultFilePath; // @synthesize choosePathDefaultFilePath=_choosePathDefaultFilePath;
 @property unsigned long long chooseBehavior; // @synthesize chooseBehavior=_chooseBehavior;
-- (void).cxx_destruct;
 - (BOOL)eventIsInSubCellArea:(id)arg1 ofView:(id)arg2;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;

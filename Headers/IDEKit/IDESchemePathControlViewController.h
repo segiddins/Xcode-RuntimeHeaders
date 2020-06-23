@@ -24,10 +24,10 @@
 
 + (id)keyPathsForValuesAffectingSelectedNavigable;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain, nonatomic) IDESchemeManagerNavigable *rootNavigable; // @synthesize rootNavigable=_rootNavigable;
 @property(readonly, nonatomic) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
-- (void).cxx_destruct;
 - (id)pathCell:(id)arg1 accessibilityDescriptionForPathComponentCell:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)didUpdateRunDestinationMenu:(id)arg1;
 - (void)didUpdateSchemeMenu:(id)arg1;

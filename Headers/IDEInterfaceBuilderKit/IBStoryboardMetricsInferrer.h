@@ -14,11 +14,11 @@
     NSOrderedSet *_tieBreakersFromOldToNew;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *tieBreakersFromOldToNew; // @synthesize tieBreakersFromOldToNew=_tieBreakersFromOldToNew;
 @property(copy, nonatomic) NSOrderedSet *selectedOrPreviouslySelectedMembersFromOldToFresh; // @synthesize selectedOrPreviouslySelectedMembersFromOldToFresh=_selectedOrPreviouslySelectedMembersFromOldToFresh;
-- (void).cxx_destruct;
 - (void)rebuildInferredMetrics;
-- (void)recursivelyApplyMetricsInheritenceToController:(struct NSObject *)arg1 visited:(id)arg2 inheritanceSegues:(id)arg3;
+- (void)recursivelyApplyMetricsInheritenceToController:(id)arg1 visited:(id)arg2 inheritanceSegues:(id)arg3;
 - (id)globallyInheritedSimulatedMetrics;
 - (void)didRemoveSegue:(id)arg1;
 - (void)didAddSegue:(id)arg1;

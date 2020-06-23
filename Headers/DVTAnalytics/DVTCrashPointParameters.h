@@ -15,9 +15,9 @@
     NSSet *_deviceTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *deviceTypes; // @synthesize deviceTypes=_deviceTypes;
 @property(readonly) NSSet *osVersions; // @synthesize osVersions=_osVersions;
-- (void).cxx_destruct;
 - (id)description;
 - (id)filteredParametersUsingFilter:(id)arg1;
 @property(readonly) NSArray *availableFilters; // @synthesize availableFilters=_availableFilters;

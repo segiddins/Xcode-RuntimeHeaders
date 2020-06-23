@@ -20,8 +20,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) BOOL showReadOnlyIndicator; // @synthesize showReadOnlyIndicator=_showReadOnlyIndicator;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showReadOnlyIndicator; // @synthesize showReadOnlyIndicator=_showReadOnlyIndicator;
 - (void)_updateReadOnlyIndicator;
 - (void)primitiveInvalidate;
 - (id)readOnlyIndicatorView;

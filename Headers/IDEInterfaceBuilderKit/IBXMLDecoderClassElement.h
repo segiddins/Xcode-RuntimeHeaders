@@ -15,8 +15,8 @@
 }
 
 + (id)elementName;
-@property(readonly) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+@property(readonly) NSString *className; // @synthesize className=_className;
 @property(readonly) IBXMLDecoderFallbacksElement *fallbacksElement;
 - (void)enumerateElements:(CDUnknownBlockType)arg1;
 - (BOOL)acceptFallbacksElement:(id)arg1 error:(id *)arg2;

@@ -13,8 +13,8 @@
     IDEBarGraph *_graphView;
 }
 
-@property(retain, nonatomic) IDEBarGraph *graphView; // @synthesize graphView=_graphView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEBarGraph *graphView; // @synthesize graphView=_graphView;
 - (void)loadView;
 - (id)init;
 

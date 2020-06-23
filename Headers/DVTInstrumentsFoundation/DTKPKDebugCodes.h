@@ -18,8 +18,8 @@
 + (id)codesFromURL:(id)arg1 error:(id *)arg2;
 + (id)localKDebugCodes:(id *)arg1;
 + (void)initialize;
-@property(readonly, retain, nonatomic) NSSet *allKDebugCodes; // @synthesize allKDebugCodes=_allKDebugCodes;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSSet *allKDebugCodes; // @synthesize allKDebugCodes=_allKDebugCodes;
 - (id)kdebugCodeByValue:(unsigned int)arg1;
 - (id)kdebugCodeWithNameForCode:(CDUnion_1678db3a)arg1;
 - (id)kdebugCodeWithNameForValue:(unsigned int)arg1;

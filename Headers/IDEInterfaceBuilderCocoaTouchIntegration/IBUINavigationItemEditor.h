@@ -16,10 +16,10 @@
 }
 
 + (Class)ibDropTargetResolverClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldDrawBarButtonItemInsertionIndicator; // @synthesize shouldDrawBarButtonItemInsertionIndicator=_shouldDrawBarButtonItemInsertionIndicator;
 @property(nonatomic) struct CGRect dragTargetViewInsertionFrame; // @synthesize dragTargetViewInsertionFrame=_dragTargetViewInsertionFrame;
 @property(copy, nonatomic) NSString *lastDropTargetRelation; // @synthesize lastDropTargetRelation=_lastDropTargetRelation;
-- (void).cxx_destruct;
 - (id)editableStringAreas;
 - (BOOL)interceptEvent:(id)arg1;
 - (void)_dragObjects:(id)arg1 withEvent:(id)arg2 lastMouseDown:(id)arg3 draggedImageState:(id)arg4 effectiveHitObject:(id)arg5 originalRelation:(id)arg6 originalRelationValue:(id)arg7;

@@ -23,12 +23,12 @@
     NSMutableDictionary *_nodesByZPosition;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *nodesByZPosition; // @synthesize nodesByZPosition=_nodesByZPosition;
 @property int explosionStyle; // @synthesize explosionStyle=_explosionStyle;
 @property int reason; // @synthesize reason=_reason;
 @property __weak DBGSceneNode *rootViewNode; // @synthesize rootViewNode=_rootViewNode;
 @property(readonly) __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
-- (void).cxx_destruct;
 - (void)performRecursivelyOnSceneNodesWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)updateRenderingOrderRecursively:(BOOL)arg1 withRenderingOrderRangeStartingAt:(unsigned long long)arg2;
 - (void)updateTrueSpacingBoxRenderingOrder:(BOOL)arg1;

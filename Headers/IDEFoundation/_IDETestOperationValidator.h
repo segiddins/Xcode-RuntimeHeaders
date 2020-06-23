@@ -16,9 +16,9 @@
 
 + (id)errorDescriptionForEvent:(int)arg1;
 + (id)validatorWithType:(int)arg1 andIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)validateEvent:(int)arg1;
 

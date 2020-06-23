@@ -30,6 +30,7 @@
     NSProgressIndicator *_serverRefreshingSpinner;
 }
 
+- (void).cxx_destruct;
 @property __weak NSProgressIndicator *serverRefreshingSpinner; // @synthesize serverRefreshingSpinner=_serverRefreshingSpinner;
 @property __weak NSButton *serverWarningButton; // @synthesize serverWarningButton=_serverWarningButton;
 @property(retain) NSView *controlsView; // @synthesize controlsView=_controlsView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) XCSUIAccountReachabilityToImageTransformer *imageTransformer; // @synthesize imageTransformer=_imageTransformer;
 @property(retain, nonatomic) NSArray *servers; // @synthesize servers=_servers;
 @property(retain) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (void)setSelectedServer:(id)arg1;
 - (void)selectServiceInPopup:(id)arg1;
 - (void)addNewServerAction:(id)arg1;

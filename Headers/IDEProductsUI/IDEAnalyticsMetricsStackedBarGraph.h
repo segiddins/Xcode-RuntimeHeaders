@@ -14,9 +14,9 @@
     NSAttributedString *_xAxisLabelString;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSAttributedString *xAxisLabelString; // @synthesize xAxisLabelString=_xAxisLabelString;
 @property BOOL hideBars; // @synthesize hideBars=_hideBars;
-- (void).cxx_destruct;
 - (id)attributesForGraph;
 - (Class)graphClass;
 

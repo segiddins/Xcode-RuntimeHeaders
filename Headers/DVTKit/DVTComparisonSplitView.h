@@ -51,6 +51,7 @@
 + (id)_comparisonSplitterImage:(id)arg1 forTheme:(id)arg2 inForeground:(BOOL)arg3;
 + (double)defaultSplitterWidth;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL showsPrettySwitch; // @synthesize showsPrettySwitch=_showsPrettySwitch;
 @property __weak id <DVTComparisonSplitViewDelegate> comparisonDelegate; // @synthesize comparisonDelegate=_comparisonDelegate;
 @property(retain) NSMenu *diffMenu; // @synthesize diffMenu=_diffMenu;
@@ -59,7 +60,6 @@
 @property BOOL isSplitterMovable; // @synthesize isSplitterMovable=_isSplitterMovable;
 @property(retain) NSArray *diffDescriptors; // @synthesize diffDescriptors=_diffDescriptors;
 @property BOOL depressed; // @synthesize depressed=_depressed;
-- (void).cxx_destruct;
 - (void)viewFrameDidChange:(id)arg1;
 - (void)layoutManagerDidCompleteLayoutForTextContainer:(id)arg1;
 - (void)_validateCurrentSelectedIndex;

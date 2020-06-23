@@ -23,6 +23,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL neverBold; // @synthesize neverBold=_neverBold;
 @property BOOL resolved; // @synthesize resolved=_resolved;
 @property BOOL showOnlyDefiningValue; // @synthesize showOnlyDefiningValue=_showOnlyDefiningValue;
@@ -31,7 +32,6 @@
 @property BOOL editable; // @synthesize editable=_editable;
 @property(retain) NSTableColumn *tableColumn; // @synthesize tableColumn=_tableColumn;
 @property(retain) Xcode3BuildSettingsEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (id)allPropertyNamesInAllDictionaries;
 - (id)userDefinedNames;
 - (id)customTitleForName:(id)arg1;

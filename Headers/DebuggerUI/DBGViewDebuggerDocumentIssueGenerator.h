@@ -14,9 +14,9 @@
     DBGViewDebuggerDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *allIssues; // @synthesize allIssues=_allIssues;
 @property(readonly) __weak DBGViewDebuggerDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)_issuesChangedForContainer:(id)arg1;
 - (void)_addIssueForAmbiguousView:(id)arg1;
 - (BOOL)_viewRepresentsAWindow:(id)arg1;

@@ -14,9 +14,9 @@
     unsigned long long _arrowEdge;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long arrowEdge; // @synthesize arrowEdge=_arrowEdge;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)bubbleShadow;
 - (id)bubblePath;

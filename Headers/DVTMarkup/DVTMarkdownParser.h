@@ -21,8 +21,8 @@
 + (id)generateHTMLStringFromMarkdown:(id)arg1 variant:(unsigned long long)arg2 usingOptions:(unsigned long long)arg3;
 + (id)generateHTMLStringFromMarkdown:(id)arg1 usingOptions:(unsigned long long)arg2;
 + (id)generateHTMLStringFromMarkdown:(id)arg1;
-@property(retain) NSError *parseError; // @synthesize parseError=_parseError;
 - (void).cxx_destruct;
+@property(retain) NSError *parseError; // @synthesize parseError=_parseError;
 - (void)enumerateSourceExtentsWithNodes:(CDUnknownBlockType)arg1;
 - (void)enumerateSourceExtents:(CDUnknownBlockType)arg1;
 - (void)abortWithError:(id)arg1;

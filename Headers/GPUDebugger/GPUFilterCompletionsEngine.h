@@ -15,16 +15,16 @@
     NSObject<OS_dispatch_queue> *_indexingQueue;
     BOOL _isIndexing;
     GPUFilterTokenHelper *_helper;
-    struct NSMutableDictionary *_completionsIndex;
+    NSMutableDictionary *_completionsIndex;
     NSMutableDictionary *_filterItemToFilterableObject;
     NSMutableDictionary *_filterTypeToFilterStrings;
     unsigned long long _maxCompletionsCount;
     GPUFilterTokenPredicate *_currentPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUFilterTokenPredicate *currentPredicate; // @synthesize currentPredicate=_currentPredicate;
 @property(nonatomic) unsigned long long maxCompletionsCount; // @synthesize maxCompletionsCount=_maxCompletionsCount;
-- (void).cxx_destruct;
 - (id)completionsForEditingString:(id)arg1;
 - (BOOL)_evaluateForFilterItem:(id)arg1;
 - (id)_scoreWithFilterString:(id)arg1 andNumberOfOccurance:(unsigned long long)arg2 inFilterStrings:(id)arg3;

@@ -12,32 +12,37 @@
 
 @interface DBGViewWindow : DBGViewSurface <DBGSelectableViewObject>
 {
-    NSMapTable *_viewAddressesToViewSurfaces;
     BOOL _visible;
     DBGLayoutConstraintSet *_layoutConstraintSet;
     unsigned long long _orientation;
     DBGViewWindow *_attachedSheet;
     DBGScreenObject *_screen;
     DBGWindowControllerObject *_owningWindowController;
+    NSMapTable *_viewAddressesToViewSurfaces;
+    NSMapTable *_viewAddressesToLayoutGuides;
     double _screenBackingScale;
     DBGApplicationObject *_application;
     NSString *_attachedSheetIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *attachedSheetIdentifier; // @synthesize attachedSheetIdentifier=_attachedSheetIdentifier;
 @property(nonatomic) __weak DBGApplicationObject *application; // @synthesize application=_application;
 @property(nonatomic) double screenBackingScale; // @synthesize screenBackingScale=_screenBackingScale;
+@property(retain) NSMapTable *viewAddressesToLayoutGuides; // @synthesize viewAddressesToLayoutGuides=_viewAddressesToLayoutGuides;
+@property(retain) NSMapTable *viewAddressesToViewSurfaces; // @synthesize viewAddressesToViewSurfaces=_viewAddressesToViewSurfaces;
 @property(retain) DBGWindowControllerObject *owningWindowController; // @synthesize owningWindowController=_owningWindowController;
 @property(retain) DBGScreenObject *screen; // @synthesize screen=_screen;
 @property(retain) DBGViewWindow *attachedSheet; // @synthesize attachedSheet=_attachedSheet;
 @property(getter=isVisible) BOOL visible; // @synthesize visible=_visible;
 @property unsigned long long orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)forwardFocusToViewObject;
 - (id)selectableViewObjectForIdentifier:(id)arg1;
 - (void)updateSelectableViewObjectsCache;
+- (void)updateObjectIndexes;
 @property(retain) DBGLayoutConstraintSet *layoutConstraintSet; // @synthesize layoutConstraintSet=_layoutConstraintSet;
+- (id)layoutGuideForAddress:(id)arg1;
 - (id)constraintForAddress:(id)arg1;
 - (id)childViewSurfaceForAddress:(id)arg1;
 - (id)window;

@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, IBUIRefreshControl, IBUITableViewLayoutInfo, IBUITableViewSection, IBUIView, NSArray, NSDictionary, NSFont, NSMutableDictionary, NSShadow, NSString, NSValue;
+@class IBColor, IBUIRefreshControl, IBUITableViewLayoutInfo, IBUITableViewSection, IBUIView, NSArray, NSDictionary, NSFont, NSMutableDictionary, NSShadow, NSString, NSValue;
 
 @interface IBUITableView : IBUIScrollView <IBDocumentArchiving>
 {
@@ -24,7 +24,7 @@
     BOOL _ibInsetsContentViewsToSafeArea;
     int _style;
     int _separatorStyle;
-    IBUIColor *_separatorColor;
+    IBColor *_separatorColor;
     long long _sectionIndexMinimumDisplayRowCount;
     double _rowHeight;
     double _ibShadowedEstimatedRowHeight;
@@ -36,9 +36,9 @@
     IBUIView *_tableHeaderView;
     IBUIView *_tableFooterView;
     IBUIRefreshControl *_refreshControl;
-    IBUIColor *_sectionIndexColor;
-    IBUIColor *_sectionIndexBackgroundColor;
-    IBUIColor *_sectionIndexTrackingBackgroundColor;
+    IBColor *_sectionIndexColor;
+    IBColor *_sectionIndexBackgroundColor;
+    IBColor *_sectionIndexTrackingBackgroundColor;
     NSValue *_separatorInset;
     long long _separatorInsetReference;
     long long _dataMode;
@@ -66,14 +66,15 @@
 + (id)keyPathsForValuesAffectingIbInspectedEstimatedRowHeight;
 + (id)keyPathsForValuesAffectingIbInspectedRowHeight;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *compiledPrototypeNIBs; // @synthesize compiledPrototypeNIBs=_compiledPrototypeNIBs;
 @property(retain, nonatomic) IBUITableViewLayoutInfo *cachedSectionLayoutInfo; // @synthesize cachedSectionLayoutInfo=_cachedSectionLayoutInfo;
 @property(nonatomic) long long dataMode; // @synthesize dataMode=_dataMode;
 @property(nonatomic) long long separatorInsetReference; // @synthesize separatorInsetReference=_separatorInsetReference;
 @property(copy, nonatomic) NSValue *separatorInset; // @synthesize separatorInset=_separatorInset;
-@property(copy, nonatomic) IBUIColor *sectionIndexTrackingBackgroundColor; // @synthesize sectionIndexTrackingBackgroundColor=_sectionIndexTrackingBackgroundColor;
-@property(copy, nonatomic) IBUIColor *sectionIndexBackgroundColor; // @synthesize sectionIndexBackgroundColor=_sectionIndexBackgroundColor;
-@property(copy, nonatomic) IBUIColor *sectionIndexColor; // @synthesize sectionIndexColor=_sectionIndexColor;
+@property(copy, nonatomic) IBColor *sectionIndexTrackingBackgroundColor; // @synthesize sectionIndexTrackingBackgroundColor=_sectionIndexTrackingBackgroundColor;
+@property(copy, nonatomic) IBColor *sectionIndexBackgroundColor; // @synthesize sectionIndexBackgroundColor=_sectionIndexBackgroundColor;
+@property(copy, nonatomic) IBColor *sectionIndexColor; // @synthesize sectionIndexColor=_sectionIndexColor;
 @property(retain, nonatomic) IBUIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(retain, nonatomic) IBUIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) IBUIView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;
@@ -91,11 +92,10 @@
 @property BOOL allowsSelectionDuringEditing; // @synthesize allowsSelectionDuringEditing=_allowsSelectionDuringEditing;
 @property BOOL allowsSelection; // @synthesize allowsSelection=_allowsSelection;
 @property(nonatomic) long long sectionIndexMinimumDisplayRowCount; // @synthesize sectionIndexMinimumDisplayRowCount=_sectionIndexMinimumDisplayRowCount;
-@property(copy, nonatomic) IBUIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
+@property(copy, nonatomic) IBColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(nonatomic) int separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(readonly) IBUITableViewSection *prototypeSection; // @synthesize prototypeSection=_prototypeSection;
-- (void).cxx_destruct;
 - (id)marshalledCellSummary;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (id)subtitleString;
@@ -161,6 +161,7 @@
 - (void)dealloc;
 - (id)ibDefaultiOSBackgroundColor;
 - (id)ibPreviewingRegistrantSourceViewInDocument:(id)arg1;
+- (BOOL)ibAllowsAutolayoutStatusInvalidationOnChanges;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (long long)ibFrameDecisionStrategyDuringFrameDecisionForChild:(id)arg1 hasCleanStatus:(BOOL)arg2;
 - (BOOL)ibIsChildASubarbitrationUnitRoot:(id)arg1;
@@ -232,7 +233,7 @@
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
 - (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (Class)ibEditorClass;
 - (id)ibLocalLocalizableGeometryAttributeKeyPaths;

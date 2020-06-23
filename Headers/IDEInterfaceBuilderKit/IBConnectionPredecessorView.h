@@ -20,10 +20,10 @@
 }
 
 + (id)defaultTitleFieldWithInterfaceStyle:(id)arg1;
+- (void).cxx_destruct;
 @property __weak id <IBConnectionPredecessorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)disconnect:(id)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

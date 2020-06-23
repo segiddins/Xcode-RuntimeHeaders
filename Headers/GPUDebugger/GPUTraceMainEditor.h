@@ -41,11 +41,11 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUSharedTabUIState *sharedUIStateObj; // @synthesize sharedUIStateObj=_sharedUIStateObj;
 @property(readonly, nonatomic) GPUTraceSubEditor *subEditor; // @synthesize subEditor=_subEditor;
 @property(retain) GPUTraceDisplayableItem *currentDisplayableItem; // @synthesize currentDisplayableItem=_currentDisplayableItem;
 @property(retain) GPUTraceOutlineItem *currentSelectedItem; // @synthesize currentSelectedItem=_currentSelectedItem;
-- (void).cxx_destruct;
 - (id)appendScopeBarWithMessage:(id)arg1 action:(CDUnknownBlockType)arg2 icon:(id)arg3;
 - (id)appendScopeBarWithMessage:(id)arg1;
 - (void)appendProfilerScopeBarIfNeeded;
@@ -70,7 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)_loadSubEditorWithIdentifier:(id)arg1 item:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)_preloadSubEditorWithIdentifier:(id)arg1 item:(id)arg2 userInfo:(id)arg3;
 - (void)_updateScrubberForDisplayableItem:(id)arg1;
-- (void)_updateEditorLocationToOutlineItem:(id)arg1 userInfo:(struct NSDictionary *)arg2 takeFocus:(BOOL)arg3;
+- (void)_updateEditorLocationToOutlineItem:(id)arg1 userInfo:(id)arg2 takeFocus:(BOOL)arg3;
 - (void)_prepareOutlineItemForEditor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_requestUpdateToAPIItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_replayToTraceAPIItem:(id)arg1;

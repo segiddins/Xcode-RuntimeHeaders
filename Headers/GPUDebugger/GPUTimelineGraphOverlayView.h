@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _inspectionPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showMarkerBoundary; // @synthesize showMarkerBoundary=_showMarkerBoundary;
 @property(nonatomic) BOOL showMarkers; // @synthesize showMarkers=_showMarkers;
 @property(nonatomic) BOOL showInspection; // @synthesize showInspection=_showInspection;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint inspectionPoint; // @synthesize inspectionPoint=_inspectionPoint;
 @property(nonatomic) __weak id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
 @property(nonatomic) __weak GPUTimelineGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
 - (void)mouseMoved:(id)arg1;
 - (void)_updateMouseTrackingArea;

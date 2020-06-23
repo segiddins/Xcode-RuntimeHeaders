@@ -26,6 +26,8 @@
     struct __GLIFunctionDispatchRec *_disp;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct ContextInfo *currentContextInfo; // @synthesize currentContextInfo=_currentContextInfo;
 @property(nonatomic) BOOL recreateContexts; // @synthesize recreateContexts=_recreateContexts;
 @property(readonly, nonatomic) struct __GLIFunctionDispatchRec *gliDispatch; // @synthesize gliDispatch=_disp;
@@ -33,8 +35,6 @@
 @property(readonly, retain, nonatomic) NSMutableDictionary *contextDictionary; // @synthesize contextDictionary=_ctx_dict;
 @property(readonly, nonatomic) struct _CGLContextObject *context; // @synthesize context=_ctx;
 @property(readonly, retain, nonatomic) DYGLCaptureSessionInfo *captureSessionInfo; // @synthesize captureSessionInfo=_captureSessionInfo;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)executePlatformFunction;
 - (void)executeGraphicsFunction;
 - (void)_dispatchGLFunction;

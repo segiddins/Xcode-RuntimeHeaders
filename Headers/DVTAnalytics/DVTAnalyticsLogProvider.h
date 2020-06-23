@@ -27,11 +27,11 @@
 + (Class)analyticsLogClass;
 + (id)analyticsLogProviderWithCacheDirectory:(id)arg1 analyticsLogIdentifiers:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *analyticsLogsToDelete; // @synthesize analyticsLogsToDelete=_analyticsLogsToDelete;
 @property(retain, nonatomic) NSMutableDictionary *analyticsLogsInMemory; // @synthesize analyticsLogsInMemory=_analyticsLogsInMemory;
 @property(readonly) NSSet *analyticsLogIdentifiersSymbolicating; // @synthesize analyticsLogIdentifiersSymbolicating=_analyticsLogIdentifiersSymbolicating;
 @property(readonly, nonatomic) DVTFilePath *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)writeToFilePath:(id)arg1 error:(id *)arg2;
 - (id)analyticsLogRecordAtIndex:(unsigned long long)arg1;

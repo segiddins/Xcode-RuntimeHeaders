@@ -22,6 +22,7 @@
     unsigned long long _issueCountDuplicates;
 }
 
+- (void).cxx_destruct;
 @property BOOL noPositionAttribute; // @synthesize noPositionAttribute=_noPositionAttribute;
 @property unsigned long long issueCountDuplicates; // @synthesize issueCountDuplicates=_issueCountDuplicates;
 @property unsigned long long issueCountIndefinites; // @synthesize issueCountIndefinites=_issueCountIndefinites;
@@ -32,7 +33,6 @@
 @property unsigned long long elementCount; // @synthesize elementCount=_elementCount;
 @property unsigned long long instanceCount; // @synthesize instanceCount=_instanceCount;
 @property(copy) NSString *geometryType; // @synthesize geometryType=_geometryType;
-- (void).cxx_destruct;
 - (void)log;
 
 @end

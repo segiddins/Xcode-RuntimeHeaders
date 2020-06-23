@@ -15,8 +15,8 @@
     DVTReplacementView *_replacementView;
 }
 
-@property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void).cxx_destruct;
+@property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void)showSymbolInDebugNavigator:(id)arg1;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (void)installCrashReportViewController;

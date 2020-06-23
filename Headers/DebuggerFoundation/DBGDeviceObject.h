@@ -23,6 +23,7 @@
     NSString *_systemVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(copy) NSString *systemName; // @synthesize systemName=_systemName;
 @property long long orientation; // @synthesize orientation=_orientation;
@@ -34,7 +35,6 @@
 @property BOOL generatesDeviceOrientationNotifications; // @synthesize generatesDeviceOrientationNotifications=_generatesDeviceOrientationNotifications;
 @property(copy) NSString *deviceDebugDescription; // @synthesize deviceDebugDescription=_deviceDebugDescription;
 @property float batteryLevel; // @synthesize batteryLevel=_batteryLevel;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_updatePropertiesWithSnapshotNode:(id)arg1 forRequest:(id)arg2;
 

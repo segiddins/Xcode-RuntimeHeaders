@@ -14,8 +14,8 @@
     NSDocument *_document;
 }
 
-@property(readonly, nonatomic) __weak NSDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSDocument *document; // @synthesize document=_document;
 - (void)registerWithoutApply;
 - (id)reverseOperation;
 - (void)revertWithObject:(id)arg1;

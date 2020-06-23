@@ -17,9 +17,9 @@
     unsigned long long _fileEncoding;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long fileEncoding; // @synthesize fileEncoding=_fileEncoding;
 @property(readonly, copy) DVTFilePath *sourceFilePath; // @synthesize sourceFilePath=_sourceFilePath;
-- (void).cxx_destruct;
 - (BOOL)isEqualToLocalizationSourceFile:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

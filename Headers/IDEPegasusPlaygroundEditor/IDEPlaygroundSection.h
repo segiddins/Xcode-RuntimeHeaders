@@ -20,9 +20,9 @@
 + (id)contentPathsToPreserveOnSave;
 + (id)xmlElementName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IDEEditorDocument<IDEPlaygroundHostingDocument> *playgroundDocument; // @synthesize playgroundDocument=_playgroundDocument;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)enableAllowsReset;
 - (id)stringConstructingFileWrapper:(id)arg1;

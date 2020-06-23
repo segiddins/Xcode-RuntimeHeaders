@@ -16,11 +16,11 @@
     NSDictionary *_context;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *context; // @synthesize context=_context;
 @property(readonly) NSDictionary *referencedObjectsByReferenceIDs; // @synthesize referencedObjectsByReferenceIDs=_referencedObjectsByReferenceIDs;
 @property(readonly) NSString *relationship; // @synthesize relationship=_relationship;
 @property(readonly) id owningObject; // @synthesize owningObject=_owningObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOwningObject:(id)arg1 relationship:(id)arg2 referencedObjectsByReferenceIDs:(id)arg3 context:(id)arg4;
 

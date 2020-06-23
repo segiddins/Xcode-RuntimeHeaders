@@ -16,10 +16,10 @@
 }
 
 + (id)keyPathsForValuesAffectingResolvedButtonToolTip;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resolvedButtonToolTip; // @synthesize resolvedButtonToolTip=_resolvedButtonToolTip;
 @property __weak NSButton *resolvedButton; // @synthesize resolvedButton=_resolvedButton;
 @property(retain) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)viewDidLoad;
 

@@ -13,8 +13,8 @@
     DVTAnalyticsPointChartView *_analyticsPointChartView;
 }
 
-@property __weak DVTAnalyticsPointChartView *analyticsPointChartView; // @synthesize analyticsPointChartView=_analyticsPointChartView;
 - (void).cxx_destruct;
+@property __weak DVTAnalyticsPointChartView *analyticsPointChartView; // @synthesize analyticsPointChartView=_analyticsPointChartView;
 - (void)viewDidLoad;
 @property(readonly) DVTAnalyticsPointAbstractClass *analyticsPoint;
 - (id)initWithInspectable:(id)arg1;

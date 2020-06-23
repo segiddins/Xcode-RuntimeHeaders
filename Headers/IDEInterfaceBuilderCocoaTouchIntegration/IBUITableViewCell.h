@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIImageView, IBUILabel, IBUIStoryboardPreviewingSegueTemplateStorage, IBUITableView, IBUITableViewSection, NSDictionary, NSMutableSet, NSNumber, NSString, NSValue;
+@class IBUIImageView, IBUILabel, IBUIStoryboardPreviewingSegueTemplateStorage, IBUITableView, IBUITableViewSection, NSDictionary, NSImage, NSMutableSet, NSNumber, NSString, NSValue;
 
 @interface IBUITableViewCell : IBUIView <IBDocumentArchiving>
 {
@@ -59,6 +59,7 @@
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIStoryboardPreviewingSegueTemplateStorage *accessoryActionPreviewingSegueTemplateStorage; // @synthesize accessoryActionPreviewingSegueTemplateStorage=_accessoryActionPreviewingSegueTemplateStorage;
 @property __weak IBUITableViewSection *section; // @synthesize section=_section;
 @property(retain, nonatomic) IBUILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
@@ -78,7 +79,6 @@
 @property(nonatomic) BOOL showsReorderControl; // @synthesize showsReorderControl=_showsReorderControl;
 @property(nonatomic) int selectionStyle; // @synthesize selectionStyle=_selectionStyle;
 @property(retain, nonatomic) NSNumber *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)decodeSeparatorInset:(id)arg1;
 - (void)encodeSeparatorInset:(id)arg1;
 - (void)updateSubviewAttributes;
@@ -95,6 +95,7 @@
 - (void)requestCachedImageIfNeeded;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)doesContainingTableViewHandleDrawing;
+@property(readonly, nonatomic) NSImage *imageViewImage;
 - (struct CGRect)imageViewFrame;
 - (struct CGRect)detailTextLabelFrame;
 - (struct CGRect)textLabelFrame;

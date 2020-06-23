@@ -19,12 +19,12 @@
 
 + (id)itemWithEvent:(id)arg1 auditLogWrapper:(id)arg2;
 + (id)itemWithTitle:(id)arg1 date:(id)arg2 errors:(id)arg3 warnings:(id)arg4 infoMessages:(id)arg5 auditLogWrapper:(id)arg6 state:(long long)arg7;
+- (void).cxx_destruct;
 @property(readonly) long long state; // @synthesize state=_state;
 @property(readonly) IDEArchiveStatusLogAuditLogWrapper *auditLogWrapper; // @synthesize auditLogWrapper=_auditLogWrapper;
 @property(readonly) NSArray *children; // @synthesize children=_children;
 @property(readonly) NSDate *date; // @synthesize date=_date;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)revealLog:(id)arg1;
 - (id)description;
 

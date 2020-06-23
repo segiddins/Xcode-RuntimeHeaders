@@ -15,10 +15,10 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, copy) XCSIntegrationIssue *issue; // @synthesize issue=_issue;
 @property(readonly) unsigned long long selectedArea; // @synthesize selectedArea=_selectedArea;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

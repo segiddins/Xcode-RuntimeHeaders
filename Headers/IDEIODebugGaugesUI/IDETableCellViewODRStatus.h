@@ -18,10 +18,10 @@
     long long _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long progress; // @synthesize progress=_progress;
 @property(nonatomic) unsigned long long statusValue; // @synthesize statusValue=_statusValue;
 @property(retain, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
-- (void).cxx_destruct;
 - (BOOL)purgeIsEnabled;
 - (BOOL)progressIsVisible;
 @property(readonly, nonatomic) NSButton *purgeButton;

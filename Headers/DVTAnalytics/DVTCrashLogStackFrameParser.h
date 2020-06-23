@@ -14,9 +14,9 @@
     double _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double priority; // @synthesize priority=_priority;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)parsedStackFrameFromText:(id)arg1;
 - (id)initWithParserIdentifier:(id)arg1 priority:(double)arg2;
 

@@ -22,11 +22,11 @@
 + (id)ipAddressFromAddressData:(id)arg1;
 + (id)ipAddressFromSockaddr:(struct sockaddr *)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
 @property(readonly, copy, nonatomic) NSString *macAddress; // @synthesize macAddress=_macAddress;
 @property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (_Bool)attemptConnectionToAddressAtPort:(int)arg1 timeout:(double)arg2;
 - (id)addressDataWithPort:(int)arg1;
 - (struct sockaddr *)sockaddrWithPort:(int)arg1;

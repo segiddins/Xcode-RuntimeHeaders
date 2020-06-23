@@ -13,9 +13,7 @@
 {
     IBCocoaTouchIdiom *_idiom;
     NSDictionary *_systemNamesToGenericColorsMap;
-    NSDictionary *_darkSystemNamesToGenericColorsMap;
     IBColorList *_colorList;
-    IBColorList *_darkColorList;
     NSArray *_availableFonts;
     NSDictionary *_textStyles;
     NSDictionary *_fontDescriptorTextStyles;
@@ -30,7 +28,6 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
 }
 
-+ (id)targetRuntimeWithSystemColor:(id)arg1 preferringIdiom:(id)arg2;
 + (id)iOS12SystemColorNames;
 + (id)iOS13DocumentArchivingFallbackSystemColorNames;
 + (id)targetRuntimeForIdiom:(id)arg1 andOSVersion:(id)arg2;
@@ -71,8 +68,7 @@
 - (void)invalidateAvailableFonts;
 @property(readonly) NSArray *availableFonts;
 - (id)accessFontDataWithBlock:(CDUnknownBlockType)arg1;
-- (id)colorListWithAppearanceIsDark:(BOOL)arg1;
-@property(readonly) IBColorList *darkColorList;
+- (id)buildColorList;
 @property(readonly) IBColorList *colorList;
 - (BOOL)shouldIncludeColorInColorList:(id)arg1;
 - (id)tableCellBlueTextColor;
@@ -90,19 +86,11 @@
 - (BOOL)isSystemPatternColor:(id)arg1;
 - (BOOL)isSystemColor:(id)arg1;
 - (id)keyPathForSystemColor:(id)arg1;
-- (id)darkSystemNamesToGenericColorsMap;
 - (id)systemNamesToGenericColorsMap;
 - (id)genericColorForSystemColorName:(id)arg1;
-- (id)regeneratePerScaleDarkSystemNamesToGenericColorsMap;
-- (id)regeneratePerScaleSystemNamesToGenericColorsMap;
-- (id)regenerateSystemNamesToGenericColorsMapForScale:(double)arg1 keyPath:(id)arg2;
-- (id)regenerateSystemNamesToGenericColorsMapForScale:(double)arg1;
-- (id)regenerateDarkSystemNamesToGenericColorsMapForScale:(double)arg1;
-- (id)readPerScaleExistingSystemNamesToGenericColorsMapForResourceName:(id)arg1;
-- (id)readPerScaleExistingDarkSystemNamesToGenericColorsMap;
-- (id)readPerScaleExistingSystemNamesToGenericColorsMap;
-- (id)readExistingDarkSystemNamesToGenericColorsMapForScale:(double)arg1;
-- (id)readExistingSystemNamesToGenericColorsMapForScale:(double)arg1;
+- (id)regenerateSystemNamesToGenericColorsMap;
+- (id)readExistingSystemNamesToGenericColorsMapForResourceName:(id)arg1;
+- (id)readExistingSystemNamesToGenericColorsMap;
 - (CDUnknownBlockType)defaultClassValueDiagnosticsBlock;
 - (id)metricChainForDeviceConfiguration:(id)arg1;
 @property(readonly) IBUISimulatedMetricChain *defaultMetricChain;

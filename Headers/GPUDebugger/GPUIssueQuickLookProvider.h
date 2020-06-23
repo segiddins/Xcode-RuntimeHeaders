@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) NSTextView *textView; // @synthesize textView=_textView;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)_updateTextViewFromData;

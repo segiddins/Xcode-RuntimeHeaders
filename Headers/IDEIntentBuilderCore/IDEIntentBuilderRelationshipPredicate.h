@@ -19,11 +19,11 @@
 }
 
 + (id)relationshipPredicate;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsMultipleValues; // @synthesize supportsMultipleValues=_supportsMultipleValues;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic, setter=_setRelationship:) __weak IDEIntentBuilderPropertyRelationship *_relationship; // @synthesize _relationship;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
 - (id)keyPrefix;

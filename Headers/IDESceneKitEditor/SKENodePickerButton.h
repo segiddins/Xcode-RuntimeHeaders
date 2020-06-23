@@ -13,8 +13,8 @@
     SCNNode *_node;
 }
 
-@property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;

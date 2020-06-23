@@ -94,7 +94,7 @@
 - (BOOL)ibShouldEnsureChildViewHasTranslatesAutoresizingMaskIntoConstraintsInCanvas:(id)arg1;
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (BOOL)ibShouldArchiveAutolayoutPropertiesWithNSViewProperties;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (BOOL)ibIsChildViewUserSizable:(id)arg1;
 - (BOOL)ibAllowResizeBasedOnIntrinsicContentSizeForChild:(id)arg1;
 - (BOOL)ibIsChildViewUserMovable:(id)arg1;

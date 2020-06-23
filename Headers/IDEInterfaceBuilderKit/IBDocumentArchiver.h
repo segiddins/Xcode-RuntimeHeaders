@@ -21,10 +21,10 @@
     id <IBArchivableDocument> _archivedDocument;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *classesBeingEncoded; // @synthesize classesBeingEncoded=_classesBeingEncoded;
 @property(readonly) NSMutableDictionary *context; // @synthesize context=_context;
 @property(readonly) id <IBArchivableDocument> archivedDocument; // @synthesize archivedDocument=_archivedDocument;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addText:(id)arg1 withBase64EncodingIndicatorAttributeName:(id)arg2;
 - (id)existingTextElement;

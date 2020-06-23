@@ -18,10 +18,10 @@
 }
 
 + (id)substituteDataValueNameUsingDataValue:(id)arg1 inExpression:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL wasCancelled; // @synthesize wasCancelled=_wasCancelled;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property(readonly) DBGDataValue *dbgDataValue; // @synthesize dbgDataValue=_dbgDataValue;
-- (void).cxx_destruct;
 - (void)evaluateExpression:(id)arg1 failureHandler:(CDUnknownBlockType)arg2 successHandler:(CDUnknownBlockType)arg3;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;

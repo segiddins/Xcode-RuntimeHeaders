@@ -14,9 +14,9 @@
     NSImageView *_iconView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly) NSTextField *titleField; // @synthesize titleField=_titleField;
-- (void).cxx_destruct;
 - (void)arrangeSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -22,6 +22,7 @@
 
 + (id)variantDescriptorsForDistributionCoalescedThinningVariant:(id)arg1 includeDescriptorsForLegacyPlatforms:(BOOL)arg2;
 + (id)minimumDeploymentTargetDistributionCoalescedThinningVariantToDeviceIdentifierSet:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *assetPackManifestURL; // @synthesize assetPackManifestURL=_assetPackManifestURL;
 @property(copy) NSString *fullSizeImageURL; // @synthesize fullSizeImageURL=_fullSizeImageURL;
 @property(copy) NSString *displayImageURL; // @synthesize displayImageURL=_displayImageURL;
@@ -30,7 +31,6 @@
 @property(copy) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentationForDistributionCoalescedThinningVariants:(id)arg1 processedTopLevelDistributionItems:(id)arg2 error:(id *)arg3;
 - (BOOL)isValidManifest;
 - (BOOL)validateAssetPackManifestURL:(id *)arg1 error:(id *)arg2;

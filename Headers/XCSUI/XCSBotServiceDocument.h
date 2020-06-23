@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingDisplayName;
-@property(retain, nonatomic) XCSUIService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSUIService *service; // @synthesize service=_service;
 - (id)botIntegration;
 - (id)bot;
 - (id)displayName;

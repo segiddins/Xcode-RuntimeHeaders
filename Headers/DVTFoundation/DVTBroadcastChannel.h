@@ -16,9 +16,9 @@
     id _source;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id source; // @synthesize source=_source;
 @property(readonly) id <DVTBroadcastName> name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToBroadcastChannel:(id)arg1;
 - (unsigned long long)hash;

@@ -14,15 +14,14 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithITunesSoftwareExtensionVersionDescription:(id)arg1;
-- (id)initWithName:(id)arg1 displayableDescription:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifier:(id)arg4 marketingVersion:(id)arg5 shortVersion:(id)arg6 version:(id)arg7 generations:(id)arg8 extensionPointIdentifier:(id)arg9;
 
 @end
 

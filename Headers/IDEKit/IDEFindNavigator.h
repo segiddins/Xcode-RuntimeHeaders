@@ -27,14 +27,15 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableFilter; // @synthesize enableFilter=_enableFilter;
 @property(copy, nonatomic) NSString *filterPattern; // @synthesize filterPattern=_filterPattern;
 @property(readonly) IDEFindNavigatorQueryParametersController *queryParametersController; // @synthesize queryParametersController=_queryParametersController;
-- (void).cxx_destruct;
 - (BOOL)delegateFirstResponder;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)contextMenu_revealInProjectNavigator:(id)arg1;
 - (void)revealInProjectNavigator:(id)arg1;
+- (void)queryResultsController:(id)arg1 searchAgainWithSpecification:(id)arg2;
 - (id)queryResultsController:(id)arg1 contextMenuForResultsFromQuery:(id)arg2;
 - (void)queryResultsControllerExportedUserInterfaceStateDidChange:(id)arg1;
 - (void)queryParametersController:(id)arg1 replaceAllResultsWithText:(id)arg2;

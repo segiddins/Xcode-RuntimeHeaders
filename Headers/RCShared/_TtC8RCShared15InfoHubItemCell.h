@@ -21,6 +21,10 @@
     MISSING_TYPE *finishedAction;
     MISSING_TYPE *cancelButtonHandler;
     MISSING_TYPE *state;
+    MISSING_TYPE *horizontalContentOffset;
+    MISSING_TYPE *alertImageSize;
+    MISSING_TYPE *cancelButtonSize;
+    MISSING_TYPE *stackViewSpacing;
     MISSING_TYPE *obsScope;
 }
 

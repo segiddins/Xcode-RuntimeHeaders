@@ -62,6 +62,7 @@
 + (id)uniqueTestRunNamesForGroups:(id)arg1;
 + (id)titleForDevices:(id)arg1 deviceSelection:(id)arg2 andRuns:(id)arg3 runSelection:(id)arg4;
 + (id)tableColumnIdentifierForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *expandedItemIdentifiers; // @synthesize expandedItemIdentifiers=_expandedItemIdentifiers;
 @property(retain, nonatomic) NSArray *runsToFilter; // @synthesize runsToFilter=_runsToFilter;
 @property(retain, nonatomic) NSArray *devicesToFilter; // @synthesize devicesToFilter=_devicesToFilter;
@@ -87,7 +88,6 @@
 @property(readonly, nonatomic) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 @property(copy, nonatomic) CDUnknownBlockType selectionChangedCallback; // @synthesize selectionChangedCallback=_selectionChangedCallback;
 @property(retain, nonatomic) id <IDETestReport_RootObject> rootObject; // @synthesize rootObject=_rootObject;
-- (void).cxx_destruct;
 - (void)endPreviewPanelControl:(id)arg1;
 - (void)beginPreviewPanelControl:(id)arg1;
 - (BOOL)acceptsPreviewPanelControl:(id)arg1;
@@ -101,6 +101,7 @@
 - (void)performanceMetricBaselineRecordsForTestIdentifier:(id)arg1 testRun:(id)arg2 testGroupName:(id)arg3 testName:(id)arg4 matchingPerfMetrics:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)popoverDidClose:(id)arg1;
 - (void)quickLookFirstAttachmentInActivity:(id)arg1 relativeToView:(id)arg2;
+- (id)quickLookAnimationSourceViewFrom:(id)arg1;
 - (void)quickLookAttachmentsInActivity:(id)arg1 relativeToView:(id)arg2;
 - (void)_quickLookAttachment:(id)arg1 activity:(id)arg2 relativeToView:(id)arg3;
 - (void)quickLookRow:(id)arg1;
@@ -162,6 +163,7 @@
 - (id)testClassesWithScopeBarFiltering;
 @property(readonly, nonatomic) IDETestReportScopeBar *scopeBarViewController;
 - (BOOL)showOnlyMixedTests;
+- (BOOL)showOnlySkippedTests;
 - (BOOL)showOnlyPassingTests;
 - (BOOL)showOnlyFailingTests;
 - (void)allTestablesChanged;

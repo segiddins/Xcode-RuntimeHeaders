@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     DYAnalyzerFinding *_finding;
 }
 
-@property(nonatomic) __weak DYAnalyzerFinding *finding; // @synthesize finding=_finding;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DYAnalyzerFinding *finding; // @synthesize finding=_finding;
 - (id)synopsis;
 - (id)category;
 

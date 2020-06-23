@@ -15,8 +15,8 @@
     SKSceneNavMeshEditController *_editController;
 }
 
-@property(retain, nonatomic) SKSceneNavMeshEditController *editController; // @synthesize editController=_editController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKSceneNavMeshEditController *editController; // @synthesize editController=_editController;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (void)awakeFromNib;

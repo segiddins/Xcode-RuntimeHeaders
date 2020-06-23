@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <XCSAdministration/_TtP17XCSAdministration11FileService_-Protocol.h>
-
 @class MISSING_TYPE;
 
-@interface _TtC17XCSAdministration18DefaultFileService : NSObject <_TtP17XCSAdministration11FileService_>
+@interface _TtC17XCSAdministration18DefaultFileService : NSObject
 {
     MISSING_TYPE *fileManager;
 }

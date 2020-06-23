@@ -15,9 +15,9 @@
 }
 
 + (id)typeDescriptorWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *collectionType; // @synthesize collectionType=_collectionType;
 @property(retain, nonatomic) NSString *objectType; // @synthesize objectType=_objectType;
-- (void).cxx_destruct;
 - (id)initWithObjectType:(id)arg1 collectionType:(id)arg2;
 
 @end

@@ -41,7 +41,7 @@
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibLabelQualifierForChild:(id)arg1;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (void)ibSuggestLayoutAllowingResizingTopLevelView:(BOOL)arg1;
 - (struct CGPoint)ibPreferredOriginForSize:(struct CGSize)arg1;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;

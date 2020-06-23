@@ -25,6 +25,7 @@
 + (id)_allExpandedFilesToBeArchived:(id)arg1;
 + (id)expandedURLsAtLocation:(id)arg1;
 + (void)archiveWithName:(id)arg1 destination:(id)arg2 fileURLs:(id)arg3 baseURL:(id)arg4 progress:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *baseURLPath; // @synthesize baseURLPath=_baseURLPath;
 @property(copy, nonatomic) NSURL *archiveLocation; // @synthesize archiveLocation=_archiveLocation;
 @property(nonatomic) long long uncompressed_size; // @synthesize uncompressed_size=_uncompressed_size;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *archiveName; // @synthesize archiveName=_archiveName;
 @property(retain, nonatomic) NSFileManager *fm; // @synthesize fm=_fm;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *tarQueue; // @synthesize tarQueue=_tarQueue;
-- (void).cxx_destruct;
 - (id)_errorWithMessage:(id)arg1 reason:(id)arg2;
 - (void)_closeArchive;
 - (BOOL)_addDirectoryToArchive:(id)arg1 error:(id *)arg2;

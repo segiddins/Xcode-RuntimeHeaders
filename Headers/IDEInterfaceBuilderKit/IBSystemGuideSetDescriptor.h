@@ -17,11 +17,11 @@
 }
 
 + (id)instanceWithTitle:(id)arg1 identifier:(id)arg2 inset:(CDStruct_c519178c)arg3 guideDescriptors:(id)arg4;
+- (void).cxx_destruct;
 @property CDStruct_c519178c inset; // @synthesize inset=_inset;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(readonly) NSArray *guideDescriptors; // @synthesize guideDescriptors=_guideDescriptors;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 inset:(CDStruct_c519178c)arg3 guideDescriptors:(id)arg4;
 

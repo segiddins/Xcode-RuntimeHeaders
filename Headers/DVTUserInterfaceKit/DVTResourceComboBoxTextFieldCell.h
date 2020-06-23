@@ -14,8 +14,8 @@
     DVTResourceComboBox *_controlComboBox;
 }
 
-@property __weak DVTResourceComboBox *controlComboBox; // @synthesize controlComboBox=_controlComboBox;
 - (void).cxx_destruct;
+@property __weak DVTResourceComboBox *controlComboBox; // @synthesize controlComboBox=_controlComboBox;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)doLegacyComboBoxDrawingWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)legacyInternalUIDrawingOptionsWithFrame:(struct CGRect)arg1;

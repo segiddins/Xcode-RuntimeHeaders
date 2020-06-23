@@ -20,13 +20,13 @@
     IDEBatchFindFilePathPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSImage *faultedIcon; // @synthesize faultedIcon=_faultedIcon;
 @property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly) BOOL descendantPassedFilter; // @synthesize descendantPassedFilter=_descendantPassedFilter;
 @property(readonly) BOOL passedFilterLocally; // @synthesize passedFilterLocally=_passedFilterLocally;
 @property(readonly) IDEBatchFindFilePathPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)resolveIconUsingWorkspace:(id)arg1;
 - (id)iconInWorkspace:(id)arg1;
 @property(readonly) BOOL initiallyExpandsSecondLevelChildren;

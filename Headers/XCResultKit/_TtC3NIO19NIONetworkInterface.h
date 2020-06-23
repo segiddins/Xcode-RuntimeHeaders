@@ -15,6 +15,7 @@
     MISSING_TYPE *netmask;
     MISSING_TYPE *broadcastAddress;
     MISSING_TYPE *pointToPointDestinationAddress;
+    MISSING_TYPE *multicastSupported;
     MISSING_TYPE *interfaceIndex;
 }
 

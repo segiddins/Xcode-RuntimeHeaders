@@ -14,9 +14,9 @@
     id <DVTColorLiteralQuickEditCollectionViewDelegate> _colorEditDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <DVTColorLiteralQuickEditCollectionViewDelegate> colorEditDelegate; // @synthesize colorEditDelegate=_colorEditDelegate;
 @property(getter=isKeyboardHighlight) BOOL keyboardHighlight; // @synthesize keyboardHighlight=_keyboardHighlight;
-- (void).cxx_destruct;
 - (void)scrollWheel:(id)arg1;
 - (void)keyUp:(id)arg1;
 - (void)keyDown:(id)arg1;

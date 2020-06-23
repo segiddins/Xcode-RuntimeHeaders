@@ -23,14 +23,15 @@
     id <IBSceneUpdateContentViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IBSceneUpdateContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IBSceneUpdateContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)configureSceneUpdateRequest:(id)arg1 isIncrementalUpdate:(BOOL)arg2;
 - (id)surfaceForRenderingAllowingReuse:(BOOL)arg1;
+- (BOOL)supportsIOSurfaceWithSize:(struct CGSize)arg1;
 - (struct CGSize)effectiveIOSurfacePixelScreenSize;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
-- (void)prepareBezierPathMask:(id)arg1 bounds:(struct CGRect)arg2 forShapeLayer:(id)arg3;
+- (id)maskPathByTransformingNormalizedBezierMask:(id)arg1 forBounds:(struct CGRect)arg2;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)wantsToDrawMask;

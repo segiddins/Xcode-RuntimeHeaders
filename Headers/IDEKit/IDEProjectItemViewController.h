@@ -32,6 +32,7 @@
 }
 
 + (id)keyPathsForValuesAffectingIsEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(nonatomic, getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;
 @property(copy, nonatomic) NSDictionary *cachedUserEnteredInfo; // @synthesize cachedUserEnteredInfo=_cachedUserEnteredInfo;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) id <IDEPortalInfoDelegate> portalInfoDelegate; // @synthesize portalInfoDelegate=_portalInfoDelegate;
 @property(nonatomic) __weak id <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate> restorationRecordProviderDelegate; // @synthesize restorationRecordProviderDelegate=_restorationRecordProviderDelegate;
 @property(retain, nonatomic) IDEProjectItemModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)projectItemModel:(id)arg1 didReceiveError:(id)arg2;
 @property(readonly) BOOL canSelect;
 @property(readonly) BOOL disclosedByDefault;

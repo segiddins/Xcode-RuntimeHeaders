@@ -20,10 +20,10 @@
     NSImage *_pressedBackImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *pressedBackImage; // @synthesize pressedBackImage=_pressedBackImage;
 @property(readonly, nonatomic) NSImage *backImage; // @synthesize backImage=_backImage;
 @property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_updateImageViewAndLabelForPressedState;

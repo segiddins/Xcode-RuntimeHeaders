@@ -17,9 +17,9 @@
 
 + (id)_unionOrderedSetWithMembersFromSourceSet:(id)arg1 otherSet:(id)arg2;
 + (id)groupFromEligibleProvisioningProfiles:(id)arg1 ineligibleProvisioningProfiles:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *ineligibleProvisioningProfiles; // @synthesize ineligibleProvisioningProfiles=_ineligibleProvisioningProfiles;
 @property(readonly, nonatomic) NSOrderedSet *eligibleProvisioningProfiles; // @synthesize eligibleProvisioningProfiles=_eligibleProvisioningProfiles;
-- (void).cxx_destruct;
 - (id)groupByMergingSelfWithOtherGroup:(id)arg1;
 - (id)displayNameForProfile:(id)arg1;
 - (id)initWithEligibleProfiles:(id)arg1 ineligibleProfiles:(id)arg2;

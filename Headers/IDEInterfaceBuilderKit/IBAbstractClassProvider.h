@@ -14,8 +14,8 @@
     BOOL _isUpdating;
 }
 
-@property BOOL isUpdating; // @synthesize isUpdating=_isUpdating;
 - (void).cxx_destruct;
+@property BOOL isUpdating; // @synthesize isUpdating=_isUpdating;
 - (void)notifyObserversOfModifiedPartialClassDescriptions:(id)arg1 removedPartialDescriptionsWithSourceIdentifiers:(id)arg2;
 - (id)addObserver:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(CDUnknownBlockType)arg1;

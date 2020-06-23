@@ -31,6 +31,7 @@
 + (id)overrideWithExtension:(id)arg1 targetPlatformIdentifier:(id)arg2 targetOSVersion:(id)arg3;
 + (BOOL)_supportedTargetsOfExtension:(id)arg1 matchTargetPlatformIdentifier:(id)arg2 andTargetOSVersion:(id)arg3;
 + (id)loadOverridesMatchingPredicate:(id)arg1 withDelegate:(id)arg2 targetPlatformIdentifier:(id)arg3 targetOSVersion:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDebugOverrideValue *userSelectedValue; // @synthesize userSelectedValue=_userSelectedValue;
 @property(readonly, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) IDEDebugOverrideValue *currentValue; // @synthesize currentValue=_currentValue;
@@ -45,7 +46,6 @@
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *category; // @synthesize category=_category;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)debugOverrideDidUpdate:(id)arg1;
 - (void)_updateWithNewImplyingDebugOverrideValue;
 @property(readonly) BOOL isImplied;

@@ -19,8 +19,8 @@
 + (id)indexPathForWorkspace:(id)arg1;
 + (void)deriveEntryForFilePath:(id)arg1 initialTimestamp:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)runProvider:(Class)arg1 forFilePath:(id)arg2 initialTimestamp:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-@property BOOL completedPrescan; // @synthesize completedPrescan=_completedPrescan;
 - (void).cxx_destruct;
+@property BOOL completedPrescan; // @synthesize completedPrescan=_completedPrescan;
 - (void)loadContentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)scheduleSaveAndOptionallyTrimToFilePaths:(id)arg1;
 - (void)dropIndex;

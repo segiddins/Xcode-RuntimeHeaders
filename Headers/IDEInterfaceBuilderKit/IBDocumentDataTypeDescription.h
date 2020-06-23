@@ -22,15 +22,15 @@
 
 + (BOOL)platform:(id)arg1 supportsFileType:(id)arg2;
 + (id)allTypeDescriptions;
+- (void).cxx_destruct;
 @property(readonly) Class foreignContentImporter; // @synthesize foreignContentImporter=_foreignContentImporter;
 @property(readonly) NSString *fileType; // @synthesize fileType=_fileType;
 @property(readonly) NSSet *archiveTypes; // @synthesize archiveTypes=_archiveTypes;
 @property(readonly) Class documentClass; // @synthesize documentClass=_documentClass;
 @property(readonly) NSString *archiveContentFileName; // @synthesize archiveContentFileName=_archiveContentFileName;
-- (void).cxx_destruct;
 - (id)archiveContentFilePathForBasePath:(id)arg1;
 - (long long)matchingScoreForMetadataAtPath:(id)arg1 bundleContents:(id)arg2;
-- (id)description;
+- (void)populateExtraDescriptionContent:(id)arg1;
 - (BOOL)isWritable;
 @property(readonly) IBTargetRuntime *bestGuessTargetRuntime;
 @property(readonly) IBPlatform *platform;

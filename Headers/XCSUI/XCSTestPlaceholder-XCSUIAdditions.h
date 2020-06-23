@@ -25,6 +25,8 @@
 @property(readonly, copy, nonatomic) NSString *ide_testReport_test_testClassName;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_test_testName;
 - (void)ide_testReport_test_fetchTestsWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) BOOL ide_testReport_common_skipped;
+@property(readonly, nonatomic) BOOL ide_testReport_common_failed;
 @property(readonly, nonatomic) BOOL ide_testReport_common_passed;
 @property(readonly, nonatomic) BOOL ide_testReport_test_fetchesTestRunsLazily;
 - (void)setSynthesizedDeviceTestRuns:(id)arg1;

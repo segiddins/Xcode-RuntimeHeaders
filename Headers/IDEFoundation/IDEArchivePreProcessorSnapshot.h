@@ -15,10 +15,10 @@
     DVTFilePath *_archivedContentInfoPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *archivedContentInfoPath; // @synthesize archivedContentInfoPath=_archivedContentInfoPath;
 @property(retain, nonatomic) DVTFilePath *archivedContentPath; // @synthesize archivedContentPath=_archivedContentPath;
 @property(retain, nonatomic) DVTFilePath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)initWithArchive:(id)arg1;
 
 @end

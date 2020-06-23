@@ -16,8 +16,8 @@
     id <IDEIndexSymbol> _indexSymbol;
 }
 
-@property(readonly, nonatomic) id <IDEIndexSymbol> indexSymbol; // @synthesize indexSymbol=_indexSymbol;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IDEIndexSymbol> indexSymbol; // @synthesize indexSymbol=_indexSymbol;
 - (void)enumerateRelatedDeclarationsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateOverriddenSymbolResolutionsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) DVTSourceCodeLanguage *preferredLanguage;

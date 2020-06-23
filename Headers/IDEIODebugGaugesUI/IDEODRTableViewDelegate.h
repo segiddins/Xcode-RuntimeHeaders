@@ -18,9 +18,9 @@
     DVTDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTDevice *device; // @synthesize device=_device;
 @property(retain) NSArray *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)purgeResource:(id)arg1;
 - (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

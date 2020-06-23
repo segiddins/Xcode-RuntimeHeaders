@@ -18,11 +18,11 @@
     NSArray *_coloredRects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(retain, nonatomic) NSArray *coloredRects; // @synthesize coloredRects=_coloredRects;
 @property(nonatomic) struct _NSRange glyphRange; // @synthesize glyphRange=_glyphRange;
 @property(readonly, nonatomic) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
-- (void).cxx_destruct;
 - (void)addColoredRectsForRange:(struct _NSRange)arg1 color:(id)arg2 reference:(id)arg3 toArray:(id)arg4;
 - (void)drawColoredRects:(id)arg1 forTextOrigin:(struct CGPoint)arg2;
 - (double)heightAtCharacterPosition:(unsigned long long)arg1;

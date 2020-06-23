@@ -27,9 +27,9 @@
     NSPopUpButton *_pullDown;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideRevealInEditorButton; // @synthesize hideRevealInEditorButton=_hideRevealInEditorButton;
 @property(retain) NSPopUpButton *pullDown; // @synthesize pullDown=_pullDown;
-- (void).cxx_destruct;
 - (void)revealLocationInEditor:(id)arg1;
 - (id)itemsToSelect;
 - (void)propertyViewWillUninstallFromContentView;

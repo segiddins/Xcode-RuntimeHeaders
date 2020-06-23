@@ -22,9 +22,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (void)setPropertyMappingTriggerNotifications;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID;
 @property(retain) IDEMappingModelDocument *document; // @synthesize document;
-- (void).cxx_destruct;
 - (BOOL)hasDuplicateName;
 - (BOOL)isInDestinationEntity;
 - (BOOL)hasValidName;

@@ -32,6 +32,7 @@
 + (id)extensionObservers;
 + (void)observeExtensionsDidChangeForIdentifier:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 @property(readonly) id service; // @synthesize service=_service;
 @property(copy) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
@@ -40,7 +41,6 @@
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (BOOL)finishRestart:(CDUnknownBlockType)arg1;
 - (BOOL)finishStop:(CDUnknownBlockType)arg1;
 - (BOOL)finishStart:(CDUnknownBlockType)arg1;

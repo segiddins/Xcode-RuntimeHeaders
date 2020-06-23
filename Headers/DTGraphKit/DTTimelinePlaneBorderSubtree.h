@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSNumber *_hierarchyLevel;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hierarchyLevel; // @synthesize hierarchyLevel=_hierarchyLevel;
 @property(readonly, nonatomic) BOOL subtle; // @synthesize subtle=_subtle;
 @property(retain, nonatomic) DTTimelinePlaneBorderSubtree *extension; // @synthesize extension=_extension;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)isSelected;
 - (void)setSubtle:(BOOL)arg1 graph:(id)arg2;
 - (BOOL)canBeRemovedFromSuperlayer;

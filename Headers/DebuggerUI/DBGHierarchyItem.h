@@ -17,9 +17,9 @@
 }
 
 + (id)navigableItem_childRepresentedObjectsKeyPath;
+- (void).cxx_destruct;
 @property __weak DBGHierarchyItem *parentHierarchyItem; // @synthesize parentHierarchyItem=_parentHierarchyItem;
 @property(retain, nonatomic) NSArray *childItems; // @synthesize childItems=_childItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)setNeedsHierarchyUpdate;

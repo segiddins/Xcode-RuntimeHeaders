@@ -24,12 +24,12 @@
     int _requestsFulfilled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int requestsFulfilled; // @synthesize requestsFulfilled=_requestsFulfilled;
 @property(nonatomic) int frequencyDivider; // @synthesize frequencyDivider=_frequencyDivider;
 @property(nonatomic) BOOL dynamicFrameRatesEnabled; // @synthesize dynamicFrameRatesEnabled=_dynamicFrameRatesEnabled;
 @property(nonatomic) BOOL deliveryFrameMustRun; // @synthesize deliveryFrameMustRun=_deliveryFrameMustRun;
 @property(nonatomic) BOOL renderFrameMustRun; // @synthesize renderFrameMustRun=_renderFrameMustRun;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)didFulfillProvider:(id)arg1;
 - (void)providerNeedsExposure:(id)arg1;

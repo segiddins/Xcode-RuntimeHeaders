@@ -22,8 +22,8 @@
 + (void)handleSourceKitError:(struct _sourcekit_response_s *)arg1 logAspect:(id)arg2 crashed:(char *)arg3;
 + (id)sharedSourceKitService;
 + (void)initialize;
-@property int serviceStatus; // @synthesize serviceStatus=_serviceStatus;
 - (void).cxx_destruct;
+@property int serviceStatus; // @synthesize serviceStatus=_serviceStatus;
 - (void)handleNotification:(struct _sourcekit_response_s *)arg1;
 - (void)handleConnectionRestored;
 - (void)removeSemanticsDisabledNotificationBlock:(id)arg1;

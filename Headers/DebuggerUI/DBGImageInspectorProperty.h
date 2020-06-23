@@ -27,6 +27,7 @@
     NSLayoutConstraint *_imageViewRatioConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *imageViewRatioConstraint; // @synthesize imageViewRatioConstraint=_imageViewRatioConstraint;
 @property __weak NSLayoutConstraint *imageMidlineConstraint; // @synthesize imageMidlineConstraint=_imageMidlineConstraint;
 @property __weak NSLayoutConstraint *imageBaselineConstraint; // @synthesize imageBaselineConstraint=_imageBaselineConstraint;
@@ -41,7 +42,6 @@
 @property __weak NSView *imageLinesContainerView; // @synthesize imageLinesContainerView=_imageLinesContainerView;
 @property __weak NSView *imageViewContainer; // @synthesize imageViewContainer=_imageViewContainer;
 @property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
-- (void).cxx_destruct;
 - (struct CGSize)_sizeWithExtendedImage:(id)arg1;
 - (id)_symbolConfigurationStringWithExtendedImage:(id)arg1;
 - (id)_imageMidlineOffsetWithExtendedImage:(id)arg1;

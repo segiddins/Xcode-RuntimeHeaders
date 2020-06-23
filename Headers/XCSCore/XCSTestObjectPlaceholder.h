@@ -21,6 +21,7 @@
     NSNumber *_hasPerfMetricsCachedValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hasPerfMetricsCachedValue; // @synthesize hasPerfMetricsCachedValue=_hasPerfMetricsCachedValue;
 @property(retain, nonatomic) XCSDevice *deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak XCSTestObjectPlaceholder *parent; // @synthesize parent=_parent;
 @property(nonatomic) __weak XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (BOOL)_validateWithIntegration:(id)arg1 name:(id)arg2 keyPath:(id)arg3 validationErrors:(id *)arg4;
 - (id)_statusInfoForKeyPath:(id)arg1;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;

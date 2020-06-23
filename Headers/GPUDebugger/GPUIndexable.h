@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *buildSettings; // @synthesize buildSettings=_buildSettings;
 @property(readonly) BOOL requiresMainThread; // @synthesize requiresMainThread=_requiresMainThread;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSArray *indexableFiles; // @synthesize indexableFiles=_indexableFiles;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)settingsForFilesInWorkspace:(id)arg1 shouldWriteAuxiliaryFiles:(BOOL)arg2 queue:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;

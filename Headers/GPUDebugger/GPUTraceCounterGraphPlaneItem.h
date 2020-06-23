@@ -34,6 +34,7 @@
     NSSet *_filterItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *filterItems; // @synthesize filterItems=_filterItems;
 @property(nonatomic) __weak GPUTraceCounterGraphGroupItem *groupItem; // @synthesize groupItem=_groupItem;
 @property(nonatomic) BOOL maskInDraw; // @synthesize maskInDraw=_maskInDraw;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSString *planeDescription; // @synthesize planeDescription=_planeDescription;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)formatValue:(float)arg1 containsUnit:(char *)arg2;
 - (id)formatByte:(long long)arg1 unitValue:(long long)arg2;
 - (id)formatTimeValue:(long long)arg1 unitValue:(long long)arg2;

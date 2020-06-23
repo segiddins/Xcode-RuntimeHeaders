@@ -19,8 +19,8 @@
     NSComboBox *_comboBox;
 }
 
-@property(retain, nonatomic) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)userDidChangeValue:(id)arg1;

@@ -22,8 +22,8 @@
 + (id)iconImage_locationSimulation;
 + (id)assetBundle;
 + (void)initialize;
-@property(retain) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+@property(retain) NSPopover *popover; // @synthesize popover=_popover;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (id)_imageForState:(long long)arg1;

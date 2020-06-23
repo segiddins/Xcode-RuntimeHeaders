@@ -13,8 +13,8 @@
     NSArray *_files;
 }
 
-@property(retain, nonatomic) NSArray *files; // @synthesize files=_files;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *files; // @synthesize files=_files;
 - (id)_deviceTinyIDs;
 - (void)_bindHierarchyWithIntegration:(id)arg1 parentObject:(id)arg2;
 - (BOOL)_validateWithFiles:(id)arg1 validationErrors:(id *)arg2;

@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDETestsSummariesBuilderDelegate-Protocol.h>
-
 @class MISSING_TYPE;
 
-@interface _TtC13IDEFoundation19TestSummariesStream : NSObject <IDETestsSummariesBuilderDelegate>
+@interface _TtC13IDEFoundation19TestSummariesStream : NSObject
 {
     MISSING_TYPE *streamWriter;
     MISSING_TYPE *bundleWriter;

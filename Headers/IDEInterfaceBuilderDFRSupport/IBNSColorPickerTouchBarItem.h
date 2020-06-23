@@ -22,13 +22,13 @@
 }
 
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 @property unsigned long long type; // @synthesize type=_type;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property BOOL showsAlpha; // @synthesize showsAlpha=_showsAlpha;
 @property(copy) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)runtimeTouchBarItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

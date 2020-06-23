@@ -37,14 +37,14 @@
     SKSceneOverlayView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKSceneOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) SKInputView *inputView; // @synthesize inputView=_inputView;
-- (void).cxx_destruct;
 - (BOOL)isAssetStillInWorkspace:(id)arg1;
 - (void)assetReferenceInvalidated:(id)arg1;
 - (void)verifyAssetReferenceIsValid:(id)arg1 forDocument:(id)arg2;
 - (void)assetReference:(id)arg1 didUpdateFromDocument:(id)arg2;
-- (void)sceneEditController:(id)arg1 beginEditingItem:(struct NSObject *)arg2;
+- (void)sceneEditController:(id)arg1 beginEditingItem:(id)arg2;
 - (void)sceneEditController:(id)arg1 performAction:(SEL)arg2 withSender:(id)arg3;
 - (BOOL)sceneEditController:(id)arg1 canPerformAction:(SEL)arg2 withSender:(id)arg3;
 - (void)setActionsOnSceneNodes;

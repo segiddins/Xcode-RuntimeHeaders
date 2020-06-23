@@ -15,8 +15,8 @@
 
 + (id)_filterMatchAttributesForDarkBackground;
 + (id)_filterMatchAttributesForLightBackground;
-@property(copy, nonatomic) NSArray *highlightSubranges; // @synthesize highlightSubranges=_highlightSubranges;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *highlightSubranges; // @synthesize highlightSubranges=_highlightSubranges;
 - (id)attributedStringValue;
 
 @end

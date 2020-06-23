@@ -32,13 +32,14 @@
 + (id)_portalDeviceClassToPortalPlatformMap;
 + (id)_platformIdentifierToPortalPlatformsMap;
 + (id)portalPlatforms;
+- (void).cxx_destruct;
 @property(readonly) NSString *defaultSDKVariant; // @synthesize defaultSDKVariant=_defaultSDKVariant;
 @property(readonly) NSString *parentPlatformIdentifier; // @synthesize parentPlatformIdentifier=_parentPlatformIdentifier;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)profileTypesForSDKVariant:(id)arg1;
 - (id)profileTypeForPurpose:(id)arg1;
 - (id)profileTypeForPurpose:(id)arg1 sdkVariant:(id)arg2;
 @property(readonly) NSDictionary *profileTypesByPurposeName; // @synthesize profileTypesByPurposeName=_profileTypesByPurposeName;

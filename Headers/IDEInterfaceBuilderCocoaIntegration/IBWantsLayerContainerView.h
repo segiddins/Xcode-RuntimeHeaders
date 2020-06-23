@@ -13,8 +13,8 @@
     NSTableView *_tableView;
 }
 
-@property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (id)scrollView;

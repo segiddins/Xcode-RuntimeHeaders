@@ -13,8 +13,8 @@
     NSArray *_strategies;
 }
 
-- (void)setStrategies:(id)arg1;
 - (void).cxx_destruct;
+- (void)setStrategies:(id)arg1;
 - (id)strategies;
 
 @end

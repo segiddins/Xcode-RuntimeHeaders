@@ -23,12 +23,12 @@
 + (id)architectureWithCanonicalName:(id)arg1;
 + (id)allArchitectures;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL is64Bit; // @synthesize is64Bit=_is64Bit;
 @property(readonly) int CPUSubType; // @synthesize CPUSubType=_CPUSubType;
 @property(readonly) int CPUType; // @synthesize CPUType=_CPUType;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *canonicalName; // @synthesize canonicalName=_canonicalName;
-- (void).cxx_destruct;
 - (_Bool)matchesCPUType:(int)arg1 andSubType:(int)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *colorButton;
     MISSING_TYPE *colorPickerStack;
     MISSING_TYPE *colorPickerView;
+    MISSING_TYPE *expandedColorPickerConstraint;
+    MISSING_TYPE *collapsedColorPickerConstraint;
     MISSING_TYPE *expanded;
     MISSING_TYPE *color;
     MISSING_TYPE *cellIdentifier;
@@ -23,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)presentColorOptions:(id)arg1;
+- (void)viewDidAppear;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 

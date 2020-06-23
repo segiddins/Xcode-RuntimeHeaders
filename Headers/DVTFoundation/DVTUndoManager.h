@@ -24,9 +24,9 @@
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DVTUndoManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) BOOL willAutomaticallyUndoNextChangeGroup; // @synthesize willAutomaticallyUndoNextChangeGroup=_willAutomaticallyUndoNextChangeGroup;
-- (void).cxx_destruct;
 - (void)undoNestedGroup;
 - (void)redo;
 - (void)undo;

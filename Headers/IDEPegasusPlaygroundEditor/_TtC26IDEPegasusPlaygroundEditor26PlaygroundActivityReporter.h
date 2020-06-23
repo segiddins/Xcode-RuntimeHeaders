@@ -8,6 +8,7 @@
 
 @class MISSING_TYPE;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor26PlaygroundActivityReporter : IDEActivityReporter
 {
     MISSING_TYPE *playgroundDocumentsToActivityEntriesTable;

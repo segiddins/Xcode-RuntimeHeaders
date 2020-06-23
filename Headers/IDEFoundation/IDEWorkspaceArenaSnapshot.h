@@ -25,6 +25,7 @@
 }
 
 + (id)workspaceArenaSnapshotForWorkspaceArena:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *textIndexFolderPath; // @synthesize textIndexFolderPath=_textIndexFolderPath;
 @property(readonly) DVTFilePath *logFolderPath; // @synthesize logFolderPath=_logFolderPath;
 @property(readonly) DVTFilePath *indexPrecompiledHeadersFolderPath; // @synthesize indexPrecompiledHeadersFolderPath=_indexPrecompiledHeadersFolderPath;
@@ -36,7 +37,6 @@
 @property(readonly) DVTFilePath *buildIntermediatesFolderPath; // @synthesize buildIntermediatesFolderPath=_buildIntermediatesFolderPath;
 @property(readonly) DVTFilePath *buildProductsFolderPath; // @synthesize buildProductsFolderPath=_buildProductsFolderPath;
 @property(readonly) DVTFilePath *derivedDataFolderPath; // @synthesize derivedDataFolderPath=_derivedDataFolderPath;
-- (void).cxx_destruct;
 - (id)dvt_detailedDebugDescription;
 - (id)copy;
 - (unsigned long long)hash;

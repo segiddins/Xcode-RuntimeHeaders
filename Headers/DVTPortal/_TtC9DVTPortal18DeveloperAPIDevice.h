@@ -6,11 +6,9 @@
 
 #import <DVTPortal/_TtC9DVTPortal20DeveloperAPIResource.h>
 
-#import <DVTPortal/_TtP9DVTPortal22DeveloperAPIDeviceInfo_-Protocol.h>
-
 @class DVTPlatform, MISSING_TYPE, NSString;
 
-@interface _TtC9DVTPortal18DeveloperAPIDevice : _TtC9DVTPortal20DeveloperAPIResource <_TtP9DVTPortal22DeveloperAPIDeviceInfo_>
+@interface _TtC9DVTPortal18DeveloperAPIDevice : _TtC9DVTPortal20DeveloperAPIResource
 {
     MISSING_TYPE *portalDeviceClass;
     MISSING_TYPE *platform;

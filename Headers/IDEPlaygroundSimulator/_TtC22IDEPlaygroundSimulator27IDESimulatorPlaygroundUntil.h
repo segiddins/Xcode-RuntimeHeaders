@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)createSimDisplayViewWithDevice:(id)arg1;
++ (id)createSimDisplayViewWithDevice:(id)arg1 simScreenID:(unsigned int)arg2;
 - (id)init;
 
 @end

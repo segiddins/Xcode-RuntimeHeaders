@@ -13,8 +13,8 @@
     NSString *_ibCreationSelectorName;
 }
 
-@property(copy) NSString *ibCreationSelectorName; // @synthesize ibCreationSelectorName=_ibCreationSelectorName;
 - (void).cxx_destruct;
+@property(copy) NSString *ibCreationSelectorName; // @synthesize ibCreationSelectorName=_ibCreationSelectorName;
 - (id)description;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;

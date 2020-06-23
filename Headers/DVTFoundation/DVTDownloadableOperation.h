@@ -19,12 +19,12 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property BOOL cancelable; // @synthesize cancelable=_cancelable;
 @property BOOL userRequested; // @synthesize userRequested=_userRequested;
 @property unsigned long long progressWeight; // @synthesize progressWeight=_progressWeight;
 @property long long progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly, getter=shouldProceed) BOOL shouldProceed;
 - (void)downloadableOperationMain;

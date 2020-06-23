@@ -23,8 +23,8 @@
     id <GTFActionTrackOverviewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <GTFActionTrackOverviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GTFActionTrackOverviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)resetCursorRects;
 - (void)setResetCursorRects;
 - (void)redrawAllTrackViews;

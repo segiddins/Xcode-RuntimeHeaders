@@ -14,9 +14,9 @@
     DVTTextDocumentLocation *_currentFoundLocation;
 }
 
+- (void).cxx_destruct;
 @property(copy) DVTTextDocumentLocation *currentFoundLocation; // @synthesize currentFoundLocation=_currentFoundLocation;
 @property(copy, nonatomic) NSArray *foundLocations; // @synthesize foundLocations=_foundLocations;
-- (void).cxx_destruct;
 - (void)drawFoundLocationsInRange:(struct _NSRange)arg1;
 
 @end

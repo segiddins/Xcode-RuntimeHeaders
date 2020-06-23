@@ -26,12 +26,12 @@
 }
 
 + (BOOL)prefersTrackingUntilMouseUp;
+- (void).cxx_destruct;
 @property BOOL useMetricsForAutolayout; // @synthesize useMetricsForAutolayout=_useMetricsForAutolayout;
 @property unsigned long long imagePosition; // @synthesize imagePosition=_imagePosition;
 @property SEL buttonAction; // @synthesize buttonAction=_buttonAction;
 @property __weak id buttonTarget; // @synthesize buttonTarget=_buttonTarget;
 @property BOOL alwaysShowButton; // @synthesize alwaysShowButton=_alwaysShowButton;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;
 - (BOOL)accessibilityPerformPress;

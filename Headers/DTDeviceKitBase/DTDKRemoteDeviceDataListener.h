@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) struct _AMDeviceNotificationContext *deviceNotificationRef; // @synthesize deviceNotificationRef=_deviceNotificationRef;
 @property(retain) NSThread *listenerThread; // @synthesize listenerThread=_listenerThread;
-- (void).cxx_destruct;
 - (void)_rescan;
 - (void)enumerateDevicesWithBlock:(CDUnknownBlockType)arg1;
 - (id)allDevices;

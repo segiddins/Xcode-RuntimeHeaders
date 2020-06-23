@@ -13,8 +13,8 @@
     IDESwiftErrorBreakpoint *_breakpoint;
 }
 
-@property(retain) IDESwiftErrorBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (void).cxx_destruct;
+@property(retain) IDESwiftErrorBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithBreakpoint:(id)arg1;

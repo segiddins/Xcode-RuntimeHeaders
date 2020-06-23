@@ -25,9 +25,9 @@
 + (id)elementWithName:(id)arg1 stringValue:(id)arg2;
 + (id)elementWithName:(id)arg1;
 + (id)textWithStringValue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *interSegmentWhitespace; // @synthesize interSegmentWhitespace;
 @property(retain) NSMutableDictionary *nodeDictionary; // @synthesize nodeDictionary;
-- (void).cxx_destruct;
 - (void)addChildNodesFromXmlNodePtr:(struct _xmlNode *)arg1 fromChild:(struct _xmlNode *)arg2 upToChild:(struct _xmlNode *)arg3;
 - (void)addChildNodesFromXmlNodePtr:(struct _xmlNode *)arg1;
 - (BOOL)hasGenericGroupPlaceholderInlineElementOrGenericPlaceholder;

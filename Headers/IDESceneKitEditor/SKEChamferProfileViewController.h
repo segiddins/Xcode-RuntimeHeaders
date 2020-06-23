@@ -21,8 +21,8 @@
     id <SKEChamferProfileViewControllerDelegate> _delegate;
 }
 
-@property __weak id <SKEChamferProfileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <SKEChamferProfileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didSelectPreset:(id)arg1;
 @property(readonly) NSString *chamferProfileDisplayName;
 - (id)displayNameForPresetName:(unsigned long long)arg1 inMenu:(BOOL)arg2;

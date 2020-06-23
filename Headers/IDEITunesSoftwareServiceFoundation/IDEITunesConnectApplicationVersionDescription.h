@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) BOOL wasApprovedForSaleDistribution; // @synthesize wasApprovedForSaleDistribution=_wasApprovedForSaleDistribution;
 @property(readonly) BOOL wasApprovedForPrereleaseDistribution; // @synthesize wasApprovedForPrereleaseDistribution=_wasApprovedForPrereleaseDistribution;
 @property(readonly) BOOL wasApprovedForInternalTestFlightDistribution; // @synthesize wasApprovedForInternalTestFlightDistribution=_wasApprovedForInternalTestFlightDistribution;
@@ -27,7 +28,6 @@
 @property(readonly) NSArray *supportedOSVersions; // @synthesize supportedOSVersions=_supportedOSVersions;
 @property(readonly) NSArray *extensions; // @synthesize extensions=_extensions;
 @property(readonly) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -14,8 +14,8 @@
     NSString *_name;
 }
 
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *propertyTypes;
 - (void)addPropertyType:(id)arg1;
 - (id)initWithName:(id)arg1;

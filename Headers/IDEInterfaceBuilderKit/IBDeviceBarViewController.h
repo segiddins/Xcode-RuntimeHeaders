@@ -45,6 +45,7 @@
     IBDeviceBarGroupViewController *_devicesGroupForBranchMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *devicesGroupForBranchMode; // @synthesize devicesGroupForBranchMode=_devicesGroupForBranchMode;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *layoutsGroup; // @synthesize layoutsGroup=_layoutsGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *orientationsGroup; // @synthesize orientationsGroup=_orientationsGroup;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) IBDeviceConfiguration *selectedDeviceConfiguration; // @synthesize selectedDeviceConfiguration=_selectedDeviceConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType customizationModeChangedStateCallback; // @synthesize customizationModeChangedStateCallback=_customizationModeChangedStateCallback;
 @property(copy, nonatomic) CDUnknownBlockType deviceConfigurationChangedCallback; // @synthesize deviceConfigurationChangedCallback=_deviceConfigurationChangedCallback;
-- (void).cxx_destruct;
 - (id)groupViewController:(id)arg1 popUpImageForDeviceConfiguration:(id)arg2;
 - (id)_customizationSessionSummaryWithDeviceConfigurations:(id)arg1 memberConfiguration:(id)arg2 selectedConfigurationDevice:(id)arg3;
 - (void)_customizationStateChanged;

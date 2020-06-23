@@ -38,6 +38,7 @@
 + (id)greenTextAnnotationBaseHighlightColor;
 + (id)redTextAnnotationBaseHighlightColor;
 + (BOOL)hasDarkBackground;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTTextAnnotationTheme *darkVariant; // @synthesize darkVariant=_darkVariant;
 @property(retain) NSColor *highlightedRangeBorderColor; // @synthesize highlightedRangeBorderColor=_highlightedRangeBorderColor;
 @property(readonly) NSColor *textColor; // @synthesize textColor=_textColor;
@@ -49,7 +50,6 @@
 @property(readonly) NSColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(readonly) NSColor *borderBottomColor; // @synthesize borderBottomColor=_borderBottomColor;
 @property(readonly) NSColor *borderTopColor; // @synthesize borderTopColor=_borderTopColor;
-- (void).cxx_destruct;
 @property(readonly) NSColor *messageBubbleFillColor;
 - (id)_calculateTextColor;
 - (id)initWithHighlightColor:(id)arg1 messageBubbleColor:(id)arg2 caretColor:(id)arg3;

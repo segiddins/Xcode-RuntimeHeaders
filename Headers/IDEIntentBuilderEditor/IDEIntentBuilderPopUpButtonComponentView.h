@@ -21,10 +21,10 @@
     NSPopUpButton *_popUpButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 @property __weak id <IDEIntentBuilderPopUpButtonComponentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL observesContentChanges; // @synthesize observesContentChanges=_observesContentChanges;
-- (void).cxx_destruct;
 - (void)popUpButtonChangedValue:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)menuNeedsUpdate:(id)arg1;

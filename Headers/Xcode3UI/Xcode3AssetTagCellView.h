@@ -21,6 +21,7 @@
     NSLayoutConstraint *_widthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 @property(nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property(nonatomic) NSNumber *size; // @synthesize size=_size;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSTextField *sizeField; // @synthesize sizeField=_sizeField;
 @property(retain, nonatomic) NSButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) Xcode3AssetRow *assetRow; // @synthesize assetRow=_assetRow;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)controlTextDidChange:(id)arg1;

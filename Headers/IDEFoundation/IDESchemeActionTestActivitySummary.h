@@ -25,6 +25,7 @@
 + (void)loadLegacyAttachmentMetadataFromActivityRecord:(id)arg1 outTitle:(id *)arg2;
 + (BOOL)_attachments:(id)arg1 containAttachmentWithName:(id)arg2;
 + (id)summariesFromSummaries:(id)arg1 withAttachmentsExtractedToDirectory:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSMutableArray *subActivities; // @synthesize subActivities=_subActivities;
 @property(copy) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(readonly, copy) NSDate *finish; // @synthesize finish=_finish;
@@ -33,7 +34,6 @@
 @property(copy) NSString *attachmentsDirectory; // @synthesize attachmentsDirectory=_attachmentsDirectory;
 @property(readonly, copy) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)attachmentWithName:(id)arg1;
 - (BOOL)hasAttachmentWithName:(id)arg1;
 - (void)pruneAttachmentsWithLifetimes:(id)arg1 deletedAutomationScreenshots:(char *)arg2 deletedUserAttachments:(char *)arg3;

@@ -65,12 +65,13 @@
 + (id)localizedSourceListItemEditorName;
 + (BOOL)canInspectBlueprint:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSArray *configurations; // @synthesize configurations=_configurations;
 @property(readonly) NSArray *configFileBasedOnList; // @synthesize configFileBasedOnList=_configFileBasedOnList;
 @property(retain) NSArray *localizations; // @synthesize localizations=_localizations;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
+@property BOOL buildIndependentTargetsInParallel;
 @property(copy) NSString *defaultConfiguration;
 - (void)iOSProjectDeploymentOSChanged:(id)arg1;
 - (void)macOSProjectDeploymentOSChanged:(id)arg1;
@@ -138,6 +139,7 @@
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
+- (void)_updateBuildIndependentTargetsInParallel;
 - (void)_duplicateConfigurationNamed:(id)arg1;
 - (void)_updateConfigurations;
 - (void)_renameConfigurationAtNode:(id)arg1 to:(id)arg2;

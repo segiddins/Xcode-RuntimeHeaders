@@ -21,9 +21,9 @@
 + (id)classIdentifier;
 + (BOOL)wantsDefaultAnimatesCompatibilityWarning;
 + (double)displayOrderPriority;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
 @property(copy, nonatomic) NSNumber *modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
-- (void).cxx_destruct;
 - (BOOL)isFlowTerminatingSegue;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (id)badgeImage;

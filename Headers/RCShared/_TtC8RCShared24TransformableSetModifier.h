@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *main;
     MISSING_TYPE *others;
+    MISSING_TYPE *transformableWorldPivot;
 }
 
 @end

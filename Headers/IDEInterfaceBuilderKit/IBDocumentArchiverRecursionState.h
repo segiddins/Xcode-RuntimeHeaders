@@ -19,11 +19,11 @@
 }
 
 + (id)recursionStateWithElement:(id)arg1 object:(id)arg2 kind:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *blocksToRunPostSubgraphArchiving; // @synthesize blocksToRunPostSubgraphArchiving=_blocksToRunPostSubgraphArchiving;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) NSXMLElement *element; // @synthesize element=_element;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

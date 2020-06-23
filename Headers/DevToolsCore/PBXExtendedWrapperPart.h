@@ -14,9 +14,9 @@
     NSString *_subPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *subPath; // @synthesize subPath=_subPath;
 @property(readonly) long long basedOnWrapperPart; // @synthesize basedOnWrapperPart=_basedOnWrapperPart;
-- (void).cxx_destruct;
 - (id)initWithBasedOnWrapperPart:(long long)arg1 subPath:(id)arg2;
 
 @end

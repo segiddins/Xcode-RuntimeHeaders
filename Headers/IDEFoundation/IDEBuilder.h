@@ -38,6 +38,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDESchemeActionResult *schemeBuildResult; // @synthesize schemeBuildResult=_schemeBuildResult;
 @property __weak id <IDEBuilderCallbacks> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 @property(readonly) IDEBuilderHarvestedInfo *harvestedInfo; // @synthesize harvestedInfo=_harvestedInfo;
@@ -57,7 +58,6 @@
 @property(copy) NSArray *warningsToEmit; // @synthesize warningsToEmit=_warningsToEmit;
 @property(readonly) IDEBuildableSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(readonly) long long buildCommand; // @synthesize buildCommand=_buildCommand;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_logBuilderTimingDataIfNecessary;
 - (void)addGeneratedFileInfo:(id)arg1;

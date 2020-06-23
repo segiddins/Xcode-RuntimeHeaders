@@ -18,12 +18,12 @@
     NSString *_outputDirectory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *outputDirectory; // @synthesize outputDirectory=_outputDirectory;
 @property(readonly) BOOL swiftUISupport; // @synthesize swiftUISupport=_swiftUISupport;
 @property(readonly, copy) NSArray *macroBaseNames; // @synthesize macroBaseNames=_macroBaseNames;
 @property(readonly, copy) NSArray *sourceFiles; // @synthesize sourceFiles=_sourceFiles;
 @property(readonly, copy) NSArray *outputStringsFiles; // @synthesize outputStringsFiles=_outputStringsFiles;
-- (void).cxx_destruct;
 - (void)taskDidFinish;
 - (BOOL)startTask:(id *)arg1;
 - (id)initWithSourceFiles:(id)arg1 macroBaseNames:(id)arg2 swiftUISupport:(BOOL)arg3 outputDirectory:(id)arg4;

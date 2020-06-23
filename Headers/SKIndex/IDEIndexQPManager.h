@@ -20,17 +20,17 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 - (void)_logRecents;
 - (void)_cancelPurgeTimer;
 - (void)_purgeTimeout:(id)arg1;
 - (void)_scheduleQPPurge;
-- (void)_addQueryProviderToRecents:(struct IDEIndexGenericQueryProviderBase *)arg1 highPriority:(BOOL)arg2;
+- (void)_addQueryProviderToRecents:(id)arg1 highPriority:(BOOL)arg2;
 - (void)purgeAllQPs;
-- (struct IDEIndexGenericQueryProviderBase *)queryProviderForFile:(id)arg1 highPriority:(BOOL)arg2;
+- (id)queryProviderForFile:(id)arg1 highPriority:(BOOL)arg2;
 - (void)findBestIndexableForFile:(id)arg1 outIndexable:(id *)arg2 outMainFile:(id *)arg3 outHadToSettle:(char *)arg4;
-- (struct IDEIndexGenericQueryProviderBase *)queryProviderForFileNoBuildSettings:(id)arg1;
+- (id)queryProviderForFileNoBuildSettings:(id)arg1;
 - (void)dealloc;
 - (id)initWithIndex:(id)arg1;
 

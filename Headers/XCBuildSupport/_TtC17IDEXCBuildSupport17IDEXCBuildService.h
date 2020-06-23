@@ -12,11 +12,13 @@
 {
     MISSING_TYPE *xcbService;
     MISSING_TYPE *queue;
+    MISSING_TYPE *toolchainObservationToken;
 }
 
 + (void)setSharedService:(id)arg1;
 + (id)sharedService;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (id)init;
 
 @end

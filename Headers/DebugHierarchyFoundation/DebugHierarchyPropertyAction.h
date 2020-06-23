@@ -25,6 +25,7 @@
     long long _optionsComparisonStyle;
 }
 
+- (void).cxx_destruct;
 @property long long optionsComparisonStyle; // @synthesize optionsComparisonStyle=_optionsComparisonStyle;
 @property long long options; // @synthesize options=_options;
 @property long long visibility; // @synthesize visibility=_visibility;
@@ -36,7 +37,6 @@
 @property(retain) NSArray *propertyNames; // @synthesize propertyNames=_propertyNames;
 @property BOOL objectIdentifiersAreExclusive; // @synthesize objectIdentifiersAreExclusive=_objectIdentifiersAreExclusive;
 @property(retain) NSArray *objectIdentifiers; // @synthesize objectIdentifiers=_objectIdentifiers;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_fetchValuesForPropertiesWithNames:(id)arg1 onObject:(id)arg2 inContext:(id)arg3;
 - (BOOL)_isTargetingProperty:(id)arg1;

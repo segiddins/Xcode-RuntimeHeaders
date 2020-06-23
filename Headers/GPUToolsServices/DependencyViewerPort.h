@@ -15,9 +15,9 @@
     DependencyViewerVertex *_parent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DependencyViewerVertex *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) id <DYPDependencyGraphResourceInfo> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)initWithResource:(id)arg1 parent:(id)arg2;
 
 @end

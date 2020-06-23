@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long revisionType; // @synthesize revisionType=_revisionType;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) NSString *currentFilePath; // @synthesize currentFilePath=_currentFilePath;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

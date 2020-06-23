@@ -17,8 +17,8 @@
     IDESpriteKitGaugeDebuggingAddition *_debuggingAddition;
 }
 
-@property(retain, nonatomic) IDESpriteKitGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDESpriteKitGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (id)frameIntervalColors;
 - (id)frameIntervalTitles;

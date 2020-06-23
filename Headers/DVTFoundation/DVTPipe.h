@@ -15,9 +15,9 @@
 }
 
 + (id)pipeReturningError:(id *)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSFileHandle *fileHandleForWriting; // @synthesize fileHandleForWriting=_fileHandleForWriting;
 @property(readonly) NSFileHandle *fileHandleForReading; // @synthesize fileHandleForReading=_fileHandleForReading;
-- (void).cxx_destruct;
 - (void)closeBothFileHandles;
 - (id)initWithReadHandle:(id)arg1 andWriteHandle:(id)arg2;
 

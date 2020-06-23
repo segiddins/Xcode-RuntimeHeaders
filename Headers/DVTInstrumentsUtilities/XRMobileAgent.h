@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString, XRMobileAgentItinerary;
+@protocol OS_os_log;
 
 @interface XRMobileAgent : NSObject
 {
@@ -18,12 +19,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) XRMobileAgentItinerary *itinerary; // @synthesize itinerary=_itinerary;
 @property(readonly, nonatomic) int movementType; // @synthesize movementType=_movementType;
 @property(retain, nonatomic) NSString *mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingHandle;
 @property(readonly, nonatomic) unsigned int desiredQoS;
-- (int)agentDiagnosticsTypeCode;
+- (id)agentDiagnosticsName;
 - (BOOL)holdsItinerary:(id)arg1;
 - (void)deactivated;
 - (void)executeStopOnItinerary:(id)arg1;

@@ -30,6 +30,7 @@
 + (id)requiredDataQueryAttribute;
 + (id)basicDataQueryAttributes;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) NSNumber *txPackets; // @synthesize txPackets=_txPackets;
 @property(readonly, nonatomic) NSNumber *rxPackets; // @synthesize rxPackets=_rxPackets;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSArray *rxPacketsDeltas; // @synthesize rxPacketsDeltas=_rxPacketsDeltas;
 @property(readonly, nonatomic) NSArray *txBytesDeltas; // @synthesize txBytesDeltas=_txBytesDeltas;
 @property(readonly, nonatomic) NSArray *rxBytesDeltas; // @synthesize rxBytesDeltas=_rxBytesDeltas;
-- (void).cxx_destruct;
 - (void)processQueryResultDict:(id)arg1;
 - (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;
 

@@ -28,9 +28,9 @@
 + (id)keyboardShortcutFromStringRepresentation:(id)arg1;
 + (id)_keyboardShortcutWithRawKeyEquivalent:(id)arg1 rawModifierMask:(unsigned long long)arg2;
 + (id)keyboardShortcutWithKeyEquivalent:(id)arg1 modifierMask:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long modifierMask; // @synthesize modifierMask=_modifierMask;
 @property(readonly) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
-- (void).cxx_destruct;
 @property(copy) IDEKeyboardShortcut *nextKeyboardShortcut;
 @property(readonly) NSString *stringRepresentation;
 @property(readonly) NSString *humanReadableName;

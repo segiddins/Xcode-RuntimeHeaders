@@ -23,6 +23,7 @@
 
 + (id)nodeWithUniqueIdentifier;
 + (id)nodeWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property __weak DBGSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(retain) NSPointerArray *propertyObservers; // @synthesize propertyObservers=_propertyObservers;
 @property(retain) NSMutableDictionary *mutableProperties; // @synthesize mutableProperties=_mutableProperties;
@@ -31,7 +32,6 @@
 @property long long visibility; // @synthesize visibility=_visibility;
 @property(retain) DebugHierarchyRuntimeType *runtimeType; // @synthesize runtimeType=_runtimeType;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)rootLevelGroup;
 - (id)_describeTreeWithRoot:(id)arg1 depth:(unsigned long long)arg2;
 - (id)debugDescriptionWithIndentationDepth:(unsigned long long)arg1 prefix:(id)arg2 includeProperties:(BOOL)arg3;

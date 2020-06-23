@@ -39,6 +39,7 @@
 + (void)importAccountsFromFilePath:(id)arg1;
 + (id)accountProviders;
 + (id)accountPrefsHelpMenuItem;
+- (void).cxx_destruct;
 @property BOOL hasLoadedDeveloperAccounts; // @synthesize hasLoadedDeveloperAccounts=_hasLoadedDeveloperAccounts;
 @property __weak DVTBorderedView *underDetailReplacementBorderedView; // @synthesize underDetailReplacementBorderedView=_underDetailReplacementBorderedView;
 @property(retain) NSArrayController *contentArrayController; // @synthesize contentArrayController=_contentArrayController;
@@ -51,7 +52,6 @@
 @property __weak NSLayoutConstraint *accountBarHeight; // @synthesize accountBarHeight=_accountBarHeight;
 @property(retain) DVTBorderedView *accountGlassBarBorderView; // @synthesize accountGlassBarBorderView=_accountGlassBarBorderView;
 @property(retain) DVTBorderedView *accountListBorderView; // @synthesize accountListBorderView=_accountListBorderView;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;

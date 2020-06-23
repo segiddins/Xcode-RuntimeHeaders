@@ -30,6 +30,9 @@
     MISSING_TYPE *featureNames;
     MISSING_TYPE *generalClassifierType;
     MISSING_TYPE *generalRegressorType;
+    MISSING_TYPE *rmUserColumn;
+    MISSING_TYPE *rmItemColumn;
+    MISSING_TYPE *rmRatingColumn;
 }
 
 @end

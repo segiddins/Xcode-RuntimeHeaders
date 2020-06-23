@@ -25,6 +25,7 @@
     DVTStackView_ML *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
 @property(retain) DVTBorderedView *controlBar; // @synthesize controlBar=_controlBar;
 @property(retain) IDEControlGroup *controlGroup; // @synthesize controlGroup=_controlGroup;
@@ -32,7 +33,6 @@
 @property(retain) NSView *filterListContainerView; // @synthesize filterListContainerView=_filterListContainerView;
 @property(retain) NSArrayController *filtersArrayController; // @synthesize filtersArrayController=_filtersArrayController;
 @property BOOL canEditSelectedFilter; // @synthesize canEditSelectedFilter=_canEditSelectedFilter;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;

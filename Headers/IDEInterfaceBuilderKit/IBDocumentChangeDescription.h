@@ -21,9 +21,9 @@
 + (id)descriptionOfObjectReorderedConnections:(id)arg1;
 + (id)descriptionOfObject:(id)arg1 lostConnection:(id)arg2;
 + (id)descriptionOfObject:(id)arg1 gainedConnection:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSObject *member; // @synthesize member=_member;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly) BOOL isMemberChangedAccessControl;
 @property(readonly) BOOL isObjectReorderedConnection;
 @property(readonly) BOOL isObjectGainedConnection;

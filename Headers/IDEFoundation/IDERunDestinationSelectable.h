@@ -21,6 +21,7 @@
     NSString *_targetArchitecture;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isEligible; // @synthesize isEligible=_isEligible;
 @property(readonly, nonatomic) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
 @property(readonly, nonatomic) DVTSDKVariant *targetSDKVariant; // @synthesize targetSDKVariant=_targetSDKVariant;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *targetDeviceFamily; // @synthesize targetDeviceFamily=_targetDeviceFamily;
 @property(readonly, nonatomic) NSString *targetDeviceModelCode; // @synthesize targetDeviceModelCode=_targetDeviceModelCode;
 @property(readonly, nonatomic) NSURL *targetDeviceLocation; // @synthesize targetDeviceLocation=_targetDeviceLocation;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

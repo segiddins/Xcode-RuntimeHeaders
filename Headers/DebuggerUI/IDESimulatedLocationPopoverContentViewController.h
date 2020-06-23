@@ -20,13 +20,13 @@
     DVTObservingToken *_locationObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *locationObserver; // @synthesize locationObserver=_locationObserver;
 @property(retain) IDESimulateLocationMenuController *menuController; // @synthesize menuController=_menuController;
 @property(retain) IDEWorkspaceTabController *tabController; // @synthesize tabController=_tabController;
 @property(retain) DVTBorderedView *mapBorder; // @synthesize mapBorder=_mapBorder;
 @property(retain) MKMapView *map; // @synthesize map=_map;
 @property(retain) NSPopUpButton *locationPopUp; // @synthesize locationPopUp=_locationPopUp;
-- (void).cxx_destruct;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (id)_currentLocationImage;
 - (void)primitiveInvalidate;

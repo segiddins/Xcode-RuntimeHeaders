@@ -12,29 +12,29 @@
 
 @interface DBGInstructionPointerAnnotationProvider : DVTAnnotationProvider <DVTMessageBubbleAnnotationDelegate>
 {
-    IDEAnnotationContext *_context;
     NSMapTable *_annotationForLocation;
     NSMutableSet *_nonSelectedPCAnnotations;
     DVTObservingToken *_ipLocationObserver;
     DVTObservingToken *_ipLocationForDisasObserver;
     DVTObservingToken *_issueIPLocationObserver;
     DVTObservingToken *_issueIPLocationForDisasObserver;
+    IDEAnnotationContext *_context;
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-@property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void)primitiveInvalidate;
 - (void)providerWillUninstall;
 - (void)_cancelObservers;
-- (BOOL)_doesURLResolveToContextURL:(id)arg1;
+- (BOOL)_contextURLSamesAsURL:(id)arg1;
 - (BOOL)_shouldCreateAnnotationForLocation:(id)arg1;
 - (void)_removeAnnotationForLocation:(id)arg1;
 - (void)_invalidateAnnotation:(id)arg1;
 - (void)_createAnnotationForInstructionPointerLocation:(id)arg1;
 - (void)_removeAndInvalidateAllNonSelectedPCAnnocations;
 - (void)_handleInstructionPointerLocationChanged:(id)arg1;
-- (void)didMoveAnnotation:(id)arg1;
+- (void)didDragAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (void)annotation:(id)arg1 willDrawInTextSidebarView:(id)arg2 withAnnotationsInSameLine:(id)arg3;
 - (unsigned long long)annotation:(id)arg1 willMoveToParagraphNumber:(unsigned long long)arg2;
 - (void)_updateNonPrimaryPCs:(id)arg1;

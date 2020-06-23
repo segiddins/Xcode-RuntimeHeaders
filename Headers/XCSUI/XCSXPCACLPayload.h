@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *botViewers; // @synthesize botViewers=_botViewers;
 @property(copy, nonatomic) NSArray *botCreators; // @synthesize botCreators=_botCreators;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

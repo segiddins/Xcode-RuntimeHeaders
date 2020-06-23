@@ -13,8 +13,8 @@
     DTXChannel *_channel;
 }
 
-@property(readonly, retain, nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
 - (void)sendBarrierMessage;
 - (void)sendMessage:(id)arg1;
 - (id)initWithChannel:(id)arg1;

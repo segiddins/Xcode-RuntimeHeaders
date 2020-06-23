@@ -16,11 +16,11 @@
     DVTSourceCodeSymbolKind *_symbolKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isInProject; // @synthesize isInProject=_isInProject;
 @property(readonly) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
 @property(readonly) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly) DVTDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithLocation:(id)arg1 symbolName:(id)arg2 symbolKind:(id)arg3 isInProject:(BOOL)arg4;
 
 @end

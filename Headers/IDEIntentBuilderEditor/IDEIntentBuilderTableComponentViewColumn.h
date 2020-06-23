@@ -17,12 +17,12 @@
     NSString *_keyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property double width; // @synthesize width=_width;
 @property unsigned long long resizingMask; // @synthesize resizingMask=_resizingMask;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)makeTableCellViewWithOwner:(id)arg1 inTableView:(id)arg2;
 - (id)initWithKeyPath:(id)arg1;
 - (id)init;

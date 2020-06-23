@@ -20,6 +20,7 @@
     NSString *_navigableItem_sourceControlServerStatus;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *navigableItem_sourceControlServerStatus; // @synthesize navigableItem_sourceControlServerStatus=_navigableItem_sourceControlServerStatus;
 @property(readonly) NSString *navigableItem_sourceControlLocalStatus; // @synthesize navigableItem_sourceControlLocalStatus=_navigableItem_sourceControlLocalStatus;
 @property(retain) IDESourceControlTreeNode *parentGroup; // @synthesize parentGroup=_parentGroup;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long sourceControlServerStatus; // @synthesize sourceControlServerStatus=_sourceControlServerStatus;
 @property(nonatomic) unsigned long long sourceControlLocalStatus; // @synthesize sourceControlLocalStatus=_sourceControlLocalStatus;
 @property(readonly, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSMutableArray *mutableChildren;
 @property(copy) NSArray *children;

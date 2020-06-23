@@ -22,10 +22,10 @@
 }
 
 + (id)proxyForSnapshotNode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backtraceErrorMessage; // @synthesize backtraceErrorMessage=_backtraceErrorMessage;
 @property(retain, nonatomic) IDEThread *threadWithBacktrace; // @synthesize threadWithBacktrace=_threadWithBacktrace;
 @property __weak DBGSnapshotNode *snapshotNode; // @synthesize snapshotNode=_snapshotNode;
-- (void).cxx_destruct;
 @property(readonly) NSString *classHierarchyForDisplay;
 @property(readonly) BOOL shouldDisplayMallocZone;
 @property(readonly) BOOL shouldDisplayInstanceSize;

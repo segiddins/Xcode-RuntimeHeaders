@@ -15,10 +15,10 @@
     NSString *_valuesKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *valuesKeyPath; // @synthesize valuesKeyPath=_valuesKeyPath;
 @property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)decodeObject:(id)arg1;
 - (id)encodeObject:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;

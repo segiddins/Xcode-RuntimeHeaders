@@ -14,6 +14,7 @@
 + (id)displayName;
 + (BOOL)supportsCaseMatching;
 + (BOOL)supportsAnchorning;
+- (id)emptyResultSetPlaceholderResultKind;
 - (BOOL)treatsTextAsRegularExpression;
 
 @end

@@ -8,15 +8,17 @@
 
 #import <IDEKit/IDETouchBarSimulatorHostWindowControllerDelegate-Protocol.h>
 
-@class IDETouchBarSimulatorHostWindowController, IDETouchBarSimulatorWorkspaceTracker, NSMapTable, NSMenuItem, NSString;
+@class IDETouchBarSimulatorHostWindowController, IDETouchBarSimulatorWorkspaceTracker, NSArray, NSMapTable, NSMenuItem, NSString;
 
 @interface IDETouchBarSimulatorManager : NSObject <IDETouchBarSimulatorHostWindowControllerDelegate>
 {
     BOOL _autoShowEnabled;
     BOOL _simulatorEnabled;
     IDETouchBarSimulatorHostWindowController *_simulatorHostWindowController;
+    long long _lastSimulatorConfiguration;
+    NSArray *_configurationMenuItems;
     NSMenuItem *_autoShowMenuItem;
-    NSMenuItem *_simulatorMenuItem;
+    NSMenuItem *_toggleVisibilityMenuItem;
     IDETouchBarSimulatorWorkspaceTracker *_workspaceTracker;
     NSMapTable *_workspaceExecutions;
 }
@@ -26,14 +28,18 @@
 + (BOOL)isHardwareAvailable;
 + (BOOL)isSupportedByOS;
 + (BOOL)isSimulatorAvailable;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *workspaceExecutions; // @synthesize workspaceExecutions=_workspaceExecutions;
 @property(retain) IDETouchBarSimulatorWorkspaceTracker *workspaceTracker; // @synthesize workspaceTracker=_workspaceTracker;
-@property(retain) NSMenuItem *simulatorMenuItem; // @synthesize simulatorMenuItem=_simulatorMenuItem;
+@property(retain) NSMenuItem *toggleVisibilityMenuItem; // @synthesize toggleVisibilityMenuItem=_toggleVisibilityMenuItem;
 @property(retain) NSMenuItem *autoShowMenuItem; // @synthesize autoShowMenuItem=_autoShowMenuItem;
+@property(retain) NSArray *configurationMenuItems; // @synthesize configurationMenuItems=_configurationMenuItems;
+@property long long lastSimulatorConfiguration; // @synthesize lastSimulatorConfiguration=_lastSimulatorConfiguration;
 @property(retain) IDETouchBarSimulatorHostWindowController *simulatorHostWindowController; // @synthesize simulatorHostWindowController=_simulatorHostWindowController;
 @property(nonatomic) BOOL simulatorEnabled; // @synthesize simulatorEnabled=_simulatorEnabled;
 @property(nonatomic) BOOL autoShowEnabled; // @synthesize autoShowEnabled=_autoShowEnabled;
-- (void).cxx_destruct;
+- (void)touchBarSimulatorHostWindowControllerWindow:(id)arg1 didChangeConfiguration:(long long)arg2;
+- (long long)configurationForTouchBarSimulatorHostWindowController:(id)arg1;
 - (void)touchBarSimulatorHostWindowControllerWindowWillClose:(id)arg1;
 - (BOOL)touchBarSimulatorHostWindowControllerWindowShouldClose:(id)arg1;
 - (void)handleTouchBarSimulatorDisableServiceNotification:(id)arg1;
@@ -58,10 +64,14 @@
 - (void)openSimulatorWindow;
 - (id)_currentSimulatorHostWindowController;
 - (BOOL)isSimulatorWindowVisible;
+- (void)updateMenuSelectionWithConfiguration:(long long)arg1;
 - (void)updateMenuItemForSimulatorVisibility:(BOOL)arg1;
 - (void)setSimulatorWindowVisibility:(BOOL)arg1;
 - (void)userRequestSimulatorVisibility:(BOOL)arg1;
+- (void)selectSimulatorConfiguration:(id)arg1;
 - (void)toggleSimulatorWindowVisibility:(id)arg1;
+- (void)_installMenuItemsWithConfigurations;
+- (void)_installMenuItems;
 - (void)installMenuItems;
 - (void)dealloc;
 - (id)init;

@@ -16,11 +16,11 @@
     NSString *_radarComponentVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *radarComponentVersion; // @synthesize radarComponentVersion=_radarComponentVersion;
 @property(copy) NSString *radarComponentName; // @synthesize radarComponentName=_radarComponentName;
 @property(copy) NSString *path; // @synthesize path=_path;
 @property(retain) NSMutableArray *integrationIssues; // @synthesize integrationIssues=_integrationIssues;
-- (void).cxx_destruct;
 
 @end
 

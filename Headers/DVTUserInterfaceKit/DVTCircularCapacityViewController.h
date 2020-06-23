@@ -16,11 +16,11 @@
     NSAttributedString *_graphTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *graphTitle; // @synthesize graphTitle=_graphTitle;
 @property(copy) NSAttributedString *donutCenterText; // @synthesize donutCenterText=_donutCenterText;
 @property(nonatomic) BOOL leaveRemainderEmpty; // @synthesize leaveRemainderEmpty=_leaveRemainderEmpty;
 @property(nonatomic) BOOL useDonutStyle; // @synthesize useDonutStyle=_useDonutStyle;
-- (void).cxx_destruct;
 - (void)viewWillAppear;
 - (void)loadView;
 - (void)refreshContent;

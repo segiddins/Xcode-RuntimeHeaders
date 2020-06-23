@@ -15,8 +15,8 @@
     NSAlert *_alert;
 }
 
-@property __weak NSAlert *alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
+@property __weak NSAlert *alert; // @synthesize alert=_alert;
 - (void)chooseWhatToRunAction:(id)arg1;
 - (void)setTestRadioButtonEnabled:(BOOL)arg1;
 - (void)setRunRadioButtonEnabled:(BOOL)arg1;

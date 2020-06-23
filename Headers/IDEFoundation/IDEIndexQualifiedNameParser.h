@@ -16,11 +16,11 @@
     IDEIndexCollection *_kinds;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL success; // @synthesize success=_success;
 @property(readonly, nonatomic) IDEIndexCollection *kinds; // @synthesize kinds=_kinds;
 @property(readonly, nonatomic) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly, nonatomic) NSString *containerName; // @synthesize containerName=_containerName;
-- (void).cxx_destruct;
 - (void)parse:(id)arg1;
 - (void)parseObjCMethod:(id)arg1;
 - (id)parseSelector:(id)arg1;

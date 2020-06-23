@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBICSchemaProvider-Protocol.h>
 
-@class IBICColorSpace, IBICContrastAppearance, IBICIdiom, IBICLanguageDirection, IBICLuminosityAppearance, IBICPlatform, IBICScale, NSString;
+@class IBICColorSpace, IBICContrastAppearance, IBICIdiom, IBICLanguageDirection, IBICLocale, IBICLuminosityAppearance, IBICPlatform, IBICScale, NSString;
 
 @interface IBICCarPlaySchemaProvider : NSObject <IBICSchemaProvider>
 {
@@ -24,6 +24,7 @@
     IBICLanguageDirection *_anyLanguageDirection;
     IBICLanguageDirection *_leftToRightLanguageDirection;
     IBICLanguageDirection *_rightToLeftLanguageDirection;
+    IBICLocale *_developmentLanguageLocale;
     IBICLuminosityAppearance *_anyLightness;
     IBICLuminosityAppearance *_darkAppearance;
     IBICLuminosityAppearance *_lightAppearance;

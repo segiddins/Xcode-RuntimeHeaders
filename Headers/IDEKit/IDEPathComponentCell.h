@@ -17,11 +17,11 @@
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property BOOL isFirstItem; // @synthesize isFirstItem=_isFirstItem;
 @property BOOL isLastItem; // @synthesize isLastItem=_isLastItem;
 @property int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
-- (void).cxx_destruct;
 - (BOOL)_delegateRespondsToAndIsDeemphasizedInView:(id)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;

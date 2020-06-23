@@ -16,8 +16,8 @@
     id <IDETestable> _testable;
 }
 
-@property(retain) id <IDETestable> testable; // @synthesize testable=_testable;
 - (void).cxx_destruct;
+@property(retain) id <IDETestable> testable; // @synthesize testable=_testable;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)initWithTestable:(id)arg1;

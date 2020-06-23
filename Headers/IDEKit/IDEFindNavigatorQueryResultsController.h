@@ -8,20 +8,23 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/IDEBatchFindQueryDelegate-Protocol.h>
+#import <IDEKit/IDEFindNavigatorOutlineViewDelegate-Protocol.h>
+#import <IDEKit/IDEFindNavigatorRelaxedQueryResultsExistCheckerDelegate-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
-#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTStackBacktrace, IDEBatchFindAbstractQuery, IDEBatchFindAbstractResult, IDEBatchFindLineWrappingParameters, IDEBatchFindQuerySpecification, IDEFindNavigatorFilteredResultSet, IDEFindNavigatorOutlineView, IDEWorkspaceDocument, NSArray, NSMapTable, NSSet, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTStackBacktrace, IDEBatchFindAbstractQuery, IDEBatchFindAbstractResult, IDEBatchFindLineWrappingParameters, IDEBatchFindQuerySpecification, IDEFindNavigatorFilteredResultSet, IDEFindNavigatorOutlineView, IDEFindNavigatorRelaxedQueryResultsExistChecker, IDEWorkspaceDocument, NSArray, NSMapTable, NSSet, NSString;
 @protocol IDEFindNavigatorQueryResultsControllerDelegate;
 
-@interface IDEFindNavigatorQueryResultsController : NSObject <NSOutlineViewDataSource, NSOutlineViewDelegate, IDEBatchFindQueryDelegate, DVTInvalidation>
+@interface IDEFindNavigatorQueryResultsController : NSObject <NSOutlineViewDataSource, IDEFindNavigatorOutlineViewDelegate, IDEBatchFindQueryDelegate, IDEFindNavigatorRelaxedQueryResultsExistCheckerDelegate, DVTInvalidation>
 {
     IDEBatchFindLineWrappingParameters *_lineWrappingParameters;
     IDEFindNavigatorFilteredResultSet *_resultSet;
     IDEBatchFindAbstractResult *_rootResult;
-    long long _programaticOutlineViewSelectionBlocks;
+    long long _ignoreSelectionChangedCounter;
+    long long _selectionChangedGeneration;
     DVTDelayedInvocation *_rowHeightValidator;
     IDEBatchFindAbstractQuery *_query;
+    IDEFindNavigatorRelaxedQueryResultsExistChecker *_anyResultsQuery;
     NSArray *_filterMatchStrings;
     NSString *_filterText;
     DVTNotificationToken *_maximumNumberOfLinesObservingToken;
@@ -38,20 +41,25 @@
 
 + (void)initialize;
 + (id)lineWrappingParametersForOutlineView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL completed; // @synthesize completed=_completed;
 @property(readonly) IDEBatchFindQuerySpecification *specification; // @synthesize specification=_specification;
 @property(readonly) IDEBatchFindAbstractQuery *query; // @synthesize query=_query;
 @property(readonly) long long progress; // @synthesize progress=_progress;
 @property __weak id <IDEFindNavigatorQueryResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEFindNavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
+- (void)relaxedQueryResultsExistCheckerDidFinish:(id)arg1;
+- (void)relaxedQueryResultsExistChecker:(id)arg1 didUpdateResultCount:(long long)arg2;
 - (void)findNavigatorQuery:(id)arg1 didGenerateResults:(id)arg2;
 - (BOOL)shouldItemBeInitiallyExpandedWhileFiltered:(id)arg1;
 - (void)findNavigatorQuery:(id)arg1 isStalledOnFilePaths:(id)arg2;
 - (void)findNavigatorQuery:(id)arg1 didFinishGeneratingLazyChildrenOfResult:(id)arg2;
 - (void)findNavigatorQueryDidComplete:(id)arg1;
+- (id)relaxedRetrySpecification;
+@property(readonly) NSString *retryWithRelaxedSpecificationActionTitle;
 @property(readonly) NSString *placeholderText;
 - (void)findNavigatorQuery:(id)arg1 progressUpdate:(long long)arg2;
+- (void)findNavigatorOutlineViewEmptyContentPlaceholderButtonWasClicked:(id)arg1;
 - (void)replaceMatchesFromResults:(id)arg1 withText:(id)arg2;
 - (id)replaceStateForFindResult:(id)arg1;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
@@ -69,7 +77,10 @@
 - (void)outlineViewDoubleClicked:(id)arg1;
 - (void)outlineViewClicked:(id)arg1;
 - (void)openClickedRowWithEventType:(unsigned long long)arg1;
+- (void)outlineView:(id)arg1 batchSelectionDidChangeEventsDuring:(CDUnknownBlockType)arg2;
+- (void)processSelectionChanges;
 - (void)outlineViewSelectionDidChange:(id)arg1;
+- (void)ignoreSelectionChangesDuring:(CDUnknownBlockType)arg1;
 - (void)exportSelectionAllowingImpliedOpenCommand:(BOOL)arg1;
 - (void)outlineViewColumnDidResize:(id)arg1;
 - (void)outlineViewItemDidCollapse:(id)arg1;

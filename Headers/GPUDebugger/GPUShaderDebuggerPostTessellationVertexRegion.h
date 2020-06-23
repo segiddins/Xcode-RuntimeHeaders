@@ -19,11 +19,11 @@
     unsigned long long _patchId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long patchId; // @synthesize patchId=_patchId;
 @property(readonly, nonatomic) NSArray *patchIds; // @synthesize patchIds=_patchIds;
 @property(readonly, nonatomic) unsigned long long amplificationId; // @synthesize amplificationId=_amplificationId;
 @property(readonly, nonatomic) unsigned long long instanceId; // @synthesize instanceId=_instanceId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithInstanceId:(unsigned long long)arg1 amplificationId:(unsigned long long)arg2 patchIds:(id)arg3 selectedPatchId:(unsigned long long)arg4;
 

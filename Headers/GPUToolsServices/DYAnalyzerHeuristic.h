@@ -27,12 +27,12 @@
 + (BOOL)_registerHeuristic:(Class)arg1 forAPI:(unsigned int)arg2;
 + (BOOL)supportsAPI:(unsigned int)arg1;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DYAnalyzerEngine *weakEngine; // @synthesize weakEngine=_weakEngine;
 @property(nonatomic) __weak DYAnalyzerHeuristicPool *weakHeuristicPool; // @synthesize weakHeuristicPool=_weakHeuristicPool;
 @property(nonatomic) __weak DYAnalyzerFindingPool *weakFindingPool; // @synthesize weakFindingPool=_weakFindingPool;
 @property(readonly, nonatomic) BOOL isPreSortHeuristic; // @synthesize isPreSortHeuristic=_isPreSortHeuristic;
 @property(readonly, nonatomic) BOOL isPostMirrorHeuristic; // @synthesize isPostMirrorHeuristic=_isPostMirrorHeuristic;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DYAnalyzerHeuristicPool *heuristicPool;
 @property(readonly, nonatomic) DYAnalyzerEngine *engine;
 @property(readonly, nonatomic) DYAnalyzerFindingPool *findingPool;

@@ -17,10 +17,10 @@
     unsigned long long _associatedRadarID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long associatedRadarID; // @synthesize associatedRadarID=_associatedRadarID;
 @property(retain) NSString *memGraphIssueBriefString; // @synthesize memGraphIssueBriefString=_memGraphIssueBriefString;
 @property(retain) NSString *memGraphIssueString; // @synthesize memGraphIssueString=_memGraphIssueString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id underlyingIssue;
 @property(readonly, copy) NSString *attachLabelTitle;
 @property(readonly, copy) NSString *stringRepresentation;

@@ -24,13 +24,13 @@
     NSNumber *_explicitImageScaling;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *explicitImageScaling; // @synthesize explicitImageScaling=_explicitImageScaling;
 @property(nonatomic) double buttonSpacing; // @synthesize buttonSpacing=_buttonSpacing;
 @property(retain) id <DVTChooserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *choices; // @synthesize choices=_choices;
 @property(retain, nonatomic) DVTChoice *selectedChoice; // @synthesize selectedChoice=_selectedChoice;
 @property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedIndex;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutBottomUp;

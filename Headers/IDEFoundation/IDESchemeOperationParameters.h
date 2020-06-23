@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DVTFilePath, IDEExecutionEnvironment, IDERunDestination, IDESchemeActionsInvocationRecord, IDESchemeCommand, NSArray, NSDictionary, NSNumber, NSString;
-@protocol IDEBuildOperationClientInfo;
+@protocol IDEBuildOperationClientInfo, IDETestDevicePool;
 
 @interface IDESchemeOperationParameters : NSObject
 {
@@ -21,6 +21,7 @@
     NSString *_commandName;
     IDESchemeActionsInvocationRecord *_invocationRecord;
     DVTFilePath *_filePathForSingleFileAction;
+    id <IDETestDevicePool> _testingDevicePool;
     NSArray *_overridingTestingSpecifierGroups;
     NSArray *_overridingTestPlanReferences;
     NSArray *_onlyTestConfigurations;
@@ -30,15 +31,22 @@
     NSNumber *_parallelTestingEnabledOverride;
     NSNumber *_parallelTestingWorkerCountOverride;
     NSNumber *_parallelTestingMaximumWorkerCount;
+    NSNumber *_testTimeoutsEnabled;
+    NSNumber *_defaultTestExecutionTimeAllowance;
+    NSNumber *_maximumTestExecutionTimeAllowance;
     NSString *_contextString;
     id <IDEBuildOperationClientInfo> _buildOperationClientInfo;
 }
 
 + (id)operationParametersWithSchemeTask:(long long)arg1 buildCommand:(long long)arg2 executionEnvironment:(id)arg3 runDestination:(id)arg4 schemeCommand:(id)arg5 commandName:(id)arg6 invocationRecord:(id)arg7;
+- (void).cxx_destruct;
 @property(retain) id <IDEBuildOperationClientInfo> buildOperationClientInfo; // @synthesize buildOperationClientInfo=_buildOperationClientInfo;
 @property BOOL collectTimelineMetrics; // @synthesize collectTimelineMetrics=_collectTimelineMetrics;
 @property(copy) NSString *contextString; // @synthesize contextString=_contextString;
 @property BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
+@property(copy) NSNumber *maximumTestExecutionTimeAllowance; // @synthesize maximumTestExecutionTimeAllowance=_maximumTestExecutionTimeAllowance;
+@property(copy) NSNumber *defaultTestExecutionTimeAllowance; // @synthesize defaultTestExecutionTimeAllowance=_defaultTestExecutionTimeAllowance;
+@property(copy) NSNumber *testTimeoutsEnabled; // @synthesize testTimeoutsEnabled=_testTimeoutsEnabled;
 @property(copy) NSNumber *parallelTestingMaximumWorkerCount; // @synthesize parallelTestingMaximumWorkerCount=_parallelTestingMaximumWorkerCount;
 @property(copy) NSNumber *parallelTestingWorkerCountOverride; // @synthesize parallelTestingWorkerCountOverride=_parallelTestingWorkerCountOverride;
 @property(copy) NSNumber *parallelTestingEnabledOverride; // @synthesize parallelTestingEnabledOverride=_parallelTestingEnabledOverride;
@@ -48,6 +56,7 @@
 @property(copy) NSArray *onlyTestConfigurations; // @synthesize onlyTestConfigurations=_onlyTestConfigurations;
 @property(copy) NSArray *overridingTestPlanReferences; // @synthesize overridingTestPlanReferences=_overridingTestPlanReferences;
 @property(copy) NSArray *overridingTestingSpecifierGroups; // @synthesize overridingTestingSpecifierGroups=_overridingTestingSpecifierGroups;
+@property(retain) id <IDETestDevicePool> testingDevicePool; // @synthesize testingDevicePool=_testingDevicePool;
 @property(copy) DVTFilePath *filePathForSingleFileAction; // @synthesize filePathForSingleFileAction=_filePathForSingleFileAction;
 @property(retain) IDESchemeActionsInvocationRecord *invocationRecord; // @synthesize invocationRecord=_invocationRecord;
 @property(copy) NSString *commandName; // @synthesize commandName=_commandName;
@@ -56,7 +65,6 @@
 @property(retain) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
 @property long long buildCommand; // @synthesize buildCommand=_buildCommand;
 @property long long schemeTask; // @synthesize schemeTask=_schemeTask;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

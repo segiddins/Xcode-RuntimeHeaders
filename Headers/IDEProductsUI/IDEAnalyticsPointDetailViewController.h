@@ -29,6 +29,7 @@
 }
 
 + (id)keyPathsForValuesAffectingShouldShowAnalyticsLogPagingButtons;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestoringSelectedAnalyticsLog) BOOL restoringSelectedAnalyticsLog; // @synthesize restoringSelectedAnalyticsLog=_restoringSelectedAnalyticsLog;
 @property(retain) DVTUserDefaultsLeastRecentlyUsedCache *analyticsLogSelectedCache; // @synthesize analyticsLogSelectedCache=_analyticsLogSelectedCache;
 @property(nonatomic) BOOL pagerIsSettingAnalyticsLogIdentifier; // @synthesize pagerIsSettingAnalyticsLogIdentifier=_pagerIsSettingAnalyticsLogIdentifier;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak IDEAnalyticsPointsViewController *analyticsPointsViewController; // @synthesize analyticsPointsViewController=_analyticsPointsViewController;
 @property(retain) IDEAnalyticsPointLogViewController *pointLogViewController; // @synthesize pointLogViewController=_pointLogViewController;
 @property(retain) IDEAnalyticsPointOverviewViewController *overviewViewController; // @synthesize overviewViewController=_overviewViewController;
-- (void).cxx_destruct;
 - (void)updateCompressLowSampleCountFramesButtonState;
 - (void)compressLowSampleCountFrames:(id)arg1;
 - (void)updateCompressLibraryFramesButtonState;

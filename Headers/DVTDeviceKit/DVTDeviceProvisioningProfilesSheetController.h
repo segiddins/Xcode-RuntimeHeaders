@@ -20,6 +20,7 @@
     NSArray *_provisioningProfiles;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
 @property(retain) NSArrayController *profilesArrayController; // @synthesize profilesArrayController=_profilesArrayController;
 @property(retain) DVTBorderedView *buttonBorder; // @synthesize buttonBorder=_buttonBorder;
@@ -28,7 +29,6 @@
 @property(retain) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property(retain) DVTTableView *profileTable; // @synthesize profileTable=_profileTable;
 @property(readonly) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)exportProfiles:(id)arg1;
 - (void)removeProfiles:(id)arg1;
 - (void)delete:(id)arg1;

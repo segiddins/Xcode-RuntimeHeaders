@@ -15,9 +15,9 @@
 }
 
 + (id)issueAuthorSuspectsWithStrategy:(id)arg1 suspects:(id)arg2 validationErrors:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *suspects; // @synthesize suspects=_suspects;
 @property(readonly, nonatomic) XCSIssueSuspectStrategy *strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 - (BOOL)_validateStrategy:(id)arg1 suspects:(id)arg2 validationErrors:(id *)arg3;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;

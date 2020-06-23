@@ -39,11 +39,11 @@
 + (id)logAspect;
 + (void)initialize;
 + (Class)logItemViewClass;
+- (void).cxx_destruct;
 @property BOOL showingPeoplePicker; // @synthesize showingPeoplePicker=_showingPeoplePicker;
 @property unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(readonly) IDESourceControlLog *log; // @synthesize log=_log;
 @property(readonly) DVTDynamicTableView *logTableView; // @synthesize logTableView=_logTableView;
-- (void).cxx_destruct;
 - (long long)dynamicTableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInDynamicTableView:(id)arg1;
 - (id)dynamicTableView:(id)arg1 viewForRow:(long long)arg2 inSection:(long long)arg3;

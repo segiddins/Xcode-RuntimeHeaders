@@ -59,6 +59,7 @@
     IBObjectLibraryAsset *_importFromDeviceMenuItemAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBObjectLibraryAsset *importFromDeviceMenuItemAsset; // @synthesize importFromDeviceMenuItemAsset=_importFromDeviceMenuItemAsset;
 @property(retain) IBObjectLibraryAsset *findMenuAsset; // @synthesize findMenuAsset=_findMenuAsset;
 @property(retain) IBObjectLibraryAsset *editMenuAsset; // @synthesize editMenuAsset=_editMenuAsset;
@@ -106,7 +107,6 @@
 @property(retain) IBObjectLibraryAsset *windowAsset; // @synthesize windowAsset=_windowAsset;
 @property(retain) IBObjectLibraryAsset *abPersonViewAsset; // @synthesize abPersonViewAsset=_abPersonViewAsset;
 @property(retain) IBObjectLibraryAsset *abPeoplePickerViewAsset; // @synthesize abPeoplePickerViewAsset=_abPeoplePickerViewAsset;
-- (void).cxx_destruct;
 - (id)pasteboardObjectsForAsset:(id)arg1;
 - (id)processPasteboardObjectsForAsset:(id)arg1;
 - (id)windowAssetForWindowObjectAsset:(id)arg1;

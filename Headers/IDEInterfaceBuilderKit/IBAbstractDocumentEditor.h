@@ -17,7 +17,7 @@
 #import <IDEInterfaceBuilderKit/NSTextFinderClient-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTDelayedInvocation, DVTMutableOrderedSet, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, IBAttributeSearchLocation, IBAutolayoutStatus, IBCancellationToken, IBCanvasView, IBCanvasViewController, IBDocument, IBDocumentAsynchronousToolLoadingQueue, IBDocumentEditorLoadingViewController, IBInvalidationToken, IBMenuTargetResponderForwarder, IBMutableIdentityDictionary, IBStructureAreaDockLabelContainer, IBStructureViewController, NSArray, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject, NSOrderedSet, NSPopover, NSSegmentedControl, NSSet, NSString, NSTimer;
+@class DVTDelayedInvocation, DVTMutableOrderedSet, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, IBAttributeSearchLocation, IBAutolayoutStatus, IBCancellationToken, IBCanvasView, IBCanvasViewController, IBDocument, IBDocumentAsynchronousToolLoadingQueue, IBDocumentEditorLoadingViewController, IBInvalidationToken, IBMenuTargetResponderForwarder, IBMutableIdentityDictionary, IBStructureAreaDockLabelContainer, IBStructureViewController, NSArray, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject, NSOrderedSet, NSPopover, NSSegmentedControl, NSSet, NSString, NSTimer, NSView;
 @protocol IBSelectionProvider, OS_dispatch_queue;
 
 @interface IBAbstractDocumentEditor : IDEEditor <IBStructureViewControllerDelegate, NSPopoverDelegate, DVTFindBarFindable, NSTextFinderClient, IBDocumentEditorLoadingViewControllerDelegate, IBDocumentAsynchronousToolLoadingQueueDelegate, DVTReplacementViewDelegate, IDESourceExpressionSource, NSUserInterfaceValidations, IBDocumentArbitrationResponder>
@@ -89,13 +89,14 @@
 + (void)revealDocumentMemberAtLocation:(id)arg1 withEditor:(id)arg2 openSpecifierCustomizationBlock:(CDUnknownBlockType)arg3;
 + (id)showTargetIdentifierForObjects:(id)arg1 showLabels:(BOOL)arg2 inDocuments:(id)arg3;
 + (void)cancelAllOutstandingTargetIdentifiers;
-+ (id)keyPathsForValuesAffectingContentEditorAppearance;
++ (id)keyPathsForValuesAffectingDeviceConfigurationAppearance;
 + (id)lastActiveDocumentEditorForWorkspaceTabController:(id)arg1 forDocument:(id)arg2;
 + (id)lastActiveDocumentEditorForWorkspaceTabController:(id)arg1;
 + (void)noteEditorWillDeactivate:(id)arg1 inWorkspaceTabController:(id)arg2;
 + (void)noteEditorDidActivate:(id)arg1 inWorkspaceTabController:(id)arg2 isActive:(BOOL)arg3;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(readonly) IBMenuTargetResponderForwarder *editorMenuTarget; // @synthesize editorMenuTarget=_editorMenuTarget;
 @property(retain, nonatomic) id <IBSelectionProvider> selectionProvider; // @synthesize selectionProvider=_selectionProvider;
 @property(readonly) NSMutableOrderedSet *selectedOrPreviouslySelectedMembersFromOldToFresh; // @synthesize selectedOrPreviouslySelectedMembersFromOldToFresh=_selectedOrPreviouslySelectedMembersFromOldToFresh;
@@ -109,7 +110,6 @@
 @property(retain, nonatomic) DVTReplacementView *structureAreaContainer; // @synthesize structureAreaContainer=_structureAreaContainer;
 @property(retain, nonatomic) IBStructureAreaDockLabelContainer *dockItemLabelPopUpContainer; // @synthesize dockItemLabelPopUpContainer=_dockItemLabelPopUpContainer;
 @property(retain, nonatomic) IBCanvasViewController *canvasViewController; // @synthesize canvasViewController=_canvasViewController;
-- (void).cxx_destruct;
 - (void)debugShowRemoteToolErrorBanner:(id)arg1;
 - (void)displayPlatformToolFailureWithBugReportingBlock:(CDUnknownBlockType)arg1;
 - (void)populateIncrementalSceneUpdates:(id)arg1 forUpdatingSceneWithRoot:(id)arg2 sceneUpdateManager:(id)arg3;
@@ -315,7 +315,8 @@
 - (id)beginObservingDescendantsOfObject:(id)arg1 withChangeObserver:(CDUnknownBlockType)arg2;
 - (id)_registeredChangeObserversForDescendantsOfObject:(id)arg1;
 - (BOOL)presentVerificationWarningIfNeeded;
-- (id)contentEditorAppearance;
+- (id)effectiveDeviceConfigurationAppearance;
+- (id)effectiveAppearanceForEditorCanvasFrameController:(id)arg1;
 - (void)refreshContentEditorAppearance;
 - (void)documentWillBeginRegisteringUndoableChanges;
 - (void)didLoadEditor;
@@ -350,6 +351,7 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) DVTSourceLanguageService *languageService;
 @property(readonly) DVTSourceExpression *quickHelpExpression;
+@property(readonly) NSView *quickHelpTargetView;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, getter=isSelectable) BOOL selectable;
 @property(copy) NSArray *selectedRanges;

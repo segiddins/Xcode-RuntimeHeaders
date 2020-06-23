@@ -17,9 +17,9 @@
 
 + (id)writableTypes;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+- (void).cxx_destruct;
 @property(retain) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(readonly) DBGConsoleLog *consoleLog; // @synthesize consoleLog=_consoleLog;
-- (void).cxx_destruct;
 - (BOOL)writeSafelyToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 error:(id *)arg4;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)saveDocument:(id)arg1;

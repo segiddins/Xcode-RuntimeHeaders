@@ -6,10 +6,11 @@
 
 #import <IDETestPlanEditor/NSObject-Protocol.h>
 
-@class IDESchemeBuildableReference, IDETest, NSSet, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
+@class IDESchemeBuildableReference, IDETest, IDETestableReference, NSSet, NSString, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 @protocol IDETestable;
 
 @protocol _TtP13IDEFoundation36IDETestPlanTestableReferenceProtocol_ <NSObject>
+- (IDETestableReference *)copyWithNewName:(NSString *)arg1;
 - (BOOL)isTestEnabledInHierarchy:(IDETest *)arg1;
 @property(nonatomic, readonly) long long testExecutionOrdering;
 @property(nonatomic, readonly) _TtC13IDEFoundation28IDELocationScenarioReference *locationScenarioReference;

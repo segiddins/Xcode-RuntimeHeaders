@@ -68,10 +68,6 @@ struct Function {
     void *_field14;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct ProgressDigest<6> {
     long long MaxMonitorValue;
     long long InvalidIndex;
@@ -110,7 +106,9 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsign
 };
 
 struct atomic<unsigned long long> {
-    _Atomic unsigned long long __a_;
+    struct __cxx_atomic_impl<unsigned long long, std::__1::__cxx_atomic_base_impl<unsigned long long>> {
+        _Atomic unsigned long long __a_value;
+    } __a_;
 };
 
 struct deque<DeviceResourceRequest *, std::__1::allocator<DeviceResourceRequest *>> {

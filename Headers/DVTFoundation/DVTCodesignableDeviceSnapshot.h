@@ -21,13 +21,13 @@
 }
 
 + (id)snapshotFromCodesignableDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSSet *proxiedDevices; // @synthesize proxiedDevices=_proxiedDevices;
 @property(readonly) BOOL supportsProvisioning; // @synthesize supportsProvisioning=_supportsProvisioning;
 @property(readonly, copy) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *nameForDeveloperPortal; // @synthesize nameForDeveloperPortal=_nameForDeveloperPortal;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;

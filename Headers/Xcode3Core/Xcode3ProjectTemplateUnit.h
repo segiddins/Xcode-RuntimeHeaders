@@ -42,6 +42,7 @@
     NSArray *_injectionTargetNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *injectionTargetNames; // @synthesize injectionTargetNames=_injectionTargetNames;
 @property(readonly) NSDictionary *workspaceSettings; // @synthesize workspaceSettings=_workspaceSettings;
 @property BOOL suppressTopLevelGroup; // @synthesize suppressTopLevelGroup=_suppressTopLevelGroup;
@@ -63,7 +64,6 @@
 @property(readonly, copy) NSArray *nodes; // @synthesize nodes=_nodes;
 @property __weak id <Xcode3ProjectTemplateUnitParent> parent; // @synthesize parent=_parent;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)valueDidChangeForOption:(id)arg1;
 - (void)addToNode:(id)arg1 andDefinitions:(id)arg2 withOptions:(id)arg3 components:(id)arg4 project:(id)arg5 targets:(id)arg6 executables:(id)arg7 macros:(id)arg8 workspaceSettings:(id)arg9 replacementHandler:(CDUnknownBlockType)arg10;
 - (void)mergeSettingsDictionary:(id)arg1 intoDictionary:(id)arg2 replacementHandler:(CDUnknownBlockType)arg3;

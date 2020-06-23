@@ -13,6 +13,7 @@
     MISSING_TYPE *creationTime;
     MISSING_TYPE *resultsTime;
     MISSING_TYPE *explicitlyInvoked;
+    MISSING_TYPE *language;
     MISSING_TYPE *resultsCount;
     MISSING_TYPE *didSelect;
     MISSING_TYPE *didDismiss;

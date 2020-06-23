@@ -26,9 +26,9 @@
 + (BOOL)requiresConstraintBasedLayout;
 + (id)extensionForBreakpointActionClass:(Class)arg1;
 + (id)_breakpointActionEditorExtensions;
+- (void).cxx_destruct;
 @property BOOL shouldSelectKeyView; // @synthesize shouldSelectKeyView=_shouldSelectKeyView;
 @property(retain) IDEBreakpointAction *selectedAction; // @synthesize selectedAction=_selectedAction;
-- (void).cxx_destruct;
 - (void)_removeClicked:(id)arg1;
 - (void)_addClicked:(id)arg1;
 - (void)_actionSelected:(id)arg1;
@@ -39,9 +39,7 @@
 - (void)_updateActionsWithUserAction;
 - (void)viewDidMoveToWindow;
 - (id)_createAddOrRemoveButton:(id)arg1;
-- (void)_createAndAddDeleteActionButton;
-- (void)_createAndAddAddActionButton;
-- (void)_createAndAddActionsPopUpButton;
+- (void)_addControls;
 - (id)initWithAction:(id)arg1 andDelegate:(id)arg2;
 
 @end

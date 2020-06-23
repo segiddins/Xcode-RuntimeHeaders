@@ -28,6 +28,7 @@
     NSNumberFormatter *_sizeFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *sizeFormatter; // @synthesize sizeFormatter=_sizeFormatter;
 @property(retain, nonatomic) NSButton *hasValueCheckBox; // @synthesize hasValueCheckBox=_hasValueCheckBox;
 @property(retain, nonatomic) NSTextField *heightLabel; // @synthesize heightLabel=_heightLabel;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSStepper *widthStepper; // @synthesize widthStepper=_widthStepper;
 @property(retain, nonatomic) NSTextField *heightTextField; // @synthesize heightTextField=_heightTextField;
 @property(retain, nonatomic) NSTextField *widthTextField; // @synthesize widthTextField=_widthTextField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)refresh;
 - (void)toggleNilValue:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingSortedEntityMappings;
+- (void).cxx_destruct;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(retain) IDEMappingModelDocument *document; // @synthesize document;
-- (void).cxx_destruct;
 - (void)moveEntityMappings:(id)arg1 toPosition:(long long)arg2;
 - (BOOL)renumberEntityMappings;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1;

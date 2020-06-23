@@ -23,12 +23,12 @@
     NSString *_videoGravity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic) BOOL showsSharingServiceButton; // @synthesize showsSharingServiceButton=_showsSharingServiceButton;
 @property(nonatomic) BOOL showsFullScreenToggleButton; // @synthesize showsFullScreenToggleButton=_showsFullScreenToggleButton;
 @property(nonatomic) BOOL showsFrameSteppingButtons; // @synthesize showsFrameSteppingButtons=_showsFrameSteppingButtons;
 @property(nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
-- (void).cxx_destruct;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;

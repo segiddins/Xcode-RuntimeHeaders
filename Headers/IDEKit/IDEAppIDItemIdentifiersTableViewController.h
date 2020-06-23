@@ -33,6 +33,7 @@
     NSString *_requiredPrefix;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *requiredPrefix; // @synthesize requiredPrefix=_requiredPrefix;
 @property(retain) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain) DVTGradientImageButton *refreshButton; // @synthesize refreshButton=_refreshButton;
@@ -49,7 +50,6 @@
 @property(retain) NSArray *displayedContainerIDs; // @synthesize displayedContainerIDs=_displayedContainerIDs;
 @property(retain) IDEAppIDItemIdentifiersItemModelSet *identifiers; // @synthesize identifiers=_identifiers;
 @property BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)refreshIdentifiers:(id)arg1;
 - (void)removeIdentifiers:(id)arg1;
 - (void)addIdentifier:(id)arg1;

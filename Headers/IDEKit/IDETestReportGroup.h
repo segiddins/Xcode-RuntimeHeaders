@@ -19,16 +19,18 @@
     NSMutableArray *_mutableTests;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *mutableTests; // @synthesize mutableTests=_mutableTests;
 @property(copy, nonatomic) NSString *ide_testReport_base_identifier; // @synthesize ide_testReport_base_identifier=_ide_testReport_base_identifier;
 @property(copy, nonatomic) NSString *ide_testReport_testGroup_testTargetName; // @synthesize ide_testReport_testGroup_testTargetName=_ide_testReport_testGroup_testTargetName;
 @property(copy, nonatomic) NSString *ide_testReport_testGroup_groupName; // @synthesize ide_testReport_testGroup_groupName=_ide_testReport_testGroup_groupName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *tests;
 - (void)addTestItem:(id)arg1;
 @property(readonly, nonatomic) double ide_testReport_testGroup_duration;
 - (id)ide_sharedTests_testGroup_includePassingTests:(BOOL)arg1 includeFailingTests:(BOOL)arg2 includeOnlyPerfTests:(BOOL)arg3;
 - (id)ide_sharedTests_testGroup_perfTests;
+- (id)ide_sharedTests_mixedTests;
+- (id)ide_sharedTests_skippedTests;
 - (id)ide_sharedTests_passingTests;
 - (id)ide_sharedTests_failingTests;
 - (id)ide_sharedTests_testGroup_allTests;

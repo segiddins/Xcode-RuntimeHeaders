@@ -13,8 +13,8 @@
 
 + (Class)documentStripperForContentAtPath:(id)arg1;
 + (id)allTypeDescriptions;
-@property(readonly) Class stripperClass; // @synthesize stripperClass=_stripperClass;
 - (void).cxx_destruct;
+@property(readonly) Class stripperClass; // @synthesize stripperClass=_stripperClass;
 - (id)initWithExtension:(id)arg1;
 
 @end

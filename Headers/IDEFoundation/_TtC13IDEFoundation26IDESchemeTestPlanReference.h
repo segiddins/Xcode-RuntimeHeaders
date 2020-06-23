@@ -17,6 +17,7 @@
 
 + (id)keyPathsForValuesAffectingName;
 - (void).cxx_destruct;
+- (id)initWithResolvedFilePath:(id)arg1;
 - (void)setDefaultFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (BOOL)validateWithSchemeActionResult:(id)arg1 error:(id *)arg2;

@@ -25,6 +25,7 @@
     BOOL _showSubitems;
 }
 
+- (void).cxx_destruct;
 @property(getter=isLeaf) BOOL leaf; // @synthesize leaf=_leaf;
 @property(readonly) BOOL showSubitems; // @synthesize showSubitems=_showSubitems;
 @property(retain) NSArray *subitems; // @synthesize subitems=_subitems;
@@ -36,7 +37,6 @@
 @property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation; // @synthesize navigableItem_contentDocumentLocation=_contentDocumentLocation;
 @property(readonly) NSImage *navigableItem_image; // @synthesize navigableItem_image=_image;
 @property(retain, nonatomic) NSString *navigableItem_name; // @synthesize navigableItem_name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithNavigableItem:(id)arg1;
 

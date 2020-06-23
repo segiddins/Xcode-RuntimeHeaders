@@ -31,7 +31,7 @@
 - (void)ibResumeAutoResizingSubviews:(id)arg1;
 - (id)ibStopAutoResizingSubviewsWhileGrowingFromKnob:(CDUnion_42e99c75)arg1 inDocument:(id)arg2;
 - (void)ibTakeTrackedFrame:(struct CGRect)arg1 originalFrame:(struct CGRect)arg2 isFinalFrame:(BOOL)arg3;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (struct CGSize)ibPreferredSize;
 - (struct CGPoint)ibPreferredOriginForSize:(struct CGSize)arg1;

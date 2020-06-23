@@ -19,8 +19,8 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
-@property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (void)fetchSymbols:(id)arg1 generation:(unsigned long long)arg2 lastOperation:(id)arg3;
 - (id)groups;
 - (void)cancelOperations;

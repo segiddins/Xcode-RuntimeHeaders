@@ -11,12 +11,14 @@
 @interface _TtC7XCBCore21BuildRuleScriptAction : _TtCs12_SwiftObject
 {
     MISSING_TYPE *guid;
+    MISSING_TYPE *name;
     MISSING_TYPE *interpreterPath;
     MISSING_TYPE *scriptSource;
     MISSING_TYPE *inputFiles;
     MISSING_TYPE *outputFiles;
     MISSING_TYPE *dependencyInfo;
     MISSING_TYPE *runOncePerArchitecture;
+    MISSING_TYPE *runDuringInstallAPI;
 }
 
 @end

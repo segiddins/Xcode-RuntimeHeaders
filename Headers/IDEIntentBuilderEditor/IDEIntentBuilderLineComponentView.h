@@ -13,8 +13,8 @@
     DVTBorderedView *_borderedView;
 }
 
-@property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void).cxx_destruct;
+@property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

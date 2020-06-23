@@ -27,6 +27,7 @@
     NSString *_teamPickerLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideDivider; // @synthesize hideDivider=_hideDivider;
 @property(nonatomic) BOOL hideStatusLabel; // @synthesize hideStatusLabel=_hideStatusLabel;
 @property(retain, nonatomic) NSString *teamPickerLabel; // @synthesize teamPickerLabel=_teamPickerLabel;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL showIconsInMenu; // @synthesize showIconsInMenu=_showIconsInMenu;
 @property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;
 @property(nonatomic) double leftPadding; // @synthesize leftPadding=_leftPadding;
-- (void).cxx_destruct;
 
 @end
 

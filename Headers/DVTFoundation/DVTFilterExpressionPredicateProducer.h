@@ -15,8 +15,8 @@
     id <DVTFilterExpressionPredicateProducerDelegate> _producerDelegate;
 }
 
-@property(nonatomic) __weak id <DVTFilterExpressionPredicateProducerDelegate> producerDelegate; // @synthesize producerDelegate=_producerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DVTFilterExpressionPredicateProducerDelegate> producerDelegate; // @synthesize producerDelegate=_producerDelegate;
 - (id)matcherForFilterExpression:(id)arg1 includingIdentifiers:(id)arg2;
 - (id)matcherForFilterExpression:(id)arg1;
 - (id)_predicateForExpression:(id)arg1;

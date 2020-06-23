@@ -14,9 +14,9 @@
     IDEExecutionTracker *_executionTracker;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEExecutionTracker *executionTracker; // @synthesize executionTracker=_executionTracker;
 @property(readonly, nonatomic) IDEBuildOperation *buildOperation; // @synthesize buildOperation=_buildOperation;
-- (void).cxx_destruct;
 - (id)initWithBuildOperation:(id)arg1 executionTracker:(id)arg2;
 
 @end

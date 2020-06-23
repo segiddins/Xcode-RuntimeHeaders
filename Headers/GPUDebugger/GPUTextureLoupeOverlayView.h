@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     // Error: parsing type: '{DYPixelValue="format"I""(?="sint8s"[4c]"uint8s"[4C]"sint16s"[4s]"uint16s"[4S]"sint32s"[4i]"uint32s"[4I]"sint64s"[4q]"uint64s"[4Q]"float16s"[4 ]"float32s"[4f]"float64s"[4d])}', name: _pixel
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pixelValues; // @synthesize pixelValues=_pixelValues;
 @property(retain, nonatomic) _TtC11GPUDebugger18GPUImageRenderView *imageRenderView; // @synthesize imageRenderView=_imageRenderView;
 @property(retain, nonatomic) NSColor *outlineColor; // @synthesize outlineColor=_outlineColor;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 // Error parsing type for property pixel:
 // Property attributes: T{DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])},N,V_pixel
 
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

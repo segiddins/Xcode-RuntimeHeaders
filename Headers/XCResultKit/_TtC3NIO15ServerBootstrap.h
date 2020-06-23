@@ -14,8 +14,8 @@
     MISSING_TYPE *childGroup;
     MISSING_TYPE *serverChannelInit;
     MISSING_TYPE *childChannelInit;
-    MISSING_TYPE *serverChannelOptions;
-    MISSING_TYPE *childChannelOptions;
+    MISSING_TYPE *_serverChannelOptions;
+    MISSING_TYPE *_childChannelOptions;
 }
 
 @end

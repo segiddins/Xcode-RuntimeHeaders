@@ -21,8 +21,8 @@
     IBNSGridViewTemplate *_gridView;
 }
 
-@property(nonatomic) __weak IBNSGridViewTemplate *gridView; // @synthesize gridView=_gridView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IBNSGridViewTemplate *gridView; // @synthesize gridView=_gridView;
 - (void)invalidate;
 - (void)setFrame:(struct CGRect)arg1;
 - (long long)calculateNumberOfAdditionalColumnsOrRowsForLengthDelta:(double)arg1 defaultLength:(double)arg2 existingLengths:(id)arg3;

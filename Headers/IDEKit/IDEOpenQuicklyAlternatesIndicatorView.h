@@ -24,10 +24,10 @@
 + (struct CGSize)fixedSize;
 + (id)attributedStringForTitle:(id)arg1 color:(id)arg2;
 + (id)buttonBackgroundImageWithBorderColor:(id)arg1 fillColor:(id)arg2 lineWidth:(double)arg3;
+- (void).cxx_destruct;
 @property __weak id <IDEOpenQuicklyAlternatesIndicatorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (void).cxx_destruct;
 - (void)dropCaches;
 - (void)layout;
 - (id)effectiveHighlightedBackgroundImage;

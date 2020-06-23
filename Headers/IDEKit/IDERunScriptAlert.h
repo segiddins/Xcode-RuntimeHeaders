@@ -13,8 +13,8 @@
     NSString *_path;
 }
 
-@property(retain) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(retain) NSString *path; // @synthesize path=_path;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)valuesForProperty:(id)arg1;

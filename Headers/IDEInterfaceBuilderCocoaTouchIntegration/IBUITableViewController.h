@@ -21,9 +21,9 @@
 + (id)ibViewPasteboardType;
 + (Class)ibViewClass;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property BOOL clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear=_clearsSelectionOnViewWillAppear;
 @property(retain) IBUIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
-- (void).cxx_destruct;
 - (BOOL)hasTableView;
 @property(retain) IBUITableView *tableView;
 - (void)encodeWithCoder:(id)arg1;
@@ -40,7 +40,7 @@
 - (id)ibImageForOwnedScene;
 - (id)ibExplanatoryTextForEditor;
 - (void)ibStoryboardPrepareForSeparatingChild:(id)arg1 intoCompilationUnit:(id)arg2;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIViewController:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (void)ibEstablishViewOutletsInDocument:(id)arg1;
 - (id)ibLocalAttributeKeyPaths;

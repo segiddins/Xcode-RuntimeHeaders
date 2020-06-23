@@ -14,9 +14,9 @@
     long long _compressionState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long compressionState; // @synthesize compressionState=_compressionState;
 @property(nonatomic) __weak id <DBGBacktraceInspectorHeaderViewDelegate> compressionStateDelegate; // @synthesize compressionStateDelegate=_compressionStateDelegate;
-- (void).cxx_destruct;
 - (void)_toggleCompression:(id)arg1;
 - (void)refreshDisclosureButtonVisibility;
 - (void)commonInit;

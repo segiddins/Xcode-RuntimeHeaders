@@ -16,10 +16,10 @@
     BOOL _isDisassemblerAvailable;
 }
 
-@property int functionIndex; // @synthesize functionIndex=_functionIndex;
-@property(nonatomic) unsigned long long retrievalContextID; // @synthesize retrievalContextID=_retrievalContextID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property int functionIndex; // @synthesize functionIndex=_functionIndex;
+@property(nonatomic) unsigned long long retrievalContextID; // @synthesize retrievalContextID=_retrievalContextID;
 - (id)nameForVariable:(const char *)arg1;
 - (unsigned long long)getSharegroupID;
 - (BOOL)isFramebufferAttachment:(id)arg1;

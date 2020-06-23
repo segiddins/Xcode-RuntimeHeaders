@@ -7,7 +7,7 @@
 #import <IDESourceCodeComparisonEditor/DVTInvalidation-Protocol.h>
 #import <IDESourceCodeComparisonEditor/NSObject-Protocol.h>
 
-@class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString;
+@class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString, NSView;
 
 @protocol DVTSourceExpressionSource <NSObject, DVTInvalidation>
 @property(readonly, nonatomic) DVTSourceExpression *mouseOverExpression;
@@ -20,6 +20,7 @@
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) DVTSourceLanguageService *languageService;
 @property(readonly, nonatomic) NSString *selectedText;
+@property(readonly) NSView *quickHelpTargetView;
 @property(readonly) DVTSourceExpression *quickHelpExpression;
 @end
 

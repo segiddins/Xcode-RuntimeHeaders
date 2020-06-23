@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *value; // @synthesize value=_value;
 @property(readonly) unsigned long long comparison; // @synthesize comparison=_comparison;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

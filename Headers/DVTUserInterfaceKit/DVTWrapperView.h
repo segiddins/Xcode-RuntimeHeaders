@@ -33,6 +33,7 @@
 
 + (BOOL)requiresConstraintBasedLayout;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
 @property BOOL disablePaddingWarning; // @synthesize disablePaddingWarning=_disablePaddingWarning;
 @property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
@@ -43,7 +44,6 @@
 @property(nonatomic) long long horizontalAlignmentWhenClipping; // @synthesize horizontalAlignmentWhenClipping=_horizontalAlignmentWhenClipping;
 @property(nonatomic) struct CGSize maximumContentViewFrameSize; // @synthesize maximumContentViewFrameSize=_maxContentFrameSize;
 @property(nonatomic) struct CGSize minimumContentViewFrameSize; // @synthesize minimumContentViewFrameSize=_minContentFrameSize;
-- (void).cxx_destruct;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (void)willRemoveSubview:(id)arg1;

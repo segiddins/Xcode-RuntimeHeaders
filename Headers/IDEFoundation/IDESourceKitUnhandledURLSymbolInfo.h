@@ -16,10 +16,10 @@
     id <IDEIndexSymbol> _symbol;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *oldName; // @synthesize oldName=_oldName;
-- (void).cxx_destruct;
 - (id)initWithSymbol:(id)arg1 oldName:(id)arg2 newName:(id)arg3;
 
 @end

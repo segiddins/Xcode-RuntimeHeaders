@@ -6,10 +6,8 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation23IDETestDaemonController.h>
 
-#import <IDEFoundation/IDETestDaemonController-Protocol.h>
-
-@interface _TtC13IDEFoundation23IDETestDaemonController (IDEFoundation) <IDETestDaemonController>
-- (void)requestSpindumpWithCompletion:(CDUnknownBlockType)arg1;
+@interface _TtC13IDEFoundation23IDETestDaemonController (IDEFoundation)
+- (void)requestSpindumpWithPid:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)collectLogArchiveFromDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addProcessNamesToMonitoredCrashReports:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)authorizeProcessWithIdentifier:(int)arg1 completion:(CDUnknownBlockType)arg2;

@@ -11,7 +11,7 @@
 }
 
 - (id)activityReportTitle;
-- (void)processFilePath:(id)arg1 fromGroup:(id)arg2 withIndex:(id)arg3 queryStartTime:(id)arg4 progressNotifier:(id)arg5 resultOrder:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)processFilePath:(id)arg1 fromGroup:(id)arg2 withIndex:(id)arg3 queryStartTime:(id)arg4 statusAggregator:(id)arg5 resultOrder:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (BOOL)requiresEditorDocumentsToSaveBeforeSearching;
 - (BOOL)trimsIndexAfterCompletion;
 

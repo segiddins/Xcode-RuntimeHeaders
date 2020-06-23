@@ -7,12 +7,10 @@
 #import <AppKit/NSColor.h>
 
 @interface NSColor (IBUIColorSystemColorSupport)
-+ (id)ib_placeholderSystemColorWithName:(id)arg1;
-+ (id)ib_placeholderSystemColorWithName:(id)arg1 color:(id)arg2;
++ (id)ib_placeholderSystemColorWithName:(id)arg1 catalogName:(id)arg2 color:(id)arg3;
 + (id)ibSwizzledInstantiateWithDocumentUnarchiver:(id)arg1;
 @property(readonly, nonatomic) BOOL ibHasDefinedFallbackColor;
 @property(readonly, nonatomic) NSColor *ibFallbackColor;
-@property(readonly, nonatomic) BOOL ibIsPlaceholderSystemColor;
 - (const char *)ibSwizzledCStringClassNameForBinaryArchiver:(id)arg1;
 - (id)ibSwizzledArchivedSystemKeyPathForBinaryArchiver:(id)arg1 fallbackColor:(id *)arg2;
 - (void)ibSwizzledArchiveWithDocumentArchiver:(id)arg1;

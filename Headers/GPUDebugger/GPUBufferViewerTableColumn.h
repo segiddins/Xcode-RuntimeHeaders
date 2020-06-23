@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_subTitle;
 }
 
-@property(copy, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 - (id)initWithIdentifier:(id)arg1;
 
 // Remaining properties

@@ -21,10 +21,10 @@
     NSStepper *_stepper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(retain, nonatomic) NSTextField *valueText; // @synthesize valueText=_valueText;
 @property(retain, nonatomic) NSColorScaleSlider *colorSlider; // @synthesize colorSlider=_colorSlider;
-- (void).cxx_destruct;
 - (void)userDidChangeValue:(id)arg1;
 - (void)refresh;
 - (void)setupRefreshTriggersAndConfigure;

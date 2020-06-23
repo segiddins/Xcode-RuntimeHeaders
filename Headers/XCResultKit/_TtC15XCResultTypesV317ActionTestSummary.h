@@ -14,6 +14,7 @@
     MISSING_TYPE *duration;
     MISSING_TYPE *performanceMetrics;
     MISSING_TYPE *failureSummaries;
+    MISSING_TYPE *skipNoticeSummary;
     MISSING_TYPE *activitySummaries;
 }
 

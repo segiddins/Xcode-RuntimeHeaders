@@ -29,10 +29,12 @@
     MISSING_TYPE *eventSourceDidRemoveChild;
     MISSING_TYPE *eventSourceEntityWasReplaced;
     MISSING_TYPE *eventSourceGenerationStateChange;
+    MISSING_TYPE *eventSourceEntityRefreshIfUnavailable;
     MISSING_TYPE *eventSourceRootNodeDidAddDescendent;
     MISSING_TYPE *eventSourceRootNodeWillRemoveDescendent;
     MISSING_TYPE *eventSourceRootNodeDidRemoveDescendent;
     MISSING_TYPE *eventSourceRootNodeDescendentDidChange;
+    MISSING_TYPE *eventSourceRootNodeDescendentDidRefresh;
     MISSING_TYPE *children;
     MISSING_TYPE *parent;
     MISSING_TYPE *orphanedNodes;

@@ -8,22 +8,22 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
 @interface IBUISwitch : IBUIControl <IBDocumentArchiving>
 {
     BOOL _on;
-    IBUIColor *_onTintColor;
-    IBUIColor *_thumbTintColor;
+    IBColor *_onTintColor;
+    IBColor *_thumbTintColor;
 }
 
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
 + (BOOL)ibSupportsCocoaTouchAccessibility;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) IBUIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
-@property(copy, nonatomic) IBUIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
-@property(nonatomic) BOOL on; // @synthesize on=_on;
 - (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
+@property(copy, nonatomic) IBColor *onTintColor; // @synthesize onTintColor=_onTintColor;
+@property(nonatomic) BOOL on; // @synthesize on=_on;
 - (void)decodeSwitchFrame:(id)arg1;
 - (BOOL)xmlCoder:(id)arg1 shouldEncodeRect:(struct CGRect *)arg2 forKey:(id)arg3 context:(id)arg4;
 - (id)xmlCoderEncodingCallbackContext:(id)arg1;

@@ -14,9 +14,9 @@
     NSArray *_fileDataTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *fileDataTypes; // @synthesize fileDataTypes=_fileDataTypes;
 @property(readonly) Class textProviderClass; // @synthesize textProviderClass=_textProviderClass;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTextProviderClass:(Class)arg1 fileDataTypes:(id)arg2;
 

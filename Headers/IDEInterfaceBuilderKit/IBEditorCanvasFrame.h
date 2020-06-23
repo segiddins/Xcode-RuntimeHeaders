@@ -10,7 +10,7 @@
 #import <IDEInterfaceBuilderKit/IBImageButtonDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSAccessibilityGroup-Protocol.h>
 
-@class IBEditorCanvasFrameContentView, IBEditorCanvasFrameController, IBImageButton, IBSceneUpdateContentView, NSEvent, NSGestureRecognizer, NSSet, NSString, NSTrackingArea, NSValue, NSView;
+@class IBDeviceBezel, IBEditorCanvasFrameContentView, IBEditorCanvasFrameController, IBImageButton, IBSceneUpdateContentView, NSEvent, NSGestureRecognizer, NSSet, NSString, NSTrackingArea, NSValue, NSView;
 
 @interface IBEditorCanvasFrame : IBCanvasFrame <IBImageButtonDelegate, NSAccessibilityGroup, IBDocumentArbitrationResponder>
 {
@@ -20,6 +20,8 @@
     IBImageButton *_resizingGrips[3][3];
     NSSet *_resizingKnobSet;
     long long _disableDrawingCachingCount;
+    NSValue *_cachedBezelInset;
+    IBDeviceBezel *_cachedDeviceBezel;
     BOOL _horizontallyResizable;
     BOOL _verticallyResizable;
     NSEvent *_lastMouseDown;
@@ -34,6 +36,7 @@
 }
 
 + (BOOL)wantsContentEditorAppearanceUpdate;
+- (void).cxx_destruct;
 @property(retain) NSGestureRecognizer *navigationMenuGestureRecognizer; // @synthesize navigationMenuGestureRecognizer=_navigationMenuGestureRecognizer;
 @property(nonatomic, getter=isVerticallyResizable) BOOL verticallyResizable; // @synthesize verticallyResizable=_verticallyResizable;
 @property(nonatomic, getter=isHorizontallyResizable) BOOL horizontallyResizable; // @synthesize horizontallyResizable=_horizontallyResizable;
@@ -42,11 +45,10 @@
 @property(retain, nonatomic) NSValue *pinnedKnob; // @synthesize pinnedKnob=_pinnedKnob;
 @property(retain, nonatomic) IBImageButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) NSView *wrapperView; // @synthesize wrapperView=_wrapperView;
-@property(readonly) IBSceneUpdateContentView *contentView; // @synthesize contentView=_contentView;
-@property(copy) NSString *title; // @synthesize title=_title;
-@property(retain) IBEditorCanvasFrameController *controller; // @synthesize controller=_controller;
-@property(copy) NSEvent *lastMouseDown; // @synthesize lastMouseDown=_lastMouseDown;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) IBSceneUpdateContentView *contentView; // @synthesize contentView=_contentView;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) IBEditorCanvasFrameController *controller; // @synthesize controller=_controller;
+@property(copy, nonatomic) NSEvent *lastMouseDown; // @synthesize lastMouseDown=_lastMouseDown;
 - (id)knobButtonImageForState:(unsigned long long)arg1 knob:(CDUnion_31865a80)arg2;
 - (BOOL)imageButton:(id)arg1 interceptMouseDown:(id)arg2;
 - (void)dragKnob:(CDUnion_31865a80)arg1 withMouseDown:(id)arg2;
@@ -112,6 +114,7 @@
 - (struct CGRect)frameToFitDocumentViewPinningKnob:(CDUnion_31865a80)arg1;
 - (struct CGSize)sizeForDocumentSize:(struct CGSize)arg1;
 - (CDStruct_c519178c)bezelInset;
+- (void)invalidateDevizeBezel;
 - (CDStruct_c519178c)contentInset;
 - (void)flagsChanged:(id)arg1;
 - (void)mouseMoved:(id)arg1;

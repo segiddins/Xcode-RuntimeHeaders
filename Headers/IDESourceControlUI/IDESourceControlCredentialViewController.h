@@ -47,6 +47,7 @@
     NSStackView *_credentialStackView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSStackView *credentialStackView; // @synthesize credentialStackView=_credentialStackView;
 @property __weak NSView *usernameView; // @synthesize usernameView=_usernameView;
 @property(retain) NSView *sshNewView; // @synthesize sshNewView=_sshNewView;
@@ -63,7 +64,6 @@
 @property(retain) NSString *urlUsername; // @synthesize urlUsername=_urlUsername;
 @property BOOL liveReflight; // @synthesize liveReflight=_liveReflight;
 @property __weak id <IDESourceControlCredentialViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_currentCredentialType;
 - (void)updateViewHeight:(double)arg1;
 - (void)updateSSHKeyViewHeight;

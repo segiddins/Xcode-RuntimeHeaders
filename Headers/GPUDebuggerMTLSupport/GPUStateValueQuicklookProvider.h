@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <DYPLiveDebuggingHelper> _liveDebuggingHelper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <DYPLiveDebuggingHelper> liveDebuggingHelper; // @synthesize liveDebuggingHelper=_liveDebuggingHelper;
 @property(readonly, nonatomic) id <DYPVariablesViewGPUStateValue> stateValue; // @synthesize stateValue=_stateValue;
-- (void).cxx_destruct;
 - (id)loadResourceWithType:(unsigned int)arg1 resourceManager:(id)arg2;
 - (id)initWithGPUStateValue:(id)arg1;
 

@@ -21,11 +21,11 @@
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)stateSavingIdentifiers;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEEditorAreaSplit *editorAreaSplit; // @synthesize editorAreaSplit=_editorAreaSplit;
 @property(retain) IDEEditorContext *selectedAlternateEditorContext; // @synthesize selectedAlternateEditorContext=_selectedAlternateEditorContext;
 @property(retain, nonatomic) IDEEditorContext *primaryEditorContext; // @synthesize primaryEditorContext=_primaryEditorContext;
 @property(retain, nonatomic) IDEEditorArea *editorArea; // @synthesize editorArea=_editorArea;
-- (void).cxx_destruct;
 - (void)applyStateDictionary:(id)arg1 forEditor:(id)arg2;
 - (id)navigationOverlayTargetAccessibilityTitle;
 - (void)editorContext:(id)arg1 editorStateRepositoryDidChange:(id)arg2;

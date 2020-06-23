@@ -21,9 +21,9 @@
     long long _backgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(retain, nonatomic) id <IDEDebugGaugeDataSource> gaugeDataSource; // @synthesize gaugeDataSource=_gaugeDataSource;
-- (void).cxx_destruct;
 - (void)_notifyDataSourceOfNewNumberOfValuesToKeep;
 - (void)_drawChartBarValuesWithFrame:(struct CGRect)arg1 inactive:(BOOL)arg2;
 - (id)_barColorFromValue:(double)arg1 inactive:(BOOL)arg2;

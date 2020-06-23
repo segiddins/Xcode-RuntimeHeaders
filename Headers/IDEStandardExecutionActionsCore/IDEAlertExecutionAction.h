@@ -19,10 +19,10 @@
 + (id)keyPathsForValuesAffectingAlertMessageIsVisible;
 + (id)keyPathsForValuesAffectingAlertActionBehavior;
 + (id)actionType;
+- (void).cxx_destruct;
 @property(copy) NSString *alertStyle; // @synthesize alertStyle=_alertStyle;
 @property(copy) NSString *soundName; // @synthesize soundName=_soundName;
 @property(copy) NSString *alertText; // @synthesize alertText=_alertText;
-- (void).cxx_destruct;
 - (void)addAlertStyleFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addSoundNameFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addAlertTextFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

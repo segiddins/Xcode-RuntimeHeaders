@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsAPI:(unsigned int)arg1;
-@property(readonly, nonatomic) DYGLProfileConstraints *platformConstraints; // @synthesize platformConstraints=_platformConstraints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DYGLProfileConstraints *platformConstraints; // @synthesize platformConstraints=_platformConstraints;
 - (void)appendObjectDescription:(id)arg1 objectType:(int)arg2 objectID:(int)arg3 andShortDesc:(BOOL)arg4;
 - (void)appendBoundObjectDescription:(id)arg1 target:(int)arg2 andShortDesc:(BOOL)arg3;
 - (id)objectDescription:(int)arg1 objectID:(int)arg2;

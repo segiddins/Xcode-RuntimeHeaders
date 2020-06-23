@@ -18,11 +18,11 @@
     NSBox *_backgroundBox;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBox *backgroundBox; // @synthesize backgroundBox=_backgroundBox;
 @property(retain, nonatomic) NSTextField *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(nonatomic) __weak id <IBDocumentEditorLoadingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)moreInfoRequestedForBlockingEventView:(id)arg1;
 - (void)escapeHatchRequestedForBlockingEventView:(id)arg1;
 - (void)viewDidDisappear;

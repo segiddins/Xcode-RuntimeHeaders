@@ -43,12 +43,12 @@
 + (BOOL)_addLoadMoreIntegration;
 + (BOOL)isInitialized;
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *overrideLastWeekAgoDateForTesting; // @synthesize overrideLastWeekAgoDateForTesting=_overrideLastWeekAgoDateForTesting;
 @property(retain, nonatomic) XCSUIDataSourceQueueManager *queueManager; // @synthesize queueManager=_queueManager;
 @property(retain) DVTDispatchLock *lock; // @synthesize lock=_lock;
 @property unsigned long long numberOfIntegrationsToFetch; // @synthesize numberOfIntegrationsToFetch=_numberOfIntegrationsToFetch;
 @property(nonatomic) BOOL shouldFetchIssuesStreaks; // @synthesize shouldFetchIssuesStreaks=_shouldFetchIssuesStreaks;
-- (void).cxx_destruct;
 - (id)_dumpSnapshots;
 - (void)forgetWhenWatchedIntegrationFinishes:(id)arg1;
 - (BOOL)shouldNotifyWhenWatchedIntegrationFinishes:(id)arg1;

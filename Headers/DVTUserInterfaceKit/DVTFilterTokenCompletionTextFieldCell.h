@@ -15,10 +15,10 @@
     NSFont *_baselineFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFont *baselineFont; // @synthesize baselineFont=_baselineFont;
 @property double afterMargin; // @synthesize afterMargin=_afterMargin;
 @property double beforeMargin; // @synthesize beforeMargin=_beforeMargin;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;

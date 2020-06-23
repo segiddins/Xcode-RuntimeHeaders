@@ -61,9 +61,9 @@
 + (id)_activeDocumentationWindowController;
 + (BOOL)activeDocumentationWindowControllerExists;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *currentSearchString; // @synthesize currentSearchString=_currentSearchString;
 @property(retain, nonatomic) IDEDocDocumentationTabViewController *documentationTabViewController; // @synthesize documentationTabViewController=_documentationTabViewController;
-- (void).cxx_destruct;
 - (id)extensionForMenuContent;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
 - (void)_downloadsToolbarItemAction:(id)arg1;
@@ -137,7 +137,6 @@
 @property(readonly) BOOL canZoomOut;
 @property(readonly) BOOL canZoomIn;
 - (void)showRESTReferenceNavigator:(id)arg1;
-- (void)showJSReferenceNavigator:(id)arg1;
 - (void)showObjectiveCReferenceNavigator:(id)arg1;
 - (void)showSwiftReferenceNavigator:(id)arg1;
 - (void)filterInNavigator:(id)arg1;

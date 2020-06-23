@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTraceOutlineItem *_linkedResource;
 }
 
-@property(nonatomic) __weak GPUTraceOutlineItem *linkedResource; // @synthesize linkedResource=_linkedResource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUTraceOutlineItem *linkedResource; // @synthesize linkedResource=_linkedResource;
 - (void)_loadImage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

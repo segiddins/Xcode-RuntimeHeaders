@@ -31,8 +31,8 @@
     } _dvtFilteringMenuFlags;
 }
 
-@property(readonly) BOOL initiallyShowsSearch; // @synthesize initiallyShowsSearch=_initiallyShowsSearch;
 - (void).cxx_destruct;
+@property(readonly) BOOL initiallyShowsSearch; // @synthesize initiallyShowsSearch=_initiallyShowsSearch;
 - (void)controlTextDidChange:(id)arg1;
 - (id)_singleEnabledMenuItem;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;

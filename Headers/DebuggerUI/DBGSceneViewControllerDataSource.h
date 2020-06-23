@@ -8,21 +8,24 @@
 
 #import <DebuggerUI/DBGSceneViewControllerDataSourceProtocol-Protocol.h>
 
-@class DBGViewDebuggerAdditionUIController, NSDictionary, NSMutableDictionary, NSString;
+@class DBGViewDebuggerAdditionUIController, DBGViewInstance, NSMutableDictionary;
 
 @interface DBGSceneViewControllerDataSource : NSObject <DBGSceneViewControllerDataSourceProtocol>
 {
-    NSDictionary *_plistDict;
-    NSMutableDictionary *_viewInstancesDict;
-    NSString *_rootIdentifier;
-    unsigned long long globalRenderingOrderCounter;
     DBGViewDebuggerAdditionUIController *_debuggerUIController;
+    NSMutableDictionary *_renderablesDictionary;
+    DBGViewInstance *_rootView;
+    unsigned long long _globalRenderingOrderCounter;
 }
 
-@property(retain) DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
 - (void).cxx_destruct;
-- (id)allViews;
-- (id)viewWithIdentifier:(id)arg1;
+@property unsigned long long globalRenderingOrderCounter; // @synthesize globalRenderingOrderCounter=_globalRenderingOrderCounter;
+@property(retain) DBGViewInstance *rootView; // @synthesize rootView=_rootView;
+@property(retain) NSMutableDictionary *renderablesDictionary; // @synthesize renderablesDictionary=_renderablesDictionary;
+@property(retain) DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
+- (id)allRenderables;
+- (id)viewInstanceWithIdentifier:(id)arg1;
+- (id)renderableWithIdentifier:(id)arg1;
 - (id)rootViewForHierarchyToDisplay;
 - (void)updateViewRenderingOrderWithRootViewInstance:(id)arg1;
 - (void)updateChildInstancesForInstance:(id)arg1;

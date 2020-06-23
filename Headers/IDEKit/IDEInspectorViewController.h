@@ -34,6 +34,7 @@
 + (id)keyPathsForValuesAffectingInspectedObject;
 + (id)keyPathsForValuesAffectingInspectedObjects;
 + (id)inspectedArrayControllerKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEInspectorCategoryController *categoryController; // @synthesize categoryController=_categoryController;
 @property(retain, nonatomic) IDEInspectorContentView *generatedContentView; // @synthesize generatedContentView=_generatedContentView;
 @property(retain, nonatomic) DVTDelayedInvocation *reloadInspectorDelayedInvocation; // @synthesize reloadInspectorDelayedInvocation=_reloadInspectorDelayedInvocation;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSArray *content; // @synthesize content=_content;
 @property(readonly) id <IDEInspectorContentController> inspectedDocumentsController; // @synthesize inspectedDocumentsController=_inspectedDocumentsController;
 @property(readonly) id <IDEInspectorContentController> inspectedObjectsController; // @synthesize inspectedObjectsController=_inspectedObjectsController;
-- (void).cxx_destruct;
 @property(readonly) BOOL availableForAllVersionsOfMacOSX;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;

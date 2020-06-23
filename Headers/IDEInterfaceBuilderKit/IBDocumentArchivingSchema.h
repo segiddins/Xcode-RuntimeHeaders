@@ -26,8 +26,8 @@
 + (id)schemaForSchemaExtensionPointIdentifier:(id)arg1;
 + (void)populateSchemaWithCodeProvidedAdditions:(id)arg1;
 + (void)populateSchemaWithPluginDataProvidedAdditions:(id)arg1;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)description;
 - (void)verify;
 - (id)bitmaskWithElementName:(id)arg1;

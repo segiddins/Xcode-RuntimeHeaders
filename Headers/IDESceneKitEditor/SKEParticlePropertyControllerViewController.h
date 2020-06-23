@@ -24,8 +24,8 @@
 }
 
 + (id)emptyParticlePropertyController;
-@property __weak id <SKEParticlePropertyControllerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <SKEParticlePropertyControllerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didSelectPreset:(id)arg1;
 - (void)curveTypeDidChange:(id)arg1;
 - (void)timingFunctionDidChange:(id)arg1;

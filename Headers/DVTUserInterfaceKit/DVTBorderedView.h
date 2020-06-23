@@ -30,6 +30,7 @@
     DVTBorderView *_bottomBorderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTBorderView *bottomBorderView; // @synthesize bottomBorderView=_bottomBorderView;
 @property(retain, nonatomic) DVTBorderView *topBorderView; // @synthesize topBorderView=_topBorderView;
 @property(retain, nonatomic) DVTBorderView *rightBorderView; // @synthesize rightBorderView=_rightBorderView;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSColor *inactiveBackgroundColor; // @synthesize inactiveBackgroundColor=_inactiveBackgroundColor;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
-- (void).cxx_destruct;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (BOOL)_isInactive;

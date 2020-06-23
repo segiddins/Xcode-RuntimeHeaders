@@ -28,6 +28,7 @@
     NSBox *_appsSectionSeparator;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSBox *appsSectionSeparator; // @synthesize appsSectionSeparator=_appsSectionSeparator;
 @property(retain) DVTGradientImagePopUpButton *gearAppButton; // @synthesize gearAppButton=_gearAppButton;
 @property(retain) DVTGradientImageButton *deleteAppButton; // @synthesize deleteAppButton=_deleteAppButton;
@@ -35,7 +36,6 @@
 @property(retain) DVTBorderedView *appsTableFooterView; // @synthesize appsTableFooterView=_appsTableFooterView;
 @property(retain) DVTTableView *appsTableView; // @synthesize appsTableView=_appsTableView;
 @property(readonly, nonatomic) DVTDevice<DVTDeviceApplicationInstaller> *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_refreshAppsTable;
 - (void)_updateAppsTableFromDevice;
 - (void)replaceContainer:(id)arg1;

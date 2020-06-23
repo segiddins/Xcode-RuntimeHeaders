@@ -21,10 +21,10 @@
 + (id)unarchiveFromUnarchiver:(id)arg1 withKey:(id)arg2;
 + (id)identifierWithCommandActionName:(id)arg1 propertyList:(id)arg2;
 + (id)identifierWithMenuIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id commandPropertyList; // @synthesize commandPropertyList=_commandPropertyList;
 @property(readonly, nonatomic) NSString *commandActionName; // @synthesize commandActionName=_commandActionName;
 @property(readonly, nonatomic) NSString *menuIdentifier; // @synthesize menuIdentifier=_menuIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) BOOL isEmpty;

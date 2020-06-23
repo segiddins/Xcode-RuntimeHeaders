@@ -6,9 +6,7 @@
 
 #import <IDEKit/_TtC6IDEKit36IDENavigationOverlayWindowController.h>
 
-#import <IDEKit/_TtP6IDEKit28IDENavigationOverlayDelegate_-Protocol.h>
-
-@interface _TtC6IDEKit36IDENavigationOverlayWindowController (IDEKit) <_TtP6IDEKit28IDENavigationOverlayDelegate_>
+@interface _TtC6IDEKit36IDENavigationOverlayWindowController (IDEKit)
 - (id)navigationOverlay:(id)arg1 nextTargetInDirection:(long long)arg2 from:(id)arg3 candidateTargets:(id)arg4 parentWindow:(id)arg5 fallbackDelegate:(id)arg6 considerInsertionTargets:(BOOL)arg7;
 @end
 

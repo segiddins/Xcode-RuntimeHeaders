@@ -37,6 +37,7 @@
     NSCell *_sliderCell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property SEL deploymentOSAction; // @synthesize deploymentOSAction=_deploymentOSAction;
 @property(retain) id deploymentOSTarget; // @synthesize deploymentOSTarget=_deploymentOSTarget;
@@ -51,7 +52,6 @@
 @property(retain) NSSlider *sdkSlider; // @synthesize sdkSlider=_sdkSlider;
 @property(retain, nonatomic) NSArray *allSdks; // @synthesize allSdks=_allSdks;
 @property(retain, nonatomic) NSArray *sdks; // @synthesize sdks=_sdks;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 didFailToFormatString:(id)arg2 errorDescription:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

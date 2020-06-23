@@ -27,9 +27,9 @@
 + (BOOL)automaticallyNotifiesObserversOfSearchString;
 + (id)keyPathsForValuesAffectingArrangedOptionItems;
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy) NSArray *optionItems; // @synthesize optionItems=_optionItems;
-- (void).cxx_destruct;
 - (id)currentUIState;
 - (void)loadUIState:(id)arg1;
 - (id)stateRepositoryFilePath;

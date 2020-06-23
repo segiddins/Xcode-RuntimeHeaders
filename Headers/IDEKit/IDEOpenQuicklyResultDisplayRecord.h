@@ -22,9 +22,9 @@
     IDEOpenQuicklyResult *_parent;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEOpenQuicklyResult *parent; // @synthesize parent=_parent;
 @property(readonly) IDEOpenQuicklyResult *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 @property(readonly) NSString *accessibilitySubtitle;
 @property(readonly) NSAttributedString *subtitle;
 @property(readonly) NSString *title;

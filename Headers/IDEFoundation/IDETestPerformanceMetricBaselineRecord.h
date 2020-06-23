@@ -20,6 +20,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *maxStandardDeviation; // @synthesize maxStandardDeviation=_maxStandardDeviation;
 @property(readonly) NSNumber *maxRegression; // @synthesize maxRegression=_maxRegression;
 @property(readonly) NSNumber *maxPercentRelativeStandardDeviation; // @synthesize maxPercentRelativeStandardDeviation=_maxPercentRelativeStandardDeviation;
@@ -27,7 +28,6 @@
 @property(readonly) NSNumber *maxPercentRegression; // @synthesize maxPercentRegression=_maxPercentRegression;
 @property(readonly) NSNumber *average; // @synthesize average=_average;
 @property(readonly) NSString *baselineDisplayName; // @synthesize baselineDisplayName=_baselineDisplayName;
-- (void).cxx_destruct;
 - (id)initWithBaselineDisplayName:(id)arg1 average:(id)arg2 maxPercentRegression:(id)arg3 maxPercentImprovement:(id)arg4 maxPercentRelativeStandardDeviation:(id)arg5 maxRegression:(id)arg6 maxStandardDeviation:(id)arg7;
 - (id)init;
 

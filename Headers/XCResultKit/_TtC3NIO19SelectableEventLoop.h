@@ -15,7 +15,9 @@
     MISSING_TYPE *scheduledTasks;
     MISSING_TYPE *tasksCopy;
     MISSING_TYPE *tasksLock;
-    MISSING_TYPE *lifecycleState;
+    MISSING_TYPE *_externalStateLock;
+    MISSING_TYPE *internalState;
+    MISSING_TYPE *externalState;
     MISSING_TYPE *_iovecs;
     MISSING_TYPE *_storageRefs;
     MISSING_TYPE *iovecs;

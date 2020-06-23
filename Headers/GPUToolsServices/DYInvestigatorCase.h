@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSMutableArray *additionalFindings; // @synthesize additionalFindings=_additionalFindings;
 @property(readonly, nonatomic) NSMutableArray *investigatorFindings; // @synthesize investigatorFindings=_investigatorFindings;
@@ -40,7 +41,6 @@
 @property(nonatomic) BOOL invalid; // @synthesize invalid=_invalid;
 @property(readonly, nonatomic) DYDeviceInfo *playbackDeviceInfo; // @synthesize playbackDeviceInfo=_playbackDeviceInfo;
 @property(retain, nonatomic) DYInvestigatorCaseConfigData *configData; // @synthesize configData=_configData;
-- (void).cxx_destruct;
 - (void)invalidateWithReason:(int)arg1;
 - (id)investigatorResultBody;
 - (id)investigatorResultString;

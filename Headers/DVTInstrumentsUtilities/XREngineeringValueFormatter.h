@@ -22,11 +22,11 @@
 }
 
 + (id)networkAddressStringFromSockaddr:(const void *)arg1 length:(unsigned long long)arg2 resolveHostName:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL withinNarrative; // @synthesize withinNarrative=_withinNarrative;
 @property(retain, nonatomic) NSDate *offsetForRelativeTimes; // @synthesize offsetForRelativeTimes=_offsetForRelativeTimes;
 @property(nonatomic, getter=isHighestResolutionTimeEnabled) BOOL highestResolutionTimeEnabled; // @synthesize highestResolutionTimeEnabled=_highestResolutionTimeEnabled;
 @property(nonatomic, getter=isMultiline) BOOL multiline; // @synthesize multiline=_multiline;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

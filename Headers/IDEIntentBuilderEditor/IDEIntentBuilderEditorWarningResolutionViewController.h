@@ -14,9 +14,9 @@
     NSButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *fixButton; // @synthesize fixButton=_fixButton;
-- (void).cxx_destruct;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)fixButtonPressed:(id)arg1;

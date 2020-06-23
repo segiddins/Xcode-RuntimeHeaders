@@ -16,11 +16,11 @@
     NSString *_existingFileResolution;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *existingFileResolution; // @synthesize existingFileResolution=_existingFileResolution;
 @property(retain) DVTLocale *toLocale; // @synthesize toLocale=_toLocale;
 @property(retain) NSArray *localizableFiles; // @synthesize localizableFiles=_localizableFiles;
 @property(retain) Xcode3Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 @property(readonly) NSString *assistantTitle;
 - (id)initWithProject:(id)arg1 convertingFiles:(id)arg2 toLocale:(id)arg3;
 

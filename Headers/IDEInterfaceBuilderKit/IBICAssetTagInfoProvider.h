@@ -28,6 +28,7 @@
 + (id)assetTagInfoProviderForFileReference:(id)arg1;
 + (BOOL)canProvideAssetTagInfoForFileReference:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *implicitTags; // @synthesize implicitTags=_implicitTags;
 @property(retain, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) id <IBInvalidation> catalogObserverToken; // @synthesize catalogObserverToken=_catalogObserverToken;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) IBICAbstractCatalogDocument *catalogDocument; // @synthesize catalogDocument=_catalogDocument;
 @property(retain, nonatomic) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 @property(readonly, nonatomic) IBICAssetTagSolver *assetTagSolver; // @synthesize assetTagSolver=_assetTagSolver;
-- (void).cxx_destruct;
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)removeTaggedAssetItemListener:(id)arg1;
 - (void)addTaggedAssetItemListener:(id)arg1;

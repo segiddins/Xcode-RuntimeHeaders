@@ -11,7 +11,8 @@
 #import <IDEKit/IDEStructureEditingTarget-Protocol.h>
 #import <IDEKit/IDEStructureNavigatorMenuItemWhitelistProvider-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTReferenceResolutionStrategy, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTReferenceResolutionStrategy, DVTSymbol, IDEFileReference, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
+@protocol DVTPropertyListValue;
 
 @interface IDEContainerItem (IDEKit_StructureEditing) <IDEStructureEditingTarget, IDEKeyDrivenNavigableItemRepresentedObject, IDEInspectorMatching, IDEStructureNavigatorMenuItemWhitelistProvider>
 + (id)keyPathsForValuesAffectingNavigableItem_filtered;
@@ -32,9 +33,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingIdeInspectedExpectedFilePathURL;
 + (id)keyPathsForValuesAffectingIdeInspectedExpectedFilePath;
-- (id)structureEditingRemoveSubitemsTargetForParentNavigableItem:(id)arg1;
-- (id)structureEditingGroupingTargetForProposedNavigableItem:(id)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(id)arg4;
-- (id)structureEditingTargetForProposedNavigableItem:(id)arg1 proposedChildIndex:(long long)arg2;
+- (id)structureEditingRemoveSubitemsTargetForParentItem:(id)arg1;
+- (id)structureEditingGroupingTargetForProposedItem:(id)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(id)arg4;
+- (id)structureEditingTargetForProposedItem:(id)arg1 proposedChildIndex:(long long)arg2;
 @property(readonly) unsigned long long navigableItem_conflictStateForUpdateOrMerge;
 @property(readonly) NSString *navigableItem_sourceControlServerStatus;
 @property(readonly) NSString *navigableItem_sourceControlLocalStatus;
@@ -70,6 +71,8 @@
 @property(readonly, copy) NSString *idePendingInspectedName;
 @property(copy) NSString *ideInspectedName;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+@property(readonly) NSImage *explorableIcon;
+@property(readonly) id <DVTPropertyListValue> plistRepresentation;
 - (id)filterMenuWhitelistIdentifiers;
 - (id)contextualMenuWhitelistIdentifiers;
 - (id)fileNewMenuWhitelistIdentifiers;
@@ -81,6 +84,10 @@
 @property(nonatomic, readonly) id navigableItem_parentRepresentedObject;
 @property(nonatomic, readonly) NSString *navigableItem_toolTip;
 @property(nonatomic, readonly) NSURL *ideInspectedExpectedFilePathURL;
+@property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
+@property(nonatomic, readonly) NSString *containerHierarchyDescription;
+@property(nonatomic, readonly) IDEGroup *referencedGroup;
+@property(nonatomic, readonly) IDEGroup *representedGroup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

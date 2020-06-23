@@ -14,9 +14,9 @@
     NSArray *_locationErrors;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *locationErrors; // @synthesize locationErrors=_locationErrors;
 @property(readonly) NSArray *locatedProducts; // @synthesize locatedProducts=_locatedProducts;
-- (void).cxx_destruct;
 - (id)initWithLocatedProducts:(id)arg1 locationErrors:(id)arg2;
 
 @end

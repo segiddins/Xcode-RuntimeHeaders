@@ -8,7 +8,7 @@
 
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class DVTSourceControlAuthor, NSArray, NSRegularExpression, NSString;
+@class NSArray, NSRegularExpression, NSString;
 
 @interface DVTSourceControlSystem : NSObject <NSSecureCoding>
 {
@@ -23,22 +23,19 @@
     unsigned long long _revisionMatchingStyle;
     NSRegularExpression *_revisionIdentifierRegularExpression;
     unsigned long long _revisionIdentifierMinimumLength;
-    DVTSourceControlAuthor *_cachedGlobalAuthor;
-    unsigned long long _cachedGlobalRebaseState;
     unsigned long long _features;
     NSString *_nonLegacyIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (void)sourceControlSystemsWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)bestGuessSystemForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)cachedSourceControlSystems;
 + (id)systemWithIdentifier:(id)arg1;
++ (id)gitSourceControlSystem;
+- (void).cxx_destruct;
 @property(copy) NSString *nonLegacyIdentifier; // @synthesize nonLegacyIdentifier=_nonLegacyIdentifier;
 @property(readonly) BOOL isLegacyPlugIn; // @synthesize isLegacyPlugIn=_isLegacyPlugIn;
 @property unsigned long long features; // @synthesize features=_features;
-@property unsigned long long cachedGlobalRebaseState; // @synthesize cachedGlobalRebaseState=_cachedGlobalRebaseState;
-@property(retain) DVTSourceControlAuthor *cachedGlobalAuthor; // @synthesize cachedGlobalAuthor=_cachedGlobalAuthor;
 @property unsigned long long revisionIdentifierMinimumLength; // @synthesize revisionIdentifierMinimumLength=_revisionIdentifierMinimumLength;
 @property(retain) NSRegularExpression *revisionIdentifierRegularExpression; // @synthesize revisionIdentifierRegularExpression=_revisionIdentifierRegularExpression;
 @property unsigned long long revisionMatchingStyle; // @synthesize revisionMatchingStyle=_revisionMatchingStyle;
@@ -49,7 +46,6 @@
 @property(copy) NSString *plugInIdentifier; // @synthesize plugInIdentifier=_plugInIdentifier;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
@@ -69,17 +65,16 @@
 @property(readonly) BOOL supportsPathLocation;
 @property(readonly) BOOL supportsMultipleRemoteRepositories;
 @property(readonly) BOOL hasLocalRepository;
-- (id)setRebaseState:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)rebaseStateWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)remoteNameIsValid:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)ignoredFilesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)setGlobalAuthor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)globalAuthorWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)keychainNameFromURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)pluginIdentifier;
+- (id)setRebaseState:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)rebaseStateWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)setGlobalAuthor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)globalAuthorWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)remoteNameIsValid:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)ignoredFilesWithCompletionBlock:(CDUnknownBlockType)arg1;
 
 @end
 

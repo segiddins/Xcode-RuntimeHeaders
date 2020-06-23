@@ -42,6 +42,7 @@
 + (id)testSchemeCommand;
 + (id)launchSchemeCommand;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsCompilerSanitizers; // @synthesize supportsCompilerSanitizers=_supportsCompilerSanitizers;
 @property(readonly, nonatomic) BOOL supportsSingleFileProcessing; // @synthesize supportsSingleFileProcessing=_supportsSingleFileProcessing;
 @property(readonly, nonatomic) BOOL supportsCodeCoverage; // @synthesize supportsCodeCoverage=_supportsCodeCoverage;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic, getter=isAppleInternalOnly) BOOL appleInternalOnly; // @synthesize appleInternalOnly=_appleInternalOnly;
 @property(readonly, copy, nonatomic) NSString *commandNameGerund; // @synthesize commandNameGerund=_commandNameGerund;
 @property(readonly, copy, nonatomic) NSString *commandName; // @synthesize commandName=_commandName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCommandName:(id)arg1 gerund:(id)arg2 appleInternalOnly:(BOOL)arg3;
 - (id)init;

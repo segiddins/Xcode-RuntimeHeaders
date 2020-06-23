@@ -22,6 +22,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL stacksHorizontally; // @synthesize stacksHorizontally=_stacksHorizontally;
 @property double padding; // @synthesize padding=_padding;
 @property(nonatomic) double paddingBetweenViews; // @synthesize paddingBetweenViews=_paddingBetweenViews;
@@ -30,7 +31,6 @@
 @property double rightPadding; // @synthesize rightPadding=_rightPadding;
 @property double topPadding; // @synthesize topPadding=_topPadding;
 @property(nonatomic) unsigned long long paddingMask; // @synthesize paddingMask=_paddingMask;
-- (void).cxx_destruct;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (id)_generateConstraints;

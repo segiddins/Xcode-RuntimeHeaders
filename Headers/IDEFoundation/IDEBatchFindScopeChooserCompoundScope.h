@@ -16,9 +16,9 @@
 
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)propertyListIdentifier;
+- (void).cxx_destruct;
 @property(readonly) NSArray *workspaceLocationPredicates; // @synthesize workspaceLocationPredicates=_workspaceLocationPredicates;
 @property(readonly) NSArray *namedScopes; // @synthesize namedScopes=_namedScopes;
-- (void).cxx_destruct;
 - (id)propertyListRepresentation;
 - (id)predicate;
 - (id)source;

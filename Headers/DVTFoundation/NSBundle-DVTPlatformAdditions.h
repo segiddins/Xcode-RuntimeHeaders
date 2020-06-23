@@ -12,6 +12,7 @@
 + (id)dvt_platformForBundleAtPath:(id)arg1 error:(id *)arg2;
 + (id)dvt_platformFamilyForBundleAtPath:(id)arg1 error:(id *)arg2;
 + (id)dvt_rawInfoDictionaryForBundleAtPath:(id)arg1 error:(id *)arg2;
++ (id)dvt_infoPlistURLForBundleAtPath:(id)arg1;
 + (id)dvt_filteredInfoDictionaryForBundleAtPath:(id)arg1 error:(id *)arg2;
 + (id)dvt_uncachedPathForResource:(id)arg1 ofType:(id)arg2 atBundlePath:(id)arg3;
 + (id)dvt_uncachedInfoAtPath:(id)arg1;

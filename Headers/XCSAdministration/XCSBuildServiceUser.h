@@ -17,11 +17,11 @@
     id <_TtP17XCSAdministration14SessionService_> _sessionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14SessionService_> sessionService; // @synthesize sessionService=_sessionService;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14ProcessService_> processService; // @synthesize processService=_processService;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14LaunchdService_> launchdService; // @synthesize launchdService=_launchdService;
 @property(retain, nonatomic) NSString *launchDaemonsPath; // @synthesize launchDaemonsPath=_launchDaemonsPath;
-- (void).cxx_destruct;
 - (id)launchAgentInstallPath;
 - (id)launchAgentWithLabel:(id)arg1;
 - (id)buildServiceLaunchAgent;

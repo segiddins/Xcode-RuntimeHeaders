@@ -25,7 +25,7 @@
 #import <IDEInterfaceBuilderKit/IDENavigableItemArchivableRepresentationSupport-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSKeyedUnarchiverDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, IBAbstractClassProvider, IBClassDescriber, IBDeviceConfiguration, IBDocumentAutolayoutManager, IBDocumentIssueGenerator, IBDocumentLiveViewsDispatcher, IBDocumentMetrics, IBDocumentPlatformAdapter, IBFileBuildSettingsSnapshot, IBIdiom, IBIndexClassDescriber, IBLiveViewsManager, IBMemberConfiguration, IBMutableIdentityDictionary, IBObjectContainer, IBPerformanceMetric, IBPlatform, IBPlatformToolFailureHandler, IBResourceManager, IBSceneUpdateManager, IBSimulatedMetricsContainer, IBSimulatedMetricsInferrer, IBSourceCodeClassProvider, IBSystemClassProvider, IBTargetRuntime, IBTemporaryPasteboardClassProvider, IBUserDefinedActionClassProvider, IDEContainer, IDEMediaResourceVariantContext, IDEWorkspace, IDEWorkspaceDocument, NSAlert, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSURL;
+@class DVTDelayedInvocation, DVTLocale, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, IBAbstractClassProvider, IBClassDescriber, IBDeviceConfiguration, IBDocumentAutolayoutManager, IBDocumentIssueGenerator, IBDocumentLiveViewsDispatcher, IBDocumentMetrics, IBDocumentPlatformAdapter, IBFileBuildSettingsSnapshot, IBIdiom, IBIndexClassDescriber, IBLiveViewsManager, IBMemberConfiguration, IBMutableIdentityDictionary, IBObjectContainer, IBPerformanceMetric, IBPlatform, IBPlatformToolFailureHandler, IBResourceManager, IBSceneUpdateManager, IBSimulatedMetricsContainer, IBSimulatedMetricsInferrer, IBSourceCodeClassProvider, IBSystemClassProvider, IBTargetRuntime, IBTemporaryPasteboardClassProvider, IBUserDefinedActionClassProvider, IDEContainer, IDEMediaResourceVariantContext, IDEWorkspace, IDEWorkspaceDocument, NSAlert, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSURL;
 @protocol DVTInvalidation;
 
 @interface IBDocument : IDEEditorDocument <IBXMLCoderDelegate, IBXMLDecoderDelegate, IDEDocumentStructureProviding, IDENavigableItemArchivableRepresentationSupport, IDEMediaLibraryDelegate, IBAttributeSearchLocationIteratorDelegate, IBSceneUpdateManagerDelegate, IBArchivableDocument, IBUnarchivableDocument, IBObjectContainerDelegate, IBObjectContainerArchivingDelegate, IBAutolayoutInfoProvider, IBAutolayoutFrameDeciderDelegate, DVTTextFindable, DVTTextReplacable, NSKeyedUnarchiverDelegate, IBLiveViewsBundleObserverEnvironment, IBDiagnosticsHandlerConfigurator>
@@ -44,7 +44,7 @@
     NSNumber *_cachedSystemVersion;
     BOOL _wantsUpgradeToLatestXcode;
     BOOL _unarchiving;
-    BOOL _unarchivingForPasteBoard;
+    BOOL _unarchivingForPasteboard;
     NSMutableArray *_objectsWithRepairedMemberIDs;
     NSMutableOrderedSet *_capabilitiesDiscoveredDuringArchiving;
     DVTDelayedInvocation *_delayedVerifyArchivingInvocation;
@@ -131,6 +131,7 @@
     NSDictionary *_additionalInstantiationInformation;
     NSArray *_verificationMessages;
     NSURL *_verificationMessagesSourceURL;
+    DVTLocale *_resourceLocale;
     NSString *_lastSavedInterfaceBuilderVersion;
     NSDictionary *_lastSavedPluginVersionsForDependentPlugins;
     IBDocumentLiveViewsDispatcher *_liveViewsDispatcher;
@@ -151,6 +152,7 @@
 }
 
 + (id)activeDeviceTypeDescriptionsExcludingDocument:(id)arg1;
++ (id)keyPathsForValuesAffectingEffectiveAppearanceForDocumentLevelInspectorProperties;
 + (id)keyPathsForValuesAffectingUsesAutolayout;
 + (BOOL)canPasteFromPasteboard:(id)arg1 ofType:(id)arg2;
 + (id)configurationPropertyStorageForObject:(id)arg1;
@@ -181,6 +183,7 @@
 + (void)setPreventsAutosavingInPlace:(BOOL)arg1;
 + (BOOL)preventsAutosavingInPlace;
 + (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
++ (int)libraryInclusionStatusForMainMenu;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
 + (BOOL)supportsPrototypeObjects;
@@ -208,6 +211,7 @@
 + (id)documentsWithFileURLs;
 + (id)documents;
 + (Class)metricsInferrerClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL generatesPrototypingConstraints; // @synthesize generatesPrototypingConstraints=_generatesPrototypingConstraints;
 @property(readonly, nonatomic) NSString *currentAppKitVersion; // @synthesize currentAppKitVersion=_currentAppKitVersion;
 @property(readonly, nonatomic) NSString *currentIBFrameworkVersion; // @synthesize currentIBFrameworkVersion=_currentIBFrameworkVersion;
@@ -230,6 +234,7 @@
 @property(readonly) BOOL usesSafeAreaLayoutGuides; // @synthesize usesSafeAreaLayoutGuides=_usesSafeAreaLayoutGuides;
 @property(copy) NSDictionary *lastSavedPluginVersionsForDependentPlugins; // @synthesize lastSavedPluginVersionsForDependentPlugins=_lastSavedPluginVersionsForDependentPlugins;
 @property(copy) NSString *lastSavedInterfaceBuilderVersion; // @synthesize lastSavedInterfaceBuilderVersion=_lastSavedInterfaceBuilderVersion;
+@property(retain, nonatomic) DVTLocale *resourceLocale; // @synthesize resourceLocale=_resourceLocale;
 @property(copy) NSURL *verificationMessagesSourceURL; // @synthesize verificationMessagesSourceURL=_verificationMessagesSourceURL;
 @property(copy, nonatomic) NSArray *verificationMessages; // @synthesize verificationMessages=_verificationMessages;
 @property BOOL topLevelViewsShouldMaintainOriginalFrameWhenMovedToTheTopLevel; // @synthesize topLevelViewsShouldMaintainOriginalFrameWhenMovedToTheTopLevel=_topLevelViewsShouldMaintainOriginalFrameWhenMovedToTheTopLevel;
@@ -257,7 +262,6 @@
 @property(readonly, nonatomic) IBClassDescriber *classDescriber; // @synthesize classDescriber=_classDescriber;
 @property(readonly, nonatomic) IBIndexClassDescriber *indexClassDescriber; // @synthesize indexClassDescriber=_indexClassDescriber;
 @property(copy, nonatomic) NSString *defaultModuleName; // @synthesize defaultModuleName=_defaultModuleName;
-- (void).cxx_destruct;
 - (id)genericPlatformToolError;
 - (BOOL)handleOrProcessPlatformToolError:(id)arg1 returningError:(id *)arg2;
 - (void)displayPlatformToolErrorMessageForEditor:(id)arg1;
@@ -348,8 +352,10 @@
 - (void)updateConnectionsAfterEnablingOrDisablingConfigurations;
 - (void)_dispatchToDocumentObjectsDidSwitchToDeviceConfiguration:(id)arg1;
 - (void)shutdownToolsIgnoringDeviceTypeDescriptions:(id)arg1;
+- (id)effectiveAppearanceForDocumentLevelInspectorProperties;
 - (void)switchToDeviceConfigurationWithoutFrameDeciding:(id)arg1;
 - (void)switchToDeviceConfiguration:(id)arg1;
+- (void)refreshDocumentAppearance;
 - (void)applyEditedConfigurationToObjects:(id)arg1;
 - (id)memberConfigurationForViewingObject:(id)arg1;
 - (void)scheduleMemberWrapperInstalledChildrenStateInvalidationForChildrenObjects:(id)arg1;
@@ -455,7 +461,7 @@
 @property(readonly) BOOL usesAutolayout;
 - (void)waitForAllAutolayoutStatusUpdates;
 - (void)debugMenuItemPrintArbitrationUnits:(id)arg1;
-- (id)subarbitrationUnitRootForObject:(id)arg1 lookupCache:(struct IBMutableIdentityDictionary *)arg2;
+- (id)subarbitrationUnitRootForObject:(id)arg1 lookupCache:(id)arg2;
 - (id)subarbitrationUnitRootForObject:(id)arg1;
 - (id)arbitrationUnitRootForObject:(id)arg1;
 - (id)topMostObjectOfClass:(Class)arg1 inLineageToArbitrationUnitRootContainingObject:(id)arg2;
@@ -589,10 +595,12 @@
 - (id)insertOrMoveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5 finishExtractingObjectsBlock:(CDUnknownBlockType)arg6;
 - (id)insertOrMoveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5;
 - (id)insertObjectsFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5 finishExtractingObjectsBlock:(CDUnknownBlockType)arg6;
+- (void)populateDataIntoContext:(id)arg1 forPasteboardTypes:(id)arg2 fromPasteboard:(id)arg3;
+- (id)ibExtractableSidecarPasteboardTypesForObjects:(id)arg1;
 - (BOOL)allowUserInitiatedAdditionOfObjectsFromPasteboard:(id)arg1;
-- (void)performBlockNotingUnarchivingFromPasteBoard:(CDUnknownBlockType)arg1;
+- (BOOL)noteUnarchivingFromPasteboard:(id)arg1 enforcingChangeCount:(BOOL)arg2 during:(CDUnknownBlockType)arg3;
 - (id)insertObjectsFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 context:(id)arg3;
+- (void)didExtractPasteboardObjects:(id)arg1 context:(id)arg2;
 - (id)addOrMoveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 toObject:(id)arg3 context:(id)arg4 finishExtractingObjectsBlock:(CDUnknownBlockType)arg5;
 - (id)addOrMoveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 toObject:(id)arg3 context:(id)arg4;
 - (id)makeObject:(id)arg1 acceptContentsOfPasteboardFromDragInfo:(id)arg2 insertionContext:(id)arg3;
@@ -850,6 +858,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)toggleHardwarePreview:(id)arg1;
 - (id)printOperationWithSettings:(id)arg1 error:(id *)arg2;
+- (void)populateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 @property(readonly) NSDictionary *variantForResolvingMediaResources;
 @property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
 - (void)noteMediaLibraryVariantContextChanged;

@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_socketDelegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *socketDelegateQueue; // @synthesize socketDelegateQueue=_socketDelegateQueue;
 @property(retain) _DT_GCDAsyncSocket *socket; // @synthesize socket=_socket;
 @property(retain) DTXChannel *channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long port;
 - (void)socket:(id)arg1 didAcceptNewSocket:(id)arg2;
 - (void)stopListening;

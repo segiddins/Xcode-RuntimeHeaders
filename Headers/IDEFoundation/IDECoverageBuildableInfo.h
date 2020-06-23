@@ -21,6 +21,7 @@
 }
 
 + (id)infoForBuildable:(id)arg1 withBuildParameterVariants:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isStatic; // @synthesize isStatic=_isStatic;
 @property(nonatomic) BOOL includeInReport; // @synthesize includeInReport=_includeInReport;
 @property(readonly, copy, nonatomic) NSSet *sourceFiles; // @synthesize sourceFiles=_sourceFiles;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *buildableIdentifier; // @synthesize buildableIdentifier=_buildableIdentifier;
 @property(readonly, copy, nonatomic) NSArray *productPaths; // @synthesize productPaths=_productPaths;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 productPath:(id)arg2 buildableIdentifier:(id)arg3 architecture:(id)arg4 toolchains:(id)arg5 isStatic:(BOOL)arg6 sourceFiles:(id)arg7;
 - (id)initWithName:(id)arg1 productPaths:(id)arg2 buildableIdentifier:(id)arg3 architectures:(id)arg4 toolchains:(id)arg5 isStatic:(BOOL)arg6 sourceFiles:(id)arg7;
 

@@ -45,13 +45,13 @@
 + (id)keyPathsForValuesAffectingCanCancel;
 + (id)keyPathsForValuesAffectingCanGoForwardOrFinish;
 + (id)keyPathsForValuesAffectingOnFirstAssistant;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionPreprocessorExecutionStack; // @synthesize completionPreprocessorExecutionStack=_completionPreprocessorExecutionStack;
 @property(retain, nonatomic) NSMutableArray *completionPreprocessors; // @synthesize completionPreprocessors=_completionPreprocessors;
 @property(retain, nonatomic) NSString *finishButtonTitle; // @synthesize finishButtonTitle=_finishButtonTitle;
 @property(retain, nonatomic) NSString *nextButtonTitle; // @synthesize nextButtonTitle=_nextButtonTitle;
 @property(readonly, nonatomic) IDEAssistantContext *assistantContext; // @synthesize assistantContext=_assistantContext;
 @property(readonly, nonatomic) IDEAssistant *currentAssistant; // @synthesize currentAssistant=_currentAssistant;
-- (void).cxx_destruct;
 - (void)configureAnimationImageViewWithDirection:(double)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)setupAccessoriesForAssistant:(id)arg1 animated:(BOOL)arg2;
 - (void)helpAction:(id)arg1;

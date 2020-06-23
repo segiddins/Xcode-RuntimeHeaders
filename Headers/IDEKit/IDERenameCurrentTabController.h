@@ -15,9 +15,9 @@
 }
 
 + (void)renameWorkspaceWindowController:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property(retain) IDEWorkspaceWindowController *workspaceWindowController; // @synthesize workspaceWindowController=_workspaceWindowController;
-- (void).cxx_destruct;
 - (void)rename:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)loadWindow;

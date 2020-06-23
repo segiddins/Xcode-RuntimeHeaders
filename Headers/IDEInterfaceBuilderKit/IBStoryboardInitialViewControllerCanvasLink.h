@@ -20,12 +20,12 @@
     NSObject<IBPrimarySceneObject> *_canvasLinkDestination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkDestination; // @synthesize canvasLinkDestination=_canvasLinkDestination;
 @property(retain) NSObject<IBPrimarySceneObject> *canvasLinkSource; // @synthesize canvasLinkSource=_canvasLinkSource;
 @property(retain) NSObject<IBPrimarySceneObject> *source; // @synthesize source=_source;
 @property(retain) NSObject<IBStoryboardEntryPointIndicator> *entryPointIndicator; // @synthesize entryPointIndicator=_entryPointIndicator;
-- (void).cxx_destruct;
 - (BOOL)isSelectable;
 @property(readonly) BOOL canvasLinkShouldDrawPath;
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;

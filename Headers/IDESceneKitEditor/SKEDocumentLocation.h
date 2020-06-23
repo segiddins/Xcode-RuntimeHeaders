@@ -16,8 +16,8 @@
 
 + (id)URLForMember:(id)arg1 inDocumentAtURL:(id)arg2;
 + (id)memberWithURL:(id)arg1;
-@property(readonly, nonatomic) NSString *modelPath; // @synthesize modelPath=_modelPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *modelPath; // @synthesize modelPath=_modelPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -32,6 +32,7 @@
     NSBox *_separatorLine;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSBox *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property __weak NSLayoutConstraint *profileTitleTrailingConstraint; // @synthesize profileTitleTrailingConstraint=_profileTitleTrailingConstraint;
 @property __weak NSLayoutConstraint *updatedLabelLeadingConstraint; // @synthesize updatedLabelLeadingConstraint=_updatedLabelLeadingConstraint;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) _IDEProvisioningProfileImageView *profileImageView; // @synthesize profileImageView=_profileImageView;
 @property(nonatomic) BOOL hasUpdatedPortalProfile; // @synthesize hasUpdatedPortalProfile=_hasUpdatedPortalProfile;
 @property(retain, nonatomic) IDEProfileQualification *qualification; // @synthesize qualification=_qualification;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

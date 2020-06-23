@@ -14,9 +14,9 @@
     NSArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) unsigned long long cid; // @synthesize cid=_cid;
-- (void).cxx_destruct;
 
 @end
 

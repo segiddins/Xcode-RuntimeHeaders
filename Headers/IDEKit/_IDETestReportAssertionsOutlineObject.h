@@ -16,10 +16,10 @@
     NSArray *_failureSummaries;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *failureSummaries; // @synthesize failureSummaries=_failureSummaries;
 @property(retain) id <IDETestReport_TestRun> testRun; // @synthesize testRun=_testRun;
 @property(retain) id <IDETestReport_Test> test; // @synthesize test=_test;
-- (void).cxx_destruct;
 
 @end
 

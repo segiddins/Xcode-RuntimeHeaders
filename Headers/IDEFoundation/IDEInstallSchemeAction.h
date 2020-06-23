@@ -21,9 +21,9 @@
 + (id)keyPathsForValuesAffectingDefaultInstallName;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (BOOL)allowInstallSchemeAction;
+- (void).cxx_destruct;
 @property(copy) NSArray *killProcessList; // @synthesize killProcessList=_killProcessList;
 @property(copy) NSString *customInstallName; // @synthesize customInstallName=_customInstallName;
-- (void).cxx_destruct;
 - (void)setKillProcessesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setCustomInstallNameFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildConfigurationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

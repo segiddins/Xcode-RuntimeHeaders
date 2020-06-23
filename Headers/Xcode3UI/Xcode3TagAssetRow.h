@@ -19,9 +19,9 @@
     NSPredicate *_displayFilterPredicate;
 }
 
+- (void).cxx_destruct;
 - (id)displayFilterPredicate;
 - (id)tag;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)description;

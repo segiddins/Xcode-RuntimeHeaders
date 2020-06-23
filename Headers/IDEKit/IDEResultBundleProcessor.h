@@ -13,7 +13,6 @@
     NSMutableSet *_perfMetrics;
     BOOL _didProcessTests;
     BOOL _didProcessCoverage;
-    BOOL _didProcessBuildTimeline;
     NSURL *_resultBundleURL;
     NSArray *_devices;
     IDESchemeActionsInvocationRecord *_invocationRecord;
@@ -29,6 +28,7 @@
 }
 
 + (double)durationFromTestResult:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *timelineMetricsActionRecords; // @synthesize timelineMetricsActionRecords=_timelineMetricsActionRecords;
 @property(retain, nonatomic) NSMapTable *testRunSummariesByDevice; // @synthesize testRunSummariesByDevice=_testRunSummariesByDevice;
 @property(retain, nonatomic) NSDictionary *testActionsByDevice; // @synthesize testActionsByDevice=_testActionsByDevice;
@@ -41,7 +41,6 @@
 @property(retain, nonatomic) IDESchemeActionsInvocationRecord *invocationRecord; // @synthesize invocationRecord=_invocationRecord;
 @property(retain, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(retain, nonatomic) NSURL *resultBundleURL; // @synthesize resultBundleURL=_resultBundleURL;
-- (void).cxx_destruct;
 - (id)testRunSummariesForDevice:(id)arg1;
 - (id)testableSummaries;
 @property(readonly, nonatomic) NSArray *testGroups;

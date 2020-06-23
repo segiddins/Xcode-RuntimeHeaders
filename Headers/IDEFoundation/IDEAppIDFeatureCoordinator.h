@@ -29,6 +29,7 @@
 + (id)keyPathsForValuesAffectingErrors;
 + (id)keyPathsForValuesAffectingCommunicatingWithPortal;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *provisioningProfileObserver; // @synthesize provisioningProfileObserver=_provisioningProfileObserver;
 @property(nonatomic) long long provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(nonatomic) BOOL allowAllFeatures; // @synthesize allowAllFeatures=_allowAllFeatures;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) IDEProvisionableManager *provisionableManager; // @synthesize provisionableManager=_provisionableManager;
 @property(retain, nonatomic) id <IDEProvisionable> provisionable; // @synthesize provisionable=_provisionable;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team;
 @property(readonly, nonatomic) NSArray *errors;
 @property(readonly, nonatomic, getter=isCommunicatingWithPortal) BOOL communicatingWithPortal;

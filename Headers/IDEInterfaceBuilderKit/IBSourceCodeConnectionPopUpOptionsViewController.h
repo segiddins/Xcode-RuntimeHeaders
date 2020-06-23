@@ -15,10 +15,10 @@
     IBDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property BOOL connectionContextConnectionIsValid; // @synthesize connectionContextConnectionIsValid=_connectionContextConnectionIsValid;
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 @property(readonly) IBSourceCodeConnectionContext *connectionContext; // @synthesize connectionContext=_connectionContext;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)didCancelInsertingRepresentedConnectionContext;
 - (void)willInsertRepresentedConnectionContext;

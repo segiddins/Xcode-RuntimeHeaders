@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_associatedItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *associatedItems; // @synthesize associatedItems=_associatedItems;
 @property(retain, nonatomic) NSString *issue; // @synthesize issue=_issue;
 @property(nonatomic) unsigned long long severity; // @synthesize severity=_severity;
 @property(retain, nonatomic) DYPPerformanceBottleneck *bottleneck; // @synthesize bottleneck=_bottleneck;
-- (void).cxx_destruct;
 
 @end
 

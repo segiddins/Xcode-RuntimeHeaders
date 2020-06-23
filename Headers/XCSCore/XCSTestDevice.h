@@ -13,8 +13,8 @@
     XCSIntegration *integration;
 }
 
-@property(nonatomic) __weak XCSIntegration *integration; // @synthesize integration;
 - (void).cxx_destruct;
+@property(nonatomic) __weak XCSIntegration *integration; // @synthesize integration;
 - (id)description;
 
 @end

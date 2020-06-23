@@ -32,6 +32,7 @@
 + (id)requestWithService:(id)arg1 user:(id)arg2 verb:(unsigned long long)arg3 base:(id)arg4 body:(id)arg5 credential:(id)arg6 error:(id *)arg7;
 + (id)requestWithService:(id)arg1 user:(id)arg2 verb:(unsigned long long)arg3 base:(id)arg4 bodyData:(id)arg5 error:(id *)arg6;
 + (id)requestWithService:(id)arg1 user:(id)arg2 verb:(unsigned long long)arg3 base:(id)arg4 body:(id)arg5 error:(id *)arg6;
+- (void).cxx_destruct;
 @property BOOL URLNeedsUpdate; // @synthesize URLNeedsUpdate=_URLNeedsUpdate;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) XCSHTTPCredential *httpCredential; // @synthesize httpCredential=_httpCredential;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSMutableURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)performRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addHeader:(id)arg1 value:(id)arg2;
 - (id)description;

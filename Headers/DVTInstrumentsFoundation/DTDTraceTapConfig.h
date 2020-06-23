@@ -15,9 +15,9 @@
 }
 
 + (id)dtraceDataFileName;
+- (void).cxx_destruct;
 @property(nonatomic) const struct AuthorizationOpaqueRef *authorization; // @synthesize authorization=_authorization;
 @property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxStackDepth;
 @property(retain, nonatomic) NSString *preprocessorPath;
 @property(retain, nonatomic) NSDictionary *scriptTextByIdentifier;

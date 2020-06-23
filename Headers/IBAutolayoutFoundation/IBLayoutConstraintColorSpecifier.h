@@ -17,12 +17,12 @@
     NSColor *_placeholderConstraintsColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *placeholderConstraintsColor; // @synthesize placeholderConstraintsColor=_placeholderConstraintsColor;
 @property(readonly, nonatomic) NSColor *ambiguousConstraintsColor; // @synthesize ambiguousConstraintsColor=_ambiguousConstraintsColor;
 @property(readonly, nonatomic) NSColor *misplacedConstraintsColor; // @synthesize misplacedConstraintsColor=_misplacedConstraintsColor;
 @property(readonly, nonatomic) NSColor *conflictingConstraintsColor; // @synthesize conflictingConstraintsColor=_conflictingConstraintsColor;
 @property(readonly, nonatomic) NSColor *constraintColor; // @synthesize constraintColor=_constraintColor;
-- (void).cxx_destruct;
 - (id)initWithTheme:(id)arg1;
 
 @end

@@ -20,6 +20,7 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSString *targetName; // @synthesize targetName=_targetName;
 @property(readonly) NSString *projectName; // @synthesize projectName=_projectName;
@@ -28,7 +29,6 @@
 @property(readonly) DVTFilePath *outputFilePath; // @synthesize outputFilePath=_outputFilePath;
 @property(readonly) DVTFilePath *inputFilePath; // @synthesize inputFilePath=_inputFilePath;
 @property(readonly) long long command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)headerCommentRepresentation;
 - (id)_dateFormatter;
 - (id)initWithPreprocessedFilePath:(id)arg1;

@@ -14,8 +14,8 @@
     NSString *_rawText;
 }
 
-@property(readonly) NSString *rawText; // @synthesize rawText=_rawText;
 - (void).cxx_destruct;
+@property(readonly) NSString *rawText; // @synthesize rawText=_rawText;
 - (id)description;
 @property(readonly) DVTCrashLogParsedBinaryImage *parsedBinaryImage; // @synthesize parsedBinaryImage=_parsedBinaryImage;
 - (id)_binaryImageParsers;

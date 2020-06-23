@@ -14,9 +14,9 @@
     NSArray *_settings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 
 @end
 

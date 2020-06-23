@@ -18,10 +18,10 @@
     NSDictionary *_distributionItemProfileSpecifierMap;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *distributionItemProfileSpecifierMap; // @synthesize distributionItemProfileSpecifierMap=_distributionItemProfileSpecifierMap;
 @property(retain) id <IDEProvisioningBasicSigningIdentity> installerCertificate; // @synthesize installerCertificate=_installerCertificate;
 @property(retain) id <IDEProvisioningBasicSigningIdentity> certificate; // @synthesize certificate=_certificate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

@@ -33,6 +33,7 @@
 + (id)keyPathsForValuesAffectingUrl;
 + (id)keyPathsForValuesAffectingPath;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL applyShellTokenizationToArguments; // @synthesize applyShellTokenizationToArguments=_applyShellTokenizationToArguments;
 @property(readonly, nonatomic) NSMutableArray *mutableEnvironmentEntries; // @synthesize mutableEnvironmentEntries=_mutableEnvironmentEntries;
 @property(nonatomic) _Bool useDeferredLaunch; // @synthesize useDeferredLaunch=_useDeferredLaunch;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSURL *trueBinary; // @synthesize trueBinary=_trueBinary;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *environment; // @dynamic environment;
 @property(readonly, nonatomic) NSArray *arguments;
 - (id)_applyShellProcessingOnArgumentValue:(id)arg1;

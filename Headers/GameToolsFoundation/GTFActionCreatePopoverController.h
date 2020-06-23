@@ -38,6 +38,7 @@
 + (id)scannedSKSActionFileNames;
 + (BOOL)isSKSActionFile:(id)arg1;
 + (id)supportedFileTypes;
+- (void).cxx_destruct;
 @property __weak NSTextField *actionFileLabel; // @synthesize actionFileLabel=_actionFileLabel;
 @property __weak NSTextField *actionNameLabel; // @synthesize actionNameLabel=_actionNameLabel;
 @property __weak NSSegmentedControl *actionTargetControl; // @synthesize actionTargetControl=_actionTargetControl;
@@ -53,7 +54,6 @@
 @property(nonatomic) BOOL isTargetAvailable; // @synthesize isTargetAvailable=_isTargetAvailable;
 @property(nonatomic) BOOL showFileChooser; // @synthesize showFileChooser=_showFileChooser;
 @property(nonatomic) __weak id <GTFActionCreateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

@@ -10,14 +10,13 @@
 
 @interface _TtC8RCShared22SingleSegmentedControl : NSSegmentedControl
 {
+    MISSING_TYPE *targetAction;
     MISSING_TYPE *shouldEnable;
-    MISSING_TYPE *onPressedEventSource;
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)onPressedAction;
 @property(nonatomic) BOOL enabled;
 - (BOOL)isEnabled;
 

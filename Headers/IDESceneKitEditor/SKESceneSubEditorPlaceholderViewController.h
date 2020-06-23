@@ -14,8 +14,8 @@
     DVTEmptyContentPlaceholder *_placeholderView;
 }
 
-@property(readonly, nonatomic) DVTBorderedView *borderView; // @synthesize borderView=_borderView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTBorderedView *borderView; // @synthesize borderView=_borderView;
 - (void)setPlaceholderStringForState:(unsigned long long)arg1;
 - (void)loadView;
 

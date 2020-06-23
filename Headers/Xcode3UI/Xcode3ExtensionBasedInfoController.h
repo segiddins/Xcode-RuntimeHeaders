@@ -15,8 +15,8 @@
     NSDictionary *_infoDictionary;
 }
 
-- (id)infoDictionary;
 - (void).cxx_destruct;
+- (id)infoDictionary;
 - (id)initWithBlueprint:(id)arg1 extension:(id)arg2;
 - (void)setInfoDictionary:(id)arg1;
 - (void)_syncInfoDictionary;

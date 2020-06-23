@@ -17,12 +17,12 @@
     DVTLocale *_modernLocale;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTLocale *modernLocale; // @synthesize modernLocale=_modernLocale;
 @property(readonly) DVTLocale *legacyLocale; // @synthesize legacyLocale=_legacyLocale;
 @property(readonly, copy) NSArray *upgrades; // @synthesize upgrades=_upgrades;
 @property(readonly, copy) NSArray *variantGroups; // @synthesize variantGroups=_variantGroups;
 @property(retain) Xcode3Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *assistantTitle;
 - (id)_displayProjectPathForVariantGroup:(id)arg1 usingCache:(id)arg2;
 - (id)initWithProject:(id)arg1 upgradingVariantGroups:(id)arg2 fromLegacyLocale:(id)arg3;

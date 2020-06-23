@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     DTTimelinePlane *_representativePlane;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak DTTimelinePlane *representativePlane; // @synthesize representativePlane=_representativePlane;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) BOOL subplanesChanged; // @synthesize subplanesChanged=_subplanesChanged;
 @property(nonatomic) BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(nonatomic) long long groupPlaneType; // @synthesize groupPlaneType=_groupPlaneType;
 @property(retain, nonatomic) NSMutableArray *subplanes; // @synthesize subplanes=_subplanes;
-- (void).cxx_destruct;
 - (id)initWithGroupPlane:(id)arg1;
 
 @end

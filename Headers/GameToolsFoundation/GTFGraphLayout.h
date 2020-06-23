@@ -14,9 +14,9 @@
     GTFGraphLayoutLayer *_layers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GTFGraphLayoutLayer *layers; // @synthesize layers=_layers;
 @property(retain, nonatomic) GTFGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (void)assignLayers;
 - (void)undoRemoveCycles;
 - (id)sortedNodes;

@@ -15,8 +15,8 @@
     IBUITableViewCell *_tableViewCell;
 }
 
-@property(nonatomic) __weak IBUITableViewCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IBUITableViewCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 - (BOOL)prefersCachedImageBasedDrawing;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

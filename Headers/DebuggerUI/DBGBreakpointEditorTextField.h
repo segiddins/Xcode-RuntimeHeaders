@@ -16,11 +16,11 @@
     unsigned long long _completionStartMinimumCharacter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long completionStartMinimumCharacter; // @synthesize completionStartMinimumCharacter=_completionStartMinimumCharacter;
 @property(readonly) NSArray *strategies; // @synthesize strategies=_strategies;
 @property(readonly) DVTCompletingTextView *completingTextView; // @synthesize completingTextView=_completingTextView;
 @property(retain, nonatomic) DVTTextDocumentLocation *breakpointLocation; // @synthesize breakpointLocation=_breakpointLocation;
-- (void).cxx_destruct;
 - (void)completingTextView:(id)arg1 willPassContextToStrategies:(id)arg2 atWordStartLocation:(unsigned long long)arg3;
 
 @end

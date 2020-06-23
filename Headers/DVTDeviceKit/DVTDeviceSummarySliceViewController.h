@@ -13,8 +13,8 @@
     DVTDevice *_device;
 }
 
-@property(readonly) DVTDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly) DVTDevice *device; // @synthesize device=_device;
 - (id)initWithDevice:(id)arg1;
 
 @end

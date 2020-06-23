@@ -13,8 +13,8 @@
     NSView *_accessoryView;
 }
 
-@property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void)layoutBottomUp;
 - (id)defaultTitleField;
 - (double)preferredHeight;

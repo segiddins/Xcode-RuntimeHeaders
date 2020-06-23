@@ -18,9 +18,9 @@
     IBUIViewController *_editedViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIViewController *editedViewController; // @synthesize editedViewController=_editedViewController;
 @property(nonatomic) __weak id <IBUIViewControllerEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)editedDocumentObject;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

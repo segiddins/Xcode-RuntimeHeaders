@@ -13,8 +13,8 @@
     NSProgressIndicator *_progressBar;
 }
 
-@property __weak NSProgressIndicator *progressBar; // @synthesize progressBar=_progressBar;
 - (void).cxx_destruct;
+@property __weak NSProgressIndicator *progressBar; // @synthesize progressBar=_progressBar;
 
 @end
 

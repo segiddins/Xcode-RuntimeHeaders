@@ -26,8 +26,8 @@
 + (void)_anyEditorDocumentDirtyStatusWillClose:(id)arg1;
 + (void)_anyEditorDocumentDirtyStatusDidChange:(id)arg1;
 + (void)initialize;
-@property(readonly) BOOL associatedFileExists; // @synthesize associatedFileExists=_associatedFileExists;
 - (void).cxx_destruct;
+@property(readonly) BOOL associatedFileExists; // @synthesize associatedFileExists=_associatedFileExists;
 @property(readonly) BOOL displaysStatus;
 @property(readonly) BOOL displaysProgress;
 - (unsigned long long)conflictStateForUpdateOrMerge;

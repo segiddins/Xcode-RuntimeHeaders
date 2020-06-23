@@ -42,6 +42,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *contextMenuFocusLocation; // @synthesize contextMenuFocusLocation=_contextMenuFocusLocation;
 @property(nonatomic) struct CGSize layoutPositioningScale; // @synthesize layoutPositioningScale=_layoutPositioningScale;
 @property(nonatomic) BOOL shrinksToFitFrames; // @synthesize shrinksToFitFrames=_shrinksToFitFrames;
@@ -51,12 +52,12 @@
 @property(retain) IBCanvasScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly) IBCanvasBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(getter=isAutoscrollEnabled) BOOL autoscrollEnabled; // @synthesize autoscrollEnabled=_autoscrollEnabled;
-- (void).cxx_destruct;
 - (long long)accessibilityVerticalUnits;
 - (long long)accessibilityHorizontalUnits;
 - (id)accessibilitySelectedChildren;
 - (id)accessibilityChildren;
 - (id)accessibilityLabel;
+- (void)canvasViewWindowResizeTest:(id)arg1;
 - (void)canvasFrameResizingTest:(id)arg1;
 - (void)canvasScrollTest:(id)arg1;
 - (void)canvasZoomTest:(id)arg1;
@@ -88,9 +89,9 @@
 - (void)_updateTrackingAreasWithInvalidCursorRects:(BOOL)arg1;
 - (void)_updateTrackingAreas;
 - (void)_invalidateCursorRects;
-- (BOOL)isUpdateTrackingAreasEnabled;
-- (void)stopSuppressingTrackingAreaUpdates;
-- (void)suppressTrackingAreaUpdates;
+- (BOOL)areTrackingAreaAndLowFrequencyDrawHandlerUpdatesEnabled;
+- (void)stopSuppressingTrackingAreaAndLowFrequencyDrawHandlerUpdates;
+- (void)suppressTrackingAreaAndLowFrequencyDrawHandlerUpdates;
 - (void)resetCursorRects;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)scrollCanvasFrameToVisible:(id)arg1 ensuringRectVisible:(struct CGRect)arg2 shouldCenter:(BOOL)arg3 animate:(BOOL)arg4;

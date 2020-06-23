@@ -15,10 +15,10 @@
     NSString *_disambiguatedName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *disambiguatedName; // @synthesize disambiguatedName=_disambiguatedName;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *teamType; // @synthesize teamType=_teamType;
-- (void).cxx_destruct;
 - (id)teamName;
 @property(readonly, nonatomic) NSString *originalName;
 - (id)initWithTeamID:(id)arg1 teamName:(id)arg2;

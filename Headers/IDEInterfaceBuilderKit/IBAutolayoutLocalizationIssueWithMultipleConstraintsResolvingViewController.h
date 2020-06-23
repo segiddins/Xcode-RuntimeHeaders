@@ -14,9 +14,9 @@
     NSArray *_constraintItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *constraintItems; // @synthesize constraintItems=_constraintItems;
 @property(readonly, nonatomic) IBDocument *documentForConstraints; // @synthesize documentForConstraints=_documentForConstraints;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)resizeConstraints;
 - (void)deleteConstraints;

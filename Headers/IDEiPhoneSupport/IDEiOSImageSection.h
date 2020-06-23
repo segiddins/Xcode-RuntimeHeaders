@@ -26,11 +26,11 @@
 + (id)warningImageIcon;
 + (id)sectionInfoFromURL:(id)arg1;
 + (id)sectionForDictionary:(id)arg1 groupTitle:(id)arg2;
+- (void).cxx_destruct;
 @property __weak id <IDEiOSImageSectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(copy, nonatomic) NSString *groupTitle; // @synthesize groupTitle=_groupTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)imageBaseNameForRow:(id)arg1;
 - (BOOL)requiresBaseImageNameForRow:(id)arg1;

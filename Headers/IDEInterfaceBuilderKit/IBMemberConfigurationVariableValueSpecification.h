@@ -18,11 +18,11 @@
 
 + (id)unspecifiedValueSpecificationWithTitle:(id)arg1 abbreviation:(id)arg2;
 + (id)defaultUnspecifiedValueSpecification;
+- (void).cxx_destruct;
 @property(readonly) double presentationOrder; // @synthesize presentationOrder=_presentationOrder;
 @property(readonly) NSString *abbreviation; // @synthesize abbreviation=_abbreviation;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1 title:(id)arg2 abbreviation:(id)arg3 presentationOrder:(double)arg4;
 
 @end

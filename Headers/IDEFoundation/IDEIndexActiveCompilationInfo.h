@@ -15,10 +15,10 @@
     IDEActivityLogSectionRecorder *_recorder;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEActivityLogSectionRecorder *recorder; // @synthesize recorder=_recorder;
 @property(readonly) NSString *toolID; // @synthesize toolID=_toolID;
 @property(readonly) NSString *compileID; // @synthesize compileID=_compileID;
-- (void).cxx_destruct;
 - (id)initWithCompileID:(id)arg1 toolID:(id)arg2;
 
 @end

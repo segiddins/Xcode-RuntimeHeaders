@@ -22,9 +22,9 @@
 + (id)keyPathsForValuesAffectingFilterProgress;
 + (id)keyPathsForValuesAffectingObjects;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDEOpenRequest> lastOpenRequest; // @synthesize lastOpenRequest=_lastOpenRequest;
 @property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (void)revertState;
 - (long long)filterProgress;
 - (void)setFilter:(id)arg1;

@@ -42,7 +42,7 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (id)ibLabelQualifierForChild:(id)arg1;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (BOOL)ibHasSingleCell;
 - (BOOL)ibWantsBoundsIndicatorDuringTracking;
 - (BOOL)ibIsClippingContent;

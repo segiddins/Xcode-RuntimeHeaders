@@ -23,6 +23,7 @@
 }
 
 + (struct _NSRange)lineRangeForFoundRange:(struct _NSRange)arg1 inString:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) DVTDocumentLocation *replacedLocation; // @synthesize replacedLocation=_replacedLocation;
 @property(copy, nonatomic) NSString *replacedString; // @synthesize replacedString=_replacedString;
@@ -30,7 +31,6 @@
 @property(readonly) struct _NSRange contextRange; // @synthesize contextRange=_contextRange;
 @property(readonly) NSString *contextString; // @synthesize contextString=_contextString;
 @property(readonly) DVTDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)copyWithContextString:(id)arg1 contextRange:(struct _NSRange)arg2 userInfo:(id)arg3;
 - (id)copyWithUpdatedLocation:(id)arg1;
 - (id)stringForReplacementString:(id)arg1;

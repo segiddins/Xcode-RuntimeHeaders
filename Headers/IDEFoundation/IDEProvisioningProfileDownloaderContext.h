@@ -12,6 +12,7 @@
 @interface IDEProvisioningProfileDownloaderContext : NSObject
 {
     DVTPlatform *_platform;
+    NSString *_sdkVariant;
     NSString *_bundleIdentifier;
     id <IDEProvisioningBasicTeam> _team;
     NSString *_provisionableName;
@@ -24,6 +25,7 @@
     DVTPortalCertificateType *_certificateType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPortalCertificateType *certificateType; // @synthesize certificateType=_certificateType;
 @property(retain, nonatomic) IDEProvisioningSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(retain, nonatomic) IDEProvisioningTeamAccountPairManager *teamAccountPairManager; // @synthesize teamAccountPairManager=_teamAccountPairManager;
@@ -34,10 +36,10 @@
 @property(readonly, nonatomic) NSString *provisionableName; // @synthesize provisionableName=_provisionableName;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly, nonatomic) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
 @property(retain, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IDEProvisioningProfileDownloaderPortal> portal;
-- (id)initWithPlatform:(id)arg1 bundleIdentifier:(id)arg2 team:(id)arg3 provisionableName:(id)arg4 evaluation:(id)arg5 profileManager:(id)arg6 accountManager:(id)arg7 teamManager:(id)arg8 teamAccountPairManager:(id)arg9 sessionManager:(id)arg10;
+- (id)initWithPlatform:(id)arg1 sdkVariant:(id)arg2 bundleIdentifier:(id)arg3 team:(id)arg4 provisionableName:(id)arg5 evaluation:(id)arg6 profileManager:(id)arg7 accountManager:(id)arg8 teamManager:(id)arg9 teamAccountPairManager:(id)arg10 sessionManager:(id)arg11;
 
 @end
 

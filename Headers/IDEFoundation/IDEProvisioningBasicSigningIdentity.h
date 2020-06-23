@@ -16,9 +16,9 @@
     NSString *_userDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

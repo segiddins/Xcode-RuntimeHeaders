@@ -14,9 +14,9 @@
     NSObject *_destination;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject *destination; // @synthesize destination=_destination;
 @property(readonly) NSSet *sources; // @synthesize sources=_sources;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDesination:(id)arg1 andSources:(id)arg2;
 

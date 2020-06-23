@@ -20,10 +20,10 @@
 
 + (id)createIdentityWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 machineName:(id)arg4 machineID:(id)arg5 error:(id *)arg6;
 + (id)identityWithCertificate:(id)arg1 privateKey:(struct __SecKey *)arg2 keyName:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) id underlyingPrivateKey; // @synthesize underlyingPrivateKey=_underlyingPrivateKey;
 @property(readonly) NSString *keyName; // @synthesize keyName=_keyName;
 @property(readonly) id <DVTPortalCertificateProtocol> portalCertificate; // @synthesize portalCertificate=_portalCertificate;
-- (void).cxx_destruct;
 @property(readonly) DVTSigningCertificate *signingCertificate;
 @property(readonly) struct __SecKey *privateKey;
 - (id)_initWithCertificate:(id)arg1 privateKey:(struct __SecKey *)arg2 keyName:(id)arg3;

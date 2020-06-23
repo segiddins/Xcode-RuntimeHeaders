@@ -24,6 +24,7 @@
 
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDebugSession *parentDebugSession; // @synthesize parentDebugSession=_parentDebugSession;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(nonatomic) long long type; // @synthesize type=_type;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSString *subtitle;
 @property(readonly) IDELaunchSession *launchSession;

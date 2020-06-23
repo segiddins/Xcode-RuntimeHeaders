@@ -19,13 +19,13 @@
 
 + (id)keyPathsForValuesAffectingDefaultArchiveName;
 + (id)keyPathsForValuesAffectingSubtitle;
+- (void).cxx_destruct;
 @property(copy) NSString *packagerIdentifier; // @synthesize packagerIdentifier=_packagerIdentifier;
 - (void)setBuildConfiguration:(id)arg1;
 - (id)buildConfiguration;
 @property(copy) NSString *customArchiveName; // @synthesize customArchiveName=_customArchiveName;
 @property BOOL revealArchiveInOrganizer; // @synthesize revealArchiveInOrganizer=_revealArchiveInOrganizer;
 @property BOOL includeSnapshotInArchive; // @synthesize includeSnapshotInArchive=_includeSnapshotInArchive;
-- (void).cxx_destruct;
 - (void)addArchivingStrategy:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setRevealArchiveInOrganizerFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setIncludeSnapshotInArchiveFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

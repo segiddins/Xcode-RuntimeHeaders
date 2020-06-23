@@ -13,8 +13,8 @@
     NSArray *_sdks;
 }
 
-@property(retain) NSArray *sdks; // @synthesize sdks=_sdks;
 - (void).cxx_destruct;
+@property(retain) NSArray *sdks; // @synthesize sdks=_sdks;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithSDKs:(id)arg1;

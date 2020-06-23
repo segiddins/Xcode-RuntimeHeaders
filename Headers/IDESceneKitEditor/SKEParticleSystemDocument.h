@@ -20,8 +20,8 @@
 }
 
 + (void)initialize;
-@property(retain) id inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
 - (void).cxx_destruct;
+@property(retain) id inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
 @property(readonly) unsigned long long featureAvailability;
 - (void)makeDocumentAssetCatalogCurrent;
 - (void)refreshAssetCatalogWithURL:(id)arg1;

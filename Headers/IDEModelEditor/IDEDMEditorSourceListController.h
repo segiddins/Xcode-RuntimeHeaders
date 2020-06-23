@@ -27,13 +27,13 @@
 + (id)keyPathsForValuesAffectingSelection;
 + (id)keyPathsForValuesAffectingSelectedTopLevelObjects;
 + (id)keyPathsForValuesAffectingModelRoot;
+- (void).cxx_destruct;
 @property(readonly) NSTreeController *sourceListTreeController; // @synthesize sourceListTreeController=_sourceListTreeController;
 @property(readonly) NSTextFieldCell *sourceListTitleCell; // @synthesize sourceListTitleCell=_sourceListTitleCell;
 @property(readonly) NSTextFieldCell *sourceListItemCell; // @synthesize sourceListItemCell=_sourceListItemCell;
 @property(retain) NSArray *selectedSourceListIndexPaths; // @synthesize selectedSourceListIndexPaths=_selectedSourceListIndexPaths;
 @property(retain) NSArray *shownSourceListSections; // @synthesize shownSourceListSections=_shownSourceListSections;
 @property(retain) NSArray *allSourceListSections; // @synthesize allSourceListSections=_allSourceListSections;
-- (void).cxx_destruct;
 - (BOOL)outlineView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)editNameForModelObject:(id)arg1;
 - (BOOL)deleteTopLevelObjects:(id)arg1;

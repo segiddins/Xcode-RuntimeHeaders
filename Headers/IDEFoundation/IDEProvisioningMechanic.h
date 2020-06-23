@@ -27,9 +27,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisioningMechanicContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <IDEProvisioningMechanicDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeRepair:(id)arg1;
 - (void)_pendAllWaitingForUserActionRepairs;
 - (BOOL)_pendRepair:(id)arg1 skip:(BOOL)arg2;

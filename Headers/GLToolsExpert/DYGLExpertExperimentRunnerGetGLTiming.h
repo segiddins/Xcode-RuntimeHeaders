@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     DYInvestigatorStatistics *_device_utilization;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useModifiedCapture; // @synthesize useModifiedCapture=_useModifiedCapture;
 @property(readonly, nonatomic) DYInvestigatorStatistics *device_utilization; // @synthesize device_utilization=_device_utilization;
 @property(readonly, nonatomic) DYInvestigatorStatistics *tiler_utilization; // @synthesize tiler_utilization=_tiler_utilization;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) DYInvestigatorStatistics *frame_time; // @synthesize frame_time=_frame_time;
 @property(retain, nonatomic) DYGLOverviewMeasurements *updatedOverviewMeasurements; // @synthesize updatedOverviewMeasurements=_updatedOverviewMeasurements;
 @property(retain, nonatomic) DYGLOverviewMeasurements *originalOverviewMeasurements; // @synthesize originalOverviewMeasurements=_originalOverviewMeasurements;
-- (void).cxx_destruct;
 - (void)processFinishedExperiments;
 - (id)executeAndWait;
 - (id)numberOfExperiments;

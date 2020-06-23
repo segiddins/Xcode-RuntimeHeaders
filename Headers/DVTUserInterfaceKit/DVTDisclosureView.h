@@ -27,6 +27,7 @@
 + (Class)headerViewClass;
 + (id)keyPathsForValuesAffectingDisclosed;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_bf6d4a14 contentMargins; // @synthesize contentMargins=_contentMargins;
 @property(copy, nonatomic) NSString *disclosureStatePersistenceDefaultsKey; // @synthesize disclosureStatePersistenceDefaultsKey=_disclosureStatePersistenceDefaultsKey;
 @property(nonatomic) BOOL shouldAlwaysDrawBottomBorder; // @synthesize shouldAlwaysDrawBottomBorder=_shouldAlwaysDrawBottomBorder;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSColor *bottomBorderColor; // @synthesize bottomBorderColor=_bottomBorderColor;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) DVTDisclosureHeaderView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (id)accessibilityTitle;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;

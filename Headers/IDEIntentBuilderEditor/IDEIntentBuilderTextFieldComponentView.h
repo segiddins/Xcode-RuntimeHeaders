@@ -15,9 +15,9 @@
     unsigned long long _inputType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long inputType; // @synthesize inputType=_inputType;
 @property(nonatomic, getter=isMultiline) BOOL multiline; // @synthesize multiline=_multiline;
-- (void).cxx_destruct;
 - (void)unbind;
 - (BOOL)bindTo:(id)arg1;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;

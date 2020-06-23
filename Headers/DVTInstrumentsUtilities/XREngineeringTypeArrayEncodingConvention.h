@@ -14,9 +14,9 @@
     NSString *_remainderType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remainderType; // @synthesize remainderType=_remainderType;
 @property(copy, nonatomic) NSArray *fixedTypes; // @synthesize fixedTypes=_fixedTypes;
-- (void).cxx_destruct;
 
 @end
 

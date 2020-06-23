@@ -14,8 +14,8 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
-@property __weak NSButton *enableViewDebuggingCheckBox; // @synthesize enableViewDebuggingCheckBox=_enableViewDebuggingCheckBox;
 - (void).cxx_destruct;
+@property __weak NSButton *enableViewDebuggingCheckBox; // @synthesize enableViewDebuggingCheckBox=_enableViewDebuggingCheckBox;
 - (void)enableViewDebuggingClicked:(id)arg1;
 - (void)loadView;
 

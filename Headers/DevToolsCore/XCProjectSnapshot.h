@@ -14,9 +14,9 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithInformationFromProject:(id)arg1;
 
 @end

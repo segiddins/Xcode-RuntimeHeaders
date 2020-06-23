@@ -27,6 +27,7 @@
     BOOL _buttonWantsMenuHidden;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL buttonWantsMenuHidden; // @synthesize buttonWantsMenuHidden=_buttonWantsMenuHidden;
 @property(retain) NSCell *internalCell; // @synthesize internalCell=_buttonCell;
 @property(copy, nonatomic) NSImage *arrowImage; // @synthesize arrowImage=_arrowImage;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL usedInToolbar; // @synthesize usedInToolbar=_usedInToolbar;
 @property BOOL immediatelyShowsMenu; // @synthesize immediatelyShowsMenu=_immediatelyShowsMenu;
 @property BOOL showsMenuOnlyForMultipleItems; // @synthesize showsMenuOnlyForMultipleItems=_showsMenuOnlyForMultipleItems;
-- (void).cxx_destruct;
 - (void)_showMenuTimerFired:(id)arg1;
 - (BOOL)_showMenu:(id)arg1 fromTimer:(BOOL)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 untilMouseUp:(BOOL)arg5;
 - (BOOL)_shouldShowMenuImmediately:(id)arg1;

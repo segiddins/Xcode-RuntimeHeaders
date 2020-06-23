@@ -20,11 +20,11 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) XCSUIIntegration *integration; // @synthesize integration=_integration;
 @property(retain, nonatomic) NSString *reportType; // @synthesize reportType=_reportType;
-- (void).cxx_destruct;
 - (BOOL)allowsAction:(SEL)arg1;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;

@@ -26,6 +26,7 @@
 + (id)nibBundle;
 + (id)nibName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(setter=_setDelegate:) __weak id <_IDEIntentBuilderComponentViewDelegate> _delegate; // @synthesize _delegate=__delegate;
 @property(retain) id primaryControl; // @synthesize primaryControl=_primaryControl;
 @property(retain) NSLayoutConstraint *_titleLabelWidthConstraint; // @synthesize _titleLabelWidthConstraint=__titleLabelWidthConstraint;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(copy) NSDictionary *bindingKeyPaths; // @synthesize bindingKeyPaths=_bindingKeyPaths;
 @property(retain, setter=_setBindingTarget:) id bindingTarget; // @synthesize bindingTarget=_bindingTarget;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)unbind;
 - (BOOL)bindTo:(id)arg1;

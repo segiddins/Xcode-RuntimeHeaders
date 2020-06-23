@@ -17,12 +17,12 @@
     NSArray *_quickLookData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *quickLookData; // @synthesize quickLookData=_quickLookData;
 @property(readonly) BOOL isRowMajor; // @synthesize isRowMajor=_isRowMajor;
 @property(readonly) unsigned int matrixStride; // @synthesize matrixStride=_matrixStride;
 @property(readonly) unsigned int uniformType; // @synthesize uniformType=_uniformType;
 @property(readonly) unsigned int offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (id)initWithUniformType:(unsigned int)arg1 offset:(unsigned int)arg2 matrixStride:(unsigned int)arg3 isRowMajor:(BOOL)arg4;
 
 @end

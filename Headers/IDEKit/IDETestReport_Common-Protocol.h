@@ -11,6 +11,8 @@
 @protocol IDETestReport_Common <NSObject>
 @property(nonatomic, readonly) NSNumber *ide_testReport_common_duration;
 @property(nonatomic, readonly) NSString *ide_testReport_common_statusTooltip;
+@property(nonatomic, readonly) BOOL ide_testReport_common_skipped;
+@property(nonatomic, readonly) BOOL ide_testReport_common_failed;
 @property(nonatomic, readonly) BOOL ide_testReport_common_passed;
 @property(nonatomic, readonly) NSImage *ide_testReport_common_typeImage;
 @property(nonatomic, readonly) NSImage *ide_testReport_common_statusImage;

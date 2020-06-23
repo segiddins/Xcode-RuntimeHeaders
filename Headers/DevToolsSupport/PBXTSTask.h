@@ -47,8 +47,8 @@
 + (id)cpuTypeStringForArch:(id)arg1;
 + (id)_cpuStringForCPUSubType:(id)arg1;
 + (id)_cpuTypeForArch:(id)arg1;
-@property(retain) NSArray *preferredArchitectures; // @synthesize preferredArchitectures=_preferredArchitectures;
 - (void).cxx_destruct;
+@property(retain) NSArray *preferredArchitectures; // @synthesize preferredArchitectures=_preferredArchitectures;
 @property(readonly, copy) NSString *description;
 - (void)setTaskAutomaticStandardInData:(id)arg1;
 - (id)taskAutomaticStandardInData;

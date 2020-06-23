@@ -38,6 +38,7 @@
     unsigned long long _analyzerWarningCount;
     unsigned long long _testsCount;
     unsigned long long _testsFailedCount;
+    unsigned long long _testsSkippedCount;
     _TtC13IDEFoundation18IDEResultReference *_testsReference;
     _TtC13IDEFoundation18IDEResultReference *_diagnosticsReference;
     id _remoteTestSummaryIdentifier;
@@ -67,8 +68,10 @@
 
 + (long long)actionResultStatusForString:(id)arg1;
 + (id)stringForActionResultStatus:(long long)arg1;
++ (unsigned long long)countOfTestsWithStatus:(unsigned long long)arg1 inTestPlanRunSummaries:(id)arg2;
 + (BOOL)automaticallyNotifiesObserversOfLog;
 + (id)keyPathsForValuesAffectingIsRecording;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *blueprintsForShowingIssues; // @synthesize blueprintsForShowingIssues=_blueprintsForShowingIssues;
 @property(retain, nonatomic) DVTFilePath *creatingWorkspaceFilePath; // @synthesize creatingWorkspaceFilePath=_creatingWorkspaceFilePath;
 @property(retain, nonatomic) DVTFilePath *localResultDirectoryFilePath; // @synthesize localResultDirectoryFilePath=_localResultDirectoryFilePath;
@@ -100,6 +103,7 @@
 @property(retain, nonatomic) _TtC13IDEFoundation18IDEResultReference *diagnosticsReference; // @synthesize diagnosticsReference=_diagnosticsReference;
 @property(retain, nonatomic) _TtC13IDEFoundation18IDEResultReference *testsReference; // @synthesize testsReference=_testsReference;
 @property(nonatomic) BOOL hasTests; // @synthesize hasTests=_hasTests;
+@property(nonatomic) unsigned long long testsSkippedCount; // @synthesize testsSkippedCount=_testsSkippedCount;
 @property(nonatomic) unsigned long long testsFailedCount; // @synthesize testsFailedCount=_testsFailedCount;
 @property(nonatomic) unsigned long long testsCount; // @synthesize testsCount=_testsCount;
 @property(nonatomic) unsigned long long analyzerWarningCount; // @synthesize analyzerWarningCount=_analyzerWarningCount;
@@ -119,7 +123,6 @@
 @property(retain, nonatomic) NSMutableArray *analyzerWarningSummaries; // @synthesize analyzerWarningSummaries=_analyzerWarningSummaries;
 @property(retain, nonatomic) NSMutableArray *errorSummaries; // @synthesize errorSummaries=_errorSummaries;
 @property(retain, nonatomic) NSMutableArray *warningSummaries; // @synthesize warningSummaries=_warningSummaries;
-- (void).cxx_destruct;
 - (BOOL)saveCodeCoverageToContainer:(id)arg1 withError:(id *)arg2;
 - (BOOL)saveAttachmentPayloadsToContainer:(id)arg1 withError:(id *)arg2;
 @property(readonly, nonatomic) DVTFilePath *coverageArchiveFilePathForWriting;

@@ -15,8 +15,8 @@
     Xcode3BuildSettingsContext *_buildSettings;
 }
 
-@property(readonly) Xcode3BuildSettingsContext *buildSettings; // @synthesize buildSettings=_buildSettings;
 - (void).cxx_destruct;
+@property(readonly) Xcode3BuildSettingsContext *buildSettings; // @synthesize buildSettings=_buildSettings;
 @property(readonly, copy) NSString *description;
 @property(readonly) IDEScheme *scheme;
 - (id)initWithScheme:(id)arg1;

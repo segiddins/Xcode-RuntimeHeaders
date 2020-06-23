@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _transitionDoneCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transitionDoneCallback; // @synthesize transitionDoneCallback=_transitionDoneCallback;
 @property(nonatomic) BOOL running; // @synthesize running=_running;
 @property(retain, nonatomic) SKSpriteNode *background; // @synthesize background=_background;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GPUTraceDependencyViewerQuadTreeNode *visibilityTree; // @synthesize visibilityTree=_visibilityTree;
 @property(readonly, nonatomic) unsigned long long animationState; // @synthesize animationState=_animationState;
 @property(retain, nonatomic) DependencyGraphVisualRepresentation *nextVisualRep; // @synthesize nextVisualRep=_nextVisualRep;
-- (void).cxx_destruct;
 - (void)recreateVisibilityTree;
 - (struct CGRect)_activeCanvasFrame;
 - (id)_activeObjects;

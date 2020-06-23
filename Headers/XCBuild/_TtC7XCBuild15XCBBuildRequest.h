@@ -22,6 +22,8 @@
     MISSING_TYPE *buildCommand;
     MISSING_TYPE *schemeCommand;
     MISSING_TYPE *buildOnlyTheseFiles;
+    MISSING_TYPE *buildOnlyTheseTargets;
+    MISSING_TYPE *enableIndexBuildArena;
     MISSING_TYPE *useLegacyBuildLocations;
     MISSING_TYPE *shouldCollectMetrics;
 }

@@ -28,9 +28,9 @@
 + (unsigned int)_activityQoS;
 + (BOOL)supportsQoS;
 + (BOOL)enableConcurrentActivities;
-@property(readonly, nonatomic) unsigned char currentSlot; // @synthesize currentSlot=_currentSlot;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned char currentSlot; // @synthesize currentSlot=_currentSlot;
 - (BOOL)holdBackArrivingAgent:(id)arg1;
 - (BOOL)holdBackRevisitingAgent:(id)arg1;
 - (void)extendingMinorFrame:(unsigned char)arg1;

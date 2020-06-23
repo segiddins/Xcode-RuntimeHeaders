@@ -6,12 +6,11 @@
 
 #import <AppKit/NSView.h>
 
-@class NSEvent, NSImage;
+@class NSEvent;
 @protocol IBWindowLayoutViewDelegate;
 
 @interface IBWindowLayoutView : NSView
 {
-    NSImage *_backgroundImage;
     NSEvent *_mouseDown;
     unsigned long long _pressedStrut;
     struct CGRect _preDragContentFrame;
@@ -21,11 +20,11 @@
     struct CGRect _windowContentRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long windowStruts; // @synthesize windowStruts=_windowStruts;
 @property(nonatomic) struct CGRect windowContentRect; // @synthesize windowContentRect=_windowContentRect;
 @property(nonatomic) struct CGRect screenFrame; // @synthesize screenFrame=_screenFrame;
 @property __weak id <IBWindowLayoutViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)rectForStrutButton:(unsigned long long)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)mouseDown:(id)arg1;

@@ -27,13 +27,13 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversOfHasPendingChanges;
+- (void).cxx_destruct;
 @property(readonly) BOOL hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property(readonly) NSObject<OS_dispatch_queue> *changeDispatchQueue; // @synthesize changeDispatchQueue=_changeDispatchQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *asyncDispatchQueue; // @synthesize asyncDispatchQueue=_asyncDispatchQueue;
 @property(readonly) NSOperationQueue *changeQueue; // @synthesize changeQueue=_changeQueue;
 @property(readonly) NSOperationQueue *asyncQueue; // @synthesize asyncQueue=_asyncQueue;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)didDeleteModelObject:(id)arg1;
 - (void)didUpdateModelObject:(id)arg1;
 - (void)didInsertModelObject:(id)arg1;

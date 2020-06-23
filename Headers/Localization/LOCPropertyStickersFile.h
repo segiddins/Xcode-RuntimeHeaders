@@ -13,8 +13,8 @@
     NSArray *_stickerNames;
 }
 
-@property(retain) NSArray *stickerNames; // @synthesize stickerNames=_stickerNames;
 - (void).cxx_destruct;
+@property(retain) NSArray *stickerNames; // @synthesize stickerNames=_stickerNames;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 relativeTo:(id)arg2 error:(id *)arg3;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;

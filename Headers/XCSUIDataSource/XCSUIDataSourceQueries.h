@@ -19,12 +19,12 @@
     XCSUIDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSString *integrationMatchingIDQueryID; // @synthesize integrationMatchingIDQueryID=_integrationMatchingIDQueryID;
 @property(retain, nonatomic) DVTPromise *integrationMatchingIDPromise; // @synthesize integrationMatchingIDPromise=_integrationMatchingIDPromise;
 @property(copy, nonatomic) NSString *botMatchingIDQueryID; // @synthesize botMatchingIDQueryID=_botMatchingIDQueryID;
 @property(retain, nonatomic) DVTPromise *botMatchingIDPromise; // @synthesize botMatchingIDPromise=_botMatchingIDPromise;
-- (void).cxx_destruct;
 - (void)dataSource:(id)arg1 integrationSnapshotsChanged:(id)arg2 botSnapshot:(id)arg3;
 - (void)_queryForIntegrationMatchingID;
 - (id)integrationMatchingID:(id)arg1 onBot:(id)arg2 timeout:(double)arg3;

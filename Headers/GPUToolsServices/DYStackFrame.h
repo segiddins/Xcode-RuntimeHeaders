@@ -18,13 +18,13 @@
     struct _CSTypeRef _sourceInfo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _CSTypeRef sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(nonatomic) struct _CSTypeRef symbol; // @synthesize symbol=_symbol;
 @property(nonatomic) struct _CSTypeRef owner; // @synthesize owner=_owner;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(retain, nonatomic) DYSymbolicator *symbolicator; // @synthesize symbolicator=_symbolicator;
-- (void).cxx_destruct;
 - (BOOL)hasSymbols;
 - (unsigned int)lineNumber;
 - (id)shortFormat;

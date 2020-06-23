@@ -13,8 +13,8 @@
     GPUDebuggerController *_debuggerController;
 }
 
-@property __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 - (void).cxx_destruct;
+@property __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 - (void)viewDidLoad;
 - (id)initUsingDefaultNibAndDebuggerController:(id)arg1;
 

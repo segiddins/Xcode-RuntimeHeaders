@@ -16,11 +16,11 @@
     double _offsetY;
 }
 
+- (void).cxx_destruct;
 @property double offsetY; // @synthesize offsetY=_offsetY;
 @property double maxXMargin; // @synthesize maxXMargin=_maxXMargin;
 @property double minXMargin; // @synthesize minXMargin=_minXMargin;
 @property(copy) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_dvt_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

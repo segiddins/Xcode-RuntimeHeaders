@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)assetBundle;
+- (void).cxx_destruct;
 @property __weak NSTextField *bufferLabelProxyTextField; // @synthesize bufferLabelProxyTextField=_bufferLabelProxyTextField;
 @property(retain, nonatomic) GPURenderJob *renderJob; // @synthesize renderJob=_renderJob;
-- (void).cxx_destruct;
 - (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (id)accessibleChildren;
 - (void)unloadView;

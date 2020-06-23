@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEFoundation/NSCopying-Protocol.h>
+
 @class NSString;
 
-@interface IDEDebuggerExpression : NSObject
+@interface IDEDebuggerExpression : NSObject <NSCopying>
 {
     NSString *_expressionString;
     NSString *_result;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *result; // @synthesize result=_result;
 @property(copy) NSString *expressionString; // @synthesize expressionString=_expressionString;
-- (void).cxx_destruct;
 - (void)resetResult;
 - (BOOL)hasBeenEvaluated;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithExpressionString:(id)arg1;
 
 @end

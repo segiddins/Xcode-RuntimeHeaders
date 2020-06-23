@@ -19,8 +19,8 @@
     struct _IDEKeyBindingFieldCellFlags _kbcFlags;
 }
 
-@property(readonly) IDEKeyBinding *keyBinding; // @synthesize keyBinding=_keyBinding;
 - (void).cxx_destruct;
+@property(readonly) IDEKeyBinding *keyBinding; // @synthesize keyBinding=_keyBinding;
 - (BOOL)suppressesTabAlignment;
 - (void)setSuppressTabAlignment:(BOOL)arg1;
 - (void)setIndexOfSelectedKeyboardShortcut:(long long)arg1;

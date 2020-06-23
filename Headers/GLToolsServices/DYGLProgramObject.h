@@ -20,6 +20,7 @@
     NSString *_infoLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasBeenLinked; // @synthesize hasBeenLinked=_hasBeenLinked;
 @property(readonly, nonatomic) BOOL linked; // @synthesize linked=_linked;
 @property(readonly, nonatomic) BOOL separable; // @synthesize separable=_separable;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *vertexInfoLog; // @synthesize vertexInfoLog=_vertexInfoLog;
 @property(readonly, copy, nonatomic) NSString *fragmentSource; // @synthesize fragmentSource=_fragmentSource;
 @property(readonly, copy, nonatomic) NSString *vertexSource; // @synthesize vertexSource=_vertexSource;
-- (void).cxx_destruct;
 - (id)initWithProperties:(id)arg1;
 
 @end

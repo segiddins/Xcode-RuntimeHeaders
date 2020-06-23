@@ -17,12 +17,12 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) double relativeValueToDataSeries; // @synthesize relativeValueToDataSeries=_relativeValueToDataSeries;
 @property(copy, nonatomic) NSString *displayValue; // @synthesize displayValue=_displayValue;
 @property(copy, nonatomic) NSNumber *rawValue; // @synthesize rawValue=_rawValue;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 rawValue:(id)arg2 color:(id)arg3;
 
 @end

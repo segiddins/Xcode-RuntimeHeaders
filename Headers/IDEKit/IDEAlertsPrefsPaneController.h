@@ -27,8 +27,8 @@
     NSArray *_customAlertEvents;
 }
 
-@property(copy, nonatomic) NSArray *customAlertEvents; // @synthesize customAlertEvents=_customAlertEvents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *customAlertEvents; // @synthesize customAlertEvents=_customAlertEvents;
 - (void)beginEditingFromClick:(id)arg1;
 - (void)removeCustomAlertEvent:(id)arg1;
 - (void)addCustomAlertEvent:(id)arg1;

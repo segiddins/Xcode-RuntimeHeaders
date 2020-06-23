@@ -26,6 +26,7 @@
 
 + (id)configurationViewWithAllowedItems:(id)arg1 defaultItems:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain) NSTextField *defaultItemsLabel; // @synthesize defaultItemsLabel=_defaultItemsLabel;
 @property(retain) NSTextField *allowedItemsLabel; // @synthesize allowedItemsLabel=_allowedItemsLabel;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *localPasteboardType; // @synthesize localPasteboardType=_localPasteboardType;
 @property(retain, nonatomic) IBNSToolbarItemsContainerView *allowedItemsView; // @synthesize allowedItemsView=_allowedItemsView;
 @property(retain, nonatomic) IBDefaultNSToolbarItemsContainerView *defaultItemsView; // @synthesize defaultItemsView=_defaultItemsView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

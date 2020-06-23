@@ -19,6 +19,7 @@
     NSDate *_date;
     NSDate *_minimumDate;
     NSDate *_maximumDate;
+    unsigned long long _preferredDatePickerStyle;
     NSLocale *_locale;
     double _countDownDuration;
     unsigned long long _minuteInterval;
@@ -37,6 +38,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedModeIsCountDownTimer;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(copy) NSDate *ibArchivedDate; // @synthesize ibArchivedDate=_ibArchivedDate;
 @property(nonatomic) unsigned long long minuteInterval; // @synthesize minuteInterval=_minuteInterval;
 @property(nonatomic) double countDownDuration; // @synthesize countDownDuration=_countDownDuration;
@@ -44,8 +46,8 @@
 @property(nonatomic) BOOL hasMinimumDate; // @synthesize hasMinimumDate=_hasMinimumDate;
 @property(nonatomic) BOOL useCurrentDateDuringDecoding; // @synthesize useCurrentDateDuringDecoding=_useCurrentDateDuringDecoding;
 @property(copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
+@property(nonatomic) unsigned long long preferredDatePickerStyle; // @synthesize preferredDatePickerStyle=_preferredDatePickerStyle;
 @property(nonatomic) int datePickerMode; // @synthesize datePickerMode=_datePickerMode;
-- (void).cxx_destruct;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 @property(copy) NSDate *ibArchivedMaximumDate;
 @property(copy) NSDate *ibArchivedMinimumDate;

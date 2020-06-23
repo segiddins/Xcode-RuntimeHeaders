@@ -25,8 +25,8 @@
 + (id)keyPathsForValuesAffectingPathLabel;
 + (id)keyPathsForValuesAffectingDestination;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property long long destinationIndex; // @synthesize destinationIndex=_destinationIndex;
 - (void).cxx_destruct;
+@property long long destinationIndex; // @synthesize destinationIndex=_destinationIndex;
 - (BOOL)capsuleView:(id)arg1 acceptDrop:(id)arg2;
 - (unsigned long long)capsuleView:(id)arg1 validateDrop:(id)arg2;
 - (id)supportedDragTypes;

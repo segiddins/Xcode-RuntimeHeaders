@@ -19,9 +19,9 @@
 
 + (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingHealthRecords;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *healthKitCapabilities; // @synthesize healthKitCapabilities=_healthKitCapabilities;
 @property(nonatomic) BOOL supportsHealthRecords; // @synthesize supportsHealthRecords=_supportsHealthRecords;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 @property(nonatomic) BOOL healthRecords; // @dynamic healthRecords;
 - (void)_setHealthRecords:(BOOL)arg1;

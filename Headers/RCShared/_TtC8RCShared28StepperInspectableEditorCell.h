@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *value;
     MISSING_TYPE *$__lazy_storage_$_valueStackView;
     MISSING_TYPE *$__lazy_storage_$_stackView;
+    MISSING_TYPE *isStepperEnabled;
 }
 
 - (void).cxx_destruct;

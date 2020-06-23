@@ -14,8 +14,8 @@
 }
 
 + (void)releaseFilterMask:(char *)arg1;
-@property(readonly, retain, nonatomic) NSMutableSet *kdebugCodes; // @synthesize kdebugCodes=_kdebugCodes;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSMutableSet *kdebugCodes; // @synthesize kdebugCodes=_kdebugCodes;
 - (char *)createFilterMask:(BOOL)arg1;
 - (id)legacyXML;
 - (BOOL)containsClass:(unsigned int)arg1 subclassID:(unsigned int)arg2;

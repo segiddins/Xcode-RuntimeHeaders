@@ -27,6 +27,7 @@
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(copy) NSString *geniusCategoryIdentifier; // @synthesize geniusCategoryIdentifier=_geniusCategoryIdentifier;
 @property(readonly) DVTDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
@@ -34,7 +35,6 @@
 @property(readonly) unsigned long long indexOfDocumentIdentifier; // @synthesize indexOfDocumentIdentifier=_indexOfDocumentIdentifier;
 @property(readonly) NSArray *identifierPath; // @synthesize identifierPath=_identifierPath;
 @property(readonly) id domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;

@@ -17,9 +17,9 @@
 + (id)createCertificateWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 machineName:(id)arg4 machineID:(id)arg5 csrData:(id)arg6 error:(id *)arg7;
 + (id)createCertificateWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 machineName:(id)arg4 machineID:(id)arg5 csr:(id)arg6 error:(id *)arg7;
 + (id)createCertificateWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 machineName:(id)arg4 machineID:(id)arg5 keyName:(id)arg6 error:(id *)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) struct __SecKey *privateKey; // @synthesize privateKey=_privateKey;
 @property(readonly, copy, nonatomic) NSString *portalCertificateID; // @synthesize portalCertificateID=_portalCertificateID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

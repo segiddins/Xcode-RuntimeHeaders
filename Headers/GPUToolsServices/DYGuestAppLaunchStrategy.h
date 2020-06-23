@@ -15,8 +15,8 @@
 }
 
 + (double)launchTimeout;
-@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void)registerInferiorPid:(int)arg1;
 - (id)performLaunch:(id)arg1 connectFuture:(id)arg2;
 - (id)initWithSession:(id)arg1;

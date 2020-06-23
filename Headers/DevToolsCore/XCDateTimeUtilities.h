@@ -19,13 +19,13 @@
 }
 
 + (id)sharedDateTimeUtilities;
+- (void).cxx_destruct;
 @property(readonly) NSDateFormatter *fullDateTimeFormatter; // @synthesize fullDateTimeFormatter=_fullDateTimeFormatter;
 @property(readonly) NSDateFormatter *longDateTimeFormatter; // @synthesize longDateTimeFormatter=_longDateTimeFormatter;
 @property(readonly) NSDateFormatter *mediumDateTimeFormatter; // @synthesize mediumDateTimeFormatter=_mediumDateTimeFormatter;
 @property(readonly) NSDateFormatter *shortDateTimeFormatter; // @synthesize shortDateTimeFormatter=_shortDateTimeFormatter;
 @property(readonly) NSDateFormatter *shortTimeFormatter; // @synthesize shortTimeFormatter=_shortTimeFormatter;
 @property(readonly) NSDateFormatter *shortDateFormatter; // @synthesize shortDateFormatter=_shortDateFormatter;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

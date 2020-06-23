@@ -7,8 +7,6 @@
 #import <RCShared/_TtC8RCShared12TargetButton.h>
 
 @interface _TtC8RCShared12TargetButton (RCShared)
-- (void)deleteForward:(id)arg1;
-- (void)deleteBackward:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 @end
 

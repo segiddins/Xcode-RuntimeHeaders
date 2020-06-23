@@ -25,8 +25,8 @@
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)initialize;
-@property(retain) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 - (void).cxx_destruct;
+@property(retain) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)selectDocumentLocations:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)conditionWithPlistRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject *visibilityValue; // @synthesize visibilityValue=_visibilityValue;
 @property(readonly, copy, nonatomic) NSString *visibilityKeyPath; // @synthesize visibilityKeyPath=_visibilityKeyPath;
-- (void).cxx_destruct;
 - (id)plistRepresentation;
 - (id)initWithVisibilityKeyPath:(id)arg1 visibilityValue:(id)arg2;
 

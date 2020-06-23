@@ -18,9 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) DVTSourceControlLogItem *logItem; // @synthesize logItem=_logItem;
 @property struct _NSRange lineRange; // @synthesize lineRange=_lineRange;
-- (void).cxx_destruct;
+- (void)updateLogItem:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

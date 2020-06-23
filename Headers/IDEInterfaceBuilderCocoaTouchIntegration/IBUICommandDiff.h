@@ -19,10 +19,10 @@
     NSOrderedSet *_changes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *changes; // @synthesize changes=_changes;
 @property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier; // @synthesize ibExplicitStoryboardIdentifier=_ibExplicitStoryboardIdentifier;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (BOOL)ibInspectedIsInStoryboard;
 @property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (id)ibShortDisplayName;

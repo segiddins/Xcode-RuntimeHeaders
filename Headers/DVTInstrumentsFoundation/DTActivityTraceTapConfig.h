@@ -13,8 +13,8 @@
     CDUnknownBlockType _memoHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType memoHandler; // @synthesize memoHandler=_memoHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType memoHandler; // @synthesize memoHandler=_memoHandler;
 @property(nonatomic) BOOL excludeDebug;
 @property(nonatomic) BOOL excludeInfo;
 @property(nonatomic) BOOL trackExpiredPIDs;

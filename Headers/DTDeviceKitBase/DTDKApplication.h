@@ -26,10 +26,10 @@
 + (id)applicationWithPropertiesFromApplication:(id)arg1;
 + (id)applicationWithDeviceData:(id)arg1 andPlist:(id)arg2;
 + (id)keyPathsForValuesAffectingPropertyListRepresentation;
+- (void).cxx_destruct;
 @property(readonly) struct __AFCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <DTDKRemoteDeviceToken> deviceData; // @synthesize deviceData;
 @property(copy) NSDictionary *plist; // @synthesize plist=_plist;
-- (void).cxx_destruct;
 - (id)attributesOfItemAtPath:(id)arg1 error:(id *)arg2;
 - (id)contentsOfDirectoryAtPath:(id)arg1 error:(id *)arg2;
 - (BOOL)createDirectoryAtPath:(id)arg1 error:(id *)arg2;

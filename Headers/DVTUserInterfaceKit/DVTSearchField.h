@@ -25,12 +25,12 @@
 + (double)heightForBarHeight:(double)arg1;
 + (void)initialize;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hidesProgress; // @synthesize hidesProgress=_hidesProgress;
 @property(readonly) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(readonly) NSMutableArray *filterButtons; // @synthesize filterButtons=_filterButtons;
 @property BOOL isBecomingFirstResponder; // @synthesize isBecomingFirstResponder=_isBecomingFirstResponder;
 @property(copy, nonatomic) CDUnknownBlockType searchMenuBlock; // @synthesize searchMenuBlock=_searchMenuBlock;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasActiveFilter;
 @property(readonly) BOOL hasKeyboardFocus;
 - (BOOL)becomeFirstResponder;

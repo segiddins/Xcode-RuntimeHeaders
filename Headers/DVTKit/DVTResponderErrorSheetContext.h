@@ -16,11 +16,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property void *outerContext; // @synthesize outerContext=_outerContext;
 @property SEL outerCompletionSelector; // @synthesize outerCompletionSelector=_outerCompletionSelector;
 @property(retain) id outerCompletionDelegate; // @synthesize outerCompletionDelegate=_outerCompletionDelegate;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
     NSTextField *_categoryTextField;
 }
 
-@property(nonatomic) __weak NSTextField *categoryTextField; // @synthesize categoryTextField=_categoryTextField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *categoryTextField; // @synthesize categoryTextField=_categoryTextField;
 - (void)awakeFromNib;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 

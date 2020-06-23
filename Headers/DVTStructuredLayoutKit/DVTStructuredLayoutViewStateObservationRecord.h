@@ -14,9 +14,9 @@
     DVTStructuredLayoutViewFrameChangeStack *_frameChangeStack;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTStructuredLayoutViewFrameChangeStack *frameChangeStack; // @synthesize frameChangeStack=_frameChangeStack;
 @property long long observationCount; // @synthesize observationCount=_observationCount;
-- (void).cxx_destruct;
 - (void)decrementObservationCounter;
 - (void)incrementObservationCounter;
 - (id)init;

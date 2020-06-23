@@ -20,9 +20,9 @@
 
 + (void)setValue:(id)arg1 forBuildSetting:(id)arg2 inTarget:(id)arg3;
 + (id)valueForBuildSetting:(id)arg1 inTarget:(id)arg2 configuration:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DVTInvalidation> entitlementsFileHandlerSubscription; // @synthesize entitlementsFileHandlerSubscription=_entitlementsFileHandlerSubscription;
 @property(retain) IDEEntitlementsFile *entitlementsFileHandler; // @synthesize entitlementsFileHandler=_entitlementsFileHandler;
-- (void).cxx_destruct;
 @property(readonly) DVTFilePath *entitlementsFilePath;
 - (void)setEntitlementValue:(id)arg1 forKey:(id)arg2;
 - (id)allEntitlementKeys;
@@ -36,6 +36,7 @@
 - (id)bestTargetEntitlementFileName;
 - (id)entitlementsValuesProxy;
 - (id)fileReferenceForFileName:(id)arg1;
+- (BOOL)entitlementsContainsEntitlementKey:(id)arg1;
 - (BOOL)entitlementsContainsEntitlementKeyForItem:(id)arg1;
 - (id)_allEntitlementKeys;
 - (id)_entitlementsAndValues;

@@ -15,10 +15,10 @@
     DVTPortalTeam *_team;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 @property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

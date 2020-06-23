@@ -73,9 +73,7 @@
     NSColor *_analyticsLogs_samplePercentageBackgroundColor;
     NSColor *_archiveShowLogButtonBorder;
     NSColor *_archiveShowLogButtonBorder_highlighted;
-    NSColor *_viewDebuggerCanvasElementSelectionTintColor;
     NSColor *_viewDebuggerCanvasElementBorderColor;
-    NSColor *_viewDebuggerSelectedCanvasElementBorderColor;
     NSColor *_viewDebuggerConstraintColor;
     NSColor *_viewDebuggerHighlightedConstraintColor;
     NSColor *_viewDebuggerSelectedConstraintColor;
@@ -211,12 +209,13 @@
 
 + (id)currentTheme;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) NSColor *reportColorGraphYellow; // @synthesize reportColorGraphYellow=_reportColorGraphYellow;
 @property(readonly) NSColor *reportColorGraphRed; // @synthesize reportColorGraphRed=_reportColorGraphRed;
 @property(readonly) NSColor *reportColorGraphGreen; // @synthesize reportColorGraphGreen=_reportColorGraphGreen;
 @property(readonly) NSColor *reportColorGraphBlue; // @synthesize reportColorGraphBlue=_reportColorGraphBlue;
-- (void).cxx_destruct;
+@property(readonly) NSImage *stylizedQuickLookImage;
 - (id)dynamicAlphaModifiedColorForBaseColor:(id)arg1 alpha:(double)arg2;
 - (id)dynamicallyResolvedColorWithResolver:(CDUnknownBlockType)arg1;
 - (id)barSeparatorViewInRect:(struct CGRect)arg1;
@@ -314,6 +313,8 @@
 - (id)editorAnnotationTestSuccess10;
 - (id)editorAnnotationTestFail10;
 - (id)editorAnnotationTest10;
+- (id)statusTestSkippedImageOfSize:(unsigned long long)arg1 isDisabled:(BOOL)arg2;
+- (id)statusTestSkippedImageOfSize:(unsigned long long)arg1;
 - (id)statusTestFailureImageOfSize:(unsigned long long)arg1 isDisabled:(BOOL)arg2;
 - (id)statusTestFailureImageOfSize:(unsigned long long)arg1;
 - (id)statusTestFailureMixedImageOfSize:(unsigned long long)arg1 isDisabled:(BOOL)arg2;
@@ -635,9 +636,7 @@
 @property(readonly) NSColor *viewDebuggerSelectedConstraintColor;
 @property(readonly) NSColor *viewDebuggerHighlightedConstraintColor;
 @property(readonly) NSColor *viewDebuggerConstraintColor;
-@property(readonly) NSColor *viewDebuggerSelectedCanvasElementBorderColor;
 @property(readonly) NSColor *viewDebuggerCanvasElementBorderColor;
-@property(readonly) NSColor *viewDebuggerCanvasElementSelectionTintColor;
 @property(readonly) NSColor *archiveShowLogButtonBorder_highlighted;
 @property(readonly) NSColor *archiveShowLogButtonBorder;
 @property(readonly) NSColor *analyticsLogs_samplePercentageBackgroundColor;

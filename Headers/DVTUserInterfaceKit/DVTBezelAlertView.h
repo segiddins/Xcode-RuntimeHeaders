@@ -18,10 +18,10 @@
     struct CGRect _messageRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (void)tile;

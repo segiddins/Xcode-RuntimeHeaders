@@ -15,10 +15,10 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)uniqueByBundleID;

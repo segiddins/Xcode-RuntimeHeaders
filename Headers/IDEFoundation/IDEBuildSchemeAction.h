@@ -38,13 +38,13 @@
 + (id)keyPathsForValuesAffectingAvailableBuildConfigurations;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSMapTable *overridingBuildPropertiesForBuildable; // @synthesize overridingBuildPropertiesForBuildable=_overridingBuildPropertiesForBuildable;
 @property BOOL runPostActionsOnFailure; // @synthesize runPostActionsOnFailure=_runPostActionsOnFailure;
 @property BOOL collectBuildTimelineMetrics; // @synthesize collectBuildTimelineMetrics=_collectBuildTimelineMetrics;
 @property(nonatomic, getter=isBuildablesDidChangeNotificationEnabled) BOOL buildablesDidChangeNotificationEnabled; // @synthesize buildablesDidChangeNotificationEnabled=_buildablesDidChangeNotificationEnabled;
 @property BOOL buildImplicitDependencies; // @synthesize buildImplicitDependencies=_buildImplicitDependencies;
 @property BOOL parallelizeBuildables; // @synthesize parallelizeBuildables=_parallelizeBuildables;
-- (void).cxx_destruct;
 - (void)setBuildConfigurationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildRoles:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildActionEntries:(id)arg1 fromXMLUnarchiver:(id)arg2;

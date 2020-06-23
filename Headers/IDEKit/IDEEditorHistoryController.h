@@ -30,10 +30,10 @@
 + (id)_historyButtonWithImage:(id)arg1 width:(double)arg2 height:(double)arg3;
 + (long long)historySizeLimit;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IDEEditorHistoryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTDelayedMenuGradientImageButton *backButton; // @synthesize backButton=_backButton;
 @property(readonly) DVTDelayedMenuGradientImageButton *forwardButton; // @synthesize forwardButton=_forwardButton;
-- (void).cxx_destruct;
 - (void)goBackInHistoryByCommandWithShiftPlusAlternate:(id)arg1;
 - (void)goBackInHistoryByCommandWithAlternate:(id)arg1;
 - (void)goForwardInHistoryByCommandWithShiftPlusAlternate:(id)arg1;

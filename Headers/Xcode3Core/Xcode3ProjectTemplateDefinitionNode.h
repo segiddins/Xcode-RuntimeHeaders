@@ -16,10 +16,10 @@
     NSString *_expansionString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *expansionString; // @synthesize expansionString=_expansionString;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)description;
 - (id)outputToFilePath:(id)arg1 withDefinitions:(id)arg2 indentString:(id)arg3 rootGroup:(id)arg4 targets:(id)arg5 basedOn:(id)arg6 targetName:(id)arg7 suppressTargetGroup:(BOOL)arg8 deferredTargetAdditions:(id)arg9 error:(id *)arg10 replacementHandler:(CDUnknownBlockType)arg11;
 - (id)outputInDirectory:(id)arg1 withDefinitions:(id)arg2 indentString:(id)arg3 rootGroup:(id)arg4 targets:(id)arg5 basedOn:(id)arg6 deferredTargetAdditions:(id)arg7 error:(id *)arg8 replacementHandler:(CDUnknownBlockType)arg9;

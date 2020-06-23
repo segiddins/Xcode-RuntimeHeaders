@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSString *_engineName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *engineName; // @synthesize engineName=_engineName;
 @property(copy) NSString *deviceGPUVendor; // @synthesize deviceGPUVendor=_deviceGPUVendor;
 @property(copy) NSString *deviceGPUName; // @synthesize deviceGPUName=_deviceGPUName;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSNumber *hostMetalFeatureSet; // @synthesize hostMetalFeatureSet=_hostMetalFeatureSet;
 @property(copy) NSString *hostXcodeVersion; // @synthesize hostXcodeVersion=_hostXcodeVersion;
 @property(copy) NSNumber *graphicsAPI; // @synthesize graphicsAPI=_graphicsAPI;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

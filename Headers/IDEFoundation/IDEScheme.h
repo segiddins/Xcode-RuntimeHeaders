@@ -75,6 +75,7 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDESchemeOrderedWorkspaceNotificationManager *orderedWorkspaceNotificationManager; // @synthesize orderedWorkspaceNotificationManager=_orderedWorkspaceNotificationManager;
 @property(getter=isRunDestinationInvalidationPending) BOOL runDestinationInvalidationPending; // @synthesize runDestinationInvalidationPending=_runDestinationInvalidationPending;
 @property(nonatomic, getter=isRunDestinationInvalidationSuspended) BOOL runDestinationInvalidationSuspended; // @synthesize runDestinationInvalidationSuspended=_runDestinationInvalidationSuspended;
@@ -103,7 +104,6 @@
 @property(retain) IDETestSchemeAction *testSchemeAction; // @synthesize testSchemeAction=_testSchemeAction;
 @property(retain) IDELaunchSchemeAction *launchSchemeAction; // @synthesize launchSchemeAction=_launchSchemeAction;
 @property(retain) IDEBuildSchemeAction *buildSchemeAction; // @synthesize buildSchemeAction=_buildSchemeAction;
-- (void).cxx_destruct;
 - (void)addBuildableProductRunnable:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addPathRunnable:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addLaunchPhase:(id)arg1 fromXMLUnarchiver:(id)arg2;

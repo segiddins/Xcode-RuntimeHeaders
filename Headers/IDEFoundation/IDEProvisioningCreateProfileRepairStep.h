@@ -14,9 +14,9 @@
 }
 
 + (id)createProfileRepairStepWithCharacteristics:(id)arg1;
-@property(readonly, nonatomic) DVTPortalProfileCharacteristics *characteristics; // @synthesize characteristics=_characteristics;
 - (void).cxx_destruct;
-- (BOOL)_installPortalProfile:(id)arg1 profileManager:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) DVTPortalProfileCharacteristics *characteristics; // @synthesize characteristics=_characteristics;
+- (BOOL)_installPortalProfile:(id)arg1 profileManager:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;
 - (id)activityDescription;

@@ -25,10 +25,10 @@
 + (id)_accountCredentialsForUsername:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
 + (id)_keychainServiceAccountCredentialsForUsername:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
 + (id)_legacyAccountCredentialsForUsername:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property BOOL _optOutOfTokenRequirement; // @synthesize _optOutOfTokenRequirement=__optOutOfTokenRequirement;
 @property(readonly, nonatomic) NSURLCredential *URLCredential; // @synthesize URLCredential=_URLCredential;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)applyAuthenticationHeadersToRequest:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *authenticationHeaders;
 - (id)authenticationHeadersForRequest:(id)arg1;

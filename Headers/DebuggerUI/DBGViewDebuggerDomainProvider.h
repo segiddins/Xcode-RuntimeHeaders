@@ -23,8 +23,8 @@
 + (id)domainObjectForWorkspace:(id)arg1;
 + (id)providerForWorkspace:(id)arg1;
 + (void)initialize;
-@property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)_handleViewDebuggingAdditionAdded:(id)arg1;
 - (void)_handleDebuggingAdditionsChanged:(id)arg1;

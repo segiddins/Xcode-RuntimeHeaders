@@ -14,8 +14,8 @@
 }
 
 + (id)_elementNameToClassMap;
-@property(nonatomic) __weak id <XRSchemaRegexPatternDetectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <XRSchemaRegexPatternDetectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
 @end

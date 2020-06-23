@@ -17,5 +17,6 @@
 - (void)willHideEmptyContentString;
 - (void)willShowEmptyContentString;
 @property(nonatomic) BOOL followsFontAndColorTheme;
+@property(nonatomic, copy) NSString *emptyContentButtonTitle;
 @end
 

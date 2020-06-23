@@ -24,11 +24,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimating) BOOL animating; // @synthesize animating=_animating;
 @property(nonatomic) __weak id <DVTColoredSpinnerDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL displaysWhenStopped; // @synthesize displaysWhenStopped=_displaysWhenStopped;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)imagesAreValid;
 - (void)_timerStep:(id)arg1;

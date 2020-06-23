@@ -20,9 +20,9 @@
 }
 
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(retain) DVTOutlineView *containerOutline; // @synthesize containerOutline=_containerOutline;
 @property(readonly) id <DVTDeviceApplication_KitSupport> application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)_updateContainerItemDictionaries;
 - (id)_recursiveContainerItemDictionariesForItems:(id)arg1;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;

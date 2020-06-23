@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <XCSAdministration/_TtP17XCSAdministration16DirectoryService_-Protocol.h>
-
-@interface _TtC17XCSAdministration23DefaultDirectoryService : NSObject <_TtP17XCSAdministration16DirectoryService_>
+@interface _TtC17XCSAdministration23DefaultDirectoryService : NSObject
 {
 }
 

@@ -35,6 +35,7 @@
     DVTRangeArray *_proposedNameMatchRange;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTRangeArray *proposedNameMatchRange; // @synthesize proposedNameMatchRange=_proposedNameMatchRange;
 @property(retain) DVTRangeArray *currentNameMatchRange; // @synthesize currentNameMatchRange=_currentNameMatchRange;
 @property(retain) IDERenameableXcode3ProjectItem *renameableItem; // @synthesize renameableItem=_renameableItem;
@@ -55,7 +56,6 @@
 @property(retain) id <IDEXcode3ProjectItemRenaming> renamer; // @synthesize renamer=_renamer;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(retain) XCProjectRenameItem *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (void)validate;
 - (void)rename;
 - (void)cancel;

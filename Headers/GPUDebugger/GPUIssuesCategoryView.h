@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GPUIssueCategory *_category;
 }
 
+- (void).cxx_destruct;
 @property __weak GPUIssueCategory *category; // @synthesize category=_category;
 @property NSTextField *numberOfIssuesLabel; // @synthesize numberOfIssuesLabel=_numberOfIssuesLabel;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,10 +15,10 @@
     unsigned long long _issueGeneration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long issueGeneration; // @synthesize issueGeneration=_issueGeneration;
 @property(readonly) NSArray *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
 @property(readonly) IDETest *test; // @synthesize test=_test;
-- (void).cxx_destruct;
 - (id)initWithIssueProvider:(id)arg1 test:(id)arg2 performanceMetrics:(id)arg3 documentLocation:(id)arg4 messageText:(id)arg5 issueTypeIdentifier:(id)arg6 issueGeneration:(unsigned long long)arg7;
 
 @end

@@ -32,14 +32,16 @@ __attribute__((visibility("hidden")))
     id _batchCounterDataUpdateToken;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _shadersUpdatable;
+    BOOL _requiresXcodeSelect;
     NSArray *_invalidOverrides;
 }
 
 + (id)assetBundle;
-- (void)setShadersUpdatable:(BOOL)arg1;
-- (BOOL)shadersUpdatable;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)requiresXcodeSelect;
+- (void)setShadersUpdatable:(BOOL)arg1;
+- (BOOL)shadersUpdatable;
 - (id)buildDefaultLibraryAtURL:(id)arg1 error:(id *)arg2;
 - (id)_buildProductsDefaultLibraryURL:(id)arg1;
 - (id)gpuVendorForAPIItem:(id)arg1;

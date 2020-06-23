@@ -25,7 +25,6 @@
 - (id)localExtraMarshalledToOneRelationshipKeyPaths;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
-- (id)ibRuntimeClassName;
 - (id)ibSwizzledCocoaTouchNSObjectLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibSwizzledCocoaTouchNSObjectLocalAttributeKeyPaths;
 - (void)setIbInspectedIsAccessibilityElement:(BOOL)arg1;
@@ -40,7 +39,6 @@
 - (BOOL)ibShouldPropagateDesignFramesToCopiedViewForChild:(id)arg1;
 - (void)ibCocoaTouchToolFontsDidChange;
 - (void)ibPopulateAdditionalKeyValuePairs:(id)arg1 forCompilationWithMarshallingContext:(id)arg2;
-- (id)ibEffectiveColorList;
 - (BOOL)ibIsUIObjectUsingDarkAppearance;
 - (id)ibPreviewingRegistrantSourceViewInDocument:(id)arg1;
 - (BOOL)ibIsUISegmentedControlSelectedSegmentTintColorAvailable;
@@ -71,7 +69,6 @@
 - (BOOL)ibRequiresLayoutInfoInCocoaTouchToolDuringCompilationOfDocument:(id)arg1;
 - (void)ibPopulateCompilationMarshallingContext:(id)arg1 forDocument:(id)arg2;
 - (BOOL)ibUserCanConfigureActionArgumentType;
-- (id)ibRuntimeClassName;
 - (id)ibActionArgumentClassName;
 - (long long)ibPreferredActionArgumentType;
 - (unsigned long long)ibPreferredActionEventType;

@@ -15,10 +15,10 @@
     NSString *_deviceTinyID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceTinyID; // @synthesize deviceTinyID=_deviceTinyID;
 @property(retain, nonatomic) XCSDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak XCSCodeCoverageIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)_bindHierarchyWithIntegration:(id)arg1 parentObject:(id)arg2;
 - (BOOL)_validateWithDeviceTinyID:(id)arg1 validationErrors:(id *)arg2;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;

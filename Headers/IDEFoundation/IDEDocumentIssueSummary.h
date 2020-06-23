@@ -24,6 +24,7 @@
 }
 
 + (id)keyPathsForValuesAffectingMaxSeverity;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long fixItCount; // @synthesize fixItCount=_fixItCount;
 @property(readonly) unsigned long long analyzerResultCount; // @synthesize analyzerResultCount=_analyzerResultCount;
 @property(readonly) unsigned long long noticeCount; // @synthesize noticeCount=_noticeCount;
@@ -34,7 +35,6 @@
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSMutableDictionary *issuesIndexedByCoalescingIdentifier; // @synthesize issuesIndexedByCoalescingIdentifier=_issuesIndexedByCoalescingIdentifier;
 @property(copy, nonatomic) NSArray *vendedIssuesBySeqNum; // @synthesize vendedIssuesBySeqNum=_vendedIssuesBySeqNum;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long maxSeverity;
 - (void)removeVendedIssuesBySeqNumAtIndexes:(id)arg1;
 - (void)insertVendedIssuesBySeqNum:(id)arg1 atIndexes:(id)arg2;

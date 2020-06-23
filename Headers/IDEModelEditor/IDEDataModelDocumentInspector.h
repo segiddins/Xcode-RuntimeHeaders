@@ -21,8 +21,8 @@
 + (id)keyPathsForValuesAffectingSourceLanguage;
 + (id)keyPathsForValuesAffectingModelVersionIdentifier;
 + (id)keyPathsForValuesAffectingCanChooseModelVersion;
-@property(copy) NSArray *developmentVersionMenuItems; // @synthesize developmentVersionMenuItems=_developmentVersionMenuItems;
 - (void).cxx_destruct;
+@property(copy) NSArray *developmentVersionMenuItems; // @synthesize developmentVersionMenuItems=_developmentVersionMenuItems;
 @property(readonly) NSString *developmentVersionTitle;
 - (void)takeToolsVersion:(id)arg1;
 @property unsigned long long sourceLanguage; // @dynamic sourceLanguage;

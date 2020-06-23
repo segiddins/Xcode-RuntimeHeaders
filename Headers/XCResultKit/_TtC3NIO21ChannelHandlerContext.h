@@ -16,6 +16,8 @@
     MISSING_TYPE *name;
     MISSING_TYPE *inboundHandler;
     MISSING_TYPE *outboundHandler;
+    MISSING_TYPE *removeHandlerInvoked;
+    MISSING_TYPE *userTriggeredRemovalStarted;
 }
 
 @end

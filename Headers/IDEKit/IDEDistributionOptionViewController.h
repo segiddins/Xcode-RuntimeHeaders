@@ -16,11 +16,11 @@
     IDEDistributionOption *_option;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showAdditionalOptionsGroupLabel; // @synthesize showAdditionalOptionsGroupLabel=_showAdditionalOptionsGroupLabel;
 @property(readonly, nonatomic) BOOL needsInteraction; // @synthesize needsInteraction=_needsInteraction;
 @property(readonly, nonatomic) IDEDistributionOption *option; // @synthesize option=_option;
 @property(retain, nonatomic) IDEDistributionOptionViewControllerConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isInAdditionalOptionsGroup;
 - (id)loadContent;
 - (id)providedOutputContextPropertyNames;

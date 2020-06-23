@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *delegateMenuItems;
     MISSING_TYPE *itemTags;
     MISSING_TYPE *groupSubTitles;
-    MISSING_TYPE *disabledOutlineItems;
-    MISSING_TYPE *expandedOutlineItems;
+    MISSING_TYPE *disabledItemPaths;
+    MISSING_TYPE *expandedItemPaths;
     MISSING_TYPE *ignoreUpdates;
     MISSING_TYPE *currentTopLevelItems;
     MISSING_TYPE *groupOrderKind;

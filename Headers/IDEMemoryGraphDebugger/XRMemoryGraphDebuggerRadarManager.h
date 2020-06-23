@@ -16,9 +16,9 @@
     NSData *_mgScreenshot;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *mgScreenshot; // @synthesize mgScreenshot=_mgScreenshot;
 @property(retain) NSData *memoryGraph; // @synthesize memoryGraph=_memoryGraph;
-- (void).cxx_destruct;
 - (void)fileRadarForGraph:(id)arg1 withNodeID:(unsigned int)arg2 nodeAddressDescription:(id)arg3 andLabel:(id)arg4 screenshot:(id)arg5 inWindow:(id)arg6;
 - (void)fileRadarForGraph:(id)arg1 withSelectedNodeID:(unsigned int)arg2 nodeAddressDescription:(id)arg3 selectedNodeLabel:(id)arg4 pivotNodeID:(unsigned int)arg5 pivotNodeLabel:(id)arg6 screenshot:(id)arg7 inWindow:(id)arg8;
 - (void)fileRadarForIssue:(id)arg1 withGraph:(id)arg2 andScreenshot:(id)arg3 inWindow:(id)arg4;

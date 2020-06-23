@@ -22,6 +22,7 @@
     IDEProvisioningSliceConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DVTObservingToken *errorsObserver; // @synthesize errorsObserver=_errorsObserver;
 @property(retain, nonatomic) NSBox *divider; // @synthesize divider=_divider;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *issuesStackViewLeadingConstraint; // @synthesize issuesStackViewLeadingConstraint=_issuesStackViewLeadingConstraint;
 @property(retain, nonatomic) DVTStackView_AppKitAutolayout *issuesStackView; // @synthesize issuesStackView=_issuesStackView;
 @property(retain, nonatomic) id <IDEProvisioningIssuesDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)updateIssuesList;
 - (void)viewDidLoad;

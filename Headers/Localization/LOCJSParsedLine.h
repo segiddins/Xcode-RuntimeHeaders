@@ -20,6 +20,7 @@
     NSString *_stringValue;
 }
 
+- (void).cxx_destruct;
 @property BOOL autoEscapeUnescape; // @synthesize autoEscapeUnescape=_autoEscapeUnescape;
 @property BOOL suspiciousLine; // @synthesize suspiciousLine=_suspiciousLine;
 @property BOOL valid; // @synthesize valid=_valid;
@@ -28,7 +29,6 @@
 @property(retain) NSMutableDictionary *tokens; // @synthesize tokens=_tokens;
 @property int lineType; // @synthesize lineType=_lineType;
 @property(retain) NSString *lineContent; // @synthesize lineContent=_lineContent;
-- (void).cxx_destruct;
 - (id)composeLine;
 - (id)stringDictKeyPrefix;
 - (id)stringDictValue;

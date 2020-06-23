@@ -26,6 +26,7 @@
 
 + (id)sharedUnversionedLogItem;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long revisionType; // @synthesize revisionType=_revisionType;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -34,7 +35,6 @@
 @property(getter=isComplete) BOOL complete; // @synthesize complete=_complete;
 @property(retain, nonatomic) NSArray *fileStatuses; // @synthesize fileStatuses=_fileStatuses;
 @property(retain, nonatomic) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isMerge;
 - (long long)compareToLogItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

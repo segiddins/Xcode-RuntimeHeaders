@@ -23,6 +23,7 @@
     NSTokenField *_preTenFourPresetTokenField10;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTokenField *preTenFourPresetTokenField10; // @synthesize preTenFourPresetTokenField10=_preTenFourPresetTokenField10;
 @property(retain) NSTokenField *preTenFourPresetTokenField09; // @synthesize preTenFourPresetTokenField09=_preTenFourPresetTokenField09;
 @property(retain) NSTokenField *preTenFourPresetTokenField08; // @synthesize preTenFourPresetTokenField08=_preTenFourPresetTokenField08;
@@ -33,7 +34,6 @@
 @property(retain) NSTokenField *preTenFourPresetTokenField03; // @synthesize preTenFourPresetTokenField03=_preTenFourPresetTokenField03;
 @property(retain) NSTokenField *preTenFourPresetTokenField02; // @synthesize preTenFourPresetTokenField02=_preTenFourPresetTokenField02;
 @property(retain) NSTokenField *preTenFourPresetTokenField01; // @synthesize preTenFourPresetTokenField01=_preTenFourPresetTokenField01;
-- (void).cxx_destruct;
 - (double)baseline;
 - (id)tokenField:(id)arg1 displayStringForRepresentedObject:(id)arg2;
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;

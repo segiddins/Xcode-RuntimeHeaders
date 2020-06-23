@@ -17,9 +17,9 @@
 }
 
 + (id)plistTypeName;
+- (void).cxx_destruct;
 @property(readonly) NSString *replacementClassName; // @synthesize replacementClassName=_replacementClassName;
 @property(readonly) IBMemberID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)modificationDescription;
 - (id)categoryName;
 - (id)modificationByChangingReplacementName:(id)arg1;

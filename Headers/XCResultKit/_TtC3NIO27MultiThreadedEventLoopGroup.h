@@ -12,6 +12,8 @@
 {
     MISSING_TYPE *index;
     MISSING_TYPE *eventLoops;
+    MISSING_TYPE *shutdownLock;
+    MISSING_TYPE *runState;
 }
 
 @end

@@ -24,10 +24,10 @@
 
 + (id)defaultCertificateManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTSigningCertificate *localDevelopmentCertificate; // @synthesize localDevelopmentCertificate=_localDevelopmentCertificate;
 @property(retain) DVTSigningCertificateSource *certificateSource; // @synthesize certificateSource=_certificateSource;
 @property BOOL areCertificatesLoaded; // @synthesize areCertificatesLoaded=_areCertificatesLoaded;
-- (void).cxx_destruct;
 - (void)_delayedPostCertificatesChangedBroadcast;
 - (void)forceFullSyncWithCallback:(CDUnknownBlockType)arg1;
 - (void)forceFullSync;

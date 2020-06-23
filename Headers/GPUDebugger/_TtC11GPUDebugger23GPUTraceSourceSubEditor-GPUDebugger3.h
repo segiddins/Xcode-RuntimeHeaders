@@ -6,9 +6,7 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger23GPUTraceSourceSubEditor.h>
 
-#import <GPUDebugger/_TtP11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegate_-Protocol.h>
-
-@interface _TtC11GPUDebugger23GPUTraceSourceSubEditor (GPUDebugger3) <_TtP11GPUDebugger53GPUTraceShaderProfilerAuxiliaryViewControllerDelegate_>
+@interface _TtC11GPUDebugger23GPUTraceSourceSubEditor (GPUDebugger3)
 - (void)exportISA:(id)arg1;
 - (void)jumpToFunctionDefinition:(id)arg1;
 - (void)setupContextMenuWithAuxiliaryViewController:(id)arg1 selectedSymbol:(id)arg2 menu:(id)arg3;

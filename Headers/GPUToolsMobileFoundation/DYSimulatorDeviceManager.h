@@ -12,7 +12,6 @@
 {
     DYSimulatorRootsObserver *_simulatorRootsObserver;
     NSMapTable *_deviceMap;
-    NSMapTable *_daemonInstances;
     NSMapTable *_observersMap;
     struct dispatch_queue_s *_queue;
     int _lock;
@@ -20,17 +19,12 @@
 
 + (id)sharedSimulatorDeviceManager;
 - (void).cxx_destruct;
-- (id)faultDeviceForSDKRootPath:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)notifyOnQueue:(struct dispatch_queue_s *)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)allDevices;
-- (id)_allDevicesInner;
-- (void)dealloc;
+- (id)_allDevicesWithoutLock;
+- (id)faultDeviceForAMDIdentifier:(id)arg1 simDevice:(id)arg2;
 - (id)init;
-- (void)_registerSimulatorEnvironment:(id)arg1;
-- (void)_sendLoadEnvironmentMessage:(id)arg1;
-- (void)_registerSimulatorRoot:(id)arg1 daemon:(id)arg2;
-- (void)_broadcastEvent:(int)arg1 device:(id)arg2;
 
 @end
 

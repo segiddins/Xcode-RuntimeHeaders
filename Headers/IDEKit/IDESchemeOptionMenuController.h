@@ -33,6 +33,7 @@
 + (id)filesMatchingUTIInWorkspace:(id)arg1;
 + (id)itemsForMatchingFilesInWorkspace:(id)arg1;
 + (id)_itemForFileReference:(id)arg1 inWorkspace:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) id doNothingItemRepresentedObject; // @synthesize doNothingItemRepresentedObject=_doNothingItemRepresentedObject;
 @property(readonly) NSString *doNothingItemTitle; // @synthesize doNothingItemTitle=_doNothingItemTitle;
 @property(readonly) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) IDEWorkspaceTabController *tabController; // @synthesize tabController=_tabController;
 @property(nonatomic) unsigned long long extraItems; // @synthesize extraItems=_extraItems;
 @property BOOL validateMenuItems; // @synthesize validateMenuItems=_validateMenuItems;
-- (void).cxx_destruct;
 - (void)attachToMenu:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)_updateMenu:(id)arg1;

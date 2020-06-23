@@ -16,9 +16,9 @@
     CDUnknownBlockType _numberClickedCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType numberClickedCallback; // @synthesize numberClickedCallback=_numberClickedCallback;
 @property unsigned long long iterationNumber; // @synthesize iterationNumber=_iterationNumber;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

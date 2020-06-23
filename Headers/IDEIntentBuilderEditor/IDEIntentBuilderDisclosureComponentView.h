@@ -16,8 +16,8 @@
     IDEIntentBuilderDisclosureView *_disclosureView;
 }
 
-@property __weak IDEIntentBuilderDisclosureView *disclosureView; // @synthesize disclosureView=_disclosureView;
 - (void).cxx_destruct;
+@property __weak IDEIntentBuilderDisclosureView *disclosureView; // @synthesize disclosureView=_disclosureView;
 - (void)_resize;
 - (void)disclosureView:(id)arg1 didChangeDisclosedState:(BOOL)arg2;
 - (BOOL)bindTo:(id)arg1;

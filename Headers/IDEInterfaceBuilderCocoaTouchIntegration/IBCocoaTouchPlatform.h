@@ -11,6 +11,8 @@
 }
 
 + (BOOL)isAppleTV;
++ (BOOL)supportsScrollTypesMask;
++ (BOOL)supportsPointerInteraction;
 + (BOOL)supportsAllowedPressTypes;
 + (BOOL)supportsSceneUpdates;
 + (id)targetRuntimes;
@@ -51,7 +53,6 @@
 - (unsigned long long)applicableTraits;
 - (long long)userInterfaceStyleForConfiguration:(id)arg1;
 - (id)traitCollectionForConfiguration:(id)arg1;
-- (id)darkSystemNamesToGenericColorsMapResourceNameForTargetRuntime:(id)arg1;
 - (id)systemNamesToGenericColorsMapResourceNameForTargetRuntime:(id)arg1;
 - (id)runtimeConfigurableConstraintConstantKeyPath;
 - (id)archiveKeyForUsesConfigurations;

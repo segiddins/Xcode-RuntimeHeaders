@@ -19,9 +19,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contentViews; // @synthesize contentViews=_contentViews;
 @property(retain) id <IDEProjectItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)primitiveInvalidate;

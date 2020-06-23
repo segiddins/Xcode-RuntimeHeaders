@@ -15,10 +15,10 @@
     DVTDiffContext *_cachedIntermediateDiffContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDiffContext *cachedIntermediateDiffContext; // @synthesize cachedIntermediateDiffContext=_cachedIntermediateDiffContext;
 @property(retain, nonatomic) DVTDiffContext *cachedModifiedDiffContext; // @synthesize cachedModifiedDiffContext=_cachedModifiedDiffContext;
 @property(retain, nonatomic) DVTDiffContext *cachedOriginalDiffContext; // @synthesize cachedOriginalDiffContext=_cachedOriginalDiffContext;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

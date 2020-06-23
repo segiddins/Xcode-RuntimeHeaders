@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (id)issues;
 - (void)addIssue:(id)arg1;
 - (id)initWithName:(id)arg1;

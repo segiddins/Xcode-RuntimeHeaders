@@ -13,8 +13,8 @@
     DVTPortalServerCertificate *_certificate;
 }
 
-@property(readonly, copy, nonatomic) DVTPortalServerCertificate *certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) DVTPortalServerCertificate *certificate; // @synthesize certificate=_certificate;
 
 @end
 

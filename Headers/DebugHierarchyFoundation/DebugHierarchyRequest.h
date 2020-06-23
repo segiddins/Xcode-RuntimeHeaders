@@ -37,6 +37,7 @@
 + (id)_requestWithV1RequestDictionary:(id)arg1;
 + (id)_compatibleRequestWithDictionary:(id)arg1;
 + (id)requestWithBase64Data:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property BOOL compressDuringTransport; // @synthesize compressDuringTransport=_compressDuringTransport;
 @property BOOL needsCompatibilityConversion; // @synthesize needsCompatibilityConversion=_needsCompatibilityConversion;
 @property(retain) NSData *serializedCompatibilitySupportRepresentation; // @synthesize serializedCompatibilitySupportRepresentation=_serializedCompatibilitySupportRepresentation;
@@ -57,7 +58,6 @@
 @property float initiatorVersion; // @synthesize initiatorVersion=_initiatorVersion;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)humanReadableStatusMessage;
 - (void)addLogEntry:(id)arg1;

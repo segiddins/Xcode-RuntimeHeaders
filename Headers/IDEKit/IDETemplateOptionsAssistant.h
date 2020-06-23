@@ -23,10 +23,10 @@
     NSArray *_sortedPrimaryOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *sortedPrimaryOptions; // @synthesize sortedPrimaryOptions=_sortedPrimaryOptions;
 @property(retain) NSTextField *firstTextField; // @synthesize firstTextField=_firstTextField;
 @property BOOL canGoForward; // @synthesize canGoForward=_canGoForward;
-- (void).cxx_destruct;
 - (id)comboBox:(id)arg1 completedString:(id)arg2;
 - (unsigned long long)comboBox:(id)arg1 indexOfItemWithStringValue:(id)arg2;
 - (id)comboBox:(id)arg1 objectValueForItemAtIndex:(long long)arg2;

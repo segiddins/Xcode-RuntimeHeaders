@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableCloumnWithElement:(id)arg1;
-@property(readonly, nonatomic) id <GPUBufferViewerElement> element; // @synthesize element=_element;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GPUBufferViewerElement> element; // @synthesize element=_element;
 - (double)extraWidth;
 @property(readonly, nonatomic) double defaultWidth;
 @property(readonly, nonatomic) Class cellClass;

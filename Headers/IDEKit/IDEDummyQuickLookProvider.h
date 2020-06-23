@@ -15,8 +15,8 @@
     NSView *_quickLookView;
 }
 
-@property(retain) NSView *quickLookView; // @synthesize quickLookView=_quickLookView;
 - (void).cxx_destruct;
+@property(retain) NSView *quickLookView; // @synthesize quickLookView=_quickLookView;
 - (void)cancelLoading;
 @property(readonly) int loadedState;
 - (id)initWithDataValue:(id)arg1 options:(id)arg2;

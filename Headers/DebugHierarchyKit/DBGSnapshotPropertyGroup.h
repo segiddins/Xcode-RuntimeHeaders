@@ -13,8 +13,8 @@
     DBGSnapshot *_snapshot;
 }
 
-@property __weak DBGSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 - (void).cxx_destruct;
+@property __weak DBGSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 
 @end
 

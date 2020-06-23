@@ -56,13 +56,13 @@
 }
 
 + (BOOL)isNaturalScrollDirection;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL trackMoves; // @synthesize trackMoves=_trackMoves;
 @property(nonatomic) BOOL allowDragging; // @synthesize allowDragging=_allowDragging;
 @property(readonly, nonatomic) NSEvent *lastMouseDragEvent; // @synthesize lastMouseDragEvent=_lastMouseDragEvent;
 @property(readonly, nonatomic) NSEvent *lastMouseDownEvent; // @synthesize lastMouseDownEvent=_lastMouseDownEvent;
 @property unsigned long long lastEventModFlags; // @synthesize lastEventModFlags=_lastEventModFlags;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_update:(double)arg1;
 - (void)willRenderContent;
 - (void)draggingEnded:(id)arg1;

@@ -15,9 +15,9 @@
     NSColor *_innerInactiveBorderColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *innerInactiveBorderColor; // @synthesize innerInactiveBorderColor=_innerInactiveBorderColor;
 @property unsigned long long solidBorderSides; // @synthesize solidBorderSides=_solidBorderSides;
-- (void).cxx_destruct;
 - (void)setInactiveBackgroundGradient:(id)arg1;
 - (void)setInactiveBackgroundColor:(id)arg1;
 - (void)setBackgroundGradient:(id)arg1;

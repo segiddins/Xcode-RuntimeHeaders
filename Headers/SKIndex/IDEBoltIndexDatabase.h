@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
     NSObject<IDEBoltIndexDatabaseProgressDelegate> *_progressDelegate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<IDEBoltIndexDatabaseProgressDelegate> *progressDelegate; // @synthesize progressDelegate=_progressDelegate;
 @property(nonatomic) __weak NSObject<IDEIndexDatabaseDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<IDEIndexGlobalQueryProvider> *queryProvider; // @synthesize queryProvider=_queryProvider;
 @property(readonly, nonatomic) DVTFilePath *path; // @synthesize path=_path;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)newImportSession;
 - (void)_forceEndSession:(id)arg1;
 - (void)didEndSession:(id)arg1;

@@ -13,8 +13,8 @@
     NSPopUpButton *_arrangePopUpButton;
 }
 
-@property(retain) NSPopUpButton *arrangePopUpButton; // @synthesize arrangePopUpButton=_arrangePopUpButton;
 - (void).cxx_destruct;
+@property(retain) NSPopUpButton *arrangePopUpButton; // @synthesize arrangePopUpButton=_arrangePopUpButton;
 - (double)baseline;
 - (void)disabledActionForArrangementMenuHeaders:(id)arg1;
 - (void)arrangeFillContainerHorizontally:(id)arg1;

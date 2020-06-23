@@ -14,9 +14,9 @@
     NSMutableDictionary *_layerMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *layerMap; // @synthesize layerMap=_layerMap;
 @property(retain) NSMutableArray *layers; // @synthesize layers=_layers;
-- (void).cxx_destruct;
 - (void)arrangeXCoordAbove:(int)arg1 layerAbove:(int)arg2;
 - (void)arrangeXCoordIn:(int)arg1;
 - (void)arrangeXCoordBelow:(int)arg1 layerBelow:(int)arg2;

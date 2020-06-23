@@ -23,11 +23,11 @@
     DVTPerformanceMetric *_objectLibraryLoadingPerformanceMetric;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTPerformanceMetric *objectLibraryLoadingPerformanceMetric; // @synthesize objectLibraryLoadingPerformanceMetric=_objectLibraryLoadingPerformanceMetric;
 @property(copy) NSString *currentDragMarker; // @synthesize currentDragMarker=_currentDragMarker;
 @property(retain, nonatomic) Class documentClass; // @synthesize documentClass=_documentClass;
 @property(retain, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (void)libraryDidLoad;
 - (void)activeEditorDidChange:(id)arg1;
 - (id)inlineDetailViewForAssets:(id)arg1;

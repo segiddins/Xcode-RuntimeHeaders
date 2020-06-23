@@ -18,12 +18,12 @@
 }
 
 + (id)parametersWithEntityIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL disablesSourceIntegration; // @synthesize disablesSourceIntegration=_disablesSourceIntegration;
 @property BOOL isImported; // @synthesize isImported=_isImported;
 @property BOOL collectsTimelineMetrics; // @synthesize collectsTimelineMetrics=_collectsTimelineMetrics;
 @property BOOL collectsCodeCoverage; // @synthesize collectsCodeCoverage=_collectsCodeCoverage;
 @property(retain) IDEEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
-- (void).cxx_destruct;
 
 @end
 

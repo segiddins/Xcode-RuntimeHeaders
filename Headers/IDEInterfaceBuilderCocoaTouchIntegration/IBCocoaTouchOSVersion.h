@@ -23,6 +23,7 @@
 + (id)instanceWithIdentifier:(id)arg1;
 + (id)allInstances;
 + (id)sharedInstance;
+- (id)colorTableVersionSuffix;
 - (long long)userInterfaceEra;
 - (void)didRegisterSharedInstance;
 

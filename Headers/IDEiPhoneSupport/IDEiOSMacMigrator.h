@@ -15,11 +15,12 @@
     Xcode3TargetEditor *_targetEditor;
 }
 
-@property __weak Xcode3TargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
 - (void).cxx_destruct;
+@property __weak Xcode3TargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
 - (BOOL)alertShowHelp:(id)arg1;
 - (void)setEnabledForMacCatalyst:(BOOL)arg1;
 - (void)migrate:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)migrationAlert;
 - (id)initWithTargetEditor:(id)arg1;
 
 // Remaining properties

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)requiresConstraintBasedLayout;
 + (id)separatorColor;
-@property(nonatomic) BOOL landscape; // @synthesize landscape=_landscape;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL landscape; // @synthesize landscape=_landscape;
 - (struct CGSize)fauxUIElementSize:(id)arg1;
 - (struct CGPoint)fauxUIElementPosition:(id)arg1;
 - (void)fauxUIElement:(id)arg1 setFocus:(id)arg2;

@@ -22,9 +22,9 @@
 + (id)localCPU:(id *)arg1;
 + (id)localOverrideName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)serializationData:(id *)arg1;
 - (id)allAliasAndNameStrings;
 - (id)eventFromNameOrAlias:(id)arg1;

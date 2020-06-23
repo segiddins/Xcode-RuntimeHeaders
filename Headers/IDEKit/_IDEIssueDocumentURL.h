@@ -14,9 +14,9 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long issueType; // @synthesize issueType=_type;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 type:(unsigned long long)arg2;
 
 @end

@@ -19,9 +19,9 @@
     NSURL *_temporaryFileURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *temporaryFileURL; // @synthesize temporaryFileURL=_temporaryFileURL;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_closeDocument;
 - (void)_getDisassemblyForSettingPC:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

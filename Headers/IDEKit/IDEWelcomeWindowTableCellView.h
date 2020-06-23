@@ -13,8 +13,8 @@
     NSTextField *_projectURLTextField;
 }
 
-@property(retain) NSTextField *projectURLTextField; // @synthesize projectURLTextField=_projectURLTextField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *projectURLTextField; // @synthesize projectURLTextField=_projectURLTextField;
 - (void)setBackgroundStyle:(long long)arg1;
 
 @end

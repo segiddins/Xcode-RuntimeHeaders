@@ -19,13 +19,14 @@ __attribute__((visibility("hidden")))
     GPUTraceOutlineItem *_linkedResource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUTraceOutlineItem *linkedResource; // @synthesize linkedResource=_linkedResource;
 @property(nonatomic) __weak GPUTraceCounterGraphGroupItem *groupItem; // @synthesize groupItem=_groupItem;
 @property(retain, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMutableArray *filteredItems; // @synthesize filteredItems=_filteredItems;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
+- (id)pasteboardString;
 
 @end
 

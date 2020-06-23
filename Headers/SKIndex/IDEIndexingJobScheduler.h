@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedInstance;
 + (void)initialize;
-@property(readonly, nonatomic) long long width; // @synthesize width=_width;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long width; // @synthesize width=_width;
 - (void)_scheduleJobs;
 - (long long)_throttledWidth;
 - (long long)_adjustThrottledWidth:(long long)arg1;

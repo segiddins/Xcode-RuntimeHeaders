@@ -38,6 +38,8 @@
 - (_Bool)IsValid;
 - (id)initWithSBThread:(const struct SBThread *)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)GetCurrentExceptionBacktrace;
+- (id)GetCurrentException;
 - (id)StepOverUntil:(id)arg1 fileSpec:(id)arg2 line:(unsigned int)arg3;
 - (id)GetStopReturnValue;
 - (id)GetStopReasonExtendedBacktraces:(int)arg1;

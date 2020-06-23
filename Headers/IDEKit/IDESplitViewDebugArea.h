@@ -32,12 +32,12 @@
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *rightReplacementView; // @synthesize rightReplacementView=_rightReplacementView;
 @property(retain) DVTReplacementView *leftReplacementView; // @synthesize leftReplacementView=_leftReplacementView;
 @property(retain) DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property(nonatomic) int actualLayoutMode; // @synthesize actualLayoutMode=_actualLayoutMode;
 @property(nonatomic) int preferredLayoutMode; // @synthesize preferredLayoutMode=_preferredLayoutMode;
-- (void).cxx_destruct;
 - (double)_rightViewMinWidth;
 - (double)_leftViewMinWidth;
 - (double)_currentVariableViewWidthProportion;

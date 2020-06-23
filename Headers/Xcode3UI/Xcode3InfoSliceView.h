@@ -19,13 +19,13 @@
     NSColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property BOOL showBottomBorder; // @synthesize showBottomBorder=_showBottomBorder;
 @property BOOL narrowLayout; // @synthesize narrowLayout=_narrowLayout;
 @property(retain, nonatomic) NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSView *rightColumnView; // @synthesize rightColumnView=_rightColumnView;
 @property(retain, nonatomic) NSView *leftColumnView; // @synthesize leftColumnView=_leftColumnView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

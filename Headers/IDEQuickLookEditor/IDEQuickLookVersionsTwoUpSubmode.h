@@ -31,11 +31,11 @@
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 + (id)keyPathsForValuesAffectingKeyEditor;
+- (void).cxx_destruct;
 @property BOOL showingPrimaryDocumentStructure; // @synthesize showingPrimaryDocumentStructure=_showingPrimaryDocumentStructure;
 @property(retain) DVTComparisonSplitView *comparisonSplitView; // @synthesize comparisonSplitView=_comparisonSplitView;
 @property(retain) DVTBorderedView *secondaryLayoutView; // @synthesize secondaryLayoutView=_secondaryLayoutView;
 @property(retain) DVTBorderedView *primaryLayoutView; // @synthesize primaryLayoutView=_primaryLayoutView;
-- (void).cxx_destruct;
 - (void)revertComparisonEditorStateWithDictionary:(id)arg1;
 - (void)commitComparisonEditorStateToDictionary:(id)arg1;
 - (void)comparisonEditor:(id)arg1 didReplaceAncestorDocument:(id)arg2;

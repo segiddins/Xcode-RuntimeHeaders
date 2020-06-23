@@ -15,8 +15,8 @@
     CDUnknownBlockType _doubleClickHandler;
 }
 
-@property(copy) CDUnknownBlockType doubleClickHandler; // @synthesize doubleClickHandler=_doubleClickHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType doubleClickHandler; // @synthesize doubleClickHandler=_doubleClickHandler;
 - (void)mouseDown:(id)arg1;
 - (id)thumbnailQueue;
 

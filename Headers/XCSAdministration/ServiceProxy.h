@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_identityLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *identityLock; // @synthesize identityLock=_identityLock;
 @property(retain, nonatomic) XCSKeychain *keychain; // @synthesize keychain=_keychain;
 @property(retain, nonatomic) NSString *commonName; // @synthesize commonName=_commonName;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)resetIdentity;
 - (void)attemptToLoadIdentityIntoService;
 - (struct __SecIdentity *)identity;

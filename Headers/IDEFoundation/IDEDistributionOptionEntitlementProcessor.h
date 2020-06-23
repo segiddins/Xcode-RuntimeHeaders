@@ -13,8 +13,8 @@
 + (id)propertyListForContext:(id)arg1;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (id)matchingPrcoessorFromProcessors:(id)arg1;
-- (id)makeNewPrcoessorWithDistributionMethod:(id)arg1 item:(id)arg2 itemEntitlements:(id)arg3;
+- (id)matchingProcessorFromProcessors:(id)arg1;
+- (id)makeNewProcessorWithDistributionMethod:(id)arg1 item:(id)arg2 itemEntitlements:(id)arg3 team:(id)arg4;
 - (id)createProcessors;
 - (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 - (Class)entitlementsPrcoessorClass;

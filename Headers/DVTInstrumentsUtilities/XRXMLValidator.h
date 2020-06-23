@@ -19,10 +19,10 @@
     NSObject<OS_os_log> *_log;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) NSFileHandle *diagnosticFile; // @synthesize diagnosticFile=_diagnosticFile;
 @property(retain) NSFileHandle *errorFile; // @synthesize errorFile=_errorFile;
-- (void).cxx_destruct;
 - (BOOL)validate;
 - (id)findErrorMessageForErrorPtr:(struct _xmlError *)arg1;
 - (id)initWithSourceURL:(id)arg1 schemaURL:(id)arg2;

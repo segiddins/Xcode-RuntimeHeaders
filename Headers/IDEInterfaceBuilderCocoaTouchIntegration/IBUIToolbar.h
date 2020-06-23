@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBMutableIdentityDictionary, IBUIColor, NSArray, NSMutableArray, NSString;
+@class IBColor, IBMutableIdentityDictionary, NSArray, NSMutableArray, NSString;
 
 @interface IBUIToolbar : IBUIView <IBDocumentArchiving>
 {
@@ -18,7 +18,7 @@
     NSMutableArray *_items;
     BOOL _translucent;
     BOOL _isTopBar;
-    IBUIColor *_barTintColor;
+    IBColor *_barTintColor;
     long long _barStyle;
 }
 
@@ -26,11 +26,11 @@
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTopBar; // @synthesize isTopBar=_isTopBar;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
-@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(copy, nonatomic) IBColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setObservedSubviews:(id)arg1;
 - (void)subviewFrameChanged:(id)arg1;

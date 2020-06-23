@@ -24,6 +24,8 @@
     struct GPUBufferViewerAdaptorGeometryParams _geometryParams;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsOffset; // @synthesize supportsOffset=_supportsOffset;
 @property(retain, nonatomic) NSArray *markers; // @synthesize markers=_markers;
 @property(nonatomic) struct GPUBufferViewerAdaptorGeometryParams geometryParams; // @synthesize geometryParams=_geometryParams;
@@ -34,8 +36,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 dataStruct:(const struct Struct *)arg2 dataBuffers:(const vector_d2e2fb42 *)arg3 encodedResourceMaps:(const vector_56802008 *)arg4 combinedView:(BOOL)arg5 geometryParams:(const struct GPUBufferViewerAdaptorGeometryParams *)arg6 markers:(id)arg7;
 - (id)initWithName:(id)arg1 dataStruct:(const struct Struct *)arg2 dataBuffers:(const vector_d2e2fb42 *)arg3 encodedResourceMaps:(const vector_56802008 *)arg4;
 - (id)initWithName:(id)arg1 dataStruct:(const struct Struct *)arg2 dataBuffers:(const vector_d2e2fb42 *)arg3 combinedView:(BOOL)arg4 geometryParams:(const struct GPUBufferViewerAdaptorGeometryParams *)arg5 markers:(id)arg6;

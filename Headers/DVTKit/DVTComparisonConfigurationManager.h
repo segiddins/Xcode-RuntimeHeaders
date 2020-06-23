@@ -11,6 +11,7 @@
 }
 
 + (id)fineGrainDiffHighlightColor;
++ (void)reportConfigurationState;
 + (void)toggleComparisonOrientation;
 + (unsigned long long)comparisonOrientation;
 + (void)initialize;

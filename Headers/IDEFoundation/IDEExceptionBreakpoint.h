@@ -10,6 +10,7 @@
 
 @interface IDEExceptionBreakpoint : IDEBreakpoint
 {
+    int _breakpointStackSelectionBehavior;
     int _scope;
     int _stopOnStyle;
     NSString *_exceptionName;
@@ -21,10 +22,12 @@
 + (BOOL)isCPPExceptionBreakpoint:(id)arg1;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)propertiesAffectingPersistenceState;
+- (void).cxx_destruct;
 @property(copy) NSString *exceptionName; // @synthesize exceptionName=_exceptionName;
 @property int stopOnStyle; // @synthesize stopOnStyle=_stopOnStyle;
 @property int scope; // @synthesize scope=_scope;
-- (void).cxx_destruct;
+- (void)setBreakpointStackSelectionBehavior:(int)arg1;
+- (int)breakpointStackSelectionBehavior;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
@@ -32,8 +35,8 @@
 - (BOOL)locationsProvideAdditionalInformation;
 - (BOOL)matchesAllExceptionsInScope;
 - (id)description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)displayName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

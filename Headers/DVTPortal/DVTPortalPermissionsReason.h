@@ -15,10 +15,10 @@
     NSNumber *_resultString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *resultString; // @synthesize resultString=_resultString;
 @property(retain, nonatomic) NSNumber *userString; // @synthesize userString=_userString;
 @property(retain, nonatomic) NSNumber *resultCode; // @synthesize resultCode=_resultCode;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,9 +14,9 @@
     IDEActivityLogMessage *_submessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEActivityLogMessage *submessage; // @synthesize submessage=_submessage;
 @property(readonly) IDEActivityLogMessage *supermessage; // @synthesize supermessage=_supermessage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)addedChild;
 - (id)changedParent;

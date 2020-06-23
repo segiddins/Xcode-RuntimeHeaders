@@ -20,12 +20,12 @@
     NSResponder *_errorPresenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSResponder *errorPresenter; // @synthesize errorPresenter=_errorPresenter;
 @property(copy) CDUnknownBlockType refreshIssuesCallback; // @synthesize refreshIssuesCallback=_refreshIssuesCallback;
 @property(retain, nonatomic) id <XCSUIIntegrationSummaryIssuesOutlineSelectionDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 @property(retain, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)unassignIssue:(id)arg1;
 - (void)assignIssueToMe:(id)arg1;
 - (void)stopSilencingIssue:(id)arg1;

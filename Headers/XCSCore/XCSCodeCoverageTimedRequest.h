@@ -19,6 +19,7 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
@@ -26,7 +27,6 @@
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSString *base; // @synthesize base=_base;
-- (void).cxx_destruct;
 - (void)clearTimer;
 - (void)performRequestWithTimer:(id)arg1;
 - (void)performRequestWithCompletionHandler:(CDUnknownBlockType)arg1;

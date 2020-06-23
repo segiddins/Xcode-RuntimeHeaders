@@ -17,10 +17,10 @@
     BOOL _showsClickedState;
 }
 
+- (void).cxx_destruct;
 @property BOOL disableClickHandler; // @synthesize disableClickHandler=_disableClickHandler;
 @property BOOL showsClickedState; // @synthesize showsClickedState=_showsClickedState;
 @property(copy) CDUnknownBlockType clickHandlerBlock; // @synthesize clickHandlerBlock=_clickHandlerBlock;
-- (void).cxx_destruct;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;

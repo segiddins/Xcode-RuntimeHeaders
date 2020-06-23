@@ -17,12 +17,12 @@
     NSTextField *_totalLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *totalLabel; // @synthesize totalLabel=_totalLabel;
 @property(retain, nonatomic) NSTextField *totalField; // @synthesize totalField=_totalField;
 @property(retain, nonatomic) NSTextField *rateLabel; // @synthesize rateLabel=_rateLabel;
 @property(retain, nonatomic) NSTextField *rateField; // @synthesize rateField=_rateField;
 @property(retain, nonatomic) IDEDebugGaugeRoundChevronedView *chevronView; // @synthesize chevronView=_chevronView;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)init;
 

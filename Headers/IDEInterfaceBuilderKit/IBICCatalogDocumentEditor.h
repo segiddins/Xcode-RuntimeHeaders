@@ -38,6 +38,7 @@
 
 + (id)displayOrderedCatalogItemsForDetailViewFromItems:(id)arg1;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBICCatalogSlicingController *slicingController; // @synthesize slicingController=_slicingController;
 @property(readonly, nonatomic) IBICCatalogOverviewController *overviewController; // @synthesize overviewController=_overviewController;
 @property(readonly, nonatomic) IBICCatalogSourceListController *sourceListController; // @synthesize sourceListController=_sourceListController;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSSet *sourceItems; // @synthesize sourceItems=_sourceItems;
 @property(readonly, nonatomic) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
 @property(copy, nonatomic) NSSet *selectedCatalogItems; // @synthesize selectedCatalogItems=_selectedCatalogItems;
-- (void).cxx_destruct;
 - (void)splitViewDidResizeSubviews:(id)arg1;
 - (void)restoreSourceListToPreferredWidth;
 - (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
@@ -58,6 +58,8 @@
 - (void)warnAboutBogusDocumentLocations:(id)arg1;
 - (void)addAssetTagsToProject:(id)arg1;
 - (void)addAssetTagsToProjectForItem:(id)arg1;
+- (BOOL)canPopulateAssetCatalogSlot:(id)arg1;
+- (void)populateAssetCatalogSlot:(id)arg1;
 - (void)duplicate:(id)arg1;
 - (void)duplicateItems:(BOOL)arg1;
 - (void)cut:(id)arg1;
@@ -71,8 +73,6 @@
 - (BOOL)canPerformPasteWithActionContext:(id)arg1;
 - (BOOL)canPerformCutWithActionContext:(id)arg1;
 - (BOOL)canPerformCopyWithActionContext:(id)arg1;
-- (BOOL)canPopulateAssetCatalogSlot:(id)arg1;
-- (void)populateAssetCatalogSlot:(id)arg1;
 - (BOOL)validateDeviceSlotMenuItem:(id)arg1 actionContext:(id)arg2;
 - (id)imageSetsForActionContext:(id)arg1;
 - (void)convertDarkSuffixedAssets:(id)arg1;

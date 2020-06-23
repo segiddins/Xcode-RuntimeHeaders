@@ -27,6 +27,7 @@
     _Bool _deviceReportsWirelessEnabled;
     _Bool _wireless;
     _Bool _paired;
+    _Bool _disconnecting;
     unsigned int _interfaceSpeed;
     unsigned int _location;
     id <DTDKRemoteDeviceToken> _owner;
@@ -56,6 +57,8 @@
 + (id)existingConnectionForDeviceRef:(struct _AMDevice *)arg1;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long pongs; // @synthesize pongs=_pongs;
 @property(readonly) unsigned long long pings; // @synthesize pings=_pings;
 @property(readonly) double averageLatency; // @synthesize averageLatency=_averageLatency;
@@ -64,14 +67,13 @@
 @property(readonly, copy) NSString *companionIdentifier; // @synthesize companionIdentifier=_companionIdentifier;
 @property(readonly) unsigned int location; // @synthesize location=_location;
 @property(readonly, copy) NSString *bonjourServiceName; // @synthesize bonjourServiceName=_bonjourServiceName;
+@property(getter=isDisconnecting) _Bool disconnecting; // @synthesize disconnecting=_disconnecting;
 @property(getter=isPaired) _Bool paired; // @synthesize paired=_paired;
 @property(readonly, getter=isWireless) _Bool wireless; // @synthesize wireless=_wireless;
 @property _Bool deviceReportsWirelessEnabled; // @synthesize deviceReportsWirelessEnabled=_deviceReportsWirelessEnabled;
 @property(readonly) unsigned int interfaceSpeed; // @synthesize interfaceSpeed=_interfaceSpeed;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property __weak id <DTDKRemoteDeviceToken> owner; // @synthesize owner=_owner;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)cancelInstrumentsConnection;
 - (void)removeConnectionMonitor:(id)arg1;
 - (id)monitorConnection;

@@ -15,8 +15,8 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
-@property(retain) XCSUIBotDefinition_BasicInfoEditor *basicInfoEditor; // @synthesize basicInfoEditor=_basicInfoEditor;
 - (void).cxx_destruct;
+@property(retain) XCSUIBotDefinition_BasicInfoEditor *basicInfoEditor; // @synthesize basicInfoEditor=_basicInfoEditor;
 - (void)loadView;
 - (BOOL)canGoForward;
 - (id)assistantTitle;

@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1;
 
 @end

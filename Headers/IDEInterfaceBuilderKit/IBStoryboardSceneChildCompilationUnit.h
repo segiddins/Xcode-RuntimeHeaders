@@ -20,12 +20,12 @@
 }
 
 + (id)childUnitWithLeader:(id)arg1 fromUpstreamUnit:(id)arg2;
+- (void).cxx_destruct;
 @property long long compiledDataDestination; // @synthesize compiledDataDestination=_compiledDataDestination;
 @property(readonly) NSMutableDictionary *placeholderTableContext; // @synthesize placeholderTableContext=_placeholderTableContext;
 @property(copy) NSString *separatedRelationship; // @synthesize separatedRelationship=_separatedRelationship;
 @property(readonly) id upstreamParent; // @synthesize upstreamParent=_upstreamParent;
 @property(readonly) IBStoryboardSceneAbstractCompilationUnit *upstreamCompilationUnit; // @synthesize upstreamCompilationUnit=_upstreamCompilationUnit;
-- (void).cxx_destruct;
 - (id)compilationResultWithCompiledPackage:(id)arg1;
 - (id)placeholderForUpstreamObject:(id)arg1;
 - (void)recordLocalConnectionID:(id)arg1 forPatchedUpstreamConnectionID:(id)arg2;

@@ -81,8 +81,8 @@
 + (id)_openDocuments;
 + (id)sharedDocumentController;
 + (void)initialize;
-@property BOOL isClosingAllDocuments; // @synthesize isClosingAllDocuments=_isClosingAllDocuments;
 - (void).cxx_destruct;
+@property BOOL isClosingAllDocuments; // @synthesize isClosingAllDocuments=_isClosingAllDocuments;
 - (void)_structureEditingWillRemoveContainerItems:(id)arg1;
 - (id)unsavedEditorDocumentFilePaths;
 - (void)container:(id)arg1 attemptToUnlockItems:(id)arg2 workspace:(id)arg3 completionQueue:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;

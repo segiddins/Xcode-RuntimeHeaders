@@ -19,9 +19,9 @@
 }
 
 + (id)diffDataSourceWithContent:(id)arg1;
+- (void).cxx_destruct;
 @property struct _DVTDiffContextFlags dcFlags; // @synthesize dcFlags=_dcFlags;
 @property unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)tokenStringWithTokenRange:(struct _NSRange)arg1;
 - (id)tokenStringWithPrefix:(id)arg1 tokenRange:(struct _NSRange)arg2;
 - (void)appendTokenStringToString:(id)arg1 tokenRange:(struct _NSRange)arg2;

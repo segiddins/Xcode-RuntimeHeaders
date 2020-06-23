@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEEditorDocument.h>
 
-@class MISSING_TYPE, _TtC18IDESourceControlUI24SourceControlPullRequest;
+@class MISSING_TYPE;
 
 @interface _TtC18IDESourceControlUI25PullRequestEditorDocument : IDEEditorDocument
 {
@@ -14,10 +14,10 @@
     MISSING_TYPE *pullRequest;
 }
 
++ (BOOL)shouldUnlockFileURLBeforeMakingChanges;
 - (void).cxx_destruct;
 - (id)init;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
-@property(nonatomic, retain) _TtC18IDESourceControlUI24SourceControlPullRequest *pullRequest; // @synthesize pullRequest;
 @property(nonatomic, readonly) int readOnlyStatus;
 
 @end

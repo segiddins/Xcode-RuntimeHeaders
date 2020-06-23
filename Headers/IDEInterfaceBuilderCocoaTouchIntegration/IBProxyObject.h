@@ -23,9 +23,9 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy, nonatomic) NSString *proxiedObjectIdentifier; // @synthesize proxiedObjectIdentifier=_proxiedObjectIdentifier;
-- (void).cxx_destruct;
 @property(copy) NSString *externalReferenceIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;

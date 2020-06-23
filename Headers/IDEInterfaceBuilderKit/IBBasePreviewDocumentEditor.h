@@ -20,8 +20,8 @@
 
 + (id)buildAccessoryLocalizationControlForLanguages:(id)arg1 developmentLanguage:(id)arg2 withTarget:(id)arg3;
 + (id)languageMenuForLanguages:(id)arg1 developmentLanguage:(id)arg2 withTarget:(id)arg3;
-@property(readonly) NSMenu *addConfigurationMenu; // @synthesize addConfigurationMenu=_addConfigurationMenu;
 - (void).cxx_destruct;
+@property(readonly) NSMenu *addConfigurationMenu; // @synthesize addConfigurationMenu=_addConfigurationMenu;
 - (id)displayNameForApplyingRecipe:(id)arg1 toObject:(id)arg2;
 - (id)initialRecipe;
 - (Class)previewRecipeClass;

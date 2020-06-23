@@ -33,10 +33,10 @@
 + (int)_defaultBuildRulesEditorDisplayMode;
 + (void)_setDefaultBuildRulesEditorDisplayMode:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (BOOL)capsuleListView:(id)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;
 - (unsigned long long)capsuleListView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3;
 - (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;

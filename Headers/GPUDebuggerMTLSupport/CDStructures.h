@@ -130,14 +130,6 @@ struct GPUBufferViewerAdaptorRegion {
     } _field1;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSMutableArray {
-    Class _field1;
-};
-
 struct StructNameOffset;
 
 struct _NSRange {
@@ -222,6 +214,11 @@ typedef struct {
     unsigned char _field3;
     unsigned char _field4;
 } CDStruct_a06f635e;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+} CDStruct_c0454aff;
 
 typedef struct {
     unsigned long long _field1;

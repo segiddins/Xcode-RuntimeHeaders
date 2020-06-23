@@ -19,11 +19,11 @@
 }
 
 + (id)keyPathsForValuesAffectingUseCustomPassTypes;
+- (void).cxx_destruct;
 @property(retain) NSProgressIndicator *refreshTableSpinner; // @synthesize refreshTableSpinner=_refreshTableSpinner;
 @property(retain) DVTGradientImageButton *refreshTableButton; // @synthesize refreshTableButton=_refreshTableButton;
 @property(retain) DVTTableView *passTypesTable; // @synthesize passTypesTable=_passTypesTable;
 @property(retain) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

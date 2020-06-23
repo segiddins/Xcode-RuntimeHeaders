@@ -11,8 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC8RCShared25BoolInspectableEditorCell : _TtC8RCShared30InspectableEditorCellFromClass
 {
-    MISSING_TYPE *iconView;
-    MISSING_TYPE *checkbox;
+    MISSING_TYPE *boolCheckboxView;
 }
 
 - (void).cxx_destruct;

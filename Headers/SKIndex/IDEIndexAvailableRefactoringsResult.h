@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     IDEIndexSymbol *_symbol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEIndexSymbol *symbol; // @synthesize symbol=_symbol;
 @property(readonly, nonatomic) NSArray *refactorings; // @synthesize refactorings=_refactorings;
-- (void).cxx_destruct;
 - (id)initWithRefactorings:(id)arg1 symbol:(id)arg2;
 
 @end

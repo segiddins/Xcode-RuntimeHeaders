@@ -14,9 +14,9 @@
 
 + (id)descriptionWithScaleFactor:(double)arg1 toolManagerClass:(Class)arg2;
 + (id)descriptionWithScaleFactor:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class preferredToolManagerClass; // @synthesize preferredToolManagerClass=_preferredToolManagerClass;
 @property(readonly, nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToDescription:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)revokeCertificatesUserActionWithCertificates:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isForPreExistingMachineSpecificCertificate) BOOL forPreExistingMachineSpecificCertificate; // @synthesize forPreExistingMachineSpecificCertificate=_forPreExistingMachineSpecificCertificate;
 @property(readonly, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (id)executionMessage;
 - (id)userActionName;
 - (id)userActionMessage;

@@ -15,10 +15,10 @@
     NSView *_componentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSView *componentView; // @synthesize componentView=_componentView;
 @property(readonly) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 accessoryView:(id)arg2 componentView:(id)arg3;
 
 @end

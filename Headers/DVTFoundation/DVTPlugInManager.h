@@ -32,6 +32,7 @@
     NSMutableSet *_nonApplePlugInSanitizedStatuses;
     NSMutableDictionary *_nonApplePlugInDescriptors;
     NSMutableDictionary *_nonApplePlugInDescriptorActivateCallbacks;
+    NSMutableArray *_duplicateRecords;
     struct {
         unsigned int _reserved:62;
         unsigned int _isSecondaryScan:1;
@@ -45,10 +46,11 @@
 + (void)_setDefaultPlugInManager:(id)arg1;
 + (id)defaultPlugInManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType shouldAllowNonApplePlugInsCallback; // @synthesize shouldAllowNonApplePlugInsCallback=_shouldAllowNonApplePlugInsCallback;
 @property(retain) DVTPlugInLocator *plugInLocator; // @synthesize plugInLocator=_plugInLocator;
 @property BOOL shouldClearPlugInCaches; // @synthesize shouldClearPlugInCaches=_shouldClearPlugInCaches;
-- (void).cxx_destruct;
+- (id)_duplicateRecords;
 - (id)_invalidExtensionWithIdentifier:(id)arg1;
 - (id)_plugInCachePath;
 - (id)_applicationCachesPath;
@@ -100,6 +102,7 @@
 - (id)_extensionsForExtensionPoint:(id)arg1 matchingPredicate:(id)arg2;
 - (id)extensionWithIdentifier:(id)arg1;
 - (id)extensionPointWithIdentifier:(id)arg1;
+- (id)_extensionPointWithIdentifier:(id)arg1 forExtension:(id)arg2 orExtensionPoint:(id)arg3 inPlugIn:(id)arg4;
 - (id)plugInWithIdentifier:(id)arg1;
 - (BOOL)scanForPlugIns:(id *)arg1;
 - (id)init;

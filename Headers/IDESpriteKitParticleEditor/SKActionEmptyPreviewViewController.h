@@ -14,9 +14,9 @@
     NSTextField *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain) DVTBorderedView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 
 @end

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSArray *_filterIndices;
 }
 
-@property(retain, nonatomic) NSArray *filterIndices; // @synthesize filterIndices=_filterIndices;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *filterIndices; // @synthesize filterIndices=_filterIndices;
 - (unsigned long long)rowAtOffset:(unsigned long long)arg1;
 - (unsigned long long)offsetAtRow:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long bufferSize;

@@ -20,8 +20,8 @@
     unsigned long long _duration;
 }
 
-@property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
 - (void)addState:(id)arg1 atTime:(unsigned long long)arg2;
 - (void)setDefaultsForPlane:(id)arg1;

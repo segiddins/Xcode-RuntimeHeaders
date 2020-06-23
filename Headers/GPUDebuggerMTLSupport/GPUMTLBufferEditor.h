@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (id)assetBundle;
 + (BOOL)asyncLoadingSupported;
-@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPatchesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawIndexedPrimitivesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPrimitivesIndirectBufferPtr:(const char *)arg2;

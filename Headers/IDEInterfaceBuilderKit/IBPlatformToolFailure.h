@@ -22,11 +22,11 @@
 + (id)failureWithException:(id)arg1 assertionShortMessage:(id)arg2;
 + (id)failureWithException:(id)arg1;
 + (id)failureWithError:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *assertionLongMessage; // @synthesize assertionLongMessage=_assertionLongMessage;
 @property(copy, nonatomic) NSString *assertionShortMessage; // @synthesize assertionShortMessage=_assertionShortMessage;
 @property(copy, nonatomic) NSException *exception; // @synthesize exception=_exception;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)configureDiagnosticsHandler:(id)arg1;
 - (id)exceptionBacktrace;

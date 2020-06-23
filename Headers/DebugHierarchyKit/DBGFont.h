@@ -19,9 +19,9 @@
 
 + (id)withDescription:(id)arg1;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSFont *font; // @synthesize font=_font;
 @property(readonly) NSDictionary *fontDescription; // @synthesize fontDescription=_fontDescription;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)objectValue;

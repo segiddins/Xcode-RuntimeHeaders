@@ -96,6 +96,7 @@
 + (int)_defaultBuildSettingsEditorMode;
 + (void)_setDefaultBuildSettingsEditorMode:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSScrollView *buildSettingsScrollView; // @synthesize buildSettingsScrollView=_buildSettingsScrollView;
 @property(nonatomic) BOOL needsCompleteUpdate; // @synthesize needsCompleteUpdate=_needsCompleteUpdate;
 @property(readonly) NSOutlineView *buildPropertiesOutlineView; // @synthesize buildPropertiesOutlineView=_buildPropertiesOutlineView;
@@ -116,7 +117,6 @@
 @property(retain, nonatomic) DVTSourceExpression *mouseOverExpression; // @synthesize mouseOverExpression=_mouseOverExpression;
 @property(retain, nonatomic) DVTSourceExpression *selectedExpression; // @synthesize selectedExpression=_selectedExpression;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_buildPropertiesOutlineViewSelectionDidChange:(id)arg1;
@@ -139,7 +139,7 @@
 - (void)selectAnyPreselection;
 - (void)preselectRowContext:(id)arg1 columnContext:(id)arg2;
 - (void)preselectBuildSettingNamed:(id)arg1 withDefinition:(id)arg2 conditionSet:(id)arg3 editColumnId:(id)arg4;
-- (struct NSObject *)adapterForUIType:(id)arg1;
+- (id)adapterForUIType:(id)arg1;
 - (BOOL)dataSource:(id)arg1 control:(id)arg2 didFailToFormatString:(id)arg3 errorDescription:(id)arg4;
 - (BOOL)shouldExpandPropertyNamed:(id)arg1;
 - (void)expandPropertyNamed:(id)arg1;

@@ -16,11 +16,11 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)description;
 - (unsigned long long)hash;

@@ -16,10 +16,10 @@
     NSString *_serverStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(copy, nonatomic) NSString *serverStatus; // @synthesize serverStatus=_serverStatus;
 @property(copy, nonatomic) NSString *localStatus; // @synthesize localStatus=_localStatus;
-- (void).cxx_destruct;
 - (id)view;
 - (void)propagateState;
 

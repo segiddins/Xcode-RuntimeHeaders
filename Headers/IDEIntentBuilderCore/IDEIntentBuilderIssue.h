@@ -16,10 +16,10 @@
     id <IDEIntentBuilderIssueGenerator> _origin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDEIntentBuilderIssueGenerator> origin; // @synthesize origin=_origin;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)initWithCategory:(unsigned long long)arg1 message:(id)arg2 origin:(id)arg3;
 
 @end

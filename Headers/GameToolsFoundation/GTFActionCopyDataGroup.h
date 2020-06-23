@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) int loopCount; // @synthesize loopCount=_loopCount;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (void)setType:(long long)arg1;
 - (void)setLoopCount:(int)arg1;
 @property(readonly, nonatomic) NSMutableArray *actionsMutable;

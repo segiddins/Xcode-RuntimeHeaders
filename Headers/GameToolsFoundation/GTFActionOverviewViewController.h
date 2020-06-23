@@ -40,6 +40,7 @@
     DVTGradientImageButton *_addActionButton;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTGradientImageButton *addActionButton; // @synthesize addActionButton=_addActionButton;
 @property __weak NSSlider *actionTimeScaleSlider; // @synthesize actionTimeScaleSlider=_actionTimeScaleSlider;
 @property __weak DVTSearchField *actionNodesFilterField; // @synthesize actionNodesFilterField=_actionNodesFilterField;
@@ -57,7 +58,6 @@
 @property __weak GTFActionScrollView *actionTimelineScrollView; // @synthesize actionTimelineScrollView=_actionTimelineScrollView;
 @property __weak GTFActionSplitView *actionSplitView; // @synthesize actionSplitView=_actionSplitView;
 @property(nonatomic) __weak id <GTFActionOverviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;

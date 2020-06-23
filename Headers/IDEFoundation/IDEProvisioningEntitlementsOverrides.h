@@ -15,10 +15,10 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *teamIdentifierPrefix; // @synthesize teamIdentifierPrefix=_teamIdentifierPrefix;
 @property(retain, nonatomic) NSString *appIdentifierPrefix; // @synthesize appIdentifierPrefix=_appIdentifierPrefix;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

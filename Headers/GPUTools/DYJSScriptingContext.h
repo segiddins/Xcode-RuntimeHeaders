@@ -20,11 +20,11 @@
 }
 
 + (id)sharedContext;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
 @property(readonly, nonatomic) JSContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) JSVirtualMachine *virtualMachine; // @synthesize virtualMachine=_virtualMachine;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getGlobalJSONObject:(const char *)arg1;
 - (BOOL)setGlobalJSONObject:(const char *)arg1 value:(id)arg2;
 - (double)getGlobalDouble:(const char *)arg1;

@@ -28,6 +28,7 @@
     id <DVTDisclosureHeaderViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <DVTDisclosureHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property double preferredHeight; // @synthesize preferredHeight=_preferredHeight;
 @property(nonatomic) long long extendedDisclosureHitArea; // @synthesize extendedDisclosureHitArea=_extendedDisclosureHitArea;
@@ -38,7 +39,6 @@
 @property double rightEdgeInset; // @synthesize rightEdgeInset=_rightEdgeInset;
 @property(nonatomic) unsigned long long disclosureButtonPosition; // @synthesize disclosureButtonPosition=_disclosureButtonPosition;
 @property double distanceFromLeftEdgeToDisclosureButton; // @synthesize distanceFromLeftEdgeToDisclosureButton=_distanceFromLeftEdgeToDisclosureButton;
-- (void).cxx_destruct;
 - (void)_updateBottomBorderColor;
 @property BOOL drawsBottomBorder;
 - (void)layoutBottomUp;

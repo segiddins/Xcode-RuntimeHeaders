@@ -15,8 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
-@property(retain, nonatomic) NSResponder *nextMagnificationResponder; // @synthesize nextMagnificationResponder=_nextMagnificationResponder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSResponder *nextMagnificationResponder; // @synthesize nextMagnificationResponder=_nextMagnificationResponder;
+- (BOOL)isAccessibilityElement;
 - (void)scrollWheel:(id)arg1;
 - (void)magnifyWithEvent:(id)arg1;
 

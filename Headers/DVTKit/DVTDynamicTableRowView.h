@@ -28,6 +28,7 @@
 + (void)initialize;
 + (id)dynamicTableRowView;
 + (id)keyPathsForValuesAffectingSelected;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *popQ; // @synthesize popQ=_popQ;
 @property(copy) CDUnknownBlockType populationBlock; // @synthesize populationBlock=_populationBlock;
 @property(getter=isRemoved) BOOL removed; // @synthesize removed=_removed;
@@ -35,7 +36,6 @@
 @property(retain) NSView *rightContentView; // @synthesize rightContentView=_rightContentView;
 @property(retain) NSView *leftContentView; // @synthesize leftContentView=_leftContentView;
 @property(retain) DVTComparisonSplitView *splitView; // @synthesize splitView=_splitView;
-- (void).cxx_destruct;
 - (void)populateLeftContentSubview:(id)arg1 rightContentSubview:(id)arg2 withAnimation:(BOOL)arg3;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)showPlaceholderWithPopulationBlock:(CDUnknownBlockType)arg1 usingQueue:(id)arg2;

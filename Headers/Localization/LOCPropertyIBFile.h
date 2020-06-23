@@ -22,6 +22,7 @@
     NSDictionary *keyCommentDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *keyCommentDictionary; // @synthesize keyCommentDictionary;
 @property(retain) NSDictionary *ibtoolOutputStrings; // @synthesize ibtoolOutputStrings;
 @property(retain) NSDictionary *ibtoolOutputPlist; // @synthesize ibtoolOutputPlist;
@@ -32,7 +33,6 @@
 @property(retain) NSString *ibtoolLaunchPath; // @synthesize ibtoolLaunchPath;
 @property(retain) NSString *ibtoolErrorInfo; // @synthesize ibtoolErrorInfo;
 @property(retain) NSString *ibfilePath; // @synthesize ibfilePath;
-- (void).cxx_destruct;
 - (void)deleteTempFiles;
 - (id)metainfoDictionaryForStrings;
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;

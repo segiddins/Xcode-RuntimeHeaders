@@ -29,13 +29,13 @@
 
 + (id)planeWithHeight:(double)arg1 decorator:(id)arg2;
 + (id)planeWithDecorator:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *extendedSummary; // @synthesize extendedSummary=_extendedSummary;
 @property(retain, nonatomic) NSAttributedString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *dynamicRangePeerGroup; // @synthesize dynamicRangePeerGroup=_dynamicRangePeerGroup;
 @property(nonatomic) struct DTTimelineGraphDynamicRange maximumDynamicRange; // @synthesize maximumDynamicRange=_maximumDynamicRange;
 @property(nonatomic) struct DTTimelineGraphDynamicRange minimalDynamicRange; // @synthesize minimalDynamicRange=_minimalDynamicRange;
 @property(readonly, nonatomic) DTTimelineDecorator *decorator; // @synthesize decorator=_decorator;
-- (void).cxx_destruct;
 - (void)_didMoveOutOfView;
 - (void)_willMoveIntoView;
 - (id)_decorationSummaryLayer;

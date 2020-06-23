@@ -20,8 +20,8 @@
     XRMobileAgent *_dockedAgent;
 }
 
-@property(retain, nonatomic) XRMobileAgent *dockedAgent; // @synthesize dockedAgent=_dockedAgent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XRMobileAgent *dockedAgent; // @synthesize dockedAgent=_dockedAgent;
 - (void)releaseDockedAgent;
 - (void)executeDockedAgent;
 - (BOOL)waitForAgentToDock;

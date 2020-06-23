@@ -18,13 +18,13 @@
     long long _options;
 }
 
+- (void).cxx_destruct;
 @property long long options; // @synthesize options=_options;
 @property long long visibility; // @synthesize visibility=_visibility;
 @property(retain) NSString *format; // @synthesize format=_format;
 @property(retain) NSString *logicalType; // @synthesize logicalType=_logicalType;
 @property(retain) NSString *runtimeTypeName; // @synthesize runtimeTypeName=_runtimeTypeName;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)dictionaryRepresentation;
 - (BOOL)isEditable;

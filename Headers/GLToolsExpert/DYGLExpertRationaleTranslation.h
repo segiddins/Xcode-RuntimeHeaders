@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *object; // @synthesize object=_object;
 @property(readonly, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (id)translationWithEvidence:(id)arg1;
 - (id)translation;
 - (id)_substituteVerbString:(id)arg1 withEvidence:(id)arg2;

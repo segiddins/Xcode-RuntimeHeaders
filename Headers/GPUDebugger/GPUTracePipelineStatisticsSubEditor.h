@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property __weak NSOutlineView *drawcallOutline; // @synthesize drawcallOutline=_drawcallOutline;
 @property __weak NSOutlineView *overviewOutline; // @synthesize overviewOutline=_overviewOutline;
 @property __weak NSOutlineView *remarksOutline; // @synthesize remarksOutline=_remarksOutline;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property __weak NSView *overviewView; // @synthesize overviewView=_overviewView;
 @property __weak NSView *remarksView; // @synthesize remarksView=_remarksView;
 @property __weak NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)gotoButtonClicked:(id)arg1;
 - (void)setFilterString:(id)arg1;
 - (id)arrangedItems;

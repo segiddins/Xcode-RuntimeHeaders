@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingTitleForDisplay;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSyntheticBuildPhase; // @synthesize isSyntheticBuildPhase=_isSyntheticBuildPhase;
 @property(retain) Xcode3BuildPhasesEditor *editor; // @synthesize editor=_editor;
 @property(retain) Xcode3BuildPhase *buildPhase; // @synthesize buildPhase=_buildPhase;
-- (void).cxx_destruct;
 - (double)contentOriginXOffsetForCapsuleView:(id)arg1;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
 - (BOOL)capsuleViewShouldBeginEditingTitle:(id)arg1;

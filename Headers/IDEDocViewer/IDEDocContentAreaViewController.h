@@ -36,12 +36,12 @@
 + (id)keyPathsForValuesAffectingWebViewWebViewScrollPosition;
 + (id)keyPathsForValuesAffectingInstalledContentViewController;
 + (id)keyPathsForValuesAffectingWebView;
+- (void).cxx_destruct;
 @property(retain) DVTSplitViewItem *navigatorAreaSplitViewItem; // @synthesize navigatorAreaSplitViewItem=_navigatorAreaSplitViewItem;
 @property(retain) _TtC12IDEDocViewer19IDEDocNavigatorArea *navigatorArea; // @synthesize navigatorArea=_navigatorArea;
 @property(retain) DVTSplitView *contentAreaSplitView; // @synthesize contentAreaSplitView=_contentAreaSplitView;
 @property(retain) DVTReplacementView *contentReplacementView; // @synthesize contentReplacementView=_contentReplacementView;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)printDocument:(id)arg1;
 - (id)printInfo;
 - (BOOL)_isDocumentHTML;

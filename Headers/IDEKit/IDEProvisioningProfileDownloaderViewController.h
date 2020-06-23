@@ -22,6 +22,7 @@
     DVTSplitView *_splitView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property __weak DVTBorderedView *profileDetailBorderView; // @synthesize profileDetailBorderView=_profileDetailBorderView;
 @property __weak DVTBorderedView *sourceListBorderView; // @synthesize sourceListBorderView=_sourceListBorderView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) IDEProvisioningProfileDownloaderSourceListViewController *sourceListViewController; // @synthesize sourceListViewController=_sourceListViewController;
 @property(retain, nonatomic) id <IDEProvisioningProfileDownloaderDetailContainerViewControllerDelegate> containerViewControllerDelegate; // @synthesize containerViewControllerDelegate=_containerViewControllerDelegate;
 @property(retain, nonatomic) IDEProvisioningProfileDownloader *downloader; // @synthesize downloader=_downloader;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;

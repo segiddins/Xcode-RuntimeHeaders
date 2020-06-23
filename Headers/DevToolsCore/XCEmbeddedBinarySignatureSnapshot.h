@@ -17,9 +17,9 @@
 + (id)snapshotWithCertificate:(id)arg1;
 + (id)snapshotForAdHocSigning;
 + (id)snapshotForUnsigned;
+- (void).cxx_destruct;
 @property(readonly) BOOL isAdHocSigned; // @synthesize isAdHocSigned=_isAdHocSigned;
 @property(readonly) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
-- (void).cxx_destruct;
 - (id)initWithAdHocSigned:(BOOL)arg1 certificate:(id)arg2;
 
 @end

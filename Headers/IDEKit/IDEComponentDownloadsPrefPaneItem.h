@@ -27,12 +27,12 @@
 + (id)keyPathsForValuesAffectingSize;
 + (id)keyPathsForValuesAffectingdownloadOperationFlatTree;
 + (id)keyPathsForValuesAffectingDownloadOperation;
+- (void).cxx_destruct;
 @property(readonly) DVTKVOQueueForwarder *allDownloadedDownloadables; // @synthesize allDownloadedDownloadables=_allDownloadedDownloadables;
 @property(readonly) DVTKVOQueueForwarder *allDownloadables; // @synthesize allDownloadables=_allDownloadables;
 @property(readonly) DVTKVOQueueForwarder *allOperations; // @synthesize allOperations=_allOperations;
 @property(readonly) DVTKVOCollectionNotificationForwarder *downloadOperationFlatTreeForwarder; // @synthesize downloadOperationFlatTreeForwarder=_downloadOperationFlatTreeForwarder;
 @property(readonly) DVTDownloadable *downloadable; // @synthesize downloadable=_downloadable;
-- (void).cxx_destruct;
 - (long long)downloadProgress;
 - (BOOL)isCancelable;
 - (BOOL)isAvailableForDownload;

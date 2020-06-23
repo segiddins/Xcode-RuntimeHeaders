@@ -27,6 +27,8 @@
 + (id)keyPathsForValuesAffectingIbInspectedControlSize;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (id)ibLocalSearchableNumericAttributeKeyPaths;
+- (BOOL)ibSupportsCustomFont;
+- (BOOL)ibShouldInvalidateAutolayoutStatusForChangeToKeyPath:(id)arg1;
 - (id)ibInspectedEffectiveAppearance;
 - (BOOL)ibCanSupportIdentifierProperty;
 - (void)ibSizeToFitIfNeeded:(BOOL)arg1 during:(CDUnknownBlockType)arg2;

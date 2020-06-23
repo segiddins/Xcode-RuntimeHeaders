@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)argumentWithValue:(id)arg1 enabled:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

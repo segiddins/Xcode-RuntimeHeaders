@@ -21,12 +21,12 @@
 }
 
 + (id)coordinatorWithDataSourceConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DebugHierarchyRequest *executingRequest; // @synthesize executingRequest=_executingRequest;
 @property(retain) NSMutableArray *enqueuedRequests; // @synthesize enqueuedRequests=_enqueuedRequests;
 @property(retain) NSMutableArray *snapshotTransformerStore; // @synthesize snapshotTransformerStore=_snapshotTransformerStore;
 @property(retain) id <DBGDataSourceConnection> dataSourceConnection; // @synthesize dataSourceConnection=_dataSourceConnection;
 @property __weak DBGSnapshotManager *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
-- (void).cxx_destruct;
 - (void)didReceiveData:(id)arg1 forRequest:(id)arg2;
 @property(readonly) NSArray *snapshotTransformers;
 - (void)addSnapshotTransformer:(id)arg1;

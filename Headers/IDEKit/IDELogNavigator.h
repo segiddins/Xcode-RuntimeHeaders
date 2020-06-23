@@ -43,6 +43,7 @@
 + (id)keyPathsForValuesAffectingWorkspaceBotFilteringEnabled;
 + (id)groupByTimeDefault;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *scopeBarViewHeightConstraint; // @synthesize scopeBarViewHeightConstraint=_scopeBarViewHeightConstraint;
 @property __weak DVTBorderView *dividerView; // @synthesize dividerView=_dividerView;
 @property __weak DVTScrollView *logNavigatorScrollView; // @synthesize logNavigatorScrollView=_logNavigatorScrollView;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *filterPatternString; // @synthesize filterPatternString=_filterPatternString;
 @property(retain) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
 @property(copy) NSPredicate *groupingPredicate; // @synthesize groupingPredicate=_groupingPredicate;
-- (void).cxx_destruct;
 - (void)_revealNavigableItem:(id)arg1 loadEditor:(BOOL)arg2;
 - (void)revealNavigableItems:(id)arg1 loadEditor:(BOOL)arg2;
 - (void)_teardownTableCellView:(id)arg1;

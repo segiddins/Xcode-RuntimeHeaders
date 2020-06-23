@@ -21,10 +21,10 @@
 
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL temporarilyCreatedForGeniusFinder; // @synthesize temporarilyCreatedForGeniusFinder=_temporarilyCreatedForGeniusFinder;
 @property(copy, nonatomic) NSArray *disassemblyItems; // @synthesize disassemblyItems=_disassemblyItems;
 @property(retain) IDEThread *thread; // @synthesize thread=_thread;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;

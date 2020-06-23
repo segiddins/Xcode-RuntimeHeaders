@@ -21,8 +21,8 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
-@property(retain) PDFView *pdfView; // @synthesize pdfView=_pdfView;
 - (void).cxx_destruct;
+@property(retain) PDFView *pdfView; // @synthesize pdfView=_pdfView;
 - (void)printDocument:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

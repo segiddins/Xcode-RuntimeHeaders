@@ -13,8 +13,8 @@
     NSArray *_samples;
 }
 
-@property(copy, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 
 @end
 

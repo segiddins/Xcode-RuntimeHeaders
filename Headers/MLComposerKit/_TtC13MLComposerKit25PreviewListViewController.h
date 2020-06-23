@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)headerContinuityCameraButtonTapped:(id)arg1;
+- (void)createLiveRecommendItemWithSender:(id)arg1;
 - (void)createEnterTextItemWithSender:(id)arg1;
 - (void)createLiveListenItemWithSender:(id)arg1;
 - (void)addFilesToPreviewWithSender:(id)arg1;

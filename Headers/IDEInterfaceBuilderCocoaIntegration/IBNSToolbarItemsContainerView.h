@@ -24,11 +24,11 @@
     id <IBNSToolbarItemsContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IBNSToolbarItemsContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) IBNSToolbarConfigurationView *configurationView; // @synthesize configurationView=_configurationView;
 @property(retain, nonatomic) IBNSToolbarItemsContainerView *itemsContainerCounterpart; // @synthesize itemsContainerCounterpart=_itemsContainerCounterpart;
-- (void).cxx_destruct;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)draggedImage:(id)arg1 endedAt:(struct CGPoint)arg2 operation:(unsigned long long)arg3;

@@ -14,9 +14,9 @@
     DVTFilePath *_primaryPath;
 }
 
+- (void).cxx_destruct;
 @property(copy) DVTFilePath *primaryPath; // @synthesize primaryPath=_primaryPath;
 @property(copy) NSArray *paths; // @synthesize paths=_paths;
-- (void).cxx_destruct;
 
 @end
 

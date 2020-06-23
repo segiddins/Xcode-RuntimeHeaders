@@ -11,8 +11,8 @@
     id _deleteTarget;
 }
 
-@property __weak id deleteTarget; // @synthesize deleteTarget=_deleteTarget;
 - (void).cxx_destruct;
+@property __weak id deleteTarget; // @synthesize deleteTarget=_deleteTarget;
 - (void)keyDown:(id)arg1;
 
 @end

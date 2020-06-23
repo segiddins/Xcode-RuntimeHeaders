@@ -16,9 +16,9 @@
 
 + (id)sparseTestPlanRunSummaries:(id)arg1 testIdentifiers:(id)arg2;
 + (id)sparseTestPlanRunSummary:(id)arg1 testIdentifiers:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *testableSummaries; // @synthesize testableSummaries=_testableSummaries;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 testableSummaries:(id)arg2;
 
 @end

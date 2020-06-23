@@ -29,8 +29,8 @@
 + (void)view:(id)arg1 willMoveToWindow:(id)arg2 monitorWholeTree:(BOOL)arg3 createOrDestroyDrawingStrategyIfNeeded:(id *)arg4;
 + (void)view:(id)arg1 willMoveToWindow:(id)arg2 scope:(long long)arg3 createOrDestroyDrawingStrategyIfNeeded:(id *)arg4;
 + (void)initialize;
-@property(nonatomic) long long scope; // @synthesize scope=_scope;
 - (void).cxx_destruct;
+@property(nonatomic) long long scope; // @synthesize scope=_scope;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)appActivationChanged;

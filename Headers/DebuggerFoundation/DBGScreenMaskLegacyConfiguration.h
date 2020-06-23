@@ -20,11 +20,11 @@
 
 + (id)_knownConfigurations;
 + (id)configurationForDisplayPixelWidth:(long long)arg1 displayPixelHeight:(long long)arg2 displayCornerRadius:(double)arg3;
+- (void).cxx_destruct;
 @property double displayCornerRadius; // @synthesize displayCornerRadius=_displayCornerRadius;
 @property long long displayPixelHeight; // @synthesize displayPixelHeight=_displayPixelHeight;
 @property long long displayPixelWidth; // @synthesize displayPixelWidth=_displayPixelWidth;
 @property(retain) NSString *deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initWithPixelWidth:(long long)arg1 pixelHeight:(long long)arg2 cornerRadius:(double)arg3 deviceType:(id)arg4;
 

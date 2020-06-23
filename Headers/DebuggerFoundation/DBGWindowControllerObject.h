@@ -18,10 +18,10 @@
     NSArray *_windows;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *windows; // @synthesize windows=_windows;
 @property(retain) NSArray *contentViewControllers; // @synthesize contentViewControllers=_contentViewControllers;
 @property __weak DBGApplicationObject *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)_recursivelyUpdateAddressesToViewObjectsWithMapTable:(id)arg1;
 - (id)_createAddressesToViewObjectsMap;
 - (id)selectableViewObjectForIdentifier:(id)arg1;

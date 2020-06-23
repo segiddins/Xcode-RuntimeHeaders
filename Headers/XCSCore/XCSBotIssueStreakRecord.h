@@ -17,11 +17,11 @@
 }
 
 + (id)issueStreakRecordWithIntegrationID:(id)arg1 integrationNumber:(unsigned long long)arg2 message:(id)arg3 commits:(id)arg4 validationErrors:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *commits; // @synthesize commits=_commits;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned long long integrationNumber; // @synthesize integrationNumber=_integrationNumber;
 @property(readonly, nonatomic) NSString *integrationID; // @synthesize integrationID=_integrationID;
-- (void).cxx_destruct;
 - (BOOL)_validateIntegrationID:(id)arg1 integrationNumber:(unsigned long long)arg2 message:(id)arg3 commits:(id)arg4 validationErrors:(id *)arg5;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithIntegrationID:(id)arg1 integrationNumber:(unsigned long long)arg2 message:(id)arg3 commits:(id)arg4 validationErrors:(id *)arg5;

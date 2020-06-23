@@ -25,6 +25,7 @@
     NSTextField *_trailingLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *trailingLabel; // @synthesize trailingLabel=_trailingLabel;
 @property(retain, nonatomic) NSTextField *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(retain, nonatomic) NSStepper *trailingStepper; // @synthesize trailingStepper=_trailingStepper;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSStepper *topStepper; // @synthesize topStepper=_topStepper;
 @property(retain, nonatomic) NSTextField *leadingTextField; // @synthesize leadingTextField=_leadingTextField;
 @property(retain, nonatomic) NSTextField *topTextField; // @synthesize topTextField=_topTextField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)refresh;
 - (void)userDidEnterTrailing:(id)arg1;

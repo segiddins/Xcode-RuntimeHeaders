@@ -19,6 +19,7 @@
 + (void)generateProfileForWorkspaceArenaSnapshot:(id)arg1 scheme:(id)arg2 sortedRunDestinations:(id)arg3 timeTaken:(double)arg4;
 - (void).cxx_destruct;
 - (void)generateProfile;
+- (id)_deviceDictionaryFor:(id)arg1;
 - (id)_runDestinationDictionaryFor:(id)arg1;
 - (id)initWithWorkspaceArenaSnapshot:(id)arg1 scheme:(id)arg2 sortedRunDestinations:(id)arg3 timeTaken:(double)arg4;
 

@@ -8,7 +8,7 @@
 
 #import <DVTPortal/NSCopying-Protocol.h>
 
-@class NSSet, NSString;
+@class NSArray, NSSet, NSString;
 
 @interface DVTPortalProfileFeature : NSObject <NSCopying>
 {
@@ -25,6 +25,7 @@
     NSString *_portalIdentifier;
     NSSet *_allowedValues;
     NSString *_defaultValue;
+    NSArray *_defaultSettings;
     NSSet *_profileFeatureEntitlements;
     long long _valueType;
 }
@@ -35,9 +36,11 @@
 + (id)profileFeaturesWithLegacyPortalKey:(id)arg1;
 + (id)profileFeatureWithIdentifier:(id)arg1;
 + (id)profileFeatures;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) NSSet *profileFeatureEntitlements; // @synthesize profileFeatureEntitlements=_profileFeatureEntitlements;
 @property(readonly, nonatomic) BOOL requiresPortalInteraction; // @synthesize requiresPortalInteraction=_requiresPortalInteraction;
+@property(readonly, nonatomic) NSArray *defaultSettings; // @synthesize defaultSettings=_defaultSettings;
 @property(readonly, nonatomic) BOOL isAutomaticallyEnabledInExplicitAppIDs; // @synthesize isAutomaticallyEnabledInExplicitAppIDs=_isAutomaticallyEnabledInExplicitAppIDs;
 @property(readonly, nonatomic) BOOL isAvailableWithDirectDistribution; // @synthesize isAvailableWithDirectDistribution=_isAvailableWithDirectDistribution;
 @property(readonly, nonatomic) BOOL isAvailableWithUniversity; // @synthesize isAvailableWithUniversity=_isAvailableWithUniversity;
@@ -50,14 +53,13 @@
 @property(readonly, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly, nonatomic) NSSet *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEnabledInProfile:(id)arg1 appIDValue:(id *)arg2;
 - (BOOL)isValidFeatureValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSSet *entitlements;
-- (id)initWithIdentifier:(id)arg1 legacyPortalKey:(id)arg2 portalIdentifier:(id)arg3 supportedPlatforms:(id)arg4 valueType:(long long)arg5 userDescription:(id)arg6 isAvailableWithFreeProvisioning:(BOOL)arg7 isAvailableWithEnterprise:(BOOL)arg8 isAvailableWithUniversity:(BOOL)arg9 isAvailableWithDirectDistribution:(BOOL)arg10 allowedValues:(id)arg11 defaultValue:(id)arg12 entitlements:(id)arg13 requiresPortalInteraction:(BOOL)arg14 isAutomaticallyEnabledInExplicitAppIDs:(BOOL)arg15;
+- (id)initWithIdentifier:(id)arg1 legacyPortalKey:(id)arg2 portalIdentifier:(id)arg3 supportedPlatforms:(id)arg4 valueType:(long long)arg5 userDescription:(id)arg6 isAvailableWithFreeProvisioning:(BOOL)arg7 isAvailableWithEnterprise:(BOOL)arg8 isAvailableWithUniversity:(BOOL)arg9 isAvailableWithDirectDistribution:(BOOL)arg10 allowedValues:(id)arg11 defaultValue:(id)arg12 entitlements:(id)arg13 defaultSettings:(id)arg14 requiresPortalInteraction:(BOOL)arg15 isAutomaticallyEnabledInExplicitAppIDs:(BOOL)arg16;
 
 @end
 

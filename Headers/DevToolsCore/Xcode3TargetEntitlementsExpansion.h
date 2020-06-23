@@ -13,8 +13,8 @@
     XCMacroExpansionScope *_macroExpansionScope;
 }
 
-@property(readonly) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
 - (void).cxx_destruct;
+@property(readonly) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
 - (id)expandMacro:(id)arg1;
 - (id)expandEntitlements:(id)arg1 withOverrides:(id)arg2;
 - (id)initWithMacroExpansionScope:(id)arg1;

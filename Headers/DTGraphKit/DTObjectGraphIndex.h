@@ -31,6 +31,7 @@
 }
 
 + (id)indexWithGraph:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly) id <DVTCancellable> creationToken; // @synthesize creationToken=_creationToken;
 @property(nonatomic) BOOL showLeaksOnly; // @synthesize showLeaksOnly=_showLeaksOnly;
 @property(nonatomic) unsigned long long defaultHierarchicalLimit; // @synthesize defaultHierarchicalLimit=_defaultHierarchicalLimit;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) DVT_VMUProcessObjectGraph *graph; // @synthesize graph=_graph;
 @property(copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_userFilterBlock;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-- (void).cxx_destruct;
 - (BOOL)_isNodePresentInLeakedGraph:(unsigned int)arg1;
 - (void)_updateFilter;
 - (void)exemptItem:(id)arg1;

@@ -17,10 +17,10 @@
     NSDictionary *_materials;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *materials; // @synthesize materials=_materials;
 @property(readonly) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)updateFromScene:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithScene:(id)arg1 andName:(id)arg2;

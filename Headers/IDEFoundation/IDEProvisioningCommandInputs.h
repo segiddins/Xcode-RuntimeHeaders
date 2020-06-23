@@ -28,6 +28,7 @@
 + (id)_identityNameFromSnapshot:(id)arg1;
 + (id)_identityHashFromSnapshot:(id)arg1;
 + (id)inputsFromEvaluation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *warnings; // @synthesize warnings=_warnings;
 @property(readonly) NSArray *errors; // @synthesize errors=_errors;
 @property(readonly) NSString *teamIdentifierPrefix; // @synthesize teamIdentifierPrefix=_teamIdentifierPrefix;
@@ -40,7 +41,6 @@
 @property(readonly) NSString *identityCertificateSerialNumber; // @synthesize identityCertificateSerialNumber=_identityCertificateSerialNumber;
 @property(readonly) NSString *identityName; // @synthesize identityName=_identityName;
 @property(readonly) NSString *identityHash; // @synthesize identityHash=_identityHash;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

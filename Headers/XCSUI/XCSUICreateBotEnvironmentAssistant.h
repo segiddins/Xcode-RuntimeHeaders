@@ -17,9 +17,9 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBotDefinition_EnvironmentEditor *environmentEditor; // @synthesize environmentEditor=_environmentEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
-- (void).cxx_destruct;
 - (void)setPreventGoNextOrFinish:(BOOL)arg1;
 - (BOOL)preventGoNextOrFinish;
 - (BOOL)canGoForward;

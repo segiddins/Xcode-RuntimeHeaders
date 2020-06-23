@@ -25,6 +25,7 @@
 + (id)keyPathsForValuesAffectingShouldShowEmptyMessage;
 + (id)utilityPaneExtensionForIdentifier:(id)arg1;
 + (id)utilityExtensionForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSTextField *typeTextField; // @synthesize typeTextField=_typeTextField;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak NSScrollView *infoPaneScrollView; // @synthesize infoPaneScrollView=_infoPaneScrollView;
@@ -32,7 +33,6 @@
 @property __weak DVTBorderedView *topBorderedView; // @synthesize topBorderedView=_topBorderedView;
 @property(retain, nonatomic) id <IDEProductsInspectableVending> inspectableVendor; // @synthesize inspectableVendor=_inspectableVendor;
 @property(retain, nonatomic) NSObject<IDEProductsInspectable> *inspectable; // @synthesize inspectable=_inspectable;
-- (void).cxx_destruct;
 - (id)_customPaneWithExtension:(id)arg1;
 - (id)_descriptionPaneWithExtension:(id)arg1;
 - (id)_detailPaneWithExtension:(id)arg1;

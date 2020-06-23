@@ -19,6 +19,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) unsigned long long numResults; // @synthesize numResults=_numResults;
 @property(readonly) unsigned long long column; // @synthesize column=_column;
@@ -26,7 +27,6 @@
 @property(readonly) NSString *filename; // @synthesize filename=_filename;
 @property(readonly) NSString *workspaceName; // @synthesize workspaceName=_workspaceName;
 @property(readonly) NSString *strategyName; // @synthesize strategyName=_strategyName;
-- (void).cxx_destruct;
 - (void)completedWithNumResults:(unsigned long long)arg1;
 - (void)start;
 - (id)initWithStrategyName:(id)arg1 workspaceName:(id)arg2 location:(id)arg3;

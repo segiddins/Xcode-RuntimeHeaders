@@ -14,8 +14,8 @@
 }
 
 + (Class)cellClass;
-@property(copy, nonatomic) NSString *maxValueLabelOverride; // @synthesize maxValueLabelOverride=_maxValueLabelOverride;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *maxValueLabelOverride; // @synthesize maxValueLabelOverride=_maxValueLabelOverride;
 @property(copy, nonatomic) NSString *minValueLabelOverride;
 @property(retain, nonatomic) NSColor *labelColor;
 @property(retain, nonatomic) NSFont *labelFont;

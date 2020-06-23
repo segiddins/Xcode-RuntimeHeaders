@@ -15,10 +15,10 @@
     NSArray *_bufferBindings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
 @property(nonatomic) BOOL paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSArray *bufferBindings; // @synthesize bufferBindings=_bufferBindings;
-- (void).cxx_destruct;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 

@@ -17,10 +17,10 @@
 }
 
 + (id)deviceWrapperForDevice:(id)arg1 forContainer:(id)arg2 andAccessor:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *accessor; // @synthesize accessor=_accessor;
 @property(readonly) id container; // @synthesize container=_container;
 @property(readonly) id <DVTBasicDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)deviceModel;
 - (id)operatingSystemVersion;
 - (id)deviceIdentifier;

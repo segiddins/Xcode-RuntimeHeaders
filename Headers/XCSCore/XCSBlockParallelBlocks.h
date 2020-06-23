@@ -13,8 +13,8 @@
     NSMutableDictionary *_tasks;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *tasks; // @synthesize tasks=_tasks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *tasks; // @synthesize tasks=_tasks;
 - (unsigned long long)count;
 - (id)identifiers;
 - (BOOL)stopOnFailureForIdentifier:(id)arg1;

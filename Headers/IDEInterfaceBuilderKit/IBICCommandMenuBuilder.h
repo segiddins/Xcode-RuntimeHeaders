@@ -16,8 +16,8 @@
     id <IBICCommandMenuDelegate> _delegate;
 }
 
-@property __weak id <IBICCommandMenuDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBICCommandMenuDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)quicklookItem:(id)arg1;
 - (void)changeSlottedAssetRepSlots:(id)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (id)title;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBotDefinition_BuildConfigurationEditor *buildConfigurationEditor; // @synthesize buildConfigurationEditor=_buildConfigurationEditor;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

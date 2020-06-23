@@ -25,6 +25,7 @@
     NSAlert *_alert;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSAlert *alert; // @synthesize alert=_alert;
 @property __weak NSButton *thirdButton; // @synthesize thirdButton=_thirdButton;
 @property __weak NSProgressIndicator *secondButtonSpinner; // @synthesize secondButtonSpinner=_secondButtonSpinner;
@@ -36,7 +37,6 @@
 @property __weak NSImageView *appIconImageWell; // @synthesize appIconImageWell=_appIconImageWell;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property BOOL alertShowing; // @synthesize alertShowing=_alertShowing;
-- (void).cxx_destruct;
 - (void)dismissAlert:(id)arg1;
 - (void)showAlert;
 - (void)_showOnlyFirstButton;

@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *navigatorItemsObserver; // @synthesize navigatorItemsObserver=_navigatorItemsObserver;
 @property(retain) DVTNotificationToken *contentDelegateModeNotificationToken; // @synthesize contentDelegateModeNotificationToken=_contentDelegateModeNotificationToken;
 @property(retain) DVTObservingToken *navigatorFilterDefinitionObserver; // @synthesize navigatorFilterDefinitionObserver=_navigatorFilterDefinitionObserver;
 @property(retain) DVTObservingToken *navigatorFilterHasTextObserver; // @synthesize navigatorFilterHasTextObserver=_navigatorFilterHasTextObserver;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 
 // Remaining properties

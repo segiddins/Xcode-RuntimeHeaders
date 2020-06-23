@@ -6,7 +6,7 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class MISSING_TYPE, NSImageView, NSTextField, NSView, _TtC13MLComposerKit9ColorView;
+@class MISSING_TYPE, NSImageView, NSLayoutConstraint, NSTextField, NSView, _TtC13MLComposerKit9ColorView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC13MLComposerKit27EditorOutlineHeaderCellView : NSTableCellView
@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *headerLabel;
     MISSING_TYPE *headerImage;
     MISSING_TYPE *lineView;
+    MISSING_TYPE *leadingConstraint;
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)viewWillDraw;
+@property(nonatomic) __weak NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint;
 @property(nonatomic) __weak _TtC13MLComposerKit9ColorView *lineView; // @synthesize lineView;
 @property(nonatomic) __weak NSImageView *headerImage; // @synthesize headerImage;
 @property(nonatomic) __weak NSTextField *headerLabel; // @synthesize headerLabel;

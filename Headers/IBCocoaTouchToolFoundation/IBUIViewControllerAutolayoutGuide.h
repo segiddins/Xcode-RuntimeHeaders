@@ -20,11 +20,11 @@
     unsigned long long __spacerTag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSpacerTag:) unsigned long long _spacerTag; // @synthesize _spacerTag=__spacerTag;
 @property(nonatomic) __weak id <IBUIViewControllerAutolayoutGuideDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
 - (void)ibDidMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;

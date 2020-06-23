@@ -20,8 +20,8 @@
 + (id)weakKeyDictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
 + (id)weakKeyDictionaryWithCapacity:(unsigned long long)arg1;
 + (id)weakKeyDictionary;
-@property(readonly, nonatomic, getter=isStrong) BOOL strong; // @synthesize strong=_strong;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isStrong) BOOL strong; // @synthesize strong=_strong;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

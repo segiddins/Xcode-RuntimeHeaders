@@ -17,7 +17,6 @@
     BOOL _includeInMenu;
     BOOL _usesCLikeIndentation;
     SourceModelParserProductionRule *_productionRule;
-    BOOL _preservesTrailingWhitespace;
 }
 
 + (id)identifierForUniqueId:(long long)arg1;
@@ -46,14 +45,13 @@
 + (id)objCImplementationSpecification;
 + (id)objCInterfaceDeclaratorSpecification;
 + (id)objCInterfaceSpecification;
-@property(readonly) BOOL preservesTrailingWhitespace; // @synthesize preservesTrailingWhitespace=_preservesTrailingWhitespace;
+- (void).cxx_destruct;
 @property(retain) SourceModelParserProductionRule *productionRule; // @synthesize productionRule=_productionRule;
 @property(readonly) NSDictionary *syntaxRules; // @synthesize syntaxRules=_syntaxRules;
 @property(readonly) Class scannerClass; // @synthesize scannerClass=_scannerClass;
 @property(readonly) BOOL usesCLikeIndentation; // @synthesize usesCLikeIndentation=_usesCLikeIndentation;
 @property(readonly) BOOL includeInMenu; // @synthesize includeInMenu=_includeInMenu;
 @property(readonly) long long uniqueId; // @synthesize uniqueId=_uniqueId;
-- (void).cxx_destruct;
 @property(readonly) NSString *syntaxType;
 - (id)availableKeywords;
 - (id)lexerKeywords;

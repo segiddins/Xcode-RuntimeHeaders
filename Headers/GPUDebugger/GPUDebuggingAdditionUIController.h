@@ -29,10 +29,10 @@
 + (void)addTraceSessionReference:(id)arg1 forTraceSession:(id)arg2;
 + (void)setGPUDebuggingAdditionUIControllerIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUTraceSession *currentTraceSession; // @synthesize currentTraceSession=_currentTraceSession;
 @property(retain) GPUDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 @property(readonly) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)stepToNextCall:(id)arg1;
 - (void)stepToPreviousCall:(id)arg1;

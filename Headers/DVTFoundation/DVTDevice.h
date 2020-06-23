@@ -56,6 +56,7 @@
 + (id)keyPathsForValuesAffectingActiveProxiedDevice;
 + (id)_knownDeviceLocators;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *operatingSystemBuild; // @synthesize operatingSystemBuild=_operatingSystemBuild;
 @property(copy) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
@@ -77,7 +78,6 @@
 @property(copy, nonatomic) NSString *operatingSystemVersionWithBuildNumber; // @synthesize operatingSystemVersionWithBuildNumber=_operatingSystemVersionWithBuildNumber;
 @property(readonly, copy) NSURL *deviceLocation; // @synthesize deviceLocation=_deviceLocation;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)cancelWatchPowerAssertion;
 - (void)takeWatchPowerAssertionName:(id)arg1 details:(id)arg2;
 - (BOOL)supportsDYLDPrintToStdErr;
@@ -161,6 +161,7 @@
 - (id)_applicationListingChannelForPairedDevice:(BOOL)arg1;
 @property(readonly) unsigned long long supportedLaunchOptionsForProxiedDevice;
 @property(readonly) unsigned long long supportedLaunchOptions;
+- (BOOL)isAvailableWithError:(id *)arg1;
 - (void)cancelPrimaryInstrumentsServer;
 - (id)proxiedPrimaryInstrumentsServer;
 - (id)primaryInstrumentsServer;
@@ -171,6 +172,7 @@
 - (void)enableDeviceForDevelopment;
 - (id)installApplicationsSync:(id)arg1 options:(id)arg2;
 - (id)installApplicationSync:(id)arg1 options:(id)arg2;
+- (void)requestDebugLaunchOfDaemon:(id)arg1 onPairedDevice:(BOOL)arg2;
 - (void)stopDebuggingXPCServices:(id)arg1 forPairedDevice:(BOOL)arg2;
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
 - (BOOL)validateDeviceSpecifierOptions:(id)arg1 allowMultipleMatches:(BOOL)arg2 error:(id *)arg3;
@@ -224,6 +226,7 @@
 - (id)viewDebuggerDylibPathWithOptions:(id)arg1;
 @property(readonly, copy) NSString *extraDebuggingRuntimeDylibPath;
 @property(readonly, copy) NSString *recordedFramesLibdispatchIntrospectionDylibPath;
+@property(readonly) BOOL supportsDaemonDebugging;
 @property(readonly) BOOL supportsDebugOverrides;
 @property(readonly) BOOL supportsMainThreadChecker;
 @property(readonly) BOOL supportsRecordedFrames;

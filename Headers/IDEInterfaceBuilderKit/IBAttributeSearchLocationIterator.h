@@ -22,10 +22,10 @@
     IBMemberID *_currentDocumentMemberID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isBackwards) BOOL backwards; // @synthesize backwards=_backwards;
 @property(readonly, nonatomic) IBMemberID *currentDocumentMemberID; // @synthesize currentDocumentMemberID=_currentDocumentMemberID;
 @property(readonly, nonatomic) __weak id <IBAttributeSearchLocationIteratorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_continueToNextAttributeSearchLocation;
 - (BOOL)hasReachedEnd;
 @property(readonly, nonatomic) IBAttributeSearchLocation *currentAttributeSearchLocation;

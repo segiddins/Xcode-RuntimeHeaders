@@ -10,6 +10,7 @@
 {
 }
 
+- (id)colorTableVersionSuffix;
 - (id)firstInapplicableSystemTarget;
 - (id)firstApplicableSystemTarget;
 - (id)compiledStoryboardInfoPlistFileName;

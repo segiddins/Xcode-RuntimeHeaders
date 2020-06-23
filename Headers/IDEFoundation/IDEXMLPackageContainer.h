@@ -25,9 +25,9 @@
 + (id)xmlArchiveFileName;
 + (id)rootElementName;
 + (BOOL)supportsFilePersistence;
+- (void).cxx_destruct;
 @property(readonly) BOOL hasUnhandledArchiveData; // @synthesize hasUnhandledArchiveData=_hasUnhandledArchiveData;
 @property(retain) IDEDirectoryBasedCustomDataStore *customDataStore; // @synthesize customDataStore=_customDataStore;
-- (void).cxx_destruct;
 @property(readonly) float maxSupportedArchiveVersion;
 @property(readonly) float archiveVersion;
 @property(readonly) NSString *displayName;

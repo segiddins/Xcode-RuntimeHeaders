@@ -15,8 +15,8 @@
 
 + (id)archivableAttributes;
 + (id)keyPathsForValuesAffectingDisplayName;
-@property(copy, nonatomic) NSString *packageName; // @synthesize packageName=_packageName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *packageName; // @synthesize packageName=_packageName;
 - (void)awakeFromPListUnarchiver:(id)arg1;
 - (id)gidCommentForArchive;
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;

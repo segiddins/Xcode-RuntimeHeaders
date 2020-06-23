@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)assetBundle;
-@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (struct TypeOutputFormatTypeAlias)glTypeToStructTypeOutputFormatTypeAlias:(unsigned int)arg1;
 - (void)extractUniformBlockDataLayout:(const ProgramUniformBlock_b2b71853 *)arg1 dataStructs:(vector_44d4fed2 *)arg2 bufferOffset:(unsigned long long)arg3;
 - (void)extractCandidateLayoutsForUniformBufferWithItem:(id)arg1 dataStructs:(vector_44d4fed2 *)arg2 dataBuffer:(struct Buffer *)arg3 preferredDataStruct:(int *)arg4 bufferType:(id *)arg5;

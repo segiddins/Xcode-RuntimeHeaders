@@ -24,11 +24,11 @@
     NSString *_placeholderString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsEmptyRelation; // @synthesize allowsEmptyRelation=_allowsEmptyRelation;
 @property(copy, nonatomic) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property(copy, nonatomic) NSArray *pickedObjects; // @synthesize pickedObjects=_pickedObjects;
 @property __weak id <IBObjectPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)backgroundCell;
 - (void)objectPickerElementViewUserDidDelete:(id)arg1;

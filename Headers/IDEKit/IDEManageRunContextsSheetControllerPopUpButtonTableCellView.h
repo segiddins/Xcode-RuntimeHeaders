@@ -13,8 +13,8 @@
     NSButton *_popUpButton;
 }
 
-@property(retain) NSButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 
 @end
 

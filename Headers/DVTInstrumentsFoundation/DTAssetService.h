@@ -17,9 +17,9 @@
 }
 
 + (id)translatedManifest:(id)arg1 withAssetServicePort:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *ondemandConnection; // @synthesize ondemandConnection=_ondemandConnection;
 @property(retain) DTAssetHTTPServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (id)registerApplicationIdentifier:(id)arg1 manifest:(id)arg2;
 - (void)connectToOnDemandDaemon;
 - (id)startServer;

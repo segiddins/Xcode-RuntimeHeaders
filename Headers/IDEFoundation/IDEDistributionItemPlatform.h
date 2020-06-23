@@ -15,9 +15,9 @@
 }
 
 + (id)distributionItemPlatformWithPlatform:(id)arg1 platformError:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSError *platformError; // @synthesize platformError=_platformError;
 @property(readonly) DVTPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 
 @end
 

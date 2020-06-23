@@ -14,9 +14,9 @@
     NSString *_parentClassName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *parentClassName; // @synthesize parentClassName=_parentClassName;
 @property(readonly) DVTTextDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithLocation:(id)arg1 parentClassName:(id)arg2;
 
 @end

@@ -14,9 +14,9 @@
     NSMutableArray *_orderedEditorViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *orderedEditorViews; // @synthesize orderedEditorViews=_orderedEditorViews;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)invalidateLayout;
 - (void)invalidateEditorView;
 - (void)layoutTopDown;

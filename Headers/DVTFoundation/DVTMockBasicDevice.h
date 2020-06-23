@@ -26,6 +26,7 @@
     NSError *_unavailabilityErrorMock;
 }
 
+- (void).cxx_destruct;
 @property _Bool deviceIsBusyMock; // @synthesize deviceIsBusyMock=_deviceIsBusyMock;
 @property(retain) NSError *unavailabilityErrorMock; // @synthesize unavailabilityErrorMock=_unavailabilityErrorMock;
 @property(getter=isAvailableMock) BOOL availableMock; // @synthesize availableMock=_availableMock;
@@ -38,9 +39,9 @@
 @property(copy, nonatomic) NSString *modelUTIMock; // @synthesize modelUTIMock=_modelUTIMock;
 @property(copy, nonatomic) NSString *modelCodeMock; // @synthesize modelCodeMock=_modelCodeMock;
 @property(copy, nonatomic) NSString *modelNameMock; // @synthesize modelNameMock=_modelNameMock;
-- (void).cxx_destruct;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) NSError *unavailabilityError;
+- (BOOL)isAvailableWithError:(id *)arg1;
 @property(readonly, getter=isAvailable) BOOL available;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy) NSString *nativeArchitecture;

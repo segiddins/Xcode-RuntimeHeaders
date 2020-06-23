@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEKit/IDEPlaygroundExecutionDeviceService.h>
+#import <IDEPlaygroundsKit/IDEPlaygroundExecutionDeviceService.h>
 
 #import <IDEPlaygroundExecution/IDEPlaygroundExecutionDeviceInputEventProcessing-Protocol.h>
 #import <IDEPlaygroundExecution/IDEPlaygroundExecutionDeviceViewContentProvider-Protocol.h>

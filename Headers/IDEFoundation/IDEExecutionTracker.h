@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *debugName; // @synthesize debugName=_debugName;
 @property(retain) IDEExecutionTracker *cancelingTracker; // @synthesize cancelingTracker=_cancelingTracker;
 @property int cancellationReason; // @synthesize cancellationReason=_cancellationReason;
@@ -37,7 +38,6 @@
 @property int serviceTier; // @synthesize serviceTier=_serviceTier;
 @property(retain) DVTFilePath *statusImageFilePath; // @synthesize statusImageFilePath=_statusImageFilePath;
 @property(copy) NSString *statusDisplayName; // @synthesize statusDisplayName=_statusDisplayName;
-- (void).cxx_destruct;
 @property(retain) NSError *error;
 @property(readonly, copy) NSString *description;
 - (void)setStatusDisplayName:(id)arg1 statusImageFilePath:(id)arg2;

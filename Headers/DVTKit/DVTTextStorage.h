@@ -59,10 +59,10 @@
 + (void)initialize;
 + (id)_changeTrackingLogAspect;
 + (id)_sourceLandmarksLogAspect;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long wrappedLineIndentWidth; // @synthesize wrappedLineIndentWidth=_wrappedLineIndentWidth;
 @property unsigned long long indentWidth; // @synthesize indentWidth=_indentWidth;
 @property double lastEditTimestamp; // @synthesize lastEditTimestamp=_lastEditTimestamp;
-- (void).cxx_destruct;
 - (id)updatedLocationFromLocation:(id)arg1 toTimestamp:(double)arg2;
 - (id)compatibleLocationFromLocation:(id)arg1;
 - (id)convertLocationToNativeNSStringEncodedLocation:(id)arg1;

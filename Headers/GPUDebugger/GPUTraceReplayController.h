@@ -25,13 +25,13 @@
     struct DYInterposeVersion _interposerVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct DYInterposeVersion interposerVersion; // @synthesize interposerVersion=_interposerVersion;
 @property(readonly) int currentSubCommandIndex; // @synthesize currentSubCommandIndex=_currentSubCommandIndex;
 @property(readonly) unsigned int currentFunctionIndex; // @synthesize currentFunctionIndex=_currentFunctionIndex;
 @property(readonly) DYGuestAppSession *replaySession; // @synthesize replaySession=_replaySession;
 @property BOOL replayerReady; // @synthesize replayerReady=_replayerReady;
 @property(readonly) GPUDebuggerController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (id)connectedDevices;
 - (id)prepareCaptureArchive:(id)arg1 withDestinationName:(id)arg2;
 - (id)replayerGuestApp;

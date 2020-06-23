@@ -22,8 +22,8 @@
 + (id)finalActionsFromActions:(id)arg1;
 + (id)initialActionsFromActions:(id)arg1;
 + (id)actionExecutorWithContext:(id)arg1;
-@property(retain) DebugHierarchyRequestExecutionContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) DebugHierarchyRequestExecutionContext *context; // @synthesize context=_context;
 - (BOOL)allObjectActionsTargetIdentifiers:(id *)arg1;
 - (void)executeActionsWithObject:(id)arg1;
 - (void)executeFinalStandaloneActions;

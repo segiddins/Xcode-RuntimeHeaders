@@ -19,10 +19,10 @@
 + (void)_reportTooLargeStateData:(id)arg1 readBacktrace:(id)arg2;
 + (void)_appendReport:(id)arg1 forTokens:(id)arg2 currentIndentString:(id)arg3 totalSize:(unsigned long long)arg4;
 + (id)_reporterTokensForStateDictionary:(id)arg1 minDataLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *children; // @synthesize children=_children;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 
 @end
 

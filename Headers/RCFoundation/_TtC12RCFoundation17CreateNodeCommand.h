@@ -18,8 +18,6 @@
     MISSING_TYPE *parameters;
     MISSING_TYPE *future;
     MISSING_TYPE *restorationToken;
-    MISSING_TYPE *removeBehaviorsOnUndo;
-    MISSING_TYPE *behaviorConfigurations;
 }
 
 @end

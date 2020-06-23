@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *runningMetadata; // @synthesize runningMetadata=_runningMetadata;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *runningMetadata; // @synthesize runningMetadata=_runningMetadata;
 @property(nonatomic) unsigned long long timestamp;
 @property(nonatomic) unsigned int code;
 - (void)setSessionMetadata:(id)arg1;

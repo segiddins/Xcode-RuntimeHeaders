@@ -18,11 +18,11 @@
 
 + (id)_titleForHierarchyRequest:(id)arg1 inViewDebuggingAddition:(id)arg2;
 + (id)_titleForViewDebuggingAddition:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *reportForHierarchyRequestTable; // @synthesize reportForHierarchyRequestTable=_reportForHierarchyRequestTable;
 @property(retain) NSMapTable *reportForViewDebuggingAdditionTable; // @synthesize reportForViewDebuggingAdditionTable=_reportForViewDebuggingAdditionTable;
 @property(retain) NSMapTable *requestToToken; // @synthesize requestToToken=_requestToToken;
 @property(retain) NSMapTable *launchSessionsToTokens; // @synthesize launchSessionsToTokens=_launchSessionsToTokens;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_removeAndInvalidateReportForHierarchyRequest:(id)arg1 inViewDebuggingAddition:(id)arg2;
 - (void)_removeAndInvalidateReportForDebuggingAddition:(id)arg1;

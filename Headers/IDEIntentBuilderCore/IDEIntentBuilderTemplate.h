@@ -13,8 +13,8 @@
     NSString *_filePath;
 }
 
-@property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (id)resolvedTemplateWithReplacements:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 

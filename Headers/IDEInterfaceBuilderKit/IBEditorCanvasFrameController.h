@@ -68,6 +68,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IBNavigationMenuController *navigationMenuController; // @synthesize navigationMenuController=_navigationMenuController;
 @property(retain) IBEditor *lastDragTarget; // @synthesize lastDragTarget=_lastDragTarget;
 @property(retain, nonatomic) NSAccessibilityElement *baseEditedObjectAccessibilityElement; // @synthesize baseEditedObjectAccessibilityElement=_baseEditedObjectAccessibilityElement;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) IBEditorCanvasFrame *editorCanvasFrame; // @synthesize editorCanvasFrame=_editorCanvasFrame;
 @property(nonatomic, getter=isDropInProgress) BOOL dropInProgress; // @synthesize dropInProgress=_dropInProgress;
-- (void).cxx_destruct;
 - (id)runSynchronousSceneUpdateForRoot:(id)arg1 updateAutolayoutStatus:(BOOL)arg2;
 - (void)populateIncrementalSceneUpdates:(id)arg1 forUpdatingSceneWithRoot:(id)arg2 sceneUpdateManager:(id)arg3;
 - (void)populateFullSceneUpdates:(id)arg1 forUpdatingSceneWithRoot:(id)arg2 objectPackage:(id)arg3 sceneUpdateManager:(id)arg4;
@@ -215,6 +215,7 @@
 - (void)depthFirstSearchForObjectsAtPoint:(struct CGPoint)arg1 criteria:(long long)arg2 fromObject:(id)arg3 clippedRect:(struct CGRect)arg4 clippingRectForChildren:(struct CGRect)arg5 addingObjectsToArray:(id)arg6;
 - (struct CGRect)rectClippedToViewAncestorsForChild:(id)arg1 ofParent:(id)arg2;
 - (struct CGRect)clipRect:(struct CGRect)arg1 toViewAncestorsOfObject:(id)arg2;
+- (BOOL)delegatedCanvasOverlay:(id)arg1 shouldDrawForPriority:(long long)arg2;
 - (id)delegatedCanvasOverlay:(id)arg1 hitTest:(struct CGPoint)arg2 inCoordinatesSpaceOfView:(id)arg3;
 - (void)decrementTargetIdentifierUseCount;
 - (void)incrementTargetIdentifierUseCount;

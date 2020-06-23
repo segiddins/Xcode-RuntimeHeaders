@@ -20,10 +20,10 @@
 + (id)defaultMessageText;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDEEditorInternalErrorBannerControllerDelegate> internalErrorDelegate; // @synthesize internalErrorDelegate=_internalErrorDelegate;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSURL *reportErrorURL; // @synthesize reportErrorURL=_reportErrorURL;
-- (void).cxx_destruct;
 - (void)createXCIssue;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;

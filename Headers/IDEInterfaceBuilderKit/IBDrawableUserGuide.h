@@ -16,9 +16,9 @@
     NSView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL showsDistances; // @synthesize showsDistances=_showsDistances;
 @property(readonly) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (struct CGPoint)endInView:(id)arg1;

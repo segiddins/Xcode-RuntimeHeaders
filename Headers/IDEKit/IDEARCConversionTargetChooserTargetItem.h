@@ -19,8 +19,8 @@
 + (id)keyPathsForValuesAffectingState;
 + (id)keyPathsForValuesAffectingIsEnabled;
 + (id)keyPathsForValuesAffectingTitle;
-@property(retain) IDEARCConversionTargetChooserAssistant *targetChooserAssistant; // @synthesize targetChooserAssistant=_targetChooserAssistant;
 - (void).cxx_destruct;
+@property(retain) IDEARCConversionTargetChooserAssistant *targetChooserAssistant; // @synthesize targetChooserAssistant=_targetChooserAssistant;
 - (double)rowHeight;
 - (id)arrangedChildItems;
 - (id)warningMessage;

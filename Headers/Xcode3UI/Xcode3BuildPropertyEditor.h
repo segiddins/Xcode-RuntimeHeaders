@@ -27,6 +27,7 @@
     Xcode3BuildPropertyEditor *_pendingDetachedEditor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(copy) CDUnknownBlockType saveDataBlock; // @synthesize saveDataBlock=_saveDataBlock;
 @property(retain) NSView *viewToAttachTo; // @synthesize viewToAttachTo=_viewToAttachTo;
@@ -39,7 +40,6 @@
 @property(copy) NSString *buildSetting; // @synthesize buildSetting=_buildSetting;
 @property(retain) Xcode3BuildSettingsEditor *buildSettingsEditor; // @synthesize buildSettingsEditor=_buildSettingsEditor;
 @property(retain) id content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)clickedDoneButton:(id)arg1;
 - (void)closeEditor;
 - (void)showEditor;

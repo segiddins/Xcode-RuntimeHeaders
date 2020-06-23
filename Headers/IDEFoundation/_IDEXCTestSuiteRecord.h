@@ -13,18 +13,20 @@
     BOOL _shouldUseForReportingSuiteCompletion;
     IDETestIdentifier *_suiteIdentifier;
     long long _runCount;
+    long long _skipCount;
     long long _failureCount;
     double _suiteStartTime;
     long long _unexpectedFailureCount;
 }
 
+- (void).cxx_destruct;
 @property long long unexpectedFailureCount; // @synthesize unexpectedFailureCount=_unexpectedFailureCount;
 @property BOOL shouldUseForReportingSuiteCompletion; // @synthesize shouldUseForReportingSuiteCompletion=_shouldUseForReportingSuiteCompletion;
 @property double suiteStartTime; // @synthesize suiteStartTime=_suiteStartTime;
 @property long long failureCount; // @synthesize failureCount=_failureCount;
+@property long long skipCount; // @synthesize skipCount=_skipCount;
 @property long long runCount; // @synthesize runCount=_runCount;
 @property(copy) IDETestIdentifier *suiteIdentifier; // @synthesize suiteIdentifier=_suiteIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

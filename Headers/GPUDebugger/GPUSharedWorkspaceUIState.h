@@ -17,8 +17,8 @@
     IDELaunchSession *_syntheticLaunchSession;
 }
 
-@property(retain, nonatomic) IDELaunchSession *syntheticLaunchSession; // @synthesize syntheticLaunchSession=_syntheticLaunchSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDELaunchSession *syntheticLaunchSession; // @synthesize syntheticLaunchSession=_syntheticLaunchSession;
 - (void)removeObserver:(id)arg1;
 - (id)notifyOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_handleNewDebugAddition:(id)arg1;

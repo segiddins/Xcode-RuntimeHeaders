@@ -10,13 +10,12 @@
 #import <IDESourceControlUI/NSOutlineViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTOutlineView, DVTSourceControlPathLocation, DVTSourceControlRepository, NSMutableDictionary, NSString;
-@protocol DVTSourceControlCancellable, IDESourceControlFilePickerDelegate;
+@protocol IDESourceControlFilePickerDelegate;
 
 @interface IDESourceControlFilePickerViewController : DVTViewController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
     DVTBorderedView *_borderedView;
     CDUnknownBlockType _completionBlock;
-    id <DVTSourceControlCancellable> _currentToken;
     DVTSourceControlRepository *_repository;
     DVTSourceControlPathLocation *_root;
     NSMutableDictionary *_cachedPaths;
@@ -24,9 +23,9 @@
     id <IDESourceControlFilePickerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) id <IDESourceControlFilePickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)choose:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;

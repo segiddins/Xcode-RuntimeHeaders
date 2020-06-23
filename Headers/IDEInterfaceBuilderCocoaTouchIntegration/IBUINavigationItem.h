@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedBackButtonTitle;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) __weak IBUINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(copy, nonatomic) NSArray *rightBarButtonItems; // @synthesize rightBarButtonItems=_rightBarButtonItems;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL leftItemsSupplementBackButton; // @synthesize leftItemsSupplementBackButton=_leftItemsSupplementBackButton;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;

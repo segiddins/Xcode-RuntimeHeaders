@@ -23,8 +23,8 @@
 }
 
 + (void)initialize;
-@property(readonly) Class preferenceSetClass; // @synthesize preferenceSetClass=_preferenceSetClass;
 - (void).cxx_destruct;
+@property(readonly) Class preferenceSetClass; // @synthesize preferenceSetClass=_preferenceSetClass;
 - (id)description;
 - (void)_writePreferenceSetsIfNeeded;
 - (void)_applicationWillTerminate:(id)arg1;

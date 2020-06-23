@@ -20,12 +20,12 @@
     NSString *_crashPointId;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *crashPointId; // @synthesize crashPointId=_crashPointId;
 @property(retain) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain) NSString *appBuild; // @synthesize appBuild=_appBuild;
 @property(retain) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(retain) NSString *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 @property(copy) NSString *rootBuild; // @synthesize rootBuild=_rootBuild;
 @property(copy) NSString *rootVersion; // @synthesize rootVersion=_rootVersion;
 @property(readonly) DVTAnalyticsCrashPointIdentifier *crashPointIdentifier; // @synthesize crashPointIdentifier=_crashPointIdentifier;

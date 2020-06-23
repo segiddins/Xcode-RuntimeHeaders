@@ -20,6 +20,7 @@
 }
 
 + (id)propertyDescriptionWithPlistRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property(readonly, copy, nonatomic) NSArray *visibilityConditions; // @synthesize visibilityConditions=_visibilityConditions;
 @property(readonly, copy, nonatomic) NSString *enabledKeyPath; // @synthesize enabledKeyPath=_enabledKeyPath;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *sliceIdentifier; // @synthesize sliceIdentifier=_sliceIdentifier;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEditableForInspectedObject:(id)arg1;
 - (BOOL)isVisibleForInspectedObject:(id)arg1;
 - (id)plistRepresentation;

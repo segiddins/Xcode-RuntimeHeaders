@@ -25,11 +25,11 @@
 + (unsigned long long)defaultLineNumberFormat;
 + (id)lineNumberFormatStateKey;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) HFStringEncodingTextRepresenter *textRepresenter; // @synthesize textRepresenter=_textRepresenter;
 @property(readonly) HFHexTextRepresenter *hexRepresenter; // @synthesize hexRepresenter=_hexRepresenter;
 @property(readonly) HFLineCountingRepresenter *lineNumberRepresenter; // @synthesize lineNumberRepresenter=_lineNumberRepresenter;
 @property(readonly) HFTextView *hexView; // @synthesize hexView=_hexView;
-- (void).cxx_destruct;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 @property(readonly) NSString *stateSavingIdentifier;

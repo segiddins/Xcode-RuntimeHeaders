@@ -14,8 +14,8 @@
 }
 
 + (void)registerNibWithOutlineView:(id)arg1 forIdentifier:(id)arg2;
-@property(retain) IDECompressedStackFrameIndicatorView *compressedIndicatorView; // @synthesize compressedIndicatorView=_compressedIndicatorView;
 - (void).cxx_destruct;
+@property(retain) IDECompressedStackFrameIndicatorView *compressedIndicatorView; // @synthesize compressedIndicatorView=_compressedIndicatorView;
 @property(copy) NSColor *color;
 
 @end

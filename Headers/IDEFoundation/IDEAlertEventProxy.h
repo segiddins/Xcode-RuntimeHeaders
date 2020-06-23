@@ -15,8 +15,8 @@
     DVTExtension *_extension;
 }
 
-@property(retain) DVTExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(retain) DVTExtension *extension; // @synthesize extension=_extension;
 @property(readonly) IDEAlertEvent *alertEvent;
 
 @end

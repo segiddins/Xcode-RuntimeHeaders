@@ -33,6 +33,8 @@
 
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingHasFlowLayout;
++ (id)keyPathsForValuesAffectingFullScreenLayout;
++ (id)keyPathsForValuesAffectingFlowLayout;
 + (id)keyPathsForValuesAffectingIbInspectedScrollDirection;
 + (id)keyPathsForValuesAffectingIbInspectedSectionInsetReference;
 + (id)keyPathsForValuesAffectingIbInspectedSectionInsetMaxY;
@@ -52,6 +54,7 @@
 + (id)keyPathsForValuesAffectingIbAllowsSettingNumberOfCellsFromInspector;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfCells;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *compiledPrototypeNIBs; // @synthesize compiledPrototypeNIBs=_compiledPrototypeNIBs;
 @property(copy, nonatomic) NSValue *cachedBackgroundViewFrame; // @synthesize cachedBackgroundViewFrame=_cachedBackgroundViewFrame;
 @property(copy, nonatomic) NSArray *cachedSectionFooterViewFrames; // @synthesize cachedSectionFooterViewFrames=_cachedSectionFooterViewFrames;
@@ -66,7 +69,6 @@
 @property(copy, nonatomic) NSArray *cells; // @synthesize cells=_cells;
 @property(retain, nonatomic) IBUICollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(nonatomic) long long dataMode; // @synthesize dataMode=_dataMode;
-- (void).cxx_destruct;
 - (BOOL)ibShouldMarshallCollectionViewLayoutWithContext:(id)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (BOOL)canFitCellOfSize:(struct CGSize)arg1;
@@ -193,7 +195,7 @@
 @property(nonatomic) long long ibInspectedNumberOfCells;
 - (BOOL)ibSupportsFullScreenLayout;
 - (BOOL)ibAllowsSettingNumberOfCellsFromInspector;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (Class)ibEditorClass;
 - (id)ibLocalAttributeKeyPaths;

@@ -27,6 +27,7 @@
 }
 
 + (id)keyPathsForValuesAffectingEnableSelectProfileButton;
+- (void).cxx_destruct;
 @property __weak NSTextField *errorTextField; // @synthesize errorTextField=_errorTextField;
 @property __weak NSButton *errorButton; // @synthesize errorButton=_errorButton;
 @property(retain, nonatomic) IDEProvisioningCompoundProfile *selectedCompoundProfile; // @synthesize selectedCompoundProfile=_selectedCompoundProfile;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) IDEProvisioningProfileDownloader *downloader; // @synthesize downloader=_downloader;
 @property(retain, nonatomic) IDEProvisioningProfileDownloaderContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)didFinishRefresh;

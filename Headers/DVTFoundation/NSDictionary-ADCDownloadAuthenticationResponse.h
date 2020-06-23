@@ -39,13 +39,14 @@
 - (id)dvt_dictionaryOrNilForKey:(id)arg1;
 - (id)dvt_dataOrNilForKey:(id)arg1;
 - (id)dvt_stringOrNilForKey:(id)arg1;
+- (long long)dvt_compareSortedKeysAndValues:(id)arg1;
 - (BOOL)dvt_isNonEmpty;
 - (id)dvt_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)dvt_dictionaryBySettingObject:(id)arg1 forKey:(id)arg2;
 - (id)dvt_dictionaryByRemovingObjectsForKeys:(id)arg1;
 - (id)dvt_dictionaryByExpandingKeysAndValuesWithMacroExpansionScope:(id)arg1;
 - (id)dvt_dictionaryByExpandingValuesWithMacroExpansionScope:(id)arg1;
-- (struct NSObject *)dvt_findPatternComponentRepresentation;
+- (id)dvt_findPatternComponentRepresentation;
 - (id)dvt_decodePlistArrayForKey:(id)arg1 objectsOfClass:(Class)arg2 error:(id *)arg3;
 - (id)dvt_decodePlistObjectForKey:(id)arg1 ofClass:(Class)arg2 error:(id *)arg3;
 - (id)dvt_plistDictionaryForKey:(id)arg1 error:(id *)arg2;

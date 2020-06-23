@@ -18,6 +18,7 @@
     NSObject<OS_dispatch_source> *_waitingForDeviceTimer;
     NSObject<OS_dispatch_source> *_heartbeatTimer;
     id <NSObject> _deviceObserver;
+    BOOL _enableShaderProfiler;
     NSMutableDictionary *_collectingDataSources;
     NSMutableDictionary *_dataSourceDict;
 }
@@ -31,9 +32,11 @@
 - (void)_waitForProcessMetalDevice:(int)arg1 counterProfile:(unsigned int)arg2 interval:(unsigned long long)arg3 windowLimit:(unsigned long long)arg4;
 - (void)_configureDataSourcesAndSendMessage:(id)arg1 counterProfile:(unsigned int)arg2 interval:(unsigned long long)arg3 windowLimit:(unsigned long long)arg4;
 - (id)_findDataSourcesForTargetProcess:(int)arg1;
-- (void)readyToSendData:(const unsigned long long *)arg1 sampleCount:(unsigned long long)arg2 dataSource:(id)arg3;
+- (void)readyToSendData:(const unsigned long long *)arg1 sampleCount:(unsigned long long)arg2 length:(unsigned long long)arg3 dataSource:(id)arg4 sampleType:(unsigned long long)arg5;
 - (id)flushRemainingData;
+- (id)_constructMessagePayload:(const unsigned long long *)arg1 sampleCount:(unsigned long long)arg2 length:(unsigned long long)arg3 dataSource:(id)arg4 sampleType:(unsigned long long)arg5;
 - (id)stopCollectingCounters;
+- (void)enableShaderProfiler;
 - (void)startCollectingCounters;
 - (void)configureCounters:(unsigned long long)arg1 counterProfile:(unsigned int)arg2 interval:(unsigned long long)arg3 windowLimit:(unsigned long long)arg4 tracingPID:(int)arg5;
 - (id)requestDeviceGPUInfo;

@@ -8,17 +8,21 @@
 
 #import <IDEKit/IDESigningEditorConfigurationDataSourceDelegate-Protocol.h>
 
+@class NSTextField;
 @protocol IDESigningEditorBundleIdentifierDataSource;
 
 @interface IDEProvisioningBundleIdentifierViewController : IDEViewController <IDESigningEditorConfigurationDataSourceDelegate>
 {
     id <IDESigningEditorBundleIdentifierDataSource> _dataSource;
+    NSTextField *_bundleIdentifierTextField;
 }
 
-@property(retain, nonatomic) id <IDESigningEditorBundleIdentifierDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property __weak NSTextField *bundleIdentifierTextField; // @synthesize bundleIdentifierTextField=_bundleIdentifierTextField;
+@property(retain, nonatomic) id <IDESigningEditorBundleIdentifierDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)primitiveInvalidate;
 - (void)willUpdateConfigurationScope:(id)arg1;
+- (void)viewDidLoad;
 - (id)initWithDataSource:(id)arg1;
 
 @end

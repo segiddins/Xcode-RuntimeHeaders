@@ -15,10 +15,10 @@
     NSStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 @property __weak NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) IDEBuildSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
-- (void).cxx_destruct;
 - (Class)loadConditionalViewClassFromExtensionIdentifier:(id)arg1 viewClassKey:(id)arg2 requiredSuperClass:(Class)arg3;
 - (void)addExtraConfigurations;
 - (id)initWithFrame:(struct CGRect)arg1;

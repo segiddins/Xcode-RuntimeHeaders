@@ -25,9 +25,9 @@
 + (void)synthesizeCoverAPIWithKeyForTree:(id)arg1 keyForParentNode:(id)arg2 keyForChildNodes:(id)arg3;
 + (BOOL)automaticallyNotifiesObserversOfObjectGraph;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTModelTreeNode *subclass_parentNode; // @synthesize subclass_parentNode=_parentNode;
 @property(readonly) DVTModelTree *subclass_tree; // @synthesize subclass_tree=_tree;
-- (void).cxx_destruct;
 - (void)removeSubclass_childNodesAtIndexes:(id)arg1;
 - (void)insertSubclass_childNodes:(id)arg1 atIndexes:(id)arg2;
 - (id)subclass_childNodesAtIndexes:(id)arg1;

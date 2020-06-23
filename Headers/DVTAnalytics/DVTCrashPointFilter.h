@@ -19,9 +19,9 @@
 
 + (id)objectFromFilenameRepresentation:(id)arg1 error:(id *)arg2;
 + (id)emptyFilter;
+- (void).cxx_destruct;
 @property(readonly) NSString *filter; // @synthesize filter=_filter;
 @property(readonly) long long filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)filenameRepresentation;
 @property(readonly, copy) NSString *description;

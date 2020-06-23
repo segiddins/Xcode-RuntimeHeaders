@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstanceForLanguage:(id)arg1;
-@property(retain) DVTSourceCodeLanguage *language; // @synthesize language=_language;
 - (void).cxx_destruct;
+@property(retain) DVTSourceCodeLanguage *language; // @synthesize language=_language;
 - (id)contextExtensionForClass:(Class)arg1;
 - (id)prototypeConnectionContextsForAction:(long long)arg1 sourceItem:(id)arg2 sourceModel:(id)arg3 applicableContextClasses:(id)arg4;
 - (id)connectionContextClassesForSourceItemContexts:(id)arg1 applicableConnectionClasses:(id)arg2 inclusionDictionary:(id)arg3 exclusionDictionary:(id)arg4;

@@ -30,11 +30,11 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_subtitle;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long resourceID; // @synthesize resourceID;
 @property(nonatomic) __weak id <DYPTraceAPIItem> previousDisplayableItem; // @synthesize previousDisplayableItem=_previousDisplayableItem;
 @property(readonly) int displayIndex; // @synthesize displayIndex=_displayIndex;
 @property(readonly) int functionIndex; // @synthesize functionIndex=_functionIndex;
-- (void).cxx_destruct;
 - (void)populateUnusedResourcesData;
 - (void)populateUnusedResourcesMetadata;
 @property(readonly, nonatomic) id <DYPStateMirror> stateMirror;

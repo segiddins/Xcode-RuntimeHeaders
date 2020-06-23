@@ -17,8 +17,8 @@
     NSButton *_button;
 }
 
-@property(retain, nonatomic) NSButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSButton *button; // @synthesize button=_button;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)broadcastAction:(id)arg1;

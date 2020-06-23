@@ -20,13 +20,13 @@
 }
 
 + (id)containerFromArguments:(id)arg1 collectingErrors:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extendedParameters; // @synthesize extendedParameters=_extendedParameters;
 @property(copy, nonatomic) NSDictionary *buildEnvironment; // @synthesize buildEnvironment=_buildEnvironment;
 @property(nonatomic) BOOL buildEnvironmentFromClient; // @synthesize buildEnvironmentFromClient=_buildEnvironmentFromClient;
 @property(copy, nonatomic) NSArray *inputDocumentPaths; // @synthesize inputDocumentPaths=_inputDocumentPaths;
 @property long long outputFormat; // @synthesize outputFormat=_outputFormat;
 @property BOOL shouldPrintUsage; // @synthesize shouldPrintUsage=_shouldPrintUsage;
-- (void).cxx_destruct;
 - (BOOL)longArgumentIsPresentOnCommandLine:(id)arg1;
 - (void)validateAfterInterpretingOptionsCollectingErrors:(id)arg1;
 @property(readonly) IBCLIOptionIndex *optionIndex;

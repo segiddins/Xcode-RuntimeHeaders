@@ -46,6 +46,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSOrderedSet *recentApplicationItems; // @synthesize recentApplicationItems=_recentApplicationItems;
 @property(retain, nonatomic) DVTMutableOrderedDictionary *orderedRecentsByURL; // @synthesize orderedRecentsByURL=_orderedRecentsByURL;
 @property(retain, nonatomic) NSArray *installedApplications; // @synthesize installedApplications=_installedApplications;
@@ -65,7 +66,6 @@
 @property(retain, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain) NSArray *orderedChooserApplications; // @synthesize orderedChooserApplications=_orderedChooserApplications;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;

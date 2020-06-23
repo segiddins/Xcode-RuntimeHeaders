@@ -14,9 +14,9 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 forValue:(id)arg2;
 
 @end

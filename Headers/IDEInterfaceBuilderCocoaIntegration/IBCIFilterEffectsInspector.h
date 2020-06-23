@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingInspectedView;
-@property(retain, nonatomic) CIFilter *editedFilter; // @synthesize editedFilter=_editedFilter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CIFilter *editedFilter; // @synthesize editedFilter=_editedFilter;
 - (id)defaultFilterForFilterName:(id)arg1;
 - (id)filterNamesInCategories:(id)arg1;
 - (id)inspectorXMLForFilter:(id)arg1;

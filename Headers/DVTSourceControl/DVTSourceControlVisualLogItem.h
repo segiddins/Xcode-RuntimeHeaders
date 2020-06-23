@@ -38,6 +38,7 @@
 
 + (id)sharedUnversionedLogItem;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
 @property(nonatomic) BOOL hasVisualHistory; // @synthesize hasVisualHistory=_hasVisualHistory;
 @property(nonatomic) unsigned long long revisionType; // @synthesize revisionType=_revisionType;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) DVTSourceControlAuthor *committer; // @synthesize committer=_committer;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(retain, nonatomic) NSArray *branches; // @synthesize branches=_branches;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isMerge;
 - (long long)compareToLogItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

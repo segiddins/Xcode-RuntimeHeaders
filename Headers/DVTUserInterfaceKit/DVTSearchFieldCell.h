@@ -20,11 +20,11 @@
 }
 
 + (id)_placeholderTextColor:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL hasText; // @synthesize hasText=_hasText;
 @property long long numberOfMatches; // @synthesize numberOfMatches=_numberOfMatches;
 @property(retain) NSTextView *fieldEditor; // @synthesize fieldEditor=_fieldEditor;
 @property BOOL showsProgress; // @synthesize showsProgress=_showsProgress;
-- (void).cxx_destruct;
 - (struct CGRect)_accessibilitySearchFieldCellBounds;
 - (id)accessibilityIdentifier;
 - (id)accessibilityAttributeValue:(id)arg1;

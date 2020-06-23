@@ -18,9 +18,9 @@
 + (id)_breakpointActionExtensions;
 + (id)_extensionIDForAction:(id)arg1;
 + (id)actionProxyForAction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL wasSuccessfullyUnarchived; // @synthesize wasSuccessfullyUnarchived=_wasSuccessfullyUnarchived;
 @property(readonly) IDEBreakpointAction *proxiedAction; // @synthesize proxiedAction=_proxiedAction;
-- (void).cxx_destruct;
 - (void)addActionContent:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setActionExtensionIDFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;

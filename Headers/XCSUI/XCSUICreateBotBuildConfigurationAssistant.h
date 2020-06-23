@@ -16,9 +16,9 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBotDefinition_BuildConfigurationEditor *buildConfigurationEditor; // @synthesize buildConfigurationEditor=_buildConfigurationEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
-- (void).cxx_destruct;
 - (void)helpAction;
 - (BOOL)showHelpButton;
 - (BOOL)canGoForward;

@@ -16,9 +16,9 @@
     NSMapTable *_targetMacroExpansionScopes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL needsVFS; // @synthesize needsVFS=_needsVFS;
 @property(readonly, retain, nonatomic) NSMapTable *targetMacroExpansionScopes; // @synthesize targetMacroExpansionScopes=_targetMacroExpansionScopes;
-- (void).cxx_destruct;
 - (id)cachedModTimeForFileAtPath:(id)arg1;
 - (void)constructVFSForSnapshot:(id)arg1 withMacroExpansionScope:(id)arg2 atPath:(id)arg3;
 - (id)initWithTargetMacroExpansionScopes:(id)arg1 needsVFS:(BOOL)arg2;

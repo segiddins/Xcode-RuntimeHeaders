@@ -16,10 +16,10 @@
     long long _receivedGeneration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long receivedGeneration; // @synthesize receivedGeneration=_receivedGeneration;
 @property(readonly) NSArray *resultsOrderedByScore; // @synthesize resultsOrderedByScore=_resultsOrderedByScore;
 @property(readonly) IDEOpenQuicklyResultGenerator *generator; // @synthesize generator=_generator;
-- (void).cxx_destruct;
 - (id)description;
 - (void)noteDidFinishStarting;
 - (BOOL)updateOrderedResults:(id)arg1 generation:(long long)arg2;

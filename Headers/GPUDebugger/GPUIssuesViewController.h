@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)instantiateFromStoryboard;
+- (void).cxx_destruct;
 @property __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(nonatomic) __weak id <GPUIssuesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
-- (void).cxx_destruct;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)_issueCellForItem:(id)arg1;
 - (id)_categoryCellForItem:(id)arg1;

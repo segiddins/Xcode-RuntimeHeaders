@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_showCommandCallsOnly;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *showCommandCallsOnly; // @synthesize showCommandCallsOnly=_showCommandCallsOnly;
 @property(copy) NSNumber *programMode; // @synthesize programMode=_programMode;
 @property(copy) NSNumber *filterType; // @synthesize filterType=_filterType;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 @property(copy) NSString *hostXcodeVersion; // @synthesize hostXcodeVersion=_hostXcodeVersion;
 @property(copy) NSNumber *graphicsAPI; // @synthesize graphicsAPI=_graphicsAPI;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

@@ -33,6 +33,7 @@
     BOOL _isLoading;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *_extensionPointsByIdentifier; // @synthesize _extensionPointsByIdentifier;
 @property(readonly) NSDictionary *_extensionsByIdentifier; // @synthesize _extensionsByIdentifier;
 @property(readonly, getter=isLoading) BOOL loading; // @synthesize loading=_isLoading;
@@ -48,7 +49,6 @@
 @property(readonly, copy) NSString *version; // @synthesize version=_version;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) DVTPlugInManager *plugInManager; // @synthesize plugInManager=_plugInManager;
-- (void).cxx_destruct;
 - (BOOL)load:(id *)arg1;
 - (void)_instantiatePrincipalClass;
 @property(readonly, getter=isLoadable) BOOL loadable;

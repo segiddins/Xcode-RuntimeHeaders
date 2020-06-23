@@ -35,6 +35,7 @@
 
 + (id)keyPathsForValuesAffectingCanIncludeNonLocalizedResources;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localizedActivitiesData; // @synthesize localizedActivitiesData=_localizedActivitiesData;
 @property(retain) NSSavePanel *savePanel; // @synthesize savePanel=_savePanel;
 @property BOOL complete; // @synthesize complete=_complete;
@@ -53,7 +54,6 @@
 @property(retain) NSArrayController *targetLanguagesController; // @synthesize targetLanguagesController=_targetLanguagesController;
 @property __weak NSPanel *selectScreenshotsPanel; // @synthesize selectScreenshotsPanel=_selectScreenshotsPanel;
 @property(retain, nonatomic) IDELocalizationExportAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)editScreenshotOptionsSave:(id)arg1;
 - (void)editScreenshotOptions:(id)arg1;
 - (id)screenshotsSummaryString;

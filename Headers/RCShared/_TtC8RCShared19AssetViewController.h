@@ -37,7 +37,6 @@
     MISSING_TYPE *onCurrentSceneChange;
     MISSING_TYPE *currentScene;
     MISSING_TYPE *onManipulationModeChange;
-    MISSING_TYPE *onTransformModeChange;
     MISSING_TYPE *onEditingEnabledChange;
 }
 

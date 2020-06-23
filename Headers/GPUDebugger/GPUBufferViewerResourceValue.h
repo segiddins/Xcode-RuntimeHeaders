@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _offset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) GPUTraceResourceItem *resourceItem; // @synthesize resourceItem=_resourceItem;
-- (void).cxx_destruct;
 - (id)initWithResourceItem:(id)arg1 offset:(unsigned long long)arg2;
 
 // Remaining properties

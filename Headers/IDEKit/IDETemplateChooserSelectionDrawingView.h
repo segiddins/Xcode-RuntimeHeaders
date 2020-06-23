@@ -17,11 +17,11 @@
     NSColor *_inactiveBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *inactiveBackgroundColor; // @synthesize inactiveBackgroundColor=_inactiveBackgroundColor;
 @property(retain, nonatomic) NSColor *activeBackgroundColor; // @synthesize activeBackgroundColor=_activeBackgroundColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL drawsBackground; // @synthesize drawsBackground=_drawsBackground;
-- (void).cxx_destruct;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)updateColors:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

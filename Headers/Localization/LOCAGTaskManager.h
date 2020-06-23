@@ -15,10 +15,10 @@
     NSMutableArray *_synchronousTaskQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *synchronousTaskQueue; // @synthesize synchronousTaskQueue=_synchronousTaskQueue;
 @property(retain) NSMutableArray *asynchronousTaskQueue; // @synthesize asynchronousTaskQueue=_asynchronousTaskQueue;
 @property unsigned long long maxConcurrentTaskCount; // @synthesize maxConcurrentTaskCount=_maxConcurrentTaskCount;
-- (void).cxx_destruct;
 - (id)locFileSets;
 - (void)processWithCommand:(id)arg1 withObject:(id)arg2 executionMode:(unsigned long long)arg3;
 - (void)addTasksToSynchronousQueue:(id)arg1;

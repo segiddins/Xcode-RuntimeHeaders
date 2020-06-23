@@ -23,13 +23,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSArray *springLoadedTraversal; // @synthesize springLoadedTraversal=_springLoadedTraversal;
 @property(retain) id target; // @synthesize target=_target;
 @property(retain) NSEvent *finalEvent; // @synthesize finalEvent=_finalEvent;
 @property(retain) NSView *endPointProviderView; // @synthesize endPointProviderView=_endPointProviderView;
 @property(retain) id <IBEndPointProvider> endPointProvider; // @synthesize endPointProvider=_endPointProvider;
 @property(readonly) IBDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)constraintsForConnectingFromObject:(id)arg1;
 - (id)targetToSendToEndPointProviderForConnectionSuccess;
 - (id)connectionForConnectingFromAnnotation:(id)arg1;

@@ -26,9 +26,9 @@
 }
 
 + (id)inspectedArrayControllerKeys;
+- (void).cxx_destruct;
 @property(retain) NSString *slotName; // @synthesize slotName=_slotName;
 @property(retain) SCNMaterial *material; // @synthesize material=_material;
-- (void).cxx_destruct;
 @property(readonly) IDEInspectorContentView *inspectorContentView;
 @property(readonly) id inspectedObject;
 @property(readonly) NSArray *inspectedObjects;

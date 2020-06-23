@@ -29,10 +29,10 @@
 + (id)nodeForSKNode:(id)arg1 withChildren:(id)arg2 inDocument:(id)arg3;
 + (id)nodeForSKNode:(id)arg1 inDocument:(id)arg2;
 + (id)keyPathsForValuesAffectinghasEntity_commit;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GTFActionTimelineModel *actionTimeline; // @synthesize actionTimeline=_actionTimeline;
 @property(retain, nonatomic) GKEntity *entity; // @synthesize entity=_entity;
 @property(retain, nonatomic) SKNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long manipulationSupport;
 @property(nonatomic) struct CGPoint anchorPoint_commit;
 @property(nonatomic) struct CGPoint anchorPoint;
@@ -43,12 +43,11 @@
 @property(nonatomic) double xScale_commit;
 @property(nonatomic) double xScale;
 @property(nonatomic) struct CGPoint position_commit;
-- (void)setPosition:(struct CGPoint)arg1;
+@property(nonatomic) struct CGPoint position;
 - (struct CGRect)displayRectInView:(id)arg1;
 @property(readonly, nonatomic) double zPosition;
 @property(readonly, nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) struct CGSize size;
-@property(readonly, nonatomic) struct CGPoint position;
 @property(nonatomic) BOOL isHidden_commit;
 @property(nonatomic) BOOL isHidden;
 @property(nonatomic) BOOL isLocked_commit;

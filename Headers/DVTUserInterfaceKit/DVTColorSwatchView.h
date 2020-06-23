@@ -20,6 +20,7 @@
     double _cornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) BOOL drawsBorder; // @synthesize drawsBorder=_drawsBorder;
@@ -28,7 +29,6 @@
 @property(nonatomic) double proportionalInset; // @synthesize proportionalInset=_proportionalInset;
 @property(nonatomic) BOOL useProportionalBorderWidth; // @synthesize useProportionalBorderWidth=_useProportionalBorderWidth;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)_drawRectangleStyle;
 - (void)_drawCircularStyle;
 - (void)drawRect:(struct CGRect)arg1;

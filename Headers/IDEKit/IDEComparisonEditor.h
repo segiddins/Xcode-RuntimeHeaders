@@ -44,7 +44,6 @@
     IDEEditorDocument *_ancestorDocument;
     id <DVTInvalidation> _ancestorDocumentExportToken;
     DVTObservingToken *_diffSessionObservingToken;
-    int _editorSubmode;
     IDEComparisonEditorAutoLayoutView *_layoutView;
     DVTComparisonDocumentLocation *_internalComparisonDocumentLocation;
     NSArray *_keyEditorDocumentLocations;
@@ -93,6 +92,7 @@
 + (void)initialize;
 + (id)performanceLogAspect;
 + (id)comparisonEditorLogAspect;
+- (void).cxx_destruct;
 @property(retain) IDENavigableItem *secondaryRootNavigableItem; // @synthesize secondaryRootNavigableItem=_secondaryRootNavigableItem;
 @property(retain) IDENavigableItem *primaryRootNavigableItem; // @synthesize primaryRootNavigableItem=_primaryRootNavigableItem;
 @property int toggleAllDiffDescriptorsState; // @synthesize toggleAllDiffDescriptorsState=_toggleAllDiffDescriptorsState;
@@ -117,7 +117,6 @@
 @property(retain) IDEEditorDocument *ancestorDocument; // @synthesize ancestorDocument=_ancestorDocument;
 @property(retain) IDEEditorDocument *secondaryDocument; // @synthesize secondaryDocument=_secondaryDocument;
 @property(retain) IDEEditorDocument *primaryDocument; // @synthesize primaryDocument=_primaryDocument;
-- (void).cxx_destruct;
 - (BOOL)pathCell:(id)arg1 shouldPopUpMenuForPathComponentCell:(id)arg2 item:(id)arg3;
 - (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;
 - (BOOL)splitView:(id)arg1 shouldHideDividerAtIndex:(long long)arg2;
@@ -168,16 +167,12 @@
 - (void)_pendingExportOperations:(unsigned long long)arg1 withDocumentLocation:(id)arg2 force:(BOOL)arg3;
 - (id)internalComparisonDocumentLocation;
 @property(readonly) IDEComparisonEditorSubmode *submode;
-- (void)setEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
-@property(readonly) int editorSubmode;
 @property BOOL hideNavTimelineBar;
 @property BOOL hideRootJumpBarItem; // @synthesize hideRootJumpBarItem=_hideRootJumpBarItem;
 @property BOOL hideToolBar;
 - (void)_willOpenSpecifier:(id)arg1;
-- (void)_validateAndUpdateOnSubmodeChange;
 - (void)_updateOnSubmodeChange;
 - (void)showRevision:(id)arg1;
-- (void)compareCurrentRevisionToRevision:(id)arg1;
 - (void)compareRevisionChange:(id)arg1;
 - (id)pathCellNoSelectionTitle;
 - (void)_setupSupportViews;
@@ -199,7 +194,6 @@
 - (id)_modeActionItemWithIdentifier:(id)arg1;
 - (id)_navigationItemWithIdentifier:(id)arg1;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
-- (void)_registerForComparisonEditorModeChange;
 - (id)_touchBarForComparisonSubmode;
 - (id)_touchBarForComparisonEditor;
 - (id)makeTouchBar;

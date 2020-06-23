@@ -18,9 +18,9 @@
     id <IDEActionSliceViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <IDEActionSliceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEExecutionAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)capsuleView:(id)arg1 setTitle:(id)arg2;
 - (void)capsuleViewDidClickRemoveButton:(id)arg1;
 @property(readonly) BOOL canUndisclose;

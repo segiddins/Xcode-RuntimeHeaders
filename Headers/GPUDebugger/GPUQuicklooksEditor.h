@@ -8,7 +8,7 @@
 
 #import <GPUDebugger/GPUDeviceLockedPanelDelegate-Protocol.h>
 
-@class DVTDevice, DVTDeviceManager, DVTObservingToken, GPUDeviceLockedPanel, IDEWorkspaceTabController, NSArray, NSBox, NSButton, NSImageView, NSObject, NSPopUpButton, NSProgressIndicator, NSString, NSTextField, NSWindow;
+@class DVTDevice, DVTDeviceManager, DVTObservingToken, GPUDeviceLockedPanel, IDEWorkspaceTabController, NSArray, NSBox, NSButton, NSImageView, NSObject, NSPopUpButton, NSProgressIndicator, NSString, NSTabView, NSTextField, NSWindow;
 @protocol OS_dispatch_queue;
 
 @interface GPUQuicklooksEditor : GPUTraceSubEditor <GPUDeviceLockedPanelDelegate>
@@ -25,31 +25,45 @@
     NSTextField *_incompatibleDescTextField;
     NSWindow *_deviceSelectionSheet;
     GPUDeviceLockedPanel *_deviceLockedSheet;
-    NSBox *_boxView;
+    NSTextField *_progressTextField;
     NSProgressIndicator *_progressIndicator;
     NSButton *_profilerButton;
+    NSBox *_containerLine;
+    NSTabView *_containerView;
     BOOL _traceSessionActivated;
     NSString *_appname;
     NSArray *_usableDevices;
+    NSArray *_pendingDevices;
     IDEWorkspaceTabController *_tabController;
     DVTDeviceManager *_deviceManager;
     DVTDevice *_selectedDevice;
     DVTObservingToken *_debuggingAdditionsObservation;
     DVTObservingToken *_usableDevicesObservation;
+    DVTObservingToken *_pendingDevicesObservation;
     BOOL _isKojakFile;
     BOOL _disableDeviceCompabilityCheck;
 }
 
 + (id)assetBundle;
-@property(retain, nonatomic) NSArray *usableDevices; // @synthesize usableDevices=_usableDevices;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *pendingDevices; // @synthesize pendingDevices=_pendingDevices;
+@property(retain, nonatomic) NSArray *usableDevices; // @synthesize usableDevices=_usableDevices;
 - (void)onProfilerCheckboxStatusChange:(id)arg1;
 - (void)GPUDebugger_replayCapture:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)toolsDeviceFromDVTDevice:(id)arg1 error:(id *)arg2;
 - (void)_updateUsableDeviceList;
+- (id)_sortUsableDevices:(id)arg1;
+- (BOOL)_isSimulatorDVTDevice:(id)arg1;
+- (BOOL)_shouldShowDevice:(id)arg1 captureSessionInfo:(id)arg2;
 - (void)_updateUsableDeviceListNotification:(id)arg1;
 - (void)_onUsableDevicesUpdated;
+- (void)_switchToProgressViewWithMessage:(id)arg1;
+- (void)_switchToReplayView;
+- (void)_switchToWarningView;
+- (void)setProfilerButtonEnabled:(BOOL)arg1;
+- (void)setProfilerButtonState:(long long)arg1;
+- (BOOL)_hasOnlySimulatorUsableDevices;
 - (void)onDeviceSelectionCancelled:(id)arg1;
 - (void)onDeviceSelected:(id)arg1;
 - (void)onTraceSessionActivated:(id)arg1;

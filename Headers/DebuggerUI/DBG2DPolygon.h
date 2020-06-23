@@ -19,8 +19,8 @@
 
 + (id)polygonFromQuad:(struct CGPoint)arg1 cornerB:(struct CGPoint)arg2 cornerC:(struct CGPoint)arg3 cornerD:(struct CGPoint)arg4;
 + (id)polygonFromRect:(struct CGRect)arg1;
-@property(readonly, nonatomic) NSArray *vertices; // @synthesize vertices=_vertices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *vertices; // @synthesize vertices=_vertices;
 - (id)debugDescription;
 - (id)debugQuickLookObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -26,6 +26,7 @@
 }
 
 + (double)heightForString:(id)arg1 font:(id)arg2 width:(double)arg3 lineBreakMode:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *detailsObservingToken; // @synthesize detailsObservingToken=_detailsObservingToken;
 @property(retain) DVTNotificationToken *frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
 @property __weak NSLayoutConstraint *bottomSpaceHeightConstraint; // @synthesize bottomSpaceHeightConstraint=_bottomSpaceHeightConstraint;
@@ -36,7 +37,6 @@
 @property BOOL removeBottomMargin; // @synthesize removeBottomMargin=_removeBottomMargin;
 @property(readonly) NSString *detailsKeyPath; // @synthesize detailsKeyPath=_detailsKeyPath;
 @property(readonly) NSString *detailsTitleKeyPath; // @synthesize detailsTitleKeyPath=_detailsTitleKeyPath;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;

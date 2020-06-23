@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBAutolayoutItem-Protocol.h>
 
-@class IBAutolayoutAmbiguityGroup, IBAutolayoutStatus, IBDocument, NSArray, NSMutableArray, NSObject, NSString;
+@class IBAutolayoutAmbiguityGroup, IBAutolayoutStatus, IBDocument, IBMutableIdentityDictionary, NSArray, NSMutableArray, NSObject, NSString;
 @protocol IBCollection, IBIDEAutolayoutItem;
 
 @protocol IBIDEAutolayoutItem <IBAutolayoutItem>
@@ -36,7 +36,7 @@
 - (NSObject<IBIDEAutolayoutItem> *)ibEffectiveItemForConstrainingAttribute:(unsigned long long)arg1;
 - (NSArray *)ibAuxiliaryItemsForConstraintDrawables;
 - (BOOL)ibCanHaveUninitializedAutolayoutAmbiguityStatusInDocument:(IBDocument *)arg1;
-- (void)ibVerifyConstraintsAreWellFormedInDocument:(IBDocument *)arg1 subarbitrationUnitCache:(struct IBMutableIdentityDictionary *)arg2 andPopulateMessages:(NSMutableArray *)arg3;
+- (void)ibVerifyConstraintsAreWellFormedInDocument:(IBDocument *)arg1 subarbitrationUnitCache:(IBMutableIdentityDictionary *)arg2 andPopulateMessages:(NSMutableArray *)arg3;
 - (void)ibVerifyConstraintsAreSortedInDocument:(IBDocument *)arg1;
 - (void)ibRemoveCandidateConstraints:(id <IBCollection>)arg1;
 - (void)ibAddCandidateConstraints:(id <IBCollection>)arg1 shouldAddToEffectiveEditedConfiguration:(BOOL)arg2;

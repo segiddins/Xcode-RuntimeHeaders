@@ -24,6 +24,7 @@
 }
 
 + (id)keyPathsForValuesAffectingImageTypeString;
+- (void).cxx_destruct;
 @property(readonly) NSArray *assetCatalogWrappers; // @synthesize assetCatalogWrappers=_assetCatalogWrappers;
 @property(retain) DVTGradientImageButton *assetCatalogGoToButton; // @synthesize assetCatalogGoToButton=_assetCatalogGoToButton;
 @property(retain) NSPopUpButton *assetCatalogPopUpButton; // @synthesize assetCatalogPopUpButton=_assetCatalogPopUpButton;
@@ -33,7 +34,6 @@
 @property(readonly) int targetEditorImageType; // @synthesize targetEditorImageType=_targetEditorImageType;
 @property(readonly) IDEiOSTargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
 @property(retain, nonatomic) NSArray *imageSections; // @synthesize imageSections=_imageSections;
-- (void).cxx_destruct;
 - (id)_contentStackCenteringView;
 - (id)deploymentOS;
 - (id)imageSection:(id)arg1 expandedValueForString:(id)arg2;

@@ -36,6 +36,7 @@
     NSSet *_profilePlatforms;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *profilePlatforms; // @synthesize profilePlatforms=_profilePlatforms;
 @property(readonly, nonatomic) NSData *dataRepresentation; // @synthesize dataRepresentation=_dataRepresentation;
 @property(readonly) NSSet *platforms; // @synthesize platforms=_platforms;
@@ -55,9 +56,9 @@
 @property(readonly) NSString *teamName; // @synthesize teamName=_teamName;
 @property(readonly) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isGameCenterFeatureEnabled;
 - (long long)compare:(id)arg1;
 - (id)certificates;
 @property(readonly) id underlyingProfile;

@@ -14,9 +14,9 @@
     NSData *_compressedData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *compressedData; // @synthesize compressedData=_compressedData;
 @property(retain) NSData *originalData; // @synthesize originalData=_originalData;
-- (void).cxx_destruct;
 - (id)data;
 - (id)initWithData:(id)arg1 shouldCompress:(BOOL)arg2;
 

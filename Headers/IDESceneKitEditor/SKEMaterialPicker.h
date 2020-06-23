@@ -23,8 +23,8 @@
     NSString *_filterString;
 }
 
-@property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 - (void)_discardPicker:(id)arg1;
 - (void)_useSelectedMaterial:(id)arg1;
 - (void)refreshContentsUI;

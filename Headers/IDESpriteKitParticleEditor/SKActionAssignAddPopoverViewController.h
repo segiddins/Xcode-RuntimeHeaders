@@ -20,9 +20,9 @@
     NSPopover *_popover;
 }
 
+- (void).cxx_destruct;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak id <SKActionAssignAddPopoverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

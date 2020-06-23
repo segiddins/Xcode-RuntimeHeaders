@@ -20,8 +20,8 @@
 }
 
 + (void)initialize;
-@property __weak id <_IDEEditorContextSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <_IDEEditorContextSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeSplitViewItem:(id)arg1;
 - (void)addSplitViewItem:(id)arg1;
 - (void)splitView:(id)arg1 auxiliarySplitViewItemWasResized:(id)arg2;

@@ -17,9 +17,9 @@
     unsigned long long _displayImageType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long displayImageType; // @synthesize displayImageType=_displayImageType;
 @property(nonatomic) BOOL displayAsBlock; // @synthesize displayAsBlock=_displayAsBlock;
-- (void).cxx_destruct;
 - (BOOL)setCompressionValue:(long long)arg1;
 - (void)invalidateChildItems;
 - (id)childRepresentedObjects;

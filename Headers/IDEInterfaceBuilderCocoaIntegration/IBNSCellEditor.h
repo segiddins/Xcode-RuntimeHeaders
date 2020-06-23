@@ -16,7 +16,6 @@
 - (id)editedTitleKeyPath;
 - (BOOL)isTitleEditable;
 - (struct CGRect)rectForTitleEditingInView:(id)arg1;
-- (struct CGRect)editedCellFrameInView:(id)arg1;
 - (id)editorView;
 - (id)control;
 - (id)editedCell;

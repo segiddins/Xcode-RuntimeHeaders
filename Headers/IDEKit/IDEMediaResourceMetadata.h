@@ -13,6 +13,7 @@
 @interface IDEMediaResourceMetadata : NSObject <NSCopying>
 {
     BOOL _isSystemResource;
+    BOOL _isPrivate;
     long long _preferredOrder;
     NSString *_usageInformation;
     NSArray *_keywords;
@@ -20,21 +21,22 @@
 }
 
 + (id)metadataForSystemResource;
-+ (id)metadataForSystemResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4;
-+ (id)metadataForResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4;
++ (id)metadataForSystemResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 isPrivate:(BOOL)arg5;
++ (id)metadataForResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 isPrivate:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *nameForNonDeprecatedSymbol; // @synthesize nameForNonDeprecatedSymbol=_nameForNonDeprecatedSymbol;
 @property(readonly, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(readonly, nonatomic) NSString *usageInformation; // @synthesize usageInformation=_usageInformation;
 @property(readonly, nonatomic) long long preferredOrder; // @synthesize preferredOrder=_preferredOrder;
+@property(readonly, nonatomic) BOOL isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, nonatomic) BOOL isSystemResource; // @synthesize isSystemResource=_isSystemResource;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToMediaResourceMetadata:(id)arg1;
 @property(readonly, nonatomic) BOOL isDeprecated;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithKeywords:(id)arg1 isSystemResource:(BOOL)arg2 usageInformation:(id)arg3 preferredOrder:(long long)arg4 nameForNonDeprecatedSymbol:(id)arg5;
+- (id)initWithKeywords:(id)arg1 isSystemResource:(BOOL)arg2 usageInformation:(id)arg3 preferredOrder:(long long)arg4 nameForNonDeprecatedSymbol:(id)arg5 isPrivate:(BOOL)arg6;
 
 @end
 

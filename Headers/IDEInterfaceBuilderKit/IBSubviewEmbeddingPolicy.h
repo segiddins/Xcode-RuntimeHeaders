@@ -13,8 +13,8 @@
     NSView *_templateContainer;
 }
 
-@property(retain) NSView *templateContainer; // @synthesize templateContainer=_templateContainer;
 - (void).cxx_destruct;
+@property(retain) NSView *templateContainer; // @synthesize templateContainer=_templateContainer;
 - (BOOL)canEmbedObjects:(id)arg1 fromDocument:(id)arg2;
 - (id)embedObjects:(id)arg1 fromDocument:(id)arg2 context:(id)arg3;
 - (void)moveViews:(id)arg1 intoDesignableContentView:(id)arg2 ofView:(id)arg3 withRootContainer:(id)arg4 forDocument:(id)arg5;

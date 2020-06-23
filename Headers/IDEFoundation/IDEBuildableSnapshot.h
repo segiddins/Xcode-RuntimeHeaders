@@ -25,6 +25,7 @@
 
 + (id)_enqueue_semaphore;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTDispatchLock *syncLock; // @synthesize syncLock=_syncLock;
 @property long long buildResult; // @synthesize buildResult=_buildResult;
 @property(retain) NSMutableArray *startedBuildTasks; // @synthesize startedBuildTasks=_startedBuildTasks;
@@ -34,7 +35,6 @@
 @property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
 @property(readonly) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)buildTask:(id)arg1 addsPostprocessingBlocks:(id)arg2 forBuilder:(id)arg3;
 - (void)buildTask:(id)arg1 updatesBuildStatusForBuilder:(id)arg2;

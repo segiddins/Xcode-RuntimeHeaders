@@ -15,8 +15,8 @@
     NSString *_threadSanitizerMessage;
 }
 
-@property(copy) NSString *threadSanitizerMessage; // @synthesize threadSanitizerMessage=_threadSanitizerMessage;
 - (void).cxx_destruct;
+@property(copy) NSString *threadSanitizerMessage; // @synthesize threadSanitizerMessage=_threadSanitizerMessage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

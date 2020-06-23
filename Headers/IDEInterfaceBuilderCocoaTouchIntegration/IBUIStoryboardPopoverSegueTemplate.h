@@ -18,11 +18,11 @@
     IBUIBarButtonItem *_anchorBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBUIBarButtonItem *anchorBarButtonItem; // @synthesize anchorBarButtonItem=_anchorBarButtonItem;
 @property(retain) IBUIView *anchorView; // @synthesize anchorView=_anchorView;
 @property(copy) NSArray *passthroughViews; // @synthesize passthroughViews=_passthroughViews;
 @property unsigned long long permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibLocalAutoNullifyingNonChildToManyRelationshipsKeyPaths;

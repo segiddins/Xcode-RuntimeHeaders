@@ -37,6 +37,7 @@
 + (id)activityReportLayerForDisplayStyle:(long long)arg1;
 + (struct CGSize)defaultSizeForPopUpStyle;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *validReportObserver; // @synthesize validReportObserver=_validReportObserver;
 @property(retain) IDEActivityView *activityView; // @synthesize activityView=_activityView;
 @property(nonatomic) double spaceNeededForStatusLayers; // @synthesize spaceNeededForStatusLayers=_spaceNeededForStatusLayers;
@@ -45,7 +46,6 @@
 @property(retain) IDEActivityReport *displayedReportValidCopy; // @synthesize displayedReportValidCopy=_displayedReportValidCopy;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) IDEActivityReport *activityReport; // @synthesize activityReport=_activityReport;
-- (void).cxx_destruct;
 - (void)updateTheme;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)dvt_view;

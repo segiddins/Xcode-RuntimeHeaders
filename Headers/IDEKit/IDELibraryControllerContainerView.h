@@ -34,6 +34,7 @@
 + (double)tabBarHeight;
 + (id)createButton;
 + (id)defaultAnimationForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *explicitLibraryWidth; // @synthesize explicitLibraryWidth=_explicitLibraryWidth;
 @property(nonatomic) double bannerViewAnimationProgress; // @synthesize bannerViewAnimationProgress=_bannerViewAnimationProgress;
 @property(nonatomic) long long bannerLayout; // @synthesize bannerLayout=_bannerLayout;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSArray *choices; // @synthesize choices=_choices;
 @property(retain, nonatomic) NSView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) NSView *libraryView; // @synthesize libraryView=_libraryView;
-- (void).cxx_destruct;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (double)bannerHeight;

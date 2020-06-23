@@ -34,8 +34,8 @@
 + (id)supportedCustomResolutionStrategies;
 + (id)supportedResolutionStrategies;
 + (void)initialize;
-@property(readonly) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly) NSString *path; // @synthesize path=_path;
 - (id)knownAssetTags;
 - (id)assetTags;
 - (void)setAssetTags:(id)arg1;

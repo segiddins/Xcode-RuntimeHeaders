@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     DependencyViewerSKTextureCache *_textureCache;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak DependencyViewerSKTextureCache *textureCache; // @synthesize textureCache=_textureCache;
 @property(readonly, nonatomic) GPUTraceSKHighlight *highlight; // @synthesize highlight=_highlight;
 @property(retain, nonatomic) NSMutableArray *resourceElements; // @synthesize resourceElements=_resourceElements;
 @property(readonly, nonatomic) GPUTraceTitleElement *titleElement; // @synthesize titleElement=_titleElement;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)hideStats;
 - (void)showStats;
 - (void)setMagnification:(double)arg1;

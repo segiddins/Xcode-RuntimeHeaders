@@ -21,13 +21,13 @@
     XCSKeychain *_temporaryKeychain;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSKeychain *temporaryKeychain; // @synthesize temporaryKeychain=_temporaryKeychain;
 @property(retain, nonatomic) XCSHardwareInfo *hardwareInfo; // @synthesize hardwareInfo=_hardwareInfo;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) DVTPortalServerCertificate *certificate; // @synthesize certificate=_certificate;
 @property(retain, nonatomic) id <XCSPortalTeamProvider> teamProvider; // @synthesize teamProvider=_teamProvider;
 @property(retain, nonatomic) id <XCSServicesSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
-- (void).cxx_destruct;
 @property(readonly) DVTPortalTeam *team;
 @property(readonly) id <DVTServicesSession> session;
 - (BOOL)createTemporaryKeychainWithError:(id *)arg1;

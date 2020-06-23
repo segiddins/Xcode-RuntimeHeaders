@@ -18,11 +18,11 @@
     IBWKWebViewConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) IBWKWebViewConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) BOOL allowsLinkPreview; // @synthesize allowsLinkPreview=_allowsLinkPreview;
 @property(retain, nonatomic) NSString *customUserAgent; // @synthesize customUserAgent=_customUserAgent;
 @property(nonatomic) BOOL allowsBackForwardNavigationGestures; // @synthesize allowsBackForwardNavigationGestures=_allowsBackForwardNavigationGestures;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)defaultBackgroundColor;

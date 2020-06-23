@@ -30,12 +30,12 @@
 
 + (void)initialize;
 + (id)customDataStoreWithRootDirectoryPath:(id)arg1 perUserSubfolderName:(id)arg2 sharedSubfolderName:(id)arg3 supportCurrentUserOnly:(BOOL)arg4;
+- (void).cxx_destruct;
 @property BOOL mayCreateRootDirectoryIfNeeded; // @synthesize mayCreateRootDirectoryIfNeeded=_mayCreateRootDirectoryIfNeeded;
 @property(readonly) NSString *sharedSubfolderName; // @synthesize sharedSubfolderName=_sharedSubfolderName;
 @property(readonly) NSString *perUserSubfolderName; // @synthesize perUserSubfolderName=_perUserSubfolderName;
 @property(readonly) BOOL supportsCurrentUserOnly; // @synthesize supportsCurrentUserOnly=_supportsCurrentUserOnly;
 @property(retain) DVTFilePath *rootDirectoryPath; // @synthesize rootDirectoryPath=_rootDirectoryPath;
-- (void).cxx_destruct;
 @property(readonly) NSString *displayName;
 - (BOOL)supportsCustomDataForOwnership:(id)arg1;
 - (void)moveCustomDataWithSpecifier:(id)arg1 toSpecifier:(id)arg2 completionQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

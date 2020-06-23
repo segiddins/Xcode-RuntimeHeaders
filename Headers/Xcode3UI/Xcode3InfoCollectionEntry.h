@@ -15,9 +15,9 @@
     BOOL _updatingInfoValue;
 }
 
+- (void).cxx_destruct;
 @property BOOL _updatingInfoValue; // @synthesize _updatingInfoValue;
 @property(readonly) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 @property(readonly) Class entryClassForItems;
 @property(readonly) NSDictionary *itemDictionary;
 - (void)entryValueChanged:(id)arg1;

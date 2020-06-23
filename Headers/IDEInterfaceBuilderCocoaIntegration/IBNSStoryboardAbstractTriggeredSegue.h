@@ -26,9 +26,9 @@
 + (id)keyPathsForValuesAffectingIbInspectedCanChangeToModalSegue;
 + (id)keyPathsForValuesAffectingIbInspectedCanChangeToPopoverSegue;
 + (id)keyPathsForValuesAffectingIbInspectedCanChangeToShowSegue;
+- (void).cxx_destruct;
 @property(copy) NSString *customSegueClassModuleProvider; // @synthesize customSegueClassModuleProvider=_customSegueClassModuleProvider;
 @property(copy) NSString *customSegueClassName; // @synthesize customSegueClassName=_customSegueClassName;
-- (void).cxx_destruct;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;
 - (BOOL)isPrototypeFor:(id)arg1;
 - (BOOL)isEqualToPrototype:(id)arg1;

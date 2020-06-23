@@ -14,9 +14,9 @@
     XCSUIBot *_bot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBot *bot; // @synthesize bot=_bot;
 @property(retain, nonatomic) NSString *streak; // @synthesize streak=_streak;
-- (void).cxx_destruct;
 - (id)initWithStreak:(id)arg1 bot:(id)arg2;
 
 @end

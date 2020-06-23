@@ -17,12 +17,12 @@
     NSError *_insertionError;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *insertionError; // @synthesize insertionError=_insertionError;
 @property(readonly) NSDictionary *insertAfterHint; // @synthesize insertAfterHint=_insertAfterHint;
 @property(readonly) NSDictionary *insertBeforeHint; // @synthesize insertBeforeHint=_insertBeforeHint;
 @property(readonly) NSString *insertionSourceCode; // @synthesize insertionSourceCode=_insertionSourceCode;
 @property(readonly) DVTDocumentLocation *insertionDocumentLocation; // @synthesize insertionDocumentLocation=_insertionDocumentLocation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)resultByReplacingInsertionDocumentLocationWithLocation:(id)arg1;
 - (id)initWithInsertionError:(id)arg1;

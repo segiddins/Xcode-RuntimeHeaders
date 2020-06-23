@@ -13,8 +13,8 @@
     NSSet *_allKnownAssetTags;
 }
 
-@property(copy) NSSet *allKnownAssetTags; // @synthesize allKnownAssetTags=_allKnownAssetTags;
 - (void).cxx_destruct;
+@property(copy) NSSet *allKnownAssetTags; // @synthesize allKnownAssetTags=_allKnownAssetTags;
 - (void)setContent:(id)arg1;
 
 @end

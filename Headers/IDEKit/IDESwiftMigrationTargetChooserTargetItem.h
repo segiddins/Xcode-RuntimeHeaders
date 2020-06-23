@@ -17,8 +17,8 @@
 + (id)keyPathsForValuesAffectingWarningMessage;
 + (id)keyPathsForValuesAffectingIconImage;
 + (id)keyPathsForValuesAffectingTitle;
-@property(retain) IDESwiftMigrationTargetChooserAssistant *targetChooserAssistant; // @synthesize targetChooserAssistant=_targetChooserAssistant;
 - (void).cxx_destruct;
+@property(retain) IDESwiftMigrationTargetChooserAssistant *targetChooserAssistant; // @synthesize targetChooserAssistant=_targetChooserAssistant;
 - (double)rowHeight;
 - (id)warningMessage;
 - (id)iconImage;

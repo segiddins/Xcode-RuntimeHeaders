@@ -19,11 +19,11 @@
 }
 
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEActivityLogRecord *logRecord; // @synthesize logRecord=_logRecord;
 @property(retain, nonatomic) IDELogStoreManageableLogItem *currentLogItem; // @synthesize currentLogItem=_currentLogItem;
 @property(retain, nonatomic) NSArray *availableLogs; // @synthesize availableLogs=_availableLogs;
 @property(retain, nonatomic) IDEActivityLogSection *buildLog; // @synthesize buildLog=_buildLog;
-- (void).cxx_destruct;
 - (void)printDocument:(id)arg1;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
 - (struct _NSRange)searchRangeforStartRange:(struct _NSRange)arg1 backwards:(BOOL)arg2 withinString:(id)arg3;

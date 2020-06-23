@@ -27,6 +27,7 @@
     NSString *_toolTip;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(retain) DVTButtonTextField *actionButtonTextField; // @synthesize actionButtonTextField=_actionButtonTextField;
 @property(retain) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (void)_actionButtonTextFieldAction:(id)arg1;
 - (void)wasAssociatedWithScopeBarController:(id)arg1;
 - (void)viewWillUninstall;

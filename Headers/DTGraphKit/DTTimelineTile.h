@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) unsigned long long tileIndex; // @synthesize tileIndex=_tileIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long tileIndex; // @synthesize tileIndex=_tileIndex;
 - (id)stringSummaries;
 - (const struct TileMetrics *)tileMetrics;
 - (void)providerHasNewResponse:(id)arg1;

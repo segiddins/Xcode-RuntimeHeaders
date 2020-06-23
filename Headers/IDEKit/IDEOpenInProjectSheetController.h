@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *projectFilePath; // @synthesize projectFilePath=_projectFilePath;
 @property(retain) IDEOpenInProjectViewController *openInProjectViewController; // @synthesize openInProjectViewController=_openInProjectViewController;
 @property(retain) id <IDEOpenInProjectViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSString *openLogDescription; // @synthesize openLogDescription=_openLogDescription;
-- (void).cxx_destruct;
 - (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)windowDidLoad;
 @property(readonly) NSURL *projectURL;

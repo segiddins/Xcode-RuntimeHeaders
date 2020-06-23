@@ -11,8 +11,8 @@
     CDUnknownBlockType _environmentPopulationBlock;
 }
 
-@property(copy) CDUnknownBlockType environmentPopulationBlock; // @synthesize environmentPopulationBlock=_environmentPopulationBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType environmentPopulationBlock; // @synthesize environmentPopulationBlock=_environmentPopulationBlock;
 
 @end
 

@@ -24,12 +24,12 @@
 
 + (id)keyPathsForValuesAffectingImportedRecords;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *auxiliaryRecordsByIdentifier; // @synthesize auxiliaryRecordsByIdentifier=_auxiliaryRecordsByIdentifier;
 @property(readonly) NSMutableDictionary *navigatorRootItems; // @synthesize navigatorRootItems=_navigatorRootItems;
 @property(copy) NSString *domainName; // @synthesize domainName=_domainName;
 @property(retain) id domainItem; // @synthesize domainItem=_domainItem;
 @property(readonly) NSArray *logProviders; // @synthesize logProviders=_logProviders;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *importedRecords;
 - (id)mostRecentLogRecordForType:(id)arg1;
 @property(readonly) NSSet *mostRecentLogRecordForEachType;

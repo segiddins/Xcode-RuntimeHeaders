@@ -21,8 +21,8 @@
     id <XCSUIIntegrationSteppedProgressViewLabelProvider> _labelProvider;
 }
 
-@property __weak id <XCSUIIntegrationSteppedProgressViewLabelProvider> labelProvider; // @synthesize labelProvider=_labelProvider;
 - (void).cxx_destruct;
+@property __weak id <XCSUIIntegrationSteppedProgressViewLabelProvider> labelProvider; // @synthesize labelProvider=_labelProvider;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)reloadInformativeString;

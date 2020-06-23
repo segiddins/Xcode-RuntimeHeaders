@@ -13,6 +13,7 @@
 
 @interface XCSourceControlPullRequestEvent : NSObject <NSSecureCoding, NSCopying>
 {
+    NSArray *_allCommits;
     NSString *_rawType;
     long long _resolvedType;
     XCSourceControlHostRenderableContent *_content;
@@ -24,9 +25,14 @@
     XCSourceControlPullRequestEvent *_parent;
     NSArray *_attachments;
     NSArray *_children;
+    NSArray *_addedCommits;
+    NSArray *_removedCommits;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *removedCommits; // @synthesize removedCommits=_removedCommits;
+@property(readonly, nonatomic) NSArray *addedCommits; // @synthesize addedCommits=_addedCommits;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(readonly, nonatomic) XCSourceControlPullRequestEvent *parent; // @synthesize parent=_parent;
@@ -38,13 +44,14 @@
 @property(readonly, copy, nonatomic) XCSourceControlHostRenderableContent *content; // @synthesize content=_content;
 @property(readonly, nonatomic) long long resolvedType; // @synthesize resolvedType=_resolvedType;
 @property(readonly, copy, nonatomic) NSString *rawType; // @synthesize rawType=_rawType;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *commits;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)initWithRawType:(id)arg1 resolvedType:(long long)arg2 identifier:(id)arg3 content:(id)arg4 url:(id)arg5 dateCreated:(id)arg6 dateUpdated:(id)arg7 participant:(id)arg8 parent:(id)arg9 attachments:(id)arg10 children:(id)arg11 addedCommits:(id)arg12 removedCommits:(id)arg13;
 - (id)initWithRawType:(id)arg1 resolvedType:(long long)arg2 identifier:(id)arg3 content:(id)arg4 url:(id)arg5 dateCreated:(id)arg6 dateUpdated:(id)arg7 participant:(id)arg8 parent:(id)arg9 attachments:(id)arg10 children:(id)arg11;
 
 @end

@@ -16,9 +16,9 @@
     NSString *_macroName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isListType) BOOL listType; // @synthesize listType=_listType;
 @property(readonly, copy) NSString *macroName; // @synthesize macroName=_macroName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *identifier;
 - (id)initWithMacroName:(id)arg1 isListType:(BOOL)arg2;

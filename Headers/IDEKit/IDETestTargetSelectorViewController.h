@@ -18,12 +18,12 @@
     NSButton *_bundleLoaderCheckbox;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *bundleLoaderCheckbox; // @synthesize bundleLoaderCheckbox=_bundleLoaderCheckbox;
 @property(retain) NSPopUpButton *testHostPopUp; // @synthesize testHostPopUp=_testHostPopUp;
 @property(nonatomic) BOOL shouldSetBundleLoader; // @synthesize shouldSetBundleLoader=_shouldSetBundleLoader;
 @property(retain, nonatomic) NSString *blueprintIdentifierToTest; // @synthesize blueprintIdentifierToTest=_blueprintIdentifierToTest;
 @property(retain, nonatomic) id <IDEBlueprint> unitTestBlueprint; // @synthesize unitTestBlueprint=_unitTestBlueprint;
-- (void).cxx_destruct;
 - (void)_rebuildTestHostPopUp;
 - (id)filteredBlueprints;
 - (id)selectedBlueprint;

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSArray *applications; // @synthesize applications=_applications;
 - (void).cxx_destruct;
+@property(readonly) NSArray *applications; // @synthesize applications=_applications;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

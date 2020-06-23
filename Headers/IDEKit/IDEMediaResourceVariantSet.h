@@ -17,12 +17,12 @@
     IDEMediaResourceFoldingStrategy *_foldingStrategy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEMediaResourceFoldingStrategy *foldingStrategy; // @synthesize foldingStrategy=_foldingStrategy;
 @property(readonly, nonatomic) NSSet *resources; // @synthesize resources=_resources;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) IDEMediaRepository *repository; // @synthesize repository=_repository;
 @property(readonly) IDEMediaType *mediaType; // @synthesize mediaType=_mediaType;
-- (void).cxx_destruct;
 - (void)populateAdditionalTypesToPasteboard:(id)arg1;
 - (void)removeAllResources;
 - (void)removeResource:(id)arg1;

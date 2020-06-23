@@ -24,8 +24,8 @@
 + (id)normalizeDestination:(id)arg1 withParent:(id)arg2;
 + (BOOL)canObjectFireActions:(id)arg1 inDocument:(id)arg2;
 + (id)actionTriggersForObject:(id)arg1 inDocument:(id)arg2;
-@property(copy, nonatomic) NSString *trigger; // @synthesize trigger=_trigger;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *trigger; // @synthesize trigger=_trigger;
 - (id)connectionByCompletingWithConnectionContext:(id)arg1;
 - (id)messageForConnectingAcrossRepeatingStoryboardRelationship;
 - (id)endPointForStoryboardCrossRepetitionWarning;

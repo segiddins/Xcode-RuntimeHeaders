@@ -27,15 +27,14 @@
 + (id)keyPathsForValuesAffectingisLocked_commit;
 + (id)keyPathsForValuesAffectingname_commit;
 + (id)keyPathsForValuesAffectingposition_commit;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) BOOL isReferenced; // @synthesize isReferenced=_isReferenced;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) BOOL isLocked; // @synthesize isLocked=_isLocked;
 @property(readonly, nonatomic) double zPosition; // @synthesize zPosition=_zPosition;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void)setPosition:(struct CGPoint)arg1;
-@property(readonly, nonatomic) struct CGPoint position;
-- (void).cxx_destruct;
+@property(nonatomic) struct CGPoint position; // @synthesize position=_position;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly, nonatomic) unsigned long long manipulationSupport;
 - (struct CGRect)displayRectInView:(id)arg1;

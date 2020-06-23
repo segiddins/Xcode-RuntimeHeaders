@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int weightSegStart; // @synthesize weightSegStart;
 @property(readonly, nonatomic) unsigned int weight; // @synthesize weight;
 @property(nonatomic) unsigned int maxNumExperiments; // @synthesize maxNumExperiments;
 @property(nonatomic) unsigned int definiteNumExperiments; // @synthesize definiteNumExperiments;
 @property(readonly, nonatomic) NSString *description; // @synthesize description;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index;
-- (void).cxx_destruct;
 - (void)debugPrintFormatted;
 - (id)initWithIndex:(unsigned int)arg1 withDescription:(id)arg2 andWeight:(unsigned int)arg3 andWeightSegStart:(unsigned int)arg4;
 - (void)encodeWithCoder:(id)arg1;

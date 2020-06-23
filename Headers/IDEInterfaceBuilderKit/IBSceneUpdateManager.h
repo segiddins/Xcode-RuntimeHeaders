@@ -28,9 +28,9 @@
 + (id)ibtesting_collectDiagnosticsReportsDuring:(CDUnknownBlockType)arg1;
 + (id)runSynchronousUpdateForRoot:(id)arg1 deviceTypeDescription:(id)arg2 targetRuntime:(id)arg3 request:(id)arg4 requestConfigurationBlock:(CDUnknownBlockType)arg5;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldUpdateScenesAsynchronously; // @synthesize shouldUpdateScenesAsynchronously=_shouldUpdateScenesAsynchronously;
 @property(nonatomic) __weak id <IBSceneUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateScenesIteratively;
 - (void)_updateScenes;
 - (void)_updateScene:(id)arg1 waitForRequests:(BOOL)arg2 populatingPendingRequestIDsByRequester:(id)arg3;
@@ -44,6 +44,7 @@
 - (void)noteObject:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (BOOL)isInIncrementalUpdateSession;
 - (void)establishIncrementalUpdateSessionForObject:(id)arg1 duringBlock:(CDUnknownBlockType)arg2;
+- (void)runIncrementalUpdateSessionForObject:(id)arg1 duringBlock:(CDUnknownBlockType)arg2;
 - (void)ibtesting_waitForPendingUpdates;
 - (void)waitForPendingUpdates;
 - (void)removeReferencesToObject:(id)arg1;

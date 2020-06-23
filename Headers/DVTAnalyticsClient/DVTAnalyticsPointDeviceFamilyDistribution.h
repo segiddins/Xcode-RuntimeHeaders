@@ -15,8 +15,8 @@
     NSArray *_deviceFamilyData;
 }
 
-@property(readonly) NSArray *deviceFamilyData; // @synthesize deviceFamilyData=_deviceFamilyData;
 - (void).cxx_destruct;
+@property(readonly) NSArray *deviceFamilyData; // @synthesize deviceFamilyData=_deviceFamilyData;
 - (id)JSONRepresentation;
 
 // Remaining properties

@@ -29,6 +29,7 @@
 }
 
 + (id)modifiedName:(id)arg1 forVariant:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *developerIDAppOutputPath; // @synthesize developerIDAppOutputPath=_developerIDAppOutputPath;
 @property(retain, nonatomic) DVTFilePath *developerIDPackageOutputPath; // @synthesize developerIDPackageOutputPath=_developerIDPackageOutputPath;
 @property(retain, nonatomic) DVTFilePath *appStorePackageOutputPath; // @synthesize appStorePackageOutputPath=_appStorePackageOutputPath;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) Class packagingStep; // @synthesize packagingStep=_packagingStep;
 @property(retain, nonatomic) DVTFilePath *destinationRoot; // @synthesize destinationRoot=_destinationRoot;
 @property(retain, nonatomic) DVTFilePath *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
-- (void).cxx_destruct;
 @property(readonly) DVTFilePath *swinfoOutputPath;
 - (id)assetPackManifestFileName:(id)arg1 forVariant:(id)arg2;
 - (id)assetPackFileName:(id)arg1 forVariant:(id)arg2;

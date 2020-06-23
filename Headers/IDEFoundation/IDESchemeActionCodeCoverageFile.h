@@ -16,9 +16,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *functions; // @synthesize functions=_functions;
 @property(readonly, nonatomic) NSString *documentLocation; // @synthesize documentLocation=_documentLocation;
-- (void).cxx_destruct;
 - (id)wrappedContainer;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

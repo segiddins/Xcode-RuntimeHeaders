@@ -23,8 +23,8 @@
     id <SKESceneViewDelegate> _selectionDelegate;
 }
 
-@property __weak id <SKESceneViewDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 - (void).cxx_destruct;
+@property __weak id <SKESceneViewDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 - (void)switchToNextCamera;
 - (void)didChangePointOfView;
 - (void)willChangePointOfView;

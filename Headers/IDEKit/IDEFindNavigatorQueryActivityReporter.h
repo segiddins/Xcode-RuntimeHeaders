@@ -16,8 +16,8 @@
     NSMapTable *_entriesByQuery;
 }
 
-@property(copy, nonatomic) NSArray *activityReports; // @synthesize activityReports=_reports;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *activityReports; // @synthesize activityReports=_reports;
 - (void)queryCompleted:(id)arg1;
 - (void)queryThrottled:(id)arg1;
 - (void)queryStallStatusChanged:(id)arg1;

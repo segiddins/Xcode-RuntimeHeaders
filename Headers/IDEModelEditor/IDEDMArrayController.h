@@ -13,8 +13,8 @@
     id <IDEDMArrayControllerDelegate> _delegate;
 }
 
-@property(retain) id <IDEDMArrayControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <IDEDMArrayControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)rearrangeObjects;
 
 @end

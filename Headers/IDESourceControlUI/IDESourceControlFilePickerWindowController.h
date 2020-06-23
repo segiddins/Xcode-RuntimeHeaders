@@ -22,10 +22,10 @@
     NSString *_messageText;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *messageText; // @synthesize messageText=_messageText;
 @property(copy) DVTSourceControlPathLocation *expandedLocation; // @synthesize expandedLocation=_expandedLocation;
 @property(retain) DVTSourceControlRepository *repository; // @synthesize repository=_repository;
-- (void).cxx_destruct;
 - (void)filePickerSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)cancel:(id)arg1;
 - (void)choose:(id)arg1;

@@ -25,6 +25,7 @@
     DVTObservingToken *_repairBusyObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *repairBusyObserver; // @synthesize repairBusyObserver=_repairBusyObserver;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) NSLayoutConstraint *sliceHeightConstraint; // @synthesize sliceHeightConstraint=_sliceHeightConstraint;
@@ -35,7 +36,6 @@
 @property(retain) NSTextField *signingIdentityLabel; // @synthesize signingIdentityLabel=_signingIdentityLabel;
 @property(retain) NSPopUpButton *signingIdentityPopUpButton; // @synthesize signingIdentityPopUpButton=_signingIdentityPopUpButton;
 @property(retain, nonatomic) id <IDESigningEditorCertificateDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)manageCertificates:(id)arg1;
 - (void)signingIdentityDidChangeOnPopUpButton:(id)arg1;

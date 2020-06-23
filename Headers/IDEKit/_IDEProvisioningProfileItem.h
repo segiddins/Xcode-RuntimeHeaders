@@ -16,11 +16,11 @@
     unsigned long long _rowHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
 @property(nonatomic) unsigned long long rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(retain, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

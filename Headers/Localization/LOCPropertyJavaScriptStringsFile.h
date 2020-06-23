@@ -22,13 +22,13 @@
     NSString *_lineSeparatorString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *lineSeparatorString; // @synthesize lineSeparatorString=_lineSeparatorString;
 @property(copy) NSData *rawDataContents; // @synthesize rawDataContents=_rawDataContents;
 @property BOOL lastLineHasNewLineChar; // @synthesize lastLineHasNewLineChar=_lastLineHasNewLineChar;
 @property BOOL autoEscapeUnescape; // @synthesize autoEscapeUnescape=_autoEscapeUnescape;
 @property unsigned long long encoding; // @synthesize encoding=_encoding;
 @property(copy) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (BOOL)writeTo:(id)arg1 withTranslation:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;
 - (id)createInternalGlossaryWithError:(id *)arg1;

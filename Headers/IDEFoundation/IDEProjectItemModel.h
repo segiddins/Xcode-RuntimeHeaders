@@ -21,6 +21,7 @@
     NSSet *_coalescableWriteableKeyPaths;
     BOOL _isEnabled;
     BOOL _needsPublishState;
+    BOOL _isPublisherObservationsTornDown;
     BOOL _willSetErrorShouldPreventPublish;
     id <IDECoalescableCapabilityEditingItemDelegate> _delegate;
     id <IDEProjectItemModelErrorDelegate> _errorDelegate;
@@ -35,8 +36,10 @@
 
 + (id)coalescableReadOnlyKeyPaths;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *willSetReceivedError; // @synthesize willSetReceivedError=_willSetReceivedError;
 @property(nonatomic) BOOL willSetErrorShouldPreventPublish; // @synthesize willSetErrorShouldPreventPublish=_willSetErrorShouldPreventPublish;
+@property(nonatomic) BOOL isPublisherObservationsTornDown; // @synthesize isPublisherObservationsTornDown=_isPublisherObservationsTornDown;
 @property(nonatomic) BOOL needsPublishState; // @synthesize needsPublishState=_needsPublishState;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedUpdateInvocation; // @synthesize delayedUpdateInvocation=_delayedUpdateInvocation;
 @property(retain, nonatomic) id <IDEFlightCheckingContext> flightCheckContext; // @synthesize flightCheckContext=_flightCheckContext;
@@ -47,7 +50,6 @@
 @property(retain, nonatomic) NSArray *flightChecks; // @synthesize flightChecks=_flightChecks;
 @property(nonatomic) __weak id <IDEProjectItemModelErrorDelegate> errorDelegate; // @synthesize errorDelegate=_errorDelegate;
 @property(nonatomic) __weak id <IDECoalescableCapabilityEditingItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *coalescableWriteableKeyPathToDataSource;
 - (void)wantsUpdateKeyPath:(id)arg1 value:(id)arg2;
 - (void)primitiveInvalidate;
@@ -59,6 +61,7 @@
 - (void)setUpPublisherObservations;
 - (BOOL)enableWithError:(id *)arg1;
 - (BOOL)hasDisclosableContent;
+- (BOOL)entitlementsContainsEntitlementKey:(id)arg1;
 - (BOOL)entitlementsContainsEntitlementKey;
 @property(readonly) NSObject<IDEInfoPlistCoordination> *infoPlistCoordinator;
 @property(readonly) NSObject<IDELinkedFrameworksCoordination> *linkedFrameworksCoordinator;

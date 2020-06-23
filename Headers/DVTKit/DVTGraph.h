@@ -29,6 +29,7 @@
     struct _DVTGraphInsets _graphScreenInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *yAxisTitle; // @synthesize yAxisTitle=_yAxisTitle;
 @property(copy, nonatomic) NSString *xAxisTitle; // @synthesize xAxisTitle=_xAxisTitle;
 @property(copy, nonatomic) NSString *graphTitle; // @synthesize graphTitle=_graphTitle;
@@ -37,7 +38,6 @@
 @property(nonatomic) struct _DVTGraphBounds viewableGraphBounds; // @synthesize viewableGraphBounds=_viewableGraphBounds;
 @property(nonatomic) struct _DVTGraphBounds graphBounds; // @synthesize graphBounds=_graphBounds;
 @property(readonly) NSArray *graphLayers; // @synthesize graphLayers=_graphLayers;
-- (void).cxx_destruct;
 - (BOOL)acceptsFirstResponder;
 - (void)moveRight:(id)arg1;
 - (void)moveLeft:(id)arg1;

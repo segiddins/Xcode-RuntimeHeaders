@@ -16,9 +16,9 @@
 }
 
 + (id)previewLoadingOperationQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *previewImage; // @synthesize previewImage=_previewImage;
 @property(retain, nonatomic) DVTFilePath *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
-- (void).cxx_destruct;
 - (void)complete:(CDUnknownBlockType)arg1;
 - (void)requestPreviewImageWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)createImageSource;

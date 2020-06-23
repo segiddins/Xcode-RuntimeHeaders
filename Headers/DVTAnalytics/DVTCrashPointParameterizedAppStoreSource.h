@@ -26,6 +26,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTCrashPointFilter *filter; // @synthesize filter=_filter;
 @property(readonly) DVTCrashPointParameters *filteredParameters; // @synthesize filteredParameters=_filteredParameters;
 @property __weak DVTCrashPointAppStoreSource *appStoreSource; // @synthesize appStoreSource=_appStoreSource;
@@ -34,7 +35,6 @@
 @property(retain) Class crashPointListClass; // @synthesize crashPointListClass=_crashPointListClass;
 @property(retain, nonatomic) _TtC12DVTAnalytics34AnalyticsAppStoreSourceRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(readonly) DVTAnalyticsDownloadMoreLogsOptions *_defaultCrashPointMoreLogsOptions; // @synthesize _defaultCrashPointMoreLogsOptions;
-- (void).cxx_destruct;
 - (id)_requestMoreLogsForCrashPointIdentifier:(id)arg1 withSession:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)_requestCrashPointForIdentifier:(id)arg1 withSession:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)_requestCrashPointForIdentifier:(id)arg1 withSession:(id)arg2 error:(id *)arg3;

@@ -16,11 +16,11 @@
     CDStruct_bf6d4a14 _inset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
 @property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(nonatomic) CDStruct_bf6d4a14 inset; // @synthesize inset=_inset;
 @property(readonly) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)awakeFromNib;

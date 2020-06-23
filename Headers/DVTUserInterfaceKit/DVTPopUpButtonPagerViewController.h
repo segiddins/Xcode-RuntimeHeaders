@@ -21,6 +21,7 @@
 }
 
 + (id)keyPathsForValuesAffectingHasSelectionChoice;
+- (void).cxx_destruct;
 @property __weak NSMenu *popUpMenu; // @synthesize popUpMenu=_popUpMenu;
 @property __weak NSButton *nextButton; // @synthesize nextButton=_nextButton;
 @property __weak NSButton *previousButton; // @synthesize previousButton=_previousButton;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL canSelectPrevious; // @synthesize canSelectPrevious=_canSelectPrevious;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)clickedNextButton:(id)arg1;
 - (void)clickedPreviousButton:(id)arg1;
 - (BOOL)_canSelectNext;

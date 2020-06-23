@@ -38,11 +38,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(copy) NSArray *appsThatNeedToBeQuitBeforeInstallCanProceed; // @synthesize appsThatNeedToBeQuitBeforeInstallCanProceed=_appsThatNeedToBeQuitBeforeInstallCanProceed;
 @property(copy) CDUnknownBlockType installationCompleteButtonHandler; // @synthesize installationCompleteButtonHandler=_installationCompleteButtonHandler;
 @property(copy) CDUnknownBlockType installationCompleteHandler; // @synthesize installationCompleteHandler;
-- (void).cxx_destruct;
 - (void)cancelQuitAppsThatNeedToBeQuitBeforeInstallationStarts:(id)arg1;
 - (void)quitAppsThatNeedToBeQuitBeforeInstallationStarts:(id)arg1;
 - (void)continueAfterSuccessfulInstallation:(id)arg1;

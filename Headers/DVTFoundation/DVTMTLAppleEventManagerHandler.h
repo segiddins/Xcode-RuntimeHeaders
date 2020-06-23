@@ -15,11 +15,12 @@
     DVTStackBacktrace *_creationBacktrace;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property SEL realHandleEventSelector; // @synthesize realHandleEventSelector=_realHandleEventSelector;
 @property __weak id realHandler; // @synthesize realHandler=_realHandler;
-- (void).cxx_destruct;
 - (void)handleAppleEvent:(id)arg1 withReplyEvent:(id)arg2;
+- (void)dealloc;
 
 @end
 

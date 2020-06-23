@@ -26,6 +26,8 @@
 - (void)toggleAuthorsShown:(id)arg1;
 - (BOOL)isAuthorsShown;
 - (BOOL)validateToggleAuthorsShownUserInterfaceItem:(id)arg1;
+- (void)openCodeReviewForLogItem:(id)arg1;
+- (void)openAuthorsViewForLogItem:(id)arg1;
 - (void)popoverDidShow;
 - (void)popoverDidClose;
 - (void)openCodeReviewForLogItem:(id)arg1;

@@ -9,13 +9,14 @@
 @interface IBDelegatedCanvasOverlayCallbackToken : NSObject
 {
     CDUnknownBlockType _callback;
-    double _priority;
+    long long _priority;
 }
 
 - (void).cxx_destruct;
+@property(readonly) long long priority; // @synthesize priority=_priority;
 - (void)invoke;
 - (long long)comparePriority:(id)arg1;
-- (id)initWithCallback:(CDUnknownBlockType)arg1 priority:(double)arg2;
+- (id)initWithCallback:(CDUnknownBlockType)arg1 priority:(long long)arg2;
 
 @end
 

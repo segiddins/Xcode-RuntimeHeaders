@@ -20,13 +20,13 @@
 
 + (id)viewWithIntegration:(id)arg1 isCurrent:(BOOL)arg2 cancellationHandler:(CDUnknownBlockType)arg3;
 + (id)durationFormatter;
+- (void).cxx_destruct;
 @property __weak NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
 @property(nonatomic) BOOL current; // @synthesize current=_current;
 @property(retain, nonatomic) XCSBuildQueueIntegration *integration; // @synthesize integration=_integration;
 @property(retain, nonatomic) NSTimer *ETATimer; // @synthesize ETATimer=_ETATimer;
-- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)updateETA:(id)arg1;
 - (id)thisIntegrationString;

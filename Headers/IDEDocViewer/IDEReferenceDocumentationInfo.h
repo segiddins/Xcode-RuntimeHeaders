@@ -22,13 +22,13 @@
 + (id)referenceDocumentationInfos;
 + (int)rawLanguageFor:(id)arg1;
 + (id)collectionDisplayTreeItemWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int sourceLanguage; // @synthesize sourceLanguage=_sourceLanguage;
 @property(readonly, nonatomic) DVTSourceCodeLanguage *sourceCodeLanguage; // @synthesize sourceCodeLanguage=_sourceCodeLanguage;
 @property(readonly, nonatomic) DNTDisplayTreeItem *backingExplorableIdentifier; // @synthesize backingExplorableIdentifier=_backingExplorableIdentifier;
 @property(readonly, nonatomic) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCollection:(id)arg1 identifier:(id)arg2;

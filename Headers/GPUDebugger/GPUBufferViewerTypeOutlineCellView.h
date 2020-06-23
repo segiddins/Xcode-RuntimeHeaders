@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUBufferViewerTextField *nameView; // @synthesize nameView=_nameView;
 @property(nonatomic) __weak id <GPUBufferViewerElement> element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (id)init;
 

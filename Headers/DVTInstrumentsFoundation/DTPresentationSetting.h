@@ -15,10 +15,10 @@
     NSString *_tooltip;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
-- (void).cxx_destruct;
 - (id)initWithShortName:(id)arg1 displayName:(id)arg2 tooltip:(id)arg3;
 
 @end

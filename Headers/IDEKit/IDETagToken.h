@@ -14,9 +14,9 @@
     CDStruct_5017ad51 _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDStruct_5017ad51 state; // @synthesize state=_state;
 @property(readonly) NSString *tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 @property(readonly) NSString *toolTip;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

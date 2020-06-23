@@ -16,11 +16,11 @@
     id _reference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id reference; // @synthesize reference=_reference;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 
 @end
 

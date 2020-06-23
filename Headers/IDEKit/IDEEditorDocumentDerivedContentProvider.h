@@ -20,9 +20,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) id <NSCopying> derivedContent; // @synthesize derivedContent=_derivedContent;
 @property(readonly) DVTFileDataType *derivedContentType; // @synthesize derivedContentType=_derivedContentType;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setDerivedContent:(id)arg1 ofType:(id)arg2;
 - (BOOL)hasClients;

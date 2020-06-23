@@ -24,12 +24,12 @@
     NSTextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsLabel; // @synthesize showsLabel=_showsLabel;
 @property(retain) NSTextField *textField; // @synthesize textField=_textField;
 @property(readonly) NSToolbarItem *item; // @synthesize item=_item;
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) BOOL useLabelInsteadOfPaletteLabel; // @synthesize useLabelInsteadOfPaletteLabel=_useLabelInsteadOfPaletteLabel;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly) struct CGRect titleRect;
 - (void)layoutBottomUp;

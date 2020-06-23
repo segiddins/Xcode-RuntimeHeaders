@@ -14,9 +14,9 @@
     CDUnknownBlockType _clickHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 - (void)didClickActionButton:(id)arg1;
 - (void)_updateActionButtonVisibility;
 

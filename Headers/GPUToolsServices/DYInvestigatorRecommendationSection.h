@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) BOOL ordered; // @synthesize ordered=_ordered;
 @property(retain, nonatomic) NSAttributedString *preamble; // @synthesize preamble=_preamble;
-- (void).cxx_destruct;
 - (void)printFormatted;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

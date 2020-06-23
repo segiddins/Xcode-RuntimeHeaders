@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingPerformingFiltering;
+- (void).cxx_destruct;
 @property(readonly) DVTTimeSlicedMainThreadWorkQueue *itemsToInvalidateChildArrangedItemsQueue; // @synthesize itemsToInvalidateChildArrangedItemsQueue=_itemsToInvalidateChildArrangedItemsQueue;
 @property(readonly) DVTTimeSlicedMainThreadWorkQueue *itemsToFilterQueue; // @synthesize itemsToFilterQueue=_itemsToFilterQueue;
-- (void).cxx_destruct;
 - (void)_handleObjectGraphDidChange:(id)arg1;
 - (void)_handleItemsPropertiesDidChange:(id)arg1;
 - (void)_invalidateParentsChildrenOf:(id)arg1;

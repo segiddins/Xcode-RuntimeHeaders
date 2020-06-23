@@ -19,9 +19,9 @@
     XCSUIStatusBadgesView *_hostBadgeView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIStatusBadgesView *hostBadgeView; // @synthesize hostBadgeView=_hostBadgeView;
 @property(retain) XCSUIStatusBadge *badge; // @synthesize badge=_badge;
-- (void).cxx_destruct;
 - (BOOL)wantsUpdateLayer;
 - (void)updateLayer;
 - (id)defaultBadgeCountTextColor;

@@ -15,10 +15,10 @@
     double _cachedRequiredHeight;
 }
 
+- (void).cxx_destruct;
 @property double cachedRequiredHeight; // @synthesize cachedRequiredHeight=_cachedRequiredHeight;
 @property __weak NSTextField *changesText; // @synthesize changesText=_changesText;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 @property(readonly) double requiredHeight;
 - (void)layoutChanges;
 - (id)textForControlledChanges:(id)arg1;

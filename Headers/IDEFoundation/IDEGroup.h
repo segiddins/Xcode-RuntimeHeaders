@@ -39,8 +39,8 @@
 + (id)keyPathsForValuesAffectingConflictStateForUpdateOrMerge;
 + (id)keyPathsForValuesAffectingSourceControlServerStatus;
 + (id)keyPathsForValuesAffectingSourceControlLocalStatus;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (BOOL)_structureEditRemoveSubitemsShouldCloseDocumentsUnderPathWithoutSaving;
 @property(readonly, getter=isLocationKnown) BOOL locationKnown;
 - (BOOL)createNewSubgroupAtIndex:(unsigned long long)arg1 createDirectory:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;

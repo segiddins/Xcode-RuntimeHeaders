@@ -31,6 +31,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSArray *validEditorCategories; // @synthesize validEditorCategories=_validEditorCategories;
 @property(copy) NSArray *defaultEditorCategories; // @synthesize defaultEditorCategories=_defaultEditorCategories;
 @property(nonatomic) BOOL showMiniIssueNavigators; // @synthesize showMiniIssueNavigators=_showMiniIssueNavigators;
@@ -41,7 +42,6 @@
 @property(nonatomic) int layout; // @synthesize layout=_layout;
 @property(retain) id <IDEEditorMultipleContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEEditorContext *selectedEditorContext; // @synthesize selectedEditorContext=_selectedEditorContext;
-- (void).cxx_destruct;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
 - (void)_splitView:(id)arg1 resizeVerticalSubviewsWithOldSize:(struct CGSize)arg2;

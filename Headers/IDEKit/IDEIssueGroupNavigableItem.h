@@ -19,9 +19,9 @@
 }
 
 + (id)keyPathsForValuesAffectingSubtitle;
+- (void).cxx_destruct;
 @property(nonatomic) long long showChildrenByType; // @synthesize showChildrenByType=_showChildrenByType;
 @property(nonatomic) BOOL showsCompressedStackFrames; // @synthesize showsCompressedStackFrames=_showsCompressedStackFrames;
-- (void).cxx_destruct;
 - (void)_changeThreadNavigableItem:(id)arg1;
 - (id)subtitle;
 - (id)childRepresentedObjects;

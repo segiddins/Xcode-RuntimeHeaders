@@ -19,8 +19,8 @@
 + (id)keyPathsForValuesDistributionMethod;
 + (id)availableDistributionMethodsForTasks:(id)arg1 archive:(id)arg2 logAspect:(id)arg3;
 + (id)availableOptionsForPropertyList;
-@property(readonly) NSNumber *distributionTask; // @synthesize distributionTask=_distributionTask;
 - (void).cxx_destruct;
+@property(readonly) NSNumber *distributionTask; // @synthesize distributionTask=_distributionTask;
 @property(retain) IDEDistributionMethod *distributionMethod;
 @property(readonly) NSArray *availableDistributionMethods;
 - (id)providedOutputContextPropertyNames;

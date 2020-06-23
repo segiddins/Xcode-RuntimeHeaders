@@ -24,6 +24,7 @@
     long long _clientDataOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long clientDataOffset; // @synthesize clientDataOffset=_clientDataOffset;
 @property(readonly, retain, nonatomic) NSString *clientDataURL; // @synthesize clientDataURL=_clientDataURL;
 @property(readonly, nonatomic) unsigned long long pointer; // @synthesize pointer=_pointer;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) int size; // @synthesize size=_size;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index=_index;
 @property(readonly, nonatomic) int attributeType; // @synthesize attributeType=_attributeType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProperties:(id)arg1;
 - (id)init;

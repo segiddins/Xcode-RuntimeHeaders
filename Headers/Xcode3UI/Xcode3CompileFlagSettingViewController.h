@@ -19,10 +19,10 @@
 }
 
 + (void)showCompileFlagPopoverRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3 defaultContent:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) NSString *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)close:(id)arg1;
 - (void)loadView;

@@ -31,9 +31,9 @@
     DVTObservingToken *_iccProfileNSDataForDataValueProviderObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL hasImageBeenRetrieved; // @synthesize hasImageBeenRetrieved=_hasImageBeenRetrieved;
 @property(readonly) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_imageWasFetched:(id)arg1;
 - (void)_failedToGetData;
 - (void)_releaseDataValue:(id)arg1;

@@ -37,10 +37,10 @@
 
 + (id)defaultViewNibName;
 + (id)nibName;
+- (void).cxx_destruct;
 @property BOOL currentlyUpdatingConsoleText; // @synthesize currentlyUpdatingConsoleText=_currentlyUpdatingConsoleText;
 @property(retain, nonatomic) DVTiOSDevice *device; // @synthesize device=_device;
 @property _Bool shouldWrapLines; // @synthesize shouldWrapLines;
-- (void).cxx_destruct;
 - (void)_drainTextBuffer;
 - (void)_clearTextBuffer;
 - (void)_appendToTextBuffer:(id)arg1;

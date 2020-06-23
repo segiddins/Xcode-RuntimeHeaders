@@ -15,10 +15,10 @@
     NSColor *_markerColor;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldDraw; // @synthesize shouldDraw=_shouldDraw;
 @property(retain) NSColor *markerColor; // @synthesize markerColor=_markerColor;
 @property double xPosition; // @synthesize xPosition=_xPosition;
-- (void).cxx_destruct;
 - (struct CGRect)_markerRectForVisibleGraphBounds:(struct _DVTGraphBounds)arg1;
 - (void)drawLayerWithVisibleBounds:(struct _DVTGraphBounds)arg1;
 - (id)initWithGraph:(id)arg1;

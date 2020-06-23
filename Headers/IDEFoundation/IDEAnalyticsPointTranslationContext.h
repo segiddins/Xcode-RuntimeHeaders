@@ -17,12 +17,12 @@
     NSMutableDictionary *_codeModulesByName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *codeModulesByName; // @synthesize codeModulesByName=_codeModulesByName;
 @property(retain) NSMutableDictionary *fileNameToFilePathMap; // @synthesize fileNameToFilePathMap=_fileNameToFilePathMap;
 @property(retain) NSSet *binaryUUIDs; // @synthesize binaryUUIDs=_binaryUUIDs;
 @property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
-- (void).cxx_destruct;
 - (id)codeModuleForName:(id)arg1;
 - (void)updateWithLoadedBinaries:(id)arg1 executablePath:(id)arg2;
 - (void)setCodeModule:(id)arg1 forName:(id)arg2 passesBuildProductDirFallback:(BOOL)arg3;

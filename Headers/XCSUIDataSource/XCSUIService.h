@@ -42,6 +42,7 @@
 
 + (id)serviceURLWithoutNavigableScheme:(id)arg1;
 + (id)serviceURLForServer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) XCSUIIntegrationStatus *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *shadowPassword; // @synthesize shadowPassword=_shadowPassword;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSString *lastCreatedBotID; // @synthesize lastCreatedBotID=_lastCreatedBotID;
 @property(nonatomic) BOOL attemptGuestAuthentication; // @synthesize attemptGuestAuthentication=_attemptGuestAuthentication;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)mainThread_updateLastKnownAuthenticationError:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)mainThread_updateLastKnownError:(id)arg1;
 - (void)clearTimer;

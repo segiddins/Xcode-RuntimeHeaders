@@ -30,6 +30,7 @@
 + (id)_fixupDocumentExtensionIdentifier:(id)arg1;
 + (id)editorHistoryItemForStateSavingDictionary:(id)arg1 forNavigableItemCoordinator:(id)arg2 forWorkspace:(id)arg3 error:(id *)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property BOOL cachedImageIsDark; // @synthesize cachedImageIsDark=_cachedImageIsDark;
 @property(copy) NSURL *documentContentsURL; // @synthesize documentContentsURL=_documentContentsURL;
@@ -40,7 +41,6 @@
 @property(readonly) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(readonly) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) NSImage *cachedImage;

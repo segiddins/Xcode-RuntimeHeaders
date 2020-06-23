@@ -32,13 +32,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _visibilityRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double magnification; // @synthesize magnification=_magnification;
 @property(nonatomic) struct CGRect visibilityRect; // @synthesize visibilityRect=_visibilityRect;
 @property(nonatomic) BOOL animating; // @synthesize animating=_animating;
 @property(nonatomic) BOOL statsVisible; // @synthesize statsVisible=_statsVisible;
 @property(readonly, nonatomic) __weak DependencyGraphVisualRepresentation *gvGraphVis; // @synthesize gvGraphVis=_gvGraphVis;
 @property(nonatomic) __weak DependencyViewerView_SpriteKit *dvView; // @synthesize dvView=_dvView;
-- (void).cxx_destruct;
 - (void)menuDidClose:(id)arg1;
 - (void)menu:(id)arg1 willHighlightItem:(id)arg2;
 - (id)contextMenuForLocaction:(struct CGPoint)arg1;

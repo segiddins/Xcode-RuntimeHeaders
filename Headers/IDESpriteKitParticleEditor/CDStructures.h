@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTDelayedInvocation, NSColor;
+@class DVTDelayedInvocation, NSColor, NSObject;
 
 #pragma mark Blocks
 
@@ -41,14 +41,6 @@ struct GTFGKEdge {
     id _field2;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
 struct SKCameraState {
     double cachedViewScale;
     struct CGPoint cachedViewTranslation;
@@ -77,7 +69,7 @@ struct SKColorPalette {
 
 struct SKInputData {
     struct SKSceneEditInputLocation location;
-    struct NSObject *clickedNode;
+    NSObject *clickedNode;
     unsigned long long state;
     unsigned long long handle;
     struct vector<CGPoint, std::__1::allocator<CGPoint>> startPositions;
@@ -86,7 +78,7 @@ struct SKInputData {
     struct CGPoint startScale;
     struct CGPoint startAnchorPoint;
     struct vector<NSObject<SKSceneManipulating, SKSceneNavigating>*, std::__1::allocator<NSObject<SKSceneManipulating, SKSceneNavigating>*>> targetItems;
-    struct NSObject *targetItem;
+    NSObject *targetItem;
 };
 
 struct SKManipulationHandleSet {
@@ -113,7 +105,7 @@ struct SKSceneEditInputLocation {
 };
 
 struct SKSceneOverlayHandleInfo {
-    struct NSObject *_field1;
+    id _field1;
     unsigned long long _field2;
 };
 

@@ -21,6 +21,7 @@
     NSTextField *_passwordField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *passwordField; // @synthesize passwordField=_passwordField;
 @property(nonatomic) __weak NSTextField *usernameField; // @synthesize usernameField=_usernameField;
 @property BOOL authenticateAsRegisteredUser; // @synthesize authenticateAsRegisteredUser=_authenticateAsRegisteredUser;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property(retain, nonatomic) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) XCSUIAddServerWindowController *pagingSheetWindowController; // @synthesize pagingSheetWindowController=_pagingSheetWindowController;
-- (void).cxx_destruct;
 - (void)windowDidUpdate:(id)arg1;
 - (void)cancelAction:(id)arg1;
 - (void)goBackAction:(id)arg1;

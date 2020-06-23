@@ -17,8 +17,8 @@
 
 + (id)pdfNavigableForDocumentURL:(id)arg1 PDFOutline:(id)arg2;
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
-@property(retain) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 - (void).cxx_destruct;
+@property(retain) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;

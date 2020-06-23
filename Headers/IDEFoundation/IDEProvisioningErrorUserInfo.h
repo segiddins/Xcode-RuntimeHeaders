@@ -21,6 +21,7 @@
     DVTSigningCertificate *_certificate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSigningCertificate *certificate; // @synthesize certificate=_certificate;
 @property(retain, nonatomic) DVTDeveloperAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) NSString *specifier; // @synthesize specifier=_specifier;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSNumber *errorAction; // @synthesize errorAction=_errorAction;
 @property(retain, nonatomic) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
 @property(retain, nonatomic) NSString *provisionableName; // @synthesize provisionableName=_provisionableName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithUserInfo:(id)arg1;

@@ -16,7 +16,7 @@
 - (id)description;
 - (BOOL)hasPerfTests;
 @property(readonly, nonatomic) NSArray *testClasses;
-- (void)setTestClasses:(struct NSArray *)arg1;
+- (void)setTestClasses:(id)arg1;
 
 @end
 

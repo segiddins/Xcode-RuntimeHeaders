@@ -15,10 +15,10 @@
     struct CGRect _cellFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect cellFrame; // @synthesize cellFrame=_cellFrame;
 @property(retain, nonatomic) IDEConfigurableDataNode *dataNode; // @synthesize dataNode=_dataNode;
 @property(retain, nonatomic) XCBuildResultsTextLayout *textLayout; // @synthesize textLayout=_textLayout;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)enterSelection:(id)arg1;
 - (void)useSelectionForReplace:(id)arg1;

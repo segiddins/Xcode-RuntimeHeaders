@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)showRESTReferenceNavigator:(id)arg1;
-- (void)showJSReferenceNavigator:(id)arg1;
 - (void)showSwiftReferenceNavigator:(id)arg1;
 - (void)showObjectiveCReferenceNavigator:(id)arg1;
 - (void)updateWithURL:(id)arg1 explorableIdentifier:(id)arg2;

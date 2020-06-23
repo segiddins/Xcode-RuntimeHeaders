@@ -49,8 +49,8 @@
 + (id)logAspect;
 + (BOOL)dvtAlwaysPublishMetrics;
 + (BOOL)dvtDisableMetricsReporting;
-@property(copy) NSString *projectName; // @synthesize projectName=_projectName;
 - (void).cxx_destruct;
+@property(copy) NSString *projectName; // @synthesize projectName=_projectName;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)populateCommonMetrics;

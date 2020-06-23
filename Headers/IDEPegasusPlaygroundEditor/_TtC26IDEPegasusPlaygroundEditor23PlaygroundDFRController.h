@@ -11,6 +11,7 @@
 
 @class MISSING_TYPE;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor23PlaygroundDFRController : DVTInvalidation_NSObject <NSTouchBarDelegate, IDEWorkspaceRunGroupFunctionBarOverride>
 {
     MISSING_TYPE *editor;

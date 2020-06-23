@@ -18,9 +18,9 @@
 
 + (id)DFITokenWithOptions:(id)arg1 selectedIndex:(unsigned long long)arg2 type:(long long)arg3;
 + (id)DFITokenWithOptions:(id)arg1 selection:(id)arg2 type:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id selection; // @synthesize selection=_selection;
 @property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)menuWithAction:(SEL)arg1 target:(id)arg2 tokenField:(id)arg3;
 @property(retain) NSString *displayString;
 @property(retain) NSString *editingString;

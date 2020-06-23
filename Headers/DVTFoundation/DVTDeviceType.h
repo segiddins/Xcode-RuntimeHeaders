@@ -35,6 +35,7 @@
 + (id)parentDeviceTypeForDeviceType:(id)arg1;
 + (id)deviceTypeWithIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSSet *requiredDeviceSpecifierOptions; // @synthesize requiredDeviceSpecifierOptions=_requiredDeviceSpecifierOptions;
 @property(readonly, copy) NSSet *knownDeviceSpecifierOptions; // @synthesize knownDeviceSpecifierOptions=_knownDeviceSpecifierOptions;
 @property(readonly, copy) NSDictionary *deviceSpecifierOptionDefaults; // @synthesize deviceSpecifierOptionDefaults=_deviceSpecifierOptionDefaults;
@@ -43,7 +44,6 @@
 @property(readonly, copy) NSString *UTI; // @synthesize UTI=_UTI;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)_isFilteredDevice:(id)arg1;
 - (BOOL)_isMatchedDevice:(id)arg1;
 - (id)_baseDeviceType;

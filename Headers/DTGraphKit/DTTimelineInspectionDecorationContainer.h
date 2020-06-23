@@ -16,10 +16,10 @@
     DTTimelineDecoratedPlane *_plane;
 }
 
-@property(nonatomic) __weak DTTimelineDecoratedPlane *plane; // @synthesize plane=_plane;
-@property(retain, nonatomic) XRIntKeyedDictionary *associatedObjects; // @synthesize associatedObjects=_associatedObjects;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DTTimelineDecoratedPlane *plane; // @synthesize plane=_plane;
+@property(retain, nonatomic) XRIntKeyedDictionary *associatedObjects; // @synthesize associatedObjects=_associatedObjects;
 - (void)cancel;
 - (id)decorationAtTime:(unsigned long long)arg1;
 - (id)objectForLabel:(unsigned long long)arg1;

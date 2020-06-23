@@ -26,6 +26,7 @@
 + (id)keyPathsForValuesAffectingInspectedDestinationEntity;
 + (id)keyPathsForValuesAffectingFilteredRelationshipsWithNoInverse;
 + (id)keyPathsForValuesAffectingPossibleInverseRelationships;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ordered; // @synthesize ordered=_ordered;
 @property(readonly) BOOL toMany; // @synthesize toMany=_toMany;
 @property(retain, nonatomic) CDMRelationship *inverseRelationship; // @synthesize inverseRelationship=_inverseRelationship;
@@ -33,7 +34,6 @@
 @property(readonly) unsigned long long maxCount; // @synthesize maxCount=_maxCount;
 @property(readonly) unsigned long long minCount; // @synthesize minCount=_minCount;
 @property(retain, nonatomic) CDMEntity *destinationEntity; // @synthesize destinationEntity=_destinationEntity;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)encodeXMLElement;
 - (id)xmlElementAttributes;

@@ -14,9 +14,9 @@
 
 + (id)wrapDictionary:(id)arg1 inProxy:(Class)arg2 forContainer:(id)arg3 andAccessor:(id)arg4;
 + (id)wrapItemOfDictionary:(id)arg1 forKey:(id)arg2 inProxy:(Class)arg3 forContainer:(id)arg4 andAccessor:(id)arg5;
+- (void).cxx_destruct;
 @property(retain) id collection; // @synthesize collection=_collection;
 @property(retain) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)objectSpecifier;
 - (BOOL)isEqual:(id)arg1;
 - (void)setValue:(id)arg1;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _viewDidEndLiveResizeCallback;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType viewDidEndLiveResizeCallback; // @synthesize viewDidEndLiveResizeCallback=_viewDidEndLiveResizeCallback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType viewDidEndLiveResizeCallback; // @synthesize viewDidEndLiveResizeCallback=_viewDidEndLiveResizeCallback;
 - (void)viewDidEndLiveResize;
 
 @end

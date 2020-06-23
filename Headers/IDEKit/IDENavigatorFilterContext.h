@@ -20,6 +20,7 @@
 }
 
 + (id)contextWithType:(long long)arg1 image:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *toggleKeyPathObservingToken; // @synthesize toggleKeyPathObservingToken=_toggleKeyPathObservingToken;
 @property(retain) id toggleTarget; // @synthesize toggleTarget=_toggleTarget;
 @property(copy) NSString *toggleKeyPath; // @synthesize toggleKeyPath=_toggleKeyPath;
@@ -27,7 +28,6 @@
 @property(retain) IDENavigatorSearchFilterControlBar *navigatorFilterControlBar; // @synthesize navigatorFilterControlBar=_navigatorFilterControlBar;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_typeDescription;
 - (id)description;
 - (void)dealloc;

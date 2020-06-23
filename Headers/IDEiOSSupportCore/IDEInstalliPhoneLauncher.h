@@ -13,8 +13,8 @@
     DVTiOSDevice *_device;
 }
 
-@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void)terminate;
 - (void)performWorkerAction;
 - (BOOL)preflightWithError:(id *)arg1 recoverable:(char *)arg2 shouldRetry:(char *)arg3;

@@ -23,12 +23,12 @@
 }
 
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(copy, nonatomic) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
 @property(retain, nonatomic) NSDictionary *testKeyPathsAndTests; // @synthesize testKeyPathsAndTests=_testKeyPathsAndTests;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) NSString *reportType; // @synthesize reportType=_reportType;
-- (void).cxx_destruct;
 - (id)reportDocument;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (void)primitiveInvalidate;

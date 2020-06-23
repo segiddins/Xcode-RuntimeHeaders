@@ -18,9 +18,9 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property(retain) XCSUIBotDefinition_SchedulingEditor *schedulingEditor; // @synthesize schedulingEditor=_schedulingEditor;
 @property BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
-- (void).cxx_destruct;
 - (BOOL)canGoForward;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

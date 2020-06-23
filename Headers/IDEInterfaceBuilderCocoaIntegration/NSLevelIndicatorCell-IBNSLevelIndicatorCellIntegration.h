@@ -11,10 +11,16 @@
 @class NSString;
 
 @interface NSLevelIndicatorCell (IBNSLevelIndicatorCellIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedMinValue;
++ (id)keyPathsForValuesAffectingIbInspectedMaxValue;
 + (id)keyPathsForValuesAffectingIbInspectedImage;
 + (id)keyPathsForValuesAffectingIbStyleIsRating;
 + (id)keyPathsForValuesAffectingIbStyleIsCapacity;
 + (id)keyPathsForValuesAffectingIbInspectedLevelIndicatorStyle;
+- (void)setIbInspectedMinValue:(double)arg1;
+- (double)ibInspectedMinValue;
+- (void)setIbInspectedMaxValue:(double)arg1;
+- (double)ibInspectedMaxValue;
 - (long long)ibPreferredResizeDirectionMask;
 - (Class)ibPreferredControlClass;
 - (unsigned long long)ibPreferredMatrixMode;

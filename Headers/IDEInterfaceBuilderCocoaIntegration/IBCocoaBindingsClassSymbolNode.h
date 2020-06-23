@@ -15,10 +15,10 @@
     NSString *_parentKey;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *parentKey; // @synthesize parentKey=_parentKey;
 @property(retain) IBCocoaBindingsClassSymbolNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(copy) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)initWithClassName:(id)arg1 parentNode:(id)arg2 parentKey:(id)arg3;
 
 @end

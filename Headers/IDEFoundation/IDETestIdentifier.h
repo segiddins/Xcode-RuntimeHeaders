@@ -17,10 +17,10 @@
     NSString *_methodName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *methodName; // @synthesize methodName=_methodName;
 @property(readonly, copy) NSString *suiteName; // @synthesize suiteName=_suiteName;
 @property(readonly, copy) NSString *identifierString; // @synthesize identifierString=_identifierString;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *displayName;
 @property(readonly, copy) NSString *languageAgnosticIdentifierString;
 - (unsigned long long)hash;

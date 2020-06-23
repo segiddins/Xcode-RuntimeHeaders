@@ -34,6 +34,7 @@
 }
 
 + (id)defaultPixelFormat;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DYOpenGLViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double checkerboardGridSize; // @synthesize checkerboardGridSize=_checkerboardGridSize;
 @property(copy, nonatomic) NSColor *checkerboardColor1; // @synthesize checkerboardColor1=_checkerboardColor1;
@@ -43,7 +44,6 @@
 @property(nonatomic) double gridMinScale; // @synthesize gridMinScale=_gridMinScale;
 @property(nonatomic) double renderScale; // @synthesize renderScale=_renderScale;
 @property(nonatomic) struct CGRect renderRect; // @synthesize renderRect=_renderRect;
-- (void).cxx_destruct;
 - (void)renderIntoSurface:(struct __IOSurface **)arg1;
 - (BOOL)dumpImage:(id)arg1;
 -     // Error parsing type: {DYPixelValue=I(?=[4c][4C][4s][4S][4i][4I][4q][4Q][4 ][4f][4d])}28@0:8I16I20I24, name: readPixelAtX:y:z:

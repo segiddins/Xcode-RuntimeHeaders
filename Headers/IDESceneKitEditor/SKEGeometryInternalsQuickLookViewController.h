@@ -15,8 +15,8 @@
     SCNView *_sceneView;
 }
 
-@property(readonly) SCNView *sceneView; // @synthesize sceneView=_sceneView;
 - (void).cxx_destruct;
+@property(readonly) SCNView *sceneView; // @synthesize sceneView=_sceneView;
 - (BOOL)program:(id)arg1 bindValueForSymbol:(id)arg2 atLocation:(unsigned int)arg3 programID:(unsigned int)arg4 renderer:(id)arg5;
 - (id)vertexColorsMaterial;
 - (id)textureCoordinatesMaterial;

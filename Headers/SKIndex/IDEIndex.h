@@ -75,13 +75,13 @@
 + (id)compilerInvocationLogAspect;
 + (id)metricLogAspect;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long indexerToken; // @synthesize indexerToken=_indexerToken;
 @property(readonly, nonatomic) DVTFilePath *databaseFile; // @synthesize databaseFile=_databaseFile;
 @property(readonly, nonatomic) DVTFilePath *workspaceFile; // @synthesize workspaceFile=_workspaceFile;
 @property(readonly, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property BOOL avoidDelaysForTesting; // @synthesize avoidDelaysForTesting=_avoidDelaysForTesting;
 @property(readonly, nonatomic) IDEBoltIndexDatabase *database; // @synthesize database=_workspaceDatabase;
-- (void).cxx_destruct;
 - (void)_filesContainingWordUpdate:(long long)arg1 results:(id)arg2 isFinished:(BOOL)arg3;
 - (void)cancelFindFiles:(long long)arg1;
 - (BOOL)filesContainingWord:(id)arg1 handler:(CDUnknownBlockType)arg2;

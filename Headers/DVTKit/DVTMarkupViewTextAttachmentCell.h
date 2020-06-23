@@ -13,8 +13,8 @@
     NSView *_markupView;
 }
 
-@property(retain) NSView *markupView; // @synthesize markupView=_markupView;
 - (void).cxx_destruct;
+@property(retain) NSView *markupView; // @synthesize markupView=_markupView;
 - (id)viewWithFrame:(struct CGRect)arg1 forView:(id)arg2 characterIndex:(unsigned long long)arg3 layoutManager:(id)arg4;
 - (struct CGSize)cellSize;
 

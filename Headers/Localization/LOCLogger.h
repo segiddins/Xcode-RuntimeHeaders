@@ -20,6 +20,7 @@
 }
 
 + (id)logMessage:(id)arg1 withCategory:(unsigned long long)arg2 timeStamp:(BOOL)arg3;
+- (void).cxx_destruct;
 @property BOOL debugMode; // @synthesize debugMode=_debugMode;
 @property(retain) NSMutableArray *messageQueue; // @synthesize messageQueue=_messageQueue;
 @property(retain) NSFileHandle *stderrHandler; // @synthesize stderrHandler=_stderrHandler;
@@ -27,7 +28,6 @@
 @property(retain) NSFileHandle *logFileHandler; // @synthesize logFileHandler=_logFileHandler;
 @property(retain) NSString *logFilePath; // @synthesize logFilePath=_logFilePath;
 @property long long flushThreshold; // @synthesize flushThreshold=_flushThreshold;
-- (void).cxx_destruct;
 - (void)logFormattedMessages:(id)arg1 to:(unsigned long long)arg2 forceFlush:(BOOL)arg3;
 - (void)logMessages:(id)arg1 to:(unsigned long long)arg2 category:(unsigned long long)arg3 timeStamp:(BOOL)arg4;
 - (void)logMessages:(id)arg1 to:(unsigned long long)arg2;

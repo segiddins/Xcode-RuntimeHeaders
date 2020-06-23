@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)asyncLoadingSupported;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *renderTargetArrayIndexButton; // @synthesize renderTargetArrayIndexButton=_renderTargetArrayIndexButton;
 @property __weak NSProgressIndicator *debugProgress; // @synthesize debugProgress=_debugProgress;
 @property __weak NSButton *debugButton; // @synthesize debugButton=_debugButton;
@@ -75,7 +76,6 @@ __attribute__((visibility("hidden")))
 @property __weak DVTBorderedView *bottomToolBar; // @synthesize bottomToolBar=_bottomToolBar;
 - (void)setForceSelection:(BOOL)arg1;
 - (BOOL)forceSelection;
-- (void).cxx_destruct;
 - (void)GPUDebugger_exportRenderBuffer:(id)arg1;
 - (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
 - (struct CGPoint)_getLoupePositionViewsPosition:(id)arg1;

@@ -21,10 +21,12 @@
 - (unsigned long long)canvasView:(IBCanvasView *)arg1 draggingUpdated:(id <NSDraggingInfo>)arg2;
 - (unsigned long long)canvasView:(IBCanvasView *)arg1 draggingEntered:(id <NSDraggingInfo>)arg2;
 - (DVTDraggedImageState *)canvasView:(IBCanvasView *)arg1 draggedImageState:(id <DVTDraggingInfo>)arg2;
+- (void)canvasViewDidStopSuppressingTrackingAreaUpdates:(IBCanvasView *)arg1;
 - (void)canvasViewWillInvalidateCursorRects:(IBCanvasView *)arg1;
 - (void)canvasViewDidUpdateTrackingAreas:(IBCanvasView *)arg1;
 - (void)canvasViewResetCursorRects:(IBCanvasView *)arg1;
 - (void)canvasViewWillUpdateTrackingAreas:(IBCanvasView *)arg1;
+- (void)canvasViewWindowResizeTest:(IBCanvasView *)arg1;
 - (void)canvasViewRunResizeTest:(IBCanvasView *)arg1;
 - (void)canvasViewRunScrollTest:(IBCanvasView *)arg1;
 - (void)canvasViewRunZoomTest:(IBCanvasView *)arg1;

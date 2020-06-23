@@ -18,10 +18,10 @@
 + (id)alternateGroupResultForAlternates:(id)arg1;
 + (id)orderedResutlsByCombiningAlternates:(id)arg1;
 + (id)flattenAndOrderAlternates:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *alternatesExcludingPrimaryChoice; // @synthesize alternatesExcludingPrimaryChoice=_alternatesExcludingPrimaryChoice;
 @property(readonly) NSArray *alternatesIncludingPrimaryChoice; // @synthesize alternatesIncludingPrimaryChoice=_alternatesIncludingPrimaryChoice;
 @property(readonly) IDEOpenQuicklyResult *primaryResult; // @synthesize primaryResult=_primaryResult;
-- (void).cxx_destruct;
 - (id)childResults;
 - (BOOL)representsAlternativeOfResult:(id)arg1;
 - (unsigned long long)hashForAlternateIdentity;

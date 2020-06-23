@@ -13,8 +13,8 @@
     IBAutolayoutMisplacementStatus *_status;
 }
 
-@property(readonly, nonatomic) IBAutolayoutMisplacementStatus *status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBAutolayoutMisplacementStatus *status; // @synthesize status=_status;
 - (id)initWithStatus:(id)arg1;
 
 @end

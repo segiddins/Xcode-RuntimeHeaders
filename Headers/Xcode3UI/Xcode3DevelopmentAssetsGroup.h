@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTNotificationToken *referencePathChangedNotificationObservation; // @synthesize referencePathChangedNotificationObservation=_referencePathChangedNotificationObservation;
 @property(retain, nonatomic) DVTNotificationToken *referenceRemovedNotificationObservation; // @synthesize referenceRemovedNotificationObservation=_referenceRemovedNotificationObservation;
-- (void).cxx_destruct;
 - (BOOL)containsItemIdenticalTo:(id)arg1;
 - (BOOL)removeItemsAtIndexes:(id)arg1;
 - (BOOL)canRemoveItemsAtIndexes:(id)arg1;

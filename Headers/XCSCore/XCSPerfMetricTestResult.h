@@ -28,6 +28,7 @@
 }
 
 + (id)perfMetricResultWithTestResult:(id)arg1 name:(id)arg2 identifier:(id)arg3 type:(unsigned long long)arg4 unit:(id)arg5 iterations:(id)arg6 baseline:(id)arg7 maxPercentRegression:(double)arg8 maxPercentRelativeStandardDeviation:(double)arg9 hasPassed:(BOOL)arg10 validationErrors:(id *)arg11;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long deviceCount; // @synthesize deviceCount=_deviceCount;
 @property(nonatomic) __weak XCSTestResult *testResult; // @synthesize testResult=_testResult;
 @property(retain, nonatomic) NSArray *iterations; // @synthesize iterations=_iterations;
@@ -43,9 +44,8 @@
 @property(copy, nonatomic) NSString *unit; // @synthesize unit;
 @property(nonatomic) unsigned long long type; // @synthesize type;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
-- (void)_setRelativeStandardDeviationWithIterations:(struct NSArray *)arg1;
-- (void)_setAverageMinMaxForPerfMetricWithIterations:(struct NSArray *)arg1;
+- (void)_setRelativeStandardDeviationWithIterations:(id)arg1;
+- (void)_setAverageMinMaxForPerfMetricWithIterations:(id)arg1;
 - (BOOL)_validateWithTestResult:(id)arg1 name:(id)arg2 identifier:(id)arg3 type:(unsigned long long)arg4 unit:(id)arg5 iterations:(id)arg6 baseline:(id)arg7 hasPassed:(BOOL)arg8 validationErrors:(id *)arg9;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)saveRepresentation;

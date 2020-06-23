@@ -19,6 +19,7 @@
     NSArray *_subactivities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subactivities; // @synthesize subactivities=_subactivities;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) NSDate *finish; // @synthesize finish=_finish;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) XCSIntegrationAsset *memoryGraph;
 @property(readonly, nonatomic) XCSIntegrationAsset *diagnosticReport;
 @property(readonly, nonatomic) XCSIntegrationAsset *snapshot;

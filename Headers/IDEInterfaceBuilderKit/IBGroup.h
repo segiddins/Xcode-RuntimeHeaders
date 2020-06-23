@@ -20,9 +20,9 @@
 }
 
 + (long long)ibMemberType;
+- (void).cxx_destruct;
 @property __weak id <IBGroupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTMutableOrderedSet *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)ibMemberIDInObjectContainer:(id)arg1;
 - (id)objectWithIdentifier:(id)arg1;
 - (id)identifierForObject:(id)arg1;

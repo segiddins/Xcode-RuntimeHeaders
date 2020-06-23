@@ -15,8 +15,8 @@
     AKAppleIDAuthenticationController *_appleIDController;
 }
 
-@property(retain) AKAppleIDAuthenticationController *appleIDController; // @synthesize appleIDController=_appleIDController;
 - (void).cxx_destruct;
+@property(retain) AKAppleIDAuthenticationController *appleIDController; // @synthesize appleIDController=_appleIDController;
 - (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)_addAccountWithResults:(id)arg1;
 - (id)accountCredentialsForResults:(id)arg1;

@@ -20,11 +20,11 @@
     id <IDEOpenQuicklyTableCellViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEOpenQuicklyTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSTextField *subtitleField; // @synthesize subtitleField=_subtitleField;
 @property(readonly) IDEOpenQuicklyTextField *titleField; // @synthesize titleField=_titleField;
 @property(readonly) NSImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)alternatesIndicatorToggleAlternatesVisibility:(id)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 @property(retain) NSString *alternateIndicatorTitle;

@@ -7,7 +7,7 @@
 @class NSError, NSString, NSWindow;
 
 @protocol IDEOperationViewDelegate
-@property(readonly) NSWindow *window;
+@property(nonatomic, readonly) NSWindow *window;
 - (void)endSheetImmediately;
 - (void)endSheet;
 - (void)enablePrimaryButton:(BOOL)arg1;

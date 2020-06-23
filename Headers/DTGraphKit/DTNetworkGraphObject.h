@@ -17,11 +17,11 @@
     id <NSObject> entity;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSBezierPath *decorativePath; // @synthesize decorativePath;
 @property(retain) NSBezierPath *path; // @synthesize path;
 @property BOOL isSelected; // @synthesize isSelected;
 @property(retain) id <NSObject> entity; // @synthesize entity;
-- (void).cxx_destruct;
 
 @end
 

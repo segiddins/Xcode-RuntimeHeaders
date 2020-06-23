@@ -32,6 +32,7 @@
 + (id)keyPathsForValuesAffectingFilterProgress;
 + (BOOL)automaticallyNotifiesObserversOfRootNavigableItem;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSView *_primaryFilterControl; // @synthesize _primaryFilterControl=__primaryFilterControl;
 @property(nonatomic, getter=isFilteringEnabled) BOOL filteringEnabled; // @synthesize filteringEnabled=_filteringEnabled;
 @property BOOL wantsUniquingNavigableItemCoordinator; // @synthesize wantsUniquingNavigableItemCoordinator=_wantsUniquingNavigableItemCoordinator;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) IDENavigableItemFilter *filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) IDENavigableItemAsyncFilteringCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain, nonatomic) IDENavigableItem *rootNavigableItem; // @synthesize rootNavigableItem=_rootNavigableItem;
-- (void).cxx_destruct;
 - (void)willForgetNavigableItems:(id)arg1;
 - (void)_navigableItemCoordinatorWillForgetNavigableItems:(id)arg1;
 - (void)focusedEditorDidSelectItem;

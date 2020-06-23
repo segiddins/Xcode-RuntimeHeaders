@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation11IDETestPlan.h>
 
-#import <IDEFoundation/IDECodeCoverageProviding-Protocol.h>
-
-@interface _TtC13IDEFoundation11IDETestPlan (IDEFoundation) <IDECodeCoverageProviding>
+@interface _TtC13IDEFoundation11IDETestPlan (IDEFoundation)
 - (BOOL)isCodeCoverageEnabled;
 
 // Remaining properties

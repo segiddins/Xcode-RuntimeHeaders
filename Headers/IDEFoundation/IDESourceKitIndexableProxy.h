@@ -20,8 +20,8 @@
     id <IDEIndexable><DVTInvalidation> _indexableObject;
 }
 
-@property(retain) id <IDEIndexable><DVTInvalidation> indexableObject; // @synthesize indexableObject=_indexableObject;
 - (void).cxx_destruct;
+@property(retain) id <IDEIndexable><DVTInvalidation> indexableObject; // @synthesize indexableObject=_indexableObject;
 @property(readonly) NSSet *supportedPlatformsForIndexing;
 @property(readonly, getter=isUnitTest) BOOL unitTest;
 @property(readonly, copy) NSString *productType;

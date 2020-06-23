@@ -30,6 +30,7 @@
 }
 
 + (id)debugSteppingSegmentedControlWithTarget:(id)arg1 action:(SEL)arg2;
+- (void).cxx_destruct;
 @property(retain) id optionKeyMonitor; // @synthesize optionKeyMonitor=_optionKeyMonitor;
 @property(nonatomic) BOOL onlyAllowStepByInstructionBehavior; // @synthesize onlyAllowStepByInstructionBehavior=_onlyAllowStepByInstructionBehavior;
 @property SEL stepOutAction; // @synthesize stepOutAction=_stepOutAction;
@@ -47,7 +48,6 @@
 @property(retain) NSImage *stepOverByInstructionImage; // @synthesize stepOverByInstructionImage=_stepOverByInstructionImage;
 @property(retain) NSImage *stepOverImage; // @synthesize stepOverImage=_stepOverImage;
 @property(nonatomic) long long steppingMode; // @synthesize steppingMode=_steppingMode;
-- (void).cxx_destruct;
 - (void)_updateImagesForStepByInstructionMode;
 - (void)_updateImagesForStepSuspendingOtherThreadsMode;
 - (void)_updateImagesForStepByLineMode;

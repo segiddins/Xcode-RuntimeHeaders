@@ -10,7 +10,7 @@
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/UNUserNotificationCenterDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IDEBuildTimeStatistics, IDERemoteNotificationRegistration, NSArray, NSDictionary, NSMenuItem, NSMutableDictionary, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, IDEBuildTimeStatistics, IDERemoteNotificationRegistration, IDEUserNotificationCenter, NSArray, NSDictionary, NSMenuItem, NSMutableDictionary, NSString;
 @protocol NSMenuDelegate;
 
 @interface IDEApplicationController : NSObject <UNUserNotificationCenterDelegate, NSApplicationDelegate, NSMenuDelegate>
@@ -29,8 +29,8 @@
     DVTDelayedInvocation *_tabStateContextDelayedSaveInvocation;
     NSMutableDictionary *_tabStateContextForTabNameMap;
     IDEBuildTimeStatistics *_buildTimeStatistics;
-    DVTObservingToken *_lastActiveEditorToken;
     DVTNotificationToken *_lastActiveEditorContextNotificationToken;
+    DVTNotificationToken *_editorContextEditorChangedNotificationToken;
     id _keyBindingSetWillActivateObserver;
     id _keyBindingSetDidActivateObserver;
     BOOL _isSafeToLoadMobileDevice;
@@ -40,17 +40,19 @@
     BOOL _forceUpdateOfEditorAndNavigateMenus;
     BOOL _currentEditorAndNavigatorMenusAreBackstop;
     IDERemoteNotificationRegistration *_remoteNotificationRegistration;
+    IDEUserNotificationCenter *__userNotificationCenterDelegate;
 }
 
 + (id)sharedAppController;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IDEBuildTimeStatistics *buildTimeStatistics; // @synthesize buildTimeStatistics=_buildTimeStatistics;
 @property(readonly) BOOL currentEditorAndNavigatorMenusAreBackstop; // @synthesize currentEditorAndNavigatorMenusAreBackstop=_currentEditorAndNavigatorMenusAreBackstop;
+@property(retain) IDEUserNotificationCenter *_userNotificationCenterDelegate; // @synthesize _userNotificationCenterDelegate=__userNotificationCenterDelegate;
 @property(retain) IDERemoteNotificationRegistration *remoteNotificationRegistration; // @synthesize remoteNotificationRegistration=_remoteNotificationRegistration;
 @property BOOL forceUpdateOfEditorAndNavigateMenus; // @synthesize forceUpdateOfEditorAndNavigateMenus=_forceUpdateOfEditorAndNavigateMenus;
 @property BOOL applicationIsTerminatingDuringLaunch; // @synthesize applicationIsTerminatingDuringLaunch=_applicationIsTerminatingDuringLaunch;
 @property BOOL haveScannedForPlugins; // @synthesize haveScannedForPlugins=_haveScannedForPlugins;
-- (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)batchFind:(id)arg1 userData:(id)arg2 error:(id *)arg3;
 - (void)openQuickly:(id)arg1 userData:(id)arg2 error:(id *)arg3;
@@ -72,8 +74,7 @@
 - (id)_navigateMenu;
 - (id)_editorMenu;
 - (id)_editorMenuProviderExtension;
-- (BOOL)_useOrganizerForMenuContent;
-- (id)_editorForMenuContent;
+- (id)_editorContextForMenuContent;
 - (void)_updateInspectorsMenusIfNeeded;
 - (void)_updateEditMenuIfNeeded;
 - (id)_inspectorsMenu;

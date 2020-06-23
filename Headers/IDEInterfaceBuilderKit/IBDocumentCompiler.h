@@ -24,9 +24,9 @@
 + (id)compileContentsOfDocument:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)productPathExtension;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IBDocument *intermediateDocument; // @synthesize intermediateDocument=_intermediateDocument;
 @property(readonly) IBDocument *sourceDocument; // @synthesize sourceDocument=_sourceDocument;
-- (void).cxx_destruct;
 - (id)compileWithOptions:(id)arg1 error:(id *)arg2;
 - (void)invokeWithIntermediateDocumentOfTargetRuntime:(id)arg1 alwaysCopy:(BOOL)arg2 block:(CDUnknownBlockType)arg3;
 - (void)invokeWithIntermediateDocument:(CDUnknownBlockType)arg1;

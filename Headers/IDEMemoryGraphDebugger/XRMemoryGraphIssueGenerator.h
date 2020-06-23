@@ -14,9 +14,9 @@
     IDEDebugSession *_debugSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly, nonatomic) NSArray *allIssues; // @synthesize allIssues=_allIssues;
-- (void).cxx_destruct;
 - (void)_issuesChanged;
 - (void)clearAllIssues;
 - (void)addLeakedItems:(id)arg1 abandonedItems:(id)arg2;

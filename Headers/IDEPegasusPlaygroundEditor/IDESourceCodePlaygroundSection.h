@@ -20,11 +20,11 @@
 
 + (id)xmlElementName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *originalSourceCode; // @synthesize originalSourceCode=_originalSourceCode;
 @property struct _NSRange originalCodeRange; // @synthesize originalCodeRange=_originalCodeRange;
 @property long long sectionStyle; // @synthesize sectionStyle=_sectionStyle;
 @property BOOL incomingResultsAreStale; // @synthesize incomingResultsAreStale=_incomingResultsAreStale;
-- (void).cxx_destruct;
 - (id)content;
 @property(readonly) NSString *sectionString;
 @property(readonly) struct _NSRange sectionCharacterRange;

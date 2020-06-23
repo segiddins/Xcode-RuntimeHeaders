@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingCustomWorkspaceRelativeDerivedDataLocation;
 + (id)keyPathsForValuesAffectingUseCustomDistributionArchivesLocation;
 + (id)keyPathsForValuesAffectingUseCustomDerivedDataLocation;
+- (void).cxx_destruct;
 @property(copy) NSString *customBuildIntermediatesPath; // @synthesize customBuildIntermediatesPath=_customBuildIntermediatesPath;
 @property(copy) NSString *customBuildProductsPath; // @synthesize customBuildProductsPath=_customBuildProductsPath;
 @property int customBuildLocationType; // @synthesize customBuildLocationType=_customBuildLocationType;
@@ -45,7 +46,6 @@
 @property(nonatomic) int derivedDataLocationStyle; // @synthesize derivedDataLocationStyle=_derivedDataLocationStyle;
 @property(copy, nonatomic) NSString *customDistributionArchivesLocation; // @synthesize customDistributionArchivesLocation=_customDistributionArchivesLocation;
 @property(copy, nonatomic) NSString *customDerivedDataLocation; // @synthesize customDerivedDataLocation=_customDerivedDataLocation;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)validateCustomDistributionArchivesLocation:(id *)arg1 error:(id *)arg2;
 - (BOOL)validateCustomDerivedDataLocation:(id *)arg1 error:(id *)arg2;

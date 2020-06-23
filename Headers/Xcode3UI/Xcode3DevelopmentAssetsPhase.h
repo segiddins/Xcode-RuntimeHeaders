@@ -15,8 +15,8 @@
 
 + (id)developmentAssetsBuildPhaseForTarget:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) Xcode3DevelopmentAssetsGroup *developmentAssetsGroup; // @synthesize developmentAssetsGroup=_developmentAssetsGroup;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Xcode3DevelopmentAssetsGroup *developmentAssetsGroup; // @synthesize developmentAssetsGroup=_developmentAssetsGroup;
 - (BOOL)containsItemIdenticalTo:(id)arg1;
 - (id)fileTypeForDisplay;
 - (BOOL)acceptsItem:(id)arg1 checkFileType:(BOOL)arg2;

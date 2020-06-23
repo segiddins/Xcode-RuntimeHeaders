@@ -18,8 +18,8 @@
 
 + (id)withValue:(id)arg1;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
-@property(retain) id enumValue; // @synthesize enumValue=_enumValue;
 - (void).cxx_destruct;
+@property(retain) id enumValue; // @synthesize enumValue=_enumValue;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)objectValue;

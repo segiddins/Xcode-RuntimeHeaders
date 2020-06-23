@@ -17,12 +17,12 @@
     BOOL _fileExists;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL fileExists; // @synthesize fileExists=_fileExists;
 @property BOOL expanded; // @synthesize expanded=_expanded;
 @property(readonly) int type; // @synthesize type=_type;
 @property(retain, nonatomic) PBXFileReference *configBasedOnFile; // @synthesize configBasedOnFile=_configBasedOnFile;
 @property(retain) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (long long)compareByName:(id)arg1;
 - (id)basedOnFileColumnIcon;
 - (id)configurationColumnIcon;

@@ -18,9 +18,9 @@
 + (id)sharedInstance;
 + (id)sharedFindState;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) DVTFindPatternComponents *replacePatternComponents; // @synthesize replacePatternComponents=_replacePatternComponents;
 @property(copy, nonatomic) DVTFindPatternComponents *findPatternComponents; // @synthesize findPatternComponents=_findPatternComponents;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL wrapText;
 @property(nonatomic) BOOL ignoresCase;
 @property(nonatomic) unsigned long long matchStyle;

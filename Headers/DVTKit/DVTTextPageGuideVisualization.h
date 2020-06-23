@@ -17,8 +17,8 @@
 }
 
 + (unsigned long long)defaultDrawOrdering;
-@property(nonatomic) unsigned long long columnNumber; // @synthesize columnNumber=_columnNumber;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long columnNumber; // @synthesize columnNumber=_columnNumber;
 - (void)drawUnderTextInRect:(struct CGRect)arg1;
 - (void)drawUnderCurrentLineHighlightInRect:(struct CGRect)arg1;
 - (id)_pageGuideColor;

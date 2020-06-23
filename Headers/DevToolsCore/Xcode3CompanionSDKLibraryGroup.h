@@ -16,8 +16,8 @@
 }
 
 + (id)libraryGroupForSDK:(id)arg1 companionSDK:(id)arg2;
-@property(readonly) Xcode3SDK *companionSDK; // @synthesize companionSDK=_companionSDK;
 - (void).cxx_destruct;
+@property(readonly) Xcode3SDK *companionSDK; // @synthesize companionSDK=_companionSDK;
 - (id)libraries;
 - (id)displayName;
 - (id)initWithSDK:(id)arg1 companionSDK:(id)arg2;

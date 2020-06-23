@@ -14,9 +14,9 @@
     NSArray *_filteredGroups;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *filteredGroups; // @synthesize filteredGroups=_filteredGroups;
 @property(readonly) IDETextFragmentIndex *textFragmentIndex; // @synthesize textFragmentIndex=_textFragmentIndex;
-- (void).cxx_destruct;
 - (long long)totalNumberOfFilteredUniquedFilePaths;
 @property(readonly) NSArray *ordredCandidateFilePaths;
 - (id)initWithTextFragmentIndex:(id)arg1 filteredGroups:(id)arg2;

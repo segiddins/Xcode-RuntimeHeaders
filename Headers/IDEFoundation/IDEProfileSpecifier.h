@@ -16,9 +16,9 @@
     NSString *_specifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (void)_parseString:(id)arg1 teamSpecifier:(id *)arg2 specifier:(id *)arg3;
 - (id)chunkFromString:(id)arg1 remainingString:(id *)arg2;

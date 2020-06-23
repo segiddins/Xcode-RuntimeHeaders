@@ -28,8 +28,8 @@
 + (void)setGuidesAreEnabled:(BOOL)arg1;
 + (BOOL)guidesAreEnabled;
 + (void)initialize;
-@property(readonly) IBLayoutGuideCanvasOverlay *canvasOverlay; // @synthesize canvasOverlay=_canvasOverlay;
 - (void).cxx_destruct;
+@property(readonly) IBLayoutGuideCanvasOverlay *canvasOverlay; // @synthesize canvasOverlay=_canvasOverlay;
 - (long long)displayGuidesForViews:(id)arg1 usingContainerResizingRules:(BOOL)arg2 draggedKnobInSuperview:(CDUnion_31865a80)arg3 andReturningLayoutGuideMatches:(id *)arg4;
 - (long long)suggestGuidesForViews:(id)arg1 forEvent:(id)arg2 withSuggestedFrame:(struct CGRect)arg3 returningX:(double *)arg4 andReturningY:(double *)arg5 andReturningLayoutGuideMatches:(id *)arg6 fromKnobPositionInSuperview:(CDUnion_31865a80)arg7 usingContainerResizingRules:(BOOL)arg8 snaps:(BOOL)arg9;
 - (long long)applyGuidesForViews:(id)arg1 forEvent:(id)arg2 withSuggestedFrame:(struct CGRect)arg3 andSiblings:(id)arg4 returningX:(double *)arg5 andReturningY:(double *)arg6 andReturningLayoutGuideMatches:(id *)arg7 fromKnobPositionInTargetSuperview:(CDUnion_31865a80)arg8 usingContainerResizingRules:(BOOL)arg9 displayOnly:(BOOL)arg10 maxSnapDistance:(double)arg11;

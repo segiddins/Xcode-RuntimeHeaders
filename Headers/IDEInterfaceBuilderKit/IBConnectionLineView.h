@@ -18,11 +18,11 @@
     double _strokeWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) double ballRadius; // @synthesize ballRadius=_ballRadius;
 @property(retain, nonatomic) NSScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)linePath;
 - (void)layoutBottomUp;

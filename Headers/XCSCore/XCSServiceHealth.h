@@ -13,8 +13,8 @@
     NSDictionary *_workers;
 }
 
-@property(retain, nonatomic) NSDictionary *workers; // @synthesize workers=_workers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *workers; // @synthesize workers=_workers;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 
 @end

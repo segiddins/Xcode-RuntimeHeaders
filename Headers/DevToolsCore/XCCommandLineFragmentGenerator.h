@@ -15,9 +15,9 @@
     NSArray<DVTMacroExpansion> *_defaultCommandLineTemplate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray<DVTMacroExpansion> *defaultCommandLineTemplate; // @synthesize defaultCommandLineTemplate=_defaultCommandLineTemplate;
 @property(readonly) NSDictionary *commandLineTemplatesByLiteralValue; // @synthesize commandLineTemplatesByLiteralValue=_commandLineTemplatesByLiteralValue;
-- (void).cxx_destruct;
 - (id)generatedCommandLineFragmentForLiteralStringValue:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (id)init;
 - (id)initFromPropertyListTemplate:(id)arg1 error:(id *)arg2;

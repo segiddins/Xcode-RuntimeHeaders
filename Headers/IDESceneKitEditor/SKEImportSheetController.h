@@ -21,6 +21,7 @@
     NSPopUpButton *_imageDestination;
 }
 
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *imageDestination; // @synthesize imageDestination=_imageDestination;
 @property __weak NSButton *shouldCopyImages; // @synthesize shouldCopyImages=_shouldCopyImages;
 @property __weak NSTextField *preferredUnits; // @synthesize preferredUnits=_preferredUnits;
@@ -28,7 +29,6 @@
 @property __weak NSButton *preserveOriginalTopology; // @synthesize preserveOriginalTopology=_preserveOriginalTopology;
 @property __weak NSButton *convertUnits; // @synthesize convertUnits=_convertUnits;
 @property __weak NSButton *convertToYUp; // @synthesize convertToYUp=_convertToYUp;
-- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)import:(id)arg1;
 @property(retain, nonatomic) NSArray *availableFoldersForImages;

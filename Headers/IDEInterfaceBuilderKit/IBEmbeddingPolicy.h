@@ -14,8 +14,8 @@
 }
 
 + (id)embeddingPolicyWithRepresentedExtension:(id)arg1;
-@property(readonly) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 - (void).cxx_destruct;
+@property(readonly) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 - (void)performEmbedWithObjects:(id)arg1 inDocumentEditor:(id)arg2;
 - (BOOL)canEmbedObjects:(id)arg1 fromDocument:(id)arg2;
 - (id)embedObjects:(id)arg1 fromDocument:(id)arg2 context:(id)arg3;

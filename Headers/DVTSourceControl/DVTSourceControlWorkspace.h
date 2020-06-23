@@ -20,10 +20,10 @@
     NSString *_relativePathToProject;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *relativePathToProject; // @synthesize relativePathToProject=_relativePathToProject;
 @property(retain) DVTSourceControlWorkingCopy *primaryWorkingCopy; // @synthesize primaryWorkingCopy=_primaryWorkingCopy;
 @property(copy) NSString *_id; // @synthesize _id=__id;
-- (void).cxx_destruct;
 - (id)blueprintWithRemoteRepositories:(id)arg1 includingManagedWorkingCopies:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)blueprintWithRemoteRepositories:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 @property(readonly) NSURL *workspaceRootFolder;

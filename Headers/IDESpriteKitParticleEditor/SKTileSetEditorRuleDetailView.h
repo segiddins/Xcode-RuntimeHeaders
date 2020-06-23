@@ -29,11 +29,11 @@
     unsigned long long _selectedDefinitionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedDefinitionIndex; // @synthesize selectedDefinitionIndex=_selectedDefinitionIndex;
 @property(retain, nonatomic) SKNode *viewRoot; // @synthesize viewRoot=_viewRoot;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) __weak id <SKTileSetEditorRuleDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)deleteBackward:(id)arg1;
 - (void)deleteForward:(id)arg1;
 - (void)keyDown:(id)arg1;

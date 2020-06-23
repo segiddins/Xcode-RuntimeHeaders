@@ -25,10 +25,10 @@
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_subtitle;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property unsigned long long disabledBreakpointCount; // @synthesize disabledBreakpointCount=_disabledBreakpointCount;
 @property unsigned long long breakpointCount; // @synthesize breakpointCount=_breakpointCount;
 @property(copy) IDEBreakpointBucket *bucket; // @synthesize bucket=_bucket;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) unsigned long long hash;
@@ -38,10 +38,10 @@
 - (id)_createAndAddFileBreakpointGroupForFilePathIfNecessary:(id)arg1;
 - (id)_getFileBreakpointGroupForFilePath:(id)arg1;
 - (id)_findFileBreakpointGroupForFilePath:(id)arg1;
-- (BOOL)_removeFileBreakpoint:(id)arg1;
+- (id)_removeFileBreakpoints:(id)arg1;
 - (BOOL)_addFileBreakpoint:(id)arg1;
 - (void)_updateDisabledBreakpointCount:(id)arg1;
-- (void)removeBreakpoint:(id)arg1;
+- (void)removeBreakpoints:(id)arg1;
 - (void)addBreakpoint:(id)arg1;
 - (id)initWithBucket:(id)arg1;
 - (id)navigableItem_childRepresentedObjectIndexesForFilter:(id)arg1;

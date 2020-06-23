@@ -23,13 +23,13 @@
     IDEITunesSoftwareServiceApplicationDescriptionCache *_applicationDescriptionCache;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldContinueUploading; // @synthesize shouldContinueUploading=_shouldContinueUploading;
 @property(readonly) IDEITunesSoftwareServiceApplicationDescriptionCache *applicationDescriptionCache; // @synthesize applicationDescriptionCache=_applicationDescriptionCache;
 @property(readonly) NSMutableArray *authenticationDelegates; // @synthesize authenticationDelegates=_authenticationDelegates;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) IDEITunesConnectProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain) id <IDEITunesSoftwareServiceDelegateProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dSYMURLForAdamID:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 platformIdentifier:(id)arg5 accountCredentials:(id)arg6 callback:(CDUnknownBlockType)arg7;
 - (id)_dSYMURLForAdamID:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 platformIdentifier:(id)arg5 accountCredentials:(id)arg6 error:(id *)arg7;
 - (void)applicationVersionsForApplicationDecription:(id)arg1 accountCredentials:(id)arg2 callback:(CDUnknownBlockType)arg3;

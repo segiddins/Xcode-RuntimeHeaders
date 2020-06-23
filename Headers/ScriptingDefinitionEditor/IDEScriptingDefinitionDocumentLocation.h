@@ -15,10 +15,10 @@
     NSString *elementOrPropertyCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *elementOrPropertyCode; // @synthesize elementOrPropertyCode;
 @property(readonly) NSString *commandOrClassCode; // @synthesize commandOrClassCode;
 @property(readonly) NSString *suiteCode; // @synthesize suiteCode;
-- (void).cxx_destruct;
 - (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 definition:(id)arg3;
 
 @end

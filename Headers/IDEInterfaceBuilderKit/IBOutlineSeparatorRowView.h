@@ -17,10 +17,10 @@
     double _leadingInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double leadingInset; // @synthesize leadingInset=_leadingInset;
 @property(nonatomic) BOOL showBottomLine; // @synthesize showBottomLine=_showBottomLine;
 @property(nonatomic) BOOL showTopLine; // @synthesize showTopLine=_showTopLine;
-- (void).cxx_destruct;
 - (id)makeBackingLayer;
 - (void)_updateLineLayerVisibilityAndFrames;
 

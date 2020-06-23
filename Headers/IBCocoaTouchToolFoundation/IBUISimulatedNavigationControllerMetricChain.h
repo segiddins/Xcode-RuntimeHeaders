@@ -16,11 +16,11 @@
     IBUIMetricRepresentation *_toolbar;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBUIMetricRepresentation *toolbar; // @synthesize toolbar=_toolbar;
 @property(readonly, nonatomic) IBUIMetricRepresentation *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(readonly, nonatomic) BOOL toolbarHidden; // @synthesize toolbarHidden=_toolbarHidden;
 @property(readonly, nonatomic) BOOL navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
-- (void).cxx_destruct;
 - (id)singleLinkPrettyDescription;
 - (id)copyWithPrecedingMetric:(id)arg1;
 - (BOOL)isEqualToMetricChain:(id)arg1;

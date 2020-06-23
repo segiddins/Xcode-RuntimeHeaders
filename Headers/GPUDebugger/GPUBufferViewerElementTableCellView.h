@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifierForTableColumn:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUBufferViewerErrorView *errorView; // @synthesize errorView=_errorView;
 @property(nonatomic) __weak GPUBufferViewerElementTableColumn *tableColumn; // @synthesize tableColumn=_tableColumn;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setError:(id)arg1;
 - (void)setValue:(id)arg1 forComponent:(unsigned long long)arg2 row:(unsigned long long)arg3;

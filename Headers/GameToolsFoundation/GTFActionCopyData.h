@@ -23,10 +23,10 @@
 + (id)readableTypesForPasteboard:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)actionCopyDataForTimeline:(id)arg1 withActionsSubset:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(readonly, nonatomic) NSArray *allActions; // @synthesize allActions=_allActions;
 @property(readonly, nonatomic) NSArray *independentActions; // @synthesize independentActions=_independentActions;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)initWithCoder:(id)arg1;

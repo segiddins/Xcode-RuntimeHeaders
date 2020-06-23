@@ -65,6 +65,7 @@
 + (void)initialize;
 + (void)setRootItemBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)rootItemBlock;
+- (void).cxx_destruct;
 @property(retain) NSTimer *statusUpdateTimer; // @synthesize statusUpdateTimer=_statusUpdateTimer;
 @property(retain) IDESourceControlManager *sourceControlManager; // @synthesize sourceControlManager=_sourceControlManager;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
@@ -75,7 +76,6 @@
 @property(retain) DVTSourceControlWorkspaceBlueprint *cachedBlueprint; // @synthesize cachedBlueprint=_cachedBlueprint;
 @property(retain) DVTSourceControlWorkspace *sourceControlWorkspace; // @synthesize sourceControlWorkspace=_sourceControlWorkspace;
 @property(retain) id rootItem; // @synthesize rootItem=_rootItem;
-- (void).cxx_destruct;
 - (id)rootDirectoryOfAllWorkingCopies;
 - (void)writeSCMInfoToWorkspace;
 - (void)saveSCMInfo;

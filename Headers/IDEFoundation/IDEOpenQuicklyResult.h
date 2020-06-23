@@ -19,10 +19,10 @@
 + (id)documentLocationForURL:(id)arg1 lineNumber:(id)arg2;
 + (double)scoreCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 isFileName:(BOOL)arg2 fromFilePathOrURL:(id)arg3 isFromProject:(BOOL)arg4 sourceSDKFilePath:(id)arg5 isFromInterestingFramework:(BOOL)arg6 query:(id)arg7;
 + (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 query:(id)arg2 score:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly) IDEOpenQuicklyQuery *query; // @synthesize query=_query;
 @property(readonly) struct IDEOpenQuicklyQueryCandidate *candidate; // @synthesize candidate=_candidate;
 @property(readonly) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (long long)compareScoreInDescendingOrder:(id)arg1;
 @property(readonly) BOOL isFromPoject;
 @property(readonly) BOOL isSymbolic;

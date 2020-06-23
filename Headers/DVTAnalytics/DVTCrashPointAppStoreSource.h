@@ -21,13 +21,13 @@
 }
 
 + (id)_timestampLock;
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
 @property(readonly) DVTCrashPointParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly) NSMapTable *identifierToCrashPointRecordObservedMap; // @synthesize identifierToCrashPointRecordObservedMap=_identifierToCrashPointRecordObservedMap;
 @property(readonly) NSMapTable *filterToSourceMap; // @synthesize filterToSourceMap=_filterToSourceMap;
 @property(readonly) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_populateParametersToSourceMap;
 - (id)_crashPointRecordForIdentifier:(id)arg1;

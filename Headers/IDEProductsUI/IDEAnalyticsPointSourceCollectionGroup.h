@@ -17,10 +17,10 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSArray *analyticsPointSourceCollections; // @synthesize analyticsPointSourceCollections=_analyticsPointSourceCollections;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)initWithName:(id)arg1 sourceCollections:(id)arg2 groupSources:(BOOL)arg3 type:(long long)arg4;

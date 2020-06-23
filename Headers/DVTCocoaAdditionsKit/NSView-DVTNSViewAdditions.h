@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class DVTViewController;
+@class DVTViewController, NSString;
 
 @interface NSView (DVTNSViewAdditions)
 + (double)dvt_floatValueForSizeStyle:(long long)arg1 smallValue:(double)arg2 mediumValue:(double)arg3 largeValue:(double)arg4;
@@ -77,6 +77,7 @@
 @property(readonly, nonatomic) DVTViewController *dvt_closestViewController;
 - (void)setDvt_viewController:(id)arg1;
 @property(readonly, nonatomic) DVTViewController *dvt_viewController;
+@property(nonatomic, readonly) NSString *dvt_locationInWindowDescription;
 
 // Remaining properties
 @property(nonatomic, getter=isHidden) BOOL hidden;

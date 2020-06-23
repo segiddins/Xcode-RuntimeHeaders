@@ -36,6 +36,7 @@
     NSLayoutConstraint *_belowReplacementViewSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL intendedPrimaryActionState; // @synthesize intendedPrimaryActionState=_intendedPrimaryActionState;
 @property(nonatomic) BOOL forceDisablePrimaryAction; // @synthesize forceDisablePrimaryAction=_forceDisablePrimaryAction;
 @property(nonatomic) BOOL sheetShown; // @synthesize sheetShown=_sheetShown;
@@ -52,7 +53,6 @@
 @property __weak NSImageView *subIconView; // @synthesize subIconView=_subIconView;
 @property __weak NSImageView *iconView; // @synthesize iconView=_iconView;
 @property unsigned long long alertStyle; // @synthesize alertStyle=_alertStyle;
-- (void).cxx_destruct;
 - (id)makeTouchBar;
 - (id)makeButtonGroupButtonWithButton:(id)arg1;
 - (void)dealloc;

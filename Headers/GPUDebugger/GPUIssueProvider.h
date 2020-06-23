@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 
 + (void)_associateIssue:(id)arg1 withFinding:(id)arg2;
 + (int)providerType;
-@property(retain, nonatomic) NSDictionary *unsortedToSortedIndexMapDict; // @synthesize unsortedToSortedIndexMapDict=_unsortedToSortedIndexMapDict;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *unsortedToSortedIndexMapDict; // @synthesize unsortedToSortedIndexMapDict=_unsortedToSortedIndexMapDict;
 - (id)_threadWithAPIItem:(id)arg1;
 - (id)imageForIssueTypeIdentifier:(id)arg1 ofSize:(long long)arg2;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;

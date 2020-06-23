@@ -16,9 +16,9 @@
 }
 
 + (id)mountedFileSystemWithDeviceNumber:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *mountPath; // @synthesize mountPath=_mountPath;
 @property(readonly) int deviceNumber; // @synthesize deviceNumber=_deviceNumber;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeVNode:(id)arg1;
 - (void)addVNode:(id)arg1;

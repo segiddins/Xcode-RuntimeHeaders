@@ -23,6 +23,8 @@
 - (id)supportedSourceListItemEditorClasses;
 - (void)_changeContainerFilePath:(id)arg1 inContext:(id)arg2;
 - (void)_renameProjectOldName:(id)arg1 newName:(id)arg2 inContext:(id)arg3;
+- (id)containerItemFromPlistRepresentation:(id)arg1;
+- (id)plistRepresentationForContainerItem:(id)arg1;
 - (id)ideInspectedReferencedRelativeLocationContainingFolderPlaceholder;
 - (id)ideInspectedReferencedRelativeLocationPlaceholder;
 - (id)ideInspectedReferenceMessageForChoosingRelativeLocation;

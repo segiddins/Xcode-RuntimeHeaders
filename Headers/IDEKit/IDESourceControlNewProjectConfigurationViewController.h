@@ -17,10 +17,10 @@
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(copy) NSString *repositoryCreationMessage; // @synthesize repositoryCreationMessage=_repositoryCreationMessage;
 @property(nonatomic) BOOL shouldCreateLocalRepository; // @synthesize shouldCreateLocalRepository=_shouldCreateLocalRepository;
 @property BOOL enableCreateLocalRepository; // @synthesize enableCreateLocalRepository=_enableCreateLocalRepository;
-- (void).cxx_destruct;
 - (void)createGitRepositoryWithFilePath:(id)arg1 workspaceUIHandler:(id)arg2;
 - (void)updateDirectoryURL:(id)arg1;
 - (void)viewDidInstall;

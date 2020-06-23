@@ -28,10 +28,11 @@
 - (_Bool)SetCurrentPlatformSDKRoot:(const char *)arg1;
 - (void)RunCommandInterpreter:(_Bool)arg1 spawnThread:(_Bool)arg2;
 - (void)Destroy;
-- (void)SkipAppInitFiles:(BOOL)arg1;
-- (void)SkipLLDBInitFiles:(BOOL)arg1;
+- (void)SkipAppInitFiles:(_Bool)arg1;
+- (void)SkipLLDBInitFiles:(_Bool)arg1;
 - (_Bool)IsValid;
 - (int)SetIOFile:(const char *)arg1;
+- (int)GetServerProcessID;
 - (id)GetCommandInterpreter;
 - (id)GetListener;
 - (id)SetCurrentPlatform:(const char *)arg1;

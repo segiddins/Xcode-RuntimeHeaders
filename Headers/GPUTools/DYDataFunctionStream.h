@@ -16,9 +16,9 @@
     struct _Iterator<GPUTools::FD::Function> _reset;
 }
 
-@property(readonly, retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (unsigned long long)readFunctions:(struct Function *)arg1 maxCount:(unsigned long long)arg2;
 - (const struct Function *)readFunction;
 - (const struct Function *)peekFunction;

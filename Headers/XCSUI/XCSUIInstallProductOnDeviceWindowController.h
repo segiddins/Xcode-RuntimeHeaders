@@ -22,6 +22,7 @@
     DVTObservingToken *_selectionWatcher;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *selectionWatcher; // @synthesize selectionWatcher=_selectionWatcher;
 @property(copy, nonatomic) NSIndexSet *tableViewSelectionIndexes; // @synthesize tableViewSelectionIndexes=_tableViewSelectionIndexes;
 @property(copy) NSArray *devices; // @synthesize devices=_devices;
@@ -30,7 +31,6 @@
 @property __weak NSButton *installButton; // @synthesize installButton=_installButton;
 @property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy) DVTFilePath *productPath; // @synthesize productPath=_productPath;
-- (void).cxx_destruct;
 - (void)install:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)windowDidLoad;

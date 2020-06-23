@@ -13,8 +13,8 @@
     IBUIScrollView *_scrollView;
 }
 
-@property __weak IBUIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
+@property __weak IBUIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (id)initWithScrollView:(id)arg1;
 
 @end

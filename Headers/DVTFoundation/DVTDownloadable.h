@@ -23,6 +23,7 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly) NSURL *source; // @synthesize source=_source;
@@ -31,7 +32,6 @@
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) DVTDotSeparatedVersion *version; // @synthesize version=_version;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *category;
 @property(readonly) NSDictionary *installedIfAllReceiptsArePresentOrNewer;
 @property(readonly) NSDictionary *installedIfAllSHA1SumsMatch;

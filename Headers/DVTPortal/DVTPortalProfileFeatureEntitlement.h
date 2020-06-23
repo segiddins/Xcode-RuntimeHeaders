@@ -14,9 +14,9 @@
     NSSet *_allowedValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 allowedValues:(id)arg2;
 
 @end

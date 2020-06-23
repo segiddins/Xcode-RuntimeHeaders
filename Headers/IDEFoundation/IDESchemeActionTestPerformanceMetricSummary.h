@@ -23,6 +23,7 @@
 }
 
 + (id)missingBaselineDescriptionForPerformanceMetricWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *maxStandardDeviation; // @synthesize maxStandardDeviation=_maxStandardDeviation;
 @property(readonly) NSNumber *maxRegression; // @synthesize maxRegression=_maxRegression;
 @property(readonly) NSNumber *maxPercentRelativeStandardDeviation; // @synthesize maxPercentRelativeStandardDeviation=_maxPercentRelativeStandardDeviation;
@@ -33,7 +34,6 @@
 @property(readonly, copy) NSString *unitOfMeasurement; // @synthesize unitOfMeasurement=_unitOfMeasurement;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualToTestPerformanceMetricSummary:(id)arg1;
 @property(readonly) double relativeStandardDeviationOfMeasurements;
 @property(readonly) double meanAverageOfMeasurements;

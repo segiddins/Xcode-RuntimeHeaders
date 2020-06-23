@@ -18,10 +18,10 @@
     NSColor *_bezelColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *bezelColor; // @synthesize bezelColor=_bezelColor;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(retain) IDEArchive *archive; // @synthesize archive=_archive;
-- (void).cxx_destruct;
 - (void)exportApp:(id)arg1;
 - (void)showStatusLog:(id)arg1;
 - (BOOL)hasDisplayableStatus;

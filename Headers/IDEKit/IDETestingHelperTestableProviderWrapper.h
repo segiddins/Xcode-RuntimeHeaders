@@ -17,8 +17,8 @@
 }
 
 + (id)keyPathsForValuesAffectingTestableWrappers;
-@property(retain) id <IDETestableProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(retain) id <IDETestableProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, copy) NSArray *testableWrappers;

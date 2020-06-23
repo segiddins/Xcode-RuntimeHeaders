@@ -19,11 +19,11 @@
     NSData *_sessionData;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *sessionData; // @synthesize sessionData=_sessionData;
 @property(copy) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(copy) NSString *prsID; // @synthesize prsID=_prsID;
 @property(nonatomic) __weak DVTDeveloperAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property struct __SecIdentity *identity;

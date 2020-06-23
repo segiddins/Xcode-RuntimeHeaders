@@ -18,8 +18,8 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (void)initialize;
-@property(readonly) Xcode3Project *project; // @synthesize project=_project;
 - (void).cxx_destruct;
+@property(readonly) Xcode3Project *project; // @synthesize project=_project;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) NSString *navigableItem_name;

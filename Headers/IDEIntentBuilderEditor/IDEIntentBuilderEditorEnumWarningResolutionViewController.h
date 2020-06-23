@@ -13,8 +13,8 @@
     IDEIntentBuilderEnum *_enumType;
 }
 
-@property(readonly, nonatomic) IDEIntentBuilderEnum *enumType; // @synthesize enumType=_enumType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEIntentBuilderEnum *enumType; // @synthesize enumType=_enumType;
 - (void)applyWarningFixup;
 - (void)primitiveInvalidate;
 - (id)initWithEnum:(id)arg1;

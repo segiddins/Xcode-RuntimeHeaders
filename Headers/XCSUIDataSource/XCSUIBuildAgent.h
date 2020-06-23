@@ -15,9 +15,9 @@
 }
 
 + (id)initializeWithBuildAgent:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSBuildAgent *agent; // @synthesize agent=_agent;
-- (void).cxx_destruct;
 
 @end
 

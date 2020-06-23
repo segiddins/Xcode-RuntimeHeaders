@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *buildSettingName; // @synthesize buildSettingName=_buildSettingName;
 @property(readonly) NSString *blueprintName; // @synthesize blueprintName=_blueprintName;
 @property(readonly) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)blueprintKey;
 - (void)encodeWithCoder:(id)arg1;

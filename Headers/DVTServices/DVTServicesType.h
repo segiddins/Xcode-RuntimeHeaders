@@ -20,11 +20,11 @@
 + (id)typeWithName:(id)arg1;
 + (id)types;
 + (id)_orderedTypeNameToTypeMapByLoadingIfNeeded;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) Class expectedInputClass; // @synthesize expectedInputClass=_expectedInputClass;
 @property(readonly, nonatomic) Class resultClass; // @synthesize resultClass=_resultClass;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)_deserializePropertiesIntoTypeInstance:(id)arg1 serviceValueDictionary:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (id)_makeInstanceForDeserialization;
 - (id)_deserialize:(id)arg1 context:(id)arg2 error:(id *)arg3;

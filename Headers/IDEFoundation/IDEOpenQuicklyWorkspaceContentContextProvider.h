@@ -24,9 +24,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSSet *directlyImportedFrameworkNames; // @synthesize directlyImportedFrameworkNames=_directlyImportedFrameworkNames;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)workspaceFilePath:(id)arg1 didChangeWithType:(long long)arg2;
 - (void)beginRefresh;
 - (void)primitiveInvalidate;

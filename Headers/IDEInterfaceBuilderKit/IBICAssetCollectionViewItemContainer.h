@@ -14,9 +14,9 @@
     id <IBICAssetCollectionViewItemContainerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IBICAssetCollectionViewItemContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL showCross; // @synthesize showCross=_showCross;
-- (void).cxx_destruct;
 - (id)description;
 - (void)didCompleteLayout;
 - (void)drawRect:(struct CGRect)arg1;

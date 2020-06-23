@@ -14,8 +14,8 @@
     id <IDEIntentBuilderDisclosureViewDelegate> _delegate;
 }
 
-@property __weak id <IDEIntentBuilderDisclosureViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IDEIntentBuilderDisclosureViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dvt_didCompleteLayout;
 - (void)setDisclosed:(BOOL)arg1;
 

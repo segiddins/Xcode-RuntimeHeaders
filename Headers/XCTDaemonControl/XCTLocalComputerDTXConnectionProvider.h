@@ -18,9 +18,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> remoteHostDiagnosticReportsSynchronizer;
 - (void)invalidate;
 - (void)makeConnectionWithCompletion:(CDUnknownBlockType)arg1;

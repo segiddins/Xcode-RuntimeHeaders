@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (id)objectContainerFromAsset:(id)arg1 forInsertionIntoPasteboard:(id)arg2;
 - (void)addAsset:(id)arg1;
 - (BOOL)shouldIncludeAsset:(id)arg1;

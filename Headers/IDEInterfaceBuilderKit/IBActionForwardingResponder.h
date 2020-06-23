@@ -11,8 +11,8 @@
     id _target;
 }
 
-@property __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property __weak id target; // @synthesize target=_target;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 
 @end

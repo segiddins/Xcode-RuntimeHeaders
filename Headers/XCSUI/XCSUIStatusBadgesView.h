@@ -15,8 +15,8 @@
     NSArray *_badges;
 }
 
-@property(copy, nonatomic) NSArray *badges; // @synthesize badges=_badges;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *badges; // @synthesize badges=_badges;
 - (id)accessibilityValue;
 - (void)refreshBadges;
 - (void)placeBadges;

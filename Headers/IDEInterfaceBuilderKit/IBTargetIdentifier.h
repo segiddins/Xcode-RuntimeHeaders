@@ -31,9 +31,9 @@
 + (id)showTargetsWithSpecifiers:(id)arg1 forDuration:(double)arg2;
 + (void)runTargetIdentificationGroup:(CDUnknownBlockType)arg1;
 + (void)cancelAllOutstandingIdentifiers;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shiftsLabelsToKeepInBounds; // @synthesize shiftsLabelsToKeepInBounds=_shiftsLabelsToKeepInBounds;
 @property(retain, nonatomic) NSView *frameRelativeView; // @synthesize frameRelativeView=_frameRelativeView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawInsertionLineInRect:(struct CGRect)arg1;
 - (id)insertionLineStrokeColor;

@@ -41,13 +41,13 @@
     NSString *_username;
 }
 
+- (void).cxx_destruct;
 @property(getter=isConnected) BOOL connected; // @synthesize connected=_connected;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSData *identityKeychainPassword; // @synthesize identityKeychainPassword=_identityKeychainPassword;
 @property(retain, nonatomic) NSString *identityKeychainPath; // @synthesize identityKeychainPath=_identityKeychainPath;
 @property unsigned short port; // @synthesize port=_port;
 @property(retain) NSString *hostname; // @synthesize hostname=_hostname;
-- (void).cxx_destruct;
 - (void)socket:(id)arg1 didReceiveTrust:(struct __SecTrust *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)socketDidSecure:(id)arg1;
 - (void)socketDidDisconnect:(id)arg1 withError:(id)arg2;

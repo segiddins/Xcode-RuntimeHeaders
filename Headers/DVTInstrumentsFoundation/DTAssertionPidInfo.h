@@ -15,9 +15,9 @@
     NSMutableSet *_clientsWithClaim;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property(readonly) NSArray *blocks; // @synthesize blocks=_blocks;
-- (void).cxx_destruct;
 - (BOOL)hasNoMoreClients;
 - (BOOL)removeClaimFromClient:(id)arg1;
 - (void)addClaimForClient:(id)arg1;

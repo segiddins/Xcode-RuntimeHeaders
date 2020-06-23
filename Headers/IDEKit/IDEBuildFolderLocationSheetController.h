@@ -44,6 +44,7 @@
 + (BOOL)automaticallyNotifiesObserversOfCustomBuildLocationTypeIndex;
 + (id)keyPathsForValuesAffectingCustomBuildLocationTypeIndex;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDEBuildFolderLocationSheetControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *customBuildIntermediatesPath; // @synthesize customBuildIntermediatesPath=_customBuildIntermediatesPath;
 @property(copy) NSString *customBuildProductsPath; // @synthesize customBuildProductsPath=_customBuildProductsPath;
@@ -51,7 +52,6 @@
 @property(copy) NSString *sharedBuildFolderName; // @synthesize sharedBuildFolderName=_sharedBuildFolderName;
 @property(nonatomic) int buildLocationStyle; // @synthesize buildLocationStyle=_buildLocationStyle;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (id)DVTFilePathFieldCell:(id)arg1 resolvedPathForPath:(id)arg2;
 - (BOOL)validateCustomBuildIntermediatesPath:(id *)arg1 error:(id *)arg2;
 - (BOOL)validateCustomBuildProductsPath:(id *)arg1 error:(id *)arg2;

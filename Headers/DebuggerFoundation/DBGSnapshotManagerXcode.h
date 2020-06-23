@@ -13,8 +13,8 @@
     DBGViewDebugger *_viewDebugger;
 }
 
-@property __weak DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
 - (void).cxx_destruct;
+@property __weak DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
 - (id)_displayableStringFromRawErrorMessage:(id)arg1;
 - (void)logMessage:(id)arg1 userFacing:(BOOL)arg2;
 

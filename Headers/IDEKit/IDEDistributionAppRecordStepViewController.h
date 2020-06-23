@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoNext;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL loadingRecords; // @synthesize loadingRecords=_loadingRecords;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (void)selectAppRecord:(id)arg1;
 - (void)_loadAppRecords;
 - (void)viewDidInstall;

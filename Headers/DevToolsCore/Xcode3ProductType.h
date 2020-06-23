@@ -17,9 +17,9 @@
 }
 
 + (id)productTypeForIdentifier:(id)arg1 platform:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) XCProductTypeSpecification *backingSpecification; // @synthesize backingSpecification=_backingSpecification;
 - (id)platform;
-- (void).cxx_destruct;
 - (BOOL)wantsBundleIdentifierEditing;
 - (long long)provisioningProfileSupport;
 - (BOOL)runsDirectlyOnProxy;

@@ -31,6 +31,7 @@
 }
 
 + (id)_subtitleForTestableReference:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IDETestActionTestableOptionsController *testableOptionsController; // @synthesize testableOptionsController=_testableOptionsController;
 @property(retain, nonatomic) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
@@ -44,8 +45,6 @@
 @property(nonatomic) BOOL showUpgradeToTestPlansButton; // @synthesize showUpgradeToTestPlansButton=_showUpgradeToTestPlansButton;
 @property __weak id <IDETestTargetsOutlineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <IDETestTargetsOutlineViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
-- (BOOL)isParallelizationSupportedForAnyItems:(id)arg1;
 - (BOOL)isParallelizationDisabledForAllItems:(id)arg1;
 - (BOOL)isParallelizationEnabledForAllItems:(id)arg1;
 - (BOOL)isRandomizationDisabledForAllItems:(id)arg1;
@@ -99,6 +98,7 @@
 - (void)addTarget:(id)arg1;
 - (void)_updateDeleteButton;
 - (void)setItem:(id)arg1 enabled:(BOOL)arg2 recursively:(BOOL)arg3;
+- (void)jumpToTestInCode:(id)arg1;
 - (void)enabledCheckboxPressed:(id)arg1;
 - (void)optionsButtonPressed:(id)arg1;
 - (void)upgradeToTestPlansButtonPressed:(id)arg1;

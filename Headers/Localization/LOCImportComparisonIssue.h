@@ -18,13 +18,13 @@
     struct _NSRange _projectRange;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *projectComparisonFile; // @synthesize projectComparisonFile=_projectComparisonFile;
 @property(copy) NSString *importComparisonFile; // @synthesize importComparisonFile=_importComparisonFile;
 @property struct _NSRange projectRange; // @synthesize projectRange=_projectRange;
 @property struct _NSRange importRange; // @synthesize importRange=_importRange;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)initWithCategory:(unsigned long long)arg1 message:(id)arg2 importRange:(struct _NSRange)arg3 projectRange:(struct _NSRange)arg4 importComparisonFile:(id)arg5 projectComparisonFile:(id)arg6;
 - (id)initWithCategory:(unsigned long long)arg1 message:(id)arg2 importRange:(struct _NSRange)arg3 projectRange:(struct _NSRange)arg4;
 

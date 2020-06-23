@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_changesAndIssuesQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *changesAndIssues; // @synthesize changesAndIssues=_changesAndIssues;
 @property(readonly, copy) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly, copy) NSSet *changedFiles; // @synthesize changedFiles=_changedFiles;
-- (void).cxx_destruct;
 - (void)addComparisonDetailInfoToOldProperties:(id)arg1 changedFile:(id)arg2;
 - (void)addComparisonDetailsFromComparison:(id)arg1;
 - (void)addComparisonDetail:(id)arg1 forKey:(id)arg2;

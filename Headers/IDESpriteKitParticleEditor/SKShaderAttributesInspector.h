@@ -32,6 +32,7 @@
 + (BOOL)supportsMultipleObjectInspection;
 + (void)rebuildShaderForSprite:(id)arg1 skipIfNoChange:(BOOL)arg2;
 + (void)postShaderCompilationLog:(id)arg1 path:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKNode<SKNodeWithShader> *editingSprite; // @synthesize editingSprite=_editingSprite;
 @property(retain, nonatomic) NSMenu *typeMenu; // @synthesize typeMenu=_typeMenu;
 @property(retain, nonatomic) NSTableView *attributesTableView; // @synthesize attributesTableView=_attributesTableView;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSArray *userDefinedRuntimeAttributes; // @synthesize userDefinedRuntimeAttributes=_userDefinedRuntimeAttributes;
 @property(copy, nonatomic) NSSet *draggedAttributes; // @synthesize draggedAttributes=_draggedAttributes;
 @property(retain, nonatomic) NSIndexSet *rowIndexesToSelectAfterRefresh; // @synthesize rowIndexesToSelectAfterRefresh=_rowIndexesToSelectAfterRefresh;
-- (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 removeRowsWithIndexes:(id)arg2;
 - (BOOL)tableView:(id)arg1 canRemoveRowsWithIndexes:(id)arg2;

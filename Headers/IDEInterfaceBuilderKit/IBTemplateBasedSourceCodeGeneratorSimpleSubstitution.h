@@ -14,9 +14,9 @@
     NSString *_replacementString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(readonly, copy) NSString *findString; // @synthesize findString=_findString;
-- (void).cxx_destruct;
 - (id)performReplacementWithGenerator:(id)arg1 forTemplateString:(id)arg2;
 - (id)initWithFindString:(id)arg1 replacementString:(id)arg2;
 

@@ -12,9 +12,9 @@
     CDUnknownBlockType _layoutTopDownCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType layoutTopDownCallback; // @synthesize layoutTopDownCallback=_layoutTopDownCallback;
 @property(copy, nonatomic) CDUnknownBlockType didCompleteFirstLayoutCallback; // @synthesize didCompleteFirstLayoutCallback=_didCompleteFirstLayoutCallback;
-- (void).cxx_destruct;
 - (void)layoutTopDown;
 - (void)layoutBottomUp;
 - (void)_fireDidCompleteFirstLayoutCallback;

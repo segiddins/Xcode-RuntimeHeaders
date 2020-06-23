@@ -17,11 +17,11 @@
 }
 
 + (id)crashPointForSession:(id)arg1 crashPointIdentifier:(id)arg2 distributionOptions:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain) DVTAnalyticsCrashPointLogList *logList; // @synthesize logList=_logList;
 @property(retain) DVTAnalyticsPointTimeDistribution *crashPointTimeSeries; // @synthesize crashPointTimeSeries=_crashPointTimeSeries;
 @property(retain) DVTAnalyticsPointDeviceFamilyDistribution *deviceFamilyDistribution; // @synthesize deviceFamilyDistribution=_deviceFamilyDistribution;
 @property(retain) DVTAnalyticsPointOSVersionDistribution *osVersionDistribution; // @synthesize osVersionDistribution=_osVersionDistribution;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 
 @end

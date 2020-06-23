@@ -22,8 +22,8 @@
 
 + (id)inspectedArrayControllerKeys;
 + (void)initialize;
-@property __weak id <IDEParagraphStylePopoverControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IDEParagraphStylePopoverControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IDEWorkspaceTabController *workspaceTabController;
 - (void)valuesDidFinishChanging;
 - (void)loadView;

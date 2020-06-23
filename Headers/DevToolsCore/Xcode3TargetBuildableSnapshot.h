@@ -27,12 +27,12 @@
 
 + (id)createTargetActivityLogSectionForTargetName:(id)arg1 projectName:(id)arg2 isPackage:(BOOL)arg3 sdkroot:(id)arg4 buildParameters:(id)arg5 targetTypeName:(id)arg6 configurationName:(id)arg7 configurationIsDefault:(BOOL)arg8 activityLogDomainType:(id)arg9 representedObject:(id)arg10 asConsoleLog:(BOOL)arg11;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDETypeIdentifier *activityLogDomainType; // @synthesize activityLogDomainType=_activityLogDomainType;
 @property(readonly, nonatomic) NSString *projectName; // @synthesize projectName=_projectName;
 @property(readonly, nonatomic) NSString *targetTypeName; // @synthesize targetTypeName=_targetTypeName;
 @property(readonly, nonatomic) NSString *targetName; // @synthesize targetName=_targetName;
 @property(readonly) Xcode3TargetBuildable *buildable; // @synthesize buildable=_buildable;
-- (void).cxx_destruct;
 - (void)cleanupForBuilder:(id)arg1;
 - (void)builderWasCancelled:(id)arg1;
 - (void)_harvestInfoForBuilder:(id)arg1 buildContext:(id)arg2;

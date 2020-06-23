@@ -15,9 +15,9 @@
 }
 
 + (void)actionWithObjectGraph:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) DTVMUObjectGraphActionToken *token; // @synthesize token=_token;
 @property(copy) DVT_VMUProcessObjectGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (id)buildGraphWithRootPathsForNode:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

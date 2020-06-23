@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
     struct Buffer _sourceBuffer;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct Buffer sourceBuffer; // @synthesize sourceBuffer=_sourceBuffer;
 @property(retain, nonatomic) id <GPUBufferViewerAdaptorTypeNameProvider> typeNameProvider; // @synthesize typeNameProvider=_typeNameProvider;
 @property(retain, nonatomic) GPUTraceAPIItem *apiItem; // @synthesize apiItem=_apiItem;
@@ -30,8 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowsCustomLayouts; // @synthesize allowsCustomLayouts=_allowsCustomLayouts;
 @property(retain, nonatomic) id <GPUBufferViewerLayout> preferredLayout; // @synthesize preferredLayout=_preferredLayout;
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)nameForType:(unsigned long long)arg1 rows:(unsigned long long)arg2 components:(unsigned long long)arg3;
 - (struct Struct)createStructFromElementType:(unsigned long long)arg1 rows:(unsigned long long)arg2 components:(unsigned long long)arg3 columns:(unsigned long long)arg4;
 - (unsigned long long)preferredNumberOfElementsForType:(unsigned long long)arg1 error:(id *)arg2;

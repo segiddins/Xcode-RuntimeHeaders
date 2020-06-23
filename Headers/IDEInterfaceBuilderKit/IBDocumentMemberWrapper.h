@@ -22,9 +22,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IBDocument *document; // @synthesize document=_document;
 @property(readonly) NSObject *member; // @synthesize member=_member;
-- (void).cxx_destruct;
 - (id)acceptDrop:(id)arg1 childIndex:(long long)arg2;
 - (unsigned long long)dragOperationForDropInfo:(id)arg1 proposedIndex:(long long)arg2 acceptingIndex:(long long *)arg3 isAlternativeItem:(BOOL)arg4;
 - (void)document:(id)arg1 mayHaveTurnedMemberOnOrOff:(id)arg2;

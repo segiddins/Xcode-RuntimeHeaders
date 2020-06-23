@@ -18,13 +18,13 @@
     NSString *ibtoolCommandString;
 }
 
+- (void).cxx_destruct;
 @property int exitCode; // @synthesize exitCode;
 @property BOOL IBTaskDebugFlag; // @synthesize IBTaskDebugFlag;
 @property BOOL LOCFrameworkDebugFlag; // @synthesize LOCFrameworkDebugFlag;
 @property(retain) NSString *ibtoolCommandString; // @synthesize ibtoolCommandString;
 @property(retain) NSDictionary *environmentVariables; // @synthesize environmentVariables;
 @property(retain) NSString *standardOutputString; // @synthesize standardOutputString;
-- (void).cxx_destruct;
 - (void)readStdErr:(id)arg1;
 - (id)inferProjectNameFromIbtoolOptions:(id)arg1;
 - (void)addMatchBoxOptionsToIbtoolOptions:(id *)arg1 toOtherOptions:(id *)arg2;

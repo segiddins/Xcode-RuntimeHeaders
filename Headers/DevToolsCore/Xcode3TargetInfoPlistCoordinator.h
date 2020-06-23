@@ -19,12 +19,12 @@
     DVTFilePath *_infoPlistFilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *infoPlistFilePath; // @synthesize infoPlistFilePath=_infoPlistFilePath;
 @property(retain, nonatomic) NSDictionary *infoPlistDictionary; // @synthesize infoPlistDictionary=_infoPlistDictionary;
 @property BOOL targetInfoPlistFileExists; // @synthesize targetInfoPlistFileExists=_targetInfoPlistFileExists;
 @property(readonly) PBXTarget *pbxTarget; // @synthesize pbxTarget=_pbxTarget;
 @property(readonly, nonatomic) BOOL infoPlistFileExists; // @synthesize infoPlistFileExists=_infoPlistFileExists;
-- (void).cxx_destruct;
 - (void)removeValue:(id)arg1 fromArrayForPlistSetting:(id)arg2;
 - (void)addValue:(id)arg1 toArrayForPlistSetting:(id)arg2;
 - (void)setValue:(id)arg1 forPlistSetting:(id)arg2;

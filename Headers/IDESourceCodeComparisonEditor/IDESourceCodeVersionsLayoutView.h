@@ -19,12 +19,12 @@
     IDESourceCodeVersionsTwoUpSubmode *_submode;
 }
 
+- (void).cxx_destruct;
 @property __weak IDESourceCodeVersionsTwoUpSubmode *submode; // @synthesize submode=_submode;
 @property __weak id <DVTComparisonScrollContentAreaDelegate> contentAreaDelegate; // @synthesize contentAreaDelegate=_contentAreaDelegate;
 @property(retain) NSView *rightContentView; // @synthesize rightContentView=_rightContentView;
 @property(retain) NSScroller *globalScroller; // @synthesize globalScroller=_globalScroller;
 @property(retain) NSSplitView *comparisonSplitView; // @synthesize comparisonSplitView=_comparisonSplitView;
-- (void).cxx_destruct;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)_windowOrderedOut:(id)arg1;

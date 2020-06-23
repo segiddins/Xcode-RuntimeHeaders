@@ -22,6 +22,7 @@
     double _dimPercent;
 }
 
+- (void).cxx_destruct;
 @property double dimPercent; // @synthesize dimPercent=_dimPercent;
 @property double speedMultiplier; // @synthesize speedMultiplier=_speedMultiplier;
 @property double topRadiusToWidthFactor; // @synthesize topRadiusToWidthFactor=_topRadiusToWidthFactor;
@@ -32,8 +33,7 @@
 @property(retain) CALayer *containerLayer; // @synthesize containerLayer=_containerLayer;
 @property unsigned long long animationStyle; // @synthesize animationStyle=_animationStyle;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
-- (struct CAShapeLayer *)_generateSpokeLayer;
+- (id)_generateSpokeLayer;
 - (id)_mutableColorsArray:(struct CGColor *)arg1 stops:(unsigned long long)arg2;
 - (void)_addBrightnessAnimationToContainerLayer;
 - (void)_addRotationAnimationToContainerLayer;

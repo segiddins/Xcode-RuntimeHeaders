@@ -15,10 +15,10 @@
     DVTTableView *_localizationsTableView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTTableView *localizationsTableView; // @synthesize localizationsTableView=_localizationsTableView;
 @property(retain) Xcode3LocalizationsInspector *inspector; // @synthesize inspector=_inspector;
 @property NSView *makeLocalizedView; // @synthesize makeLocalizedView;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)awakeFromNib;
 

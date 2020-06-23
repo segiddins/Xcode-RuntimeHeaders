@@ -15,7 +15,9 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *numberOfColumns;
     MISSING_TYPE *delegate;
     MISSING_TYPE *colors;
+    MISSING_TYPE *cornerRadiusLayer;
     MISSING_TYPE *columns;
+    MISSING_TYPE *selectedColor;
     MISSING_TYPE *lastSelection;
 }
 

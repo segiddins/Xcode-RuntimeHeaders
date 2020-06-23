@@ -23,6 +23,7 @@
     DVTEmptyContentPlaceholder *_errorPlaceholder;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTEmptyContentPlaceholder *errorPlaceholder; // @synthesize errorPlaceholder=_errorPlaceholder;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)installTestReport;
 @property(readonly, nonatomic) IDETestReportViewController *testReportViewController;
 - (void)_configureTestReport;

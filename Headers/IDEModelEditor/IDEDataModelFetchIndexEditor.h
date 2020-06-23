@@ -20,10 +20,10 @@
 
 + (id)keyPathsForValuesAffectingSelection;
 + (id)keyPathsForValuesAffectingSelectedFetchIndexes;
+- (void).cxx_destruct;
 @property(retain) IDEDataModelFetchIndexDetailEditor *fetchIndexDetailEditor; // @synthesize fetchIndexDetailEditor=_fetchIndexDetailEditor;
 @property(retain) IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
 @property(retain) IDEDataModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
-- (void).cxx_destruct;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (id)selection;

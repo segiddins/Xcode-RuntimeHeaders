@@ -17,12 +17,12 @@
     NSArrayController *_domainsController;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArrayController *domainsController; // @synthesize domainsController=_domainsController;
 @property(retain) DVTGradientImageButton *removeDomainButton; // @synthesize removeDomainButton=_removeDomainButton;
 @property(retain) DVTGradientImageButton *addDomainButton; // @synthesize addDomainButton=_addDomainButton;
 @property(retain) DVTTableView *domainsTable; // @synthesize domainsTable=_domainsTable;
 @property(retain) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
-- (void).cxx_destruct;
 - (void)removeSelectedDomains:(id)arg1;
 - (void)addDomain:(id)arg1;
 - (void)loadView;

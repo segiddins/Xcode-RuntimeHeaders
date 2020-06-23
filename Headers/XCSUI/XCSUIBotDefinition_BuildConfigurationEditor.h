@@ -65,6 +65,7 @@
     NSPopUpButton *_overrideToolchainPopUp;
 }
 
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *overrideToolchainPopUp; // @synthesize overrideToolchainPopUp=_overrideToolchainPopUp;
 @property __weak NSTextField *overrideToolchainLabel; // @synthesize overrideToolchainLabel=_overrideToolchainLabel;
 @property __weak NSPopUpButton *buildConfigurationPopUp; // @synthesize buildConfigurationPopUp=_buildConfigurationPopUp;
@@ -102,7 +103,6 @@
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 @property(retain, nonatomic) NSError *schemeError; // @synthesize schemeError=_schemeError;
-- (void).cxx_destruct;
 - (id)previewPanel:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewPanel:(id)arg1;
 - (void)endPreviewPanelControl:(id)arg1;

@@ -35,6 +35,7 @@
 + (id)machOFileTypesAtPath:(id)arg1 error:(id *)arg2;
 + (id)itemWithPath:(id)arg1 childItems:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
 + (id)itemsSupportingProvisioning:(id)arg1 archive:(id)arg2 logAspect:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(readonly, nonatomic) IDEDistributionItemPlatform *itemPlatform; // @synthesize itemPlatform=_itemPlatform;
 @property(readonly, nonatomic) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
@@ -45,7 +46,6 @@
 @property __weak IDEDistributionItem *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) DVTFilePath *machOPath; // @synthesize machOPath=_machOPath;
 @property(readonly, nonatomic) DVTFilePath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAssetPack;
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
 @property(readonly, nonatomic) NSString *appID;

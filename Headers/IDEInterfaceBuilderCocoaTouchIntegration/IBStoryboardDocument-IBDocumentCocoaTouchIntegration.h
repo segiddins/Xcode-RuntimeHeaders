@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBStoryboardDocument.h>
 
-@class IBUIColor;
+@class IBColor;
 
 @interface IBStoryboardDocument (IBDocumentCocoaTouchIntegration)
 + (id)keyPathsForValuesAffectingGlobalTintColor;
@@ -15,7 +15,7 @@
 + (int)libraryInclusionStatusForProxyObject;
 - (void)unarchiveCocoaTouchDataWithDocumentUnarchiver:(id)arg1;
 - (void)archiveCocoaTouchDataWithDocumentArchiver:(id)arg1;
-@property(copy, nonatomic) IBUIColor *globalTintColor;
+@property(copy, nonatomic) IBColor *globalTintColor;
 - (id)cocoaTouchPlatformAdapter;
 - (void)flattenConnectionsIfNecessary;
 - (void)replaceSystemMenusWithDiffs;

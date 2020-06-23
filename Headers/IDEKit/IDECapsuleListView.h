@@ -45,13 +45,13 @@
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL highlightingEnabled; // @synthesize highlightingEnabled=_highlightingEnabled;
 @property long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
 @property(retain) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) id <IDECapsuleListViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_setDisclosedIndexes:(id)arg1;

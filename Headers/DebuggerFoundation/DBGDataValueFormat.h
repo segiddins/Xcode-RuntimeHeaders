@@ -21,9 +21,9 @@
 + (id)decimalFormatUsingTag:(unsigned long long)arg1;
 + (id)hexFormatUsingTag:(unsigned long long)arg1;
 + (id)naturalFormatUsingTag:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long tag; // @synthesize tag=_tag;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDisplayName:(id)arg1 tag:(unsigned long long)arg2;
 
 @end

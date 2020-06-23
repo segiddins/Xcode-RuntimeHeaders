@@ -52,9 +52,9 @@
     id <DVTPlistViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <DVTPlistViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) DVTPlistNode *selectedNode; // @synthesize selectedNode=_selectedNode;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)createPlistTypeMenuWithTitle:(id)arg1;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;

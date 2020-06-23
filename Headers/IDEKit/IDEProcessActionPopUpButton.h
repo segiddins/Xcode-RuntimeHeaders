@@ -13,8 +13,8 @@
     NSTrackingArea *_trackingArea;
 }
 
-@property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 - (void).cxx_destruct;
+@property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 - (id)processActionPopUpCell;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

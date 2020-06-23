@@ -77,8 +77,8 @@
 + (id)translateValue:(id)arg1 ofType:(id)arg2;
 + (id)sampleAttributes;
 + (void)initialize;
-@property unsigned long long verboseLevel; // @synthesize verboseLevel;
 - (void).cxx_destruct;
+@property unsigned long long verboseLevel; // @synthesize verboseLevel;
 - (BOOL)validateModel:(id)arg1;
 - (void)_sizeToFit:(id)arg1;
 - (void)drawPlaceholder:(struct CGRect)arg1;

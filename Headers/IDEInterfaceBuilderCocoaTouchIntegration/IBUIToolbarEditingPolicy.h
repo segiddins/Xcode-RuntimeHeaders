@@ -14,9 +14,9 @@
     IBEditor *_editor;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBEditor *editor; // @synthesize editor=_editor;
 @property(readonly) IBUIToolbar *toolbar; // @synthesize toolbar=_toolbar;
-- (void).cxx_destruct;
 - (id)captureImagesAndProcessGeometryOfItems:(id)arg1;
 - (BOOL)isFrameLockedForButtonBarItem:(id)arg1;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;

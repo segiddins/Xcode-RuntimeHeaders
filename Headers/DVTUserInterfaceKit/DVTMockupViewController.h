@@ -13,8 +13,8 @@
     NSImageView *_imageView;
 }
 
-@property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 
 @end
 

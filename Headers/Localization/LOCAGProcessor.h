@@ -26,6 +26,7 @@
     unsigned long long _executionMode;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long executionMode; // @synthesize executionMode=_executionMode;
 @property(retain) NSMutableDictionary *indexFromNewbaseFilePathToFileSet; // @synthesize indexFromNewbaseFilePathToFileSet=_indexFromNewbaseFilePathToFileSet;
 @property(retain) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
@@ -40,7 +41,6 @@
 @property(retain) LOCAGProjectManager *projectManager; // @synthesize projectManager=_projectManager;
 @property(retain) LOCAGEnvironmentManager *environmentManager; // @synthesize environmentManager=_environmentManager;
 @property(retain) NSString *componentName; // @synthesize componentName=_componentName;
-- (void).cxx_destruct;
 - (id)nonThreadSafeFileSets;
 - (id)threadSafeFileSets;
 - (void)copyXLIFFatPath:(id)arg1 toPath:(id)arg2;

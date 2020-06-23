@@ -14,8 +14,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(copy, nonatomic) NSArray *keychainAccessGroups; // @synthesize keychainAccessGroups=_keychainAccessGroups;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *keychainAccessGroups; // @synthesize keychainAccessGroups=_keychainAccessGroups;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

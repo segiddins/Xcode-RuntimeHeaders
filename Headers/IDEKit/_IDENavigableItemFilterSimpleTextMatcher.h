@@ -13,8 +13,8 @@
     NSString *_text;
 }
 
-@property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

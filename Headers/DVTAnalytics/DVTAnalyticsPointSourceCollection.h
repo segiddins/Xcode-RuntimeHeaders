@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSArray *sourceAnalyticsPointsObservationTokens; // @synthesize sourceAnalyticsPointsObservationTokens=_sourceAnalyticsPointsObservationTokens;
 @property(retain, nonatomic) NSArray *analyticsPoints; // @synthesize analyticsPoints=_analyticsPoints;
 @property(retain, nonatomic) id <DVTAnalyticsAppStoreSourceProtocol> representativeAnalyticsPointSource; // @synthesize representativeAnalyticsPointSource=_representativeAnalyticsPointSource;
 @property(retain, nonatomic) NSSet *analyticsPointSources; // @synthesize analyticsPointSources=_analyticsPointSources;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)cachedPathForAnalyticsPoint:(id)arg1;
 @property(readonly) DVTAnalyticsAppStoreSourceUserDefaultsKey *userDefaultsKey;

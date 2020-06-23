@@ -15,8 +15,8 @@
 
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)propertyListIdentifier;
-@property(readonly) NSArray *sources; // @synthesize sources=_sources;
 - (void).cxx_destruct;
+@property(readonly) NSArray *sources; // @synthesize sources=_sources;
 - (void)accumulateContributingSources:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualToFileSourceWithIdenticalClass:(id)arg1;

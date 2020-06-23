@@ -15,9 +15,9 @@
     NSArray *_debugBarIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *debugBarIdentifiers; // @synthesize debugBarIdentifiers=_debugBarIdentifiers;
 @property __weak id <IDEWorkspaceDFRDebugBarItemFactoryControlDelegate> controlDelegate; // @synthesize controlDelegate=_controlDelegate;
-- (void).cxx_destruct;
 - (id)makeDebugExtrasItemWithIdentifier:(id)arg1;
 - (id)makeSteppingItemWithIdentifier:(id)arg1;
 - (id)makeBreakpointsItemWithIdentifier:(id)arg1;

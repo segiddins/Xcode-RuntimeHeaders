@@ -11,8 +11,8 @@
     CDUnknownBlockType _updateBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 - (void)run;
 - (id)statusDescription;
 

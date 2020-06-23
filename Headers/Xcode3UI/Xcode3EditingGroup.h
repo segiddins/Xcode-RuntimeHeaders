@@ -18,10 +18,10 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
+- (void).cxx_destruct;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, copy) NSArray *childItems; // @synthesize childItems=_childItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

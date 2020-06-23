@@ -14,6 +14,7 @@
     MISSING_TYPE *observers;
     MISSING_TYPE *productFuture;
     MISSING_TYPE *taskType;
+    MISSING_TYPE *reuseToken;
 }
 
 @end

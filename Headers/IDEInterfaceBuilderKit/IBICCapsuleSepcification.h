@@ -15,10 +15,10 @@
     NSSet *_displayedDescendants;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isExplicitBarrier; // @synthesize isExplicitBarrier=_isExplicitBarrier;
 @property(readonly) NSSet *displayedDescendants; // @synthesize displayedDescendants=_displayedDescendants;
 @property(readonly) Class capsuleClass; // @synthesize capsuleClass=_capsuleClass;
-- (void).cxx_destruct;
 - (id)initWithCapsuleClass:(Class)arg1 displayedDescendants:(id)arg2 isExplicitBarrier:(BOOL)arg3;
 - (id)initWithCapsuleClass:(Class)arg1 displayedDescendants:(id)arg2;
 

@@ -16,11 +16,11 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (id)initWithPixelFormat:(unsigned int)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 bytesPerRow:(unsigned long long)arg4 data:(id)arg5;
 - (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 data:(id)arg4;
 

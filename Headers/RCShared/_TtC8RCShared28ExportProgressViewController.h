@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class MISSING_TYPE, NSProgressIndicator;
+@class MISSING_TYPE;
 
 @interface _TtC8RCShared28ExportProgressViewController : NSViewController
 {
@@ -17,11 +17,10 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewDidLoad;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 - (void)cancel:(id)arg1;
-@property(nonatomic) __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator;
 
 @end
 

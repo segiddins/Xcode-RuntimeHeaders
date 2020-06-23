@@ -22,12 +22,12 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSNumber *isAccessibilityElement; // @synthesize isAccessibilityElement=_isAccessibilityElement;
 @property(copy) NSNumber *accessibilityTraits; // @synthesize accessibilityTraits=_accessibilityTraits;
 @property(copy) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(copy) NSString *accessibilityHint; // @synthesize accessibilityHint=_accessibilityHint;
-- (void).cxx_destruct;
 - (BOOL)isEquivalentToDefaultConfiguration:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

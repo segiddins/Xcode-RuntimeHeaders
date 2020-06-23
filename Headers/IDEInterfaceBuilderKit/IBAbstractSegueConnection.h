@@ -27,8 +27,8 @@
 + (BOOL)isOrderedRelativeToUniformInstances;
 + (double)displayOrderPriority;
 + (id)classIdentifier;
-@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (BOOL)isFlowTerminatingSegue;
 - (BOOL)isSelectable;
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;

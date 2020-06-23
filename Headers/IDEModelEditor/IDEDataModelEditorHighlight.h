@@ -18,12 +18,12 @@
     struct _NSRange _highlightRange;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long numberOfInternalHits; // @synthesize numberOfInternalHits=_numberOfInternalHits;
 @property(getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly, copy) NSString *highlightProperty; // @synthesize highlightProperty=_highlightProperty;
 @property(readonly) struct _NSRange highlightRange; // @synthesize highlightRange=_highlightRange;
 @property(readonly) id <IDEDMModelObject> modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (id)initWithModelObject:(id)arg1 range:(struct _NSRange)arg2 property:(id)arg3;
 
 @end

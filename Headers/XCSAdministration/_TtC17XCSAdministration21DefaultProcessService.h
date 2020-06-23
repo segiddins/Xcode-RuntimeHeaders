@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <XCSAdministration/_TtP17XCSAdministration14ProcessService_-Protocol.h>
-
-@interface _TtC17XCSAdministration21DefaultProcessService : NSObject <_TtP17XCSAdministration14ProcessService_>
+@interface _TtC17XCSAdministration21DefaultProcessService : NSObject
 {
 }
 

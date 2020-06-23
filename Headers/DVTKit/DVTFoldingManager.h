@@ -21,12 +21,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL usesImageLiteral; // @synthesize usesImageLiteral=_usesImageLiteral;
 @property BOOL usesFileLiteral; // @synthesize usesFileLiteral=_usesFileLiteral;
 @property BOOL usesColorLiteral; // @synthesize usesColorLiteral=_usesColorLiteral;
 @property __weak id <DVTFoldingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) DVTTextFold *topLevelFold; // @synthesize topLevelFold=_topLevelFold;
-- (void).cxx_destruct;
 - (id)fixedSelectionRangesForRanges:(id)arg1 affinity:(unsigned long long)arg2 inTextView:(id)arg3;
 - (id)adjustFoldsForRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
 - (id)blockFoldsEnclosingRange:(struct _NSRange)arg1;

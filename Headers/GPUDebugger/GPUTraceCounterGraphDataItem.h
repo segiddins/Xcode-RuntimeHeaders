@@ -34,6 +34,7 @@
     DYPPerformanceAnalysisResult *_performanceAnalysisResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL batchFilteredDataLoaded; // @synthesize batchFilteredDataLoaded=_batchFilteredDataLoaded;
 @property(readonly, nonatomic) DYPPerformanceAnalysisResult *performanceAnalysisResult; // @synthesize performanceAnalysisResult=_performanceAnalysisResult;
 @property(readonly, nonatomic) NSArray *valuesForAnalysis; // @synthesize valuesForAnalysis=_valuesForAnalysis;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) BOOL encoderData; // @synthesize encoderData=_encoderData;
 @property(nonatomic) BOOL isEmptyEncoder; // @synthesize isEmptyEncoder=_isEmptyEncoder;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)runPerformanceAnalysis:(id)arg1;
 - (void)clearAnalysisResult;
 - (void)performanceAnalyzer:(id)arg1 finish:(id)arg2;
@@ -61,6 +61,7 @@
 - (void)updateData:(BOOL)arg1;
 - (void)setTraceInfo:(id)arg1;
 - (void)_updateLabel;
+- (id)_cleanNavigatorLabel:(id)arg1;
 - (id)representedObject;
 - (id)initWithDrawCallInfo:(id)arg1 index:(unsigned long long)arg2 sampleProvider:(id)arg3 encoderData:(BOOL)arg4;
 

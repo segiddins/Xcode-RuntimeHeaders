@@ -18,9 +18,9 @@
 + (id)_breakpointExtensions;
 + (id)_extensionIDForBreakpoint:(id)arg1;
 + (id)breakpointProxyForBreakpoint:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL wasSuccessfullyUnarchived; // @synthesize wasSuccessfullyUnarchived=_wasSuccessfullyUnarchived;
 @property(readonly) IDEBreakpoint *proxiedBreakpoint; // @synthesize proxiedBreakpoint=_proxiedBreakpoint;
-- (void).cxx_destruct;
 - (void)addBreakpointContent:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBreakpointExtensionIDFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;

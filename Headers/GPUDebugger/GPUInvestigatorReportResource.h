@@ -24,6 +24,7 @@
 
 + (double)maximumFrameTime;
 + (void)setMaximumFrameTime:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUTraceOutlineItem *outlineItem; // @synthesize outlineItem=_outlineItem;
 @property(nonatomic) __weak DYInvestigatorFinding *investigatorFinding; // @synthesize investigatorFinding=_investigatorFinding;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
 @property(nonatomic) unsigned long long functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(nonatomic) unsigned long long drawFunctionIndex; // @synthesize drawFunctionIndex=_drawFunctionIndex;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

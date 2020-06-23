@@ -15,8 +15,8 @@
     Class _slotComponentClass;
 }
 
-@property(retain, nonatomic) Class slotComponentClass; // @synthesize slotComponentClass=_slotComponentClass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Class slotComponentClass; // @synthesize slotComponentClass=_slotComponentClass;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToVariable:(id)arg1;

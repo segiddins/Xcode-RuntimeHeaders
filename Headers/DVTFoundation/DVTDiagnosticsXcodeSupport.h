@@ -17,10 +17,10 @@
     NSMutableArray *_errors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSFileManager *fm; // @synthesize fm=_fm;
 @property(retain, nonatomic) NSMutableDictionary *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)_unknownPlatform;
 - (id)_captureSDKInfoUsingPlatform:(id)arg1 xcodePath:(id)arg2;
 - (void)_captureAllSDKInfo:(id)arg1;

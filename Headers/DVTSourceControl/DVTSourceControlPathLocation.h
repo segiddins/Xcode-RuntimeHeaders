@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)rootPathLocation;
-@property(retain) NSString *relativePath; // @synthesize relativePath=_relativePath;
 - (void).cxx_destruct;
+@property(retain) NSString *relativePath; // @synthesize relativePath=_relativePath;
 - (id)description;
 - (id)displayName;
 - (BOOL)isEqual:(id)arg1;

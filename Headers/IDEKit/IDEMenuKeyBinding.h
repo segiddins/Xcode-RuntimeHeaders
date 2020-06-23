@@ -19,11 +19,11 @@
 + (id)keyPathsForValuesAffectingCombinedIdentifier;
 + (id)combinedIdentifierWithCommandIdentifier:(id)arg1 group:(id)arg2 groupIdentifier:(id)arg3;
 + (long long)_defaultMaxNumberOfShortcuts;
+- (void).cxx_destruct;
 @property unsigned long long defaultRawModifierMask; // @synthesize defaultRawModifierMask=_defaultRawModifierMask;
 @property(copy) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(copy) NSString *commandGroupIdentifier; // @synthesize commandGroupIdentifier=_commandGroupIdentifier;
 @property(copy) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *combinedIdentifier;
 - (BOOL)isEqualToKeyBinding:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

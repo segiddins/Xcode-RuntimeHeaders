@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property BOOL hidden; // @synthesize hidden=_hidden;
 - (void).cxx_destruct;
+@property BOOL hidden; // @synthesize hidden=_hidden;
 - (void)setControlViewWorkaround13788386:(id)arg1;
 - (void)setControlView:(id)arg1;
 @property(copy) NSArray *nodeAttributeInfo;

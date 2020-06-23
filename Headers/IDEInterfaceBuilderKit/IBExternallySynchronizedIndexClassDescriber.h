@@ -17,8 +17,8 @@
     IDEIndex *_index;
 }
 
-@property(retain) IDEIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(retain) IDEIndex *index; // @synthesize index=_index;
 - (id)relationSymbolsInClassNamed:(id)arg1 ofRelationshipType:(long long)arg2;
 - (id)relationSymbolsInIndexClassSymbol:(id)arg1 ofRelationshipType:(long long)arg2;
 - (id)typeForNamedRelation:(id)arg1 ofRelationshipType:(long long)arg2 forClassNamed:(id)arg3;

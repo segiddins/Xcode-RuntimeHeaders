@@ -11,8 +11,8 @@
     NSTextStorage *_realStorage;
 }
 
-@property(retain) NSTextStorage *realStorage; // @synthesize realStorage=_realStorage;
 - (void).cxx_destruct;
+@property(retain) NSTextStorage *realStorage; // @synthesize realStorage=_realStorage;
 - (void)endEditing;
 - (void)beginEditing;
 - (unsigned long long)lineBreakBeforeIndex:(unsigned long long)arg1 withinRange:(struct _NSRange)arg2;

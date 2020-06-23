@@ -13,8 +13,8 @@
     NSDictionary *_attributes;
 }
 
-@property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (void)setDefaultsForPlane:(id)arg1;
 - (void)decorateContainer:(struct DTTimelineDecorationContainer *)arg1 qualityOfService:(unsigned int)arg2 priority:(int)arg3 group:(id)arg4;
 - (id)init;

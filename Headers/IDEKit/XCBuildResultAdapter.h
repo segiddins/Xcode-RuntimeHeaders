@@ -31,6 +31,7 @@
 - (BOOL)expandableTitleForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionAtMessageLevelForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionAtSectionLevelForDataNode:(id)arg1;
+- (BOOL)textAlwaysExpandedForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionForDataNode:(id)arg1;
 - (BOOL)dataNode:(id)arg1 doubleClickInColumn:(id)arg2;
 - (id)newAttributesForFont:(id)arg1 color:(id)arg2;

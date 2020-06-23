@@ -40,6 +40,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DTBarGraph *graphView; // @synthesize graphView=_graphView;
 @property(nonatomic) BOOL useFlatColor; // @synthesize useFlatColor=_useFlatColor;
 @property(nonatomic) double yLabelSpacing; // @synthesize yLabelSpacing=_yLabelSpacing;
@@ -52,7 +53,6 @@
 @property(nonatomic) BOOL showsLabels; // @synthesize showsLabels=_showsLabels;
 @property(nonatomic) double keyViewOffset; // @synthesize keyViewOffset=_keyViewOffset;
 @property(nonatomic) BOOL showsKey; // @synthesize showsKey=_showsKey;
-- (void).cxx_destruct;
 - (BOOL)useFlatColorForGraphChart:(id)arg1;
 - (void)setPathStyleForGraph:(id)arg1 entry:(id)arg2 path:(id)arg3;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;

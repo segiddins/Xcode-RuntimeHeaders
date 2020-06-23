@@ -11,6 +11,7 @@
 @interface _TtC16XCBTaskExecution36BuildDescriptionDeserializerDelegate : _TtCs12_SwiftObject
 {
     MISSING_TYPE *platformRegistry;
+    MISSING_TYPE *sdkRegistry;
     MISSING_TYPE *workspace;
     MISSING_TYPE *buildParameters;
     MISSING_TYPE *configuredTargets;

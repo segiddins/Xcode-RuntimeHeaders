@@ -14,9 +14,9 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 
 @end
 

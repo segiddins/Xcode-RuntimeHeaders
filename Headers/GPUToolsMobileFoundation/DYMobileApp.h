@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subgenres; // @synthesize subgenres=_subgenres;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(copy, nonatomic) NSString *originDeviceIdentifier; // @synthesize originDeviceIdentifier=_originDeviceIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

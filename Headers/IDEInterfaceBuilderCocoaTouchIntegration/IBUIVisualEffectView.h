@@ -22,11 +22,11 @@
 + (id)keyPathsForValuesAffectingIbShouldShowVibrancyEffectStyles;
 + (id)keyPathsForValuesAffectingIbArchivedDesignableContentView;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) long long vibrancyEffectStyle; // @synthesize vibrancyEffectStyle=_vibrancyEffectStyle;
 @property(nonatomic) BOOL vibrancy; // @synthesize vibrancy=_vibrancy;
 @property(nonatomic) long long blurEffectStyle; // @synthesize blurEffectStyle=_blurEffectStyle;
-- (void).cxx_destruct;
 - (id)localExtraMarshalledToManyRelationshipKeyPaths;
 - (id)instantiationKeyPathForMarshalledRelatedObject:(id)arg1;
 - (void)layoutSubviews;

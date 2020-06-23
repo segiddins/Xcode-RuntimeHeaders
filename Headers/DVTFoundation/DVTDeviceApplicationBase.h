@@ -25,6 +25,7 @@
     NSString *_installedPath;
 }
 
+- (void).cxx_destruct;
 @property BOOL supportsSimulator; // @synthesize supportsSimulator=_supportsSimulator;
 @property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(copy) NSString *installedPath; // @synthesize installedPath=_installedPath;
@@ -36,7 +37,6 @@
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -45,6 +45,7 @@
 
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
 + (id)nextNodeUID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *uidToSKNode; // @synthesize uidToSKNode=_uidToSKNode;
 @property(retain, nonatomic) NSMutableDictionary *actionAssignments; // @synthesize actionAssignments=_actionAssignments;
 @property(nonatomic) double animatingSpeed; // @synthesize animatingSpeed=_animatingSpeed;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) SKScene *activeScene; // @synthesize activeScene=_activeScene;
 @property(retain, nonatomic) SKScene *layoutScene; // @synthesize layoutScene=_layoutScene;
 @property(retain, nonatomic) GTFActionLibrary *actionLibrary; // @synthesize actionLibrary=_actionLibrary;
-- (void).cxx_destruct;
 - (id)entityFromNode:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *dynamicObjectLibraryAssets;
 - (void)updateDynanicObjectLibraryAssets;
@@ -87,7 +87,7 @@
 - (void)_setupActionEditorNotifications;
 - (void)_refreshScene:(id)arg1 forTextureNames:(id)arg2;
 - (void)_setupTextureUpdateNotifications;
-- (struct NSObject *)navigableItemFromDocumentLocation:(id)arg1;
+- (id)navigableItemFromDocumentLocation:(id)arg1;
 - (id)navigableItemsFromIndexPaths:(id)arg1;
 - (id)navigableItemsFromSKNodes:(id)arg1;
 - (id)navigableItemFromSKNode:(id)arg1;
@@ -111,13 +111,13 @@
 - (void)_decodeSKNodeComponentsInGKScene:(id)arg1 forSKScene:(id)arg2;
 - (void)clearActionAssignmentEntryForURL:(id)arg1;
 - (void)setActionAssignmentEntry:(id)arg1 forURL:(id)arg2;
-- (struct NSDictionary *)_encodeActionAssignments;
-- (struct NSDictionary *)_decodeActionAssignments:(struct NSDictionary *)arg1 forScene:(id)arg2;
+- (id)_encodeActionAssignments;
+- (id)_decodeActionAssignments:(id)arg1 forScene:(id)arg2;
 - (void)_cleanupSceneForWriting:(id)arg1;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
 - (id)namedAssets;
 - (BOOL)_loadGKSceneFromArchiver:(id)arg1 forScene:(id)arg2 withFileInfo:(id)arg3 outGKScene:(id *)arg4 error:(id *)arg5;
-- (BOOL)_loadActionsFromArchiver:(id)arg1 forScene:(id)arg2 withFileInfo:(id)arg3 outActionLibrary:(id *)arg4 outActionAssignments:(struct NSDictionary **)arg5 error:(id *)arg6;
+- (BOOL)_loadActionsFromArchiver:(id)arg1 forScene:(id)arg2 withFileInfo:(id)arg3 outActionLibrary:(id *)arg4 outActionAssignments:(id *)arg5 error:(id *)arg6;
 - (BOOL)_loadSceneFromArchiver:(id)arg1 withFileInfo:(id)arg2 outScene:(id *)arg3 error:(id *)arg4;
 - (void)generateNavigableNodeGraph;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;

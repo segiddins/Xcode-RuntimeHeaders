@@ -25,12 +25,12 @@
 
 + (id)requiredExtensionsForExtensionPointWithIdentifier:(id)arg1;
 + (id)requiredExtensionPointForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSSet *childExtensionPoints; // @synthesize childExtensionPoints=_childExtensionPoints;
 @property(readonly, copy) NSSet *extensions; // @synthesize extensions=_extensions;
 @property(readonly) DVTPlugIn *plugIn; // @synthesize plugIn=_plugIn;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_registerChildExtensionPoint:(id)arg1;
 - (void)_registerExtension:(id)arg1;
 - (id)extensionsMatchingPredicate:(id)arg1;

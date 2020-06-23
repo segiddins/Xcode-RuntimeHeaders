@@ -13,8 +13,8 @@
     NSMutableArray *_unarchivedScopes;
 }
 
-@property(readonly) NSArray *unarchivedScopes; // @synthesize unarchivedScopes=_unarchivedScopes;
 - (void).cxx_destruct;
+@property(readonly) NSArray *unarchivedScopes; // @synthesize unarchivedScopes=_unarchivedScopes;
 - (void)addScope:(id)arg1 fromXMLUnarchiver:(id)arg2;
 
 @end

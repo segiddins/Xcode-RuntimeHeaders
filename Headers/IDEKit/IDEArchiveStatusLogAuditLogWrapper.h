@@ -16,10 +16,10 @@
     DVTFilePath *_auditLogPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *auditLogPath; // @synthesize auditLogPath=_auditLogPath;
 @property(readonly) NSError *auditLogLoadingError; // @synthesize auditLogLoadingError=_auditLogLoadingError;
 @property(readonly) _TtC13IDEFoundation20NotarizationAuditLog *auditLog; // @synthesize auditLog=_auditLog;
-- (void).cxx_destruct;
 @property(readonly) NSArray *issues; // @synthesize issues=_issues;
 - (id)initFromPath:(id)arg1;
 

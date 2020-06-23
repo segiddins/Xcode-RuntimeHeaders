@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/OSActivityStreamDelegate-Protocol.h>
-#import <IDEFoundation/_TtP13IDEFoundation38IDETestingLaunchSession_ConsoleAdaptor_-Protocol.h>
 
 @class NSDateFormatter, NSFileHandle, NSMutableArray, NSMutableData, NSMutableString, NSString, NSTimer, OSActivityStream;
 @protocol IDEConsoleAdaptorDelegateProtocol, OS_dispatch_queue;
 
-@interface IDEConsoleAdaptor : NSObject <_TtP13IDEFoundation38IDETestingLaunchSession_ConsoleAdaptor_, OSActivityStreamDelegate>
+@interface IDEConsoleAdaptor : NSObject <OSActivityStreamDelegate>
 {
     int _readMode;
     OSActivityStream *_stream;
@@ -52,6 +51,7 @@
 + (id)_itemsForAdaptors:(id)arg1 sequencesSelector:(SEL)arg2;
 + (unsigned long long)_nextContentSequence;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) struct __CFArray *standardErrorSequences; // @synthesize standardErrorSequences=_standardErrorSequences;
 @property(readonly) struct __CFArray *standardOutputSequences; // @synthesize standardOutputSequences=_standardOutputSequences;
 @property(readonly) struct __CFArray *standardInputSequences; // @synthesize standardInputSequences=_standardInputSequences;
@@ -60,7 +60,6 @@
 @property BOOL ignoreFutureOutput; // @synthesize ignoreFutureOutput=_ignoreFutureOutput;
 @property BOOL finishedReceivingData; // @synthesize finishedReceivingData=_finishedReceivingData;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)activityStream:(id)arg1 results:(id)arg2;
 - (void)setupLoggingStreamForPid:(int)arg1 withDevice:(id)arg2;
 - (id)standardErrorItems;

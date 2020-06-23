@@ -26,12 +26,12 @@
 + (id)slotFilterWithIdiomFilter:(id)arg1 subtypeFilter:(id)arg2 memoryFilter:(id)arg3 graphicsFeatureSetFilter:(id)arg4 colorSpaceFilter:(id)arg5;
 + (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 subtypes:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
 + (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 subtypes:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICGraphicsFeatureSet *graphicsFeatureSet; // @synthesize graphicsFeatureSet=_graphicsFeatureSet;
 @property(readonly) IBICMemoryClass *memory; // @synthesize memory=_memory;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;
 - (long long)compareDisplayOrder:(id)arg1;

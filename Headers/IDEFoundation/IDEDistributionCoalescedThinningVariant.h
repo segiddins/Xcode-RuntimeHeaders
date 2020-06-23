@@ -14,9 +14,9 @@
     IPAToolCoalescedThinningVariant *_coalescedThinningVariant;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IPAToolCoalescedThinningVariant *coalescedThinningVariant; // @synthesize coalescedThinningVariant=_coalescedThinningVariant;
 - (id)fileNameSuffix;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

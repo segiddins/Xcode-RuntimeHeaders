@@ -17,9 +17,9 @@
     DVTBorderedView *_fileAccessTableHeaderBorderedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *fileAccessTableHeaderBorderedView; // @synthesize fileAccessTableHeaderBorderedView=_fileAccessTableHeaderBorderedView;
 @property(retain) DVTTableView *fileAccessTable; // @synthesize fileAccessTable=_fileAccessTable;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

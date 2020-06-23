@@ -14,7 +14,7 @@
     MISSING_TYPE *_currentIconName;
     MISSING_TYPE *_cachedResolutionAndIconSpec;
     MISSING_TYPE *_cachedDrawable;
-    MISSING_TYPE *currentIconSetName;
+    MISSING_TYPE *currentIconSetIdentifier;
     MISSING_TYPE *currentBundle;
     MISSING_TYPE *intendedSize;
     MISSING_TYPE *scaleFactor;

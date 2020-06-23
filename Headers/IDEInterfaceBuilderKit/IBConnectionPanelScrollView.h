@@ -21,6 +21,7 @@
     NSView *_documentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *documentView; // @synthesize documentView=_documentView;
 @property(readonly) IBConnectionPanelScroller *horizontalScroller; // @synthesize horizontalScroller=_horizontalScroller;
 @property(readonly) IBConnectionPanelScroller *verticalScroller; // @synthesize verticalScroller=_verticalScroller;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL autohidesScrollers; // @synthesize autohidesScrollers=_autohidesScrollers;
 @property double scrollerSize; // @synthesize scrollerSize=_scrollerSize;
 @property(readonly) NSView *contentView; // @synthesize contentView=_clipView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)scrollWheel:(id)arg1;
 @property(readonly) BOOL hasHorizontalScroller;

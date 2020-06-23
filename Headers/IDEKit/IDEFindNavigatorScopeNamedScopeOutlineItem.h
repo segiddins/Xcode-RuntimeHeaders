@@ -13,8 +13,8 @@
     IDEBatchFindNamedScope *_namedScope;
 }
 
-@property(readonly) IDEBatchFindNamedScope *namedScope; // @synthesize namedScope=_namedScope;
 - (void).cxx_destruct;
+@property(readonly) IDEBatchFindNamedScope *namedScope; // @synthesize namedScope=_namedScope;
 - (id)filteredCloneWithChildren:(id)arg1 passedFilterLocally:(BOOL)arg2 descendantPassedFilter:(BOOL)arg3;
 - (id)initWithNamedScope:(id)arg1 passedFilterLocally:(BOOL)arg2 descendantPassedFilter:(BOOL)arg3;
 

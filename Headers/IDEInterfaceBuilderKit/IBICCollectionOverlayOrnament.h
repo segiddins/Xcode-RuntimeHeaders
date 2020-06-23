@@ -24,9 +24,9 @@
 + (id)dropIndicatorWithCatalogItems:(id)arg1;
 + (id)dropIndicatorWithImages:(id)arg1;
 + (id)dropIndicatorWithPaths:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dropLocation; // @synthesize dropLocation=_dropLocation;
 @property(readonly, nonatomic) IBICCollectionComponentID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (long long)incrementIndex;
 @property(readonly, nonatomic) long long currentIndex;
 @property(readonly, nonatomic) NSArray *catalogItems;

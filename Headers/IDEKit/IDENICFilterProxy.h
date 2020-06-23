@@ -13,8 +13,8 @@
     NSHashTable *_rootItems;
 }
 
-@property(readonly) NSHashTable *rootItems; // @synthesize rootItems=_rootItems;
 - (void).cxx_destruct;
+@property(readonly) NSHashTable *rootItems; // @synthesize rootItems=_rootItems;
 - (BOOL)_alwaysBypassFilter;
 - (id)_childItems;
 - (id)childItems;

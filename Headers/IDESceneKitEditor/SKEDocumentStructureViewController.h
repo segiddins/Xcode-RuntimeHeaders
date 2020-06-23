@@ -34,9 +34,9 @@
     SKESceneEditor *_sceneEditor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain, nonatomic) SKESceneEditor *sceneEditor; // @synthesize sceneEditor=_sceneEditor;
-- (void).cxx_destruct;
 - (id)openRows;
 - (void)setOpenRows:(id)arg1;
 - (BOOL)shouldEnableActionPopUpButton;

@@ -17,12 +17,12 @@
     long long _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) long long deferralRound; // @synthesize deferralRound=_deferralRound;
 @property(copy, nonatomic) NSString *runtimeKeyPath; // @synthesize runtimeKeyPath=_runtimeKeyPath;
 @property(readonly, nonatomic) NSString *designTimeKeyPath; // @synthesize designTimeKeyPath=_designTimeKeyPath;
-- (void).cxx_destruct;
 - (id)description;
 - (void)reset;
 - (void)resetWithKeyPath:(id)arg1 round:(long long)arg2;

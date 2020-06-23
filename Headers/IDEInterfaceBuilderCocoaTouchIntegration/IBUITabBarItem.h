@@ -9,13 +9,13 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCopying-Protocol.h>
 
-@class IBOffsetWrapper, IBUIColor, IBUITabBar, NSImage, NSNumber, NSString;
+@class IBColor, IBOffsetWrapper, IBUITabBar, NSImage, NSNumber, NSString;
 
 @interface IBUITabBarItem : IBUIBarItem <IBDocumentArchiving, NSCopying>
 {
     BOOL _springLoaded;
     IBUITabBar *_tabBar;
-    IBUIColor *_badgeColor;
+    IBColor *_badgeColor;
     NSString *_badgeValue;
     NSImage *_selectedImage;
     NSNumber *_systemItemIdentifier;
@@ -29,14 +29,14 @@
 + (id)keyPathsForValuesAffectingIbInspectedHasTitlePositionAdjustment;
 + (id)keyPathsForValuesAffectingIbInspectedSystemItemIdentifier;
 + (id)keyPathsForValuesAffectingIbInspectedSelectedImage;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
 @property(copy, nonatomic) IBOffsetWrapper *titlePositionAdjustment; // @synthesize titlePositionAdjustment=_titlePositionAdjustment;
 @property(copy, nonatomic) NSNumber *systemItemIdentifier; // @synthesize systemItemIdentifier=_systemItemIdentifier;
 @property(retain, nonatomic) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
-@property(copy, nonatomic) IBUIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
+@property(copy, nonatomic) IBColor *badgeColor; // @synthesize badgeColor=_badgeColor;
 @property(readonly) __weak IBUITabBar *tabBar; // @synthesize tabBar=_tabBar;
-- (void).cxx_destruct;
 - (BOOL)isSystemItem;
 - (void)setTabBar:(id)arg1;
 - (id)barView;

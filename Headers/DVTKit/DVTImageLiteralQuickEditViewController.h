@@ -25,13 +25,13 @@
 }
 
 + (struct CGSize)defaultContentSize;
+- (void).cxx_destruct;
 @property(retain) NSView *footerView; // @synthesize footerView=_footerView;
 @property(retain) NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *imageFilePaths; // @synthesize imageFilePaths=_imageFilePaths;
 @property(retain, nonatomic) DVTFilePath *selectedImageFilePath; // @synthesize selectedImageFilePath=_selectedImageFilePath;
 @property(retain) id <DVTImageLiteralQuickEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPopover *presentingPopover; // @synthesize presentingPopover;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemsAtIndexPaths:(id)arg2;
 - (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

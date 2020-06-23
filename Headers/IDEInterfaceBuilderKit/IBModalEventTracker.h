@@ -14,11 +14,11 @@
     CDUnknownBlockType _autoscrollHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType autoscrollHandler; // @synthesize autoscrollHandler=_autoscrollHandler;
 @property(copy, nonatomic) CDUnknownBlockType flagsChangedHandler; // @synthesize flagsChangedHandler=_flagsChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType rightDragHandler; // @synthesize rightDragHandler=_rightDragHandler;
 @property(copy, nonatomic) CDUnknownBlockType leftDragHandler; // @synthesize leftDragHandler=_leftDragHandler;
-- (void).cxx_destruct;
 - (id)trackMouseInWindow:(id)arg1 fromEvent:(id)arg2;
 
 @end

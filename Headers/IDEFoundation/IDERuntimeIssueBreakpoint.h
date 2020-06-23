@@ -14,11 +14,13 @@
 + (id)displayNameForType:(unsigned long long)arg1;
 + (id)supportedTypes;
 + (id)propertiesAffectingPersistenceState;
++ (void)initialize;
 @property unsigned long long type; // @synthesize type=_type;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 @property(readonly, nonatomic) BOOL isSanitizerBreakpoint;
 - (id)accessibilityDescription;
 - (id)displayName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

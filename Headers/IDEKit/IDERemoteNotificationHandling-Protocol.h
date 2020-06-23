@@ -6,9 +6,10 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSDictionary, UNNotificationResponse;
 
 @protocol IDERemoteNotificationHandling <NSObject>
+- (BOOL)handleNotificationResponse:(UNNotificationResponse *)arg1 payload:(NSDictionary *)arg2 error:(id *)arg3;
 - (BOOL)handleNotificationPayload:(NSDictionary *)arg1 error:(id *)arg2;
 - (BOOL)canHandleNotificationPayload:(NSDictionary *)arg1;
 @end

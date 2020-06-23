@@ -20,10 +20,10 @@
     QLPreviewView *_qlPreviewView;
 }
 
+- (void).cxx_destruct;
 @property(retain) QLPreviewView *qlPreviewView; // @synthesize qlPreviewView=_qlPreviewView;
 @property __weak id <QLPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)previewView:(id)arg1 didLoadPreviewItem:(id)arg2;
 - (id)existingURLToOpen;
 - (void)dealloc;

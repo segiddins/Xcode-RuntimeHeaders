@@ -39,6 +39,7 @@
 + (Class)_responseClass;
 + (Class)propertyClass;
 + (id)defaultPropertyName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *parameterCombinations; // @synthesize parameterCombinations=_parameterCombinations;
 @property(nonatomic, getter=isConfigurable) BOOL configurable; // @synthesize configurable=_configurable;
 @property(nonatomic, getter=isIneligibleForSuggestions) BOOL ineligibleForSuggestions; // @synthesize ineligibleForSuggestions=_ineligibleForSuggestions;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *intentTitle; // @synthesize intentTitle=_intentTitle;
 @property(copy, nonatomic) NSString *defaultImageName; // @synthesize defaultImageName=_defaultImageName;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;

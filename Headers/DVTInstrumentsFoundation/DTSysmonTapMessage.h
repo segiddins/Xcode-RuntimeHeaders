@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *runningMetadata; // @synthesize runningMetadata=_runningMetadata;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *runningMetadata; // @synthesize runningMetadata=_runningMetadata;
 - (void)setSessionMetadata:(id)arg1;
 - (id)sessionMetadata;
 @property(nonatomic) unsigned int tapVersion;

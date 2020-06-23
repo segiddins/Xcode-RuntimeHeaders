@@ -18,6 +18,7 @@
     DVTObservingToken *_testablesObservingToken;
     DVTObservingToken *_skippedTestsObservingToken;
     DVTObservingToken *_workspaceRunnableProductsToken;
+    DVTObservingToken *_testPlanReferencesObservingToken;
     NSArray *_hostBuildableReferences;
     BOOL _suppressSimulatorApplication;
     _TtC13IDEFoundation26IDESchemeTestPlanReference *_activeTestPlanReference;
@@ -31,11 +32,11 @@
 + (id)keyPathsForValuesAffectingDoesNonActionWork;
 + (void)forceCodeCoverageEnabledTo:(BOOL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressSimulatorApplication; // @synthesize suppressSimulatorApplication=_suppressSimulatorApplication;
 @property BOOL localizableStringsDataGatheringEnabled; // @synthesize localizableStringsDataGatheringEnabled=_localizableStringsDataGatheringEnabled;
 @property(retain) _TtC13IDEFoundation26IDESchemeTestPlanReference *defaultTestPlanReference; // @synthesize defaultTestPlanReference=_defaultTestPlanReference;
 @property(retain, nonatomic) _TtC13IDEFoundation26IDESchemeTestPlanReference *activeTestPlanReference; // @synthesize activeTestPlanReference=_activeTestPlanReference;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)isCodeCoverageEnabled;
 - (id)selectedInternalDebuggerToolchainIdentifier;

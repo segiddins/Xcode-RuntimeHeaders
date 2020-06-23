@@ -12,9 +12,9 @@
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long count; // @synthesize count=_count;
 @property(readonly) NSString *pattern; // @synthesize pattern=_pattern;
-- (void).cxx_destruct;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;
 - (id)init;

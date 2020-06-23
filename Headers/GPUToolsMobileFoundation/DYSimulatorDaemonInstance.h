@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_xcodePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *xcodePath; // @synthesize xcodePath=_xcodePath;
 @property(readonly, nonatomic) struct _xpc_connection_s *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithXcodePath:(id)arg1;
 

@@ -29,13 +29,13 @@
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 + (id)keyPathsForValuesAffectingCanRemovedSelectedItem;
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *intentSplitViewPane; // @synthesize intentSplitViewPane=_intentSplitViewPane;
 @property __weak DVTBorderedView *sourceListSplitViewPane; // @synthesize sourceListSplitViewPane=_sourceListSplitViewPane;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property(retain, nonatomic) IDEIntentBuilderGroupItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(retain, setter=_setContentViewController:) IDEIntentBuilderEditorContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, setter=_setSourceListViewController:) IDEIntentBuilderEditorSourceListViewController *sourceListViewController; // @synthesize sourceListViewController=_sourceListViewController;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;

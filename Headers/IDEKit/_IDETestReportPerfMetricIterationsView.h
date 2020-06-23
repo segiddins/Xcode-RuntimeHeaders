@@ -17,12 +17,12 @@
     long long _iterationsCount;
 }
 
+- (void).cxx_destruct;
 @property long long iterationsCount; // @synthesize iterationsCount=_iterationsCount;
 @property __weak IDETestReportPerfMetricIterationsGraphView *graphView; // @synthesize graphView=_graphView;
 @property(retain) NSView *firstView; // @synthesize firstView=_firstView;
 @property(retain) _IDETestReportPerfMetricIterationNumberView *selectedView; // @synthesize selectedView=_selectedView;
 @property(copy) CDUnknownBlockType numberClickedCallback; // @synthesize numberClickedCallback=_numberClickedCallback;
-- (void).cxx_destruct;
 - (void)layoutViews;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 

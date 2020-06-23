@@ -32,6 +32,7 @@
 
 + (id)patienceLogAspect;
 + (id)performanceLogAspect;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType shouldCommence; // @synthesize shouldCommence=_shouldCommence;
 @property(nonatomic) long long defaultDiffMergeDirection; // @synthesize defaultDiffMergeDirection=_defaultDiffMergeDirection;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) DVTDiffContextSharedState *sharedState; // @synthesize sharedState=_sharedState;
 @property(retain, nonatomic) DVTDiffDataSource *unsafeModifiedDataSource; // @synthesize unsafeModifiedDataSource=_unsafeModifiedDataSource;
 @property(retain, nonatomic) DVTDiffDataSource *unsafeOriginalDataSource; // @synthesize unsafeOriginalDataSource=_unsafeOriginalDataSource;
-- (void).cxx_destruct;
 - (id)modifiedDescriptorIndexes;
 - (long long)numberOfModifiedDescriptors;
 - (long long)numberOfDiffDescriptors;

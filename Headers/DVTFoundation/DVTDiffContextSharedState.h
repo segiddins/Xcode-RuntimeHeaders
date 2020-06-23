@@ -15,10 +15,10 @@
     NSString *_diffString;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *diffString; // @synthesize diffString=_diffString;
 @property(retain) DVTDiffFNVHashCache *hashCache; // @synthesize hashCache=_hashCache;
 @property(retain) NSArray *diffDescriptors; // @synthesize diffDescriptors=_diffDescriptors;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -12,6 +12,7 @@
 {
     NSDictionary *_infoPlist;
     BOOL _startSuspended;
+    BOOL _needsRoot;
     int _xpcParentPid;
     NSString *_xpcServiceName;
     NSDictionary *_environment;
@@ -22,6 +23,8 @@
     NSString *_appContainerPath;
 }
 
+- (void).cxx_destruct;
+@property BOOL needsRoot; // @synthesize needsRoot=_needsRoot;
 @property(retain) NSString *appContainerPath; // @synthesize appContainerPath=_appContainerPath;
 @property(retain) NSString *containerAppID; // @synthesize containerAppID=_containerAppID;
 @property(retain) NSString *fullPath; // @synthesize fullPath=_fullPath;
@@ -31,7 +34,6 @@
 @property(retain) NSDictionary *environment; // @synthesize environment=_environment;
 @property(retain) NSString *xpcServiceName; // @synthesize xpcServiceName=_xpcServiceName;
 @property int xpcParentPid; // @synthesize xpcParentPid=_xpcParentPid;
-- (void).cxx_destruct;
 - (BOOL)isWidgetExtension;
 - (id)extensionType;
 - (id)extensionInfo;

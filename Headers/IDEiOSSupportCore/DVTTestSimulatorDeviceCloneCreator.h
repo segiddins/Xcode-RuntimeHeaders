@@ -28,6 +28,7 @@
 + (id)sharedCreator;
 + (void)setLogAspect:(id)arg1;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSMutableDictionary *cloneMap; // @synthesize cloneMap=_cloneMap;
 @property(readonly) NSMutableDictionary *cloneNameIndexes; // @synthesize cloneNameIndexes=_cloneNameIndexes;
@@ -37,7 +38,6 @@
 @property(readonly) id <DVTTestingSimDeviceSet> deviceSet; // @synthesize deviceSet=_deviceSet;
 @property(readonly) Class simulatorClass; // @synthesize simulatorClass=_simulatorClass;
 @property(readonly) Class serviceClass; // @synthesize serviceClass=_serviceClass;
-- (void).cxx_destruct;
 - (void)addClone:(id)arg1 ofDeviceWithIdentifier:(id)arg2;
 - (void)recycleNameForClone:(id)arg1 ofDeviceWithIdentifier:(id)arg2;
 - (unsigned long long)nameIndexForClone:(id)arg1;

@@ -18,9 +18,9 @@
 
 + (void)registerMarshallingRecordHandlers;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *insertsAfter; // @synthesize insertsAfter=_insertsAfter;
 @property(copy, nonatomic) NSArray *fallbacks; // @synthesize fallbacks=_fallbacks;
-- (void).cxx_destruct;
 - (void)unarchiveInsertsAfter:(id)arg1;
 - (void)archiveInsertsAfter:(id)arg1;
 - (void)unarchiveAnchor:(id)arg1;

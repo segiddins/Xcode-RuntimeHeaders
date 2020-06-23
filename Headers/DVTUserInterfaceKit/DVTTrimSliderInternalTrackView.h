@@ -15,10 +15,10 @@
     NSColor *_segmentSeparatorColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *segmentSeparatorColor; // @synthesize segmentSeparatorColor=_segmentSeparatorColor;
 @property(nonatomic) BOOL drawsBackground; // @synthesize drawsBackground=_drawsBackground;
 @property(nonatomic) long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;
-- (void).cxx_destruct;
 - (void)_drawSegmentSeparatorCenteredAtX:(double)arg1 boundsHeight:(double)arg2 color:(id)arg3;
 - (void)_drawSegmentSeparatorsInBounds:(struct CGRect)arg1;
 - (void)_drawTrackBackgroundInBounds:(struct CGRect)arg1;

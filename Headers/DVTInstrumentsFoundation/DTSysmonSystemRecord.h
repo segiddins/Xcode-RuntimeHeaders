@@ -13,8 +13,8 @@
     NSArray *_attributes;
 }
 
-@property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 
 @end
 

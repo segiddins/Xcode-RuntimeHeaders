@@ -20,11 +20,11 @@
 }
 
 + (id)controllerWithDebugOverride:(id)arg1 forDebugSession:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) id <DBGKitDebuggingAddition> kitDebuggingAddition; // @synthesize kitDebuggingAddition=_kitDebuggingAddition;
 @property __weak NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(retain) IDEDebugOverride *debugOverride; // @synthesize debugOverride=_debugOverride;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)debugOverrideDidUpdate:(id)arg1;
 - (void)updateUIWithOverrideState;

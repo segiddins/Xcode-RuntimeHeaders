@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) IDEIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash; // @synthesize hash=_hash;

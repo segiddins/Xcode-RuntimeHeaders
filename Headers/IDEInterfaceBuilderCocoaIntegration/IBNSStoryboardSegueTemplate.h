@@ -17,8 +17,8 @@
 }
 
 + (id)codingKeyForPropertyName:(id)arg1;
-@property(retain) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 - (void).cxx_destruct;
+@property(retain) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 - (id)ibRuntimeClassName;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;

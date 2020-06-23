@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) BOOL hasOSXAppNapGuidance; // @synthesize hasOSXAppNapGuidance=_hasOSXAppNapGuidance;
+- (void)setModelDelegate:(id)arg1;
 - (double)xLabelSpacing;
 - (Class)graphClass;
 

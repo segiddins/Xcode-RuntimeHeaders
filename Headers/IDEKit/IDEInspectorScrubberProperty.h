@@ -16,9 +16,9 @@
     NSTextField *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) DVTStepperTextField *scrubber; // @synthesize scrubber=_scrubber;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (BOOL)canTileIntoColumnsWithMinimumWidth:(double)arg1;

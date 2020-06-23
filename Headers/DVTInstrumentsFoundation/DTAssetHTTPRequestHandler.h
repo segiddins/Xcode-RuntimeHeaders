@@ -21,13 +21,13 @@
     unsigned long long _dataSent;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long dataSent; // @synthesize dataSent=_dataSent;
 @property BOOL sentHeader; // @synthesize sentHeader=_sentHeader;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain) _DT_GCDAsyncSocket *socket; // @synthesize socket=_socket;
 @property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)socketDidDisconnect:(id)arg1 withError:(id)arg2;
 - (void)socket:(id)arg1 didReadData:(id)arg2 withTag:(long long)arg3;
 - (void)serveResponseAndDisconnect:(struct __CFHTTPMessage *)arg1;

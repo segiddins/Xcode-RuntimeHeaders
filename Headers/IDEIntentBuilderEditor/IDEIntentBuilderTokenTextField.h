@@ -21,9 +21,9 @@
     id <IDEIntentBuilderTokenTextFieldDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEIntentBuilderTokenTextFieldDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property __weak id <IDEIntentBuilderTokenTextFieldDelegate> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
-- (void).cxx_destruct;
 - (void)tokenTextFieldCell:(id)arg1 tokenClicked:(id)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 atCharacterIndex:(unsigned long long)arg5;
 - (id)availableTokensForTextFieldCell:(id)arg1;
 - (id)control:(id)arg1 textView:(id)arg2 completions:(id)arg3 forPartialWordRange:(struct _NSRange)arg4 indexOfSelectedItem:(long long *)arg5;

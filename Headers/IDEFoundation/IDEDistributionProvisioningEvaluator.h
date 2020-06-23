@@ -33,6 +33,7 @@
 
 + (id)evaluationForTopLevelDistributionItems:(id)arg1 withItemParameters:(id)arg2 method:(id)arg3 provisioningStyle:(long long)arg4 logAspect:(id)arg5;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TtC13IDEFoundation41IDEDistributionProvisioningLedgerDelegate *ledgerDelegate; // @synthesize ledgerDelegate=_ledgerDelegate;
 @property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly, nonatomic) NSArray *topLevelDistributionItems; // @synthesize topLevelDistributionItems=_topLevelDistributionItems;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) IDEDistributionMethod *distributionMethod; // @synthesize distributionMethod=_distributionMethod;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) IDEProvisioningContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *provisionableDevices;
 @property(readonly, nonatomic) NSSet *provisionables;
 @property(readonly, nonatomic) BOOL finishedLoading;

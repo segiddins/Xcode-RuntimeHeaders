@@ -32,6 +32,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reportEmails; // @synthesize reportEmails=_reportEmails;
 @property(retain, nonatomic) NSMutableArray *triggerEmails; // @synthesize triggerEmails=_triggerEmails;
 @property(retain, nonatomic) NSMutableArray *postIntegrationTriggerScripts; // @synthesize postIntegrationTriggerScripts=_postIntegrationTriggerScripts;
@@ -47,7 +48,6 @@
 @property(nonatomic) BOOL preventGoFowardOrFinish; // @synthesize preventGoFowardOrFinish=_preventGoFowardOrFinish;
 @property(retain, nonatomic) NSMutableArray *triggers; // @synthesize triggers=_triggers;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (BOOL)outlineView:(id)arg1 shouldEditTableColumn:(id)arg2 item:(id)arg3;
 - (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;

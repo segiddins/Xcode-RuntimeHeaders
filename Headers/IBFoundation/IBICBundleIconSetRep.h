@@ -16,8 +16,8 @@
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(copy, nonatomic) IBICCatalogContentReference *contentReference; // @synthesize contentReference=_contentReference;
 - (void).cxx_destruct;
+@property(copy, nonatomic) IBICCatalogContentReference *contentReference; // @synthesize contentReference=_contentReference;
 - (BOOL)isMinimallyFitForCompiling;
 - (BOOL)isImageDataSizedProperly;
 - (id)infoPlistReferenceName;

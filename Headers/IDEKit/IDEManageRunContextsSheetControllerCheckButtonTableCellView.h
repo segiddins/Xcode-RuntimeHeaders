@@ -13,8 +13,8 @@
     NSButton *_checkButton;
 }
 
-@property(retain) NSButton *checkButton; // @synthesize checkButton=_checkButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *checkButton; // @synthesize checkButton=_checkButton;
 
 @end
 

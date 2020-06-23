@@ -85,6 +85,7 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *stateSavingIdentifier; // @synthesize stateSavingIdentifier=_stateSavingIdentifier;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *tabLabel; // @synthesize tabLabel=_tabLabel;
@@ -109,7 +110,6 @@
 @property(nonatomic) BOOL userWantsInspectorAreaVisible; // @synthesize userWantsInspectorAreaVisible=_userWantsInspectorAreaVisible;
 @property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(retain) DVTReplacementView *navigatorReplacementView; // @synthesize navigatorReplacementView=_navReplacementView;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)provisioningManager:(id)arg1 repairable:(id)arg2 shouldAuthorizeUserAction:(id)arg3 authorizationCallback:(CDUnknownBlockType)arg4;
@@ -150,6 +150,7 @@
 - (void)detach:(id)arg1;
 - (void)pauseOrContinue:(id)arg1;
 - (void)toggleBreakpoints:(id)arg1;
+- (void)deleteAllBreakpoints:(id)arg1;
 - (void)createConstraintErrorBreakpoint:(id)arg1;
 - (void)createTestFailureBreakpoint:(id)arg1;
 - (void)createSymbolicBreakpoint:(id)arg1;
@@ -199,11 +200,6 @@
 - (void)installActiveRunContext:(id)arg1;
 - (void)editAndAnalyzeActiveRunContext:(id)arg1;
 - (void)analyzeActiveRunContext:(id)arg1;
-- (void)buildForPreviewActiveScheme:(id)arg1;
-- (void)editAndBuildForPreviewingActiveScheme:(id)arg1;
-- (void)editAndPreviewActiveScheme:(id)arg1;
-- (void)previewActiveSchemeWithoutBuilding:(id)arg1;
-- (void)previewActiveScheme:(id)arg1;
 - (void)profileUsingActiveRunContextWithOverridingTestingSpecifierGroups:(id)arg1;
 - (void)buildForProfileActiveScheme:(id)arg1;
 - (void)editAndBuildForProfilingActiveScheme:(id)arg1;
@@ -227,13 +223,14 @@
 - (void)_alertNonExistentWorkingDirectoryBeforeRunOrProfileForContext:(id)arg1 workingDirectory:(id)arg2 title:(id)arg3 defaultButton:(id)arg4 usingBlock:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
 - (void)_alertNonExistentWorkingDirectoryBeforeProfileForContext:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 errorBlock:(CDUnknownBlockType)arg3;
 - (void)_alertNonExistentWorkingDirectoryBeforeRunForContext:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 errorBlock:(CDUnknownBlockType)arg3;
-- (void)_askShouldBuildBeforeRunProfilePreviewForContext:(id)arg1 title:(id)arg2 defaultButton:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (void)_askShouldBuildBeforeRunProfileForContext:(id)arg1 title:(id)arg2 defaultButton:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)_runActiveRunContextFromScripting:(BOOL)arg1 withInvocationRecord:(id)arg2 additionalCommandLineArgs:(id)arg3 overridingEnvironmentVars:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)runActiveRunContext:(id)arg1;
 - (void)_runScheme:(id)arg1 runDestination:(id)arg2 invocationRecord:(id)arg3;
 - (BOOL)_needToSwitchSchemeActionToLLDB:(id)arg1;
 - (void)_silentlySwitchToLLDBIfNecessary:(id)arg1;
 - (void)_performDebuggableTaskOnScheme:(id)arg1 forSchemeOperationParameters:(id)arg2 invokedViaScripting:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (BOOL)_validateDeviceForDaemonDebuggingOnScheme:(id)arg1 forSchemeOperationParameters:(id)arg2;
 - (BOOL)_validToolchainForSchemeAction:(id)arg1 schemeCommand:(id)arg2;
 - (id)_runtimeLLDBFilePath;
 - (void)_debugSessionCoalescedStateChanged:(id)arg1 forDebugSession:(id)arg2;

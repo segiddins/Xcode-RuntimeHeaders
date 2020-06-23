@@ -27,11 +27,11 @@
 + (id)servicesSessionWithDeveloperAccountSession:(id)arg1 executionContext:(long long)arg2;
 + (id)sessionForAuthenticatingAccount:(id)arg1;
 + (id)servicesSessionByLoggingInWithAccount:(id)arg1 executionContext:(long long)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDeveloperAccountSession *accountSession; // @synthesize accountSession=_accountSession;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(readonly) DVTDeveloperAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *portalServiceHostname;
 - (void)updateWithResponseHeaders:(id)arg1;

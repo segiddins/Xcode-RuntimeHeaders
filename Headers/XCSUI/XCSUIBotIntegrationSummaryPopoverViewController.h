@@ -23,6 +23,7 @@
     XCSUIBotIntegrationPopoverBadgesView *_countsView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIBotIntegrationPopoverBadgesView *countsView; // @synthesize countsView=_countsView;
 @property __weak NSImageView *integrationFailureImageView; // @synthesize integrationFailureImageView=_integrationFailureImageView;
 @property(retain) NSImage *issuesIcon; // @synthesize issuesIcon=_issuesIcon;
@@ -34,7 +35,6 @@
 @property unsigned long long warningsCount; // @synthesize warningsCount=_warningsCount;
 @property unsigned long long errorsCount; // @synthesize errorsCount=_errorsCount;
 @property(copy) NSString *integrationTitle; // @synthesize integrationTitle=_integrationTitle;
-- (void).cxx_destruct;
 - (void)updateBadges;
 - (void)showIntegrationSummary:(id)arg1;
 - (void)showOrHideIntegrationFailedControls:(BOOL)arg1;

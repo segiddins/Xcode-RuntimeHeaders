@@ -84,6 +84,7 @@
 + (Class)ibViewClass;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *viewsWithPreviewingRegistrants; // @synthesize viewsWithPreviewingRegistrants=_viewsWithPreviewingRegistrants;
 @property(retain) NSArray *storyboardPreviewingRegistrants; // @synthesize storyboardPreviewingRegistrants=_storyboardPreviewingRegistrants;
 @property(retain) NSArray *storyboardCommitSegueTemplates; // @synthesize storyboardCommitSegueTemplates=_storyboardCommitSegueTemplates;
@@ -125,7 +126,6 @@
 @property(copy, nonatomic) IBUISimulatedStatusBarMetrics *simulatedStatusBarMetrics; // @synthesize simulatedStatusBarMetrics=_simulatedStatusBarMetrics;
 @property(copy, nonatomic) IBUISimulatedOrientationMetrics *simulatedOrientationMetrics; // @synthesize simulatedOrientationMetrics=_simulatedOrientationMetrics;
 @property(copy, nonatomic) IBUISimulatedSizeMetrics *simulatedDestinationMetrics; // @synthesize simulatedDestinationMetrics=_simulatedDestinationMetrics;
-- (void).cxx_destruct;
 - (id)layoutGuideForAttribute:(unsigned long long)arg1;
 - (id)ibEffectiveParentItemForReferencingConstraintTraversalOfAutolayoutGuide:(id)arg1;
 - (struct CGRect)drawableFrameForAutolayoutGuide:(id)arg1;

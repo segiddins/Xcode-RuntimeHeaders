@@ -18,9 +18,9 @@
 + (id)ownershipForSharing;
 + (id)ownershipForCurrentUser;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL isShared; // @synthesize isShared=_isShared;
 @property(readonly) NSString *ownerName; // @synthesize ownerName=_ownerName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

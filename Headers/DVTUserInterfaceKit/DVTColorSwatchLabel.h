@@ -18,12 +18,12 @@
     NSString *_labelString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *labelString; // @synthesize labelString=_labelString;
 @property(nonatomic) BOOL shouldUseSingleLine; // @synthesize shouldUseSingleLine=_shouldUseSingleLine;
 @property(readonly) NSTextField *valueTextField; // @synthesize valueTextField=_valueTextField;
 @property(readonly) NSTextField *labelTextField; // @synthesize labelTextField=_labelTextField;
 @property(readonly) DVTColorSwatchView *colorSwatch; // @synthesize colorSwatch=_colorSwatch;
-- (void).cxx_destruct;
 - (id)_createColorSwatchImageView;
 - (id)_createLabel:(id)arg1;
 - (id)_createValueTextField;

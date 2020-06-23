@@ -23,6 +23,7 @@
 }
 
 + (id)keyPathsForValuesAffectingShouldEnableAddButton;
+- (void).cxx_destruct;
 @property(copy) NSString *currentFilterString; // @synthesize currentFilterString=_currentFilterString;
 @property __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -30,7 +31,6 @@
 @property(retain) Xcode3AddPackageProductDependencyViewControllerPackageProductSpecifier *selectedProductSpecifier; // @synthesize selectedProductSpecifier=_selectedProductSpecifier;
 @property(retain) Xcode3AddPackageProductDependencyViewControllerPackageSpecifier *selectedPackageSpecifier; // @synthesize selectedPackageSpecifier=_selectedPackageSpecifier;
 @property(copy) NSArray *availablePackageSpecifiers; // @synthesize availablePackageSpecifiers=_availablePackageSpecifiers;
-- (void).cxx_destruct;
 - (void)search:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;

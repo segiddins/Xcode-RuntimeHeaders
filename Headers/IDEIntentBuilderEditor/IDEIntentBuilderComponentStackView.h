@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDEIntentBuilderComponentStackViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *componentViews; // @synthesize componentViews=_componentViews;
 @property(nonatomic) double titleLabelWidth; // @synthesize titleLabelWidth=_titleLabelWidth;
-- (void).cxx_destruct;
 - (void)componentViewBoundsDidChange:(id)arg1;
 - (void)_updateTitleLabelWidthInComponentViews;
 - (id)_visibleComponentViews;

@@ -16,11 +16,11 @@
     DVTDelayedInvocation *_updateArchivesDelayedInvocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDelayedInvocation *updateArchivesDelayedInvocation; // @synthesize updateArchivesDelayedInvocation=_updateArchivesDelayedInvocation;
 @property(retain) DVTObservingToken *archivedProductsObservingToken; // @synthesize archivedProductsObservingToken=_archivedProductsObservingToken;
 @property(retain, nonatomic) IDEArchiveManager *archiveManager; // @synthesize archiveManager=_archiveManager;
 @property BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)productsFromArchives:(id)arg1 coordinator:(id)arg2;
 - (id)mostRecentArchive:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)targetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 document:(id)arg3 preferredTarget:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain) NSObject *controller; // @synthesize controller=_controller;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) NSString *binding; // @synthesize binding=_binding;
-- (void).cxx_destruct;
 - (id)containingClassImage;
 - (id)insertionConnectionTypeString;
 - (BOOL)parseSourceModelItem:(id)arg1;

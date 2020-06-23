@@ -14,9 +14,9 @@
     PBXProject *_project;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak _Xcode3ProjectInfoConfigurationNode *configurationNode; // @synthesize configurationNode=_configNode;
 @property(readonly) PBXProject *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (id)basedOnFileColumnIcon;
 - (id)configurationColumnIcon;
 - (id)displayName;

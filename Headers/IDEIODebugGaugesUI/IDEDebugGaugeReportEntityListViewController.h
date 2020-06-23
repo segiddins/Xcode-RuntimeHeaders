@@ -13,8 +13,8 @@
     IDEGaugeReportTableView *_tableView;
 }
 
-@property(retain, nonatomic) IDEGaugeReportTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEGaugeReportTableView *tableView; // @synthesize tableView=_tableView;
 - (void)loadView;
 - (id)init;
 

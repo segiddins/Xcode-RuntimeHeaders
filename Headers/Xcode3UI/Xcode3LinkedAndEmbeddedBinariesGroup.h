@@ -14,11 +14,9 @@
     DVTNotificationToken *_buildFileRemovedToken;
 }
 
-+ (id)extensionPointIdentifierForTarget:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 - (id)_computeLinkedAndEmbeddedBinariesExcludingBuildFileToBeRemovedOrNil:(id)arg1;
-- (BOOL)isExtensionPointIdentifierAvailableInMarzipan:(id)arg1 error:(id *)arg2;
 - (BOOL)insertItems:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)isReferenceMemberOfSDK:(id)arg1;
 - (BOOL)canInsertItems:(id)arg1;

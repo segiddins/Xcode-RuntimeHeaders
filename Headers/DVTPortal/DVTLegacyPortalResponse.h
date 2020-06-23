@@ -13,8 +13,8 @@
     NSDictionary *_payload;
 }
 
-@property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) long long resultCode;
 - (id)debugDescription;
 - (id)description;

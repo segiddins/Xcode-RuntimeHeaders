@@ -57,8 +57,8 @@
 - (void)setRelayTransport:(id)arg1;
 @property(retain, nonatomic) NSURL *url; // @dynamic url;
 - (void)dealloc;
-- (id)initWithMode:(int)arg1 initialMessageSerial:(unsigned int)arg2;
-- (id)initWithMode:(int)arg1;
+- (id)initWithMode:(int)arg1 initialMessageSerial:(unsigned int)arg2 uniqueIdentifier:(id)arg3;
+- (id)initWithMode:(int)arg1 uniqueIdentifier:(id)arg2;
 - (id)init;
 
 @end

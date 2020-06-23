@@ -17,10 +17,10 @@
     NSArray *_devices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) IDEProfileQualifierResult *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (BOOL)qualify;
 @property(readonly, nonatomic) NSString *userFacingName;
 @property(readonly, nonatomic) BOOL onlyDisplayOnError;

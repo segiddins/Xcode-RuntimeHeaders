@@ -9,11 +9,12 @@
 #import <IDEKit/DVTStatefulObject-Protocol.h>
 #import <IDEKit/IDESelectionSource-Protocol.h>
 
-@class DVTStateToken, IDESelection, IDEWorkspace, IDEWorkspaceDocument, IDEWorkspaceTabController, NSString;
+@class DVTNotificationToken, DVTStateToken, IDESelection, IDEWorkspace, IDEWorkspaceDocument, IDEWorkspaceTabController, NSString;
 @protocol IDEWorkspaceDocumentProvider;
 
 @interface IDEViewController : DVTViewController <IDESelectionSource, DVTStatefulObject>
 {
+    DVTNotificationToken *_willBeginSheetNotificationToken;
     BOOL _didAssertForMissingWorkspaceDocument;
     IDESelection *_outputSelection;
     DVTStateToken *_stateToken;
@@ -25,12 +26,12 @@
 + (long long)version;
 + (id)keyPathsForValuesAffectingWorkspace;
 + (id)keyPathsForValuesAffectingWorkspaceDocument;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property BOOL didAssertForMissingWorkspaceDocument; // @synthesize didAssertForMissingWorkspaceDocument=_didAssertForMissingWorkspaceDocument;
 @property(retain, nonatomic) id <IDEWorkspaceDocumentProvider> workspaceDocumentProvider; // @synthesize workspaceDocumentProvider=_workspaceDocumentProvider;
 @property(readonly, nonatomic) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(copy, nonatomic) IDESelection *outputSelection; // @synthesize outputSelection=_outputSelection;
-- (void).cxx_destruct;
 - (void)setStateToken:(id)arg1;
 - (BOOL)_knowsAboutInstalledState;
 - (void)revertState;

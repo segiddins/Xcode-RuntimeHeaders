@@ -17,12 +17,12 @@
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *contentView; // @synthesize contentView=_contentView;
 @property __weak NSView *accessoryContainer; // @synthesize accessoryContainer=_accessoryContainer;
 @property __weak NSTextField *labelField; // @synthesize labelField=_labelField;
 @property __weak IDEGaugeReportTopSectionContentBackground *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property double height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (id)initWithComponentLabel:(id)arg1 accessoryView:(id)arg2 view:(id)arg3 lastComponent:(BOOL)arg4;
 
 @end

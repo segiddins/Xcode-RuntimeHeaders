@@ -18,12 +18,12 @@
     id _other;
 }
 
+- (void).cxx_destruct;
 @property(retain) id other; // @synthesize other=_other;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) id <NSCopying> version; // @synthesize version=_version;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

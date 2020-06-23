@@ -14,8 +14,8 @@
     IDEHexEditorDocument *_document;
 }
 
-@property(retain) IDEHexEditorDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(retain) IDEHexEditorDocument *document; // @synthesize document=_document;
 - (id)ideModelObjectTypeIdentifier;
 - (id)navigableItem_fileReference;
 - (id)navigableItem_documentType;

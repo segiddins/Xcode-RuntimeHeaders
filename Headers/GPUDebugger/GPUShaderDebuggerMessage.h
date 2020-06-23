@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSString *_deviceGPUVendor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *deviceGPUVendor; // @synthesize deviceGPUVendor=_deviceGPUVendor;
 @property(copy) NSString *deviceGPUName; // @synthesize deviceGPUName=_deviceGPUName;
 @property(copy) NSString *deviceOSVersion; // @synthesize deviceOSVersion=_deviceOSVersion;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *error; // @synthesize error=_error;
 @property BOOL success; // @synthesize success=_success;
 @property(retain) NSNumber *shaderType; // @synthesize shaderType=_shaderType;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

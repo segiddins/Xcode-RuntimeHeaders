@@ -13,8 +13,8 @@
     NSMutableDictionary *_nodes;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *nodes; // @synthesize nodes=_nodes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *nodes; // @synthesize nodes=_nodes;
 - (id)description;
 - (void)clear;
 - (struct CGRect)bounds;

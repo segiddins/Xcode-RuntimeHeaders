@@ -19,9 +19,9 @@
 }
 
 + (id)requestWithDomain:(id)arg1 key:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *key; // @synthesize key=_key;
 @property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;

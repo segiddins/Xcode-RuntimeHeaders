@@ -10,8 +10,8 @@
 @protocol DVTSourceControlLogItemProtocol;
 
 @protocol IDESourceControlLogDetailDelegate <NSObject>
-@property(readonly) NSWindow *viewWindow;
-@property(readonly) BOOL detailShouldShowOpenBlameView;
+@property(nonatomic, readonly) NSWindow *viewWindow;
+@property(nonatomic, readonly) BOOL detailShouldShowOpenBlameView;
 - (void)openAuthorsViewForLogItem:(id <DVTSourceControlLogItemProtocol>)arg1;
 - (void)openCodeReviewForLogItem:(id <DVTSourceControlLogItemProtocol>)arg1;
 @end

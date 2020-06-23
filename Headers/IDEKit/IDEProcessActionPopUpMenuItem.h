@@ -13,8 +13,8 @@
     NSImage *_popUpImage;
 }
 
-@property(readonly) NSImage *popUpImage; // @synthesize popUpImage=_popUpImage;
 - (void).cxx_destruct;
+@property(readonly) NSImage *popUpImage; // @synthesize popUpImage=_popUpImage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPopUpImage:(id)arg1 menuItemImage:(id)arg2 action:(SEL)arg3;
 

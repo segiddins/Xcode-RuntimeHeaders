@@ -31,6 +31,7 @@
     NSDictionary *_toolInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *toolInfo; // @synthesize toolInfo=_toolInfo;
 @property(retain) NSString *preferredXLIFFNamespace; // @synthesize preferredXLIFFNamespace;
 @property BOOL initializedFromGlossary; // @synthesize initializedFromGlossary;
@@ -43,7 +44,6 @@
 @property(retain) NSMutableDictionary *glossaries; // @synthesize glossaries;
 @property(retain) NSMutableArray *originalPathOrder; // @synthesize originalPathOrder;
 @property(retain) NSMutableSet *originalPaths; // @synthesize originalPaths;
-- (void).cxx_destruct;
 - (void)addNamespaceToXLIFFElementWithName:(id)arg1 stringValue:(id)arg2;
 - (void)fixNamespaceForXPaths:(id)arg1;
 - (BOOL)needToFixNamespaceIssueOfNSXMLDocument;

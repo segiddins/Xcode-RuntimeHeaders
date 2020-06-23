@@ -250,7 +250,9 @@ struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
 };
 
 struct atomic<bool> {
-    _Atomic _Bool _field1;
+    struct __cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool>> {
+        _Atomic _Bool _field1;
+    } _field1;
 };
 
 struct atomic_flag {

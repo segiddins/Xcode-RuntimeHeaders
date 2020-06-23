@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_accessibilityTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *accessibilityTitle; // @synthesize accessibilityTitle=_accessibilityTitle;
 @property(readonly, nonatomic) GPURenderBuffer *renderBuffer; // @synthesize renderBuffer=_renderBuffer;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (unsigned long long)hash;

@@ -23,6 +23,7 @@
     struct CGPoint _offsetFromParent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize sizeOfSubtree; // @synthesize sizeOfSubtree=_sizeOfSubtree;
 @property __weak IBStoryboardSceneTreeDragImageNode *parent; // @synthesize parent=_parent;
 @property BOOL hasReceivedLayout; // @synthesize hasReceivedLayout=_hasReceivedLayout;
@@ -31,7 +32,6 @@
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 @property(readonly) DVTMutableOrderedDictionary *relationshipKeyPathToChildNodeMap; // @synthesize relationshipKeyPathToChildNodeMap=_relationshipKeyPathToChildNodeMap;
 @property(readonly) NSObject<IBPrimarySceneObject> *representedViewController; // @synthesize representedViewController=_representedViewController;
-- (void).cxx_destruct;
 - (struct CGRect)frameContentRectInAbsoluteSpace;
 - (struct CGRect)frameViewFrameInAbsoluteSpace;
 - (struct CGPoint)convertNodePointToAbsoluteSpace:(struct CGPoint)arg1;

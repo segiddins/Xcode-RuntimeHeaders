@@ -35,9 +35,9 @@
 + (id)managerForWorkspace:(id)arg1;
 + (id)managersByWorkspace;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IBLiveViewsBundleBlueprintMap *bundlesByBlueprintMap; // @synthesize bundlesByBlueprintMap=_bundlesByBlueprintMap;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)cachedRequestProxyAttachingIfNeededWithDescription:(id)arg1 returningFailedLoadResult:(id *)arg2;
 - (id)marshallingResultErrorWithMessage:(id)arg1;
 - (BOOL)_INSIDE_LOCK_loadLiveViewsBundleBuiltInstances:(id)arg1 inTool:(id)arg2 returningFailedLoadResult:(id *)arg3;

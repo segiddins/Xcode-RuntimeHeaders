@@ -13,8 +13,8 @@
     NSURL *_fileURL;
 }
 
-@property(readonly) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (id)liberationPreflight:(id)arg1;
 - (id)errorForMissingIB3PluginIdentifiers:(id)arg1;
 - (void)liberationErrorAlert:(id)arg1 wasPresentedWithResult:(long long)arg2 inContext:(void *)arg3;

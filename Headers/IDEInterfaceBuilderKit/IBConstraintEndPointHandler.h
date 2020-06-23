@@ -24,11 +24,11 @@
 + (BOOL)includeCenteringConstraintsForUsingCurrentConstants;
 + (void)setThresholdForUsingCurrentConstantForAlignmentConstraints:(id)arg1;
 + (id)thresholdForUsingCurrentConstantForAlignmentConstraints;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly, nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *toItem; // @synthesize toItem=_toItem;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *fromItem; // @synthesize fromItem=_fromItem;
-- (void).cxx_destruct;
 - (id)connectionForConnectingFromObject:(id)arg1;
 - (void)resetLayoutFrameIfNeededForHorizontal:(BOOL)arg1 vertical:(BOOL)arg2;
 - (void)connectionMenu:(id)arg1 willDeselectItems:(id)arg2;

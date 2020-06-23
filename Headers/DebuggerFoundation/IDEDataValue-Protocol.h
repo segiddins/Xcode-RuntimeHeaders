@@ -26,7 +26,7 @@
 @property(readonly, copy) NSString *pointeeAddress;
 @property(readonly, copy) NSString *address;
 @property(copy) NSString *value;
-@property(readonly, copy) NSString *name;
+@property(copy) NSString *name;
 @property(readonly) IDEStackFrame *stackFrame;
 @end
 

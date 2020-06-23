@@ -20,12 +20,12 @@
     NSButton *_integrateButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *integrateButton; // @synthesize integrateButton=_integrateButton;
 @property __weak NSButton *editBotButton; // @synthesize editBotButton=_editBotButton;
 @property __weak NSButton *idButton; // @synthesize idButton=_idButton;
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (id)workspaceTabController;
 - (void)editButton:(id)arg1;
 - (void)redefineButton:(id)arg1;

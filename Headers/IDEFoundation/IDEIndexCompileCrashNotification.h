@@ -13,8 +13,8 @@
     NSString *_toolID;
 }
 
-@property(retain) NSString *toolID; // @synthesize toolID=_toolID;
 - (void).cxx_destruct;
+@property(retain) NSString *toolID; // @synthesize toolID=_toolID;
 - (id)initWithToolID:(id)arg1;
 
 @end

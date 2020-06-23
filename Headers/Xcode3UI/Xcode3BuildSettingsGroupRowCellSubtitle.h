@@ -17,12 +17,12 @@
     Xcode3BuildSettingsGroupRowCell *_cell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak Xcode3BuildSettingsGroupRowCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) BOOL showRightDivider; // @synthesize showRightDivider=_showRightDivider;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (struct CGRect)draggableRectForSubtitleBounds:(struct CGRect)arg1;
 - (struct CGRect)boundingRectWithSize:(struct CGSize)arg1 options:(long long)arg2;
 - (void)drawInRect:(struct CGRect)arg1;

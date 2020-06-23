@@ -19,8 +19,8 @@
     long long _signal;
 }
 
-@property(readonly) long long signal; // @synthesize signal=_signal;
 - (void).cxx_destruct;
+@property(readonly) long long signal; // @synthesize signal=_signal;
 - (void)_update;
 - (id)initWithObject:(id)arg1 collectionKeyPath:(id)arg2 objectKeyPaths:(id)arg3 updateQueue:(id)arg4;
 

@@ -21,11 +21,11 @@
     id <IBObjectPickerElementViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IBObjectPickerElementViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isRolledOver) BOOL rolledOver; // @synthesize rolledOver=_rolledOver;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (void)delete:(id)arg1;
 - (void)didCompleteLayout;
 - (void)viewWillMoveToWindow:(id)arg1;

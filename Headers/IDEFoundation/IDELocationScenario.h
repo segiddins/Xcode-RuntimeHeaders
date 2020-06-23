@@ -24,12 +24,12 @@
 + (id)defaultScenarios;
 + (id)currentLocationScenario;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSError *gpxError; // @synthesize gpxError=_gpxError;
 @property(readonly) BOOL isCurrentLocationScenario; // @synthesize isCurrentLocationScenario=_isCurrentLocationScenario;
 @property(readonly) BOOL autorepeat; // @synthesize autorepeat=_autorepeat;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, getter=isDefaultScenario) BOOL defaultScenario;
 - (id)description;
 @property(readonly) NSString *name;

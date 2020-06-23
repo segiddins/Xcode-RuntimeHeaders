@@ -12,16 +12,16 @@
 {
     BOOL _requiresUpgrade;
     XCSBotSCMBlueprint *_lastRevisionBlueprint;
-    struct NSArray *_groups;
+    NSArray *_groups;
     XCSValidator *_validator;
 }
 
 + (id)botWithName:(id)arg1 group:(id)arg2 type:(unsigned long long)arg3 configuration:(id)arg4 lastRevisionBlueprint:(id)arg5 validationErrors:(id *)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSValidator *validator; // @synthesize validator=_validator;
 @property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) BOOL requiresUpgrade; // @synthesize requiresUpgrade=_requiresUpgrade;
 @property(retain, nonatomic) XCSBotSCMBlueprint *lastRevisionBlueprint; // @synthesize lastRevisionBlueprint=_lastRevisionBlueprint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *botSCMBlueprintAsDictionary;
 - (void)newestNonFatalIntegrationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)newestIntegrationWithCompletionBlock:(CDUnknownBlockType)arg1;

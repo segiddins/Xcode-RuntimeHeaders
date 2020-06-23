@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     GPUSharedTabUIState *_sharedUIStateObj;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak GPUSharedTabUIState *sharedUIStateObj; // @synthesize sharedUIStateObj=_sharedUIStateObj;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property(nonatomic) __weak id <DYPResourceManager> resourceManager; // @synthesize resourceManager=_resourceManager;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)viewDidLoad;

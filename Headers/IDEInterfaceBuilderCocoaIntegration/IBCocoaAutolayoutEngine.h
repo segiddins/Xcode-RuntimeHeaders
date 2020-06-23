@@ -15,8 +15,8 @@
 }
 
 + (id)defaultWindowForContentViewSize:(struct CGSize)arg1;
-@property(readonly) NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(readonly) NSWindow *window; // @synthesize window=_window;
 - (id)candidateRedundantRepresentedConstraints;
 - (id)viewForApplyingSystemRequiredConstraints;
 - (BOOL)internalTryToAddConstraint:(id)arg1 toRepresentedView:(id)arg2 roundingAdjustment:(double)arg3 mutuallyExclusiveConstraints:(id *)arg4;

@@ -14,9 +14,9 @@
     NSString *_testMethodName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *testMethodName; // @synthesize testMethodName=_testMethodName;
 @property(copy) NSString *testClassName; // @synthesize testClassName=_testClassName;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,8 +15,8 @@
 }
 
 + (id)dysmURLForUUIDBytes:(const CDStruct_bd2f613f *)arg1 roots:(id)arg2;
-@property(readonly, nonatomic) struct _CSTypeRef coreSymbolicator; // @synthesize coreSymbolicator=_coreSymbolicator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct _CSTypeRef coreSymbolicator; // @synthesize coreSymbolicator=_coreSymbolicator;
 - (id)stackFramesWithBacktrace:(const unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithSignature:(id)arg1 rootPaths:(id)arg2 device:(id)arg3 error:(id *)arg4;

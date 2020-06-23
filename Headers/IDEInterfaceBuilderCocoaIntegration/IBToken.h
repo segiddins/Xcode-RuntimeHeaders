@@ -18,10 +18,10 @@
 }
 
 + (id)tokenWithEditingString:(id)arg1 displayString:(id)arg2 type:(long long)arg3;
+- (void).cxx_destruct;
 @property long long type; // @synthesize type=_type;
 @property(retain) NSString *displayString; // @synthesize displayString=_displayString;
 @property(retain) NSString *editingString; // @synthesize editingString=_editingString;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

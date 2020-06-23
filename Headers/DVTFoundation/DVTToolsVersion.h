@@ -18,6 +18,11 @@
 }
 
 + (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 update:(unsigned long long)arg3;
++ (id)version11_5_0;
++ (id)version11_4_1;
++ (id)version11_4_0;
++ (id)version11_3_1;
++ (id)version11_3_0;
 + (id)version11_2_1;
 + (id)version11_2_0;
 + (id)version11_1_0;

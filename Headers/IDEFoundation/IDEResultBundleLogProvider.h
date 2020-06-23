@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingLogRecords;
-@property(retain) IDEInMemoryLogStore *logStore; // @synthesize logStore=_logStore;
 - (void).cxx_destruct;
+@property(retain) IDEInMemoryLogStore *logStore; // @synthesize logStore=_logStore;
 - (id)domainIdentifier;
 - (id)ideModelObjectTypeIdentifier;
 - (id)logRecords;

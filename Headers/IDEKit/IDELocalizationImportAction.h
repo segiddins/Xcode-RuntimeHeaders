@@ -15,9 +15,9 @@
     IDEWorkspaceTabController *_workspaceTabController;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) IDEContainer<IDELocalizedContainer> *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (id)createController;
 
 @end

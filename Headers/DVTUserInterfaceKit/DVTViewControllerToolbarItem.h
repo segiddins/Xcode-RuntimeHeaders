@@ -14,8 +14,8 @@
 }
 
 + (id)toolbarItemWithViewController:(id)arg1;
-@property(retain) DVTToolbarViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain) DVTToolbarViewController *viewController; // @synthesize viewController=_viewController;
 
 @end
 

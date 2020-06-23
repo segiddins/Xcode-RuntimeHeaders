@@ -23,12 +23,12 @@
 + (id)allAspects;
 + (unsigned long long)defaultLogLevel;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSArray *activeLoggers; // @synthesize activeLoggers=_activeLoggers;
 @property BOOL takeTimeProfile; // @synthesize takeTimeProfile=_takeTimeProfile;
 @property BOOL signalInstruments; // @synthesize signalInstruments=_signalInstruments;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long effectiveLogLevel; // @synthesize effectiveLogLevel=_effectiveLogLevel;
-- (void).cxx_destruct;
 - (id)description;
 - (void)unregisterLogHandler:(id)arg1;
 - (id)registerLogHandler:(CDUnknownBlockType)arg1;

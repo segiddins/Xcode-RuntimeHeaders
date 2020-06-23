@@ -18,9 +18,9 @@
 
 + (id)keyPathsForValuesAffectingTokenizedDateFormatForSelection;
 + (id)editingStringForTokens:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSTokenField *tenFourTokenField; // @synthesize tenFourTokenField=_tenFourTokenField;
 @property(retain) NSTokenField *preTenFourTokenField; // @synthesize preTenFourTokenField=_preTenFourTokenField;
-- (void).cxx_destruct;
 - (void)tokenPopupDidChange:(id)arg1;
 - (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;

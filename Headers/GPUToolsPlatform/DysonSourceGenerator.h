@@ -23,13 +23,13 @@
 + (void)_registerGenerators;
 + (void)_registerGenerator:(Class)arg1;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL emitErrorChecks; // @synthesize emitErrorChecks=_emitErrorChecks;
 @property(nonatomic) BOOL shouldFilterAppleInternalContexts; // @synthesize shouldFilterAppleInternalContexts=_shouldFilterAppleInternalContexts;
 @property(nonatomic) BOOL skipOptionalFunctions; // @synthesize skipOptionalFunctions=_skipOptionalFunctions;
 @property(nonatomic) DYCaptureSessionInfo *captureSessionInfo; // @synthesize captureSessionInfo=_captureSessionInfo;
 @property(readonly, retain, nonatomic) NSURL *sourceDirectoryURL; // @synthesize sourceDirectoryURL=_sourceDirectoryURL;
 @property(readonly, retain, nonatomic) NSURL *outputURL; // @synthesize outputURL=_outputURL;
-- (void).cxx_destruct;
 - (void)processArchive:(id)arg1;
 - (id)pathForResource:(id)arg1;
 - (void)_createOutputDirectory;

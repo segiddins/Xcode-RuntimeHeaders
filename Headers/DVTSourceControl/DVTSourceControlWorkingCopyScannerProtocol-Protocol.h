@@ -4,9 +4,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSArray, NSDictionary;
+@class NSArray;
 
 @protocol DVTSourceControlWorkingCopyScannerProtocol
-- (void)scanFolderPaths:(NSArray *)arg1 traversingUp:(BOOL)arg2 ignoringFolders:(NSArray *)arg3 workingCopyIdentifiers:(NSDictionary *)arg4 completionBlock:(void (^)(NSDictionary *))arg5;
+- (void)scanFolderPaths:(NSArray *)arg1 traversingUp:(BOOL)arg2 ignoringFolders:(NSArray *)arg3 completionBlock:(void (^)(DVTSourceControlURLsResultType *))arg4;
 @end
 

@@ -20,12 +20,12 @@
 
 + (id)_listService;
 + (id)teamsForSession:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *membershipsNonUnique; // @synthesize membershipsNonUnique=_membershipsNonUnique;
 @property(retain, nonatomic) DVTPortalMember *memberInformation; // @synthesize memberInformation=_memberInformation;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)plaStatusWithSession:(id)arg1 error:(id *)arg2;
 - (id)membershipForPlatform:(id)arg1;
 - (BOOL)supportsOneCertPerMac;

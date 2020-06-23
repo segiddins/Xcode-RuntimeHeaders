@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSArray *versions; // @synthesize versions=_versions;
 - (void).cxx_destruct;
+@property(readonly) NSArray *versions; // @synthesize versions=_versions;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

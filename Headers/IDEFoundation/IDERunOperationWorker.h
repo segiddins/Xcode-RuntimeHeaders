@@ -24,11 +24,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isLongTerm; // @synthesize isLongTerm=_isLongTerm;
 @property(retain, nonatomic) IDEExecutionRunnableTracker *runnableTracker; // @synthesize runnableTracker=_runnableTracker;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(readonly) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 - (void)terminate;

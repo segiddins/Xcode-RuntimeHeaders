@@ -19,11 +19,11 @@
 }
 
 + (id)keyPathsForValuesAffectingSampleCodeDownload;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *revealInFinderButton; // @synthesize revealInFinderButton=_revealInFinderButton;
 @property(retain) NSTextField *statusTextField; // @synthesize statusTextField=_statusTextField;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)revealDownloadedFileInFinder:(id)arg1;
 - (void)setObjectValue:(id)arg1;
 - (void)_updateStackView;

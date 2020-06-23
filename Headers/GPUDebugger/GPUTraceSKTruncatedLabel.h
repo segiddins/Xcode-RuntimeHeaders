@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     DVTFuture *_textureFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFuture *textureFuture; // @synthesize textureFuture=_textureFuture;
 @property(readonly, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(nonatomic) double labelHeight; // @synthesize labelHeight=_labelHeight;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
 @property(nonatomic) double magnification; // @synthesize magnification=_magnification;
-- (void).cxx_destruct;
 - (void)_rebuildTextureForConfiguration:(id)arg1;
 - (id)_labelAttributes;
 - (id)_cacheKey;

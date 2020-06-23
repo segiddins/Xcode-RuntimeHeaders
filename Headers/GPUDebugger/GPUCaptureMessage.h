@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_captureMs;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *captureMs; // @synthesize captureMs=_captureMs;
 @property(copy) NSString *error; // @synthesize error=_error;
 @property(copy) NSNumber *success; // @synthesize success=_success;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *hostXcodeVersion; // @synthesize hostXcodeVersion=_hostXcodeVersion;
 @property(copy) NSString *gpuName; // @synthesize gpuName=_gpuName;
 @property(copy) NSString *gpuVendor; // @synthesize gpuVendor=_gpuVendor;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

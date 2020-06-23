@@ -12,7 +12,13 @@ __attribute__((visibility("hidden")))
 @interface _TtC8RCShared25TextInspectableEditorCell : _TtC8RCShared30InspectableEditorCellFromClass
 {
     MISSING_TYPE *textView;
+    MISSING_TYPE *label;
+    MISSING_TYPE *spacing;
+    MISSING_TYPE *textBackground;
     MISSING_TYPE *isEditing;
+    MISSING_TYPE *hasLabelConstraint;
+    MISSING_TYPE *noLabelConstraint;
+    MISSING_TYPE *hasLabel;
 }
 
 - (void).cxx_destruct;

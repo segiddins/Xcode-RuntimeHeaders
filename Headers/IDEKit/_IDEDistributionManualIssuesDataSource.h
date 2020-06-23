@@ -15,8 +15,8 @@
     NSArray *_errors;
 }
 
-@property(readonly, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 - (id)initWithErrors:(id)arg1;
 
 @end

@@ -18,13 +18,13 @@
     NSView *_wrapperView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int verticalContentResizingMode; // @synthesize verticalContentResizingMode=_verticalContentResizingMode;
 @property(nonatomic) int horizontalContentResizingMode; // @synthesize horizontalContentResizingMode=_horizontalContentResizingMode;
 @property(retain, nonatomic) NSView *wrapperView; // @synthesize wrapperView=_wrapperView;
 @property(retain, nonatomic) NSView *documentView; // @synthesize documentView=_documentView;
 @property(retain, nonatomic) IBSceneSpaceView *sceneSpaceView; // @synthesize sceneSpaceView=_sceneSpaceView;
 @property(nonatomic) BOOL showSceneMask; // @synthesize showSceneMask=_showSceneMask;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (BOOL)wantsToDrawMask;
 - (void)layoutTopDown;

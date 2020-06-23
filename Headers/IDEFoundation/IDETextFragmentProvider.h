@@ -20,8 +20,8 @@
 + (Class)textProviderClassForFilePath:(id)arg1;
 + (void)faultProviderClasses;
 + (id)textFragmentProviderLookupEntriesInPriorityOrder;
-@property(readonly) NSObject<IDETextFragmentProviderSeed> *seed; // @synthesize seed=_seed;
 - (void).cxx_destruct;
+@property(readonly) NSObject<IDETextFragmentProviderSeed> *seed; // @synthesize seed=_seed;
 - (id)documentLocationForToken:(long long)arg1 documentURL:(id)arg2 timestamp:(id)arg3 range:(struct _NSRange)arg4;
 - (void)enumerateTextFragments:(CDUnknownBlockType)arg1;
 - (id)initWithSeed:(id)arg1;

@@ -14,9 +14,9 @@
     NSTextField *_introText;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *introText; // @synthesize introText=_introText;
 @property __weak NSPopUpButton *teamPopUp; // @synthesize teamPopUp=_teamPopUp;
-- (void).cxx_destruct;
 - (BOOL)willNavigateToNextPage;
 - (void)teamPopUpAction:(id)arg1;
 - (void)_populateDeveloperTeams;

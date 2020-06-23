@@ -22,10 +22,10 @@
 + (id)minimumProtocolVersion;
 + (id)currentProcessDisplayPath;
 + (id)clientProcessUniqueIdentifier;
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)handleConnectionFailure:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
 - (id)initWithSessionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

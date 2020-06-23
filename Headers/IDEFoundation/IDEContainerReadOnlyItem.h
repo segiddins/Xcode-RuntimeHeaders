@@ -17,10 +17,10 @@
     DVTFilePath *_filePath;
 }
 
+- (void).cxx_destruct;
 @property int readOnlyStatus; // @synthesize readOnlyStatus=_readOnlyStatus;
 @property(readonly) IDEContainer *container; // @synthesize container=_container;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (BOOL)makeWritableWithError:(id *)arg1;
 - (void)updateReadOnlyStatus;
 @property(readonly) NSURL *readOnlyItemURL;

@@ -6,7 +6,8 @@
 
 #import <IDESpriteKitParticleEditor/DVTInvalidation-Protocol.h>
 
-@class NSEvent, NSView, SKSceneEditController;
+@class NSEvent, NSObject, NSView, SKSceneEditController;
+@protocol SKSceneNavigating;
 
 @protocol SKSceneSecondaryEditController <DVTInvalidation>
 - (BOOL)sceneEditController:(SKSceneEditController *)arg1 rightClickAtLocation:(struct CGPoint)arg2;
@@ -17,9 +18,9 @@
 - (void)sceneEditController:(SKSceneEditController *)arg1 multiTouchMovedAtLocation:(struct CGPoint)arg2;
 - (BOOL)sceneEditController:(SKSceneEditController *)arg1 multiTouchBeganAtLocation:(struct CGPoint)arg2;
 - (void)sceneEditController:(SKSceneEditController *)arg1 touchHoverMoveAtLocation:(struct CGPoint)arg2;
-- (void)sceneEditController:(SKSceneEditController *)arg1 touchEndedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
-- (void)sceneEditController:(SKSceneEditController *)arg1 touchMovedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
-- (BOOL)sceneEditController:(SKSceneEditController *)arg1 touchBeganAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(struct NSObject *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (void)sceneEditController:(SKSceneEditController *)arg1 touchEndedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(NSObject<SKSceneNavigating> *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (void)sceneEditController:(SKSceneEditController *)arg1 touchMovedAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(NSObject<SKSceneNavigating> *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
+- (BOOL)sceneEditController:(SKSceneEditController *)arg1 touchBeganAtLocation:(struct SKSceneEditInputLocation)arg2 onItem:(NSObject<SKSceneNavigating> *)arg3 clickCount:(unsigned long long)arg4 modifierFlags:(unsigned long long)arg5;
 - (void)sceneEditControllerWillDeactivate:(SKSceneEditController *)arg1;
 - (void)sceneEditControllerDidActivate:(SKSceneEditController *)arg1;
 - (NSView *)viewInEditController:(SKSceneEditController *)arg1;

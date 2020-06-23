@@ -13,8 +13,8 @@
     IDESourceCodePlaygroundSection *_playgroundSection;
 }
 
-@property(retain) IDESourceCodePlaygroundSection *playgroundSection; // @synthesize playgroundSection=_playgroundSection;
 - (void).cxx_destruct;
+@property(retain) IDESourceCodePlaygroundSection *playgroundSection; // @synthesize playgroundSection=_playgroundSection;
 - (id)initWithEditor:(id)arg1 document:(id)arg2 fileDataType:(id)arg3 playgroundSection:(id)arg4 workspaceTabController:(id)arg5;
 
 @end

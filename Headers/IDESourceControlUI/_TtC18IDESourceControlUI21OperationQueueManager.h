@@ -11,6 +11,8 @@
 @interface _TtC18IDESourceControlUI21OperationQueueManager : _TtCs12_SwiftObject
 {
     MISSING_TYPE *fetchQueue;
+    MISSING_TYPE *duplicateOperationsByName;
+    MISSING_TYPE *operationTokens;
 }
 
 @end

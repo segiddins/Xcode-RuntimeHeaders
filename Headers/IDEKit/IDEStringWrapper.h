@@ -13,8 +13,8 @@
     NSString *_value;
 }
 
-@property(copy) NSString *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(copy) NSString *value; // @synthesize value=_value;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initWithString:(id)arg1;
 

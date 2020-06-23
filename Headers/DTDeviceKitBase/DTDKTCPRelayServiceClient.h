@@ -18,11 +18,11 @@
     long long _sshPort;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long sshPort; // @synthesize sshPort=_sshPort;
 @property(retain, nonatomic) DVTPlatform *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (id)_connectToTCPRelayService;
 - (id)_tcprelayXPCConnection;
 - (void)_cancelTrackingTCPRelayPID;

@@ -17,8 +17,8 @@
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
-@property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 - (BOOL)insertItems:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)canInsertItems:(id)arg1;
 - (BOOL)removeItemsAtIndexes:(id)arg1;

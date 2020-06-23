@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(copy, nonatomic) NSDictionary *assignments; // @synthesize assignments=_assignments;
-- (void).cxx_destruct;
 - (void)touchEntry;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

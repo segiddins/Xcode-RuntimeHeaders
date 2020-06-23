@@ -19,11 +19,11 @@
 + (id)productExtensionCategoryForExtensionPointIdentifier:(id)arg1;
 + (id)identifierToProductExtensionCategory;
 + (id)productExtensions;
+- (void).cxx_destruct;
 @property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) NSString *userDescription; // @synthesize userDescription=_userDescription;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 userDescription:(id)arg2 sortOrder:(long long)arg3 imageName:(id)arg4;
 
 @end

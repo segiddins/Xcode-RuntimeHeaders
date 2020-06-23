@@ -13,8 +13,8 @@
     IDETemplateOptionsAssistant *_optionsAssistant;
 }
 
-@property(retain, nonatomic) IDETemplateOptionsAssistant *optionsAssistant; // @synthesize optionsAssistant=_optionsAssistant;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDETemplateOptionsAssistant *optionsAssistant; // @synthesize optionsAssistant=_optionsAssistant;
 - (BOOL)isFlipped;
 
 @end

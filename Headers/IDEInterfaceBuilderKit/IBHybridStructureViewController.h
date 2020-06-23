@@ -19,10 +19,10 @@
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentFilterFieldWantingStructureProvider;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *lastKnownOutlineViewWidth; // @synthesize lastKnownOutlineViewWidth=_lastKnownOutlineViewWidth;
 @property(retain) IBNavigationOutlineViewController *outlineViewController; // @synthesize outlineViewController=_outlineViewController;
 @property(retain) IBDockViewController *dockViewController; // @synthesize dockViewController=_dockViewController;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)setStateToken:(id)arg1;

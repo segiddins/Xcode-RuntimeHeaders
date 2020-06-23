@@ -21,11 +21,11 @@
     NSString *_backtraceErrorMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backtraceErrorMessage; // @synthesize backtraceErrorMessage=_backtraceErrorMessage;
 @property(retain, nonatomic) IDEThread *threadWithBacktrace; // @synthesize threadWithBacktrace=_threadWithBacktrace;
 @property long long unfetchedPropertyCount; // @synthesize unfetchedPropertyCount=_unfetchedPropertyCount;
 @property(readonly) NSArray *propertyEntriesToBeFetched; // @synthesize propertyEntriesToBeFetched=_propertyEntriesToBeFetched;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;

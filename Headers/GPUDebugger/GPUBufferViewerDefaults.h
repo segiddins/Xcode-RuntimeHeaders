@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedDefaults;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (id)displayValueForOffset:(unsigned long long)arg1;
 @property long long outlineStyleRowLimit;
 @property BOOL autoDetectColorElements;

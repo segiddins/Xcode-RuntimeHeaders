@@ -28,6 +28,7 @@
 
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingTitleForDisplay;
+- (void).cxx_destruct;
 @property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
 @property(retain) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
@@ -35,7 +36,6 @@
 @property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(readonly) Xcode3PackageReferencesGroup *packageReferencesGroup; // @synthesize packageReferencesGroup=_packageReferencesGroup;
 @property(readonly) Xcode3Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)toolTipForRemoveButton;
 - (id)toolTipForAddButton;

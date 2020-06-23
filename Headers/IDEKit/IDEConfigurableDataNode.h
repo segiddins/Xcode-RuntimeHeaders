@@ -74,10 +74,10 @@
 + (id)minimumNodeCoverFromNodesInArray:(id)arg1;
 + (id)dataNodeWithData:(id)arg1 adapter:(id)arg2 dataSource:(id)arg3;
 + (id)dataNodeWithData:(id)arg1 adapter:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id custom; // @synthesize custom=_custom;
 @property(nonatomic) double cachedRowHeight; // @synthesize cachedRowHeight=_cachedRowHeight;
 @property(retain, nonatomic) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
-- (void).cxx_destruct;
 - (void)consistencyCheck;
 - (void)scrollToVisible;
 - (void)selectInOutlineView;
@@ -143,8 +143,8 @@
 - (id)firstChild;
 - (long long)numberOfChildren;
 - (void)discardPreloadedChildren;
-- (id)addChildForDataObject:(id)arg1 withAdapter:(struct NSObject *)arg2;
-- (void)addChildrenForDataObjects:(id)arg1 withCommonAdapter:(struct NSObject *)arg2;
+- (id)addChildForDataObject:(id)arg1 withAdapter:(id)arg2;
+- (void)addChildrenForDataObjects:(id)arg1 withCommonAdapter:(id)arg2;
 @property(copy, nonatomic) NSArray *children;
 - (void)removeChildrenAtIndexes:(id)arg1;
 - (void)insertChildren:(id)arg1 atIndexes:(id)arg2;

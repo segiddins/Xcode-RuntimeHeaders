@@ -18,9 +18,9 @@
     id <GPUAbstractTraceGroupItem> _outlineItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <GPUAbstractTraceGroupItem> outlineItem; // @synthesize outlineItem=_outlineItem;
 @property(readonly, nonatomic) __weak DependencyViewerCluster *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)title;
 - (id)clusters;

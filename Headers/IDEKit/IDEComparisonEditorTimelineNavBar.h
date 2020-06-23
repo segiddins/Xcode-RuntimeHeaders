@@ -25,12 +25,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDEComparisonEditorCollapsibleSourceList> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEComparisonEditorChangesStepperView *changesStepperControl; // @synthesize changesStepperControl=_changesStepperControl;
 @property(retain) DVTPathControl *secondaryPathControl; // @synthesize secondaryPathControl=_secondaryPathControl;
 @property(retain) DVTPathControl *primaryPathControl; // @synthesize primaryPathControl=_primaryPathControl;
 @property(retain) IDEComparisonEditor *comparisonEditor; // @synthesize comparisonEditor=_comparisonEditor;
-- (void).cxx_destruct;
 @property BOOL hideSecondaryPathControl;
 - (void)primitiveInvalidate;
 - (void)centerChangesStepperControl;

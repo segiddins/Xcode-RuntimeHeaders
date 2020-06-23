@@ -18,6 +18,7 @@
 + (Class)documentGroupMemberWrapperClass;
 + (Class)metricsInferrerClass;
 + (Class)libraryAssetProviderClassForIdiom:(id)arg1;
++ (int)libraryInclusionStatusForMainMenu;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
 + (BOOL)supportsPrototypeObjects;

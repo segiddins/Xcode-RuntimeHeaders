@@ -20,8 +20,8 @@
     DVTObservingToken *_editorFilterStringObservingToken;
 }
 
-@property(readonly, nonatomic) NSArrayController *currentSelectedActionsController; // @synthesize currentSelectedActionsController=_currentSelectedActionsController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArrayController *currentSelectedActionsController; // @synthesize currentSelectedActionsController=_currentSelectedActionsController;
 - (BOOL)actionEditor:(id)arg1 shouldSupportPastedActions:(id)arg2;
 - (BOOL)actionEditor:(id)arg1 shouldCreateReferenceActionWithActions:(id)arg2;
 - (void)updateActionPreview;

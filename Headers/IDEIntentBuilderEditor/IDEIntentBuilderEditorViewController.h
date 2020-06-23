@@ -15,8 +15,8 @@
     IDEIntentBuilderEditor *_parentEditor;
 }
 
-@property __weak IDEIntentBuilderEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (void).cxx_destruct;
+@property __weak IDEIntentBuilderEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 - (void)primitiveInvalidate;
 @property(readonly) IDEIntentBuilderModel *model;
 

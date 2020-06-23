@@ -22,6 +22,7 @@
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
 + (Class)correspondingStepClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *helpID; // @synthesize helpID=_helpID;
 @property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly) NSString *additionalActionTitle; // @synthesize additionalActionTitle=_additionalActionTitle;
@@ -30,7 +31,6 @@
 @property(readonly) BOOL wantsNextAction; // @synthesize wantsNextAction=_wantsNextAction;
 @property(readonly) IDEDistributionAssistantWindowController *assistantWindowController; // @synthesize assistantWindowController=_assistantWindowController;
 @property(readonly) IDEDistributionStep *distributionStep; // @synthesize distributionStep=_distributionStep;
-- (void).cxx_destruct;
 - (void)help:(id)arg1;
 - (void)presentErrorAndCancel:(id)arg1;
 @property(readonly) NSSet *providedOutputContextPropertyNames;

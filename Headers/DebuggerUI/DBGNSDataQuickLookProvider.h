@@ -31,6 +31,7 @@
     NSProgressIndicator *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSButton *exportButton; // @synthesize exportButton=_exportButton;
 @property(retain) NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
@@ -40,7 +41,6 @@
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic) long long currentPageIndexIntoByteData; // @synthesize currentPageIndexIntoByteData=_currentPageIndexIntoByteData;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (void)exportButtonPressed:(id)arg1;
 - (void)nextOrPreviousPage:(id)arg1;
 - (void)promptToSaveData:(id)arg1 withSuggestedFileName:(id)arg2;

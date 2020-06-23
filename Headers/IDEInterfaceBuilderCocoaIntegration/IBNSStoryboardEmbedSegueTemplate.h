@@ -15,8 +15,8 @@
     NSView *_containerView;
 }
 
-@property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibLocalAutoNullifyingNonChildToOneRelationshipsKeyPaths;

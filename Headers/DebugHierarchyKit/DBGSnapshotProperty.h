@@ -21,12 +21,12 @@
 + (id)propertyWithDebugHierarchyProperty:(id)arg1;
 + (id)propertyWithName:(id)arg1 runtimeTypeName:(id)arg2 value:(id)arg3;
 + (id)propertyWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DebugHierarchyProperty *backingRuntimeTypeProperty; // @synthesize backingRuntimeTypeProperty=_backingRuntimeTypeProperty;
 @property(retain) NSMutableDictionary *subpropertiesMap; // @synthesize subpropertiesMap=_subpropertiesMap;
 @property __weak DBGSnapshotNode *snapshotNode; // @synthesize snapshotNode=_snapshotNode;
 @property long long fetchStatus; // @synthesize fetchStatus=_fetchStatus;
 @property(retain) id <DBGValue> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 @property(readonly) NSData *dataValue;

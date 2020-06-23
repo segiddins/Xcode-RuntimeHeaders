@@ -30,6 +30,7 @@
 + (id)keyPathsForValuesAffectingHideSpinner;
 + (id)keyPathsForValuesAffectingAccessory;
 + (void)applyToMenuItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *wifiView; // @synthesize wifiView=_wifiView;
 @property(retain, nonatomic) IDERunDestinationMenuItemColoredSpinner *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) NSTextField *titleView; // @synthesize titleView=_titleView;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(nonatomic) BOOL isWatchDestination; // @synthesize isWatchDestination=_isWatchDestination;
 @property(retain, nonatomic) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
-- (void).cxx_destruct;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;

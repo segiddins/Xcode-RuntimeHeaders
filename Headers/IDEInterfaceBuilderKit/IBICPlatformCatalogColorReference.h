@@ -16,10 +16,10 @@
 }
 
 + (id)referenceForSystemColorWithName:(id)arg1 platformID:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBICColorSet *representativeColorSet; // @synthesize representativeColorSet=_representativeColorSet;
 @property(readonly, nonatomic) NSString *colorName; // @synthesize colorName=_colorName;
 @property(readonly, nonatomic) NSString *platformID; // @synthesize platformID=_platformID;
-- (void).cxx_destruct;
 - (BOOL)isEqualToColorReference:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

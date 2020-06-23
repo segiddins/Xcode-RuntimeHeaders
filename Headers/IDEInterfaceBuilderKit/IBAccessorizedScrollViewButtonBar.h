@@ -25,8 +25,8 @@
 + (id)barButtonWithTitle:(id)arg1;
 + (id)barButtonWithImage:(id)arg1;
 + (id)barSegmentWithSegments:(id)arg1;
-@property(copy, nonatomic) NSColor *barBackgroundColor; // @synthesize barBackgroundColor=_barBackgroundColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSColor *barBackgroundColor; // @synthesize barBackgroundColor=_barBackgroundColor;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)hitTest:(struct CGPoint)arg1;

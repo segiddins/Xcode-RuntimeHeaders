@@ -13,7 +13,7 @@
 #import <IDEInterfaceBuilderKit/IDEWorkspaceTabControllerCursorRectInterceptor-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSScrollViewDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTDraggedImageState, DVTMutableOrderedSet, DVTNotificationToken, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBCanvasControllerLayoutGuideGeneratorDelegate, IBCanvasScrollView, IBCanvasView, IBDeviceBarViewController, IBHitDetectionMap, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMutableIdentityDictionary, NSButton, NSDate, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSegmentedControl, NSString;
+@class DVTDelayedInvocation, DVTDraggedImageState, DVTMutableOrderedSet, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBCanvasControllerLayoutGuideGeneratorDelegate, IBCanvasScrollView, IBCanvasView, IBDeviceBarViewController, IBHitDetectionMap, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMutableIdentityDictionary, NSButton, NSDate, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSegmentedControl, NSString;
 @protocol IBInvalidation;
 
 @interface IBCanvasViewController : IDEViewController <IBEditorTreeDelegate, NSScrollViewDelegate, IDEWorkspaceTabControllerCursorRectInterceptor, IBCanvasViewDelegate, IBSelectionProvider, IBHighlightProvider>
@@ -36,14 +36,11 @@
     struct CGPoint _lastAutoExpansionPlace;
     DVTDraggedImageState *_imageState;
     NSMutableArray *_expansionTokens;
-    double _defaultEditingZoomFactor;
     double _lastAlternateZoomFactor;
     NSNumber *_canvasZoomFactorAfterAnimation;
     NSSegmentedControl *_zoomSegmentedControl;
     DVTObservingToken *_currentZoomToken;
-    DVTNotificationToken *_willStartLiveMagnifyToken;
-    BOOL _inLiveMagnify;
-    DVTNotificationToken *_didEndLiveMagnifyToken;
+    IBCancellationToken *_scrollViewNotificationTokens;
     unsigned long long _updateFramesSegmentIndex;
     NSSegmentedControl *_embedButton;
     NSSegmentedControl *_actionAreaButton;
@@ -56,6 +53,7 @@
     NSMutableOrderedSet *_keyFrameObservers;
     NSButton *_deviceBarViewAsButton;
     DVTObservingToken *_deviceConfigurationObservingToken;
+    BOOL _inLiveMagnify;
     BOOL _deviceBarVisible;
     BOOL _editorsProvidingSelection;
     IBAbstractDocumentEditor *_documentEditor;
@@ -63,25 +61,32 @@
     IBLayoutManager *_frameLayoutManager;
     IBCanvasControllerLayoutGuideGeneratorDelegate *_frameLayoutGuideGeneratorDelegate;
     IBDeviceBarViewController *_deviceBarViewController;
+    double _defaultEditingZoomFactor;
     IBCanvasScrollView *_canvasScrollView;
     DVTMutableOrderedSet *_selectedConnections;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)zoomLevelMenuItemsWithAction:(SEL)arg1 titleFormatter:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL editorsProvidingSelection; // @synthesize editorsProvidingSelection=_editorsProvidingSelection;
 @property(copy, nonatomic) DVTMutableOrderedSet *selectedConnections; // @synthesize selectedConnections=_selectedConnections;
 @property(retain, nonatomic) IBCanvasScrollView *canvasScrollView; // @synthesize canvasScrollView=_canvasScrollView;
 @property(nonatomic) BOOL deviceBarVisible; // @synthesize deviceBarVisible=_deviceBarVisible;
+@property(readonly) double defaultEditingZoomFactor; // @synthesize defaultEditingZoomFactor=_defaultEditingZoomFactor;
+@property(readonly) BOOL inLiveMagnify; // @synthesize inLiveMagnify=_inLiveMagnify;
 @property(readonly, nonatomic) IBDeviceBarViewController *deviceBarViewController; // @synthesize deviceBarViewController=_deviceBarViewController;
 @property(readonly, nonatomic) IBCanvasControllerLayoutGuideGeneratorDelegate *frameLayoutGuideGeneratorDelegate; // @synthesize frameLayoutGuideGeneratorDelegate=_frameLayoutGuideGeneratorDelegate;
 @property(readonly, nonatomic) IBLayoutManager *frameLayoutManager; // @synthesize frameLayoutManager=_frameLayoutManager;
 @property(retain, nonatomic) IBCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(nonatomic) __weak IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 - (void)canvasViewRunResizeTest:(id)arg1;
+- (void)canvasViewWindowResizeTest:(id)arg1;
+- (id)doWindowResizeTest;
+- (long long)doWindowResizeForCount:(long long)arg1 increment:(double)arg2;
 - (void)canvasViewRunScrollTest:(id)arg1;
 - (id)runZoomPerformanceTestForDuration:(double)arg1;
+- (long long)zoomTestForDuration:(double)arg1 anchor:(struct CGPoint)arg2 zoomTo:(double)arg3;
 - (void)canvasViewRunZoomTest:(id)arg1;
 - (void)_updateDeviceBarSelection;
 - (void)_toggleDeviceBar:(id)arg1;
@@ -110,6 +115,7 @@
 - (double)canvasView:(id)arg1 canvasFrameChromeScaleForContentScale:(double)arg2;
 - (double)canvasView:(id)arg1 scaleForOverlayView:(id)arg2 ofCanvasFrame:(id)arg3 canvasMagnification:(double)arg4;
 - (struct CGRect)canvasView:(id)arg1 frameForOverlayView:(id)arg2 ofCanvasFrame:(id)arg3 scale:(double)arg4;
+- (void)canvasViewDidStopSuppressingTrackingAreaUpdates:(id)arg1;
 - (void)canvasViewWillInvalidateCursorRects:(id)arg1;
 - (void)canvasViewDidUpdateTrackingAreas:(id)arg1;
 - (BOOL)shouldAddSelectableObjectCursorRectsForFrameController:(id)arg1;
@@ -210,6 +216,8 @@
 - (BOOL)canZoomIn;
 - (void)updateDocumentEditorMenuTarget;
 - (id)magnificationInflectionPointsForScrollView:(id)arg1;
+- (void)canvasScrollViewDidEndLiveScroll:(id)arg1;
+- (void)canvasScrollViewWillStartLiveScroll:(id)arg1;
 - (void)canvasScrollViewDidEndLiveMagnify:(id)arg1;
 - (void)canvasScrollViewWillStartLiveMagnify:(id)arg1;
 - (void)zoomToFactorFromContextAnchoredZoomMenu:(id)arg1;

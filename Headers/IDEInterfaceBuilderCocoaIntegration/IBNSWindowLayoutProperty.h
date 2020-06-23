@@ -18,8 +18,8 @@
     IBWindowLayoutView *_layoutView;
 }
 
-@property(retain) IBWindowLayoutView *layoutView; // @synthesize layoutView=_layoutView;
 - (void).cxx_destruct;
+@property(retain) IBWindowLayoutView *layoutView; // @synthesize layoutView=_layoutView;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)windowLayoutViewDidChangeWindowContentRect:(id)arg1;

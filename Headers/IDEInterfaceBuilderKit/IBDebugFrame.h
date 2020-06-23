@@ -14,9 +14,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseDown:(id)arg1;
 

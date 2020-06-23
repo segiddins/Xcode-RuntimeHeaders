@@ -20,13 +20,13 @@
     _TtC13IDEProductsUI31ProcessorUsageLogViewController *_processorUsageLogViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC13IDEProductsUI31ProcessorUsageLogViewController *processorUsageLogViewController; // @synthesize processorUsageLogViewController=_processorUsageLogViewController;
 @property(retain, nonatomic) DVTCrashLogViewController *crashLogViewController; // @synthesize crashLogViewController=_crashLogViewController;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(nonatomic) __weak IDEAnalyticsPointDetailViewController *analyticsPointDetailViewController; // @synthesize analyticsPointDetailViewController=_analyticsPointDetailViewController;
 @property(retain, nonatomic) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
 @property(retain, nonatomic) DVTAnalyticsLogRecord *analyticsLogRecord; // @synthesize analyticsLogRecord=_analyticsLogRecord;
-- (void).cxx_destruct;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (void)_updateInstalledViewController;
 @property(readonly) BOOL isLogViewVisible;

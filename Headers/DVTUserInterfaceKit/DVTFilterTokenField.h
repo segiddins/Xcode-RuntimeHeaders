@@ -37,6 +37,7 @@
 
 + (id)keyPathsForValuesAffectingHasText;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain) DVTFilterTokenIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain) DVTGradientImageButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly) NSMutableArray *filterButtons; // @synthesize filterButtons=_filterButtons;
@@ -50,7 +51,6 @@
 @property(nonatomic) double completionWindowMinWidth; // @synthesize completionWindowMinWidth=_completionWindowMinWidth;
 @property(nonatomic) int globalOperatorType; // @synthesize globalOperatorType=_globalOperatorType;
 @property id <DVTFilterTokenFieldCompletionDelegate> completionDelegate; // @synthesize completionDelegate=_completionDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (BOOL)completionTableView:(id)arg1 rowIsSeparator:(long long)arg2;

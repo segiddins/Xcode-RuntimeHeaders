@@ -22,9 +22,9 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)keyPathsForValuesAffectingNavigableItem_subtitle;
+- (void).cxx_destruct;
 @property __weak IDESymbolNavigator *navigator; // @synthesize navigator=_navigator;
 @property(readonly, copy) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly) NSString *symbolKindIdentifier;
 - (void)fetchSymbols:(id)arg1 lastOperation:(id)arg2;

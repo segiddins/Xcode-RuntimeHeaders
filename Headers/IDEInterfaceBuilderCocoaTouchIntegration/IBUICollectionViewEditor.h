@@ -14,8 +14,8 @@
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(retain, nonatomic) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (BOOL)interceptEvent:(id)arg1;
 - (void)reattachDraggedObjects:(id)arg1 dragContext:(id)arg2;
 - (id)draggedImageState:(id)arg1;

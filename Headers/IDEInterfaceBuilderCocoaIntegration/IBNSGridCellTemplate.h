@@ -26,6 +26,7 @@
 + (id)cellWithRow:(id)arg1 column:(id)arg2;
 + (void)initialize;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) long long rowAlignment; // @synthesize rowAlignment=_rowAlignment;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak IBNSGridColumnTemplate *column; // @synthesize column=_column;
 @property(nonatomic) __weak IBNSGridRowTemplate *row; // @synthesize row=_row;
 @property(retain, nonatomic) IBNSGridCellTemplate *headOfMergedCell; // @synthesize headOfMergedCell=_headOfMergedCell;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)ibDefaultLabel;
 - (id)ibLabelToCell:(id)arg1;

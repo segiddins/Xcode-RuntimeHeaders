@@ -28,6 +28,7 @@
 }
 
 + (id)keyPathsForValuesAffectingEffectiveTextFont;
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(copy, nonatomic) NSColor *innerBorderColor; // @synthesize innerBorderColor=_innerBorderColor;
 @property(copy, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSFont *textFont; // @synthesize textFont=_textFont;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(getter=isFlipped) BOOL flipped; // @synthesize flipped=_flipped;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)destinationRectForContentWithSize:(struct CGSize)arg1 knob:(CDUnion_31865a80)arg2 offset:(struct CGPoint)arg3;
 - (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;

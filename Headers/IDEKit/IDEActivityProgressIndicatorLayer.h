@@ -36,6 +36,7 @@
 
 + (id)defaultActionForKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;
 @property(nonatomic) double spaceNeededForIndeterminateIndicator; // @synthesize spaceNeededForIndeterminateIndicator=_spaceNeededForIndeterminateIndicator;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
@@ -43,7 +44,6 @@
 @property(nonatomic) double maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) double minValue; // @synthesize minValue=_minValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;

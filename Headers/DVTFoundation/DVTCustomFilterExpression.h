@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) id <DVTPropertyListValue> context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) id <DVTPropertyListValue> context; // @synthesize context=_context;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

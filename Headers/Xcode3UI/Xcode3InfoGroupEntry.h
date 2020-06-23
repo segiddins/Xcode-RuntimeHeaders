@@ -14,9 +14,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
 @property(readonly, copy) NSArray *entries; // @synthesize entries=_entries;
-- (void).cxx_destruct;
 @property(readonly) id inspectorXML;
 - (id)initWithExtension:(id)arg1 infoEditor:(id)arg2;
 

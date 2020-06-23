@@ -20,11 +20,11 @@
 
 + (id)appearanceWithIdentifier:(id)arg1 archivingName:(id)arg2 displayName:(id)arg3 imageName:(id)arg4;
 + (id)defaultAppearance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 archivingName:(id)arg2 displayName:(id)arg3 imageName:(id)arg4;
 

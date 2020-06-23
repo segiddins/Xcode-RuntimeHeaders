@@ -17,11 +17,11 @@
     DVTObservingToken *_repairBusyReasonObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *repairBusyReasonObserver; // @synthesize repairBusyReasonObserver=_repairBusyReasonObserver;
 @property __weak NSTextField *busyReasonLabel; // @synthesize busyReasonLabel=_busyReasonLabel;
 @property(nonatomic) __weak NSProgressIndicator *busyIndicator; // @synthesize busyIndicator=_busyIndicator;
 @property(retain, nonatomic) id <IDEProvisioningRepairBusyReasonDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)startObservations;
 - (void)viewDidLoad;

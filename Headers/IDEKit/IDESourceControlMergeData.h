@@ -14,9 +14,9 @@
     BOOL _dirty;
 }
 
+- (void).cxx_destruct;
 @property(getter=isDirty) BOOL dirty; // @synthesize dirty=_dirty;
 @property(retain) NSFileWrapper *fileWrapper; // @synthesize fileWrapper=_fileWrapper;
-- (void).cxx_destruct;
 
 @end
 

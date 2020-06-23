@@ -15,10 +15,10 @@
     double _location;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double location; // @synthesize location=_location;
 @property(nonatomic) unsigned long long affinity; // @synthesize affinity=_affinity;
 @property(retain) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isVisible;
 - (struct CGPoint)endInView:(id)arg1;

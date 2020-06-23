@@ -28,6 +28,7 @@
     unsigned long long _testCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long testCount; // @synthesize testCount=_testCount;
 @property(readonly) unsigned long long totalAttachmentSize; // @synthesize totalAttachmentSize=_totalAttachmentSize;
 @property(readonly) float screenshotAttachmentRatio; // @synthesize screenshotAttachmentRatio=_screenshotAttachmentRatio;
@@ -44,7 +45,6 @@
 @property(readonly) BOOL deviceIsWireless; // @synthesize deviceIsWireless=_deviceIsWireless;
 @property(readonly, copy) NSString *platformName; // @synthesize platformName=_platformName;
 @property(readonly, copy) NSString *initiationEvent; // @synthesize initiationEvent=_initiationEvent;
-- (void).cxx_destruct;
 - (void)reportAttachmentStats;
 - (void)reportBootstrappingOverhead;
 - (void)reportInitiationEvent;

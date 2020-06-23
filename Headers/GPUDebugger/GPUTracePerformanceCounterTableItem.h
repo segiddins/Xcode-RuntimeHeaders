@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSSet *_filterItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *filterItems; // @synthesize filterItems=_filterItems;
 @property(nonatomic) unsigned long long plane; // @synthesize plane=_plane;
 @property(nonatomic) unsigned long long sortingIndex; // @synthesize sortingIndex=_sortingIndex;
@@ -45,7 +46,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
+- (id)pasteboardString;
 - (long long)compare:(id)arg1;
 - (id)init;
 

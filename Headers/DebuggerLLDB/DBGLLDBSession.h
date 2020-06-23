@@ -42,7 +42,6 @@
     DBGLLDBRuntimeIssuesHelper *_runtimeIssuesHelper;
     BOOL _isTracingOnDeviceAndTargetGotJetsam;
     BOOL _stopRequested;
-    BOOL _useSyncPerformBlock;
     BOOL _profilingEnabled;
     BOOL _pauseRequested;
     BOOL _continueRequestedAfterExpression;
@@ -61,6 +60,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (BOOL)breakpointHit:(void *)arg1 thread:(id)arg2 location:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *expressionsWhenPaused; // @synthesize expressionsWhenPaused=_expressionsWhenPaused;
 @property BOOL shouldIssueKillAfterPause; // @synthesize shouldIssueKillAfterPause=_shouldIssueKillAfterPause;
 @property BOOL readyForActionsWhenPaused; // @synthesize readyForActionsWhenPaused=_readyForActionsWhenPaused;
@@ -72,12 +72,10 @@
 @property int profileScanType; // @synthesize profileScanType=_profileScanType;
 @property(nonatomic, getter=isProfilingEnabled) BOOL profilingEnabled; // @synthesize profilingEnabled=_profilingEnabled;
 @property struct _opaque_pthread_t *sessionThreadIdentifier; // @synthesize sessionThreadIdentifier=_sessionThreadIdentifier;
-@property BOOL useSyncPerformBlock; // @synthesize useSyncPerformBlock=_useSyncPerformBlock;
 @property BOOL stopRequested; // @synthesize stopRequested=_stopRequested;
 @property BOOL isTracingOnDeviceAndTargetGotJetsam; // @synthesize isTracingOnDeviceAndTargetGotJetsam=_isTracingOnDeviceAndTargetGotJetsam;
 @property(copy) NSString *RPCServerCrashedOrExitedMessage; // @synthesize RPCServerCrashedOrExitedMessage=_RPCServerCrashedOrExitedMessage;
 - (id)memoryProfilingDisabledMessage;
-- (void).cxx_destruct;
 - (void)_delayedTurnOnMemoryDebugging;
 - (void)_handleSessionThreadEndOfLifeWithExitCode:(long long)arg1 exitDescription:(id)arg2;
 - (BOOL)_showErrorMessageForExitDescription:(id)arg1;
@@ -110,12 +108,16 @@
 - (BOOL)_allSanitizerBreakpointsInSameEnabledStateAsBreakpoint:(id)arg1;
 - (void)breakpointIgnoreCountChanged:(id)arg1;
 - (void)breakpointConditionChanged:(id)arg1;
+- (void)breakpointNameChanged:(id)arg1;
 - (void)_logBreakpointState:(id)arg1 usingPrefix:(id)arg2;
 - (void)watchpointEnablementChanged:(id)arg1;
 - (void)activationStateChanged:(BOOL)arg1 forBreakpoints:(id)arg2;
 - (void)_deleteBreakpointFromLLDBSessionThread:(id)arg1 breakpointLocations:(id)arg2;
 - (void)deleteBreakpoint:(id)arg1;
 - (void)_handleBreakpointLocationsRemovedEvent:(id)arg1;
+- (void)_handleBreakpointDisabledEventFromLLDB:(id)arg1;
+- (void)_handleBreakpointEnabledEventFromLLDB:(id)arg1;
+- (void)_handleBreakpointEnabled:(BOOL)arg1 eventFromLLDB:(id)arg2;
 - (void)_handleBreakpointLocationsAddedEvent:(id)arg1;
 - (void)_handleBreakpointRemovedEventFromLLDB:(id)arg1;
 - (id)_breakpointLocationFromSBBreakpointLocation:(id)arg1 parentBreakpoint:(id)arg2;
@@ -131,6 +133,7 @@
 - (id)_createBreakpointFromSymbolicBreakpoint:(id)arg1;
 - (id)_createBreakpointFromFileBreakpoint:(id)arg1;
 - (void)createBreakpointIfNecessary:(id)arg1;
+- (void)_changeNameForBreakpoint:(id)arg1 initial:(BOOL)arg2;
 - (void)_handleSanitizerBreakpoint:(id)arg1 stop:(long long)arg2 multiplier:(long long)arg3;
 - (void)_evaluateExpressionFromSessionThread:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 resultBlock:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 resultBlock:(CDUnknownBlockType)arg6;
@@ -140,7 +143,8 @@
 - (void)_setProfilingEnabled:(BOOL)arg1;
 - (id)commandsExpectingExpressions;
 - (void)_delayedSetRunningState;
-- (void)_quitWatchdogOnProcessState:(int *)arg1 forceQuit:(BOOL)arg2;
+- (void)_killWatchdog;
+- (void)_quitWatchdogOnProcessState:(int *)arg1;
 - (void)_cancelAndClearAllSessionThreadActionsByFirstTakingActionsLock;
 - (void)_cancelAndClearAllSessionThreadActionsWithActionsLockAlreadyTaken;
 - (BOOL)handleNextActionWithState:(int *)arg1 withRunPending:(char *)arg2;
@@ -164,6 +168,7 @@
 - (void)requestUISnapshotRefresh;
 - (void)simulateMetricPayloads;
 - (void)requestFetchEvent;
+- (id)bundleIDOfAssociatedBuildable;
 - (void)_runActionOnSessionThreadWhenPaused:(CDUnknownBlockType)arg1;
 - (void)requestContinueToLocation:(id)arg1;
 - (void)requestStepIntoCallSymbol:(id)arg1 atLocation:(id)arg2;

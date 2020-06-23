@@ -13,8 +13,8 @@
     NSView *_overlayView;
 }
 
-@property(retain, nonatomic) NSView *overlayView; // @synthesize overlayView=_overlayView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *overlayView; // @synthesize overlayView=_overlayView;
 - (void)setFrameSize:(struct CGSize)arg1;
 
 @end

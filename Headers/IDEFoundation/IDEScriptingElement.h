@@ -12,9 +12,9 @@
     id _accessor;
 }
 
+- (void).cxx_destruct;
 @property(retain) id accessor; // @synthesize accessor=_accessor;
 @property(retain) id container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)objectSpecifier;
 - (id)objectSpecifierAsProperty;
 - (id)objectSpecifierByIndex;

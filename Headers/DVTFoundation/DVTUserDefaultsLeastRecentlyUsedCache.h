@@ -17,12 +17,12 @@
     DVTDispatchLock *_cacheLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDispatchLock *cacheLock; // @synthesize cacheLock=_cacheLock;
 @property(retain, nonatomic) NSString *userDefaultsKey; // @synthesize userDefaultsKey=_userDefaultsKey;
 @property unsigned long long cacheSize; // @synthesize cacheSize=_cacheSize;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) NSMutableArray *keysRecentlyUsed; // @synthesize keysRecentlyUsed=_keysRecentlyUsed;
-- (void).cxx_destruct;
 - (void)removeAllObjects;
 - (id)objectForKey:(id)arg1;
 - (void)addObject:(id)arg1 key:(id)arg2;

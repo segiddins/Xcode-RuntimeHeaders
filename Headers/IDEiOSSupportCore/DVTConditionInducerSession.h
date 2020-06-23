@@ -25,6 +25,7 @@
     NSObject<OS_os_log> *_log;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) DVTObservingToken *deviceIsPairedObservingToken; // @synthesize deviceIsPairedObservingToken=_deviceIsPairedObservingToken;
 @property(retain) DVTObservingToken *deviceHasConnectionObservingToken; // @synthesize deviceHasConnectionObservingToken=_deviceHasConnectionObservingToken;
@@ -37,7 +38,6 @@
 @property __weak DVTiOSConditionInducer *activeCondition; // @synthesize activeCondition=_activeCondition;
 @property(retain) NSArray *availableConditions; // @synthesize availableConditions=_availableConditions;
 @property unsigned long long serviceState; // @synthesize serviceState=_serviceState;
-- (void).cxx_destruct;
 - (void)_conditionInducerStateDidChange;
 - (void)unRegisterStateChangedCallbackWithOwner:(id)arg1;
 - (void)registerStateChangedCallbackWithOwner:(id)arg1 block:(CDUnknownBlockType)arg2;

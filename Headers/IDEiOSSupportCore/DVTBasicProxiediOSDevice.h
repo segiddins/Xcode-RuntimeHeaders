@@ -33,6 +33,7 @@
 - (BOOL)canBeRunDestination;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) NSError *unavailabilityError;
+- (BOOL)isAvailableWithError:(id *)arg1;
 @property(readonly, getter=isAvailable) BOOL available;
 @property(readonly) _Bool isPasscodeLocked;
 @property(readonly) NSString *adjustedOperatingSystemVersion;

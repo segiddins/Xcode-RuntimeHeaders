@@ -20,9 +20,9 @@
 + (BOOL)automaticallyNotifiesObserversForBuildSystemType;
 + (int)defaultBuildSystemType;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL loadedExistingSettings; // @synthesize loadedExistingSettings=_loadedExistingSettings;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property int buildSystemType;
 - (void)loadSettings;

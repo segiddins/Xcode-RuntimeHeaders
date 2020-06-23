@@ -18,12 +18,12 @@
 }
 
 + (id)managedPortalMembership;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DVTPortalTeam *team; // @synthesize team=_team;
 @property(retain, nonatomic) DVTPortalProgram *portalProgram; // @synthesize portalProgram=_portalProgram;
 @property(readonly, copy, nonatomic) NSString *membershipProductId; // @synthesize membershipProductId=_membershipProductId;
 @property(readonly, copy, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly) BOOL isManaged; // @synthesize isManaged=_isManaged;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *portalPrograms;
 @property(readonly, nonatomic) NSSet *platforms;
 - (unsigned long long)hash;

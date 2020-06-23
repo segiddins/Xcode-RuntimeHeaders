@@ -23,10 +23,10 @@
 }
 
 + (id)layoutLogAspect;
+- (void).cxx_destruct;
 @property(getter=isGeneratingInlineFolds) BOOL generatingInlineFolds; // @synthesize generatingInlineFolds=_generatingInlineFolds;
 @property BOOL foldsMultiPathTokens; // @synthesize foldsMultiPathTokens=_foldsMultiPathTokens;
 @property(readonly) DVTFoldingManager *foldingManager; // @synthesize foldingManager=_foldingManager;
-- (void).cxx_destruct;
 - (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1 inTextContainer:(id)arg2 fractionOfDistanceBetweenInsertionPoints:(double *)arg3;
 - (struct CGSize)attachmentSizeForGlyphAtIndex:(unsigned long long)arg1;
 - (void)drawGlyphsForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;

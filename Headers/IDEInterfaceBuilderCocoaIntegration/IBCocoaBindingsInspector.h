@@ -34,12 +34,12 @@
 }
 
 + (BOOL)supportsMultipleObjectInspection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *controllerInfo; // @synthesize controllerInfo=_controllerInfo;
 @property(retain) DVTStackView_ML *mainView; // @synthesize mainView=_mainView;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *controllers; // @synthesize controllers=_controllers;
 @property(retain) IBCocoaBindingsSuggestedKeyPathProvider *keyPathProvider; // @synthesize keyPathProvider=_keyPathProvider;
-- (void).cxx_destruct;
 - (void)unbindDocumentBindingNamed:(id)arg1;
 - (void)bindDocumentBindingNamed:(id)arg1 toController:(id)arg2 withKeyPath:(id)arg3 valueTransformerName:(id)arg4 options:(id)arg5;
 - (id)expandedBindings;

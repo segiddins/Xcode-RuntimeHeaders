@@ -27,9 +27,9 @@
 + (id)keyPathsForValuesAffectingSelectedEntityMappingIndexes;
 + (id)keyPathsForValuesAffectingSelectedEntityMappings;
 + (id)keyPathsForValuesAffectingAllEntityMappings;
+- (void).cxx_destruct;
 @property(retain) IDEMappingModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 @property(retain) NSIndexSet *selectedPropertyMappingIndexes; // @synthesize selectedPropertyMappingIndexes=_selectedPropertyMappingIndexes;
-- (void).cxx_destruct;
 - (void)removeSelectedPropertyMappings;
 - (void)delete:(id)arg1;
 - (void)modelDidChange;

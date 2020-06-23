@@ -11,6 +11,7 @@
 @interface _TtC9CoreAsset19RealityAssetBuilder : _TtCs12_SwiftObject
 {
     MISSING_TYPE *debugName;
+    MISSING_TYPE *privateContext;
     MISSING_TYPE *context;
 }
 

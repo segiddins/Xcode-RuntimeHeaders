@@ -21,13 +21,13 @@
 }
 
 + (id)insertRecordForPartialClassDescription:(id)arg1 inClassNameChainLeadByRecord:(id)arg2 inClassNameChainTable:(id)arg3 andSourceIDChainTable:(id)arg4;
+- (void).cxx_destruct;
 @property IBPartialClassDescriptionRecord *prevRecordWithSameClassNameInContentionOrder; // @synthesize prevRecordWithSameClassNameInContentionOrder=_prevRecordWithSameClassNameInContentionOrder;
 @property(readonly) IBPartialClassDescriptionRecord *nextRecordWithSameSourceID; // @synthesize nextRecordWithSameSourceID=_nextRecordWithSameSourceID;
 @property(readonly) IBPartialClassDescriptionRecord *nextRecordWithSameClassNameInContentionOrder; // @synthesize nextRecordWithSameClassNameInContentionOrder=_nextRecordWithSameClassNameInContentionOrder;
 @property(retain) IBPartialClassDescription *partialClassDescription; // @synthesize partialClassDescription=_partialClassDescription;
 @property(readonly) IBClassDescriptionSource *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (void)removeFromClassChainTable:(id)arg1;
 - (id)existingRecordWithSameClassNameForSourceIdentifier:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;

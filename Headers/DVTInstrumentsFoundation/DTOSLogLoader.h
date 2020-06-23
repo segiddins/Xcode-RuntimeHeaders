@@ -61,11 +61,11 @@
 
 + (void)heartbeat;
 + (id)heartbeatPredicate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DTOSLogLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSError *failureReason; // @synthesize failureReason=_failureReason;
 @property(retain, nonatomic) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_setupLiveStream:(id)arg1;
 - (void)_setupLoggedStreamForNextChunk:(id)arg1;

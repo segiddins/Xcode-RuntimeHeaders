@@ -29,6 +29,7 @@
 
 + (id)nodeWithGeometry:(id)arg1;
 + (id)node;
+- (void).cxx_destruct;
 @property struct CGRect rectRespondingToHitTests; // @synthesize rectRespondingToHitTests=_rectRespondingToHitTests;
 @property(retain) DBGSimpleNode *shineThroughNode; // @synthesize shineThroughNode=_shineThroughNode;
 @property double maxScaleFactor; // @synthesize maxScaleFactor=_maxScaleFactor;
@@ -36,7 +37,6 @@
 @property __weak DBGSimpleNode *forwardsHitTestsToNode; // @synthesize forwardsHitTestsToNode=_forwardsHitTestsToNode;
 @property BOOL respondsToHitTests; // @synthesize respondsToHitTests=_respondsToHitTests;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)recursivelyUpdateRenderingOrder:(long long)arg1 withRootNode:(id)arg2;
 - (void)setRenderingOrder:(long long)arg1 includingChildNodes:(BOOL)arg2;
 @property double shineThroughOpacity; // @synthesize shineThroughOpacity=_shineThroughOpacity;

@@ -14,8 +14,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)requestWithSession:(id)arg1;
 - (id)_payloadFromParameters:(id)arg1 extensionRequestParameters:(id)arg2;
 - (id)_responseFromServiceWithSession:(id)arg1 request:(id *)arg2 error:(id *)arg3;

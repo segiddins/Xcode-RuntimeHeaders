@@ -17,10 +17,10 @@
     NSSet *_explicitLinkerOutputFileNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *explicitLinkerOutputFileNames; // @synthesize explicitLinkerOutputFileNames=_explicitLinkerOutputFileNames;
 @property(readonly, nonatomic) NSSet *supportedPlatformNames; // @synthesize supportedPlatformNames=_supportedPlatformNames;
 @property(readonly, nonatomic) NSString *explicitTargetDeviceName; // @synthesize explicitTargetDeviceName=_explicitTargetDeviceName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)targetDeviceNameForTargetedDeviceFamilyIdentifier:(id)arg1;
 - (id)initWithDVTExtension:(id)arg1;

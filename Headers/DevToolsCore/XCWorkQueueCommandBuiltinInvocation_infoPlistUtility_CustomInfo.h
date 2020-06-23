@@ -14,9 +14,9 @@
     NSDictionary *_additionalContent;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *additionalContent; // @synthesize additionalContent=_additionalContent;
 @property(retain) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
-- (void).cxx_destruct;
 
 @end
 

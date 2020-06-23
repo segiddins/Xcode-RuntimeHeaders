@@ -6,12 +6,9 @@
 
 #import <IDEFoundation/_TtCE13IDEFoundationCSo25IDELaunchTestSchemeAction11BaseOptions.h>
 
-#import <IDEFoundation/IDELaunchTestSchemeActionOptions-Protocol.h>
-#import <IDEFoundation/IDETestPlanOptions-Protocol.h>
-
 @class MISSING_TYPE, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 
-@interface _TtCC13IDEFoundation11IDETestPlan11BaseOptions : _TtCE13IDEFoundationCSo25IDELaunchTestSchemeAction11BaseOptions <IDETestPlanOptions, IDELaunchTestSchemeActionOptions>
+@interface _TtCC13IDEFoundation11IDETestPlan11BaseOptions : _TtCE13IDEFoundationCSo25IDELaunchTestSchemeAction11BaseOptions
 {
     MISSING_TYPE *parallelizable;
     MISSING_TYPE *testExecutionOrdering;
@@ -20,9 +17,11 @@
     MISSING_TYPE *uiTestingScreenshotsLifetime;
     MISSING_TYPE *areLocalizationScreenshotsEnabled;
     MISSING_TYPE *userAttachmentLifetime;
+    MISSING_TYPE *testTimeoutsEnabled;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, readonly) BOOL testTimeoutsEnabled; // @synthesize testTimeoutsEnabled;
 @property(nonatomic, readonly) long long userAttachmentLifetime; // @synthesize userAttachmentLifetime;
 @property(nonatomic, readonly) BOOL areLocalizationScreenshotsEnabled; // @synthesize areLocalizationScreenshotsEnabled;
 @property(nonatomic, readonly) long long uiTestingScreenshotsLifetime; // @synthesize uiTestingScreenshotsLifetime;

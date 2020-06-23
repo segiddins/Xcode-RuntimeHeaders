@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSColor *_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(copy, nonatomic) NSColor *backgroundUpperColor; // @synthesize backgroundUpperColor=_backgroundUpperColor;
 @property(copy, nonatomic) NSColor *backgroundLowerColor; // @synthesize backgroundLowerColor=_backgroundLowerColor;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double blueComponent; // @synthesize blueComponent=_blueComponent;
 @property(nonatomic) double greenComponent; // @synthesize greenComponent=_greenComponent;
 @property(nonatomic) double redComponent; // @synthesize redComponent=_redComponent;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

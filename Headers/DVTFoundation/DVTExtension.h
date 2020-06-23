@@ -30,6 +30,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTExtension *basedOnExtension; // @synthesize basedOnExtension=_basedOnExtension;
 @property(readonly) DVTExtensionPoint *extensionPoint; // @synthesize extensionPoint=_extensionPoint;
 @property(readonly) DVTPlugIn *plugIn; // @synthesize plugIn=_plugIn;
@@ -37,7 +38,6 @@
 @property(readonly) DVTPlugInManager *plugInManager; // @synthesize plugInManager=_plugInManager;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_localizedStringForString:(id)arg1;
 - (BOOL)_fireExtensionFault:(id *)arg1;
 - (void)_adjustClassReferencesInParameterData:(id)arg1 usingSchema:(id)arg2;

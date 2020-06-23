@@ -19,9 +19,9 @@
 + (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingSystemInstallation;
 + (id)keyPathsForValuesAffectingAppUsage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *fontInstallationValues; // @synthesize fontInstallationValues=_fontInstallationValues;
 @property(nonatomic) BOOL fontEnumeration; // @synthesize fontEnumeration=_fontEnumeration;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 @property(nonatomic) BOOL systemInstallation; // @dynamic systemInstallation;
 - (void)_setSystemInstallation:(BOOL)arg1;

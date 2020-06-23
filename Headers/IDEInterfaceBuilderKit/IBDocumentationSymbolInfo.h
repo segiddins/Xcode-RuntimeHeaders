@@ -25,13 +25,13 @@
 + (id)infoForClass:(id)arg1 classMethod:(id)arg2;
 + (id)infoForClass:(id)arg1 instanceMethod:(id)arg2;
 + (id)infoForClass:(id)arg1 property:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *enumConstantName; // @synthesize enumConstantName=_enumConstantName;
 @property(readonly) NSString *classMethodSignature; // @synthesize classMethodSignature=_classMethodSignature;
 @property(readonly) NSString *instanceMethodSignature; // @synthesize instanceMethodSignature=_instanceMethodSignature;
 @property(readonly) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly) NSString *protocolName; // @synthesize protocolName=_protocolName;
 @property(readonly) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)symbolsForHierarchyUsingClassDescriber:(id)arg1;
 
 @end

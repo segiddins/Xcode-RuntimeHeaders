@@ -22,12 +22,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *cachedCompositeStateForSuperTest; // @synthesize cachedCompositeStateForSuperTest=_cachedCompositeStateForSuperTest;
 @property(readonly) NSMutableDictionary *aggregatedStateForLeafNodeTest; // @synthesize aggregatedStateForLeafNodeTest=_aggregatedStateForLeafNodeTest;
 @property unsigned long long sessionGeneration; // @synthesize sessionGeneration=_sessionGeneration;
 @property(readonly) IDETestableIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
 @property(readonly) __weak id <IDETestable> testable; // @synthesize testable=_testable;
-- (void).cxx_destruct;
+- (id)_noticesForTest:(id)arg1;
 - (id)_performanceMetricsForTest:(id)arg1;
 - (unsigned long long)_stateOfTest:(id)arg1;
 - (unsigned long long)_testableStateForTestable:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSColor *_backGroundColor;
 }
 
-@property(retain, nonatomic) NSColor *backGroundColor; // @synthesize backGroundColor=_backGroundColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *backGroundColor; // @synthesize backGroundColor=_backGroundColor;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

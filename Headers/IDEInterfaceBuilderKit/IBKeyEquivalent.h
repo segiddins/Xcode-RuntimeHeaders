@@ -17,9 +17,9 @@
 }
 
 + (id)keyEquivalentFromMenuItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long modifierMask; // @synthesize modifierMask=_modifierMask;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToKeyEquivalent:(id)arg1;

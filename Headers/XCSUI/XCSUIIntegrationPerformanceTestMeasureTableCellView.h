@@ -18,13 +18,13 @@
     NSTextField *_rsdField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *rsdField; // @synthesize rsdField=_rsdField;
 @property(retain) NSTextField *averageField; // @synthesize averageField=_averageField;
 @property(retain) NSTextField *maxField; // @synthesize maxField=_maxField;
 @property(retain) NSTextField *minField; // @synthesize minField=_minField;
 @property(retain) NSImageView *measureImageView; // @synthesize measureImageView=_measureImageView;
 @property(retain) XCSUIIntegrationTestsDetailPerfMeasureButton *measureTypeButton; // @synthesize measureTypeButton=_measureTypeButton;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -20,13 +20,13 @@
 
 + (id)separatorSearchResultItem;
 + (id)headerSearchResultItem;
+- (void).cxx_destruct;
 @property(retain) IDEDocumentationSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(readonly, getter=isSeparator) BOOL separator; // @synthesize separator=_separator;
 @property(readonly, getter=isHeader) BOOL header; // @synthesize header=_header;
 @property(readonly, getter=isSelectable) BOOL selectable; // @synthesize selectable=_selectable;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

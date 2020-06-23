@@ -20,10 +20,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)completedResponseWithIdentifier:(id)arg1;
 + (id)responseWithIdentifier:(id)arg1 data:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCompleted) BOOL completed; // @synthesize completed=_completed;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) DTXMessage *message;
 - (void)encodeWithCoder:(id)arg1;

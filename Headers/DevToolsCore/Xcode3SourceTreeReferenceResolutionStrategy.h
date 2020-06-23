@@ -13,8 +13,8 @@
     NSString *_sourceTreeName;
 }
 
-@property(copy) NSString *sourceTreeName; // @synthesize sourceTreeName=_sourceTreeName;
 - (void).cxx_destruct;
+@property(copy) NSString *sourceTreeName; // @synthesize sourceTreeName=_sourceTreeName;
 - (id)resolveInput:(id)arg1 forContainer:(id)arg2 group:(id)arg3 inContext:(id)arg4 usingSnapshot:(id)arg5 error:(id *)arg6;
 - (id)persistenceIdentifier;
 - (id)displayName;

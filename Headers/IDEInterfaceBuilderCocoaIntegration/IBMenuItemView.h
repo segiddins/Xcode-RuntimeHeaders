@@ -17,10 +17,10 @@
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL showsSubmenuIndicator; // @synthesize showsSubmenuIndicator=_showsSubmenuIndicator;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)titleRect;
 - (struct CGRect)submenuIndicatorRect;

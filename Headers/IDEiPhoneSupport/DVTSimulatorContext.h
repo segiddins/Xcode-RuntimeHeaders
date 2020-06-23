@@ -14,9 +14,9 @@
     DVTSimulatorGenerator *_pairedSimGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSimulatorGenerator *pairedSimGenerator; // @synthesize pairedSimGenerator=_pairedSimGenerator;
 @property(retain, nonatomic) DVTSimulatorGenerator *simGenerator; // @synthesize simGenerator=_simGenerator;
-- (void).cxx_destruct;
 
 @end
 

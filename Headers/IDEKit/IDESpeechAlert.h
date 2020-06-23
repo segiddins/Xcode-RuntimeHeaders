@@ -16,8 +16,8 @@
     NSString *_voice;
 }
 
-@property(retain, nonatomic) NSString *voice; // @synthesize voice=_voice;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *voice; // @synthesize voice=_voice;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPropertyList:(id)arg1;

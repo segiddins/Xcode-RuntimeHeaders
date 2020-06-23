@@ -35,10 +35,10 @@
 + (id)keyPathsForValuesAffectingSelectedEntityMappings;
 + (id)keyPathsForValuesAffectingModelRoot;
 + (id)keyPathsForValuesAffectingMappingModel;
+- (void).cxx_destruct;
 @property(retain) NSView *currentActiveView; // @synthesize currentActiveView=_currentActiveView;
 @property(retain) NSArray *selectedSourceListIndexPaths; // @synthesize selectedSourceListIndexPaths=_selectedSourceListIndexPaths;
 @property(retain) NSArray *shownSourceListSections; // @synthesize shownSourceListSections=_shownSourceListSections;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)selectedDocumentLocationsChanged;

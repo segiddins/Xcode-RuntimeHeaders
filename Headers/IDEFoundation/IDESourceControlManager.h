@@ -44,12 +44,12 @@
 + (id)sourceControlFileStatusLogAspect;
 + (id)sourceControlLogAspect;
 + (id)sharedSourceControlManager;
+- (void).cxx_destruct;
 @property(readonly) double minimumLocalStatusRequestDelay; // @synthesize minimumLocalStatusRequestDelay=_minimumLocalStatusRequestDelay;
 @property(readonly) _TtC13IDEFoundation34IDESourceControlFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(readonly) _TtC13IDEFoundation30IDESourceControlAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(readonly) BOOL shouldLoadAccounts; // @synthesize shouldLoadAccounts=_shouldLoadAccounts;
 @property BOOL waitingForAuthentication; // @synthesize waitingForAuthentication=_waitingForAuthentication;
-- (void).cxx_destruct;
 - (void)reportSourceControlOperation:(unsigned long long)arg1;
 - (void)_reportNewUICloneOperation:(unsigned long long)arg1;
 - (void)_reportNewUIEditorOperation:(unsigned long long)arg1;
@@ -78,7 +78,6 @@
 @property BOOL enableSourceControl;
 - (id)_blacklistedDirectories;
 @property(readonly) BOOL isPullRequestSupportEnabled;
-- (void)loadPlugIns;
 - (id)initWithSavedAccounts:(BOOL)arg1 credentialsManager:(id)arg2 userDefaults:(id)arg3;
 - (id)initWithSavedAccounts:(BOOL)arg1;
 

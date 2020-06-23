@@ -13,8 +13,8 @@
     NSColor *_selectionColor;
 }
 
-@property(retain, nonatomic) NSColor *selectionColor; // @synthesize selectionColor=_selectionColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *selectionColor; // @synthesize selectionColor=_selectionColor;
 - (void)drawSelectionInRect:(struct CGRect)arg1;
 
 @end

@@ -14,20 +14,20 @@
     NSSet *_devices;
     NSString *_displayName;
     unsigned long long _sortOrder;
-    struct NSDictionary *_traits;
+    NSDictionary *_traits;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *traits; // @synthesize traits=_traits;
 @property(readonly) unsigned long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSSet *devices; // @synthesize devices=_devices;
 @property(readonly) IDEIPAProcessorDevice *idiomaticDevice; // @synthesize idiomaticDevice=_idiomaticDevice;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithIdiomaticDevice:(id)arg1 devices:(id)arg2 displayName:(id)arg3 sortOrder:(unsigned long long)arg4 traits:(struct NSDictionary *)arg5;
+- (id)initWithIdiomaticDevice:(id)arg1 devices:(id)arg2 displayName:(id)arg3 sortOrder:(unsigned long long)arg4 traits:(id)arg5;
 
 @end
 

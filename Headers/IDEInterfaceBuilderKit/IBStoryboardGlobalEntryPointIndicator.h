@@ -19,9 +19,9 @@
 }
 
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<IBPrimarySceneObject> *indicatedEntryPoint; // @synthesize indicatedEntryPoint=_indicatedEntryPoint;
 @property(retain, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (BOOL)ibIsValidOutletSource;
 - (BOOL)ibIsValidOutletDestination;
 - (id)storyboardIndicatedEntryPointKeyPath;

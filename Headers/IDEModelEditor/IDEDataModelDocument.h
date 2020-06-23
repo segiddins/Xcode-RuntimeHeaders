@@ -31,8 +31,8 @@
 + (id)writableTypes;
 + (id)readableTypes;
 + (id)keyPathsForValuesAffectingDocumentToolsVersion;
-@property(retain) CDMModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(retain) CDMModel *model; // @synthesize model=_model;
 - (BOOL)replaceFindResults:(id)arg1 withString:(id)arg2 withError:(id *)arg3;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
 - (void)updateChangeCount:(unsigned long long)arg1;

@@ -22,12 +22,12 @@
     _TtC12IDEDocViewer33IDESearchResultHighlightFormatter *_abstractTextFieldFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain) _TtC12IDEDocViewer33IDESearchResultHighlightFormatter *abstractTextFieldFormatter; // @synthesize abstractTextFieldFormatter=_abstractTextFieldFormatter;
 @property(retain) NSTextField *abstractTextField; // @synthesize abstractTextField=_abstractTextField;
 @property(retain) NSBox *collectionNamesBox; // @synthesize collectionNamesBox=_collectionNamesBox;
 @property(retain) NSTextField *collectionNamesField; // @synthesize collectionNamesField=_collectionNamesField;
 @property(retain) NSTextField *ownerNameTextField; // @synthesize ownerNameTextField=_ownerNameTextField;
-- (void).cxx_destruct;
 - (BOOL)_isSelected;
 - (void)_updateColors;
 - (void)_update;

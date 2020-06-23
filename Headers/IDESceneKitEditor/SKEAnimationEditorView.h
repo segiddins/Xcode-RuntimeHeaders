@@ -28,9 +28,9 @@
     NSString *_placeholderString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property __weak id <SKEAnimationEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;

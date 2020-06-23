@@ -8,14 +8,14 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
 @interface IBUIActivityIndicatorView : IBUIView <IBDocumentArchiving>
 {
     BOOL _hidesWhenStopped;
     BOOL _animating;
     int _style;
-    IBUIColor *_color;
+    IBColor *_color;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -23,11 +23,11 @@
 + (id)keyPathsForValuesAffectingInspectedHidesWhenStopped;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) IBUIColor *color; // @synthesize color=_color;
+- (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *color; // @synthesize color=_color;
 @property(nonatomic) BOOL animating; // @synthesize animating=_animating;
 @property(nonatomic) BOOL hidesWhenStopped; // @synthesize hidesWhenStopped=_hidesWhenStopped;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)verifyDecodedStyle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

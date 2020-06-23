@@ -16,9 +16,9 @@
     NSString *_lastName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy) NSString *remoteAlreadyExistsWindowMessage; // @synthesize remoteAlreadyExistsWindowMessage=_remoteAlreadyExistsWindowMessage;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)beginSheetForWindow:(id)arg1 withRemoteName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)cancelCreateRemoteWithName:(id)arg1;

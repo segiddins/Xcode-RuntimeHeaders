@@ -15,10 +15,10 @@
     DVTObservingToken *_viewDebuggerApplicationChangedObservingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *viewDebuggerApplicationChangedObservingToken; // @synthesize viewDebuggerApplicationChangedObservingToken=_viewDebuggerApplicationChangedObservingToken;
 @property(retain) NSArray *childHierarchyItems; // @synthesize childHierarchyItems=_childHierarchyItems;
 @property(retain, nonatomic) DBGHierarchyNavigationCoordinator *hierarchyNavigationCoordinator; // @synthesize hierarchyNavigationCoordinator=_hierarchyNavigationCoordinator;
-- (void).cxx_destruct;
 - (id)_makeDefaultHierarchyNavigationCoordinator;
 - (void)primitiveInvalidate;
 - (id)childRepresentedObjects;

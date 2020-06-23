@@ -21,12 +21,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastMetricsDeltaCount; // @synthesize lastMetricsDeltaCount=_lastMetricsDeltaCount;
 @property(retain, nonatomic) IDEEnergyAddition *addition; // @synthesize addition=_addition;
 @property(retain, nonatomic) IDEDebugGaugeTrayCell *trayCell; // @synthesize trayCell=_trayCell;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_handleMetricsUpdate:(id)arg1;
 - (id)dataSourceForNavigationProcessHeader;

@@ -18,9 +18,9 @@
     BOOL _findableSupportsReplace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <DVTTextFindable> findable; // @synthesize findable=_findable;
 @property(readonly) DVTFindDescriptor *findDescriptor; // @synthesize findDescriptor=_findDescriptor;
-- (void).cxx_destruct;
 - (unsigned long long)_findIndexForLocation:(id)arg1 inResults:(id)arg2;
 - (BOOL)_findNext;
 - (long long)_compareLocation:(id)arg1 toLocation:(id)arg2;

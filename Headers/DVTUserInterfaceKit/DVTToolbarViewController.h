@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 @property(readonly, copy) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 @property(readonly) struct CGSize maxSize;
 @property(readonly) struct CGSize minSize;
 - (id)menuForMenuFormRepresentation;

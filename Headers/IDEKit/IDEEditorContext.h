@@ -21,7 +21,7 @@
 #import <IDEKit/NSUserInterfaceValidations-Protocol.h>
 #import <IDEKit/_IDEEditorContextSplitViewControllerDelegate-Protocol.h>
 
-@class CALayer, DVTBindingToken, DVTBorderedView, DVTDocumentLocation, DVTFileDataType, DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, DVTStackBacktrace, DVTStateRepository, IDEEditor, IDEEditorArea, IDEEditorAreaSplit, IDEEditorGeniusResults, IDEEditorHistoryController, IDEEditorHistoryItem, IDEEditorIssueMenuController, IDEEditorModeSwitcherController, IDEEditorModeViewController, IDEEditorMultipleContext, IDEEditorNavigableItemCoalescingState, IDEEditorReadOnlyIndicatorController, IDEEditorRelatedItemsPopUpButtonController, IDEEditorSplittingController, IDEEditorStepperView, IDENavBar, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSArrayController, NSDictionary, NSIndexSet, NSMutableArray, NSNumber, NSScrollView, NSSplitViewItem, NSString, NSURL, NSView, NSVisualEffectView, _IDEEditorContextSplitViewController, _IDEGeniusResultsContext;
+@class CALayer, DVTBindingToken, DVTBorderedView, DVTDocumentLocation, DVTFileDataType, DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, DVTStackBacktrace, DVTStateRepository, IDEEditor, IDEEditorArea, IDEEditorAreaSplit, IDEEditorGeniusResults, IDEEditorHistoryController, IDEEditorHistoryItem, IDEEditorIssueMenuController, IDEEditorModeSwitcherController, IDEEditorModeViewController, IDEEditorMultipleContext, IDEEditorNavigableItemCoalescingState, IDEEditorReadOnlyIndicatorController, IDEEditorRelatedItemsPopUpButtonController, IDEEditorSplittingController, IDEEditorStepperView, IDENavBar, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSArrayController, NSDictionary, NSIndexSet, NSMutableArray, NSMutableDictionary, NSNumber, NSScrollView, NSSplitViewItem, NSString, NSURL, NSView, NSVisualEffectView, _IDEEditorContextSplitViewController, _IDEGeniusResultsContext;
 @protocol DVTCancellable, IDEEditorContextDelegate;
 
 @interface IDEEditorContext : IDEViewController <NSMenuDelegate, IDEEditorContextProtocol, DVTFindBarHostable, NSPathControlDelegate, DVTPathCellDelegate, DVTScopeBarHost, IDENavigableItemCoordinatorDelegate, IDEEditorDelegate, DVTStateRepositoryDelegate, IDEEditorHistoryControllerDelegate, IDENavBarDelegate, _IDEEditorContextSplitViewControllerDelegate, NSUserInterfaceValidations, NSAnimationDelegate>
@@ -104,6 +104,7 @@
     _IDEEditorContextSplitViewController *_auxiliaryContentSplitViewController;
     NSSplitViewItem *_auxiliaryContentSplitViewItem;
     struct CGSize _lastAuxiliarySplitViewItemSize;
+    NSMutableDictionary *_previewEditorStateByExtensionIdentifierAndDocumentURL;
     BOOL _showNavBar;
     BOOL _showRelatedItemsControl;
     BOOL _showNavBarHistoryStepperControls;
@@ -148,7 +149,7 @@
 
 + (id)_createSpacerViewWithWidth:(double)arg1;
 + (id)_createBorderViewWithInset:(BOOL)arg1;
-+ (id)_titleForNavigationUserInterfaceItem:(id)arg1 forEventBehavior:(int)arg2 fromPrimaryEditorContext:(BOOL)arg3 isWindowFullscreen:(BOOL)arg4;
++ (id)_titleForNavigationUserInterfaceItem:(id)arg1 forEventBehavior:(unsigned long long)arg2 fromPrimaryEditorContext:(BOOL)arg3 isWindowFullscreen:(BOOL)arg4;
 + (id)keyPathsForValuesAffectingAssistantCategoriesCount;
 + (BOOL)_canEditEditorHistoryItem:(id)arg1 withEditorCategories:(id)arg2;
 + (BOOL)_canEditDocumentURL:(id)arg1 fileDataType:(id)arg2 documentExtensionIdentifier:(id)arg3 withEditorCategories:(id)arg4;
@@ -161,6 +162,7 @@
 + (id)keyPathsForValuesAffectingIsLastActiveEditorContext;
 + (id)keyPathsForValuesAffectingNavBarNavigableItemRootChildItems;
 + (id)keyPathsForValuesAffectingOutputSelection;
+- (void).cxx_destruct;
 @property(retain) NSURL *originalRequestedDocumentURL; // @synthesize originalRequestedDocumentURL=_originalRequestedDocumentURL;
 @property(retain) DVTStackBacktrace *viewWillUninstallBacktrace; // @synthesize viewWillUninstallBacktrace=_viewWillUninstallBacktrace;
 @property(retain) DVTStackBacktrace *viewDidInstallBacktrace; // @synthesize viewDidInstallBacktrace=_viewDidInstallBacktrace;
@@ -200,7 +202,6 @@
 @property(retain, nonatomic) IDENavigableItem *navigableItem; // @synthesize navigableItem=_navigableItem;
 @property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain) id <IDEEditorContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)splitViewController:(id)arg1 auxiliarySplitViewItemWasResized:(id)arg2;
 - (void)splitViewController:(id)arg1 auxiliarySplitViewItemDidCollapse:(id)arg2;
 - (void)_updateAuxiliaryEditor;
@@ -273,7 +274,7 @@
 - (void)editorContext_jumpToDefinition:(id)arg1;
 - (void)jumpToLastDestination:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
-- (void)_renameOpenInEditorCommandForUserInterfaceItem:(id)arg1 forEventBehavior:(int)arg2;
+- (void)_renameOpenInEditorCommandForUserInterfaceItem:(id)arg1 forEventBehavior:(unsigned long long)arg2;
 - (void)showMiniIssuesNavigatorMenu:(id)arg1;
 - (void)showDocumentItemsMenu:(id)arg1;
 - (void)showGroupFilesMenu:(id)arg1;
@@ -289,7 +290,7 @@
 - (BOOL)_canAskDocumentToClose;
 - (void)openInAdjacentEditorWithShiftPlusAlternate:(id)arg1;
 - (void)openInAdjacentEditorWithAlternate:(id)arg1;
-- (void)_openInAdjacentEditorWithEventBehavior:(int)arg1;
+- (void)_openInAdjacentEditorWithEventBehavior:(unsigned long long)arg1;
 - (void)scrollWheel:(id)arg1;
 - (void)_moveOverlayToMatchGestureAmount:(double)arg1 imageOfCurrentEditorOnTop:(BOOL)arg2;
 - (void)_hideSwipeOverlay;
@@ -361,6 +362,8 @@
 - (BOOL)_canEditFilePath:(id)arg1;
 - (BOOL)_canEditEditorOpenSpecifier:(id)arg1 withEditorCategories:(id)arg2;
 - (void)_applyEditorStateDictionary:(id)arg1 forDocumentExtensionIdentifier:(id)arg2 atDocumentURLToCurrentEditor:(id)arg3;
+- (void)_cachePreviewEditorStateDictionary:(id)arg1 forDocumentExtensionIdentifier:(id)arg2 forDocumentURL:(id)arg3;
+- (id)_previewEditorStateDictionaryForDocumentExtensionIdentifier:(id)arg1 forDocumentURL:(id)arg2;
 - (BOOL)_isEditorCompatibleWithDocumentExtensionIdentifier:(id)arg1;
 - (int)_openNavigableItem:(id)arg1 documentExtension:(id)arg2 document:(id)arg3 shouldInstallEditorBlock:(CDUnknownBlockType)arg4;
 - (id)_firstResponderChangedObserverWithIdentifierBlock:(CDUnknownBlockType)arg1;

@@ -14,9 +14,9 @@
     NSString *_subTitle;
 }
 
+- (void).cxx_destruct;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy) NSString *subTitle; // @synthesize subTitle=_subTitle;
-- (void).cxx_destruct;
 - (void)updateBuildSettings;
 - (id)warningMessage;
 - (id)initWithBlueprint:(id)arg1 migrationContext:(id)arg2;

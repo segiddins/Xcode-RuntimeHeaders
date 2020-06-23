@@ -7,6 +7,7 @@
 #import <DTGraphKit/DTTimelineGraphLayerSubtree.h>
 
 @class DTTimelineGraphPlaneLabelLayer, NSColor, NSString;
+@protocol DTTimelineGraphTooltipPresentationDelegate;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelinePlaneLabelSubtree : DTTimelineGraphLayerSubtree
@@ -18,16 +19,17 @@ __attribute__((visibility("hidden")))
     struct CGSize _displayNameTextSize;
     DTTimelineGraphPlaneLabelLayer *_displayNameLayer;
     BOOL _selected;
-    BOOL _mouseHoveringOverLabel;
+    id <DTTimelineGraphTooltipPresentationDelegate> _tooltipPresentationDelegate;
 }
 
 + (BOOL)shouldAlignInstancesVertically;
-@property(nonatomic) BOOL mouseHoveringOverLabel; // @synthesize mouseHoveringOverLabel=_mouseHoveringOverLabel;
-@property(readonly, nonatomic) BOOL selected; // @synthesize selected=_selected;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DTTimelineGraphTooltipPresentationDelegate> tooltipPresentationDelegate; // @synthesize tooltipPresentationDelegate=_tooltipPresentationDelegate;
+@property(readonly, nonatomic) BOOL selected; // @synthesize selected=_selected;
 - (BOOL)getClickableGlyphFrameWithinRoot:(struct CGRect *)arg1;
 - (void)layoutDisplayNameLayer:(id)arg1;
 - (void)layoutSublayers;
+- (void)setMouseHoveringOverLabel:(BOOL)arg1 labelRelativePosition:(struct CGPoint)arg2;
 - (void)adjustToGraph:(id)arg1;
 - (void)setSelected:(BOOL)arg1 graph:(id)arg2;
 - (id)initWithRootLayer:(id)arg1 owner:(BOOL)arg2;

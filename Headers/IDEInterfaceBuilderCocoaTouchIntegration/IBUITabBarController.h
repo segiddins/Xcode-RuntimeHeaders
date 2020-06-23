@@ -22,11 +22,11 @@
 + (void)registerMarshallingRecordHandlers;
 + (id)ibObservedPropertiesForEditorViewInvalidation;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *simulatedTabBarItems; // @synthesize simulatedTabBarItems=_simulatedTabBarItems;
 @property(retain, nonatomic) IBUIViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
 @property(nonatomic) BOOL displaysAllTabsForReordering; // @synthesize displaysAllTabsForReordering=_displaysAllTabsForReordering;
 @property(retain, nonatomic) IBUITabBar *tabBar; // @synthesize tabBar=_tabBar;
-- (void).cxx_destruct;
 - (id)localExtraMarshalledToManyRelationshipKeyPaths;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (id)simulatedMetricsFromParentChainForPipeline;

@@ -14,8 +14,8 @@
     NSArray *_dataSet;
 }
 
-@property(copy, nonatomic) NSArray *dataSet; // @synthesize dataSet=_dataSet;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *dataSet; // @synthesize dataSet=_dataSet;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)viewDidChangeBackingProperties;

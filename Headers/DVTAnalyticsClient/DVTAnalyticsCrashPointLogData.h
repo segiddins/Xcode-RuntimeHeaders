@@ -15,8 +15,8 @@
     NSString *_data;
 }
 
-@property(readonly) NSString *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly) NSString *data; // @synthesize data=_data;
 - (id)JSONRepresentation;
 
 // Remaining properties

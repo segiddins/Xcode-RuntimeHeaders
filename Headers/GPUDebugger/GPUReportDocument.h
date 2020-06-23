@@ -17,10 +17,10 @@
 }
 
 + (BOOL)autosavesInPlace;
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUReportEditor *editor; // @synthesize editor=_editor;
 @property(retain, nonatomic) GPUReportResults *reportResults; // @synthesize reportResults=_reportResults;
 @property(nonatomic) __weak GPUSharedTabUIState *sharedTabUIState; // @synthesize sharedTabUIState=_sharedTabUIState;
-- (void).cxx_destruct;
 - (id)displayName;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)printOperationWithSettings:(id)arg1 error:(id *)arg2;

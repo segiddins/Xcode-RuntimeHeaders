@@ -16,9 +16,9 @@
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+- (void).cxx_destruct;
 @property(retain) DVTComparisonSplitView *comparisonSplitView; // @synthesize comparisonSplitView=_comparisonSplitView;
 @property(retain) id <DVTSourceTextScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_pointInVisibleScroller:(struct CGPoint)arg1;
 - (void)reflectScrolledClipView:(id)arg1;
 - (void)scrollWheel:(id)arg1;

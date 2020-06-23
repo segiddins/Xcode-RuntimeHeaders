@@ -16,8 +16,8 @@
 }
 
 + (id)provisioningProfilePathExtension;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *description;
 - (id)initWithIdentifier:(id)arg1;
 - (id)provisioningProfileFromFilePath:(id)arg1 error:(id *)arg2;

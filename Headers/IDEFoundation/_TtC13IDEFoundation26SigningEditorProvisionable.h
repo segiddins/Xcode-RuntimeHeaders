@@ -48,6 +48,8 @@
 @property(nonatomic, readonly) BOOL isTeamSelectionRequired;
 @property(nonatomic, retain) NSOrderedSet *teams; // @synthesize teams;
 @property(nonatomic, copy) NSString *bundleIdentifier;
+@property(nonatomic, readonly) NSString *bundleIdentifierPlaceholder;
+@property(nonatomic, readonly) BOOL wantsBundleIdentifierEditingLabel;
 @property(nonatomic, readonly) BOOL wantsBundleIdentifierEditing;
 @property(nonatomic, readonly) BOOL isBundleIdentifierReadOnly;
 @property(nonatomic) long long provisioningStyle;

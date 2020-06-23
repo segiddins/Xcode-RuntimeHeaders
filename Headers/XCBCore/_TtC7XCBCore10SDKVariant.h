@@ -23,6 +23,10 @@
     MISSING_TYPE *llvmTargetTripleSys;
     MISSING_TYPE *llvmTargetTripleEnvironment;
     MISSING_TYPE *buildVersionPlatformID;
+    MISSING_TYPE *platformFamilyName;
+    MISSING_TYPE *targetOSMacroName;
+    MISSING_TYPE *deploymentTargetSettingName;
+    MISSING_TYPE *ibtoolPlatformDefinition;
 }
 
 @end

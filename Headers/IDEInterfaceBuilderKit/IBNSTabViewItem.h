@@ -13,8 +13,8 @@
     IBNSViewController *_ibViewController;
 }
 
-@property(nonatomic) __weak IBNSViewController *ibViewController; // @synthesize ibViewController=_ibViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IBNSViewController *ibViewController; // @synthesize ibViewController=_ibViewController;
 - (id)label;
 
 @end

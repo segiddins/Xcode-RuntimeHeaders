@@ -17,11 +17,11 @@
 }
 
 + (id)descriptionWithTitle:(id)arg1 action:(SEL)arg2 target:(id)arg3 representedObject:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) id representedObject; // @synthesize representedObject;
 @property(retain) id target; // @synthesize target;
 @property SEL action; // @synthesize action;
 @property(copy) NSString *title; // @synthesize title;
-- (void).cxx_destruct;
 
 @end
 

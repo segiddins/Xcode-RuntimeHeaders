@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (Class)renderJobClass;
 + (Class)captureSessionInfoClassWithAPI:(unsigned int)arg1;
-@property(retain, nonatomic) GPUGLTraceOutline *outline; // @synthesize outline=_outline;
 - (void).cxx_destruct;
-- (struct NSArray *)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
+@property(retain, nonatomic) GPUGLTraceOutline *outline; // @synthesize outline=_outline;
+- (id)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
 - (int)openGLAPI;
 - (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
 - (id)newDataProviderForShaderDataItem:(id)arg1;

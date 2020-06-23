@@ -6,15 +6,16 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
 #import <IDEKit/IDEWorkspaceDocumentProvider-Protocol.h>
 #import <IDEKit/NSTouchBarDelegate-Protocol.h>
 #import <IDEKit/NSTouchBarProvider-Protocol.h>
 #import <IDEKit/NSWindowDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTReplacementView, IDEExecutionEnvironment, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDENavigatorOutlineView, IDEScheme, IDESchemeAction, IDESchemeCommand, IDESchemePathControlViewController, IDEWorkspaceDocument, NSArray, NSArrayController, NSButton, NSImageView, NSString, NSTextField, NSTouchBar, NSView, NSWindow;
+@class DVTBorderedView, DVTObservingToken, DVTReplacementView, DVTStateRepository, IDEExecutionEnvironment, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDENavigatorOutlineView, IDEScheme, IDESchemeAction, IDESchemeCommand, IDESchemePathControlViewController, IDEWorkspaceDocument, NSArray, NSArrayController, NSButton, NSImageView, NSString, NSTextField, NSTouchBar, NSView, NSWindow;
 @protocol IDEClientTrackingToken;
 
-@interface IDERunSheetController : IDEViewController <NSTouchBarProvider, NSTouchBarDelegate, IDEWorkspaceDocumentProvider, NSWindowDelegate>
+@interface IDERunSheetController : IDEViewController <NSTouchBarProvider, NSTouchBarDelegate, IDEWorkspaceDocumentProvider, DVTStateRepositoryDelegate, NSWindowDelegate>
 {
     NSWindow *_sheetWindow;
     DVTBorderedView *_masterBorderedView;
@@ -52,6 +53,7 @@
     IDESchemeAction *_selectedRunPhase;
     BOOL _didSheetEnd;
     BOOL _runningOnManageSheet;
+    DVTStateRepository *_stateRepository;
     DVTObservingToken *_runSheetSelectionObserver;
     DVTObservingToken *_runSheetContentObserver;
     DVTObservingToken *_buttonTitleObserver;
@@ -62,8 +64,10 @@
 
 + (id)keyPathsForValuesAffectingRunContext;
 + (id)keyPathsForValuesAffectingExecutionEnvironment;
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2 editingIdentity:(BOOL)arg3 forSchemeCommand:(id)arg4 okButtonReflectsSchemeCommand:(BOOL)arg5 showDoneButton:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 + (id)sheetOpeningLogAspect;
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *detailReplacementView; // @synthesize detailReplacementView=_detailReplacementView;
 @property __weak NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property __weak NSButton *goButton; // @synthesize goButton=_goButton;
@@ -79,7 +83,6 @@
 @property(copy) NSString *selectedSchemeCommandTitle; // @synthesize selectedSchemeCommandTitle=_selectedSchemeCommandTitle;
 @property(retain) IDESchemeCommand *selectedSchemeCommand; // @synthesize selectedSchemeCommand=_selectedSchemeCommand;
 @property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (void)windowDidResize:(id)arg1;
 - (void)_updateSelectedSchemeCommand;
 - (void)_updateSelectedRunPhaseRowIndex;
@@ -107,6 +110,9 @@
 @property(readonly) IDEExecutionEnvironment *executionEnvironment;
 - (void)primitiveInvalidate;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
+- (void)stateRepositoryDidChange:(id)arg1;
+- (void)revertStateWithDictionary:(id)arg1;
+- (void)commitStateToDictionary:(id)arg1;
 - (void)_beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2 editingIdentity:(BOOL)arg3 forSchemeCommand:(id)arg4 okButtonReflectsSchemeCommand:(BOOL)arg5 showDoneButton:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (int)_runControllerPhaseRowIndexForSchemeCommand:(id)arg1;
 - (void)_setUpObservation;

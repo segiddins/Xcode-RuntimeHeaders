@@ -16,10 +16,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSArray *profiles; // @synthesize profiles=_profiles;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (id)initWithTeam:(id)arg1 profiles:(id)arg2;
 - (id)initWithTeam:(id)arg1 error:(id)arg2;
 

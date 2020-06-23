@@ -25,7 +25,6 @@
 @property(nonatomic, readonly) BOOL isSearchingForTests;
 - (void)searchForTestsInWorkspace:(IDEWorkspace *)arg1;
 - (IDETestRunSpecification *)testRunSpecificationWithTestingSpecifier:(id <_TtP13IDEFoundation19IDETestingSpecifier_>)arg1 forScheme:(IDEScheme *)arg2 buildParameters:(IDEBuildParameters *)arg3 buildables:(NSArray *)arg4 error:(id *)arg5;
-@property(nonatomic, readonly) NSSet *supportedPlatformsForParallelization;
 @property(nonatomic, readonly) BOOL isUITest;
 @property(nonatomic, readonly) NSSet *testFiles;
 @property(nonatomic, readonly) id <IDETestableProvider> testableProvider;

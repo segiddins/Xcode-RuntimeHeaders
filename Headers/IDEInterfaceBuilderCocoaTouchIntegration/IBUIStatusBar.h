@@ -15,10 +15,10 @@
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(retain, nonatomic) IBUINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(retain, nonatomic) IBUISimulatedStatusBarMetrics *statusBarMetrics; // @synthesize statusBarMetrics=_statusBarMetrics;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayer;
 - (id)navBarTintColorToMatch;

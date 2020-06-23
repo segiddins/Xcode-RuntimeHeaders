@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property(retain) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 @property __weak IDETokenFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
 @property __weak NSView *tabBarContainerView; // @synthesize tabBarContainerView=_tabBarContainerView;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *filteredResources; // @synthesize filteredResources=_filteredResources;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
 @property(retain, nonatomic) GPUFilteringCoordinator *filteringCoordinator; // @synthesize filteringCoordinator=_filteringCoordinator;
-- (void).cxx_destruct;
 - (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
 - (BOOL)takeFocus;
 - (void)GPUDebugger_exportResource:(id)arg1;

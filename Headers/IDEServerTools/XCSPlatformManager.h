@@ -14,9 +14,9 @@
     XCSXcode *_xcode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) XCSXcode *xcode; // @synthesize xcode=_xcode;
 @property(readonly) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)platformsJSON;
 - (BOOL)saveAvailablePlatformsWithError:(id *)arg1;
 - (id)allPlatforms;

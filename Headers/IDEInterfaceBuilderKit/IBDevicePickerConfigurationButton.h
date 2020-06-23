@@ -14,9 +14,9 @@
     IBDeviceConfiguration *_deviceConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInBranchMode) BOOL inBranchMode; // @synthesize inBranchMode=_inBranchMode;
 @property(retain, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

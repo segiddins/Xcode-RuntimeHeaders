@@ -6,9 +6,11 @@
 
 #import <IDEKit/IDEInspectorViewController.h>
 
+#import <IDEInterfaceBuilderKit/IBInspectorWithInspectedDocument-Protocol.h>
+
 @class DVTDelayedInvocation, DVTNotificationToken, IBMutableIdentityDictionary, NSArray, NSString;
 
-@interface IBDocumentInspectorViewController : IDEInspectorViewController
+@interface IBDocumentInspectorViewController : IDEInspectorViewController <IBInspectorWithInspectedDocument>
 {
     DVTNotificationToken *_documentUpdatedDependenciesNotificationToken;
     BOOL _isInstalled;
@@ -29,6 +31,7 @@
 + (BOOL)canInspectFileReferenceNavigableItems:(id)arg1;
 + (BOOL)matchesFileReference:(id)arg1;
 + (id)documentPlatform;
+- (void).cxx_destruct;
 @property BOOL deploymentEnabled; // @synthesize deploymentEnabled=_deploymentEnabled;
 @property BOOL developmentEnabled; // @synthesize developmentEnabled=_developmentEnabled;
 @property(nonatomic) long long useSafeAreaLayoutGuidesState; // @synthesize useSafeAreaLayoutGuidesState=_useSafeAreaLayoutGuidesState;
@@ -38,7 +41,7 @@
 @property(copy) NSString *deploymentSummary; // @synthesize deploymentSummary=_deploymentSummary;
 @property(copy) NSArray *developmentMenuItems; // @synthesize developmentMenuItems=_developmentMenuItems;
 @property(copy) NSArray *deploymentMenuItems; // @synthesize deploymentMenuItems=_deploymentMenuItems;
-- (void).cxx_destruct;
+- (id)inspectedDocument;
 - (void)setContent:(id)arg1;
 - (void)startObservingDocuments:(id)arg1;
 - (void)stopObservingDocuments:(id)arg1;
@@ -77,6 +80,12 @@
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -25,10 +25,10 @@
     struct CGSize _minimumViewportSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DTObjectGridGraphDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize minimumViewportSize; // @synthesize minimumViewportSize=_minimumViewportSize;
 @property(readonly, nonatomic) DVT_VMUProcessObjectGraph *graph; // @synthesize graph=_sourceGraph;
-- (void).cxx_destruct;
 - (id)objectGridGraph:(id)arg1 contextMenuForNode:(id)arg2;
 - (void)objectGridGraph:(id)arg1 didDoubleClickReference:(id)arg2;
 - (void)objectGridGraph:(id)arg1 didDoubleClickNode:(id)arg2;

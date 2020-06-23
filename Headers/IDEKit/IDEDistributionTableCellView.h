@@ -14,9 +14,9 @@
     NSTextField *_titleField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain) NSBox *bottomBorder; // @synthesize bottomBorder=_bottomBorder;
-- (void).cxx_destruct;
 - (double)heightAccomodatingTextFieldWrappingWithColumnWidth:(double)arg1;
 
 @end

@@ -14,9 +14,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

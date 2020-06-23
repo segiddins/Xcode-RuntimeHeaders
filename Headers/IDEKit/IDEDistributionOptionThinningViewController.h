@@ -17,12 +17,12 @@
     NSSet *_availableDeviceDisplayNames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *availableDeviceDisplayNames; // @synthesize availableDeviceDisplayNames=_availableDeviceDisplayNames;
 @property(retain, nonatomic) NSProgressIndicator *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property(retain, nonatomic) NSLayoutConstraint *popupLeadingConstraint; // @synthesize popupLeadingConstraint=_popupLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *popupWidthConstraint; // @synthesize popupWidthConstraint=_popupWidthConstraint;
 @property(retain, nonatomic) NSPopUpButton *thinningOptionsPopUp; // @synthesize thinningOptionsPopUp=_thinningOptionsPopUp;
-- (void).cxx_destruct;
 - (void)updateValueFromMenu:(id)arg1;
 - (void)updateMenuWithDeviceDisplayNameToCoalescedThinningVariantSet:(id)arg1;
 - (BOOL)needsInteraction;

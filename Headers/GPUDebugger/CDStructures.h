@@ -183,18 +183,6 @@ struct GPUValueRange {
     float max;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct Statistics {
     double _field1;
     double _field2;
@@ -470,6 +458,16 @@ typedef struct {
     unsigned long long height;
     unsigned long long scale;
 } CDStruct_b00b4bef;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
 
 typedef struct {
     CDStruct_b00b4bef _field1;

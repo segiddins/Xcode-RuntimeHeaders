@@ -14,9 +14,9 @@
     NSDictionary *_context;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *context; // @synthesize context=_context;
 @property(readonly) NSString *outputPasteboardType; // @synthesize outputPasteboardType=_outputPasteboardType;
-- (void).cxx_destruct;
 - (id)specialPasteMenuItemTitleFromPasteboard:(id)arg1;
 - (id)specialPasteboardDataFromPasteboard:(id)arg1 error:(id *)arg2;
 - (id)initWithOutputPasteboardType:(id)arg1 context:(id)arg2;

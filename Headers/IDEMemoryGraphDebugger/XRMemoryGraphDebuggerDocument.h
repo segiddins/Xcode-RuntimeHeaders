@@ -25,12 +25,12 @@
 
 + (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
 + (id)documentLocationWithDebugSession:(id)arg1 instanceItem:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *savedLocation; // @synthesize savedLocation=_savedLocation;
 @property(copy, nonatomic) CDUnknownBlockType documentSavedCallback; // @synthesize documentSavedCallback=_documentSavedCallback;
 @property(retain) NSArray *ideTopLevelStructureObjects; // @synthesize ideTopLevelStructureObjects=_ideTopLevelStructureObjects;
 @property(retain, nonatomic) XRMemoryGraphProcessDescription *processDescription; // @synthesize processDescription=_processDescription;
 @property(readonly) XRMemoryGraphDebugger *memoryGraphDebugger; // @synthesize memoryGraphDebugger=_memoryGraphDebugger;
-- (void).cxx_destruct;
 - (void)editorDocumentWillClose;
 - (id)displayName;
 @property(setter=isPerformingSaveAs:) BOOL performingSaveAs;

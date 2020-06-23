@@ -13,8 +13,8 @@
 #import <IDEFoundation/IDETestsActivityLogBuilderDelegate-Protocol.h>
 #import <IDEFoundation/IDETestsInTestableObserver-Protocol.h>
 
-@class DTXConnection, DVTDisallowFinishToken, DVTFilePath, DVTOneShotBlock, DVTPerformanceMetric, DVTStackBacktrace, IDERunDestination, IDESchemeActionRecord, IDETest, IDETestDestination, IDETestIdentifier, IDETestManager, IDETestsActivityLogBuilder, NSArray, NSCountedSet, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSString;
-@protocol DVTInvalidation, IDETestTargetRunner;
+@class DTXConnection, DVTDisallowFinishToken, DVTFilePath, DVTOneShotBlock, DVTPerformanceMetric, DVTStackBacktrace, IDERunDestination, IDESchemeActionRecord, IDETest, IDETestIdentifier, IDETestManager, IDETestsActivityLogBuilder, NSArray, NSCountedSet, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSString, _TtC13IDEFoundation22IDETestDeviceAllocator, _TtC13IDEFoundation29IDETestingInstallationTracker;
+@protocol DVTInvalidation, IDETestTargetRunner, _TtP13IDEFoundation17IDETestDevicePool_;
 
 @interface IDETestRunSession : NSObject <IDETestsActivityLogBuilderDelegate, IDETestTargetRunnerEvents, IDETestsInTestableObserver, IDETestingActivityGenerating, DVTProgressReporting, DVTInvalidation>
 {
@@ -26,7 +26,6 @@
     DVTOneShotBlock *_systemSleepToken;
     DVTOneShotBlock *_displaySleepToken;
     DVTOneShotBlock *_screenSaverSuppressionToken;
-    DVTOneShotBlock *_touchBarSimulatorLifecycleToken;
     DVTOneShotBlock *_restoreSystemAfterTestingBlock;
     DVTOneShotBlock *_cleanupTestRunSessionBlock;
     DTXConnection *_keepAliveServiceHubConnection;
@@ -51,11 +50,14 @@
     NSString *_sessionIdentifier;
     unsigned long long _sessionGenerationCount;
     IDERunDestination *_runDestination;
+    id <DVTInvalidation> _touchBarSimulatorLifecycleToken;
     id <DVTInvalidation> _destinationDeviceClaimToken;
     DVTDisallowFinishToken *_testOperationDisallowFinishToken;
     DVTDisallowFinishToken *_finishWritingLogsToken;
     IDETestsActivityLogBuilder *_activityLogBuilder;
-    IDETestDestination *_testDestination;
+    _TtC13IDEFoundation29IDETestingInstallationTracker *_testingInstallationTracker;
+    _TtC13IDEFoundation22IDETestDeviceAllocator *_deviceAllocator;
+    id <_TtP13IDEFoundation17IDETestDevicePool_> _devicePool;
     DVTPerformanceMetric *_performanceMetric;
     NSString *_currentDiagnosticsTask;
 }
@@ -65,14 +67,17 @@
 + (id)keyPathsForValuesAffectingProgress;
 + (id)fallbackTestSessionDiectoryForSessionIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *currentDiagnosticsTask; // @synthesize currentDiagnosticsTask=_currentDiagnosticsTask;
 @property(retain) DVTPerformanceMetric *performanceMetric; // @synthesize performanceMetric=_performanceMetric;
-@property(retain) IDETestDestination *testDestination; // @synthesize testDestination=_testDestination;
+@property(retain) id <_TtP13IDEFoundation17IDETestDevicePool_> devicePool; // @synthesize devicePool=_devicePool;
+@property(retain) _TtC13IDEFoundation22IDETestDeviceAllocator *deviceAllocator; // @synthesize deviceAllocator=_deviceAllocator;
+@property(retain) _TtC13IDEFoundation29IDETestingInstallationTracker *testingInstallationTracker; // @synthesize testingInstallationTracker=_testingInstallationTracker;
 @property(retain) IDETestsActivityLogBuilder *activityLogBuilder; // @synthesize activityLogBuilder=_activityLogBuilder;
 @property(retain) DVTDisallowFinishToken *finishWritingLogsToken; // @synthesize finishWritingLogsToken=_finishWritingLogsToken;
 @property(retain) DVTDisallowFinishToken *testOperationDisallowFinishToken; // @synthesize testOperationDisallowFinishToken=_testOperationDisallowFinishToken;
 @property(retain) id <DVTInvalidation> destinationDeviceClaimToken; // @synthesize destinationDeviceClaimToken=_destinationDeviceClaimToken;
-@property(retain) DVTOneShotBlock *touchBarSimulatorLifecycleToken; // @synthesize touchBarSimulatorLifecycleToken=_touchBarSimulatorLifecycleToken;
+@property(retain) id <DVTInvalidation> touchBarSimulatorLifecycleToken; // @synthesize touchBarSimulatorLifecycleToken=_touchBarSimulatorLifecycleToken;
 @property(retain) DVTOneShotBlock *screenSaverSuppressionToken; // @synthesize screenSaverSuppressionToken=_screenSaverSuppressionToken;
 @property(retain) DVTOneShotBlock *displaySleepToken; // @synthesize displaySleepToken=_displaySleepToken;
 @property(retain) DVTOneShotBlock *systemSleepToken; // @synthesize systemSleepToken=_systemSleepToken;
@@ -93,7 +98,6 @@
 @property(readonly) BOOL isUITestingSession; // @synthesize isUITestingSession=_isUITestingSession;
 @property(readonly) DVTFilePath *testSessionDirectory; // @synthesize testSessionDirectory=_testSessionDirectory;
 @property(readonly) IDESchemeActionRecord *schemeActionRecord; // @synthesize schemeActionRecord=_schemeActionRecord;
-- (void).cxx_destruct;
 - (void)endActivity:(id)arg1;
 - (id)startActivityWithTitle:(id)arg1;
 - (void)allTestablesChanged;
@@ -109,6 +113,7 @@
 @property(readonly) long long progress;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
 - (void)_removeRunningTest:(id)arg1;
+- (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 didSkipTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 didOutput:(id)arg3;
@@ -116,7 +121,7 @@
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 willStartActivity:(id)arg4;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 rawOutput:(id)arg4;
 - (void)_addRunningTest:(id)arg1;
-- (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(id)arg8;
+- (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testSuiteDidFinishWithRunCount:(unsigned long long)arg3 skipCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8 rawOutput:(id)arg9;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 testSuite:(id)arg3 didStartAt:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 forTestTargetRunner:(id)arg2 willFinishWithError:(id)arg3 didCancel:(BOOL)arg4;
@@ -148,8 +153,7 @@
 - (void)_addUnitTestsObserver:(id)arg1;
 @property(readonly) IDETest *currentTest;
 - (void)primitiveInvalidate;
-- (id)initWithTestManager:(id)arg1 sessionGenerationCount:(unsigned long long)arg2 runDestination:(id)arg3 actionRecord:(id)arg4;
-- (id)init;
+- (id)initWithTestManager:(id)arg1 sessionGenerationCount:(unsigned long long)arg2 devicePool:(id)arg3 actionRecord:(id)arg4;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

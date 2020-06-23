@@ -15,8 +15,8 @@
     Xcode3TargetEntitlementsCoordinator *_coordinator;
 }
 
-@property(retain) Xcode3TargetEntitlementsCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
+@property(retain) Xcode3TargetEntitlementsCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 - (id)entitlementsAndValues;
 - (BOOL)containsEntitlementKey:(id)arg1;
 - (BOOL)boolEntitlementValueForKey:(id)arg1;

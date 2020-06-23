@@ -6,14 +6,22 @@
 
 #import <IDEKit/IDEEditor.h>
 
+@class DVTReplacementView, MISSING_TYPE;
+
 @interface _TtC18IDESourceControlUI17PullRequestEditor : IDEEditor
 {
+    MISSING_TYPE *bannerReplacementView;
+    MISSING_TYPE *documentObserver;
 }
 
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
+- (void)primitiveInvalidate;
 - (void)viewDidLoad;
+- (void)loadView;
+@property(nonatomic) __weak DVTReplacementView *bannerReplacementView; // @synthesize bannerReplacementView;
 
 @end
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(nonatomic) unsigned long long endIndex; // @synthesize endIndex=_endIndex;
 @property(nonatomic) unsigned long long startIndex; // @synthesize startIndex=_startIndex;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

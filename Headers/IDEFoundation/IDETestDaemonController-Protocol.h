@@ -9,7 +9,7 @@
 
 @protocol IDETestDaemonController
 @property(nonatomic, copy) CDUnknownBlockType selfDiagnosisIssueHandler;
-- (void)requestSpindumpWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)requestSpindumpWithPid:(int)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)collectLogArchiveFromDate:(NSDate *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)addProcessNamesToMonitoredCrashReports:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)authorizeProcessWithIdentifier:(int)arg1 completion:(void (^)(NSError *))arg2;

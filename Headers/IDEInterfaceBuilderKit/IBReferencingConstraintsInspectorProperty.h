@@ -41,6 +41,7 @@
 }
 
 + (id)keyPathsForValuesAffectingDocument;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *scopeBarHeightConstraint; // @synthesize scopeBarHeightConstraint=_scopeBarHeightConstraint;
 @property(retain) NSButton *installedOnlyButton; // @synthesize installedOnlyButton=_installedOnlyButton;
 @property(retain) NSButton *allButton; // @synthesize allButton=_allButton;
@@ -49,7 +50,6 @@
 @property __weak NSTextField *filterLabel; // @synthesize filterLabel=_filterLabel;
 @property(retain) NSView *filterContainerView; // @synthesize filterContainerView=_filterContainerView;
 @property(retain) DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (BOOL)_constraintAffectsHorizontalAndVerticalAxis:(id)arg1;
 - (BOOL)_constraintAffectsOnlyVerticalAxis:(id)arg1;
 - (BOOL)_constraintAffectsOnlyHorizontalAxis:(id)arg1;

@@ -15,8 +15,8 @@
     NSError *_error;
 }
 
-@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)newTraceString:(id)arg1;
 - (void)visitFunctionStreamFile:(id)arg1;
 - (id)performTrace;

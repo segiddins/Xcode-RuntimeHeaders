@@ -21,8 +21,8 @@
 + (id)keyPathsForValuesAffectingIsFairPlayEncrypted;
 + (id)keyPathsForValuesAffectingApplication;
 + (id)alloc;
-@property __weak DTDKApplicationItemBase *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property __weak DTDKApplicationItemBase *parent; // @synthesize parent=_parent;
 - (void)performBatchedOperations:(CDUnknownBlockType)arg1;
 - (id)childNamed:(id)arg1;
 - (long long)compare:(id)arg1;

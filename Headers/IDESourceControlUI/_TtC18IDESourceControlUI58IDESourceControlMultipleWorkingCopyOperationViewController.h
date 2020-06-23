@@ -35,7 +35,6 @@
 @property(nonatomic, readonly) NSString *windowTitle;
 @property(nonatomic, readonly) NSString *primaryButtonTitle;
 - (BOOL)validateMenuItem:(id)arg1;
-- (void)selectBranch:(id)arg1;
 - (void)check:(id)arg1;
 - (void)willBeginSheet;
 @property(nonatomic, readonly) double preferredViewHeight;

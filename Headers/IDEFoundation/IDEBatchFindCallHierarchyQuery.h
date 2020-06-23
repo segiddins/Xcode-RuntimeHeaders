@@ -6,13 +6,13 @@
 
 #import <IDEFoundation/IDEBatchFindAbstractQuery.h>
 
-@class IDEBatchFindQueryProgressNotifier, NSMapTable, NSObject;
+@class NSMapTable, NSObject, _TtC13IDEFoundation33IDEBatchFindQueryStatusAggregator;
 @protocol OS_dispatch_queue;
 
 @interface IDEBatchFindCallHierarchyQuery : IDEBatchFindAbstractQuery
 {
     NSObject<OS_dispatch_queue> *_queue;
-    IDEBatchFindQueryProgressNotifier *_progressNotifier;
+    _TtC13IDEFoundation33IDEBatchFindQueryStatusAggregator *_statusAggregator;
     NSMapTable *_faultedChildrenByParent;
 }
 
@@ -23,8 +23,10 @@
 + (BOOL)supportsAnchorning;
 - (void).cxx_destruct;
 - (void)execute;
+- (void)cancel;
 - (id)customContextMenuID;
 - (BOOL)requiresEditorDocumentsToSaveBeforeSearching;
+- (id)emptyResultSetPlaceholderResultKind;
 - (void)userIsAttemptingToViewFaultedChildrenOfItem:(id)arg1;
 - (void)faultChildrenForResult:(id)arg1 prefetchDepth:(long long)arg2;
 - (BOOL)lazilyFaultsChildren;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (id)maxLengthStringForFormat:(unsigned int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DYGLBufferObject *buffer; // @synthesize buffer=_buffer;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int stride; // @synthesize stride=_stride;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int subcomponentOffset; // @synthesize subcomponentOffset=_subcomponentOffset;
 @property(nonatomic) int dataOffset; // @synthesize dataOffset=_dataOffset;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)formattedDataAtIndex:(int)arg1 packedComponentIdx:(int)arg2;
 - (id)formattedDataAtIndex:(int)arg1;
 - (id)dataAtIndex:(int)arg1;

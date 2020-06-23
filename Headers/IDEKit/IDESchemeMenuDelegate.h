@@ -18,10 +18,11 @@
 }
 
 + (id)keyPathsForValuesAffectingCurrentRunContextManager;
++ (id)_findCurrentWorkspaceWindowControllerIgnoringController:(id)arg1;
 + (id)_findCurrentWorkspaceWindowController;
 + (void)initialize;
-@property(retain) IDEWorkspaceWindowController *currentWorkspaceWindowController; // @synthesize currentWorkspaceWindowController=_currentWorkspaceWindowController;
 - (void).cxx_destruct;
+@property(retain) IDEWorkspaceWindowController *currentWorkspaceWindowController; // @synthesize currentWorkspaceWindowController=_currentWorkspaceWindowController;
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)_schemeMenuItems;
 - (void)_selectScheme:(id)arg1;

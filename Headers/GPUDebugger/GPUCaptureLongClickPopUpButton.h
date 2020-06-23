@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _captureButtonState;
 }
 
+- (void).cxx_destruct;
 @property(getter=isMenuEnabled) BOOL menuEnabled; // @synthesize menuEnabled=_menuEnabled;
 @property(nonatomic) unsigned long long captureButtonState; // @synthesize captureButtonState=_captureButtonState;
 @property BOOL enableMenuWithOnlyMultipleItems; // @synthesize enableMenuWithOnlyMultipleItems=_enableMenuWithOnlyMultipleItems;
 @property(retain) id <GPUCaptureLongClickPopUpButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property SEL clickAction; // @synthesize clickAction=_clickAction;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

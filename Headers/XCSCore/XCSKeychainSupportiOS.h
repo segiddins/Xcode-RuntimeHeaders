@@ -15,10 +15,10 @@
     NSString *_password;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (BOOL)removeFromKeychainWithError:(id *)arg1;
 - (BOOL)saveToKeychainWithError:(id *)arg1;
 - (BOOL)reloadFromKeychainWithError:(id *)arg1;

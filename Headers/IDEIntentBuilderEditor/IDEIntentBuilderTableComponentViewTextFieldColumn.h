@@ -14,9 +14,9 @@
     NSString *_enabledKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *enabledKeyPath; // @synthesize enabledKeyPath=_enabledKeyPath;
 @property(copy) NSString *editableKeyPath; // @synthesize editableKeyPath=_editableKeyPath;
-- (void).cxx_destruct;
 - (id)makeTableCellViewWithOwner:(id)arg1 inTableView:(id)arg2;
 - (id)type;
 

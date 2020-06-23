@@ -20,8 +20,8 @@
 }
 
 + (void)initialize;
-@property BOOL forwardsScrollWheelToDelegate; // @synthesize forwardsScrollWheelToDelegate=_forwardsScrollWheelToDelegate;
 - (void).cxx_destruct;
+@property BOOL forwardsScrollWheelToDelegate; // @synthesize forwardsScrollWheelToDelegate=_forwardsScrollWheelToDelegate;
 - (void)drawGridInClipRect:(struct CGRect)arg1;
 - (BOOL)becomeFirstResponder;
 - (void)keyDown:(id)arg1;

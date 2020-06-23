@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     DYFuture *_future;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DYFuture *future; // @synthesize future=_future;
 @property(readonly, nonatomic) unsigned long long functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(readonly, nonatomic) id <DYResource> resource; // @synthesize resource=_resource;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 resource:(id)arg2 functionIndex:(unsigned int)arg3 subCommandIndex:(int)arg4;
 
 @end

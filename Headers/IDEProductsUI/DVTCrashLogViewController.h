@@ -42,6 +42,7 @@
 + (id)_colorForStackFrameWithoutSymbols;
 + (id)keyPathsForValuesAffectingIsSymbolicating;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *findString; // @synthesize findString=_findString;
 @property __weak DVTCrashLogOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property float scrollViewTopContentInsetDefault; // @synthesize scrollViewTopContentInsetDefault=_scrollViewTopContentInsetDefault;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) DVTCrashPoint *crashPoint; // @synthesize crashPoint=_crashPoint;
 @property(retain, nonatomic) DVTCrashLog *crashLog; // @synthesize crashLog=_crashLog;
 @property(retain, nonatomic) DVTDelayedInvocation *saveCrashLogScrollPositionInvocation; // @synthesize saveCrashLogScrollPositionInvocation=_saveCrashLogScrollPositionInvocation;
-- (void).cxx_destruct;
 - (void)_updateFindBar:(id)arg1;
 - (void)pullSharedFindPattern;
 - (id)findBar;

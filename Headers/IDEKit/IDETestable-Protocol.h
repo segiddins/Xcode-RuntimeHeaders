@@ -14,7 +14,6 @@
 @protocol IDETestable <IDETestContainer, DVTInvalidation, NSObject>
 @property(readonly) id <IDEBuildable> primaryBuildable;
 @property(readonly) BOOL isSearchingForTests;
-@property(readonly) NSSet *supportedPlatformsForParallelization;
 @property(readonly) BOOL isUITest;
 @property(readonly) NSSet *testFiles;
 @property(readonly) id <IDETestableProvider> testableProvider;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (Class)renderJobClass;
 + (Class)captureSessionInfoClassWithAPI:(unsigned int)arg1;
-@property(retain, nonatomic) GPUMTLTraceOutline *outline; // @synthesize outline=_outline;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUMTLTraceOutline *outline; // @synthesize outline=_outline;
 - (id)labelForObjectID:(unsigned long long)arg1 functionIndex:(int)arg2;
 - (id)_generateOutlineItemsForShaderDebuggerSession:(id)arg1 processItem:(id)arg2;
 - (void)populatePlaceholderItem:(id)arg1 objectID:(unsigned long long)arg2 stateMirrorObject:(const void *)arg3 containerID:(unsigned long long)arg4 identifier:(id)arg5;
@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)shaderItemWithProgram:(id)arg1 shaderType:(unsigned int)arg2 functionInfo:(id)arg3 identifier:(id)arg4;
 - (id)programItemWithGroup:(id)arg1 programType:(unsigned int)arg2 programID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
 - (id)resourceItemWithGroup:(id)arg1 type:(unsigned int)arg2 objectID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
-- (struct NSArray *)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
+- (id)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
 - (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
 - (id)newDataProviderForShaderDataItem:(id)arg1;
 - (void)establishResource:(id)arg1 forProgramChildren:(id)arg2 containerID:(unsigned long long)arg3;

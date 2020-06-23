@@ -18,13 +18,13 @@
     NSData *_rawSelectionTextRanges;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *rawSelectionTextRanges; // @synthesize rawSelectionTextRanges=_rawSelectionTextRanges;
 @property(retain) NSString *textBuffer; // @synthesize textBuffer=_textBuffer;
 @property BOOL usesTabsForIndentation; // @synthesize usesTabsForIndentation=_usesTabsForIndentation;
 @property unsigned long long indentationWidth; // @synthesize indentationWidth=_indentationWidth;
 @property unsigned long long tabWidth; // @synthesize tabWidth=_tabWidth;
 @property(copy) NSString *contentUTI; // @synthesize contentUTI=_contentUTI;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

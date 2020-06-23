@@ -25,11 +25,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IBEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
 @property(readonly) IBDropTargetResolver *parentDropTargetResolver; // @synthesize parentDropTargetResolver=_parentDropTargetResolver;
 @property(readonly) NSObject *editedObject; // @synthesize editedObject=_editedObject;
 @property __weak id <IBDropTargetResolverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)insertionPolicy:(id)arg1 orderedRelationInsertionIndexDidChange:(long long)arg2;
 - (void)insertionPolicy:(id)arg1 orderedRelationInsertionIndexWillChange:(long long)arg2;
 - (struct CGRect)insertionPolicy:(id)arg1 confinementRectForRepresentedObject:(id)arg2;

@@ -15,9 +15,9 @@
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(retain) IDEDataModelDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (BOOL)commitChangesWithError:(id *)arg1;
 
 @end

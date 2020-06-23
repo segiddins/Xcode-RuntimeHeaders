@@ -38,6 +38,7 @@
     IBCocoaBindingsAutocompletingResizingTextFieldView *_controlledObjectResizingFieldView;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBCocoaBindingsAutocompletingResizingTextFieldView *controlledObjectResizingFieldView; // @synthesize controlledObjectResizingFieldView=_controlledObjectResizingFieldView;
 @property(retain) IBCocoaBindingsAutocompletingResizingTextFieldView *controllerKeyResizingFieldView; // @synthesize controllerKeyResizingFieldView=_controllerKeyResizingFieldView;
 @property(retain) IBCocoaBindingsAutocompletingResizingTextFieldView *modelKeyResizingFieldView; // @synthesize modelKeyResizingFieldView=_modelKeyResizingFieldView;
@@ -55,7 +56,6 @@
 @property(readonly, copy) NSString *enteredControlledObjectClass; // @synthesize enteredControlledObjectClass=_enteredControlledObjectClass;
 @property(readonly, copy) NSString *enteredModelKeyPath; // @synthesize enteredModelKeyPath=_enteredModelKeyPath;
 @property(readonly, copy) NSString *enteredControllerKeyPath; // @synthesize enteredControllerKeyPath=_enteredControllerKeyPath;
-- (void).cxx_destruct;
 - (void)revertControllersToInitialState;
 - (void)menuWillOpen:(id)arg1;
 - (void)setControlledObjectClassForSelectedController;

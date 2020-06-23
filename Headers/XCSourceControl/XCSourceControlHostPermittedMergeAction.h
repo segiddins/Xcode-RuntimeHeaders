@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL deleteSourceBranch; // @synthesize deleteSourceBranch=_deleteSourceBranch;
 @property(readonly, nonatomic) unsigned long long strategy; // @synthesize strategy=_strategy;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

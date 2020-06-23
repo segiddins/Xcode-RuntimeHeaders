@@ -15,9 +15,9 @@
 }
 
 + (id)captureSessionInfoWithCaptureStore:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSArray *deviceProfiles; // @synthesize deviceProfiles=_deviceProfiles;
 @property(readonly, nonatomic) unsigned long long capturedCommandQueueAddress; // @synthesize capturedCommandQueueAddress=_capturedCommandQueueAddress;
-- (void).cxx_destruct;
 - (BOOL)canPlaybackOnDeviceWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;
 - (BOOL)_isBackwardsCompatible:(id)arg1 isInternal:(BOOL)arg2;
 - (id)initWithCaptureStore:(id)arg1;

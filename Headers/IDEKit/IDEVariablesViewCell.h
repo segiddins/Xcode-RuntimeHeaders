@@ -13,8 +13,8 @@
     id <IDEDataValue> _dataValue;
 }
 
-@property(readonly) id <IDEDataValue> dataValue; // @synthesize dataValue=_dataValue;
 - (void).cxx_destruct;
+@property(readonly) id <IDEDataValue> dataValue; // @synthesize dataValue=_dataValue;
 - (void)selectWithFrame:(struct CGRect)arg1 inView:(id)arg2 editor:(id)arg3 delegate:(id)arg4 start:(long long)arg5 length:(long long)arg6;
 - (void)editWithFrame:(struct CGRect)arg1 inView:(id)arg2 editor:(id)arg3 delegate:(id)arg4 event:(id)arg5;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;

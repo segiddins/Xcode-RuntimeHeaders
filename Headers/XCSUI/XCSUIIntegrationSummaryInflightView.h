@@ -15,8 +15,8 @@
     XCSUIIntegrationSummaryInflightViewController *_viewController;
 }
 
-@property __weak XCSUIIntegrationSummaryInflightViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property __weak XCSUIIntegrationSummaryInflightViewController *viewController; // @synthesize viewController=_viewController;
 - (id)accessibilityLabel;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;

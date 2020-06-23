@@ -40,6 +40,7 @@
 + (id)keyPathsForValuesAffectingNumberOfRows;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(nonatomic) long long numberOfMergedCells; // @synthesize numberOfMergedCells=_numberOfMergedCells;
 @property(retain, nonatomic) NSArray *cells; // @synthesize cells=_cells;
@@ -50,7 +51,6 @@
 @property(nonatomic) long long rowAlignment; // @synthesize rowAlignment=_rowAlignment;
 @property(nonatomic) long long yPlacement; // @synthesize yPlacement=_yPlacement;
 @property(nonatomic) long long xPlacement; // @synthesize xPlacement=_xPlacement;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)anyCellIsMerged;
@@ -79,7 +79,7 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
 - (id)viewsOfCellContentViews;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (void)recomputeAndApplyEstimatedFramesContentViewsAffectingRows:(BOOL)arg1 columns:(BOOL)arg2;
 - (void)ibTakeTrackedFrame:(struct CGRect)arg1 originalFrame:(struct CGRect)arg2 isFinalFrame:(BOOL)arg3;
 - (BOOL)ibIsVerticallyResizable;

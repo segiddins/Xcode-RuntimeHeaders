@@ -36,12 +36,12 @@
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) IDEActivityLogSection *lastFindResultSection; // @synthesize lastFindResultSection=_lastFindResultSection;
 @property(readonly) struct _NSRange lastFindResultRange; // @synthesize lastFindResultRange=_lastFindResultRange;
 @property(readonly) BOOL lastFindResult; // @synthesize lastFindResult=_lastFindResult;
 @property(copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(copy) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
-- (void).cxx_destruct;
 - (id)activityLogSection;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

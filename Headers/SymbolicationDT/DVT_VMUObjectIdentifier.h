@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVT_VMUClassInfo, DVT_VMUClassInfoMap, DVT_VMUNonOverlappingRangeArray, DVT_VMUSwiftRuntimeInfo, DVT_VMUTaskMemoryScanner, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet;
+@class DVT_VMUClassInfo, DVT_VMUClassInfoMap, DVT_VMUNonOverlappingRangeArray, DVT_VMURangeArray, DVT_VMUSwiftRuntimeInfo, DVT_VMUTaskMemoryScanner, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 @interface DVT_VMUObjectIdentifier : NSObject
 {
@@ -21,6 +21,8 @@
     DVT_VMUSwiftRuntimeInfo *_swiftRuntimeInfoStableABI;
     DVT_VMUSwiftRuntimeInfo *_swiftRuntimeInfoPreABI;
     BOOL _debugSwiftRemoteMirror;
+    unsigned int _objectContentLevel;
+    DVT_VMURangeArray *_readonlyRegionRanges;
     DVT_VMUClassInfoMap *_realizedIsaToClassInfo;
     DVT_VMUClassInfoMap *_unrealizedClassInfos;
     DVT_VMUClassInfoMap *_cfTypeIDToClassInfo;
@@ -51,6 +53,7 @@
     unsigned long long _taggedPointerObfuscator;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int objcABI; // @synthesize objcABI=_objcABI;
 @property(readonly, nonatomic) struct _CSTypeRef symbolicator; // @synthesize symbolicator=_symbolicator;
 @property(readonly, nonatomic) unsigned long long taggedPointerMask; // @synthesize taggedPointerMask=_taggedPointerMask;
@@ -59,8 +62,9 @@
 @property(readonly, nonatomic) DVT_VMUSwiftRuntimeInfo *swiftRuntimeInfoPreABI; // @synthesize swiftRuntimeInfoPreABI=_swiftRuntimeInfoPreABI;
 @property(readonly, nonatomic) DVT_VMUClassInfoMap *realizedClasses; // @synthesize realizedClasses=_realizedIsaToClassInfo;
 @property(readonly, nonatomic) CDUnknownBlockType memoryReader; // @synthesize memoryReader=_memoryReader;
+@property(retain, nonatomic) DVT_VMURangeArray *readonlyRegionRanges; // @synthesize readonlyRegionRanges=_readonlyRegionRanges;
+@property(nonatomic) unsigned int objectContentLevel; // @synthesize objectContentLevel=_objectContentLevel;
 @property(readonly) BOOL needToValidateAddressRange; // @synthesize needToValidateAddressRange=_needToValidateAddressRange;
-- (void).cxx_destruct;
 - (id)initWithTask:(unsigned int)arg1;
 @property(readonly) BOOL hasSwiftReflection;
 @property(readonly) BOOL hasSwiftContent;
@@ -122,6 +126,7 @@
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(BOOL)arg3;
 - (id)classNameForTaggedPointer:(void *)arg1;
 - (id)labelForTaggedPointer:(void *)arg1;
+- (BOOL)_remoteAddressIsOKtoRead:(unsigned long long)arg1;
 - (id)objectLabelHandlerForRemoteIsa:(unsigned long long)arg1;
 - (void)buildIsaToObjectLabelHandlerMap;
 - (id)osMajorMinorVersionString;
@@ -138,6 +143,7 @@
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned long long)arg2;
 - (id)classInfoForNonobjectMemory:(void *)arg1 length:(unsigned long long)arg2;
+- (id)classInfoForObjCClassStructurePointerType:(unsigned int)arg1;
 - (unsigned int)classInfoIndexForObjCClassStructurePointerType:(unsigned int)arg1;
 - (void)_generateClassInfosForObjCClassStructurePointerTypes;
 - (id)_classInfoWithPthreadType:(id)arg1;

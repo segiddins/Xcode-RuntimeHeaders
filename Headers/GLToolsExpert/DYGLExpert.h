@@ -43,13 +43,13 @@
 + (BOOL)_getForceGPULimited;
 + (void)initNSUnarchiverClassTranslationMappings;
 + (id)sharedStringManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL stop; // @synthesize stop=_stop;
 @property(readonly, nonatomic) DYAnalyzerEngine *analyzerEngine; // @synthesize analyzerEngine=_analyzerEngine;
 @property(readonly, nonatomic) DYGLExpertCase *kase; // @synthesize kase=_kase;
 @property(readonly, nonatomic) __weak id <DYGLExpertDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL createFullArchives; // @synthesize createFullArchives=_createFullArchives;
 @property(nonatomic) BOOL playbackRunning; // @synthesize playbackRunning=_playbackRunning;
-- (void).cxx_destruct;
 - (id)_translateRationaleGLLimited:(id)arg1 intoArray:(id)arg2;
 - (id)_translateRationale:(id)arg1;
 - (void)_warning:(id)arg1;

@@ -18,8 +18,8 @@
 + (id)platformForPlatformSpecification:(id)arg1;
 + (id)allPlatforms;
 + (void)initialize;
-@property(retain) XCPlatformSpecification *xcPlatform; // @synthesize xcPlatform=_xcPlatform;
 - (void).cxx_destruct;
+@property(retain) XCPlatformSpecification *xcPlatform; // @synthesize xcPlatform=_xcPlatform;
 - (id)description;
 @property(readonly) NSString *platformDomain;
 @property(readonly) Xcode3SDK *defaultSDK;

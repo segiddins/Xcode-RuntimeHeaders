@@ -14,8 +14,8 @@
     NSFileHandle *_slaveFileHandle;
 }
 
-@property(readonly) NSFileHandle *slaveFileHandle; // @synthesize slaveFileHandle=_slaveFileHandle;
 - (void).cxx_destruct;
+@property(readonly) NSFileHandle *slaveFileHandle; // @synthesize slaveFileHandle=_slaveFileHandle;
 - (void)setReadabilityHandler:(CDUnknownBlockType)arg1;
 - (int)fileDescriptor;
 - (void)waitForDataInBackgroundAndNotify;

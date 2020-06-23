@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL bufferViewLoaded; // @synthesize bufferViewLoaded=_bufferViewLoaded;
 @property(nonatomic) BOOL renderViewLoaded; // @synthesize renderViewLoaded=_renderViewLoaded;
 @property(nonatomic) unsigned long long primitiveIssuesVertexCount; // @synthesize primitiveIssuesVertexCount=_primitiveIssuesVertexCount;
@@ -94,7 +95,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSSplitView *splitView; // @synthesize splitView=_splitView;
 - (void)setForceSelection:(BOOL)arg1;
 - (BOOL)forceSelection;
-- (void).cxx_destruct;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPatchesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawIndexedPrimitivesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPrimitivesIndirectBufferPtr:(const char *)arg2;
@@ -149,7 +149,6 @@ __attribute__((visibility("hidden")))
 - (void)handleNotification:(id)arg1;
 @property(retain) GPUTracePostVertexTransformItem *representedObject; // @dynamic representedObject;
 - (void)viewDidDisappear;
-- (void)viewDidLayout;
 - (void)viewDidLoad;
 - (id)init;
 

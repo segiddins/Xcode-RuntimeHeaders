@@ -21,6 +21,7 @@
     struct CGRect _overlayRegionOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayElementName; // @synthesize displayElementName=_displayElementName;
 @property(nonatomic) BOOL displayRegionOfInterestOverlay; // @synthesize displayRegionOfInterestOverlay=_displayRegionOfInterestOverlay;
 @property(retain, nonatomic) id <DYResource> overlayRenderMask; // @synthesize overlayRenderMask=_overlayRenderMask;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) __weak GPUTraceModelFactory *modelFactory; // @synthesize modelFactory=_modelFactory;
 @property(readonly, copy, nonatomic) NSDictionary *overlayResources; // @synthesize overlayResources=_overlayResources;
 @property(nonatomic) __weak id <DYResource> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (BOOL)wantsDepth;
 - (struct CGSize)imageSize;
 @property(readonly, nonatomic) BOOL isStencilDisplayElement;

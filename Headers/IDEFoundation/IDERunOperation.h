@@ -22,10 +22,10 @@
 
 + (id)keyPathsForValuesAffectingLaunchSession;
 + (id)keyPathsForValuesAffectingIsCancelled;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *trackers; // @synthesize trackers=_trackers;
 @property(retain) IDERunOperationWorker *worker; // @synthesize worker=_worker;
 @property BOOL workaroundIsCancelled; // @synthesize workaroundIsCancelled=_workaroundIsCancelled;
-- (void).cxx_destruct;
 - (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (void)registerTracker:(id)arg1;
 - (void)_runningTrackerFinished:(id)arg1;

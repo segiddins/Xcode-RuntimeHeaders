@@ -22,12 +22,12 @@
 }
 
 + (id)viewControllerForConstraint:(id)arg1 referencingItem:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) IBDocumentMemberWrapper *memberWrapper; // @synthesize memberWrapper=_memberWrapper;
 @property(retain, nonatomic) NSObject<IBAutolayoutItem> *referencedItem; // @synthesize referencedItem=_referencedItem;
 @property(nonatomic) __weak id <IBInspectorReferencingConstraintViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
-- (void).cxx_destruct;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)updateConstraintView;

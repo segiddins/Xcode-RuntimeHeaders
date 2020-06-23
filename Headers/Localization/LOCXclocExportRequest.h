@@ -16,10 +16,10 @@
     NSString *_referencesPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *referencesPath; // @synthesize referencesPath=_referencesPath;
 @property(readonly, copy) NSString *localizedContentsPath; // @synthesize localizedContentsPath=_localizedContentsPath;
 @property(readonly, copy) NSString *sourceContentsPath; // @synthesize sourceContentsPath=_sourceContentsPath;
-- (void).cxx_destruct;
 - (BOOL)_handleExportNonXLIFFableFile:(id)arg1 error:(id *)arg2;
 - (BOOL)_handleExportAssetCatalog:(id)arg1 error:(id *)arg2;
 - (id)_xliffOutputPath;

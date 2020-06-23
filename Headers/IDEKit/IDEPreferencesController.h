@@ -30,12 +30,12 @@
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)defaultPreferencesController;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly) DVTDelayedInvocation *stateSavingInvocation; // @synthesize stateSavingInvocation=_stateSavingInvocation;
 @property(readonly) DVTStateRepository *stateRepository; // @synthesize stateRepository=_stateRepository;
 @property(retain) DVTExtension *currentExtension; // @synthesize currentExtension=_currentExtension;
 @property(retain) DVTReplacementView *paneReplacementView; // @synthesize paneReplacementView=_paneReplacementView;
-- (void).cxx_destruct;
 - (BOOL)_loadStateData:(id *)arg1;
 - (BOOL)_saveStateData:(id *)arg1;
 - (id)_stateRepositoryFilePath;

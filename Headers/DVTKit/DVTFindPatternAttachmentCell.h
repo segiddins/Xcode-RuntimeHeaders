@@ -25,8 +25,8 @@
     int cachedGroupID;
 }
 
-@property NSTextField<DVTFindPatternField> *field; // @synthesize field=_field;
 - (void).cxx_destruct;
+@property NSTextField<DVTFindPatternField> *field; // @synthesize field=_field;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2 characterIndex:(unsigned long long)arg3 layoutManager:(id)arg4;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;

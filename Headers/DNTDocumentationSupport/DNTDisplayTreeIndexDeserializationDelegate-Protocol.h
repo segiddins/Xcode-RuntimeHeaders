@@ -8,7 +8,7 @@
 @protocol DNTDisplayTreeIndexItem;
 
 @protocol DNTDisplayTreeIndexDeserializationDelegate
-- (id <DNTDisplayTreeIndexItem>)entityWithPartialURL:(NSString *)arg1 isGroup:(BOOL)arg2 rawLanguage:(int)arg3 name:(NSString *)arg4 kind:(long long)arg5 platformAvailabilityMask:(unsigned int)arg6 availabilityItemId:(unsigned int)arg7;
+- (id <DNTDisplayTreeIndexItem>)entityWithPartialURL:(NSString *)arg1 isGroup:(BOOL)arg2 rawLanguage:(int)arg3 name:(NSString *)arg4 kind:(long long)arg5 platformAvailabilityMask:(unsigned int)arg6 availabilityItemId:(unsigned int)arg7 coreDocumentationKind:(NSString *)arg8;
 - (id <DNTDisplayTreeIndexItem>)groupMarkerWithParent:(id <DNTDisplayTreeIndexItem>)arg1 name:(NSString *)arg2;
 - (id <DNTDisplayTreeIndexItem>)collectionWithRawLanguageValue:(int)arg1;
 - (id <DNTDisplayTreeIndexItem>)rootIndexItem;

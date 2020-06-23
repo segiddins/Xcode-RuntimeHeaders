@@ -39,6 +39,7 @@
 
 + (id)wrColor;
 + (id)rdColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *profileButton; // @synthesize profileButton=_profileButton;
 @property(retain, nonatomic) IDEODRTableViewDelegate *resourceTableViewDelegate; // @synthesize resourceTableViewDelegate=_resourceTableViewDelegate;
 @property BOOL resourcesFilterRecentsEnabled; // @synthesize resourcesFilterRecentsEnabled=_resourcesFilterRecentsEnabled;
@@ -56,9 +57,9 @@
 @property(retain, nonatomic) IDEDebugGaugeReportByteStatisticsViewController *outputStatsViewController; // @synthesize outputStatsViewController=_outputStatsViewController;
 @property(retain, nonatomic) IDEDebugGaugeReportByteStatisticsViewController *inputStatsViewController; // @synthesize inputStatsViewController=_inputStatsViewController;
 @property(retain, nonatomic) IDEFileIOGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
-- (void).cxx_destruct;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (id)accumulateIODeltas:(id)arg1 initialValue:(id)arg2;
+- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)tableView:(id)arg1 shouldEditTableColumn:(id)arg2 row:(long long)arg3;
@@ -67,6 +68,11 @@
 - (id)colorForChartNamed:(id)arg1;
 - (void)profileInInstruments:(id)arg1;
 - (void)primitiveInvalidate;
+- (void)showInFinder:(id)arg1;
+- (void)copy:(id)arg1;
+- (BOOL)_putSelectionFromFileListTable:(id)arg1 intoPasteboard:(id)arg2;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)_canShowInFinder:(id)arg1;
 - (id)topSectionTitleAccessoryView;
 - (id)topSectionComponentEntries;
 - (id)topSectionTitle;

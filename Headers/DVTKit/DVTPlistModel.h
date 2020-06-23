@@ -21,8 +21,8 @@
 }
 
 + (void)initialize;
-@property(readonly) NSDocument<DVTPlistDocumentProtocol> *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) NSDocument<DVTPlistDocumentProtocol> *document; // @synthesize document=_document;
 - (unsigned long long)replaceAllResults:(id)arg1 inNode:(id)arg2 withString:(id)arg3;
 - (BOOL)selection:(id)arg1 matchesString:(id)arg2 ignoreCase:(BOOL)arg3;
 - (BOOL)replaceFindResults:(id)arg1 withString:(id)arg2 withError:(id *)arg3;

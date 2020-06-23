@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEBuildNoticeLogStore-Protocol.h>
 
 @class DVTStackBacktrace, NSArray, NSMutableArray, NSString;
 
-@interface IDELogStore : NSObject <DVTInvalidation>
+@interface IDELogStore : NSObject <IDEBuildNoticeLogStore, DVTInvalidation>
 {
     NSMutableArray *_logRecords;
 }
@@ -25,6 +26,7 @@
 - (id)addLog:(id)arg1 entityIdentifier:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 - (void)primitiveInvalidate;
+- (void)addBuildNoticeBlueprintLog:(id)arg1 from:(id)arg2 rootSignature:(id)arg3;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

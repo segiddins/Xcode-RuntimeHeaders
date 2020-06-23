@@ -22,6 +22,7 @@
     NSMutableDictionary *_selectedProducts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasValidRequirement; // @synthesize hasValidRequirement=_hasValidRequirement;
 @property(retain, nonatomic) NSMutableDictionary *selectedProducts; // @synthesize selectedProducts=_selectedProducts;
 @property(copy, nonatomic) NSArray *dependencyProducts; // @synthesize dependencyProducts=_dependencyProducts;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) DVTSourceControlRemoteRepository *remoteRepository; // @synthesize remoteRepository=_remoteRepository;
 @property(retain, nonatomic) Xcode3Project *project; // @synthesize project=_project;
 @property(retain, nonatomic) PBXTarget *onlyTarget; // @synthesize onlyTarget=_onlyTarget;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

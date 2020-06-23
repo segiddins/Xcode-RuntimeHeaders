@@ -15,10 +15,10 @@
     NSImage *_onImageForAlternate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSImage *onImageForAlternate; // @synthesize onImageForAlternate=_onImageForAlternate;
 @property(readonly) id alternateRepresentedObject; // @synthesize alternateRepresentedObject=_alternateRepresentedObject;
 @property(readonly) BOOL isAlternate; // @synthesize isAlternate=_isAlternate;
-- (void).cxx_destruct;
 - (void)toggleAlternate;
 - (id)representedObject;
 - (id)alternateImage;

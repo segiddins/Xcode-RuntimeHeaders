@@ -15,8 +15,8 @@
     DVTSyntaxTypeSpecification *_syntaxSpec;
 }
 
-@property(readonly) DVTSyntaxTypeSpecification *syntaxSpec; // @synthesize syntaxSpec=_syntaxSpec;
 - (void).cxx_destruct;
+@property(readonly) DVTSyntaxTypeSpecification *syntaxSpec; // @synthesize syntaxSpec=_syntaxSpec;
 - (void)setFont:(id)arg1 forTheme:(id)arg2;
 - (void)setColor:(id)arg1 forTheme:(id)arg2;
 - (id)fontForTheme:(id)arg1;

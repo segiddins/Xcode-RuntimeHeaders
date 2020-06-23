@@ -31,9 +31,9 @@
 - (void)_notifyObserversOfBreakpointAdded:(id)arg1;
 - (void)_addBreakpoint:(id)arg1;
 - (void)_handleBreakpointsAdded:(id)arg1;
-- (void)_notifyObserversOfBreakpointRemoved:(id)arg1;
+- (void)_notifyObserversOfBreakpointsRemoved:(id)arg1;
 - (void)_notifyObserversBreakpointsWillBeRemoved:(id)arg1;
-- (void)_removeBreakpoint:(id)arg1;
+- (void)_removeBreakpoints:(id)arg1;
 - (void)_handleBreakpointsRemoved:(id)arg1;
 - (void)_handleBreakpointChanges:(id)arg1;
 - (void)removeObserver:(id)arg1;

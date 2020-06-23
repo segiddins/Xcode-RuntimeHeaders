@@ -17,11 +17,11 @@
 }
 
 + (id)meterThreshold:(double)arg1 color:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showEndSection; // @synthesize showEndSection=_showEndSection;
 @property(nonatomic) BOOL showStartSection; // @synthesize showStartSection=_showStartSection;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 
 @end
 

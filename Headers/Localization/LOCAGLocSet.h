@@ -23,6 +23,7 @@
 }
 
 + (BOOL)isNibStringsOrPlistFile:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) LOCAGCommandOptions *commandOptions; // @synthesize commandOptions=_commandOptions;
 @property unsigned long long executionMode; // @synthesize executionMode=_executionMode;
 @property(retain) NSMutableArray *tempFilesToBeDeleted; // @synthesize tempFilesToBeDeleted=_tempFilesToBeDeleted;
@@ -33,7 +34,6 @@
 @property(retain) LOCLogger *log; // @synthesize log=_log;
 @property __weak LOCAGProjectManager *projectManager; // @synthesize projectManager=_projectManager;
 @property(retain) NSString *fileName; // @synthesize fileName=_fileName;
-- (void).cxx_destruct;
 - (void)saveIBToolErros:(id)arg1 forNib:(id)arg2 operation:(id)arg3;
 - (id)convertPathFromNibToNibPlist:(id)arg1;
 - (id)convertPathFromNibToNibStrings:(id)arg1;

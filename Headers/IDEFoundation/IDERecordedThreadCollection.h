@@ -22,11 +22,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL usedInRuntimeIssue; // @synthesize usedInRuntimeIssue=_usedInRuntimeIssue;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSArray *recordedThreads; // @synthesize recordedThreads=_recordedThreads;
 @property(retain) IDEDebugProcess *parentProcess; // @synthesize parentProcess=_parentProcess;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;

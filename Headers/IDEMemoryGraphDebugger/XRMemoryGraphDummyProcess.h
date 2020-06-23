@@ -14,9 +14,9 @@
     XRMemoryGraphDebuggerDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XRMemoryGraphDebuggerDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) NSString *memgraphFileName; // @synthesize memgraphFileName=_memgraphFileName;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)navigableItem_documentType;
 - (id)navigableItem_contentDocumentLocation;

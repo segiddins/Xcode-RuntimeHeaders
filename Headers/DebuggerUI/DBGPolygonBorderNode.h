@@ -16,10 +16,10 @@
 }
 
 + (id)borderNodeWithPolygon:(id)arg1 addToParentNode:(id)arg2 sceneView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *edgeNodes; // @synthesize edgeNodes=_edgeNodes;
 @property(retain, nonatomic) NSArray *cornerNodes; // @synthesize cornerNodes=_cornerNodes;
 @property(retain, nonatomic) DBG2DPolygon *borderPolygon; // @synthesize borderPolygon=_borderPolygon;
-- (void).cxx_destruct;
 - (void)_reconstructBorder;
 - (id)lineNodes;
 - (id)initWithPolygon:(id)arg1 addToParentNode:(id)arg2 sceneView:(id)arg3;

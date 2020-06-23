@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *projectContext;
     MISSING_TYPE *location;
     MISSING_TYPE *expandTarget;
+    MISSING_TYPE *reloadOnDismiss;
     MISSING_TYPE *hoveredRow;
     MISSING_TYPE *selectableItems;
     MISSING_TYPE *delegate;

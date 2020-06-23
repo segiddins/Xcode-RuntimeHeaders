@@ -16,10 +16,10 @@
 }
 
 + (id)archiveExportOptionsWithName:(id)arg1 exportOptions:(id)arg2 validationErrors:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *exportOptions; // @synthesize exportOptions=_exportOptions;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
-- (void).cxx_destruct;
 - (BOOL)_validateName:(id)arg1 createdAt:(id)arg2 exportOptions:(id)arg3 validationErrors:(id *)arg4;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithName:(id)arg1 createdAt:(id)arg2 exportOptions:(id)arg3 validationErrors:(id *)arg4;

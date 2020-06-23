@@ -21,12 +21,12 @@
 
 + (id)initialHistoryItemForDocumentURL:(id)arg1 withInteractivity:(long long)arg2 onDate:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long numberOfEdits; // @synthesize numberOfEdits=_numberOfEdits;
 @property(readonly) long long numberOfInteractions; // @synthesize numberOfInteractions=_numberOfInteractions;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(readonly) NSDate *startOfActivity; // @synthesize startOfActivity=_startOfActivity;
 @property(readonly) NSDate *mostRecentActivity; // @synthesize mostRecentActivity=_mostRecentActivity;
-- (void).cxx_destruct;
 - (id)description;
 - (id)updatedItemAfterCountingInteractivity:(long long)arg1 onDate:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

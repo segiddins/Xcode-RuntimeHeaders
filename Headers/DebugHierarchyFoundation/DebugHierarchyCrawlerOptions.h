@@ -18,13 +18,13 @@
     unsigned long long _maximumObjectCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maximumObjectCount; // @synthesize maximumObjectCount=_maximumObjectCount;
 @property unsigned long long maximumObjectDepth; // @synthesize maximumObjectDepth=_maximumObjectDepth;
 @property long long groupVisibilityMask; // @synthesize groupVisibilityMask=_groupVisibilityMask;
 @property BOOL groupingIdentifiersAreExclusive; // @synthesize groupingIdentifiersAreExclusive=_groupingIdentifiersAreExclusive;
 @property(retain) NSArray *groupingIdentifiers; // @synthesize groupingIdentifiers=_groupingIdentifiers;
 @property(readonly) NSArray *rootItems; // @synthesize rootItems=_rootItems;
-- (void).cxx_destruct;
 - (BOOL)shouldCrawlObject:(id)arg1;
 - (BOOL)shouldCrawlGroupWithID:(id)arg1;
 - (id)dictionaryRepresentation;

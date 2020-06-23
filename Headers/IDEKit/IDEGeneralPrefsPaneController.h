@@ -17,15 +17,18 @@
     NSPopUpButton *_appearancePopUpButton;
 }
 
++ (unsigned long long)_maximumSliderValueForCoreCount:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *appearancePopUpButton; // @synthesize appearancePopUpButton=_appearancePopUpButton;
 @property(retain) NSPopUpButton *searchNavigatorDetailPopUpButton; // @synthesize searchNavigatorDetailPopUpButton=_searchNavigatorDetailPopUpButton;
 @property(retain) NSPopUpButton *issueNavigatorDetailPopUpButton; // @synthesize issueNavigatorDetailPopUpButton=_issueNavigatorDetailPopUpButton;
 @property(retain) DVTLabeledSlider *maxParallelTestingSimulatorsSlider; // @synthesize maxParallelTestingSimulatorsSlider=_maxParallelTestingSimulatorsSlider;
 @property(retain) DVTLabeledSlider *maxParallelTestingWorkersMacSlider; // @synthesize maxParallelTestingWorkersMacSlider=_maxParallelTestingWorkersMacSlider;
-- (void).cxx_destruct;
 - (void)maxParallelTestingSimulatorsSliderChanged:(id)arg1;
 - (void)maxParallelTestingWorkersMacSliderChanged:(id)arg1;
 - (long long)_clampToCoreCount:(long long)arg1;
+- (void)_resizeSliderToFitTickMarkLabels:(id)arg1;
+- (void)_updateSlider:(id)arg1 numberOfTickMarks:(unsigned long long)arg2 maximumValue:(unsigned long long)arg3 initialValue:(unsigned long long)arg4;
 - (void)_configureParallelTestingSlider:(id)arg1 initialValue:(long long)arg2;
 - (void)configureParallelTestingUI;
 - (void)resetDialogWarnings:(id)arg1;

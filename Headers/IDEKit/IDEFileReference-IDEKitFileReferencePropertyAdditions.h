@@ -9,7 +9,7 @@
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 #import <IDEKit/IDESchemeOptionMenuItem-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
 
 @interface IDEFileReference (IDEKitFileReferencePropertyAdditions) <IDEKeyDrivenNavigableItemRepresentedObject, IDESchemeOptionMenuItem>
 + (id)keyPathsForValuesAffectingNavigableItem_accessibleImageDescription;
@@ -59,6 +59,11 @@
 - (BOOL)ideInspectedShowsFileTypePopUp;
 - (BOOL)ideInspectedIsNameEditable;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)explorableIcon;
+@property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
+@property(nonatomic, readonly) NSString *containerHierarchyDescription;
+@property(nonatomic, readonly) IDEGroup *referencedGroup;
+@property(nonatomic, readonly) IDEGroup *representedGroup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)shouldAlignInstancesVertically;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *elaboration; // @synthesize elaboration=_elaboration;
 @property(readonly, nonatomic) NSString *supertitle; // @synthesize supertitle=_supertitle;
 @property(readonly, nonatomic) NSString *badgeName; // @synthesize badgeName=_badgeName;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (void)layoutDisplayNameLayer:(id)arg1;
 - (BOOL)getClickableGlyphFrameWithinRoot:(struct CGRect *)arg1;
 - (void)adjustToGraph:(id)arg1;

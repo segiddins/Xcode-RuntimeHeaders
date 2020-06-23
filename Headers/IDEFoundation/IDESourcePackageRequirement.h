@@ -23,9 +23,9 @@
 + (id)requirementWithExactVersion:(id)arg1;
 + (id)requirementWithMinimumVersionUpToNextMinorVersion:(id)arg1;
 + (id)requirementWithMinimumVersionUpToNextMajorVersion:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSObject<NSCopying> *value; // @synthesize value=_value;
 @property(readonly) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 @property(readonly) NSString *revision;
 @property(readonly) NSString *branchName;
 @property(readonly) NSString *exactVersion;

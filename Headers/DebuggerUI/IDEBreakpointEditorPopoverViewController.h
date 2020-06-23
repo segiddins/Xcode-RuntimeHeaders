@@ -8,25 +8,32 @@
 
 #import <DebuggerUI/IDEBreakpointActionRowDelegate-Protocol.h>
 #import <DebuggerUI/NSPopoverDelegate-Protocol.h>
+#import <DebuggerUI/NSTableViewDataSource-Protocol.h>
+#import <DebuggerUI/NSTableViewDelegate-Protocol.h>
 
-@class DBGBreakpointEditorTextField, DVTExtension, DVTStackView_AppKitAutolayout, DVTTextDocumentLocation, IDEBreakpoint, NSMapTable, NSPopover, NSString, NSView;
+@class DBGBreakpointEditorTextField, DVTExtension, DVTTextDocumentLocation, IDEBreakpoint, NSLayoutConstraint, NSMapTable, NSMutableDictionary, NSPopover, NSStackView, NSString, NSTableView, NSTextField, NSView;
 @protocol IDEBreakpointEditor;
 
-@interface IDEBreakpointEditorPopoverViewController : NSViewController <NSPopoverDelegate, IDEBreakpointActionRowDelegate>
+@interface IDEBreakpointEditorPopoverViewController : NSViewController <NSPopoverDelegate, NSTableViewDelegate, NSTableViewDataSource, IDEBreakpointActionRowDelegate>
 {
     IDEBreakpoint *_breakpoint;
     NSView *_initialFirstResponder;
     NSMapTable *_actionRowViewsToObservationTokens;
+    NSMutableDictionary *_rowToActionRowViews;
+    unsigned long long _rowOfInsertedAction;
     DVTExtension *_breakpointEditorExtension;
     NSViewController<IDEBreakpointEditor> *_breakpointSpecificViewController;
     DVTTextDocumentLocation *_breakpointLocation;
     NSPopover *_popover;
-    DVTStackView_AppKitAutolayout *_stackView;
-    DVTStackView_AppKitAutolayout *_actionsStackView;
+    NSStackView *_stackView;
+    NSView *_nameForDebuggerView;
+    NSTextField *_nameForDebuggerTextField;
     NSView *_conditionView;
     DBGBreakpointEditorTextField *_conditionTextField;
     NSView *_ignoreCountView;
     NSView *_actionsView;
+    NSTableView *_actionsTableView;
+    NSLayoutConstraint *_actionsScrollViewHeightConstraint;
     NSView *_automaticallyContinueView;
     NSView *_addActionButtonView;
 }
@@ -38,34 +45,51 @@
 + (void)hideCurrentEditorIfEditingBreakpoint:(id)arg1;
 + (void)hideCurrentEditor;
 + (void)showEditorForBreakpoint:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSView *addActionButtonView; // @synthesize addActionButtonView=_addActionButtonView;
 @property(retain) NSView *automaticallyContinueView; // @synthesize automaticallyContinueView=_automaticallyContinueView;
+@property(retain) NSLayoutConstraint *actionsScrollViewHeightConstraint; // @synthesize actionsScrollViewHeightConstraint=_actionsScrollViewHeightConstraint;
+@property(retain) NSTableView *actionsTableView; // @synthesize actionsTableView=_actionsTableView;
 @property(retain) NSView *actionsView; // @synthesize actionsView=_actionsView;
 @property(retain) NSView *ignoreCountView; // @synthesize ignoreCountView=_ignoreCountView;
 @property(retain) DBGBreakpointEditorTextField *conditionTextField; // @synthesize conditionTextField=_conditionTextField;
 @property(retain) NSView *conditionView; // @synthesize conditionView=_conditionView;
-@property(retain) DVTStackView_AppKitAutolayout *actionsStackView; // @synthesize actionsStackView=_actionsStackView;
-@property(retain) DVTStackView_AppKitAutolayout *stackView; // @synthesize stackView=_stackView;
+@property(retain) NSTextField *nameForDebuggerTextField; // @synthesize nameForDebuggerTextField=_nameForDebuggerTextField;
+@property(retain) NSView *nameForDebuggerView; // @synthesize nameForDebuggerView=_nameForDebuggerView;
+@property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(readonly) IDEBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 @property(retain) DVTTextDocumentLocation *breakpointLocation; // @synthesize breakpointLocation=_breakpointLocation;
-- (void).cxx_destruct;
 - (id)_findAssociatedBreakpointEditorExtension;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillClose:(id)arg1;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;
 @property(readonly) NSString *ignoreCountPostText;
-- (void)removeRowRequestedByRow:(id)arg1;
-- (void)addRowRequestedByRow:(id)arg1;
+- (void)removeRowRequestedByRowView:(id)arg1;
+- (void)_findRowView:(id)arg1 remove:(BOOL)arg2 offsetForRowsBelow:(long long)arg3;
+- (void)addRowRequestedByRowView:(id)arg1;
 - (id)initialFirstResponder;
-- (void)cancelOperation:(id)arg1;
-- (void)addFirstAction:(id)arg1;
 - (double)sizeForFont:(id)arg1 fittingHeightOfTextField:(id)arg2;
 - (id)sourceStyleFontFittingHeightOfTextField:(id)arg1;
-- (id)_addBreakpointActionRowToStackViewForAction:(id)arg1 atIndex:(unsigned long long)arg2 becomeFirstResponder:(BOOL)arg3;
-- (id)_addBreakpointActionRowToStackViewBelow:(id)arg1 becomeFirstResponder:(BOOL)arg2;
-- (void)_addInitialActions;
+- (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
+- (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
+- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
+- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (id)_createActionRowViewForRowIfNeeded:(long long)arg1;
+- (long long)numberOfRowsInTableView:(id)arg1;
+- (void)delete:(id)arg1;
+- (void)paste:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)cut:(id)arg1;
+- (void)cancelOperation:(id)arg1;
+- (void)addFirstAction:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
+- (void)_addNewBreakpointActionRowBelow:(id)arg1;
+- (void)_reloadActionsTable;
+- (double)_heightOfAllRowViews;
 - (id)_createBreakpointSpecificViewController;
 - (void)_addBreakpointSpecificView;
 - (int)_placementFromString:(id)arg1;

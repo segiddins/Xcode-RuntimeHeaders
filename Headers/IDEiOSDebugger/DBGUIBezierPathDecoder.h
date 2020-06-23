@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property double lineDashPhase; // @synthesize lineDashPhase=_lineDashPhase;
 @property(retain) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;
 @property BOOL usesEvenOddFillRule; // @synthesize usesEvenOddFillRule=_usesEvenOddFillRule;
@@ -33,7 +34,6 @@
 @property int lineCapStyle; // @synthesize lineCapStyle=_lineCapStyle;
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) NSData *cgPathData; // @synthesize cgPathData=_cgPathData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

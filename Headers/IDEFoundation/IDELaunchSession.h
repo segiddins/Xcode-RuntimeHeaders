@@ -18,13 +18,13 @@
     NSMutableSet *_shellXPCLaunchSessions;
     NSMutableSet *_xpcLaunchSessions;
     DVTPerformanceMetric *_xpcDebuggingMetric;
-    NSArray *_frameworkNamesIncludingExtensionsLinkedByExecutable;
     NSArray *_frameworkNamesIncludingExtensionsLinkedByExecutableForAllSlices;
     NSMutableSet *_gaugeLocations;
     BOOL _allConsoleAdaptorsTerminated;
     BOOL _hasAlreadyOutputExitString;
     DVTFuture *_appExtensionInstallFuture;
     DVTObservingToken *_appExtensionObserverToken;
+    unsigned long long _launchTimeInContinuousTime;
     BOOL _debuggerShouldAttachToTarget;
     BOOL _wasDetached;
     BOOL _shouldHidePID;
@@ -73,6 +73,7 @@
 + (id)launchSessionForReference:(id)arg1;
 + (void)_setLaunchSession:(id)arg1 forReference:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *codeModulesObserver; // @synthesize codeModulesObserver=_codeModulesObserver;
 @property(retain, nonatomic) NSMapTable *targetConsoleAdaptorToTerminationToken; // @synthesize targetConsoleAdaptorToTerminationToken=_targetConsoleAdaptorToTerminationToken;
 @property(retain, nonatomic) NSMutableSet *consoleAdaptors; // @synthesize consoleAdaptors=_consoleAdaptors;
@@ -103,15 +104,14 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain) IDEExecutionTracker *executionTracker; // @synthesize executionTracker=_executionTracker;
 @property(retain) IDESchemeActionRecord *schemeActionRecord; // @synthesize schemeActionRecord=_schemeActionRecord;
-- (void).cxx_destruct;
 - (void)performanceMetric_xpcDebuggingCheckpointWithLabel:(id)arg1;
 - (void)performanceMetric_xpcDebuggingCompleted;
 - (void)performanceMetric_xpcDebuggingStarted;
 - (id)performanceMetric_xpcIdentifierForLaunchSession;
 - (void)_handleXPCServiceObservation:(id)arg1;
+- (void)_createXPCLaunchSessionsShells:(id)arg1 launchParameter:(id)arg2;
 - (void)_fillUpXPCServiceWithPid:(int)arg1 forServiceName:(id)arg2;
 - (id)_findShellXPCLaunchSessionForServiceName:(id)arg1;
-- (id)xpcLaunchSessions;
 @property(readonly, nonatomic) IDELaunchSession *parentLaunchSession;
 - (void)_cancelXPCPostLaunchActions;
 - (void)_startXPCPostLaunchActions;
@@ -122,7 +122,6 @@
 - (id)_createLaunchSessionForXPCServiceName:(id)arg1 withLaunchParameters:(id)arg2;
 - (void)_cancelAllXPCRelatedWork;
 @property(readonly) NSArray *frameworkNamesIncludingExtensionsLinkedByExecutableForAllSlices;
-@property(readonly) NSArray *frameworkNamesIncludingExtensionsLinkedByExecutable;
 - (id)_frameworkNamesIncludingExtensionsLinkedByExecutableForCpuType:(int)arg1;
 - (id)debuggingAdditionMatchingClass:(id)arg1;
 - (id)debuggingAdditionMatchingID:(id)arg1;
@@ -145,6 +144,7 @@
 - (void)removeConsoleAdaptor:(id)arg1;
 - (void)addConsoleAdaptor:(id)arg1;
 @property(readonly, copy) NSMutableSet *kvoConsoleAdaptors;
+- (void)_emitLaunchSignpostIfNecessary;
 - (void)setTargetOutputState:(int)arg1;
 @property(readonly, nonatomic) DVTFileDataType *runnableType; // @synthesize runnableType=_runnableType;
 @property(readonly) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;

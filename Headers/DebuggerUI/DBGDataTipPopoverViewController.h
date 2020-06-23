@@ -27,12 +27,12 @@
     struct CGRect _screenAnchorRect;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property unsigned long long datatipEdge; // @synthesize datatipEdge=_datatipEdge;
 @property struct CGRect screenAnchorRect; // @synthesize screenAnchorRect=_screenAnchorRect;
 @property(retain) IDEVariablesView *variablesView; // @synthesize variablesView=_variablesView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;

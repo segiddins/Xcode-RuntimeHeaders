@@ -27,9 +27,9 @@
 + (id)keyPathsForValuesAffectingrepeatInfinite_edit;
 + (id)keyPathsForValuesAffectingduration_edit;
 + (id)keyPathsForValuesAffectingusesSceneTimeBase_edit;
+- (void).cxx_destruct;
 @property(retain) NSString *key; // @synthesize key=_key;
 @property(retain) SCNNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (id)ske_document;
 @property BOOL cumulative;
 @property BOOL additive;

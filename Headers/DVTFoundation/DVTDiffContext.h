@@ -45,6 +45,7 @@
 + (Class)_sharedStateClass;
 + (Class)_diffOperationClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL preventAsynchronicity; // @synthesize preventAsynchronicity=_preventAsynchronicity;
 @property BOOL isRestoringState; // @synthesize isRestoringState=_isRestoringState;
 @property unsigned long long diffCachingMode; // @synthesize diffCachingMode=_diffCachingMode;
@@ -59,7 +60,6 @@
 @property BOOL skipTokenizingNewlines; // @synthesize skipTokenizingNewlines=_skipTokenizingNewlines;
 @property BOOL synchronouslyAdjustDescriptorTokenRanges; // @synthesize synchronouslyAdjustDescriptorTokenRanges=_synchronouslyAdjustDescriptorTokenRanges;
 @property __weak id <DVTDiffContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dumpDataSources;
 - (id)diffDescriptorIndexesForModifiedTokenRange:(struct _NSRange)arg1;
 - (id)diffDescriptorIndexesForOriginalTokenRange:(struct _NSRange)arg1;

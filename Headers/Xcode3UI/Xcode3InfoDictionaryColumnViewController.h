@@ -15,9 +15,9 @@
     IDEInspectorContentView *_generatedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEInspectorContentView *generatedView; // @synthesize generatedView=_generatedView;
 @property(readonly) Xcode3InfoSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (id)bundle;
 - (BOOL)supportsDocumentUndo;
 - (id)selection;

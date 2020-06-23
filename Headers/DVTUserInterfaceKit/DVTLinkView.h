@@ -14,9 +14,9 @@
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <DVTLinkViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)resetCursorRects;
 

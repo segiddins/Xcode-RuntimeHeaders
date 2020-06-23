@@ -13,8 +13,8 @@
     IBICCollectionOverlayOrnament *_ornament;
 }
 
-@property(retain, nonatomic) IBICCollectionOverlayOrnament *ornament; // @synthesize ornament=_ornament;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBICCollectionOverlayOrnament *ornament; // @synthesize ornament=_ornament;
 - (BOOL)isAccessibilityHidden;
 - (BOOL)isAccessibilityEnabled;
 - (void)drawRect:(struct CGRect)arg1;

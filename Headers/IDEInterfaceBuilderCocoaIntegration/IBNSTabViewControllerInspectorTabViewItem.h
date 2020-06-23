@@ -15,8 +15,8 @@
     NSTabViewItem *_tabViewItem;
 }
 
-@property(readonly) NSTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
 - (void).cxx_destruct;
+@property(readonly) NSTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setLabel:(id)arg1;

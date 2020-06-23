@@ -14,8 +14,8 @@
 }
 
 + (Class)cellClass;
-@property __weak id <IBNSViewPrioritySliderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBNSViewPrioritySliderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cellDidStopTrackingFromLastPoint:(struct CGPoint)arg1 to:(struct CGPoint)arg2 mouseIsUp:(BOOL)arg3;
 - (void)cellDidContinueTrackingFromLastPoint:(struct CGPoint)arg1 to:(struct CGPoint)arg2;
 - (void)cellDidStartTrackingAt:(struct CGPoint)arg1;

@@ -18,9 +18,9 @@
     AKAppleIDAuthenticationController *_appleIDController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKAppleIDAuthenticationController *appleIDController; // @synthesize appleIDController=_appleIDController;
 @property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

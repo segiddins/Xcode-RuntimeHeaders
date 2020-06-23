@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEFoundation/IDEBuildNoticeLogMessage-Protocol.h>
 #import <IDEFoundation/NSCopying-Protocol.h>
 
 @class DVTDocumentLocation, IDEActivityLogSection, IDETypeIdentifier, NSArray, NSMutableArray, NSString;
 
-@interface IDEActivityLogMessage : NSObject <NSCopying>
+@interface IDEActivityLogMessage : NSObject <IDEBuildNoticeLogMessage, NSCopying>
 {
     NSString *_title;
     NSString *_shortTitle;
@@ -29,9 +30,9 @@
 + (id)messageWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 filePath:(id)arg4 lineNumber:(unsigned long long)arg5;
 + (id)messageWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 location:(id)arg4;
 + (id)defaultMessageType;
+- (void).cxx_destruct;
 @property(readonly) IDETypeIdentifier *type; // @synthesize type=_type;
 @property(readonly) unsigned long long severity; // @synthesize severity=_severity;
-- (void).cxx_destruct;
 - (void)dvt_writeToSerializer:(id)arg1;
 - (id)dvt_initFromDeserializer:(id)arg1;
 @property(readonly) unsigned long long totalNumberOfAnalyzerResults;

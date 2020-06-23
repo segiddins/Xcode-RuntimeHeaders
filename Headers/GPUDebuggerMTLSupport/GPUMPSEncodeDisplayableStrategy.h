@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     GPUMTLTraceTextureDisplayableItem *_displayableItem;
 }
 
-@property(nonatomic) __weak GPUMTLTraceTextureDisplayableItem *displayableItem; // @synthesize displayableItem=_displayableItem;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUMTLTraceTextureDisplayableItem *displayableItem; // @synthesize displayableItem=_displayableItem;
 - (id)loadDisplaySet;
 - (id)initWithTextureDisplayable:(id)arg1;
 

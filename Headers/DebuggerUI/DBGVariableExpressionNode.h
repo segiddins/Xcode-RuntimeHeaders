@@ -19,9 +19,9 @@
 }
 
 + (id)keyPathsForValuesAffectingExpressionIsEmpty;
+- (void).cxx_destruct;
 @property BOOL loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) NSString *expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (long long)compare:(id)arg1;
 - (void)_evaluateExpression;

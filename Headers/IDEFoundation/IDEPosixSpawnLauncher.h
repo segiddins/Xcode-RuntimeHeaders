@@ -19,8 +19,8 @@
     DVTDispatchLock *_deathMutex;
 }
 
-@property BOOL startSuspended; // @synthesize startSuspended=_startSuspended;
 - (void).cxx_destruct;
+@property BOOL startSuspended; // @synthesize startSuspended=_startSuspended;
 - (void)terminate;
 - (void)start;
 - (BOOL)_willUseExistingProcess:(id)arg1;

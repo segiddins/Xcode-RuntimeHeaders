@@ -27,6 +27,7 @@
 + (void)requestSessionForLocalComputerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)requestSessionWithDTXConnectionProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property __weak id <XCTDaemonRecordingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL isConnected; // @synthesize isConnected=_isConnected;
@@ -34,7 +35,6 @@
 @property(readonly) id <XCTDaemonProxyProviding> proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(readonly) id <XCTDaemonProxy> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (id)_XCT_nativeFocusItemDidChangeAtTime:(id)arg1 parameterSnapshot:(id)arg2 applicationSnapshot:(id)arg3;
 - (id)_XCT_recordedKeyEventsWithApplicationSnapshot:(id)arg1 characters:(id)arg2 charactersIgnoringModifiers:(id)arg3 modifierFlags:(id)arg4;
 - (id)_XCT_recordedFirstResponderChangedWithApplicationSnapshot:(id)arg1;

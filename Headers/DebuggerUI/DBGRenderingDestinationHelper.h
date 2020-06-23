@@ -18,13 +18,13 @@
     struct CGSize _maskedScreenPointSize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize maskedScreenPointSize; // @synthesize maskedScreenPointSize=_maskedScreenPointSize;
 @property unsigned char worldPositionToScreenUVsMatrixBufferWriteIndex; // @synthesize worldPositionToScreenUVsMatrixBufferWriteIndex=_worldPositionToScreenUVsMatrixBufferWriteIndex;
 @property(retain) id <MTLBuffer> worldPositionToScreenUVsMatrixBufferWrite; // @synthesize worldPositionToScreenUVsMatrixBufferWrite=_worldPositionToScreenUVsMatrixBufferWrite;
 @property(retain) id <MTLBuffer> worldPositionToScreenUVsMatrixBufferRead; // @synthesize worldPositionToScreenUVsMatrixBufferRead=_worldPositionToScreenUVsMatrixBufferRead;
 @property double sceneViewBackingScale; // @synthesize sceneViewBackingScale=_sceneViewBackingScale;
 @property(readonly) BOOL isUsingMetalRenderer; // @synthesize isUsingMetalRenderer=_isUsingMetalRenderer;
-- (void).cxx_destruct;
 - (void)updateScreenMaskParametersForApplication:(id)arg1 rotationNode:(id)arg2 withCommandQueue:(id)arg3;
 - (void)disableScreenMasking;
 - (void)enableScreenMaskingWithDevice:(id)arg1 screenPointSize:(struct CGSize)arg2;

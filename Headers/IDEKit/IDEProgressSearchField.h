@@ -26,10 +26,10 @@
 
 + (Class)cellClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDEProgressSearchFieldDelegate> searchFieldDelegate; // @synthesize searchFieldDelegate=_searchFieldDelegate;
 @property(retain) id <IDEProgressSearchFieldCommandDelegate> commandDelegate; // @synthesize commandDelegate=_commandDelegate;
 @property(copy, nonatomic) NSArray *suggestionItems; // @synthesize suggestionItems=_suggestionItems;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 dataCellForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;

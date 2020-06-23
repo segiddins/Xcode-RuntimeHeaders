@@ -14,18 +14,21 @@
 {
     NSNumber *_minimumNumberOfTouches;
     NSNumber *_maximumNumberOfTouches;
+    long long _allowedScrollTypesMask;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfTouchesDefault;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
+@property(nonatomic) long long allowedScrollTypesMask; // @synthesize allowedScrollTypesMask=_allowedScrollTypesMask;
 @property(copy) NSNumber *maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
 @property(copy) NSNumber *minimumNumberOfTouches; // @synthesize minimumNumberOfTouches=_minimumNumberOfTouches;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibSegueTriggers;
+- (BOOL)showScrollTypesMask;
 @property(readonly) NSNumber *ibInspectedNumberOfTouchesDefault;
 - (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

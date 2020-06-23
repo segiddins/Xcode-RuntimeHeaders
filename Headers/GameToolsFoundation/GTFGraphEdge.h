@@ -16,10 +16,10 @@
 }
 
 + (id)edgeWithFromNode:(id)arg1 to:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL reversed; // @synthesize reversed=_reversed;
 @property(retain, nonatomic) GTFGraphNode *to; // @synthesize to=_to;
 @property(retain, nonatomic) GTFGraphNode *from; // @synthesize from=_from;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setFromNode:(id)arg1 to:(id)arg2;
 - (id)initWithFromNode:(id)arg1 to:(id)arg2;

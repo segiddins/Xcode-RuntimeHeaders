@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_baseSlices;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *baseSlices; // @synthesize baseSlices=_baseSlices;
 @property(readonly) NSMutableDictionary *baseLevels; // @synthesize baseLevels=_baseLevels;
 @property(readonly) NSMutableDictionary *colorResourceObjects; // @synthesize colorResourceObjects=_colorResourceObjects;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *elementIDs;
 @property(readonly, nonatomic) unsigned int numElements;
 - (void)addTexture:(unsigned long long)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;

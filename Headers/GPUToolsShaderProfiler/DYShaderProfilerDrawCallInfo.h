@@ -40,6 +40,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int commandBufferIndex; // @synthesize commandBufferIndex=_commandBufferIndex;
 @property(nonatomic) unsigned int commandType; // @synthesize commandType=_commandType;
 @property(readonly, nonatomic) struct DYShaderProfilerTiming timing; // @synthesize timing=_timing;
@@ -61,8 +63,6 @@
 @property(nonatomic) int subCommandIndex; // @synthesize subCommandIndex=_subCommandIndex;
 @property(nonatomic) unsigned int functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(nonatomic) unsigned int drawCallIndex; // @synthesize drawCallIndex=_drawCallIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)isComputeDispatchCall;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

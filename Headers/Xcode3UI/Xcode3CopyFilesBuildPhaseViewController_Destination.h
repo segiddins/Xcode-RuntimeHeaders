@@ -15,10 +15,10 @@
     NSString *_subPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *subPath; // @synthesize subPath=_subPath;
 @property long long wrapperPart; // @synthesize wrapperPart=_wrapperPart;
 @property(retain) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

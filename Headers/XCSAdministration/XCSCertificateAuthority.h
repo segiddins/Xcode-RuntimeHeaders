@@ -16,11 +16,11 @@
     XCSKeychain *_keychain;
 }
 
+- (void).cxx_destruct;
 @property(readonly) XCSKeychain *keychain; // @synthesize keychain=_keychain;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(readonly) NSString *commonName; // @synthesize commonName=_commonName;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)issueCertificateForCommonName:(id)arg1 email:(id)arg2 destinationKeychain:(id)arg3 applications:(id)arg4 discardPrevious:(BOOL)arg5 error:(id *)arg6;
 - (BOOL)createUniquelyWithAllowedApplications:(id)arg1 error:(id *)arg2;
 - (BOOL)createIfNeededWithAllowedApplications:(id)arg1 error:(id *)arg2;

@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *internalName; // @synthesize internalName=_internalName;
 @property(readonly) NSString *deviceFamilyIdentifier; // @synthesize deviceFamilyIdentifier=_deviceFamilyIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

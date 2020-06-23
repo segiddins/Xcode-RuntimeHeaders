@@ -6,10 +6,12 @@
 
 #import <DVTUserInterfaceKit/DVTFilterTokenBasedFieldController.h>
 
-@class DVTCompoundFilterExpression, DVTFilterExpressionController, NSMutableDictionary, NSMutableSet;
+#import <DVTUserInterfaceKit/DVTInvalidation-Protocol.h>
+
+@class DVTCompoundFilterExpression, DVTFilterExpressionController, DVTStackBacktrace, NSMutableDictionary, NSMutableSet, NSString;
 @protocol DVTFilterExpressionPresentationDelegate;
 
-@interface DVTFilterExpressionFieldController : DVTFilterTokenBasedFieldController
+@interface DVTFilterExpressionFieldController : DVTFilterTokenBasedFieldController <DVTInvalidation>
 {
     NSMutableDictionary *_buttonsToFilterIdentifiers;
     NSMutableSet *_toggleButtonExpressions;
@@ -20,12 +22,13 @@
     id <DVTFilterExpressionPresentationDelegate> _presentationDelegate;
 }
 
++ (void)initialize;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(nonatomic) int defaultGlobalOperator; // @synthesize defaultGlobalOperator=_defaultGlobalOperator;
 @property(nonatomic) BOOL allowsANYOperator; // @synthesize allowsANYOperator=_allowsANYOperator;
 @property(nonatomic) __weak id <DVTFilterExpressionPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(retain) DVTCompoundFilterExpression *currentFilterExpression; // @synthesize currentFilterExpression=_currentFilterExpression;
-- (void).cxx_destruct;
 - (id)tokenFieldCompletion:(id)arg1 rowStringFor:(unsigned long long)arg2 inSection:(unsigned long long)arg3;
 - (void)_updateValuesWith:(id)arg1 editingString:(id)arg2;
 - (void)_notifySomethingChanged;
@@ -56,12 +59,19 @@
 - (id)allowedClassesForArchivingState;
 - (void)clearControlBarConfiguration;
 - (void)configureWithFilteredDataSource:(id)arg1 viewingContext:(id)arg2 presentationDelegate:(id)arg3;
-- (void)dealloc;
 - (id)initWithTokenField:(id)arg1 filteredDataSource:(id)arg2 presentationDelegate:(id)arg3 viewingContext:(id)arg4;
+- (void)primitiveInvalidate;
 - (id)initWithTokenField:(id)arg1;
 
 // Remaining properties
 @property(retain) NSMutableDictionary *completionData; // @dynamic completionData;
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

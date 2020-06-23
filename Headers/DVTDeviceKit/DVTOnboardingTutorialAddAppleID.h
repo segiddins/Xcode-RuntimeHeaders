@@ -19,12 +19,12 @@
     NSButton *_createAppleIDButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *createAppleIDButton; // @synthesize createAppleIDButton=_createAppleIDButton;
 @property __weak NSTextField *errorField; // @synthesize errorField=_errorField;
 @property __weak NSButton *forgotPasswordButton; // @synthesize forgotPasswordButton=_forgotPasswordButton;
 @property __weak NSSecureTextField *passwordField; // @synthesize passwordField=_passwordField;
 @property __weak NSTextField *appleIDField; // @synthesize appleIDField=_appleIDField;
-- (void).cxx_destruct;
 - (id)_accountWithAppleID:(id)arg1 password:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)willNavigateToNextPage;

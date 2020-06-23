@@ -16,8 +16,8 @@
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(copy, nonatomic) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (id)editorView:(id)arg1 explanatoryTextForPlaceholderView:(id)arg2;
 - (id)editorView:(id)arg1 subtitleForPlaceholderView:(id)arg2;
 - (id)editorView:(id)arg1 titleForPlaceholderView:(id)arg2;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSError, NSString;
 @protocol OS_dispatch_queue;
 
 @interface RemoteBundleLoader : NSObject
@@ -36,9 +36,9 @@
     NSString *_helperLaunchPath;
     NSObject<OS_dispatch_queue> *_symbolLookupQueue;
     NSObject<OS_dispatch_queue> *_injectionQueue;
+    NSError *_missingSymbolError;
     _Bool _attemptedSymbolLookup;
     _Bool _exited;
-    _Bool _missingSymbol;
 }
 
 - (void).cxx_destruct;

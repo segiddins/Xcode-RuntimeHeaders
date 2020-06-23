@@ -17,9 +17,9 @@
 
 + (id)_filterMatchAttributesForDarkBackground;
 + (id)_filterMatchAttributesForLightBackground;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTCrashLogParsedStackFrame *parsedStackFrame; // @synthesize parsedStackFrame=_parsedStackFrame;
 @property(nonatomic) struct _NSRange emphasizedRange; // @synthesize emphasizedRange=_emphasizedRange;
-- (void).cxx_destruct;
 - (id)attributedStringValue;
 
 @end

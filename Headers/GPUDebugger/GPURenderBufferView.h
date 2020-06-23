@@ -31,6 +31,7 @@
     struct CGRect _focusRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL explicitUserScroll; // @synthesize explicitUserScroll=_explicitUserScroll;
 @property(nonatomic) BOOL disableResizeFit; // @synthesize disableResizeFit=_disableResizeFit;
 @property(nonatomic) struct CGRect focusRect; // @synthesize focusRect=_focusRect;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) GPURenderJob *renderJob; // @synthesize renderJob=_renderJob;
 @property(retain, nonatomic) id <DYResource> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (unsigned long long)_renderJobOverlayOptions;
 - (BOOL)_refreshScrollViewWithStateUpdate:(BOOL)arg1;
@@ -56,6 +56,7 @@
 - (void)_loupeViewGesture:(id)arg1;
 @property(nonatomic) struct CGPoint loupePosition;
 @property(readonly, nonatomic) BOOL isLoupeVisible;
+- (void)refocusCenter;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setScaleToFitWithUserInitiated:(BOOL)arg1;
 @property(nonatomic) double scale;

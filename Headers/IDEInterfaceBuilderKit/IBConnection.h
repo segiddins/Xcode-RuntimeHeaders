@@ -45,10 +45,10 @@
 + (id)menuLabelForConnection:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (id)connectionWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSObject *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)populateRefactoringModifications:(id)arg1 forRenameRefactoringRequest:(id)arg2 inDocument:(id)arg3;
 - (id)categoryNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
 - (id)typeNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
@@ -91,6 +91,7 @@
 - (BOOL)isEquivalentToPrototypeFor:(id)arg1 inDocument:(id)arg2;
 - (id)equivalentPrototypeWithRespectToEquivalentEndPoint:(id)arg1 inDocument:(id)arg2;
 - (id)prototypeWithRespectTo:(id)arg1;
+- (id)suggestedDisplayNameForConnectedObject;
 - (BOOL)shouldShowInDocumentStructure;
 - (long long)previousConnectionStateIndicatorForDragFromObject:(id)arg1 toObject:(id)arg2 inDocument:(id)arg3;
 - (id)displayGroupFromReferenceEndPoint:(id)arg1;

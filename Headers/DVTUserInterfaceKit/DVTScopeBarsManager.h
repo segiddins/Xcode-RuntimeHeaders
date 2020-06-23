@@ -25,11 +25,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long layoutType; // @synthesize layoutType=_layoutType;
 @property(readonly, nonatomic) __weak NSViewAnimation *currentAnimation; // @synthesize currentAnimation=_currentAnimation;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property(readonly) NSArray *scopeBarControllers; // @synthesize scopeBarControllers=_scopeBarControllers;
-- (void).cxx_destruct;
 - (void)animationDidEnd:(id)arg1;
 - (void)_adjustViewsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 animate:(BOOL)arg3 extraAnimations:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)viewAnimationsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 extraAnimations:(id)arg3 progressRemaining:(float)arg4;

@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *workspaceContext;
     MISSING_TYPE *configuredTarget;
+    MISSING_TYPE *phase;
     MISSING_TYPE *project;
     MISSING_TYPE *globalProductPlan;
     MISSING_TYPE *targetTaskInfo;
@@ -39,6 +40,7 @@
     MISSING_TYPE *_copiedPathMap;
     MISSING_TYPE *_stubBinaries;
     MISSING_TYPE *_xcframeworkLibraries;
+    MISSING_TYPE *_additionalCodeSignInputs;
     MISSING_TYPE *notes;
     MISSING_TYPE *warnings;
     MISSING_TYPE *errors;

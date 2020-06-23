@@ -50,6 +50,7 @@
 + (BOOL)canInspectBlueprint:(id)arg1;
 + (id)viewControllerForBuildPhase:(id)arg1;
 + (id)localizedSourceListItemEditorName;
+- (void).cxx_destruct;
 @property __weak DVTSearchField *searchField; // @synthesize searchField=_searchField;
 @property __weak NSScrollView *buildPhasesScrollView; // @synthesize buildPhasesScrollView=_buildPhasesScrollView;
 @property(copy) NSArray *arrangedPhaseViewControllers; // @synthesize arrangedPhaseViewControllers=_arrangedPhaseViewControllers;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (long long)numberOfPseudoBuildPhases;
 - (BOOL)shouldIncludePackageProductDependencies;
 - (void)commitStateToDictionary:(id)arg1;

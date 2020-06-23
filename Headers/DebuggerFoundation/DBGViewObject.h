@@ -40,6 +40,7 @@
 + (struct CGPoint)pointFromArray:(id)arg1;
 + (struct CGRect)rectFromArray:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DBGSnapshotNodePropertyProxy *snapshotNodePropertyProxy; // @synthesize snapshotNodePropertyProxy=_snapshotNodePropertyProxy;
 @property(retain) NSMutableArray *elidedParentNodes; // @synthesize elidedParentNodes=_elidedParentNodes;
 @property __weak DBGSnapshotNode *snapshotNode; // @synthesize snapshotNode=_snapshotNode;
@@ -57,7 +58,7 @@
 @property struct CGRect frame; // @synthesize frame=_frame;
 @property BOOL usesDebugHierarchyInfrastructure; // @synthesize usesDebugHierarchyInfrastructure=_usesDebugHierarchyInfrastructure;
 @property(retain) id <DBGViewDescriber> viewDescriber; // @synthesize viewDescriber=_viewDescriber;
-- (void).cxx_destruct;
+- (BOOL)representsLayer;
 - (id)castedPointerExpressionString;
 - (id)threadWithBacktrace;
 - (id)classHierarchyForDisplay;

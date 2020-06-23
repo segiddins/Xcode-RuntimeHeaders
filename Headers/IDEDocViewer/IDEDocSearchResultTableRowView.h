@@ -17,9 +17,9 @@
 + (id)keyPathsForValuesAffectingSeparator;
 + (id)keyPathsForValuesAffectingHeader;
 + (id)keyPathsForValuesAffectingSelectable;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mouseInside; // @synthesize mouseInside=_mouseInside;
 @property(retain) IDEDocSearchResultItem *resultItem; // @synthesize resultItem=_resultItem;
-- (void).cxx_destruct;
 - (long long)selectionHighlightStyle;
 @property(readonly, getter=isSeparator) BOOL separator;
 - (BOOL)isHeader;

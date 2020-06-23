@@ -25,6 +25,7 @@
 + (id)eventWithITunesDeveloperIDStatusResponse:(id)arg1 auditLog:(id)arg2;
 + (id)eventWithTitle:(id)arg1 shortTitle:(id)arg2 date:(id)arg3 errors:(id)arg4 warnings:(id)arg5 infoMessages:(id)arg6 state:(long long)arg7;
 + (id)eventWithTitle:(id)arg1 shortTitle:(id)arg2 rawDate:(id)arg3 errors:(id)arg4 warnings:(id)arg5 infoMessages:(id)arg6 state:(long long)arg7;
+- (void).cxx_destruct;
 @property(readonly) NSString *originalStateString; // @synthesize originalStateString=_originalStateString;
 @property(readonly) NSString *rawDate; // @synthesize rawDate=_rawDate;
 @property(readonly) long long state; // @synthesize state=_state;
@@ -33,7 +34,6 @@
 @property(readonly) NSArray *errors; // @synthesize errors=_errors;
 @property(readonly) NSString *shortTitle; // @synthesize shortTitle=_shortTitle;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

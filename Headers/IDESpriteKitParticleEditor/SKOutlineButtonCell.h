@@ -15,9 +15,9 @@
     NSImage *_activeImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHovered) BOOL hovered; // @synthesize hovered=_hovered;
 @property(retain, nonatomic) NSImage *activeImage; // @synthesize activeImage=_activeImage;
-- (void).cxx_destruct;
 - (void)setState:(long long)arg1;
 
 @end

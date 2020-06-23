@@ -36,6 +36,7 @@
 
 + (id)logAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(getter=isDatasourceExternal) BOOL datasourceExternal; // @synthesize datasourceExternal=_datasourceExternal;
 @property(retain, nonatomic) NSArray *logContents; // @synthesize logContents=_logContents;
 @property(copy) NSString *endingRevision; // @synthesize endingRevision=_endingRevision;
@@ -47,7 +48,6 @@
 @property(readonly) DVTSourceControlBranch *branch; // @synthesize branch=_branch;
 @property BOOL displayFilesChanged; // @synthesize displayFilesChanged=_displayFilesChanged;
 @property(readonly) NSArray *logItems; // @synthesize logItems=_logItems;
-- (void).cxx_destruct;
 - (void)endLogging;
 - (void)beginLogging;
 - (id)loadLogItems:(id)arg1 searchType:(unsigned long long)arg2 incrementalLogBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;

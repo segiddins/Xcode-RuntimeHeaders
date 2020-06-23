@@ -18,11 +18,11 @@
     CDUnknownBlockType _commandLineArgEntriesConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType commandLineArgEntriesConfiguration; // @synthesize commandLineArgEntriesConfiguration=_commandLineArgEntriesConfiguration;
 @property BOOL allowForDebugging; // @synthesize allowForDebugging=_allowForDebugging;
 @property(retain, nonatomic) DVTFilePath *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithExecutableName:(id)arg1 executablePath:(id)arg2 allowForDebugging:(BOOL)arg3 argEntriesConfiguration:(CDUnknownBlockType)arg4;
 
 @end

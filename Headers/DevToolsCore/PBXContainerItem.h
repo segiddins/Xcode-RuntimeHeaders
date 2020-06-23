@@ -15,6 +15,7 @@
 + (id)archivableUserAttributes;
 + (id)archivableAttributes;
 + (id)keyPathsForValuesAffectingProject;
+- (BOOL)validateWithUnarchiver:(id)arg1;
 - (BOOL)shouldArchiveComments;
 - (void)willChangeWithArchivePriority:(int)arg1;
 - (void)willChange;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     DependencyViewerGraphObject *_to;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak DependencyViewerGraphObject *to; // @synthesize to=_to;
 @property(nonatomic) __weak DependencyViewerGraphObject *from; // @synthesize from=_from;
-- (void).cxx_destruct;
 - (id)cluster;
 - (id)vertex;
 - (id)initWithFrom:(id)arg1 to:(id)arg2;

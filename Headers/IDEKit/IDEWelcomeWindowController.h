@@ -55,6 +55,7 @@
 + (id)currentlyOpenOrNewWelcomeWindowController;
 + (id)currentlyOpenWelcomeWindowController;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *openAnotherProjectContainerView; // @synthesize openAnotherProjectContainerView=_openAnotherProjectContainerView;
 @property __weak NSTextField *createPlaygroundButtonTitle; // @synthesize createPlaygroundButtonTitle=_createPlaygroundButtonTitle;
 @property __weak IDEWelcomeWindowHighlightButton *createPlaygroundButton; // @synthesize createPlaygroundButton=_createPlaygroundButton;
@@ -70,7 +71,6 @@
 @property __weak NSView *leftContentsArea; // @synthesize leftContentsArea=_leftContentsArea;
 @property(nonatomic) BOOL transientControlsHidden; // @synthesize transientControlsHidden=_transientControlsHidden;
 @property(retain) NSArrayController *projectsArrayController; // @synthesize projectsArrayController=_projectsArrayController;
-- (void).cxx_destruct;
 - (void)_windowDidBecomeKeyOrMain:(id)arg1;
 - (void)_addWindowNotificationObservers;
 - (void)_removeWindowNotificationObservers;

@@ -24,11 +24,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) id <IDETextFieldActionFilterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (id)tokenField:(id)arg1 setUpTokenAttachmentCell:(id)arg2 forRepresentedObject:(id)arg3;
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;

@@ -29,6 +29,7 @@
 + (id)completionScopesForLanguage:(id)arg1;
 + (id)keyPathsForValuesAffectingSystemSnippet;
 + (id)userEditableKeyPaths;
+- (void).cxx_destruct;
 @property(copy) NSSet *completionScopes; // @synthesize completionScopes=_completionScopes;
 @property long long relativePriority; // @synthesize relativePriority=_relativePriority;
 @property(copy) NSString *completionPrefix; // @synthesize completionPrefix=_completionPrefix;
@@ -42,7 +43,6 @@
 @property(retain) DVTPlatformFamily *platformFamily; // @synthesize platformFamily=_platformFamily;
 @property(getter=isUserSnippet) BOOL userSnippet; // @synthesize userSnippet=_userSnippet;
 @property(retain) DVTCustomDataSpecifier *customDataSpecifier; // @synthesize customDataSpecifier=_customDataSpecifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, getter=isSystemSnippet) BOOL systemSnippet;

@@ -26,6 +26,7 @@
     CDUnknownBlockType _selectedBadgeCallback;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) BOOL isAllCommittersBadge; // @synthesize isAllCommittersBadge=_isAllCommittersBadge;
 @property(copy) CDUnknownBlockType selectedBadgeCallback; // @synthesize selectedBadgeCallback=_selectedBadgeCallback;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long commiterCount; // @synthesize commiterCount=_commiterCount;
 @property(copy, nonatomic) NSImage *committerImage; // @synthesize committerImage=_committerImage;
 @property(copy) NSString *committerName; // @synthesize committerName=_committerName;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (void)viewDidChangeBackingProperties;
 - (id)polishedCommitterName;

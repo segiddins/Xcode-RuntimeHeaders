@@ -31,6 +31,7 @@
     IBCocoaTouchObjectLibraryAsset *_imageViewAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBCocoaTouchObjectLibraryAsset *imageViewAsset; // @synthesize imageViewAsset=_imageViewAsset;
 @property(retain) IBCocoaTouchObjectLibraryAsset *stepperAsset; // @synthesize stepperAsset=_stepperAsset;
 @property(retain) IBCocoaTouchObjectLibraryAsset *progressViewAsset; // @synthesize progressViewAsset=_progressViewAsset;
@@ -50,7 +51,6 @@
 @property(retain) IBCocoaTouchObjectLibraryAsset *tabBarControllerAsset; // @synthesize tabBarControllerAsset=_tabBarControllerAsset;
 @property(retain) IBCocoaTouchObjectLibraryAsset *scrollViewAsset; // @synthesize scrollViewAsset=_scrollViewAsset;
 @property(retain) IBCocoaTouchObjectLibraryAsset *viewAsset; // @synthesize viewAsset=_viewAsset;
-- (void).cxx_destruct;
 - (void)document:(id)arg1 didAddDraggedObjects:(id)arg2 fromDraggedObjectLibraryAsset:(id)arg3;
 - (void)markObjects:(id)arg1 draggedToDocument:(id)arg2 asHavingHorizontal:(id)arg3 andVerticalHuggingPriority:(id)arg4;
 - (void)didAddContainerViewAssetProducts:(id)arg1 toDocument:(id)arg2;

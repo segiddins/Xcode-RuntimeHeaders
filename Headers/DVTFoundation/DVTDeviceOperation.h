@@ -16,11 +16,11 @@
     long long _progress;
 }
 
+- (void).cxx_destruct;
 @property long long progress; // @synthesize progress=_progress;
 @property(copy) NSString *operationDescription; // @synthesize operationDescription=_operationDescription;
 @property(readonly, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property BOOL operationIsUserInitiated; // @synthesize operationIsUserInitiated=_operationIsUserInitiated;
-- (void).cxx_destruct;
 - (id)initWithDeviceIdentifier:(id)arg1 isUserInitiated:(BOOL)arg2;
 
 @end

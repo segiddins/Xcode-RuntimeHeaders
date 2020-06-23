@@ -15,8 +15,8 @@
     IDEEditorDocument *_document;
 }
 
-@property(retain, nonatomic) IDEEditorDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEEditorDocument *document; // @synthesize document=_document;
 - (unsigned long long)indexOfChildItemForIdentifier:(id)arg1;
 - (id)identifierForChildItem:(id)arg1;
 - (id)childRepresentedObjects;

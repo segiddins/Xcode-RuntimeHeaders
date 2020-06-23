@@ -28,6 +28,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)logStoreDictionaryWithContentsOfFile:(id)arg1 foundationServicesProvider:(id)arg2 error:(id *)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) id <IDEOnDiskLogStoreFoundationServicesProviding> foundationServicesProvider; // @synthesize foundationServicesProvider=_foundationServicesProvider;
 @property(readonly) NSOperationQueue *asyncOperations; // @synthesize asyncOperations=_asyncOperations;
 @property(readonly) NSMutableDictionary *logRecordDictionary; // @synthesize logRecordDictionary=_logRecordDictionary;
@@ -36,7 +37,6 @@
 @property(retain) DVTObservingToken *logFolderPathObservingToken; // @synthesize logFolderPathObservingToken=_logFolderPathObservingToken;
 @property(readonly, copy) NSString *rootDirectoryPath; // @synthesize rootDirectoryPath=_rootDirectoryPath;
 - (BOOL)preserveOldLogs;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)cacheLogStoreManageable:(id)arg1 forLogRecord:(id)arg2;
 - (id)cachedLogStoreManageableForLogRecord:(id)arg1;

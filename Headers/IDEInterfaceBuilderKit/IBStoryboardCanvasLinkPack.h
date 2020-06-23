@@ -15,9 +15,9 @@
     NSObject *_destination;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) NSObject *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)sortCanvasLinksUsingComparator:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *exclusiveCanvasLinks;
 @property(readonly, nonatomic) NSArray *nonExclusiveCanvasLinks;

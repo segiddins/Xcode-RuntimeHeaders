@@ -16,9 +16,9 @@
     unsigned long long _attribute;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long attribute; // @synthesize attribute=_attribute;
 @property __weak IBReferencingConstraintsFilter *filterView; // @synthesize filterView=_filterView;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (id)accessibilityParent;

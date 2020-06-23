@@ -5,9 +5,11 @@
 //
 
 @class DVTPlatform, DVTPortalTeam, NSData, NSDate, NSString;
-@protocol DVTServicesSession;
+@protocol DVTPortalProfileProtocol, DVTServicesSession, _TtP9DVTPortal28DeveloperAPIBundleIDProtocol_;
 
 @protocol DVTPortalProfileProtocol
+- (BOOL)isXcodeManaged;
+- (BOOL)matchesUUID:(id <DVTPortalProfileProtocol>)arg1;
 - (BOOL)removeWithSession:(id <DVTServicesSession>)arg1 error:(id *)arg2;
 - (BOOL)downloadWithSession:(id <DVTServicesSession>)arg1 error:(id *)arg2;
 @property(nonatomic, readonly) NSData *profileData;
@@ -17,6 +19,7 @@
 @property(nonatomic, readonly) DVTPlatform *platform;
 @property(nonatomic, readonly) DVTPortalTeam *team;
 @property(nonatomic, readonly) NSString *UUID;
+@property(nonatomic, readonly) id <_TtP9DVTPortal28DeveloperAPIBundleIDProtocol_> appID;
 @property(nonatomic, readonly) NSString *name;
 
 // Remaining properties

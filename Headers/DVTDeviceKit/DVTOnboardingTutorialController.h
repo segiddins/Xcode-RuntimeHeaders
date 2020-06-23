@@ -16,10 +16,10 @@
     NSString *_teamID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(retain, nonatomic) DVTDeveloperAccount *accountForSetup; // @synthesize accountForSetup=_accountForSetup;
 @property(nonatomic) __weak DVTDevice *selectedDeviceForSetup; // @synthesize selectedDeviceForSetup=_selectedDeviceForSetup;
-- (void).cxx_destruct;
 - (id)developerTeamsForAccount;
 - (id)_devicesForPlatforms:(id)arg1;
 - (id)pageController:(id)arg1 viewControllerForIdentifier:(id)arg2;

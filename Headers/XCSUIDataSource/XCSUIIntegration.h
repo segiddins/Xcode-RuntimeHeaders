@@ -36,6 +36,7 @@
 
 + (id)snapshotWithIntegration:(id)arg1 dataSource:(id)arg2;
 + (id)loadMoreItemForBotSnapshot:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSString *integrationTypeString; // @synthesize integrationTypeString=_integrationTypeString;
 @property(retain, nonatomic) NSArray *cachedReports; // @synthesize cachedReports=_cachedReports;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dataSource:(id)arg1 integrationStepChanged:(id)arg2 serviceSnapshot:(id)arg3 botSnapshot:(id)arg4 integrationSnapshot:(id)arg5;
 - (void)refreshDataFromIntegration:(id)arg1 useMainQueue:(BOOL)arg2;

@@ -15,13 +15,16 @@
 + (id)keyPathsForValuesAffectingNavigableItem_additionalFilterMatchingText;
 + (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
++ (id)keyPathsForValuesAffectingPopUpEditorDisplayName;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingNavigableItem_subtitle;
 @property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly) NSString *popUpEditorDisplayName;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
+- (id)basicSubtitle:(id)arg1;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 
 // Remaining properties

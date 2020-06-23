@@ -14,9 +14,9 @@
     NSImageView *_provisioningProfileImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImageView *provisioningProfileImageView; // @synthesize provisioningProfileImageView=_provisioningProfileImageView;
 @property(retain) NSLayoutConstraint *imageViewWidthConstraint; // @synthesize imageViewWidthConstraint=_imageViewWidthConstraint;
-- (void).cxx_destruct;
 - (id)downloadProfileImage;
 
 @end

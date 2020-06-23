@@ -14,9 +14,9 @@
     DVTObservingToken *_token;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTObservingToken *token; // @synthesize token=_token;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 
 @end
 

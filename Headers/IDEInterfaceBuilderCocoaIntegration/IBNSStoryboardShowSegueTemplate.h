@@ -15,8 +15,8 @@
     NSString *_uniqueControllerIdentifier;
 }
 
-@property(retain) NSString *uniqueControllerIdentifier; // @synthesize uniqueControllerIdentifier=_uniqueControllerIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *uniqueControllerIdentifier; // @synthesize uniqueControllerIdentifier=_uniqueControllerIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

@@ -13,8 +13,8 @@
     NSLayoutConstraint *_warningButtonWidthConstraint;
 }
 
-@property(retain) NSLayoutConstraint *warningButtonWidthConstraint; // @synthesize warningButtonWidthConstraint=_warningButtonWidthConstraint;
 - (void).cxx_destruct;
+@property(retain) NSLayoutConstraint *warningButtonWidthConstraint; // @synthesize warningButtonWidthConstraint=_warningButtonWidthConstraint;
 - (id)warningImage;
 
 @end

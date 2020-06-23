@@ -16,10 +16,10 @@
     IDEExecutionOperationTracker *_tracker;
 }
 
+- (void).cxx_destruct;
 @property BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(retain) IDEExecutionOperationTracker *tracker; // @synthesize tracker=_tracker;
 @property(copy) NSString *commandName; // @synthesize commandName=_commandName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeBuildOperation:(id)arg1;
 - (BOOL)containsBuildOperation:(id)arg1;

@@ -19,11 +19,11 @@
     struct CGColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *colorComponents; // @synthesize colorComponents=_colorComponents;
 @property(readonly) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 @property(readonly) struct CGColor *color; // @synthesize color=_color;
 @property(readonly) BOOL hasColorBeenRetrieved; // @synthesize hasColorBeenRetrieved=_hasColorBeenRetrieved;
-- (void).cxx_destruct;
 - (void)_fetchColorComponentAtIndex:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchValueNumberComponentsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchValueFromCGFunction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

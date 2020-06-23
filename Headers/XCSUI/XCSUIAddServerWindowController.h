@@ -19,11 +19,11 @@
     NSError *_addAccountError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *addAccountError; // @synthesize addAccountError=_addAccountError;
 @property(retain, nonatomic) XCSUIService *authenticatedService; // @synthesize authenticatedService=_authenticatedService;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
 @property(copy) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 - (void)didEndSheetWithReturnCode:(long long)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)windowDidLoad;

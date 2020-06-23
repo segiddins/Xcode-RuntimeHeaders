@@ -37,6 +37,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property double statusItemEdgeMargin; // @synthesize statusItemEdgeMargin=_statusItemEdgeMargin;
 @property(copy, nonatomic) NSColor *inactiveTitleTextColor; // @synthesize inactiveTitleTextColor=_inactiveTitleTextColor;
 @property(copy, nonatomic) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
@@ -58,7 +59,6 @@
 @property unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 @property struct CGSize baseImageSize; // @synthesize baseImageSize=_baseImageSize;
 @property(retain) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;

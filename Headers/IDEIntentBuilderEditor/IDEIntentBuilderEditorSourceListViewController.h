@@ -24,6 +24,7 @@
     DVTEmptyContentPlaceholder *_placeholderView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTEmptyContentPlaceholder *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property __weak DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property __weak DVTGradientImagePopUpButton *addButton; // @synthesize addButton=_addButton;
@@ -31,7 +32,6 @@
 @property __weak DVTSearchField *searchField; // @synthesize searchField=_searchField;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak IDEIntentBuilderIndentationAdjustingOutlineView *sourceListOutlineView; // @synthesize sourceListOutlineView=_sourceListOutlineView;
-- (void).cxx_destruct;
 - (void)_removeButtonPressed:(id)arg1;
 - (void)_updateFilter:(id)arg1;
 - (void)paste:(id)arg1;

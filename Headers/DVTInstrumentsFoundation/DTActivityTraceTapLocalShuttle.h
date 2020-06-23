@@ -33,6 +33,7 @@
     XRMobileAgentDock *_ownersDock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XRMobileAgentDock *ownersDock; // @synthesize ownersDock=_ownersDock;
 @property(retain, nonatomic) DTOSLogLoader *loaderStop; // @synthesize loaderStop=_loaderStop;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long lastMachContinuousTime; // @synthesize lastMachContinuousTime;
 @property(nonatomic, getter=isFetchComplete) BOOL fetchComplete; // @synthesize fetchComplete;
 @property(retain, nonatomic) NSData *nextOutputBytes; // @synthesize nextOutputBytes;
-- (void).cxx_destruct;
 - (void)executeStopOnItinerary:(id)arg1;
 
 @end

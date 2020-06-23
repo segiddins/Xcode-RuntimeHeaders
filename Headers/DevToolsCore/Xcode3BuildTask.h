@@ -18,11 +18,11 @@
 
 + (id)buildTaskWithIdentifier:(id)arg1 restorePersistedBuildResults:(BOOL)arg2 workQueueCommand:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *builderUniqueId; // @synthesize builderUniqueId=_builderUniqueId;
 @property(copy) CDUnknownBlockType commandFinishedRunningBlock; // @synthesize commandFinishedRunningBlock=_commandFinishedRunningBlock;
 @property(retain) XCWorkQueueCommandInvocation *commandInvocation; // @synthesize commandInvocation=_commandInvocation;
 @property(readonly) XCWorkQueueCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)description;
 - (void)main;
 - (BOOL)isWrapperForCommand:(id)arg1;

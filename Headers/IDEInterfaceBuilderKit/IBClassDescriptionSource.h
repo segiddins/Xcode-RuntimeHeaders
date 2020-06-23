@@ -27,10 +27,10 @@
 + (id)systemSourceIdentifierForPluginWithBundleIdentifier:(id)arg1;
 + (id)workspaceDocumentSourceIdentifierForInterfaceFile:(id)arg1 inWorkspaceDocumentInFolderAtPath:(id)arg2;
 + (id)workspaceDocumentSourceIdentifierForWorkspaceDocumentRelativeInterfaceFile:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *frameworkPath; // @synthesize frameworkPath=_frameworkPath;
 @property(readonly) NSString *qualifier; // @synthesize qualifier=_qualifier;
 @property(readonly) long long sourceType; // @synthesize sourceType=_sourceType;
-- (void).cxx_destruct;
 - (long long)compareForDefinitionContention:(id)arg1;
 - (long long)compare:(id)arg1;
 - (long long)compareLegacyMajorKeys:(id)arg1;

@@ -48,6 +48,8 @@
 }
 
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSArray *selection; // @synthesize selection=_selection;
 @property(nonatomic, getter=isReadonly) BOOL readonly; // @synthesize readonly=_readonly;
@@ -56,11 +58,9 @@
 @property(nonatomic) __weak id <SKSceneEditControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) SKSceneOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain) SKInputView *inputView; // @synthesize inputView=_inputView;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (MISSING_TYPE *)_snapItem:(struct NSObject *)arg1 forScalingWithTouchLocation:(BOOL)arg2 withScaleBase:(BOOL)arg3 scaleXAxis:scaleYAxis:evaluateXAxis:evaluateYAxis: /* Error: Ran out of types for this method. */;
+- (MISSING_TYPE *)_snapItem:(id)arg1 forScalingWithTouchLocation:(BOOL)arg2 withScaleBase:(BOOL)arg3 scaleXAxis:scaleYAxis:evaluateXAxis:evaluateYAxis: /* Error: Ran out of types for this method. */;
 - (struct CGPoint)_nearestGridPositionForPoint:(struct CGPoint)arg1 withGridSpacing:(double)arg2 forAxis:(int)arg3;
-- (void)_snapNodeForMovement:(struct NSObject *)arg1 lastPosition:(struct CGPoint)arg2;
+- (void)_snapNodeForMovement:(id)arg1 lastPosition:(struct CGPoint)arg2;
 - (void)_snapScreenPoint:(MISSING_TYPE **)arg1 withManipulationVector:(int)arg2 andStartPoint:(float)arg3 toAxis:(float)arg4 withSceneValue:(struct SnapResult *)arg5 andScreenValue:resultOut: /* Error: Ran out of types for this method. */;
 - (void)_snapPoint:(struct CGPoint)arg1 ofNode:(id)arg2 toGridWithSpacing:(double)arg3 withAxis:(int)arg4 resultOut:(struct SnapResult *)arg5;
 - (void)_snapNodeToPoint:(id)arg1 sceneRect:(struct CGRect)arg2 screenRect:(struct CGRect)arg3 targetValue:(float)arg4 targetScreenValue:(float)arg5 axis:(int)arg6 side:(int)arg7 resultOut:(struct SnapResult *)arg8;
@@ -87,11 +87,11 @@
 - (void)_rotateSelectedItemsBy:(double)arg1;
 - (void)_moveSelectedItemsBy:(struct CGPoint)arg1;
 - (void)_endAnchoring;
-- (void)_startAnchoringItem:(struct NSObject *)arg1;
+- (void)_startAnchoringItem:(id)arg1;
 - (void)_endScaling;
-- (void)_startScalingItem:(struct NSObject *)arg1;
+- (void)_startScalingItem:(id)arg1;
 - (void)_endRotation;
-- (void)_startRotatingItem:(struct NSObject *)arg1;
+- (void)_startRotatingItem:(id)arg1;
 - (void)_sendItemsToPasteboard:(id)arg1;
 - (void)_endTranslating;
 - (void)_startTranslatingItems:(id)arg1;
@@ -116,7 +116,7 @@
 - (void)copy:(id)arg1;
 - (void)keyUp:(id)arg1;
 - (void)keyDown:(id)arg1;
-- (id)getMenuForRightClick:(struct NSObject *)arg1;
+- (id)getMenuForRightClick:(id)arg1;
 - (struct CGPoint)getViewCenterInScene;
 - (void)inputView:(id)arg1 multiTouchEnded:(id)arg2 location:(struct CGPoint)arg3;
 - (void)inputView:(id)arg1 multiTouchMoved:(id)arg2 location:(struct CGPoint)arg3;
@@ -134,9 +134,9 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
-- (void)_toggleSelectItem:(struct NSObject *)arg1;
+- (void)_toggleSelectItem:(id)arg1;
 - (void)_deselectItems:(id)arg1;
-- (void)_deselectItem:(struct NSObject *)arg1;
+- (void)_deselectItem:(id)arg1;
 - (void)_addNodesToSelection:(id)arg1;
 @property(readonly, nonatomic) NSArray *scalableSelection; // @synthesize scalableSelection=_scalableSelection;
 @property(readonly, nonatomic) NSArray *rotatableSelection; // @synthesize rotatableSelection=_rotatableSelection;

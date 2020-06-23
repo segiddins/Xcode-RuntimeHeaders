@@ -15,9 +15,9 @@
 }
 
 + (void)registerNibWithOutlineView:(id)arg1 forIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsPointerAnnotationView; // @synthesize showsPointerAnnotationView=_showsPointerAnnotationView;
 @property(retain) NSView *pointerAnnotationView; // @synthesize pointerAnnotationView=_pointerAnnotationView;
-- (void).cxx_destruct;
 - (void)_updatePointerAnnotationViewFrame;
 - (void)_updateInstructionPointerAnnotation;
 - (void)setFrameSize:(struct CGSize)arg1;

@@ -14,9 +14,9 @@
     DVTFilePath *_profilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *profilePath; // @synthesize profilePath=_profilePath;
 @property(nonatomic) BOOL wantsFileProxy; // @synthesize wantsFileProxy=_wantsFileProxy;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 
 @end

@@ -17,9 +17,9 @@
     DVTLocale *_legacyLocalization;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) DVTLocale *legacyLocalization; // @synthesize legacyLocalization=_legacyLocalization;
 @property(readonly) IDEUpgradeContext<Xcode3UpgradeContext> *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_presentErrors:(id)arg1;
 - (void)_ugpradeLegacyLocalizationForProject:(id)arg1 workspaceTabController:(id)arg2 task:(id)arg3;
 - (void)upgradeWorkspace:(id)arg1 withTasks:(id)arg2;

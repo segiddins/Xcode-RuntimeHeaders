@@ -10,6 +10,7 @@
 
 @interface IDEActivityLogUnitTestSection : IDEActivityLogSection
 {
+    BOOL _wasSkipped;
     NSString *_durationString;
     NSString *_testsPassedString;
     NSString *_summaryString;
@@ -18,6 +19,7 @@
     NSString *_performanceTestOutputString;
     unsigned long long _testsPassedCount;
     unsigned long long _testsCount;
+    unsigned long long _testsSkippedCount;
     unsigned long long _unexpectedFailuresCount;
     double _duration;
     NSString *_runnablePath;
@@ -29,10 +31,13 @@
 + (Class)logRecorderClass;
 + (id)defaultLogSectionDomainType;
 + (id)newWithDomainType:(id)arg1 title:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *runnableUTI; // @synthesize runnableUTI=_runnableUTI;
 @property(copy) NSString *runnablePath; // @synthesize runnablePath=_runnablePath;
+@property BOOL wasSkipped; // @synthesize wasSkipped=_wasSkipped;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property unsigned long long unexpectedFailuresCount; // @synthesize unexpectedFailuresCount=_unexpectedFailuresCount;
+@property unsigned long long testsSkippedCount; // @synthesize testsSkippedCount=_testsSkippedCount;
 @property unsigned long long testsCount; // @synthesize testsCount=_testsCount;
 @property unsigned long long testsPassedCount; // @synthesize testsPassedCount=_testsPassedCount;
 @property(copy) NSString *performanceTestOutputString; // @synthesize performanceTestOutputString=_performanceTestOutputString;
@@ -40,13 +45,12 @@
 @property(copy) NSString *suiteName; // @synthesize suiteName=_suiteName;
 @property(copy) NSString *summaryString; // @synthesize summaryString=_summaryString;
 @property(copy) NSString *testsPassedString; // @synthesize testsPassedString=_testsPassedString;
-- (void).cxx_destruct;
 @property(readonly) IDETestIdentifier *testIdentifier;
 - (void)dvt_writeToSerializer:(id)arg1;
 - (id)dvt_initFromDeserializer:(id)arg1;
 @property(readonly, copy) NSString *durationString; // @synthesize durationString=_durationString;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTestsPassedString:(id)arg1 duration:(double)arg2 summaryString:(id)arg3 suiteName:(id)arg4 testName:(id)arg5 performanceTestOutputString:(id)arg6 runnablePath:(id)arg7 runnableUTI:(id)arg8 sectionType:(long long)arg9 domainType:(id)arg10 title:(id)arg11 subtitle:(id)arg12 location:(id)arg13 signature:(id)arg14 timeStartedRecording:(double)arg15 timeStoppedRecording:(double)arg16 subsections:(id)arg17 text:(id)arg18 messages:(id)arg19 wasCancelled:(BOOL)arg20 wasFetchedFromCache:(BOOL)arg21 commandDetailDescription:(id)arg22 resultCode:(long long)arg23 uniqueIdentifier:(id)arg24 localizedResultString:(id)arg25 xcbuildSignature:(id)arg26;
+- (id)initWithTestsPassedString:(id)arg1 wasSkipped:(BOOL)arg2 duration:(double)arg3 summaryString:(id)arg4 suiteName:(id)arg5 testName:(id)arg6 performanceTestOutputString:(id)arg7 runnablePath:(id)arg8 runnableUTI:(id)arg9 sectionType:(long long)arg10 domainType:(id)arg11 title:(id)arg12 subtitle:(id)arg13 location:(id)arg14 signature:(id)arg15 timeStartedRecording:(double)arg16 timeStoppedRecording:(double)arg17 subsections:(id)arg18 text:(id)arg19 messages:(id)arg20 wasCancelled:(BOOL)arg21 wasFetchedFromCache:(BOOL)arg22 commandDetailDescription:(id)arg23 resultCode:(long long)arg24 uniqueIdentifier:(id)arg25 localizedResultString:(id)arg26 xcbuildSignature:(id)arg27;
 - (id)initUnitTestWorkerGroupWithTitle:(id)arg1 subtitle:(id)arg2 runnablePath:(id)arg3 runnableUTI:(id)arg4;
 - (id)initUnitTestWithTitle:(id)arg1 location:(id)arg2;
 - (void)buildStrings;

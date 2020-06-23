@@ -15,9 +15,9 @@
 }
 
 + (id)purposeWithOID:(id)arg1 certificateTypeIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *certificateTypeIdentifier; // @synthesize certificateTypeIdentifier=_certificateTypeIdentifier;
 @property(readonly) NSString *oid; // @synthesize oid=_oid;
-- (void).cxx_destruct;
 
 @end
 

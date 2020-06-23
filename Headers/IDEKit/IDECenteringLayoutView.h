@@ -13,8 +13,8 @@
     NSView *_centeredView;
 }
 
-@property(retain, nonatomic) NSView *centeredView; // @synthesize centeredView=_centeredView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *centeredView; // @synthesize centeredView=_centeredView;
 - (void)layoutBottomUp;
 
 @end

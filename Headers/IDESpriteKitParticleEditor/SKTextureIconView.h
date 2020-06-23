@@ -14,9 +14,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

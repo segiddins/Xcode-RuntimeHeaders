@@ -30,6 +30,7 @@
     id <IBDeviceBarGroupViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IBDeviceBarGroupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id selectedConfiguration; // @synthesize selectedConfiguration=_selectedConfiguration;
 @property(copy, nonatomic) NSString *groupTitle; // @synthesize groupTitle=_groupTitle;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSAttributedString *contentAttributedString; // @synthesize contentAttributedString=_contentAttributedString;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) CDUnknownBlockType selectionChangedBlock; // @synthesize selectionChangedBlock=_selectionChangedBlock;
-- (void).cxx_destruct;
 - (void)restoreConfiguration:(id)arg1 comparisonBlock:(CDUnknownBlockType)arg2;
 - (void)fillStack;
 - (void)_turnOffAllButtonsInStackview:(id)arg1 except:(id)arg2;

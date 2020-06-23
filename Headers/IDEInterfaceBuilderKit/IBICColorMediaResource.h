@@ -19,9 +19,9 @@
 + (id)generateContentWithContext:(id)arg1;
 + (id)generateIconWithContext:(id)arg1;
 + (id)resourceWithColorSetRep:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *variantSetName; // @synthesize variantSetName=_variantSetName;
 @property(retain, nonatomic) IBICColorSetRep *colorSetRep; // @synthesize colorSetRep=_colorSetRep;
-- (void).cxx_destruct;
 - (id)detailViewAlternateWithTitle:(id)arg1;
 - (BOOL)needsContentForDetailViewAlternate;
 - (long long)compareForVariantMatching:(id)arg1;

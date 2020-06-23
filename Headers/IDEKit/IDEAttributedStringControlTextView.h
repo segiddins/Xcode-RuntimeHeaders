@@ -20,8 +20,8 @@
     NSString *_placeholder;
 }
 
-@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (void)didChangeText;
 - (void)drawViewBackgroundInRect:(struct CGRect)arg1;
 - (void)changeColor:(id)arg1;

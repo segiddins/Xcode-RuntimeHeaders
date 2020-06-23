@@ -13,8 +13,8 @@
     NSButton *_enabledCheckbox;
 }
 
-@property(retain) NSButton *enabledCheckbox; // @synthesize enabledCheckbox=_enabledCheckbox;
 - (void).cxx_destruct;
+@property(retain) NSButton *enabledCheckbox; // @synthesize enabledCheckbox=_enabledCheckbox;
 
 @end
 

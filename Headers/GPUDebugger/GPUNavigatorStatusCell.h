@@ -6,27 +6,14 @@
 
 #import <IDEKit/IDENavigatorStatusCell.h>
 
-@class NSLayoutManager, NSTextContainer, NSTextStorage;
-
 __attribute__((visibility("hidden")))
 @interface GPUNavigatorStatusCell : IDENavigatorStatusCell
 {
-    struct CGSize attributedStringSize;
-    BOOL hasString;
-    NSTextContainer *textContainer;
-    NSTextStorage *textStorage;
-    NSLayoutManager *layoutManager;
-    struct _NSRange glyphRange;
 }
 
-- (void).cxx_destruct;
 - (void)drawTextStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct CGSize)_cellTextSize;
-- (void)setAttributedStringValue:(id)arg1;
-- (void)setStringValue:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)redraw;
 - (void)_drawStatusStringInPathRect:(struct CGRect)arg1 view:(id)arg2;
+- (void)setTitle:(id)arg1;
 - (id)initWithType:(int)arg1;
 
 @end

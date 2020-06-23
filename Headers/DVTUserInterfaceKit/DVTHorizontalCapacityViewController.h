@@ -17,12 +17,12 @@
     NSView *_segmentsLabelView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *segmentsLabelView; // @synthesize segmentsLabelView=_segmentsLabelView;
 @property __weak NSTextField *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property __weak NSTextField *leftLabel; // @synthesize leftLabel=_leftLabel;
 @property(copy) NSString *rightLabelString; // @synthesize rightLabelString=_rightLabelString;
 @property(copy) NSString *leftLabelString; // @synthesize leftLabelString=_leftLabelString;
-- (void).cxx_destruct;
 - (void)_recreateAndAddLabelsForSegments;
 - (void)setSegments:(id)arg1;
 - (void)primitiveInvalidate;

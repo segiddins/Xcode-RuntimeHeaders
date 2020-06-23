@@ -14,9 +14,9 @@
     NSArray *_userDefinedRuntimeAttributes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float orderPriority; // @synthesize orderPriority=_orderPriority;
 @property(copy, nonatomic) NSArray *userDefinedRuntimeAttributes; // @synthesize userDefinedRuntimeAttributes=_userDefinedRuntimeAttributes;
-- (void).cxx_destruct;
 - (id)archiveConnection;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

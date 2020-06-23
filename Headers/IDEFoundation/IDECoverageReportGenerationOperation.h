@@ -25,6 +25,7 @@
 
 + (id)coverageErrorsLogSectionDomainType;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(retain, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 @property long long progress; // @synthesize progress=_progress;
@@ -34,7 +35,6 @@
 @property(retain) DVTFilePath *coverageReportDestinationPath; // @synthesize coverageReportDestinationPath=_coverageReportDestinationPath;
 @property(retain, nonatomic) NSArray *buildableInfos; // @synthesize buildableInfos=_buildableInfos;
 @property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 - (id)initWithBuildableInfos:(id)arg1 coverageReportDestinationPath:(id)arg2 coverageArchiveDestinationPath:(id)arg3 errorLog:(id)arg4 profileFilePath:(id)arg5;

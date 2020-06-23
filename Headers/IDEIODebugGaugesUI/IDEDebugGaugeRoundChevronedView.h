@@ -14,9 +14,9 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long chevronDirection; // @synthesize chevronDirection=_chevronDirection;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

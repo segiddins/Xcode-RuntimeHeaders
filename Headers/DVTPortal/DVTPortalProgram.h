@@ -29,6 +29,7 @@
 + (id)_portalIdentifierToPortalProgramMap;
 + (id)_platformsFromExtension:(id)arg1 primaryPlatform:(id *)arg2;
 + (id)portalPrograms;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *certificatePurposes; // @synthesize certificatePurposes=_certificatePurposes;
 @property(readonly, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly, nonatomic) DVTPlatform *primaryPlatform; // @synthesize primaryPlatform=_primaryPlatform;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *developerAPIIdentifier; // @synthesize developerAPIIdentifier=_developerAPIIdentifier;
 @property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

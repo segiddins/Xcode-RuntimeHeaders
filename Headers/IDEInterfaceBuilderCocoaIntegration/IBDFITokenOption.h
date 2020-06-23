@@ -20,12 +20,12 @@
 }
 
 + (id)tokenOptionWithEditingString:(id)arg1 displayString:(id)arg2 menuString:(id)arg3 hidden:(BOOL)arg4 label:(BOOL)arg5;
+- (void).cxx_destruct;
 @property BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property BOOL isLabel; // @synthesize isLabel=_isLabel;
 @property(copy, nonatomic) NSString *menuString; // @synthesize menuString=_menuString;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(copy, nonatomic) NSString *editingString; // @synthesize editingString=_editingString;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEditingString:(id)arg1 displayString:(id)arg2 menuString:(id)arg3 hidden:(BOOL)arg4 label:(BOOL)arg5;

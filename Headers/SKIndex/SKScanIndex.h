@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logAspect;
-@property(nonatomic) __weak id <SKScanIndexDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKScanIndexDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invalidate;
 - (void)noteOutOfDateFile:(id)arg1;
 - (id)_getScannerForFile:(id)arg1 error:(id *)arg2;

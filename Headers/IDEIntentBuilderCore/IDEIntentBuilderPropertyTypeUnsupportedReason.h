@@ -15,10 +15,10 @@
     NSArray *_tokens;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCode:(id)arg1 formatString:(id)arg2 tokens:(id)arg3;
 

@@ -30,8 +30,8 @@
 + (id)archivedContentWithArchive:(id)arg1;
 + (BOOL)fillArchivedContentInfoInArchiveInfoDictionary:(id)arg1 forContentInArchiveProductsDirectory:(id)arg2;
 + (id)contentClasses;
-@property(readonly) __weak IDEArchive *archive; // @synthesize archive=_archive;
 - (void).cxx_destruct;
+@property(readonly) __weak IDEArchive *archive; // @synthesize archive=_archive;
 @property(readonly) NSString *teamIdentifier;
 @property(readonly) NSString *shortBundleVersionString;
 @property(readonly) NSString *bundleVersion;

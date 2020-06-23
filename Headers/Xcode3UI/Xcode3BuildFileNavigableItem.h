@@ -16,8 +16,8 @@
 
 + (id)keyPathsForValuesAffectingContentDocumentLocation;
 + (id)keyPathsForValuesAffectingImage;
-@property(retain) IDENavigableItem *realNavigableItem; // @synthesize realNavigableItem=_realNavigableItem;
 - (void).cxx_destruct;
+@property(retain) IDENavigableItem *realNavigableItem; // @synthesize realNavigableItem=_realNavigableItem;
 - (void)primitiveInvalidate;
 - (id)textColor;
 - (id)contentDocumentLocation;

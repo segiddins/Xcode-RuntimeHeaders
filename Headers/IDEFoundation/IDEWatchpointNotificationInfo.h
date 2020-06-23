@@ -18,13 +18,13 @@
     NSString *_thread;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *thread; // @synthesize thread=_thread;
 @property(readonly) NSString *newValue; // @synthesize newValue=_newValue;
 @property(readonly) NSString *oldValue; // @synthesize oldValue=_oldValue;
 @property(readonly) NSString *expression; // @synthesize expression=_expression;
 @property(readonly) NSString *watchpointID; // @synthesize watchpointID=_watchpointID;
 @property(readonly) IDEWatchpoint *watchpoint; // @synthesize watchpoint=_watchpoint;
-- (void).cxx_destruct;
 - (id)consoleOutputStyleDisplayString;
 - (id)titleStyleDisplayString;
 - (id)initWithWatchpoint:(id)arg1 watchpointID:(id)arg2 expression:(id)arg3 oldValue:(id)arg4 newValue:(id)arg5 thread:(id)arg6;

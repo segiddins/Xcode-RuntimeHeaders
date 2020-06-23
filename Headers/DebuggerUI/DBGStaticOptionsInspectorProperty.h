@@ -16,11 +16,11 @@
     NSDictionary *_titleByValue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *titleByValue; // @synthesize titleByValue=_titleByValue;
 @property(retain) NSString *staticText; // @synthesize staticText=_staticText;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)_configureEnumeratedOptions;
 - (void)_extractOptionGroupsFromElement:(id)arg1 intoDictionary:(id)arg2;
 - (void)_extractOptionsFromElement:(id)arg1 intoDictionary:(id)arg2;

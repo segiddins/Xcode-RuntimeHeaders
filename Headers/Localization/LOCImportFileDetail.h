@@ -20,6 +20,7 @@
 }
 
 + (id)importFileDetailWithPath:(id)arg1 importPath:(id)arg2 sourceLocale:(id)arg3 targetLocale:(id)arg4 glossary:(id)arg5 sourceFile:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly) LOCFileDescription *sourceFile; // @synthesize sourceFile=_sourceFile;
 @property(readonly) LOCPropertyInternalGlossary *glossary; // @synthesize glossary=_glossary;
 @property(readonly) NSDictionary *translations; // @synthesize translations=_translations;
@@ -27,7 +28,6 @@
 @property(readonly) NSString *sourceLocale; // @synthesize sourceLocale=_sourceLocale;
 @property(readonly) NSString *importPath; // @synthesize importPath=_importPath;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)initWithPath:(id)arg1 importPath:(id)arg2 sourceLocale:(id)arg3 targetLocale:(id)arg4 glossary:(id)arg5 sourceFile:(id)arg6;
 
 @end

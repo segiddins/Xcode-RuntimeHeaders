@@ -15,11 +15,12 @@
     BOOL _supportsProcessorUsageLogs;
     BOOL _supportsAnalyticsMetricsData;
     BOOL _supportedByNotaryService;
-    BOOL _wantsOnDiskPlatformDisambiguation;
     NSString *_identifier;
     NSString *_archiveDescription;
     long long _sortOrder;
     long long _deprecatedIdentifier;
+    NSString *_platformDisambiguationString;
+    NSString *_productVersionSupportedDeviceTypesKey;
     NSString *_supportedOSVersionStringFormat;
     NSString *_analyticsPointInspectableOSVersionDescriptor;
     NSSet *_overridingDeviceTypes;
@@ -32,7 +33,7 @@
 + (id)productCategoryForIdentifier:(id)arg1;
 + (id)productCategoryForPlatformSDKIdentifier:(id)arg1;
 + (id)productCategories;
-@property(nonatomic) BOOL wantsOnDiskPlatformDisambiguation; // @synthesize wantsOnDiskPlatformDisambiguation=_wantsOnDiskPlatformDisambiguation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userDescriptionWhenNoPlatformExists; // @synthesize userDescriptionWhenNoPlatformExists=_userDescriptionWhenNoPlatformExists;
 @property(readonly) BOOL supportedByNotaryService; // @synthesize supportedByNotaryService=_supportedByNotaryService;
 @property(readonly) BOOL supportsAnalyticsMetricsData; // @synthesize supportsAnalyticsMetricsData=_supportsAnalyticsMetricsData;
@@ -41,20 +42,20 @@
 @property(readonly) BOOL analyticsPointInspectableShouldShowDeviceTypes; // @synthesize analyticsPointInspectableShouldShowDeviceTypes=_analyticsPointInspectableShouldShowDeviceTypes;
 @property(readonly) NSString *analyticsPointInspectableOSVersionDescriptor; // @synthesize analyticsPointInspectableOSVersionDescriptor=_analyticsPointInspectableOSVersionDescriptor;
 @property(readonly) NSString *supportedOSVersionStringFormat; // @synthesize supportedOSVersionStringFormat=_supportedOSVersionStringFormat;
+@property(readonly) NSString *productVersionSupportedDeviceTypesKey; // @synthesize productVersionSupportedDeviceTypesKey=_productVersionSupportedDeviceTypesKey;
+@property(readonly) NSString *platformDisambiguationString; // @synthesize platformDisambiguationString=_platformDisambiguationString;
 @property(readonly) BOOL wantsRoundedIcons; // @synthesize wantsRoundedIcons=_wantsRoundedIcons;
 @property(readonly) long long deprecatedIdentifier; // @synthesize deprecatedIdentifier=_deprecatedIdentifier;
 @property(readonly) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) NSString *archiveDescription; // @synthesize archiveDescription=_archiveDescription;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
-@property(readonly) NSString *platformDisambiguationString;
 @property(readonly) DVTPlatform *platform;
 - (id)platformForCategoryIdentifier:(id)arg1;
 @property(readonly) NSString *userDescriptionPluralForm;
 @property(readonly) NSString *userDescription;
-- (id)initWithIdentifier:(id)arg1 userDescriptionWhenNoPlatformExists:(id)arg2 archiveDescription:(id)arg3 sortOrder:(long long)arg4 deprecatedIdentifier:(long long)arg5 wantsRoundedIcons:(BOOL)arg6 supportedOSVersionStringFormat:(id)arg7 analyticsPointInspectableOSVersionDescriptor:(id)arg8 overridingDeviceTypes:(id)arg9 wantsOnDiskPlatformDisambiguation:(BOOL)arg10 analyticsPointInspectableShouldShowDeviceTypes:(BOOL)arg11 supportsProcessorUsageLogs:(BOOL)arg12 supportsAnalyticsMetricsData:(BOOL)arg13 supportedByNotaryService:(BOOL)arg14;
+- (id)initWithIdentifier:(id)arg1 userDescriptionWhenNoPlatformExists:(id)arg2 archiveDescription:(id)arg3 sortOrder:(long long)arg4 deprecatedIdentifier:(long long)arg5 wantsRoundedIcons:(BOOL)arg6 supportedOSVersionStringFormat:(id)arg7 analyticsPointInspectableOSVersionDescriptor:(id)arg8 overridingDeviceTypes:(id)arg9 platformDisambiguationString:(id)arg10 productVersionSupportedDeviceTypesKey:(id)arg11 analyticsPointInspectableShouldShowDeviceTypes:(BOOL)arg12 supportsProcessorUsageLogs:(BOOL)arg13 supportsAnalyticsMetricsData:(BOOL)arg14 supportedByNotaryService:(BOOL)arg15;
 - (id)platformDisambiguationStringWithPrefixString:(id)arg1;
 
 @end

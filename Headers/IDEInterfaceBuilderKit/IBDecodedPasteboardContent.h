@@ -20,8 +20,8 @@
 
 + (void)initialize;
 + (id)contentWithDocument:(id)arg1 topLevelObjects:(id)arg2 decodedOIDToOriginalOIDMap:(id)arg3;
-@property(readonly) NSDictionary *decodedOIDToOriginalOIDMap; // @synthesize decodedOIDToOriginalOIDMap=_decodedOIDToOriginalOIDMap;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *decodedOIDToOriginalOIDMap; // @synthesize decodedOIDToOriginalOIDMap=_decodedOIDToOriginalOIDMap;
 - (void)primitiveInvalidate;
 - (id)objectInDestinationDocumentForObject:(id)arg1 inSourceDocument:(id)arg2;
 - (id)identifiedTopLevelObjectsUsingStrategy:(long long)arg1;

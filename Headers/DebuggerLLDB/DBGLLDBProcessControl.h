@@ -17,12 +17,12 @@
     DVTTextDocumentLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTTextDocumentLocation *location; // @synthesize location=_location;
 @property(readonly) unsigned long long argument; // @synthesize argument=_arg0;
 @property(readonly) DBGLLDBThread *thread; // @synthesize thread=_thread;
 @property(readonly) int scope; // @synthesize scope=_scope;
 @property(readonly) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)initWithAction:(int)arg1 scope:(int)arg2 thread:(id)arg3 arg:(unsigned long long)arg4 location:(id)arg5;
 - (id)initWithAction:(int)arg1 scope:(int)arg2 thread:(id)arg3 arg:(unsigned long long)arg4;
 

@@ -15,8 +15,8 @@
     NSArray *_timeSeriesData;
 }
 
-@property(readonly) NSArray *timeSeriesData; // @synthesize timeSeriesData=_timeSeriesData;
 - (void).cxx_destruct;
+@property(readonly) NSArray *timeSeriesData; // @synthesize timeSeriesData=_timeSeriesData;
 - (id)JSONRepresentation;
 
 // Remaining properties

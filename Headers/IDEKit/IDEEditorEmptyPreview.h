@@ -16,11 +16,11 @@
     NSButton *_hideButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *hideButton; // @synthesize hideButton=_hideButton;
 @property(retain) NSTextField *line2TextField; // @synthesize line2TextField=_line2TextField;
 @property(retain) NSTextField *line1TextField; // @synthesize line1TextField=_line1TextField;
 @property(retain) IDEEditorAreaSplit *editorAreaSplit; // @synthesize editorAreaSplit=_editorAreaSplit;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)hideCanvas:(id)arg1;
 - (void)loadView;

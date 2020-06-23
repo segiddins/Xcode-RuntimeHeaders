@@ -13,8 +13,8 @@
     NSProgressIndicator *_progressIndicator;
 }
 
-@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 - (void).cxx_destruct;
+@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 - (void)viewDidLoad;
 
 @end

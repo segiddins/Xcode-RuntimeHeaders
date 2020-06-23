@@ -16,11 +16,11 @@
     NSColor *_tableBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *tableBackgroundColor; // @synthesize tableBackgroundColor=_tableBackgroundColor;
 @property(nonatomic) BOOL wantsDistinguishedHeaderView; // @synthesize wantsDistinguishedHeaderView=_wantsDistinguishedHeaderView;
 @property(retain, nonatomic) NSColor *tableRowGridColor; // @synthesize tableRowGridColor=_tableRowGridColor;
 @property(nonatomic) BOOL wantsFileProxy; // @synthesize wantsFileProxy=_wantsFileProxy;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,6 +16,8 @@
     MISSING_TYPE *_edgeEdge;
     MISSING_TYPE *_facePlunge;
     MISSING_TYPE *_edgeCut;
+    MISSING_TYPE *_coincident;
+    MISSING_TYPE *_sidedFace;
 }
 
 @end

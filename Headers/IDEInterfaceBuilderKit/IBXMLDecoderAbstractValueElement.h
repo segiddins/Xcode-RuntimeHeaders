@@ -14,8 +14,8 @@
     NSString *_key;
 }
 
-@property(readonly) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(readonly) NSString *key; // @synthesize key=_key;
 - (id)interpretedBytesValue;
 @property(readonly) double interpretedDoubleValue;
 @property(readonly) float interpretedFloatValue;

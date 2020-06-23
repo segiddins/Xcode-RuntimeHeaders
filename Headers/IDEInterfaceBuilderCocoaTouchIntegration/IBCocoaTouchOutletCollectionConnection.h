@@ -17,9 +17,9 @@
 + (BOOL)isOrderedRelativeToUniformInstances;
 + (BOOL)isObjectValidOutletCollectionDestination:(id)arg1;
 + (BOOL)isObjectValidOutletCollectionSource:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastKnownRuntimeCollectionName; // @synthesize lastKnownRuntimeCollectionName=_lastKnownRuntimeCollectionName;
 @property(nonatomic) BOOL addsContentToExistingCollection; // @synthesize addsContentToExistingCollection=_addsContentToExistingCollection;
-- (void).cxx_destruct;
 - (id)_descriptionSubstringForLabel;
 - (BOOL)canHaveDestinationSeparatedWithSeparationType:(int)arg1;
 - (BOOL)canHaveSourceSeparatedWithSeparationType:(int)arg1;

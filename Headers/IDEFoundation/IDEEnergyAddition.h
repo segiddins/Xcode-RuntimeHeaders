@@ -24,6 +24,7 @@
 
 + (void)initialize;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int selectedPID; // @synthesize selectedPID=_selectedPID;
 @property(retain, nonatomic) DVTSysmonBridge *sysmonBridge; // @synthesize sysmonBridge=_sysmonBridge;
 @property(retain, nonatomic) id launchSessionObservationToken2; // @synthesize launchSessionObservationToken2=_launchSessionObservationToken2;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDEDataMatrix *metricsOverTime; // @synthesize metricsOverTime=_metricsOverTime;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)bridgeHasNewProcessInformation:(id)arg1;
 - (void)_handlePIDChange:(int)arg1;

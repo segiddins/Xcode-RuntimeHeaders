@@ -25,6 +25,7 @@
 + (BOOL)ibExistsAtRuntime;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfRows;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy, nonatomic) NSArray *cells; // @synthesize cells=_cells;
 @property(copy, nonatomic) NSString *footerTitle; // @synthesize footerTitle=_footerTitle;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) IBUIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) IBUIView *headerView; // @synthesize headerView=_headerView;
 @property __weak IBUITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (void)tableViewCellDidChangeBackgroundColor:(id)arg1;

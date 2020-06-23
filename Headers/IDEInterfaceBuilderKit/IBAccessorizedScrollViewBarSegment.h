@@ -23,12 +23,12 @@
 + (id)segmentWithTag:(long long)arg1 image:(id)arg2 menu:(id)arg3;
 + (id)segmentWithTag:(long long)arg1 menu:(id)arg2;
 + (id)segmentWithTag:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long tag; // @synthesize tag=_tag;
 @property(readonly) NSMenu *menu; // @synthesize menu=_menu;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *toolTip; // @synthesize toolTip=_toolTip;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(long long)arg3 menu:(id)arg4 toolTip:(id)arg5;
 
 @end

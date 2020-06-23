@@ -4,12 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEKit/IDEAuxiliaryEditorContext.h>
+#import <IDEKit/IDEAuxiliaryEditorProvider.h>
 
 @class MISSING_TYPE, NSSet;
 
 __attribute__((visibility("hidden")))
-@interface _TtC5UVKit17EditorCoordinator : IDEAuxiliaryEditorContext
+@interface _TtC5UVKit17EditorCoordinator : IDEAuxiliaryEditorProvider
 {
     MISSING_TYPE *editorViewController;
     MISSING_TYPE *editorStateSnapshotProvider;
@@ -22,10 +22,12 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *activeDocumentScene;
     MISSING_TYPE *workspaceSceneObservationToken;
     MISSING_TYPE *previewInstanceContainer;
-    MISSING_TYPE *pinnedPreviewFile;
+    MISSING_TYPE *_pinnedPreviewFile;
     MISSING_TYPE *workspaceLoadingToken;
     MISSING_TYPE *workspaceRunContextToken;
+    MISSING_TYPE *makeSelectedPreviewLiveObserver;
     MISSING_TYPE *isActivelyDragging;
+    MISSING_TYPE *hasPreviouslyRestoredFromState;
     MISSING_TYPE *pinningSource;
     MISSING_TYPE *pinningSourceNoPreviewUpdateRequest;
 }
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isShowing;
 - (void)willClosePrincipalEditor:(id)arg1;
 - (void)toggleThunkingEnabled:(id)arg1;
+- (void)toggleDeviceBezels:(id)arg1;
 - (void)toggleViewBoundaries:(id)arg1;
 - (void)refreshPreviews:(id)arg1;
 - (void)primitiveInvalidate;

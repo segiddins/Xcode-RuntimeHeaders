@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
 @property(retain, nonatomic) id <IDEProvisioningIssueResolverViewController> userActionViewController; // @synthesize userActionViewController=_userActionViewController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)windowDidLoad;
 - (id)initWithUserAction:(id)arg1;

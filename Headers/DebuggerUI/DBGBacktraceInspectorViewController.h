@@ -19,9 +19,9 @@
     id <DBGBacktraceInspectorViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DBGBacktraceInspectorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL stackCompressionEnabled; // @synthesize stackCompressionEnabled=_stackCompressionEnabled;
-- (void).cxx_destruct;
 - (void)frameViewController:(id)arg1 displaySourceForStackFrame:(id)arg2;
 - (void)backtraceHeaderView:(id)arg1 didChangeCompressionState:(long long)arg2;
 - (void)disableStackCompressionButton;

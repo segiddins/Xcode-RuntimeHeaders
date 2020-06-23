@@ -16,10 +16,10 @@
 }
 
 + (id)uniqueSeparatorItem;
+- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) Class fileSourceClass; // @synthesize fileSourceClass=_fileSourceClass;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToBatchFindSourceRuleEditorCriterion:(id)arg1;

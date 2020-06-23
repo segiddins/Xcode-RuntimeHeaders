@@ -15,8 +15,8 @@
 }
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
-@property(nonatomic) long long progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) long long progress; // @synthesize progress=_progress;
 - (BOOL)hasDisplayableStatus;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;

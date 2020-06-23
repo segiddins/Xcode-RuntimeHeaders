@@ -17,8 +17,8 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(retain) NSMenu *mainMenu; // @synthesize mainMenu=_mainMenu;
 - (void).cxx_destruct;
+@property(retain) NSMenu *mainMenu; // @synthesize mainMenu=_mainMenu;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ibMustCompileWithCustomObjectSemanticsInDocument:(id)arg1;
@@ -29,6 +29,7 @@
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
+- (Class)ibEditorClass;
 - (BOOL)ibCanBecomeEntryPointForIndicator:(id)arg1 inStoryboard:(id)arg2;
 @property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (id)ibShortDisplayName;

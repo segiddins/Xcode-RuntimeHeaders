@@ -18,12 +18,12 @@
 + (id)validProfilesFromProfiles:(id)arg1 withToolchain:(id)arg2 errorStrings:(id *)arg3;
 + (BOOL)isValidProfData:(id)arg1 withToolchain:(id)arg2 errorString:(id *)arg3;
 + (BOOL)_mergeOptimizationProfiles:(id)arg1 aggregateFile:(id)arg2 toFileAtPath:(id)arg3 withToolchain:(id)arg4 returningError:(id *)arg5;
-+ (BOOL)_downloadProfiles:(id)arg1 fromDevice:(id)arg2 toDirectory:(id)arg3 error:(id *)arg4;
++ (BOOL)_downloadProfiles:(id)arg1 toDirectory:(id)arg2 error:(id *)arg3;
 + (BOOL)_prepareForDownloadingProfilesToDirectory:(id)arg1 placingMergedProfileAt:(id)arg2 error:(id *)arg3;
 + (id)logAspect;
 + (void)presentPGOResult:(id)arg1 inWorkspace:(id)arg2;
 + (BOOL)setupProfileGenerationForLaunchSession:(id)arg1 error:(id *)arg2;
-+ (BOOL)downloadProfiles:(id)arg1 fromDevice:(id)arg2 toDirectory:(id)arg3 placingMergedProfileAt:(id)arg4 addingMergedProfileToContainer:(id)arg5 usingToolchain:(id)arg6 warnings:(id)arg7 error:(id *)arg8;
++ (BOOL)downloadProfiles:(id)arg1 toDirectory:(id)arg2 placingMergedProfileAt:(id)arg3 addingMergedProfileToContainer:(id)arg4 usingToolchain:(id)arg5 warnings:(id)arg6 error:(id *)arg7;
 + (id)mergedProfilePathForBuildable:(id)arg1 buildParameters:(id)arg2 doingCodeCoverage:(BOOL)arg3;
 + (id)destinationDirectoryForDownloadedRuntimeProfilesForBuildable:(id)arg1 buildParameters:(id)arg2;
 + (id)relevantBuildablesForOptimizationProfileGenerationForSchemeCommand:(id)arg1 buildSchemeAction:(id)arg2;

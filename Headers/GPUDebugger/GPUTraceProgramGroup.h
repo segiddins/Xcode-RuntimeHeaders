@@ -15,8 +15,8 @@
     GPUTraceGroupItem *_relatedDisplayablesGroupItem;
 }
 
-@property(readonly, nonatomic) GPUTraceGroupItem *relatedDisplayablesGroupItem; // @synthesize relatedDisplayablesGroupItem=_relatedDisplayablesGroupItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GPUTraceGroupItem *relatedDisplayablesGroupItem; // @synthesize relatedDisplayablesGroupItem=_relatedDisplayablesGroupItem;
 - (id)APIItem;
 - (unsigned int)functionIndex;
 - (id)associatedDisplayableItem;

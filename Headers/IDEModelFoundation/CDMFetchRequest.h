@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingPredicate;
 + (id)keyPathsForValuesAffectingPredicateString;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(retain) CDMModel *model; // @synthesize model=_model;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSString *predicateString; // @synthesize predicateString=_predicateString;
 @property(retain, nonatomic) CDMEntity *entity; // @synthesize entity=_entity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)validateName:(id *)arg1 error:(id *)arg2;
 - (id)stringRepresentation;
 - (id)encodeXMLElement;

@@ -17,11 +17,11 @@
 }
 
 + (id)activityReportStringSegmentWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) id frontSeparator; // @synthesize frontSeparator=_frontSeparator;
 @property(readonly) id backSeparator; // @synthesize backSeparator=_backSeparator;
 @property(readonly) double priority; // @synthesize priority=_priority;
 @property(readonly) id stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToActivityReportStringSegment:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

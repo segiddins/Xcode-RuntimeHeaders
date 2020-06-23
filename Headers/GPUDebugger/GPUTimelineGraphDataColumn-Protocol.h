@@ -7,7 +7,6 @@
 @class NSArray, NSString;
 
 @protocol GPUTimelineGraphDataColumn
-- (NSString *)summaryOfValueAtPlane:(unsigned long long)arg1;
 - (BOOL)inactive;
 - (NSString *)label;
 - (id)representedObject;

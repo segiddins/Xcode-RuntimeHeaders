@@ -16,9 +16,9 @@
 }
 
 + (id)sharedBroker;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *activeHandlersQueue; // @synthesize activeHandlersQueue=_activeHandlersQueue;
 @property(retain, nonatomic) NSMutableDictionary *activeHandlers; // @synthesize activeHandlers=_activeHandlers;
-- (void).cxx_destruct;
 - (void)unregisterHandler:(id)arg1;
 - (void)registerHandler:(id)arg1;
 - (BOOL)canContinueServingRequestWithIdentifier:(id)arg1;

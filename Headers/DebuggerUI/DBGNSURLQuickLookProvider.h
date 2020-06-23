@@ -18,8 +18,8 @@
     int _loadedState;
 }
 
-@property int loadedState; // @synthesize loadedState=_loadedState;
 - (void).cxx_destruct;
+@property int loadedState; // @synthesize loadedState=_loadedState;
 - (void)previewView:(id)arg1 didLoadPreviewItem:(id)arg2;
 @property(readonly) NSURL *existingURLToOpen;
 - (void)cancelLoading;

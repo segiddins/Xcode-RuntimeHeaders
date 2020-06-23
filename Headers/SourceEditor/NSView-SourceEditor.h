@@ -6,9 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-#import <SourceEditor/_TtP12SourceEditor11DynamicItem_-Protocol.h>
-
-@interface NSView (SourceEditor) <_TtP12SourceEditor11DynamicItem_>
+@interface NSView (SourceEditor)
 - (void)layoutIfNeeded;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(nonatomic) struct CGAffineTransform transform;

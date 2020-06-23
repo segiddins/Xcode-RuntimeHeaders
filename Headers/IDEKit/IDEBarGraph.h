@@ -23,10 +23,10 @@
     double _barSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double barSpacing; // @synthesize barSpacing=_barSpacing;
 @property(nonatomic) double barWidth; // @synthesize barWidth=_barWidth;
 @property(nonatomic) BOOL showsNegativeValues; // @synthesize showsNegativeValues=_showsNegativeValues;
-- (void).cxx_destruct;
 - (id)imageForGraph:(id)arg1 entry:(id)arg2 inRect:(struct CGRect)arg3;
 - (id)colorForGraph:(id)arg1 entry:(id)arg2;
 - (void)userMouseExitedGraph:(id)arg1 event:(id)arg2;

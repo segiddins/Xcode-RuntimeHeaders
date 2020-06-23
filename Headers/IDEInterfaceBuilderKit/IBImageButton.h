@@ -39,6 +39,7 @@
 
 + (id)makeButtonsStartSharingRolloverState:(id)arg1;
 + (id)revealContentButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) CDStruct_c519178c hitTestInset; // @synthesize hitTestInset=_hitTestInset;
 @property(nonatomic) BOOL usesButtonCellStates; // @synthesize usesButtonCellStates=_usesButtonCellStates;
@@ -55,7 +56,6 @@
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) __weak id <IBImageButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawImage:(id)arg1 withOpacity:(double)arg2;
 - (struct CGSize)intrinsicContentSize;

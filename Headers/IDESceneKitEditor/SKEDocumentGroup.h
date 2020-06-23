@@ -23,9 +23,9 @@
 + (id)ske_attributeClassesOfInterestInEditorWithAvailability:(unsigned long long)arg1;
 + (unsigned long long)ske_availability;
 + (id)ske_memberClassDescriptionWithPlurality:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak SKESceneDocument *document; // @synthesize document=_document;
 @property(readonly) NSString *ske_referencePath; // @synthesize ske_referencePath;
-- (void).cxx_destruct;
 @property(readonly) IDETypeIdentifier *ideModelObjectTypeIdentifier;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 @property(readonly) NSArray *ske_overridesMembers;

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEFoundation/IDEBuildNoticeLogRecord-Protocol.h>
+
 @class DVTFileDataType, DVTFilePath, DVTFilePromise, IDEActivityLogObservableRecord, IDEEntityIdentifier, IDETypeIdentifier, NSString, NSURL;
 @protocol IDELogStoreManageable;
 
-@interface IDEActivityLogRecord : NSObject
+@interface IDEActivityLogRecord : NSObject <IDEBuildNoticeLogRecord>
 {
     BOOL _isImported;
     BOOL _disablesSourceIntegration;
@@ -24,13 +26,13 @@
 + (void)uncacheLogRecord:(id)arg1;
 + (void)cacheLogRecord:(id)arg1;
 + (id)cachedLogRecordWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *buildMetricsReportFilePath; // @synthesize buildMetricsReportFilePath=_buildMetricsReportFilePath;
 @property(readonly) BOOL hasTests; // @synthesize hasTests=_hasTests;
 @property(readonly) IDEEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(readonly) BOOL disablesSourceIntegration; // @synthesize disablesSourceIntegration=_disablesSourceIntegration;
 @property BOOL isImported; // @synthesize isImported=_isImported;
 @property(readonly) NSString *auxiliaryLogUniqueIdentifier; // @synthesize auxiliaryLogUniqueIdentifier=_auxiliaryLogUniqueIdentifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasTimelineData;
 @property(readonly) NSString *onDiskPath;
 @property(readonly) DVTFilePath *coverageArchiveFilePath;

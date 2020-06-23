@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     double _lastAccess;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *coveredFiles; // @synthesize coveredFiles=_coveredFiles;
 @property(copy, nonatomic) NSString *target; // @synthesize target=_target;
 @property(copy, nonatomic) DVTFilePath *mainFilePath; // @synthesize mainFilePath=_mainFilePath;
 @property double lastAccess; // @synthesize lastAccess=_lastAccess;
 @property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) IDEBoltIndexDatabase *database; // @synthesize database=_db;
-- (void).cxx_destruct;
 - (id)translateName:(id)arg1 ofSymbol:(id)arg2 atLocation:(id)arg3 toLanguageOfRef:(id)arg4 withCurrentFileContentDictionary:(id)arg5;
 - (id)parsedCodeCommentAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 forIndex:(id)arg3;
 - (id)impliedHeadersForModuleImportLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 forIndex:(id)arg3;

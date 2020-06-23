@@ -21,10 +21,10 @@
     NSMutableDictionary *_tempCaptureArchivePathsDict;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak DYGLExpert *expert; // @synthesize expert=_expert;
 @property(nonatomic) BOOL playbackRunning; // @synthesize playbackRunning;
 @property(readonly, nonatomic) NSMutableArray *experiments; // @synthesize experiments;
-- (void).cxx_destruct;
 - (void)_mockExperimentPerformOverrides:(id)arg1;
 - (id)_getMockExperimentDict;
 - (id)calculateFrameTime:(id)arg1;

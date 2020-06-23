@@ -13,8 +13,8 @@
     NSPopUpButton *_navigatorPopUpButton;
 }
 
-@property(retain) NSPopUpButton *navigatorPopUpButton; // @synthesize navigatorPopUpButton=_navigatorPopUpButton;
 - (void).cxx_destruct;
+@property(retain) NSPopUpButton *navigatorPopUpButton; // @synthesize navigatorPopUpButton=_navigatorPopUpButton;
 - (void)selectNavigator:(id)arg1;
 - (void)loadView;
 - (void)_synchronizePopUpButton;

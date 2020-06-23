@@ -17,10 +17,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) int slaveFD; // @synthesize slaveFD=_slaveFD;
 @property(readonly) NSString *slaveName; // @synthesize slaveName=_slaveName;
 @property(readonly) NSFileHandle *masterFileHandle; // @synthesize masterFileHandle=_masterFileHandle;
-- (void).cxx_destruct;
 @property(readonly) NSFileHandle *slaveFileHandle;
 - (BOOL)_configSlaveCounterpartWithError:(id *)arg1;
 - (BOOL)_openFirstAvailableMasterOwnsSlaveFileDescriptor:(BOOL)arg1 error:(id *)arg2;

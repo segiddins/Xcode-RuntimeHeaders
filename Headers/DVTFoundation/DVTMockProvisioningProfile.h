@@ -31,6 +31,7 @@
     DVTFilePath *_filePathMock;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *filePathMock; // @synthesize filePathMock=_filePathMock;
 @property(retain) NSString *appIdentifierNameMock; // @synthesize appIdentifierNameMock=_appIdentifierNameMock;
 @property(nonatomic) BOOL isActiveMock; // @synthesize isActiveMock=_isActiveMock;
@@ -50,11 +51,11 @@
 @property(retain) NSDate *expirationDateMock; // @synthesize expirationDateMock=_expirationDateMock;
 @property(retain) NSDate *creationDateMock; // @synthesize creationDateMock=_creationDateMock;
 @property(retain) NSArray *signingCertificatesMock; // @synthesize signingCertificatesMock=_signingCertificatesMock;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)longDescription;
 - (BOOL)matchesEntitlements:(id)arg1 nonMatchingKeys:(id *)arg2;
 - (BOOL)matchesBundleIdentifier:(id)arg1;
+- (BOOL)isGameCenterFeatureEnabled;
 - (id)appIdentifierEntitlement;
 - (BOOL)usesExplicitAppIdentifier;
 - (id)appIdentifierEntitlementWithoutPrefix;

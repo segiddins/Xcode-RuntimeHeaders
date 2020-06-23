@@ -18,8 +18,8 @@
 + (id)keyPathsForValuesAffectingPacketTunnelProvider;
 + (id)keyPathsForValuesAffectingContentFilterProvider;
 + (id)keyPathsForValuesAffectingAppProxyProvider;
-@property(retain, nonatomic) NSSet *networkExtensionCapabilities; // @synthesize networkExtensionCapabilities=_networkExtensionCapabilities;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *networkExtensionCapabilities; // @synthesize networkExtensionCapabilities=_networkExtensionCapabilities;
 - (id)coalescableWriteableKeyPathToDataSource;
 @property(nonatomic) BOOL dnsProxy; // @dynamic dnsProxy;
 - (void)_setDnsProxy:(BOOL)arg1;

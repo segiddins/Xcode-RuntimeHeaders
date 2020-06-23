@@ -16,9 +16,9 @@
     NSImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property BOOL hasDisplayableStatus; // @synthesize hasDisplayableStatus=_hasDisplayableStatus;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)initWithImageSize:(struct CGSize)arg1 bottomOffset:(double)arg2;
 

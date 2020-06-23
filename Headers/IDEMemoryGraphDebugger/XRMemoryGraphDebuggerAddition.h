@@ -20,10 +20,10 @@
 + (id)errorMessageForSession:(id)arg1;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain) XRMemoryGraphDebugger *memoryGraphDebugger; // @synthesize memoryGraphDebugger=_memoryGraphDebugger;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSString *targetPlatform;
 - (void)initiateMemoryGraphDebuggingWithSuccessCompletion:(CDUnknownBlockType)arg1;

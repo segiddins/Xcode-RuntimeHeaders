@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 - (void)primitiveInvalidate;
 - (void)rebuildInferredMetrics;
 - (void)immediatelyInferMetrics;

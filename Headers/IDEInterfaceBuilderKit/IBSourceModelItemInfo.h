@@ -32,6 +32,7 @@
 + (BOOL)sourceModelItemHasDescendantIBSegueActionItem:(id)arg1 inSourceModel:(id)arg2;
 + (id)sourceModelInfoForActionContextItem:(id)arg1 inSourceModel:(id)arg2 languageSpecification:(id)arg3;
 + (BOOL)sourceModelItemHasDescendantIBActionItem:(id)arg1 inSourceModel:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long annotationKind; // @synthesize annotationKind=_annotationKind;
 @property long long relationshipType; // @synthesize relationshipType=_relationshipType;
 @property(retain) NSString *collectionType; // @synthesize collectionType=_collectionType;
@@ -39,7 +40,6 @@
 @property(retain) NSString *type; // @synthesize type=_type;
 @property struct _NSRange range; // @synthesize range=_range;
 @property(retain) DVTSourceModelItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithSourceModelItem:(id)arg1 name:(id)arg2 type:(id)arg3 collectionType:(id)arg4 range:(struct _NSRange)arg5 relationshipType:(long long)arg6;
 
 @end

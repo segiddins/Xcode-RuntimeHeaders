@@ -13,8 +13,8 @@
     NSURL *_compilerURL;
 }
 
-@property(readonly) NSURL *compilerURL; // @synthesize compilerURL=_compilerURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *compilerURL; // @synthesize compilerURL=_compilerURL;
 - (id)executeCommand:(id)arg1 inputFile:(id)arg2 outputFilename:(id)arg3 arguments:(id)arg4 error:(id *)arg5;
 - (int)executeWithNSArray:(id)arg1 output:(id *)arg2 errOutput:(id *)arg3 error:(id *)arg4;
 - (id)readMetadataFromModelURL:(id)arg1 error:(id *)arg2;

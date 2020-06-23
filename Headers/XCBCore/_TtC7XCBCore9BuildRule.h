@@ -12,15 +12,8 @@
 {
     MISSING_TYPE *name;
     MISSING_TYPE *guid;
-    MISSING_TYPE *fileTypeIdentifier;
-    MISSING_TYPE *filePatterns;
-    MISSING_TYPE *compilerSpecificationIdentifier;
-    MISSING_TYPE *scriptContents;
-    MISSING_TYPE *inputFilePaths;
-    MISSING_TYPE *outputFilePaths;
-    MISSING_TYPE *outputFilesCompilerFlags;
-    MISSING_TYPE *dependencyInfo;
-    MISSING_TYPE *runOncePerArchitecture;
+    MISSING_TYPE *inputSpecifier;
+    MISSING_TYPE *actionSpecifier;
 }
 
 @end

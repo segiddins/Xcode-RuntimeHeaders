@@ -22,10 +22,10 @@
 
 + (id)focusedRootWithObject:(id)arg1 uiController:(id)arg2 unfocusHandler:(CDUnknownBlockType)arg3;
 + (void)registerTableCellViewsForDebugNavigatorContentDelegateWithOutlineView:(id)arg1;
+- (void).cxx_destruct;
 @property __weak DBGViewDebuggerAdditionUIController *viewDebuggingUIController; // @synthesize viewDebuggingUIController=_viewDebuggingUIController;
 @property(copy) CDUnknownBlockType unfocusHandler; // @synthesize unfocusHandler=_unfocusHandler;
 @property __weak id <IDEKeyDrivenNavigableItemRepresentedObject> focusedRoot; // @synthesize focusedRoot=_focusedRoot;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;

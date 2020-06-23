@@ -18,14 +18,15 @@
 + (BOOL)canBeRootOfMetricChain;
 + (id)firstMetricInChain:(id)arg1;
 + (struct CGSize)windowSizeForMetricChain:(id)arg1;
-@property(readonly, nonatomic) IBUISimulatedMetricChain *precedingMetric; // @synthesize precedingMetric=_precedingMetric;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBUISimulatedMetricChain *precedingMetric; // @synthesize precedingMetric=_precedingMetric;
+- (id)singleLinkDescription;
 - (void)_appendLinkPrettyDescriptionsToArray:(id)arg1;
 - (id)prettyDescription;
 - (id)singleLinkPrettyDescription;
 - (id)explicitWindowSize;
 - (void)_appendDebugDescriptionLineToArray:(id)arg1;
-@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToMetricChain:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -36,7 +37,7 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly) Class superclass;
 
 @end

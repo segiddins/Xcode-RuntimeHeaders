@@ -18,8 +18,8 @@
 + (id)appendTextEventWithSection:(id)arg1 textString:(id)arg2;
 + (id)addSubmessageEventWithSection:(id)arg1 supermessage:(id)arg2 submessage:(id)arg3;
 + (id)addSubsectionEventWithSection:(id)arg1 subsection:(id)arg2;
-@property(readonly) IDEActivityLogSection *section; // @synthesize section=_section;
 - (void).cxx_destruct;
+@property(readonly) IDEActivityLogSection *section; // @synthesize section=_section;
 - (id)description;
 - (id)addedChild;
 - (id)changedParent;

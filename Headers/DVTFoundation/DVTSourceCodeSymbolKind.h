@@ -72,10 +72,10 @@
 + (id)callableSymbolKind;
 + (id)globalSymbolKind;
 + (id)containerSymbolKind;
+- (void).cxx_destruct;
 @property(readonly) BOOL navigationPrefersDefinition; // @synthesize navigationPrefersDefinition=_navigationPrefersDefinition;
 @property(readonly, copy) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)conformsToSymbolKind:(id)arg1;
 @property(readonly, getter=isContainer) BOOL container;
 @property(readonly, copy) NSArray *allConformingSymbolKinds;

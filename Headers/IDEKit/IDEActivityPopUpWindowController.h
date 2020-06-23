@@ -25,10 +25,10 @@
 
 + (void)initialize;
 + (id)activityPopUpWindowForActivityView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(readonly) IDEActivityView *activityView; // @synthesize activityView=_activityView;
-- (void).cxx_destruct;
 - (void)stopMonitoringForEventsToClosePopUp;
 - (void)startMonitoringForEventsToClosePopUp;
 - (void)animateToHeight:(double)arg1;

@@ -16,11 +16,11 @@
     NSDictionary *_deviceMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *deviceMap; // @synthesize deviceMap=_deviceMap;
 @property(retain, nonatomic) NSArray *targets; // @synthesize targets=_targets;
 @property(nonatomic) unsigned long long integrationNumber; // @synthesize integrationNumber=_integrationNumber;
 @property(copy, nonatomic) NSString *integrationID; // @synthesize integrationID=_integrationID;
-- (void).cxx_destruct;
 - (id)_targetWithTitle:(id)arg1;
 - (id)_deviceTinyIDs;
 - (void)_bindHierarchy;

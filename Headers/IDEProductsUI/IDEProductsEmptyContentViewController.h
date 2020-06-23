@@ -27,6 +27,7 @@
     DVTDelayedInvocation *_delayedShowTitleAndSubtitle;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTDelayedInvocation *delayedShowTitleAndSubtitle; // @synthesize delayedShowTitleAndSubtitle=_delayedShowTitleAndSubtitle;
 @property BOOL shouldShowDelayedSpinner; // @synthesize shouldShowDelayedSpinner=_shouldShowDelayedSpinner;
 @property BOOL shouldShowDelayedTitleAndSubtitle; // @synthesize shouldShowDelayedTitleAndSubtitle=_shouldShowDelayedTitleAndSubtitle;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL busy; // @synthesize busy=_busy;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentTitle; // @synthesize emptyContentTitle=_emptyContentTitle;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)resolve:(id)arg1;
 - (void)disableResolutionButton;

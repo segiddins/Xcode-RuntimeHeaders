@@ -23,11 +23,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) __weak id <IBDocumentAsynchronousToolLoadingQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_processNextDeviceTypeDescriptionIfNeeded;
 - (void)blockLoadingDocumentUntilAfterCompletingEntryForDeviceTypeDescription:(id)arg1;
 - (void)enqueueNonBlockingEntryForDeviceTypeDescription:(id)arg1;

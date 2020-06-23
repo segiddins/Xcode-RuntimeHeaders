@@ -18,11 +18,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL locatePlugin; // @synthesize locatePlugin=_locatePlugin;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 @property(nonatomic) void *originalContext; // @synthesize originalContext=_originalContext;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

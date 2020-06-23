@@ -30,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) double verticalButtonSpacing; // @synthesize verticalButtonSpacing=_verticalButtonSpacing;
 @property(nonatomic) double horizontalButtonSpacing; // @synthesize horizontalButtonSpacing=_horizontalButtonSpacing;
@@ -40,7 +41,6 @@
 @property(nonatomic) BOOL notifyOnClose; // @synthesize notifyOnClose=_notifyOnClose;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak id <SKSceneTileMapEditPopoverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)rightMouseDown:(id)arg1;
 - (void)deleteButton:(id)arg1;
 - (void)popoverDidClose:(id)arg1;

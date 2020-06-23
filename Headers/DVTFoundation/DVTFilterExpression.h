@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL isNegation; // @synthesize isNegation=_isNegation;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_queue> *_matchDiffingQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *matchDiffingQueue; // @synthesize matchDiffingQueue=_matchDiffingQueue;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_queue> *matchDiffingQueue; // @synthesize matchDiffingQueue=_matchDiffingQueue;
 - (void)setMatches:(id)arg1 forFilterSession:(id)arg2;
 - (id)initWithFilteredDataSource:(id)arg1 presentationDelegate:(id)arg2 viewingContext:(id)arg3;
 

@@ -41,13 +41,13 @@
 
 + (void)initialize;
 + (id)webViewLoadingLogAspect;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *pathControlBindingTokens; // @synthesize pathControlBindingTokens=_pathControlBindingTokens;
 @property(readonly, nonatomic) IDEExplorableJumpBarController *jumpBarController; // @synthesize jumpBarController=_jumpBarController;
 @property(retain) DVTBorderedView *webViewBorderedView; // @synthesize webViewBorderedView=_webViewBorderedView;
 @property(retain) NSVisualEffectView *webViewVisualEffectView; // @synthesize webViewVisualEffectView=_webViewVisualEffectView;
 @property(retain) WebView *webView; // @synthesize webView=_webView;
 @property __weak IDEDocContentAreaViewController *hostContentAreaViewController; // @synthesize hostContentAreaViewController=_hostContentAreaViewController;
-- (void).cxx_destruct;
 - (void)_updateCoreDocViewController:(id)arg1;
 @property(readonly) BOOL isRenderingCoreDocContent;
 @property(readonly, nonatomic) WKWebView *wkWebView;

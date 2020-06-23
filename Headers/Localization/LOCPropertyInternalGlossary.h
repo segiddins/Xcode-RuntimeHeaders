@@ -30,6 +30,7 @@
 }
 
 + (id)originalsInXliffObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *doNotTranslateTermList; // @synthesize doNotTranslateTermList;
 @property(retain, getter=theNewSegSourceDict) NSDictionary *newSegSourceDict; // @synthesize newSegSourceDict;
 @property(retain) NSMutableDictionary *cachedEntities; // @synthesize cachedEntities;
@@ -43,7 +44,6 @@
 @property(retain) NSMutableDictionary *transUnitsDict; // @synthesize transUnitsDict;
 @property(retain) NSDictionary *globalsDict; // @synthesize globalsDict;
 @property(retain) NSMutableDictionary *fileAttributesDict; // @synthesize fileAttributesDict;
-- (void).cxx_destruct;
 - (unsigned long long)newTransUnitCount;
 - (unsigned long long)signedOffTransUnitCount;
 - (unsigned long long)transUnitCountForState:(id)arg1;

@@ -13,8 +13,8 @@
     NSString *_destination;
 }
 
-@property(retain) NSString *destination; // @synthesize destination=_destination;
 - (void).cxx_destruct;
+@property(retain) NSString *destination; // @synthesize destination=_destination;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_finishSelectIssue:(id)arg1;

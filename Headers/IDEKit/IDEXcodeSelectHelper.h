@@ -18,9 +18,9 @@
 + (id)keyPathsForValuesAffectingIsRunningXcodeTheSelectedXcode;
 + (id)_xcodeURLs;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEXcodeSelectableXcode *selectedXcode; // @synthesize selectedXcode=_selectedXcode;
 @property(readonly) NSArray *selectableXcodes; // @synthesize selectableXcodes=_selectableXcodes;
-- (void).cxx_destruct;
 - (BOOL)_switchXcodeSelectToXcodeAtBundlePath:(id)arg1 error:(id *)arg2;
 - (void)switchXcodeSelectToRunningXcode;
 - (BOOL)_shouldSwitchToCurrentlyRunningXcode;

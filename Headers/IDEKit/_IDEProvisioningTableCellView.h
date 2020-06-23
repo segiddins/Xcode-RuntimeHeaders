@@ -13,8 +13,8 @@
     NSTextField *_subtitleField;
 }
 
-@property(retain, nonatomic) NSTextField *subtitleField; // @synthesize subtitleField=_subtitleField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTextField *subtitleField; // @synthesize subtitleField=_subtitleField;
 
 @end
 

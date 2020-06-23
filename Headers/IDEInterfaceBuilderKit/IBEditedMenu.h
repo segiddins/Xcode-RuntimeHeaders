@@ -16,11 +16,11 @@
     NSArray *_itemArray;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL representsMainMenuOrDescendantOfMainMenu; // @synthesize representsMainMenuOrDescendantOfMainMenu=_representsMainMenuOrDescendantOfMainMenu;
 @property(nonatomic) BOOL isTopLevelInMenuBar; // @synthesize isTopLevelInMenuBar=_isTopLevelInMenuBar;
 @property(copy, nonatomic) NSArray *itemArray; // @synthesize itemArray=_itemArray;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2 shouldLogTree:(BOOL)arg3;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)description;

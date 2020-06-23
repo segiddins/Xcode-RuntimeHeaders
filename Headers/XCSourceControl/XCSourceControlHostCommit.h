@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSDate *commitDate; // @synthesize commitDate=_commitDate;
 @property(readonly, nonatomic) XCSourceControlHostAuthor *committer; // @synthesize committer=_committer;
 @property(readonly, nonatomic) NSDate *authorDate; // @synthesize authorDate=_authorDate;
 @property(readonly, nonatomic) XCSourceControlHostAuthor *author; // @synthesize author=_author;
 @property(readonly, nonatomic) XCSourceControlHostRevision *revision; // @synthesize revision=_revision;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

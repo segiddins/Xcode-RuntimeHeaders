@@ -18,13 +18,13 @@
     NSString *_emphasizedTableColumnIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *emphasizedTableColumnIdentifier; // @synthesize emphasizedTableColumnIdentifier=_emphasizedTableColumnIdentifier;
 @property(getter=isConditional) BOOL conditional; // @synthesize conditional=_conditional;
 @property(copy, nonatomic) NSString *propertyDefinitionName; // @synthesize propertyDefinitionName=_propertyDefinitionName;
 @property(copy) DVTMacroDefinitionConditionSet *propertyConditionSet; // @synthesize propertyConditionSet=_propertyConditionSet;
 @property(retain) XCPropertyDefinition *propertyDefinition; // @synthesize propertyDefinition=_propertyDefinition;
 @property(copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
-- (void).cxx_destruct;
 - (id)newVariationForBuildSettingName:(id)arg1;
 - (id)newVariationForConditionSet:(id)arg1;
 - (id)newVariationForConfiguationName:(id)arg1;

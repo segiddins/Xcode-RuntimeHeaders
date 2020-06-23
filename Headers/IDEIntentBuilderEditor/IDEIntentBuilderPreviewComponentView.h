@@ -16,8 +16,8 @@
     IDEIntentBuilderPreviewView *_preview;
 }
 
-@property __weak IDEIntentBuilderPreviewView *preview; // @synthesize preview=_preview;
 - (void).cxx_destruct;
+@property __weak IDEIntentBuilderPreviewView *preview; // @synthesize preview=_preview;
 - (void)primitiveInvalidate;
 - (void)resize;
 - (struct CGRect)_previewContentFrame;

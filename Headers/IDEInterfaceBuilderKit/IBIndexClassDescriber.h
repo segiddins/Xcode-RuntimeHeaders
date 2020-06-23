@@ -24,8 +24,8 @@
 }
 
 + (void)initialize;
-@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (id)relationSymbolsInClassNamed:(id)arg1 ofRelationshipType:(long long)arg2;
 - (id)typeForNamedRelation:(id)arg1 ofRelationshipType:(long long)arg2 forClassNamed:(id)arg3;
 - (id)subclassNamesOfClassNamed:(id)arg1;

@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setSynonyms:) NSArray *synonyms; // @synthesize synonyms=_synonyms;
 @property(nonatomic, setter=_setRemoved:) BOOL isRemoved; // @synthesize isRemoved=_isRemoved;
 @property(nonatomic, setter=_setParentEnum:) __weak IDEIntentBuilderEnum *parentEnum; // @synthesize parentEnum=_parentEnum;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)titleForComponent:(id)arg1;
 - (id)nameForComponent:(id)arg1;
 @property(readonly, copy) NSString *description;

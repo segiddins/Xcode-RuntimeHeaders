@@ -50,9 +50,9 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL recentDocumentFilteringEnabled; // @synthesize recentDocumentFilteringEnabled=_recentDocumentFilteringEnabled;
 @property(copy, nonatomic) NSString *fileNamePatternString; // @synthesize fileNamePatternString=_fileNamePatternString;
-- (void).cxx_destruct;
 @property(readonly) id <IDETestCollection> selectedTests;
 - (void)_handleEnterAction;
 - (BOOL)outlineView:(id)arg1 doCommandBySelector:(SEL)arg2;
@@ -135,13 +135,8 @@
 - (id)_titleForNewFileMenuItemUsingContextualMenuSelection:(BOOL)arg1 isMainMenu:(BOOL)arg2;
 - (id)_containerNameForNavigableItem:(id)arg1;
 - (id)_selectedContainerOrContainingReferenceUsingContextualMenuSelection:(BOOL)arg1;
-- (void)_createPlaygroundBookItemOfType:(unsigned long long)arg1 usingContextualMenuSelection:(BOOL)arg2;
-- (void)contextMenu_newPlaygroundCutscene:(id)arg1;
-- (void)newPlaygroundCutscene:(id)arg1;
 - (void)contextMenu_newPlaygroundPage:(id)arg1;
 - (void)newPlaygroundPage:(id)arg1;
-- (void)contextMenu_newPlaygroundChapter:(id)arg1;
-- (void)newPlaygroundChapter:(id)arg1;
 - (void)contextMenu_newLibraryPackage:(id)arg1;
 - (void)newLibraryPackage:(id)arg1;
 - (void)contextMenu_addFiles:(id)arg1;
@@ -162,7 +157,7 @@
 - (void)newGroupWithFolder:(id)arg1;
 - (void)contextMenu_newGroup:(id)arg1;
 - (void)newGroup:(id)arg1;
-- (void)_createNewPlaygroundPageWithType:(long long)arg1 inPlayground:(id)arg2 targeting:(id)arg3;
+- (void)_createNewPlaygroundPageInPlayground:(id)arg1 targeting:(id)arg2;
 - (void)addTemplateInstantiatedItems:(id)arg1 primaryItem:(id)arg2 shouldEdit:(BOOL)arg3;
 - (id)_itemsToExpandFromInitialItems:(id)arg1;
 - (void)setupTemplateContext:(id)arg1 forTemplateKind:(id)arg2;

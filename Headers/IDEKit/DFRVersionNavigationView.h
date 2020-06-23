@@ -17,12 +17,12 @@
     NSTextField *_numbersLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *numbersLabel; // @synthesize numbersLabel=_numbersLabel;
 @property(retain) NSButton *navigateFowardButton; // @synthesize navigateFowardButton=_navigateFowardButton;
 @property(retain) NSButton *navigateBackButton; // @synthesize navigateBackButton=_navigateBackButton;
 @property(retain, nonatomic) NSButton *modeActionButton; // @synthesize modeActionButton=_modeActionButton;
 @property(retain, nonatomic) DFRNavigationMode *navigationMode; // @synthesize navigationMode=_navigationMode;
-- (void).cxx_destruct;
 - (void)setChangeIndex:(long long)arg1 ofChanges:(long long)arg2;
 - (id)_newNumbersLabel;
 - (void)navigateForwardAction:(id)arg1;

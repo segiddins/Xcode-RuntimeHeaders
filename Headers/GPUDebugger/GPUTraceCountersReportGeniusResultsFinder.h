@@ -6,13 +6,13 @@
 
 #import <IDEKit/IDEGeniusResultsFinder.h>
 
-@class GPUTraceEmptyEncoderPerformanceItem, GPUTraceGlobalPerformanceItem;
+@class GPUTraceEncoderPerformanceItem, GPUTraceGlobalPerformanceItem;
 
 __attribute__((visibility("hidden")))
 @interface GPUTraceCountersReportGeniusResultsFinder : IDEGeniusResultsFinder
 {
     GPUTraceGlobalPerformanceItem *_selectionRangeItem;
-    GPUTraceEmptyEncoderPerformanceItem *_emptyEncoderItem;
+    GPUTraceEncoderPerformanceItem *_emptyEncoderItem;
 }
 
 + (Class)editorDocumentClass;

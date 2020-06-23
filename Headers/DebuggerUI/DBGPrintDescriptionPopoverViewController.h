@@ -23,13 +23,13 @@
     NSLayoutConstraint *_scrollViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *scrollViewHeightConstraint; // @synthesize scrollViewHeightConstraint=_scrollViewHeightConstraint;
 @property(retain) NSLayoutConstraint *scrollViewWidthConstraint; // @synthesize scrollViewWidthConstraint=_scrollViewWidthConstraint;
 @property(retain) NSProgressIndicator *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property(retain) NSScrollView *textScrollView; // @synthesize textScrollView=_textScrollView;
 @property(retain) NSTextView *textView; // @synthesize textView=_textView;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;

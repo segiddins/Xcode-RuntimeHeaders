@@ -18,12 +18,12 @@
     NSStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 @property __weak id <XCSUICreateBotTriggerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) XCSUICreateBotTriggerConditionsViewController *conditionsViewController; // @synthesize conditionsViewController=_conditionsViewController;
 @property(readonly) NSViewController<XCSUICreateBotTriggerChildViewController> *childViewController; // @synthesize childViewController=_childViewController;
 @property(readonly) XCSTrigger *trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (void)setTitle:(id)arg1;
 - (BOOL)canRename;
 - (void)remove:(id)arg1;

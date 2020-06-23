@@ -17,10 +17,10 @@
 
 + (id)customDataSpecifierWithName:(id)arg1 groupingName:(id)arg2;
 + (id)customDataSpecifierWithName:(id)arg1 groupingName:(id)arg2 ownership:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) DVTCustomDataOwnership *ownership; // @synthesize ownership=_ownership;
 @property(readonly) NSString *groupingName; // @synthesize groupingName=_groupingName;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

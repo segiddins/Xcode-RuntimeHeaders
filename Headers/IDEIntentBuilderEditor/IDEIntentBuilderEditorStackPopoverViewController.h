@@ -25,6 +25,7 @@
     IDEIntentBuilderComponentStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property __weak IDEIntentBuilderComponentStackView *stackView; // @synthesize stackView=_stackView;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak NSButton *button; // @synthesize button=_button;
@@ -33,7 +34,6 @@
 @property(nonatomic) double titleLabelWidth; // @synthesize titleLabelWidth=_titleLabelWidth;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property __weak id <IDEIntentBuilderEditorStackPopoverViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)componentStackViewBoundsDidChange:(id)arg1;
 - (void)_resize;
 - (BOOL)popoverShouldClose:(id)arg1;

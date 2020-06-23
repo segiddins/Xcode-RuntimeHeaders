@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingParametersString;
 + (id)keyPathsForValuesAffectingSummary;
 + (id)stateParameterCombinationWithParameter:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRemoved:) BOOL isRemoved; // @synthesize isRemoved=_isRemoved;
 @property(nonatomic, setter=_setIntent:) __weak IDEIntentBuilderIntent *intent; // @synthesize intent=_intent;
 @property(nonatomic) BOOL updatesLinkedParameterCombinations; // @synthesize updatesLinkedParameterCombinations=_updatesLinkedParameterCombinations;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL supportsBackgroundExecution; // @synthesize supportsBackgroundExecution=_supportsBackgroundExecution;
 @property(copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;

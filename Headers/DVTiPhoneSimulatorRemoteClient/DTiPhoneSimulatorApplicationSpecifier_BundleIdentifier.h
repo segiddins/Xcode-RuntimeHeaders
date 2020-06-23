@@ -14,8 +14,8 @@
 }
 
 + (id)specifierWithApplicationBundleIdentifier:(id)arg1;
-- (id)bundleID;
 - (void).cxx_destruct;
+- (id)bundleID;
 - (id)description;
 
 @end

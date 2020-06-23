@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *proxiedConfigurablePropertyKeyPath; // @synthesize proxiedConfigurablePropertyKeyPath=_proxiedConfigurablePropertyKeyPath;
 @property(copy, nonatomic) NSString *keyPathFromEditedObjectToModelObject; // @synthesize keyPathFromEditedObjectToModelObject=_keyPathFromEditedObjectToModelObject;
 @property(readonly, nonatomic) NSMenu *menu; // @synthesize menu=_menu;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(retain, nonatomic) DVTButtonTextField *textField; // @synthesize textField=_textField;
 @property(copy, nonatomic) NSSet *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (void)_userDidPressStepper:(id)arg1;
 - (void)decrementValue;
 - (void)incrementValue;

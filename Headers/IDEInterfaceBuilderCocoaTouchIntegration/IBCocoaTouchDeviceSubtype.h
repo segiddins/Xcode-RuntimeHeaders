@@ -14,8 +14,8 @@
     NSArray *_allScreenMetrics;
 }
 
-@property(readonly, nonatomic) NSArray *allScreenMetrics; // @synthesize allScreenMetrics=_allScreenMetrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *allScreenMetrics; // @synthesize allScreenMetrics=_allScreenMetrics;
 - (id)idiom;
 - (id)defaultScreenMetrics;
 - (id)_makeScreenMetricsForAdaptationsWithLayout:(id)arg1;

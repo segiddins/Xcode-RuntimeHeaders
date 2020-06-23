@@ -15,8 +15,8 @@
     struct CGAffineTransform _originalWindowTransform;
 }
 
-@property(retain) DVTMessageBubbleView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
+@property(retain) DVTMessageBubbleView *annotationView; // @synthesize annotationView=_annotationView;
 - (void)setCurrentProgress:(float)arg1;
 - (void)stopAnimation;
 - (void)startAnimation;

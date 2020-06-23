@@ -16,9 +16,9 @@
 
 + (id)issuesFromErrors:(id)arg1 withSeverity:(long long)arg2;
 + (id)issuesFromITunesResponse:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long severity; // @synthesize severity=_severity;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *humanReadableDescription;
 - (id)initWithSeverity:(long long)arg1 error:(id)arg2;

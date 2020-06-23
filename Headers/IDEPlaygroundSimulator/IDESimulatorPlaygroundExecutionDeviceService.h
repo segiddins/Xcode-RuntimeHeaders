@@ -4,22 +4,29 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEKit/IDEPlaygroundExecutionDeviceService.h>
+#import <IDEPlaygroundsKit/IDEPlaygroundExecutionDeviceService.h>
+
+@class NSObject;
+@protocol OS_os_log;
 
 @interface IDESimulatorPlaygroundExecutionDeviceService : IDEPlaygroundExecutionDeviceService
 {
+    NSObject<OS_os_log> *_diagnosticsLog;
 }
 
 + (id)_disabledSimulatorJobs;
 + (BOOL)_shouldDisableUnnecessarySimulatorJobs;
 + (BOOL)_shouldDisableSimulatorDataMigration;
++ (BOOL)_shouldUseSketchBoard;
 + (BOOL)bootDevice:(id)arg1 error:(out id *)arg2;
 + (id)capability;
 + (id)simulatorPlaygroundExecutionDeviceServiceLogAspect;
+- (void).cxx_destruct;
+@property(retain) NSObject<OS_os_log> *diagnosticsLog; // @synthesize diagnosticsLog=_diagnosticsLog;
+- (BOOL)requiresExecutionPreparation;
 - (void)_launchAppAtURL:(id)arg1 withDevice:(id)arg2 launchOptions:(id)arg3 cancellationCallback:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_launchAppInFullSimulatorModeWithExecutablePath:(id)arg1 environment:(id)arg2 slaveFilename:(id)arg3 replMode:(BOOL)arg4 cancellationCallback:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (int)_launchAppInSimpleSimulatorModeWithExecutablePath:(id)arg1 environment:(id)arg2 slaveFilename:(id)arg3 replMode:(BOOL)arg4 error:(id *)arg5;
-- (id)_sandboxProfileDataWithContainerPath:(id)arg1 socketPath:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (void)launchWithPendingParameters;
 - (id)initForDevice:(id)arg1 extension:(id)arg2 capability:(id)arg3;
 

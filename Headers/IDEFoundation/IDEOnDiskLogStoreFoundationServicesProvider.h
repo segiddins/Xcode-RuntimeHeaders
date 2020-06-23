@@ -15,8 +15,8 @@
     NSFileManager *_fileManager;
 }
 
-@property(readonly) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (void).cxx_destruct;
+@property(readonly) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (BOOL)writeData:(id)arg1 toFile:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)dataWithPropertyList:(id)arg1 format:(unsigned long long)arg2 options:(unsigned long long)arg3 error:(out id *)arg4;
 - (id)propertyListWithData:(id)arg1 options:(unsigned long long)arg2 format:(unsigned long long *)arg3 error:(out id *)arg4;

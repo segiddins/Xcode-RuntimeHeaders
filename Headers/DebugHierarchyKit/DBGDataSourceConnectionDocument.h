@@ -20,10 +20,10 @@
 
 + (Class)matchingDataCoordinatorClass;
 + (id)connectionForDocumentDirectoryAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *dateOrderedDirectoryContents; // @synthesize dateOrderedDirectoryContents=_dateOrderedDirectoryContents;
 @property(retain) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property __weak id <DBGDataSourceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property float debugHierarchyVersion;
 - (void)retrieveDebugHierarchyConfiguration:(CDUnknownBlockType)arg1;
 - (void)performRequest:(id)arg1;

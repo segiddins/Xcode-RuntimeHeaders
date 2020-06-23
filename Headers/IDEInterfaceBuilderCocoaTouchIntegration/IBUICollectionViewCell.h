@@ -32,10 +32,10 @@
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ibRequiresCompileTimeContentViewConstraints; // @synthesize ibRequiresCompileTimeContentViewConstraints=_ibRequiresCompileTimeContentViewConstraints;
 @property(retain, nonatomic) IBUIView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) NSValue *customSize; // @synthesize customSize=_customSize;
-- (void).cxx_destruct;
 - (id)configurableKeyPathForMarshalledDesignTimeToManyRelationship:(id)arg1;
 - (id)localExtraMarshalledToManyRelationshipKeyPaths;
 - (id)localExtraMarshalledAttributesKeyPaths;
@@ -77,6 +77,7 @@
 - (BOOL)ibIsMovable;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
+- (BOOL)ibCanRemoveChildren:(id)arg1;
 - (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
 - (id)ibArchivedDesignableContentView;
 - (id)ibDesignableContentView;

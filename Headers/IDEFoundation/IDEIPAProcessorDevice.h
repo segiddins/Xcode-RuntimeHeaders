@@ -14,9 +14,9 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;

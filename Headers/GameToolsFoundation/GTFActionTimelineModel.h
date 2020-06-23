@@ -37,6 +37,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingNav_children;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *targetName; // @synthesize targetName=_targetName;
 @property(retain, nonatomic) NSString *keyName; // @synthesize keyName=_keyName;
 @property(nonatomic) BOOL allowReturnToNotedStartTime; // @synthesize allowReturnToNotedStartTime=_allowReturnToNotedStartTime;
@@ -48,7 +49,6 @@
 @property(nonatomic) __weak id <GTFActionTimelineModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) GTFActionLibraryTargetThumbnail *targetThumbnail; // @synthesize targetThumbnail=_targetThumbnail;
 @property(readonly, nonatomic) id <NSCopying> targetID; // @synthesize targetID=_targetID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;

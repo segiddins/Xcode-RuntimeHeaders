@@ -39,6 +39,7 @@
 + (unsigned long long)_computeOffsetFromFunction:(const struct Function *)arg1 forImage:(id)arg2 numLayers:(int)arg3;
 + (id)_imagesFromPaletteTexture:(id)arg1 numLevels:(int)arg2;
 + (id)textureImageKeyForLevel:(unsigned int)arg1 layer:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int engineDataType; // @synthesize engineDataType=_engineDataType;
 @property(readonly, nonatomic) unsigned int engineFormat; // @synthesize engineFormat=_engineFormat;
 @property(readonly, nonatomic) int border; // @synthesize border=_border;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned int genericFormat; // @synthesize genericFormat=_genericFormat;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cachingCost;
 - (void)_processTextureImageUploadInfo:(const struct Function *)arg1;
 - (id)uncompressedData;

@@ -19,10 +19,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <Xcode3ImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSImage *badgeImage; // @synthesize badgeImage=_badgeImage;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)contextMenu_deleteImage:(id)arg1;
 - (void)contextMenu_selectImageFile:(id)arg1;

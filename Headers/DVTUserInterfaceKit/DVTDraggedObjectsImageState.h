@@ -24,10 +24,10 @@
 + (id)stateWithName:(id)arg1 identifiers:(id)arg2 views:(id)arg3;
 + (id)stateWithName:(id)arg1 identifiers:(id)arg2 images:(id)arg3 frames:(id)arg4;
 + (id)stateWithName:(id)arg1 identifiers:(id)arg2 images:(id)arg3 frames:(id)arg4 secondaryFrames:(id)arg5;
+- (void).cxx_destruct;
 @property BOOL forcesImageScaling; // @synthesize forcesImageScaling=_forcesImageScaling;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *buildConfiguration; // @synthesize buildConfiguration=_buildConfiguration;
 @property(readonly, nonatomic) Xcode3Target *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithTarget:(id)arg1 buildConfiguration:(id)arg2;
 

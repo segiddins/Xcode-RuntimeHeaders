@@ -24,12 +24,12 @@
 + (id)sharedDataProviderForController:(id)arg1;
 + (int)stringToResourceLink:(id)arg1;
 + (int)stringToDataType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int platform; // @synthesize platform=_platform;
 @property(nonatomic) BOOL showEncoderData; // @synthesize showEncoderData=_showEncoderData;
 @property(nonatomic) __weak GPUTracePerformanceItem *selectedPerformanceItem; // @synthesize selectedPerformanceItem=_selectedPerformanceItem;
 @property(readonly, nonatomic) GPUTraceCounterGraphDataStore *dataStorePerDraw; // @synthesize dataStorePerDraw=_dataStorePerDraw;
 @property(readonly, nonatomic) GPUTraceCounterGraphDataStore *dataStorePerEncoder; // @synthesize dataStorePerEncoder=_dataStorePerEncoder;
-- (void).cxx_destruct;
 - (void)_dataStoreFinishedUpdatingBatchIDFilteredCounters:(id)arg1;
 - (void)_dataStoreLoadingData:(id)arg1;
 - (void)_dataStoreUpdated:(id)arg1 updatedIndicies:(id)arg2;

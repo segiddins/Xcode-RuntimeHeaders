@@ -8,6 +8,7 @@
 
 @class IDEConsoleTextView, MISSING_TYPE, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor19PlaygroundDebugArea : IDEDebugArea
 {
     MISSING_TYPE *consoleTextView;

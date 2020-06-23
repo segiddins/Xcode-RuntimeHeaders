@@ -39,6 +39,7 @@
 + (id)productVersionByMerging:(id)arg1;
 + (id)mostRecentVersion:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAnalyticsAppStoreSourceProtocolEnsured; // @synthesize isAnalyticsAppStoreSourceProtocolEnsured=_isAnalyticsAppStoreSourceProtocolEnsured;
 @property unsigned long long appStoreStatus; // @synthesize appStoreStatus=_appStoreStatus;
 @property(retain) NSArray *archives; // @synthesize archives=_archives;
@@ -54,7 +55,6 @@
 @property(readonly) IDEProductVersionIdentifier *productVersionIdentifier; // @synthesize productVersionIdentifier=_productVersionIdentifier;
 @property(nonatomic) __weak id <DVTAnalyticsAppStoreSourceProtocol> processorUsagePointConsolidatedSource; // @synthesize processorUsagePointConsolidatedSource=_processorUsagePointConsolidatedSource;
 @property(nonatomic) __weak id <DVTAnalyticsAppStoreSourceProtocol> crashPointParameterizedAppStoreSource; // @synthesize crashPointParameterizedAppStoreSource=_crashPointParameterizedAppStoreSource;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

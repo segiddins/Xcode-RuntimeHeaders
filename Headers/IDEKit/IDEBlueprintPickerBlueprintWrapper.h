@@ -16,8 +16,8 @@
     id <IDEBlueprint> _blueprint;
 }
 
-@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (void).cxx_destruct;
+@property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)initWithBlueprint:(id)arg1;

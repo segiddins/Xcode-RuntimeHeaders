@@ -22,6 +22,7 @@
     NSButton *_helpButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property __weak NSTextField *editBotLabel; // @synthesize editBotLabel=_editBotLabel;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (void)goToBotConfigurationURL;
 - (void)goToEnvVarURL;
 - (void)done:(id)arg1;

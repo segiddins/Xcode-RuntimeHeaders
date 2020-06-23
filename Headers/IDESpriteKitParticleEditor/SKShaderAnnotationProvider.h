@@ -17,8 +17,8 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-@property(readonly) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void)providerWillUninstall;
 - (id)_documentURL;
 - (void)_removeAnnotation:(id)arg1;

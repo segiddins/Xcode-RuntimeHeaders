@@ -15,6 +15,8 @@
     MISSING_TYPE *timestamp;
     MISSING_TYPE *owner;
     MISSING_TYPE *group;
+    MISSING_TYPE *inode;
+    MISSING_TYPE *device;
     MISSING_TYPE *xattrs;
 }
 

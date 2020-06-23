@@ -14,8 +14,8 @@
     NSDictionary *_snapshotContentByConfiguration;
 }
 
-@property(readonly) NSArray *buildConfigurationNames; // @synthesize buildConfigurationNames=_buildConfigurationNames;
 - (void).cxx_destruct;
+@property(readonly) NSArray *buildConfigurationNames; // @synthesize buildConfigurationNames=_buildConfigurationNames;
 - (id)xcconfigFileErrorsForConfiguration:(id)arg1;
 - (id)xcconfigFilePathForConfiguration:(id)arg1;
 - (id)initWithInformationFromProject:(id)arg1;

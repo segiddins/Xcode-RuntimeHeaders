@@ -14,8 +14,8 @@
     CDUnknownBlockType _callback;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void)cancelDownloads;
 - (void)downloadAttachments:(id)arg1 forTest:(id)arg2 inActivity:(id)arg3 destinationDirectory:(id)arg4;
 

@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property(copy, nonatomic) NSSet *assetRepIdentifiers; // @synthesize assetRepIdentifiers=_assetRepIdentifiers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *assetRepIdentifiers; // @synthesize assetRepIdentifiers=_assetRepIdentifiers;
 - (void)layoutBottomUp;
 - (double)suggestedMaxWidthForContent;
 - (void)layoutTopDown;

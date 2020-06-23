@@ -27,13 +27,13 @@
     NSDate *_overridenLastMonthAgoDateForTesting;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *overridenLastMonthAgoDateForTesting; // @synthesize overridenLastMonthAgoDateForTesting=_overridenLastMonthAgoDateForTesting;
 @property(nonatomic) __weak id <XCSServiceConnectionDelegate> serviceConnectionDelegate; // @synthesize serviceConnectionDelegate=_serviceConnectionDelegate;
 @property(nonatomic) BOOL ignoreUserDefaults; // @synthesize ignoreUserDefaults=_ignoreUserDefaults;
 @property(nonatomic) __weak XCSUIDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <XCSUIServicesManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *clientApplicationName; // @synthesize clientApplicationName=_clientApplicationName;
-- (void).cxx_destruct;
 - (void)issuesStreakForBot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)overrideLastMonthAgoDateForTesting:(id)arg1;
 - (id)dateOneMonthAgoForFetchingIssuesStreak;

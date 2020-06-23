@@ -14,9 +14,9 @@
     IBLiveViewsTrackedBuildOperation *_pendingTrackedBuildOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBLiveViewsTrackedBuildOperation *pendingTrackedBuildOperation; // @synthesize pendingTrackedBuildOperation=_pendingTrackedBuildOperation;
 @property(retain, nonatomic) IBLiveViewsTrackedBuildOperation *activeTrackedBuildOperation; // @synthesize activeTrackedBuildOperation=_activeTrackedBuildOperation;
-- (void).cxx_destruct;
 
 @end
 

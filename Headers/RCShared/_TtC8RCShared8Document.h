@@ -18,7 +18,6 @@
     MISSING_TYPE *remotePeer;
 }
 
-+ (BOOL)usesUbiquitousStorage;
 + (BOOL)autosavesInPlace;
 - (void).cxx_destruct;
 - (void)duplicateDocumentWithDelegate:(id)arg1 didDuplicateSelector:(SEL)arg2 contextInfo:(void *)arg3;

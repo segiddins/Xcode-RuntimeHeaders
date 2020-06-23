@@ -29,12 +29,12 @@
 + (id)keyPathsForValuesAffectingIbIsStackingWithHorizontalAxisWithMultipleConfigurations;
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBaselineRelativeArrangement) BOOL baselineRelativeArrangement; // @synthesize baselineRelativeArrangement=_baselineRelativeArrangement;
 @property(retain, nonatomic) NSNumber *spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) long long distribution; // @synthesize distribution=_distribution;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (void)unarchiveBaselineRelativeArrangement:(id)arg1;
 - (void)archiveBaselineRelativeArrangement:(id)arg1;
 - (void)unarchiveSpacing:(id)arg1;

@@ -36,6 +36,7 @@
 + (id)navigatorsForContext:(id)arg1;
 + (id)_explorableNavigatorIdsForKnownNavigators;
 + (id)keyPathsForValuesAffectingWorkspace;
+- (void).cxx_destruct;
 @property(retain) IDENavigatorAreaDFRController *touchBarSupportController; // @synthesize touchBarSupportController=_touchBarSupportController;
 @property __weak DVTBorderView *chooserNavigatorSeparatorView; // @synthesize chooserNavigatorSeparatorView=_chooserNavigatorSeparatorView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -44,7 +45,6 @@
 @property(retain) NSArrayController *choicesController; // @synthesize choicesController=_choicesController;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain) IDENavigatorSearchFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
-- (void).cxx_destruct;
 - (double)minimumContentWidth;
 - (void)commitStateToDictionary:(id)arg1;
 @property(readonly) BOOL canRevertWithEmptyStateDictionary;

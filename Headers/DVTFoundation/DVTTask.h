@@ -34,6 +34,7 @@
 }
 
 + (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy) NSNumber *argumentEncoding; // @synthesize argumentEncoding=_argumentEncoding;
 @property(copy) NSString *waitRunLoopMode; // @synthesize waitRunLoopMode=_waitRunLoopMode;
 @property(copy) NSNumber *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
@@ -47,7 +48,6 @@
 @property(copy) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy) NSString *currentDirectoryPath; // @synthesize currentDirectoryPath=_currentDirectoryPath;
 @property(copy) NSString *launchPath; // @synthesize launchPath=_launchPath;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)description;
 @property(readonly) BOOL isRunning;

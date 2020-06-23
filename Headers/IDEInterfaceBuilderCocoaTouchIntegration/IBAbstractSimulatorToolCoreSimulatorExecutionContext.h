@@ -19,9 +19,9 @@
 + (id)_environmentForBootingDevice;
 + (long long)bootingSessionType;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBCocoaTouchIdiom *idiom; // @synthesize idiom=_idiom;
 @property(readonly, nonatomic) SimDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)bootDeviceIfNeededWithContext:(id)arg1 error:(id *)arg2;
 - (id)_disabledSimulatorJobs;
 - (id)debugDescription;

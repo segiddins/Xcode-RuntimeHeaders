@@ -14,6 +14,7 @@
     MISSING_TYPE *inspectable;
     MISSING_TYPE *controllerResolver;
     MISSING_TYPE *expanded;
+    MISSING_TYPE *infoProperty;
     MISSING_TYPE *$__lazy_storage_$_dynamicValue;
 }
 

@@ -11,6 +11,8 @@
 @interface _TtC12RCFoundation15SceneSimulation : _TtCs12_SwiftObject
 {
     MISSING_TYPE *scene;
+    MISSING_TYPE *arMode;
+    MISSING_TYPE *arSettingAnchor;
     MISSING_TYPE *shouldCreateVisualCues;
     MISSING_TYPE *_state;
     MISSING_TYPE *rigidBodiesWorkingSet;

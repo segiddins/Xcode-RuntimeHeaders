@@ -16,8 +16,8 @@
     NSString *_propertyName;
 }
 
-@property(readonly) NSString *propertyName; // @synthesize propertyName=_propertyName;
 - (void).cxx_destruct;
+@property(readonly) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly, copy) NSString *description;
 - (id)expandedExpressionWithViewObject:(id)arg1;
 - (id)initWithPropertyName:(id)arg1 rawExpressionToGenerateValue:(id)arg2;

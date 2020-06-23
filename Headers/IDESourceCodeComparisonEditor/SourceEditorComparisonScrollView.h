@@ -13,8 +13,8 @@
     id <SourceEditorComparisonScrollViewDelegate> _sourceEditorComparisonScrollViewDelegate;
 }
 
-@property __weak id <SourceEditorComparisonScrollViewDelegate> sourceEditorComparisonScrollViewDelegate; // @synthesize sourceEditorComparisonScrollViewDelegate=_sourceEditorComparisonScrollViewDelegate;
 - (void).cxx_destruct;
+@property __weak id <SourceEditorComparisonScrollViewDelegate> sourceEditorComparisonScrollViewDelegate; // @synthesize sourceEditorComparisonScrollViewDelegate=_sourceEditorComparisonScrollViewDelegate;
 - (id)_pointInVisibleScroller:(struct CGPoint)arg1;
 - (void)reflectScrolledClipView:(id)arg1;
 - (void)scrollWheel:(id)arg1;

@@ -16,11 +16,11 @@
     unsigned long long _modifierFlags;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(readonly) NSString *charactersIgnoringModfiers; // @synthesize charactersIgnoringModfiers=_charactersIgnoringModfiers;
 @property(readonly) NSString *characters; // @synthesize characters=_characters;
 @property(readonly) XCElementSnapshot *applicationSnapshot; // @synthesize applicationSnapshot=_applicationSnapshot;
-- (void).cxx_destruct;
 - (id)initWithApplicationSnapshot:(id)arg1 characters:(id)arg2 charactersIgnoringModfiers:(id)arg3 modifierFlags:(unsigned long long)arg4;
 
 @end

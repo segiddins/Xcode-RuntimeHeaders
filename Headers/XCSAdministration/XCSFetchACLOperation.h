@@ -13,8 +13,8 @@
     XCSACL *_acl;
 }
 
-@property(retain, nonatomic) XCSACL *acl; // @synthesize acl=_acl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSACL *acl; // @synthesize acl=_acl;
 - (void)run;
 - (id)statusDescription;
 

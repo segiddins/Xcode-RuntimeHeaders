@@ -18,9 +18,9 @@
     NSTextField *_pointValueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *pointValueLabel; // @synthesize pointValueLabel=_pointValueLabel;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)_startRetrieval;

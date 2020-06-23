@@ -14,9 +14,9 @@
     NSString *_command;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *command; // @synthesize command=_command;
 @property(copy) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-- (void).cxx_destruct;
 - (id)init:(id)arg1 command:(SEL)arg2;
 
 @end

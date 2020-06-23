@@ -36,6 +36,7 @@
 + (long long)schemeTaskForString:(id)arg1;
 + (id)stringForSchemeTask:(long long)arg1;
 + (id)schemeCommandForString:(id)arg1;
++ (id)keyPathsForValuesAffectingTestsSkippedCount;
 + (id)keyPathsForValuesAffectingTestsFailedCount;
 + (id)keyPathsForValuesAffectingTestsCount;
 + (id)keyPathsForValuesAffectingAnalyzerWarningCount;
@@ -44,6 +45,7 @@
 + (id)keyPathsForValuesAffectingIsRecording;
 + (id)keyPathsForValuesAffectingStatus;
 + (BOOL)getSchemeTask:(long long *)arg1 fromDictionaryRepresentation:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didSendFinishAction; // @synthesize didSendFinishAction=_didSendFinishAction;
 @property(readonly, nonatomic) long long actionIndex; // @synthesize actionIndex=_actionIndex;
 @property(retain, nonatomic) DVTFilePath *creatingWorkspaceFilePath; // @synthesize creatingWorkspaceFilePath=_creatingWorkspaceFilePath;
@@ -65,7 +67,7 @@
 @property(readonly, nonatomic) long long schemeTask; // @synthesize schemeTask=_schemeTask;
 @property(retain, nonatomic) NSString *schemeCommandName; // @synthesize schemeCommandName=_schemeCommandName;
 @property(retain, nonatomic) IDESchemeCommand *schemeCommand; // @synthesize schemeCommand=_schemeCommand;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long testsSkippedCount;
 @property(readonly, nonatomic) unsigned long long testsFailedCount;
 @property(readonly, nonatomic) unsigned long long testsCount;
 @property(readonly, nonatomic) unsigned long long analyzerWarningCount;

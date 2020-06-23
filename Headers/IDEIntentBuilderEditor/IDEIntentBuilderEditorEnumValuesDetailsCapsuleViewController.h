@@ -24,6 +24,7 @@
     DVTEmptyContentPlaceholder *_placeholderView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTEmptyContentPlaceholder *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property __weak NSView *stackContainerView; // @synthesize stackContainerView=_stackContainerView;
 @property __weak DVTBorderedView *buttonsBorderedView; // @synthesize buttonsBorderedView=_buttonsBorderedView;
@@ -32,7 +33,6 @@
 @property __weak DVTBorderedView *sourceListSplitViewPane; // @synthesize sourceListSplitViewPane=_sourceListSplitViewPane;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property __weak IDEIntentBuilderComponentStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)componentStackViewBoundsDidChange:(id)arg1;
 - (id)_componentViewsForEnumValue:(id)arg1;
 - (void)_reloadData;

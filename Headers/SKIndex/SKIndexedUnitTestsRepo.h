@@ -31,10 +31,10 @@ __attribute__((visibility("hidden")))
     id <SKIndexedUnitTestsDelegate> _delegate;
 }
 
-@property BOOL shouldWaitForPrebuild; // @synthesize shouldWaitForPrebuild=_shouldWaitForPrebuild;
-@property __weak id <SKIndexedUnitTestsDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property BOOL shouldWaitForPrebuild; // @synthesize shouldWaitForPrebuild=_shouldWaitForPrebuild;
+@property __weak id <SKIndexedUnitTestsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invalidate;
 - (id)unitTestsForTestable:(id)arg1;
 - (id)_testablesForIndexable:(id)arg1;

@@ -18,10 +18,10 @@
     XCSUIBotIntegrationPopoverStatusBadgeView *_issuesBadgeView;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIBotIntegrationPopoverStatusBadgeView *issuesBadgeView; // @synthesize issuesBadgeView=_issuesBadgeView;
 @property __weak XCSUIBotIntegrationPopoverStatusBadgeView *warningsBadgeView; // @synthesize warningsBadgeView=_warningsBadgeView;
 @property __weak XCSUIBotIntegrationPopoverStatusBadgeView *errorsBadgeView; // @synthesize errorsBadgeView=_errorsBadgeView;
-- (void).cxx_destruct;
 - (void)updateBadgesWithErrors:(unsigned long long)arg1 warnings:(unsigned long long)arg2 issues:(unsigned long long)arg3;
 
 @end

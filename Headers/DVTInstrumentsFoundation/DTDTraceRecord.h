@@ -22,6 +22,7 @@
     NSString *_consoleMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *consoleMessage; // @synthesize consoleMessage=_consoleMessage;
 @property(nonatomic) unsigned long long numKernelFrames; // @synthesize numKernelFrames=_numKernelFrames;
 @property(nonatomic) const unsigned long long *kernelStackFrames; // @synthesize kernelStackFrames=_kernelStackFrames;
@@ -32,7 +33,6 @@
 @property(nonatomic) const char *eventText; // @synthesize eventText=_eventText;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

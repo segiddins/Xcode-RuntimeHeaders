@@ -32,6 +32,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedPreferredSymbolConfigurationPointSize;
 + (id)keyPathsForValuesAffectingIbInspectedPreferredSymbolConfiguration;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIImageSymbolConfiguration *preferredSymbolConfiguration; // @synthesize preferredSymbolConfiguration=_preferredSymbolConfiguration;
 @property(retain, nonatomic) IBUIViewAutolayoutGuide *midlineLayoutGuide; // @synthesize midlineLayoutGuide=_midlineLayoutGuide;
 @property(nonatomic) BOOL adjustsImageSizeForAccessibilityContentSizeCategory; // @synthesize adjustsImageSizeForAccessibilityContentSizeCategory=_adjustsImageSizeForAccessibilityContentSizeCategory;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSImage *highlightedImage; // @synthesize highlightedImage=_highlightedImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)ibEffectiveViewLayoutGuides;
 - (void)unarchiveMidlineLayoutGuide:(id)arg1;
 - (void)archiveMidlineLayoutGuide:(id)arg1;

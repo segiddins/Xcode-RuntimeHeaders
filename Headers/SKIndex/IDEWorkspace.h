@@ -42,10 +42,10 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
-@property(retain) NSString *activeDestinationSDKVariant; // @synthesize activeDestinationSDKVariant=_activeDestinationSDKVariant;
-@property(retain) DVTPlatform *activeDestinationPlatform; // @synthesize activeDestinationPlatform=_activeDestinationPlatform;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain) NSString *activeDestinationSDKVariant; // @synthesize activeDestinationSDKVariant=_activeDestinationSDKVariant;
+@property(retain) DVTPlatform *activeDestinationPlatform; // @synthesize activeDestinationPlatform=_activeDestinationPlatform;
 - (void)primitiveInvalidate;
 - (void)onBuildSettingsForFile:(id)arg1;
 - (void)onUnitTestsDidChange:(id)arg1;

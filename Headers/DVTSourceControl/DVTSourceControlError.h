@@ -13,8 +13,8 @@
     NSMapTable *_objectsToErrors;
 }
 
-@property(retain) NSMapTable *objectsToErrors; // @synthesize objectsToErrors=_objectsToErrors;
 - (void).cxx_destruct;
+@property(retain) NSMapTable *objectsToErrors; // @synthesize objectsToErrors=_objectsToErrors;
 - (id)initWithMapTable:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
 

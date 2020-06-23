@@ -27,6 +27,7 @@
 + (id)keyPathsForValuesAffectingWebViewTextSizeMultiplier;
 + (id)keyPathsForValuesAffectingWebViewWebViewScrollPosition;
 + (id)keyPathsForValuesAffectingSidebarVisible;
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *contentAreaReplacementView; // @synthesize contentAreaReplacementView=_contentAreaReplacementView;
 @property(copy, nonatomic) NSURL *sharingURL; // @synthesize sharingURL=_sharingURL;
 @property(copy) NSURL *loadedURL; // @synthesize loadedURL=_loadedURL;
@@ -34,7 +35,6 @@
 @property(retain) NSDocument *document; // @synthesize document=_document;
 @property(retain) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain) NSString *tabLabel; // @synthesize tabLabel=_tabLabel;
-- (void).cxx_destruct;
 - (void)moveKeyboardFocusToNextArea:(id)arg1;
 @property double webViewTextSizeMultiplier;
 @property int webViewScrollPosition;
@@ -58,7 +58,6 @@
 @property(readonly, copy) NSString *webViewBackForwardListBackItemURLString;
 @property(readonly, getter=isSidebarVisible) BOOL sidebarVisible;
 - (void)showRESTReferenceNavigator;
-- (void)showJSReferenceNavigator;
 - (void)showObjectiveCReferenceNavigator;
 - (void)showSwiftReferenceNavigator;
 - (void)showDisplayedNodeInBrowseNavigator;

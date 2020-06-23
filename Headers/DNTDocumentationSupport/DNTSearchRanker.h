@@ -18,8 +18,8 @@
     unsigned long long _patternLength;
 }
 
-@property(readonly, copy) NSString *pattern; // @synthesize pattern=_pattern;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *pattern; // @synthesize pattern=_pattern;
 - (double)scoreCandidate:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

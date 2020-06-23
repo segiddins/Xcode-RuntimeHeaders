@@ -24,12 +24,12 @@
 
 + (void)initialize;
 + (id)proxyArrayObservingObject:(id)arg1 keyPath:(id)arg2 withProxyObtainBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain) id observedObject; // @synthesize observedObject=_observedObject;
 @property(copy) NSString *kvoNotifyKeyPath; // @synthesize kvoNotifyKeyPath=_kvoNotifyKeyPath;
 @property(retain) id kvoNotifyObject; // @synthesize kvoNotifyObject=_kvoNotifyObject;
 @property(copy) CDUnknownBlockType proxyDiscardBlock; // @synthesize proxyDiscardBlock=_proxyDiscardBlock;
 @property(copy) CDUnknownBlockType proxyObtainBlock; // @synthesize proxyObtainBlock=_proxyObtainBlock;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)primitiveInvalidate;
 - (id)proxyForObject:(id)arg1;

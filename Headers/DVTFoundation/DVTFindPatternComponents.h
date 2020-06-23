@@ -18,8 +18,8 @@
 + (id)findPatternComponentsFromPasteboardPropertyList:(id)arg1;
 + (id)findPatternComponentsWithString:(id)arg1;
 + (id)emptyComponents;
-@property(readonly) NSArray *components; // @synthesize components=_components;
 - (void).cxx_destruct;
+@property(readonly) NSArray *components; // @synthesize components=_components;
 - (id)replacementExpression;
 - (id)regularExpressionEscapingStrings:(BOOL)arg1 usingBackreferences:(BOOL)arg2;
 - (id)regularExpression;

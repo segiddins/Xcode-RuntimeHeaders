@@ -19,10 +19,10 @@
 
 + (id)statusCheckerForDistributionRecord:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEITunesConnect *iTunesConnect; // @synthesize iTunesConnect=_iTunesConnect;
 @property(readonly, nonatomic) IDEArchiveDistributionRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) DVTFuture *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)logAspect;

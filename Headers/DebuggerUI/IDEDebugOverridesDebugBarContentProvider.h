@@ -30,6 +30,7 @@
 + (id)iconImage_debugOverridesDisabled;
 + (id)iconImage_debugOverridesEnabled;
 + (id)assetBundle;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *popoverTouchBarSwitches; // @synthesize popoverTouchBarSwitches=_popoverTouchBarSwitches;
 @property(retain) NSMutableArray *popoverTouchBarButtons; // @synthesize popoverTouchBarButtons=_popoverTouchBarButtons;
 @property(retain) DVTObservingToken *appearanceOverrideStateToken; // @synthesize appearanceOverrideStateToken=_appearanceOverrideStateToken;
@@ -40,7 +41,6 @@
 @property(retain) DVTObservingToken *debuggingAdditionToken; // @synthesize debuggingAdditionToken=_debuggingAdditionToken;
 @property(retain, nonatomic) NSArray *debugOverridesByCategory; // @synthesize debugOverridesByCategory=_debugOverridesByCategory;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (void)_updateDebugOverridesByCategory;

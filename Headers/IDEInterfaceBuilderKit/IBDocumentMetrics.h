@@ -24,6 +24,7 @@
 
 + (id)documentMetricsFromDictionary:(id)arg1;
 + (id)keyPathsForReporting;
+- (void).cxx_destruct;
 @property(readonly) long long editOperationsCount; // @synthesize editOperationsCount=_editOperationsCount;
 @property(readonly, copy) NSString *editOperationLongestDurationActionName; // @synthesize editOperationLongestDurationActionName=_editOperationLongestDurationActionName;
 @property(readonly) double editOperationLongestDuration; // @synthesize editOperationLongestDuration=_editOperationLongestDuration;
@@ -31,7 +32,6 @@
 @property(readonly) double documentSessionDuration; // @synthesize documentSessionDuration=_documentSessionDuration;
 @property(readonly) double documentUILoadingDuration; // @synthesize documentUILoadingDuration=_documentUILoadingDuration;
 @property(readonly) long long documentOpeningCount; // @synthesize documentOpeningCount=_documentOpeningCount;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)finishEditOperationWithActionName:(id)arg1;
 - (void)startEditOperation;

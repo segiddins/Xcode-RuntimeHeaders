@@ -25,9 +25,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *destinationWorkspacePopUp; // @synthesize destinationWorkspacePopUp=_destinationWorkspacePopUp;
 @property(retain) NSPopUpButton *destinationGroupPopUp; // @synthesize destinationGroupPopUp=_destinationGroupPopUp;
-- (void).cxx_destruct;
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
 - (BOOL)mainThread_panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
 - (BOOL)panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;

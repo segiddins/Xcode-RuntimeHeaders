@@ -13,8 +13,8 @@
     NSMutableDictionary *_assets;
 }
 
-@property(retain) NSMutableDictionary *assets; // @synthesize assets=_assets;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *assets; // @synthesize assets=_assets;
 - (void)clearData;
 - (id)_assetIdentifierForItemIdentifier:(id)arg1 query:(id)arg2;
 - (void)storeAsset:(id)arg1 forItemWithIdentifier:(id)arg2 query:(id)arg3;

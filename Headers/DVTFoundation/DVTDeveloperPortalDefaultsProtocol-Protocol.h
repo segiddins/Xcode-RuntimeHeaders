@@ -7,12 +7,12 @@
 @class NSString;
 
 @protocol DVTDeveloperPortalDefaultsProtocol
-@property(readonly, copy, nonatomic) NSString *portalServiceEndpoint;
-@property(readonly, copy, nonatomic) NSString *portalServiceHostDescription;
-@property(readonly, copy, nonatomic) NSString *portalServiceCertificateHostname;
-@property(readonly, copy, nonatomic) NSString *portalServiceHostname;
-@property(readonly, copy, nonatomic) NSString *portalServiceProtocolVersion;
-@property(readonly, copy, nonatomic) NSString *portalServiceXcodeServerClientID;
-@property(readonly, copy, nonatomic) NSString *portalServiceXcodeClientID;
+@property(nonatomic, readonly) NSString *portalServiceEndpoint;
+@property(nonatomic, readonly) NSString *portalServiceHostDescription;
+@property(nonatomic, readonly) NSString *portalServiceCertificateHostname;
+@property(nonatomic, readonly) NSString *portalServiceHostname;
+@property(nonatomic, readonly) NSString *portalServiceProtocolVersion;
+@property(nonatomic, readonly) NSString *portalServiceXcodeServerClientID;
+@property(nonatomic, readonly) NSString *portalServiceXcodeClientID;
 @end
 

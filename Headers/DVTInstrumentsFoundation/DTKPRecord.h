@@ -37,6 +37,7 @@
     NSString *_kdebugString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int counterEventCount; // @synthesize counterEventCount=_counterEventCount;
 @property(readonly, retain, nonatomic) NSString *kdebugString; // @synthesize kdebugString=_kdebugString;
 @property(readonly, nonatomic) unsigned long long kdebugStringUUID; // @synthesize kdebugStringUUID=_kdebugStringUUID;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned int triggerID; // @synthesize triggerID=_triggerID;
 @property(readonly, nonatomic) unsigned int recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 - (id)detailedDescription;
 - (id)description;
 @property(readonly, nonatomic) unsigned long long *counterEventValues; // @synthesize counterEventValues=_counterEventValues;

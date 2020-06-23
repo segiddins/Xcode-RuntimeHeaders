@@ -14,8 +14,8 @@
 }
 
 + (id)responseFromData:(id)arg1 httpResponse:(id)arg2 error:(id *)arg3;
-@property(readonly) NSDictionary *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *payload; // @synthesize payload=_payload;
 - (id)initWithPayload:(id)arg1;
 
 @end

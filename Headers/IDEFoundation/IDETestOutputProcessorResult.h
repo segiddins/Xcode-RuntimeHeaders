@@ -14,9 +14,9 @@
     NSArray *_consoleChunks;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *consoleChunks; // @synthesize consoleChunks=_consoleChunks;
 @property(retain) NSString *finalOutput; // @synthesize finalOutput=_finalOutput;
-- (void).cxx_destruct;
 
 @end
 

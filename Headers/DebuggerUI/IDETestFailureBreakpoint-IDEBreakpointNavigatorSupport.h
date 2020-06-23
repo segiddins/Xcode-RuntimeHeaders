@@ -11,7 +11,6 @@
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
 @interface IDETestFailureBreakpoint (IDEBreakpointNavigatorSupport) <IDEKeyDrivenNavigableItemRepresentedObject>
-- (id)popUpEditorDisplayName;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 
 // Remaining properties

@@ -21,9 +21,9 @@
     DVTColorSwatchWithComponentsView *_colorSwatchWithComponentsView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTColorSwatchWithComponentsView *colorSwatchWithComponentsView; // @synthesize colorSwatchWithComponentsView=_colorSwatchWithComponentsView;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (void)_updateView;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;

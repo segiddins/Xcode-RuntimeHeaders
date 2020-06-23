@@ -18,11 +18,11 @@
     long long _kind;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long kind; // @synthesize kind=_kind;
 @property(readonly) NSString *lastSavedInterfaceBuilderVersion; // @synthesize lastSavedInterfaceBuilderVersion=_lastSavedInterfaceBuilderVersion;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *archiveType; // @synthesize archiveType=_archiveType;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTypeDescription:(id)arg1;

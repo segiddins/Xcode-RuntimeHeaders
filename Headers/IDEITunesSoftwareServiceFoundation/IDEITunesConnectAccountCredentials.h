@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *alternateDSID; // @synthesize alternateDSID=_alternateDSID;
 @property(readonly) NSString *token; // @synthesize token=_token;
 @property(readonly) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

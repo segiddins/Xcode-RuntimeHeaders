@@ -22,6 +22,7 @@
     NSButton *_addButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *addButton; // @synthesize addButton=_addButton;
 @property(copy, nonatomic) CDUnknownBlockType parametersFilter; // @synthesize parametersFilter=_parametersFilter;
 @property(nonatomic, getter=isEditable) BOOL editable; // @synthesize editable=_editable;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) IDEIntentBuilderIntentParameterCombination *parameterCombination; // @synthesize parameterCombination=_parameterCombination;
 @property(readonly, nonatomic) IDEIntentBuilderIntent *intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) NSMutableSet *_selectedParameters; // @synthesize _selectedParameters;
-- (void).cxx_destruct;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)addButtonPressed:(id)arg1;
 - (void)checkBoxPressed:(id)arg1;

@@ -33,6 +33,7 @@
 + (Class)renderJobClass;
 + (Class)captureSessionInfoClassWithAPI:(unsigned int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DYFuture *complete; // @synthesize complete=_complete;
 @property(readonly, nonatomic) __weak GPUTraceSession *traceSession; // @synthesize traceSession=_traceSession;
 @property(readonly, nonatomic) NSMutableArray *allAPIItems; // @synthesize allAPIItems=_allAPIItems;
@@ -46,11 +47,10 @@
 @property(readonly, nonatomic) Class variablesViewContentProviderClass; // @synthesize variablesViewContentProviderClass=_variablesViewContentProviderClass;
 @property(readonly, nonatomic) __weak GPUDebuggerController *controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic) __weak id <DYPPluginFactory> pluginFactory; // @synthesize pluginFactory=_pluginFactory;
-- (void).cxx_destruct;
 - (id)generateResourceItemForObjectID:(unsigned long long)arg1 type:(unsigned int)arg2 options:(id)arg3 forAPIItem:(id)arg4 error:(id *)arg5;
 - (id)newDataProviderForShaderDataItem:(id)arg1;
 - (id)generateAllResourcesGroupForAPIItem:(id)arg1 boundOnly:(BOOL)arg2;
-- (struct NSArray *)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
+- (id)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
 - (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
 - (id)dataProviderForShaderItem:(id)arg1;
 - (void)establishResource:(id)arg1 forProgramChildren:(id)arg2 containerID:(unsigned long long)arg3;

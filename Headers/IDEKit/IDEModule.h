@@ -18,8 +18,8 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *description;
 - (id)geniusResult_identifierForManualCategory;
 - (id)geniusResult_identifierForGeniusCategory;

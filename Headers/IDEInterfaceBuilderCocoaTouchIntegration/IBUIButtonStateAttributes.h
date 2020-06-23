@@ -17,12 +17,12 @@
     IBUIButtonPerStateAttributes *_focused;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIButtonPerStateAttributes *focused; // @synthesize focused=_focused;
 @property(retain, nonatomic) IBUIButtonPerStateAttributes *selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) IBUIButtonPerStateAttributes *disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) IBUIButtonPerStateAttributes *highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) IBUIButtonPerStateAttributes *normal; // @synthesize normal=_normal;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -14,8 +14,8 @@
 }
 
 + (id)downloadMoreLogsOptionsWithLastCrashReportKey:(id)arg1 lastCrashPointTime:(id)arg2;
-@property(readonly) NSArray *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly) NSArray *options; // @synthesize options=_options;
 
 @end
 

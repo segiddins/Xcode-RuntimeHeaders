@@ -35,13 +35,13 @@
 + (id)keyPathsForValuesAffectingTitle;
 + (id)keyPathsForValuesAffectingInterstitialViewController;
 + (Class)correspondingStepClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) id <DVTInvalidation> certificatesToken; // @synthesize certificatesToken=_certificatesToken;
 @property(retain, nonatomic) id <DVTInvalidation> accountsToken; // @synthesize accountsToken=_accountsToken;
 @property(retain, nonatomic) IDEProvisioningCreateTeamOwnedCertificateUserAction *createCertificateAction; // @synthesize createCertificateAction=_createCertificateAction;
 @property(retain, nonatomic) NSOrderedSet *errors; // @synthesize errors=_errors;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (void)takeAdditionalAction;
 - (id)additionalActionTitle;
 - (void)takePreviousAction;

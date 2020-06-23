@@ -25,6 +25,7 @@
     NSTextField *_integrationTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *integrationTextField; // @synthesize integrationTextField=_integrationTextField;
 @property __weak XCSUIBotIntegrationTestPopoverBadgesView *countsView; // @synthesize countsView=_countsView;
 @property __weak NSImageView *integrationFailedImageView; // @synthesize integrationFailedImageView=_integrationFailedImageView;
@@ -38,7 +39,6 @@
 @property(copy) NSString *testsSuccessText; // @synthesize testsSuccessText=_testsSuccessText;
 @property(copy) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy) NSString *integrationTitle; // @synthesize integrationTitle=_integrationTitle;
-- (void).cxx_destruct;
 - (void)updateBadges;
 - (void)showIntegrationTestsResults:(id)arg1;
 - (void)showOrHideIntegrationFailedControls:(BOOL)arg1;

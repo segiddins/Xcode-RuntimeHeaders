@@ -23,6 +23,7 @@
     long long _accountType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) NSButton *addButton; // @synthesize addButton=_addButton;
 @property BOOL forceLegacyAuth; // @synthesize forceLegacyAuth=_forceLegacyAuth;
-- (void).cxx_destruct;
 - (void)signUp:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)closeWithCode:(long long)arg1;

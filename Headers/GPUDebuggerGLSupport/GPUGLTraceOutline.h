@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_contextNameDict;
 }
 
-@property(readonly) NSMutableDictionary *contextNameDict; // @synthesize contextNameDict=_contextNameDict;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) NSMutableDictionary *contextNameDict; // @synthesize contextNameDict=_contextNameDict;
 - (id)sharegroupResourceDictionaryForSharegroupID:(id)arg1;
 - (id)stateMirrorForTraceItem:(id)arg1;
 - (id)_derivedStateMirrorFromStateMirror:(id)arg1 forFunctionIndex:(unsigned int)arg2 fromFunctionIndex:(unsigned int)arg3;

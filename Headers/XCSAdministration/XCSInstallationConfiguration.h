@@ -42,6 +42,7 @@
 
 + (id)defaultConfigurationWithSharedDataPath:(id)arg1 buildServiceUsername:(id)arg2;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sharedDataPath; // @synthesize sharedDataPath=_sharedDataPath;
 @property(retain, nonatomic) ServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain) id <VersionService> versionService; // @synthesize versionService=_versionService;
@@ -67,7 +68,6 @@
 @property(retain) NSString *systemLaunchDaemonPath; // @synthesize systemLaunchDaemonPath=_systemLaunchDaemonPath;
 @property(retain) NSString *sharedDataSymlinkPath; // @synthesize sharedDataSymlinkPath=_sharedDataSymlinkPath;
 @property(retain) NSString *xcodePath; // @synthesize xcodePath=_xcodePath;
-- (void).cxx_destruct;
 @property(readonly) XCSCertificateAuthority *clientCertificateAuthority;
 @property(readonly) XCSCertificateAuthority *serverCertificateAuthority;
 @property(readonly) XCSKeychain *debugKeychain;

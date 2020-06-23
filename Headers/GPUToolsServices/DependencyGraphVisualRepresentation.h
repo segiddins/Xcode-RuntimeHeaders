@@ -22,11 +22,11 @@
     struct unordered_map<unsigned long, NSArray<NSValue *>*, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, NSArray<NSValue *>*>>> _edgeControlPoints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *clusters; // @synthesize clusters=_clusters;
 @property(readonly, nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 @property(readonly, nonatomic) __weak DependencyViewerGraph *graph; // @synthesize graph=_graph;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)edgeControlPoints:(id)arg1;
 - (struct CGRect)clusterBounds:(id)arg1;
 - (id)nodeEdges:(id)arg1;

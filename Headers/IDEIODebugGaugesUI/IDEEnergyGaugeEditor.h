@@ -77,6 +77,7 @@
     NSLayoutConstraint *_thermalStateTitleHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *thermalStateTitleHeightConstraint; // @synthesize thermalStateTitleHeightConstraint=_thermalStateTitleHeightConstraint;
 @property(retain, nonatomic) NSView *thermalStateTitleView; // @synthesize thermalStateTitleView=_thermalStateTitleView;
 @property(retain, nonatomic) NSView *thermalStateLegendView; // @synthesize thermalStateLegendView=_thermalStateLegendView;
@@ -105,7 +106,6 @@
 @property(retain, nonatomic) NSView *costOverheadExplanationView; // @synthesize costOverheadExplanationView=_costOverheadExplanationView;
 @property __weak DVTMeterView *energyMeterView; // @synthesize energyMeterView=_energyMeterView;
 @property(retain, nonatomic) IDEEnergyGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
-- (void).cxx_destruct;
 - (BOOL)inputHandlerForGraph:(id)arg1 requestsLongPressDragBeginAtTime:(unsigned long long)arg2 onPlanes:(id)arg3;
 - (void)inputHandlerForGraph:(id)arg1 requestsRangeIndicatorState:(unsigned long long)arg2;
 - (void)inputHandlerForGraph:(id)arg1 requestsHeight:(double)arg2 forPlane:(id)arg3;

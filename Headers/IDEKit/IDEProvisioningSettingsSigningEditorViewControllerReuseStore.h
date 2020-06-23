@@ -14,9 +14,9 @@
     NSArray *_reusableViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reusableViewControllers; // @synthesize reusableViewControllers=_reusableViewControllers;
 @property(nonatomic) long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 @property(readonly) NSArray *discardedViewControllers;
 - (id)popReusableViewController;
 - (id)initWithReusableViewControllers:(id)arg1;

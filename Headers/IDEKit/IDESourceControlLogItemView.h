@@ -38,6 +38,7 @@
 + (id)messageTextAttributes;
 + (id)showChatButtonTransformer;
 + (id)nibName;
+- (void).cxx_destruct;
 @property __weak DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
 @property __weak NSTextField *mergeField; // @synthesize mergeField=_mergeField;
 @property(retain) IDESourceControlNameTokenView *nameTokenView; // @synthesize nameTokenView=_nameTokenView;
@@ -45,7 +46,6 @@
 @property(retain) IDESourceControlLogFilesChangedView *filesChangedButton; // @synthesize filesChangedButton=_filesChangedButton;
 @property(retain) NSTextField *revisionField; // @synthesize revisionField=_revisionField;
 @property(retain) NSTextField *dateField; // @synthesize dateField=_dateField;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)teardown;
 - (void)viewWillMoveToSuperview:(id)arg1;

@@ -13,10 +13,10 @@
     BOOL _visible;
 }
 
+- (void).cxx_destruct;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(getter=isVisible) BOOL visible; // @synthesize visible=_visible;
 @property double precedence; // @synthesize precedence=_precedence;
-- (void).cxx_destruct;
 @property(readonly) BOOL hideCarets;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;

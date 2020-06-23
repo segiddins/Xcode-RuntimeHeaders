@@ -18,13 +18,13 @@
     IDELocationScenario *_scenario;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDELocationScenario *scenario; // @synthesize scenario=_scenario;
 @property(readonly) NSNumber *course; // @synthesize course=_course;
 @property(readonly) NSNumber *speed; // @synthesize speed=_speed;
 @property(readonly) NSDate *time; // @synthesize time=_time;
 @property(readonly) NSNumber *longitude; // @synthesize longitude=_longitude;
 @property(readonly) NSNumber *latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 - (BOOL)hasSameCoordinateAs:(id)arg1;
 - (id)description;
 - (id)locationWithSpeed:(id)arg1 course:(id)arg2;

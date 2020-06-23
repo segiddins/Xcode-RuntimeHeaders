@@ -26,9 +26,9 @@
 + (id)knownExtensionMetadata;
 + (id)sourceEditorExtensions;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *commandsByIdentifier; // @synthesize commandsByIdentifier=_commandsByIdentifier;
 @property(readonly, copy) NSArray *commands; // @synthesize commands=_commands;
-- (void).cxx_destruct;
 - (void)sendCancelCommandWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendPerformCommandRequestWithUUID:(id)arg1 commandIdentifier:(id)arg2 parameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)connectionInterrupted;

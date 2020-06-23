@@ -16,6 +16,7 @@
     MISSING_TYPE *emittedOutput;
     MISSING_TYPE *performanceTestOutput;
     MISSING_TYPE *testsPassedString;
+    MISSING_TYPE *wasSkipped;
     MISSING_TYPE *runnablePath;
     MISSING_TYPE *runnableUTI;
 }

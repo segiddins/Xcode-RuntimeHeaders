@@ -19,8 +19,8 @@
 
 + (id)pasteboardTypesForAcceptingCatalogItems;
 + (void)initialize;
-@property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 - (BOOL)canPasteFromPasteboard:(id)arg1;
 - (id)localDragMovedItems:(id)arg1;
 - (id)parentsOfDocumentLocalDragMovedItems:(id)arg1;

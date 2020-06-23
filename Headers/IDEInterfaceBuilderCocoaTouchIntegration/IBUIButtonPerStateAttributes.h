@@ -6,27 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class IBUIColor, IBUIImageSymbolConfiguration, NSAttributedString, NSImage, NSString;
+@class IBColor, IBUIImageSymbolConfiguration, NSAttributedString, NSImage, NSString;
 
 @interface IBUIButtonPerStateAttributes : NSObject
 {
     NSString *_title;
     NSAttributedString *_attributedTitle;
-    IBUIColor *_titleColor;
-    IBUIColor *_titleShadowColor;
+    IBColor *_titleColor;
+    IBColor *_titleShadowColor;
     NSImage *_image;
     NSImage *_backgroundImage;
     IBUIImageSymbolConfiguration *_preferredSymbolConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIImageSymbolConfiguration *preferredSymbolConfiguration; // @synthesize preferredSymbolConfiguration=_preferredSymbolConfiguration;
 @property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-@property(copy, nonatomic) IBUIColor *titleShadowColor; // @synthesize titleShadowColor=_titleShadowColor;
-@property(copy, nonatomic) IBUIColor *titleColor; // @synthesize titleColor=_titleColor;
+@property(copy, nonatomic) IBColor *titleShadowColor; // @synthesize titleShadowColor=_titleShadowColor;
+@property(copy, nonatomic) IBColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

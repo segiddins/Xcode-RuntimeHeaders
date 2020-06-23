@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
 @property(retain) IDEControlGroup *rightControlGroup; // @synthesize rightControlGroup=_rightControlGroup;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <IDENavBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL drawsLeftBorder; // @synthesize drawsLeftBorder=_drawsLeftBorder;
 @property(nonatomic) BOOL drawsTopBorder; // @synthesize drawsTopBorder=_drawsTopBorder;
-- (void).cxx_destruct;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (struct CGRect)grabRect;

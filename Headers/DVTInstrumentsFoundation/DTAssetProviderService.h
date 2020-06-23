@@ -21,9 +21,9 @@
 + (void)assetProviderWithConnection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)beginProvidingAssetsForLocalApplication:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)beginProvidingAssetsForRemoteApplication:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *concurrentRequestQueue; // @synthesize concurrentRequestQueue=_concurrentRequestQueue;
 @property(nonatomic) __weak DTXConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)registerManifestForApplicationAtPath:(id)arg1 onPort:(unsigned long long)arg2;
 - (void)startServerOnDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)hasCancelledRequestWithIdentifier:(id)arg1 onChannel:(id)arg2;

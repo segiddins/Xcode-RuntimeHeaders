@@ -16,10 +16,10 @@
     DVTTextDocumentLocation *_breakpointLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTTextDocumentLocation *breakpointLocation; // @synthesize breakpointLocation=_breakpointLocation;
 @property unsigned long long completionStartMinimumCharacter; // @synthesize completionStartMinimumCharacter=_completionStartMinimumCharacter;
 @property(copy) NSArray *strategies; // @synthesize strategies=_strategies;
-- (void).cxx_destruct;
 - (BOOL)shouldAutoCompleteAtLocation:(unsigned long long)arg1;
 - (id)autoCompleteChars;
 - (struct _NSRange)wordRangeAtLocation:(unsigned long long)arg1;

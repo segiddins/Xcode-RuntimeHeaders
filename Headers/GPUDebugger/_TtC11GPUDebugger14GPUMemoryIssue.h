@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUDebugger/GPUIssuesViewItem-Protocol.h>
-
 @class MISSING_TYPE, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC11GPUDebugger14GPUMemoryIssue : NSObject <GPUIssuesViewItem>
+@interface _TtC11GPUDebugger14GPUMemoryIssue : NSObject
 {
     MISSING_TYPE *finding;
     MISSING_TYPE *subItems;

@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
     id <DTTimelineGraphDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DTTimelineGraphDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DTTimelineGraphDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateAccessoryDownState:(id)arg1 down:(BOOL)arg2;
 - (void)_endReorderingEvent:(id)arg1;
 - (void)_reorderPlaneEvent:(id)arg1;

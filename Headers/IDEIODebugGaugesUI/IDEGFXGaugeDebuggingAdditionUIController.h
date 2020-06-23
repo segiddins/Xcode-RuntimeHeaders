@@ -31,11 +31,11 @@
 
 + (id)debuggingAdditionForLaunchSession:(id)arg1 inWorkspaceTabController:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) id <IDEGFXGaugeReportItemProvider> reportItemProvider; // @synthesize reportItemProvider=_reportItemProvider;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(readonly) double appTargetFrameRate; // @synthesize appTargetFrameRate=_appTargetFrameRate;
 - (void)setAppTargetFrameRate:(double)arg1;

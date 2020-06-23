@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) IDEEnergyGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (void)_initializeTray;

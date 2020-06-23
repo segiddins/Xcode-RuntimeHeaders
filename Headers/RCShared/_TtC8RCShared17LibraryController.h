@@ -10,7 +10,6 @@
 
 @interface _TtC8RCShared17LibraryController : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *importManager;
     MISSING_TYPE *thumbnailGenerator;
     MISSING_TYPE *catalogs;
     MISSING_TYPE *metadataQueue;
@@ -19,6 +18,7 @@
     MISSING_TYPE *libraries;
     MISSING_TYPE *fileWrapper;
     MISSING_TYPE *cacheWrapper;
+    MISSING_TYPE *documentResolver;
     MISSING_TYPE *assetResolver;
     MISSING_TYPE *delegate;
     MISSING_TYPE *importProgressItems;

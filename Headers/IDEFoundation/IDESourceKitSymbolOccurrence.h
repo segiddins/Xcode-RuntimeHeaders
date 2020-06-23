@@ -23,9 +23,9 @@
     IDESourceKitWorkspace *_index;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long column; // @synthesize column=_column;
 @property(readonly, nonatomic) long long lineNumber; // @synthesize lineNumber=_lineNumber;
-- (void).cxx_destruct;
 - (BOOL)isKindOfClass:(Class)arg1;
 @property(readonly) DVTDocumentLocation *location;
 @property(readonly) NSURL *moduleURL;

@@ -18,10 +18,10 @@
 }
 
 + (id)headerItemWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTDevice *device; // @synthesize device=_device;
 @property(readonly) NSMutableArray *children; // @synthesize children=_children;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, getter=isGroupItem) BOOL groupItem;
 @property(readonly, getter=isEditable) BOOL editable;
 @property(readonly, getter=isLeaf) BOOL leaf;

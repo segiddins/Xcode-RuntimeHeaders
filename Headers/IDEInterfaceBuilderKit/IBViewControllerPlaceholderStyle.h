@@ -18,12 +18,12 @@
 }
 
 + (id)styleWithTheme:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *explanationAttributes; // @synthesize explanationAttributes=_explanationAttributes;
 @property(retain, nonatomic) NSDictionary *subtitleAttributes; // @synthesize subtitleAttributes=_subtitleAttributes;
 @property(retain, nonatomic) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSShadow *barShadow; // @synthesize barShadow=_barShadow;
-- (void).cxx_destruct;
 
 @end
 

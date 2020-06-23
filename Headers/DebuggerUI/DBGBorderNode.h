@@ -17,12 +17,12 @@
     double _lineWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dashed; // @synthesize dashed=_dashed;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) double borderOpacity; // @synthesize borderOpacity=_borderOpacity;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
-- (void).cxx_destruct;
 - (id)lineNodes;
 - (void)updateLines;
 - (void)setShineThroughOpacity:(double)arg1;

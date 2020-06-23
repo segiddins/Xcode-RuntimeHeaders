@@ -13,8 +13,8 @@
     NSString *_completionDisplayString;
 }
 
-@property(readonly, nonatomic) NSString *completionDisplayString; // @synthesize completionDisplayString=_completionDisplayString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *completionDisplayString; // @synthesize completionDisplayString=_completionDisplayString;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

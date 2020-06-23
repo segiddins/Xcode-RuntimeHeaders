@@ -16,11 +16,11 @@
     NSArray *_perCPUUsage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *perCPUUsage; // @synthesize perCPUUsage=_perCPUUsage;
 @property(retain, nonatomic) DTSysmonCPUUsageEntry *averageCPUUsage; // @synthesize averageCPUUsage=_averageCPUUsage;
 @property(nonatomic) unsigned int enabledCPUs; // @synthesize enabledCPUs=_enabledCPUs;
 @property(nonatomic) unsigned int cpuCount; // @synthesize cpuCount=_cpuCount;
-- (void).cxx_destruct;
 
 @end
 

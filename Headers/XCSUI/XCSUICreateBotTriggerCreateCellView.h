@@ -14,9 +14,9 @@
     id <XCSUICreateBotTriggerCreateCellViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL isPostIntegration; // @synthesize isPostIntegration=_isPostIntegration;
 @property __weak id <XCSUICreateBotTriggerCreateCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addSendEmailTrigger:(id)arg1;
 - (void)addRunScriptTrigger:(id)arg1;
 

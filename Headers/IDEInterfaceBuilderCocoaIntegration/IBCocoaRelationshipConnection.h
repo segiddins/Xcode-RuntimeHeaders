@@ -16,8 +16,8 @@
 + (BOOL)isObjectValidOutletDestination:(id)arg1;
 + (BOOL)isObjectValidOutletSource:(id)arg1;
 + (id)connectionWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3 creationSelectorName:(id)arg4;
-@property(readonly, nonatomic) NSString *creationSelectorName; // @synthesize creationSelectorName=_creationSelectorName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *creationSelectorName; // @synthesize creationSelectorName=_creationSelectorName;
 - (id)description;
 - (id)archiveConnection;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

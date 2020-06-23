@@ -7,6 +7,6 @@
 #import <IDEKit/IDEOpenRequest-Protocol.h>
 
 @protocol _IDEPrivateOpenRequest <IDEOpenRequest>
-- (void)addPostNavigationBlock:(void (^)(BOOL))arg1;
+- (void)addPostNavigationBlock:(void (^)(BOOL, BOOL))arg1;
 @end
 

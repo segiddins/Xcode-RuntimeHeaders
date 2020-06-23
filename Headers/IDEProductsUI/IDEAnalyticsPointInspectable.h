@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingMarkAsResolvedButtonTitle;
+- (void).cxx_destruct;
 @property(readonly) IDEProductCategory *productCategory; // @synthesize productCategory=_productCategory;
 @property(readonly) id <DVTAnalyticsLogProtocol> analyticsLog; // @synthesize analyticsLog=_analyticsLog;
 @property(readonly) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
-- (void).cxx_destruct;
 - (id)markAsResolvedButtonTitle;
 - (id)analyticsLogDetails;
 @property(readonly) NSString *inspectableUtilityExtensionIdentifier;

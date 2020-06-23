@@ -20,13 +20,13 @@
     NSMutableSet *_proxiedDevicesMock;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *proxiedDevicesMock; // @synthesize proxiedDevicesMock=_proxiedDevicesMock;
 @property BOOL supportsProvisioningMock; // @synthesize supportsProvisioningMock=_supportsProvisioningMock;
 @property(copy) NSString *platformIdentifierMock; // @synthesize platformIdentifierMock=_platformIdentifierMock;
 @property(copy) NSString *identifierMock; // @synthesize identifierMock=_identifierMock;
 @property(copy) NSString *nameForDeveloperPortalMock; // @synthesize nameForDeveloperPortalMock=_nameForDeveloperPortalMock;
 @property(copy) NSString *nameMock; // @synthesize nameMock=_nameMock;
-- (void).cxx_destruct;
 @property(readonly) DVTPlatform *platform;
 @property(readonly, copy) NSSet *proxiedDevices;
 @property(readonly) BOOL supportsProvisioning;

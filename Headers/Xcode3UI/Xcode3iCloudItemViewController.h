@@ -26,13 +26,13 @@
 + (id)keyPathsForValuesAffectingCloudDocumentsEnabled;
 + (id)keyPathsForValuesAffectingKeyValueStoreEnabled;
 + (id)reorderingPasteboardType;
+- (void).cxx_destruct;
 @property(retain) NSButton *iCloudDashboardButton; // @synthesize iCloudDashboardButton=_iCloudDashboardButton;
 @property(retain) IDEAppIDItemIdentifiersTableViewController *identifiersTableViewController; // @synthesize identifiersTableViewController=_identifiersTableViewController;
 @property(retain) NSView *identifiersSlice; // @synthesize identifiersSlice=_identifiersSlice;
 @property(retain) NSView *cloudDocsSlice; // @synthesize cloudDocsSlice=_cloudDocsSlice;
 @property(retain) NSButton *cloudKitServiceCheckBox; // @synthesize cloudKitServiceCheckBox=_cloudKitServiceCheckBox;
 @property(retain) NSView *servicesSlice; // @synthesize servicesSlice=_servicesSlice;
-- (void).cxx_destruct;
 - (void)iCloudDashboardAction:(id)arg1;
 - (void)setCloudKitEnabled:(BOOL)arg1;
 - (BOOL)isCloudKitEnabled;

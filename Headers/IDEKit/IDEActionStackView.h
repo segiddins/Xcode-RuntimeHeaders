@@ -13,8 +13,8 @@
     id <IDEActionStackViewDelegate> _delegate;
 }
 
-@property __weak id <IDEActionStackViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IDEActionStackViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)invalidateLayout;
 - (id)initWithFrame:(struct CGRect)arg1 stackView:(id)arg2;

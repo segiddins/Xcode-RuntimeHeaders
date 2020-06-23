@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <XCTDaemonControl/XCTConfigurableCallbackQueue-Protocol.h>
-#import <XCTDaemonControl/XCTConfigurableDebugLogger-Protocol.h>
+#import <XCTDaemonControl/XCTTestRunnerSession-Protocol.h>
 #import <XCTDaemonControl/XCTestManager_IDEInterface-Protocol.h>
 
 @class DTXConnection, DTXProxyChannel, NSString;
 @protocol OS_dispatch_queue, XCTDebugLogDelegate, XCTTestRunnerConnectionProvider, XCTTestRunnerSessionDelegate, XCTestDriverInterface;
 
-@interface XCTTestRunnerSession : NSObject <XCTestManager_IDEInterface, XCTConfigurableCallbackQueue, XCTConfigurableDebugLogger>
+@interface XCTTestRunnerSession : NSObject <XCTestManager_IDEInterface, XCTTestRunnerSession>
 {
     BOOL _testRunnerReady;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -26,6 +25,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(getter=isTestRunnerReady) BOOL testRunnerReady; // @synthesize testRunnerReady=_testRunnerReady;
 @property(retain) DTXProxyChannel *proxyChannel; // @synthesize proxyChannel=_proxyChannel;
 @property(retain) DTXConnection *connection; // @synthesize connection=_connection;
@@ -34,7 +34,6 @@
 @property __weak id <XCTTestRunnerSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-- (void).cxx_destruct;
 - (id)_XCT_reportSelfDiagnosisIssue:(id)arg1 description:(id)arg2;
 - (id)_XCT_logDebugMessage:(id)arg1;
 - (id)_XCT_logMessage:(id)arg1;
@@ -47,7 +46,9 @@
 - (id)_XCT_testCase:(id)arg1 method:(id)arg2 didStallOnMainThreadInFile:(id)arg3 line:(id)arg4;
 - (id)_XCT_testCaseDidFinishForTestClass:(id)arg1 method:(id)arg2 withStatus:(id)arg3 duration:(id)arg4;
 - (id)_XCT_testCaseDidFailForTestClass:(id)arg1 method:(id)arg2 withMessage:(id)arg3 file:(id)arg4 line:(id)arg5;
+- (id)_XCT_testCaseWasSkippedForTestClass:(id)arg1 method:(id)arg2 withMessage:(id)arg3 file:(id)arg4 line:(id)arg5;
 - (id)_XCT_testCaseDidStartForTestClass:(id)arg1 method:(id)arg2;
+- (id)_XCT_testSuite:(id)arg1 didFinishAt:(id)arg2 runCount:(id)arg3 skipCount:(id)arg4 failureCount:(id)arg5 unexpectedFailureCount:(id)arg6 testDuration:(id)arg7 totalDuration:(id)arg8;
 - (id)_XCT_testSuite:(id)arg1 didFinishAt:(id)arg2 runCount:(id)arg3 withFailures:(id)arg4 unexpected:(id)arg5 testDuration:(id)arg6 totalDuration:(id)arg7;
 - (id)_XCT_testSuite:(id)arg1 didStartAt:(id)arg2;
 - (id)_XCT_initializationForUITestingDidFailWithError:(id)arg1;
@@ -55,6 +56,8 @@
 - (id)_XCT_didFinishExecutingTestPlan;
 - (id)_XCT_didBeginExecutingTestPlan;
 - (id)_XCT_testBundleReadyWithProtocolVersion:(id)arg1 minimumVersion:(id)arg2;
+- (id)_XCT_reportTestWithIdentifier:(id)arg1 didExceedExecutionTimeAllowance:(id)arg2;
+- (id)_XCT_reportTestWithIdentifier:(id)arg1 didExceedMaxDuration:(id)arg2;
 - (id)_XCT_didFailToBootstrapWithError:(id)arg1;
 @property(readonly) id <XCTestDriverInterface> testRunnerProxy;
 - (void)notifyDisconnected;

@@ -34,6 +34,7 @@
 }
 
 + (id)sourceControlReviewFilesWindowControllerLogAspect;
+- (void).cxx_destruct;
 @property(readonly) IDENavigableItemAsyncFilteringCoordinator *flatFileNavigableItemCoordinator; // @synthesize flatFileNavigableItemCoordinator=_flatFileNavigableItemCoordinator;
 @property(readonly) IDENavigableItemAsyncFilteringCoordinator *fileSystemNavigableItemCoordinator; // @synthesize fileSystemNavigableItemCoordinator=_fileSystemNavigableItemCoordinator;
 @property(readonly) IDENavigableItemUniquingAsyncFilteringCoordinator *workspaceNavigableItemCoordinator; // @synthesize workspaceNavigableItemCoordinator=_workspaceNavigableItemCoordinator;
@@ -42,7 +43,6 @@
 @property(copy) NSArray *workingTrees; // @synthesize workingTrees=_workingTrees;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) IDEReviewFilesViewController *reviewFilesViewController; // @synthesize reviewFilesViewController=_reviewFilesViewController;
-- (void).cxx_destruct;
 - (void)uncheckAll:(id)arg1;
 - (void)checkModified:(id)arg1;
 - (void)checkAll:(id)arg1;

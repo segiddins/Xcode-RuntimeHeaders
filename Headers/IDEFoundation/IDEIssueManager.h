@@ -58,12 +58,12 @@
 + (id)_issueProviderInfo;
 + (void)_useDebugProviderExtensionPointWithIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long numberOfRuntimeIssues; // @synthesize numberOfRuntimeIssues=_numberOfRuntimeIssues;
 @property unsigned long long numberOfBuildtimeIssues; // @synthesize numberOfBuildtimeIssues=_numberOfBuildtimeIssues;
 @property(readonly) IDEIssueLogRecordsGroup *issueLogRecordsGroup; // @synthesize issueLogRecordsGroup=_issueLogRecordsGroup;
 @property(readonly, getter=areLiveIssuesEnabled) BOOL liveIssuesEnabled; // @synthesize liveIssuesEnabled=_liveIssuesEnabled;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)_containersOrBlueprintsUpdated;
 - (id)_issuesForProviderContext:(id)arg1;
 - (id)_providerContextToProvisionInfoMapForIssues:(id)arg1;

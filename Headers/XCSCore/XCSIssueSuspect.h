@@ -16,10 +16,10 @@
 }
 
 + (id)issueSuspectWithSuspectName:(id)arg1 emails:(id)arg2 commits:(id)arg3 validationErrors:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *commits; // @synthesize commits=_commits;
 @property(readonly, nonatomic) NSArray *emails; // @synthesize emails=_emails;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)_validateName:(id)arg1 emails:(id)arg2 commits:(id)arg3 validationErrors:(id *)arg4;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;

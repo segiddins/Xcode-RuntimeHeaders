@@ -18,11 +18,11 @@
     NSString *_teamName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canGoNext; // @synthesize canGoNext=_canGoNext;
 @property(retain, nonatomic) NSString *teamName; // @synthesize teamName=_teamName;
 @property(retain, nonatomic) NSString *distributionMethodName; // @synthesize distributionMethodName=_distributionMethodName;
 @property(retain, nonatomic) NSString *certificateName; // @synthesize certificateName=_certificateName;
-- (void).cxx_destruct;
 - (void)takeAdditionalAction;
 @property(readonly, nonatomic) NSString *additionalActionTitle;
 

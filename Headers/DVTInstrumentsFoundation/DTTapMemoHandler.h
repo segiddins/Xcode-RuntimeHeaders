@@ -17,8 +17,8 @@
     id <DTTapMemoHandlerDelegate> _delegate;
 }
 
-@property(readonly, retain, nonatomic) DTTapConfig *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DTTapConfig *config; // @synthesize config=_config;
 - (id)handleMemo:(id)arg1;
 - (void)resume;
 - (void)suspend;

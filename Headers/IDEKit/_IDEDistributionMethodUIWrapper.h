@@ -15,9 +15,9 @@
 }
 
 + (id)wrapperForDistributionMethod:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly) IDEDistributionMethod *distributionMethod; // @synthesize distributionMethod=_distributionMethod;
-- (void).cxx_destruct;
 
 @end
 

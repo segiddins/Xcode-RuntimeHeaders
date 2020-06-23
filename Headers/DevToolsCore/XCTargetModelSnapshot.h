@@ -17,9 +17,9 @@
     NSArray *_resourceFileNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *resourceFileNames; // @synthesize resourceFileNames=_resourceFileNames;
 @property(readonly) NSArray *buildConfigurationNames; // @synthesize buildConfigurationNames=_buildConfigurationNames;
-- (void).cxx_destruct;
 @property(readonly) NSString *containerPath;
 - (id)infoPlistFilePathForConfiguration:(id)arg1;
 - (id)infoPlistForConfiguration:(id)arg1;

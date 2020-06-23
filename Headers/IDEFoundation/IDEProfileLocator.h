@@ -23,6 +23,7 @@
     DVTPortalProfileType *_profileType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
 @property(nonatomic) long long automaticLocationStyle; // @synthesize automaticLocationStyle=_automaticLocationStyle;
 @property(retain, nonatomic) NSSet *signingCertificates; // @synthesize signingCertificates=_signingCertificates;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSSet *profiles; // @synthesize profiles=_profiles;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (id)_errorForManualWithAllowsAutomaticSelectionOfAllProfiles;
 - (id)_errorForXcodeManagedNoMatchingProfiles;
 - (id)_errorForManualWithNoMatchingProfile:(id)arg1;

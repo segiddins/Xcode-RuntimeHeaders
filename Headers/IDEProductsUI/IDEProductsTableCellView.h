@@ -14,9 +14,9 @@
     NSLayoutConstraint *_errorButtonWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *errorButtonWidthConstraint; // @synthesize errorButtonWidthConstraint=_errorButtonWidthConstraint;
 @property __weak NSButton *errorButton; // @synthesize errorButton=_errorButton;
-- (void).cxx_destruct;
 - (void)_hideErrorButton;
 - (void)_showErrorButton;
 

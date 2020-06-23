@@ -22,6 +22,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSURL *location; // @synthesize location=_location;
 @property(retain, nonatomic) XCSUser *user; // @synthesize user=_user;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(nonatomic) long long httpStatusCode; // @synthesize httpStatusCode=_httpStatusCode;
 @property(retain, nonatomic) NSURLRequest *originalRequest; // @synthesize originalRequest=_originalRequest;
-- (void).cxx_destruct;
 - (id)_cleanedUpErrorCode:(long long)arg1 headers:(id)arg2 body:(id)arg3 request:(id)arg4;
 - (BOOL)_unpackResponseData:(id)arg1;
 - (id)dictionaryRepresentation;

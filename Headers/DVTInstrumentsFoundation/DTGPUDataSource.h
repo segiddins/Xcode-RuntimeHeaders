@@ -17,24 +17,27 @@
     unsigned long long _windowLimit;
     unsigned long long _sampleInterval;
     unsigned long long _stopTime;
+    BOOL _enableShaderProfiler;
     struct unique_ptr<DTGPUCounterRingBuffer, std::__1::default_delete<DTGPUCounterRingBuffer>> _counterBuffer;
+    struct unique_ptr<DTGPUCounterRingBuffer, std::__1::default_delete<DTGPUCounterRingBuffer>> _shaderProfilerBuffer;
     NSArray *_supportedCounterProfiles;
     id <MTLDevice> _device;
     id <DTGPUDataSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DTGPUDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) __weak id <MTLDevice> device; // @synthesize device=_device;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DTGPUDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <MTLDevice> device; // @synthesize device=_device;
 - (id)_queryDisplayInfoDict;
 - (unsigned long long)timestampOfFirstSample;
 - (BOOL)isEqual:(id)arg1;
 - (void)_sampleCounters;
 - (void)reset;
-- (void)flushRemainingData:(CDUnknownBlockType)arg1;
+- (void)getRemainingData:(CDUnknownBlockType)arg1;
 - (void)stop;
 - (BOOL)run;
+- (void)enableShaderProfiler:(BOOL)arg1;
 - (id)configure:(unsigned int)arg1 interval:(unsigned long long)arg2 windowLimit:(unsigned long long)arg3;
 @property(readonly, nonatomic) DTGPUCounterProfile *collectingProfile;
 @property(readonly, nonatomic) NSDictionary *deviceInfoDict;

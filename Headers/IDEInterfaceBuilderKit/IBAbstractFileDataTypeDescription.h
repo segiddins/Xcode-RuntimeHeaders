@@ -17,10 +17,12 @@
 
 + (id)allTypeDescriptionsMatchingMetadataAtPath:(id)arg1;
 + (id)allTypeDescriptions;
+- (void).cxx_destruct;
 @property(readonly) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(readonly) NSSet *bundleLayouts; // @synthesize bundleLayouts=_bundleLayouts;
 @property(readonly) long long fileSystemNodeType; // @synthesize fileSystemNodeType=_fileSystemNodeType;
-- (void).cxx_destruct;
+- (void)populateExtraDescriptionContent:(id)arg1;
+- (id)description;
 - (long long)matchingScoreForMetadataAtPath:(id)arg1 bundleContents:(id)arg2;
 - (id)initWithExtension:(id)arg1;
 

@@ -25,6 +25,7 @@
     struct CGRect _nativeDisplayBounds;
 }
 
+- (void).cxx_destruct;
 @property BOOL wantsSoftwareDimming; // @synthesize wantsSoftwareDimming=_wantsSoftwareDimming;
 @property BOOL shapeIsRectangular; // @synthesize shapeIsRectangular=_shapeIsRectangular;
 @property long long screenType; // @synthesize screenType=_screenType;
@@ -36,7 +37,6 @@
 @property long long maximumFramesPerSecond; // @synthesize maximumFramesPerSecond=_maximumFramesPerSecond;
 @property double displayCornerRadius; // @synthesize displayCornerRadius=_displayCornerRadius;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (double)_normalizedCornerRadius;
 - (struct CGSize)_nativeDisplaySize;
 - (id)_calculateScreenMask;

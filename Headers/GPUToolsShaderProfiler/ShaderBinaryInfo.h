@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DYShaderAnalyzerResult *analyzerResult; // @synthesize analyzerResult=_analyzerResult;
 @property(retain, nonatomic) NSString *disassembly; // @synthesize disassembly=_disassembly;
 @property(retain, nonatomic) NSMutableData *uscSamples; // @synthesize uscSamples=_uscSamples;
 @property(retain, nonatomic) NSData *binary; // @synthesize binary=_binary;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

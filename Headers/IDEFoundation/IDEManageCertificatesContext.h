@@ -22,6 +22,7 @@
     DVTDeveloperAccount *_developerAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDeveloperAccount *developerAccount; // @synthesize developerAccount=_developerAccount;
 @property(retain, nonatomic) DVTDeveloperAccountManager *developerAccountManager; // @synthesize developerAccountManager=_developerAccountManager;
 @property(retain, nonatomic) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSSet *certificateTypes; // @synthesize certificateTypes=_certificateTypes;
 @property(readonly, nonatomic) DVTPortalTeam *portalTeam; // @synthesize portalTeam=_portalTeam;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (id)sessionWithError:(id *)arg1;
 - (id)sessionProviderWithError:(id *)arg1;
 - (id)initWithTeam:(id)arg1;

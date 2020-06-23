@@ -31,6 +31,7 @@
     NSNumber *_maximumAllowedRuntimeOSVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsBottomPadding; // @synthesize wantsBottomPadding=_wantsBottomPadding;
 @property(nonatomic) BOOL wantsHeaderBottomBorder; // @synthesize wantsHeaderBottomBorder=_wantsHeaderBottomBorder;
 @property(retain, nonatomic) NSNumber *maximumAllowedRuntimeOSVersion; // @synthesize maximumAllowedRuntimeOSVersion=_maximumAllowedRuntimeOSVersion;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)sliceDictionary;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 andDictionary:(id)arg2;

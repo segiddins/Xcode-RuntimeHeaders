@@ -7,17 +7,18 @@
 #import <DebuggerFoundation/DBGViewObject.h>
 
 #import <DebuggerFoundation/DBGFocusableViewObject-Protocol.h>
+#import <DebuggerFoundation/DBGLayoutConstraintItem-Protocol.h>
 #import <DebuggerFoundation/DBGViewSurfaceUpdateDelegate-Protocol.h>
 
-@class DBGFetchedDocument, DBGLayoutConstraintSet, DBGViewControllerObject, DBGViewLayer, DBGViewWindow, NSMutableArray, NSString;
-@protocol DBGViewSurfaceUpdateDelegate;
+@class DBGFetchedDocument, DBGLayoutConstraintSet, DBGViewControllerObject, DBGViewLayer, DBGViewWindow, NSArray, NSMutableArray, NSObject, NSSet, NSString;
+@protocol DBGViewSurfaceUpdateDelegate, IBAutolayoutItem, IBCollection, IBOrderedCollection;
 
-@interface DBGViewSurface : DBGViewObject <DBGViewSurfaceUpdateDelegate, DBGFocusableViewObject>
+@interface DBGViewSurface : DBGViewObject <DBGLayoutConstraintItem, DBGViewSurfaceUpdateDelegate, DBGFocusableViewObject>
 {
     DBGViewWindow *_window;
-    DBGLayoutConstraintSet *_constraintsAffectingViewObject;
-    DBGLayoutConstraintSet *_constraintsReferencingViewObject;
-    NSMutableArray *_referencingConstraints;
+    DBGLayoutConstraintSet *_affectingConstraintsSet;
+    DBGLayoutConstraintSet *_referencingConstraintsSetForDisplay;
+    NSMutableArray *_allReferencingConstraints;
     BOOL _flipped;
     BOOL _masksToBounds;
     BOOL _hasVisibleRect;
@@ -35,6 +36,7 @@
     double _zPosition;
     double _anchorPointZ;
     unsigned long long _ambiguityStatusMask;
+    NSArray *_layoutGuides;
     id <DBGViewSurfaceUpdateDelegate> _updateDelegate;
     NSString *_viewForFirstBaselineLayoutPointer;
     NSString *_viewForLastBaselineLayoutPointer;
@@ -49,11 +51,13 @@
     struct CATransform3D _sublayerTransform;
 }
 
+- (void).cxx_destruct;
 @property BOOL legacyLayerFormat; // @synthesize legacyLayerFormat=_legacyLayerFormat;
 @property(retain) DBGFetchedDocument *fetchedDocument; // @synthesize fetchedDocument=_fetchedDocument;
 @property(retain) NSString *viewForLastBaselineLayoutPointer; // @synthesize viewForLastBaselineLayoutPointer=_viewForLastBaselineLayoutPointer;
 @property(retain) NSString *viewForFirstBaselineLayoutPointer; // @synthesize viewForFirstBaselineLayoutPointer=_viewForFirstBaselineLayoutPointer;
 @property __weak id <DBGViewSurfaceUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
+@property(retain) NSArray *layoutGuides; // @synthesize layoutGuides=_layoutGuides;
 @property BOOL iOS; // @synthesize iOS=_iOS;
 @property(nonatomic) unsigned long long ambiguityStatusMask; // @synthesize ambiguityStatusMask=_ambiguityStatusMask;
 @property BOOL hasAmbiguousLayout; // @synthesize hasAmbiguousLayout=_hasAmbiguousLayout;
@@ -76,7 +80,6 @@
 @property struct CATransform3D transform; // @synthesize transform=_transform;
 @property BOOL flipped; // @synthesize flipped=_flipped;
 @property unsigned long long layerIndex; // @synthesize layerIndex=_layerIndex;
-- (void).cxx_destruct;
 - (void)assignRepresentedLayerFromTree;
 - (void)_getSublayersFromTree;
 - (void)_extractLayerInfoFromDictionary:(id)arg1;
@@ -87,17 +90,16 @@
 - (id)forwardFocusToViewObject;
 - (id)childWithIdentifier:(id)arg1;
 - (id)allFetchedDocuments;
-@property(readonly) DBGLayoutConstraintSet *constraintsReferencingViewObject;
-@property(readonly) DBGLayoutConstraintSet *constraintsAffectingViewObject;
-- (void)_recursiveViewAddressesToViewSurfaces:(id)arg1;
-- (id)recursiveViewAddressesToViewSurfaces;
+@property(readonly) DBGLayoutConstraintSet *referencingConstraintsSetForDisplay;
+@property(readonly) DBGLayoutConstraintSet *affectingConstraintsSet;
+- (void)recursivelyIndexViewSurfaces:(id)arg1 layoutGuides:(id)arg2;
 - (void)viewSurfaceDidUpdateVisualRepresentation:(id)arg1;
-@property(readonly) NSMutableArray *referencingConstraints;
+@property(readonly) NSMutableArray *allReferencingConstraints;
 @property(retain) id snapshot; // @synthesize snapshot=_snapshot;
 @property(retain) DBGViewLayer *layer; // @synthesize layer=_layer;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
-- (id)parentViewSurface;
+@property(readonly) DBGViewSurface *parentViewSurface;
 @property(readonly) DBGViewWindow *window;
 - (struct CGSize)size;
 - (id)_decodeDocumentInfoValuesIfNecessary:(id)arg1;
@@ -110,10 +112,117 @@
 - (void)updateChildrenWithSnapshotGroup:(id)arg1 forRequest:(id)arg2;
 @property(readonly) BOOL isViewHost;
 @property(readonly) BOOL isHostingView;
+@property(readonly, nonatomic) NSArray *ibCandidateRedundantConstraintsFromHostedEngine;
+@property(readonly, nonatomic) BOOL ibIgnoreNearestNeighborProximityThreshold;
+@property(readonly, nonatomic) NSSet *ibFallbackViewsForCandidateConstraintGenerationForFailedArbitration;
+@property(readonly, nonatomic) id ibWindowForArbitration;
+@property(nonatomic) double ibShadowedVerticalContentCompressionResistancePriority;
+@property(nonatomic) double ibShadowedHorizontalContentCompressionResistancePriority;
+@property(nonatomic) double ibShadowedVerticalContentHuggingPriority;
+@property(nonatomic) double ibShadowedHorizontalContentHuggingPriority;
+@property(readonly, nonatomic) BOOL ibExternalEffectiveTranslatesAutoresizingMaskIntoConstraints;
+@property(nonatomic) BOOL ibExternalExplicitTranslatesAutoresizingMaskIntoConstraints;
+@property(nonatomic) struct CGRect ibDesignBounds;
+@property(nonatomic) struct CGRect ibDesignFrame;
+@property(readonly, nonatomic) id <IBCollection> ibTurnedOnButPossiblyUninstalledReferencingConstraints;
+@property(readonly, nonatomic) id <IBCollection> ibInstalledReferencingConstraints;
+@property(readonly, nonatomic) id <IBCollection> ibCandidateReferencingConstraints;
+@property(retain, nonatomic) id <IBOrderedCollection> ibTurnedOnButPossiblyUninstalledConstraints;
+@property(retain, nonatomic) id <IBOrderedCollection> ibInstalledConstraints;
+@property(readonly, nonatomic) id <IBOrderedCollection> ibInstalledConstraintsWithInstalledAncestors;
+@property(retain, nonatomic) id <IBOrderedCollection> ibCandidateConstraints;
+@property(readonly, nonatomic) struct CGRect ibLayoutFrameworkBounds;
+@property(nonatomic) struct CGRect ibLayoutFrame;
+@property(readonly, nonatomic) double ibShadowedFirstBaselineOffsetFromTop;
+@property(readonly, nonatomic) double baselineOffsetFromBottom;
+@property(readonly, nonatomic) struct CGSize intrinsicContentSize;
+@property(readonly, nonatomic) CDStruct_d2b197d1 ibLayoutInset;
+@property(nonatomic) BOOL translatesAutoresizingMaskIntoConstraints;
+@property(readonly, nonatomic) NSArray *subviews;
+@property(readonly, nonatomic) NSArray *ibChildItemsEligibleForNearestNeighborConstraints;
+@property(readonly, nonatomic) NSObject<IBAutolayoutItem> *ibParentItem;
+- (id)ibNextAncestorItemForFindingReferencingConstraintsInLayoutInfo:(id)arg1;
+- (void)ibInvalidateAutoresizingMaskConstraints;
+- (void)setNeedsUpdateConstraints;
+- (id)ibEffectiveItemForRuntimeConstraintAdjustingConstant:(double *)arg1 attribute:(unsigned long long *)arg2 orConstraintClassIfNeeded:(Class *)arg3 context:(id)arg4;
+- (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
+@property(readonly, nonatomic) long long ibFrameDecisionStrategy;
+@property(readonly, nonatomic) BOOL ibIsSelfManagedContainerInEngine;
+- (BOOL)ibShouldIgnoreScrollableContentHeightAmbiguityForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
+- (BOOL)ibShouldIgnoreScrollableContentWidthAmbiguityForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
+- (BOOL)ibShouldIgnoreAmbiguityAndMisplacementIssuesBecauseLayoutIsExplicitlyManaged;
+- (unsigned long long)ibAllowedSiblingEdgesForGuidesToSelectedItems:(id)arg1;
+- (BOOL)ibAllowsSiblingGuidesToSelectedItems:(id)arg1 ofType:(long long)arg2;
+- (BOOL)ibAllowsConstraintSpacingFromInsideEdgesForSiblings;
+- (BOOL)ibShouldConsiderGuidesToEdgeWithAttribute:(unsigned long long)arg1 fromEdgeWithAttribute:(unsigned long long)arg2 ofSelectedItems:(id)arg3;
+- (id)ibViewForAncestorViewEdgeMovementQuestionsOfSubview:(id)arg1;
+- (struct CGRect)ibLayoutFrameForFrame:(struct CGRect)arg1;
+- (struct CGRect)ibFrameForLayoutFrame:(struct CGRect)arg1;
+- (struct CGRect)ibBoundsForLayoutBounds:(struct CGRect)arg1;
+- (void)exerciseAmbiguityInLayout;
+- (id)constraintsAffectingLayoutForOrientation:(unsigned long long)arg1;
+- (BOOL)ib_hasAmbiguousLayout;
+- (void)setContentCompressionResistancePriority:(float)arg1 forOrientation:(unsigned long long)arg2;
+- (float)contentCompressionResistancePriorityForOrientation:(unsigned long long)arg1;
+- (void)setContentHuggingPriority:(float)arg1 forOrientation:(unsigned long long)arg2;
+- (float)contentHuggingPriorityForOrientation:(unsigned long long)arg1;
+- (void)removeConstraints:(id)arg1;
+- (void)removeConstraint:(id)arg1;
+- (void)addConstraints:(id)arg1;
+- (void)addConstraint:(id)arg1;
+@property(readonly, nonatomic) NSArray *constraints;
+- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 fromView:(id)arg2;
+- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 toView:(id)arg2;
+- (unsigned int)convertRectEdge:(unsigned int)arg1 fromView:(id)arg2;
+- (unsigned int)convertRectEdge:(unsigned int)arg1 toView:(id)arg2;
+- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 fromView:(id)arg2;
+- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 toView:(id)arg2;
+- (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
+- (struct CGSize)convertSize:(struct CGSize)arg1 toView:(id)arg2;
+- (struct CGSize)convertSize:(struct CGSize)arg1 fromView:(id)arg2;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2;
+- (CDUnion_42e99c75)ib_convertKnobPosition:(CDUnion_42e99c75)arg1 fromItem:(id)arg2;
+- (CDUnion_42e99c75)ib_convertKnobPosition:(CDUnion_42e99c75)arg1 toItem:(id)arg2;
+- (unsigned int)ib_convertRectEdge:(unsigned int)arg1 fromItem:(id)arg2;
+- (unsigned int)ib_convertRectEdge:(unsigned int)arg1 toItem:(id)arg2;
+- (CDStruct_d2b197d1)ib_convertInset:(CDStruct_d2b197d1)arg1 fromItem:(id)arg2;
+- (CDStruct_d2b197d1)ib_convertInset:(CDStruct_d2b197d1)arg1 toItem:(id)arg2;
+- (struct CGRect)ib_convertRect:(struct CGRect)arg1 fromItem:(id)arg2;
+- (struct CGSize)ib_convertSize:(struct CGSize)arg1 toItem:(id)arg2;
+- (struct CGSize)ib_convertSize:(struct CGSize)arg1 fromItem:(id)arg2;
+- (struct CGPoint)ib_convertPoint:(struct CGPoint)arg1 fromItem:(id)arg2;
+- (id)ibEffectiveRootCoordinateSystemForConversions;
+- (void)setFrameSize:(struct CGSize)arg1;
+- (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
+- (BOOL)ibSupportsLayoutMargins;
+- (struct NSEdgeInsets)ibLayoutMargins;
+- (BOOL)ibSupportsFirstBaseline;
+- (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
+- (double)ibBaselineAtIndex:(long long)arg1 inCoordinateSpaceOfItem:(id)arg2;
+- (void)addSubview:(id)arg1;
+- (void)removeFromSuperview;
+- (id)initAsEngineSpacerItemWithInitialLayoutFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) long long ibBaselineCount;
+@property(readonly, nonatomic) NSObject<IBAutolayoutItem> *superview;
+- (struct CGPoint)ib_convertPoint:(struct CGPoint)arg1 toItem:(id)arg2;
+- (struct CGRect)ib_convertRect:(struct CGRect)arg1 toItem:(id)arg2;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2;
+- (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;
+- (struct CGRect)convertRect:(struct CGRect)arg1 toOverlayView:(id)arg2;
+- (id)ibEffectiveWindowForConversions;
+@property(readonly, nonatomic) struct CGRect ibLayoutBounds;
+@property(readonly) DBGViewSurface *effectiveViewSurface;
+@property(readonly) struct CGRect layoutFrame;
+- (id)descriptiveAmbiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
+- (id)plainAmbiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
+- (id)ambiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) struct CGRect frame;
 @property(readonly) unsigned long long hash;
+@property(readonly) NSString *identifier;
+@property(readonly) NSString *primaryDisplayName;
 @property(readonly) Class superclass;
 
 @end

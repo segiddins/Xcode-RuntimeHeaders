@@ -17,8 +17,8 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(copy) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(copy) NSArray *sections; // @synthesize sections=_sections;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

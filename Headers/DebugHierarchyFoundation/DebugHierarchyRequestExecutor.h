@@ -15,9 +15,9 @@
 }
 
 + (id)executorWithRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DebugHierarchyRequestExecutionContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(retain, nonatomic) DebugHierarchyRequestActionExecutor *actionExecutor; // @synthesize actionExecutor=_actionExecutor;
-- (void).cxx_destruct;
 - (id)_performanceMetricsDictionaryRequestActionDuration:(double)arg1;
 - (void)_executeRequestActionsWithKnownObjects;
 - (void)_executeRequestActionsWithCrawler;

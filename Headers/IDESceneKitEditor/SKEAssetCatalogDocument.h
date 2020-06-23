@@ -14,8 +14,8 @@
     NSArray *_scenes;
 }
 
-@property(retain) NSArray *scenes; // @synthesize scenes=_scenes;
 - (void).cxx_destruct;
+@property(retain) NSArray *scenes; // @synthesize scenes=_scenes;
 - (void)makeCurrent;
 @property BOOL preferCompressedTextures;
 @property BOOL forceYUp;

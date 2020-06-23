@@ -21,12 +21,12 @@
 
 + (id)keyPathsForValuesAffectingLogRecords;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *resultError; // @synthesize resultError=_resultError;
 @property(retain) IDEActivityLogSectionRecorder *logSectionRecorder; // @synthesize logSectionRecorder=_logSectionRecorder;
 @property(retain) IDEActivityLogSectionRecorder *logRecorder; // @synthesize logRecorder=_logRecorder;
 @property(retain) IDELogStore *logStore; // @synthesize logStore=_logStore;
 @property(retain) NSString *appName; // @synthesize appName=_appName;
-- (void).cxx_destruct;
 - (void)setResultErrorString:(id)arg1;
 - (void)addOperationToActivityLog:(id)arg1 details:(id)arg2;
 - (void)stopActivityLog;

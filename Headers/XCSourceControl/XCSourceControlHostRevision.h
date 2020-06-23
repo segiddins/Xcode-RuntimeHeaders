@@ -18,8 +18,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sharedHead;
-@property(readonly, copy, nonatomic) NSString *commitHash; // @synthesize commitHash=_commitHash;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *commitHash; // @synthesize commitHash=_commitHash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

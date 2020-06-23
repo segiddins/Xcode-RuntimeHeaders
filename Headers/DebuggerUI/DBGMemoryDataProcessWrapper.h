@@ -21,8 +21,8 @@
 
 + (id)keyPathsForValuesAffectingMemoryDatas;
 + (void)registerTableCellViewsForDebugNavigatorContentDelegateWithOutlineView:(id)arg1;
-@property(readonly) IDEDebugProcess *process; // @synthesize process=_process;
 - (void).cxx_destruct;
+@property(readonly) IDEDebugProcess *process; // @synthesize process=_process;
 - (unsigned long long)navigableItem_indexOfRepresentedObjectForIdentifier:(id)arg1 inRelationshipKeyPath:(id)arg2;
 - (id)navigableItem_identifierForRepresentedObjectAtIndex:(unsigned long long)arg1 inRelationshipKeyPath:(id)arg2;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

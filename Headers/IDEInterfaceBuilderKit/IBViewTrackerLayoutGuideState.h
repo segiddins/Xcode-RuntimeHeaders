@@ -15,10 +15,10 @@
     struct CGRect _layoutFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *layoutGuideMatches; // @synthesize layoutGuideMatches=_layoutGuideMatches;
 @property(retain, nonatomic) IBLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(nonatomic) struct CGRect layoutFrame; // @synthesize layoutFrame=_layoutFrame;
-- (void).cxx_destruct;
 
 @end
 

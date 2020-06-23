@@ -17,12 +17,12 @@
     struct CGRect rect;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *color; // @synthesize color;
 @property(nonatomic) struct CGRect rect; // @synthesize rect;
 @property(nonatomic) unsigned long long binOffset; // @synthesize binOffset;
 @property DTHistogramBin *bin; // @synthesize bin;
 @property(nonatomic) unsigned long long height; // @synthesize height;
-- (void).cxx_destruct;
 
 @end
 

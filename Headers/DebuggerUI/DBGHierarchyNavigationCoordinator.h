@@ -21,6 +21,7 @@
     NSMapTable *_representedObjectToItemMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *representedObjectToItemMap; // @synthesize representedObjectToItemMap=_representedObjectToItemMap;
 @property __weak id <DBGHierarchyNavigationRoot> rootHierarchyObject; // @synthesize rootHierarchyObject=_rootHierarchyObject;
 @property(retain) NSMapTable *changeObserverCallbacks; // @synthesize changeObserverCallbacks=_changeObserverCallbacks;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL showsOnlyVisibleViewObjects; // @synthesize showsOnlyVisibleViewObjects=_showsOnlyVisibleViewObjects;
 @property(nonatomic) long long viewOutlineStructure; // @synthesize viewOutlineStructure=_viewOutlineStructure;
 @property(retain) NSArray *topLevelNavigationItems; // @synthesize topLevelNavigationItems=_topLevelNavigationItems;
-- (void).cxx_destruct;
 - (id)makeHierarchyItemForProxiedObject:(id)arg1;
 - (void)_calculateTopLevelNavigationObjectsForApplication:(id)arg1;
 - (void)_updateHierarchyWithRootObject:(id)arg1;

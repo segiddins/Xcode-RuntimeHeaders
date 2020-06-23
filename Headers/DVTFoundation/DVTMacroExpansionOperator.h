@@ -21,6 +21,7 @@
 + (void)registerRetrievalOperatorClass:(Class)arg1;
 + (id)retrievalOperatorRegistry;
 + (void)registerBuiltInOperators;
+- (BOOL)applyToEmptyResult;
 - (id)dvt_debugDescription;
 - (id)parseError;
 - (BOOL)hasParseError;

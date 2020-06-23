@@ -14,8 +14,8 @@
 }
 
 + (id)dynamicTableRowProgressIndicatorView;
-@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 - (void).cxx_destruct;
+@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 
 @end
 

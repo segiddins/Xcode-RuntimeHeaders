@@ -24,6 +24,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DBGViewSurface *hostingView; // @synthesize hostingView=_hostingView;
 @property(retain) NSArray *editorTopLevelItems; // @synthesize editorTopLevelItems=_editorTopLevelItems;
 @property(retain) NSString *modelObjectIdentifier; // @synthesize modelObjectIdentifier=_modelObjectIdentifier;
@@ -31,7 +32,6 @@
 @property(retain) NSDictionary *additionalDocumentInfo; // @synthesize additionalDocumentInfo=_additionalDocumentInfo;
 @property unsigned long long loadedState; // @synthesize loadedState=_loadedState;
 @property(retain) NSString *representedClassPath; // @synthesize representedClassPath=_representedClassPath;
-- (void).cxx_destruct;
 @property(retain) NSData *fetchedPayload; // @synthesize fetchedPayload=_fetchedPayload;
 - (id)openActionTooltip;
 - (id)openActionTitle;

@@ -24,6 +24,7 @@
     XCSUIInsetHorizontalDividerLine *_topDividerLine;
 }
 
+- (void).cxx_destruct;
 @property __weak XCSUIInsetHorizontalDividerLine *topDividerLine; // @synthesize topDividerLine=_topDividerLine;
 @property __weak NSView *deviceBadgesView; // @synthesize deviceBadgesView=_deviceBadgesView;
 @property __weak NSView *deviceDetailsView; // @synthesize deviceDetailsView=_deviceDetailsView;
@@ -33,7 +34,6 @@
 @property __weak NSTextField *devicesTextField; // @synthesize devicesTextField=_devicesTextField;
 @property __weak DVTTableView *devicesTableView; // @synthesize devicesTableView=_devicesTableView;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)selectionShouldChangeInTableView:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;

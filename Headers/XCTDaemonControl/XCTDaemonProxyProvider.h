@@ -17,8 +17,8 @@
     id <XCTDTXConnection> _connection;
 }
 
-@property(readonly) id <XCTDTXConnection> connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly) id <XCTDTXConnection> connection; // @synthesize connection=_connection;
 - (void)registerDisconnectHandler:(CDUnknownBlockType)arg1;
 - (id)makeDaemonProxyWithRemoteInterface:(id)arg1 exportedInterface:(id)arg2;
 - (void)invalidate;

@@ -14,12 +14,13 @@
     NSString *_applicationIdentifierEntitlement;
 }
 
-- (id)underlyingProfile;
 - (void).cxx_destruct;
+- (id)underlyingProfile;
 - (id)certificates;
 - (id)pathExtension;
 - (BOOL)matchesEntitlements:(id)arg1 nonMatchingKeys:(id *)arg2;
 - (id)dataRepresentation;
+- (BOOL)isGameCenterFeatureEnabled;
 - (id)applicationIdentifierEntitlement;
 - (struct _MISProfile *)misProfile;
 - (id)initWithProfileRef:(struct _MISProfile *)arg1 error:(id *)arg2;

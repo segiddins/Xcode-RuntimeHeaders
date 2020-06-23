@@ -31,6 +31,7 @@
 }
 
 + (id)dfr_switch;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didChangeValueByDragging; // @synthesize didChangeValueByDragging=_didChangeValueByDragging;
 @property(retain, nonatomic) NSControl *hostedSwitch; // @synthesize hostedSwitch=_hostedSwitch;
 @property(retain, nonatomic) CALayer *highlightLayer; // @synthesize highlightLayer=_highlightLayer;
@@ -47,7 +48,6 @@
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) id target; // @synthesize target=_target;
 @property(nonatomic, getter=isOn) BOOL on; // @synthesize on=_on;
-- (void).cxx_destruct;
 - (BOOL)_isHostedSwitchClassSupported;
 - (Class)_hostedSwitchClass;
 - (struct CGColor *)_trackColorWithBrightnessMultiplier:(double)arg1;

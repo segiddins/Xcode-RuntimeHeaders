@@ -20,12 +20,12 @@
 }
 
 + (id)ibStandInRuntimeClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *propertyNamesAndTitles; // @synthesize propertyNamesAndTitles=_propertyNamesAndTitles;
 @property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(nonatomic) BOOL allowsGroupSelection; // @synthesize allowsGroupSelection=_allowsGroupSelection;
 @property(nonatomic) int valueSelectionBehavior; // @synthesize valueSelectionBehavior=_valueSelectionBehavior;
 @property(retain, nonatomic) NSString *autosaveName; // @synthesize autosaveName=_autosaveName;
-- (void).cxx_destruct;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)removePropertyWithName:(id)arg1;

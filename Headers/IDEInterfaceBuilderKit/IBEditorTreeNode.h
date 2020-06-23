@@ -14,9 +14,9 @@
     IBEditor *_editor;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBEditor *editor; // @synthesize editor=_editor;
 @property(retain) IBMutableIdentityDictionary *objectToChildNodesMap; // @synthesize objectToChildNodesMap=_objectToChildNodesMap;
-- (void).cxx_destruct;
 - (void)_appendDebugDescriptionLinesToArray:(id)arg1 prefix:(id)arg2 prevFrameController:(id)arg3;
 - (id)debugDescription;
 - (id)init;

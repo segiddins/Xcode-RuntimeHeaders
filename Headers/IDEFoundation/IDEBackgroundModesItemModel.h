@@ -34,6 +34,7 @@
 + (id)keyPathsForValuesAffectingAudio;
 + (id)selectedBackgroundSessionTypes:(id)arg1 forBackgroundModes:(id)arg2;
 + (id)defaultSessionTypes;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isProgrammaticallySettingSessionType; // @synthesize isProgrammaticallySettingSessionType=_isProgrammaticallySettingSessionType;
 @property(retain, nonatomic) DVTObservingToken *sessionTypeObservation; // @synthesize sessionTypeObservation=_sessionTypeObservation;
 @property(retain, nonatomic) DVTObservingToken *backgroundModesObservation; // @synthesize backgroundModesObservation=_backgroundModesObservation;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSDictionary *backgroundModesInfoPlistKeyToEnabledBackgroundModes; // @synthesize backgroundModesInfoPlistKeyToEnabledBackgroundModes=_backgroundModesInfoPlistKeyToEnabledBackgroundModes;
 @property(retain, nonatomic) _TtC13IDEFoundation25BackgroundModeSessionType *sessionType; // @synthesize sessionType=_sessionType;
 @property(readonly, nonatomic) NSArray *sessionTypes; // @synthesize sessionTypes=_sessionTypes;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (void)primitiveInvalidate;
 - (BOOL)isEnabledUsingEducatedGuess;

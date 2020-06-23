@@ -24,11 +24,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL forceReload; // @synthesize forceReload=_forceReload;
 @property(retain) _TtC29IDESourceCodeComparisonEditor18BlameVisualization *currentBlameVisualization; // @synthesize currentBlameVisualization=_currentBlameVisualization;
 @property(retain) NSMutableArray *currentBlameAnnotations; // @synthesize currentBlameAnnotations=_currentBlameAnnotations;
 @property(retain) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)blameItemsForLine:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_findBlameItemsForLine:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

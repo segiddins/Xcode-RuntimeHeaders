@@ -14,10 +14,11 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *ghostRingLayer;
     MISSING_TYPE *indeterminateProgressRingLayer;
     MISSING_TYPE *determinateProgressRingLayer;
-    MISSING_TYPE *observeFractionCompleted;
+    MISSING_TYPE *observeCompletionState;
     MISSING_TYPE *observeIsIndeterminate;
     MISSING_TYPE *progress;
     MISSING_TYPE *graduallyIncreasingProgress;
+    MISSING_TYPE *onStateChangeEventSource;
     MISSING_TYPE *observedProgress;
     MISSING_TYPE *activeStrokeColor;
     MISSING_TYPE *inactiveStrokeColor;

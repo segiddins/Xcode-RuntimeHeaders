@@ -48,6 +48,7 @@
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultSelectionChannelContext;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *previousStateRestorationExpandedItemIDs; // @synthesize previousStateRestorationExpandedItemIDs=_previousStateRestorationExpandedItemIDs;
 @property(retain, nonatomic) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) DVTGradientImagePopUpButton *addButton; // @synthesize addButton=_addButton;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) IBICSourceListOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(readonly) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
 @property(readonly) IBICCatalogDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)outlineViewSelectionDidChange:(id)arg1;

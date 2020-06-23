@@ -17,11 +17,11 @@
 }
 
 + (int)providerType;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *issuesByFile; // @synthesize issuesByFile=_issuesByFile;
 @property BOOL openDocumentsChanged; // @synthesize openDocumentsChanged=_openDocumentsChanged;
 @property(retain) DVTObservingToken *openDocumentsChangedToken; // @synthesize openDocumentsChangedToken=_openDocumentsChangedToken;
 @property(retain) DVTNotificationToken *playgroundAuxIssueObserverToken; // @synthesize playgroundAuxIssueObserverToken=_playgroundAuxIssueObserverToken;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_filterIssuesByActiveScheme;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;

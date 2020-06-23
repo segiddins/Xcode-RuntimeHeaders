@@ -28,6 +28,7 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *designTimeHeightConstraint; // @synthesize designTimeHeightConstraint=_designTimeHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *designTimeWidthConstraint; // @synthesize designTimeWidthConstraint=_designTimeWidthConstraint;
 @property struct CGSize designTimeSize; // @synthesize designTimeSize=_designTimeSize;
@@ -35,7 +36,6 @@
 @property float visibilityPriority; // @synthesize visibilityPriority=_visibilityPriority;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) IBNSViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (BOOL)isSpace;
 - (id)childTouchBar;
 - (id)runtimeTouchBarItem;

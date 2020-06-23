@@ -28,7 +28,6 @@
     BOOL _mouseOverRangeSlider;
     struct CGPoint _panLeftover;
     BOOL _explicitZoom;
-    NSSet *_selectedInstances;
     DBGLayoutConstraintSet *_allConstraints;
     DBGLayoutConstraintOverlayImageProvider *_constraintOverlaySource;
     DVTObservingToken *_highlightedConstraintObserver;
@@ -59,11 +58,14 @@
     DBGViewDebuggerAdditionUIController *_debuggerUIController;
     NSMutableArray *_revealedObjects;
     NSDictionary *_presentedObjects;
+    NSSet *_selectedRenderables;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(retain) NSSet *selectedRenderables; // @synthesize selectedRenderables=_selectedRenderables;
 @property(retain, nonatomic) NSDictionary *presentedObjects; // @synthesize presentedObjects=_presentedObjects;
 @property(retain, nonatomic) NSMutableArray *revealedObjects; // @synthesize revealedObjects=_revealedObjects;
 @property __weak DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
@@ -82,7 +84,6 @@
 @property(readonly) BOOL showOnCanvasRangeSlider; // @synthesize showOnCanvasRangeSlider=_showOnCanvasRangeSlider;
 @property unsigned long long numberOfZPlanes; // @synthesize numberOfZPlanes=_numberOfZPlanes;
 @property(nonatomic) BOOL isIn3D; // @synthesize isIn3D=_isIn3D;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)primitiveInvalidate;
@@ -182,7 +183,7 @@
 - (void)showObjects:(id)arg1 forReason:(id)arg2;
 - (void)clearReveal;
 - (void)updateWithRevealedObjects:(id)arg1;
-- (void)updatePresentedConstraintsForViewInstances:(id)arg1;
+- (void)updatePresentedConstraintsForRenderables:(id)arg1;
 - (id)_selectableViewsForShowingConstraints:(id)arg1 alreadySelectedInstances:(id)arg2;
 - (id)rootViewSurface;
 - (void)updateWithSelectedViewObjects:(id)arg1;

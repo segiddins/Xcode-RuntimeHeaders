@@ -27,6 +27,7 @@
 + (id)containerIdentifiersJobCache;
 + (id)expandedIdentifiers:(id)arg1 targetCapabilitiesContext:(id)arg2 buildConfiguration:(id)arg3 expansion:(id)arg4 error:(id *)arg5;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *unexpandedIdentifiers; // @synthesize unexpandedIdentifiers=_unexpandedIdentifiers;
 @property(retain) NSSet *availableTeamIdentifiers; // @synthesize availableTeamIdentifiers=_availableTeamIdentifiers;
 @property(readonly) DVTPortalContainerType *containerType; // @synthesize containerType=_containerType;
@@ -34,7 +35,6 @@
 @property(readonly) BOOL requiresPortalIdentifiers; // @synthesize requiresPortalIdentifiers=_requiresPortalIdentifiers;
 @property(nonatomic) BOOL isRefreshing; // @synthesize isRefreshing=_isRefreshing;
 @property(readonly, nonatomic) IDEProjectItemModel *itemModel; // @synthesize itemModel=_itemModel;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)flightCheckIsValidating:(id)arg1;

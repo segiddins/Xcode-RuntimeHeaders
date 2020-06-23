@@ -21,6 +21,8 @@
 - (void).cxx_destruct;
 - (void)SetCallbackToNull;
 - (unsigned long long)GetNumLocations;
+- (void)RemoveName:(const char *)arg1;
+- (_Bool)AddName:(const char *)arg1;
 - (_Bool)IsEnabled;
 - (void)SetEnabled:(_Bool)arg1;
 - (void)SetCondition:(const char *)arg1;
@@ -32,6 +34,7 @@
 - (void)SetCallbackWithBaton:(void *)arg1;
 - (id)GetLocationAtIndex:(unsigned int)arg1;
 - (id)FindLocationByID:(int)arg1;
+- (void)GetNames:(id)arg1;
 - (_Bool)GetDescription:(id)arg1;
 
 // Remaining properties

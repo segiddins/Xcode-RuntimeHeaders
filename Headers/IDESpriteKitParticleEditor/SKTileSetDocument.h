@@ -18,9 +18,9 @@
 }
 
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKTileSetNavigableContainer *tileSetContainer; // @synthesize tileSetContainer=_tileSetContainer;
 @property(retain, nonatomic) NSSet *editorTileSets; // @synthesize editorTileSets=_editorTileSets;
-- (void).cxx_destruct;
 - (void)commitChangeOfObject:(id)arg1 onKeyPath:(id)arg2 oldValue:(id)arg3 withActionName:(id)arg4 dependentKeyPaths:(id)arg5;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
 - (void)_unobserveTileSetBehaviorChanges;

@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(copy) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy) NSString *title; // @synthesize title=_title;
 - (id)description;
 - (id)initWithTitle:(id)arg1;
 

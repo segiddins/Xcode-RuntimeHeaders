@@ -49,7 +49,6 @@
 - (void)cancel;
 - (void)setState:(long long)arg1 result:(id)arg2 error:(id)arg3;
 - (CDUnknownBlockType)_internalSetState:(long long)arg1 result:(id)arg2 error:(id)arg3;
-- (id)future;
 - (void)setProgress:(long long)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_description;

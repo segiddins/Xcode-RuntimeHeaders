@@ -16,8 +16,8 @@
     id <IDEIndexSymbol> _indexSymbol;
 }
 
-@property(readonly, nonatomic) id <IDEIndexSymbol> indexSymbol; // @synthesize indexSymbol=_indexSymbol;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IDEIndexSymbol> indexSymbol; // @synthesize indexSymbol=_indexSymbol;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;

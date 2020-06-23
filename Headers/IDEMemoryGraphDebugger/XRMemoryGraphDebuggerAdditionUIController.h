@@ -35,6 +35,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingFilteredChildren;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly) DVTDispatchLock *filteredIndexLock; // @synthesize filteredIndexLock=_filteredIndexLock;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL shouldAutoSwitchDebugNavigatorContentMode; // @synthesize shouldAutoSwitchDebugNavigatorContentMode=_shouldAutoSwitchDebugNavigatorContentMode;
 @property(nonatomic) BOOL userHasRequestedMemoryGraphDebugging; // @synthesize userHasRequestedMemoryGraphDebugging=_userHasRequestedMemoryGraphDebugging;
 @property(retain, nonatomic) XRMemoryGraphDebuggerAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

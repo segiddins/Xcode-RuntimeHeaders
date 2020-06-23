@@ -23,10 +23,10 @@
 + (id)_automaticPlaceHolderFilePath;
 + (id)askOnLaunchPlaceHolderForBuildable:(id)arg1 scheme:(id)arg2;
 + (id)_askOnLaunchPlaceHolderFilePath;
+- (void).cxx_destruct;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(retain) id <IDEBuildable> buildableProduct; // @synthesize buildableProduct=_buildableProduct;
 @property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
-- (void).cxx_destruct;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setFilePathFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

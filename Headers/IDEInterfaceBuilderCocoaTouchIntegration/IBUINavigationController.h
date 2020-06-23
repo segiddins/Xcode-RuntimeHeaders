@@ -30,6 +30,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedToolbarHidden;
 + (id)keyPathsForValuesAffectingIbInspectedNavigationBarHidden;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hidesBarsOnTap; // @synthesize hidesBarsOnTap=_hidesBarsOnTap;
 @property(nonatomic) BOOL hidesBarsWhenVerticallyCompact; // @synthesize hidesBarsWhenVerticallyCompact=_hidesBarsWhenVerticallyCompact;
 @property(nonatomic) BOOL hidesBarsOnSwipe; // @synthesize hidesBarsOnSwipe=_hidesBarsOnSwipe;
@@ -38,7 +39,6 @@
 @property(retain) IBUIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(getter=isNavigationBarHidden) BOOL navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
 @property(retain) IBUINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-- (void).cxx_destruct;
 - (id)innateSimulatedMetricsForPipeline;
 - (id)simulatedMetricsForPipeline;
 - (id)displayedChildViewController;

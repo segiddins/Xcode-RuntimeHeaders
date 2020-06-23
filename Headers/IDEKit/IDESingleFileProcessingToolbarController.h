@@ -23,10 +23,10 @@
 
 + (id)keyPathsForValuesAffectingActionLabel;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProcessedFileAttributes *attributes; // @synthesize attributes=_attributes;
 @property BOOL canRefresh; // @synthesize canRefresh=_canRefresh;
 @property(retain) IDEEditor<IDESingleFileCommandSupportingEditor> *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (void)_updateActionPopUp;
 - (BOOL)_showingAssembly;
 @property(readonly) NSString *actionLabel;

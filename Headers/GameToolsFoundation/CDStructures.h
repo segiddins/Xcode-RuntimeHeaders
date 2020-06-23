@@ -34,10 +34,6 @@ struct MappingPair {
     id to;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct SCNVector4 {
     double _field1;
     double _field2;

@@ -14,9 +14,9 @@
     NSDictionary *moreAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *moreAttributes; // @synthesize moreAttributes;
 @property(retain) NSDictionary *posixAttributes; // @synthesize posixAttributes;
-- (void).cxx_destruct;
 - (id)posixPermissionsStringFromIntValue:(id)arg1;
 - (id)osTypeStringFromIntValue:(id)arg1;
 - (id)allAttributeKeyValuePairsForDiff;

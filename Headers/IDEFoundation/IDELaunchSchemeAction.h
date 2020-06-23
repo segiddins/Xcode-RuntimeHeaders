@@ -48,6 +48,7 @@
     _TtC13IDEFoundation24IDESchemeOptionReference *_routingCoverageFileReference;
     NSNumber *_simulatorIPhoneDisplay;
     NSNumber *_simulatorIPadDisplay;
+    NSString *_launchdServiceSpecifier;
     NSString *_internalIOSSubstitutionApp;
     long long _consoleMode;
     NSString *_debugServiceExtensionContentsString;
@@ -58,6 +59,7 @@
 + (id)keyPathsForValuesAffectingLaunchDueToFetchEvent;
 + (id)keyPathsForValuesAffectingDoesNonActionWork;
 + (id)createAdditionalDiagnosticsDict;
+- (void).cxx_destruct;
 @property(copy) NSString *debugServiceExtension; // @synthesize debugServiceExtension=_debugServiceExtension;
 @property(copy) NSString *debugServiceExtensionContentsString; // @synthesize debugServiceExtensionContentsString=_debugServiceExtensionContentsString;
 @property BOOL GPUProfilerEnabled; // @synthesize GPUProfilerEnabled=_GPUProfilerEnabled;
@@ -69,6 +71,7 @@
 @property(copy) NSString *internalIOSSubstitutionApp; // @synthesize internalIOSSubstitutionApp=_internalIOSSubstitutionApp;
 @property int internalIOSLaunchStyle; // @synthesize internalIOSLaunchStyle=_internalIOSLaunchStyle;
 @property(retain) NSDictionary *additionalSchemeSettings; // @synthesize additionalSchemeSettings=_additionalSchemeSettings;
+@property(retain) NSString *launchdServiceSpecifier; // @synthesize launchdServiceSpecifier=_launchdServiceSpecifier;
 @property int enableGPUValidationMode; // @synthesize enableGPUValidationMode=_enableGPUValidationMode;
 @property int enableGPUFrameCaptureMode; // @synthesize enableGPUFrameCaptureMode=_enableGPUFrameCaptureMode;
 @property BOOL debugDocumentVersioning; // @synthesize debugDocumentVersioning=_debugDocumentVersioning;
@@ -93,7 +96,6 @@
 @property(retain) _TtC13IDEFoundation24IDESchemeOptionReference *deviceSensorReplayFileReference; // @synthesize deviceSensorReplayFileReference=_deviceSensorReplayFileReference;
 @property BOOL allowDeviceSensorReplayData; // @synthesize allowDeviceSensorReplayData=_allowDeviceSensorReplayData;
 @property(retain) _TtC13IDEFoundation25IDEDeviceAppDataReference *deviceAppDataReference; // @synthesize deviceAppDataReference=_deviceAppDataReference;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)addDeviceSensorReplayFileReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addRoutingCoverageFileReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
@@ -163,7 +165,6 @@
 - (void)setLaunchDueToFetchEvent:(BOOL)arg1;
 - (BOOL)launchDueToFetchEvent;
 - (id)additionalOptions;
-- (id)_expandMacrosInString:(id)arg1;
 @property(readonly) NSString *resolvedCustomWorkingDirectory; // @synthesize resolvedCustomWorkingDirectory=_resolvedCustomWorkingDirectory;
 - (id)commandLineArgumentsForDevice:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)doesNonActionWork;

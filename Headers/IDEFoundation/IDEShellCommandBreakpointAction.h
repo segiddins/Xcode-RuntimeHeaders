@@ -16,10 +16,10 @@
 }
 
 + (id)propertiesAffectingPersistenceState;
+- (void).cxx_destruct;
 @property BOOL waitUntilDone; // @synthesize waitUntilDone=_waitUntilDone;
 @property(copy, nonatomic) NSString *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) NSString *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (void)setWaitUntilDoneFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setArgumentsFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
@@ -33,6 +33,7 @@
 - (void)performActionUsingContext:(id)arg1 andBreakpoint:(id)arg2;
 - (id)_argumentsArrayForBreakpoint:(id)arg1;
 - (void)_extractExpressionsAndMacrosFromCommandAndArguments;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_shellCommandActionCommonInit;
 - (id)init;
 

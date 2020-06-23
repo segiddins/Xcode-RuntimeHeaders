@@ -15,6 +15,7 @@
     MISSING_TYPE *startTime;
     MISSING_TYPE *duration;
     MISSING_TYPE *result;
+    MISSING_TYPE *location;
     MISSING_TYPE *subsections;
     MISSING_TYPE *messages;
 }

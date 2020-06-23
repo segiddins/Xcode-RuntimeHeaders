@@ -9,8 +9,8 @@
 #import <IDEPlaygroundExecution/IDEPlaygroundDataHandlerDelegate-Protocol.h>
 #import <IDEPlaygroundExecution/IDEPlaygroundDeviceOwner-Protocol.h>
 
-@class DVTDisallowFinishToken, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTPlaygroundCommunicationListener, IDEConsoleAdaptor, IDEPlaygroundDataHandler, IDEPlaygroundExecutionParameters, IDEPlaygroundLaunchDescriptor, IDEPlaygroundPreparationParameters, NSObject, NSString;
-@protocol IDEPlaygroundExecutionSessionDelegate, OS_dispatch_queue, OS_dispatch_semaphore;
+@class DVTDisallowFinishToken, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTPlaygroundCommunicationListener, IDEConsoleAdaptor, IDEPlaygroundDataHandler, IDEPlaygroundExecutionDeviceService, IDEPlaygroundExecutionParameters, IDEPlaygroundLaunchDescriptor, IDEPlaygroundPreparationParameters, NSObject, NSString;
+@protocol IDEPlaygroundExecutionSessionDelegate, OS_dispatch_queue, OS_dispatch_semaphore, OS_os_log;
 
 @interface IDEPlaygroundExecutionSession : DVTOperation <IDEPlaygroundDataHandlerDelegate, IDEPlaygroundDeviceOwner>
 {
@@ -52,20 +52,28 @@
     DVTPerformanceMetric *_executionPerformanceMetric;
     BOOL _consoleAdaptorIsOpen;
     BOOL _playgroundListenerConnectionIsOpen;
+    BOOL _didExecutePlaygroundSetupExpression;
     int _internalState;
     unsigned long long _state;
     IDEPlaygroundLaunchDescriptor *_launchDescriptor;
     IDEPlaygroundExecutionParameters *_executionParameters;
     id <IDEPlaygroundExecutionSessionDelegate> _delegate;
+    IDEPlaygroundExecutionDeviceService *_deviceService;
     IDEPlaygroundPreparationParameters *_preparationParameters;
     IDEPlaygroundExecutionParameters *_executionParametersMailbox;
     IDEConsoleAdaptor *_targetConsoleAdaptor;
     DVTPlaygroundCommunicationListener *_playgroundListener;
+    NSObject<OS_os_log> *_diagnosticsLog;
 }
 
++ (id)stringFromExecutionState:(unsigned long long)arg1;
 + (id)keyPathsForValuesAffectingCanFinishExecution;
 + (id)playgroundExecutionPerformanceLogAspect;
 + (id)playgroundExecutionLogAspect;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property BOOL didExecutePlaygroundSetupExpression; // @synthesize didExecutePlaygroundSetupExpression=_didExecutePlaygroundSetupExpression;
+@property(retain) NSObject<OS_os_log> *diagnosticsLog; // @synthesize diagnosticsLog=_diagnosticsLog;
 @property BOOL playgroundListenerConnectionIsOpen; // @synthesize playgroundListenerConnectionIsOpen=_playgroundListenerConnectionIsOpen;
 @property(retain) DVTPlaygroundCommunicationListener *playgroundListener; // @synthesize playgroundListener=_playgroundListener;
 @property BOOL consoleAdaptorIsOpen; // @synthesize consoleAdaptorIsOpen=_consoleAdaptorIsOpen;
@@ -73,12 +81,11 @@
 @property(retain) IDEPlaygroundExecutionParameters *executionParametersMailbox; // @synthesize executionParametersMailbox=_executionParametersMailbox;
 @property(readonly) IDEPlaygroundPreparationParameters *preparationParameters; // @synthesize preparationParameters=_preparationParameters;
 @property int internalState; // @synthesize internalState=_internalState;
+@property(readonly) IDEPlaygroundExecutionDeviceService *deviceService; // @synthesize deviceService=_deviceService;
 @property(nonatomic) __weak id <IDEPlaygroundExecutionSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEPlaygroundExecutionParameters *executionParameters; // @synthesize executionParameters=_executionParameters;
 @property(readonly, nonatomic) IDEPlaygroundLaunchDescriptor *launchDescriptor; // @synthesize launchDescriptor=_launchDescriptor;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)playgroundDeviceWithIdentifier:(id)arg1 wasAssignedToOwner:(id)arg2;
 - (void)playgroundDeviceWithIdentifier:(id)arg1 wasRequestedBy:(id)arg2;
 - (void)_relinqishDevice;
@@ -102,6 +109,7 @@
 - (id)_errorMessageFromExpressionResult:(struct SBValue)arg1;
 - (void)_handleExpressionResult:(struct SBValue)arg1;
 - (struct SBValue)_executePlaygroundSource;
+- (void)_executePlaygroundSetupExpressionIfNecessaryAndContinueRunning;
 - (BOOL)playgroundExecutionWillFinishBreakpointHitOnThread:(struct SBThread *)arg1 location:(struct SBBreakpointLocation *)arg2;
 - (BOOL)executePlaygroundBreakpointHitOnThread:(struct SBThread *)arg1 location:(struct SBBreakpointLocation *)arg2;
 - (BOOL)_createBreakpointWithName:(const char *)arg1 breakpointHitCallback:(CDUnknownFunctionPointerType)arg2 error:(id *)arg3;
@@ -134,6 +142,8 @@
 - (id)_setupConsoleAdaptor;
 - (void)_destroyPlaygroundListener;
 - (id)_setupPlaygroundListener:(id *)arg1;
+- (void)enableLLDBLogChannelsCategoriesIfRequested;
+- (void)enableLLDBLogCategoriesIfRequested;
 - (void)main;
 - (void)_moveToFinishedState;
 - (void)_interruptExecutingPlaygroundSource;

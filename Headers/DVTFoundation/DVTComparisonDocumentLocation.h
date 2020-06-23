@@ -15,10 +15,10 @@
     DVTDocumentLocation *_ancestorDocumentLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTDocumentLocation *ancestorDocumentLocation; // @synthesize ancestorDocumentLocation=_ancestorDocumentLocation;
 @property(copy) DVTDocumentLocation *secondaryDocumentLocation; // @synthesize secondaryDocumentLocation=_secondaryDocumentLocation;
 @property(copy) DVTDocumentLocation *primaryDocumentLocation; // @synthesize primaryDocumentLocation=_primaryDocumentLocation;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

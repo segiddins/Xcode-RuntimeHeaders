@@ -14,8 +14,8 @@
     BOOL _skipTokenizingNewlines;
 }
 
-@property BOOL skipTokenizingNewlines; // @synthesize skipTokenizingNewlines=_skipTokenizingNewlines;
 - (void).cxx_destruct;
+@property BOOL skipTokenizingNewlines; // @synthesize skipTokenizingNewlines=_skipTokenizingNewlines;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)didChange;
 - (long long)numberOfDiffTokensInDiffDescriptor:(id)arg1;

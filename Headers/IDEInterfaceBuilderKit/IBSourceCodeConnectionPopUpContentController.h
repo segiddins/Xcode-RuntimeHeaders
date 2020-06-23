@@ -38,6 +38,7 @@
 + (id)keyPathsForValuesAffectingShadowedSelectedConnectionContextType;
 + (id)keyPathsForValuesAffectingShadowedSelectedConnectionContextName;
 + (id)keyPathsForValuesAffectingCanInsertConnection;
+- (void).cxx_destruct;
 @property(retain) NSView *typeContainerView; // @synthesize typeContainerView=_typeContainerView;
 @property(retain) NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property(retain) NSView *nameContainerView; // @synthesize nameContainerView=_nameContainerView;
@@ -56,7 +57,6 @@
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 @property(readonly) NSArray *connectionContexts; // @synthesize connectionContexts=_connectionContexts;
 @property(retain, nonatomic) IBSourceCodeConnectionContext *selectedConnectionContext; // @synthesize selectedConnectionContext=_selectedConnectionContext;
-- (void).cxx_destruct;
 - (void)willInsertConnectionFromContext:(id)arg1;
 - (void)updateObjectPopUp;
 - (void)selectTargetFromObjectPopUp:(id)arg1;

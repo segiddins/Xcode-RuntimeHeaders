@@ -13,8 +13,8 @@
     NSURL *_originalExecutableURL;
 }
 
-@property(copy) NSURL *originalExecutableURL; // @synthesize originalExecutableURL=_originalExecutableURL;
 - (void).cxx_destruct;
+@property(copy) NSURL *originalExecutableURL; // @synthesize originalExecutableURL=_originalExecutableURL;
 - (BOOL)writeToURL:(id)arg1 options:(unsigned long long)arg2 originalContentsURL:(id)arg3 error:(id *)arg4;
 - (id)initSymbolicLinkWithDestinationURL:(id)arg1;
 - (id)initRegularFileWithContents:(id)arg1;

@@ -20,12 +20,12 @@
     IBMemberPropertyStorage *_memberPropertyStorage;
 }
 
+- (void).cxx_destruct;
 @property(retain) IBMemberPropertyStorage *memberPropertyStorage; // @synthesize memberPropertyStorage=_memberPropertyStorage;
 @property(nonatomic) __weak IBGroup *group; // @synthesize group=_group;
 @property(retain) IBObjectRecord *parentRecord; // @synthesize parentRecord=_parentRecord;
 @property(retain) NSObject *parent; // @synthesize parent=_parent;
 @property(copy) NSString *explicitLabel; // @synthesize explicitLabel=_explicitLabel;
-- (void).cxx_destruct;
 - (BOOL)isObjectRecord;
 - (void)verifyNoDuplicateChildren;
 - (BOOL)isDescendantOfObjectRecord:(id)arg1;

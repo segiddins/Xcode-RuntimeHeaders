@@ -13,8 +13,9 @@
     _TtC11GPUDebugger27GPUMemoryReportDataProvider *_dataProvider;
 }
 
-@property(retain, nonatomic) _TtC11GPUDebugger27GPUMemoryReportDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TtC11GPUDebugger27GPUMemoryReportDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
+- (id)displayName;
 - (id)traceSession;
 
 @end

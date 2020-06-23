@@ -22,11 +22,11 @@
 + (int)globalOperatorTypeFromString:(id)arg1;
 + (int)_globalOperatorTypeFromDisplayString:(id)arg1;
 + (id)_displayStringForOperatorType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTFilterTokenComparisonType *defaultTokenComparisonType; // @synthesize defaultTokenComparisonType=_defaultTokenComparisonType;
 @property(readonly, nonatomic) DVTFilterTokenType *defaultTokenType; // @synthesize defaultTokenType=_defaultTokenType;
 @property(readonly, nonatomic) NSArray *tokenComparisonTypes; // @synthesize tokenComparisonTypes=_tokenComparisonTypes;
 @property(readonly, nonatomic) NSArray *tokenTypes; // @synthesize tokenTypes=_tokenTypes;
-- (void).cxx_destruct;
 - (id)tokensForTokensFromPasteboard:(id)arg1;
 - (id)tokenForValuelessType:(id)arg1;
 - (id)valuelessTokenIconMenuItemsWithTarget:(id)arg1 andAction:(SEL)arg2;

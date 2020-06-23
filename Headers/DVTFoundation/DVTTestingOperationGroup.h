@@ -21,10 +21,10 @@
 
 + (id)operationGroupWithSuboperations:(id)arg1 signpost:(CDUnknownBlockType)arg2;
 + (id)operationGroupWithSuboperations:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *suboperationFinishedObservations; // @synthesize suboperationFinishedObservations=_suboperationFinishedObservations;
 @property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (void)enumerateUsingBlock:(CDUnknownBlockType)arg1;

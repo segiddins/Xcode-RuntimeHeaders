@@ -1,2 +1,2 @@
-Xcode 11.2.1
-Build version 11B500
+Xcode 11.5
+Build version 11E608c

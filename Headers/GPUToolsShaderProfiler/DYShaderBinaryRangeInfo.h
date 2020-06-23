@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *callStackInfo; // @synthesize callStackInfo=_callStackInfo;
 @property(retain, nonatomic) NSArray *disassembledLineInfo; // @synthesize disassembledLineInfo=_disassembledLineInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

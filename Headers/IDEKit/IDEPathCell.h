@@ -45,8 +45,8 @@
 
 + (void)initialize;
 + (unsigned long long)defaultFocusRingType;
-@property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 - (void).cxx_destruct;
+@property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 - (id)ide_accessibilityPopUpMenuParent:(id)arg1;
 - (id)ide_accessibilityChildMenuForChild:(id)arg1;
 - (void)ide_accessibilityPerformPressForChild:(id)arg1;

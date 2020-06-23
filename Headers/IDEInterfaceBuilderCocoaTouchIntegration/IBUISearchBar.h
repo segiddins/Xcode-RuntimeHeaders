@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUITextInputTraits-Protocol.h>
 
-@class IBOffsetWrapper, IBUIColor, IBUITextInputTraits, NSArray, NSImage, NSString;
+@class IBColor, IBOffsetWrapper, IBUITextInputTraits, NSArray, NSImage, NSString;
 
 @interface IBUISearchBar : IBUIView <IBDocumentArchiving, IBUITextInputTraits>
 {
@@ -27,7 +27,7 @@
     NSString *_text;
     NSString *_prompt;
     NSString *_placeholder;
-    IBUIColor *_barTintColor;
+    IBColor *_barTintColor;
     IBOffsetWrapper *_searchFieldBackgroundPositionAdjustment;
     IBOffsetWrapper *_searchTextPositionAdjustment;
     NSImage *_backgroundImage;
@@ -48,6 +48,7 @@
 + (id)keyPathsForValuesAffectingInspectedShowsScopeBar;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forcesPrompt; // @synthesize forcesPrompt=_forcesPrompt;
 @property(nonatomic) BOOL isInBar; // @synthesize isInBar=_isInBar;
 @property(nonatomic) BOOL showsScopeBar; // @synthesize showsScopeBar=_showsScopeBar;
@@ -59,18 +60,18 @@
 @property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(copy, nonatomic) IBOffsetWrapper *searchTextPositionAdjustment; // @synthesize searchTextPositionAdjustment=_searchTextPositionAdjustment;
 @property(copy, nonatomic) IBOffsetWrapper *searchFieldBackgroundPositionAdjustment; // @synthesize searchFieldBackgroundPositionAdjustment=_searchFieldBackgroundPositionAdjustment;
-@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(copy, nonatomic) IBColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 @property(nonatomic) int searchBarStyle; // @synthesize searchBarStyle=_searchBarStyle;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
-- (void).cxx_destruct;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (void)decodeTintColor:(id)arg1;
 - (void)encodeTintColor:(id)arg1;
 @property(retain, nonatomic) IBUITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
+- (id)ibDocumentationProtocolNames;
 @property(copy, nonatomic) NSArray *scopeButtonTitles; // @synthesize scopeButtonTitles=_scopeButtonTitles;
 @property(readonly, nonatomic, getter=isPrompted) BOOL prompted;
 - (void)encodeWithCoder:(id)arg1;

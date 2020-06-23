@@ -19,9 +19,9 @@
 + (id)backingType;
 + (id)defaultType;
 + (id)defaultPropertyName;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setDisplayNameID:) NSString *displayNameID; // @synthesize displayNameID=_displayNameID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;

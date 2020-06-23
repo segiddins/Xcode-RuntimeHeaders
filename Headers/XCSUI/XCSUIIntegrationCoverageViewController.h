@@ -22,12 +22,12 @@
 }
 
 + (BOOL)instancesCanContainDocumentLocation:(id)arg1;
+- (void).cxx_destruct;
 @property __weak XCSUIProgressReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) XCSCodeCoverageIntegration *coverageIntegration; // @synthesize coverageIntegration=_coverageIntegration;
 @property(retain, nonatomic) NSArray *itemIdentifiersToExpand; // @synthesize itemIdentifiersToExpand=_itemIdentifiersToExpand;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)selectDocumentLocations:(id)arg1;
 - (id)currentSelectedItems;
 - (id)currentSelectedDocumentLocations;

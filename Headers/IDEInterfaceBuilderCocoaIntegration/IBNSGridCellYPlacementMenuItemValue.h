@@ -15,9 +15,9 @@
 }
 
 + (id)valueForTargets:(id)arg1 yPlacement:(long long)arg2;
+- (void).cxx_destruct;
 @property long long yPlacement; // @synthesize yPlacement=_yPlacement;
 @property(retain) NSSet *targets; // @synthesize targets=_targets;
-- (void).cxx_destruct;
 
 @end
 

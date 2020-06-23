@@ -18,8 +18,8 @@
     GPUFilterTokenPredicate *_filterPredicate;
 }
 
-@property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 - (void)setToggleFilters:(BOOL)arg1 issues:(BOOL)arg2;
 - (void)invalidateChildItems;
 @property(readonly, nonatomic) NSArray *childRepresentedObjects;

@@ -16,6 +16,8 @@
     MISSING_TYPE *data;
     MISSING_TYPE *scene;
     MISSING_TYPE *title;
+    MISSING_TYPE *newSceneIsActive;
+    MISSING_TYPE *position;
     MISSING_TYPE *isUndoable;
 }
 

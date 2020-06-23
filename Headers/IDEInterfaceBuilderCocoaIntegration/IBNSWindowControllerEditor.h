@@ -13,8 +13,8 @@
     NSSet *_observers;
 }
 
-@property(retain) NSSet *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain) NSSet *observers; // @synthesize observers=_observers;
 - (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)_updatePlaceholderFrame;

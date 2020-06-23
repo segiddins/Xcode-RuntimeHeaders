@@ -19,9 +19,9 @@
     NSDictionary *_machineInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *machineInfo; // @synthesize machineInfo=_machineInfo;
 @property(readonly, nonatomic) NSArray *transitionViews; // @synthesize transitionViews=_transitionViews;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_generateStateAndTransitionViews;
 @property(readonly, nonatomic) NSArray *stateViews;

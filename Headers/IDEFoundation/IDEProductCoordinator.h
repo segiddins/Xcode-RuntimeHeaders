@@ -16,8 +16,8 @@
 }
 
 + (void)initialize;
-@property(retain) NSHashTable *products; // @synthesize products=_products;
 - (void).cxx_destruct;
+@property(retain) NSHashTable *products; // @synthesize products=_products;
 - (void)invalidateProducts:(id)arg1;
 - (void)invalidateProduct:(id)arg1;
 - (void)_forgetProduct:(id)arg1 invalidate:(BOOL)arg2;

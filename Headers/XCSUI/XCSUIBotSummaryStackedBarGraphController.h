@@ -24,6 +24,7 @@
     unsigned long long _yAxisLabelHeight;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long yAxisLabelHeight; // @synthesize yAxisLabelHeight=_yAxisLabelHeight;
 @property unsigned long long xAxisLabelHeight; // @synthesize xAxisLabelHeight=_xAxisLabelHeight;
 @property(retain, nonatomic) XCSUIBotSummaryStackedBarGraph *graphView; // @synthesize graphView=_graphView;
@@ -35,7 +36,6 @@
 @property(copy) NSArray *graphData; // @synthesize graphData=_graphData;
 @property double barWidth; // @synthesize barWidth=_barWidth;
 @property double barSpacing; // @synthesize barSpacing=_barSpacing;
-- (void).cxx_destruct;
 - (void)layoutGraph;
 - (unsigned long long)columnsThatFit;
 - (id)emptyColumnColor;

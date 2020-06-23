@@ -14,8 +14,8 @@
 }
 
 + (id)relationshipPredicate;
-@property(retain, nonatomic) IDEIntentBuilderEnumValue *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEIntentBuilderEnumValue *value; // @synthesize value=_value;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)doesSatisfyRelationshipPredicate:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;

@@ -6,11 +6,9 @@
 
 #import <AppKit/NSViewController.h>
 
-#import <IDEKit/_TtP6IDEKit26IDENavigationOverlayTarget_-Protocol.h>
-
 @class NSString;
 
-@interface NSViewController (IDEKit) <_TtP6IDEKit26IDENavigationOverlayTarget_>
+@interface NSViewController (IDEKit)
 @property(nonatomic, readonly) NSString *navigationOverlayTargetAccessibilityTitle;
 @property(nonatomic, readonly) BOOL wantsHighlightEdgeAdornments;
 @property(nonatomic, readonly) double highlightFrameBorderWidth;

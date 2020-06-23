@@ -17,9 +17,9 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property __weak IDESourceControlWorkspaceUIHandler *workspaceUIHandler; // @synthesize workspaceUIHandler=_workspaceUIHandler;
-- (void).cxx_destruct;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)endSheet;
 - (BOOL)containsWorkingCopyForRepository:(id)arg1;

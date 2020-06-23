@@ -17,12 +17,12 @@
     struct _xmlDoc *rulesDoc;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *unwantedSuffixes; // @synthesize unwantedSuffixes;
 @property(retain) NSSet *unwantedFiles; // @synthesize unwantedFiles;
 @property(retain) NSSet *nonXMLFileExtensions; // @synthesize nonXMLFileExtensions;
 @property(retain) NSArray *rules; // @synthesize rules;
 @property struct _xmlDoc *rulesDoc; // @synthesize rulesDoc;
-- (void).cxx_destruct;
 - (void *)libxml2RulesDoc;
 - (id)applicableFilesExcludingEnglishInDirectory:(id)arg1 skipOption:(unsigned long long)arg2 allowNoXMLDecl:(BOOL)arg3;
 - (BOOL)fileToBeSkipped:(id)arg1;

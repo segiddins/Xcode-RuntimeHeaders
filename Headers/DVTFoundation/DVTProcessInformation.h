@@ -17,12 +17,12 @@
     BOOL _foregroundRunning;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *preferredArchitecture; // @synthesize preferredArchitecture=_preferredArchitecture;
 @property(readonly) NSURL *processURL; // @synthesize processURL=_processURL;
 @property(readonly, getter=isForegroundRunning) BOOL foregroundRunning; // @synthesize foregroundRunning=_foregroundRunning;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (long long)displayNameCompare:(id)arg1;
 - (void)setForegroundRunning:(BOOL)arg1;
 - (void)setProcessURL:(id)arg1;

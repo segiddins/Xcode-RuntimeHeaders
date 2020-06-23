@@ -14,9 +14,9 @@
     unsigned long long _diffHash;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long diffHash; // @synthesize diffHash=_diffHash;
 @property(retain) DVTDiffDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)initWithDataSource:(id)arg1 diffHash:(unsigned long long)arg2;
 
 @end

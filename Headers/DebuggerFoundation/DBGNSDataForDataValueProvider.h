@@ -26,6 +26,7 @@
     double _timeToReadData;
 }
 
+- (void).cxx_destruct;
 @property double timeToReadData; // @synthesize timeToReadData=_timeToReadData;
 @property double timeToEvaluateExpression; // @synthesize timeToEvaluateExpression=_timeToEvaluateExpression;
 @property(retain) NSError *retrievalError; // @synthesize retrievalError=_retrievalError;
@@ -34,7 +35,6 @@
 @property(retain) DBGNSDataForDataValueProviderOptions *options; // @synthesize options=_options;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) BOOL hasDataBeenRetrieved; // @synthesize hasDataBeenRetrieved=_hasDataBeenRetrieved;
-- (void).cxx_destruct;
 - (id)safelyUnarchiveRootObjectFromDataUsingSecureCoding:(BOOL)arg1 withValidClasses:(id)arg2;
 - (void)_dataWasFetched:(id)arg1;
 - (void)_failedToGetData;

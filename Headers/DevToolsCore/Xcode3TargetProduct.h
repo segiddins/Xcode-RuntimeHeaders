@@ -17,8 +17,8 @@
     DVTFilePath *_filePath;
 }
 
-@property(nonatomic) BOOL filePathIsValid; // @synthesize filePathIsValid=_filePathIsValid;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL filePathIsValid; // @synthesize filePathIsValid=_filePathIsValid;
 @property(readonly, copy) NSString *productTypeIdentifier;
 @property(readonly) NSString *toolTip;
 @property(readonly) NSString *displayName;

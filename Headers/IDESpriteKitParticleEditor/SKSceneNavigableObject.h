@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingTitle;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (BOOL)isValidChild:(id)arg1;
 - (id)filterName;
 - (id)subtitle;

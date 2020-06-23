@@ -15,9 +15,9 @@
     NSArray *_samples;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 @property(retain, nonatomic) DTSysmonTapRecordDecoder *recordDecoder; // @synthesize recordDecoder=_recordDecoder;
-- (void).cxx_destruct;
 - (unsigned long long)enumerateRecordsWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithHeartbeatTime:(unsigned long long)arg1;
 

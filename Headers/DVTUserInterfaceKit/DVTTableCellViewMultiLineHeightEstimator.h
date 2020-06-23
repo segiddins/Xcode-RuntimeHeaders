@@ -16,8 +16,8 @@
 }
 
 + (void)initialize;
-@property(readonly) DVTTableCellViewMultiLine *tableCellView; // @synthesize tableCellView=_tableCellView;
 - (void).cxx_destruct;
+@property(readonly) DVTTableCellViewMultiLine *tableCellView; // @synthesize tableCellView=_tableCellView;
 - (void)primitiveInvalidate;
 - (double)estimatedHeightForWidth:(double)arg1 title:(id)arg2 subTitle:(id)arg3;
 - (id)init;

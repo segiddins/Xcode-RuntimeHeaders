@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCopying-Protocol.h>
 
-@class IBUIColor, IBUINavigationItem, IBUIToolbar, IBUIView, NSNumber, NSString, NSValue;
+@class IBColor, IBUINavigationItem, IBUIToolbar, IBUIView, NSNumber, NSString, NSValue;
 
 @interface IBUIBarButtonItem : IBUIBarItem <IBDocumentArchiving, NSCopying>
 {
@@ -20,7 +20,7 @@
     double _width;
     IBUIView *_customView;
     NSNumber *_systemItemIdentifier;
-    IBUIColor *_tintColor;
+    IBColor *_tintColor;
     NSValue *_customViewFrameInEnclosingBar;
 }
 
@@ -32,16 +32,16 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)keyPathsForValuesAffectingIbInspectedSystemItemIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
 @property(readonly, nonatomic) NSValue *customViewFrameInEnclosingBar; // @synthesize customViewFrameInEnclosingBar=_customViewFrameInEnclosingBar;
-@property(copy, nonatomic) IBUIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(copy, nonatomic) IBColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(copy, nonatomic) NSNumber *systemItemIdentifier; // @synthesize systemItemIdentifier=_systemItemIdentifier;
 @property(retain, nonatomic) IBUIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) __weak IBUIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(nonatomic) __weak IBUINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
-- (void).cxx_destruct;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
 - (void)encodeSystemItemIdentifier:(id)arg1;

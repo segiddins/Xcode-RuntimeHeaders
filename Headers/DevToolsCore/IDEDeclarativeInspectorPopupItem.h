@@ -15,9 +15,9 @@
 }
 
 + (id)matchingRepresentedObject:(id)arg1 inItems:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *displayValue; // @synthesize displayValue=_displayValue;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)initWithRepresentedObject:(id)arg1 displayValue:(id)arg2;
 
 @end

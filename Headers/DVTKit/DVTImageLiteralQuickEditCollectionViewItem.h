@@ -17,11 +17,11 @@
 }
 
 + (id)nibName;
+- (void).cxx_destruct;
 @property __weak NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property __weak NSButton *imageButton; // @synthesize imageButton=_imageButton;
 @property(retain, nonatomic) DVTImageLiteralQuickEditPreview *imagePreview; // @synthesize imagePreview=_imagePreview;
 @property __weak DVTImageLiteralQuickEditViewController *imageLiteralQuickEditViewController; // @synthesize imageLiteralQuickEditViewController=_imageLiteralQuickEditViewController;
-- (void).cxx_destruct;
 - (void)_imageButtonAction:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)viewDidLoad;

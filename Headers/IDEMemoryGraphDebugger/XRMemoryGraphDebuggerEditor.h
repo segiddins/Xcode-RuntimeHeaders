@@ -53,6 +53,7 @@
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 + (BOOL)supportsInvalidationPrevention;
+- (void).cxx_destruct;
 @property BOOL shouldBeShowingGraphView; // @synthesize shouldBeShowingGraphView=_shouldBeShowingGraphView;
 @property(retain) id <DVTCancellable> rootPathsBuilderActionToken; // @synthesize rootPathsBuilderActionToken=_rootPathsBuilderActionToken;
 @property(retain, nonatomic) XRMemoryGraphDebuggerIndexSearchManager *indexSearchManager; // @synthesize indexSearchManager=_indexSearchManager;
@@ -74,7 +75,6 @@
 @property __weak NSVisualEffectView *toolBarContainerView; // @synthesize toolBarContainerView=_toolBarContainerView;
 @property __weak DVTBorderedView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) XRMemoryGraphDebuggerEditorDFRSupport *touchBarSupportController; // @synthesize touchBarSupportController=_touchBarSupportController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

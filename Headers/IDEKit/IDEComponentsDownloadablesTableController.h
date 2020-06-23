@@ -20,11 +20,11 @@
 }
 
 + (id)keyPathsForValuesAffectingItems;
+- (void).cxx_destruct;
 @property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) DVTKVOQueueForwarder *allDownloadables; // @synthesize allDownloadables=_allDownloadables;
 @property(retain) NSPredicate *downloadsFilter; // @synthesize downloadsFilter=_downloadsFilter;
 @property(copy) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 @property(readonly) NSArray *items;
 - (void)primitiveInvalidate;

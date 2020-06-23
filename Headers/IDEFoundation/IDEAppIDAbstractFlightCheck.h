@@ -22,10 +22,10 @@
 + (id)keyPathsForValuesAffectingRequiresAccountAndTeamSelection;
 + (id)keyPathsForValuesAffectingStatus;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *resolutionError; // @synthesize resolutionError=_resolutionError;
 @property(nonatomic) BOOL failed; // @synthesize failed=_failed;
 @property(retain, nonatomic) NSObject<IDEAppIDFeatureCoordination> *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *resolvingTitle;
 @property(readonly, copy, nonatomic) NSString *pastTitle;
 @property(readonly, copy, nonatomic) NSString *title;

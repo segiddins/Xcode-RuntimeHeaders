@@ -14,9 +14,9 @@
     NSArray *_targetWrappers;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *targetWrappers; // @synthesize targetWrappers=_targetWrappers;
 @property BOOL canFinish; // @synthesize canFinish=_canFinish;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;

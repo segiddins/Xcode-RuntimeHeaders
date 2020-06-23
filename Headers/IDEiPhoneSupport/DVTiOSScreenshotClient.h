@@ -14,8 +14,8 @@
 }
 
 + (id)screenshotClientWithConnection:(id)arg1;
-@property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
+@property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 - (id)requestScreenshotWithError:(id *)arg1;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;

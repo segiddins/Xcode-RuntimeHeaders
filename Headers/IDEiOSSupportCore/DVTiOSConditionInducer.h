@@ -19,6 +19,7 @@
     DVTiOSConditionInducerProfile *_activeProfile;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTiOSConditionInducerProfile *activeProfile; // @synthesize activeProfile=_activeProfile;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain) NSArray *profiles; // @synthesize profiles=_profiles;
@@ -26,7 +27,6 @@
 @property(getter=isDestructive) BOOL destructive; // @synthesize destructive=_destructive;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 isDestructive:(BOOL)arg3 isInternal:(BOOL)arg4 profiles:(id)arg5;
 

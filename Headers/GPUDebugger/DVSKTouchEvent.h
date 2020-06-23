@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     SKNode *_anchorNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKNode *anchorNode; // @synthesize anchorNode=_anchorNode;
 @property(readonly, nonatomic) id menu; // @synthesize menu=_menu;
 @property(readonly, nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(readonly, nonatomic) __weak GPUTraceOutlineItem *outlineItem; // @synthesize outlineItem=_outlineItem;
-- (void).cxx_destruct;
 - (id)initWithAction:(unsigned long long)arg1 outlineItem:(id)arg2 menu:(id)arg3 anchorNode:(id)arg4;
 
 @end

@@ -31,6 +31,7 @@
 
 + (id)keyPathsForValuesAffectingCanGoNext;
 + (Class)correspondingStepClass;
+- (void).cxx_destruct;
 @property(nonatomic) double spinnerStartTime; // @synthesize spinnerStartTime=_spinnerStartTime;
 @property(nonatomic) BOOL finishedBuildingStack; // @synthesize finishedBuildingStack=_finishedBuildingStack;
 @property(nonatomic) BOOL busyEvaluating; // @synthesize busyEvaluating=_busyEvaluating;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) IDEProvisioningTeamSelectionViewController *teamViewController; // @synthesize teamViewController=_teamViewController;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) DVTStackView_AppKitAutolayout *stack; // @synthesize stack=_stack;
-- (void).cxx_destruct;
 - (id)helpID;
 - (id)title;
 - (BOOL)canGoNext;

@@ -34,6 +34,7 @@
     DVTGradientImageButton *_deleteButton;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTGradientImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property __weak DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property __weak DVTBorderedView *separatorView; // @synthesize separatorView=_separatorView;
@@ -51,7 +52,6 @@
 @property(retain) DVTObservingToken *innerTargetEditorObserver; // @synthesize innerTargetEditorObserver=_innerTargetEditorObserver;
 @property(retain) Xcode3TargetEditor *innerTargetEditor; // @synthesize innerTargetEditor=_innerTargetEditor;
 @property(retain, nonatomic) IDEiOSTargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)titleForDisplay;

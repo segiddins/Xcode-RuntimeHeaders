@@ -19,9 +19,9 @@
 + (id)variantGroupsForProject:(id)arg1 coveringLocale:(id)arg2;
 + (id)localizableFilesForProject:(id)arg1 convertingToLocale:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) Xcode3Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)upgradeLegacyLocale:(id)arg1 errorHandler:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)removeBaseInternationalizationWithErrorHandler:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)removeLocale:(id)arg1 errorHandler:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;

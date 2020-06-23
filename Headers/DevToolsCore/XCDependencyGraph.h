@@ -28,8 +28,8 @@
 + (id)readFromBuildDirectory:(id)arg1 withTargetBuildContext:(id)arg2 error:(id *)arg3;
 + (id)loadOrCreateInBuildDirectory:(id)arg1 withTargetBuildContext:(id)arg2 withBasePath:(id)arg3;
 + (id)dependencyGraphFilename;
-@property(copy) NSSet *buildActionProducedArtifactNodes; // @synthesize buildActionProducedArtifactNodes=_buildActionProducedArtifactNodes;
 - (void).cxx_destruct;
+@property(copy) NSSet *buildActionProducedArtifactNodes; // @synthesize buildActionProducedArtifactNodes=_buildActionProducedArtifactNodes;
 - (id)description;
 - (void)printNodes;
 - (BOOL)isValid;

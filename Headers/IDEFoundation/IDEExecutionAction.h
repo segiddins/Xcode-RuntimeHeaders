@@ -17,9 +17,9 @@
 }
 
 + (id)actionType;
+- (void).cxx_destruct;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)schemeObjectGraphSetupComplete;
 @property(readonly) BOOL needsCurrentArchiveVersion;
 - (void)setTitleFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

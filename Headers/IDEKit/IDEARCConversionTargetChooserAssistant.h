@@ -31,9 +31,9 @@
 + (BOOL)automaticallyNotifiesObserversOfSearchString;
 + (id)keyPathsForValuesAffectingArrangedTargetItems;
 + (id)keyPathsForValuesAffectingCanFinish;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy) NSArray *targetItems; // @synthesize targetItems=_targetItems;
-- (void).cxx_destruct;
 - (id)currentUIState;
 - (void)loadUIState:(id)arg1;
 - (id)_getPathStringForItem:(id)arg1;

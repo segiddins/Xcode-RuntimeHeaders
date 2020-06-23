@@ -8,6 +8,7 @@
 
 @interface _TtC8RCShared23InspectorCollectionView (RCShared)
 - (void)doCommandBySelector:(SEL)arg1;
+- (void)insertNewline:(id)arg1;
 - (void)duplicateWithBehaviors:(id)arg1;
 - (void)pasteWithBehaviors:(id)arg1;
 - (void)paste:(id)arg1;

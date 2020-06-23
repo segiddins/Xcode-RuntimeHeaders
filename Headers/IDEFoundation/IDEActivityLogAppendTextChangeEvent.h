@@ -13,8 +13,8 @@
     NSString *_textString;
 }
 
-@property(readonly) NSString *textString; // @synthesize textString=_textString;
 - (void).cxx_destruct;
+@property(readonly) NSString *textString; // @synthesize textString=_textString;
 - (id)description;
 - (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 textString:(id)arg2;

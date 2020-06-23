@@ -41,9 +41,9 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKESceneEditor *sceneEditor; // @synthesize sceneEditor=_sceneEditor;
 @property(readonly, nonatomic) SKESceneView *sceneView; // @synthesize sceneView=_sceneView;
-- (void).cxx_destruct;
 - (void)runSwiftScript;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

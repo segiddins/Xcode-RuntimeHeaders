@@ -24,6 +24,7 @@
     unsigned long long _nearestNeighborAttribute;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nearestNeighborAttribute; // @synthesize nearestNeighborAttribute=_nearestNeighborAttribute;
 @property(retain, nonatomic) NSObject<IBAutolayoutItem> *selectedNearestNeighbor; // @synthesize selectedNearestNeighbor=_selectedNearestNeighbor;
 @property(retain, nonatomic) NSDictionary *orderedNearestNeighborsToDistance; // @synthesize orderedNearestNeighborsToDistance=_orderedNearestNeighborsToDistance;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSButton *overlayButton; // @synthesize overlayButton=_overlayButton;
 @property(retain, nonatomic) NSButton *checkBox; // @synthesize checkBox=_checkBox;
 @property(retain, nonatomic) DVTButtonTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 
 @end
 

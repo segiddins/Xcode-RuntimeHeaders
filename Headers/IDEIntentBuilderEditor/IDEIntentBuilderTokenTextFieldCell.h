@@ -19,9 +19,9 @@
     id <IDEIntentBuilderTokenTextFieldCellDelegate> _eventsDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEIntentBuilderTokenTextFieldCellDelegate> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 @property __weak id <IDEIntentBuilderTokenTextFieldCellDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)tokenTextView:(id)arg1 tokenClicked:(id)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 atCharacterIndex:(unsigned long long)arg5;
 - (id)availableTokensForTextView:(id)arg1;
 - (void)setLineBreakMode:(unsigned long long)arg1;

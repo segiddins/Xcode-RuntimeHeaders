@@ -13,8 +13,8 @@
     id <IBDocumentEditorLoadingBlockingEventViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IBDocumentEditorLoadingBlockingEventViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IBDocumentEditorLoadingBlockingEventViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollWheel:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

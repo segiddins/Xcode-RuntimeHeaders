@@ -21,9 +21,9 @@
 
 + (id)localizedSourceListItemEditorName;
 + (BOOL)canInspectBlueprint:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (void)primitiveInvalidate;

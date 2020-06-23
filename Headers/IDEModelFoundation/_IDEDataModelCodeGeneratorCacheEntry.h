@@ -14,9 +14,9 @@
     NSArray *_generatedFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *generatedFilePaths; // @synthesize generatedFilePaths=_generatedFilePaths;
 @property(copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
-- (void).cxx_destruct;
 
 @end
 

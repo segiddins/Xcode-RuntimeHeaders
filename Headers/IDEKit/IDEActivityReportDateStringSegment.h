@@ -15,10 +15,10 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long timeStyle; // @synthesize timeStyle=_timeStyle;
 @property(readonly) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(readonly) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToActivityReportDateSegment:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

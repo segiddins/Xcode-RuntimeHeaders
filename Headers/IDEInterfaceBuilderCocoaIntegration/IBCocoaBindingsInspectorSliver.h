@@ -21,9 +21,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSControl *valueField; // @synthesize valueField=_valueField;
 @property(retain) IBCocoaBindingsInspectorSlice *parentEditor; // @synthesize parentEditor=_parentEditor;
-- (void).cxx_destruct;
 - (void)objectDidEndEditing:(id)arg1;
 - (void)objectDidBeginEditing:(id)arg1;
 - (id)optionAttribute;

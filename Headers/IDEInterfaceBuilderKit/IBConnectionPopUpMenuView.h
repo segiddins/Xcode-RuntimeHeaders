@@ -33,11 +33,11 @@
     id <IBConnectionPopUpMenuDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasAlternateItems; // @synthesize hasAlternateItems=_hasAlternateItems;
 @property(readonly, nonatomic) BOOL allowsAndNeedsMultipleSelection; // @synthesize allowsAndNeedsMultipleSelection=_allowsAndNeedsMultipleSelection;
 @property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property __weak id <IBConnectionPopUpMenuDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)effectiveBackgroundColor;
 - (void)setAlternateMenuItemsVisible:(BOOL)arg1 returningNewLastHitView:(id *)arg2 returningNewHighlightedItemView:(id *)arg3;

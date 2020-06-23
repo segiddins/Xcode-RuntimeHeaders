@@ -22,10 +22,10 @@
 + (id)keyPathsForValuesAffectingCanSelectPrevious;
 + (id)keyPathsForValuesAffectingCanSelectNext;
 + (id)keyPathsForValuesAffectingIndexOfSelectedDiff;
+- (void).cxx_destruct;
 @property unsigned long long indexOfSelectedDiff; // @synthesize indexOfSelectedDiff=_indexOfSelectedDiff;
 @property(retain) IDEComparisonEditorTimelineNavBar *timelineNavBar; // @synthesize timelineNavBar=_timelineNavBar;
 @property(retain) DVTDiffSession *diffSession; // @synthesize diffSession=_diffSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (double)centerViewOverlap;
 - (struct CGSize)centerViewSizeInHeight:(double)arg1;

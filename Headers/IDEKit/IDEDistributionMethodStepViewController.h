@@ -19,11 +19,11 @@
     NSLayoutConstraint *_distributionTableHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *distributionTableHeightConstraint; // @synthesize distributionTableHeightConstraint=_distributionTableHeightConstraint;
 @property(retain) NSArray *distributionMethodWrappers; // @synthesize distributionMethodWrappers=_distributionMethodWrappers;
 @property(retain, nonatomic) id selectedDistributionMethodWrapper; // @synthesize selectedDistributionMethodWrapper=_selectedDistributionMethodWrapper;
 @property(retain) DVTTableView *distributionTableView; // @synthesize distributionTableView=_distributionTableView;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

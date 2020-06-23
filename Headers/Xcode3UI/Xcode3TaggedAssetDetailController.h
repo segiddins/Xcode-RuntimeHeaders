@@ -28,6 +28,7 @@
     DVTTableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
 @property(nonatomic) BOOL editable; // @synthesize editable=_editable;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) __weak Xcode3AssetTagsEditor *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) Xcode3AssetRow *assetRow; // @synthesize assetRow=_assetRow;
-- (void).cxx_destruct;
 - (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;

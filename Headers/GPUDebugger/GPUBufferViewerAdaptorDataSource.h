@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _rowColumnFirstValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsUnorderedRowColumns; // @synthesize supportsUnorderedRowColumns=_supportsUnorderedRowColumns;
 @property(nonatomic) unsigned long long rowColumnFirstValue; // @synthesize rowColumnFirstValue=_rowColumnFirstValue;
 @property(nonatomic) unsigned long long rowsPerPatch; // @synthesize rowsPerPatch=_rowsPerPatch;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <GPUBufferViewerDataSourceProvider> provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) id <GPUBufferViewerAdaptor> adaptor; // @synthesize adaptor=_adaptor;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (id)labelForObjectId:(unsigned long long)arg1;
 - (id)traceResourceItemForObjectId:(unsigned long long)arg1;
 - (unsigned long long)resolveControlPointIndex:(unsigned long long)arg1 withGeometryParams:(const struct GPUBufferViewerAdaptorGeometryParams *)arg2;

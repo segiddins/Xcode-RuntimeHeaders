@@ -19,10 +19,10 @@
 }
 
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain) NSImage *buttonImage; // @synthesize buttonImage=_buttonImage;
 @property(copy) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
-- (void).cxx_destruct;
 - (id)runtimeTouchBarItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

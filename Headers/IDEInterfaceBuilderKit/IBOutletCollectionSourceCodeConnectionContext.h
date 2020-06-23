@@ -13,8 +13,8 @@
     NSString *_collectionType;
 }
 
-@property(copy) NSString *collectionType; // @synthesize collectionType=_collectionType;
 - (void).cxx_destruct;
+@property(copy) NSString *collectionType; // @synthesize collectionType=_collectionType;
 - (id)qualifiedCollectionType;
 - (id)description;
 - (id)validatedSourceCodeConnectionNameForName:(id)arg1 error:(id *)arg2;

@@ -18,10 +18,10 @@
     DVTPortalTeam *_team;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 @property(retain, nonatomic) id <XCSServicesSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-- (void).cxx_destruct;
 @property(readonly) id <DVTServicesSession> session;
 - (void)run;
 - (id)statusDescription;

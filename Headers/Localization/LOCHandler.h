@@ -26,6 +26,7 @@
     LOCITSRulesFile *_rulesFile;
 }
 
+- (void).cxx_destruct;
 @property(retain) LOCITSRulesFile *rulesFile; // @synthesize rulesFile=_rulesFile;
 @property(copy) NSDictionary *toolInfo; // @synthesize toolInfo=_toolInfo;
 @property(copy) NSString *projectDirPath; // @synthesize projectDirPath=_projectDirPath;
@@ -34,7 +35,6 @@
 @property(copy) NSString *sourceLocale; // @synthesize sourceLocale=_sourceLocale;
 @property(readonly, copy) NSArray *importedFileDescriptions; // @synthesize importedFileDescriptions=_importedFileDescriptions;
 @property(readonly, copy) NSArray *importedFiles; // @synthesize importedFiles=_importedFiles;
-- (void).cxx_destruct;
 - (id)_recordFileNotInImportIssue:(id)arg1 importComparisonFile:(id)arg2 projectComparisonFile:(id)arg3;
 - (id)_recordFileNotInProjectIssue:(id)arg1 importComparisonFile:(id)arg2 projectComparisonFile:(id)arg3;
 - (id)_compareImportUnrecognizedExtensionFile:(id)arg1 writeTempComparisonFilesTo:(id)arg2;

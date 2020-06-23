@@ -28,9 +28,9 @@
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 @property BOOL isViewLoaded; // @synthesize isViewLoaded=_isViewLoaded;
-- (void).cxx_destruct;
 - (void)_interposeViewControllerNotifyingLifecycleMethodsIfNecessaryForView:(id)arg1;
 - (void)_checkKvoWindow;
 - (id)_kvoWindow;

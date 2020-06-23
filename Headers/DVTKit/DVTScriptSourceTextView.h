@@ -15,8 +15,8 @@
 }
 
 + (id)placeholder;
-@property(readonly, getter=isShowingPlaceholder) BOOL showingPlaceholder; // @synthesize showingPlaceholder=_showingPlaceholder;
 - (void).cxx_destruct;
+@property(readonly, getter=isShowingPlaceholder) BOOL showingPlaceholder; // @synthesize showingPlaceholder=_showingPlaceholder;
 @property(readonly) unsigned long long lineCount;
 - (BOOL)becomeFirstResponder;
 - (void)showPlaceholder;

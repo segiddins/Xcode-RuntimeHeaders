@@ -22,6 +22,7 @@
     NSString *_messageBubbleToolTipText;
 }
 
+- (void).cxx_destruct;
 @property BOOL wantsFlatStyle; // @synthesize wantsFlatStyle=_wantsFlatStyle;
 @property BOOL wantsPreferredSizeAndPosition; // @synthesize wantsPreferredSizeAndPosition=_wantsPreferredSizeAndPosition;
 @property(copy, nonatomic) NSString *messageBubbleToolTipText; // @synthesize messageBubbleToolTipText=_messageBubbleToolTipText;
@@ -31,7 +32,6 @@
 @property long long messageBubbleTextAlignment; // @synthesize messageBubbleTextAlignment=_messageBubbleTextAlignment;
 @property(copy, nonatomic) NSString *messageBubbleText; // @synthesize messageBubbleText=_messageBubbleText;
 @property(nonatomic, getter=isMiniaturized) BOOL miniaturized; // @synthesize miniaturized=_miniaturized;
-- (void).cxx_destruct;
 - (id)annotationDisplayDescription;
 @property(retain) id <DVTMessageBubbleAnnotationDelegate> delegate;
 - (void)fontAndColorThemeChanged:(id)arg1;

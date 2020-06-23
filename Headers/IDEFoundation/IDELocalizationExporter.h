@@ -31,6 +31,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *workTitle; // @synthesize workTitle=_workTitle;
 @property(copy) NSString *phase; // @synthesize phase=_phase;
 @property long long progress; // @synthesize progress=_progress;
@@ -40,7 +41,6 @@
 @property(copy) NSURL *destinationUrl; // @synthesize destinationUrl=_destinationUrl;
 @property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
 @property(copy) NSArray *targetLanguages; // @synthesize targetLanguages=_targetLanguages;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (void)exportLocalizations;

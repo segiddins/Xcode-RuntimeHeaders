@@ -46,9 +46,9 @@
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 + (id)localizedSourceListItemEditorName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 @property(readonly) id <IDESigningEditorProvisionableManagerProvider> provisionableManagerProvider;
 @property(readonly) id <IDEProvisionable> provisionable;
 - (id)protocolConformingProviderForProtocolName:(id)arg1;

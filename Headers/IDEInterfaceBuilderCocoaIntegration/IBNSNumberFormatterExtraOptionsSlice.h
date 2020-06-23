@@ -14,8 +14,8 @@
     DVTStackView_ML *_extraOptionsStackView;
 }
 
-@property(retain) DVTStackView_ML *extraOptionsStackView; // @synthesize extraOptionsStackView=_extraOptionsStackView;
 - (void).cxx_destruct;
+@property(retain) DVTStackView_ML *extraOptionsStackView; // @synthesize extraOptionsStackView=_extraOptionsStackView;
 - (double)baseline;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

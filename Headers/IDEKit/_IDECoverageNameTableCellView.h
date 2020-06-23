@@ -6,19 +6,19 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class IDEWorkspace, NSButton;
+@class IDEEditor, NSButton;
 
 @interface _IDECoverageNameTableCellView : NSTableCellView
 {
     NSButton *_jumpButton;
     id _coverageItem;
-    IDEWorkspace *_workspace;
+    IDEEditor *_hostEditor;
 }
 
-@property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
+- (void).cxx_destruct;
+@property __weak IDEEditor *hostEditor; // @synthesize hostEditor=_hostEditor;
 @property __weak id coverageItem; // @synthesize coverageItem=_coverageItem;
 @property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
-- (void).cxx_destruct;
 - (void)jumpToSourceCode:(id)arg1;
 
 @end

@@ -15,9 +15,9 @@
 }
 
 + (id)historyMenuWithWebView:(id)arg1 isForwardList:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isForwardList; // @synthesize isForwardList=_isForwardList;
 @property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)update;
 - (void)_backList;
 - (void)_forwardList;

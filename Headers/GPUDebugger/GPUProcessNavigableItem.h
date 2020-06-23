@@ -24,6 +24,7 @@
 
 + (id)keyPathsForValuesAffectinImage;
 + (id)keyPathsForValuesAffectingName;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsGauges; // @synthesize showsGauges=_showsGauges;
 @property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(nonatomic) BOOL filterIssues; // @synthesize filterIssues=_filterIssues;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long programSortMode; // @synthesize programSortMode=_programSortMode;
 @property(nonatomic) unsigned long long traceOutlineMode; // @synthesize traceOutlineMode=_traceOutlineMode;
 @property(nonatomic) long long usage; // @synthesize usage=_usage;
-- (void).cxx_destruct;
 - (void)invalidateChildItems;
 - (void)addGaugeItemsToChildObjects:(id)arg1;
 @property(readonly, nonatomic) NSArray *childRepresentedObjects;

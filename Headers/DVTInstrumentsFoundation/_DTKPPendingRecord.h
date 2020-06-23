@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     _DTKPPendingRecord *_latestRecord;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _DTKPPendingRecord *latestRecord; // @synthesize latestRecord=_latestRecord;
 @property(retain, nonatomic) _DTKPPendingRecord *nextRecord; // @synthesize nextRecord=_nextRecord;
-- (void).cxx_destruct;
 - (void)_resetAndPopulateFieldsWithEvent:(struct kpdecode_record *)arg1;
 
 @end

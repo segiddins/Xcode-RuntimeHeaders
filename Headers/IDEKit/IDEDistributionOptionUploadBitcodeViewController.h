@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCheckboxValue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *stateError; // @synthesize stateError=_stateError;
 @property(retain, nonatomic) IDEDistributionOptionUploadBitcodeState *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)loadContent;
 - (void)setCheckboxValue:(BOOL)arg1;
 - (BOOL)checkboxValue;

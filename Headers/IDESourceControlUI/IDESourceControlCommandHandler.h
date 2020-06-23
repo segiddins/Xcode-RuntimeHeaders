@@ -19,13 +19,14 @@
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSAlert *waitingOnInitialScanAlert; // @synthesize waitingOnInitialScanAlert=_waitingOnInitialScanAlert;
 @property(readonly) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
-- (void).cxx_destruct;
 - (void)createPullRequestCommand:(id)arg1;
 - (void)stashCommand:(id)arg1;
 - (void)cherryPickCommand:(id)arg1;
 - (void)refreshFileStatusCommand:(id)arg1;
+- (void)fetchChangesCommand:(id)arg1;
 - (void)resolvedCommand:(id)arg1;
 - (void)revertSelectedFilesCommand:(id)arg1;
 - (void)addCommand:(id)arg1;
@@ -40,6 +41,7 @@
 - (void)presentInvalidSelectionError;
 - (void)presentNoSelectionError;
 - (void)presentNoWorkingCopiesError;
+- (void)presentError:(id)arg1 informativeText:(id)arg2;
 - (BOOL)hasSelection;
 - (BOOL)hasValidWorkingCopy;
 - (BOOL)hasValidWorkspace;

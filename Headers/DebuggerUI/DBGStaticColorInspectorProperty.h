@@ -20,10 +20,10 @@
     NSTextField *_colorNameTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *colorNameTextField; // @synthesize colorNameTextField=_colorNameTextField;
 @property __weak DVTColorSwatchView *colorWell; // @synthesize colorWell=_colorWell;
 @property __weak NSTextField *colorValueTextField; // @synthesize colorValueTextField=_colorValueTextField;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
 - (void)_configureForNilColor;

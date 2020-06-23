@@ -25,6 +25,7 @@
 }
 
 + (id)keyPathsForValuesAffectingFileExists;
+- (void).cxx_destruct;
 @property NSArrayController *baseLocalizationsArrayController; // @synthesize baseLocalizationsArrayController=_baseLocalizationsArrayController;
 @property NSView *baseLocalizationAccessoryView; // @synthesize baseLocalizationAccessoryView=_baseLocalizationAccessoryView;
 @property NSArrayController *makeLocalizationsArrayController; // @synthesize makeLocalizationsArrayController=_makeLocalizationsArrayController;
@@ -34,7 +35,6 @@
 @property(retain) IDENavigatorDataCell *nameAndImageCell; // @synthesize nameAndImageCell=_nameAndImageCell;
 @property(retain) DVTObservingToken *selectionToken; // @synthesize selectionToken=_selectionToken;
 @property(retain) Xcode3LocalizationCommands *localizationCommands; // @synthesize localizationCommands=_localizationCommands;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (void)changeResourceForInspectorLocale:(id)arg1 toFileDataType:(id)arg2;
 - (void)removeBaseResource;

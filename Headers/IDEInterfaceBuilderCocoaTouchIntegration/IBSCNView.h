@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
 @interface IBSCNView : IBUIView <IBDocumentArchiving>
 {
@@ -19,11 +19,12 @@
     BOOL _allowsCameraControl;
     BOOL _ibWantsMultisampling;
     int _ibPreferredRenderingAPI;
-    IBUIColor *_backgroundColor;
+    IBColor *_backgroundColor;
     NSString *_ibSceneName;
 }
 
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) int ibPreferredRenderingAPI; // @synthesize ibPreferredRenderingAPI=_ibPreferredRenderingAPI;
 @property(nonatomic) BOOL ibWantsMultisampling; // @synthesize ibWantsMultisampling=_ibWantsMultisampling;
 @property(nonatomic) BOOL allowsCameraControl; // @synthesize allowsCameraControl=_allowsCameraControl;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL jitteringEnabled; // @synthesize jitteringEnabled=_jitteringEnabled;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)shouldDrawAsPlaceholder;
 - (void)encodeWithCoder:(id)arg1;

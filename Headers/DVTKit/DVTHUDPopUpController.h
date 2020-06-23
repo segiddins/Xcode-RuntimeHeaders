@@ -29,6 +29,7 @@
     BOOL _animatesIn;
 }
 
+- (void).cxx_destruct;
 @property BOOL animatesIn; // @synthesize animatesIn=_animatesIn;
 @property(nonatomic) BOOL hidesArrow; // @synthesize hidesArrow=_hidesArrow;
 @property(copy) CDUnknownBlockType doneButtonClickHandlerBlock; // @synthesize doneButtonClickHandlerBlock=_doneButtonClickHandlerBlock;
@@ -37,7 +38,6 @@
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property struct CGRect visibleArea; // @synthesize visibleArea=_visibleArea;
 @property(readonly) DVTHUDPopUpContentViewController *popupContentViewController; // @synthesize popupContentViewController=_viewController;
-- (void).cxx_destruct;
 - (void)insertText:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)cancelOperation:(id)arg1;

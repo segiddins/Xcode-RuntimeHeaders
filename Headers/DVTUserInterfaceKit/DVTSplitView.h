@@ -56,11 +56,11 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSImage *dividerImage; // @synthesize dividerImage=_dividerImage;
 @property(copy, nonatomic) NSImage *dividerKnobImage; // @synthesize dividerKnobImage=_dividerKnobImage;
 @property(retain, nonatomic) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property unsigned long long indexOfViewForResizing; // @synthesize indexOfViewForResizing=_indexOfViewForResizing;
-- (void).cxx_destruct;
 - (void)resetCursorRects;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)dvt_isValidGrabHit:(struct CGPoint)arg1;

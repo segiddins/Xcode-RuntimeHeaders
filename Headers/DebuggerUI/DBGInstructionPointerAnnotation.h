@@ -24,8 +24,8 @@
 + (id)dvt_instructionPointerPathWithSize:(struct CGSize)arg1 tipWidth:(double)arg2;
 + (id)dvt_instructionPointerPathWithSize:(struct CGSize)arg1;
 + (id)_dvt_instructionPointerImageForSize:(struct CGSize)arg1 fillColor:(id)arg2;
-@property(retain) DVTTextDocumentLocation *preDragAnnotationLocation; // @synthesize preDragAnnotationLocation=_preDragAnnotationLocation;
 - (void).cxx_destruct;
+@property(retain) DVTTextDocumentLocation *preDragAnnotationLocation; // @synthesize preDragAnnotationLocation=_preDragAnnotationLocation;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;
 - (void)moveInstructionPointerToParagraphLocation;

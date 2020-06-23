@@ -13,8 +13,8 @@
     id <IBLayoutConstraintItemInspectorBackgroundViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IBLayoutConstraintItemInspectorBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IBLayoutConstraintItemInspectorBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewDidMoveToWindow;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

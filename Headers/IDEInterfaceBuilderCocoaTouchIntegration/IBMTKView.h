@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
 @interface IBMTKView : IBUIView <IBDocumentArchiving>
 {
@@ -16,7 +16,7 @@
     BOOL _enableSetNeedsDisplay;
     BOOL _autoResizeDrawable;
     unsigned int _clearStencil;
-    IBUIColor *_clearColor;
+    IBColor *_clearColor;
     double _clearDepth;
     unsigned long long _colorPixelFormat;
     unsigned long long _depthStencilPixelFormat;
@@ -25,6 +25,7 @@
 }
 
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL autoResizeDrawable; // @synthesize autoResizeDrawable=_autoResizeDrawable;
 @property(nonatomic) BOOL enableSetNeedsDisplay; // @synthesize enableSetNeedsDisplay=_enableSetNeedsDisplay;
 @property(nonatomic) BOOL paused; // @synthesize paused=_paused;
@@ -34,8 +35,7 @@
 @property(nonatomic) unsigned long long colorPixelFormat; // @synthesize colorPixelFormat=_colorPixelFormat;
 @property(nonatomic) unsigned int clearStencil; // @synthesize clearStencil=_clearStencil;
 @property(nonatomic) double clearDepth; // @synthesize clearDepth=_clearDepth;
-@property(retain, nonatomic) IBUIColor *clearColor; // @synthesize clearColor=_clearColor;
-- (void).cxx_destruct;
+@property(retain, nonatomic) IBColor *clearColor; // @synthesize clearColor=_clearColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

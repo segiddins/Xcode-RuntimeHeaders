@@ -17,12 +17,12 @@
     long long _status;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long accountType; // @synthesize accountType=_accountType;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 
 @end
 

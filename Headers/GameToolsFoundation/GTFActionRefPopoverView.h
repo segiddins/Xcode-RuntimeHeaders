@@ -16,9 +16,9 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) __weak GTFActionTimelineModel *referenceAction; // @synthesize referenceAction=_referenceAction;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)createCGRoundedRect:(struct CGRect)arg1 radius:(double)arg2 context:(struct CGContext *)arg3;
 - (void)drawRect:(struct CGRect)arg1;

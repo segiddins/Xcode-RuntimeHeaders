@@ -17,8 +17,8 @@
     BOOL _isPointer;
 }
 
-@property(retain) NSString *pointeeTypeName; // @synthesize pointeeTypeName=_pointeeTypeName;
 - (void).cxx_destruct;
+@property(retain) NSString *pointeeTypeName; // @synthesize pointeeTypeName=_pointeeTypeName;
 - (BOOL)isUnknownType;
 - (BOOL)isPointer;
 - (id)displayTypeName;

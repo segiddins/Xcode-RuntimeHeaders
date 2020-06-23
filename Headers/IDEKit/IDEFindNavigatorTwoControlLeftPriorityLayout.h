@@ -17,10 +17,10 @@
     double _horizontalSpacing;
 }
 
+- (void).cxx_destruct;
 @property double horizontalSpacing; // @synthesize horizontalSpacing=_horizontalSpacing;
 @property(retain) NSControl *rightControl; // @synthesize rightControl=_rightControl;
 @property(retain) NSControl *leftControl; // @synthesize leftControl=_leftControl;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)awakeFromNib;

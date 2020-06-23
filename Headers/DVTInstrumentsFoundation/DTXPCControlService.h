@@ -16,6 +16,7 @@
 
 + (void)registerCapabilities:(id)arg1;
 - (void)stopObservationsForIdentifier:(id)arg1 requestingProcess:(int)arg2;
+- (void)requestDebugLaunchOfDaemonWithSpecifier:(id)arg1 programPath:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (void)observeServicesWithIdentifier:(id)arg1 requestingProcess:(int)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (void)messageReceived:(id)arg1;
 - (id)launchSuspendedProcessWithDevicePath:(id)arg1 bundleIdentifier:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;

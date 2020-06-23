@@ -8,7 +8,8 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTPortalProfile, DVTProvisioningProfile, IDEProvisioningCompoundProfileIdentifier, NSError, NSString;
+@class DVTProvisioningProfile, IDEProvisioningCompoundProfileIdentifier, NSError, NSString;
+@protocol DVTPortalProfileProtocol;
 
 @interface IDEProvisioningCompoundProfile : NSObject <NSCopying>
 {
@@ -17,7 +18,7 @@
     long long _state;
     NSError *_error;
     IDEProvisioningCompoundProfileIdentifier *_identifier;
-    DVTPortalProfile *_portalProfile;
+    id <DVTPortalProfileProtocol> _portalProfile;
     DVTProvisioningProfile *_provisioningProfile;
     DVTProvisioningProfile *_outDatedProfile;
     DVTProvisioningProfile *_previewProfile;
@@ -27,16 +28,16 @@
 + (id)keyPathsForValuesAffectingIsLocalProfileOutDated;
 + (id)keyPathsForValuesAffectingHasProfileInstalled;
 + (id)keyPathsForValuesAffectingProfile;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsInstallCancelled; // @synthesize wantsInstallCancelled=_wantsInstallCancelled;
 @property(retain, nonatomic) DVTProvisioningProfile *previewProfile; // @synthesize previewProfile=_previewProfile;
 @property(retain, nonatomic) DVTProvisioningProfile *outDatedProfile; // @synthesize outDatedProfile=_outDatedProfile;
 @property(retain, nonatomic) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
-@property(retain, nonatomic) DVTPortalProfile *portalProfile; // @synthesize portalProfile=_portalProfile;
+@property(retain, nonatomic) id <DVTPortalProfileProtocol> portalProfile; // @synthesize portalProfile=_portalProfile;
 @property(retain, nonatomic) IDEProvisioningCompoundProfileIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

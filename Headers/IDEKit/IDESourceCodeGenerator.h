@@ -14,8 +14,8 @@
 }
 
 + (id)alloc;
-@property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
+@property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (id)commitInsertionOfSourceCodeForCompositeResult:(id)arg1 error:(id *)arg2;
 - (id)prepareToAddSourceCodeForCounterparts:(id)arg1 documentLocationForCounterpartBlock:(CDUnknownBlockType)arg2 addSourceCodeForCounterpartBlock:(CDUnknownBlockType)arg3 options:(id)arg4 error:(id *)arg5;
 - (id)effectiveInsertionOptionsFromBaseOptions:(id)arg1 forCounterpart:(id)arg2 lineHintingCounterpart:(id)arg3 insertBeforeHint:(id)arg4 insertAfterHint:(id)arg5;

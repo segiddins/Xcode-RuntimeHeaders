@@ -19,6 +19,7 @@
     DTKPCPUCounterAllocatorRecord *_child;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak DTKPCPUCounterAllocatorRecord *child; // @synthesize child=_child;
 @property(nonatomic) __weak DTKPCPUCounterAllocatorRecord *parent; // @synthesize parent=_parent;
 @property(nonatomic) struct kpep_event *kpepEvent; // @synthesize kpepEvent=_kpepEvent;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *counterName; // @synthesize counterName=_counterName;
 @property(retain, nonatomic) NSString *eventOrAliasName; // @synthesize eventOrAliasName=_eventOrAliasName;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 nameOrAlias:(id)arg2 counterName:(id)arg3 kpepEvent:(struct kpep_event *)arg4 isPMI:(BOOL)arg5;
 
 @end

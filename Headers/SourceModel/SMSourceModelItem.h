@@ -30,12 +30,12 @@
 }
 
 + (id)sourceModelItemWithRange:(struct _NSRange)arg1 language:(long long)arg2 token:(long long)arg3 nodeType:(short)arg4;
+- (void).cxx_destruct;
 @property struct _NSRange relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(nonatomic) SMSourceModelItem *parent; // @synthesize parent=_parent;
 @property long long token; // @synthesize token=_token;
 @property long long langId; // @synthesize langId=_langId;
-- (void).cxx_destruct;
 - (void)enumerateIdentifierItemsInRelativeRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateDescendentsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)clearAdjustedNodeTypes;

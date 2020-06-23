@@ -21,6 +21,7 @@
     MISSING_TYPE *productValidationToolSpecIdentifier;
     MISSING_TYPE *buildPhaseFileRefAdditions;
     MISSING_TYPE *infoPlistAdditions;
+    MISSING_TYPE *defaultEntitlements;
     MISSING_TYPE *supportsOnDemandResources;
     MISSING_TYPE *deprecationInfo;
 }

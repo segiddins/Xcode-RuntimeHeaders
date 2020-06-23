@@ -27,10 +27,10 @@
 + (BOOL)_isDebuggingEnabledForLaunchParameters:(id)arg1;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_shouldSkipDylibLoadingOnLaunchDueToSceneKitSymbolConflictForLaunchSession:(id)arg1;
 - (BOOL)_shouldSkipDylibLoadingOnLaunchDueToUserDefault;

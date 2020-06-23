@@ -18,10 +18,10 @@
     DTNetworkGraphObject *_selectedObject;
 }
 
+- (void).cxx_destruct;
 @property(retain) DTNetworkGraphObject *selectedObject; // @synthesize selectedObject=_selectedObject;
 @property(retain) NSArray *edges; // @synthesize edges=_edges;
 @property(retain) NSArray *nodes; // @synthesize nodes=_nodes;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 @property(retain, getter=_layoutDelegate, setter=_setLayoutDelegate:) id <DTNetworkGraphLayout> layout;
 - (void)observeModel:(BOOL)arg1;

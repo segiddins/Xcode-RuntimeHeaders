@@ -19,10 +19,12 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *snappingRange;
     MISSING_TYPE *defaultValueView;
     MISSING_TYPE *trailingDefaultValueViewConstraint;
+    MISSING_TYPE *valueLabelWidthConstraint;
     MISSING_TYPE *resetButton;
     MISSING_TYPE *range;
     MISSING_TYPE *value;
     MISSING_TYPE *defaultValue;
+    MISSING_TYPE *isSliderEnabled;
     MISSING_TYPE *accessibilityMeasurementFormatter;
 }
 

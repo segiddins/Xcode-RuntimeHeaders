@@ -21,10 +21,10 @@
 
 + (Class)migrationContextClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long currentConversionStage; // @synthesize currentConversionStage=_currentConversionStage;
 @property long long numberOfIncompatibilityErrors; // @synthesize numberOfIncompatibilityErrors=_numIncompatibilityErrors;
 @property(readonly, copy) NSArray *targets; // @synthesize targets=_targets;
-- (void).cxx_destruct;
 - (id)migrateFolderForBuildable:(id)arg1;
 - (id)convertedFilePathForOriginalFilePath:(id)arg1;
 - (unsigned long long)numberOfConvertedFilePaths;

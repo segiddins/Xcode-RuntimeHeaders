@@ -19,8 +19,8 @@
     NSButton *_checkbox;
 }
 
-@property(retain, nonatomic) NSButton *checkbox; // @synthesize checkbox=_checkbox;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSButton *checkbox; // @synthesize checkbox=_checkbox;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)loadView;
 - (void)refresh;

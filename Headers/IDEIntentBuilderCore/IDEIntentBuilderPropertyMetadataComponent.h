@@ -26,6 +26,7 @@
     NSArray *_supportedPaths;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *supportedPaths; // @synthesize supportedPaths=_supportedPaths;
 @property(readonly, nonatomic) __weak IDEIntentBuilderPropertyMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak id <IDEIntentBuilderPropertyMetadataComponentDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) IDEIntentBuilderPropertyMetadataComponentSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (id)decodeObject:(id)arg1;
 - (id)encodeObject:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;

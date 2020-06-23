@@ -18,10 +18,10 @@
     GPUDebuggingAdditionUIController *_debuggingAdditionUIController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL editorWasInstalled; // @synthesize editorWasInstalled=_editorWasInstalled;
 @property(retain, nonatomic) GPUDebuggingAdditionUIController *debuggingAdditionUIController; // @synthesize debuggingAdditionUIController=_debuggingAdditionUIController;
 @property(retain, nonatomic) GPUTraceSession *traceSession; // @synthesize traceSession=_traceSession;
-- (void).cxx_destruct;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)editorDocumentDidClose;

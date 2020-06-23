@@ -48,6 +48,7 @@
     DVTReplacementView *_topBarReplacementView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *topBarReplacementView; // @synthesize topBarReplacementView=_topBarReplacementView;
 @property(retain) NSTimer *resizeReloadTimer; // @synthesize resizeReloadTimer=_resizeReloadTimer;
 @property __weak XCSUIProgressReplacementView *progressReplacementView; // @synthesize progressReplacementView=_progressReplacementView;
@@ -63,7 +64,6 @@
 @property(readonly, copy) NSString *botDescription; // @synthesize botDescription=_botDescription;
 @property(readonly, copy) NSString *botName; // @synthesize botName=_botName;
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_showPopoverForIntegration:(id)arg1 event:(id)arg2 resultSummary:(id)arg3 graphColumn:(id)arg4 graphController:(id)arg5;
 - (void)stackedBarChartViewController:(id)arg1 userClickedOnGraphColumn:(id)arg2 event:(id)arg3;

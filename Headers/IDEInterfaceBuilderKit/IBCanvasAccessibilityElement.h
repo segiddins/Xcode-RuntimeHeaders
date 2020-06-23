@@ -19,12 +19,12 @@
     CDUnknownBlockType _roleDescriptionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType roleDescriptionBlock; // @synthesize roleDescriptionBlock=_roleDescriptionBlock;
 @property(copy) CDUnknownBlockType parentBlock; // @synthesize parentBlock=_parentBlock;
 @property(copy) CDUnknownBlockType labelBlock; // @synthesize labelBlock=_labelBlock;
 @property(copy) CDUnknownBlockType frameBlock; // @synthesize frameBlock=_frameBlock;
 @property(copy) CDUnknownBlockType childrenBlock; // @synthesize childrenBlock=_childrenBlock;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)accessibilityRoleDescription;

@@ -6,12 +6,20 @@
 
 #import <GPUToolsRenderer/MTLDevice-Protocol.h>
 
-@class MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLIndirectCommandBufferDescriptor, MTLMotionEstimationPipelineDescriptor, MTLMotionEstimatorCapabilities, MTLRenderPipelineDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSMutableDictionary, NSString, OS_dispatch_data, _MTLIndirectArgumentBufferLayout;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLCommandQueue, MTLComputeCommandEncoder, MTLComputePipelineState, MTLDeserializationContext, MTLDevice, MTLDeviceSPI, MTLFunction, MTLIndirectArgumentEncoder, MTLIndirectCommandBuffer, MTLIndirectRenderCommandEncoder, MTLLibrary, MTLMotionEstimationPipeline, MTLPipelineCache, MTLPipelineLibrarySPI, MTLRenderCommandEncoder, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture;
+@class MTLBinaryArchiveDescriptor, MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLIndirectCommandBufferDescriptor, MTLMotionEstimationPipelineDescriptor, MTLMotionEstimatorCapabilities, MTLRasterizationRateMapDescriptor, MTLRenderPipelineDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSMutableDictionary, NSString, NSURL, OS_dispatch_data, _MTLIndirectArgumentBufferLayout;
+@protocol MTLArgumentEncoder, MTLBinaryArchive, MTLBinaryLibrary, MTLBuffer, MTLCommandQueue, MTLComputeCommandEncoder, MTLComputePipelineState, MTLDeserializationContext, MTLDevice, MTLDeviceSPI, MTLDynamicLibrary, MTLFunction, MTLIndirectArgumentEncoder, MTLIndirectCommandBuffer, MTLIndirectComputeCommandEncoder, MTLIndirectRenderCommandEncoder, MTLLibrary, MTLMotionEstimationPipeline, MTLPipelineCache, MTLPipelineLibrarySPI, MTLRasterizationRateMap, MTLRenderCommandEncoder, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture;
 
 @protocol MTLDeviceSPI <MTLDevice>
 + (void)registerDevices;
+- (id <MTLBinaryLibrary>)newBinaryLibraryWithOptions:(unsigned long long)arg1 url:(NSURL *)arg2 error:(id *)arg3;
+- (id <MTLDynamicLibrary>)newDynamicLibraryFromURL:(NSURL *)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibrary:(id <MTLLibrary>)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibrary:(id <MTLLibrary>)arg1 computeDescriptor:(MTLComputePipelineDescriptor *)arg2 error:(id *)arg3;
+- (id <MTLBinaryArchive>)newBinaryArchiveWithDescriptor:(MTLBinaryArchiveDescriptor *)arg1 error:(id *)arg2;
 - (BOOL)isPlacementHeapSupported;
+@property(nonatomic, readonly) long long maxRasterizationRateLayerCount;
+- (id <MTLRasterizationRateMap>)newRasterizationRateMapWithDescriptor:(MTLRasterizationRateMapDescriptor *)arg1;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(long long)arg1;
 - (unsigned long long)offsetFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)resourceIndexFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)indirectBufferAddressForResourceIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
@@ -37,6 +45,7 @@
 - (BOOL)isResourceIndirectionEnabled;
 - (BOOL)setResourcesPurgeableState:(id *)arg1 newState:(unsigned long long)arg2 oldState:(unsigned long long *)arg3 count:(int)arg4;
 - (id <MTLSharedEvent>)newSharedEventWithMachPort:(unsigned int)arg1;
+- (id <MTLIndirectComputeCommandEncoder>)newIndirectComputeCommandEncoderWithBuffer:(id <MTLBuffer>)arg1;
 - (id <MTLIndirectRenderCommandEncoder>)newIndirectRenderCommandEncoderWithBuffer:(id <MTLBuffer>)arg1;
 - (id <MTLBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCount:(long long)arg2 options:(unsigned long long)arg3;
 @property(nonatomic, readonly) unsigned long long samplerReductionModeSupport;
@@ -60,6 +69,8 @@
 @property(nonatomic, readonly) unsigned int acceleratorPort;
 @property(nonatomic, readonly) long long maxComputeAttributes;
 @property(nonatomic, readonly) long long maxTextureBufferWidth;
+@property(nonatomic, readonly) long long maxVertexAmplificationCount;
+@property(nonatomic, readonly) long long maxVertexAmplificationFactor;
 @property(nonatomic, readonly) long long maxCustomSamplePositions;
 @property(nonatomic, readonly) long long maxViewportCount;
 @property(nonatomic, readonly) long long maxIndirectSamplersPerDevice;
@@ -108,10 +119,13 @@
 @property(nonatomic, readonly) long long maxColorAttachments;
 - (id <MTLTexture>)newTextureWithSurface:(long long)arg1 buffer:(long long)arg2;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface *)arg2 plane:(long long)arg3;
+- (long long)minLinearTexturePitchAlignmentForDescriptor:(MTLTextureDescriptor *)arg1 mustMatchExactly:(long long *)arg2;
+- (long long)minLinearTextureBaseAddressAlignmentForDescriptor:(MTLTextureDescriptor *)arg1;
+- (long long)requiredLinearTextureBytesPerRowForDescriptor:(MTLTextureDescriptor *)arg1;
 - (long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
 - (BOOL)deviceSupportsFeatureSet:(unsigned long long)arg1;
-@property(nonatomic, readonly) const CDStruct_daf93e08 *limits;
+@property(nonatomic, readonly) const CDStruct_d36c2e50 *limits;
 - (id <MTLDevice>)_deviceWrapper;
 - (void)_setDeviceWrapper:(id <MTLDeviceSPI>)arg1;
 @property(nonatomic, readonly) unsigned long long featureProfile;
@@ -137,6 +151,7 @@
 @property(nonatomic, readonly) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(nonatomic, readonly) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(nonatomic, readonly) BOOL supportsShaderBarycentricCoordinates;
+@property(nonatomic, readonly) BOOL supportsVariableRateRasterization;
 @property(nonatomic, readonly) BOOL supportsSIMDShufflesAndBroadcast;
 @property(nonatomic, readonly) BOOL supportsShaderMinLODClamp;
 @property(nonatomic, readonly) BOOL supportsSIMDGroup;
@@ -195,6 +210,9 @@
 @property(nonatomic, readonly) BOOL supportsSRGBwrites;
 @property(nonatomic, readonly) BOOL supportsPublicXR10Formats;
 @property(nonatomic, readonly) BOOL supportsASTCTextureCompression;
+@property(nonatomic, readonly) BOOL supportsBinaryLibraries;
+@property(nonatomic, readonly) BOOL supportsDynamicLibraries;
+@property(nonatomic, readonly) BOOL supportsBinaryArchives;
 @property(nonatomic, readonly) BOOL supportsGPUStatistics;
 @property(nonatomic, readonly) BOOL supportsSeparateDepthStencil;
 @property(nonatomic, readonly) BOOL supportsRelaxedTextureViewRequirements;
@@ -213,6 +231,7 @@
 @property(nonatomic, readonly) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(nonatomic, readonly) BOOL supportsPlacementHeaps;
 @property(nonatomic, readonly) BOOL supportsSamplerReductionMode;
+@property(nonatomic, readonly) BOOL supportsVertexAmplification;
 @property(nonatomic, readonly) BOOL supportsQueryTextureLOD;
 @property(nonatomic, readonly) BOOL supports32bpcMSAATextures;
 @property(nonatomic, readonly) BOOL supportsSamplerAddressModeClampToHalfBorder;

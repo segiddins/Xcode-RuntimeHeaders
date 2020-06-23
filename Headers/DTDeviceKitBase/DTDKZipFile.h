@@ -17,9 +17,9 @@
 
 + (id)zipFileWithContentsOfURL:(id)arg1 error:(id *)arg2;
 + (id)zipFileWithContentsOfURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy) NSURL *zipFileURL; // @synthesize zipFileURL=_zipFileURL;
-- (void).cxx_destruct;
 - (_Bool)extractEntireArchiveTo:(id)arg1 error:(id *)arg2;
 - (_Bool)extractEntireArchiveTo:(id)arg1 error:(id *)arg2 withProgressHandler:(CDUnknownBlockType)arg3;
 - (_Bool)enumerateFileDataWithError:(id *)arg1 andBlock:(CDUnknownBlockType)arg2;

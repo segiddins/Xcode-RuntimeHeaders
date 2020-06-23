@@ -32,6 +32,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL allowProjectChanges; // @synthesize allowProjectChanges=_allowProjectChanges;
 @property(copy) NSURL *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
 @property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
@@ -42,7 +43,6 @@
 @property(copy) CDUnknownBlockType onNeedsReviewBlock; // @synthesize onNeedsReviewBlock=_onNeedsReviewBlock;
 @property(copy) CDUnknownBlockType onCompletedBlock; // @synthesize onCompletedBlock=_onCompletedBlock;
 @property(copy) CDUnknownBlockType onErrorBlock; // @synthesize onErrorBlock=_onErrorBlock;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (void)processImportedFileDescriptions:(id)arg1;

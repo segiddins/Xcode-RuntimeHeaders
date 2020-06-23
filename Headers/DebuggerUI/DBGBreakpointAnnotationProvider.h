@@ -19,8 +19,8 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-@property(readonly) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void)_revealInBreakpointNavigator:(id)arg1;
 - (void)_deleteBreakpoint:(id)arg1;
 - (void)_editBreakpoint:(id)arg1;

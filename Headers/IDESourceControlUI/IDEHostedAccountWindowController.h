@@ -54,6 +54,7 @@
 
 + (id)keyPathsForValuesAffectingSignInEnabled;
 + (id)hostedAccountPersonalAccessTokenHelpMenuItemWithID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *linkAttributes; // @synthesize linkAttributes=_linkAttributes;
 @property __weak NSTextField *passwordTitleTextField; // @synthesize passwordTitleTextField=_passwordTitleTextField;
 @property __weak NSButton *patHelpButton; // @synthesize patHelpButton=_patHelpButton;
@@ -75,7 +76,6 @@
 @property(nonatomic) __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(nonatomic) NSString *forcedUsername; // @synthesize forcedUsername=_forcedUsername;
 @property(nonatomic) NSURL *forcedURL; // @synthesize forcedURL=_forcedURL;
-- (void).cxx_destruct;
 - (void)cancelClick:(id)arg1;
 - (void)createAccountFromUserInput:(CDUnknownBlockType)arg1;
 - (void)displayPinEntry:(BOOL)arg1;
@@ -84,6 +84,7 @@
 - (void)_displayError:(id)arg1;
 - (void)signInClick:(id)arg1;
 - (id)_hostedAccount;
+- (id)_authentication;
 - (id)_hostURL;
 @property(nonatomic) BOOL authenticating; // @synthesize authenticating=_authenticating;
 - (void)pinFieldViewTextDidChange:(id)arg1;
@@ -97,7 +98,10 @@
 @property __weak NSTextField *urlTextField; // @synthesize urlTextField=_urlTextField;
 @property(retain, nonatomic) DVTSourceControlHostedAccount *lockedAccount; // @synthesize lockedAccount=_lockedAccount;
 - (void)resendAuthCode:(id)arg1;
+- (id)endpointPersonalAccessTokenHelpURL;
+- (BOOL)endpointUsesPrivateTokenAuth;
 - (BOOL)endpointUsesBearerAuth;
+- (BOOL)endpointRequiresPersonalAccessToken;
 - (void)windowDidLoad;
 - (id)windowNibName;
 - (void)openPATHelpBook:(id)arg1;

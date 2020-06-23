@@ -14,9 +14,9 @@
     NSDate *_dateCached;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *dateCached; // @synthesize dateCached=_dateCached;
 @property(readonly) NSSet *annotations; // @synthesize annotations=_annotations;
-- (void).cxx_destruct;
 - (id)initWithAnnotations:(id)arg1;
 
 @end

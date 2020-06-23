@@ -13,6 +13,7 @@
 {
     MISSING_TYPE *configuration;
     MISSING_TYPE *evaluation;
+    MISSING_TYPE *bundleIdentifierPlaceholder;
 }
 
 - (void).cxx_destruct;
@@ -22,7 +23,11 @@
 @property(nonatomic, retain) id <IDEProvisioningBasicSigningIdentity> signingIdentity;
 @property(nonatomic, readonly) NSOrderedSet *signingIdentities;
 @property(nonatomic, readonly) BOOL isSigningIdentityChangeable;
+@property(nonatomic) BOOL useIOSAppID;
+@property(nonatomic, readonly) BOOL wantsUniversalBundleIdentifierOption;
+@property(nonatomic, copy) NSString *bundleIdentifierPlaceholder;
 @property(nonatomic, copy) NSString *bundleIdentifier;
+@property(nonatomic, readonly) BOOL wantsBundleIdentifierEditingLabel;
 @property(nonatomic, readonly) BOOL wantsBundleIdentifierEditing;
 @property(nonatomic, readonly) BOOL isBundleIdentifierReadOnly;
 - (id)provisioningProfileDownloaderContextWithError:(id *)arg1;

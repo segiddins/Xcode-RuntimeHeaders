@@ -21,14 +21,16 @@
     BOOL _useOnlyStandardLLDBFramework;
     BOOL _hasQueriedLLDBRPCUserDefaults;
     BOOL _terminateCalled;
+    int _lldbRPCServerPID;
     DBGLLDBSession *_debugSession;
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
-@property(retain) DBGLLDBSession *debugSession; // @synthesize debugSession=_debugSession;
-@property(readonly) BOOL terminateCalled; // @synthesize terminateCalled=_terminateCalled;
 - (void).cxx_destruct;
+@property(retain) DBGLLDBSession *debugSession; // @synthesize debugSession=_debugSession;
+@property(readonly) int lldbRPCServerPID; // @synthesize lldbRPCServerPID=_lldbRPCServerPID;
+@property(readonly) BOOL terminateCalled; // @synthesize terminateCalled=_terminateCalled;
 - (void)primitiveInvalidate;
 - (void)terminate;
 - (void)start;
@@ -47,12 +49,13 @@
 - (void)_reportTarget:(id)arg1 failedToLaunchError:(id)arg2;
 - (id)_doAttachWithTarget:(id)arg1 childPID:(unsigned long long *)arg2;
 - (id)_modifyMessageForDisplay:(id)arg1;
-- (void)_showLaunchErrorForTitle:(id)arg1 message:(id)arg2 underlyingError:(id)arg3;
+- (void)_showLaunchErrorForDescription:(id)arg1 message:(id)arg2 rawErrorMessage:(id)arg3;
 - (id)parseConsoleOutputFromOriginalOutput:(id)arg1;
 - (id)parseConsoleInputFromOriginalInput:(id)arg1;
 - (void)_executeLLDBCommands:(id)arg1;
-- (void)_createBasicDebuggerObjects;
-- (BOOL)_createDebuggerConsoleAdaptor:(id *)arg1;
+- (void)_createBasicDebuggerObjects:(id)arg1;
+- (BOOL)_createDebuggerConsoleAdaptor:(id *)arg1 launchParameters:(id)arg2;
+- (void)_sourceLLDBInitFile:(id)arg1;
 - (id)lldbDebugger;
 - (void)setFinishedRunning;
 - (void)_logToConsoleForUserActions:(id)arg1;

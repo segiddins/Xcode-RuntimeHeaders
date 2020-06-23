@@ -9,6 +9,6 @@
 @class IDEToyHostingViewController;
 
 @protocol IDEToyHostingViewControllerDelegate <NSObject>
-- (void)toyHostingViewControllerDidDragResize:(IDEToyHostingViewController *)arg1;
+- (void)toyHostingViewControllerDidResize:(IDEToyHostingViewController *)arg1;
 @end
 

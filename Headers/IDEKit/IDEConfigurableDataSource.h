@@ -58,13 +58,13 @@
 + (id)arrayOfSelectedNodesForOutlineView:(id)arg1;
 + (id)dataSourceWithRootAdapter:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL requireOneNodePerData; // @synthesize requireOneNodePerData=_requireOneNodePerData;
 @property(retain, nonatomic) NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(copy) NSArray *draggedNodes; // @synthesize draggedNodes=_draggedNodes;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(retain, nonatomic) NSTableColumn *imageColumn; // @synthesize imageColumn=_imageColumn;
 @property(retain, nonatomic) NSMutableArray *roots; // @synthesize roots=_roots;
-- (void).cxx_destruct;
 - (void)configureDragAndDropForOutlineView:(id)arg1;
 - (void)configureOutlineView:(id)arg1;
 - (void)configureOutlineView:(id)arg1 withColumnTitled:(id)arg2 roots:(id)arg3 rootAdapter:(id)arg4 useImages:(BOOL)arg5 sourceList:(BOOL)arg6;
@@ -143,9 +143,9 @@
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (id)_childrenOfItem:(id)arg1;
-- (id)addRootForDataObject:(id)arg1 withAdapter:(struct NSObject *)arg2;
+- (id)addRootForDataObject:(id)arg1 withAdapter:(id)arg2;
 - (void)removeRoot:(id)arg1;
-- (void)addRootsForDataObjects:(id)arg1 withCommonAdapter:(struct NSObject *)arg2;
+- (void)addRootsForDataObjects:(id)arg1 withCommonAdapter:(id)arg2;
 @property(retain, nonatomic) id <XCEDataRootAdapterP> rootAdapter;
 - (void)reloadDataAndDisplayedNodes;
 - (id)displayedRoots;

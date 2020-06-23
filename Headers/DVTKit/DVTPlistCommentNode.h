@@ -14,8 +14,8 @@
     BOOL isMultiLine;
 }
 
-@property BOOL isMultiLine; // @synthesize isMultiLine;
 - (void).cxx_destruct;
+@property BOOL isMultiLine; // @synthesize isMultiLine;
 - (id)rawPlist;
 - (id)xmlStringWithIndent:(id)arg1;
 - (id)plistStringWithIndent:(id)arg1;

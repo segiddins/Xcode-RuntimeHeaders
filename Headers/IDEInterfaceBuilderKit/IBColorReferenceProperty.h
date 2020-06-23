@@ -21,8 +21,8 @@
 
 + (id)absentColorChoice;
 + (id)keyPathsForValuesAffectingActiveRunDestination;
-@property(retain, nonatomic) NSPopUpButton *popupButton; // @synthesize popupButton=_popupButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopUpButton *popupButton; // @synthesize popupButton=_popupButton;
 - (id)referenceColorChoicesForSlot:(id)arg1 withActiveRunDestination:(id)arg2;
 - (id)choicesForSlot:(id)arg1 withActiveRunDestination:(id)arg2;
 - (id)activeRunDestination;

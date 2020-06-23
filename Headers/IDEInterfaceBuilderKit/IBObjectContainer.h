@@ -36,6 +36,7 @@
 + (id)dataForOpaqueToken:(id)arg1 forPasteboard:(id)arg2;
 + (BOOL)hasDataForOpaqueToken:(id)arg1 forPasteboard:(id)arg2;
 + (id)objectContainerWithInitiallyDesignableChildrenOfObjects:(id)arg1 usingAutoincrementingIDs:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *verificationIssues; // @synthesize verificationIssues=_verificationIssues;
 @property id <IBObjectContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long maxID; // @synthesize maxID=_maxID;
@@ -43,7 +44,6 @@
 @property(readonly) NSObject *rootObject; // @synthesize rootObject=_rootObject;
 @property(readonly) NSString *sourceID; // @synthesize sourceID=_sourceID;
 @property(readonly) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)renameObjectWithMemberID:(id)arg1 toMemberID:(id)arg2;
 - (void)removeObject:(id)arg1;
 - (void)setSourceID:(id)arg1;

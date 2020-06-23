@@ -24,9 +24,9 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GTFActionTimelineViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)setPlayForTimelineControl:(double)arg1;
 - (void)resetTimelineControl;
 - (void)pauseTimelineControl;

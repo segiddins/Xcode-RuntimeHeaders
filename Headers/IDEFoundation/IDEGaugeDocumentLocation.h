@@ -18,10 +18,10 @@
 + (id)launchSessionFromURL:(id)arg1;
 + (id)URLForScheme:(id)arg1 launchSession:(id)arg2;
 + (id)URLForScheme:(id)arg1 launchSession:(id)arg2 otherQueryString:(id)arg3;
+- (void).cxx_destruct;
 @property BOOL displaysWhileTracing; // @synthesize displaysWhileTracing=_displaysWhileTracing;
 @property(readonly) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDisplayName:(id)arg1 documentURL:(id)arg2 priority:(unsigned long long)arg3;
 
 @end

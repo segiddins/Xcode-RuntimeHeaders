@@ -28,6 +28,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL preserveAllMessages; // @synthesize preserveAllMessages=_preserveAllMessages;
 @property unsigned long long bufferedMessagesInCurrentBuffer; // @synthesize bufferedMessagesInCurrentBuffer=_bufferedMessagesInCurrentBuffer;
 @property unsigned long long bufferedMessages; // @synthesize bufferedMessages=_bufferedMessages;
@@ -42,7 +43,6 @@
 @property unsigned long long state; // @synthesize state=_state;
 @property __weak id <IDETestingDiagnosticLogWriter> writer; // @synthesize writer=_writer;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)dispatchQueueBarrier:(CDUnknownBlockType)arg1;
 - (void)_on_queue_finishLogging:(CDUnknownBlockType)arg1;
 - (void)finishLogging:(CDUnknownBlockType)arg1;

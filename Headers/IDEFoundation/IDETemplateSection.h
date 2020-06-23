@@ -18,9 +18,9 @@
 }
 
 + (id)crossPlatformSectionName;
+- (void).cxx_destruct;
 @property BOOL showsCategoriesAsChildren; // @synthesize showsCategoriesAsChildren=_showsCategoriesAsChildren;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 @property(readonly) NSArray *templates;
 @property(readonly) NSArray *categories; // @synthesize categories=_categories;
 - (void)sortAllCategories;

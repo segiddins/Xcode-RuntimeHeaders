@@ -21,7 +21,6 @@
 - (BOOL)_canSetRole;
 - (BOOL)_canShowEmbed;
 - (BOOL)_canShowPlatformsFilter;
-- (id)footerLabel;
 - (id)titleForDisplay;
 - (void)viewDidInstall;
 

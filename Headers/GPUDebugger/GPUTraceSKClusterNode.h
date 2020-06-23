@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     DependencyViewerVertex *_cluster;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) __weak DependencyViewerVertex *cluster; // @synthesize cluster=_cluster;
-- (void).cxx_destruct;
 - (id)contextMenuAtLocation:(struct CGPoint)arg1;
 - (id)acceptTouch:(struct CGPoint)arg1 modified:(BOOL)arg2;
 - (void)loadResourceImages;

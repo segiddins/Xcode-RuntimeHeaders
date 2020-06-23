@@ -24,10 +24,9 @@
 }
 
 + (void)initialize;
-@property BOOL isValidToolbarItem; // @synthesize isValidToolbarItem=_isValidToolbarItem;
 - (void).cxx_destruct;
+@property BOOL isValidToolbarItem; // @synthesize isValidToolbarItem=_isValidToolbarItem;
 - (void)performAnalyzeAction:(id)arg1;
-- (void)performPreviewAction:(id)arg1;
 - (void)performProfileAction:(id)arg1;
 - (void)performTestAction:(id)arg1;
 - (void)performRunAction:(id)arg1;
@@ -38,7 +37,6 @@
 - (id)_toolbarItem;
 - (void)_setButtonToBuildStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToAnalyzeStyle:(id)arg1 menuItem:(id)arg2;
-- (void)_setButtonToPreviewStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToProfileStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToTestStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToRunStyle:(id)arg1 menuItem:(id)arg2;
@@ -49,7 +47,6 @@
 - (void)primitiveInvalidate;
 - (id)initWithWindowController:(id)arg1;
 - (id)addAnalyzeButtonToMenu:(id)arg1;
-- (id)addPreviewButtonToMenu:(id)arg1;
 - (id)addProfileButtonToMenu:(id)arg1;
 - (id)addTestButtonToMenu:(id)arg1;
 - (id)addRunButtonToMenu:(id)arg1;

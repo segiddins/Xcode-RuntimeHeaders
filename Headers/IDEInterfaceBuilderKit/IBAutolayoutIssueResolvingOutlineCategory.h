@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long severity; // @synthesize severity=_severity;
 @property(copy, nonatomic) NSSet *childrenWantingBottomSeparator; // @synthesize childrenWantingBottomSeparator=_childrenWantingBottomSeparator;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(copy, nonatomic) NSString *descriptiveText; // @synthesize descriptiveText=_descriptiveText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)itemForDocumentObject:(id)arg1;
 - (id)documentObjectForItem:(id)arg1;
 - (void)primitiveInvalidate;

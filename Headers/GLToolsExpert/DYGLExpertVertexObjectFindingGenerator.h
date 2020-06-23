@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     DYGLExpertAnalyzerFindingWrapper *afWrapperNotInVAO;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DYGLExpertAnalyzerFindingWrapper *afWrapperNotInVAO; // @synthesize afWrapperNotInVAO;
 @property(retain, nonatomic) DYGLExpertAnalyzerFindingWrapper *afWrapperIndicesNotInVBO; // @synthesize afWrapperIndicesNotInVBO;
 @property(retain, nonatomic) DYGLExpertAnalyzerFindingWrapper *afWrapperVerticesNotInVBO; // @synthesize afWrapperVerticesNotInVBO;
-- (void).cxx_destruct;
 - (void)_generateFinding:(int)arg1 withAfWrapper:(id)arg2 withNotableEvidence:(unsigned int)arg3;
 - (unsigned int)execute;
 - (void)preprocess;

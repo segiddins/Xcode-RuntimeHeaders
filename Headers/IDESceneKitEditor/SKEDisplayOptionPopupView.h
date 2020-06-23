@@ -13,8 +13,8 @@
     SKEDisplayOptionPopupController *_controller;
 }
 
-@property __weak SKEDisplayOptionPopupController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak SKEDisplayOptionPopupController *controller; // @synthesize controller=_controller;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 

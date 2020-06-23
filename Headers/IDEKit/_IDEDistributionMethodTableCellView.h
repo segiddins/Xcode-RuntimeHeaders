@@ -13,8 +13,8 @@
     NSButton *_radioButton;
 }
 
-@property(retain) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 
 @end
 

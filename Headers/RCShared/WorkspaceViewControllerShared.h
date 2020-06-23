@@ -25,6 +25,7 @@
     MISSING_TYPE *currentScene;
     MISSING_TYPE *unitSystem;
     MISSING_TYPE *generationCancellableMap;
+    MISSING_TYPE *fontScope;
     MISSING_TYPE *onEditingEnabledChange;
     MISSING_TYPE *editingEnabled;
     MISSING_TYPE *visualizationMode;
@@ -42,6 +43,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)toggleSettings:(id)arg1;
 - (void)toggleProperties:(id)arg1;
+- (void)export:(id)arg1;
 - (void)viewDidLoad;
 @property(nonatomic) __weak _TtC8RCShared11OverlayView *overlayContainerView; // @synthesize overlayContainerView;
 - (void)togglePlay:(id)arg1;

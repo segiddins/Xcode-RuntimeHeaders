@@ -15,10 +15,10 @@
     IDEProductIdentifier *_productIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProductIdentifier *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 imageURL:(id)arg2 productIdentifer:(id)arg3;
 
 @end

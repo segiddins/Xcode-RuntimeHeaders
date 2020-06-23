@@ -24,13 +24,13 @@
 + (id)errorLogEntryWithTitle:(id)arg1 message:(id)arg2 methodSignature:(id)arg3;
 + (id)warningLogEntryWithTitle:(id)arg1 message:(id)arg2 methodSignature:(id)arg3 environmentInfo:(id)arg4;
 + (id)errorLogEntryWithTitle:(id)arg1 message:(id)arg2 methodSignature:(id)arg3 environmentInfo:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) NSString *environmentInfo; // @synthesize environmentInfo=_environmentInfo;
 @property unsigned long long severity; // @synthesize severity=_severity;
 @property(retain) NSString *methodSignature; // @synthesize methodSignature=_methodSignature;
 @property(retain) NSString *message; // @synthesize message=_message;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)formattedSummary;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;

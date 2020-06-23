@@ -14,9 +14,9 @@
     IDEITunesConnectConfigurationResponse *_configurationResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEITunesConnectConfigurationResponse *configurationResponse; // @synthesize configurationResponse=_configurationResponse;
 @property(readonly) DVTDeveloperAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithDeveloperAccount:(id)arg1 appStoreSubmissionConfiguration:(id)arg2;
 
 @end

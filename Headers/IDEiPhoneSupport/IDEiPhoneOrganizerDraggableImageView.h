@@ -17,8 +17,8 @@
     BOOL _dragging;
 }
 
-@property __weak id <IDEiPhoneOrganizerDraggableImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IDEiPhoneOrganizerDraggableImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)menuForEvent:(id)arg1;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)mouseDragged:(id)arg1;

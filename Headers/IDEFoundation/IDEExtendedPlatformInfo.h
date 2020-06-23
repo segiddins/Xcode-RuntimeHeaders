@@ -40,6 +40,7 @@
     NSString *_deploymentTargetLdFlagName;
     NSString *_deploymentTargetLdEnvName;
     NSString *_swiftTargetPrefix;
+    NSString *_minimumOSForSwiftInTheOS;
     NSString *_appStoreNameTitleCase;
     NSString *_appStoreConnectNameTitleCase;
     NSArray *_hiDPIArtworkTargetUpgradeProductTypesToExclude;
@@ -61,6 +62,7 @@
 + (id)_baseEntitlementsWithFileName:(id)arg1 bundle:(id)arg2 platformIdentifier:(id)arg3;
 + (void)_initializePlatformInfo:(id)arg1 fromExtension:(id)arg2;
 + (id)extendedPlatformInfoForPlatformIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) Class testingUIRecorderClass; // @synthesize testingUIRecorderClass=_testingUIRecorderClass;
 @property(readonly) BOOL supportsUIRecording; // @synthesize supportsUIRecording=_supportsUIRecording;
 @property(readonly, copy) NSString *minimumOSForUITesting; // @synthesize minimumOSForUITesting=_minimumOSForUITesting;
@@ -94,6 +96,7 @@
 @property(readonly, copy) NSString *appStoreConnectNameTitleCase; // @synthesize appStoreConnectNameTitleCase=_appStoreConnectNameTitleCase;
 @property(readonly, copy) NSString *appStoreNameTitleCase; // @synthesize appStoreNameTitleCase=_appStoreNameTitleCase;
 @property(readonly) BOOL wantsIntegrityCheckForApplicationCategory; // @synthesize wantsIntegrityCheckForApplicationCategory=_wantsIntegrityCheckForApplicationCategory;
+@property(readonly, copy) NSString *minimumOSForSwiftInTheOS; // @synthesize minimumOSForSwiftInTheOS=_minimumOSForSwiftInTheOS;
 @property(readonly, copy) NSString *swiftTargetPrefix; // @synthesize swiftTargetPrefix=_swiftTargetPrefix;
 @property(readonly, copy) NSString *deploymentTargetLdEnvName; // @synthesize deploymentTargetLdEnvName=_deploymentTargetLdEnvName;
 @property(readonly, copy) NSString *deploymentTargetLdFlagName; // @synthesize deploymentTargetLdFlagName=_deploymentTargetLdFlagName;
@@ -104,7 +107,6 @@
 @property(readonly, copy) NSString *embeddedProvisioningProfileName; // @synthesize embeddedProvisioningProfileName=_embeddedProvisioningProfileName;
 @property(readonly, copy) NSString *bundleFormatApplicationPathFormatString; // @synthesize bundleFormatApplicationPathFormatString=_bundleFormatApplicationPathFormatString;
 @property(readonly, copy) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *appStoreSubmissionConfigurationBitCodeDefaultSupportLevel; // @synthesize appStoreSubmissionConfigurationBitCodeDefaultSupportLevel=_appStoreSubmissionConfigurationBitCodeDefaultSupportLevel;
 @property(readonly, copy) NSString *deploymentTargetSettingHumanReadableNameSentenceCase;
 @property(readonly, copy) NSString *deploymentTargetSettingHumanReadableNameTitleCase;

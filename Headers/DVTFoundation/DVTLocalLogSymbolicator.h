@@ -17,9 +17,9 @@
 + (id)symbolicatorWithDSYMs:(id)arg1;
 + (id)symbolicator;
 + (id)symbolicateCrashPath;
+- (void).cxx_destruct;
 @property(copy) NSSet *missingUUIDs; // @synthesize missingUUIDs=_missingUUIDs;
 @property(readonly, copy) NSArray *dSYMs; // @synthesize dSYMs=_dSYMs;
-- (void).cxx_destruct;
 - (void)_parseToolStandardError:(id)arg1;
 - (void)symbolicateLogData:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)symbolicateLogData:(id)arg1 error:(id *)arg2;

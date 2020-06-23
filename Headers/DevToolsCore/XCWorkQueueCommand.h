@@ -16,8 +16,8 @@
     XCMacroExpansionScope *_macroExpansionScope;
 }
 
-@property(retain) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
 - (void).cxx_destruct;
+@property(retain) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
 - (id)messageFormatForFailingCommandWithNoErrors;
 - (CDUnknownBlockType)processDependencyInfoFileIfNecessaryWithCommandInvocationSucceeded:(BOOL)arg1;
 - (id)instantiatedCommandResultsPostprocessor;

@@ -13,8 +13,8 @@
     MISSING_TYPE *context;
     MISSING_TYPE *isTornDown;
     MISSING_TYPE *currentGenerateGroup;
-    MISSING_TYPE *waitingGenerateGroup;
-    MISSING_TYPE *scheduledGenerateGroup;
+    MISSING_TYPE *waitingGenerateGroups;
+    MISSING_TYPE *scheduledGenerateGroups;
     MISSING_TYPE *completedGenerateGroups;
     MISSING_TYPE *_generateGroupTimeStamp;
     MISSING_TYPE *sessionWorkers;

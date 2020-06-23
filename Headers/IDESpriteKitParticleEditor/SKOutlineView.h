@@ -17,8 +17,8 @@
     SKOutlineViewHoverInfo *_hoverInfo;
 }
 
-@property(retain, nonatomic) SKOutlineViewHoverInfo *hoverInfo; // @synthesize hoverInfo=_hoverInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKOutlineViewHoverInfo *hoverInfo; // @synthesize hoverInfo=_hoverInfo;
 - (void)_updateHoverInfoWithEvent:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;

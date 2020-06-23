@@ -30,6 +30,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCanContinue;
+- (void).cxx_destruct;
 @property __weak DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) NSMutableArray *checkedFilePaths; // @synthesize checkedFilePaths=_checkedFilePaths;
@@ -37,7 +38,6 @@
 @property BOOL inProgress; // @synthesize inProgress=_inProgress;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property __weak IDESourceControlWorkspaceUIHandler *workspaceUIHandler; // @synthesize workspaceUIHandler=_workspaceUIHandler;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;

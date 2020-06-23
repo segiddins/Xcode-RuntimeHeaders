@@ -34,6 +34,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSPopoverTouchBarItem *conflictPopoverItem; // @synthesize conflictPopoverItem=_conflictPopoverItem;
 @property(retain) NSPopoverTouchBarItem *commitPopoverItem; // @synthesize commitPopoverItem=_commitPopoverItem;
 @property(retain) NSPopoverTouchBarItem *popoverItem; // @synthesize popoverItem=_popoverItem;
@@ -53,7 +54,6 @@
 @property(retain) DVTObservingToken *runSheetContentObserver; // @synthesize runSheetContentObserver=_runSheetContentObserver;
 @property BOOL showsCommitToggle; // @synthesize showsCommitToggle=_showsCommitToggle;
 @property(retain, nonatomic) IDEComparisonEditor *comparisonEditor; // @synthesize comparisonEditor=_comparisonEditor;
-- (void).cxx_destruct;
 - (void)discardDiff:(id)arg1;
 - (void)toggleDiffOff:(id)arg1;
 - (void)keepDiff:(id)arg1;

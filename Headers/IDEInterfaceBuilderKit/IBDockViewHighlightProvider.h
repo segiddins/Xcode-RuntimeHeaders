@@ -16,8 +16,8 @@
     id <IBDockViewHighlightProviderDelegate> _delegate;
 }
 
-@property __weak id <IBDockViewHighlightProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBDockViewHighlightProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)documentEditor:(id)arg1 highlightObjects:(id)arg2 showLabels:(BOOL)arg3 successfulObjects:(id *)arg4;
 - (double)highlightPriorityInDocumentEditor:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

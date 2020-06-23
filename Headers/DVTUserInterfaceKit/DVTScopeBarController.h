@@ -18,9 +18,9 @@
     BOOL _showsDismissButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsDismissButton; // @synthesize showsDismissButton=_showsDismissButton;
 @property(retain) DVTViewController<DVTScopeBarContentController> *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (void)_adjustSubviews;
 - (void)dismissButtonAction:(id)arg1;
 @property(readonly) double preferredScopeBarHeight;

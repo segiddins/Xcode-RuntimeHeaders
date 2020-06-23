@@ -24,6 +24,7 @@
     MISSING_TYPE *system;
     MISSING_TYPE *cancelled;
     MISSING_TYPE *buildOutputMap;
+    MISSING_TYPE *nodesToBuild;
     MISSING_TYPE *workspace;
     MISSING_TYPE *core;
 }

@@ -14,9 +14,9 @@
     NSMutableArray *_array;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 @property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)keyAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 forKey:(id)arg2 atIndex:(unsigned long long)arg3;

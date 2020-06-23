@@ -14,9 +14,9 @@
     NSSet *_allowedSizeModes;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *allowedSizeModes; // @synthesize allowedSizeModes=_allowedSizeModes;
 @property(copy) NSSet *allowedDisplayModes; // @synthesize allowedDisplayModes=_allowedDisplayModes;
-- (void).cxx_destruct;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)_allowsSizeMode:(unsigned long long)arg1;
 - (BOOL)_allowsDisplayMode:(unsigned long long)arg1;

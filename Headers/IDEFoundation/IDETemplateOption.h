@@ -45,6 +45,7 @@
 + (id)keyPathsForValuesAffectingHasValidValue;
 + (id)keyPathsForValuesAffectingDisplayValue;
 + (id)allowedTemplateOptionTypes;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
 @property(nonatomic) BOOL disabledByConstraints; // @synthesize disabledByConstraints=_disabledByConstraints;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
@@ -66,7 +67,6 @@
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property id <IDETemplateOptionParent> parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (void)addImportMacroToEngine:(id)arg1;
 - (id)_importStringFromWorkspaceVisibilityForFilePath:(id)arg1;
 @property(readonly) NSString *identifierValue;

@@ -13,8 +13,9 @@
     GPUDebuggerController *_debuggerController;
 }
 
-@property(nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
+- (id)displayName;
 - (id)traceSession;
 
 @end

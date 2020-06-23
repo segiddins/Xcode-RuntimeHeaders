@@ -17,9 +17,9 @@
 }
 
 + (BOOL)wantsHeaderView;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBStoryboardCanvasFrameTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic, getter=isShowingDock) BOOL showingDock; // @synthesize showingDock=_showingDock;
-- (void).cxx_destruct;
 - (struct CGPoint)pointForCanvasLink:(id)arg1 withIndex:(long long)arg2 inSeriesOfSeguesWithCount:(long long)arg3 atEdge:(unsigned long long)arg4;
 - (CDStruct_f6143a38)spanForAttachingSeguesToEdge:(unsigned long long)arg1 inSeriesOfSeguesWithCount:(long long)arg2;
 - (CDStruct_c519178c)contentInsetForAttachingSeguesToEdge:(unsigned long long)arg1 inSeriesOfSeguesWithCount:(long long)arg2;

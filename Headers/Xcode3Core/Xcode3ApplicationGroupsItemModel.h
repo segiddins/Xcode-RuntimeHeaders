@@ -14,8 +14,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(retain) IDEAppIDItemIdentifiersItemModelSet *applicationGroups; // @synthesize applicationGroups=_applicationGroups;
 - (void).cxx_destruct;
+@property(retain) IDEAppIDItemIdentifiersItemModelSet *applicationGroups; // @synthesize applicationGroups=_applicationGroups;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

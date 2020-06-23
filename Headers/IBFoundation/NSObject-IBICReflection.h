@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IBICReflection)
-+ (BOOL)isInstance;
++ (BOOL)ibic_isInstance;
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 + (BOOL)ib_overridesClassMethod:(SEL)arg1;
 + (BOOL)ib_overridesInstanceMethod:(SEL)arg1;
-- (BOOL)isInstance;
+- (BOOL)ibic_isInstance;
 - (id)ibic_schemaDebugDescription;
 - (id)ibic_attributeValueDescription;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;

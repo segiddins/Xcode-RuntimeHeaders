@@ -17,9 +17,9 @@
 }
 
 + (id)emptyFeatures;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *containers; // @synthesize containers=_containers;
 @property(readonly, nonatomic) NSDictionary *features; // @synthesize features=_features;
-- (void).cxx_destruct;
 - (BOOL)allowsFeatures:(id)arg1 missingFeatures:(id *)arg2;
 - (id)containersForType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

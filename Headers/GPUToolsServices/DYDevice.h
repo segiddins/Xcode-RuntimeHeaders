@@ -18,16 +18,19 @@
 + (Class)controlStrategyClass;
 + (Class)deferredLaunchStrategyClass;
 + (Class)launchStrategyClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct dispatch_queue_s *eventsQueue; // @synthesize eventsQueue=_eventsQueue;
 @property(readonly, retain, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
-- (void).cxx_destruct;
 - (id)unlocked;
+@property(readonly, nonatomic) BOOL online;
 - (BOOL)connected;
+@property(readonly, nonatomic) BOOL needsGPUToolsServiceBeforePlayback;
 - (BOOL)supportsPlaybackOfCaptureWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;
 - (BOOL)versionIsOlderThan:(id)arg1;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;
 - (id)createTransport;
 @property(readonly, retain, nonatomic) NSString *standardTitle;
+- (void)applicationWillAttachWithTransport:(id)arg1;
 @property(readonly, retain, nonatomic) NSArray *supportedGraphicsAPIInfos;
 @property(readonly, nonatomic) CDStruct_fc1d2ed0 mainScreenDescriptor;
 @property(readonly, retain, nonatomic) DYGPUToolsVersionInfo *gputoolsVersionInfo;
@@ -42,6 +45,7 @@
 @property(readonly, nonatomic) unsigned long long runtimeIdentifier;
 @property(readonly, nonatomic) int platform;
 - (id)init;
+@property(readonly, nonatomic) BOOL needsAttachNotification;
 
 @end
 

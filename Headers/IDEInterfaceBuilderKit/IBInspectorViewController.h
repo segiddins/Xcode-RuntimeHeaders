@@ -7,15 +7,17 @@
 #import <IDEKit/IDEInspectorViewController.h>
 
 #import <IDEInterfaceBuilderKit/IBConfigurablePropertyKeyPathAdapterDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBInspectorWithInspectedDocument-Protocol.h>
 
 @class DVTDelayedInvocation, IBDocument, IBMutableIdentityDictionary, NSArray, NSArrayController, NSDictionary, NSSet, NSString, NSUserDefaultsController, NSXMLElement;
 @protocol IDEInspectorContentController;
 
-@interface IBInspectorViewController : IDEInspectorViewController <IBConfigurablePropertyKeyPathAdapterDelegate>
+@interface IBInspectorViewController : IDEInspectorViewController <IBConfigurablePropertyKeyPathAdapterDelegate, IBInspectorWithInspectedDocument>
 {
     IBMutableIdentityDictionary *_documentToObservingTokenMap;
     DVTDelayedInvocation *_imageNameInvocation;
     DVTDelayedInvocation *_systemImageNameInvocation;
+    DVTDelayedInvocation *_systemPrivateImageNameInvocation;
     DVTDelayedInvocation *_soundNameInvocation;
     DVTDelayedInvocation *_systemSoundNameInvocation;
     NSSet *previousInspectedInterfaceBuilderDocuments;
@@ -35,6 +37,7 @@
     NSArray *_availableSystemSoundNames;
     NSArray *_availableImageNames;
     NSArray *_availableSystemImageNames;
+    NSArray *_availableSystemPrivateImageNames;
 }
 
 + (id)keyPathsForValuesAffectingBundleIdentifierPlaceholder;
@@ -42,6 +45,8 @@
 + (id)keyPathsForValuesAffectingInspectedDocumentName;
 + (id)keyPathsForValuesAffectingInspectedDocument;
 + (id)inspectedArrayControllerKeys;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *availableSystemPrivateImageNames; // @synthesize availableSystemPrivateImageNames=_availableSystemPrivateImageNames;
 @property(copy, nonatomic) NSArray *availableSystemImageNames; // @synthesize availableSystemImageNames=_availableSystemImageNames;
 @property(copy, nonatomic) NSArray *availableImageNames; // @synthesize availableImageNames=_availableImageNames;
 @property(copy, nonatomic) NSArray *availableSystemSoundNames; // @synthesize availableSystemSoundNames=_availableSystemSoundNames;
@@ -54,7 +59,6 @@
 @property(nonatomic) BOOL allInspectedDocumentsAreNotUsingAutolayout; // @synthesize allInspectedDocumentsAreNotUsingAutolayout=_allInspectedDocumentsAreNotUsingAutolayout;
 @property(copy, nonatomic) NSArray *availableNibNames; // @synthesize availableNibNames=_availableNibNames;
 @property(copy, nonatomic) NSArray *availableStoryboardNames; // @synthesize availableStoryboardNames=_availableStoryboardNames;
-- (void).cxx_destruct;
 - (id)inspectorProperty:(id)arg1 toolTipContentFromKeyPath:(id)arg2 titleAttribute:(id)arg3 placeholderAttribute:(id)arg4;
 - (id)filePathForExternalInspectorContentWithIdentifier:(id)arg1;
 - (id)searchableAttributesForProperty:(id)arg1;
@@ -66,6 +70,7 @@
 - (void)constrainBoundsOfSelectionToNearestLegalSize;
 - (id)createNameInvocationForComputationKeyPath:(id)arg1 withStorageKeyPath:(id)arg2;
 - (id)computeAvailableSystemSoundNames;
+- (id)computeAvailableSystemPrivateImageNames;
 - (id)computeAvailableSystemImageNames;
 - (id)computeAvailableSoundNames;
 - (id)computeAvailableImageNames;

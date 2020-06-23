@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) id <IDEBlueprint> resolvedBlueprint; // @synthesize resolvedBlueprint=_resolvedBlueprint;
 @property(readonly) PBXTargetDependency *pbxTargetDependency; // @synthesize pbxTargetDependency=_pbxTargetDependency;
-- (void).cxx_destruct;
 - (id)initWithTargetDependency:(id)arg1 resolvedBlueprint:(id)arg2;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;

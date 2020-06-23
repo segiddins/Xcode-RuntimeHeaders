@@ -11,6 +11,7 @@
 @interface _TtC5UVKit14SelectionStore : _TtCs12_SwiftObject
 {
     MISSING_TYPE *state;
+    MISSING_TYPE *selectionItemForPath;
     MISSING_TYPE *objectWillChange;
     MISSING_TYPE *didChange;
 }

@@ -25,6 +25,7 @@
 + (id)keyPathsForValuesAffectingContentVersion;
 + (id)keyPathsForValuesAffectingProductIdentifier;
 + (id)keyPathsForValuesAffectingProductName;
+- (void).cxx_destruct;
 @property __weak NSView *inAppPurchaseTargetEditorView; // @synthesize inAppPurchaseTargetEditorView=_inAppPurchaseTargetEditorView;
 @property __weak NSView *inAppPurchaseTargetCapsuleBottomPadding; // @synthesize inAppPurchaseTargetCapsuleBottomPadding=_inAppPurchaseTargetCapsuleBottomPadding;
 @property(retain) DVTStackView_ML *inAppPurchaseTargetCapsuleStackView; // @synthesize inAppPurchaseTargetCapsuleStackView=_inAppPurchaseTargetCapsuleStackView;
@@ -32,7 +33,6 @@
 @property(retain) IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
 @property(retain) Xcode3TargetEditorCapsuleViewController *inAppPurchaseTargetCapsuleViewController; // @synthesize inAppPurchaseTargetCapsuleViewController=_inAppPurchaseTargetCapsuleViewController;
 @property(retain, nonatomic) id targetViewController; // @synthesize targetViewController=_targetViewController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;

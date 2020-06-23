@@ -21,9 +21,9 @@
     DVTObservingToken *_nsDataForDataValueProviderObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL hasImageBeenRetrieved; // @synthesize hasImageBeenRetrieved=_hasImageBeenRetrieved;
 @property(readonly) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_updateImageOnMainThread:(id)arg1;
 - (void)_failedToGetData;
 - (void)_startRetrieval;

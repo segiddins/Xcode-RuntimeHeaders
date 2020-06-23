@@ -24,13 +24,13 @@
 + (id)keyPathsForValuesAffectingTargetName;
 + (id)keyPathsForValuesAffectingProjectName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTNotificationToken *configurationNamesNotificationObservation; // @synthesize configurationNamesNotificationObservation=_configurationNamesNotificationObservation;
 @property(retain, nonatomic) DVTObservingToken *projectNameObservation; // @synthesize projectNameObservation=_projectNameObservation;
 @property(retain, nonatomic) DVTObservingToken *configurationsObservation; // @synthesize configurationsObservation=_configurationsObservation;
 @property(retain, nonatomic) Xcode3Project *project; // @synthesize project=_project;
 @property(retain, nonatomic) Xcode3Target *target; // @synthesize target=_target;
 @property(nonatomic) __weak id <_TtP13IDEFoundation41SigningEditorConfigurationsSourceDelegate_> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy, nonatomic) NSString *targetName;
 @property(readonly, copy, nonatomic) NSString *projectName;

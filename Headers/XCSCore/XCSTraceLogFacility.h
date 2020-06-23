@@ -14,8 +14,8 @@
     NSObject<OS_os_log> *_log;
 }
 
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)logAtLevel:(int)arg1 attributes:(id)arg2 message:(id)arg3;
 - (id)initWithName:(id)arg1;
 

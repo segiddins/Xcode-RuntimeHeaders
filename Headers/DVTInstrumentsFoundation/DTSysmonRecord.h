@@ -24,6 +24,7 @@
     NSArray *_coalitionAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *coalitionAttributes; // @synthesize coalitionAttributes=_coalitionAttributes;
 @property(retain, nonatomic) NSArray *systemAttributes; // @synthesize systemAttributes=_systemAttributes;
 @property(retain, nonatomic) NSArray *processAttributes; // @synthesize processAttributes=_processAttributes;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic) unsigned long long startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 @property(nonatomic) unsigned int recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 
 @end
 

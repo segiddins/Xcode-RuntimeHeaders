@@ -29,6 +29,7 @@
 }
 
 + (id)openIndicator;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPressed) BOOL pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) __weak id <IBStructureAreaDockItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldShowLabelPopUp; // @synthesize shouldShowLabelPopUp=_shouldShowLabelPopUp;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityRole;

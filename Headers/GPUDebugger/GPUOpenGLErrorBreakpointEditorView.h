@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUOpenGLErrorBreakpoint *_breakpoint;
 }
 
-@property(retain) GPUOpenGLErrorBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (void).cxx_destruct;
+@property(retain) GPUOpenGLErrorBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (void)loadView;
 - (id)initWithBreakpoint:(id)arg1;
 

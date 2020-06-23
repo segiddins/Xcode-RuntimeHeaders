@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *didChange;
     MISSING_TYPE *objectWillChange;
+    MISSING_TYPE *analyticsLogger;
     MISSING_TYPE *devicesDidChangeToken;
     MISSING_TYPE *devices;
 }

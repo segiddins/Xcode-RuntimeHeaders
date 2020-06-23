@@ -13,8 +13,8 @@
     DVTLocale *_language;
 }
 
-@property(retain) DVTLocale *language; // @synthesize language=_language;
 - (void).cxx_destruct;
+@property(retain) DVTLocale *language; // @synthesize language=_language;
 - (id)propertyListRepresentation;
 - (id)initWithPropertyList:(id)arg1;
 

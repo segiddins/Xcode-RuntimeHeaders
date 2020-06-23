@@ -15,10 +15,10 @@
     DVTDraggedImageState *_toState;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTDraggedImageState *toState; // @synthesize toState=_toState;
 @property(readonly) DVTDraggedImageState *fromState; // @synthesize fromState=_fromState;
 @property float progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 @property(readonly) double duration;
 @property(readonly) struct CGPoint anchorPoint;
 - (id)initWithFromState:(id)arg1 toState:(id)arg2;

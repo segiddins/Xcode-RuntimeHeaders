@@ -32,6 +32,7 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property BOOL reachedStage2; // @synthesize reachedStage2=_reachedStage2;
 @property struct CGRect rectForPulse; // @synthesize rectForPulse=_rectForPulse;
 @property BOOL allowsUnsetValue; // @synthesize allowsUnsetValue=_allowsUnsetValue;
@@ -40,7 +41,6 @@
 @property float increment; // @synthesize increment=_increment;
 @property float maxValue; // @synthesize maxValue=_maxValue;
 @property float minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 @property BOOL integerValues;
 @property BOOL hasButtons;
 - (void)textDidEndEditing:(id)arg1;

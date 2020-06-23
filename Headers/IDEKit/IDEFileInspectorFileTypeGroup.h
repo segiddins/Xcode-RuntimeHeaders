@@ -22,9 +22,9 @@
 + (id)fileDataTypesPerGroupID;
 + (id)groupExtensionPoint;
 + (id)groupEntryExtensionPoint;
+- (void).cxx_destruct;
 @property(readonly) NSArray *fileDataTypes; // @synthesize fileDataTypes=_fileDataTypes;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDisplayName:(id)arg1 fileDataTypes:(id)arg2;
 

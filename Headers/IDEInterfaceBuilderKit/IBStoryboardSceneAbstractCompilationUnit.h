@@ -21,11 +21,11 @@
 
 + (void)initialize;
 + (id)counterpartForObject:(id)arg1 sourceDocument:(id)arg2 destinationDocument:(id)arg3 sourceToDestinationObjectIDMap:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) long long compilationPhase; // @synthesize compilationPhase=_compilationPhase;
 @property(readonly) NSArray *downstreamPlaceholderTables; // @synthesize downstreamPlaceholderTables=_downstreamPlaceholderTables;
 @property(readonly) IBStoryboardDocument *storyboard; // @synthesize storyboard=_storyboard;
 @property(readonly) id localUnitLeader; // @synthesize localUnitLeader=_localUnitLeader;
-- (void).cxx_destruct;
 - (void)capturePlaceholderTableFromChildCompilationUnit:(id)arg1;
 - (id)compilationResultWithCompiledPackage:(id)arg1;
 - (CDUnknownBlockType)stringsFileKeyGenerator;

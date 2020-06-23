@@ -17,12 +17,12 @@
     DVTFilePath *_creatingWorkspaceFilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *creatingWorkspaceFilePath; // @synthesize creatingWorkspaceFilePath=_creatingWorkspaceFilePath;
 @property(copy) DVTDocumentLocation *documentLocationInCreatingWorkspace; // @synthesize documentLocationInCreatingWorkspace=_documentLocationInCreatingWorkspace;
 @property(copy) NSString *producingTarget; // @synthesize producingTarget=_producingTarget;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property(copy) NSString *issueType; // @synthesize issueType=_issueType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *stringSignature;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

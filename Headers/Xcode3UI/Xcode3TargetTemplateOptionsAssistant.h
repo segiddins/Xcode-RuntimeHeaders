@@ -31,8 +31,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCanFinish;
-@property(retain) Xcode3TargetChooserViewController *blueprintChooser; // @synthesize blueprintChooser=_blueprintChooser;
 - (void).cxx_destruct;
+@property(retain) Xcode3TargetChooserViewController *blueprintChooser; // @synthesize blueprintChooser=_blueprintChooser;
 - (id)targetWorkspacesForDestinationManager:(id)arg1;
 - (void)destinationManagerWorkspaceDidChange:(id)arg1;
 - (void)destinationManagerGroupDidChange:(id)arg1;

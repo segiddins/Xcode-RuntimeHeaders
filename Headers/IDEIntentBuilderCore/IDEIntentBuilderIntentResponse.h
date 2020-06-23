@@ -17,10 +17,10 @@
 
 + (id)defaultPropertyName;
 + (Class)propertyClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCodes:) NSArray *codes; // @synthesize codes=_codes;
 @property(retain, nonatomic) IDEIntentBuilderProperty *output; // @synthesize output=_output;
 @property(nonatomic, setter=_setIntent:) __weak IDEIntentBuilderIntent *intent; // @synthesize intent=_intent;
-- (void).cxx_destruct;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;

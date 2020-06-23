@@ -16,10 +16,10 @@
 }
 
 + (id)resultsWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *results; // @synthesize results=_results;
 @property(nonatomic) BOOL hasTimedOut; // @synthesize hasTimedOut=_hasTimedOut;
 @property(retain, nonatomic) NSDictionary *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (id)resultForIdentifier:(id)arg1;
 - (id)identifiers;
 - (id)initWithResults:(id)arg1;

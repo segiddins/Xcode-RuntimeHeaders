@@ -23,12 +23,12 @@
     id <DVTInvalidation> _tooltipRegistration;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <DVTInvalidation> tooltipRegistration; // @synthesize tooltipRegistration=_tooltipRegistration;
 @property(retain, nonatomic) NSArray *constraintModelControllers; // @synthesize constraintModelControllers=_constraintModelControllers;
 @property(nonatomic) __weak IBReferencingConstraintsFilter *visualFilter; // @synthesize visualFilter=_visualFilter;
 @property(nonatomic) __weak NSBox *visualFilterContainer; // @synthesize visualFilterContainer=_visualFilterContainer;
 @property(retain, nonatomic) DBGInspectorConstraintViewController *mousedOverController; // @synthesize mousedOverController=_mousedOverController;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)commitEditingAndReturnError:(id *)arg1;
 - (void)constraintFilterViewWillDeleteSelectedConstraints:(id)arg1;
@@ -42,6 +42,7 @@
 - (void)updateReferencingConstraintsFilter:(id)arg1;
 - (void)updateConstraintIssues;
 - (void)updateReferencingConstraintSubviews;
+- (id)singleSelectedConstraintItem;
 - (id)singleSelectedViewObjectHierarchyItem;
 - (id)layoutConstraintSet;
 - (void)refresh;

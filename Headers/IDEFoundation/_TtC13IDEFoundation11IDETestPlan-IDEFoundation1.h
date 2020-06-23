@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation11IDETestPlan.h>
 
-#import <IDEFoundation/IDECodeCoverageBuildableProviding-Protocol.h>
-
-@interface _TtC13IDEFoundation11IDETestPlan (IDEFoundation1) <IDECodeCoverageBuildableProviding>
+@interface _TtC13IDEFoundation11IDETestPlan (IDEFoundation1)
 - (id)coverageBuildableInfosForScheme:(id)arg1 buildableResolver:(id)arg2 buildParameterVariants:(id)arg3;
 @end
 

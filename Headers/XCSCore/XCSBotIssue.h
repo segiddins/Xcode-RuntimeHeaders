@@ -22,6 +22,7 @@
 }
 
 + (id)botIssueWithBotID:(id)arg1 type:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 target:(id)arg5 testCase:(id)arg6 documentFilePath:(id)arg7 fixItType:(id)arg8 streaks:(id)arg9 validationErrors:(id *)arg10;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *streaks; // @synthesize streaks=_streaks;
 @property(readonly, nonatomic) NSString *fixItType; // @synthesize fixItType=_fixItType;
 @property(readonly, nonatomic) NSString *documentFilePath; // @synthesize documentFilePath=_documentFilePath;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *issueType; // @synthesize issueType=_issueType;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *botID; // @synthesize botID=_botID;
-- (void).cxx_destruct;
 - (BOOL)_validateBotID:(id)arg1 type:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 target:(id)arg5 testCase:(id)arg6 documentFilePath:(id)arg7 fixItType:(id)arg8 streaks:(id)arg9 validationErrors:(id *)arg10;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;

@@ -21,11 +21,11 @@
 + (id)keyPathsForValuesAffectingCanGoPrevious;
 + (id)keyPathsForValuesAffectingAdditionalActionTitle;
 + (id)keyPathsForValuesAffectingTitle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDistributionAccountIssueViewController *accountIssuesVC; // @synthesize accountIssuesVC=_accountIssuesVC;
 @property(retain) DVTDelayedInvocation *delayedAccountCheck; // @synthesize delayedAccountCheck=_delayedAccountCheck;
 @property(retain) id <DVTInvalidation> accountsToken; // @synthesize accountsToken=_accountsToken;
 @property double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (BOOL)canGoPrevious;
 - (void)takeAdditionalAction;
 - (id)additionalActionTitle;

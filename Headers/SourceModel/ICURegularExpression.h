@@ -20,10 +20,10 @@
 + (struct URegularExpression *)testAndCompileExpressionString:(id)arg1 options:(int)arg2 error:(id *)arg3;
 + (id)descriptionForParseError:(struct UParseError *)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property int options; // @synthesize options=_options;
 @property struct URegularExpression *compiledExpression; // @synthesize compiledExpression=_compiledExpression;
 @property(copy) NSString *expressionString; // @synthesize expressionString=_expressionString;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)enumerateMatchesInString:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (BOOL)enumerateMatchesInString:(id)arg1 searchRange:(struct _NSRange)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;

@@ -39,6 +39,7 @@
 + (id)keyPathsForValuesAffectingAuxiliaryObservable;
 + (id)keyPathsForValuesAffectingPrimaryObservable;
 + (id)entityIdentifierFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *recorderLogObservingToken; // @synthesize recorderLogObservingToken=_recorderLogObservingToken;
 @property(readonly, copy) NSString *logClassName; // @synthesize logClassName=_logClassName;
 @property(readonly, copy) NSString *logFileName; // @synthesize logFileName=_logFileName;
@@ -60,7 +61,6 @@
 - (id)uniqueIdentifier;
 - (double)timeStoppedRecording;
 @property(readonly) id <IDELogStoreManageable> logStoreManageable; // @synthesize logStoreManageable=_logStoreManageable;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isRecording;
 - (void)transferLogStoreManageableToCache;

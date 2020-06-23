@@ -11,7 +11,7 @@
 
 @optional
 - (void)testDaemonController:(id <IDETestDaemonController>)arg1 receivedCrashReport:(id <_TtP13IDEFoundation26IDETestingDiagnosticReport_>)arg2 isFatal:(BOOL)arg3 crashingSymbol:(NSString *)arg4;
-- (void)testDaemonController:(id <IDETestDaemonController>)arg1 willReceiveCrashReportForPID:(int)arg2;
+- (void)testDaemonController:(id <IDETestDaemonController>)arg1 willReceiveCrashReportForPID:(int)arg2 isFatal:(BOOL)arg3;
 - (void)testDaemonControllerDidDisconnect:(id <IDETestDaemonController>)arg1;
 @end
 

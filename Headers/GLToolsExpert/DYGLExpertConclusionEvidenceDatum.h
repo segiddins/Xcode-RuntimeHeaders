@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *compareValue; // @synthesize compareValue=_compareValue;
 @property(readonly, nonatomic) int relOp; // @synthesize relOp=_relOp;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)debugPrintFormatted;
 - (void)translateIntoArray:(id)arg1 withRationale:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

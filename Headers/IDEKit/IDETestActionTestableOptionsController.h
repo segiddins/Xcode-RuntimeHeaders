@@ -26,6 +26,7 @@
     NSView *_horizontalDivider;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *horizontalDivider; // @synthesize horizontalDivider=_horizontalDivider;
 @property(retain) NSView *appDataContainerView; // @synthesize appDataContainerView=_appDataContainerView;
 @property(retain) NSView *simulatedLocationContainerView; // @synthesize simulatedLocationContainerView=_simulatedLocationContainerView;
@@ -39,9 +40,7 @@
 @property(retain) IDESimulateLocationMenuController *simulatedLocationMenuController; // @synthesize simulatedLocationMenuController=_simulatedLocationMenuController;
 @property(retain) IDETestableReference *testableReference; // @synthesize testableReference=_testableReference;
 @property __weak id <IDETestActionTestableOptionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property BOOL automaticallyIncludeNewTests;
-- (void)configureParallelizationEnabledCheckbox;
 @property BOOL parallelizable;
 - (void)hideRandomExecutionOrderUI;
 @property BOOL randomizeExecutionOrder;

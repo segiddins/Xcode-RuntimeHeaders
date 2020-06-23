@@ -39,9 +39,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL canJump; // @synthesize canJump=_canJump;
 @property BOOL showIssueMenuController; // @synthesize showIssueMenuController=_showIssueMenuController;
-- (void).cxx_destruct;
 - (void)selectPreviousFixIt;
 - (void)selectNextFixIt;
 - (void)selectPrevious;

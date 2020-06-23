@@ -13,8 +13,8 @@
     DBGLayoutConstraint *_constraintModel;
 }
 
-@property(retain, nonatomic) DBGLayoutConstraint *constraintModel; // @synthesize constraintModel=_constraintModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DBGLayoutConstraint *constraintModel; // @synthesize constraintModel=_constraintModel;
 - (id)multiplier;
 
 @end

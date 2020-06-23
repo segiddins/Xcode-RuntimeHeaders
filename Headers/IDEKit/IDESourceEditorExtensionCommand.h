@@ -18,11 +18,11 @@
 
 + (double)cancellationDelay;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEKeyboardShortcut *keyboardShortcut; // @synthesize keyboardShortcut=_keyboardShortcut;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak IDESourceEditorExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)_updateCommandMenuItem:(id)arg1;
 - (id)menuItemWithAction:(SEL)arg1;
 - (id)identifierForAccessibility;

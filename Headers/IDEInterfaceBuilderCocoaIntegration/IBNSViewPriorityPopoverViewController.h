@@ -15,10 +15,10 @@
     NSTextField *_priorityTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *priorityTextField; // @synthesize priorityTextField=_priorityTextField;
 @property(copy) NSString *descriptiveText; // @synthesize descriptiveText=_descriptiveText;
 @property double priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 
 @end
 

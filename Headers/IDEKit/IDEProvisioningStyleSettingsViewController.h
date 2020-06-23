@@ -17,9 +17,9 @@
     NSButton *_provisioningStyleCheckBoxButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *provisioningStyleCheckBoxButton; // @synthesize provisioningStyleCheckBoxButton=_provisioningStyleCheckBoxButton;
 @property(retain, nonatomic) id <IDESigningEditorStyleDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)startObservations;
 - (void)clickedProvisioningStyleSelecthionCheckBoxButton:(id)arg1;

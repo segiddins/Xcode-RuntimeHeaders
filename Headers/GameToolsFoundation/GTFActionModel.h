@@ -57,6 +57,7 @@
 + (id)keyPathsForValuesAffectingInspectorTimingMode;
 + (id)keyPathsForValuesAffectingInspectorDuration;
 + (id)keyPathsForValuesAffectingInspectorStartTime;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customStringArray1; // @synthesize customStringArray1=_customStringArray1;
 @property(nonatomic) double customData4; // @synthesize customData4=_customData4;
 @property(nonatomic) double customData3; // @synthesize customData3=_customData3;
@@ -66,7 +67,6 @@
 @property(nonatomic) long long timingMode; // @synthesize timingMode=_timingMode;
 @property(nonatomic) double notedStartTime; // @synthesize notedStartTime=_notedStartTime;
 @property(nonatomic) __weak GTFActionTimelineModel *ownerTimeline; // @synthesize ownerTimeline=_ownerTimeline;
-- (void).cxx_destruct;
 - (void)reverse;
 - (id)getSCNAction;
 - (id)getSKAction;

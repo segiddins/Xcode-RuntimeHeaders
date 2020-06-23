@@ -14,8 +14,8 @@
 }
 
 + (id)revokeCertificateRepairStepWithCertificate:(id)arg1;
-@property(readonly, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;
 - (id)activityDescription;

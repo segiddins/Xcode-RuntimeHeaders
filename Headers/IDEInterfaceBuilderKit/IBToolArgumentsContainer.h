@@ -77,6 +77,7 @@
     NSString *_baseSDK;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *baseSDK; // @synthesize baseSDK=_baseSDK;
 @property(retain) NSNumber *useNIBArchivesForMacOS; // @synthesize useNIBArchivesForMacOS=_useNIBArchivesForMacOS;
 @property BOOL autoActivateCustomFonts; // @synthesize autoActivateCustomFonts=_autoActivateCustomFonts;
@@ -142,7 +143,6 @@
 @property BOOL removePluginDependency; // @synthesize removePluginDependency=_removePluginDependency;
 @property BOOL upgrade; // @synthesize upgrade=_upgrade;
 @property(copy) NSArray *importSourcePaths; // @synthesize importSourcePaths=_importSourcePaths;
-- (void).cxx_destruct;
 - (void)validateAfterInterpretingOptionsCollectingErrors:(id)arg1;
 - (BOOL)supportsMultipleInputDocuments;
 - (void)interpretOption:(id)arg1 optionalParameter:(id)arg2 collectingErrors:(id)arg3;

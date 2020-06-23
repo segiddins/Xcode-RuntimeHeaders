@@ -13,8 +13,8 @@
 
 + (id)userDefinedRuntimeAttributeKeyForAdapterKey:(id)arg1 expectedType:(long long *)arg2;
 + (id)adapterKeyForUserDefinedRuntimeAttribute:(id)arg1 type:(long long)arg2;
-@property(retain, nonatomic) NSObject *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject *object; // @synthesize object=_object;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (id)userDefinedRuntimeAttributeForKey:(id)arg1;

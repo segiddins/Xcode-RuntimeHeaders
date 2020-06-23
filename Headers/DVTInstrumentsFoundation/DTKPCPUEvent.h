@@ -17,11 +17,11 @@
     NSString *_definition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct kpep_event *kpepEvent; // @synthesize kpepEvent=_kpepEvent;
 @property(readonly, retain, nonatomic) NSString *definition; // @synthesize definition=_definition;
 @property(retain, nonatomic) NSString *alias; // @synthesize alias=_alias;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *displayName;
 @property(readonly, retain, nonatomic) NSString *aliasOrName;
 - (id)description;

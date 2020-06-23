@@ -30,6 +30,7 @@
 
 + (id)defaultManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) Class archiveProductSourceClass; // @synthesize archiveProductSourceClass=_archiveProductSourceClass;
 @property(retain) Class appStoreProductSourceClass; // @synthesize appStoreProductSourceClass=_appStoreProductSourceClass;
 @property(readonly) NSMapTable *sourcesToProducts; // @synthesize sourcesToProducts=_sourcesToProducts;
@@ -41,7 +42,6 @@
 @property(retain) IDEProductCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property __weak id <DVTProductManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEAppStoreProductSource *appStoreProductSource; // @synthesize appStoreProductSource=_appStoreProductSource;
-- (void).cxx_destruct;
 - (void)handleLocationErrors:(id)arg1;
 - (void)handleLocationErrors:(id)arg1 fromSource:(id)arg2;
 - (void)ensureProductHasAnalyticsPointSources:(id)arg1;

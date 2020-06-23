@@ -17,11 +17,11 @@
 }
 
 + (id)pluralizeNoun:(id)arg1 forCount:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isClickable) BOOL clickable; // @synthesize clickable=_clickable;
 @property(readonly, nonatomic) struct DTTimelineRepresentativeDecoration representedDecorationInfo; // @synthesize representedDecorationInfo=_representedDecorationInfo;
 @property(retain, nonatomic) NSImage *extendedSummary; // @synthesize extendedSummary=_extendedSummary;
 @property(copy, nonatomic) NSAttributedString *summary; // @synthesize summary=_summary;
-- (void).cxx_destruct;
 - (void)setSummaryAsString:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *baseStringAttributes;
 @property(readonly, nonatomic) struct XRTimeRange range;

@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
-@property(copy) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(copy) NSString *message; // @synthesize message=_message;
 - (void)loadView;
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;

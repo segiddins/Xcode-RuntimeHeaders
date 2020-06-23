@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSArray *selectionPath; // @synthesize selectionPath=_selectionPath;
 - (void).cxx_destruct;
+@property(readonly) NSArray *selectionPath; // @synthesize selectionPath=_selectionPath;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSString *stringRepresentation;
 - (BOOL)isNearSelection:(id)arg1 inModel:(id)arg2;

@@ -15,10 +15,10 @@
     unsigned long long _port;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long port; // @synthesize port=_port;
 @property(readonly, nonatomic) __weak DependencyViewerVertex *to; // @synthesize to=_to;
 @property(readonly, nonatomic) __weak DependencyViewerVertex *from; // @synthesize from=_from;
-- (void).cxx_destruct;
 - (id)initWithID:(unsigned long long)arg1 graph:(id)arg2 data:(id)arg3 u:(id)arg4 v:(id)arg5 port:(unsigned long long)arg6;
 
 @end

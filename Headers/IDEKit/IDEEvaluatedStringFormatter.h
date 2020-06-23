@@ -13,8 +13,8 @@
     IDEAppIDItemIdentifiersItemModelSet *_identifiers;
 }
 
-@property(readonly) IDEAppIDItemIdentifiersItemModelSet *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
+@property(readonly) IDEAppIDItemIdentifiersItemModelSet *identifiers; // @synthesize identifiers=_identifiers;
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)editingStringForObjectValue:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;

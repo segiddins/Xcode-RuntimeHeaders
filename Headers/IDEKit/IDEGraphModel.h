@@ -16,10 +16,10 @@
     NSArray *_charts;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *charts; // @synthesize charts=_charts;
 @property __weak id <IDEGraphModelChartsModificationDelegate> chartsModificationDelegate; // @synthesize chartsModificationDelegate=_chartsModificationDelegate;
 @property __weak id <IDEGraphDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_chartNamed:(id)arg1;
 - (id)chartNamed:(id)arg1;
 - (id)init;

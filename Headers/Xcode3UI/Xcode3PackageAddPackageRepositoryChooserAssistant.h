@@ -17,11 +17,11 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property BOOL isGoingNext; // @synthesize isGoingNext=_isGoingNext;
 @property BOOL allowGoForward; // @synthesize allowGoForward=_allowGoForward;
 @property(retain) IDESourceControlRepositoryCredentialAbstractWindowController *credentialWindowController; // @synthesize credentialWindowController=_credentialWindowController;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (BOOL)validateRemoteRepository:(id)arg1;
 - (CDUnknownBlockType)validationPreprocessor;

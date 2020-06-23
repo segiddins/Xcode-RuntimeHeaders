@@ -32,6 +32,7 @@
 + (id)fetchedDocumentForViewDebuggerObjectWithID:(id)arg1 inLaunchSessionWithReference:(id)arg2;
 + (Class)viewDescriberClassForLaunchSession:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTTimeSlicedMainThreadWorkQueue *snapshotRenderingWorkQueue; // @synthesize snapshotRenderingWorkQueue=_snapshotRenderingWorkQueue;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property double percentLoaded; // @synthesize percentLoaded=_percentLoaded;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) DBGApplicationObject *application; // @synthesize application=_application;
 @property(readonly) BOOL usesDebugHierarchyInfrastructure; // @synthesize usesDebugHierarchyInfrastructure=_usesDebugHierarchyInfrastructure;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)_environmentInfoToReportCaptureFailure;
 - (id)_dataSourceConnectionForPlatform:(id)arg1 debugSession:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_imageDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *imageDescription; // @synthesize imageDescription=_imageDescription;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

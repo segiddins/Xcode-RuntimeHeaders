@@ -17,8 +17,8 @@
 }
 
 + (id)title;
-@property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
 - (void)primitiveInvalidate;
 - (void)commitChanges;
 - (void)loadView;

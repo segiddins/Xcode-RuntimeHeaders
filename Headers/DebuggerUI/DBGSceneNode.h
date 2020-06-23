@@ -6,11 +6,12 @@
 
 #import <DebuggerUI/DBGNode.h>
 
+#import <DebuggerUI/DBGAutoLayoutConstraintHost-Protocol.h>
 #import <DebuggerUI/DBGSceneViewRevealing-Protocol.h>
 
-@class DBGBorderNode, DBGHeaderDecorationNode, DBGHostNode, DBGInteractiveSceneView, DBGSimpleNode, DBGViewGeometry, DBGViewInstance, SCNMaterial;
+@class DBGBorderNode, DBGHeaderDecorationNode, DBGHostNode, DBGInteractiveSceneView, DBGSimpleNode, DBGViewGeometry, DBGViewInstance, NSString, SCNMaterial;
 
-@interface DBGSceneNode : DBGNode <DBGSceneViewRevealing>
+@interface DBGSceneNode : DBGNode <DBGSceneViewRevealing, DBGAutoLayoutConstraintHost>
 {
     DBGBorderNode *_borderNode;
     DBGHeaderDecorationNode *_headerDecorationNode;
@@ -32,6 +33,7 @@
     DBGSimpleNode *_revealNode;
 }
 
+- (void).cxx_destruct;
 @property(retain) DBGSimpleNode *revealNode; // @synthesize revealNode=_revealNode;
 @property BOOL hasRotation; // @synthesize hasRotation=_hasRotation;
 @property BOOL screenMaskEnabled; // @synthesize screenMaskEnabled=_screenMaskEnabled;
@@ -41,10 +43,10 @@
 @property __weak DBGHostNode *host; // @synthesize host=_host;
 @property __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property __weak DBGViewInstance *viewInstance; // @synthesize viewInstance=_viewInstance;
-- (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_newFinderDecorationNodeWithSize:(struct CGSize)arg1;
 @property(getter=isRevealed) BOOL revealed; // @synthesize revealed=_revealed;
+- (void)_setupLayoutGuides;
 - (void)updateDecorationAfterAppearanceChange;
 - (void)updateDecorationVisibility;
 - (void)_updateHeaderDecorationGeometry;
@@ -68,6 +70,7 @@
 - (id)_generateFragmentShaderModifierWithClearContent:(BOOL)arg1 applyTint:(BOOL)arg2 applyMask:(BOOL)arg3;
 - (id)_generateGeometryShaderModifierWithApplyMask:(BOOL)arg1;
 - (void)updateShaderModifiers;
+@property(readonly) struct SCNVector3 hostRelativePosition;
 - (BOOL)respondsToHitTests;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
@@ -76,6 +79,13 @@
 @property(readonly) DBGViewGeometry *viewGeometry;
 - (struct CATransform3D)applicableTransform;
 - (id)initWithView:(id)arg1 inSceneView:(id)arg2 host:(id)arg3 isHostRoot:(BOOL)arg4 isSceneRoot:(BOOL)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(nonatomic) long long renderingOrder;
+@property(readonly) Class superclass;
 
 @end
 

@@ -25,13 +25,13 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)_revisionLock;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long conflictStateForUpdateOrMerge; // @synthesize conflictStateForUpdateOrMerge=_conflictStateForUpdateOrMerge;
 @property unsigned long long sourceControlServerStatus; // @synthesize sourceControlServerStatus=_sourceControlServerStatus;
 @property unsigned long long sourceControlLocalStatus; // @synthesize sourceControlLocalStatus=_sourceControlLocalStatus;
 @property unsigned long long state; // @synthesize state=_state;
 @property(readonly) NSString *pathString; // @synthesize pathString=_pathString;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)clearAllRevisions;

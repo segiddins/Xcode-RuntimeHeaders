@@ -18,13 +18,13 @@
     NSArray *_childrenDeltas;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *childrenDeltas; // @synthesize childrenDeltas=_childrenDeltas;
 @property(readonly, copy) NSArray *removedChildren; // @synthesize removedChildren=_removedChildren;
 @property(readonly, copy) NSArray *addedChildren; // @synthesize addedChildren=_addedChildren;
 @property(readonly) DVTLineCoverageDelta *lineCoverageDelta; // @synthesize lineCoverageDelta=_lineCoverageDelta;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, getter=isZero) BOOL zero;
 - (id)initWithType:(unsigned long long)arg1 identifier:(id)arg2 lineCoverageDelta:(id)arg3 addedChildren:(id)arg4 removedChildren:(id)arg5 childrenDeltas:(id)arg6;
 

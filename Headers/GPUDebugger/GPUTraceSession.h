@@ -35,6 +35,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) float wireframeLineWidth; // @synthesize wireframeLineWidth=_wireframeLineWidth;
 @property(nonatomic) BOOL presentWireframeOnDevice; // @synthesize presentWireframeOnDevice=_presentWireframeOnDevice;
 @property(nonatomic) BOOL presentOutlineOnDevice; // @synthesize presentOutlineOnDevice=_presentOutlineOnDevice;
@@ -50,7 +51,6 @@
 @property(nonatomic) BOOL debugReplayActive; // @synthesize debugReplayActive=_debugReplayActive;
 @property(readonly, nonatomic) GPUTraceReplayController *replayController; // @synthesize replayController=_replayController;
 @property(readonly, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)notifyHarvestDone;
 - (id)resetEmbeddedReplaySession;

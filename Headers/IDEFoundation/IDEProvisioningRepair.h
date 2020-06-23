@@ -26,12 +26,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(readonly, nonatomic) IDEProvisioningRepairContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <IDEProvisioningRepairDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)userAction:(id)arg1 didFailWithError:(id)arg2;
 - (void)userActionDidFinish:(id)arg1;
 - (void)userActionDidBegin:(id)arg1;

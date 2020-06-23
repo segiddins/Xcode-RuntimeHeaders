@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_liveCapture;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *liveCapture; // @synthesize liveCapture=_liveCapture;
 @property(copy) NSNumber *replayMs; // @synthesize replayMs=_replayMs;
 @property(copy) NSString *error; // @synthesize error=_error;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *hostXcodeVersion; // @synthesize hostXcodeVersion=_hostXcodeVersion;
 @property(copy) NSString *gpuName; // @synthesize gpuName=_gpuName;
 @property(copy) NSString *gpuVendor; // @synthesize gpuVendor=_gpuVendor;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)log;

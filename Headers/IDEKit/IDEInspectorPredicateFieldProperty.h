@@ -16,8 +16,8 @@
     DVTPredicateTextField *_predicateField;
 }
 
-@property(retain, nonatomic) DVTPredicateTextField *predicateField; // @synthesize predicateField=_predicateField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTPredicateTextField *predicateField; // @synthesize predicateField=_predicateField;
 - (void)userDidChangeValue:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)setupRefreshTriggersAndConfigure;

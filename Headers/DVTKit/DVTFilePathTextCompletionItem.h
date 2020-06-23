@@ -15,8 +15,8 @@
     DVTFilePath *_filePath;
 }
 
-@property(copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) NSImage *icon;
 - (id)initWithName:(id)arg1 filePath:(id)arg2;
 

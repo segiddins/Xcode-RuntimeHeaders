@@ -16,10 +16,10 @@
 #import <IDEFoundation/XCTTestWorker-Protocol.h>
 #import <IDEFoundation/_TtP13IDEFoundation31IDETestDaemonControllerObserver_-Protocol.h>
 
-@class DVTDevice, DVTDisallowFinishToken, DVTObservingToken, DVTOperation, DVTStackBacktrace, IDELaunchSessionEventSource, IDERunOperation, IDETestOperationEventSource, IDETestOperationStateMachine, IDETestOutputProcessor, IDETestRunner, IDETestingActivity, IDETestingDiagnosticLogArbiter, NSData, NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutputStream, NSString, NSTimer, NSUUID, XCTTestRunnerSession;
-@protocol IDETestDaemonController, IDETestOperationCoordinatorEvents, IDETestingActivityGenerating, IDETestingLaunchSession, IDETestingOutputStream, OS_dispatch_queue;
+@class DVTDevice, DVTDisallowFinishToken, DVTObservingToken, DVTOperation, DVTStackBacktrace, IDELaunchSessionEventSource, IDERunOperation, IDETestIdentifier, IDETestOperationEventSource, IDETestOperationStateMachine, IDETestOutputProcessor, IDETestRunSpecification, IDETestingActivity, IDETestingDiagnosticLogArbiter, NSData, NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutputStream, NSString, NSTimer, NSUUID, _TtC13IDEFoundation29IDETestingInstallationTracker;
+@protocol IDETestDaemonController, IDETestOperationCoordinatorEvents, IDETestingActivityGenerating, IDETestingLaunchSession, IDETestingOutputStream, OS_dispatch_queue, XCTTestRunnerSession;
 
-@interface IDETestOperationCoordinator : NSObject <IDETestingDiagnosticLogWriter, IDETestOperationStateMachineDelegate, IDELaunchSessionEventSourceEvents, IDETestOperationEventSourceEvents, _TtP13IDEFoundation31IDETestDaemonControllerObserver_, XCTTestRunnerSessionDelegate, XCTDebugLogDelegate, XCTTestWorker, DVTInvalidation>
+@interface IDETestOperationCoordinator : NSObject <IDETestingDiagnosticLogWriter, IDETestOperationEventSourceEvents, _TtP13IDEFoundation31IDETestDaemonControllerObserver_, XCTDebugLogDelegate, XCTTestWorker, DVTInvalidation, XCTTestRunnerSessionDelegate, IDELaunchSessionEventSourceEvents, IDETestOperationStateMachineDelegate>
 {
     DVTOperation *_testRunnerSessionStartupOperation;
     BOOL _finished;
@@ -31,14 +31,14 @@
     int _testRunnerPID;
     IDERunOperation *_operation;
     NSString *_diagnosticLogPath;
-    NSString *_temporaryDirectoryPath;
     id <IDETestOperationCoordinatorEvents> _delegate;
-    IDETestRunner *_testRunner;
     DVTDevice *_targetDevice;
+    IDETestRunSpecification *_testRunSpecification;
+    NSString *_runnerArtifactsDirectory;
     id <IDETestDaemonController> _daemonController;
     NSMutableArray *_validatorsStack;
     NSUUID *_sessionIdentifier;
-    XCTTestRunnerSession *_testRunnerSession;
+    id <XCTTestRunnerSession> _testRunnerSession;
     IDELaunchSessionEventSource *_launchSessionEventSource;
     IDETestOperationEventSource *_testOperationEventSource;
     id _iPhoneConnectLogHandlerToken;
@@ -63,6 +63,8 @@
     id <IDETestingActivityGenerating> _activityReporter;
     IDETestingActivity *_finalizingActivity;
     NSData *_testRunnerCrash;
+    IDETestIdentifier *_currentTestIdentifier;
+    _TtC13IDEFoundation29IDETestingInstallationTracker *_testingInstallationTracker;
     NSMutableDictionary *_testTokensToExecutionTrackers;
     NSMutableDictionary *_testTokensToLaunchSessions;
     NSMutableDictionary *_testTokensToOperations;
@@ -75,9 +77,11 @@
 + (id)nextLaunchSessionToken;
 + (id)_messageForErrorWithDiagnosticLogPath:(id)arg1;
 + (id)_resultBundlePathFromDiagnosticLogPath:(id)arg1;
++ (void)disableTestTimeoutsInTestProcessUsingDebugSession:(id)arg1 forTestOperationCoordinator:(id)arg2;
 + (BOOL)supportsInvalidationPrevention;
 + (void)logDebugMessage:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *displayNamesOfLaunchedProcesses; // @synthesize displayNamesOfLaunchedProcesses=_displayNamesOfLaunchedProcesses;
 @property(retain) NSMutableSet *executionTrackerObservationTokens; // @synthesize executionTrackerObservationTokens=_executionTrackerObservationTokens;
 @property(retain) NSMutableSet *launchedApplicationTokens; // @synthesize launchedApplicationTokens=_launchedApplicationTokens;
@@ -85,6 +89,8 @@
 @property(retain) NSMutableDictionary *testTokensToOperations; // @synthesize testTokensToOperations=_testTokensToOperations;
 @property(retain) NSMutableDictionary *testTokensToLaunchSessions; // @synthesize testTokensToLaunchSessions=_testTokensToLaunchSessions;
 @property(retain) NSMutableDictionary *testTokensToExecutionTrackers; // @synthesize testTokensToExecutionTrackers=_testTokensToExecutionTrackers;
+@property(retain) _TtC13IDEFoundation29IDETestingInstallationTracker *testingInstallationTracker; // @synthesize testingInstallationTracker=_testingInstallationTracker;
+@property(retain) IDETestIdentifier *currentTestIdentifier; // @synthesize currentTestIdentifier=_currentTestIdentifier;
 @property(retain) NSData *testRunnerCrash; // @synthesize testRunnerCrash=_testRunnerCrash;
 @property(retain) IDETestingActivity *finalizingActivity; // @synthesize finalizingActivity=_finalizingActivity;
 @property(readonly) id <IDETestingActivityGenerating> activityReporter; // @synthesize activityReporter=_activityReporter;
@@ -115,24 +121,23 @@
 @property(retain) id iPhoneConnectLogHandlerToken; // @synthesize iPhoneConnectLogHandlerToken=_iPhoneConnectLogHandlerToken;
 @property(retain) IDETestOperationEventSource *testOperationEventSource; // @synthesize testOperationEventSource=_testOperationEventSource;
 @property(retain) IDELaunchSessionEventSource *launchSessionEventSource; // @synthesize launchSessionEventSource=_launchSessionEventSource;
-@property(retain) XCTTestRunnerSession *testRunnerSession; // @synthesize testRunnerSession=_testRunnerSession;
+@property(retain) id <XCTTestRunnerSession> testRunnerSession; // @synthesize testRunnerSession=_testRunnerSession;
 @property(retain) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property BOOL finished; // @synthesize finished=_finished;
 @property(retain) NSMutableArray *validatorsStack; // @synthesize validatorsStack=_validatorsStack;
 @property(retain) id <IDETestDaemonController> daemonController; // @synthesize daemonController=_daemonController;
+@property(copy) NSString *runnerArtifactsDirectory; // @synthesize runnerArtifactsDirectory=_runnerArtifactsDirectory;
+@property(retain) IDETestRunSpecification *testRunSpecification; // @synthesize testRunSpecification=_testRunSpecification;
 @property(retain) DVTDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
-@property(retain) IDETestRunner *testRunner; // @synthesize testRunner=_testRunner;
 @property(retain) id <IDETestOperationCoordinatorEvents> delegate; // @synthesize delegate=_delegate;
-@property(readonly) NSString *temporaryDirectoryPath; // @synthesize temporaryDirectoryPath=_temporaryDirectoryPath;
 @property(retain) NSString *diagnosticLogPath; // @synthesize diagnosticLogPath=_diagnosticLogPath;
 @property(readonly) IDERunOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)cancelExecutionTrackersWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)terminateProcessWithToken:(id)arg1 error:(id *)arg2;
 - (id)progressForLaunchWithToken:(id)arg1 error:(id *)arg2;
 - (void)launchProcessWithParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_executeOperation:(id)arg1 withPath:(id)arg2 bundleID:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)_testingLaunchSessionForLaunchSession:(id)arg1 bundleID:(id)arg2;
+- (id)_testingLaunchSessionForLaunchSession:(id)arg1 bundleID:(id)arg2 path:(id)arg3;
 - (void)_observeExitOfLaunchSession:(id)arg1 withToken:(id)arg2;
 - (void)_observeCompletionOfTracker:(id)arg1 withToken:(id)arg2 path:(id)arg3 bundleID:(id)arg4;
 - (id)_launchParametersForProcessWithPath:(id)arg1 bundleID:(id)arg2 arguments:(id)arg3 environmentVariables:(id)arg4;
@@ -150,8 +155,9 @@
 - (void)testRunnerSession:(id)arg1 testCase:(id)arg2 method:(id)arg3 didStallOnMainThreadAtSourceLocation:(id)arg4;
 - (void)testRunnerSession:(id)arg1 testCaseDidFinishForTestClass:(id)arg2 method:(id)arg3 status:(id)arg4 duration:(double)arg5;
 - (void)testRunnerSession:(id)arg1 testCaseDidFailForTestClass:(id)arg2 method:(id)arg3 failureMessage:(id)arg4 sourceLocation:(id)arg5;
+- (void)testRunnerSession:(id)arg1 testCaseWasSkippedForTestClass:(id)arg2 method:(id)arg3 message:(id)arg4 sourceLocation:(id)arg5;
 - (void)testRunnerSession:(id)arg1 testCaseDidStartForTestClass:(id)arg2 method:(id)arg3;
-- (void)testRunnerSession:(id)arg1 testSuite:(id)arg2 didFinishAt:(id)arg3 runCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8;
+- (void)testRunnerSession:(id)arg1 testSuite:(id)arg2 didFinishAt:(id)arg3 runCount:(unsigned long long)arg4 skipCount:(unsigned long long)arg5 failureCount:(unsigned long long)arg6 unexpectedFailureCount:(unsigned long long)arg7 testDuration:(double)arg8 totalDuration:(double)arg9;
 - (void)testRunnerSession:(id)arg1 testSuite:(id)arg2 didStartAt:(id)arg3;
 - (void)testRunnerSession:(id)arg1 initializationForUITestingDidFailWithError:(id)arg2;
 - (void)testRunnerSessionDidStartInitializingForUITesting:(id)arg1;
@@ -159,6 +165,7 @@
 - (void)testRunnerSessionDidFinishExecutingTests:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)testRunnerSessionDidStartExecutingTests:(id)arg1;
 - (void)testRunnerSessionDidDisconnect:(id)arg1;
+- (void)testRunnerSession:(id)arg1 testWithIdentifier:(id)arg2 didExceedExecutionTimeAllowance:(double)arg3;
 - (void)testRunnerSession:(id)arg1 didFailToBootstrapWithError:(id)arg2;
 - (void)testRunnerSession:(id)arg1 didFailInitializationWithError:(id)arg2;
 - (void)testRunnerSessionDidBecomeReady:(id)arg1;
@@ -167,7 +174,7 @@
 - (void)logDebugMessage:(id)arg1;
 - (void)processDiagnosticReport:(id)arg1 isFatal:(BOOL)arg2 crashingSymbol:(id)arg3;
 - (void)testDaemonController:(id)arg1 receivedCrashReport:(id)arg2 isFatal:(BOOL)arg3 crashingSymbol:(id)arg4;
-- (void)testDaemonController:(id)arg1 willReceiveCrashReportForPID:(int)arg2;
+- (void)testDaemonController:(id)arg1 willReceiveCrashReportForPID:(int)arg2 isFatal:(BOOL)arg3;
 - (void)testDaemonControllerDidDisconnect:(id)arg1;
 - (BOOL)validateEvent:(int)arg1;
 - (void)_enqueueDelegateBlock:(CDUnknownBlockType)arg1;
@@ -227,8 +234,8 @@
 - (void)executeTestIdentifiers:(id)arg1 skippingTestIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;
 - (void)fetchDiscoveredTestClasses:(CDUnknownBlockType)arg1;
 - (BOOL)isTestRunnerSessionAvailable;
-- (id)initWithTestRunOperation:(id)arg1 forTestRunner:(id)arg2 daemonController:(id)arg3 activityReporter:(id)arg4;
-- (id)initWithDelegate:(id)arg1 forTestRunner:(id)arg2 daemonController:(id)arg3 activityReporter:(id)arg4;
+- (id)initWithTestRunOperation:(id)arg1 testRunnerSessionProvider:(CDUnknownBlockType)arg2 stateMachineProvider:(CDUnknownBlockType)arg3 testRunSpecification:(id)arg4 testingInstallationTracker:(id)arg5 runnerArtifactsDirectory:(id)arg6 daemonController:(id)arg7 activityReporter:(id)arg8 delegate:(id)arg9;
+- (id)initWithTestRunOperation:(id)arg1 testRunSpecification:(id)arg2 testingInstallationTracker:(id)arg3 runnerArtifactsDirectory:(id)arg4 daemonController:(id)arg5 activityReporter:(id)arg6 delegate:(id)arg7;
 - (void)primitiveInvalidate;
 - (BOOL)validateEvent:(int)arg1 error:(id *)arg2;
 - (void)initializeValidatorsStack;

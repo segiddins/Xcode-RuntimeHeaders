@@ -21,10 +21,10 @@
 + (id)assetTagInfoProviderForFileReference:(id)arg1;
 + (BOOL)canProvideAssetTagInfoForFileReference:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *objectsToCancel; // @synthesize objectsToCancel=_objectsToCancel;
 @property(retain, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) NSSet *assetInfos; // @synthesize assetInfos=_assetInfos;
-- (void).cxx_destruct;
 - (void)removeTaggedAssetItemListener:(id)arg1;
 - (void)addTaggedAssetItemListener:(id)arg1;
 - (BOOL)isTagEditable:(id)arg1;

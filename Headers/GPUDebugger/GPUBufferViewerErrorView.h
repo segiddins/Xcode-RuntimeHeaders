@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSTextField *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setError:(id)arg1;

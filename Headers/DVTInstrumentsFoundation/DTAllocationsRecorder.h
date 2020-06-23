@@ -38,12 +38,12 @@
 + (unsigned int)retainReleaseAutoEventsMask;
 + (unsigned int)vmEventsMask;
 + (unsigned int)allEventsMask;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sharedMemorySize; // @synthesize sharedMemorySize=_sharedMemorySize;
 @property(nonatomic) BOOL readStackLogsUponAttach; // @synthesize readStackLogsUponAttach=_readStackLogsUponAttach;
 @property(copy, nonatomic) CDUnknownBlockType bufferHandler; // @synthesize bufferHandler=_bufferHandler;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_processIncomingData;
 @property(readonly) int eventCount;
 - (void)_endAndTossResources:(BOOL)arg1;

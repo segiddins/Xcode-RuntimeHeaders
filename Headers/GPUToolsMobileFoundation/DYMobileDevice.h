@@ -31,9 +31,9 @@
 + (Class)deferredLaunchStrategyClass;
 + (Class)launchStrategyClass;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)gputoolsServiceAvailabilityError;
 - (BOOL)gputoolsServiceAvailable;
-- (void).cxx_destruct;
 - (void)setPlatform:(int)arg1;
 - (id)streamArchiveAtURL:(id)arg1 destinationName:(id)arg2;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;

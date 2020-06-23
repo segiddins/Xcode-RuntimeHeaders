@@ -8,7 +8,7 @@
 
 @interface IBICImageSet (DisplayAdditions)
 + (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
-+ (id)keysThatResourceRendering;
++ (id)keysThatAffectResourceRendering;
 + (id)keyPathsForValuesAffectingIbInspectedAutoscalingType;
 - (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
 - (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;

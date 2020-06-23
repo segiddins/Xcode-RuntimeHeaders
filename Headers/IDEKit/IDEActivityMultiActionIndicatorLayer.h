@@ -18,8 +18,8 @@
 }
 
 + (id)defaultActionForKey:(id)arg1;
-@property(nonatomic) long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
+@property(nonatomic) long long count; // @synthesize count=_count;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)updateTheme;

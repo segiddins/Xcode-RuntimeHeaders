@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDESigningEditorCapsuleViewStateRestorationRecordProvider-Protocol.h>
 
-@class DVTObservingToken, DVTStackView_ML, IDEProvisioningBundleIdentifierViewController, IDEProvisioningIssuesViewController, IDEProvisioningProfileSelectionViewController, IDEProvisioningProgressIndicatorViewController, IDEProvisioningRepairProgressIndicatorViewController, IDEProvisioningSigningSelectionViewController, IDEProvisioningStyleSettingsViewController, IDEProvisioningTeamSelectionViewController, IDEVerticalResizeToContentLayoutView, _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord, _TtC6IDEKit38ProvisioningPlatformNameViewController;
+@class DVTObservingToken, DVTStackView_ML, IDEProvisioningBundleIdentifierViewController, IDEProvisioningIssuesViewController, IDEProvisioningProfileSelectionViewController, IDEProvisioningProgressIndicatorViewController, IDEProvisioningRepairProgressIndicatorViewController, IDEProvisioningSigningSelectionViewController, IDEProvisioningStyleSettingsViewController, IDEProvisioningTeamSelectionViewController, IDEVerticalResizeToContentLayoutView, _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord, _TtC6IDEKit38ProvisioningPlatformNameViewController, _TtC6IDEKit57IDEProvisioningiOSMacBundleIdentifierOptionViewController;
 @protocol IDESigningEditorAssetSelectionDataSource, IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate;
 
 @interface IDEProvisioningSettingsSigningEditorViewController : IDESigningEditorSectionViewController <IDESigningEditorCapsuleViewStateRestorationRecordProvider>
@@ -36,6 +36,7 @@
     IDEProvisioningProgressIndicatorViewController *_provisioningProgressIndicatorViewController;
     IDEVerticalResizeToContentLayoutView *_verticalResizingContentView;
     _TtC6IDEKit38ProvisioningPlatformNameViewController *_provisioningSecondPlatformNameViewController;
+    _TtC6IDEKit57IDEProvisioningiOSMacBundleIdentifierOptionViewController *_iOSMacBundleIdentifierOptionViewController;
     IDEProvisioningBundleIdentifierViewController *_iOSMacBundleIdentifierViewController;
     IDEProvisioningProfileSelectionViewController *_iOSMacProvisioningProfileSelectionViewController;
     IDEProvisioningSigningSelectionViewController *_iOSMacSigningSelectionViewController;
@@ -44,6 +45,7 @@
 + (id)provisioningSettingsSigningEditorViewControllersWithDataSourceProvider:(id)arg1 configuration:(id)arg2 reusableViewControllers:(id)arg3 discardedViewControllers:(id *)arg4;
 + (id)provisioningSettingsSigningEditorViewControllersWithDataSourceProvider:(id)arg1 configuration:(id)arg2 reuseStore:(id)arg3 reusableViewControllers:(id)arg4 discardedViewControllers:(id *)arg5;
 + (id)provisioningSettingsSigningEditorViewControllerCreatedOrDequeuedWithReuseStore:(id)arg1 dataSource:(id)arg2 showProgressIndicatorView:(BOOL)arg3 showStyleSelection:(BOOL)arg4 showSigningSelectionView:(BOOL)arg5 showBundleIdentifierView:(BOOL)arg6 showIOSMacViews:(BOOL)arg7;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showIOSMacViews; // @synthesize showIOSMacViews=_showIOSMacViews;
 @property(readonly, nonatomic) BOOL showBundleIdentifierView; // @synthesize showBundleIdentifierView=_showBundleIdentifierView;
 @property(readonly, nonatomic) BOOL showNoAccountsView; // @synthesize showNoAccountsView=_showNoAccountsView;
@@ -53,6 +55,7 @@
 @property(retain, nonatomic) IDEProvisioningSigningSelectionViewController *iOSMacSigningSelectionViewController; // @synthesize iOSMacSigningSelectionViewController=_iOSMacSigningSelectionViewController;
 @property(retain, nonatomic) IDEProvisioningProfileSelectionViewController *iOSMacProvisioningProfileSelectionViewController; // @synthesize iOSMacProvisioningProfileSelectionViewController=_iOSMacProvisioningProfileSelectionViewController;
 @property(retain, nonatomic) IDEProvisioningBundleIdentifierViewController *iOSMacBundleIdentifierViewController; // @synthesize iOSMacBundleIdentifierViewController=_iOSMacBundleIdentifierViewController;
+@property(retain, nonatomic) _TtC6IDEKit57IDEProvisioningiOSMacBundleIdentifierOptionViewController *iOSMacBundleIdentifierOptionViewController; // @synthesize iOSMacBundleIdentifierOptionViewController=_iOSMacBundleIdentifierOptionViewController;
 @property(retain, nonatomic) _TtC6IDEKit38ProvisioningPlatformNameViewController *provisioningSecondPlatformNameViewController; // @synthesize provisioningSecondPlatformNameViewController=_provisioningSecondPlatformNameViewController;
 @property __weak IDEVerticalResizeToContentLayoutView *verticalResizingContentView; // @synthesize verticalResizingContentView=_verticalResizingContentView;
 @property(retain, nonatomic) IDEProvisioningProgressIndicatorViewController *provisioningProgressIndicatorViewController; // @synthesize provisioningProgressIndicatorViewController=_provisioningProgressIndicatorViewController;
@@ -70,11 +73,12 @@
 @property(retain, nonatomic) DVTObservingToken *errorsObserver; // @synthesize errorsObserver=_errorsObserver;
 @property(retain, nonatomic) id <IDESigningEditorAssetSelectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate> restorationRecordProviderDelegate; // @synthesize restorationRecordProviderDelegate=_restorationRecordProviderDelegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)disclosedByDefault;
 @property(readonly, nonatomic) _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord *restorationRecord;
 - (void)startObservations;
+- (BOOL)showiOSMacBundleIdentifierView;
+- (BOOL)showiOSMacBundleIdentifierOptionView;
 @property(readonly, nonatomic) BOOL showRepairBusyView;
 @property(readonly, nonatomic) BOOL showIssuesView;
 - (void)refreshStackView;

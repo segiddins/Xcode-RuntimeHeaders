@@ -18,9 +18,9 @@
     NSTextCheckingResult *_match;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSTextCheckingResult *match; // @synthesize match=_match;
 @property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
-- (void).cxx_destruct;
 - (id)stringForReplacementString:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

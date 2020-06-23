@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _modulePathSortIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long modulePathSortIndex; // @synthesize modulePathSortIndex=_modulePathSortIndex;
 @property(readonly) BOOL isMainExecutable; // @synthesize isMainExecutable=_isMainExecutable;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *path;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDownloadableOperationDownload, DVTFilePath, DVTObservingToken, DVTPlatform, DVTProxiediOSDevice, NSError, NSString;
+@class DVTDevice, DVTDownloadableOperationDownload, DVTFilePath, DVTObservingToken, DVTPlatform, DVTProxiediOSDevice, NSError, NSString;
 
 @interface DVTProxiedDeviceSymbolsCoordinator : NSObject
 {
@@ -14,6 +14,7 @@
     NSError *_downloadError;
     DVTDownloadableOperationDownload *_downloadOperation;
     DVTProxiediOSDevice *_device;
+    DVTDevice *_parent;
     NSString *_modelCode;
     DVTObservingToken *_modelCodeObserver;
     NSString *_operatingSystemVersion;
@@ -24,6 +25,7 @@
     DVTObservingToken *_platformObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *platformObserver; // @synthesize platformObserver=_platformObserver;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(retain) DVTObservingToken *operatingSystemBuildObserver; // @synthesize operatingSystemBuildObserver=_operatingSystemBuildObserver;
@@ -32,18 +34,18 @@
 @property(retain) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(retain) DVTObservingToken *modelCodeObserver; // @synthesize modelCodeObserver=_modelCodeObserver;
 @property(retain) NSString *modelCode; // @synthesize modelCode=_modelCode;
+@property(retain) DVTDevice *parent; // @synthesize parent=_parent;
 @property(retain) DVTProxiediOSDevice *device; // @synthesize device=_device;
 @property(retain) DVTDownloadableOperationDownload *downloadOperation; // @synthesize downloadOperation=_downloadOperation;
 @property(retain) NSError *downloadError; // @synthesize downloadError=_downloadError;
 @property(retain) DVTFilePath *symbolsPath; // @synthesize symbolsPath=_symbolsPath;
-- (void).cxx_destruct;
 - (id)_downloadOpForSymbolsFileURL:(id)arg1 fromPath:(id)arg2 requireAuth:(BOOL)arg3 error:(id *)arg4;
 - (void)_completePreparationForSymbolsPath:(id)arg1;
 - (void)_downloadSymbolsToFileURL:(id)arg1 fromServers:(id)arg2;
 - (void)_downloadSymbolsToFileURL:(id)arg1;
 - (void)_checkForSymbols;
 - (void)_setUpPropertyObservers;
-- (id)initWithDevice:(id)arg1;
+- (id)initWithDevice:(id)arg1 andPairedDevice:(id)arg2;
 
 @end
 

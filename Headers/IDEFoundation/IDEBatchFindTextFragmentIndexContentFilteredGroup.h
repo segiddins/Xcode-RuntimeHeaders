@@ -14,9 +14,9 @@
     NSArray *_orderedFilteredAndFullQueryUniquedFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *orderedFilteredAndFullQueryUniquedFilePaths; // @synthesize orderedFilteredAndFullQueryUniquedFilePaths=_orderedFilteredAndFullQueryUniquedFilePaths;
 @property(readonly) IDEBatchFindTextFragmentIndexContentGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)initWithGroup:(id)arg1 orderedFilteredAndFullQueryUniquedFilePaths:(id)arg2;
 
 @end

@@ -13,8 +13,8 @@
     DVTPortalProfileFeature *_feature;
 }
 
-@property(readonly, nonatomic) DVTPortalProfileFeature *feature; // @synthesize feature=_feature;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTPortalProfileFeature *feature; // @synthesize feature=_feature;
 - (id)resolvingTitle;
 - (id)pastTitle;
 - (id)title;

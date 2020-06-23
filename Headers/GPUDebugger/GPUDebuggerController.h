@@ -46,6 +46,7 @@
     BOOL _shouldProfileOnGPUTraceLoad;
     BOOL _didDismissRunProfilerScopeBar;
     BOOL _noRecentGPUWorkloadDetected;
+    BOOL _requiresXcodeSelect;
     BOOL _shadersUpdatable;
     int _debugState;
     int _profilerState;
@@ -76,9 +77,11 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *synchronousJobQueue; // @synthesize synchronousJobQueue=_synchronousJobQueue;
 @property(retain) GPUCaptureInfoMessage *captureInfoMessage; // @synthesize captureInfoMessage=_captureInfoMessage;
 @property BOOL shadersUpdatable; // @synthesize shadersUpdatable=_shadersUpdatable;
+@property(readonly) BOOL requiresXcodeSelect; // @synthesize requiresXcodeSelect=_requiresXcodeSelect;
 @property BOOL noRecentGPUWorkloadDetected; // @synthesize noRecentGPUWorkloadDetected=_noRecentGPUWorkloadDetected;
 @property int enableGPUValidationMode; // @synthesize enableGPUValidationMode=_enableGPUValidationMode;
 @property(readonly) id <DYPPipelineStatistics> pipelineStatistics; // @synthesize pipelineStatistics=_pipelineStatistics;
@@ -115,7 +118,6 @@
 @property(readonly) unsigned int api; // @synthesize api=_api;
 @property(retain) id <GPUCapturableObject> currentCapturableObject; // @synthesize currentCapturableObject=_currentCapturableObject;
 @property(readonly) NSArray *capturableObjects; // @synthesize capturableObjects=_capturableObjects;
-- (void).cxx_destruct;
 - (void)requestPerLineShaderProfilerData:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)stopShaderDebuggerSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startShaderDebuggerSessionWithShaderItem:(id)arg1 region:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -144,6 +146,7 @@
 @property(readonly) BOOL isDeploymentTargetOlderThanDeviceVersionForiOS;
 @property(readonly) BOOL isDisassemblerAvailable;
 @property(readonly) BOOL shaderProfilerResultsHaveBeenUpdated;
+@property(readonly, nonatomic) BOOL isSimulatorDevice;
 @property(readonly) BOOL isMacOSXDevice;
 - (void)removeProfilingUpdateObserver:(id)arg1;
 - (void)notifyProfilingDataUpdateObservers:(id)arg1;

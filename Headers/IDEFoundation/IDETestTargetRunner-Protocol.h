@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTOperation, IDETestDestination, IDETestRunSpecification, NSArray, NSURL, _TtC13IDEFoundation28IDETestRunSpecificationGroup;
+@class DVTOperation, IDETestRunSpecification, NSArray, NSURL, _TtC13IDEFoundation28IDETestRunSpecificationGroup;
 @protocol IDETestTargetRunnerEvents;
 
 @protocol IDETestTargetRunner <DVTInvalidation>
@@ -16,7 +16,6 @@
 @property(readonly) NSArray *testResults;
 @property(readonly) _TtC13IDEFoundation28IDETestRunSpecificationGroup *testRunSpecificationGroup;
 @property(readonly) IDETestRunSpecification *testRunSpecification;
-@property(readonly) IDETestDestination *testDestination;
 @property(readonly) DVTOperation *operation;
 @property __weak id <IDETestTargetRunnerEvents> testEventsObserver;
 @end

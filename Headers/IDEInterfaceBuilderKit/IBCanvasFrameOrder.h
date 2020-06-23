@@ -17,12 +17,12 @@
     IBMutableIdentityDictionary *_framesToRootFrames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBMutableIdentityDictionary *framesToRootFrames; // @synthesize framesToRootFrames=_framesToRootFrames;
 @property(retain, nonatomic) IBMutableIdentityDictionary *viewsToFrames; // @synthesize viewsToFrames=_viewsToFrames;
 @property(retain, nonatomic) IBMutableIdentityDictionary *postOrder; // @synthesize postOrder=_postOrder;
 @property(retain, nonatomic) IBMutableIdentityDictionary *preOrder; // @synthesize preOrder=_preOrder;
 @property(retain, nonatomic) IBMutableIdentityDictionary *zOrder; // @synthesize zOrder=_zOrder;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *reportData; // @synthesize reportData=_reportData;
 @property(retain, nonatomic) DYInvestigatorStatistics *overviewCAWaitTime; // @synthesize overviewCAWaitTime=_overviewCAWaitTime;
 @property(retain, nonatomic) DYInvestigatorStatistics *overviewFrameTime; // @synthesize overviewFrameTime=_overviewFrameTime;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) DYDeviceInfo *captureDeviceInfo; // @synthesize captureDeviceInfo=_captureDeviceInfo;
 @property(retain, nonatomic) NSArray *appArguments; // @synthesize appArguments=_appArguments;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
-- (void).cxx_destruct;
 - (void)reportDataClearProjections;
 - (void)reportDataClear;
 - (void)reportDataCommit;

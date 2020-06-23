@@ -30,6 +30,7 @@
 + (id)containerOfInferredSentinels;
 + (id)containerByFlatteningPipelineOfContainers:(id)arg1;
 + (id)_simulatedMetricsKeyPaths;
+- (void).cxx_destruct;
 @property(copy) id simulatedDeviceMemberConfiguration; // @synthesize simulatedDeviceMemberConfiguration=_simulatedDeviceMemberConfiguration;
 @property(copy) id simulatedSceneMemberConfiguration; // @synthesize simulatedSceneMemberConfiguration=_simulatedSceneMemberConfiguration;
 @property(copy) id simulatedScreenMetrics; // @synthesize simulatedScreenMetrics=_simulatedScreenMetrics;
@@ -39,7 +40,6 @@
 @property(copy) id simulatedTopBarMetrics; // @synthesize simulatedTopBarMetrics=_simulatedTopBarMetrics;
 @property(copy) id simulatedStatusBarMetrics; // @synthesize simulatedStatusBarMetrics=_simulatedStatusBarMetrics;
 @property(retain, nonatomic) IBUISimulatedMetricChain *metricChain; // @synthesize metricChain=_metricChain;
-- (void).cxx_destruct;
 - (id)marshallableRepresentationWithFreeformSize:(struct CGSize)arg1 platform:(id)arg2;
 - (void)unarchiveSimulatedMetrics:(id)arg1;
 - (void)archiveSimulatedMetrics:(id)arg1;

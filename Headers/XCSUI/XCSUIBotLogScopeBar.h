@@ -32,13 +32,13 @@
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property __weak DVTScopeBarButton *errorsOnlyScopeButton; // @synthesize errorsOnlyScopeButton=_errorsOnlyScopeButton;
 @property __weak DVTScopeBarButton *allIssuesScopeButton; // @synthesize allIssuesScopeButton=_allIssuesScopeButton;
 @property __weak DVTScopeBarButton *allMessagesScopeButton; // @synthesize allMessagesScopeButton=_allMessagesScopeButton;
 @property __weak NSPopUpButton *logSelectorPopUp; // @synthesize logSelectorPopUp=_logSelectorPopUp;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain) id <XCSUIBotLogEditorScopeBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)searchFieldAction:(id)arg1;
 - (void)showDownloadAllLogsProgress;
 - (void)showDownloadAllLogsButton;

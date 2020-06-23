@@ -17,10 +17,10 @@
 }
 
 + (id)actionType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDESchemeBuildableReference *buildableReferenceToUseForBuildSettings; // @synthesize buildableReferenceToUseForBuildSettings=_buildableReferenceToUseForBuildSettings;
 @property(copy) NSString *shellToInvoke; // @synthesize shellToInvoke=_shellToInvoke;
 @property(copy, nonatomic) NSString *embeddedScriptText; // @synthesize embeddedScriptText=_embeddedScriptText;
-- (void).cxx_destruct;
 - (void)setShellToInvokeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setScriptTextFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

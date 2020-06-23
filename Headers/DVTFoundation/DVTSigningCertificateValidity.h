@@ -15,9 +15,9 @@
 }
 
 + (id)validityWithIsValid:(BOOL)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSError *validityError; // @synthesize validityError=_validityError;
 @property(readonly) BOOL isValid; // @synthesize isValid=_isValid;
-- (void).cxx_destruct;
 - (id)initWithIsValid:(BOOL)arg1 validityError:(id)arg2;
 
 @end

@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKEmitterNode *emitter; // @synthesize emitter=_emitter;
 @property(retain, nonatomic) NSSet *editorEmitters; // @synthesize editorEmitters=_editorEmitters;
-- (void).cxx_destruct;
 - (void)commitChangeOfObject:(id)arg1 onKeyPath:(id)arg2 oldValue:(id)arg3 withActionName:(id)arg4 dependentKeyPaths:(id)arg5;
 - (void)_unobserveEmitterBehaviorChanges;
 - (void)_observeEmitterBehaviorChanges;

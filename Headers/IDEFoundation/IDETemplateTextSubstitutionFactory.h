@@ -16,8 +16,8 @@
     NSOperationQueue *_queue;
 }
 
-@property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (void)instantiateTemplateForContext:(id)arg1 options:(id)arg2 whenDone:(CDUnknownBlockType)arg3;
 - (id)operationForContext:(id)arg1 options:(id)arg2;
 - (id)proposedFilePathsForContext:(id)arg1 options:(id)arg2 error:(id *)arg3;

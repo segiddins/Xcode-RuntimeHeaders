@@ -23,10 +23,10 @@
 
 + (id)_indexQueriesOperationQueue;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) struct _NSRange dirtyCharacterRange; // @synthesize dirtyCharacterRange=_dirtyCharacterRange;
 @property BOOL started; // @synthesize started=_started;
 @property(readonly) IDEIndex *workspaceIndex; // @synthesize workspaceIndex=_workspaceIndex;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_processFoundSymbolResults:(id)arg1;
 - (void)_batchProcessDirtyRange;

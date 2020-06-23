@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfileType, DVTPortalTeam, NSSet, NSString;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfileType, DVTPortalTeam, NSArray, NSSet, NSString;
 
 @interface DVTPortalProfileCharacteristics : NSObject
 {
@@ -16,6 +16,7 @@
     DVTPortalProfileType *_profileType;
     NSString *_bundleID;
     DVTPortalAppIDFeatures *_features;
+    NSArray *_featuresToDisable;
     DVTPlatform *_profilePlatform;
     DVTPlatform *_appIDPlatform;
     NSSet *_registeredDevices;
@@ -23,8 +24,11 @@
     NSString *_manualStyleProfileName;
 }
 
++ (id)_errorFeaturesAndFeaturesToDisable:(id)arg1;
 + (id)_errorFeatures:(id)arg1 mustMatchContainers:(id)arg2;
 + (BOOL)_allContainers:(id)arg1 haveFeaturesEnabled:(id)arg2 error:(id *)arg3;
++ (BOOL)_validateFeaturesAndFeaturesToDisable:(id)arg1 featuresToDisable:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL overrideDeletionOfPreExistingProfile; // @synthesize overrideDeletionOfPreExistingProfile=_overrideDeletionOfPreExistingProfile;
 @property BOOL forceExplicitAppID; // @synthesize forceExplicitAppID=_forceExplicitAppID;
 @property(readonly, nonatomic) NSString *manualStyleProfileName; // @synthesize manualStyleProfileName=_manualStyleProfileName;
@@ -32,15 +36,15 @@
 @property(readonly, nonatomic) NSSet *registeredDevices; // @synthesize registeredDevices=_registeredDevices;
 @property(readonly, nonatomic) DVTPlatform *appIDPlatform; // @synthesize appIDPlatform=_appIDPlatform;
 @property(readonly, nonatomic) DVTPlatform *profilePlatform; // @synthesize profilePlatform=_profilePlatform;
+@property(readonly, nonatomic) NSArray *featuresToDisable; // @synthesize featuresToDisable=_featuresToDisable;
 @property(retain, nonatomic) DVTPortalAppIDFeatures *features; // @synthesize features=_features;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
 @property(readonly, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithTeam:(id)arg1 type:(id)arg2 registeredDevices:(id)arg3 unregisteredDevices:(id)arg4 manualStyleProfileName:(id)arg5 bundleID:(id)arg6 features:(id)arg7 profilePlatform:(id)arg8 appIDPlatform:(id)arg9 error:(id *)arg10;
+- (id)initWithTeam:(id)arg1 type:(id)arg2 registeredDevices:(id)arg3 unregisteredDevices:(id)arg4 manualStyleProfileName:(id)arg5 bundleID:(id)arg6 features:(id)arg7 featuresToDisable:(id)arg8 profilePlatform:(id)arg9 appIDPlatform:(id)arg10 error:(id *)arg11;
 
 @end
 

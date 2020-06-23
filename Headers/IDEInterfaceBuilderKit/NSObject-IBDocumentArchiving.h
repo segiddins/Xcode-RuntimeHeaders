@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IBDesignablesStatus, IBTargetRuntime, NSArray, NSAttributedString, NSError, NSString, NSValue;
+@class IBDesignablesStatus, IBTargetRuntime, NSAppearance, NSArray, NSAttributedString, NSError, NSString, NSValue;
 
 @interface NSObject (IBDocumentArchiving)
 + (id)ibClassDefaultImage;
@@ -63,13 +63,14 @@
 - (id)ibRequiredFrameworksForGeneratedSource;
 - (id)ibValueForKeySceneRequestForKey:(id)arg1 setValueBlock:(CDUnknownBlockType)arg2;
 @property(readonly) BOOL ibSupportsInspectedEffectiveAppearance;
-- (id)ibInspectedEffectiveAppearance;
+@property(readonly, nonatomic) NSAppearance *ibInspectedEffectiveAppearance;
 - (void)ibDidSwitchToDeviceConfiguration:(id)arg1 inDocument:(id)arg2;
 - (void)ibPopulateIssuesIfDuplicateStoryboardIDForDocument:(id)arg1 withComputationContext:(id)arg2 forClasses:(id)arg3 usingIssuesBlock:(CDUnknownBlockType)arg4;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (void)ibInvalidatePlaceholderBackground;
 @property(copy, nonatomic) NSArray *ibLiveViewsSceneUpdateWarningMessages;
 @property(copy, nonatomic) NSError *ibLiveViewsSceneUpdateError;
+- (BOOL)ibShouldInvalidateAutolayoutStatusForChangeToKeyPath:(id)arg1;
 - (BOOL)ibShouldInvalidateSceneOrAutolayoutStatusForChangeToKeyPath:(id)arg1;
 - (void)ibInvalidateDesignablesStatusInDocument:(id)arg1;
 - (id)ibLiveViewsBundleForUpdatingScene:(id)arg1 inDocument:(id)arg2;
@@ -277,6 +278,7 @@
 - (BOOL)ibShouldUseInspectorPropertyTitleInTooltipForKeyPath:(id)arg1;
 - (BOOL)ibShouldIncludeKeyPathInIbtoolPrintingOutput:(id)arg1;
 - (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationProtocolNames;
 - (id)ibDocumentationClassName;
 - (id)ibDisplayNameForKeyPath:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
@@ -323,7 +325,7 @@
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (BOOL)ibIsValidOutletDestination;
 - (BOOL)ibIsValidOutletSource;
-- (void)ibPopulateResourceReferences:(id)arg1 withValueToVariantSetMap:(id)arg2;
+- (void)ibPopulateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (void)ibEnumerateCollectionOfValuesForKeyPath:(id)arg1 during:(CDUnknownBlockType)arg2;
 - (id)ibAllFontDescriptionKeyPathsStartingWithClass:(Class)arg1;
 - (id)ibAllFontDescriptionKeyPaths;
@@ -423,7 +425,8 @@
 - (void)ibWillAcceptPastedObject:(id)arg1 intoToOneRelation:(id)arg2 inDocument:(id)arg3 insertionContext:(id)arg4;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
+- (id)ibExtractableSidecarPasteboardTypesForDocument:(id)arg1;
 - (void)ibDidPutObjects:(id)arg1 onPasteboard:(id)arg2 fromDocument:(id)arg3 context:(id)arg4;
 - (void)ibWillPutObjects:(id)arg1 withDescendants:(id)arg2 onPasteboard:(id)arg3 fromDocument:(id)arg4 context:(id)arg5;
 - (id)ibPasteboardTypes;

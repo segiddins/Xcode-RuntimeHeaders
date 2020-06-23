@@ -18,13 +18,13 @@
     DVTObservingToken *_nsDataForDataValueProviderObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *nsDataForDataValueProviderObserver; // @synthesize nsDataForDataValueProviderObserver=_nsDataForDataValueProviderObserver;
 @property(retain) DBGNSDataForDataValueProvider *nsDataForDataValueProvider; // @synthesize nsDataForDataValueProvider=_nsDataForDataValueProvider;
 @property(retain) NSLayoutConstraint *pdfViewAspectRatioConstraint; // @synthesize pdfViewAspectRatioConstraint=_pdfViewAspectRatioConstraint;
 @property __weak NSLayoutConstraint *pdfViewHeight; // @synthesize pdfViewHeight=_pdfViewHeight;
 @property __weak NSLayoutConstraint *pdfViewWidth; // @synthesize pdfViewWidth=_pdfViewWidth;
 @property __weak PDFView *pdfView; // @synthesize pdfView=_pdfView;
-- (void).cxx_destruct;
 - (id)dataRepresentation;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;

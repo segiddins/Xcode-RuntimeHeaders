@@ -15,9 +15,9 @@
     PKPackage *_pkPackage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly) PKPackage *pkPackage; // @synthesize pkPackage=_pkPackage;
 - (id)_initWithURL:(id)arg1;

@@ -23,13 +23,13 @@
     DVTTableView *_accountsTable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTTableView *accountsTable; // @synthesize accountsTable=_accountsTable;
 @property(retain, nonatomic) NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain, nonatomic) NSArray *accountDetails; // @synthesize accountDetails=_accountDetails;
 @property(retain, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
-- (void).cxx_destruct;
 - (void)login:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

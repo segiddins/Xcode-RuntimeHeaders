@@ -24,6 +24,7 @@
     NSLayoutConstraint *_contentHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *contentHeightConstraint; // @synthesize contentHeightConstraint=_contentHeightConstraint;
 @property(retain) NSLayoutConstraint *centeringConstraint; // @synthesize centeringConstraint=_centeringConstraint;
 @property(retain) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *buttonEnabledKeyPath; // @synthesize buttonEnabledKeyPath=_buttonEnabledKeyPath;
 @property(retain, nonatomic) NSString *buttonTitleKeyPath; // @synthesize buttonTitleKeyPath=_buttonTitleKeyPath;
 @property(retain, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
-- (void).cxx_destruct;
 - (void)bindButtonEnabledKeyPath;
 - (void)bindButtonTitleKeyPath;
 - (void)buttonClicked:(id)arg1;

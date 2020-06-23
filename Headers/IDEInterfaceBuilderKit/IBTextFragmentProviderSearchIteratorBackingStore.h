@@ -15,8 +15,8 @@
     IBDocumentSearchDescription *_documentSearchDescription;
 }
 
-@property(readonly) IBDocumentSearchDescription *documentSearchDescription; // @synthesize documentSearchDescription=_documentSearchDescription;
 - (void).cxx_destruct;
+@property(readonly) IBDocumentSearchDescription *documentSearchDescription; // @synthesize documentSearchDescription=_documentSearchDescription;
 - (id)searchLocationIterator:(id)arg1 stringValueForAttributeSearchLocation:(id)arg2 memberID:(id)arg3;
 - (long long)searchLocationIterator:(id)arg1 compareAttributeSearchLocation:(id)arg2 forMemberID:(id)arg3 toLocation:(id)arg4 forMemberID:(id)arg5;
 - (id)searchLocationIterator:(id)arg1 attributeSearchLocationsForMemberID:(id)arg2 andKeyPath:(id)arg3;

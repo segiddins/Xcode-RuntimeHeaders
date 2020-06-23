@@ -14,9 +14,9 @@
     NSString *_itemsKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *itemsKeyPath; // @synthesize itemsKeyPath=_itemsKeyPath;
 @property __weak IBUINavigationBar *navBar; // @synthesize navBar=_navBar;
-- (void).cxx_destruct;
 - (id)cachedValueFromRequestedValue:(id)arg1;
 - (id)initWithNavigationBar:(id)arg1 itemsKeyPath:(id)arg2 cachedKeyPath:(id)arg3 requestedKeyPath:(id)arg4;
 

@@ -17,11 +17,11 @@
 }
 
 + (id)contextWithConfiguration:(id)arg1 titleRectCalculator:(CDUnknownBlockType)arg2 endEditingHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) CDUnknownBlockType titleRectCalculator; // @synthesize titleRectCalculator=_titleRectCalculator;
 @property(copy) CDUnknownBlockType endEditingHandler; // @synthesize endEditingHandler=_endEditingHandler;
 @property(copy) IBFieldEditorConfiguration *fieldEditorConfiguration; // @synthesize fieldEditorConfiguration=_fieldEditorConfiguration;
-- (void).cxx_destruct;
 - (id)initWithFieldEditorConfiguration:(id)arg1;
 
 @end

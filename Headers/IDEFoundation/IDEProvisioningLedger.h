@@ -15,8 +15,8 @@
     id <IDEProvisioningLedgerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IDEProvisioningLedgerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IDEProvisioningLedgerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)provisioningLedgerEntryDidClose:(id)arg1 withError:(id)arg2;
 - (void)provisioningLedgerEntry:(id)arg1 didRecordDetails:(id)arg2;
 - (void)provisioningLedgerEntry:(id)arg1 didCloseSubentry:(id)arg2 withError:(id)arg3;

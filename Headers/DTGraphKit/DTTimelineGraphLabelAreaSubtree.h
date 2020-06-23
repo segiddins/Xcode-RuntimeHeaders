@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     DTTimelineGraphPinnedLabelAreaSubtree *_bottomPinnedLabelArea;
 }
 
-@property(retain, nonatomic) DTTimelineGraphPinnedLabelAreaSubtree *bottomPinnedLabelArea; // @synthesize bottomPinnedLabelArea=_bottomPinnedLabelArea;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DTTimelineGraphPinnedLabelAreaSubtree *bottomPinnedLabelArea; // @synthesize bottomPinnedLabelArea=_bottomPinnedLabelArea;
 - (void)layoutSublayers;
 - (void)removeLabelBorderSubtree:(id)arg1;
 - (void)removeLabelSubtree:(id)arg1;

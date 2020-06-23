@@ -17,10 +17,10 @@
     DVTFilePath *_archiveDSYMsPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *archiveDSYMsPath; // @synthesize archiveDSYMsPath=_archiveDSYMsPath;
 @property(retain) DVTFilePath *archiveProductsPath; // @synthesize archiveProductsPath=_archiveProductsPath;
 @property(retain) DVTFilePath *archivePath; // @synthesize archivePath=_archivePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

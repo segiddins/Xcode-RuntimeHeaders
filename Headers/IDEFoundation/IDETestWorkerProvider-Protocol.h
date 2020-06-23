@@ -4,11 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTFuture;
+@class IDETestRunSpecification;
 @protocol IDETestRunner;
 
 @protocol IDETestWorkerProvider
+- (BOOL)supportsMultipleWorkersFor:(IDETestRunSpecification *)arg1;
 - (void)returnWorker:(id <IDETestRunner>)arg1;
-- (DVTFuture *)vendWorker;
+- (id)vendWorker;
 @end
 

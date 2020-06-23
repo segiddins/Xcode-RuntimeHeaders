@@ -19,8 +19,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)setState:(id)arg1 ForKey:(id)arg2;
 - (id)stateForKey:(id)arg1;
 - (void)primitiveInvalidate;

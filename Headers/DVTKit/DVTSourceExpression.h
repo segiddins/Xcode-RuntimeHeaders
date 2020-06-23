@@ -20,6 +20,7 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id context; // @synthesize context=_context;
 @property(readonly) struct _NSRange expressionRange; // @synthesize expressionRange=_expressionRange;
 @property(readonly, copy) NSDictionary *symbolDescription; // @synthesize symbolDescription=_symbolDescription;
@@ -28,7 +29,6 @@
 @property(readonly, copy) NSString *symbolString; // @synthesize symbolString=_symbolString;
 @property(readonly, copy) NSString *expressionString; // @synthesize expressionString=_expressionString;
 @property(readonly) DVTTextDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithExpressionString:(id)arg1 symbolString:(id)arg2 location:(id)arg3 symbolDescription:(id)arg4 andContext:(id)arg5;
 - (id)initWithExpressionString:(id)arg1 range:(struct _NSRange)arg2 symbolString:(id)arg3 location:(id)arg4 textSelectionString:(id)arg5 textSelectionLocation:(id)arg6 symbolDescription:(id)arg7 andContext:(id)arg8;

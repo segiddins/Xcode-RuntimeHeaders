@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL used; // @synthesize used;
 @property(readonly, nonatomic) DYGLAnalyzerFinding *finding; // @synthesize finding;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFinding:(id)arg1;

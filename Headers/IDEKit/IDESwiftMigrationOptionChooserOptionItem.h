@@ -25,6 +25,7 @@
 
 + (id)keyPathsForValuesAffectingModernizerOptions;
 + (id)keyPathsForValuesAffectingArrangedChildOptionItems;
+- (void).cxx_destruct;
 @property(copy) NSString *selectedValue; // @synthesize selectedValue=_selectedValue;
 @property(copy) NSArray *localizedAllowedValues; // @synthesize localizedAllowedValues=_localizedAllowedValues;
 @property __weak IDESwiftMigrationOptionChooserOptionItem *parentOptionItem; // @synthesize parentOptionItem=_parentOptionItem;
@@ -34,7 +35,6 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property __weak IDESwiftMigrationOptionChooserAssistant *optionChooserAssistant; // @synthesize optionChooserAssistant=_optionChooserAssistant;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *buildOptions;
 - (void)_valuePopUpButtonCellMenuItemAction:(id)arg1;
 @property(readonly, copy) DVTPopUpButtonCell *valuePopUpButtonCell;

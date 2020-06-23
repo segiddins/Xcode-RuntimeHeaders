@@ -12,11 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CAShapeLayer {
-    Class _field1;
-    struct _CALayerIvars _field2;
-};
-
 struct CGPoint {
     double x;
     double y;
@@ -39,10 +34,6 @@ struct GKCQuadTree<NSObject> {
 
 struct GKCQuadTreeNode<NSObject>;
 
-struct IBMutableIdentityDictionary {
-    Class _field1;
-};
-
 struct IBNSDirectionalEdgeInsets {
     double _field1;
     double _field2;
@@ -57,10 +48,6 @@ struct NSEdgeInsets {
     double right;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct Token {
     char *_field1;
     unsigned long long _field2;
@@ -68,12 +55,6 @@ struct Token {
     long long _field4;
     long long _field5;
     long long _field6;
-};
-
-struct _CALayerIvars {
-    int _field1;
-    unsigned int _field2;
-    void *_field3;
 };
 
 struct _NSRange {

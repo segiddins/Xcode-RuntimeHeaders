@@ -24,6 +24,7 @@
     float _startSecureServicesRetryMaxSeconds;
     float _startSecureServicesRetryFalloff;
     DVTDispatchLock *_startSecureServicesLock;
+    unsigned long long bonjourServiceChangeHandlerGeneration;
     _Bool _deviceAllowsSecureServices;
     _Bool _inReloadApplications;
     _Bool _inReloadSystemApplications;
@@ -131,6 +132,7 @@
 + (id)deviceLock;
 + (id)devices;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSError *developerDiskImageMountError; // @synthesize developerDiskImageMountError=_developerDiskImageMountError;
 @property(copy) CDUnknownBlockType extendedPairRequestHandler; // @synthesize extendedPairRequestHandler=_extendedPairRequestHandler;
 @property _Bool isWirelessEnabled; // @synthesize isWirelessEnabled=_isWirelessEnabled;
@@ -184,7 +186,6 @@
 - (void)setDeviceSoftwareVersion:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (id)deviceIdentifier;
-- (void).cxx_destruct;
 - (id)connectToTCPRelayService;
 @property(readonly) long long deviceSSHPort;
 - (id)takeWatchPowerAssertionWithName:(id)arg1 details:(id)arg2 andTimeout:(double)arg3;
@@ -335,7 +336,7 @@
 - (id)checkDeviceCapabilities:(id)arg1 withOptions:(id)arg2 andError:(id *)arg3;
 - (_Bool)simulateLatitude:(id)arg1 andLongitude:(id)arg2 withError:(id *)arg3;
 - (_Bool)stopSimulatingLocationWithError:(id *)arg1;
-- (id)copyAndProcessSharedCache;
+- (id)copyAndProcessSharedCacheWithOperation:(id)arg1;
 - (BOOL)mountDeveloperDiskImageWithError:(id *)arg1;
 - (id)developerDiskImageForDeviceType:(id)arg1 productVersion:(id)arg2 buildVersion:(id)arg3;
 - (BOOL)_mountDeveloperDiskImage:(id)arg1 withError:(id *)arg2;

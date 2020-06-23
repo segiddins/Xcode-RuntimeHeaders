@@ -56,8 +56,8 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingIdeModelObjectTypeIdentifier;
-@property(copy, nonatomic) DVTFileDataType *assignedFileDataType; // @synthesize assignedFileDataType=_assignedFileDataType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) DVTFileDataType *assignedFileDataType; // @synthesize assignedFileDataType=_assignedFileDataType;
 - (BOOL)structureEditName:(id)arg1 inContext:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (id)_structureEditNameForSuggestedName:(id)arg1;

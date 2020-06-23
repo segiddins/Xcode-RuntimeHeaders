@@ -23,9 +23,9 @@
 + (id)typeCompletionHandlerWithDelegate:(id)arg1;
 + (id)typeCompletionHandlerWithDelegate:(id)arg1 runLoopMode:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
 @property(retain, nonatomic) id <DVTTypeCompletionHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)processTypeSelectionInput:(id)arg1 objects:(id)arg2 index:(unsigned long long *)arg3 startingAtObject:(id)arg4;
 - (id)processTypeSelectionInput:(id)arg1 objects:(id)arg2 index:(unsigned long long *)arg3;
 - (void)primitiveInvalidate;

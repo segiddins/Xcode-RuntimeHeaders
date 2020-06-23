@@ -11,7 +11,6 @@
 @interface _TtC11CASDatabaseP33_42CD2322CB9855C74493DA2E97454EB114FetchOperation : _TtCs12_SwiftObject
 {
     MISSING_TYPE *queue;
-    MISSING_TYPE *group;
     MISSING_TYPE *root;
     MISSING_TYPE *db;
     MISSING_TYPE *remoteDB;

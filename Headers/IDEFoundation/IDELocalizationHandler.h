@@ -41,6 +41,7 @@
 
 + (BOOL)shouldPreserveTemporaryFiles;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *supportedPlatformsByBlueprint; // @synthesize supportedPlatformsByBlueprint=_supportedPlatformsByBlueprint;
 @property(copy) NSDictionary *blueprintsByNonLocalizableResourceFile; // @synthesize blueprintsByNonLocalizableResourceFile=_blueprintsByNonLocalizableResourceFile;
 @property(copy) NSDictionary *nonLocalizableResourceFilesByBlueprint; // @synthesize nonLocalizableResourceFilesByBlueprint=_nonLocalizableResourceFilesByBlueprint;
@@ -64,7 +65,6 @@
 @property(retain) IDEContainer<IDELocalizedContainer> *container; // @synthesize container=_container;
 @property(copy) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (BOOL)hasWorkspaceSupport;
 @property(readonly, copy) NSSet *blueprintProvidersForWorkspace;
 - (void)cleanUpTemporaryFiles;

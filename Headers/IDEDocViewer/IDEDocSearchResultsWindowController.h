@@ -28,12 +28,12 @@
     struct CGSize _hostWindowSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTTableView *resultsTableView; // @synthesize resultsTableView=_resultsTableView;
 @property(readonly) DVTScopeBarView *languageScopeBarView; // @synthesize languageScopeBarView=_languageScopeBarView;
 @property(readonly) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property struct CGSize hostWindowSize; // @synthesize hostWindowSize=_hostWindowSize;
 @property(retain, nonatomic) IDEReferenceDocumentationInfo *selectedReference; // @synthesize selectedReference=_selectedReference;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

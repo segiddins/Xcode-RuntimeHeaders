@@ -16,8 +16,8 @@
 + (id)_requestParameterPayloadDictionaryFromFeatures:(id)arg1;
 + (id)_serviceIdentifier;
 + (id)_serviceWithTeam:(id)arg1 program:(id)arg2 features:(id)arg3 extraParameters:(id)arg4;
-@property(copy, nonatomic) NSDictionary *featureKeyToSanitizedPlistValue; // @synthesize featureKeyToSanitizedPlistValue=_featureKeyToSanitizedPlistValue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *featureKeyToSanitizedPlistValue; // @synthesize featureKeyToSanitizedPlistValue=_featureKeyToSanitizedPlistValue;
 - (id)_requestParameters;
 
 @end

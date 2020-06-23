@@ -20,12 +20,12 @@
 }
 
 + (id)upToDateStatusWithLastUpdateDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBDesignablesStatusAction *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(copy, nonatomic) NSString *secondaryStatusText; // @synthesize secondaryStatusText=_secondaryStatusText;
 @property(copy, nonatomic) NSString *primaryStatusText; // @synthesize primaryStatusText=_primaryStatusText;
 @property(nonatomic) long long statusValue; // @synthesize statusValue=_statusValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStatusValue:(long long)arg1 primaryStatusText:(id)arg2 secondaryStatusText:(id)arg3 action:(id)arg4;
 - (id)initWithStatusValue:(long long)arg1 primaryStatusText:(id)arg2 secondaryStatusText:(id)arg3;

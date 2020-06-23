@@ -22,11 +22,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *actionText; // @synthesize actionText=_actionText;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) __weak id <IBViewDragDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

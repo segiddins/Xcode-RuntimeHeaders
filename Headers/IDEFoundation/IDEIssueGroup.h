@@ -30,6 +30,7 @@
     unsigned long long _issueType;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long issueType; // @synthesize issueType=_issueType;
 @property(readonly) id <IDEIssueRuntimeGroupingObject> runtimeGroupingObject; // @synthesize runtimeGroupingObject=_runtimeGroupingObject;
 @property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
@@ -38,7 +39,6 @@
 @property(readonly, copy) NSArray *issueTypeGroups; // @synthesize issueTypeGroups=_issueTypeGroups;
 @property(readonly, copy) NSArray *issuesWithNoFile; // @synthesize issuesWithNoFile=_issuesWithNoFile;
 @property(readonly, copy) NSArray *issueFileGroups; // @synthesize issueFileGroups=_issueFileGroups;
-- (void).cxx_destruct;
 @property(readonly) NSSet *_allIssues;
 - (void)_removeIssues:(id)arg1;
 - (void)_addIssues:(id)arg1;

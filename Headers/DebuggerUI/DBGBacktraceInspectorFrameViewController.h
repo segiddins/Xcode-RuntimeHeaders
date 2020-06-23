@@ -20,12 +20,12 @@
     NSView *_jumpButtonContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *jumpButtonContainerView; // @synthesize jumpButtonContainerView=_jumpButtonContainerView;
 @property(nonatomic) __weak NSImageView *frameIconImageView; // @synthesize frameIconImageView=_frameIconImageView;
 @property(nonatomic) __weak NSTextField *frameDisplayNameField; // @synthesize frameDisplayNameField=_frameDisplayNameField;
 @property(nonatomic) BOOL mouseIsOver; // @synthesize mouseIsOver=_mouseIsOver;
 @property(nonatomic) __weak id <DBGBacktraceInspectorFrameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_updateTextAndImageFields;
 - (id)_frameIcon;

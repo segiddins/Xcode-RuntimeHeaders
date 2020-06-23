@@ -13,9 +13,9 @@
 }
 
 + (id)pairWithObject:(id)arg1 andGroup:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) id object; // @synthesize object=_object;
 @property(readonly) id group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDockObjectAndGroupPair:(id)arg1;

@@ -11,7 +11,7 @@
 #import <PlistEditor/DVTSourceExpressionSource-Protocol.h>
 #import <PlistEditor/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, DVTPlistViewController, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSString;
+@class DVTNotificationToken, DVTObservingToken, DVTPlistViewController, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSString, NSView;
 
 @interface IDEPlistEditor : IDEEditor <DVTPlistViewControllerProtocol, DVTSourceExpressionSource, DVTFindBarFindable, NSUserInterfaceValidations>
 {
@@ -22,8 +22,8 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-@property(retain, nonatomic) DVTSourceExpression *selectedExpression; // @synthesize selectedExpression=_selectedExpression;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTSourceExpression *selectedExpression; // @synthesize selectedExpression=_selectedExpression;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)revealNode:(id)arg1;
@@ -56,6 +56,7 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) DVTSourceLanguageService *languageService;
 @property(readonly) DVTSourceExpression *quickHelpExpression;
+@property(readonly) NSView *quickHelpTargetView;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) NSString *selectedText;
 @property(readonly) Class superclass;

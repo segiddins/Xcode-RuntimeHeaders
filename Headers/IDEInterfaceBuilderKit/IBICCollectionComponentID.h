@@ -21,10 +21,10 @@
 + (id)componentIDWithTitle:(id)arg1 identifier:(id)arg2 positions:(id)arg3;
 + (id)componentIDForIntrinsicallyOrderedChild:(id)arg1;
 + (id)componentIDForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *positions; // @synthesize positions=_positions;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (long long)compareDisplayOrder:(id)arg1;
 - (BOOL)isEqualToStickerComponentID:(id)arg1;

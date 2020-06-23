@@ -25,6 +25,7 @@
 + (id)fallbackActiveArchitectureForBuildArchitectures:(id)arg1;
 + (id)keyPathsForValuesAffectingFullDisplayName;
 + (id)keyPathsForValuesAffectingDisplayName;
+- (void).cxx_destruct;
 @property(readonly) NSError *deviceIneligibilityError; // @synthesize deviceIneligibilityError=_deviceIneligibilityError;
 @property(readonly) BOOL isTargetDeviceEligible; // @synthesize isTargetDeviceEligible=_isTargetDeviceEligible;
 @property(readonly) NSString *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
@@ -32,7 +33,6 @@
 @property(readonly) DVTSDK *targetSDK; // @synthesize targetSDK=_targetSDK;
 @property(readonly, copy) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
 @property(readonly) DVTDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
-- (void).cxx_destruct;
 - (id)dvt_detailedDebugDescription;
 - (id)activeArchitectureForBuildArchitectures:(id)arg1;
 - (id)runOperationForLaunchSession:(id)arg1 error:(id *)arg2;

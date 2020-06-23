@@ -18,10 +18,10 @@
     id <IDEContainerContentProducer> _producer;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <IDEContainerContentProducer> producer; // @synthesize producer=_producer;
 @property(readonly) NSSet *types; // @synthesize types=_types;
 @property(readonly) IDEContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContentProductionSpecifier:(id)arg1;
 - (unsigned long long)hash;

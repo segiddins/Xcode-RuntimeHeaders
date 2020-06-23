@@ -17,7 +17,6 @@
     MISSING_TYPE *fontPicker;
     MISSING_TYPE *scopeLevel;
     MISSING_TYPE *title;
-    MISSING_TYPE *fontCache;
 }
 
 - (void)handleStylePicker:(id)arg1;

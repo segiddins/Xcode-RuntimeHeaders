@@ -15,9 +15,9 @@
 }
 
 + (id)dynamicLogControllerForPath:(id)arg1 createIfNeeded:(BOOL)arg2 returningError:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) DVTDispatchLock *dispatchLock; // @synthesize dispatchLock=_dispatchLock;
 @property(retain) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)writeString:(id)arg1 toFileAtSubpath:(id)arg2 returningError:(id *)arg3;
 - (id)initWithPath:(id)arg1;
 

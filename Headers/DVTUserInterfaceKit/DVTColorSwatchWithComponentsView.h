@@ -19,8 +19,8 @@
 }
 
 + (id)colorComponentNamesForColor:(struct CGColor *)arg1;
-@property(nonatomic, getter=shouldAdaptToTheme) BOOL adaptToTheme; // @synthesize adaptToTheme=_adaptToTheme;
 - (void).cxx_destruct;
+@property(nonatomic, getter=shouldAdaptToTheme) BOOL adaptToTheme; // @synthesize adaptToTheme=_adaptToTheme;
 - (id)_createLabel:(id)arg1 bold:(BOOL)arg2 selectable:(BOOL)arg3;
 - (void)_updateForCurrentTheme;
 @property(nonatomic) BOOL drawsSwatchBackground; // @dynamic drawsSwatchBackground;

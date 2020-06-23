@@ -16,8 +16,8 @@
 }
 
 + (Class)cellClass;
-@property(nonatomic) BOOL followsFontAndColorTheme; // @synthesize followsFontAndColorTheme=_followsFontAndColorTheme;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL followsFontAndColorTheme; // @synthesize followsFontAndColorTheme=_followsFontAndColorTheme;
 - (void)setAutoCenterAndResizeToFitSuperview:(BOOL)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)_centerAndResizeToFitSuperview;

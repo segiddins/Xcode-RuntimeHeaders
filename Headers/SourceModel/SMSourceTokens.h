@@ -15,12 +15,17 @@
 }
 
 + (long long)addTokenForString:(id)arg1;
-+ (long long)_tokenForString:(id)arg1;
++ (void)addGlobalTokenName:(id)arg1;
++ (id)globalTokenNames;
++ (void)setGlobalToken:(long long)arg1 forString:(id)arg2;
++ (long long)globalTokenForString:(id)arg1;
++ (long long)nextGlobalToken;
++ (void)initialize;
 - (void).cxx_destruct;
+- (void)setCaseSensitive:(BOOL)arg1;
 - (id)allTokens;
 - (long long)tokenForString:(id)arg1;
 - (BOOL)containsToken:(id)arg1;
-- (void)setCaseSensitive:(BOOL)arg1;
 - (void)addArrayOfStrings:(id)arg1;
 - (id)initWithArrayOfStrings:(id)arg1 caseSensitive:(BOOL)arg2;
 

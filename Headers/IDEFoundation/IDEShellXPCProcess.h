@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)isDoingAsyncAttach;
 - (id)contentDelegateUIExtensionIdentifier;

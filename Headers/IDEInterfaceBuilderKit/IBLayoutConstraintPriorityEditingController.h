@@ -14,8 +14,8 @@
     NSString *_priorityKeyPath;
 }
 
-@property(retain, nonatomic) NSString *priorityKeyPath; // @synthesize priorityKeyPath=_priorityKeyPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *priorityKeyPath; // @synthesize priorityKeyPath=_priorityKeyPath;
 - (void)decrementValue;
 - (void)incrementValue;
 - (void)didSelectPriorityItem:(id)arg1;

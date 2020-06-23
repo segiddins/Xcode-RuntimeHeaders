@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _child;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTarget; // @synthesize isTarget=_isTarget;
 @property(nonatomic) long long child; // @synthesize child=_child;
 @property(retain, nonatomic) id <DYPRemark> remark; // @synthesize remark=_remark;
-- (void).cxx_destruct;
 
 @end
 

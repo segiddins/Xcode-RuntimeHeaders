@@ -17,9 +17,9 @@
 }
 
 + (id)identifierWithName:(id)arg1 teamID:(id)arg2 profile:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

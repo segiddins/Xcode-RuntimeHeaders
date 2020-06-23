@@ -14,8 +14,8 @@
 }
 
 + (id)rootMenu;
-@property(readonly) NSArray *groups; // @synthesize groups=_groups;
 - (void).cxx_destruct;
+@property(readonly) NSArray *groups; // @synthesize groups=_groups;
 - (id)initWithExtension:(id)arg1;
 
 @end

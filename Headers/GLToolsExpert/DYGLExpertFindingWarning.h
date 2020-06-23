@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)generateRecommendation:(id)arg1;
 - (id)localizedDescription;
 - (void)encodeWithCoder:(id)arg1;

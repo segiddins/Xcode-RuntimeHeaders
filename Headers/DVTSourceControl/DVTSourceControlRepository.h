@@ -11,61 +11,41 @@
 #import <DVTSourceControl/NSCopying-Protocol.h>
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class DVTSourceControlRemoteRepository, DVTSourceControlSystem, NSArray, NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class DVTSourceControlRemoteRepository, DVTSourceControlSystem, NSArray, NSDictionary, NSString, NSURL;
 
 @interface DVTSourceControlRepository : NSObject <DVTSourceControlIdentifiable, NSSecureCoding, NSCopying, DVTSourceControlDisplayable>
 {
-    NSMutableDictionary *_cachedLastDownloadedFromRemoteRepositories;
     NSString *__id;
     NSURL *_URL;
     NSString *_identifier;
     NSString *_secondaryIdentifier;
     DVTSourceControlSystem *_sourceControlSystem;
-    NSDictionary *_cachedRemoteRepositories;
-    DVTSourceControlRemoteRepository *_cachedPrimaryRemoteRepository;
     NSArray *_cachedTags;
     NSArray *_cachedBranches;
     NSArray *_cachedStashes;
+    NSDictionary *_cachedRemoteRepositories;
+    DVTSourceControlRemoteRepository *_cachedPrimaryRemoteRepository;
     NSDictionary *_cachedRemoteBranches;
-    DVTSourceControlRemoteRepository *_primaryRemoteRepository;
     NSDictionary *_cachedRevisionToTagsMapping;
 }
 
-+ (id)createRepositoryAtFileURL:(id)arg1 withSystem:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (BOOL)supportsSecureCoding;
++ (id)scanForRepositoryInFolderPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)scanForRepositoryInFolderPath:(id)arg1 usingSourceControlSystems:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (id)createRepositoryAtFileURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedRevisionToTagsMapping; // @synthesize cachedRevisionToTagsMapping=_cachedRevisionToTagsMapping;
-@property(retain) DVTSourceControlRemoteRepository *primaryRemoteRepository; // @synthesize primaryRemoteRepository=_primaryRemoteRepository;
-@property(retain, nonatomic) NSDictionary *cachedRemoteBranches; // @synthesize cachedRemoteBranches=_cachedRemoteBranches;
+@property(retain) NSDictionary *cachedRemoteBranches; // @synthesize cachedRemoteBranches=_cachedRemoteBranches;
+@property(retain) DVTSourceControlRemoteRepository *cachedPrimaryRemoteRepository; // @synthesize cachedPrimaryRemoteRepository=_cachedPrimaryRemoteRepository;
+@property(copy) NSDictionary *cachedRemoteRepositories; // @synthesize cachedRemoteRepositories=_cachedRemoteRepositories;
 @property(retain, nonatomic) NSArray *cachedStashes; // @synthesize cachedStashes=_cachedStashes;
 @property(retain, nonatomic) NSArray *cachedBranches; // @synthesize cachedBranches=_cachedBranches;
 @property(retain, nonatomic) NSArray *cachedTags; // @synthesize cachedTags=_cachedTags;
-@property(retain, nonatomic) DVTSourceControlRemoteRepository *cachedPrimaryRemoteRepository; // @synthesize cachedPrimaryRemoteRepository=_cachedPrimaryRemoteRepository;
-@property(copy, nonatomic) NSDictionary *cachedRemoteRepositories; // @synthesize cachedRemoteRepositories=_cachedRemoteRepositories;
 @property(retain) DVTSourceControlSystem *sourceControlSystem; // @synthesize sourceControlSystem=_sourceControlSystem;
 @property(copy) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
 @property(copy) NSString *_id; // @synthesize _id=__id;
-@property(readonly) NSDictionary *cachedLastDownloadedFromRemoteRepositories; // @synthesize cachedLastDownloadedFromRemoteRepositories=_cachedLastDownloadedFromRemoteRepositories;
-- (void).cxx_destruct;
-- (id)uploadCommitsToRemoteRepository:(id)arg1 remoteBranch:(id)arg2 pushTags:(BOOL)arg3 authenticationOptions:(unsigned long long)arg4 progressBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
-- (id)downloadUpdatesFromRemoteRepository:(id)arg1 removeDeletedLocations:(BOOL)arg2 authenticationOptions:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (id)removeRemoteRepositoryNamed:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)addRemoteRepository:(id)arg1 withName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)remoteBranchForBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)listRemoteRepositoriesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)diffLocation:(id)arg1 againstLocation:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)removeTag:(id)arg1 remoteRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)addTag:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)removeBranch:(id)arg1 remoteRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)addBranch:(id)arg1 from:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)parentBranchesOfBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)listRemoteBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)listBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)listSubpathsAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)revisionOfLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)headRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)updateCachedTags:(id)arg1;
 - (id)tagsWithRevision:(id)arg1;
 @property(readonly) NSString *displayName;
@@ -76,6 +56,25 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)__id;
+- (void)updateCachedPrimaryRemoteRepository:(id)arg1;
+- (void)updateCachedRemoteRepositories:(id)arg1;
+- (void)updateCachedRemoteBranches:(id)arg1;
+- (id)revisionOfLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)headRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)removeTag:(id)arg1 remoteRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)addTag:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)uploadCommitsToRemoteRepository:(id)arg1 remoteBranch:(id)arg2 pushTags:(BOOL)arg3 authenticationOptions:(unsigned long long)arg4 progressBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)downloadUpdatesFromRemoteRepository:(id)arg1 removeDeletedLocations:(BOOL)arg2 authenticationOptions:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)removeBranch:(id)arg1 remoteRepository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)addBranch:(id)arg1 from:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)parentBranchesOfBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)listRemoteBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)listBranchesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)diffLocation:(id)arg1 againstLocation:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)removeRemoteRepositoryNamed:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)listRemoteRepositoriesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)addRemoteRepository:(id)arg1 withName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)remoteBranchForBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

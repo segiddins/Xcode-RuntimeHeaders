@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingEvents;
 + (id)recordFromDictionaryRepresentation:(id)arg1;
 + (id)recordWithTask:(long long)arg1 destination:(long long)arg2 uploadDestination:(long long)arg3 teamID:(id)arg4 signingCertificateSHA1:(id)arg5 uniqueIdentifier:(id)arg6 packagePath:(id)arg7;
+- (void).cxx_destruct;
 @property(retain) DVTDispatchLock *lock; // @synthesize lock=_lock;
 @property(readonly) NSString *originalUploadDestinationString; // @synthesize originalUploadDestinationString=_originalUploadDestinationString;
 @property(readonly) NSString *originalDestinationString; // @synthesize originalDestinationString=_originalDestinationString;
@@ -48,7 +49,6 @@
 @property(readonly) long long distributionDestination; // @synthesize distributionDestination=_distributionDestination;
 @property(readonly) long long task; // @synthesize task=_task;
 @property __weak id <IDEArchiveDistributionRecordObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

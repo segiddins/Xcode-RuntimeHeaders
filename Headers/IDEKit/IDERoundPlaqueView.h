@@ -14,9 +14,9 @@
     NSCell *_backgroundCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCell *backgroundCell; // @synthesize backgroundCell=_backgroundCell;
 @property(retain) NSCell *contentCell; // @synthesize contentCell=_contentCell;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)titleRect;
 - (void)setTitle:(id)arg1;

@@ -24,12 +24,12 @@
 
 + (id)descriptionWithClassName:(id)arg1;
 + (id)userDescriptionWithClassName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) IBClassDescriptionSource *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly, nonatomic) BOOL requiresClassNameFormatting; // @synthesize requiresClassNameFormatting=_requiresClassNameFormatting;
 @property(readonly, nonatomic, getter=isDesignable) BOOL designable; // @synthesize designable=_designable;
 @property(readonly, copy, nonatomic) NSString *superclassName; // @synthesize superclassName=_superclassName;
 @property(readonly, copy, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)partialClassDescriptionBySettingSourceIdentifier:(id)arg1;
 - (BOOL)describesAnyRelationships;
 - (BOOL)isPrimaryDefinition;

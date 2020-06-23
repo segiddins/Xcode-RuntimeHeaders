@@ -35,10 +35,10 @@
 + (id)keyPathsForValuesAffectingAvailablePropertyIndexes;
 + (id)keyPathsForValuesAffectingAvailablePropertyNames;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain) CDMFetchIndex *fetchIndex; // @synthesize fetchIndex=_fetchIndex;
 @property(retain) CDMModel *model; // @synthesize model=_model;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)generateBackwardsCompatibilityErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 @property(readonly) BOOL representsKeyPathExpression;
 @property(readonly) BOOL representsEntityExpression;

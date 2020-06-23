@@ -15,9 +15,9 @@
     NSTextField *_descriptionLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) NSArray *proposedChanges; // @synthesize proposedChanges=_proposedChanges;
-- (void).cxx_destruct;
 - (void)confirmChanges;
 - (void)loadView;
 - (id)initWithProposedChanges:(id)arg1;

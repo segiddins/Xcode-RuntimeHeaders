@@ -16,9 +16,9 @@
     DVTDotSeparatedVersion *_minVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTDotSeparatedVersion *minVersion; // @synthesize minVersion=_minVersion;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)propertyList;
 - (id)initWithPropertyList:(id)arg1 error:(id *)arg2;
 - (void)encodeWithCoder:(id)arg1;

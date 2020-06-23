@@ -8,21 +8,25 @@
 
 #import <GPUDebugger/GPUTimelineGraphThumbnailView-Protocol.h>
 
-@class GPUTimelineGraphDataSource, GPUTraceAPIItem, NSImageView, NSString, NSTextField;
+@class GPUTimelineGraphDataSource, GPUTraceCounterGraphDataItem, NSImageView, NSString, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface GPUTraceCounterGraphThumbnailView : NSView <GPUTimelineGraphThumbnailView>
 {
-    GPUTraceAPIItem *_item;
+    GPUTraceCounterGraphDataItem *_dataItem;
     GPUTimelineGraphDataSource *_dataSource;
     NSImageView *_imageView;
-    NSTextField *_itemTitle;
+    NSTextField *_commandBufferLabel;
+    NSTextField *_encoderLabel;
+    NSTextField *_drawLabel;
 }
 
-@property __weak NSTextField *itemTitle; // @synthesize itemTitle=_itemTitle;
+- (void).cxx_destruct;
+@property __weak NSTextField *drawLabel; // @synthesize drawLabel=_drawLabel;
+@property __weak NSTextField *encoderLabel; // @synthesize encoderLabel=_encoderLabel;
+@property __weak NSTextField *commandBufferLabel; // @synthesize commandBufferLabel=_commandBufferLabel;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (BOOL)updateThumbnailForItem:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)_update;
 

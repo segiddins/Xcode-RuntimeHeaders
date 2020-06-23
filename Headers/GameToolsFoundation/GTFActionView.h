@@ -37,6 +37,7 @@
     struct CGRect _deleteRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect deleteRect; // @synthesize deleteRect=_deleteRect;
 @property(nonatomic) BOOL showResizeCursor; // @synthesize showResizeCursor=_showResizeCursor;
 @property(nonatomic) BOOL showDeleteCircle; // @synthesize showDeleteCircle=_showDeleteCircle;
@@ -46,7 +47,6 @@
 @property(nonatomic) BOOL ghost; // @synthesize ghost=_ghost;
 @property(nonatomic) BOOL validPlacement; // @synthesize validPlacement=_validPlacement;
 @property(nonatomic) __weak id <GTFActionTimelineInfoDelegate> timelineInfoDelegate; // @synthesize timelineInfoDelegate=_timelineInfoDelegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawAtPoint:(struct CGPoint)arg1 ghosted:(BOOL)arg2 disableSelect:(BOOL)arg3 dirtyRect:(struct CGRect)arg4;
 - (void)drawWithDirtyRect:(struct CGRect)arg1;

@@ -14,9 +14,9 @@
     id _representedObject;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

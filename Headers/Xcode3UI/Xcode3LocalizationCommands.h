@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType operationCompletionBlock; // @synthesize operationCompletionBlock=_operationCompletionBlock;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) id <IDEClientTrackingToken> token; // @synthesize token=_token;
 @property BOOL inProgress; // @synthesize inProgress=_inProgress;
-- (void).cxx_destruct;
 - (void)_copyFileFromLocale:(id)arg1 variantGroup:(id)arg2 inspectorLocale_locale:(id)arg3 inspectorLocale_fileDataType:(id)arg4 conversionFileDataType:(id)arg5 fileDataType:(id)arg6 allowsConversion:(BOOL)arg7 completionBlock:(CDUnknownBlockType)arg8;
 - (void)_convertFileToDefaultTypeAtPath:(id)arg1 locale:(id)arg2 variantGroup:(id)arg3 fileExtension:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)_convertFileToConversionTypeAtPath:(id)arg1 variantGroup:(id)arg2 locale:(id)arg3 desiredDataType:(id)arg4 documentFilePath:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;

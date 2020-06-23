@@ -14,9 +14,9 @@
     NSString *_hostBlueprintIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL hasBundleLoader; // @synthesize hasBundleLoader=_hasBundleLoader;
 @property(readonly) NSString *hostBlueprintIdentifier; // @synthesize hostBlueprintIdentifier=_hostBlueprintIdentifier;
-- (void).cxx_destruct;
 - (id)initWithHostBlueprintIdentifier:(id)arg1 hasBundleLoader:(BOOL)arg2;
 
 @end

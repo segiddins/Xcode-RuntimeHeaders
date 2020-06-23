@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithSchemeBuildableReference:(id)arg1;
+- (id)initWithSchemeBuildableReference:(id)arg1 blueprintName:(id)arg2;
 - (id)initWithBuildableIdentifier:(id)arg1 blueprintIdentifier:(id)arg2 blueprintName:(id)arg3 referencedContainerPath:(id)arg4;
 @property(nonatomic, readonly) NSString *referencedContainerPath;
 @property(nonatomic, readonly) NSString *blueprintName;

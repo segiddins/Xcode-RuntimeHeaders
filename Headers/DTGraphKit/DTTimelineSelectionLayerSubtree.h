@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id _colorEffect;
 }
 
-@property(retain, nonatomic) id colorEffect; // @synthesize colorEffect=_colorEffect;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id colorEffect; // @synthesize colorEffect=_colorEffect;
 - (void)layoutSublayers;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)adjustToGraph:(id)arg1;

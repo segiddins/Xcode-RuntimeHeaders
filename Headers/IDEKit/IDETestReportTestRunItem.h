@@ -14,6 +14,8 @@
 @interface IDETestReportTestRunItem : NSObject <IDETestReport_TestRun>
 {
     BOOL _ide_testReport_common_passed;
+    BOOL _ide_testReport_common_failed;
+    BOOL _ide_testReport_common_skipped;
     NSArray *_ide_testReport_testRun_perfMetrics;
     NSString *_ide_testReport_testRun_testName;
     NSString *_ide_testReport_testRun_testClassName;
@@ -29,9 +31,9 @@
     NSString *_ide_testReport_base_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ide_testReport_base_identifier; // @synthesize ide_testReport_base_identifier=_ide_testReport_base_identifier;
 @property(retain, nonatomic) NSNumber *ide_testReport_common_duration; // @synthesize ide_testReport_common_duration=_ide_testReport_common_duration;
-@property(nonatomic) BOOL ide_testReport_common_passed; // @synthesize ide_testReport_common_passed=_ide_testReport_common_passed;
 @property(copy, nonatomic) NSArray *ide_testReport_testRun_activities; // @synthesize ide_testReport_testRun_activities=_ide_testReport_testRun_activities;
 @property(copy, nonatomic) NSString *ide_testReport_testRun_testableBlueprintPath; // @synthesize ide_testReport_testRun_testableBlueprintPath=_ide_testReport_testRun_testableBlueprintPath;
 @property(copy, nonatomic) NSString *ide_testReport_testRun_testableBlueprintName; // @synthesize ide_testReport_testRun_testableBlueprintName=_ide_testReport_testRun_testableBlueprintName;
@@ -43,7 +45,9 @@
 @property(copy, nonatomic) NSString *ide_testReport_testRun_testClassName; // @synthesize ide_testReport_testRun_testClassName=_ide_testReport_testRun_testClassName;
 @property(copy, nonatomic) NSString *ide_testReport_testRun_testName; // @synthesize ide_testReport_testRun_testName=_ide_testReport_testRun_testName;
 @property(copy, nonatomic) NSArray *ide_testReport_testRun_perfMetrics; // @synthesize ide_testReport_testRun_perfMetrics=_ide_testReport_testRun_perfMetrics;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL ide_testReport_common_skipped; // @synthesize ide_testReport_common_skipped=_ide_testReport_common_skipped;
+@property(readonly, nonatomic) BOOL ide_testReport_common_failed; // @synthesize ide_testReport_common_failed=_ide_testReport_common_failed;
+@property(readonly, nonatomic) BOOL ide_testReport_common_passed; // @synthesize ide_testReport_common_passed=_ide_testReport_common_passed;
 - (void)ide_testReport_testRun_schemeActionsInvocationRecord:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL ide_testReport_testRun_fetchesSchemeActionsInvocationRecordAsync;
 @property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
@@ -51,6 +55,7 @@
 @property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_common_title;
 - (id)initWithTestName:(id)arg1 testClassName:(id)arg2 testPlanRunName:(id)arg3 device:(id)arg4 runDestinationRecord:(id)arg5 failureSummaries:(id)arg6 performanceMetrics:(id)arg7 activities:(id)arg8 testableBlueprintName:(id)arg9 testableBlueprintPath:(id)arg10 passed:(BOOL)arg11 duration:(double)arg12;
+- (id)initWithTestName:(id)arg1 testClassName:(id)arg2 testPlanRunName:(id)arg3 device:(id)arg4 runDestinationRecord:(id)arg5 failureSummaries:(id)arg6 performanceMetrics:(id)arg7 activities:(id)arg8 testableBlueprintName:(id)arg9 testableBlueprintPath:(id)arg10 passed:(BOOL)arg11 failed:(BOOL)arg12 skipped:(BOOL)arg13 duration:(double)arg14;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

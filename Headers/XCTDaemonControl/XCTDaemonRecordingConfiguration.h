@@ -17,12 +17,12 @@
     NSArray *_simpleTargetGestureNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *simpleTargetGestureNames; // @synthesize simpleTargetGestureNames=_simpleTargetGestureNames;
 @property(readonly) NSDictionary *elementSnapshotParameters; // @synthesize elementSnapshotParameters=_elementSnapshotParameters;
 @property(readonly) NSArray *elementSnapshotAttributes; // @synthesize elementSnapshotAttributes=_elementSnapshotAttributes;
 @property(readonly) NSDictionary *applicationSnapshotParameters; // @synthesize applicationSnapshotParameters=_applicationSnapshotParameters;
 @property(readonly) NSArray *applicationSnapshotAttributes; // @synthesize applicationSnapshotAttributes=_applicationSnapshotAttributes;
-- (void).cxx_destruct;
 - (id)initWithApplicationSnapshotAttributes:(id)arg1 applicationSnapshotParameters:(id)arg2 elementSnapshotAttributes:(id)arg3 elementSnapshotParameters:(id)arg4 simpleTargetGestureNames:(id)arg5;
 
 @end

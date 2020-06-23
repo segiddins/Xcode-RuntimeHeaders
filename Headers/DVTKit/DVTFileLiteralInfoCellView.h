@@ -14,9 +14,9 @@
     NSImageView *_checkmark;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *checkmark; // @synthesize checkmark=_checkmark;
 @property(retain, nonatomic) NSTextField *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 
 @end
 

@@ -38,6 +38,7 @@
 }
 
 + (id)defaultToolchain;
+- (void).cxx_destruct;
 @property(readonly) NSString *compatibilityVersionDisplayString; // @synthesize compatibilityVersionDisplayString=_compatibilityVersionDisplayString;
 @property(readonly) NSNumber *compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property(readonly) NSDate *createdDate; // @synthesize createdDate=_createdDate;
@@ -54,7 +55,6 @@
 @property(readonly) DVTVersion *version; // @synthesize version=_version;
 @property(readonly) DVTFilePath *path; // @synthesize path=_path;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL isSwiftOpenSourceToolchain;
 @property(readonly) BOOL requiresSwiftDevelopmentRuntime;
 @property(readonly) DVTVersion *swiftVersion;

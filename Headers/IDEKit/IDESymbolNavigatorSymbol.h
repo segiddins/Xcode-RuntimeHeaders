@@ -17,9 +17,9 @@
     BOOL _dontShortCircuitFetch;
 }
 
+- (void).cxx_destruct;
 @property BOOL dontShortCircuitFetch; // @synthesize dontShortCircuitFetch=_dontShortCircuitFetch;
 @property(readonly) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (void)fetchSymbols:(id)arg1 generation:(unsigned long long)arg2 lastOperation:(id)arg3;
 - (void)cancelOperations;
 - (BOOL)childrenNeedUpdating;

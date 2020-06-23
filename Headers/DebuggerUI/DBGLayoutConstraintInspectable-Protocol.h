@@ -4,11 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DBGViewSurface, NSString;
+@class NSString;
+@protocol DBGLayoutConstraintItem;
 
 @protocol DBGLayoutConstraintInspectable
-@property(readonly) DBGViewSurface *secondItem;
-@property(readonly) DBGViewSurface *firstItem;
+@property(readonly) id <DBGLayoutConstraintItem> secondItem;
+@property(readonly) id <DBGLayoutConstraintItem> firstItem;
 @property(readonly, copy) NSString *constraintIdentifier;
 @end
 

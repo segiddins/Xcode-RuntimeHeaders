@@ -18,10 +18,10 @@
     CDUnknownBlockType _observerBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property(readonly) unsigned long long observingOptions; // @synthesize observingOptions=_observingOptions;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (id)initWithIssueManager:(id)arg1 documentURL:(id)arg2 options:(unsigned long long)arg3 block:(CDUnknownBlockType)arg4;

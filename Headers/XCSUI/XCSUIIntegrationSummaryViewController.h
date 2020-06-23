@@ -25,12 +25,12 @@
     DVTReplacementView *_progressReplacementView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *progressReplacementView; // @synthesize progressReplacementView=_progressReplacementView;
 @property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *selectedDocumentLocations; // @synthesize selectedDocumentLocations=_selectedDocumentLocations;
 @property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)dataSource:(id)arg1 integrationStepChanged:(id)arg2 serviceSnapshot:(id)arg3 botSnapshot:(id)arg4 integrationSnapshot:(id)arg5;
 - (void)sendReportDidLoadNotification;
 - (void)configureIssuesControllerCallbacks;

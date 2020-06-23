@@ -20,10 +20,10 @@
 + (id)functionCoverageForInstantiationGroup:(struct LLVMOpaqueCoverageInstantiationGroup *)arg1 inFile:(id)arg2 coverageMapping:(struct LLVMOpaqueCoverageMapping *)arg3 outNeedsDemangling:(char *)arg4;
 + (void)getStartLine:(unsigned int *)arg1 endLine:(unsigned int *)arg2 executableLines:(unsigned int *)arg3 coveredLines:(unsigned int *)arg4 fillingLines:(id)arg5 forCoverageData:(struct LLVMOpaqueCoverageData *)arg6;
 + (id)getSubrangesForLineSegments:(id)arg1 wrappedSegment:(struct LLVMOpaqueCoverageSegment *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *profilePath; // @synthesize profilePath=_profilePath;
 @property(readonly, nonatomic) NSArray *binaryArchitectures; // @synthesize binaryArchitectures=_binaryArchitectures;
 @property(readonly, nonatomic) NSArray *binaryPaths; // @synthesize binaryPaths=_binaryPaths;
-- (void).cxx_destruct;
 - (id)functionsForFile:(id)arg1 demangler:(CDUnknownBlockType)arg2;
 - (id)linesForFile:(id)arg1;
 @property(readonly, nonatomic) NSSet *coveredSourceFiles;

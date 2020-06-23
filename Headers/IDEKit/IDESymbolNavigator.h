@@ -9,7 +9,7 @@
 #import <IDEKit/IDEIndexSymbolSelectionSource-Protocol.h>
 #import <IDEKit/IDESourceExpressionSource-Protocol.h>
 
-@class DVTBorderView, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSLayoutConstraint, NSMutableSet, NSSet, NSString;
+@class DVTBorderView, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSLayoutConstraint, NSMutableSet, NSSet, NSString, NSView;
 @protocol IDEOpenRequest;
 
 @interface IDESymbolNavigator : IDEOutlineBasedNavigator <IDEIndexSymbolSelectionSource, IDESourceExpressionSource>
@@ -49,6 +49,7 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak DVTBorderView *dividerView; // @synthesize dividerView=_dividerView;
 @property __weak NSLayoutConstraint *scopeBarViewHeightConstraint; // @synthesize scopeBarViewHeightConstraint=_scopeBarViewHeightConstraint;
 @property __weak DVTBorderView *scopeBarBottomDividerView; // @synthesize scopeBarBottomDividerView=_scopeBarBottomDividerView;
@@ -65,7 +66,6 @@
 @property(readonly) long long loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property(copy) NSSet *symbolsForFiltering; // @synthesize symbolsForFiltering=_symbolsForFiltering;
 @property(copy) NSSet *parentsForFiltering; // @synthesize parentsForFiltering=_parentsForFiltering;
-- (void).cxx_destruct;
 - (void)revealNavigableItems:(id)arg1;
 - (void)revealSymbols:(id)arg1;
 - (void)revealNavigableItemsWithIdentifiers:(id)arg1 identifiersToExpand:(id)arg2 generation:(unsigned long long)arg3;
@@ -125,6 +125,7 @@
 @property(retain) id <IDEOpenRequest> lastOpenRequest; // @dynamic lastOpenRequest;
 @property(readonly, copy) NSMutableSet *mutableExpandedItems; // @dynamic mutableExpandedItems;
 @property(readonly) DVTSourceExpression *quickHelpExpression;
+@property(readonly) NSView *quickHelpTargetView;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) NSString *selectedText;
 @property(readonly) Class superclass;

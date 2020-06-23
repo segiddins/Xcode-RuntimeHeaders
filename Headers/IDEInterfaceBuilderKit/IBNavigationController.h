@@ -24,10 +24,10 @@
     IBNavigationControllerItem *_previousNavigationItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBNavigationControllerItem *previousNavigationItem; // @synthesize previousNavigationItem=_previousNavigationItem;
 @property(retain, nonatomic) IBNavigationControllerItem *currentNavigationItem; // @synthesize currentNavigationItem=_currentNavigationItem;
 @property(retain, nonatomic) NSView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)didPopNavigationItem:(id)arg1;
 - (void)didPushNavigationItem:(id)arg1 previousItem:(id)arg2;
 - (void)_didClickBackButton;

@@ -13,12 +13,12 @@
     XCSConfigurationChanges *_configuration;
 }
 
-@property(retain, nonatomic) XCSConfigurationChanges *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSConfigurationChanges *configuration; // @synthesize configuration=_configuration;
 @property(readonly) NSArray *descriptions;
 - (id)dictionaryRepresentation;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
-- (id)initWithXcode:(id)arg1 platforms:(struct NSDictionary *)arg2 configuration:(id)arg3 validationErrors:(id *)arg4;
+- (id)initWithXcode:(id)arg1 platforms:(id)arg2 configuration:(id)arg3 validationErrors:(id *)arg4;
 
 // Remaining properties
 @property(retain, nonatomic) NSDictionary *platforms; // @dynamic platforms;

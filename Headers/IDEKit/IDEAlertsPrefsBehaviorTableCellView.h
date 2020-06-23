@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEAlertEvent *alertEvent; // @synthesize alertEvent=_alertEvent;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)beginEditingFromEvent:(id)arg1 inTableView:(id)arg2 column:(long long)arg3 row:(long long)arg4;
 @property(retain, nonatomic) NSString *title;
 

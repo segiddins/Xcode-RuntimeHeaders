@@ -20,6 +20,7 @@
     long long _propagationProgress;
 }
 
+- (void).cxx_destruct;
 @property long long propagationProgress; // @synthesize propagationProgress=_propagationProgress;
 @property(readonly) __weak IBAssetScannerNode *parent; // @synthesize parent=_parent;
 @property(readonly) NSDictionary *contentReference; // @synthesize contentReference=_contentReference;
@@ -28,7 +29,6 @@
 @property(readonly) NSSet *tags; // @synthesize tags=_tags;
 @property(readonly) NSString *fullyQualifiedName; // @synthesize fullyQualifiedName=_fullyQualifiedName;
 @property(readonly) IBAssetScannerNodeType *typeInfo; // @synthesize typeInfo=_typeInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)propagateTagsFromNode:(id)arg1 withCertanty:(long long)arg2;

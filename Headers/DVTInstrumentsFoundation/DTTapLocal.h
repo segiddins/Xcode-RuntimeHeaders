@@ -17,8 +17,8 @@
     id <DTTapLocalDelegate> _delegate;
 }
 
-@property(readonly, retain) id <DTTapLocalDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, retain) id <DTTapLocalDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleStatusMemo:(id)arg1;
 - (id)_fetchDataForReason:(unsigned long long)arg1;
 - (BOOL)_canFetchWhileArchiving;

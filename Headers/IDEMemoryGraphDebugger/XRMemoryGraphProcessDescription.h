@@ -28,6 +28,7 @@
     NSDate *_captureDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 @property(nonatomic) BOOL hasAnalysisTool; // @synthesize hasAnalysisTool=_hasAnalysisTool;
 @property(nonatomic) BOOL hasHardwareModel; // @synthesize hasHardwareModel=_hasHardwareModel;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *processVersion; // @synthesize processVersion=_processVersion;
 @property(retain, nonatomic) NSString *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
-- (void).cxx_destruct;
 - (id)leaksDateFormatter;
 - (void)parseProcessDescriptionString:(id)arg1;
 - (id)initFromProcessDescriptionString:(id)arg1 nodeCount:(unsigned int)arg2 edgeCount:(unsigned int)arg3;

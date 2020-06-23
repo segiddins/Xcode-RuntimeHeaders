@@ -22,11 +22,11 @@
     unsigned long long _issueType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long issueType; // @synthesize issueType=_issueType;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(readonly) IDEIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
 @property(readonly) NSArray *issues; // @synthesize issues=_issues;
-- (void).cxx_destruct;
 - (void)_removeIssues:(id)arg1;
 - (void)_addIssues:(id)arg1;
 - (void)_updateIssueType;

@@ -17,10 +17,10 @@
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)malformedProductIdentifierWithArchive:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (id)bundleIdentifier;
 - (id)productCategory;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 - (id)description;
 - (unsigned long long)hash;

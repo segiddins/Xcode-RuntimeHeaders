@@ -20,13 +20,13 @@
     DVTAnalyticsAppStoreSourceUserDefaultsKey *_userDefaultsKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTAnalyticsAppStoreSourceUserDefaultsKey *userDefaultsKey; // @synthesize userDefaultsKey=_userDefaultsKey;
 @property(readonly) BOOL isBeta; // @synthesize isBeta=_isBeta;
 @property(readonly) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithBundleIdentifier:(id)arg1 version:(id)arg2 buildNumber:(id)arg3 isBeta:(BOOL)arg4;

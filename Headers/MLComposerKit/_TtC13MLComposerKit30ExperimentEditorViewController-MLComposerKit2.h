@@ -6,9 +6,7 @@
 
 #import <MLComposerKit/_TtC13MLComposerKit30ExperimentEditorViewController.h>
 
-#import <MLComposerKit/NSPasteboardItemDataProvider-Protocol.h>
-
-@interface _TtC13MLComposerKit30ExperimentEditorViewController (MLComposerKit2) <NSPasteboardItemDataProvider>
+@interface _TtC13MLComposerKit30ExperimentEditorViewController (MLComposerKit2)
 - (void)pasteboard:(id)arg1 item:(id)arg2 provideDataForType:(id)arg3;
 @end
 

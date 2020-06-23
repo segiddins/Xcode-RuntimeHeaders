@@ -8,20 +8,13 @@
 
 #import <IDEKit/DVTColorPickerDelegate-Protocol.h>
 
-@class DVTColorPickerPopUpButton, DVTObservingToken, IDEInspectorKeyPath, NSColor, NSString, NSTextField;
-@protocol DVTInvalidation, IDEResourceManager;
+@class DVTColorPickerPopUpButton, IDEInspectorKeyPath, NSColor, NSString, NSTextField;
 
 @interface IDEInspectorColorProperty : IDEInspectorProperty <DVTColorPickerDelegate>
 {
     IDEInspectorKeyPath *_defaultColorKeyPath;
     IDEInspectorKeyPath *_supportsNilKeyPath;
     IDEInspectorKeyPath *_valueKeyPath;
-    IDEInspectorKeyPath *_colorListKeyPath;
-    IDEInspectorKeyPath *_resourceManagerKeyPath;
-    IDEInspectorKeyPath *_colorSwatchAppearanceKeyPath;
-    DVTObservingToken *_colorSwatchAppearanceKeyPathObserverToken;
-    DVTObservingToken *_resourceManagerKeyPathObserverToken;
-    id <DVTInvalidation> _resourceManagerObserverToken;
     NSColor *_defaultColor;
     BOOL _targetingCIColor;
     BOOL _defaultColorForNil;
@@ -30,18 +23,18 @@
     NSTextField *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) DVTColorPickerPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
-- (void).cxx_destruct;
 - (id)colorPicker:(id)arg1 effectiveRecentColors:(id)arg2;
 - (void)userDidChangeValue:(id)arg1;
+- (id)systemColorList;
 - (id)colorValueReturningValueState:(out long long *)arg1;
+- (void)populateColorPopUpButton:(id)arg1;
 - (void)refresh;
-- (id)firstColorResourceFromResourceManager:(id)arg1 withRuntimeName:(id)arg2;
 - (id)valueFromColor:(id)arg1;
 - (id)colorFromValue:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
-@property(readonly) id <IDEResourceManager> resourceManager;
 - (id)nibName;
 - (double)baseline;
 - (void)primitiveInvalidate;

@@ -13,8 +13,8 @@
     IBCocoaBindingsAutocompletingTextField *_textField;
 }
 
-@property(retain) IBCocoaBindingsAutocompletingTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain) IBCocoaBindingsAutocompletingTextField *textField; // @synthesize textField=_textField;
 - (void)didCompleteLayout;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

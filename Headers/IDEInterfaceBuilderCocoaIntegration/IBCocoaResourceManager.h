@@ -10,6 +10,7 @@
 {
 }
 
++ (id)systemPrivateMediaRepository;
 + (id)systemMediaRepository;
 + (id)_osVersionBySystemColorName;
 + (id)_systemColorNamesByOSVersion;

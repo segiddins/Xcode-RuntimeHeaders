@@ -21,9 +21,9 @@
 + (id)choiceForColorSpace:(long long)arg1;
 + (id)separator;
 + (id)headerWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToChoiceWithKnownEqualClass:(id)arg1;

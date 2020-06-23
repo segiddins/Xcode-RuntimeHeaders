@@ -15,10 +15,10 @@
     NSArray *_imageSets;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *imageSets; // @synthesize imageSets=_imageSets;
 @property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

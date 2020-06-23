@@ -17,8 +17,8 @@
 + (id)systemSoundPaths;
 + (void)_addSoundsFromPath:(id)arg1 to:(id)arg2;
 + (void)initialize;
-@property(retain, nonatomic) NSString *soundPath; // @synthesize soundPath=_soundPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *soundPath; // @synthesize soundPath=_soundPath;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPropertyList:(id)arg1;

@@ -7,6 +7,6 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (PlistDateExtensions)
-- (id)stringValue;
+- (id)plist_stringValue;
 @end
 

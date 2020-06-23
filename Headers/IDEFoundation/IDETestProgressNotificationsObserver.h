@@ -20,21 +20,22 @@
     NSTimer *_postNotificationCoalescingTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTimer *postNotificationCoalescingTimer; // @synthesize postNotificationCoalescingTimer=_postNotificationCoalescingTimer;
 @property double postTimeForLastNotification; // @synthesize postTimeForLastNotification=_postTimeForLastNotification;
 @property(copy) NSString *currentTestMethod; // @synthesize currentTestMethod=_currentTestMethod;
 @property(copy) NSString *currentTestClass; // @synthesize currentTestClass=_currentTestClass;
 @property(copy) NSString *currentSuite; // @synthesize currentSuite=_currentSuite;
 @property(retain) IDETestRunSession *testRunSession; // @synthesize testRunSession=_testRunSession;
-- (void).cxx_destruct;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didSkipTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 withRawOutput:(id)arg4;
 - (void)_considerPostingDistributedNotification;
 - (void)testRunSessionDidFinish:(id)arg1 withCancellation:(BOOL)arg2;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(id)arg4;
-- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(id)arg8;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinishWithRunCount:(unsigned long long)arg3 skipCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8 rawOutput:(id)arg9;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testDidOutput:(id)arg3;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didFinishActivity:(id)arg4;

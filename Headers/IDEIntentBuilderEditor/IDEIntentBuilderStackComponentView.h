@@ -16,8 +16,8 @@
     IDEIntentBuilderComponentStackView *_stackView;
 }
 
-@property __weak IDEIntentBuilderComponentStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property __weak IDEIntentBuilderComponentStackView *stackView; // @synthesize stackView=_stackView;
 - (void)_resize;
 - (void)componentStackViewBoundsDidChange:(id)arg1;
 - (void)primitiveInvalidate;

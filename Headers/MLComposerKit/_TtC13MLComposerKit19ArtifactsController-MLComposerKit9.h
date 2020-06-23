@@ -7,6 +7,7 @@
 #import <MLComposerKit/_TtC13MLComposerKit19ArtifactsController.h>
 
 @interface _TtC13MLComposerKit19ArtifactsController (MLComposerKit9)
-- (void)projectChangedWithNotification:(id)arg1;
+- (void)dataSourceDeleted:(id)arg1;
+- (void)dataSourceCreated:(id)arg1;
 @end
 

@@ -18,9 +18,9 @@
     BOOL _borderComesAndGoesBasedOnScrollPosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL borderComesAndGoesBasedOnScrollPosition; // @synthesize borderComesAndGoesBasedOnScrollPosition=_borderComesAndGoesBasedOnScrollPosition;
 @property(nonatomic) BOOL showsBorderOnBottom; // @synthesize showsBorderOnBottom=_showsBorderOnBottom;
-- (void).cxx_destruct;
 - (void)tile;
 - (void)_defferedHandleBoundsOrFrameChanged;
 - (void)_handleBoundsOrFrameChanged;

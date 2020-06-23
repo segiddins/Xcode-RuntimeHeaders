@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsInvalidationPrevention;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(readonly, nonatomic) BOOL representsRepairFailure; // @synthesize representsRepairFailure=_representsRepairFailure;
 @property(readonly, nonatomic) BOOL wantsRepairRetriedOnFinish; // @synthesize wantsRepairRetriedOnFinish=_wantsRepairRetriedOnFinish;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(readonly, nonatomic) IDEProvisioningRepairExecutionContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <IDEProvisioningUserActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsBatchAuthorization;
 @property(readonly, nonatomic) NSString *executionMessage;
 @property(readonly, nonatomic) NSString *userActionMessage;

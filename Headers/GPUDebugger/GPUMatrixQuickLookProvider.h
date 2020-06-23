@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     NSCollectionView *_matrixCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSCollectionView *matrixCollectionView; // @synthesize matrixCollectionView=_matrixCollectionView;
 @property(nonatomic) __weak NSScrollView *matrixScrollView; // @synthesize matrixScrollView=_matrixScrollView;
 @property(retain, nonatomic) NSMutableArray *rowMajorMatrixData; // @synthesize rowMajorMatrixData=_rowMajorMatrixData;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)_setupCollectionView;

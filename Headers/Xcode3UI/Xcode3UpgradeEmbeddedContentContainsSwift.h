@@ -15,9 +15,9 @@
 }
 
 + (id)analyzeInContext:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *value; // @synthesize value=_value;
 @property(copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
-- (void).cxx_destruct;
 - (BOOL)upgrade;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 context:(id)arg3 configurationName:(id)arg4 value:(id)arg5;
 

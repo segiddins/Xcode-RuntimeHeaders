@@ -19,6 +19,7 @@
     NSButton *_printDescriptionButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *printDescriptionButton; // @synthesize printDescriptionButton=_printDescriptionButton;
 @property __weak NSButton *jumpToDefinitionButton; // @synthesize jumpToDefinitionButton=_jumpToDefinitionButton;
 @property __weak NSButton *focusOnNodeButton; // @synthesize focusOnNodeButton=_focusOnNodeButton;
@@ -26,7 +27,6 @@
 @property(retain) DVTObservingToken *selectedNodeObservingToken; // @synthesize selectedNodeObservingToken=_selectedNodeObservingToken;
 @property(retain) DVTObservingToken *selectedNodeDisclosureStateObservingToken; // @synthesize selectedNodeDisclosureStateObservingToken=_selectedNodeDisclosureStateObservingToken;
 @property __weak XRMemoryGraphDebuggerEditor *memoryGraphDebuggerEditor; // @synthesize memoryGraphDebuggerEditor=_memoryGraphDebuggerEditor;
-- (void).cxx_destruct;
 - (void)_clearSelectedNodeChangeObservation;
 - (void)_registerSelectedItemsChangedObservation;
 - (void)_clearSelectedNodeDisclosureStateChangedObservation;

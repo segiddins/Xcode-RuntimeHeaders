@@ -14,8 +14,8 @@
     NSImage *_statusImage;
 }
 
-@property(retain, nonatomic) NSImage *statusImage; // @synthesize statusImage=_statusImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSImage *statusImage; // @synthesize statusImage=_statusImage;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)setTarget:(id)arg1 andAction:(SEL)arg2;

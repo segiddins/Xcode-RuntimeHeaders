@@ -7,6 +7,6 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IBUITraitStorageExtensions)
-- (id)traitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
+- (id)ibAdditionalTraitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
 @end
 

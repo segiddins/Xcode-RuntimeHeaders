@@ -26,6 +26,7 @@
 
 + (id)_elementNameToKVCMap;
 + (id)_elementNameToClassMap;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XREngineeringTypeEncodingConvention *encodingConvention; // @synthesize encodingConvention=_encodingConvention;
 @property(nonatomic) BOOL deprecated; // @synthesize deprecated=_deprecated;
 @property(nonatomic) BOOL experimental; // @synthesize experimental=_experimental;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *enumString; // @synthesize enumString=_enumString;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *mnemonic; // @synthesize mnemonic=_mnemonic;
-- (void).cxx_destruct;
 - (long long)conventionalBitWidth;
 - (id)errorStringHeader;
 - (void)_handleCompletion;

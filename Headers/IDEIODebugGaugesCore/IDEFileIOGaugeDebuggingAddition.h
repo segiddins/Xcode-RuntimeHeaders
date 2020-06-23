@@ -28,6 +28,7 @@
 + (id)requiredDataQueryAttribute;
 + (id)basicDataQueryAttributes;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(readonly, nonatomic) NSArray *allFiles; // @synthesize allFiles=_allFiles;
 @property(readonly, nonatomic) NSArray *openFiles; // @synthesize openFiles=_openFiles;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
 @property(readonly, nonatomic) NSArray *wrBytesDeltas; // @synthesize wrBytesDeltas=_wrBytesDeltas;
 @property(readonly, nonatomic) NSArray *rdBytesDeltas; // @synthesize rdBytesDeltas=_rdBytesDeltas;
-- (void).cxx_destruct;
 - (void)processQueryResultDict:(id)arg1;
 - (id)_mergeExistingFiles;
 - (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;

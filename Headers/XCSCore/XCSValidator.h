@@ -15,9 +15,9 @@
 }
 
 + (void)validate:(id)arg1 usingSchema:(id)arg2 identifier:(id)arg3 class:(Class)arg4 selector:(SEL)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *privateErrors; // @synthesize privateErrors=_privateErrors;
 @property(copy, nonatomic) NSArray *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (void)_addError:(id)arg1 identifier:(id)arg2 class:(Class)arg3 selector:(SEL)arg4;
 - (id)errorWithCode:(long long)arg1 message:(id)arg2 selector:(SEL)arg3 identifier:(id)arg4 class:(Class)arg5 selector:(SEL)arg6;
 - (BOOL)_evaluateCandidate:(id)arg1 usingTest:(id)arg2 messageIfFails:(id)arg3 identifier:(id)arg4 class:(Class)arg5 selector:(SEL)arg6;

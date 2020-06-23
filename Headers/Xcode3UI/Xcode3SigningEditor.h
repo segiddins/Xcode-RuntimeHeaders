@@ -34,6 +34,7 @@
 + (id)keyPathsForValuesAffectingProvisionable;
 + (id)localizedSourceListItemEditorName;
 + (BOOL)canInspectBlueprint:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDEBlueprint> lastInspectedBlueprint; // @synthesize lastInspectedBlueprint=_lastInspectedBlueprint;
 @property(retain, nonatomic) _TtC13IDEFoundation31ConsolidatedCapabilitiesContext *consolidatedCapabilitiesContext; // @synthesize consolidatedCapabilitiesContext=_consolidatedCapabilitiesContext;
 @property(retain, nonatomic) Xcode3TargetConsolidatedCapabilitiesContextSource *consolidatedCapabilitiesContextSource; // @synthesize consolidatedCapabilitiesContextSource=_consolidatedCapabilitiesContextSource;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak id <IDESigningEditorCapabilityItemEditingConsolidatedContextSourceProviderDelegate> capabilityItemEditingConsolidatedContextSourceProviderDelegate; // @synthesize capabilityItemEditingConsolidatedContextSourceProviderDelegate=_capabilityItemEditingConsolidatedContextSourceProviderDelegate;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)addCapabilityItemWithIdentifiers:(id)arg1;
 @property(readonly, nonatomic) id <IDESigningEditorConfigurationManagerProtocol> signingEditorConfigurationManager;

@@ -22,12 +22,12 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDragging) BOOL dragging; // @synthesize dragging=_dragging;
 @property(nonatomic) double location; // @synthesize location=_location;
 @property(nonatomic) unsigned long long affinity; // @synthesize affinity=_affinity;
 @property(retain) DVTDelayedInvocation *drawableUserGuideChangedInvocation; // @synthesize drawableUserGuideChangedInvocation=_drawableUserGuideChangedInvocation;
 @property(retain) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)invalidateDrawableGuide;
 - (id)drawableUserGuide;
 - (void)updateLocation:(double)arg1 andAffinity:(unsigned long long)arg2 undoManager:(id)arg3;

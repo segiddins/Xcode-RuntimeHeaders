@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
 @property __weak NSLayoutConstraint *bottleneckTableHeightConstraint; // @synthesize bottleneckTableHeightConstraint=_bottleneckTableHeightConstraint;
 @property __weak IDETokenFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
@@ -44,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property __weak GPUTracePerformanceSubEditorOutlineView *counterOutlineView; // @synthesize counterOutlineView=_counterOutlineView;
 @property __weak NSView *tabBarContainerView; // @synthesize tabBarContainerView=_tabBarContainerView;
 @property __weak NSView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
-- (void).cxx_destruct;
+- (void)copy:(id)arg1;
 - (void)dataStoreFinishedUpdatingBatchIDFilteredCounters:(id)arg1;
 - (void)dataStoreLoadingData:(id)arg1;
 - (void)dataStoreLoaded:(id)arg1;

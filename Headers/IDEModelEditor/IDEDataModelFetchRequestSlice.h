@@ -21,8 +21,8 @@
     DVTNotificationToken *_ruleEditorRowsChangedToken;
 }
 
-@property(retain) NSArrayController *entityController; // @synthesize entityController=_entityController;
 - (void).cxx_destruct;
+@property(retain) NSArrayController *entityController; // @synthesize entityController=_entityController;
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)ruleEditorRowsDidChange:(id)arg1;

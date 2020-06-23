@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *reportUUID; // @synthesize reportUUID=_reportUUID;
 @property(retain, nonatomic) GPUTraceOutlineItem *currentAutomaticItem; // @synthesize currentAutomaticItem=_currentAutomaticItem;
-- (void).cxx_destruct;
 - (id)archive;
 @property(readonly) unsigned long long hash;
 - (void)setParent:(id)arg1;

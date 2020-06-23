@@ -42,11 +42,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double minimumReportTime; // @synthesize minimumReportTime=_minimumReportTime;
 @property(copy) NSString *debugName; // @synthesize debugName=_debugName;
 @property(copy) NSArray *issueCategories; // @synthesize issueCategories=_issueCategories;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (void)_openIssuesNavigator:(BOOL)arg1 clearFilterType:(unsigned long long)arg2;
 - (void)_openTestNavigator;
 - (void)stopObservingActivityReports;

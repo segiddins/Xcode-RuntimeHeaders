@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     struct CGPoint _origin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
 @property(readonly, nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (id)initWithOrigin:(struct CGPoint)arg1 width:(double)arg2 height:(double)arg3 object:(id)arg4;
 
 @end

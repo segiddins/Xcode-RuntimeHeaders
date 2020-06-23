@@ -16,9 +16,9 @@
 
 + (id)keyPathsForValuesAffectingIsExecuting;
 + (id)keyPathsForValuesAffectingIsFinished;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *operationIdentifier; // @synthesize operationIdentifier=_operationIdentifier;
 @property(nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
-- (void).cxx_destruct;
 - (void)cancel;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

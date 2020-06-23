@@ -14,9 +14,9 @@
     NSArray *_segments;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(nonatomic) double maxCapacity; // @synthesize maxCapacity=_maxCapacity;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -16,10 +16,10 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSNumber *lastKnownOutlineViewWidth; // @synthesize lastKnownOutlineViewWidth=_lastKnownOutlineViewWidth;
 @property(retain) IBStoryboardNavigationOutlineViewController *documentOutlineViewController; // @synthesize documentOutlineViewController=_documentOutlineViewController;
 @property(readonly) id currentFilterFieldWantingDocumentOutlineViewController; // @synthesize currentFilterFieldWantingDocumentOutlineViewController=_currentFilterFieldWantingDocumentOutlineViewController;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (id)structureAreaExpansionPreferencesKey;

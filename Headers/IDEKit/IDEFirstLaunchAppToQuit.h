@@ -14,9 +14,9 @@
     NSRunningApplication *_runningApplication;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSRunningApplication *runningApplication; // @synthesize runningApplication=_runningApplication;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly) NSImage *icon;
 - (id)_initWithNSRunningApplication:(id)arg1 customDisplayName:(id)arg2;
 - (id)_initWithNSRunningApplication:(id)arg1;

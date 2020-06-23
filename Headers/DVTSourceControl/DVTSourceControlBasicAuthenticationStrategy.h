@@ -19,11 +19,11 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)strategyIsValidForURL:(id)arg1;
 + (id)name;
+- (void).cxx_destruct;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property BOOL passwordDefinedFromURL; // @synthesize passwordDefinedFromURL=_passwordDefinedFromURL;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property BOOL usernameDefinedFromURL; // @synthesize usernameDefinedFromURL=_usernameDefinedFromURL;
-- (void).cxx_destruct;
 - (unsigned long long)type;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

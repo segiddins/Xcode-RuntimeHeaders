@@ -44,6 +44,7 @@
 
 + (id)_findingLevelString:(int)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showUniqueTerminator; // @synthesize showUniqueTerminator=_showUniqueTerminator;
 @property(nonatomic) BOOL showUniqueSeparator; // @synthesize showUniqueSeparator=_showUniqueSeparator;
 @property(nonatomic) unsigned long long associatedResourceID; // @synthesize associatedResourceID=_associatedResourceID;
@@ -67,7 +68,6 @@
 @property(nonatomic) unsigned int classification; // @synthesize classification=_classification;
 @property(retain, nonatomic) NSString *kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) int platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (BOOL)isTextureImageCompletelyUpdated;
 - (BOOL)isBufferDataCompletelyUpdated;
 - (BOOL)isInefficientStateUpdate;

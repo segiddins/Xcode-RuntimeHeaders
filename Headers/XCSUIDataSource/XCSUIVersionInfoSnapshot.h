@@ -18,12 +18,12 @@
 }
 
 + (id)snapshotWithVersions:(id)arg1 smallVersions:(id)arg2 platforms:(id)arg3 xcode:(id)arg4 service:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) XCSUIService *service; // @synthesize service=_service;
 @property(readonly, copy, nonatomic) NSString *xcode; // @synthesize xcode=_xcode;
 @property(readonly, copy, nonatomic) NSString *platforms; // @synthesize platforms=_platforms;
 @property(readonly, copy, nonatomic) NSString *smallVersions; // @synthesize smallVersions=_smallVersions;
 @property(readonly, copy, nonatomic) NSString *versions; // @synthesize versions=_versions;
-- (void).cxx_destruct;
 - (id)initWithVersions:(id)arg1 smallVersions:(id)arg2 platforms:(id)arg3 xcode:(id)arg4 service:(id)arg5;
 
 @end

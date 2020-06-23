@@ -16,10 +16,10 @@
 }
 
 + (id)nibName;
+- (void).cxx_destruct;
 @property(retain) DVTColorLiteralQuickEditCollectionViewColorView *colorView; // @synthesize colorView=_colorView;
 @property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(copy, nonatomic) NSColor *representedColor; // @synthesize representedColor=_representedColor;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)setSelected:(BOOL)arg1;
 

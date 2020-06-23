@@ -21,13 +21,13 @@
 
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)keyPathsForValuesAffectingUrl;
+- (void).cxx_destruct;
 @property BOOL isGroupHeader; // @synthesize isGroupHeader=_isGroupHeader;
 @property BOOL isRecent; // @synthesize isRecent=_isRecent;
 @property(retain) id <DVTDeviceApplication> application; // @synthesize application=_application;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (id)archiveRepresentation;

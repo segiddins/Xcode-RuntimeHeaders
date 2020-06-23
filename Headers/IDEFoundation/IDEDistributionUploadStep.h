@@ -20,13 +20,13 @@
 
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
+- (void).cxx_destruct;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType updateUploadMessageCallback; // @synthesize updateUploadMessageCallback=_updateUploadMessageCallback;
 @property(copy, nonatomic) CDUnknownBlockType updateUploadPercentageCallback; // @synthesize updateUploadPercentageCallback=_updateUploadPercentageCallback;
 @property(copy, nonatomic) CDUnknownBlockType uploadWillBeginCallback; // @synthesize uploadWillBeginCallback=_uploadWillBeginCallback;
-- (void).cxx_destruct;
 - (void)cancelUpload:(CDUnknownBlockType)arg1;
 - (id)archiveSubmissionInfoWithIdentifier:(id)arg1 issues:(id)arg2;
 - (long long)destination;

@@ -20,8 +20,8 @@
 + (Class)cellClass;
 + (unsigned long long)defaultFocusRingType;
 + (void)initialize;
-@property(copy) NSString *menuDefinitionIdentifier; // @synthesize menuDefinitionIdentifier=_menuDefinitionIdentifier;
 - (void).cxx_destruct;
+@property(copy) NSString *menuDefinitionIdentifier; // @synthesize menuDefinitionIdentifier=_menuDefinitionIdentifier;
 - (id)accessibilityPopUpMenuParent:(id)arg1;
 @property(readonly) struct CGSize sizeWanted;
 - (void)viewWillMoveToWindow:(id)arg1;

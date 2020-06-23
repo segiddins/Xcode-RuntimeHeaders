@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
+- (void).cxx_destruct;
 @property(readonly) IDEIssueStatusImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) long long progressValue; // @synthesize progressValue=_progressValue;
-- (void).cxx_destruct;
 @property(nonatomic) long long tableViewRowSizeStyle;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;

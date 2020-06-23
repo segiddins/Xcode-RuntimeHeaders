@@ -14,9 +14,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) int badge; // @synthesize badge=_badge;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

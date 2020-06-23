@@ -14,9 +14,9 @@
     NSMapTable *_accessibilityProxiesByChoice;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *accessibilityProxiesByChoice; // @synthesize accessibilityProxiesByChoice=_accessibilityProxiesByChoice;
 @property __weak DVTTabChooserView *tabChooserView; // @synthesize tabChooserView=_tabChooserView;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;

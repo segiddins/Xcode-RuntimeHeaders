@@ -14,8 +14,8 @@
     NSObject<IBIDEAutolayoutItem> *_view;
 }
 
-@property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *view; // @synthesize view=_view;
 - (id)initWithView:(id)arg1;
 
 @end

@@ -13,8 +13,8 @@
     DVTPlatform *_supportedPlatform;
 }
 
-@property(readonly) DVTPlatform *supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
 - (void).cxx_destruct;
+@property(readonly) DVTPlatform *supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
 - (id)distributionOptionIdentifiers;
 - (BOOL)supportsManifestDistribution;
 - (id)packagingStepIdentifierForDestination:(long long)arg1;

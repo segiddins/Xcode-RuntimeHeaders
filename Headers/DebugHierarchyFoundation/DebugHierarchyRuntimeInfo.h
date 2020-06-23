@@ -14,8 +14,8 @@
 }
 
 + (id)runtimeInfoWithSerializedRepresentation:(id)arg1;
-@property(retain) NSMutableDictionary *typeMap; // @synthesize typeMap=_typeMap;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *typeMap; // @synthesize typeMap=_typeMap;
 - (id)_describeTreeWithRoot:(id)arg1 depth:(unsigned long long)arg2 description:(id)arg3;
 - (id)debugDescription;
 - (void)clearData;

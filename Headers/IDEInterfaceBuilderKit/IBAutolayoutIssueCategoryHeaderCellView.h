@@ -17,11 +17,11 @@
     CDUnknownBlockType _infoButtonClickHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType infoButtonClickHandler; // @synthesize infoButtonClickHandler=_infoButtonClickHandler;
 @property(copy, nonatomic) CDUnknownBlockType actionButtonClickHandler; // @synthesize actionButtonClickHandler=_actionButtonClickHandler;
 @property(retain, nonatomic) NSButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

@@ -14,9 +14,9 @@
     NSArray *_frames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *frames; // @synthesize frames=_frames;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 frames:(id)arg2;
 - (id)init;
 

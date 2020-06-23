@@ -17,9 +17,9 @@
     DVTReplacementView *_hexEditorReplacementView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *hexEditorReplacementView; // @synthesize hexEditorReplacementView=_hexEditorReplacementView;
 @property(retain) IDEHexEditorViewController *hexEditorViewController; // @synthesize hexEditorViewController=_hexEditorViewController;
-- (void).cxx_destruct;
 - (void)setStateToken:(id)arg1;
 - (void)byteGrouping32:(id)arg1;
 - (void)byteGrouping16:(id)arg1;

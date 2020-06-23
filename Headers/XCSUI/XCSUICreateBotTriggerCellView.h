@@ -15,9 +15,9 @@
     IDEViewController<IDECapsuleViewController> *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEViewController<IDECapsuleViewController> *viewController; // @synthesize viewController=_viewController;
 @property(readonly) __weak IDECapsuleView *capsuleView; // @synthesize capsuleView=_capsuleView;
-- (void).cxx_destruct;
 - (void)seekAndDestroy;
 - (void)configureForViewController:(id)arg1 disclosed:(BOOL)arg2;
 

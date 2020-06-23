@@ -14,9 +14,9 @@
     DTDTraceTapMemo *_memo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTDTraceTapMemo *memo; // @synthesize memo=_memo;
 @property(retain, nonatomic) DTDTraceTapRecordDecoder *recordDecoder; // @synthesize recordDecoder=_recordDecoder;
-- (void).cxx_destruct;
 - (void)enumerateRecordsWithBlock:(CDUnknownBlockType)arg1;
 
 @end

@@ -27,12 +27,12 @@
 + (id)keyPathsForValuesAffectingTitle;
 + (void)beginAssistantWithArchive:(id)arg1 task:(long long)arg2 window:(id)arg3;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDistributionSigningAssetErrorsViewController *errorViewController; // @synthesize errorViewController=_errorViewController;
 @property(retain) DVTBorderedView *stepContainerView; // @synthesize stepContainerView=_stepContainerView;
 @property(retain, nonatomic) IDEDistributionStepViewController *distributionStepViewController; // @synthesize distributionStepViewController=_distributionStepViewController;
 @property(retain) IDEDistributionContext *context; // @synthesize context=_context;
 @property(nonatomic) int currentDirection; // @synthesize currentDirection=_currentDirection;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)presentUnrecoverableError:(id)arg1;
 - (void)exportPackage;

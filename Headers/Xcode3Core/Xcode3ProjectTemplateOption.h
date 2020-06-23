@@ -20,9 +20,9 @@
 + (id)keyPathsForValuesAffectingValues;
 + (id)keyPathsForValuesAffectingDisplayValues;
 + (id)allowedTemplateOptionTypes;
+- (void).cxx_destruct;
 @property(retain) NSArray *filterOptionsForDisplayValues; // @synthesize filterOptionsForDisplayValues=_filterOptionsForDisplayValues;
 @property(copy) NSDictionary *units; // @synthesize units=_units;
-- (void).cxx_destruct;
 - (id)prefix;
 - (void)setPrefix:(id)arg1;
 @property __weak id <Xcode3ProjectTemplateOptionParent> parent;

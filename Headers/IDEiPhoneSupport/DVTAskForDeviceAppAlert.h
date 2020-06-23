@@ -16,10 +16,10 @@
 }
 
 + (id)alertForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *popup; // @synthesize popup=_popup;
 @property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 @property(copy) NSString *selectedApp; // @synthesize selectedApp=_selectedApp;
-- (void).cxx_destruct;
 - (void)_menuAction:(id)arg1;
 - (void)layout;
 

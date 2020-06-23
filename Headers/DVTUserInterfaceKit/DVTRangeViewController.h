@@ -20,6 +20,7 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *endLocationTextField; // @synthesize endLocationTextField=_endLocationTextField;
 @property __weak NSTextField *lengthTextField; // @synthesize lengthTextField=_lengthTextField;
 @property __weak NSTextField *locationTextField; // @synthesize locationTextField=_locationTextField;
@@ -28,7 +29,6 @@
 @property __weak DVTRangeView *rangeView; // @synthesize rangeView=_rangeView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (void)_udpateFromRange;
 - (void)loadView;
 - (id)initWithDefaultNibName;

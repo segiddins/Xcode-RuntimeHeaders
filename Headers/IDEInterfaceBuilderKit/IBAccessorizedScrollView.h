@@ -16,9 +16,9 @@
     IBAccessorizedScrollViewButtonBar *_buttonBar;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBAccessorizedScrollViewButtonBar *buttonBar; // @synthesize buttonBar=_buttonBar;
 @property(nonatomic) BOOL usesEmphasizedButtonBarBackgroundAppearance; // @synthesize usesEmphasizedButtonBarBackgroundAppearance=_usesEmphasizedButtonBarBackgroundAppearance;
-- (void).cxx_destruct;
 - (void)_updateButtonBarVisualEffectView;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;

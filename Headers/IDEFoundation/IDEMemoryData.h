@@ -22,6 +22,7 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 @property BOOL showsAsMemoryFaulted; // @synthesize showsAsMemoryFaulted=_showsAsMemoryFaulted;
@@ -32,7 +33,6 @@
 @property unsigned long long numberOfBytes; // @synthesize numberOfBytes=_numberOfBytes;
 @property(copy) NSString *expression; // @synthesize expression=_expression;
 @property unsigned long long startingAddress; // @synthesize startingAddress=_startingAddress;
-- (void).cxx_destruct;
 - (void)gatherAdditionalInformationForAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2;
 - (void)primitiveInvalidate;
 - (void)_updateUsingExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2;

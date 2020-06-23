@@ -11,7 +11,7 @@
 #import <Xcode3UI/NSOutlineViewDelegate-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTMutableOrderedDictionary, DVTOutlineView, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDEBuildOperation, NSArray, NSButton, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PBXProject, Xcode3ProjectEditor, Xcode3Target;
+@class DVTBorderedView, DVTDelayedInvocation, DVTFilePath, DVTGradientImageButton, DVTMutableOrderedDictionary, DVTOutlineView, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDEBuildOperation, NSArray, NSButton, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PBXProject, Xcode3ProjectEditor, Xcode3Target;
 @protocol DVTCancellable, IDEBlueprint;
 
 @interface Xcode3AssetTagsEditor : IDEViewController <Xcode3SourceListItemEditor, NSOutlineViewDataSource, NSOutlineViewDelegate, IDEAssetTagChangeListener>
@@ -27,6 +27,7 @@
     id <DVTCancellable> _addReferenceNotification;
     id <DVTCancellable> _executionEnvironmentBuildStateToken;
     id <DVTCancellable> _buildOperationToken;
+    DVTFilePath *_observedBaseOutputPath;
     IDEBuildOperation *_currentBuildOperation;
     Xcode3ProjectEditor *_projectEditor;
     id <IDEBlueprint> _inspectedBlueprint;
@@ -46,6 +47,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)localizedSourceListItemEditorName;
 + (BOOL)canInspectBlueprint:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain, nonatomic) NSLayoutConstraint *topOutlineViewConstraint; // @synthesize topOutlineViewConstraint=_topOutlineViewConstraint;
 @property(retain, nonatomic) DVTSearchField *searchField; // @synthesize searchField=_searchField;
@@ -59,7 +61,6 @@
 @property(retain, nonatomic) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
-- (void).cxx_destruct;
 - (void)taggedAssetItem:(id)arg1 didUpdateProperty:(id)arg2 inAssetInfoProvider:(id)arg3;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;

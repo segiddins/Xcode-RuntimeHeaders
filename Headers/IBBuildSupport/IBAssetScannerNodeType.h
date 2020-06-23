@@ -19,13 +19,13 @@
 }
 
 + (id)allNodeTypesByExtension;
+- (void).cxx_destruct;
 @property(readonly) NSString *contentReferenceTypeName; // @synthesize contentReferenceTypeName=_contentReferenceTypeName;
 @property(readonly) NSString *implicitTagFormat; // @synthesize implicitTagFormat=_implicitTagFormat;
 @property(readonly) NSNumber *namespacesContent; // @synthesize namespacesContent=_namespacesContent;
 @property(readonly) BOOL isolatesContent; // @synthesize isolatesContent=_isolatesContent;
 @property(readonly) BOOL propagatesTags; // @synthesize propagatesTags=_propagatesTags;
 @property(readonly) BOOL acceptsTags; // @synthesize acceptsTags=_acceptsTags;
-- (void).cxx_destruct;
 - (id)initWithExtension:(id)arg1;
 
 @end

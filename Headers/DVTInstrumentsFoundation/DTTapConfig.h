@@ -26,6 +26,7 @@
     CDUnknownBlockType _recordingInfoHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType recordingInfoHandler; // @synthesize recordingInfoHandler=_recordingInfoHandler;
 @property(copy, nonatomic) CDUnknownBlockType statusHandler; // @synthesize statusHandler=_statusHandler;
 @property(copy, nonatomic) CDUnknownBlockType runningMetadataChangedHandler; // @synthesize runningMetadataChangedHandler=_runningMetadataChangedHandler;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) long long serviceVersion; // @synthesize serviceVersion=_serviceVersion;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long windowSize;
 @property(nonatomic) unsigned long long bufferMode;
 @property(nonatomic) unsigned long long pollingInterval;

@@ -28,6 +28,7 @@
 
 + (id)mostRecentManualProfilesFromProfiles:(id)arg1 bundleIdentifier:(id)arg2 team:(id)arg3 platform:(id)arg4 profileType:(id)arg5 logAspect:(id)arg6 errorProvider:(id)arg7;
 + (id)keyPathsForValuesAffectingNeedsRepair;
+- (void).cxx_destruct;
 @property(readonly) NSArray *rawErrors; // @synthesize rawErrors=_rawErrors;
 @property(readonly) IDEProvisionableEntitlements *rawEntitlements; // @synthesize rawEntitlements=_rawEntitlements;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) IDEProvisioningRepairInfo *repairInfo; // @synthesize repairInfo=_repairInfo;
 @property(readonly, nonatomic) IDECodesignParameterSnapshot *codesignParameterSnapshot; // @synthesize codesignParameterSnapshot=_codesignParameterSnapshot;
 @property(readonly, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisioningCommandInputs *provisioningCommandInputs; // @synthesize provisioningCommandInputs=_provisioningCommandInputs;
 - (id)mergedEntitlementsWithWarnings:(id *)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSString *appIdentifierPrefix;

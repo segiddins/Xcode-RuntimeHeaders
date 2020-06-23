@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)layout;
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
 @property(nonatomic, readonly) BOOL canBecomeFirstResponder;

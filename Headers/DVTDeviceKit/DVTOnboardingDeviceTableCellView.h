@@ -14,9 +14,9 @@
     NSImageView *_deviceIsSetupImage;
 }
 
+- (void).cxx_destruct;
 @property __weak NSImageView *deviceIsSetupImage; // @synthesize deviceIsSetupImage=_deviceIsSetupImage;
 @property __weak NSTextField *reasonTextField; // @synthesize reasonTextField=_reasonTextField;
-- (void).cxx_destruct;
 
 @end
 

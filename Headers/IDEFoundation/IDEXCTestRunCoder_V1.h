@@ -16,7 +16,7 @@
 - (id)coverageBuildableInfosInDictionaryRepresentation:(id)arg1 removingPathPlaceholdersForTestRootPath:(id)arg2 error:(id *)arg3;
 - (void)insertTestRunSpecifications:(id)arg1 intoDictionaryRepresentation:(id)arg2 forTestRootPath:(id)arg3 derivedDataPath:(id)arg4;
 - (void)insertCoverageBuildableInfos:(id)arg1 intoMetadataDictionary:(id)arg2 forTestRootPath:(id)arg3;
-- (id)dictionaryRepresentationWithTestRunSpecificationGroups:(id)arg1 codeCoverageBuildableInfos:(id)arg2 testRootPathPlaceholder:(id)arg3 derivedDataPathPlaceholder:(id)arg4;
+- (id)dictionaryRepresentationWithTestPlanInfo:(id)arg1 testRunSpecificationGroups:(id)arg2 codeCoverageBuildableInfos:(id)arg3 testRootPathPlaceholder:(id)arg4 derivedDataPathPlaceholder:(id)arg5;
 - (id)testRunFileWithDictionaryRepresentation:(id)arg1 removingPathPlaceholdersForTestRootPath:(id)arg2 derivedDataPath:(id)arg3 error:(id *)arg4;
 
 @end

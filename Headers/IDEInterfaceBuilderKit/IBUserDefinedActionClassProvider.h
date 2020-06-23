@@ -14,8 +14,8 @@
     NSDictionary *_actionSelectorToTypeMap;
 }
 
-@property(copy, nonatomic) NSDictionary *actionSelectorToTypeMap; // @synthesize actionSelectorToTypeMap=_actionSelectorToTypeMap;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *actionSelectorToTypeMap; // @synthesize actionSelectorToTypeMap=_actionSelectorToTypeMap;
 - (id)partialClassDescriptions;
 - (void)integrateDocumentDecodedPartialClassDescriptions:(id)arg1;
 - (id)partialClassDescription;

@@ -39,11 +39,11 @@
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingSelectedEntities;
 + (id)keyPathsForValuesAffectingModel;
+- (void).cxx_destruct;
 @property(copy) NSIndexSet *selectedEntityIndexes; // @synthesize selectedEntityIndexes=_selectedEntityIndexes;
 @property(copy) NSIndexSet *selectedPropertyIndexes; // @synthesize selectedPropertyIndexes=_selectedPropertyIndexes;
 @property(retain) NSArray *selectedProperties; // @synthesize selectedProperties=_selectedProperties;
 @property(retain) NSArrayController *arrayController; // @synthesize arrayController;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 @property(retain) NSIndexSet *stateSelectionIndexes;

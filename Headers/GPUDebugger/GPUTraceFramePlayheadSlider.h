@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property __weak id <GPUTraceFramePlayheadSliderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <GPUTraceFramePlayheadSliderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)mouseExited:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseMoved:(id)arg1;

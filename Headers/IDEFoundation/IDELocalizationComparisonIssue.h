@@ -16,10 +16,10 @@
 }
 
 + (id)issueWithLocalizationFrameworkIssue:(id)arg1 projectComparisonFileURL:(id)arg2 importComparisonFileURL:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
 @property(readonly, copy) DVTComparisonDocumentLocation *location; // @synthesize location=_location;
 @property(readonly) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (id)initWithCategory:(unsigned long long)arg1 oldLocation:(id)arg2 newLocation:(id)arg3 message:(id)arg4;

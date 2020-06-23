@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isViewLoaded; // @synthesize isViewLoaded=_isViewLoaded;
 @property(readonly, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) IDEEditor *hostEditor; // @synthesize hostEditor=_hostEditor;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly, nonatomic) IDEWorkspaceDocument *workspaceDocument;
 - (id)initWithWorkspace:(id)arg1;

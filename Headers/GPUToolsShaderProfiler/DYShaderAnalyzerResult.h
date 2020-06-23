@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *binaryDisassemblyInfo; // @synthesize binaryDisassemblyInfo=_binaryDisassemblyInfo;
 @property(retain, nonatomic) NSDictionary *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(retain, nonatomic) NSDictionary *perFileCost; // @synthesize perFileCost=_perFileCost;
@@ -36,7 +37,6 @@
 @property(nonatomic) double instructionCountMax; // @synthesize instructionCountMax=_instructionCountMax;
 @property(nonatomic) double instructionCountMin; // @synthesize instructionCountMin=_instructionCountMin;
 @property(nonatomic) double instructionCount; // @synthesize instructionCount=_instructionCount;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

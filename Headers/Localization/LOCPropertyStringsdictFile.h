@@ -13,7 +13,6 @@
     NSDictionary *_stringsdict;
     NSDictionary *_complementedStringsdict;
     NSDictionary *_configDictionary;
-    NSString *_locale;
     NSString *_transformationLocale;
     NSMutableDictionary *_referenceToAnotherFormatDictionary;
     NSMutableDictionary *_stringsKeyForReferencedDictionary;
@@ -24,14 +23,13 @@
 + (id)transUnitIDForPluralRuleNSStringLocalizedFormatKeyWithStringKey:(id)arg1;
 + (id)transUnitIDForDeviceSpecificRuleWithStringKey:(id)arg1 deviceKey:(id)arg2;
 + (id)transUnitIDForSizeRuleWithStringKey:(id)arg1 sizeKey:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *stringsKeyForReferencedDictionary; // @synthesize stringsKeyForReferencedDictionary=_stringsKeyForReferencedDictionary;
 @property(retain) NSMutableDictionary *referenceToAnotherFormatDictionary; // @synthesize referenceToAnotherFormatDictionary=_referenceToAnotherFormatDictionary;
 @property(retain) NSString *transformationLocale; // @synthesize transformationLocale=_transformationLocale;
-@property(retain) NSString *locale; // @synthesize locale=_locale;
 @property(retain) NSDictionary *configDictionary; // @synthesize configDictionary=_configDictionary;
 @property(retain) NSDictionary *complementedStringsdict; // @synthesize complementedStringsdict=_complementedStringsdict;
 @property(retain) NSDictionary *stringsdict; // @synthesize stringsdict=_stringsdict;
-- (void).cxx_destruct;
 - (id)allLocalizablePluralRulePropertyArray;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 relativeTo:(id)arg2 error:(id *)arg3;
 - (id)createInternalGlossaryWithOptions:(unsigned long long)arg1 error:(id *)arg2;
@@ -50,6 +48,7 @@
 
 // Remaining properties
 @property(retain) NSString *filePath;
+@property(retain) NSString *locale;
 
 @end
 

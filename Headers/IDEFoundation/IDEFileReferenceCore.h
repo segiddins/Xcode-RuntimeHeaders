@@ -16,8 +16,8 @@
     DVTFileDataType *_assignedDataType;
 }
 
-@property(copy) DVTFileDataType *assignedDataType; // @synthesize assignedDataType=_assignedDataType;
 - (void).cxx_destruct;
+@property(copy) DVTFileDataType *assignedDataType; // @synthesize assignedDataType=_assignedDataType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

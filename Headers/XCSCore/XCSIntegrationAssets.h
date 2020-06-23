@@ -21,6 +21,7 @@
 }
 
 + (id)emptyAssets;
+- (void).cxx_destruct;
 @property(retain) NSArray *additionalAssets; // @synthesize additionalAssets=_additionalAssets;
 @property(retain) NSArray *triggerAssets; // @synthesize triggerAssets=_triggerAssets;
 @property(retain) XCSIntegrationAsset *xcodebuildLog; // @synthesize xcodebuildLog=_xcodebuildLog;
@@ -29,7 +30,6 @@
 @property(retain) XCSIntegrationAsset *product; // @synthesize product=_product;
 @property(retain) XCSIntegrationAsset *buildServiceLog; // @synthesize buildServiceLog=_buildServiceLog;
 @property(retain) XCSIntegrationAsset *sourceControlLog; // @synthesize sourceControlLog=_sourceControlLog;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithSourceControlLog:(id)arg1 buildServiceLog:(id)arg2 product:(id)arg3 archive:(id)arg4 xcodebuildOutput:(id)arg5 xcodebuildLog:(id)arg6 triggerAssets:(id)arg7 additionalAssets:(id)arg8;

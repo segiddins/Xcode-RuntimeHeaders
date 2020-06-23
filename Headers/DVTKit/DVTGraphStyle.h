@@ -34,6 +34,7 @@
     NSColor *_majorGridlinesColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *majorGridlinesColor; // @synthesize majorGridlinesColor=_majorGridlinesColor;
 @property(nonatomic) BOOL showsYAxisMajorGridlines; // @synthesize showsYAxisMajorGridlines=_showsYAxisMajorGridlines;
 @property(nonatomic) BOOL showsXAxisMajorGridlines; // @synthesize showsXAxisMajorGridlines=_showsXAxisMajorGridlines;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) NSColor *graphBackgroundColor; // @synthesize graphBackgroundColor=_graphBackgroundColor;
 @property(nonatomic) double graphTitleOffset; // @synthesize graphTitleOffset=_graphTitleOffset;
 @property(copy, nonatomic) NSColor *viewBackgroundColor; // @synthesize viewBackgroundColor=_viewBackgroundColor;
-- (void).cxx_destruct;
 - (void)_sendStyleChangedNotification;
 @property(readonly) NSDictionary *axisLabelAttributes;
 - (void)setAxisLabelsFont:(id)arg1;

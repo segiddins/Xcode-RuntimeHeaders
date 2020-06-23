@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DYInvestigatorStatistics *graphicsCommandNum; // @synthesize graphicsCommandNum=_graphicsCommandNum;
 @property(retain, nonatomic) DYInvestigatorStatistics *textureUploadTime; // @synthesize textureUploadTime=_textureUploadTime;
 @property(retain, nonatomic) DYInvestigatorStatistics *stateChangeTime; // @synthesize stateChangeTime=_stateChangeTime;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) DYInvestigatorStatistics *frameTime; // @synthesize frameTime=_frameTime;
 @property(nonatomic) BOOL didWaitOnGPU; // @synthesize didWaitOnGPU=_didWaitOnGPU;
 @property(retain, nonatomic) NSArray *analysisSamples; // @synthesize analysisSamples=_analysisSamples;
-- (void).cxx_destruct;
 - (unsigned long long)outGLTime;
 - (unsigned long long)inGLAndPlatformTime;
 - (double)textureUploadTimePercent;

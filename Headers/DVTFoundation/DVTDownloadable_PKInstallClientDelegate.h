@@ -15,8 +15,8 @@
     DVTPromise *_promise;
 }
 
-@property(retain) NSTimer *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain) NSTimer *timer; // @synthesize timer=_timer;
 - (void)_callPKInstallClientStatusTimer:(id)arg1;
 - (void)installClientDidFinish:(id)arg1;
 - (void)installClient:(id)arg1 didFailWithError:(id)arg2;

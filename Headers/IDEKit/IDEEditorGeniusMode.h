@@ -33,10 +33,10 @@
 + (id)stateSavingIdentifiers;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSView *jumpBarHealingView; // @synthesize jumpBarHealingView=_jumpBarHealingView;
 @property(retain) IDEEditorSplitView *splitView; // @synthesize splitView=_splitView;
 @property(retain) IDEEditorMultipleContext *alternateEditorMultipleContext; // @synthesize alternateEditorMultipleContext=_alternateEditorMultipleContext;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (id)_stealPrimaryEditorContext;

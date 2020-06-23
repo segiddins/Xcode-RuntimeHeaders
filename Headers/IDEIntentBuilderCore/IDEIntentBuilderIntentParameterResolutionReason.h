@@ -22,13 +22,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRemoved, setter=_setRemoved:) BOOL removed; // @synthesize removed=_removed;
 @property(nonatomic, setter=_setIntentParameter:) __weak IDEIntentBuilderIntentParameter *intentParameter; // @synthesize intentParameter=_intentParameter;
 @property(copy, nonatomic, setter=_setFormatStringID:) NSString *formatStringID; // @synthesize formatStringID=_formatStringID;
 @property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;

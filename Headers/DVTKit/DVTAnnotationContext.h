@@ -13,8 +13,8 @@
     DVTFileDataType *_fileDataType;
 }
 
-@property(readonly, copy) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
 - (void).cxx_destruct;
+@property(readonly, copy) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
 - (id)description;
 - (id)initWithFileDataType:(id)arg1;
 - (id)init;

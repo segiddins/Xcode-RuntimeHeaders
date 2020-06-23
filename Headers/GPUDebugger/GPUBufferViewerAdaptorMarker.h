@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rangeType; // @synthesize rangeType=_rangeType;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 range:(struct _NSRange)arg2 rangeType:(unsigned long long)arg3;
 
 // Remaining properties

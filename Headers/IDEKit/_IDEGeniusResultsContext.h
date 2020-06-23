@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDENavigableItem *geniusRootNavigableItem; // @synthesize geniusRootNavigableItem=_geniusRootNavigableItem;
 @property(copy) NSString *geniusCategory; // @synthesize geniusCategory=_geniusCategory;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 
 // Remaining properties

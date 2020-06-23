@@ -27,10 +27,10 @@
 + (void)initialize;
 + (id)keyPathsForValuesAffectingInspectedElementType;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain) CDMEntity *entity; // @synthesize entity=_entity;
 @property(retain) CDMModel *model; // @synthesize model=_model;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)generateBackwardsCompatibilityErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 @property(readonly, copy) NSArray *representedEntityCompoundIndex;

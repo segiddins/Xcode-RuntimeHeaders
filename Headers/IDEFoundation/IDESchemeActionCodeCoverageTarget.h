@@ -18,11 +18,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fullDescription; // @synthesize fullDescription=_fullDescription;
 @property(readonly, nonatomic) NSString *productPath; // @synthesize productPath=_productPath;
 @property(readonly, nonatomic) NSArray *sourceFiles; // @synthesize sourceFiles=_sourceFiles;
 @property(retain, nonatomic) NSString *buildableIdentifier; // @synthesize buildableIdentifier=_buildableIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSNumber *functionCoverage;
 - (id)functions;

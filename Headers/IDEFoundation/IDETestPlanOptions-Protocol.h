@@ -9,6 +9,7 @@
 @class _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 
 @protocol IDETestPlanOptions <IDELaunchTestSchemeActionOptions>
+@property(nonatomic, readonly) BOOL testTimeoutsEnabled;
 @property(nonatomic, readonly) long long userAttachmentLifetime;
 @property(nonatomic, readonly) BOOL areLocalizationScreenshotsEnabled;
 @property(nonatomic, readonly) long long uiTestingScreenshotsLifetime;

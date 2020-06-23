@@ -15,10 +15,10 @@
     NSArray *_validChildClasses;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *validChildClasses; // @synthesize validChildClasses=_validChildClasses;
 - (id)icon;
 - (id)title;
-- (void).cxx_destruct;
 - (BOOL)isValidChildClass:(Class)arg1;
 - (BOOL)isCategory;
 - (id)initWithTitle:(id)arg1 icon:(id)arg2 document:(id)arg3;

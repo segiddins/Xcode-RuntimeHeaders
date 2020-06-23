@@ -22,7 +22,6 @@
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
 - (id)toolTip;
 - (void)_updateLandmarkItemIfAppropriate;
-- (void)adjustParagraphIndexBy:(long long)arg1 lengthBy:(long long)arg2;
 - (void)resolveLocationIfNeededForLayoutManager:(id)arg1;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;

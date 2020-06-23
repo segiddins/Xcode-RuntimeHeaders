@@ -16,9 +16,9 @@
 
 + (id)buildTreeFromSampleInfo:(id)arg1 functionInfo:(id)arg2 shaderItem:(id)arg3 parentItem:(id)arg4;
 + (id)buildTreeFromSampleInfo:(id)arg1 functionInfo:(id)arg2 shaderItem:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUTraceShaderSampleFunctionInfo *functionInfo; // @synthesize functionInfo=_functionInfo;
 @property(nonatomic) float costPercentage; // @synthesize costPercentage=_costPercentage;
-- (void).cxx_destruct;
 - (id)dataProvider;
 - (id)APIItem;
 - (void)addSampleInfo:(id)arg1;

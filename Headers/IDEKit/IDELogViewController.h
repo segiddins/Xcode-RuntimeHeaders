@@ -32,6 +32,7 @@
     struct _NSRange _lastFindResultRange;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEActivityLogSection *lastFindResultSection; // @synthesize lastFindResultSection=_lastFindResultSection;
 @property struct _NSRange lastFindResultRange; // @synthesize lastFindResultRange=_lastFindResultRange;
 @property BOOL lastFindResult; // @synthesize lastFindResult=_lastFindResult;
@@ -48,7 +49,6 @@
 @property(retain) id <IDELogViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEEditor *editor; // @synthesize editor=_editor;
 @property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)selectSection:(id)arg1 withTranscriptTextRange:(struct _NSRange)arg2;
 - (void)selectMessageOrSection:(id)arg1;

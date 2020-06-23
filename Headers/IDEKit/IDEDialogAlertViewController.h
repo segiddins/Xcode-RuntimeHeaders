@@ -13,8 +13,8 @@
     NSTextField *alertKindLabel;
 }
 
-@property(retain) NSTextField *alertKindLabel; // @synthesize alertKindLabel;
 - (void).cxx_destruct;
+@property(retain) NSTextField *alertKindLabel; // @synthesize alertKindLabel;
 - (void)loadView;
 
 @end

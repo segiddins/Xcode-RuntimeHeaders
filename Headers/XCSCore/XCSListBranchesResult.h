@@ -13,8 +13,8 @@
     NSMutableDictionary *_branchesByRepository;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *branchesByRepository; // @synthesize branchesByRepository=_branchesByRepository;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *branchesByRepository; // @synthesize branchesByRepository=_branchesByRepository;
 - (void)addBranch:(id)arg1 forRepositoryID:(id)arg2;
 - (id)mutableBranchesForRepositoryID:(id)arg1;
 - (void)mergeWithResult:(id)arg1;

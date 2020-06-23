@@ -15,10 +15,10 @@
     BOOL _pointsBackwards;
 }
 
+- (void).cxx_destruct;
 @property BOOL pointsBackwards; // @synthesize pointsBackwards=_pointsBackwards;
 @property(readonly) DVTPlistModel *model; // @synthesize model=_model;
 @property(readonly) DVTPlistSelection *selection; // @synthesize selection=_selection;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKSceneNavigableCategory *objectsRoot; // @synthesize objectsRoot=_objectsRoot;
 @property(retain, nonatomic) SKSceneNavigableNode *sceneRoot; // @synthesize sceneRoot=_sceneRoot;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_internalChildren;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) NSArray *visibleChildren;
 @property(readonly, nonatomic) __weak NSObject<SKSceneNavigating> *parent;

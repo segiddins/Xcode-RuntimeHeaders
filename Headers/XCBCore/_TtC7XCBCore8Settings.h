@@ -38,6 +38,7 @@
     MISSING_TYPE *signingSettings;
     MISSING_TYPE *deploymentTarget;
     MISSING_TYPE *supportedBuildVersionPlatforms;
+    MISSING_TYPE *constructionComponents;
 }
 
 @end

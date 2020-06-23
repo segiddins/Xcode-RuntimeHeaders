@@ -20,6 +20,7 @@
 }
 
 + (id)schemeActionResultOperationWithSchemeActionRecord:(id)arg1 trackingExecutionOfOperation:(id)arg2 actionCallbackBlock:(CDUnknownBlockType)arg3 schemeActionResultComputationBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property BOOL isObservingIsExecuting; // @synthesize isObservingIsExecuting=_isObservingIsExecuting;
@@ -27,7 +28,6 @@
 @property(copy) CDUnknownBlockType actionCallbackBlock; // @synthesize actionCallbackBlock=_actionCallbackBlock;
 @property(retain) IDESchemeActionRecord *schemeActionRecord; // @synthesize schemeActionRecord=_schemeActionRecord;
 @property(retain) DVTOperation *trackingOperation; // @synthesize trackingOperation=_trackingOperation;
-- (void).cxx_destruct;
 - (void)_doCancellationCleanup;
 - (void)main;
 - (void)start;

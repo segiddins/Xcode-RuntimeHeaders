@@ -24,10 +24,10 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *selectedDocumentLocations; // @synthesize selectedDocumentLocations=_selectedDocumentLocations;
 @property(retain, nonatomic) GPUTraceCounterGraphEditor *counterGraphEditor; // @synthesize counterGraphEditor=_counterGraphEditor;
 @property(readonly, nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
-- (void).cxx_destruct;
 - (void)GPUDebugger_zoomOutCounterGraph:(id)arg1;
 - (void)GPUDebugger_zoomInCounterGraph:(id)arg1;
 - (void)GPUDebugger_hideEmptyCounters:(id)arg1;

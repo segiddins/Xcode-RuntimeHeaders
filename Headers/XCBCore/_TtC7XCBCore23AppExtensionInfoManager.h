@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *extensionPoints;
     MISSING_TYPE *extensionPointsByIdentifier;
+    MISSING_TYPE *macCatalystYear3Platform;
 }
 
 @end

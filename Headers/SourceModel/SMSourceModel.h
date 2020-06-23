@@ -23,13 +23,13 @@
 + (void)setEnableNativeParser:(BOOL)arg1;
 + (BOOL)enableNativeParser;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isDoingBatchEdit; // @synthesize isDoingBatchEdit=_isDoingBatchEdit;
 @property struct _NSRange dirtyRange; // @synthesize dirtyRange=_dirtyRange;
 @property(retain) SourceScanner *scanner; // @synthesize scanner=_scanner;
 @property(retain) SMSourceModelItem *sourceItems; // @synthesize sourceItems=_sourceItems;
 @property(retain) CharStream *inputStream; // @synthesize inputStream=_inputStream;
 @property id <SMSourceBufferProvider> sourceBufferProvider; // @synthesize sourceBufferProvider=_sourceBufferProvider;
-- (void).cxx_destruct;
 - (id)methodNameForItem:(id)arg1 nameRanges:(id *)arg2;
 - (BOOL)isItemInPreprocessorStatement:(id)arg1;
 - (BOOL)isItemDictionaryLiteral:(id)arg1;
@@ -75,6 +75,7 @@
 - (void)addItemsInTypeList:(long long *)arg1 fromItem:(id)arg2 toArray:(id)arg3;
 - (id)functionOrMethodDefinitionAtLocation:(unsigned long long)arg1;
 - (id)functionOrMethodAtLocation:(unsigned long long)arg1;
+- (BOOL)isDeclarationOrDefinitionAtLocation:(unsigned long long)arg1;
 - (id)interfaceDeclarationAtLocation:(unsigned long long)arg1;
 - (id)typeDeclarationAtLocation:(unsigned long long)arg1;
 - (id)classAtLocation:(unsigned long long)arg1;
@@ -99,6 +100,7 @@
 - (id)enclosingItemAtLocation:(unsigned long long)arg1;
 - (id)_topLevelSourceItem;
 - (void)parse;
+- (BOOL)usesNativeParser;
 - (void)doingBatchEdit:(BOOL)arg1;
 - (void)dirtyRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
 - (struct _NSRange)dirtyRightEdge:(id)arg1;

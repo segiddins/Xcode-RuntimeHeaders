@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanFinish;
+- (void).cxx_destruct;
 @property __weak NSTableView *upgradeTable; // @synthesize upgradeTable=_upgradeTable;
 @property __weak NSArrayController *upgradesController; // @synthesize upgradesController=_upgradesController;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;

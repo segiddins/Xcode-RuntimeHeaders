@@ -14,9 +14,9 @@
     NSDate *_dateCreated;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(copy, nonatomic) NSDictionary *assignments; // @synthesize assignments=_assignments;
-- (void).cxx_destruct;
 - (id)initWithAssignments:(id)arg1;
 - (id)initFromEncodedEntry:(id)arg1 withScene:(id)arg2;
 

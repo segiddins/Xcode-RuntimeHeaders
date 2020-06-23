@@ -17,10 +17,10 @@
 }
 
 + (id)statusItemProxyWithButtonCell:(id)arg1 parent:(id)arg2 frame:(struct CGRect)arg3 title:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly) NSCell *buttonCell; // @synthesize buttonCell=_buttonCell;
 @property(readonly) id parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)accessibilityActionNames;

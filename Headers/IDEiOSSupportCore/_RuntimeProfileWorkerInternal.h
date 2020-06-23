@@ -11,6 +11,7 @@
 }
 
 - (BOOL)downloadRuntimeProfilesFromDeviceDirectories:(id)arg1 toLocalDirectory:(id)arg2 error:(id *)arg3;
+- (BOOL)performFilesystemCommand:(id)arg1 outError:(id *)arg2;
 - (id)createRuntimeProfileDirectory:(id *)arg1;
 
 @end

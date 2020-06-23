@@ -13,8 +13,8 @@
     NSString *_path;
 }
 
-@property(readonly) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly) NSString *path; // @synthesize path=_path;
 - (long long)compareShortVersionString:(id)arg1 toShortVersionString:(id)arg2;
 - (long long)compare:(id)arg1;
 - (id)installToPath:(id)arg1 error:(id *)arg2;

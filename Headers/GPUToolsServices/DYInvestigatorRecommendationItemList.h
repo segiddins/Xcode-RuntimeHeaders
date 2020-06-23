@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *value; // @synthesize value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *value; // @synthesize value;
 - (void)addString:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

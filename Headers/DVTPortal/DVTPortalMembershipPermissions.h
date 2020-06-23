@@ -27,13 +27,14 @@
 - (BOOL)canViewContainersOfType:(id)arg1;
 - (BOOL)canModifyContainersOfType:(id)arg1;
 - (BOOL)canRevokeCertificatesOfType:(id)arg1;
-- (BOOL)canCreateCertificatesOfType:(id)arg1 requiredRole:(long long *)arg2;
+- (BOOL)canCreateCertificatesOfType:(id)arg1 requiredRole:(id *)arg2;
 - (BOOL)teamCanCreateCertificatesOfType:(id)arg1;
-- (BOOL)_canUseCertificatesOfType:(id)arg1 requiredRole:(long long *)arg2 ignoreRoles:(BOOL)arg3;
+- (BOOL)_canUseCertificatesOfType:(id)arg1 requiredRole:(id *)arg2 ignoreRoles:(BOOL)arg3;
 - (BOOL)_roleCanCreateProfilesOfType:(id)arg1;
 - (BOOL)canCreateProfilesOfType:(id)arg1;
 - (BOOL)canCreateWildcardAppIDsForProgram:(id)arg1;
 - (BOOL)canCreateOrModifyAppIDsForProgram:(id)arg1;
+- (BOOL)canCreateOrModifyAppIDs;
 - (BOOL)canRegisterDevicesOfPlatform:(id)arg1;
 - (id)initWithTeam:(id)arg1 role:(long long)arg2;
 - (unsigned long long)hash;

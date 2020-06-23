@@ -20,6 +20,7 @@
     NSString *_baseLprojPathInOldLoc;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *baseLprojPathInOldLoc; // @synthesize baseLprojPathInOldLoc=_baseLprojPathInOldLoc;
 @property(retain) NSString *baseLprojPathInOldBase; // @synthesize baseLprojPathInOldBase=_baseLprojPathInOldBase;
 @property(retain) NSString *baseLprojPathInNewLoc; // @synthesize baseLprojPathInNewLoc=_baseLprojPathInNewLoc;
@@ -28,7 +29,6 @@
 @property(retain) NSString *sourceLprojPathInOldBase; // @synthesize sourceLprojPathInOldBase=_sourceLprojPathInOldBase;
 @property(retain) NSString *targetLprojPathInNewLoc; // @synthesize targetLprojPathInNewLoc=_targetLprojPathInNewLoc;
 @property(retain) NSString *sourceLprojPathInNewBase; // @synthesize sourceLprojPathInNewBase=_sourceLprojPathInNewBase;
-- (void).cxx_destruct;
 - (id)description;
 - (void)copyNibAtPath:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (void)createUniversalNibStringsAtPath:(id)arg1 fromNibPath:(id)arg2 object:(id)arg3;

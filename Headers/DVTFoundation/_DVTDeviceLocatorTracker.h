@@ -15,8 +15,8 @@
     DVTObservingToken *_observation;
 }
 
-@property(readonly) DVTDeviceLocator *deviceLocator; // @synthesize deviceLocator=_deviceLocator;
 - (void).cxx_destruct;
+@property(readonly) DVTDeviceLocator *deviceLocator; // @synthesize deviceLocator=_deviceLocator;
 - (void)stopLocatingAndObserving;
 - (void)startLocating;
 - (void)startObserving;

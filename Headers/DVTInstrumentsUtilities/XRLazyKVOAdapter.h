@@ -22,12 +22,13 @@
     _XRLazyKVOBlockToken *_strongBlockAdapterToken;
 }
 
++ (id)observeKeyPathArray:(id)arg1 object:(id)arg2 observer:(id)arg3 lazyUpdateBlock:(CDUnknownBlockType)arg4;
 + (id)observeKeyPath:(id)arg1 object:(id)arg2 observer:(id)arg3 lazyUpdateBlock:(CDUnknownBlockType)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _XRLazyKVOBlockToken *strongBlockAdapterToken; // @synthesize strongBlockAdapterToken=_strongBlockAdapterToken;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSArray *runLoopModes; // @synthesize runLoopModes=_runLoopModes;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_callbackHandler;
 - (BOOL)hasContextChanged:(const void *)arg1;

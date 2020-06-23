@@ -16,9 +16,9 @@
 }
 
 + (id)scannedSceneFiles;
+- (void).cxx_destruct;
 @property(retain) NSArrayController *availableNodeFilenames; // @synthesize availableNodeFilenames=_availableNodeFilenames;
 @property(retain) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
-- (void).cxx_destruct;
 - (void)userDidChangeValue:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

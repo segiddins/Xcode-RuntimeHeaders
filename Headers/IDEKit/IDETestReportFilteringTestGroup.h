@@ -19,13 +19,15 @@
     NSArray *_ide_sharedTests_testGroup_allTests;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *ide_sharedTests_testGroup_allTests; // @synthesize ide_sharedTests_testGroup_allTests=_ide_sharedTests_testGroup_allTests;
 @property(readonly, copy) NSSet *activeRuns; // @synthesize activeRuns=_activeRuns;
 @property(readonly, copy) NSSet *activeDevices; // @synthesize activeDevices=_activeDevices;
 @property(readonly) id <IDETestReport_TestGroup> group; // @synthesize group=_group;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double ide_testReport_testGroup_duration;
 - (BOOL)respondsToSelector:(SEL)arg1;
+- (id)ide_sharedTests_mixedTests;
+- (id)ide_sharedTests_skippedTests;
 - (id)ide_sharedTests_failingTests;
 - (id)ide_sharedTests_passingTests;
 - (id)ide_sharedTests_testGroup_perfTests;

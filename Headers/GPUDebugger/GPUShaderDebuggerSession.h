@@ -21,13 +21,13 @@
     id <DYPShaderDebuggerThread> _selectedThread;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <DYPShaderDebuggerThread> selectedThread; // @synthesize selectedThread=_selectedThread;
 @property(retain) GPUTraceShaderDebuggerExecutionHistoryItem *executionHistoryRootItem; // @synthesize executionHistoryRootItem=_executionHistoryRootItem;
 @property(readonly, nonatomic) id <GPUShaderDebuggerSessionParameters> parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) id <DYPShaderDebuggerROI> regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
 @property(readonly, nonatomic) id <DYPShaderDebuggerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) GPUTraceShaderItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)variableSnapshotsInScopeOfExecutionHistoryNode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)resourceForObjectID:(unsigned long long)arg1 type:(unsigned int)arg2 resourceItem:(out id *)arg3;
 - (id)variableSnapshotAtExecutionHistoryNode:(id)arg1 source:(id)arg2 offset:(unsigned long long)arg3 column:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;

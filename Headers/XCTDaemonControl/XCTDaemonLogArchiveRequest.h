@@ -17,9 +17,9 @@
 }
 
 + (id)minimumProtocolVersion;
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, copy) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)handleConnectionFailure:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
 - (id)initWithStartDate:(id)arg1 completion:(CDUnknownBlockType)arg2;

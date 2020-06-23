@@ -19,8 +19,8 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-@property(readonly) IDEConsoleTextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(readonly) IDEConsoleTextView *textView; // @synthesize textView=_textView;
 - (void)setupTextViewContextMenuWithMenu:(id)arg1;
 - (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
 - (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;

@@ -35,6 +35,7 @@
 }
 
 + (id)keyPathsForValuesAffectingHostedAccount;
+- (void).cxx_destruct;
 @property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) NSBox *separator; // @synthesize separator=_separator;
 @property __weak NSImageView *accountImageView; // @synthesize accountImageView=_accountImageView;
@@ -51,7 +52,6 @@
 @property __weak NSView *badCredentialsView; // @synthesize badCredentialsView=_badCredentialsView;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_reloadSSHKeyViewWarning;
 - (void)cloneUsingHTTPS:(id)arg1;
 - (void)cloneUsingSSH:(id)arg1;

@@ -20,9 +20,9 @@
 + (id)queryIncludingChildrenWithIdentifier:(id)arg1;
 + (id)queryExcludingChildren;
 + (id)queryIncludingChildren;
+- (void).cxx_destruct;
 @property(readonly) NSSet *affectedIdentifiers; // @synthesize affectedIdentifiers=_affectedIdentifiers;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly) NSString *assetQueryIdentifier;
 - (id)initWithType:(unsigned long long)arg1 affectedIdentifiers:(id)arg2;
 

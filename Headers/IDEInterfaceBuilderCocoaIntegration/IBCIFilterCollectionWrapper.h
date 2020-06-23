@@ -19,11 +19,11 @@
 + (id)keyPathsForValuesAffectingSelectedFilterName;
 + (id)keyPathsForValuesAffectingWrappedSelectedFilter;
 + (id)keyPathsForValuesAffectingSelectedFilter;
+- (void).cxx_destruct;
 @property(readonly) id owner; // @synthesize owner=_owner;
 @property(readonly) NSArray *filters; // @synthesize filters=_filters;
 @property(readonly) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain) NSIndexSet *filterSelectionIndexes; // @synthesize filterSelectionIndexes=_filterSelectionIndexes;
-- (void).cxx_destruct;
 @property(retain) NSString *selectedFilterName;
 @property(retain) CIFilter *selectedFilter;
 - (id)wrappedSelectedFilter;

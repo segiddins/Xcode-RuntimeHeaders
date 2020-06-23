@@ -19,13 +19,13 @@
 }
 
 + (id)optionDefinitionWithName:(id)arg1 usageName:(id)arg2 usageDescription:(id)arg3 argumentType:(long long)arg4 argumentKey:(id)arg5 handlerBlock:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType handlerBlock; // @synthesize handlerBlock=_handlerBlock;
 @property(copy) NSString *argumentKey; // @synthesize argumentKey=_argumentKey;
 @property long long argumentType; // @synthesize argumentType=_argumentType;
 @property(copy) NSString *usageDescription; // @synthesize usageDescription=_usageDescription;
 @property(copy) NSString *usageName; // @synthesize usageName=_usageName;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)handleArgument:(id)arg1 remainingArguments:(id)arg2 options:(id)arg3 status:(char *)arg4 error:(id *)arg5;
 - (BOOL)matchesArgument:(id)arg1;
 - (id)description;

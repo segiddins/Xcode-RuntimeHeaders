@@ -17,9 +17,9 @@
 }
 
 + (id)title;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor *devicePickerEditor; // @synthesize devicePickerEditor=_devicePickerEditor;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
-- (void).cxx_destruct;
 - (void)commitChanges;
 - (void)primitiveInvalidate;
 - (void)loadView;

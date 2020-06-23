@@ -14,8 +14,8 @@
     NSString *_path;
 }
 
-@property(retain) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(retain) NSString *path; // @synthesize path=_path;
 @property BOOL preferCompressedTextures;
 @property BOOL forceYUp;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;

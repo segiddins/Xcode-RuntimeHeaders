@@ -34,6 +34,7 @@
     NSString *_constructedValueString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *constructedValueString; // @synthesize constructedValueString=_constructedValueString;
 @property(copy, nonatomic) NSString *constructedKeyString; // @synthesize constructedKeyString=_constructedKeyString;
 @property(copy, nonatomic) NSString *editingString; // @synthesize editingString=_editingString;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *valuePrefixString; // @synthesize valuePrefixString=_valuePrefixString;
 @property(copy, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
 @property(copy, nonatomic) NSString *keyString; // @synthesize keyString=_keyString;
-- (void).cxx_destruct;
 - (BOOL)_shouldDrawExclusionForKeySide;
 - (id)_constructedKeyString;
 - (id)_constructedValueString;

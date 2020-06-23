@@ -14,9 +14,9 @@
     BOOL _isSelected;
 }
 
+- (void).cxx_destruct;
 @property BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(readonly) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
-- (void).cxx_destruct;
 - (id)initWithEditorDocument:(id)arg1;
 
 @end

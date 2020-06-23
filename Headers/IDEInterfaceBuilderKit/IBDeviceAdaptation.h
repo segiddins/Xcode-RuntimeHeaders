@@ -26,6 +26,7 @@
 }
 
 + (id)adaptationWithSubtype:(id)arg1 orientation:(id)arg2 layout:(id)arg3 layoutParameter:(id)arg4 appearance:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSValue *displayOrderSize; // @synthesize displayOrderSize=_displayOrderSize;
 @property(readonly, nonatomic) double drawingSkewAdjustment; // @synthesize drawingSkewAdjustment=_drawingSkewAdjustment;
 @property(readonly, nonatomic) NSString *legacySimulatedMetricsIdentifier; // @synthesize legacySimulatedMetricsIdentifier=_legacySimulatedMetricsIdentifier;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) IBDeviceAppearance *appearance; // @synthesize appearance=_appearance;
 @property(readonly, nonatomic) IBDeviceLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) IBDeviceOrientation *orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL wantsHomeIndicator;
 @property(readonly, nonatomic) BOOL wantsDeviceMask;
 @property(readonly, nonatomic) IBDeviceSubtype *subtype;

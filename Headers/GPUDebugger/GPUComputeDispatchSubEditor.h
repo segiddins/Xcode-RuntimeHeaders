@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingThreadPositionInGridZ;
 + (id)keyPathsForValuesAffectingThreadPositionInGridY;
 + (id)keyPathsForValuesAffectingThreadPositionInGridX;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *threadgroupsPerGridDepthTextView; // @synthesize threadgroupsPerGridDepthTextView=_threadgroupsPerGridDepthTextView;
 @property(nonatomic) __weak NSTextField *threadgroupsPerGridHeightTextView; // @synthesize threadgroupsPerGridHeightTextView=_threadgroupsPerGridHeightTextView;
 @property(nonatomic) __weak NSTextField *threadgroupsPerGridWidthTextView; // @synthesize threadgroupsPerGridWidthTextView=_threadgroupsPerGridWidthTextView;
@@ -117,7 +118,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int threadPositionInGridX; // @synthesize threadPositionInGridX=_threadPositionInGridX;
 - (void)setForceSelection:(BOOL)arg1;
 - (BOOL)forceSelection;
-- (void).cxx_destruct;
 - (id)shaderItem;
 - (unsigned int)supportedShaderType;
 - (void)debugSelectedKernelThread:(id)arg1;

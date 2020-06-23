@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <DYRenderBuffer> _buffer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDepth; // @synthesize isDepth=_isDepth;
 @property(readonly, nonatomic) unsigned int genericFormat; // @synthesize genericFormat=_genericFormat;
 @property(readonly, nonatomic) id <DYRenderBuffer> buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)uncompressedData;
 - (id)dataForMipmapLevel:(int)arg1 layer:(int)arg2;
 - (unsigned int)pixelFormat;

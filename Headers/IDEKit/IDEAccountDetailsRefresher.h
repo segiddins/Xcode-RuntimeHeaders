@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTDeveloperAccount *developerAccount; // @synthesize developerAccount=_developerAccount;
 @property(readonly, nonatomic) id <IDEAccountDetailsRefresherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)_logAspect;
 - (void)start;

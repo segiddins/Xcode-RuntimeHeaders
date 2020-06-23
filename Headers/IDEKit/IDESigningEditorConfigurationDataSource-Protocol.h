@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class SigningEditorConfiguration;
+@class _TtC13IDEFoundation26SigningEditorConfiguration;
 @protocol IDESigningEditorConfigurationDataSourceDelegate;
 
 @protocol IDESigningEditorConfigurationDataSource
-@property __weak id <IDESigningEditorConfigurationDataSourceDelegate> configurationDataSourceDelegate;
-@property(readonly) SigningEditorConfiguration *configuration;
+@property(nonatomic) __weak id <IDESigningEditorConfigurationDataSourceDelegate> configurationDataSourceDelegate;
+@property(nonatomic, readonly) _TtC13IDEFoundation26SigningEditorConfiguration *configuration;
 @end
 

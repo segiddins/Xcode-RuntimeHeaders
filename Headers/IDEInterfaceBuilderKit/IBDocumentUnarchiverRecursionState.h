@@ -16,10 +16,10 @@
     long long _kind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) NSXMLElement *element; // @synthesize element=_element;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *childElements;
 - (id)initWithElement:(id)arg1 object:(id)arg2 kind:(long long)arg3;
 

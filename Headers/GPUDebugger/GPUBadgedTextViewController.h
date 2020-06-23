@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSImageView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSImageView *badgeView; // @synthesize badgeView=_badgeView;
 @property(nonatomic) __weak NSTextField *textfield; // @synthesize textfield=_textfield;
 @property(nonatomic) __weak GPUBadgedText *badgedText; // @synthesize badgedText=_badgedText;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 badgedText:(id)arg3;

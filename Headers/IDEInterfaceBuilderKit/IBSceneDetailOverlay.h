@@ -15,9 +15,9 @@
     IBDeviceConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBDeviceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSObject<IBSceneDetailDelegate> *detail; // @synthesize detail=_detail;
-- (void).cxx_destruct;
 - (BOOL)scalesWithCanvasFrameChrome;
 - (BOOL)canScaleIndependentlyFromCanvasContent;
 - (void)drawRect:(struct CGRect)arg1;

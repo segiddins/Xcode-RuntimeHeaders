@@ -13,6 +13,7 @@
     MISSING_TYPE *rxStorage;
     MISSING_TYPE *node;
     MISSING_TYPE *commandController;
+    MISSING_TYPE *scope;
     MISSING_TYPE *baseMaterial;
 }
 

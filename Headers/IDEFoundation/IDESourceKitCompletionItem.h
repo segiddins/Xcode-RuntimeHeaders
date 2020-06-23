@@ -20,10 +20,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(nonatomic) double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property(readonly, nonatomic) double priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL notRecommended;
 @property(readonly) DVTSourceCodeSymbolKind *symbolKind;

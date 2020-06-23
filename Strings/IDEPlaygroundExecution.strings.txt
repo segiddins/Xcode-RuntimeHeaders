@@ -1,3 +1,4 @@
+@(#)PROGRAM:IDEPlaygroundExecution  PROJECT:IDEPlaygrounds-1
 com.apple.platform.iphonesimulator
 com.apple.platform.%@%@simulator
 applet
@@ -7,7 +8,7 @@ PlaygroundStub_sim
 Xcode/Agents/%@
 com.apple.dt.playground.stub.iOS_Simulator.%@
 -[IDESimulatorPlaygroundAppBundleCreator createFileWrapperForPlaygroundAppReturningRelativeExecutablePath:bundleIdentifier:error:]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/AppBundleCreator/Simulator/IDESimulatorPlaygroundAppBundleCreator.m
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/AppBundleCreator/Simulator/IDESimulatorPlaygroundAppBundleCreator.m
 legalAppIdentifier.length > bundleIdentifierOverflow
 appletvos
 CFBundleInfoDictionaryVersion
@@ -55,8 +56,6 @@ CODESIGN_ALLOCATE
 (executableSubpath)
 ((bundleIdentifier)) != nil
 (bundleIdentifier)
-((resourcesDirectoryPath)) != nil
-(resourcesDirectoryPath)
 hash
 TQ,R
 superclass
@@ -75,38 +74,61 @@ T@"DVTFilePath",&,V_containerPath
 T@"DVTFilePath",R,V_appBundlePath
 T@"NSString",R,C,V_executableSubpath
 T@"NSString",R,C,V_bundleIdentifier
-PlaygroundViewBridgeService
+com.apple.platform.macosx
+PlaygroundStub_OSX
+bin/%@
+Contents/XPCServices/
+com.apple.dt.Xcode.PlaygroundStub-macosx.xpc
 com.apple.dt.Xcode.PlaygroundStub-macosx
-@16@?0@"DVTFilePath"8
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/DeviceService/LocalComputer/IDELocalComputerPlaygroundExecutionDeviceService.mm
-<Unknown File>
-Invalid parameter not satisfying: %@
-[readyController isKindOfClass:[IDEPlaygroundLocalComputerRemoteViewController class]]
-Socket path not available.
-stdout/stderr not available.
-v20@?0i8@"NSError"12
-v12@?0c8
-v24@?0@"NSRemoteViewController"8@"NSError"16
-viewContentReceivers
-T@"NSHashTable",R
+Contents/MacOS/
+com.apple.dt.playground.stub.OSX.%@-%@
+com.apple.dt.playground.stub.OSX.%@
+MacOS
+Resources
+Contents
+Contents/MacOS/%@
+v16@?0@"DVTFilePath"8
+Playground execution could not happen because we could not determine a temporary directory for playground execution.
+-[IDEMacPlaygroundAppBundleCreator signPlaygroundAppAtPath:error:]
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/AppBundleCreator/Mac/IDEMacPlaygroundAppBundleCreator.m
+((readOnlyAbsolutePaths)) != nil
+(readOnlyAbsolutePaths)
+com.apple.security.app-sandbox
+com.apple.security.network.client
+com.apple.security.network.server
+com.apple.security.personal-information.location
+com.apple.security.temporary-exception.files.absolute-path.read-only
+com.apple.security.temporary-exception.files.absolute-path.read-write
+com.apple.security.temporary-exception.sbpl
+(allow network-outbound (regex (string-append "^" (regex-quote "%s") "/*")))
+Unable to find the temp directory.
+/entitlements-XXXXXXX.plist
+Unable to create the entitlements file.
+--entitlements
+-[IDEMacPlaygroundAppBundle initWithAppBundlePath:executableSubpath:bundleIdentifier:resourcesDirectoryPaths:]
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_
 IDEPlaygroundExecution
 IDEPlaygroundExecutionPerformance
 [PlaygroundSession <%p>] %@
+IDEPlaygroundExecutionSession
 IDEPlaygroundExecutionSession life cycle lock
 com.apple.dt.playgrounds.executionPerformanceMetricQueue
 com.apple.dt.playgrounds.dataHandlerQueue
 DVTPerEventObjectsDictionary
 -[IDEPlaygroundExecutionSession prepareWithPreparationParameters:]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/IDEPlaygroundExecutionSession.mm
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/IDEPlaygroundExecutionSession.mm
 ((preparationParameters)) != nil
 (preparationParameters)
+Preparing with: %@
 Session was asked to be made highest priority.
 Ignoring request to make session highest priority since the session is finishing.
 -[IDEPlaygroundExecutionSession executeWithExecutionParameters:]_block_invoke
 Session was asked to execute but already had parameters to execute with.
 __objc_no
 Called DVTWarn
+Execute with state: %@, parameters: autoTerminationDelay: %@, needsProcessInitialization: %d, documentContentTimestamp: %@, documentFileURL: %@
 self.state == IDEPlaygroundExecutionState_ReadyForPlayground || self.state == IDEPlaygroundExecutionState_ReadyForOtherSource
+Cancel
 Session was asked to terminate. Broadcasting termination request.
 Session was asked to terminate
 Session was asked to terminate. Moving immediately to finished state.
@@ -123,7 +145,7 @@ ConcurrentQueue: %@
 -[IDEPlaygroundExecutionSession _interruptExecutingPlaygroundSource]_block_invoke_2
 Trying to interrupt executing playground source again.
 Session finished
-Process is moving from state %lu to state %lu (Finished)
+Process is moving from state '%@' to state '%@'.
 Executing playground
 canFinishExecution
 v32@?0@8@"NSDictionary"16^c24
@@ -138,11 +160,9 @@ Unable to create connection to debugger.
 Unable to create debugger.
 settings set target.use-all-compiler-flags 1
 Set up debugger
-IDEPlaygroundExecutionLLDBLogCategories
-v32@?0@"NSString"8Q16^c24
-lldb
 xcode.IDEPlaygroundExecutionSession
 Established internal broadcaster
+-[IDEPlaygroundExecutionSession main]_block_invoke_3
 ((executableFilePath)) != nil
 (executableFilePath)
 Selected executable with path: %@
@@ -151,6 +171,12 @@ settings append target.swift-framework-search-paths '%@'
 Unable to create target for stub executable. %s
 settings set target.sdk-path '%@'
 Set up target
+Failed to launch playground device as none was provided.
+-[IDEPlaygroundExecutionSession main]_block_invoke_2
+(deviceService) == nil || [(id)(deviceService) isKindOfClass:[IDEPlaygroundExecutionDeviceService class]]
+deviceService
+Unable to find execution service for selected run destination.
+readyToExecutePlayground
 executePlayground
 playgroundExecutionWillFinish
 Failed to prepare for communication with playground for an unknown reason.
@@ -161,10 +187,6 @@ Execution session cancelled. Returning before launching process.
 Waiting on ownership of device before launching process, current owner = %@.
 Execution session cancelled. Returning after requesting device.
 [deviceCoordinator currentOwnerOfDeviceWithIdentifier:targetDeviceIdentifier] == self
-Failed to launch playground device as none was provided.
-(deviceService) == nil || [(id)(deviceService) isKindOfClass:[IDEPlaygroundExecutionDeviceService class]]
-deviceService
-Unable to find execution service for selected run destination.
 c8@?0
 v16@?0Q8
 v24@?0@"IDEPlaygroundLaunchDescriptor"8@"NSError"16
@@ -180,6 +202,12 @@ Launched process with pid %llu
 Set up launch info
 Launched process
 Failed to create session thread.
+IDEPlaygroundExecutionLLDBLogCategories
+v32@?0@"NSString"8Q16^c24
+(IDEPlaygroundExecutionLLDBLogCategories) Enabling debugger log: lldb %s
+lldb
+IDEPlaygroundExecutionLLDBLogChannelsCategories
+(IDEPlaygroundExecutionLLDBLogChannelsCategories) Enabling debugger log: %s %s
 -[IDEPlaygroundExecutionSession _setupPlaygroundListener:]
 ((_playgroundListener)) == nil
 %@ should be nil, but it is %@
@@ -195,7 +223,6 @@ finishedReceivingData
 Finished Receiving data
 Closing console adaptor.
 Making console adaptor expired
-Process is moving from state %lu to state %lu
 -[IDEPlaygroundExecutionSession listenForEvents]
 pthread_self() == _sessionThreadID
 Current thread is not the session thread!
@@ -203,8 +230,10 @@ self.internalState == IDEPlaygroundExecutionInternalState::Executing
 -listenForEvents should only be called when the session internalState is Executing, as the session thread should be the sole driver of internalState changes when Executing.
 Began listening for events
 _debuggerPendingStop == IDEPlaygroundExecutionSessionPendingStopAttached
+((self.deviceService)) != nil
+(self.deviceService)
 Process attach in a stopped state; continuing automatically.
-Initial process state is %d
+Initial lldb process state is %@ (%d)
 Handled process event, and debug session should finish with initial state %u
 Handled process event, will wait for next event
 Handled internal event, will wait for next event
@@ -217,13 +246,15 @@ Playground request termination; signal to the session thread that execution shou
 Error communicating with playground process.
 -[IDEPlaygroundExecutionSession _handleProcessEvent:]
 Received event from process with mask %d
-Received state changed event from process with state %i
+Received state changed event from process with state: %@ (%d)
 Process is unhandled state %d
 Received interrupt event from process
 Received stdout event from process
 Received stderr event from process
 Received profile data event from process
+-[IDEPlaygroundExecutionSession _handleProcessStoppedEvent]
 Process is stopped after attaching; continuing automatically.
+Process is stopped at readyToExecutePlayground.
 Process is stopped at executePlayground.
 Process is stopped at playgroundExecutionWillFinish; continuing automatically.
 Process is stopped at StopBeforeREPLEvaluationOtherSources
@@ -253,10 +284,10 @@ Not ready to execute; waiting.
 Received playground expr failed event
 Received playground expr failed (recoverably) event
 -[IDEPlaygroundExecutionSession _handleInternalSessionPlaygroundExprDidRecoverablyFailEvent]_block_invoke
-Playground tried to recover from failure - but got unexpected state %lu
+Playground tried to recover from failure - but got unexpected state '%@'
 Received playground expr finished event
 -[IDEPlaygroundExecutionSession _handlePlaygroundExprDidFinishEvent]_block_invoke
-Playground finished execution in unexpected state %lu
+Playground finished execution in unexpected state '%@'
 Failed to attach to stub for playground execution. LLDB connection not established.
 Failed to attach to stub for playground execution: %s.
 thread backtrace
@@ -272,6 +303,7 @@ addedRPCServerExitedCallback
 Succesfully added RPC server exited callback
 Succesfully removed RPC server exited callback
 Failed to remove RPC server exited callback. May already be removed
+Lost connection to lldb-rpc-server, exit_status=%d, exit_signal=%d
 The LLDB RPC server has crashed.
 The crash log is located in ~/Library/Logs/DiagnosticReports and has a prefix 'lldb-rpc-server'.
 Please file a bug and attach the most recent crash log.
@@ -284,6 +316,7 @@ bool IDEPlaygroundExecutionSessionExpressionCancellationCallback(lldb_rpc::Expre
 self.state == IDEPlaygroundExecutionState_PreparingToRunPlayground || self.state == IDEPlaygroundExecutionState_Cancelling || self.state == IDEPlaygroundExecutionState_PreparingToRunOtherSource
 self.executionParameters != nullptr
 self.state == IDEPlaygroundExecutionState_PreparingToRunPlayground ||self.state == IDEPlaygroundExecutionState_PreparingToRunOtherSource
+v12@?0c8
 Parse phase ready. WillCancel: %@
 IRGen phase ready. WillCancel: %@
 Execution phase ready. WillCancel: %@
@@ -295,22 +328,29 @@ Succeeded in creating the '%s' breakpoint, continuing launch.
 -[IDEPlaygroundExecutionSession executePlaygroundBreakpointHitOnThread:location:]
 _debuggerPendingStop == IDEPlaygroundExecutionSessionPendingStopBreakpointExecutePlayground
 Invalid state upon executePlayground breakpoint.
-State: (%u)
+State: %@ (%d)
 Process valid: (%s)
 Backtrace:
-Encountered invalid state (%lu) upon execution.
+Encountered invalid state %@ (%d) upon execution.
 Stopped at executePlayground breakpoint
 Stopped at executePlayground breakpoint (%d)
 -[IDEPlaygroundExecutionSession playgroundExecutionWillFinishBreakpointHitOnThread:location:]
 _debuggerPendingStop == IDEPlaygroundExecutionSessionPendingStopBreakpointExecutionWillFinish
 Current value of _debuggerPendingStop: %@
--[IDEPlaygroundExecutionSession _executePlaygroundSource]
+-[IDEPlaygroundExecutionSession _executePlaygroundSetupExpressionIfNecessaryAndContinueRunning]
 executionBreakpointThread.IsValid()
 Thread must be valid for execution
+About to run expr to prepare playground execution.
+(void)PreparePlaygroundExecution();
+LLDB provided no error string.
+Received invalid expression result (%@) from running PreparePlaygroundExecution().
+-[IDEPlaygroundExecutionSession _executePlaygroundSource]
 About to run expr to execute playground source
 IDEEnablePlaygroundTransform
 IDEEnablePlaygroundTrapCPPExceptions
 Set up expression options
+Loaded playground logger library (%@).
+Loaded auxiliary source module (%@).
 IDEPlaygroundPreExpressionCommandFile
 Running pre-expression command file %@
 command source '%@'
@@ -325,7 +365,7 @@ Executed expression
 -[IDEPlaygroundExecutionSession _handleExpressionResult:]
 !_executingPlaygroundSource
 Expression returned after cancelling.
-Expression result invalid: LLDB may have terminated unexpectedly.
+Expression result invalid: LLDB may have terminated unexpectedly. SBError: %s
 Expression result is a thrown swift error
 Playground execution terminated: An error was thrown and was not caught.  See console for details.
 Playground execution terminated: An error was thrown and was not caught:
@@ -359,13 +399,14 @@ Notifying delegate execution will finish.
 Asking LLDB to detach from process.
 -[IDEPlaygroundExecutionSession _detachProcess]
 Playground process detach errored out for session %@: %@
-Asking LLDB to terminate process.
+Terminating process (pid %llu) in state %@ (%d)
 -[IDEPlaygroundExecutionSession _terminateProcess]
 Playground process kill errored out for session %@: %@
-Sending SIGTERM to process.
+Sending SIGTERM to process (pid %d).
 Became the owner of device %@.
 state
 TQ,N,V_state
+T@"IDEPlaygroundExecutionDeviceService",R,V_deviceService
 Ti,V_internalState
 preparationParameters
 T@"IDEPlaygroundPreparationParameters",R,V_preparationParameters
@@ -379,72 +420,66 @@ Tc,V_consoleAdaptorIsOpen
 playgroundListener
 T@"DVTPlaygroundCommunicationListener",&,V_playgroundListener
 Tc,V_playgroundListenerConnectionIsOpen
+diagnosticsLog
+T@"NSObject<OS_os_log>",&,V_diagnosticsLog
+didExecutePlaygroundSetupExpression
+Tc,V_didExecutePlaygroundSetupExpression
 launchDescriptor
 T@"IDEPlaygroundLaunchDescriptor",R,N,V_launchDescriptor
 delegate
 T@"<IDEPlaygroundExecutionSessionDelegate>",W,N,V_delegate
+Not Started
+Preparing
+Launching Device
+Launching Process
+Launched
+Ready For Playground
+Preparing To Run Playground
+Running Playground
+Cancelling
+Finishing
+Finished
+Ready For Other Source
+Preparing To Run Other Source
+Running Other Source
 lldb> %s
 void *IDEPlaygroundExecutionSessionThread(void *)
 IDEPlaygroundExecutionSessionThread(pid=%llu)
 Playground execution is now on the session thread
+eStateInvalid
+eStateUnloaded
+eStateConnected
+eStateAttaching
+eStateLaunching
+eStateStopped
+eStateRunning
+eStateStepping
+eStateCrashed
+eStateDetached
+eStateExited
+eStateSuspended
+(unknown)
 allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
-com.apple.platform.macosx
-PlaygroundStub_OSX
-bin/%@
-Contents/XPCServices/
-com.apple.dt.Xcode.PlaygroundStub-macosx.xpc
-Contents/MacOS/
-com.apple.dt.playground.stub.OSX.%@-%@
-com.apple.dt.playground.stub.OSX.%@
-MacOS
-Resources
-Contents
-Contents/MacOS/%@
-v16@?0@"DVTFilePath"8
-Playground execution could not happen because we could not determine a temporary directory for playground execution.
--[IDEMacPlaygroundAppBundleCreator signPlaygroundAppAtPath:error:]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/AppBundleCreator/Mac/IDEMacPlaygroundAppBundleCreator.m
-((readOnlyAbsolutePaths)) != nil
-(readOnlyAbsolutePaths)
-com.apple.security.app-sandbox
-com.apple.security.network.client
-com.apple.security.network.server
-com.apple.security.personal-information.location
-com.apple.security.temporary-exception.files.absolute-path.read-only
-com.apple.security.temporary-exception.files.absolute-path.read-write
-com.apple.security.temporary-exception.sbpl
-(allow network-outbound (regex (string-append "^" (regex-quote "%s") "/*")))
-Unable to find the temp directory.
-/entitlements-XXXXXXX.plist
-Unable to create the entitlements file.
---entitlements
--[IDEMacPlaygroundAppBundle initWithAppBundlePath:executableSubpath:bundleIdentifier:resourcesDirectoryPaths:]
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_
-com.apple.dt.playgrounds.deviceCoordinatorQueue
-Ownership of device %@ requested by %@
--[IDEPlaygroundDeviceCoordinator requestOwnership:ofDeviceWithIdentifier:]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/DeviceManagement/IDEPlaygroundDeviceCoordinator.m
-((owner)) != nil
-(owner)
-((deviceIdentifier)) != nil
-(deviceIdentifier)
-Ownership of device %@ not contested. Transferring to %@
-Ownership of device %@ contested. Waiting on %@ to relinquish.
--[IDEPlaygroundDeviceCoordinator relinquishOwnership:ofDeviceWithIdentifier:]
-Ownership of device %@ relinquished by %@
-Ownership of device %@ no longer wanted by %@
-IDEPlaygroundDeviceCoordinator
+PlaygroundViewBridgeService
+@16@?0@"DVTFilePath"8
+Socket path not available.
+stdout/stderr not available.
+v20@?0i8@"NSError"12
+v24@?0@"NSRemoteViewController"8@"NSError"16
+viewContentReceivers
+T@"NSHashTable",R
+defaultLog
+T@"NSObject<OS_os_log>",R
+subsystem
+Tr*,R
+com.apple.dt.IDEPlaygroundExecution
 Xcode.Playground.AppBundleCreator
 id<IDEPlaygroundAppBundleCreator>  _Nullable IDEPlaygroundAppBundleCreatorForSDK(DVTSDK *__strong _Nonnull, NSString *__strong _Nonnull, NSUUID *__strong _Nullable, NSString *__strong _Nullable, DVTFilePath *__strong _Nullable, NSArray<DVTFilePath *> *__strong _Nullable, NSArray<DVTFilePath *> *__strong _Nullable, NSArray<IDEPlaygroundAuxiliarySourceFrameworkLocation *> *__strong _Nullable)
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/AppBundleCreator/IDEPlaygroundAppBundleCreator.m
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/AppBundleCreator/IDEPlaygroundAppBundleCreator.m
 ((sdk)) != nil
 (sdk)
 ((playgroundName)) != nil
 (playgroundName)
-((symlinkedResourcesPath)) != nil
-(symlinkedResourcesPath)
-((resourceSearchPaths)) != nil
-(resourceSearchPaths)
 ((platform)) != nil
 (platform)
 ((extensionPoint)) != nil
@@ -453,7 +488,7 @@ supportedPlatform == %@
 Multiple playground app bundle creator extensions found, using the first one: %@
 appBundleCreatorClass
 +[IDEAbstractPlaygroundAppBundleCreator supportedPlatforms]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/AppBundleCreator/IDEAbstractPlaygroundAppBundleCreator.m
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/AppBundleCreator/IDEAbstractPlaygroundAppBundleCreator.m
 method %@ is a responsibility of subclasses of %@
 -[IDEAbstractPlaygroundAppBundleCreator createFileWrapperForPlaygroundAppReturningRelativeExecutablePath:bundleIdentifier:error:]
 -[IDEAbstractPlaygroundAppBundleCreator playgroundAppBundleForAppAtPath:withExecutableSubpath:bundleIdentifier:]
@@ -480,7 +515,7 @@ T@"NSArray",R,C,V_frameworkSearchPaths
 T@"NSArray",R,C,V_auxiliarySourceFrameworkLocations
 T@"DVTSDK",R,V_sdk
 -[IDERPathUpdatingFileWrapper initWithURL:options:error:]
-/Library/Caches/com.apple.xbs/Sources/IDEPlugins/IDEPlugins-15508/IDEPlayground/IDEPlaygroundExecution/AppBundleCreator/IDERPathUpdatingFileWrapper.m
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/AppBundleCreator/IDERPathUpdatingFileWrapper.m
 IDERPathUpdatingFileWrapper only supports regular files.
 -[IDERPathUpdatingFileWrapper initDirectoryWithFileWrappers:]
 -[IDERPathUpdatingFileWrapper initSymbolicLinkWithDestinationURL:]
@@ -498,6 +533,20 @@ Standard output: %@
 Standard error: %@
 originalExecutableURL
 T@"NSURL",C,V_originalExecutableURL
+IDEPlaygroundDeviceCoordinator
+com.apple.dt.playgrounds.deviceCoordinatorQueue
+Ownership of device %@ requested by %@
+-[IDEPlaygroundDeviceCoordinator requestOwnership:ofDeviceWithIdentifier:]
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/IDEPlaygrounds/IDEPlaygrounds-16024/IDEPlaygroundExecution/DeviceManagement/IDEPlaygroundDeviceCoordinator.m
+((owner)) != nil
+(owner)
+((deviceIdentifier)) != nil
+(deviceIdentifier)
+Ownership of device %@ not contested. Transferring to %@
+Ownership of device %@ contested. Waiting on %@ to relinquish.
+-[IDEPlaygroundDeviceCoordinator relinquishOwnership:ofDeviceWithIdentifier:]
+Ownership of device %@ relinquished by %@
+Ownership of device %@ no longer wanted by %@
 platformForIdentifier:
 stringWithFormat:
 setWithObjects:
@@ -598,48 +647,47 @@ superclass
 description
 debugDescription
 executableSubpath
-.cxx_destruct
 resourcesDirectoryPath
+.cxx_destruct
 _appBundlePath
 _executableSubpath
 _bundleIdentifier
 _resourcesDirectoryPath
 _containerPath
-deviceCapabilityWithProperties:
-shouldAbortLaunch
-finishWithLaunchDescriptor:error:
-moveToLaunchingApplicationState
-requestViewController
-pendingLaunchParameters
-preparationParameters
-librarySearchPaths
-dvt_arrayByApplyingBlock:
-replMode
-frameworkSearchPaths
+setWithObject:
+usrSearchPathForPlatform:
+xcodeApplicationFilePath
+stringByAppendingString:
+initWithAppBundlePath:executableSubpath:bundleIdentifier:resourcesDirectoryPaths:
+fileURLWithPath:isDirectory:
+initSymbolicLinkWithDestinationURL:
+array
+invalidateFilePath
+isSymbolicLink
+UTF8String
 stringWithUTF8String:
-currentHandler
-handleFailureInMethod:object:file:lineNumber:description:
-serviceViewControllerProxy
-reset
-socketPath
-slaveFilename
-symlinkedResourcesDirectory
-initWithProcessIdentifier:deviceService:remoteViewController:targetView:
-setSocketPath:slaveFileName:replMode:resourceDirectoryPath:completion:
-ensureEnvironmentForLibraryPaths:frameworkPaths:completion:
-requestViewController:fromServiceWithBundleIdentifier:connectionHandler:
-capability
-registerViewContentReceiver:
-unregisterViewContentReceiver:
-viewContentReceivers
-processInputEvent:fromView:deviceRelativeLocation:
-launchWithPendingParameters
-serviceViewControllerInterface
-exportedInterface
+hasSuffix:
+resourceSearchPaths
+frameworkSearchPaths
+auxiliarySourceFrameworkLocations
+buildProductsPath
+developerDirectory
+initWithFileDescriptor:closeOnDealloc:
+initWithBytes:length:encoding:
+closeFile
+writeData:
+characterSetWithCharactersInString:
+invertedSet
+dataUsingEncoding:allowLossyConversion:
+initWithData:encoding:
+rangeOfCharacterFromSet:
+containerIdentifier
+_containerIdentifier
 logAspectWithName:
 initWithFormat:arguments:
 playgroundExecutionLogAspect
 _logAtLogLevel:withFormat:
+subsystem
 dispatchLockWithDebugName:
 setDelegate:
 _notifyDelegateExecutionDidFinish
@@ -652,6 +700,7 @@ weakObjectsPointerArray
 invalidate
 removeObjectForKey:
 dealloc
+diagnosticsLog
 start
 state
 device
@@ -660,6 +709,10 @@ currentOwnerOfDeviceWithIdentifier:
 requestOwnership:ofDeviceWithIdentifier:
 executionParametersMailbox
 setExecutionParametersMailbox:
+autoTerminationDelay
+needsProcessInitialization
+documentContentTimestamp
+documentFileURL
 asyncPerformLockedBlock:
 cancel
 _rpcConnectionIsValid
@@ -677,7 +730,6 @@ numberWithDouble:
 count
 objectAtIndexedSubscript:
 doubleValue
-UTF8String
 performLockedBlock:
 queue
 internalState
@@ -694,6 +746,7 @@ _canFinishExecutionChanged
 dvt_newObserverForKeyPath:options:withHandlerBlock:
 playgroundExecutionPerformanceLogAspect
 startedMetricForAspect:logLevel:label:
+preparationParameters
 lldbLocation
 _abortExecutionSetupWithError:
 parentFilePath
@@ -701,18 +754,19 @@ _addRPCServerExitedCallback
 logLevel
 ide_extendedInfo
 debuggingPlatformName
-standardUserDefaults
-stringForKey:
-componentsSeparatedByString:
-enumerateObjectsUsingBlock:
+enableLLDBLogCategoriesIfRequested
+enableLLDBLogChannelsCategoriesIfRequested
 executablePath
 targetTriple
 sdkPath
+deviceCapabilityWithProperties:
+servicesMatchingCapability:
+anyObject
+deviceService
+requiresExecutionPreparation
 _createBreakpointWithName:breakpointHitCallback:error:
 _setupPlaygroundListener:
 _setupConsoleAdaptor
-servicesMatchingCapability:
-anyObject
 setPreparationParameters:
 slaveName
 setSlaveFilename:
@@ -722,7 +776,12 @@ setCancellationCallback:
 setStateChangedCallback:
 setCompletion:
 scheduleLaunchWithParameters:
+shouldAbortLaunch
 attachToProcessWithPID:target:process:withError:
+standardUserDefaults
+stringForKey:
+componentsSeparatedByString:
+enumerateObjectsUsingBlock:
 _handleListenerCallbackWithEventType:data:dataIdentifier:date:version:error:
 startListeningWithCallbackQueue:error:callbackBlock:
 setPlaygroundListenerConnectionIsOpen:
@@ -769,6 +828,7 @@ playgroundExecutionSessionWillBeginExecution:
 playgroundExecutionSessionDidBeginExecution:
 _executePlaygroundSource
 _handleExpressionResult:
+replMode
 _scheduleAutoTermination
 stringWithCString:encoding:
 _lostConnectionToRPCServer
@@ -779,13 +839,12 @@ currentStackBacktrace
 stringRepresentation
 numberWithUnsignedInteger:
 _notifyDelegateExecutionWillFinish
+didExecutePlaygroundSetupExpression
 playgroundExecutionSessionWillBeginExpression:
 registerDefaults:
 boolForKey:
-needsProcessInitialization
 playgroundLoggerLibraryLocation
 loadModuleAtPath:
-auxiliarySourceFrameworkLocations
 dylibPath
 isAbsolutePath
 sourceCodePreambleToExecute
@@ -795,9 +854,7 @@ lineRangeToExecute
 newlineCharacterSet
 componentsSeparatedByCharactersInSet:
 subarrayWithRange:
-documentFileURL
 lastPathComponent
-stringByAppendingString:
 playgroundExecutionShouldSimulateHang
 playgroundExecutionSessionDidCompleteExpression:
 playgroundExecutionSessionDidFailExpression:
@@ -812,7 +869,6 @@ regularExpressionWithPattern:options:error:
 firstMatchInString:options:range:
 range
 date
-hasSuffix:
 playgroundShouldLogAdditionalProcessInfo
 _getAllThreadBacktraceFromProcess
 appendString:
@@ -822,7 +878,6 @@ isFinished
 playgroundExecutionSession:didEncounterError:
 playgroundExecutionSessionWillFinishExecution:
 playgroundExecutionSessionDidFinishExecution:
-autoTerminationDelay
 unsignedIntegerValue
 reuseProcess
 _detachProcess
@@ -831,6 +886,7 @@ _forceTerminateProcess
 playgroundExecutionSession:didReceiveResult:
 relinquishOwnership:ofDeviceWithIdentifier:
 keyPathsForValuesAffectingCanFinishExecution
+stringFromExecutionState:
 playgroundDataHandler:didDecodeResult:
 playgroundDataHandlerDidDecodeFinishExpressionResult:
 playgroundDeviceWithIdentifier:wasRequestedBy:
@@ -843,11 +899,14 @@ main
 listenForEvents
 executePlaygroundBreakpointHitOnThread:location:
 playgroundExecutionWillFinishBreakpointHitOnThread:location:
+_executePlaygroundSetupExpressionIfNecessaryAndContinueRunning
 _expressionErrorHasAssociatedLine:
-.cxx_construct
 launchDescriptor
 playgroundListener
 setPlaygroundListener:
+setDiagnosticsLog:
+setDidExecutePlaygroundSetupExpression:
+.cxx_construct
 _RPCConnection
 _debugger
 _target
@@ -881,49 +940,40 @@ _executionPerformanceMetricQueue
 _executionPerformanceMetric
 _consoleAdaptorIsOpen
 _playgroundListenerConnectionIsOpen
+_didExecutePlaygroundSetupExpression
 _internalState
 _state
 _launchDescriptor
 _executionParameters
 _delegate
+_deviceService
 _preparationParameters
 _executionParametersMailbox
 _targetConsoleAdaptor
 _playgroundListener
-setWithObject:
-usrSearchPathForPlatform:
-xcodeApplicationFilePath
-initWithAppBundlePath:executableSubpath:bundleIdentifier:resourcesDirectoryPaths:
-fileURLWithPath:isDirectory:
-initSymbolicLinkWithDestinationURL:
-array
-invalidateFilePath
-isSymbolicLink
-resourceSearchPaths
-buildProductsPath
-developerDirectory
-initWithFileDescriptor:closeOnDealloc:
-initWithBytes:length:encoding:
-closeFile
-writeData:
-characterSetWithCharactersInString:
-invertedSet
-dataUsingEncoding:allowLossyConversion:
-initWithData:encoding:
-rangeOfCharacterFromSet:
-containerIdentifier
-_containerIdentifier
-alloc
-weakToStrongObjectsMapTable
-weakToWeakObjectsMapTable
-objectForKey:
-orderedSet
-insertObject:atIndex:
-removeObject:
-firstObject
-_deviceIdentifierToInterestedOwnersTable
-_deviceIdentifierToOwnerTable
-_deviceQueue
+_diagnosticsLog
+finishWithLaunchDescriptor:error:
+moveToLaunchingApplicationState
+requestViewController
+pendingLaunchParameters
+librarySearchPaths
+dvt_arrayByApplyingBlock:
+serviceViewControllerProxy
+reset
+socketPath
+slaveFilename
+symlinkedResourcesDirectory
+initWithProcessIdentifier:deviceService:remoteViewController:targetView:
+setSocketPath:slaveFileName:replMode:resourceDirectoryPath:completion:
+ensureEnvironmentForLibraryPaths:frameworkPaths:completion:
+requestViewController:fromServiceWithBundleIdentifier:connectionHandler:
+capability
+registerViewContentReceiver:
+unregisterViewContentReceiver:
+viewContentReceivers
+processInputEvent:fromView:deviceRelativeLocation:
+launchWithPendingParameters
+defaultLog
 defaultPlugInManager
 extensionPointWithIdentifier:
 predicateWithFormat:
@@ -951,23 +1001,36 @@ defaultToolchain
 executableBinarySearchPath
 setOriginalExecutableURL:
 _originalExecutableURL
+weakToStrongObjectsMapTable
+weakToWeakObjectsMapTable
+objectForKey:
+orderedSet
+insertObject:atIndex:
+removeObject:
+firstObject
+_deviceIdentifierToInterestedOwnersTable
+_deviceIdentifierToOwnerTable
+_deviceQueue
+serviceViewControllerInterface
+exportedInterface
 IDESimulatorPlaygroundAppBundleCreator
 IDESimulatorPlaygroundAppBundle
 IDEPlaygroundAppBundle
 NSObject
-IDELocalComputerPlaygroundExecutionDeviceService
-IDEPlaygroundExecutionDeviceViewContentProvider
-IDEPlaygroundExecutionDeviceInputEventProcessing
-IDEPlaygroundLocalComputerRemoteViewController
+IDEMacPlaygroundAppBundleCreator
+IDEMacPlaygroundAppBundle
 IDEPlaygroundExecutionSession
 IDEPlaygroundDataHandlerDelegate
 IDEPlaygroundDeviceOwner
-IDEMacPlaygroundAppBundleCreator
-IDEMacPlaygroundAppBundle
-IDEPlaygroundDeviceCoordinator
+IDELocalComputerPlaygroundExecutionDeviceService
+IDEPlaygroundExecutionDeviceViewContentProvider
+IDEPlaygroundExecutionDeviceInputEventProcessing
+IDEPlaygroundExecutionLogging
 IDEAbstractPlaygroundAppBundleCreator
 IDEPlaygroundAppBundleCreator
 IDERPathUpdatingFileWrapper
+IDEPlaygroundDeviceCoordinator
+IDEPlaygroundLocalComputerRemoteViewController
 @16@0:8
 @40@0:8^@16^@24^@32
 @32@0:8@16^@24
@@ -989,14 +1052,11 @@ c24@0:8@"Protocol"16
 c24@0:8^@16
 @"DVTFilePath"16@0:8
 @48@0:8@16@24@32@40
-v16@0:8
 v24@0:8@16
+v16@0:8
 @"DVTFilePath"
 @"NSString"
-v24@0:8@"<IDEPlaygroundExecutionDeviceViewContentReceiver>"16
-@"NSHashTable"16@0:8
-c48@0:8@16@24{CGPoint=dd}32
-c48@0:8@"NSEvent"16@"NSView"24{CGPoint=dd}32
+@24@0:8Q16
 v32@0:8@16@24
 v32@0:8@16@"IDEPlaygroundResult"24
 v32@0:8@"NSString"16@"<IDEPlaygroundDeviceOwner>"24
@@ -1035,10 +1095,16 @@ v20@0:8c16
 @"IDEPlaygroundLaunchDescriptor"
 @"IDEPlaygroundExecutionParameters"
 @"<IDEPlaygroundExecutionSessionDelegate>"
+@"IDEPlaygroundExecutionDeviceService"
 @"IDEPlaygroundPreparationParameters"
 @"IDEConsoleAdaptor"
 @"DVTPlaygroundCommunicationListener"
-@"NSMapTable"
+@"NSObject<OS_os_log>"
+v24@0:8@"<IDEPlaygroundExecutionDeviceViewContentReceiver>"16
+@"NSHashTable"16@0:8
+c48@0:8@16@24{CGPoint=dd}32
+c48@0:8@"NSEvent"16@"NSView"24{CGPoint=dd}32
+r*16@0:8
 @80@0:8@16@24@32@40@48@56@64@72
 @80@0:8@"NSString"16@"NSUUID"24@"NSString"32@"DVTFilePath"40@"NSArray"48@"NSArray"56@"NSArray"64@"DVTSDK"72
 @"<IDEPlaygroundAppBundle>"32@0:8@"DVTFilePath"16^@24
@@ -1051,4 +1117,79 @@ v20@0:8c16
 @40@0:8@16Q24^@32
 c48@0:8@16Q24@32^@40
 @"NSURL"
-@(#)PROGRAM:IDEPlaygroundExecution  PROJECT:IDEPlugIns-15508
+@"NSMapTable"
+Preparing with: %@
+Execute with state: %@, parameters: autoTerminationDelay: %@, needsProcessInitialization: %d, documentContentTimestamp: %@, documentFileURL: %@
+Cancel
+Session was asked to terminate. Broadcasting termination request.
+Session was asked to terminate. Moving immediately to finished state.
+Timed out trying to cancel. Forcing session into finished state.
+Aborting execution setup. %@
+Interrupting executing playground source.
+Trying to interrupt executing playground source again.
+Process is moving from state '%@' to state '%@'.
+Starting playground execution
+Execution session cancelled. Returning before setting up debugger.
+Selected executable with path: %@
+Execution session cancelled. Returning before launching process.
+Waiting on ownership of device before launching process, current owner = %@.
+Execution session cancelled. Returning after requesting device.
+Execution session waiting on launch of stub (%@)
+Execution session cancelled. Returning after first attempt of launch.
+Execution session waiting on second attempt of launch of stub (%@)
+Execution session cancelled. Returning after second attempt of launch.
+Error after trying to launch stub process twice: %@.
+Launched process with pid %llu
+Terminating playground listener.
+Process attach in a stopped state; continuing automatically.
+Initial lldb process state is %@ (%d)
+Received unknown event: %s
+Returning from session thread
+Playground request termination; signal to the session thread that execution should terminate.
+Process is stopped after attaching; continuing automatically.
+Process is stopped at readyToExecutePlayground.
+Process is stopped at executePlayground.
+Process is stopped at playgroundExecutionWillFinish; continuing automatically.
+Process is stopped after being cancelled. Killing immediately.
+Process is stopped after encountering known error. Killing immediately.
+Process is stopped for an unknown reason. Killing immediately.
+Process detached
+Process detached unexpectedly
+Process exited unexpectedly
+Process exited
+Received session was terminated event
+Received session should exec playground source event
+Playground source execution complete; continuing process.
+Not ready to execute; waiting.
+Received playground expr failed event
+Received playground expr failed (recoverably) event
+Received playground expr finished event
+Failed to remove RPC server exited callback. May already be removed
+Lost connection to lldb-rpc-server, exit_status=%d, exit_signal=%d
+Aborting execution. %@
+Succeeded in creating the '%s' breakpoint, continuing launch.
+Invalid state upon executePlayground breakpoint.
+State: %@ (%d)
+Process valid: (%s)
+Backtrace:
+About to run expr to prepare playground execution.
+Received invalid expression result (%@) from running PreparePlaygroundExecution().
+About to run expr to execute playground source
+Expression returned after cancelling.
+Expression result invalid: LLDB may have terminated unexpectedly. SBError: %s
+Expression result is a thrown swift error
+Expression was incorrect; will return.
+Expression was cancelled via interrupt; will return.
+Playground execution failed: %@
+Unable to find a playground expr frame in the crashed thread.
+Marking playground session as complete.
+Asking LLDB to detach from process.
+Terminating process (pid %llu) in state %@ (%d)
+Sending SIGTERM to process (pid %d).
+Became the owner of device %@.
+Playground execution is now on the session thread
+Ownership of device %@ requested by %@
+Ownership of device %@ not contested. Transferring to %@
+Ownership of device %@ contested. Waiting on %@ to relinquish.
+Ownership of device %@ relinquished by %@
+Ownership of device %@ no longer wanted by %@

@@ -16,11 +16,11 @@
     CDUnknownBlockType _customizationBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType customizationBlock; // @synthesize customizationBlock=_customizationBlock;
 @property(readonly, nonatomic) BOOL darkAppearance; // @synthesize darkAppearance=_darkAppearance;
 @property(readonly, nonatomic, getter=isRotated) BOOL rotated; // @synthesize rotated=_rotated;
 @property(readonly, nonatomic) IBiOSDeviceIconDescription *iconDescription; // @synthesize iconDescription=_iconDescription;
-- (void).cxx_destruct;
 - (id)initWithDescription:(id)arg1 rotated:(BOOL)arg2 darkAppearance:(BOOL)arg3 customizationBlock:(CDUnknownBlockType)arg4;
 
 @end

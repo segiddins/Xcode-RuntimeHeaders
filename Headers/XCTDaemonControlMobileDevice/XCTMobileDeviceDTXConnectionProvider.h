@@ -19,11 +19,11 @@
     XCTMobileDevice *_mobileDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCTMobileDevice *mobileDevice; // @synthesize mobileDevice=_mobileDevice;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> remoteHostDiagnosticReportsSynchronizer;
 - (void)invalidate;
 - (void)makeConnectionWithCompletion:(CDUnknownBlockType)arg1;

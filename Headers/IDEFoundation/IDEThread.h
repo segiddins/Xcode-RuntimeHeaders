@@ -10,6 +10,7 @@
 #import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class DVTDispatchLock, DVTStackBacktrace, IDEDebugProcess, IDEDebugQueue, IDEIssue, IDELaunchSession, IDERecordedThreadCollection, NSArray, NSCache, NSMutableArray, NSNumber, NSString;
+@protocol DVTInvalidation><IDEDataValue;
 
 @interface IDEThread : NSObject <IDEDebugNavigableModel, DVTInvalidation>
 {
@@ -25,7 +26,7 @@
     BOOL _hasLatestStackFrames;
     BOOL _hasInitializedStackFrames;
     BOOL _recorded;
-    BOOL _recordedForInstrumentation;
+    BOOL _recordedForDisplayingStackFrames;
     BOOL _userSuspended;
     BOOL _specialRuntimeThread;
     int _state;
@@ -41,6 +42,7 @@
     unsigned long long _recordedThreadDepth;
     NSString *_lastReasonStopped;
     IDERecordedThreadCollection *_recordedThreadCollection;
+    id <DVTInvalidation><IDEDataValue> _exceptionDataValue;
     IDEIssue *_runtimeIssue;
     NSString *_qualityOfServiceValue;
 }
@@ -49,14 +51,16 @@
 + (id)keyPathsForValuesAffectingThreadDisplayName;
 + (id)displayNameForThreadName:(id)arg1 threadID:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int breakpointStackSelectionBehavior; // @synthesize breakpointStackSelectionBehavior=_breakpointStackSelectionBehavior;
 @property(copy, nonatomic) NSString *qualityOfServiceValue; // @synthesize qualityOfServiceValue=_qualityOfServiceValue;
 @property BOOL specialRuntimeThread; // @synthesize specialRuntimeThread=_specialRuntimeThread;
 @property(retain, nonatomic) IDEIssue *runtimeIssue; // @synthesize runtimeIssue=_runtimeIssue;
+@property(retain, nonatomic) id <DVTInvalidation><IDEDataValue> exceptionDataValue; // @synthesize exceptionDataValue=_exceptionDataValue;
 @property(retain, nonatomic) IDERecordedThreadCollection *recordedThreadCollection; // @synthesize recordedThreadCollection=_recordedThreadCollection;
 @property(nonatomic) BOOL userSuspended; // @synthesize userSuspended=_userSuspended;
 @property(copy, nonatomic) NSString *lastReasonStopped; // @synthesize lastReasonStopped=_lastReasonStopped;
-@property(nonatomic, getter=isRecordedForInstrumentation) BOOL recordedForInstrumentation; // @synthesize recordedForInstrumentation=_recordedForInstrumentation;
+@property(nonatomic) BOOL recordedForDisplayingStackFrames; // @synthesize recordedForDisplayingStackFrames=_recordedForDisplayingStackFrames;
 @property(nonatomic, getter=isRecorded) BOOL recorded; // @synthesize recorded=_recorded;
 @property(nonatomic) unsigned long long recordedThreadDepth; // @synthesize recordedThreadDepth=_recordedThreadDepth;
 @property(retain, nonatomic) IDEThread *recordedThread; // @synthesize recordedThread=_recordedThread;
@@ -70,7 +74,6 @@
 @property(readonly, nonatomic) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) IDEDebugProcess *parentProcess; // @synthesize parentProcess=_parentProcess;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_inferStateFromStackFrames:(id)arg1;
 - (void)_inferState;

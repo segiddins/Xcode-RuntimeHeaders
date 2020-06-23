@@ -16,9 +16,9 @@
     NSString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property BOOL didEncounterFatalError; // @synthesize didEncounterFatalError=_didEncounterFatalError;
-- (void).cxx_destruct;
 - (BOOL)shouldOpenProjectReadOnlyAtPath:(id)arg1;
 - (void)unableToOpenProjectAtPath:(id)arg1 reason:(id)arg2;
 - (BOOL)shouldOpenProjectOfMismatchingVersion:(unsigned long long)arg1 atPath:(id)arg2;

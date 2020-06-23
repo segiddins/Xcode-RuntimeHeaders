@@ -17,17 +17,18 @@
     BOOL _enablesARC;
 }
 
+- (void).cxx_destruct;
 @property BOOL enablesARC; // @synthesize enablesARC=_enablesARC;
 @property(readonly, copy) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(readonly) IDEARCConversionTarget *target; // @synthesize target=_target;
 @property(readonly, copy) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
-- (void).cxx_destruct;
 - (void)updateBuildSettings;
 - (void)disableOverridingBuildSettings;
 - (void)enableOverridingBuildSettings;
 - (void)_setEnablesARC:(BOOL)arg1 overridingOnly:(BOOL)arg2;
 @property(readonly, copy) NSString *displayName;
 - (id)initWithFileReference:(id)arg1 target:(id)arg2;
+- (id)compilerFlagsForBlueprint:(id)arg1;
 
 @end
 

@@ -65,6 +65,7 @@
 
 + (id)keyPathsForValuesAffectingProcessNavigableItem;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsOnlyRunningBlocks; // @synthesize showsOnlyRunningBlocks=_showsOnlyRunningBlocks;
 @property(nonatomic) BOOL showsOnlyInterestingContent; // @synthesize showsOnlyInterestingContent=_showsOnlyInterestingContent;
 @property(nonatomic) BOOL showsCompressedStackFrames; // @synthesize showsCompressedStackFrames=_showsCompressedStackFrames;
@@ -74,7 +75,6 @@
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(readonly) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(nonatomic) int debugNavigatorContentMode;
 - (void)setStoredNavigatorContentMode:(id)arg1;
@@ -176,6 +176,7 @@
 - (void)memoryDatasForProcessDidChange:(id)arg1;
 - (BOOL)shouldAddThreadItemsForMemoryDataObject:(id)arg1;
 - (id)contentObjectDataSourceClassesForMemoryDataDebugging;
+- (id)createTokenFilterControlBarForCPUDebuggingWithFrame:(struct CGRect)arg1;
 - (id)contentObjectDataSourceClassesForCPUDebugging;
 
 // Remaining properties

@@ -19,12 +19,12 @@
     NSURLSession *_urlSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(readonly) NSString *passwordFilePath; // @synthesize passwordFilePath=_passwordFilePath;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long port; // @synthesize port=_port;
 @property(readonly) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)sendSynchronousRequest:(id)arg1 returningResponse:(id *)arg2 error:(id *)arg3;
 - (id)activeTasksWithError:(id *)arg1;
 - (BOOL)secureDatabaseWithError:(id *)arg1;

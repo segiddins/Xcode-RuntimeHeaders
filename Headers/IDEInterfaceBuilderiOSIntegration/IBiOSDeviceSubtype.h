@@ -17,12 +17,12 @@
     IBiOSDeviceIconDescription *_iconDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBiOSDeviceIconDescription *iconDescription; // @synthesize iconDescription=_iconDescription;
 @property(readonly, nonatomic) NSNumber *homeIndicatorHeight; // @synthesize homeIndicatorHeight=_homeIndicatorHeight;
 @property(readonly, nonatomic) NSNumber *homeIndicatorWidthLandscape; // @synthesize homeIndicatorWidthLandscape=_homeIndicatorWidthLandscape;
 @property(readonly, nonatomic) NSNumber *homeIndicatorWidthPortrait; // @synthesize homeIndicatorWidthPortrait=_homeIndicatorWidthPortrait;
 @property(readonly, nonatomic) long long homeButtonType; // @synthesize homeButtonType=_homeButtonType;
-- (void).cxx_destruct;
 - (id)iconGenerationInstanceForAdaptation:(id)arg1;
 - (long long)homeButtonTypeFromString:(id)arg1;
 - (id)initWithExtension:(id)arg1 idiom:(id)arg2;

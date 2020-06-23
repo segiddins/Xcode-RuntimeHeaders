@@ -17,8 +17,8 @@
 
 + (BOOL)isThreadSection:(id)arg1 outThreadNumber:(long long *)arg2 outAuxiliaryString:(id *)arg3;
 + (id)sectionsFromData:(id)arg1 error:(id *)arg2;
-@property(readonly) NSData *rawData; // @synthesize rawData=_rawData;
 - (void).cxx_destruct;
+@property(readonly) NSData *rawData; // @synthesize rawData=_rawData;
 - (id)description;
 @property(readonly) NSArray *contentLines;
 @property(readonly) NSString *contents;

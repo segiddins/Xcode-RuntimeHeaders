@@ -16,9 +16,9 @@
     NSTextField *_detailsTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *detailsTextField; // @synthesize detailsTextField=_detailsTextField;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (void)hidePopover;
 - (void)showPopoverWithString:(id)arg1 atScreenPoint:(struct CGPoint)arg2 relativeToView:(id)arg3;
 - (id)init;

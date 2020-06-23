@@ -94,6 +94,7 @@
 + (id)keyPathsForValuesAffectingDefaultBotName;
 + (id)keyPathsForValuesAffectingHasSufficientSCMInfoToCreateBot;
 + (id)sourceControlLogAspect;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSourceControlWorkspaceBlueprint *localSCMWorkspaceBlueprintOriginal; // @synthesize localSCMWorkspaceBlueprintOriginal=_localSCMWorkspaceBlueprintOriginal;
 @property(nonatomic) BOOL consultSchemeForConfiguration; // @synthesize consultSchemeForConfiguration=_consultSchemeForConfiguration;
 @property(nonatomic) BOOL redefineBot; // @synthesize redefineBot=_redefineBot;
@@ -157,7 +158,6 @@
 @property(copy, nonatomic) NSString *defaultBotName; // @synthesize defaultBotName=_defaultBotName;
 @property(copy, nonatomic) NSString *botName; // @synthesize botName=_botName;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (BOOL)isSchemeValid;
 - (void)fixSchemeProblem;
 - (BOOL)devicesContext:(id)arg1 isPairedProxyDeviceRequiredForScheme:(id)arg2;

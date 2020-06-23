@@ -14,9 +14,9 @@
     unsigned long long _attribute;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long attribute; // @synthesize attribute=_attribute;
 @property(readonly) NSObject<IBIDEAutolayoutItem> *neighbor; // @synthesize neighbor=_neighbor;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToNeighborCandidate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

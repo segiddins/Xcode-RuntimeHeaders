@@ -33,6 +33,7 @@
 + (id)keyPathsForValuesAffectingCanGoBack;
 + (id)keyPathsForValuesAffectingCanFinish;
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property __weak NSTextField *failureViewSubtitle; // @synthesize failureViewSubtitle=_failureViewSubtitle;
 @property __weak NSImageView *failureImageView; // @synthesize failureImageView=_failureImageView;
 @property __weak DVTBorderedView *failureLogBorderView; // @synthesize failureLogBorderView=_failureLogBorderView;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL canFinishEarly; // @synthesize canFinishEarly=_canFinishEarly;
 @property(nonatomic) BOOL resolutionComplete; // @synthesize resolutionComplete=_resolutionComplete;
 @property(nonatomic) BOOL hadFatalError; // @synthesize hadFatalError=_hadFatalError;
-- (void).cxx_destruct;
 - (void)preflightResolutionDidUpdateStatus:(id)arg1 progress:(long long)arg2;
 - (void)preflightResolutionDidCompleteWithPackageName:(id)arg1 products:(id)arg2 logSection:(id)arg3 success:(BOOL)arg4;
 - (id)packageAssistantContext;

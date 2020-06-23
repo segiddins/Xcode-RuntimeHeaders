@@ -23,8 +23,8 @@
 }
 
 + (void)initialize;
-@property(copy) NSArray *sourceTreeDescriptors; // @synthesize sourceTreeDescriptors=_sourceTreeDescriptors;
 - (void).cxx_destruct;
+@property(copy) NSArray *sourceTreeDescriptors; // @synthesize sourceTreeDescriptors=_sourceTreeDescriptors;
 - (void)removeSourceTreeDescriptor:(id)arg1;
 - (void)addSourceTreeDescriptor:(id)arg1;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;

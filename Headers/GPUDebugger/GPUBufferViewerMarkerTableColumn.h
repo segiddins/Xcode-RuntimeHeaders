@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedIdentifier;
-@property(retain, nonatomic) GPUBufferViewerMarkerTableColumnView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUBufferViewerMarkerTableColumnView *view; // @synthesize view=_view;
 - (id)initWithDataSource:(id)arg1;
 
 @end

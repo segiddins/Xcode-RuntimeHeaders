@@ -19,11 +19,11 @@
 + (BOOL)getRequest:(id *)arg1 fromTransformation:(id)arg2 error:(id *)arg3;
 + (id)translateNameIfNeeded:(id)arg1 forSymbolKind:(long long)arg2;
 + (id)requestFromPropertyListRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *replacementName; // @synthesize replacementName=_replacementName;
 @property(readonly) NSString *originalName; // @synthesize originalName=_originalName;
 @property(readonly) NSString *containingClassName; // @synthesize containingClassName=_containingClassName;
 @property(readonly) long long symbolKind; // @synthesize symbolKind=_symbolKind;
-- (void).cxx_destruct;
 - (id)initWithSymbolKind:(long long)arg1 containingClassName:(id)arg2 originalName:(id)arg3 replacementName:(id)arg4;
 - (id)translateNameIfNeeded:(id)arg1;
 - (id)propertyListRepresentation;

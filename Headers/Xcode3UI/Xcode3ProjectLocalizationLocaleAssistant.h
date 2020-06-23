@@ -25,6 +25,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCanFinish;
+- (void).cxx_destruct;
 @property(retain) NSTextField *selectionProjectPathField; // @synthesize selectionProjectPathField=_selectionProjectPathField;
 @property(retain) DVTImageAndTextCell *nameAndImageCell; // @synthesize nameAndImageCell=_nameAndImageCell;
 @property(retain) NSPopUpButtonCell *popupButtonCell; // @synthesize popupButtonCell=_popupButtonCell;
@@ -32,7 +33,6 @@
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly) NSArray *availableLocales; // @synthesize availableLocales=_availableLocales;
 @property(readonly) NSArray *availableFileTypes; // @synthesize availableFileTypes=_availableFileTypes;
-- (void).cxx_destruct;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)alwaysShowFinish;
 - (BOOL)canGoForward;

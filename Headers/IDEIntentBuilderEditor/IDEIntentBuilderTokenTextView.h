@@ -19,11 +19,11 @@
     id <IDEIntentBuilderTokenTextViewDelegate> _eventsDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEIntentBuilderTokenTextViewDelegate> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 @property __weak id <IDEIntentBuilderTokenTextViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property unsigned long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (void).cxx_destruct;
 - (void)textStorage:(id)arg1 didProcessEditing:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4;
 - (void)_replaceCharactersInRange:(struct _NSRange)arg1 withAttributedString:(id)arg2;
 - (BOOL)readSelectionFromPasteboard:(id)arg1 type:(id)arg2;

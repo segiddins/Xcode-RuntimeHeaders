@@ -10,7 +10,9 @@
 
 @interface _TtC8RCShared16FrameModeControl : _TtC8RCShared11ModeControl
 {
+    MISSING_TYPE *rxStorage;
     MISSING_TYPE *showGuides;
+    MISSING_TYPE *shouldEnableSelected;
     MISSING_TYPE *frameMode;
     MISSING_TYPE *$__lazy_storage_$_menuItems;
 }

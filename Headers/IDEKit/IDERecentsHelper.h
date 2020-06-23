@@ -20,11 +20,11 @@
 
 + (BOOL)isProjectFileDataType:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType postUpdateCallback; // @synthesize postUpdateCallback=_postUpdateCallback;
 @property(copy) CDUnknownBlockType preUpdateCallback; // @synthesize preUpdateCallback=_preUpdateCallback;
 @property(retain) NSMutableArray *watchedFiledPaths; // @synthesize watchedFiledPaths=_watchedFiledPaths;
 @property(retain) NSArray *recentDocumentInfos; // @synthesize recentDocumentInfos=_recentDocumentInfos;
-- (void).cxx_destruct;
 - (void)_updateRecentProjectsDoAsync:(BOOL)arg1;
 - (id)_processURLsFromRecentInfoArray:(id)arg1;
 - (void)_updateRecentProjects;

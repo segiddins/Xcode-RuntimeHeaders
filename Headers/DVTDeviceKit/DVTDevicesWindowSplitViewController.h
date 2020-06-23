@@ -13,8 +13,8 @@
     DVTObservingToken *_selectionObserver;
 }
 
-@property(retain) DVTObservingToken *selectionObserver; // @synthesize selectionObserver=_selectionObserver;
 - (void).cxx_destruct;
+@property(retain) DVTObservingToken *selectionObserver; // @synthesize selectionObserver=_selectionObserver;
 - (void)_updateDetailsWithDevice:(id)arg1;
 - (void)selectDevice:(id)arg1;
 - (BOOL)includesDevice:(id)arg1;

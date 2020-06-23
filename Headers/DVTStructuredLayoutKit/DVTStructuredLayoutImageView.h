@@ -17,8 +17,8 @@
 
 + (Class)cellClass;
 + (void)initialize;
-@property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState=_dvt_layoutState;
 - (void).cxx_destruct;
+@property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState=_dvt_layoutState;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setImageFrameStyle:(unsigned long long)arg1;

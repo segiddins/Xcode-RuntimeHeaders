@@ -20,6 +20,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoNext;
+- (void).cxx_destruct;
 @property(retain) NSArray *inputHistory; // @synthesize inputHistory=_inputHistory;
 @property(retain) NSString *inputValue; // @synthesize inputValue=_inputValue;
 @property(readonly) NSArray *manifestPaths; // @synthesize manifestPaths=_manifestPaths;
@@ -27,7 +28,6 @@
 @property(retain) NSLayoutConstraint *comboBoxWidth; // @synthesize comboBoxWidth=_comboBoxWidth;
 @property(retain) NSLayoutConstraint *popupWidth; // @synthesize popupWidth=_popupWidth;
 @property(retain) NSLayoutConstraint *popupLeading; // @synthesize popupLeading=_popupLeading;
-- (void).cxx_destruct;
 - (void)willGoNext;
 - (BOOL)canGoNext;
 - (BOOL)canAppendPathComponentToBaseURL:(id)arg1;

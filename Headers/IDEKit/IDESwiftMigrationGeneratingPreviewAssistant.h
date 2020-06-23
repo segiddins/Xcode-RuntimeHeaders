@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
-@property(copy) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(copy) NSString *message; // @synthesize message=_message;
 - (void)loadView;
 - (id)_recursivelyFindBuildOperationsInOperation:(id)arg1;
 - (BOOL)canGoBack;

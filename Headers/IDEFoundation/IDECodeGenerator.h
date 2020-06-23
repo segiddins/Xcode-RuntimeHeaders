@@ -17,8 +17,8 @@
 
 + (id)codeGeneratorWithIdentifier:(id)arg1;
 + (void)initialize;
-@property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void)generateCodeForInputFile:(id)arg1 outputFilePath:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)generatedFilePathsForInputFilePath:(id)arg1 outputFilePath:(id)arg2 error:(id *)arg3;
 - (void)primitiveInvalidate;

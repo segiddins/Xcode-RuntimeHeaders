@@ -24,13 +24,13 @@
 + (id)rootNodeWithTopLevelItems:(id)arg1 context:(id)arg2 logAspect:(id)arg3;
 + (id)nodeWithInAppContent:(id)arg1 context:(id)arg2 logAspect:(id)arg3;
 + (id)nodeWithItem:(id)arg1 context:(id)arg2 logAspect:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) id <IDEDistributableInAppContent> inAppContent; // @synthesize inAppContent=_inAppContent;
 @property(readonly, nonatomic) IDEDistributionItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) NSDictionary *summary; // @synthesize summary=_summary;
 @property(readonly, nonatomic) NSArray *childNodes; // @synthesize childNodes=_childNodes;
 @property(readonly) IDEDistributionContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL appStoreBound;
 @property(readonly, nonatomic) NSString *name;
 

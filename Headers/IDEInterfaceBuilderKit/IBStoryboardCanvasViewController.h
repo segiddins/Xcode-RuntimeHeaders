@@ -26,11 +26,11 @@
     IBStoryboardCanvasBackgroundOverlayView *_backgroundOverlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBStoryboardCanvasBackgroundOverlayView *backgroundOverlayView; // @synthesize backgroundOverlayView=_backgroundOverlayView;
 @property(copy, nonatomic) NSArray *selectedEntryPointIndicators; // @synthesize selectedEntryPointIndicators=_selectedEntryPointIndicators;
 @property(retain, nonatomic) NSObject<IBStoryboardEntryPointIndicator> *draggedEntryPointIndicator; // @synthesize draggedEntryPointIndicator=_draggedEntryPointIndicator;
 @property(retain, nonatomic) IBStoryboardSceneCanvasFrame *canvasFrameShowingDock; // @synthesize canvasFrameShowingDock=_canvasFrameShowingDock;
-- (void).cxx_destruct;
 - (void)canvasViewRunResizeTest:(id)arg1;
 - (id)canvasFrameToSelectForObject:(id)arg1;
 - (void)editorCanvasFrame:(id)arg1 wasClickedWithEvent:(id)arg2;
@@ -54,6 +54,7 @@
 - (void)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasDoubleClicked:(id)arg2 withMouseDownEvent:(id)arg3;
 - (BOOL)canSelectMembers:(id)arg1;
 - (void)documentEditor:(id)arg1 deselectMembers:(id)arg2;
+- (void)canvasViewDidStopSuppressingTrackingAreaUpdates:(id)arg1;
 - (id)canvasView:(id)arg1 decoratorRectForCanvasFrame:(id)arg2;
 - (void)canvasView:(id)arg1 canvasFrameDidChangeLayout:(id)arg2;
 - (void)canvasView:(id)arg1 willRemoveCanvasFrame:(id)arg2;

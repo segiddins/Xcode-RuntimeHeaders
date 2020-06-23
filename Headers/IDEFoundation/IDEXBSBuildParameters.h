@@ -20,12 +20,12 @@
     unsigned long long _hash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *buildRecordPath; // @synthesize buildRecordPath=_buildRecordPath;
 @property(readonly, copy) NSNumber *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(readonly, copy) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(readonly, copy) NSString *updateName; // @synthesize updateName=_updateName;
 @property(readonly, copy) NSString *projectName; // @synthesize projectName=_projectName;
-- (void).cxx_destruct;
 - (id)dvt_detailedDebugDescription;
 - (id)description;
 - (unsigned long long)hash;

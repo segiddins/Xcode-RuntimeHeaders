@@ -17,8 +17,8 @@
 + (void)replaceItemAtFilePath:(id)arg1 withFileWrapper:(id)arg2;
 + (long long)binaryConflictMergeDirection:(id)arg1;
 + (BOOL)isBinaryConflictResolutionMergeData:(id)arg1;
-@property BOOL shouldDisableMergeSaving; // @synthesize shouldDisableMergeSaving=_shouldDisableMergeSaving;
 - (void).cxx_destruct;
+@property BOOL shouldDisableMergeSaving; // @synthesize shouldDisableMergeSaving=_shouldDisableMergeSaving;
 - (void)completeConflictResolution;
 - (void)removeSubmodeToNotify:(id)arg1;
 - (void)addSubmodeToNotify:(id)arg1;

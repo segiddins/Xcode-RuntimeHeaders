@@ -17,10 +17,10 @@
     NSColor *_separatorColor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(retain) id item; // @synthesize item=_item;
 @property long long coverageBarColumnIndex; // @synthesize coverageBarColumnIndex=_coverageBarColumnIndex;
-- (void).cxx_destruct;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

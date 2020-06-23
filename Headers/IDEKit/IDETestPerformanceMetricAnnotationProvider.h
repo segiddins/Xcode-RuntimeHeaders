@@ -21,10 +21,10 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSPopover *iterationPopover; // @synthesize iterationPopover=_iterationPopover;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)didClickAnnotation:(id)arg1 inTextSidebar:(id)arg2 event:(id)arg3;
 - (void)didClickAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (void)didClickMessageBubbleForAnnotation:(id)arg1 onIcon:(BOOL)arg2 inView:(id)arg3 event:(id)arg4;

@@ -15,9 +15,9 @@
 }
 
 + (id)chooseAndRevokeCertificateUserActionWithCertificates:(id)arg1 type:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTPortalCertificateType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (id)executionMessage;
 - (id)userActionName;
 - (id)userActionMessage;

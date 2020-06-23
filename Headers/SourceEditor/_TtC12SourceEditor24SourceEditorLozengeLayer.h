@@ -18,20 +18,22 @@
     MISSING_TYPE *secondaryHotspotFrame;
     MISSING_TYPE *handleFrame;
     MISSING_TYPE *$__lazy_storage_$_hotspotLayer;
+    MISSING_TYPE *handleColorOverride;
     MISSING_TYPE *$__lazy_storage_$_handleLayer;
     MISSING_TYPE *closingCurlyBraceHotspotFrame;
     MISSING_TYPE *shapePath;
     MISSING_TYPE *color;
+    MISSING_TYPE *enableFill;
     MISSING_TYPE *animated;
     MISSING_TYPE *animationDuration;
 }
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)actionForKey:(id)arg1;
 - (void)layoutSublayers;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLayer:(id)arg1;
-- (id)init;
 
 @end
 

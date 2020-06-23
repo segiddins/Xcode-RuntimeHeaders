@@ -6,15 +6,15 @@
 
 #import <IDEFoundation/IDESwiftMigrationTarget.h>
 
-@class IDEPlayground;
+@protocol IDEPlaygroundReference;
 
 @interface IDESwiftMigrationPlaygroundTarget : IDESwiftMigrationTarget
 {
-    IDEPlayground *_playground;
+    id <IDEPlaygroundReference> _playground;
 }
 
-@property(readonly, copy) IDEPlayground *playground; // @synthesize playground=_playground;
 - (void).cxx_destruct;
+@property(readonly, copy) id <IDEPlaygroundReference> playground; // @synthesize playground=_playground;
 - (id)warningMessage;
 - (BOOL)shouldMigrate;
 - (BOOL)canMigrate;

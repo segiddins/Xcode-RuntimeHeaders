@@ -16,10 +16,10 @@
     NSTextField *_urlTextField;
 }
 
+- (void).cxx_destruct;
 @property NSTextField *urlTextField; // @synthesize urlTextField=_urlTextField;
 @property BOOL showFavouriteButton; // @synthesize showFavouriteButton=_showFavouriteButton;
 @property NSButton *favoriteButton; // @synthesize favoriteButton;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)updateViewContent:(BOOL)arg1 highlighted:(BOOL)arg2;
 - (void)awakeFromNib;

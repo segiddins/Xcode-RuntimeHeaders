@@ -26,6 +26,7 @@
     NSButton *_fontMenuButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *fontMenuButton; // @synthesize fontMenuButton=_fontMenuButton;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSGridRow *familyGridRow; // @synthesize familyGridRow=_familyGridRow;
 @property(retain, nonatomic) NSGridView *gridView; // @synthesize gridView=_gridView;
 @property(retain, nonatomic) DVTFontTextField *fontTextField; // @synthesize fontTextField=_fontTextField;
-- (void).cxx_destruct;
 - (void)popoverWillShow:(id)arg1;
 - (void)done:(id)arg1;
 - (void)openFontPanel:(id)arg1;

@@ -15,9 +15,9 @@
     NSPopUpButton *_appRecordPopUpButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *appRecordPopUpButton; // @synthesize appRecordPopUpButton=_appRecordPopUpButton;
 @property(retain, nonatomic) IDEITunesConnectApplicationDescription *selectedApplicationRecord; // @synthesize selectedApplicationRecord=_selectedApplicationRecord;
-- (void).cxx_destruct;
 - (void)selectAppRecord:(id)arg1;
 @property(retain) NSArray *applicationRecords; // @synthesize applicationRecords=_applicationRecords;
 - (id)nibName;

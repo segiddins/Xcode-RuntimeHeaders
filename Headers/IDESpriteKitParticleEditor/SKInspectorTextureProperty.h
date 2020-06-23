@@ -6,18 +6,19 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class IDEInspectorKeyPath, NSArray, NSComboBox;
+@class IDEInspectorKeyPath, NSArray, NSComboBox, NSObject;
+@protocol DVTInvalidation;
 
 @interface SKInspectorTextureProperty : IDEInspectorProperty
 {
     IDEInspectorKeyPath *_valueKeyPath;
     NSArray *_availableTextureNames;
-    struct NSObject *_resourcesKVOToken;
+    NSObject<DVTInvalidation> *_resourcesKVOToken;
     NSComboBox *_comboBox;
 }
 
-@property(retain) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (void).cxx_destruct;
+@property(retain) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (void)userDidChangeValue:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

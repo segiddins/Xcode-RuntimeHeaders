@@ -18,13 +18,13 @@
     NSImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) NSTextField *subtitleField; // @synthesize subtitleField=_subtitleField;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain, nonatomic) NSString *iconKeyPath; // @synthesize iconKeyPath=_iconKeyPath;
 @property(retain, nonatomic) NSString *subtitleKeyPath; // @synthesize subtitleKeyPath=_subtitleKeyPath;
 @property(retain, nonatomic) NSString *nameKeyPath; // @synthesize nameKeyPath=_nameKeyPath;
-- (void).cxx_destruct;
 - (void)bindIcon;
 - (void)bindSubtitle;
 - (void)bindName;

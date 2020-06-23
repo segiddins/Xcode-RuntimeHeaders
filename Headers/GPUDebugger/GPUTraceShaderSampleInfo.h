@@ -20,6 +20,7 @@
     GPUTraceShaderSampleInfo *_parent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isInlined; // @synthesize isInlined=_isInlined;
 @property(readonly, nonatomic) __weak GPUTraceShaderSampleInfo *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) NSDictionary *inlineBlockAndDiassemblyInfo; // @synthesize inlineBlockAndDiassemblyInfo=_inlineBlockAndDiassemblyInfo;
 @property(readonly, nonatomic) GPUTraceShaderSampleFunctionInfo *functionInfo; // @synthesize functionInfo=_functionInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (id)callSitesForFunction:(id)arg1;
 - (id)flatten;

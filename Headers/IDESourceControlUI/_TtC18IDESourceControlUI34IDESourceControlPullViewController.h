@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDESourceControlUI/_TtC18IDESourceControlUI58IDESourceControlMultipleWorkingCopyOperationViewController.h>
+#import <IDESourceControlUI/_TtC18IDESourceControlUI64IDESourceControlMultipleWorkingCopyRemoteOperationViewController.h>
 
 @class IDEWorkspace, MISSING_TYPE, NSButton, NSString;
 
-@interface _TtC18IDESourceControlUI34IDESourceControlPullViewController : _TtC18IDESourceControlUI58IDESourceControlMultipleWorkingCopyOperationViewController
+@interface _TtC18IDESourceControlUI34IDESourceControlPullViewController : _TtC18IDESourceControlUI64IDESourceControlMultipleWorkingCopyRemoteOperationViewController
 {
     MISSING_TYPE *workspace;
     MISSING_TYPE *rebaseButton;

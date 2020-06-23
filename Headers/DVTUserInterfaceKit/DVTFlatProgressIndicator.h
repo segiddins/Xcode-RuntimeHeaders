@@ -16,10 +16,10 @@
     NSBezierPath *_progressIndicatorPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBezierPath *progressIndicatorPath; // @synthesize progressIndicatorPath=_progressIndicatorPath;
 @property(retain, nonatomic) NSColor *fillAndStrokeColor; // @synthesize fillAndStrokeColor=_fillAndStrokeColor;
 @property(retain, nonatomic) NSImage *indeterminateProgressBackground; // @synthesize indeterminateProgressBackground=_indeterminateProgressBackground;
-- (void).cxx_destruct;
 - (id)_stripeOfSize:(struct CGSize)arg1;
 @property(readonly) double indeterminateOffset;
 @property(readonly) struct CGRect determinateProgressRect;

@@ -15,8 +15,8 @@
     NSArray *_osVersionData;
 }
 
-@property(readonly) NSArray *osVersionData; // @synthesize osVersionData=_osVersionData;
 - (void).cxx_destruct;
+@property(readonly) NSArray *osVersionData; // @synthesize osVersionData=_osVersionData;
 - (id)JSONRepresentation;
 
 // Remaining properties

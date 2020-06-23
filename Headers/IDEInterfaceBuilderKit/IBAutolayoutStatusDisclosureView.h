@@ -11,8 +11,8 @@
     CDUnknownBlockType _clickHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
 - (void)mouseDown:(id)arg1;
 - (id)makeBackingLayer;
 - (id)_disclosureImageWithInitialSizeHint:(struct CGRect)arg1;

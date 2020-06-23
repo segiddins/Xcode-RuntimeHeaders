@@ -17,10 +17,10 @@
     DVTGraphLayerSelectionDetails *_selectionDetails;
 }
 
+- (void).cxx_destruct;
 @property BOOL wantsClipping; // @synthesize wantsClipping=_wantsClipping;
 @property(retain) DVTGraphLayerSelectionDetails *selectionDetails; // @synthesize selectionDetails=_selectionDetails;
 @property(readonly) __weak DVTGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (void)clearSelection;
 - (BOOL)selectNext;
 - (BOOL)selectPrevious;

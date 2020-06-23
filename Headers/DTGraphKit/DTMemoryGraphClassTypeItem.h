@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _mallocBlockSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int displayedItemLimit; // @synthesize displayedItemLimit=_displayedItemLimit;
 @property(nonatomic) unsigned long long mallocBlockSize; // @synthesize mallocBlockSize=_mallocBlockSize;
-- (void).cxx_destruct;
 - (id)subitemAtIndex:(unsigned long long)arg1;
 - (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3 leaksOnly:(BOOL)arg4;
 - (void)_refilterIfNecessary;

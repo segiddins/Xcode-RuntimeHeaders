@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)readFromPListUnarchiver:(id)arg1;
 - (void)awakeFromPListUnarchiver:(id)arg1;
-- (void)validateWithUnarchiver:(id)arg1;
+- (BOOL)validateWithUnarchiver:(id)arg1;
 - (void)_setContainerPortal:(id)arg1;
 - (id)_containerPortal;
 - (BOOL)isEqualToProxy:(id)arg1;

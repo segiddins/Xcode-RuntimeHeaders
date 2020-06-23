@@ -18,8 +18,8 @@
     NSComboBox *_comboBox;
 }
 
-@property(retain) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (void).cxx_destruct;
+@property(retain) NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

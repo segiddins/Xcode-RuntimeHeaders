@@ -21,9 +21,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)languageFromString:(id)arg1 usage:(double)arg2;
 + (unsigned long long)languageTypeFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double usage; // @synthesize usage=_usage;
 @property(readonly, nonatomic) unsigned long long languageType; // @synthesize languageType=_languageType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

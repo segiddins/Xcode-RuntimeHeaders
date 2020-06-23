@@ -28,10 +28,6 @@ struct CompileTrackingCallbacks;
 
 struct Compiler;
 
-struct IDEIndexGenericQueryProviderBase {
-    Class _field1;
-};
-
 struct IDEIndexRefactoringEdit {
     int _field1;
     unsigned int _field2;

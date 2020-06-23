@@ -15,10 +15,10 @@
     XRNetworkingServiceObservationTuple *_lastStats;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XRNetworkingServiceObservationTuple *lastStats; // @synthesize lastStats=_lastStats;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) long long serialNumber; // @synthesize serialNumber=_serialNumber;
-- (void).cxx_destruct;
 
 @end
 

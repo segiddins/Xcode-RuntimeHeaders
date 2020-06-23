@@ -14,8 +14,8 @@
     NSGlyphGenerator *_underlyingGlyphGenerator;
 }
 
-@property(readonly) NSGlyphGenerator *underlyingGlyphGenerator; // @synthesize underlyingGlyphGenerator=_underlyingGlyphGenerator;
 - (void).cxx_destruct;
+@property(readonly) NSGlyphGenerator *underlyingGlyphGenerator; // @synthesize underlyingGlyphGenerator=_underlyingGlyphGenerator;
 - (void)generateGlyphsForGlyphStorage:(id)arg1 desiredNumberOfCharacters:(unsigned long long)arg2 glyphIndex:(unsigned long long *)arg3 characterIndex:(unsigned long long *)arg4;
 - (void)_fillFoldedGlyphsForRange:(struct _NSRange)arg1 glyphStorage:(id)arg2 glyphIndex:(unsigned long long *)arg3;
 - (id)initWithUnderlyingGlyphGenerator:(id)arg1 layoutManager:(id)arg2;

@@ -16,9 +16,9 @@
 }
 
 + (id)retainedClassProviderForWorkspaceDocument:(id)arg1 platform:(id)arg2 toolchainIdentifiers:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSArray *toolchainIdentifiers; // @synthesize toolchainIdentifiers=_toolchainIdentifiers;
 @property(retain) IBPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (id)partialClassDescriptions;
 - (void)integratePartialClassDescriptions:(id)arg1;
 - (void)removePartialDescriptionsWithSourceIdentifiers:(id)arg1;

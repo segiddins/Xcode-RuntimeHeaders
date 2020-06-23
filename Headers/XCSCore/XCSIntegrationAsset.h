@@ -28,6 +28,7 @@
 + (id)assetWithFileName:(id)arg1 relativePath:(id)arg2 allowAnonymousAccess:(BOOL)arg3 validationErrors:(id *)arg4;
 + (id)assetWithFileName:(id)arg1 isDirectory:(BOOL)arg2 validationErrors:(id *)arg3;
 + (id)assetWithFileName:(id)arg1 validationErrors:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *triggerName; // @synthesize triggerName=_triggerName;
 @property(retain) NSString *productID; // @synthesize productID=_productID;
 @property(retain) NSArray *variantIds; // @synthesize variantIds=_variantIds;
@@ -38,7 +39,6 @@
 @property(retain) NSString *relativePath; // @synthesize relativePath=_relativePath;
 @property(retain) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly) NSString *integrationID; // @synthesize integrationID=_integrationID;
-- (void).cxx_destruct;
 - (id)downloadURLForService:(id)arg1 friendly:(BOOL)arg2;
 @property(readonly) NSURL *downloadURL;
 - (id)saveRepresentation;

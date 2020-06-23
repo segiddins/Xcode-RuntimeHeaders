@@ -37,10 +37,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int logMode; // @synthesize logMode=_logMode;
 @property(retain) id <IDEConsoleTextViewObjectiveCExpressionRangeDelegate> openingBracketLocationDelegate; // @synthesize openingBracketLocationDelegate=_openingBracketLocationDelegate;
 @property(retain) id <IDEConsoleTextViewStandardIODelegate> standardIODelegate; // @synthesize standardIODelegate=_standardIODelegate;
-- (void).cxx_destruct;
 - (id)_URLForDocumentLocations;
 - (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
 - (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;

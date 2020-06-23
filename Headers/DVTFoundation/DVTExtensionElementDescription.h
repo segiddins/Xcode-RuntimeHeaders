@@ -19,6 +19,7 @@
     NSSet *_propertyKeys;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
 @property(copy) NSDictionary *elements; // @synthesize elements=_elements;
@@ -26,7 +27,6 @@
 @property unsigned long long maxOccurs; // @synthesize maxOccurs=_maxOccurs;
 @property unsigned long long minOccurs; // @synthesize minOccurs=_minOccurs;
 @property(copy) NSString *plural; // @synthesize plural=_plural;
-- (void).cxx_destruct;
 - (void)_inheritAttributesAndElementsFromElementDescription:(id)arg1;
 - (void)encodeIntoPropertyList:(id)arg1;
 - (void)awakeWithPropertyList:(id)arg1;

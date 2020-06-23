@@ -23,6 +23,7 @@
     DVTDelayedInvocation *_delayedStatusCheck;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTDelayedInvocation *delayedStatusCheck; // @synthesize delayedStatusCheck=_delayedStatusCheck;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly) IDEArchive *archive; // @synthesize archive=_archive;
@@ -31,7 +32,6 @@
 @property BOOL isExportableApp; // @synthesize isExportableApp=_isExportableApp;
 @property(retain) NSString *lastUpdateMessage; // @synthesize lastUpdateMessage=_lastUpdateMessage;
 @property BOOL refreshing; // @synthesize refreshing=_refreshing;
-- (void).cxx_destruct;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;

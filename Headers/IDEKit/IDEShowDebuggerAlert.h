@@ -16,10 +16,10 @@
     NSString *_destination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int visibility; // @synthesize visibility=_visibility;
 @property(nonatomic) int action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (BOOL)finalOutputDelayed;
 - (void)setFinalOutputDelayed:(BOOL)arg1;
 - (int)alertPropertyListVersion;

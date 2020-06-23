@@ -13,8 +13,8 @@
     XCSCertificate *_certificate;
 }
 
-@property(retain, nonatomic) XCSCertificate *certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSCertificate *certificate; // @synthesize certificate=_certificate;
 - (id)dictionaryRepresentation;
 - (BOOL)_validateTeamID:(id)arg1 name:(id)arg2 type:(id)arg3 status:(id)arg4 appleID:(id)arg5 validationErrors:(id *)arg6;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

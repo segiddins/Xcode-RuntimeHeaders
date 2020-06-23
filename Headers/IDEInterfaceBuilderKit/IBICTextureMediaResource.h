@@ -20,9 +20,9 @@
 + (id)generateContentWithContext:(id)arg1;
 + (id)mediaType;
 + (id)resourceWithMipmapSet:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBICAbstractTextureSet *texture; // @synthesize texture=_texture;
 @property(retain, nonatomic) IBICMipmapSet *mipmapSet; // @synthesize mipmapSet=_mipmapSet;
-- (void).cxx_destruct;
 - (long long)compareForVariantMatching:(id)arg1;
 - (long long)filteringPriorityForVariantSelection;
 - (BOOL)isMinimallyFitForVariantSelection;

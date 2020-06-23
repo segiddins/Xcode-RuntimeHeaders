@@ -24,6 +24,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cacheName; // @synthesize cacheName=_cacheName;
 @property(copy) NSString *iconKey; // @synthesize iconKey=_iconKey;
 @property(retain) Xcode3InfoDictionarySliceController *sliceController; // @synthesize sliceController=_sliceController;
@@ -31,7 +32,6 @@
 @property(retain) Xcode3InfoDictionaryColumnViewController *rightColumnController; // @synthesize rightColumnController=_rightColumnController;
 @property(retain) Xcode3InfoDictionaryColumnViewController *leftColumnController; // @synthesize leftColumnController=_leftColumnController;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)imageView:(id)arg1 pathForImageNamed:(id)arg2;
 - (void)imageView:(id)arg1 removeImage:(id)arg2;
 - (BOOL)imageView:(id)arg1 acceptDrop:(id)arg2;

@@ -41,6 +41,7 @@
     XCSUIIntegrationCommitterBadgeView *_activeBadgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIIntegrationCommitterBadgeView *activeBadgeView; // @synthesize activeBadgeView=_activeBadgeView;
 @property __weak NSView *placeholder; // @synthesize placeholder=_placeholder;
 @property __weak DVTEmptyContentPlaceholder *noCommitsPlaceholder; // @synthesize noCommitsPlaceholder=_noCommitsPlaceholder;
@@ -61,7 +62,6 @@
 @property __weak NSTableView *committersTableView; // @synthesize committersTableView=_committersTableView;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 - (void)toggleDetailViewForTableCellView:(id)arg1 committer:(id)arg2;
 - (void)tableView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

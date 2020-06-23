@@ -17,10 +17,10 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)tokenAttachmentCellClicked:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 atCharacterIndex:(unsigned long long)arg4;
 @property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;

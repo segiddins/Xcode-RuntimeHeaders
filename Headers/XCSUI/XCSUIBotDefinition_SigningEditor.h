@@ -29,6 +29,7 @@
     XCSUIBotDefinition_SigningTeamsViewController *_installedSigningTeamsController;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSUIBotDefinition_SigningTeamsViewController *installedSigningTeamsController; // @synthesize installedSigningTeamsController=_installedSigningTeamsController;
 @property(retain) NSImageView *loadingImageView; // @synthesize loadingImageView=_loadingImageView;
 @property(retain) NSTextField *loadingDetailLabel; // @synthesize loadingDetailLabel=_loadingDetailLabel;
@@ -42,7 +43,6 @@
 @property __weak NSView *chooserReplacementHostView; // @synthesize chooserReplacementHostView=_chooserReplacementHostView;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 @property(retain, nonatomic) id <XCSUIBotDefinition_SigningEditor_AssistantCallback> assistantCallback; // @synthesize assistantCallback=_assistantCallback;
-- (void).cxx_destruct;
 - (void)upgradeSigningConfiguration:(id)arg1;
 - (void)goNextOrFinish;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;

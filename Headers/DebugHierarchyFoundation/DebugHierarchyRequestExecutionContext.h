@@ -19,13 +19,13 @@
 }
 
 + (id)contextWithRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *metaData; // @synthesize metaData=_metaData;
 @property(retain, nonatomic) DebugHierarchyRuntimeInfo *contextRuntimeInfo; // @synthesize contextRuntimeInfo=_contextRuntimeInfo;
 @property(retain, nonatomic) NSMutableDictionary *identifierToObjectDescriptionMap; // @synthesize identifierToObjectDescriptionMap=_identifierToObjectDescriptionMap;
 @property(retain, nonatomic) NSMutableDictionary *topLevelPropertyDescriptions; // @synthesize topLevelPropertyDescriptions=_topLevelPropertyDescriptions;
 @property(retain, nonatomic) NSMutableDictionary *topLevelGroups; // @synthesize topLevelGroups=_topLevelGroups;
 @property(retain, nonatomic) DebugHierarchyRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_collectRuntimeInformationForObjectType:(id)arg1;
 - (id)runtimeTypeWithName:(id)arg1;
 - (id)globalRuntimeInfo;

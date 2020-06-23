@@ -18,6 +18,7 @@
     NSString *_permanentIdentifier;
     NSString *_name;
     NSString *_productType;
+    NSString *_hostProductType;
     NSString *_version;
     NSString *_build;
     NSString *_metalVersion;
@@ -28,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (unsigned int)defaultNativePointerSize;
++ (BOOL)isSimulatorPlatform:(int)arg1;
 @property(retain, nonatomic) NSArray *supportedGraphicsAPIInfos; // @synthesize supportedGraphicsAPIInfos=_supportedGraphicsAPIInfos;
 @property(nonatomic) CDStruct_e4c1f684 mainScreenDescriptor; // @synthesize mainScreenDescriptor=_mainScreenDescriptor;
 @property(retain, nonatomic) DYGPUToolsVersionInfo *gputoolsVersionInfo; // @synthesize gputoolsVersionInfo=_gputoolsVersionInfo;
@@ -35,6 +37,7 @@
 @property(retain, nonatomic) NSString *metalVersion; // @synthesize metalVersion=_metalVersion;
 @property(retain, nonatomic) NSString *build; // @synthesize build=_build;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
+@property(retain, nonatomic) NSString *hostProductType; // @synthesize hostProductType=_hostProductType;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *permanentIdentifier; // @synthesize permanentIdentifier=_permanentIdentifier;

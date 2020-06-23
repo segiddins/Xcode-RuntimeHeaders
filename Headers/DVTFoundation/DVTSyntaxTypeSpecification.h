@@ -25,6 +25,7 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 @property(copy) NSString *colorName; // @synthesize colorName=_colorName;
 @property(copy) NSString *nameFormat; // @synthesize nameFormat=_nameFormat;
 @property(copy) NSString *urlFormat; // @synthesize urlFormat=_urlFormat;
@@ -33,7 +34,6 @@
 @property(readonly) BOOL includeInPreferences; // @synthesize includeInPreferences=_includeInPreferences;
 @property(readonly) BOOL isMark; // @synthesize isMark=_isMark;
 @property(readonly) BOOL inheritsNodeType; // @synthesize inheritsNodeType=_inheritsNodeType;
-- (void).cxx_destruct;
 - (id)initWithPropertyListDictionary:(id)arg1;
 
 @end

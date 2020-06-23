@@ -27,13 +27,13 @@
 + (id)keyPathsForValuesAffectingCanPerformDefaultAction;
 + (id)keyPathsForValuesAffectingCanGoBack;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTSimulatorCreationViewController *activeViewController; // @synthesize activeViewController=_activeViewController;
 @property(retain, nonatomic) DVTSimulatorCreationViewController *pairViewController; // @synthesize pairViewController=_pairViewController;
 @property(retain, nonatomic) DVTSimulatorCreationViewController *simViewController; // @synthesize simViewController=_simViewController;
 @property long long windowState; // @synthesize windowState=_windowState;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) NSTextField *sheetTitleLabel; // @synthesize sheetTitleLabel=_sheetTitleLabel;
-- (void).cxx_destruct;
 - (void)_pairSimulators;
 - (void)_createSimulator;
 - (id)_createSimulatorContextFromUIState;

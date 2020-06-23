@@ -21,8 +21,8 @@
 
 + (void)initialize;
 + (id)keyPathsForValuesAffectingListContents;
-@property(readonly) IDEContainerQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+@property(readonly) IDEContainerQuery *query; // @synthesize query=_query;
 - (id)blueprint;
 @property(readonly) NSArray *listContents;
 - (void)primitiveInvalidate;

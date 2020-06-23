@@ -13,8 +13,8 @@
     NSString *_stringKeyPath;
 }
 
-@property(readonly, nonatomic) NSString *stringKeyPath; // @synthesize stringKeyPath=_stringKeyPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *stringKeyPath; // @synthesize stringKeyPath=_stringKeyPath;
 - (id)cachedValueFromRequestedValue:(id)arg1;
 - (id)initWithCachedAreaKeyPath:(id)arg1 toEditStringAtKeyPath:(id)arg2 requestedKeyPath:(id)arg3;
 

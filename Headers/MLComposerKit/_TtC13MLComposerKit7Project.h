@@ -12,6 +12,8 @@
 {
     MISSING_TYPE *id;
     MISSING_TYPE *version;
+    MISSING_TYPE *versionErrorTitle;
+    MISSING_TYPE *versionErrorSubtitle;
     MISSING_TYPE *createdDate;
     MISSING_TYPE *modifiedDate;
     MISSING_TYPE *authorName;

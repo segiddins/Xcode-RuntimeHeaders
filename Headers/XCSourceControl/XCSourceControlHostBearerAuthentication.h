@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)name;
-@property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

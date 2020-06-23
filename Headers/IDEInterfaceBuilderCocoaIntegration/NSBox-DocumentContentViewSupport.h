@@ -52,7 +52,7 @@
 - (id)ibDefaultBorderColor;
 - (BOOL)ibIsTitled;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
-- (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (id)ibUnembedableChildren;
 - (void)ibDidRemoveContentViewFromDocumentDuringVerifyContentView;
 - (void)ibDidAddContentViewToDocumentDuringVerifyContentView;

@@ -26,12 +26,12 @@
 + (id)_imageMediaTypes;
 + (id)resourceManagerForWorkspace:(id)arg1;
 + (void)initialize;
-@property(readonly, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
 - (id)imageResourceNamed:(id)arg1;
 - (id)_resourceNamed:(id)arg1 ofMediaType:(id)arg2;
-- (struct NSObject *)registerImageResourceObserver:(CDUnknownBlockType)arg1;
+- (id)registerImageResourceObserver:(CDUnknownBlockType)arg1;
 - (id)_currentImageNames;
 - (id)_variantForMatching;
 - (id)_defaultFoldingStrategy;

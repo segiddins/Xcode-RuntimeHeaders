@@ -14,8 +14,8 @@
     long long _stackFrameFilter;
 }
 
-@property(nonatomic) long long stackFrameFilter; // @synthesize stackFrameFilter=_stackFrameFilter;
 - (void).cxx_destruct;
+@property(nonatomic) long long stackFrameFilter; // @synthesize stackFrameFilter=_stackFrameFilter;
 - (BOOL)isLeaf;
 - (void)invalidateChildItems;
 @property(readonly, nonatomic) NSArray *childRepresentedObjects;

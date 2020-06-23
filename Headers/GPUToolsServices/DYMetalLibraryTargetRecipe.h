@@ -16,11 +16,11 @@
     NSString *_buildDirectoryPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *buildDirectoryPath; // @synthesize buildDirectoryPath=_buildDirectoryPath;
 @property(readonly, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, nonatomic) NSString *outputFilePath; // @synthesize outputFilePath=_outputFilePath;
 @property(readonly, nonatomic) NSString *inputFilePath; // @synthesize inputFilePath=_inputFilePath;
-- (void).cxx_destruct;
 - (id)initWithInputFilePath:(id)arg1 outputFilePath:(id)arg2 arguments:(id)arg3 buildDirectoryPath:(id)arg4;
 
 @end

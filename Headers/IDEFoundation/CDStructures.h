@@ -434,14 +434,6 @@ struct IDESourceKitUIDValues {
     struct _sourcekit_uid_s *AvailableRefactoringLocal;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct UIDContainer {
     struct IDESourceKitUIDKeys keys;
     struct IDESourceKitUIDRequests requests;

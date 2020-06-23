@@ -14,9 +14,9 @@
     struct CGRect _bandSelectionRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect bandSelectionRect; // @synthesize bandSelectionRect=_bandSelectionRect;
 @property(copy, nonatomic) NSArray *dropIndicatorPaths; // @synthesize dropIndicatorPaths=_dropIndicatorPaths;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)invalidateDrawingForPath:(id)arg1;

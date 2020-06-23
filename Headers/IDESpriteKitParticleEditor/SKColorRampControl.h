@@ -20,9 +20,9 @@
     id <SKColorRampControlDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKColorRampControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isInputActive; // @synthesize isInputActive=_isInputActive;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayKeyframeSequence:(id)arg1;
 - (id)createKeyframeSequence;

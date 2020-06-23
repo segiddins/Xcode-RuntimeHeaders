@@ -40,6 +40,7 @@
     NSImageView *_throttleStatusImageView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSImageView *throttleStatusImageView; // @synthesize throttleStatusImageView=_throttleStatusImageView;
 @property __weak NSTextField *throttleStatusField; // @synthesize throttleStatusField=_throttleStatusField;
 @property(nonatomic) __weak NSTextField *energyLogScoreField; // @synthesize energyLogScoreField=_energyLogScoreField;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) IDEAppEnergyGraph *cpuWasteGraph; // @synthesize cpuWasteGraph=_cpuWasteGraph;
 @property(nonatomic) unsigned long long lastMetricsDeltaCount; // @synthesize lastMetricsDeltaCount=_lastMetricsDeltaCount;
 @property(retain, nonatomic) IDEEnergyAddition *addition; // @synthesize addition=_addition;
-- (void).cxx_destruct;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;
 - (id)gradientForColor:(id)arg1;
 - (id)colorForChartNamed:(id)arg1;

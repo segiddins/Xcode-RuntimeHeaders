@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
 
 + (void)runFileJob:(id)arg1;
 + (void)runLoadJob:(id)arg1;
-@property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 @property(readonly, nonatomic) BOOL hasHeldJobs;
 @property(readonly, nonatomic) BOOL isLoading;
 @property(readonly, nonatomic) BOOL isQuiescent;

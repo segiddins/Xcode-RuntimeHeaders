@@ -16,11 +16,11 @@
     CALayer *_layer;
 }
 
+- (void).cxx_destruct;
 @property __weak CALayer *layer; // @synthesize layer=_layer;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(readonly) long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly) double location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)_compareToLocationThenTypeOf:(id)arg1;
 - (long long)_compareToTypeOf:(id)arg1;

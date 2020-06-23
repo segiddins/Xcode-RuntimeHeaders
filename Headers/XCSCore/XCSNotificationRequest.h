@@ -14,8 +14,8 @@
 }
 
 + (id)notificationRequestWithTrigger:(id)arg1;
-@property(readonly, nonatomic) XCSTrigger *trigger; // @synthesize trigger=_trigger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) XCSTrigger *trigger; // @synthesize trigger=_trigger;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;
 - (id)initWithTrigger:(id)arg1;

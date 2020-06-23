@@ -14,8 +14,8 @@
     BOOL _drawIndent;
 }
 
-@property(nonatomic) BOOL drawIndent; // @synthesize drawIndent=_drawIndent;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL drawIndent; // @synthesize drawIndent=_drawIndent;
 - (void)setEmphasized:(BOOL)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;

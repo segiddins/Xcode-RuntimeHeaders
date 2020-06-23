@@ -104,6 +104,7 @@
 + (id)duplicateTarget:(id)arg1 withTargetController:(Class)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property BOOL subviewControllersNeedsRefresh; // @synthesize subviewControllersNeedsRefresh=_subviewControllersNeedsRefresh;
 @property(nonatomic) BOOL extensionWantsLaunchImages; // @synthesize extensionWantsLaunchImages=_extensionWantsLaunchImages;
 @property(nonatomic) BOOL extensionWantsAppIcons; // @synthesize extensionWantsAppIcons=_extensionWantsAppIcons;
@@ -134,7 +135,6 @@
 @property(copy) NSString *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
 @property(retain, nonatomic) NSDictionary *iconFilePathSetsByIconBaseName; // @synthesize iconFilePathSetsByIconBaseName=_iconFilePathSetsByIconBaseName;
 @property(retain, nonatomic) Xcode3TargetEditor *targetViewController; // @synthesize targetViewController=_targetViewController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;

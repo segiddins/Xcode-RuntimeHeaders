@@ -50,6 +50,7 @@
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingTitleForDisplay;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(readonly) DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly) DVTTableView *tableView; // @synthesize tableView=_tableView;
@@ -58,7 +59,6 @@
 @property unsigned long long arrangedItemCount; // @synthesize arrangedItemCount=_arrangedItemCount;
 @property(copy) NSArray *_selectedItems; // @synthesize _selectedItems;
 @property(readonly) IDENavigableItem *_rootNavigableItem; // @synthesize _rootNavigableItem;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long itemCount;
 - (void)_updateArrangedItemCount;
 - (id)_tableMenu;

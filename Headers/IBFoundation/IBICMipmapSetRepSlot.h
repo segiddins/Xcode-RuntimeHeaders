@@ -20,8 +20,8 @@
 + (Class)assetRepClass;
 + (Class)assetSetClass;
 + (id)slotFilterWithLevelFilter:(id)arg1;
-@property(readonly) IBICMipmapLevel *mipmapLevel; // @synthesize mipmapLevel=_mipmapLevel;
 - (void).cxx_destruct;
+@property(readonly) IBICMipmapLevel *mipmapLevel; // @synthesize mipmapLevel=_mipmapLevel;
 - (id)detailAreaPath;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (long long)compareDisplayOrder:(id)arg1;

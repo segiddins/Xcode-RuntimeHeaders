@@ -31,10 +31,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL classDataIsUpdating; // @synthesize classDataIsUpdating=_classDataIsUpdating;
 @property(copy, nonatomic) NSArray *classProviders; // @synthesize classProviders=_classProviders;
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)orderedRelationsOfRelationshipType:(long long)arg1 forClassNamed:(id)arg2 recursive:(BOOL)arg3;
 - (id)namedRelationsOfRelationshipType:(long long)arg1 forClassNamed:(id)arg2 recursive:(BOOL)arg3;
 - (void)fallbackToNextSuperclassCandidateForClassNamed:(id)arg1;

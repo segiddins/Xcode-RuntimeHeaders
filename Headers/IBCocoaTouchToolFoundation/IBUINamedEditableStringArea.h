@@ -15,8 +15,8 @@
     NSString *_editableStringKeyPath;
 }
 
-@property(retain, nonatomic) NSString *editableStringKeyPath; // @synthesize editableStringKeyPath=_editableStringKeyPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *editableStringKeyPath; // @synthesize editableStringKeyPath=_editableStringKeyPath;
 - (id)fieldEditorConfiguration;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 

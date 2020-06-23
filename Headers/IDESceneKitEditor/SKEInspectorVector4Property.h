@@ -23,8 +23,8 @@
     CDUnknownBlockType _userChangedValueBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType userChangedValueBlock; // @synthesize userChangedValueBlock=_userChangedValueBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType userChangedValueBlock; // @synthesize userChangedValueBlock=_userChangedValueBlock;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)setValue:(id)arg1;
 - (void)refresh;

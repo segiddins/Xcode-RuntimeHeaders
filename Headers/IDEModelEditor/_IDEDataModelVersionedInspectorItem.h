@@ -13,8 +13,8 @@
     IDEFileReference *_fileReference;
 }
 
-@property(readonly) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (void).cxx_destruct;
+@property(readonly) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (id)initWithFileReference:(id)arg1;
 @property(readonly) NSString *name;
 

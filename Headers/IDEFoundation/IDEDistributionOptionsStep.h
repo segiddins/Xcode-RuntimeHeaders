@@ -17,8 +17,8 @@
 + (id)availableOptionsForPropertyList;
 + (id)distributionOptionClasses;
 + (id)distributionOptionExtensions;
-@property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
 - (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;

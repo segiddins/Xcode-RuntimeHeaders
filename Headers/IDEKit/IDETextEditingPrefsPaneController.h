@@ -25,6 +25,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSTextField *autoHighlightTokensDelayField; // @synthesize autoHighlightTokensDelayField=_autoHighlightTokensDelayField;
 @property __weak NSTextField *pageGuideLocationField; // @synthesize pageGuideLocationField=_pageGuideLocationField;
 @property __weak NSTextField *wrappedLinesIndentWidthField; // @synthesize wrappedLinesIndentWidthField=_wrappedLinesIndentWidthField;
@@ -32,7 +33,6 @@
 @property __weak NSTextField *indentWidthField; // @synthesize indentWidthField=_indentWidthField;
 @property __weak NSTextField *tabWidthField; // @synthesize tabWidthField=_tabWidthField;
 @property __weak NSPopUpButton *editorOverscrollPopUp; // @synthesize editorOverscrollPopUp=_editorOverscrollPopUp;
-- (void).cxx_destruct;
 - (void)editorOverscrollChanged:(id)arg1;
 - (void)autoHighlightDelayChanged:(id)arg1;
 - (void)pageGuideLocationChanged:(id)arg1;

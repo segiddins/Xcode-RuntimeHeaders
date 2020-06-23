@@ -16,9 +16,9 @@
 }
 
 + (id)proxiedDevicesSetWithDevices:(id)arg1 activeProxiedDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) id <DVTBasicDevice> activeProxiedDevice; // @synthesize activeProxiedDevice=_activeProxiedDevice;
 @property(readonly) NSOrderedSet *proxiedDevices; // @synthesize proxiedDevices=_proxiedDevices;
-- (void).cxx_destruct;
 
 @end
 

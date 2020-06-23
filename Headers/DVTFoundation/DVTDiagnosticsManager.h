@@ -28,6 +28,7 @@
 }
 
 + (id)diagnosticsFullPathWithLocation:(id)arg1 title:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _totalProgressSteps; // @synthesize _totalProgressSteps=__totalProgressSteps;
 @property(retain, nonatomic) NSTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(retain, nonatomic) NSMutableDictionary *collectorErrors; // @synthesize collectorErrors=_collectorErrors;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL hasTimedOut; // @synthesize hasTimedOut=_hasTimedOut;
 @property(nonatomic) BOOL shouldExit; // @synthesize shouldExit=_shouldExit;
 @property(nonatomic) double progressPercentage; // @synthesize progressPercentage=_progressPercentage;
-- (void).cxx_destruct;
 - (void)_setShouldExit:(BOOL)arg1;
 - (void)_timeoutDiagnostics:(id)arg1;
 - (void)_cleanSharedDirectory;

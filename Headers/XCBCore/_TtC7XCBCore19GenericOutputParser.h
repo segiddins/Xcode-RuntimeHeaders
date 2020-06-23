@@ -16,6 +16,8 @@
     MISSING_TYPE *diagnosticRegex;
     MISSING_TYPE *toolBasenames;
     MISSING_TYPE *unparsedBytes;
+    MISSING_TYPE *inProgressDiagnostic;
+    MISSING_TYPE *fixits;
 }
 
 @end

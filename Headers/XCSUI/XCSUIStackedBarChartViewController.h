@@ -24,6 +24,7 @@
     NSTextField *_legendTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *legendTextField; // @synthesize legendTextField=_legendTextField;
 @property(retain) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain, nonatomic) XCSUIBotSummaryStackedBarGraph *graphView; // @synthesize graphView=_graphView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) id <XCSUIStackedBarChartViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSString *chartName; // @synthesize chartName=_chartName;
 @property(copy, nonatomic) NSArray *stackedBarChartBars; // @synthesize stackedBarChartBars=_stackedBarChartBars;
-- (void).cxx_destruct;
 - (void)reloadColumn:(unsigned long long)arg1;
 - (void)reloadData;
 - (id)emptyColumnColor;

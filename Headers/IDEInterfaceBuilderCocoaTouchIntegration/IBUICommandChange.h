@@ -17,9 +17,9 @@
     IBUIMenuElementIdentifier *_anchor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) IBUIMenuElementIdentifier *anchor; // @synthesize anchor=_anchor;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
-- (void).cxx_destruct;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (void)ibPrepareForCommandDiffCompilationInDocument:(id)arg1;

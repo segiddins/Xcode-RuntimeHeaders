@@ -15,9 +15,9 @@
 }
 
 + (id)recordWithConfiguration:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) IBMemberPropertyValue *value; // @synthesize value=_value;
 @property(readonly) IBMemberConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToConfigurationValueRecord:(id)arg1;

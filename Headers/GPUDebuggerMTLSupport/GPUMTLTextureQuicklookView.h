@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     DYRenderingAttributes *_renderingAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DYRenderingAttributes *renderingAttributes; // @synthesize renderingAttributes=_renderingAttributes;
 @property(nonatomic) struct DYInterposeVersion *interposerVersion; // @synthesize interposerVersion=_interposerVersion;
 @property(retain, nonatomic) id <DYPMTLTexture> texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (id)renderedImage;
 - (void)setSelectedLayer:(unsigned int)arg1;
 

@@ -16,11 +16,11 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(retain) NSColor *color; // @synthesize color=_color;
 @property(copy) NSAttributedString *valueString; // @synthesize valueString=_valueString;
 @property double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(double)arg1 color:(id)arg2 label:(id)arg3 valueString:(id)arg4;
 - (id)initWithValue:(double)arg1 color:(id)arg2 label:(id)arg3;
 

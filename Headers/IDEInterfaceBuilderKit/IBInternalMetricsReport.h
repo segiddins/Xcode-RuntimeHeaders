@@ -30,6 +30,7 @@
 + (void)printSummaryWithTitle:(id)arg1 metricReportDatas:(id)arg2;
 + (id)keyPathsForReporting;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(retain) IBDocumentMetrics *documentMetrics; // @synthesize documentMetrics=_documentMetrics;
 @property unsigned long long fileSizeB; // @synthesize fileSizeB=_fileSizeB;
 @property long long constraintCount; // @synthesize constraintCount=_constraintCount;
@@ -44,7 +45,6 @@
 @property(retain) NSString *platformOSName; // @synthesize platformOSName=_platformOSName;
 @property(retain) NSString *platformSDKBuildVersion; // @synthesize platformSDKBuildVersion=_platformSDKBuildVersion;
 @property(retain) NSString *toolsVersion; // @synthesize toolsVersion=_toolsVersion;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
 

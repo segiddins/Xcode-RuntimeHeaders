@@ -24,9 +24,9 @@
     NSColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *textColor; // @synthesize textColor=_textColor;
 @property __weak id <IDESourceControlLogFilesChangedViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawWholeTokenWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;
 - (void)_drawInteriorWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;

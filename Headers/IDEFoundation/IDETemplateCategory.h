@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (long long)categoryCompare:(id)arg1;
 - (id)standardCategoryNames;
 - (id)init;

@@ -29,6 +29,8 @@
 @property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_common_title;
+@property(readonly, nonatomic) BOOL ide_testReport_common_skipped;
+@property(readonly, nonatomic) BOOL ide_testReport_common_failed;
 @property(readonly, nonatomic) BOOL ide_testReport_common_passed;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_UUID;
 @property(readonly, nonatomic) id <IDETestReport_Device> ide_testReport_testRun_testedDevice;

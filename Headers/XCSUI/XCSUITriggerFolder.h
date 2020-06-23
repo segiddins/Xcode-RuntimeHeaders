@@ -14,9 +14,9 @@
     NSString *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1;
 
 @end

@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)listTextAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *prototypeWidthConstraint; // @synthesize prototypeWidthConstraint=_prototypeWidthConstraint;
 @property(retain) NSTreeController *treeController; // @synthesize treeController=_treeController;
 @property(retain) NSTextField *currentMSTextField; // @synthesize currentMSTextField=_currentMSTextField;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL completedBuildingTree; // @synthesize completedBuildingTree=_completedBuildingTree;
 @property(retain, nonatomic) NSMutableArray *reportComponentsArray; // @synthesize reportComponentsArray=_reportComponentsArray;
 @property(nonatomic) __weak id <GPUReportSectionNavigationDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)tableColumnDidResizeWidth:(id)arg1;

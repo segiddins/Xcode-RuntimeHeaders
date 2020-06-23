@@ -24,6 +24,7 @@
     NSNetService *_netService;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNetService *netService; // @synthesize netService=_netService;
 @property(retain, nonatomic) NSError *resolutionError; // @synthesize resolutionError;
 @property BOOL isResolving; // @synthesize isResolving;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *netServiceName; // @synthesize netServiceName;
 @property(retain, nonatomic) NSString *netServiceType; // @synthesize netServiceType;
 @property(retain, nonatomic) NSString *netServiceDomain; // @synthesize netServiceDomain;
-- (void).cxx_destruct;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)notifyAfterBonjourResolution:(CDUnknownBlockType)arg1;

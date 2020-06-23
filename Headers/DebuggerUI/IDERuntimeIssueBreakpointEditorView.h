@@ -6,29 +6,34 @@
 
 #import <AppKit/NSViewController.h>
 
-@class IDERuntimeIssueBreakpoint, NSButton, NSLayoutConstraint, NSPopUpButton, NSTextField;
+@class IDERuntimeIssueBreakpoint, NSButton, NSPopUpButton, NSStackView, NSTextField, NSView;
 
 @interface IDERuntimeIssueBreakpointEditorView : NSViewController
 {
     IDERuntimeIssueBreakpoint *_breakpoint;
+    NSView *_typePopUpView;
+    NSView *_explanationView;
     NSPopUpButton *_typePopUp;
     NSTextField *_showDiagosticsExplanation;
     NSButton *_showDiagnosticsTabButton;
-    NSLayoutConstraint *_showDiagosticsHeightConstraint;
 }
 
-@property(retain) NSLayoutConstraint *showDiagosticsHeightConstraint; // @synthesize showDiagosticsHeightConstraint=_showDiagosticsHeightConstraint;
+- (void).cxx_destruct;
 @property(retain) NSButton *showDiagnosticsTabButton; // @synthesize showDiagnosticsTabButton=_showDiagnosticsTabButton;
 @property(retain) NSTextField *showDiagosticsExplanation; // @synthesize showDiagosticsExplanation=_showDiagosticsExplanation;
 @property(retain) NSPopUpButton *typePopUp; // @synthesize typePopUp=_typePopUp;
+@property(retain) NSView *explanationView; // @synthesize explanationView=_explanationView;
+@property(retain) NSView *typePopUpView; // @synthesize typePopUpView=_typePopUpView;
 @property(retain) IDERuntimeIssueBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
-- (void).cxx_destruct;
 - (void)showDiagnosticsTab:(id)arg1;
 - (void)selectType:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithBreakpoint:(id)arg1;
+
+// Remaining properties
+@property(retain) NSStackView *view; // @dynamic view;
 
 @end
 

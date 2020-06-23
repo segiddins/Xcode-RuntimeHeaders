@@ -33,6 +33,7 @@
 + (id)keyPathsForValuesAffectingUserDescription;
 + (id)keyPathsForValuesAffectingPassword;
 + (id)keyPathsForValuesAffectingDeveloperAccount;
+- (void).cxx_destruct;
 @property(retain) NSBox *separator2; // @synthesize separator2=_separator2;
 @property(retain) NSBox *separator1; // @synthesize separator1=_separator1;
 @property(retain) IDEProvisioningProfileBulkDownloader *profileDownloader; // @synthesize profileDownloader=_profileDownloader;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSSet *teamDescriptions; // @synthesize teamDescriptions=_teamDescriptions;
 @property(retain, nonatomic) NSArrayController *teamDescriptionsArrayController; // @synthesize teamDescriptionsArrayController=_teamDescriptionsArrayController;
 @property __weak NSObjectController *objectController; // @synthesize objectController=_objectController;
-- (void).cxx_destruct;
 - (void)clickedDownloadProfilesButton:(id)arg1;
 - (void)downloadAllProfilesForTeamDescription:(id)arg1;
 - (void)viewWillUninstall;

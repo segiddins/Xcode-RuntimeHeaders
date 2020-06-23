@@ -20,12 +20,12 @@
     double _symbolSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL fillSymbol; // @synthesize fillSymbol=_fillSymbol;
 @property(nonatomic) double symbolSize; // @synthesize symbolSize=_symbolSize;
 @property(nonatomic) int symbolStyle; // @synthesize symbolStyle=_symbolStyle;
 @property(copy, nonatomic) NSColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
-- (void).cxx_destruct;
 - (void)_sendStyleChangedNotification;
 @property(readonly) NSImage *selectedSymbolImage;
 - (id)_createSymbolPathForSymbolStyle:(int)arg1;

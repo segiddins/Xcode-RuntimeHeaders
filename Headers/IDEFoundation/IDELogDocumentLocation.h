@@ -15,10 +15,10 @@
     struct _NSRange _characterRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct _NSRange characterRange; // @synthesize characterRange=_characterRange;
 @property(readonly) BOOL expandTranscript; // @synthesize expandTranscript=_expandTranscript;
 @property(readonly) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (long long)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

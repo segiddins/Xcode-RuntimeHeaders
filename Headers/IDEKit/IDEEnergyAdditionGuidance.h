@@ -17,12 +17,12 @@
     unsigned long long _verticalPosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) BOOL isOSXAppNapGuidance; // @synthesize isOSXAppNapGuidance=_isOSXAppNapGuidance;
 @property(nonatomic) unsigned long long verticalPosition; // @synthesize verticalPosition=_verticalPosition;
 @property(retain, nonatomic) NSArray *applicableTemplates; // @synthesize applicableTemplates=_applicableTemplates;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 
 @end
 

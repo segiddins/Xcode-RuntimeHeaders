@@ -43,6 +43,7 @@
 
 + (id)logAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak DVTComparisonSplitView *comparisonSplitView; // @synthesize comparisonSplitView=_comparisonSplitView;
 @property(retain) DVTBorderedView *contentAreaView; // @synthesize contentAreaView=_contentAreaView;
 @property(retain) NSIndexSet *modifiedDiffDescriptorIndexes; // @synthesize modifiedDiffDescriptorIndexes=_modifiedDiffDescriptorIndexes;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) DVTComparisonScroller *globalScroller; // @synthesize globalScroller=_globalScroller;
 @property(retain, nonatomic) NSScrollView *rightScrollView; // @synthesize rightScrollView=_rightScrollView;
 @property(retain, nonatomic) NSScrollView *leftScrollView; // @synthesize leftScrollView=_leftScrollView;
-- (void).cxx_destruct;
 - (void)scrollerImpPair:(id)arg1 updateScrollerStyleForNewRecommendedScrollerStyle:(long long)arg2;
 - (void)scrollerImpPair:(id)arg1 setContentAreaNeedsDisplayInRect:(struct CGRect)arg2;
 - (struct CGPoint)scrollerImpPair:(id)arg1 convertContentPoint:(struct CGPoint)arg2 toScrollerImp:(id)arg3;

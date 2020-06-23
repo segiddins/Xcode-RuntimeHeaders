@@ -27,13 +27,13 @@
 
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingCanAddItems;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property(nonatomic) BOOL allowsScrolling; // @synthesize allowsScrolling=_allowsScrolling;
 @property(nonatomic) BOOL resizesHeightBasedOnContent; // @synthesize resizesHeightBasedOnContent=_resizesHeightBasedOnContent;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property BOOL arrayControllerCanRemoveItems; // @synthesize arrayControllerCanRemoveItems=_arrayControllerCanRemoveItems;
 @property(retain, nonatomic) NSMutableArray *tableViewContent; // @synthesize tableViewContent=_tableViewContent;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;

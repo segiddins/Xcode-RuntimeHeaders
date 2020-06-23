@@ -13,10 +13,12 @@
 - (BOOL)disablesOnlyActiveArch;
 - (id)extraDebuggingRuntimeDylibPath;
 - (id)initWithPlatform:(id)arg1;
+- (BOOL)isAvailableWithError:(id *)arg1;
 - (BOOL)isAvailable;
 - (id)deviceType;
 - (unsigned long long)supportsFetchEvents;
 - (id)supportedDeviceFamilies;
+- (BOOL)supportsDaemonDebugging;
 - (BOOL)supportsMainThreadChecker;
 - (BOOL)supportsRecordedFrames;
 - (BOOL)supportsPGOReturningError:(id *)arg1;

@@ -23,6 +23,7 @@
     double _lineDashPhase;
 }
 
+- (void).cxx_destruct;
 @property double lineDashPhase; // @synthesize lineDashPhase=_lineDashPhase;
 @property(copy, nonatomic) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;
 @property BOOL usesEvenOddFillRule; // @synthesize usesEvenOddFillRule=_usesEvenOddFillRule;
@@ -32,7 +33,6 @@
 @property int lineCapStyle; // @synthesize lineCapStyle=_lineCapStyle;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) struct CGPath *cgPath; // @synthesize cgPath=_cgPath;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGPath *)_newScaledCGPath;
 - (void)deriveSettingsFromPath:(id)arg1;

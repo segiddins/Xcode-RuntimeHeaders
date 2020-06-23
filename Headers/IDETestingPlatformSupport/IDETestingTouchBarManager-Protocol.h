@@ -6,11 +6,9 @@
 
 #import "NSObject-Protocol.h"
 
+@protocol DVTInvalidation;
+
 @protocol IDETestingTouchBarManager <NSObject>
-- (BOOL)simulatorRunning;
-- (void)closeSimulatorWindow;
-- (void)showSimulatorWindow;
-- (BOOL)disableSimulator;
-- (BOOL)enableSimulator;
+- (id <DVTInvalidation>)enableSimulator;
 @end
 

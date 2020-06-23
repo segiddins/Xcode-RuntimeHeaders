@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     SKRenderer *_spriteRenderer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKRenderer *spriteRenderer; // @synthesize spriteRenderer=_spriteRenderer;
 @property(nonatomic) __weak SKCameraNode *camera; // @synthesize camera=_camera;
 @property(retain, nonatomic) GPUTraceDependencyViewerSKScene *scene; // @synthesize scene=_scene;
@@ -49,8 +50,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak GPUTraceDependencySubEditor *subeditor; // @synthesize subeditor=_subeditor;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) BOOL dimmedLines; // @synthesize dimmedLines=_dimmedLines;
-- (void).cxx_destruct;
 - (struct CGRect)scrollRect;
+- (struct CGSize)scale;
 - (id)nodeForGraphObject:(id)arg1;
 - (void)decrementContinuousRendering;
 - (void)incrementContinuousRendering;

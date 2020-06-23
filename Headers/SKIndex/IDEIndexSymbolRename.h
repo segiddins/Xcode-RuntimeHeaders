@@ -22,6 +22,7 @@
 
 + (void)setEnableTextualSearch:(BOOL)arg1;
 + (BOOL)enableTextualSearch;
+- (void).cxx_destruct;
 @property int specialkind; // @synthesize specialkind=_specialkind;
 @property(retain) NSNumber *paramIndex; // @synthesize paramIndex=_paramIndex;
 @property(retain) NSString *oldName; // @synthesize oldName=_oldName;
@@ -30,7 +31,6 @@
 @property(retain) NSMutableArray *includes; // @synthesize includes=_includes;
 @property(retain) NSMutableArray *occurrences; // @synthesize occurrences=_occurrences;
 @property(retain) IDEIndexSymbol *symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (id)initWithSymbol:(id)arg1 newName:(id)arg2 oldName:(id)arg3 paramIndex:(id)arg4 specialKind:(int)arg5;
 
 @end

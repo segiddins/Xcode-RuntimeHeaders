@@ -6,7 +6,7 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class DVTBorderedView, DVTSearchField, IDESearchWindowLocation, IDESearchWindowSearchField, NSAppearance, NSArray, NSEvent, NSImageView, NSNumber, NSString, NSView, NSVisualEffectView;
+@class DVTBorderedView, DVTSearchField, IDESearchWindowLocation, IDESearchWindowSearchField, NSAppearance, NSArray, NSEvent, NSImage, NSImageView, NSNumber, NSString, NSView, NSVisualEffectView;
 @protocol DVTCancellable, DVTInvalidation;
 
 @interface IDESearchWindowController : NSWindowController
@@ -40,6 +40,7 @@
 + (id)widthPreferenceSuffix;
 + (id)makeAccessoryButtonWithImage:(id)arg1 alternateImage:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (BOOL)isSystemInDarkMode;
+- (void).cxx_destruct;
 @property(readonly) __weak NSEvent *lastLeftMouseDownCausingImplicitDismiss; // @synthesize lastLeftMouseDownCausingImplicitDismiss=_lastLeftMouseDownCausingImplicitDismiss;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSAppearance *explicitContentAppearance; // @synthesize explicitContentAppearance=_explicitContentAppearance;
@@ -47,7 +48,6 @@
 @property(readonly) NSString *searchText; // @synthesize searchText=_searchText;
 @property(readonly) BOOL isWindowOpen; // @synthesize isWindowOpen=_isWindowOpen;
 @property(nonatomic) BOOL pinned; // @synthesize pinned=_pinned;
-- (void).cxx_destruct;
 - (struct CGRect)window:(id)arg1 willPositionSheet:(id)arg2 usingRect:(struct CGRect)arg3;
 - (void)windowDidResignKey:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
@@ -80,6 +80,7 @@
 - (void)sizeWindowForContentHeight:(double)arg1 animate:(BOOL)arg2 display:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateWindowMinimumSizeForContentHeight:(double)arg1;
 - (struct CGRect)frameForContentHeight:(double)arg1;
+@property(readonly) NSImage *searchFieldIcon;
 - (void)windowDidLoad;
 - (struct CGRect)unexpandedFrame;
 - (id)targetScreen;

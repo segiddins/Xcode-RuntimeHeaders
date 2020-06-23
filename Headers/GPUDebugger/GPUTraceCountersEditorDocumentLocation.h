@@ -19,6 +19,7 @@
     struct _NSRange _selectionRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 @property(nonatomic) struct _NSRange selectionRange; // @synthesize selectionRange=_selectionRange;
 @property(nonatomic) __weak GPUTimelineGraphDataSource *graphDataSource; // @synthesize graphDataSource=_graphDataSource;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned long long dataIndex; // @synthesize dataIndex=_dataIndex;
 @property(nonatomic) BOOL isEmptyEncoder; // @synthesize isEmptyEncoder=_isEmptyEncoder;
 @property(nonatomic) BOOL apiItemSelected; // @synthesize apiItemSelected=_apiItemSelected;
-- (void).cxx_destruct;
 
 @end
 

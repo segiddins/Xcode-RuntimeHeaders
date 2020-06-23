@@ -29,6 +29,7 @@
     DVTBorderedView *_argumentsTableBorderedView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *argumentsTableBorderedView; // @synthesize argumentsTableBorderedView=_argumentsTableBorderedView;
 @property __weak DVTBorderedView *tableBorderedView; // @synthesize tableBorderedView=_tableBorderedView;
 @property __weak DVTGradientImageButton *removeEnvironmentVariableButton; // @synthesize removeEnvironmentVariableButton=_removeEnvironmentVariableButton;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 @property(nonatomic) BOOL preventGoFowardOrFinish; // @synthesize preventGoFowardOrFinish=_preventGoFowardOrFinish;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)didEndEditingArgument:(id)arg1;

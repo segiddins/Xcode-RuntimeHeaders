@@ -16,9 +16,9 @@
 
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)propertyListIdentifier;
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *basePath; // @synthesize basePath=_basePath;
 @property(readonly) NSString *basePathString; // @synthesize basePathString=_basePathString;
-- (void).cxx_destruct;
 - (void)accessContentGroupsWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)accumulateContributingSources:(id)arg1;
 - (unsigned long long)hash;

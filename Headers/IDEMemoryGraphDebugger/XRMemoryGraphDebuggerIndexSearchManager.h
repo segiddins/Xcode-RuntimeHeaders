@@ -15,9 +15,9 @@
     NSMutableDictionary *_referenceNameToLocationMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *referenceNameToLocationMap; // @synthesize referenceNameToLocationMap=_referenceNameToLocationMap;
 @property(retain, nonatomic) NSMutableDictionary *classNameToLocationMap; // @synthesize classNameToLocationMap=_classNameToLocationMap;
-- (void).cxx_destruct;
 - (id)documentLocationForReferenceName:(id)arg1 withSourceClassName:(id)arg2;
 - (id)documentLocationForClassName:(id)arg1;
 - (id)initWithIDEIndex:(id)arg1;

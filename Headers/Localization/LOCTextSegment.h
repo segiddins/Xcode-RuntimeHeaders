@@ -29,6 +29,7 @@
 + (id)whitespaceCharacterSet;
 + (BOOL)sentenceSeparationCharactersNotRequiringSpace:(unsigned short)arg1;
 + (BOOL)whiteSpaceOnlyText:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long segmentUnit; // @synthesize segmentUnit;
 @property(retain) NSMutableArray *leverageStatusForNonWhiteSpaceSegment; // @synthesize leverageStatusForNonWhiteSpaceSegment;
 @property(retain) NSArray *nonWhiteSpaceSegmentSizes; // @synthesize nonWhiteSpaceSegmentSizes;
@@ -40,7 +41,6 @@
 @property(retain) NSArray *segments; // @synthesize segments;
 @property(retain) NSString *localeCode; // @synthesize localeCode;
 @property(retain) NSString *text; // @synthesize text;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)whiteSpaceOnlyText:(id)arg1;
 - (BOOL)whiteSpaceOnlyTextSegment:(unsigned long long)arg1;

@@ -17,6 +17,7 @@
     DVTObservingToken *_distributionArchivesLocationObservingToken;
 }
 
++ (id)archiveWithSubmissionIdentifier:(id)arg1;
 + (void)initialize;
 + (id)sharedArchiveManager;
 - (void).cxx_destruct;

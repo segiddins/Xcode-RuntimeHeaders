@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
-#import <IDEFoundation/_TtP13IDEFoundation36IDETestPlanTestableReferenceProtocol_-Protocol.h>
 
 @class DVTObservingToken, IDEScheme, IDESchemeBuildableReference, NSMutableSet, NSSet, NSString, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 @protocol IDETestable;
 
-@interface IDETestableReference : NSObject <_TtP13IDEFoundation36IDETestPlanTestableReferenceProtocol_, DVTXMLUnarchiving>
+@interface IDETestableReference : NSObject <DVTXMLUnarchiving>
 {
     DVTObservingToken *_testableObservingToken;
     IDESchemeBuildableReference *_buildableReference;
@@ -31,6 +30,7 @@
 + (id)_sortedTestIdentifierWrappersForTestIdentifiers:(id)arg1;
 + (id)keyPathsForValuesAffectingScheme;
 + (id)_testableForBuildableReference:(id)arg1;
+- (void).cxx_destruct;
 @property long long testExecutionOrdering; // @synthesize testExecutionOrdering=_testExecutionOrdering;
 @property(getter=isAssociatedWithSchemeAction) BOOL associatedWithSchemeAction; // @synthesize associatedWithSchemeAction=_associatedWithSchemeAction;
 @property BOOL parallelizable; // @synthesize parallelizable=_parallelizable;
@@ -38,7 +38,6 @@
 @property(retain) _TtC13IDEFoundation25IDEDeviceAppDataReference *deviceAppDataReference; // @synthesize deviceAppDataReference=_deviceAppDataReference;
 @property BOOL skipped; // @synthesize skipped=_skipped;
 @property(readonly) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
-- (void).cxx_destruct;
 - (void)gatherEnabledTestsInTreeOfTest:(id)arg1 intoWhitelist:(id)arg2;
 - (void)convertBlacklistToWhitelist;
 - (BOOL)testContainer:(id)arg1 shouldBeInBlacklistCollectingBlacklistForSubtree:(id)arg2;
@@ -70,6 +69,8 @@
 - (id)testableName;
 @property(readonly) id <IDETestable> testable; // @synthesize testable=_testable;
 @property(readonly, copy) NSString *description;
+- (id)copyWithNewName:(id)arg1;
+- (void)dealloc;
 - (id)initForTestingWithTestable:(id)arg1;
 - (id)initWithBuildableReference:(id)arg1 skippedTests:(id)arg2 selectedTests:(id)arg3 testSelectionMode:(long long)arg4;
 - (id)initWithTestable:(id)arg1 scheme:(id)arg2;

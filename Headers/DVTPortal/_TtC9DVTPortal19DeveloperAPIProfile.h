@@ -6,8 +6,8 @@
 
 #import <DVTPortal/_TtC9DVTPortal20DeveloperAPIResource.h>
 
-@class DVTPlatform, DVTPortalProfileType, MISSING_TYPE, NSDate, NSString, NSUUID;
-@protocol _TtP9DVTPortal29DeveloperAPIBundleIDSpecifier_;
+@class DVTPlatform, DVTPortalProfileType, MISSING_TYPE, NSData, NSDate, NSString, NSUUID;
+@protocol _TtP9DVTPortal28DeveloperAPIBundleIDProtocol_;
 
 @interface _TtC9DVTPortal19DeveloperAPIProfile : _TtC9DVTPortal20DeveloperAPIResource
 {
@@ -15,6 +15,8 @@
     MISSING_TYPE *identifier;
     MISSING_TYPE *dateCreated;
     MISSING_TYPE *dateExpires;
+    MISSING_TYPE *data;
+    MISSING_TYPE *state;
     MISSING_TYPE *rawProfileAttributes;
     MISSING_TYPE *bundleID;
 }
@@ -23,17 +25,21 @@
 + (id)createDeviceTestingProfileWithSession:(id)arg1 type:(id)arg2 team:(id)arg3 bundleID:(id)arg4 deviceIdentifiers:(id)arg5 certificates:(id)arg6 error:(id *)arg7;
 + (id)createDeviceTestingProfileWithSession:(id)arg1 type:(id)arg2 team:(id)arg3 bundleID:(id)arg4 deviceIdentifiers:(id)arg5 error:(id *)arg6;
 + (id)createTeamProfileWithSession:(id)arg1 type:(id)arg2 team:(id)arg3 bundleID:(id)arg4 error:(id *)arg5;
-+ (id)profilesWithSession:(id)arg1 team:(id)arg2 platform:(id)arg3 error:(id *)arg4;
++ (id)profilesWithSession:(id)arg1 team:(id)arg2 error:(id *)arg3;
++ (id)profilesWithSession:(id)arg1 team:(id)arg2 platform:(id)arg3 sdkVariant:(id)arg4 error:(id *)arg5;
 - (void).cxx_destruct;
-- (id)downloadWithSession:(id)arg1 error:(id *)arg2;
-@property(nonatomic, readonly) id <_TtP9DVTPortal29DeveloperAPIBundleIDSpecifier_> bundleID; // @synthesize bundleID;
-@property(nonatomic, readonly) BOOL isTeamProfile;
+@property(nonatomic, readonly) id <_TtP9DVTPortal28DeveloperAPIBundleIDProtocol_> bundleID; // @synthesize bundleID;
+- (BOOL)isTeamProfile;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) DVTPlatform *platform;
+@property(nonatomic, copy) NSData *data;
 @property(nonatomic, readonly) NSDate *dateExpires;
 @property(nonatomic, readonly) NSDate *dateCreated;
 @property(nonatomic, readonly) NSUUID *identifier;
 @property(nonatomic, readonly) DVTPortalProfileType *profileType; // @synthesize profileType;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL teamProfile;
 
 @end
 

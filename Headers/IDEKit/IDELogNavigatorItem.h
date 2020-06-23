@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDELogNavigatorGroupedSchemeItemsCache *groupedSchemeItemsCache; // @synthesize groupedSchemeItemsCache=_groupedSchemeItemsCache;
 @property(retain, nonatomic) NSArray *observationTokens; // @synthesize observationTokens=_observationTokens;
 @property(nonatomic) BOOL showSubtitle; // @synthesize showSubtitle=_showSubtitle;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) IDEEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (BOOL)isEqualToIdentifier:(id)arg1;

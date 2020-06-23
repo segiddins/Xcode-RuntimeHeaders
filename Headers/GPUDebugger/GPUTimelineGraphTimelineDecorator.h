@@ -17,14 +17,12 @@
     id <GPUTimelineGraphTheme> _theme;
     GPUTimelineGraphDataSource *_dataSource;
     unsigned long long _nanosecondPerPoint;
-    unsigned long long _decorationInterval;
 }
 
-@property(readonly, nonatomic) unsigned long long decorationInterval; // @synthesize decorationInterval=_decorationInterval;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nanosecondPerPoint; // @synthesize nanosecondPerPoint=_nanosecondPerPoint;
 @property(retain, nonatomic) GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (void)_decorateUsingTimestamp:(struct DTTimelineDecorationContainer *)arg1;
 - (void)_decorateUsingLabel:(struct DTTimelineDecorationContainer *)arg1;
 - (void)decorateContainer:(struct DTTimelineDecorationContainer *)arg1 qualityOfService:(unsigned int)arg2 priority:(int)arg3 group:(id)arg4;

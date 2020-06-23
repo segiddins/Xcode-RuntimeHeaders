@@ -17,8 +17,8 @@
 }
 
 + (id)buildSettingsSnapshotFilePath:(id)arg1 inWorkspaces:(id)arg2;
-@property(readonly) NSArray *buildables; // @synthesize buildables=_buildables;
 - (void).cxx_destruct;
+@property(readonly) NSArray *buildables; // @synthesize buildables=_buildables;
 @property(readonly) NSArray *unpreprocessedInfoPlistPaths;
 - (void)enumerateValuesForBuildSetting:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)minimumDeploymentTargetForPlatform:(id)arg1;

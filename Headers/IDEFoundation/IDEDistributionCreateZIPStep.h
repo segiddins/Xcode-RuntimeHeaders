@@ -14,8 +14,8 @@
 }
 
 + (id)packagePathExtension;
-@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (_Bool)runWithError:(id *)arg1;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;

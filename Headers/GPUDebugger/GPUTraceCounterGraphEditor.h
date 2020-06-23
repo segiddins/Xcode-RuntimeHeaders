@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 {
     GPUTimelineGraphViewController *_counterGraphController;
     GPUTraceProfilerStatusViewController *_statusViewController;
-    double _initialFrameWidth;
     DVTFilterMatchFormatter *_filterMatchFormatter;
     GPUFilterTokenHelper *_tokenHelper;
     GPUFilterCompletionsEngine *_tokenCompletionsEngine;
@@ -60,6 +59,7 @@ __attribute__((visibility("hidden")))
     GPUFilteringCoordinator *_filteringCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL filterByDrawCall; // @synthesize filterByDrawCall=_filterByDrawCall;
 @property(retain, nonatomic) GPUFilteringCoordinator *filteringCoordinator; // @synthesize filteringCoordinator=_filteringCoordinator;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
@@ -83,7 +83,6 @@ __attribute__((visibility("hidden")))
 @property __weak NSView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) BOOL showEmptyCounters; // @synthesize showEmptyCounters=_showEmptyCounters;
 @property(nonatomic) __weak GPUTraceCountersEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
-- (void).cxx_destruct;
 - (void)counterSourceSelected:(id)arg1;
 - (void)dataStoreFinishedUpdatingBatchIDFilteredCounters:(id)arg1;
 - (void)dataStoreLoadingData:(id)arg1;
@@ -109,7 +108,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMenu *filterButtonMenu;
 @property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 - (void)selectOutlineItemWithUUID:(id)arg1;
-- (void)updateView;
+- (void)selectOutlineItemWithUUID:(id)arg1 dataIndex:(unsigned long long)arg2;
 - (void)scaleToFit;
 - (void)snapToEncoderForCurrentSelectedItem;
 @property(readonly, nonatomic) BOOL isCounterGraphAvailable;
@@ -140,8 +139,9 @@ __attribute__((visibility("hidden")))
 - (void)_buildCounterGraphFilterTokens;
 - (void)_constraintView:(id)arg1 toParentView:(id)arg2;
 - (void)setDebuggerController:(id)arg1 andDocument:(id)arg2 andFrame:(struct CGRect)arg3;
+- (void)viewWillAppear;
+- (void)viewWillDisappear;
 - (void)viewDidLoad;
-- (void)dealloc;
 - (void)loadView;
 
 // Remaining properties

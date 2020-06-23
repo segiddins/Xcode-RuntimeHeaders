@@ -23,11 +23,11 @@
 }
 
 + (id)assetWithName:(id)arg1 ofType:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKAssetReferenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SKEditorDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) DVTFileDataType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)_verifyAssetInWorkspace;
 - (void)_invalidateAssetReference;
 - (void)_verifyAssetValidityForDocument:(id)arg1;

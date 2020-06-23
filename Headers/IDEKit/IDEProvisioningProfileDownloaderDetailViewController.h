@@ -17,12 +17,12 @@
     IDEProvisioningProfileInfoViewController *_infoViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningProfileInfoViewController *infoViewController; // @synthesize infoViewController=_infoViewController;
 @property(retain, nonatomic) DVTObservingToken *hasUpdatedPortalProfileObserver; // @synthesize hasUpdatedPortalProfileObserver=_hasUpdatedPortalProfileObserver;
 @property(retain, nonatomic) DVTObservingToken *qualificationObserver; // @synthesize qualificationObserver=_qualificationObserver;
 @property(nonatomic) BOOL hasUpdatedPortalProfile; // @synthesize hasUpdatedPortalProfile=_hasUpdatedPortalProfile;
 @property(retain, nonatomic) IDEProfileQualification *qualification; // @synthesize qualification=_qualification;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setupObservations;
 - (void)viewDidLoad;

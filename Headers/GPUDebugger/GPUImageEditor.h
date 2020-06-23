@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _level;
     unsigned long long _depthPlane;
     unsigned long long _attachmentIndex;
+    int _prevMipmapLevel;
+    int _prevLayer;
     NSMenu *_zoomScaleMenu;
     id <DYResource> _resource;
     NSTextField *_imageLabel;
@@ -50,8 +52,8 @@ __attribute__((visibility("hidden")))
 
 + (id)assetBundle;
 + (BOOL)asyncLoadingSupported;
-@property __weak NSTextField *imageLabel; // @synthesize imageLabel=_imageLabel;
 - (void).cxx_destruct;
+@property __weak NSTextField *imageLabel; // @synthesize imageLabel=_imageLabel;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
 - (void)showSettings:(id)arg1;

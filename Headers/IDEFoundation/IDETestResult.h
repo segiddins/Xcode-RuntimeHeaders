@@ -23,6 +23,7 @@
     NSMutableSet *_mutableFailureLocations;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *mutableFailureLocations; // @synthesize mutableFailureLocations=_mutableFailureLocations;
 @property(retain) NSMutableArray *mutableMessages; // @synthesize mutableMessages=_mutableMessages;
 @property(retain) NSMutableArray *mutablePerformanceMetrics; // @synthesize mutablePerformanceMetrics=_mutablePerformanceMetrics;
@@ -32,7 +33,6 @@
 @property(readonly, copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(readonly, copy) NSString *testName; // @synthesize testName=_testName;
 @property(readonly, copy) IDETestIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)addFailureLocation:(id)arg1;
 @property(readonly) NSSet *failureLocations;

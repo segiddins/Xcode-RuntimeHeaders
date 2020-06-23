@@ -14,8 +14,8 @@
 }
 
 + (id)locationForTestLocation:(id)arg1 inDocument:(id)arg2;
-@property(readonly) _TtC13IDEFoundation15IDETestLocation *testLocation; // @synthesize testLocation=_testLocation;
 - (void).cxx_destruct;
+@property(readonly) _TtC13IDEFoundation15IDETestLocation *testLocation; // @synthesize testLocation=_testLocation;
 - (void)_updateLocationForDocument:(id)arg1;
 - (void)_showHoverRunIcon;
 - (void)_updateTestStateWithTestManager:(id)arg1;

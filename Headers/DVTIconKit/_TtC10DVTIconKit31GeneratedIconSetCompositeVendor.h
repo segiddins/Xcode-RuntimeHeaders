@@ -11,7 +11,7 @@
 @interface _TtC10DVTIconKit31GeneratedIconSetCompositeVendor : _TtCs12_SwiftObject
 {
     MISSING_TYPE *iconSetVendors;
-    MISSING_TYPE *_cachedVendorsByIconSetName;
+    MISSING_TYPE *_cachedVendorsByIconSetIdentifier;
 }
 
 @end

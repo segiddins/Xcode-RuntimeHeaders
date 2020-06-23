@@ -10,6 +10,8 @@
 @class NSArray, NSString;
 
 @protocol IDETestReport_TestGroup <NSObject, IDETestReport_Base>
+- (NSArray *)ide_sharedTests_mixedTests;
+- (NSArray *)ide_sharedTests_skippedTests;
 - (NSArray *)ide_sharedTests_failingTests;
 - (NSArray *)ide_sharedTests_passingTests;
 - (NSArray *)ide_sharedTests_testGroup_allTests;

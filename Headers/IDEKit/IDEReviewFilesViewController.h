@@ -34,10 +34,10 @@
 + (struct CGRect)minimumSheetFrame;
 + (struct CGSize)sheetSizeForHostWindow:(id)arg1;
 + (id)reviewFilesLogAspect;
+- (void).cxx_destruct;
 @property(retain) id <IDEReviewFilesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEEditorVersionsMode *versionsMode; // @synthesize versionsMode=_versionsMode;
 @property(readonly) IDEReviewFilesNavigator *navigator; // @synthesize navigator=_navigator;
-- (void).cxx_destruct;
 - (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;

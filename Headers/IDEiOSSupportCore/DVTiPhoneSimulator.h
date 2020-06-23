@@ -55,6 +55,7 @@
 + (void)initialize;
 + (void)_trackPid:(int)arg1 forDevice:(id)arg2 launchService:(id)arg3;
 + (void)cleanUpSessionMap;
+- (void).cxx_destruct;
 @property long long currentSessionMode; // @synthesize currentSessionMode=_currentSessionMode;
 @property(readonly) DVTSimulatorApplication *simulatorApplication; // @synthesize simulatorApplication=_simulatorApplication;
 @property(retain) DVTProxiedDeviceSet *proxiedDeviceSet; // @synthesize proxiedDeviceSet=_proxiedDeviceSet;
@@ -65,7 +66,6 @@
 @property int simulatorPID; // @synthesize simulatorPID=_simulatorPID;
 @property(retain) SimDevice *device; // @synthesize device=_device;
 - (id)platform;
-- (void).cxx_destruct;
 - (void)_shutdownIfNoActiveClaims;
 - (id)_devicesToShutdownWhenUnclaimed;
 - (void)_shutdownLaterIfNoActiveClaims;
@@ -80,7 +80,11 @@
 - (void)stopDebuggingXPCServices:(id)arg1 forPairedDevice:(BOOL)arg2;
 - (void)xpcServiceObserved:(id)arg1 withProcessIdentifier:(int)arg2 requestedByProcess:(int)arg3 options:(id)arg4;
 - (void)outputReceived:(id)arg1 fromProcess:(int)arg2 atTime:(unsigned long long)arg3;
+- (void)_requestDebugLaunchOfDaemon:(id)arg1 onChannel:(id)arg2;
 - (void)_debugXPCServices:(id)arg1 onChannel:(id)arg2 completionSemaphore:(id)arg3;
+- (id)_optionsForService:(id)arg1;
+- (void)_runWithServiceChannelOnPairedDevice:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)requestDebugLaunchOfDaemon:(id)arg1 onPairedDevice:(BOOL)arg2;
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
 - (id)primaryInstrumentsServerWithError:(id *)arg1;
 - (void)cancelPrimaryInstrumentsServer;
@@ -181,13 +185,13 @@
 - (id)shutDownDevice;
 - (id)startUpDevice;
 - (BOOL)canStartUpAndShutDown;
-- (unsigned long long)state;
+@property(readonly) unsigned long long state;
 - (BOOL)allowsManagedStateControl;
 - (void)dealloc;
 @property(readonly, copy) NSString *simulatorIconFilePath;
 @property(readonly) NSNumber *simulatedDeviceFamily;
 - (BOOL)isLogArchiveCollectionEnabled;
-- (BOOL)testRunSpecificationWorkerRequiresUniqueClone:(id)arg1;
+- (long long)maxConcurrentTestingProcesses;
 - (BOOL)supportsCloning;
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;

@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *sourceTextViewToObservingTokensMapTable; // @synthesize sourceTextViewToObservingTokensMapTable=_sourceTextViewToObservingTokensMapTable;
 @property BOOL trimWhitespaceOnlyLines; // @synthesize trimWhitespaceOnlyLines=_trimWhitespaceOnlyLines;
 @property BOOL trimTrailingWhitespace; // @synthesize trimTrailingWhitespace=_trimTrailingWhitespace;
@@ -37,7 +38,6 @@
 @property unsigned long long textEncoding; // @synthesize textEncoding=_textEncoding;
 @property unsigned long long lineEndings; // @synthesize lineEndings=_lineEndings;
 @property(retain, nonatomic) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)updateTrimWhitespaceOnlyLines;
 - (void)updateTrimTrailingWhitespace;

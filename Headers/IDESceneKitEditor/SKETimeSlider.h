@@ -18,8 +18,8 @@
     NSTextField *_timeLabel;
 }
 
-@property(readonly) __weak NSObject<SKETimeSliderDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly) __weak NSObject<SKETimeSliderDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 - (void)userScrubbed:(id)arg1;
 - (void)playPauseButtonClicked:(id)arg1;
 - (void)_updatePlayPauseButton;

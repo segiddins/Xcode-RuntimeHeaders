@@ -22,10 +22,10 @@
 + (id)currentProcessInformations;
 + (id)_processInformationsFilteredBy:(CDUnknownBlockType)arg1;
 + (id)_archNameForExecutableArchitecture:(int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *firstApplicationArgument; // @synthesize firstApplicationArgument=_firstApplicationArgument;
 @property(copy, nonatomic) NSString *requestedApplicationName; // @synthesize requestedApplicationName=_requestedApplicationName;
 @property(copy, nonatomic) NSString *realApplicationName; // @synthesize realApplicationName=_realApplicationName;
-- (void).cxx_destruct;
 - (id)_procTableName;
 - (BOOL)_isLaunchCFMApp;
 - (id)_calculatePreferredArchitecture;

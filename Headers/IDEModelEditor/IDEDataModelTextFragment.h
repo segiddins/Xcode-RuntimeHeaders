@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) IDEDMSelection *selection; // @synthesize selection=_selection;
 @property(readonly) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

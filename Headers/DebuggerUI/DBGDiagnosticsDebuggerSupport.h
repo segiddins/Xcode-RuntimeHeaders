@@ -18,11 +18,11 @@
     NSArray *_allActiveLaunchSessionsWhenInvoked;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allActiveLaunchSessionsWhenInvoked; // @synthesize allActiveLaunchSessionsWhenInvoked=_allActiveLaunchSessionsWhenInvoked;
 @property(retain, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSFileManager *fm; // @synthesize fm=_fm;
 @property(retain, nonatomic) NSMutableDictionary *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)_cleanupStringForXML:(id)arg1;
 - (id)_codeModulesForLaunchSession:(id)arg1;
 - (void)_writeCodeModules:(id)arg1;

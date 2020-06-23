@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(retain) NSSet *selectedEntityItems; // @synthesize selectedEntityItems=_selectedEntityItems;
 @property(retain) NSArray *availableEntities; // @synthesize availableEntities=_availableEntities;
-- (void).cxx_destruct;
 - (id)nextAssistantIdentifier;
 - (BOOL)canGoForward;
 - (BOOL)canGoBack;

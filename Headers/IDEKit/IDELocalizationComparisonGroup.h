@@ -17,9 +17,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property __weak IDELocalizationComparisonGroup *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)childWithName:(id)arg1;
 - (void)removeChildForName:(id)arg1;
 - (void)addChild:(id)arg1 forName:(id)arg2;

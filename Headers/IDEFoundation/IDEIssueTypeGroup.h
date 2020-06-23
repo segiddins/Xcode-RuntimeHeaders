@@ -24,13 +24,13 @@
     unsigned long long _issueType;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long issueType; // @synthesize issueType=_issueType;
 @property(readonly) id issueTypeIdentifier; // @synthesize issueTypeIdentifier=_issueTypeIdentifier;
 @property(readonly) IDEIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
 @property(readonly) NSMutableDictionary *displayNameForRuntimeIssueTypeIdentifierTable; // @synthesize displayNameForRuntimeIssueTypeIdentifierTable=_displayNameForRuntimeIssueTypeIdentifierTable;
 @property(copy, nonatomic) NSMutableArray *subgroups; // @synthesize subgroups=_subgroups;
 @property(readonly) NSArray *issues; // @synthesize issues=_issues;
-- (void).cxx_destruct;
 - (void)_removeIssues:(id)arg1;
 - (void)_addIssues:(id)arg1;
 - (void)_updateIssueType;

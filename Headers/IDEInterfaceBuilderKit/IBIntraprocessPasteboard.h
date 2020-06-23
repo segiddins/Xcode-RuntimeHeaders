@@ -27,8 +27,8 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (void)initialize;
-- (id)name;
 - (void).cxx_destruct;
+- (id)name;
 - (BOOL)canReadObjectForClasses:(id)arg1 options:(id)arg2;
 - (BOOL)canReadItemWithDataConformingToTypes:(id)arg1;
 - (unsigned long long)indexOfPasteboardItem:(id)arg1;

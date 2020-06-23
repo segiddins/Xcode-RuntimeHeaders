@@ -19,9 +19,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak id <IBICDetailDocumentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTStackView_ML *contentStackView; // @synthesize contentStackView=_contentStackView;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)keyDown:(id)arg1;
 - (void)cancelOperation:(id)arg1;

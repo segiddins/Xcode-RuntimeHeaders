@@ -25,13 +25,13 @@
 + (BOOL)_areOnlyControlShiftKeysPressed:(id)arg1;
 + (BOOL)_isOnlyTheControlKeyPressed:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property SEL stepByInstructionAction; // @synthesize stepByInstructionAction=_stepByInstructionAction;
 @property(copy) NSImage *stepByInstructionImage; // @synthesize stepByInstructionImage=_stepByInstructionImage;
 @property SEL stepSuspendingOtherThreadsAction; // @synthesize stepSuspendingOtherThreadsAction=_stepSuspendingOtherThreadsAction;
 @property(copy) NSImage *stepSuspendingOtherThreadsImage; // @synthesize stepSuspendingOtherThreadsImage=_stepSuspendingOtherThreadsImage;
 @property SEL stepAction; // @synthesize stepAction=_stepAction;
 @property(copy) NSImage *stepImage; // @synthesize stepImage=_stepImage;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_onlyAllowAllStepByInstructionBehavior:(BOOL)arg1;
 - (void)_changeToStepByInstructionButton;

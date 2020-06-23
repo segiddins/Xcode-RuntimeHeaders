@@ -7,6 +7,7 @@
 #import <DTGraphKit/DTTimelineGraphLayerSubtree.h>
 
 @class CALayer, DTTimelineGraphAccessorySubtree, DTTimelinePlaneLabelAreaResizingConfiguration, DTTimelinePlaneLabelDisclosureSubtree, DTTimelinePlaneLabelSubtree, NSImage;
+@protocol DTTimelineGraphTooltipPresentationDelegate;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelinePlaneLabelContainerSubtree : DTTimelineGraphLayerSubtree
@@ -17,24 +18,29 @@ __attribute__((visibility("hidden")))
     CALayer *_iconLayer;
     NSImage *_icon;
     struct CGSize _iconSize;
+    BOOL _mouseHoveringOverLabel;
     BOOL _selected;
     BOOL _expanded;
     DTTimelinePlaneLabelSubtree *_labelSubtree;
     DTTimelineGraphAccessorySubtree *_accessory;
+    id <DTTimelineGraphTooltipPresentationDelegate> _tooltipPresentationDelegate;
     DTTimelinePlaneLabelDisclosureSubtree *_disclosure;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTTimelinePlaneLabelDisclosureSubtree *disclosure; // @synthesize disclosure=_disclosure;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(readonly, nonatomic) BOOL selected; // @synthesize selected=_selected;
+@property(nonatomic) __weak id <DTTimelineGraphTooltipPresentationDelegate> tooltipPresentationDelegate; // @synthesize tooltipPresentationDelegate=_tooltipPresentationDelegate;
 @property(readonly, nonatomic) DTTimelineGraphAccessorySubtree *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) DTTimelinePlaneLabelSubtree *labelSubtree; // @synthesize labelSubtree=_labelSubtree;
-- (void).cxx_destruct;
 - (BOOL)getIconLayerFrameWithinRoot:(struct CGRect *)arg1;
 - (BOOL)getDisplayNameLayerFrameWithinRoot:(struct CGRect *)arg1;
 - (BOOL)getAccessoryLayerFrameWithinRoot:(struct CGRect *)arg1;
 - (void)layoutSublayers;
-@property(nonatomic) BOOL mouseHoveringOverLabel;
+- (void)setMouseHoveringOverLabel:(BOOL)arg1 containerRelativePosition:(struct CGPoint)arg2;
+- (void)removeLabelAreaTooltipIfAvailableForOwner:(id)arg1;
+- (void)presentLabelAreaTooltip:(id)arg1 owner:(id)arg2;
 - (void)adjustToGraph:(id)arg1;
 - (void)setSelected:(BOOL)arg1 graph:(id)arg2;
 - (void)dealloc;

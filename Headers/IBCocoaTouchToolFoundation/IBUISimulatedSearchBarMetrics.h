@@ -6,23 +6,23 @@
 
 #import <IBCocoaTouchToolFoundation/IBUISimulatedBarMetrics.h>
 
-@class IBUIColor;
+@class IBColor;
 
 @interface IBUISimulatedSearchBarMetrics : IBUISimulatedBarMetrics
 {
     BOOL _translucent;
     BOOL _prompted;
-    IBUIColor *_tintColor;
-    IBUIColor *_barTintColor;
+    IBColor *_tintColor;
+    IBColor *_barTintColor;
 }
 
 + (id)simulatedSearchBarStyleWithStyle:(long long)arg1 translucent:(BOOL)arg2 prompt:(BOOL)arg3 tintColor:(id)arg4 barTintColor:(id)arg5;
 + (id)defaultMetrics;
-@property(readonly, copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
-@property(readonly, copy, nonatomic) IBUIColor *tintColor; // @synthesize tintColor=_tintColor;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) IBColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(readonly, copy, nonatomic) IBColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic, getter=isPrompted) BOOL prompted; // @synthesize prompted=_prompted;
 @property(readonly, nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

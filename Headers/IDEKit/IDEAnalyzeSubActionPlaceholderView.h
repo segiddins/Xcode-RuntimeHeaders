@@ -13,8 +13,8 @@
     NSString *_placeholderMessage;
 }
 
-@property(copy) NSString *placeholderMessage; // @synthesize placeholderMessage=_placeholderMessage;
 - (void).cxx_destruct;
+@property(copy) NSString *placeholderMessage; // @synthesize placeholderMessage=_placeholderMessage;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

@@ -12,8 +12,8 @@
     unsigned int m_format;
 }
 
-@property(readonly, nonatomic) unsigned int format; // @synthesize format=m_format;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int format; // @synthesize format=m_format;
 - (unsigned int)decodedFormat:(unsigned int)arg1 options:(id)arg2;
 - (id)decode:(id)arg1 format:(unsigned int)arg2 level:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 bytesPerRow:(unsigned int)arg6 options:(id)arg7;
 - (id)decode:(id)arg1 format:(unsigned int)arg2 level:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 options:(id)arg6;

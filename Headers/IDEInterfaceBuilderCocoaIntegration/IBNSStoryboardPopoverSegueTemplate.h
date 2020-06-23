@@ -17,10 +17,10 @@
     unsigned long long _preferredEdge;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long preferredEdge; // @synthesize preferredEdge=_preferredEdge;
 @property long long popoverBehavior; // @synthesize popoverBehavior=_popoverBehavior;
 @property(retain) NSView *anchorView; // @synthesize anchorView=_anchorView;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibLocalAutoNullifyingNonChildToOneRelationshipsKeyPaths;

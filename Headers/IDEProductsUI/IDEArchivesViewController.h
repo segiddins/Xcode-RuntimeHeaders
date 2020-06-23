@@ -42,9 +42,10 @@
 + (id)keyPathsForValuesAffectingArchivesFilterPredicate;
 + (id)keyPathsForValuesAffectingSearchStrings;
 + (id)keyPathsForValuesAffectingArchives;
-+ (void)revealArchive:(id)arg1;
++ (void)revealArchive:(id)arg1 action:(long long)arg2;
 + (void)revealArchiveNotification:(id)arg1;
 + (BOOL)ide_initializeWithOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property BOOL shouldRefreshArchiveStatus; // @synthesize shouldRefreshArchiveStatus=_shouldRefreshArchiveStatus;
 @property(retain) DVTNotificationToken *testPushNotificationObserver; // @synthesize testPushNotificationObserver=_testPushNotificationObserver;
 @property(retain) NSArray *archiveStatusObservers; // @synthesize archiveStatusObservers=_archiveStatusObservers;
@@ -63,7 +64,6 @@
 @property __weak DVTBorderedView *bottomBorderView; // @synthesize bottomBorderView=_bottomBorderView;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property __weak IDESearchFilterControlBar *controlBar; // @synthesize controlBar=_controlBar;
-- (void).cxx_destruct;
 - (struct _NSRange)initialSelectionRangeForTableCellView:(id)arg1 usingProposedRange:(struct _NSRange)arg2;
 - (void)titleDidChangeForTableCellView:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;

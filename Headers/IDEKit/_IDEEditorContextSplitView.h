@@ -14,8 +14,8 @@
     NSSplitViewItem *_auxiliarySplitViewItem;
 }
 
-@property(retain, nonatomic) NSSplitViewItem *auxiliarySplitViewItem; // @synthesize auxiliarySplitViewItem=_auxiliarySplitViewItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSplitViewItem *auxiliarySplitViewItem; // @synthesize auxiliarySplitViewItem=_auxiliarySplitViewItem;
 - (void)mouseDown:(id)arg1;
 
 // Remaining properties

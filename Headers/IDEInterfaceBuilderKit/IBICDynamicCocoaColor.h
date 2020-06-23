@@ -15,16 +15,19 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSDictionary *concreteColorsByAppearanceName; // @synthesize concreteColorsByAppearanceName=_concreteColorsByAppearanceName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *concreteColorsByAppearanceName; // @synthesize concreteColorsByAppearanceName=_concreteColorsByAppearanceName;
+- (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUniform;
+- (long long)type;
 - (id)fallbackColor;
 - (id)resolvedColor;
+- (void)_computeHashValue;
 - (id)initWithConcreteColors:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;

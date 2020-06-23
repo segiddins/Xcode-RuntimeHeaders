@@ -14,9 +14,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 block:(CDUnknownBlockType)arg2;
 
 @end

@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_readDataForEntry:(struct archive_entry *)arg1 archive:(struct archive *)arg2;
+- (int)_readDataForEntry:(struct archive_entry *)arg1 archive:(struct archive *)arg2;
 - (BOOL)_loadArchiveFromURL:(id)arg1 error:(id *)arg2;
 - (BOOL)writeToURL:(id)arg1 error:(id *)arg2;
 - (id)dataForResourceAtPath:(id)arg1;

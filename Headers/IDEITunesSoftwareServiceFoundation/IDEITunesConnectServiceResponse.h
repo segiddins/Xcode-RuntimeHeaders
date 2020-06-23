@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *infoMessages; // @synthesize infoMessages=_infoMessages;
 @property(readonly) NSArray *warnings; // @synthesize warnings=_warnings;
 @property(readonly) NSArray *errors; // @synthesize errors=_errors;
 @property(readonly) BOOL isSuccessful; // @synthesize isSuccessful=_isSuccessful;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

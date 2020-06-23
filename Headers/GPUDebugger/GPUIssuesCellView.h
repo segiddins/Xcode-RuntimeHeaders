@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <GPUIssuesViewItem> _issue;
 }
 
-@property(nonatomic) __weak id <GPUIssuesViewItem> issue; // @synthesize issue=_issue;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GPUIssuesViewItem> issue; // @synthesize issue=_issue;
 
 @end
 

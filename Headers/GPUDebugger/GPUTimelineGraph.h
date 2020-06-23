@@ -22,6 +22,7 @@
     GPUTimelineGraphTimelineDecorator *_timelineDecorator;
     NSTrackingArea *_mouseTrackingArea;
     NSTimer *_tooltipTimer;
+    unsigned long long _extraDuration;
     BOOL _showReferencePlane;
     BOOL _showTimeRuler;
     BOOL _showMarkers;
@@ -38,6 +39,7 @@
     struct _NSRange _timelineSelectionRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxNanosecondsPerPoint; // @synthesize maxNanosecondsPerPoint=_maxNanosecondsPerPoint;
 @property(nonatomic) unsigned long long minNanosecondsPerPoint; // @synthesize minNanosecondsPerPoint=_minNanosecondsPerPoint;
 @property(retain, nonatomic) GPUTimelineGraphOverlayView *overlayView; // @synthesize overlayView=_overlayView;
@@ -53,7 +55,8 @@
 @property(readonly, nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
 @property(retain, nonatomic) GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
+- (id)hitTest:(struct CGPoint)arg1;
+- (void)setNeedsDisplay:(BOOL)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)zoomOut;
 - (void)zoomIn;
@@ -101,7 +104,6 @@
 - (void)invalidateCellAtIndex:(unsigned long long)arg1;
 - (void)scrollToEndOfTimeline;
 - (void)_buildPlaneStructure:(BOOL)arg1 collapseGroups:(BOOL)arg2;
-- (unsigned long long)timelineInterval;
 - (void)_buildPlanes;
 @property(readonly, nonatomic) double rulerHeight;
 - (void)setContextMenu:(id)arg1;

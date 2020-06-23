@@ -25,7 +25,7 @@
 - (BOOL)ibInspectedVerticallySizable;
 - (BOOL)ibInspectedPositionable;
 - (CDStruct_c519178c)ibInspectedAlignmentInset;
-- (void)ibVerifyConstraintsAreWellFormedInDocument:(id)arg1 subarbitrationUnitCache:(struct IBMutableIdentityDictionary *)arg2 andPopulateMessages:(id)arg3;
+- (void)ibVerifyConstraintsAreWellFormedInDocument:(id)arg1 subarbitrationUnitCache:(id)arg2 andPopulateMessages:(id)arg3;
 - (void)ibVerifyConstraintsAreSortedInDocument:(id)arg1;
 - (void)ibPrimitiveRemoveConstraintsFromCandidates:(id)arg1 andFromDocument:(id)arg2 allowingCascadingDelete:(BOOL)arg3;
 - (void)ibPrimitiveRemoveConstraintsFromCandidateListOnly:(id)arg1 keepingInDocument:(id)arg2;

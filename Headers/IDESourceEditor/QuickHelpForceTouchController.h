@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSImmediateActionGestureRecognizer *quickHelpForceTouchGestureRecognizer; // @synthesize quickHelpForceTouchGestureRecognizer=_quickHelpForceTouchGestureRecognizer;
 @property __weak _TtC15IDESourceEditor16SourceCodeEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (void)recognizerDidDismissAnimation:(id)arg1;
 - (void)recognizerDidCompleteAnimation:(id)arg1;
 - (void)recognizerDidCancelAnimation:(id)arg1;

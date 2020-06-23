@@ -16,8 +16,8 @@
     unsigned long long _iterations;
 }
 
-@property(nonatomic) unsigned long long iterations; // @synthesize iterations=_iterations;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long iterations; // @synthesize iterations=_iterations;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 @property(readonly, copy) NSAttributedString *attributedTitle;

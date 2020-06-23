@@ -11,6 +11,7 @@
 @interface _TtC8RCShared19DynamicHeightLayout : NSCollectionViewLayout
 {
     MISSING_TYPE *isCompact;
+    MISSING_TYPE *animateAddAndRemove;
     MISSING_TYPE *lastBoundsSize;
     MISSING_TYPE *collectionWidthOverride;
     MISSING_TYPE *layoutController;
@@ -21,6 +22,9 @@
     MISSING_TYPE *showDividers;
     MISSING_TYPE *sectionInset;
     MISSING_TYPE *wantsHeaderForSection;
+    MISSING_TYPE *_oldRowFrames;
+    MISSING_TYPE *_oldHeaderInfo;
+    MISSING_TYPE *_oldDividerFrames;
     MISSING_TYPE *_rowFrames;
     MISSING_TYPE *_headerInfo;
     MISSING_TYPE *_dividerFrames;

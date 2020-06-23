@@ -12,23 +12,19 @@
 
 @interface IDETestingTouchBarManager : NSObject <IDETestingTouchBarManager>
 {
+    struct __DFRTouchBarSimulator *_touchBarSimulator;
     struct CGDisplayStream *_touchBarDisplayStream;
 }
 
 + (BOOL)_hardwarePresent;
 + (BOOL)_hostHasTouchBarSupport;
 + (void)initialize;
-- (void)_setSimulatorWindowVisible:(BOOL)arg1 forIDE:(BOOL)arg2;
-- (BOOL)_setSimulatorServiceEnabled:(BOOL)arg1 forIDE:(BOOL)arg2;
-- (BOOL)_stopSimulatorForXcodebuild;
+- (CDUnknownBlockType)_setSimulatorServiceEnabledForIDE:(BOOL)arg1;
+- (void)_stopSimulatorForXcodebuild;
 - (BOOL)_startSimulatorForXcodebuild;
-@property(readonly) BOOL _automaticSimulatorWindowBehaviorEnabled;
 @property(readonly) BOOL _simulatorAllowed;
 - (BOOL)simulatorRunning;
-- (void)closeSimulatorWindow;
-- (void)showSimulatorWindow;
-- (BOOL)disableSimulator;
-- (BOOL)enableSimulator;
+- (id)enableSimulator;
 - (void)dealloc;
 
 // Remaining properties

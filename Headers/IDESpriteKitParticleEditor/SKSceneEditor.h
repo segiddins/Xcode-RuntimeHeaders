@@ -76,11 +76,11 @@
 + (id)toolTipForShowOutlineButton;
 + (id)toolTipForHideActionEditorViewButton;
 + (id)toolTipForShowActionEditorButton;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *currentSelectedObjects; // @synthesize currentSelectedObjects=_currentSelectedObjects;
 @property(readonly, nonatomic) NSMutableArray *currentSelectedNodes; // @synthesize currentSelectedNodes=_currentSelectedNodes;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)rebuildShaderForPath:(id)arg1 skipIfNoChange:(BOOL)arg2;
 - (void)rebuildAllShaders_skipIfNoChange:(BOOL)arg1;
 - (void)fileSystemEventStream:(id)arg1 notedChangeAtPath:(id)arg2 scanRecursively:(BOOL)arg3;
@@ -106,8 +106,8 @@
 - (void)sceneEditController:(id)arg1 performAction:(SEL)arg2 withSender:(id)arg3;
 - (BOOL)sceneEditController:(id)arg1 canPerformAction:(SEL)arg2 withSender:(id)arg3;
 - (void)sceneEditController:(id)arg1 didUpdateScene:(double)arg2;
-- (void)sceneEditController:(id)arg1 beginEditingItem:(struct NSObject *)arg2;
-- (void)_beginEditingItem:(struct NSObject *)arg1;
+- (void)sceneEditController:(id)arg1 beginEditingItem:(id)arg2;
+- (void)_beginEditingItem:(id)arg1;
 - (void)_deleteSelectedNodes;
 - (void)_cutSelectedNodes;
 - (void)_duplicateSelectedNodes;

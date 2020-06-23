@@ -31,11 +31,11 @@
 
 + (id)keyPathsForValuesAffectingLogRecords;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) IDEActivityLogSection *activeSessionLogSection; // @synthesize activeSessionLogSection=_activeSessionLogSection;
 @property(retain) IDELogStore *logStore; // @synthesize logStore=_logStore;
 @property(nonatomic) __weak id <IDEProvisioningWorkspaceMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)debug_addMessageWithTitle:(id)arg1 details:(id)arg2;
 - (void)_nolock_removeSection:(id)arg1 entry:(id)arg2;
 - (id)_nolock_logSectionForLedgerEntry:(id)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)keyPathsForValuesAffectingInvalidityReason;
+- (void).cxx_destruct;
 @property(readonly, getter=isChoiceOfDestinationAvailable) BOOL choiceOfDestinationAvailable; // @synthesize choiceOfDestinationAvailable=_choiceOfDestinationAvailable;
 @property long long modernUpgradeDestination; // @synthesize modernUpgradeDestination=_modernUpgradeDestination;
 @property long long legacyUpgradeDestination; // @synthesize legacyUpgradeDestination=_legacyUpgradeDestination;
@@ -29,7 +30,6 @@
 @property(readonly) DVTLocale *modernLocale; // @synthesize modernLocale=_modernLocale;
 @property(readonly) DVTLocale *legacyLocale; // @synthesize legacyLocale=_legacyLocale;
 @property(readonly) Xcode3VariantGroup *variantGroup; // @synthesize variantGroup=_variantGroup;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *invalidityReason;
 - (id)_fullSizeImage;
 @property(readonly, copy) NSImage *image;

@@ -13,8 +13,8 @@
     IDEWorkspace *_workspace;
 }
 
-@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)processUpgradeTasks;
 - (id)initWithWorkspace:(id)arg1;
 

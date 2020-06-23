@@ -23,6 +23,7 @@
 + (id)keyPathsForValuesAffectingShouldResetToSuggestedConstraints;
 + (id)keyPathsForValuesAffectingShouldUpdateConstraints;
 + (id)keyPathsForValuesAffectingShouldUpdateFrames;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldApplyToAllViewsInContainer; // @synthesize shouldApplyToAllViewsInContainer=_shouldApplyToAllViewsInContainer;
 @property(retain) NSButton *shouldApplyToAllViewsInContainerButton; // @synthesize shouldApplyToAllViewsInContainerButton=_shouldApplyToAllViewsInContainerButton;
 @property(retain) NSButton *shouldResetToSuggestedConstraintsButton; // @synthesize shouldResetToSuggestedConstraintsButton=_shouldResetToSuggestedConstraintsButton;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long resolvingAction; // @synthesize resolvingAction=_resolvingAction;
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) IBAutolayoutMisplacementStatus *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)confirmChanges;
 @property(nonatomic) BOOL shouldResetToSuggestedConstraints;

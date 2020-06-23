@@ -15,10 +15,10 @@
     double _subtitlesLeadingOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double subtitlesLeadingOffset; // @synthesize subtitlesLeadingOffset=_subtitlesLeadingOffset;
 @property(nonatomic) double subtitlesTopOffset; // @synthesize subtitlesTopOffset=_subtitlesTopOffset;
 @property(copy, nonatomic) NSArray *subtitles; // @synthesize subtitles=_subtitles;
-- (void).cxx_destruct;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)addTrackingAreasForView:(id)arg1 inRect:(struct CGRect)arg2 withUserInfo:(id)arg3 mouseLocation:(struct CGPoint)arg4;
 - (id)subtitleTextColor;

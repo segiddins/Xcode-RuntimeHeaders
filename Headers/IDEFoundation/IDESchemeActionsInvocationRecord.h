@@ -45,6 +45,7 @@
     unsigned long long _analyzerWarningCount;
     unsigned long long _testsCount;
     unsigned long long _testsFailedCount;
+    unsigned long long _testsSkippedCount;
     DVTFilePath *_creatingWorkspaceFilePath;
     NSError *_saveError;
     id _remoteTestSummaryIdentifier;
@@ -68,6 +69,8 @@
 + (BOOL)updateSummariesFromDictionaryRepresentations:(id)arg1 withSummaryOwner:(id)arg2 summaryPropertyName:(id)arg3 summaryiVarArrayRef:(id *)arg4 summariesAreTestFailures:(BOOL)arg5;
 + (unsigned long long)countOfTestsInSchemeActionRecords:(id)arg1;
 + (id)coalescedTestableSummariesForActions:(id)arg1;
++ (unsigned long long)countOfSkippedTestsInSchemeActions:(id)arg1;
++ (unsigned long long)countOfFailedTestsInSchemeActions:(id)arg1;
 + (id)keyPathsForValuesAffectingIsRecording;
 + (BOOL)automaticallyNotifiesObserversOfActions;
 + (id)currentLegacyFormatVersion;
@@ -90,6 +93,7 @@
 + (id)createUnsupportedV1Error;
 + (BOOL)isModernResultBundleWithPath:(id)arg1;
 + (long long)resultBundleFormatVersionWithPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id _advisoryMessagesStream; // @synthesize _advisoryMessagesStream=__advisoryMessagesStream;
 @property(retain, nonatomic) id _testSummariesStream; // @synthesize _testSummariesStream=__testSummariesStream;
 @property(retain, nonatomic) id _recordRef; // @synthesize _recordRef=__recordRef;
@@ -115,6 +119,7 @@
 @property(retain, nonatomic) NSMutableArray *analyzerWarningSummaries; // @synthesize analyzerWarningSummaries=_analyzerWarningSummaries;
 @property(retain, nonatomic) NSMutableArray *errorSummaries; // @synthesize errorSummaries=_errorSummaries;
 @property(retain, nonatomic) NSMutableArray *warningSummaries; // @synthesize warningSummaries=_warningSummaries;
+@property(nonatomic) unsigned long long testsSkippedCount; // @synthesize testsSkippedCount=_testsSkippedCount;
 @property(nonatomic) unsigned long long testsFailedCount; // @synthesize testsFailedCount=_testsFailedCount;
 @property(nonatomic) unsigned long long testsCount; // @synthesize testsCount=_testsCount;
 @property(nonatomic) unsigned long long analyzerWarningCount; // @synthesize analyzerWarningCount=_analyzerWarningCount;
@@ -135,7 +140,6 @@
 @property(copy, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(retain) IDETypeIdentifier *domainType; // @synthesize domainType=_domainType;
 @property(copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long simpleOperationStatus;
 @property(readonly, nonatomic) long long status;
 @property(readonly, nonatomic) IDESchemeActionCodeCoverage *aggregateCoverageReport;
@@ -156,6 +160,7 @@
 - (BOOL)loadActionsTestSummariesAndCoverage:(id *)arg1;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
+- (void)_ensureValidFilePathForPersistence;
 - (void)_reportMetricsIfNeeded;
 - (void)saveWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_stopCollectingPerformanceSignposts;
@@ -163,7 +168,7 @@
 - (void)dealloc;
 - (void)saveSparseInvocationRecordToFilePath:(id)arg1 testIdentifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly) BOOL usesModernFormat;
-- (id)initWithFilePath:(id)arg1 creatingWorkspaceFilePath:(id)arg2 uniqueIdentifier:(id)arg3 analyzerWarningCount:(long long)arg4 errorCount:(long long)arg5 testsCount:(long long)arg6 testsFailedCount:(long long)arg7 warningCount:(long long)arg8 analyzerWarningSummaries:(id)arg9 errorSummaries:(id)arg10 testFailureSummaries:(id)arg11 warningSummaries:(id)arg12 actions:(id)arg13 coalescedTestableSummaries:(id)arg14;
+- (id)initWithFilePath:(id)arg1 creatingWorkspaceFilePath:(id)arg2 uniqueIdentifier:(id)arg3 analyzerWarningCount:(long long)arg4 errorCount:(long long)arg5 testsCount:(long long)arg6 testsFailedCount:(long long)arg7 testsSkippedCount:(long long)arg8 warningCount:(long long)arg9 analyzerWarningSummaries:(id)arg10 errorSummaries:(id)arg11 testFailureSummaries:(id)arg12 warningSummaries:(id)arg13 actions:(id)arg14 coalescedTestableSummaries:(id)arg15;
 - (id)initWithFilePath:(id)arg1 error:(id *)arg2;
 - (id)initLocalRecordWithWorkspace:(id)arg1;
 - (id)_init;

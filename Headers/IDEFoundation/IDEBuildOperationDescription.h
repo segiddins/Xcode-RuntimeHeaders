@@ -15,10 +15,10 @@
     NSString *_actionInProgress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *actionInProgress; // @synthesize actionInProgress=_actionInProgress;
 @property(readonly, copy) NSString *actionName; // @synthesize actionName=_actionName;
 @property(readonly, copy) NSString *objectToBuildName; // @synthesize objectToBuildName=_objectToBuildName;
-- (void).cxx_destruct;
 - (id)initWithObjectToBuildName:(id)arg1 actionName:(id)arg2 actionInProgress:(id)arg3;
 
 @end

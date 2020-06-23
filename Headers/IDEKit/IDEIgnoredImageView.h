@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)mouseDownCanMoveWindow;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;

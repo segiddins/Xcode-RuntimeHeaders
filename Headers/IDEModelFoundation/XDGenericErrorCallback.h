@@ -25,7 +25,7 @@
 - (id)compilerFlags;
 - (id)descriptionForElement:(id)arg1;
 - (void)createErrorsForDeploymentTargetFailures:(id)arg1 featureName:(id)arg2 category:(int)arg3 element:(id)arg4 documentURL:(id)arg5;
-- (void)createErrorsForDocumentVersionRequirement:(struct NSString *)arg1 featureName:(id)arg2 category:(int)arg3 element:(id)arg4 documentURL:(id)arg5;
+- (void)createErrorsForDocumentVersionRequirement:(id)arg1 featureName:(id)arg2 category:(int)arg3 element:(id)arg4 documentURL:(id)arg5;
 - (void)createErrorsForToolsPlatformFailures:(id)arg1 featureName:(id)arg2 category:(int)arg3 element:(id)arg4 documentURL:(id)arg5;
 - (void)createWarningForElement:(id)arg1 withFormat:(id)arg2 category:(int)arg3 documentURL:(id)arg4;
 - (void)createWarningForElement:(id)arg1 withMessage:(id)arg2 category:(int)arg3 documentURL:(id)arg4;

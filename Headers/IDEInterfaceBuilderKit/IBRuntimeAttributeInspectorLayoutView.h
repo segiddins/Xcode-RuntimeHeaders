@@ -15,10 +15,10 @@
     IBRuntimeAttributesInspector *_inspector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBRuntimeAttributesInspector *inspector; // @synthesize inspector=_inspector;
 @property(retain, nonatomic) DVTBorderedView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

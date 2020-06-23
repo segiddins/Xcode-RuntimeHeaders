@@ -13,8 +13,8 @@
     NSString *_destinationDataPath;
 }
 
-@property(retain, nonatomic) NSString *destinationDataPath; // @synthesize destinationDataPath=_destinationDataPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *destinationDataPath; // @synthesize destinationDataPath=_destinationDataPath;
 - (void)run;
 - (id)statusDescription;
 

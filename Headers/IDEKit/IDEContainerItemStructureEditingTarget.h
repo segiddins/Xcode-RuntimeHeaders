@@ -10,13 +10,14 @@
 #import <IDEKit/IDEStructureEditingGroupingTarget-Protocol.h>
 #import <IDEKit/IDEStructureEditingRemoveSubitemsTarget-Protocol.h>
 
-@class DVTObservingToken, IDEGroup, IDENavigableItem, IDEWorkspace, NSString;
+@class DVTObservingToken, IDEGroup, IDEWorkspace, NSString;
+@protocol IDEStructureEditingItem;
 
 @interface IDEContainerItemStructureEditingTarget : NSObject <IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingRemoveSubitemsTarget>
 {
     IDEGroup *_targetGroup;
     DVTObservingToken *_targetGroupValidObservationToken;
-    IDENavigableItem *_targetNavigableItem;
+    id <IDEStructureEditingItem> _targetStructureEditingItem;
     IDEWorkspace *_workspace;
     long long _targetIndex;
     unsigned long long _op;
@@ -30,14 +31,14 @@
 + (BOOL)_acceptDropAtIndex:(long long)arg1 withContext:(id)arg2;
 + (BOOL)_acceptFileURLs:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
 + (BOOL)_acceptContainerItems:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
-+ (id)_targetForStructureEditingOperation:(unsigned long long)arg1 proposedNavigableItem:(id)arg2 proposedChildIndex:(long long)arg3 inWorkspace:(id)arg4;
++ (id)_targetForStructureEditingOperation:(unsigned long long)arg1 proposedItem:(id)arg2 proposedChildIndex:(long long)arg3 inWorkspace:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long op; // @synthesize op=_op;
 @property(nonatomic) long long targetIndex; // @synthesize targetIndex=_targetIndex;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-@property(retain, nonatomic) IDENavigableItem *targetNavigableItem; // @synthesize targetNavigableItem=_targetNavigableItem;
+@property(retain, nonatomic) id <IDEStructureEditingItem> targetStructureEditingItem; // @synthesize targetStructureEditingItem=_targetStructureEditingItem;
 @property(retain, nonatomic) DVTObservingToken *targetGroupValidObservationToken; // @synthesize targetGroupValidObservationToken=_targetGroupValidObservationToken;
 @property(retain, nonatomic) IDEGroup *targetGroup; // @synthesize targetGroup=_targetGroup;
-- (void).cxx_destruct;
 - (BOOL)structureEditingRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
 - (id)structureEditingFilePathsForGroupSubitemsFilteringOutNonProjectItemsAtIndexes:(id)arg1;
 - (void)_addGroupAndSubGroupDirectoryFilePathsForGroup:(id)arg1 toSet:(id)arg2;
@@ -62,11 +63,12 @@
 - (id)structureEditingNaturalFilePathForDropTarget;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (id)actualTargetStructureEditingItem;
 - (id)actualNavigableItem;
 - (long long)actualChildIndex;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
-- (id)_initWithOperation:(unsigned long long)arg1 targetGroup:(id)arg2 targetNavigableItem:(id)arg3 targetIndex:(long long)arg4 inWorkspace:(id)arg5;
+- (id)_initWithOperation:(unsigned long long)arg1 targetGroup:(id)arg2 targetStructureEditingItem:(id)arg3 targetIndex:(long long)arg4 inWorkspace:(id)arg5;
 - (id)init;
 
 // Remaining properties

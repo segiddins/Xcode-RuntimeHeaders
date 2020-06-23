@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL editorViewIsLoaded; // @synthesize editorViewIsLoaded=_editorViewIsLoaded;
 @property __weak NSView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (id)packageAssistantContext;
 - (BOOL)canGoForward;
 - (id)nextAssistantIdentifier;

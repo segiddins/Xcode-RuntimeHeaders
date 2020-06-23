@@ -14,9 +14,9 @@
     NSTextField *_valueField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *valueField; // @synthesize valueField=_valueField;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (BOOL)_updateValuesForInspectorString:(id)arg1;
 - (BOOL)_updateValuesForInspectorProperty:(id)arg1;

@@ -31,11 +31,11 @@
 + (id)allProjectActionFileURLs;
 + (BOOL)isActionContent:(id)arg1;
 + (BOOL)isURLForActionFile:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GTFActionLibraryReferenceLookupSourceDelegate> referenceLookupSource; // @synthesize referenceLookupSource=_referenceLookupSource;
 @property(nonatomic) __weak id <GTFActionLibraryDocumentLocationDelegate> docLocDelegate; // @synthesize docLocDelegate=_docLocDelegate;
 @property(nonatomic) __weak id <GTFActionLibraryUndoDelegate> undoDelegate; // @synthesize undoDelegate=_undoDelegate;
 @property(nonatomic) __weak id <GTFActionLibraryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)searchReferenceActionLibariesForActionNamed:(id)arg1;
 - (id)documentLocationForActionTimeline:(id)arg1;
 - (id)documentLocationForAction:(id)arg1;

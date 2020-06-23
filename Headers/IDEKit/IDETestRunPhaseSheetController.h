@@ -33,11 +33,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *tabSwitcherBarHeightConstraint; // @synthesize tabSwitcherBarHeightConstraint=_tabSwitcherBarHeightConstraint;
 @property(retain, nonatomic) NSArray *debuggerSpecifiers; // @synthesize debuggerSpecifiers=_debuggerSpecifiers;
 @property BOOL supportsDebugAsDifferentUser; // @synthesize supportsDebugAsDifferentUser=_supportsDebugAsDifferentUser;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)testPlansListViewController:(id)arg1 didSetDefaultTestPlanReference:(id)arg2;
 - (void)testPlansListViewController:(id)arg1 didRemoveTestPlanReference:(id)arg2;
@@ -49,6 +49,7 @@
 - (id)baseContextMenuForTestTargetsViewController:(id)arg1;
 - (void)testTargetsViewController:(id)arg1 changedTestableReferences:(id)arg2;
 - (id)testableReferencesForTestTargetsViewController:(id)arg1;
+- (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (id)extensionsForAllOptions;
 - (void)chooseDebugProcessAs:(id)arg1;
@@ -58,6 +59,8 @@
 - (void)_setLauncherBasedOnSelectedDebugger;
 - (void)_updateDebuggerFromOldDebugger:(id)arg1;
 - (void)selectDebugExecutable:(id)arg1;
+- (void)revertStateWithDictionary:(id)arg1;
+- (BOOL)shouldRestoreSelectedTab;
 - (void)_setupDebugOptions;
 - (void)_updateDebugCheckboxes;
 - (void)_updateDebugOptionsEnablement;

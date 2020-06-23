@@ -18,9 +18,9 @@
     IBButtonComboBox *_comboBox;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideRevealInEditorButton; // @synthesize hideRevealInEditorButton=_hideRevealInEditorButton;
 @property(retain) IBButtonComboBox *comboBox; // @synthesize comboBox=_comboBox;
-- (void).cxx_destruct;
 - (void)revealLocationInEditor:(id)arg1;
 - (id)documentLocationForValue;
 - (id)ibResourceManager;

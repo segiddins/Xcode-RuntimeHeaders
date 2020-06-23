@@ -31,6 +31,7 @@
 + (id)propertiesAffectingPersistenceState;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long offsetFromSymbolStart; // @synthesize offsetFromSymbolStart=_offsetFromSymbolStart;
 @property(readonly) unsigned long long address; // @synthesize address=_address;
 @property(readonly) NSString *moduleName; // @synthesize moduleName=_moduleName;
@@ -39,7 +40,6 @@
 @property BOOL usesParentBreakpointCondition; // @synthesize usesParentBreakpointCondition=_usesParentBreakpointCondition;
 @property(retain, nonatomic) IDEBreakpoint *parentBreakpoint; // @synthesize parentBreakpoint=_parentBreakpoint;
 - (id)uuid;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setUsesParentBreakpointConditionFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;

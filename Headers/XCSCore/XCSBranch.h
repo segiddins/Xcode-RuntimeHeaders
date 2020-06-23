@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (BOOL)_validateName:(id)arg1 validationErrors:(id *)arg2;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

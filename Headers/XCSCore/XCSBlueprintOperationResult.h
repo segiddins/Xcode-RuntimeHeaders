@@ -14,9 +14,9 @@
     NSMutableDictionary *_repositoryErrorsDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *repositoryErrorsDictionary; // @synthesize repositoryErrorsDictionary=_repositoryErrorsDictionary;
 @property(retain, nonatomic) NSError *globalError; // @synthesize globalError=_globalError;
-- (void).cxx_destruct;
 - (void)addRepositoryErrors:(id)arg1;
 - (void)addError:(id)arg1 forRepositoryID:(id)arg2;
 - (void)addRepositoryError:(id)arg1;

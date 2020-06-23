@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned int notableEvidence; // @synthesize notableEvidence=_notableEvidence;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int notableEvidence; // @synthesize notableEvidence=_notableEvidence;
 - (id)nameValueStringForEvidenceItem:(id)arg1 withObject:(id)arg2;
 - (id)verifyWithExpert:(id)arg1 withCase:(id)arg2;
 - (BOOL)createVerificationExperiments:(id)arg1;

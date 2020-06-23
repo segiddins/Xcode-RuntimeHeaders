@@ -22,9 +22,9 @@
 }
 
 + (id)stream;
+- (void).cxx_destruct;
 @property(retain) PBXTSStream *upstreamStream; // @synthesize upstreamStream=_upstreamStream;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)sendStreamDidEnd;
 @property(readonly) PBXTSStream *sourceStream;
 @property id <PBXTSStreamConsuming> streamConsumer;

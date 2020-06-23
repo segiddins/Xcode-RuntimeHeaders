@@ -28,6 +28,7 @@
 }
 
 + (id)sharedTestsPerfMetricForPerformanceMetricOutput:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *ide_testReport_perfMetric_iterations; // @synthesize ide_testReport_perfMetric_iterations=_ide_testReport_perfMetric_iterations;
 @property(copy, nonatomic) NSString *ide_testReport_perfMetric_baselineIdentifier; // @synthesize ide_testReport_perfMetric_baselineIdentifier=_ide_testReport_perfMetric_baselineIdentifier;
 @property(retain, nonatomic) NSNumber *ide_testReport_perfMetric_maxPercentRelativeStandardDeviation; // @synthesize ide_testReport_perfMetric_maxPercentRelativeStandardDeviation=_ide_testReport_perfMetric_maxPercentRelativeStandardDeviation;
@@ -41,7 +42,6 @@
 @property(nonatomic) double ide_testReport_perfMetric_avg; // @synthesize ide_testReport_perfMetric_avg=_ide_testReport_perfMetric_avg;
 @property(copy, nonatomic) NSString *ide_testReport_perfMetric_unit; // @synthesize ide_testReport_perfMetric_unit=_ide_testReport_perfMetric_unit;
 @property(copy, nonatomic) NSString *ide_testReport_perfMetric_name; // @synthesize ide_testReport_perfMetric_name=_ide_testReport_perfMetric_name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

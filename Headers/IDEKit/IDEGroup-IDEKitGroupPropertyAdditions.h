@@ -44,6 +44,10 @@
 - (BOOL)ideInspectedRelativeLocationShouldChooseFile;
 - (BOOL)ideInspectedIsNameEditable;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)explorableIcon;
+@property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
+@property(nonatomic, readonly) NSString *containerHierarchyDescription;
+@property(nonatomic, readonly) IDEGroup *representedGroup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

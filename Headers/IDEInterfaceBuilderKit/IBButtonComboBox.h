@@ -17,8 +17,8 @@
 }
 
 + (Class)cellClass;
-@property(readonly) IBImageButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly) IBImageButton *button; // @synthesize button=_button;
 @property(getter=isShowingProgressIndicator) BOOL showingProgressIndicator;
 - (void)setShowingProgressIndicator:(BOOL)arg1 delayBeforeStarting:(double)arg2 minimumTimeOn:(double)arg3;
 - (struct CGRect)progressIndicatorFrame;

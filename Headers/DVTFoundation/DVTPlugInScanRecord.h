@@ -29,6 +29,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTPlugIn *plugIn; // @synthesize plugIn=_plugIn;
 @property(readonly, copy) NSDictionary *plugInPlist; // @synthesize plugInPlist=_plugInPlist;
 @property(readonly, copy) NSSet *plugInCompatibilityUUIDs; // @synthesize plugInCompatibilityUUIDs=_plugInCompatibilityUUIDs;
@@ -42,7 +43,6 @@
 @property(readonly) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, copy) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly, copy) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)loadRequiredCapabilities:(id *)arg1;
 - (BOOL)_loadBundleRawInfoPlist:(id *)arg1;
 - (BOOL)loadPlugInPlist:(id *)arg1;

@@ -17,11 +17,11 @@
     id <IDEFindNavigatorLayoutViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDEFindNavigatorLayoutViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSView *summaryView; // @synthesize summaryView=_summaryView;
 @property(retain, nonatomic) NSView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)setView:(id *)arg1 toValue:(id)arg2;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

@@ -21,6 +21,7 @@
     IBPlatformToolRequester *_currentRemoteRequester;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBPlatformToolRequester *currentRemoteRequester; // @synthesize currentRemoteRequester=_currentRemoteRequester;
 @property(copy, nonatomic) NSString *pendingRequestID; // @synthesize pendingRequestID=_pendingRequestID;
 @property(retain, nonatomic) IBPerformanceMetric *metric; // @synthesize metric=_metric;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(readonly, nonatomic) IBGenericDeviceTypeDescription *deviceTypeDescription; // @synthesize deviceTypeDescription=_deviceTypeDescription;
 @property(readonly, nonatomic) NSObject *rootObject; // @synthesize rootObject=_rootObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRootObject:(id)arg1 targetRuntime:(id)arg2 deviceTypeDescription:(id)arg3 request:(id)arg4 supersessionIdentifier:(id)arg5;
 

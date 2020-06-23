@@ -17,12 +17,12 @@
     NSButton *_secondButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *secondButton; // @synthesize secondButton=_secondButton;
 @property(retain, nonatomic) NSString *secondButtonAction; // @synthesize secondButtonAction=_secondButtonAction;
 @property(retain, nonatomic) NSString *secondButtonEnabledKeyPath; // @synthesize secondButtonEnabledKeyPath=_secondButtonEnabledKeyPath;
 @property(retain, nonatomic) NSString *secondButtonTitleKeyPath; // @synthesize secondButtonTitleKeyPath=_secondButtonTitleKeyPath;
 @property(retain, nonatomic) NSString *secondButtonTitle; // @synthesize secondButtonTitle=_secondButtonTitle;
-- (void).cxx_destruct;
 - (void)bindSecondButtonEnabledKeyPath;
 - (void)bindSecondButtonTitleKeyPath;
 - (void)secondButtonClicked:(id)arg1;

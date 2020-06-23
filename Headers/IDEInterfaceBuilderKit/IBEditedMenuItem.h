@@ -24,6 +24,7 @@
 }
 
 + (id)separatorItem;
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) BOOL isEnabled; // @synthesize isEnabled=_isEnabled;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) IBKeyEquivalent *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2 shouldLogTree:(BOOL)arg3;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)description;

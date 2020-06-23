@@ -19,11 +19,11 @@
     long long _changedInGeneration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long changedInGeneration; // @synthesize changedInGeneration=_changedInGeneration;
 @property(readonly) NSNumber *completedGeneration; // @synthesize completedGeneration=_completedGeneration;
 @property(readonly) BOOL isFramework; // @synthesize isFramework=_isFramework;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)wasChangedAfterGeneration:(long long)arg1;
 @property(readonly) BOOL needsToBeScheduled;

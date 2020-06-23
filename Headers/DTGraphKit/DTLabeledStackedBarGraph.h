@@ -16,11 +16,11 @@
     struct CGRect _graphYAxisRect;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *graphAXElements; // @synthesize graphAXElements=_graphAXElements;
 @property(retain) DTStacks *graphStacks; // @synthesize graphStacks=_graphStacks;
 @property struct CGRect graphYAxisRect; // @synthesize graphYAxisRect=_graphYAxisRect;
 @property struct CGRect graphXAxisRect; // @synthesize graphXAxisRect=_graphXAxisRect;
-- (void).cxx_destruct;
 - (void)setupAXElements;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawStacks:(id)arg1 rect:(struct CGRect)arg2;

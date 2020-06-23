@@ -14,8 +14,8 @@
 }
 
 + (void)addToolTipAccessorsToClass:(Class)arg1;
-@property(retain) NSString *toolTip; // @synthesize toolTip=_toolTip;
 - (void).cxx_destruct;
+@property(retain) NSString *toolTip; // @synthesize toolTip=_toolTip;
 - (id)archiveConnection;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

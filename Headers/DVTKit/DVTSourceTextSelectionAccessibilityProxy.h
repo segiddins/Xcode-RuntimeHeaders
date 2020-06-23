@@ -13,8 +13,8 @@
     DVTSourceTextView *_parent;
 }
 
-@property(readonly) DVTSourceTextView *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(readonly) DVTSourceTextView *parent; // @synthesize parent=_parent;
 - (id)accessibilityChildren;
 - (BOOL)accessibilityFocused;
 - (id)accessibilityTitle;

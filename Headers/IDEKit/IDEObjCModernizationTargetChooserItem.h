@@ -16,9 +16,9 @@
 }
 
 + (id)keyPathsForValuesAffectingArrangedChildItems;
+- (void).cxx_destruct;
 @property(retain) IDEObjCModernizationTargetChooserItem *parentItem; // @synthesize parentItem=_parentItem;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (void)removeObjectFromChildItemsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inChildItemsAtIndex:(unsigned long long)arg2;
 - (id)_childItems;

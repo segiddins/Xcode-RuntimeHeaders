@@ -19,7 +19,9 @@
     MISSING_TYPE *scaleFactor;
     MISSING_TYPE *platform;
     MISSING_TYPE *dvtDevice;
+    MISSING_TYPE *compositeDeviceHint;
     MISSING_TYPE *sdk;
+    MISSING_TYPE *sdkVariant;
     MISSING_TYPE *serviceHubConnectionStore;
 }
 

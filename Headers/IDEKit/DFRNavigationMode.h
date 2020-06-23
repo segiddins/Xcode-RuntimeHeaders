@@ -22,6 +22,7 @@
     CDUnknownBlockType _forwardValidation;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType forwardValidation; // @synthesize forwardValidation=_forwardValidation;
 @property(copy) CDUnknownBlockType forwardAction; // @synthesize forwardAction=_forwardAction;
 @property(copy) NSImage *forwardImage; // @synthesize forwardImage=_forwardImage;
@@ -32,7 +33,6 @@
 @property(copy) NSImage *backImage; // @synthesize backImage=_backImage;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

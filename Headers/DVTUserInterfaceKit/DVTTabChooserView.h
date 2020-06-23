@@ -27,11 +27,11 @@
 
 + (id)keyPathsForValuesAffectingSelectedChoice;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long pressedIndex; // @synthesize pressedIndex=_pressedIndex;
 @property double choicesOffset; // @synthesize choicesOffset=_choicesOffset;
 @property __weak id <DVTTabChooserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSSearchField *searchField; // @synthesize searchField=_searchField;
-- (void).cxx_destruct;
 @property BOOL hasSearchField;
 - (void)installSearchField;
 - (struct CGRect)searchFieldFrame;

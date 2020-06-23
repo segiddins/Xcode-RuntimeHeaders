@@ -8,19 +8,23 @@
 
 #import <XCTDaemonControl/XCTDaemonRequest-Protocol.h>
 
-@class NSString;
+@class NSString, XCTSpindumpRequestSpecification;
 
 @interface XCTDaemonSpindumpRequest : NSObject <XCTDaemonRequest>
 {
+    XCTSpindumpRequestSpecification *_specification;
     CDUnknownBlockType _completion;
 }
 
++ (id)latestProtocolVersion;
 + (id)minimumProtocolVersion;
-@property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(readonly) XCTSpindumpRequestSpecification *specification; // @synthesize specification=_specification;
 - (void)handleConnectionFailure:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithSpecification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

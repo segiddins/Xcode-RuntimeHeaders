@@ -15,15 +15,16 @@
     NSArray *_relationshipSegueTrackingItems;
 }
 
-@property(copy, nonatomic) NSArray *relationshipSegueTrackingItems; // @synthesize relationshipSegueTrackingItems=_relationshipSegueTrackingItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *relationshipSegueTrackingItems; // @synthesize relationshipSegueTrackingItems=_relationshipSegueTrackingItems;
 - (void)ibDidRemoveChildren:(id)arg1 fromDocument:(id)arg2;
 - (void)removeItem:(id)arg1 fromContainerOrDocument:(id)arg2;
 - (void)removeItemAtIndex:(unsigned long long)arg1 fromContainerOrDocument:(id)arg2;
 - (void)addNewItemInContainerOrDocument:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
+- (id)ibExtractableSidecarPasteboardTypesForDocument:(id)arg1;
 - (void)ibDidPutObjects:(id)arg1 onPasteboard:(id)arg2 fromDocument:(id)arg3 context:(id)arg4;
 - (id)ibUserHostableDocumentClasses;
 - (void)ibPopulateChildRelationOrder:(id)arg1;

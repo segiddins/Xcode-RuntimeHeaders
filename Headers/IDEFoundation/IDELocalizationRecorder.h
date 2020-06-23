@@ -15,8 +15,8 @@
 
 + (id)sharedLocalizationRecorder;
 + (void)initialize;
-@property(readonly, copy) NSArray *records; // @synthesize records=_records;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *records; // @synthesize records=_records;
 - (void)removeAllRecords;
 - (void)willAddGroupWithName:(id)arg1 inDirectory:(id)arg2 toItem:(id)arg3 forLanguage:(id)arg4;
 - (void)willAddReferenceWithPath:(id)arg1 toGroup:(id)arg2 forLanguage:(id)arg3;

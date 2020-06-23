@@ -65,9 +65,9 @@
 + (id)propertyDefinitionFromPListDictionary:(id)arg1;
 + (id)_parsedDefaultValueForString:(id)arg1;
 + (id)dbgAllPropertyDefinitions;
+- (void).cxx_destruct;
 @property(readonly) XCCommandLineFragmentGenerator *commandLineFragmentGenerator; // @synthesize commandLineFragmentGenerator=_commandLineFragmentGenerator;
 @property(readonly) _Bool uiShouldStripMacroDefinition; // @synthesize uiShouldStripMacroDefinition=_uiShouldStripMacroDefinition;
-- (void).cxx_destruct;
 - (void)printToStdout;
 - (id)description;
 - (id)generateArgumentsForCommand:(id)arg1 withMacroExpansionScope:(id)arg2;

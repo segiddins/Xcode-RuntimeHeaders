@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *menuDisplayString; // @synthesize menuDisplayString=_menuDisplayString;
 @property(readonly, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(readonly, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     id <DYPResourceManager> _resourceManager;
 }
 
+- (void).cxx_destruct;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property(nonatomic) __weak id <DYPResourceManager> resourceManager; // @synthesize resourceManager=_resourceManager;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 @property(readonly) NSView *quickLookView;
 - (void)loadView;

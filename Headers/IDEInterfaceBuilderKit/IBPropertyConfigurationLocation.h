@@ -15,9 +15,9 @@
 }
 
 + (id)locationWithProperty:(id)arg1 configuration:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) IBMemberConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setEvaluatedValue:(id)arg1 forMember:(id)arg2;
 - (void)setValue:(id)arg1 forMember:(id)arg2;

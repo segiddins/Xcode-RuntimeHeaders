@@ -8,5 +8,6 @@
 
 @interface NSTableView (DragAndDropEnhancements)
 - (id)draggedImageState:(id)arg1;
+- (BOOL)dtAutoscrollWithExternalDragEvent:(id)arg1 animate:(BOOL)arg2;
 @end
 

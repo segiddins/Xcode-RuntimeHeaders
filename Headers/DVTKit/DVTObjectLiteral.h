@@ -14,10 +14,10 @@
 }
 
 + (id)objectLiteralForObject:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property BOOL showsEditorString; // @synthesize showsEditorString=_showsEditorString;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)editorString;
 - (id)initWithType:(unsigned long long)arg1 representedObject:(id)arg2;
 

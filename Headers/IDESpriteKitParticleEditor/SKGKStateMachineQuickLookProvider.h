@@ -18,9 +18,9 @@
     int _loadedState;
 }
 
+- (void).cxx_destruct;
 - (void)setLoadedState:(int)arg1;
 - (int)loadedState;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 - (void)_updateOnMainThread:(id)arg1;
 - (void)_retrieveData;

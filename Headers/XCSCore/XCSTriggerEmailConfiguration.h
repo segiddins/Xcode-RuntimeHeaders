@@ -32,6 +32,7 @@
 }
 
 + (id)emailConfigurationWithAdditionalRecipients:(id)arg1 type:(unsigned long long)arg2 scmOptions:(id)arg3 allowedDomainNames:(id)arg4 fromAddress:(id)arg5 ccAddresses:(id)arg6 replyToAddress:(id)arg7 emailCommitters:(BOOL)arg8 includeIssueDetails:(BOOL)arg9 includeCommitMessages:(BOOL)arg10 includeBotConfiguration:(BOOL)arg11 includeLogs:(BOOL)arg12 includeResolvedIssues:(BOOL)arg13 weeklyScheduleDay:(long long)arg14 hour:(id)arg15 minutesAfterHour:(id)arg16 validationErrors:(id *)arg17;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL sendToAdditionalRecipitents; // @synthesize sendToAdditionalRecipitents=_sendToAdditionalRecipitents;
 @property(nonatomic) unsigned long long periodicScheduleInterval; // @synthesize periodicScheduleInterval=_periodicScheduleInterval;
 @property(nonatomic) BOOL emailCommittersHaveIntroducedIssues; // @synthesize emailCommittersHaveIntroducedIssues=_emailCommittersHaveIntroducedIssues;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) XCSTriggerSCMOptions *scmOptions; // @synthesize scmOptions=_scmOptions;
 @property(nonatomic) BOOL emailCommitters; // @synthesize emailCommitters=_emailCommitters;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;
 - (BOOL)_validateAdditionalRecipients:(id)arg1 type:(unsigned long long)arg2 scmOptions:(id)arg3 allowedDomainNames:(id)arg4 fromAddress:(id)arg5 ccAddresses:(id)arg6 replyToAddress:(id)arg7 emailCommitters:(BOOL)arg8 includeIssueDetails:(BOOL)arg9 includeCommitMessages:(BOOL)arg10 includeBotConfiguration:(BOOL)arg11 includeLogs:(BOOL)arg12 includeResolvedIssues:(BOOL)arg13 weeklyScheduleDay:(long long)arg14 hour:(id)arg15 minutesAfterHour:(id)arg16 validationErrors:(id *)arg17;

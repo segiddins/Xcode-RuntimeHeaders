@@ -14,9 +14,9 @@
     IDEProvisioningProfileInfoViewController *_infoViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningProfileInfoViewController *infoViewController; // @synthesize infoViewController=_infoViewController;
 @property(retain, nonatomic) IDEProfileQualification *qualification; // @synthesize qualification=_qualification;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)viewDidLoad;
 - (id)initWithQualification:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) id <IDEEditorHistoryControllerItem> currentEditorHistoryItem; // @synthesize currentEditorHistoryItem=currentHistoryItem;
 @property(readonly) NSArray *nextHistoryItems; // @synthesize nextHistoryItems=_nextHistoryItems;
 @property(readonly) NSArray *previousHistoryItems; // @synthesize previousHistoryItems=_previousHistoryItems;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

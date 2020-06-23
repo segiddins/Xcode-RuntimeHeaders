@@ -13,10 +13,10 @@
     id _owner;
 }
 
+- (void).cxx_destruct;
 @property BOOL watchOwner; // @synthesize watchOwner=_watchOwner;
 @property __weak id owner; // @synthesize owner=_owner;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 
 @end
 

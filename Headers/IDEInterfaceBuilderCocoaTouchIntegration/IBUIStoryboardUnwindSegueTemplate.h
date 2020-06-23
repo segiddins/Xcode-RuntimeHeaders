@@ -16,8 +16,8 @@
 }
 
 + (BOOL)requiresDestinationControllerIdentifier;
-@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibLocalAttributeKeyPaths;

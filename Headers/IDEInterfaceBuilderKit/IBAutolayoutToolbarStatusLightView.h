@@ -15,9 +15,9 @@
     CDUnknownBlockType _clickHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)updateLayer;
 - (id)makeBackingLayer;

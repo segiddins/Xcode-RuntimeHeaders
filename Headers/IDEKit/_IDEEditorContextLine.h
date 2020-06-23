@@ -14,8 +14,8 @@
     BOOL _inset;
 }
 
-@property BOOL inset; // @synthesize inset=_inset;
 - (void).cxx_destruct;
+@property BOOL inset; // @synthesize inset=_inset;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 

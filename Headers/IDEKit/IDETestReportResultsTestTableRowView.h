@@ -17,10 +17,10 @@
     long long _row;
 }
 
+- (void).cxx_destruct;
 @property BOOL disableJumpToSource; // @synthesize disableJumpToSource=_disableJumpToSource;
 @property long long row; // @synthesize row=_row;
 @property(retain) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (id)tableCellView;

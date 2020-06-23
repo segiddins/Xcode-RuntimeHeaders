@@ -50,6 +50,7 @@
 + (id)compressedStackFrames:(id)arg1 usingCompressionValue:(long long)arg2;
 + (void)initialize;
 + (id)stackFrameWithThread:(id)arg1 analyticsLogStackFrame:(id)arg2 frameNumber:(long long)arg3 usingContext:(id)arg4;
+- (void).cxx_destruct;
 @property BOOL settingDisassembly; // @synthesize settingDisassembly=_settingDisassembly;
 @property(copy, nonatomic) NSString *disassemblyString; // @synthesize disassemblyString=_disassemblyString;
 @property(nonatomic) BOOL returnValueIsValid; // @synthesize returnValueIsValid=_returnValueIsValid;
@@ -72,7 +73,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) IDEThread *parentThread; // @synthesize parentThread=_parentThread;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)expressionWithSubstitutedTypesForExpression:(id)arg1;
 - (void)evaluateExpression:(id)arg1 options:(id)arg2 withResultBlock:(CDUnknownBlockType)arg3;

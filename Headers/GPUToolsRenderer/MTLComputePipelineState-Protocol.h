@@ -10,6 +10,7 @@
 @protocol MTLDevice;
 
 @protocol MTLComputePipelineState <NSObject>
+@property(nonatomic, readonly) BOOL supportIndirectCommandBuffers;
 @property(nonatomic, readonly) long long staticThreadgroupMemoryLength;
 @property(nonatomic, readonly) long long threadExecutionWidth;
 @property(nonatomic, readonly) long long maxTotalThreadsPerThreadgroup;

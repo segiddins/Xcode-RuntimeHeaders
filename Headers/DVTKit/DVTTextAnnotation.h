@@ -56,6 +56,7 @@
 + (void)sortAndFilterSupressedAnnotationsInArray:(id)arg1 usingComparisonSelector:(SEL)arg2;
 + (id)logAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL lazyInvalidation; // @synthesize lazyInvalidation=_lazyInvalidation;
 @property(readonly) struct CGRect lastSidebarMarkerRect; // @synthesize lastSidebarMarkerRect=_lastSidebarMarkerRect;
 @property unsigned long long scrollbarMarkerType; // @synthesize scrollbarMarkerType=_scrollbarMarkerType;
@@ -74,7 +75,6 @@
 @property unsigned long long severity; // @synthesize severity=_severity;
 @property(readonly) struct _NSRange paragraphRange; // @synthesize paragraphRange=_paragraphRange;
 @property(retain, nonatomic) DVTTextDocumentLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)annotationDisplayDescription;
 - (BOOL)isFocusedInTextView:(id)arg1;
 - (void)adjustParagraphIndexBy:(long long)arg1 lengthBy:(long long)arg2;

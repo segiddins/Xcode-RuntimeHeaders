@@ -31,6 +31,7 @@
 + (struct CGRect)ibDefaultFrameForView;
 + (Class)ibViewClass;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *childViewControllers; // @synthesize childViewControllers=_childViewControllers;
 @property(nonatomic) BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(nonatomic) BOOL connectionsRequireClassSwapperForStoryboardCompilation; // @synthesize connectionsRequireClassSwapperForStoryboardCompilation=_connectionsRequireClassSwapperForStoryboardCompilation;
@@ -48,7 +49,6 @@
 - (id)inheritedSimulatedMetrics;
 - (void)setExplicitStoryboardIdentifier:(id)arg1;
 - (id)explicitStoryboardIdentifier;
-- (void).cxx_destruct;
 - (struct CGSize)effectiveSimulatedViewSize;
 - (BOOL)ibUsesStandardIdentifierPropertySlice;
 - (BOOL)ibCanSupportIdentifierProperty;

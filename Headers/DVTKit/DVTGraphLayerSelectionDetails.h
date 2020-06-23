@@ -14,9 +14,9 @@
     struct CGPoint _modelAnchorPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGPoint modelAnchorPoint; // @synthesize modelAnchorPoint=_modelAnchorPoint;
 @property(readonly) NSString *description; // @synthesize description=_description;
-- (void).cxx_destruct;
 - (id)initWithDescriptionString:(id)arg1 anchorPoint:(struct CGPoint)arg2;
 
 @end

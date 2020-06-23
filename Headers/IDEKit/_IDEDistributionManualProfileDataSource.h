@@ -19,9 +19,9 @@
 
 + (id)keyPathsForValuesAffectingProvisioningProfile;
 + (id)keyPathsForValuesAffectingProfileQualification;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEDistributionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) IDEDistributionItem *distributionItem; // @synthesize distributionItem=_distributionItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showEmptyProfileSelectionPlaceholder;
 - (id)provisioningProfileDownloaderContextWithError:(id *)arg1;
 @property(retain, nonatomic) id <IDEProvisioningBasicProfile> provisioningProfile;

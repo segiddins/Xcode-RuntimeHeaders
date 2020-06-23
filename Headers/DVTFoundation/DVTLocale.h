@@ -33,9 +33,9 @@
 + (id)currentLocale;
 + (id)_xcodeLocale;
 + (id)systemLocale;
+- (void).cxx_destruct;
 @property(readonly, getter=isLegacy) BOOL legacy; // @synthesize legacy=_legacy;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLocale:(id)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (id)codesignableDeviceWithIdentifier:(id)arg1 platform:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *platformIdentifier;
 @property(readonly) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, copy) NSSet *proxiedDevices;

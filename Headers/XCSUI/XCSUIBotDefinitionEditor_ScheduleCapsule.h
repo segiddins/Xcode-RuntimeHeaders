@@ -19,9 +19,9 @@
 }
 
 + (id)title;
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

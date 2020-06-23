@@ -17,10 +17,10 @@
     struct SCNVector3 _pivotPoint;
 }
 
+- (void).cxx_destruct;
 @property __weak SCNView *sceneView; // @synthesize sceneView=_sceneView;
 @property __weak id <DBGSceneCameraDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
 @property struct SCNVector3 pivotPoint; // @synthesize pivotPoint=_pivotPoint;
-- (void).cxx_destruct;
 - (void)cameraDidZoom;
 - (void)sceneViewDidChangeFrameSize;
 - (void)zoomToFitRootViewFrame:(struct CGRect)arg1 animated:(BOOL)arg2;

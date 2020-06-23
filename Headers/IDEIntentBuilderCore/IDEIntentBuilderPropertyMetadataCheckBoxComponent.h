@@ -13,8 +13,8 @@
     NSString *_controlTitle;
 }
 
-@property(copy, nonatomic) NSString *controlTitle; // @synthesize controlTitle=_controlTitle;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *controlTitle; // @synthesize controlTitle=_controlTitle;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

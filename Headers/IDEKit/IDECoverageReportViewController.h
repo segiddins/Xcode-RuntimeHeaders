@@ -35,8 +35,9 @@
     DVTReplacementView *_scopeBarReplacementView;
 }
 
-+ (void)jumpToSourceCodeForItem:(id)arg1 inWorkspace:(id)arg2;
++ (void)jumpToSourceCodeForItem:(id)arg1 fromEditor:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *scopeBarReplacementView; // @synthesize scopeBarReplacementView=_scopeBarReplacementView;
 @property long long coverageBarColumnIndex; // @synthesize coverageBarColumnIndex=_coverageBarColumnIndex;
 @property(retain, nonatomic) NSArray *deviceColumns; // @synthesize deviceColumns=_deviceColumns;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) id <IDECoverage_DeviceHelper> deviceHelper; // @synthesize deviceHelper=_deviceHelper;
 @property(retain, nonatomic) id <IDECoverage_RootObject> rootObject; // @synthesize rootObject=_rootObject;
 @property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
-- (void).cxx_destruct;
 - (void)restoreFilterField;
 - (void)_filterOutlineAndRefresh;
 - (id)_filterItemsBasedOnCoverageDifferencesAndTestBundleCheckboxes:(id)arg1 contextItem:(id)arg2;

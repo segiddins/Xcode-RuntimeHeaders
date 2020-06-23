@@ -15,9 +15,9 @@
     struct CGRect _bandSelectionFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType drawingCompletionBlock; // @synthesize drawingCompletionBlock=_drawingCompletionBlock;
 @property(nonatomic) struct CGRect bandSelectionFrame; // @synthesize bandSelectionFrame=_bandSelectionFrame;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateLayer;
 - (id)hitTest:(struct CGPoint)arg1;

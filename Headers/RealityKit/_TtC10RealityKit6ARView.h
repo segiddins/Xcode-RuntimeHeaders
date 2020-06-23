@@ -23,6 +23,8 @@
     MISSING_TYPE *useCAMetalLayer;
     MISSING_TYPE *pauseEngineOnLeaveForeground;
     MISSING_TYPE *__renderGraphEmitter;
+    MISSING_TYPE *__forceLocalizedProbes;
+    MISSING_TYPE *__parallaxBackgroundProbe;
     MISSING_TYPE *layerHandle;
     MISSING_TYPE *updateSubscription;
     MISSING_TYPE *renderSubscription;

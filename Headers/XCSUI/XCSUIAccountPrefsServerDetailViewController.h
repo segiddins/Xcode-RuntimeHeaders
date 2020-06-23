@@ -40,6 +40,7 @@
 
 + (id)keyPathsForValuesAffectingLastKnownConnectionErrorDescription;
 + (id)keyPathsForValuesAffectingConnectionAddress;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL resolving; // @synthesize resolving=_resolving;
 @property(nonatomic) BOOL reachable; // @synthesize reachable=_reachable;
 @property(retain, nonatomic) NSError *lastKnownConnectionError; // @synthesize lastKnownConnectionError=_lastKnownConnectionError;
@@ -62,7 +63,6 @@
 @property __weak DVTToggleSwitch *enableSwitch; // @synthesize enableSwitch=_enableSwitch;
 @property BOOL authenticateAsRegisteredUser; // @synthesize authenticateAsRegisteredUser=_authenticateAsRegisteredUser;
 @property(retain) NSImageView *connectionErrorImageView; // @synthesize connectionErrorImageView=_connectionErrorImageView;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long resolutionOperationCount;
 - (void)completeResolutionOperation;
 - (void)startResolutionOperation;

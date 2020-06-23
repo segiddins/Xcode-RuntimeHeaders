@@ -22,9 +22,9 @@
 + (id)detectedTypeOfContentAtPathString:(id)arg1 error:(id *)arg2 options:(unsigned long long)arg3;
 + (id)detectedTypeOfContentAtPathString:(id)arg1 error:(id *)arg2;
 + (id)detectedTypeOfContentAtURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) IBDocumentXMLArchiveTypeDescription *xmlArchiveTypeDescription; // @synthesize xmlArchiveTypeDescription=_xmlArchiveTypeDescription;
 @property(readonly) IBDocumentDataTypeDescription *fileDataTypeDescription; // @synthesize fileDataTypeDescription=_fileDataTypeDescription;
-- (void).cxx_destruct;
 - (id)initWithFileDataTypeDescription:(id)arg1 xmlArchiveTypeDescription:(id)arg2;
 
 @end

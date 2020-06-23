@@ -17,11 +17,11 @@
 }
 
 + (id)searchQueryWithSearchString:(id)arg1 matchType:(unsigned long long)arg2 reference:(id)arg3 tokenScope:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *tokenScope; // @synthesize tokenScope=_tokenScope;
 @property(readonly) IDEReferenceDocumentationInfo *reference; // @synthesize reference=_reference;
 @property(readonly) unsigned long long matchType; // @synthesize matchType=_matchType;
 @property(readonly, copy) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

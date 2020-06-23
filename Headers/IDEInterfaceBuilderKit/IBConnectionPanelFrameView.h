@@ -27,10 +27,10 @@
 + (void)setDefaultContentWidth:(double)arg1;
 + (double)defaultContentWidth;
 + (double)minimumContentWidth;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pinned; // @synthesize pinned=_pinned;
 @property(copy) NSEvent *lastMouseDown; // @synthesize lastMouseDown=_lastMouseDown;
 @property(readonly) DVTColoredSpinner *spinner; // @synthesize spinner=_spinner;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)windowKeyOrMainStateChanged:(id)arg1;

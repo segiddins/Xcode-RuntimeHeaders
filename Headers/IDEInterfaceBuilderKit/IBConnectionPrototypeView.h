@@ -30,6 +30,7 @@
 }
 
 + (id)defaultTitleFieldWithInterfaceStyle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 @property(readonly, nonatomic) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(nonatomic) __weak id <IBConnectionPrototypeViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL allowsNewConnections; // @synthesize allowsNewConnections=_allowsNewConnections;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) double titleWidthPercentage; // @synthesize titleWidthPercentage=_titleWidthPercentage;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)bubblePath;
 - (void)updateTitleFieldAccessibility;

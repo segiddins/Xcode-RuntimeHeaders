@@ -18,9 +18,9 @@
 + (id)keyPathsForValuesAffectingDisplayName;
 + (BOOL)autosavesInPlace;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEResultBundleProcessor *processor; // @synthesize processor=_processor;
 @property(retain, nonatomic) IDEActivityLogRecord *logRecord; // @synthesize logRecord=_logRecord;
-- (void).cxx_destruct;
 - (void)_processInvocationRecord:(id)arg1 fromFilePath:(id)arg2;
 - (id)displayName;
 @property(readonly, nonatomic) IDESchemeActionsInvocationRecord *invocationRecord;

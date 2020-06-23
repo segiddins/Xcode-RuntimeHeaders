@@ -20,9 +20,9 @@
     long long _cutoff;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long cutoff; // @synthesize cutoff=_cutoff;
 @property(readonly) BOOL sendsIncompleteResults; // @synthesize sendsIncompleteResults=_sendsIncompleteResults;
-- (void).cxx_destruct;
 - (id)resultConsumptionQueue;
 - (void)updateUserInput:(id)arg1 generation:(long long)arg2;
 - (void)resultGeneratorFinishedStarting:(id)arg1;

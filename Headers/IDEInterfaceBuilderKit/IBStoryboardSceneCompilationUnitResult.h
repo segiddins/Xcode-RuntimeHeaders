@@ -16,10 +16,10 @@
     IBXIBDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBXIBDocument *document; // @synthesize document=_document;
 @property(readonly) NSFileWrapper *compiledPackage; // @synthesize compiledPackage=_compiledPackage;
 @property(readonly) NSObject<IBPrimarySceneObject> *storyboardViewController; // @synthesize storyboardViewController=_storyboardViewController;
-- (void).cxx_destruct;
 - (id)initWithDocument:(id)arg1 compiledPackage:(id)arg2;
 - (id)initWithStoryboardViewController:(id)arg1 document:(id)arg2 compiledPackage:(id)arg3;
 

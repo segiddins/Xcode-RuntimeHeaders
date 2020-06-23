@@ -18,9 +18,9 @@
     BOOL _isAttachedToDebugBar;
 }
 
+- (void).cxx_destruct;
 @property BOOL isAttachedToDebugBar; // @synthesize isAttachedToDebugBar=_isAttachedToDebugBar;
 @property BOOL prefersDebugBarToAlwaysBeShown; // @synthesize prefersDebugBarToAlwaysBeShown;
-- (void).cxx_destruct;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (void)toggleRecording:(id)arg1;

@@ -19,12 +19,12 @@
     long long _alignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSView *closeButton; // @synthesize closeButton=_closeButton;
 @property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (BOOL)isOpaque;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFit;

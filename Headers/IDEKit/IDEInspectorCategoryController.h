@@ -14,8 +14,8 @@
     NSArray *_inspectorExtensions;
 }
 
-@property(readonly) DVTExtension *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(readonly) DVTExtension *category; // @synthesize category=_category;
 - (void)validateUtilitySlices:(id)arg1;
 - (void)validateUsageOfSupportsDocumentInspection:(id)arg1;
 @property(readonly) BOOL supportsDocumentUndo;

@@ -17,9 +17,9 @@
     NSMutableSet *_persistentStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *persistentStrings; // @synthesize persistentStrings=_persistentStrings;
 @property(readonly) NSString *contextName; // @synthesize contextName=_contextName;
-- (void).cxx_destruct;
 - (void)addPersistentStrings:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

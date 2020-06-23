@@ -18,10 +18,10 @@
     BOOL _keyIsSelected;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL keyIsSelected; // @synthesize keyIsSelected=_keyIsSelected;
 @property(readonly) struct _NSRange selectedTextRange; // @synthesize selectedTextRange=_selectedTextRange;
 @property(readonly) NSArray *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

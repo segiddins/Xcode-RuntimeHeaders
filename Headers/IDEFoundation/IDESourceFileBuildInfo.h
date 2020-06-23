@@ -38,6 +38,7 @@
 }
 
 + (id)sourceFileBuildInfoFromLegacyASTBuildInfoDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *metalBuiltProductsDir; // @synthesize metalBuiltProductsDir=_metalBuiltProductsDir;
 @property(readonly) NSArray *metalCommandLine; // @synthesize metalCommandLine=_metalCommandLine;
 @property(readonly) NSArray *intentsGeneratedFilePaths; // @synthesize intentsGeneratedFilePaths=_intentsGeneratedFilePaths;
@@ -63,7 +64,6 @@
 @property(readonly) NSArray *toolchainIdents; // @synthesize toolchainIdents=_toolchainIdents;
 @property(readonly) NSString *languageName; // @synthesize languageName=_languageName;
 @property(readonly) NSString *outputFile; // @synthesize outputFile=_outputFile;
-- (void).cxx_destruct;
 - (id)legacyDictionaryASTBuildInfoRepresentation;
 - (id)initFromLegacyASTBuildInfoDictionaryRepresentation:(id)arg1;
 

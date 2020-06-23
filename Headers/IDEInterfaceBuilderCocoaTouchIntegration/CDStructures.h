@@ -25,10 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct IBMutableIdentityDictionary {
-    Class _field1;
-};
-
 struct IBNSDirectionalEdgeInsets {
     double _field1;
     double _field2;

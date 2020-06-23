@@ -16,9 +16,9 @@
     DVTLogAspect *_logAspect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) DVTDeveloperAccountCredentials *credentials; // @synthesize credentials=_credentials;
-- (void).cxx_destruct;
 - (void)willAuthenticateWithContext:(id)arg1;
 - (id)initWithAccountCredentials:(id)arg1 logAspect:(id)arg2;
 

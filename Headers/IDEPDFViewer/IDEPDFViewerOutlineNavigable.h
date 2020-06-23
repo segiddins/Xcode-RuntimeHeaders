@@ -17,10 +17,10 @@
     PDFOutline *_pdfOutline;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(readonly) PDFOutline *pdfOutline; // @synthesize pdfOutline=_pdfOutline;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
-- (void).cxx_destruct;
 @property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly) NSString *navigableItem_name;
 @property(readonly) NSImage *navigableItem_image;

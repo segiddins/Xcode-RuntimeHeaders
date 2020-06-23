@@ -43,6 +43,7 @@
 + (struct CGSize)maximumThumbnailSize;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(readonly) NSSearchField *assetFilterField; // @synthesize assetFilterField=_assetFilterField;
 @property(readonly) NSTreeController *groupController; // @synthesize groupController=_groupController;
 @property(retain) NSArray *draggedAssets; // @synthesize draggedAssets=_draggedAssets;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly) DVTLibrary *library; // @synthesize library=_library;
 @property(retain) id <DVTLibraryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)libraryTileViewDidChangeEffectiveAppearance:(id)arg1;
 - (void)focusAssetFilterField;

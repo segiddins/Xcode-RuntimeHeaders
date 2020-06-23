@@ -33,13 +33,13 @@
 - (void)windowMenu_showDocumentation:(id)arg1;
 - (void)showWhatsNewInXcode:(id)arg1;
 - (void)showContinuousIntegrationGuide:(id)arg1;
+- (void)showSwiftProgrammingLanguageBook:(id)arg1;
 - (void)showAppStoreConnectHelp:(id)arg1;
 - (void)showDeveloperAccountHelp:(id)arg1;
 - (void)showXcodeReleaseNotes:(id)arg1;
 - (id)_documentationURLForInfoDictionaryKey:(id)arg1;
 - (void)showDeveloperDocumentation:(id)arg1;
 - (void)documentation_showRESTReferenceNavigator:(id)arg1;
-- (void)documentation_showJSReferenceNavigator:(id)arg1;
 - (void)documentation_showObjectiveCReferenceNavigator:(id)arg1;
 - (void)documentation_showSwiftReferenceNavigator:(id)arg1;
 - (void)revealInNavigator:(id)arg1;

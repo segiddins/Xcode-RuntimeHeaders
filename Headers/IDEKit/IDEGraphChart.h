@@ -16,11 +16,11 @@
     NSArray *_entries;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *entries; // @synthesize entries=_entries;
 @property(copy) NSColor *keyColor; // @synthesize keyColor=_keyColor;
 @property(copy) NSColor *color; // @synthesize color=_color;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)clearValues;
 - (void)flushEntriesToCount:(unsigned long long)arg1;
 - (void)addLabeledMetrics:(id)arg1 chartName:(id)arg2 startingAtIndex:(long long)arg3 withLabels:(id)arg4;

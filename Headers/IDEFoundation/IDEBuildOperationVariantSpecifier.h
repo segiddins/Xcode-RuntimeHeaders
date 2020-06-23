@@ -15,10 +15,10 @@
     NSString *_buildLogSubtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *buildLogSubtitle; // @synthesize buildLogSubtitle=_buildLogSubtitle;
 @property(readonly) unsigned long long sanitizerOptions; // @synthesize sanitizerOptions=_sanitizerOptions;
 @property(readonly, copy, nonatomic) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
-- (void).cxx_destruct;
 - (id)initWithBuildParameters:(id)arg1 sanitizerOptions:(unsigned long long)arg2 buildLogSubtitle:(id)arg3;
 
 @end

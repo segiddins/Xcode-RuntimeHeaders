@@ -16,9 +16,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)name;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

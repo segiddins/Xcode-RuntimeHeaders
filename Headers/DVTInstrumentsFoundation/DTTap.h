@@ -18,13 +18,12 @@
     DTTapConfig *_config;
 }
 
-+ (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(readonly, retain, nonatomic) DTTapConfig *config; // @synthesize config=_config;
 @property(readonly, retain, nonatomic) DTTapMemoHandler *memoHandler; // @synthesize memoHandler=_memoHandler;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic) unsigned int tapID; // @synthesize tapID=_tapID;
-- (void).cxx_destruct;
 - (id)_fetchDataForReason:(unsigned long long)arg1;
 - (BOOL)_canFetchWhileArchiving;
 - (void)_unpause;

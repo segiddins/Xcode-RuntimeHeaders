@@ -22,13 +22,13 @@
     IDEActivityReporter *_activityReporter;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak IDEActivityReporter *activityReporter; // @synthesize activityReporter=_activityReporter;
 @property(readonly) DVTDeviceOperation *deviceOperation; // @synthesize deviceOperation=_deviceOperation;
 @property _Bool cachedIsUserRequested; // @synthesize cachedIsUserRequested;
 @property(copy) NSString *cachedTitle; // @synthesize cachedTitle;
 @property long long cachedProgress; // @synthesize cachedProgress;
 @property(retain) IDEActivityReport *cachedActivityReport; // @synthesize cachedActivityReport;
-- (void).cxx_destruct;
 - (void)_finishActivityReport;
 - (void)_updateActivityReportCoallesced;
 - (void)_configureNewActivityReport;

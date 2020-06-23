@@ -13,7 +13,7 @@
 }
 
 - (id)init;
-- (id)entityWithPartialURL:(id)arg1 isGroup:(BOOL)arg2 rawLanguage:(int)arg3 name:(id)arg4 kind:(long long)arg5 platformAvailabilityMask:(unsigned int)arg6 availabilityItemId:(unsigned int)arg7;
+- (id)entityWithPartialURL:(id)arg1 isGroup:(BOOL)arg2 rawLanguage:(int)arg3 name:(id)arg4 kind:(long long)arg5 platformAvailabilityMask:(unsigned int)arg6 availabilityItemId:(unsigned int)arg7 coreDocumentationKind:(id)arg8;
 - (id)groupMarkerWithParent:(id)arg1 name:(id)arg2;
 - (id)collectionWithRawLanguageValue:(int)arg1;
 - (id)rootIndexItem;

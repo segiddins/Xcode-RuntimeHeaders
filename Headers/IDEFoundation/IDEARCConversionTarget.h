@@ -14,9 +14,9 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) BOOL fileOveridesARCSetting; // @synthesize fileOveridesARCSetting=_fileOveridesARCSetting;
-- (void).cxx_destruct;
 - (void)updateBuildSettings;
 - (void)disableOverridingBuildSettings;
 - (void)enableOverridingBuildSettings;

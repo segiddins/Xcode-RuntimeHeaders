@@ -23,10 +23,10 @@
 + (BOOL)buildableProducesWatchApp:(id)arg1;
 + (Class)migrationTargetSublass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *selectedTargets; // @synthesize selectedTargets=_selectedTargets;
 @property(readonly) NSArray *targetsToApplyMigrationSettingsTo; // @synthesize targetsToApplyMigrationSettingsTo=_targetsToApplyMigrationSettingsTo;
 @property(readonly) NSArray *targets; // @synthesize targets=_targets;
-- (void).cxx_destruct;
 - (void)selectDefaultTargets;
 @property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;

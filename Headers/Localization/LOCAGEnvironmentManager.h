@@ -21,10 +21,10 @@
 + (id)optionalFolderMap;
 + (id)mandatoryFolderNames;
 + (id)mandatoryFolderMap;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *glotFolderNames; // @synthesize glotFolderNames=_glotFolderNames;
 @property(retain) LOCAGCommandOptions *commandOptions; // @synthesize commandOptions=_commandOptions;
 @property(retain) NSString *environmentFolderPath; // @synthesize environmentFolderPath=_environmentFolderPath;
-- (void).cxx_destruct;
 - (void)mkbomAtPath:(id)arg1;
 - (id)dntPath;
 - (id)itsrulesPath;

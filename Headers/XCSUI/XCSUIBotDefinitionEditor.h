@@ -39,6 +39,7 @@
     DVTBorderedView *_detailBorderedView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *detailBorderedView; // @synthesize detailBorderedView=_detailBorderedView;
 @property __weak DVTReplacementView *detailReplacementView; // @synthesize detailReplacementView=_detailReplacementView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) XCSSettings *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
-- (void).cxx_destruct;
 - (void)selectPane:(long long)arg1;
 - (void)tabChooserView:(id)arg1 userDidChooseChoice:(id)arg2;
 @property(readonly, nonatomic) id <XCSUIBotDefintionEditorViewController> installedViewController;

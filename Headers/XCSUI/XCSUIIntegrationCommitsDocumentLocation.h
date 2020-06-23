@@ -14,9 +14,9 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, copy) NSString *commitsFilePath; // @synthesize commitsFilePath=_commitsFilePath;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 filePath:(id)arg3 workspace:(id)arg4;

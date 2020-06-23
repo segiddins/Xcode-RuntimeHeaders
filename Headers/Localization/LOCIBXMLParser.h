@@ -17,12 +17,12 @@
     NSURL *_ibFileURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *ibFileURL; // @synthesize ibFileURL=_ibFileURL;
 @property(copy, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(copy, nonatomic) NSXMLDocument *xml; // @synthesize xml=_xml;
 @property(copy, nonatomic) NSURL *restypesURL; // @synthesize restypesURL=_restypesURL;
 @property(copy, nonatomic) NSURL *ontologyURL; // @synthesize ontologyURL=_ontologyURL;
-- (void).cxx_destruct;
 - (id)ibElementsForNode:(id)arg1 definitions:(id)arg2 restype:(id)arg3 commentDefinitions:(id)arg4;
 - (id)userCommentForNode:(id)arg1 definitions:(id)arg2;
 - (id)parseWithError:(id *)arg1;

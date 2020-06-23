@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingCanShowPreviousStep;
 + (id)keyPathsForValuesAffectingCanShowNextStep;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *doneButtonHeight; // @synthesize doneButtonHeight=_doneButtonHeight;
 @property __weak NSLayoutConstraint *forwardBackButtonHeight; // @synthesize forwardBackButtonHeight=_forwardBackButtonHeight;
 @property __weak NSLayoutConstraint *containerViewHeight; // @synthesize containerViewHeight=_containerViewHeight;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) IDEActivityLogAnalyzerResultMessage *analyzerMessage; // @synthesize analyzerMessage=_analyzerMessage;
 @property(retain) IDEEditor<IDEAnalyzerResultsHostingEditor> *editor; // @synthesize editor=_editor;
 @property(nonatomic) long long currentStepIndex; // @synthesize currentStepIndex=_currentStepIndex;
-- (void).cxx_destruct;
 - (BOOL)shouldMoveCursorForAnnotation:(id)arg1;
 - (void)segmentedNavButtonAction:(id)arg1;
 - (void)showPreviousStep:(id)arg1;

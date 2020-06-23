@@ -15,10 +15,10 @@
     DVTTextDocumentLocation *_replacementLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTTextDocumentLocation *replacementLocation; // @synthesize replacementLocation=_replacementLocation;
 @property(readonly) NSString *fixItString; // @synthesize fixItString=_fixItString;
 @property(nonatomic) __weak IDEDiagnosticActivityLogMessage *diagnosticItem; // @synthesize diagnosticItem=_diagnosticItem;
-- (void).cxx_destruct;
 - (void)updateFixItInfoWithLocationEncodingConverter:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

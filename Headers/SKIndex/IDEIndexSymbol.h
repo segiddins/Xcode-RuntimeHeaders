@@ -29,6 +29,7 @@
 + (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 resolution:(id)arg4 isVirtual:(BOOL)arg5 role:(long long)arg6 isImplicit:(BOOL)arg7 location:(id)arg8 forQueryProvider:(id)arg9;
 + (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 resolution:(id)arg4 forQueryProvider:(id)arg5;
 + (Class)classForSymbolKind:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(nonatomic) BOOL isSystem; // @synthesize isSystem=_isSystem;
 @property(nonatomic) BOOL isVirtual; // @synthesize isVirtual=_isVirtual;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
 @property(readonly, nonatomic) NSString *resolution; // @synthesize resolution=_resolution;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)qualifiedDisplayName;
 - (id)displayName;
 - (id)references;

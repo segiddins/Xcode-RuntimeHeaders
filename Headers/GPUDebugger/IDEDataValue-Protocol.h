@@ -26,7 +26,7 @@
 @property(nonatomic, readonly) NSString *pointeeAddress;
 @property(nonatomic, readonly) NSString *address;
 @property(nonatomic, copy) NSString *value;
-@property(nonatomic, readonly) NSString *name;
+@property(nonatomic, copy) NSString *name;
 @property(nonatomic, readonly) IDEStackFrame *stackFrame;
 @end
 

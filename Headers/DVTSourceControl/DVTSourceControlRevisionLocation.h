@@ -20,9 +20,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDate *date; // @synthesize date=_date;
 @property(copy) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *displayName;
 - (BOOL)isSimilar:(id)arg1;

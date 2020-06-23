@@ -14,9 +14,9 @@
     NSString *_alertInformativeText;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *alertInformativeText; // @synthesize alertInformativeText=_alertInformativeText;
 @property(copy) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseUp:(id)arg1;
 

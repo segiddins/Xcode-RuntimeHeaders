@@ -29,6 +29,7 @@
 + (id)keyPathsForValuesAffectingCanPerformAdditionalAction;
 + (id)keyPathsForValuesAffectingCanGoPrevious;
 + (id)keyPathsForValuesAffectingCanGoNext;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canNavigate; // @synthesize canNavigate=_canNavigate;
 @property(retain, nonatomic) IDEDistributionItemSummaryViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) IDEDistributionItemSummaryNode *rootItem; // @synthesize rootItem=_rootItem;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) DVTOutlineView *masterOutlineView; // @synthesize masterOutlineView=_masterOutlineView;
 @property(retain, nonatomic) DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property(retain, nonatomic) NSTabView *tabView; // @synthesize tabView=_tabView;
-- (void).cxx_destruct;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;

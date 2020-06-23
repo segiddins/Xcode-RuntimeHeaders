@@ -34,6 +34,7 @@
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingIbInspectedAlternates;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) IBUIMenuElementIdentifier *anchorForUnarchiving; // @synthesize anchorForUnarchiving=_anchorForUnarchiving;
 @property(nonatomic) BOOL isSystemItem; // @synthesize isSystemItem=_isSystemItem;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

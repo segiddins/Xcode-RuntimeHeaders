@@ -16,8 +16,8 @@
     NSMutableArray *_recentScripts;
 }
 
-@property(retain) NSPopUpButton *scriptPopUpButton; // @synthesize scriptPopUpButton=_scriptPopUpButton;
 - (void).cxx_destruct;
+@property(retain) NSPopUpButton *scriptPopUpButton; // @synthesize scriptPopUpButton=_scriptPopUpButton;
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
 - (void)awakeFromNib;
 - (void)populatePopUpButton;

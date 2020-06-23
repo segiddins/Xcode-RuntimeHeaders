@@ -6,7 +6,7 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-@class DVTStackView_AppKitAutolayout, DVTToolchain, IDEAttachTokenFieldDelegate, IDEWorkspaceTabController, NSArray, NSButton, NSButtonCell, NSImageView, NSTokenField, NSView, NSWindow;
+@class DVTStackView_AppKitAutolayout, DVTToolchain, IDEAttachTokenFieldDelegate, IDEWorkspaceTabController, NSButton, NSButtonCell, NSImageView, NSPopUpButton, NSTokenField, NSView, NSWindow;
 @protocol IDEAttachToProcessSheetDelegate;
 
 @interface IDEAttachToProcessSheet : DVTViewController
@@ -18,26 +18,25 @@
     NSImageView *_invalidPIDImage;
     NSView *_debugProcessAsSlice;
     NSView *_toolchainSlice;
+    NSPopUpButton *_toolchainPopup;
     NSView *_mallocStackSlice;
     DVTStackView_AppKitAutolayout *_slicesStackView;
     NSButtonCell *_debugProcessAsMeButtonCell;
     IDEWorkspaceTabController *_workspaceTabController;
     id <IDEAttachToProcessSheetDelegate> _delegate;
+    DVTToolchain *_selectedToolchain;
     BOOL _enableMallocStackLogging;
     unsigned int _debugProcessAsUID;
-    DVTToolchain *_selectedToolchain;
-    NSArray *_toolchains;
     IDEAttachTokenFieldDelegate *_tokenFieldDelegate;
 }
 
 + (id)lldbToolchainFromActiveLaunchSchemeInWorkspace:(id)arg1;
 + (void)showAttachToProcessSheetForWorkspaceTabController:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableMallocStackLogging; // @synthesize enableMallocStackLogging=_enableMallocStackLogging;
 @property(retain) IDEAttachTokenFieldDelegate *tokenFieldDelegate; // @synthesize tokenFieldDelegate=_tokenFieldDelegate;
-@property(retain) NSArray *toolchains; // @synthesize toolchains=_toolchains;
 @property unsigned int debugProcessAsUID; // @synthesize debugProcessAsUID=_debugProcessAsUID;
-@property(retain, nonatomic) DVTToolchain *selectedToolchain; // @synthesize selectedToolchain=_selectedToolchain;
-- (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (void)_rememberDebugProcessAsSelection;
 - (void)_attachToProcessUsingProcessInformations:(id)arg1;
 - (BOOL)deduplicateProcessNameOrPIDString:(id)arg1 withContext:(id)arg2;
@@ -52,7 +51,7 @@
 - (id)_processInformationForProcessName:(id)arg1 processInformations:(id)arg2;
 - (id)_processInformationForUserEnteredText:(id)arg1 processInformations:(id)arg2;
 - (id)_processInformationForPID:(int)arg1 processInformations:(id)arg2;
-- (void)primitiveInvalidate;
+- (void)selectToolchain:(id)arg1;
 - (void)loadView;
 - (void)_setupSlices;
 - (void)_setupMallocStackSlice;

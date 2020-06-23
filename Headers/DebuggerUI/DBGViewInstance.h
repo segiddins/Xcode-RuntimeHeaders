@@ -4,20 +4,24 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DebuggerUI/DBGRenderableInstance.h>
+#import <objc/NSObject.h>
 
+#import <DebuggerUI/DBGCanvasRenderable-Protocol.h>
 #import <DebuggerUI/DBGViewSurfaceUpdateDelegate-Protocol.h>
 
-@class DBG2DPolygon, DBGSceneNode, DBGViewControllerInstance, DBGViewDebuggerAdditionUIController, DBGViewSurface, NSArray, NSString;
+@class DBG2DPolygon, DBGSceneNode, DBGViewControllerInstance, DBGViewDebuggerAdditionUIController, DBGViewSurface, NSArray, NSMutableArray, NSString;
 
-@interface DBGViewInstance : DBGRenderableInstance <DBGViewSurfaceUpdateDelegate>
+@interface DBGViewInstance : NSObject <DBGViewSurfaceUpdateDelegate, DBGCanvasRenderable>
 {
     DBG2DPolygon *_boundsPolygon;
     BOOL _transformIs3D;
-    BOOL _highlighted;
+    BOOL _selected;
     BOOL _showFlattened;
     BOOL _isCurrentMasterView;
+    BOOL _highlighted;
     BOOL _isIOS;
+    NSMutableArray *_layoutGuideInstances;
+    NSString *_identifier;
     DBGViewInstance *_layoutReference;
     DBG2DPolygon *_resultingClippingPolygon;
     DBG2DPolygon *_clippedShape;
@@ -41,8 +45,10 @@
     struct CATransform3D _composedLocalTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain) DBGViewControllerInstance *owningController; // @synthesize owningController=_owningController;
 @property BOOL isIOS; // @synthesize isIOS=_isIOS;
+@property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) __weak DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
 @property(nonatomic) __weak DBGViewSurface *modelObject; // @synthesize modelObject=_modelObject;
 @property(nonatomic) __weak DBGSceneNode *node; // @synthesize node=_node;
@@ -65,20 +71,20 @@
 @property struct CGRect alignmentRect; // @synthesize alignmentRect=_alignmentRect;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 @property struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
+@property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain) NSMutableArray *layoutGuideInstances; // @synthesize layoutGuideInstances=_layoutGuideInstances;
 @property(readonly, nonatomic) DBG2DPolygon *boundsPolygon;
 @property(readonly, nonatomic) BOOL clipsToBounds;
 @property(readonly, nonatomic) BOOL isDoubleSided;
 @property(readonly, nonatomic) BOOL isFlipped;
-- (BOOL)isNormalizationNecessaryForView:(id)arg1;
+- (BOOL)needsCoordinateSpaceNormalization;
 - (double)normalizeVerticalUnitCoordinateIfNecessary:(double)arg1 ofView:(id)arg2;
 - (struct CATransform3D)normalizeTransform:(struct CATransform3D)arg1 ofView:(id)arg2;
-- (struct CGPoint)normalizedPointForPoint:(struct CGPoint)arg1 ofView:(id)arg2;
-- (struct CGRect)normalizedRectForFrame:(struct CGRect)arg1 ofView:(id)arg2;
+- (struct CGPoint)normalizedPoint:(struct CGPoint)arg1;
+- (struct CGRect)normalizedRect:(struct CGRect)arg1;
 - (void)viewSurfaceDidUpdateVisualRepresentation:(id)arg1;
 - (BOOL)transformIs3D;
-@property BOOL highlighted; // @synthesize highlighted=_highlighted;
-- (void)setSelected:(BOOL)arg1;
 - (BOOL)shouldSkipSnapshotUpdates;
 - (void)updateSnapshot;
 - (void)_recursivelyDestroyLayerTreeConnectionsWithViewInstance:(id)arg1;
@@ -87,6 +93,7 @@
 - (void)_updateSnapshotIfNecessary;
 - (id)snapshotRenderingWorkQueue;
 - (id)_viewDebugger;
+- (void)_setupLayoutGuideInstances;
 - (void)updateChildren;
 - (void)_sortSubviewsOfSurface:(id)arg1 outSubviewsToAdd:(id)arg2 outSubviewsToRemove:(id)arg3;
 - (id)subviewInstanceForSurface:(id)arg1;

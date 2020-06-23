@@ -38,8 +38,8 @@
 + (id)_blueprintContextForExtension:(id)arg1 blueprint:(id)arg2;
 + (id)_upgradeTasksProviderExtensionForContainer:(id)arg1;
 + (void)initialize;
-@property(readonly) BOOL displayingResults; // @synthesize displayingResults=_displayingResults;
 - (void).cxx_destruct;
+@property(readonly) BOOL displayingResults; // @synthesize displayingResults=_displayingResults;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldShowCellExpansionForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;

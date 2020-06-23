@@ -20,10 +20,10 @@
     DVTStackView_AppKitAutolayout *_bottomDetailsView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTStackView_AppKitAutolayout *bottomDetailsView; // @synthesize bottomDetailsView=_bottomDetailsView;
 @property __weak DVTStackView_AppKitAutolayout *topDetailsView; // @synthesize topDetailsView=_topDetailsView;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)addLabelViewsToBottomDetailsView:(id)arg1;
 - (void)addLabelViewsToTopDetailsView:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(retain) NSString *newClassName; // @synthesize newClassName=_newClassName;
 @property(retain) NSArray *findResults; // @synthesize findResults=_findResults;
-- (void).cxx_destruct;
 - (BOOL)commitChangesWithError:(id *)arg1;
 
 @end

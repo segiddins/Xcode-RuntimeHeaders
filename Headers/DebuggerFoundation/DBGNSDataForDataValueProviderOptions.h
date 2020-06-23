@@ -15,12 +15,12 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property unsigned long long timeout; // @synthesize timeout=_timeout;
 @property BOOL autoHandleExceptions; // @synthesize autoHandleExceptions=_autoHandleExceptions;
 @property BOOL unwindOnError; // @synthesize unwindOnError=_unwindOnError;
 @property long long language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

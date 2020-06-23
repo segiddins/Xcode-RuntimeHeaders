@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     id <SKScannedUnitTestsDelegate> _delegate;
 }
 
-@property __weak id <SKScannedUnitTestsDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property __weak id <SKScannedUnitTestsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invalidate;
 - (id)_testablesForIndexable:(id)arg1;
 - (BOOL)_isUnitTestOrLinkedFromUnitTest:(id)arg1;

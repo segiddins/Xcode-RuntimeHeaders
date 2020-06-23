@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedHeight;
 + (id)rowWithGridView:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(retain, nonatomic) NSNumber *measuredAutomaticHeight; // @synthesize measuredAutomaticHeight=_measuredAutomaticHeight;
 @property(retain, nonatomic) NSNumber *measuredHeight; // @synthesize measuredHeight=_measuredHeight;
@@ -42,7 +43,6 @@
 @property(nonatomic) long long yPlacement; // @synthesize yPlacement=_yPlacement;
 @property(readonly, nonatomic) long long numberOfCells; // @synthesize numberOfCells=_numberOfCells;
 @property(nonatomic) __weak IBNSGridViewTemplate *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)ibDefaultLabel;
 @property(readonly, nonatomic) NSString *ibShortLabel;

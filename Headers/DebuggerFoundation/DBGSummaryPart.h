@@ -23,11 +23,11 @@
 + (id)changedPropertyPathForField:(int)arg1;
 + (id)propertyPathForField:(int)arg1;
 + (int)dataFieldForString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *children; // @synthesize children=_children;
 @property(readonly) NSString *wholeString; // @synthesize wholeString=_wholeString;
 @property(readonly) struct _NSRange contentRange; // @synthesize contentRange=_contentRange;
 @property(readonly) struct _NSRange partRange; // @synthesize partRange=_partRange;
-- (void).cxx_destruct;
 @property(readonly) BOOL requiresExpressionPath;
 @property(readonly) NSArray *expressionParts;
 @property(readonly) NSArray *valuePathParts;

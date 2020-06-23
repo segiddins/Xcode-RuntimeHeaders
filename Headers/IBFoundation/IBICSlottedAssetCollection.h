@@ -22,9 +22,9 @@
 + (BOOL)supportsLocalization;
 + (Class)requiredChildrenClass;
 + (Class)slotClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *childrenIdentifiersToConflictStates; // @synthesize childrenIdentifiersToConflictStates=_childrenIdentifiersToConflictStates;
 @property(copy, nonatomic) NSDictionary *childrenIdentifiersToSlots; // @synthesize childrenIdentifiersToSlots=_childrenIdentifiersToSlots;
-- (void).cxx_destruct;
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
 - (BOOL)shouldMutateChild:(id)arg1 byCopyingContentToNewSlot:(id)arg2;

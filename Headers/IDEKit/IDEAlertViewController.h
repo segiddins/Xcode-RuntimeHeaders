@@ -17,8 +17,8 @@
 + (id)alertViewControllerForAlertIdentifier:(id)arg1;
 + (id)alertViewControllerForAlert:(id)arg1;
 + (void)initialize;
-@property(retain) IDEAlert *alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
+@property(retain) IDEAlert *alert; // @synthesize alert=_alert;
 
 @end
 

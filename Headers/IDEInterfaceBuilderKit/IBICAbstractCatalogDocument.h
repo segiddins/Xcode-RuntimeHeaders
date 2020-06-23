@@ -53,13 +53,13 @@
 + (void)unregisterOpenDocument:(id)arg1;
 + (void)registerOpenDocument:(id)arg1;
 + (id)openDocuments;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly, nonatomic) NSSet *defaultDeviceSpecificImageRepSlots; // @synthesize defaultDeviceSpecificImageRepSlots=_defaultDeviceSpecificImageRepSlots;
 @property(readonly, nonatomic) IBICTransientUIStateRepository *transientUIStateRepository; // @synthesize transientUIStateRepository=_transientUIStateRepository;
 @property(readonly, nonatomic) IBICCatalogSynchronizer *synchronizer; // @synthesize synchronizer=_synchronizer;
 @property(readonly, nonatomic) IBICPasteboardManager *pasteboardManager; // @synthesize pasteboardManager=_pasteboardManager;
 @property(readonly) NSArray *ideTopLevelStructureObjects; // @synthesize ideTopLevelStructureObjects=_ideTopLevelStructureObjects;
-- (void).cxx_destruct;
 - (long long)compareFindableLocation:(id)arg1 withLocation:(id)arg2;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
 - (id)relativePathForDisplayOrder:(long long)arg1;

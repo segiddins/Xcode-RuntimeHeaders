@@ -19,13 +19,13 @@
 }
 
 + (id)serviceWithIdentifier:(id)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *extensionRequestParameters; // @synthesize extensionRequestParameters=_extensionRequestParameters;
 @property(readonly, nonatomic) NSArray *expectedResponseTemplates; // @synthesize expectedResponseTemplates=_expectedResponseTemplates;
 @property(readonly, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) BOOL wantsPlatformInRequestURL; // @synthesize wantsPlatformInRequestURL=_wantsPlatformInRequestURL;
 @property(copy, nonatomic) NSString *actionSuffix; // @synthesize actionSuffix=_actionSuffix;
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)_requestParameters;
 - (id)_errorFromPayload:(id)arg1 resultCode:(long long)arg2;
 - (id)_resultFromPayload:(id)arg1 resultCode:(long long)arg2 error:(id *)arg3;

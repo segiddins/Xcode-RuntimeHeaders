@@ -6,36 +6,25 @@
 
 #import <AppKit/NSView.h>
 
-@class IDEAnalyticsMetricsRoundChevronView, IDEAnalyticsMetricsSingleBarGraphInfoPaneData, NSArray, NSNumber;
+@class IDEAnalyticsMetricsRoundChevronView, IDEAnalyticsMetricsStackBarLegendData, NSArray;
 
 @interface IDEAnalyticsStackBarLegendView : NSView
 {
-    BOOL _showBorder;
-    BOOL _isSingleBarGraphView;
-    NSArray *_dataSet;
     NSArray *_graphAXElements;
-    IDEAnalyticsMetricsSingleBarGraphInfoPaneData *_singleBarGraphInfo;
-    NSNumber *_valueChange;
     IDEAnalyticsMetricsRoundChevronView *_chevronView;
+    IDEAnalyticsMetricsStackBarLegendData *_legendData;
 }
 
-@property(retain) IDEAnalyticsMetricsRoundChevronView *chevronView; // @synthesize chevronView=_chevronView;
-@property(retain, nonatomic) NSNumber *valueChange; // @synthesize valueChange=_valueChange;
-@property(retain, nonatomic) IDEAnalyticsMetricsSingleBarGraphInfoPaneData *singleBarGraphInfo; // @synthesize singleBarGraphInfo=_singleBarGraphInfo;
-@property(nonatomic) BOOL isSingleBarGraphView; // @synthesize isSingleBarGraphView=_isSingleBarGraphView;
-@property(retain) NSArray *graphAXElements; // @synthesize graphAXElements=_graphAXElements;
-@property(nonatomic) BOOL showBorder; // @synthesize showBorder=_showBorder;
-@property(copy, nonatomic) NSArray *dataSet; // @synthesize dataSet=_dataSet;
 - (void).cxx_destruct;
-- (void)setupAXElements;
+@property(retain, nonatomic) IDEAnalyticsMetricsStackBarLegendData *legendData; // @synthesize legendData=_legendData;
+@property(retain) IDEAnalyticsMetricsRoundChevronView *chevronView; // @synthesize chevronView=_chevronView;
+@property(retain) NSArray *graphAXElements; // @synthesize graphAXElements=_graphAXElements;
 - (id)accessibilityChildren;
 - (id)accessibilityRole;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
-- (id)bottomString:(double)arg1;
 - (BOOL)isFlipped;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)setDataSet:(id)arg1 withValueChange:(id)arg2;
 
 @end
 

@@ -34,8 +34,9 @@
     NSString *_sanitizedMessage;
 }
 
-+ (id)integrationIssueWithType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(struct NSArray *)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 issueAuthorSuspects:(id)arg16 issueAuthors:(id)arg17 cause:(id)arg18 validationErrors:(id *)arg19;
-+ (id)integrationIssueWithType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(struct NSArray *)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 issueAuthorSuspects:(id)arg16 issueAuthors:(id)arg17 validationErrors:(id *)arg18;
++ (id)integrationIssueWithType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(id)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 issueAuthorSuspects:(id)arg16 issueAuthors:(id)arg17 cause:(id)arg18 validationErrors:(id *)arg19;
++ (id)integrationIssueWithType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(id)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 issueAuthorSuspects:(id)arg16 issueAuthors:(id)arg17 validationErrors:(id *)arg18;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sanitizedMessage; // @synthesize sanitizedMessage=_sanitizedMessage;
 @property(readonly, nonatomic) XCSIssueCause *cause; // @synthesize cause=_cause;
 @property(readonly, nonatomic) NSArray *issueAuthors; // @synthesize issueAuthors=_issueAuthors;
@@ -58,15 +59,14 @@
 @property(readonly, nonatomic) NSString *issueType; // @synthesize issueType=_issueType;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
-- (BOOL)_validateType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(struct NSArray *)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 associations:(id)arg16 issueAuthorSuspects:(id)arg17 issueAuthors:(id)arg18 validationErrors:(id *)arg19;
+- (BOOL)_validateType:(unsigned long long)arg1 status:(unsigned long long)arg2 issueType:(id)arg3 message:(id)arg4 reason:(id)arg5 target:(id)arg6 testCase:(id)arg7 documentLocationData:(id)arg8 documentFilePath:(id)arg9 lineNumber:(id)arg10 exitCode:(id)arg11 commits:(id)arg12 integrationID:(id)arg13 age:(unsigned long long)arg14 fixItType:(id)arg15 associations:(id)arg16 issueAuthorSuspects:(id)arg17 issueAuthors:(id)arg18 validationErrors:(id *)arg19;
 - (unsigned long long)hash;
 - (BOOL)isEqualToIntegrationIssue:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
-- (id)initWithID:(id)arg1 type:(unsigned long long)arg2 status:(unsigned long long)arg3 issueType:(id)arg4 message:(id)arg5 reason:(id)arg6 target:(id)arg7 testCase:(id)arg8 documentLocationData:(id)arg9 documentFilePath:(id)arg10 lineNumber:(id)arg11 exitCode:(id)arg12 commits:(struct NSArray *)arg13 integrationID:(id)arg14 age:(unsigned long long)arg15 fixItType:(id)arg16 silenced:(BOOL)arg17 associations:(id)arg18 issueAuthorSuspects:(id)arg19 issueAuthors:(id)arg20 cause:(id)arg21 validationErrors:(id *)arg22;
+- (id)initWithID:(id)arg1 type:(unsigned long long)arg2 status:(unsigned long long)arg3 issueType:(id)arg4 message:(id)arg5 reason:(id)arg6 target:(id)arg7 testCase:(id)arg8 documentLocationData:(id)arg9 documentFilePath:(id)arg10 lineNumber:(id)arg11 exitCode:(id)arg12 commits:(id)arg13 integrationID:(id)arg14 age:(unsigned long long)arg15 fixItType:(id)arg16 silenced:(BOOL)arg17 associations:(id)arg18 issueAuthorSuspects:(id)arg19 issueAuthors:(id)arg20 cause:(id)arg21 validationErrors:(id *)arg22;
 
 @end
 

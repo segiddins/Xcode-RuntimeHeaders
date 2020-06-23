@@ -18,11 +18,11 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
 @property(readonly, copy) NSArray *buildFiles; // @synthesize buildFiles=_buildFiles;
 @property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 @property(readonly) IDEMigrationContext *migrationContext; // @synthesize migrationContext=_migrationContext;
-- (void).cxx_destruct;
 @property(readonly) BOOL shouldMigrate;
 @property(readonly) BOOL canMigrate;
 @property(readonly) BOOL buildsWithClang;

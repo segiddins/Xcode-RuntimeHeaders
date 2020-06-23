@@ -14,8 +14,8 @@
 }
 
 + (id)stepWithProfile:(id)arg1;
-@property(readonly) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;
 - (id)activityDescription;

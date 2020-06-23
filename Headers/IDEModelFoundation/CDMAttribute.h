@@ -50,13 +50,13 @@
 + (id)keyPathsForValuesAffectingInspectedAttributeType;
 + (id)keyPathsForValuesAffectingInspectedClassName;
 + (id)keyPathsForValuesAffectingInspectedModuleName;
+- (void).cxx_destruct;
 @property long long preferredType; // @synthesize preferredType=_preferredType;
 @property(copy, nonatomic) NSString *valueTransformerName; // @synthesize valueTransformerName=_valueTransformerName;
 @property(copy, nonatomic) NSString *regularExpressionString; // @synthesize regularExpressionString=_regularExpressionString;
 @property(copy, nonatomic) NSString *maxValueString; // @synthesize maxValueString=_maxValueString;
 @property(copy, nonatomic) NSString *minValueString; // @synthesize minValueString=_minValueString;
 @property(copy, nonatomic) NSString *defaultValueString; // @synthesize defaultValueString=_defaultValueString;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)encodeXMLElement;
 - (void)awakeAfterXMLDecoding;
@@ -68,7 +68,7 @@
 - (void)generateDerivedAttributeErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 - (void)generateCloudKitErrorsAndWarningsForConfigurations:(id)arg1 withCallback:(id)arg2 forDocumentAtURL:(id)arg3;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
-- (void)createWarningsWithCallback:(id)arg1 forDocumentVersionRequirement:(struct NSString *)arg2 featureName:(id)arg3 category:(int)arg4 element:(id)arg5 documentURL:(id)arg6;
+- (void)createWarningsWithCallback:(id)arg1 forDocumentVersionRequirement:(id)arg2 featureName:(id)arg3 category:(int)arg4 element:(id)arg5 documentURL:(id)arg6;
 - (id)undoManager;
 - (BOOL)mapsDirectlyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSDictionary *_aggregatedLines;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *aggregatedLines; // @synthesize aggregatedLines=_aggregatedLines;
 @property(retain, nonatomic) IDESchemeActionCodeCoverage *aggregatedCoverageReport; // @synthesize aggregatedCoverageReport=_aggregatedCoverageReport;
-- (void).cxx_destruct;
 - (void)addCoverageReport:(id)arg1 lines:(id)arg2;
 - (void)aggregateLines:(id)arg1;
 - (id)init;

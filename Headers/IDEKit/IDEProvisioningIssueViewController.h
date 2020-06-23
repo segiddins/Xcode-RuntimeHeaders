@@ -19,12 +19,12 @@
     IDEProvisioningSliceConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) DVTWrapperView *wrapperView; // @synthesize wrapperView=_wrapperView;
 @property(retain) DVTStackView_AppKitAutolayout *issuesStackView; // @synthesize issuesStackView=_issuesStackView;
 @property(retain) NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(retain, nonatomic) IDEProvisioningIssue *issue; // @synthesize issue=_issue;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)didSelectIssueActionFromProvisioningIssuesSliceView:(id)arg1;
 - (void)didSelectSubtitleActionFromProvisioningIssueSliceView:(id)arg1;

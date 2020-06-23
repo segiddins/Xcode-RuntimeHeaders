@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 @property(readonly, nonatomic) SKSpriteNode *resourceImage; // @synthesize resourceImage=_resourceImage;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GPUTraceStatBox *statBox; // @synthesize statBox=_statBox;
 @property(readonly) SKTexture *texture; // @synthesize texture=_texture;
 @property(readonly) id <DYPDependencyGraphResourceInfo> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)selectableOutlineItemAtSlotIndex:(unsigned long long)arg1;
 - (BOOL)isSelected;
 - (void)setSelected:(BOOL)arg1;

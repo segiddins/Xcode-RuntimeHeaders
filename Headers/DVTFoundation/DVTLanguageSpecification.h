@@ -27,6 +27,7 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 @property(readonly) BOOL preservesTrailingWhitespace; // @synthesize preservesTrailingWhitespace=_preservesTrailingWhitespace;
 @property(retain) DVTSourceModelParserProductionRule *productionRule; // @synthesize productionRule=_productionRule;
 @property(readonly) NSDictionary *syntaxRules; // @synthesize syntaxRules=_syntaxRules;
@@ -34,7 +35,6 @@
 @property(readonly) BOOL usesCLikeIndentation; // @synthesize usesCLikeIndentation=_usesCLikeIndentation;
 @property(readonly) BOOL includeInMenu; // @synthesize includeInMenu=_includeInMenu;
 @property(readonly) long long uniqueId; // @synthesize uniqueId=_uniqueId;
-- (void).cxx_destruct;
 @property(readonly) NSString *syntaxType;
 - (id)availableKeywords;
 - (id)lexerKeywords;

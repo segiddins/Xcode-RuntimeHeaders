@@ -28,11 +28,11 @@
 }
 
 + (id)workingTreeWithFilePath:(id)arg1 sourceControlManager:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastStatusUpdateDate; // @synthesize lastStatusUpdateDate=_lastStatusUpdateDate;
 @property(readonly) BOOL initialServerStatusUpdateIsComplete; // @synthesize initialServerStatusUpdateIsComplete=_initialServerStatusUpdateIsComplete;
 @property(readonly) BOOL initialLocalStatusUpdateIsComplete; // @synthesize initialLocalStatusUpdateIsComplete=_initialLocalStatusUpdateIsComplete;
 @property(copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)invalidateServerStatus;
 - (void)clearServerStatus;
 - (void)invalidateLocalStatus;

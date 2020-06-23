@@ -24,6 +24,7 @@
 }
 
 + (id)deviceChooserSheet;
+- (void).cxx_destruct;
 @property(retain) NSArray *groupedDevices; // @synthesize groupedDevices=_groupedDevices;
 @property __weak NSButton *addButton; // @synthesize addButton=_addButton;
 @property __weak NSTextField *selectedOSLabel; // @synthesize selectedOSLabel=_selectedOSLabel;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSSet *disabledDevices; // @synthesize disabledDevices=_disabledDevices;
 @property(retain, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(retain, nonatomic) NSArray *knownPlatforms; // @synthesize knownPlatforms=_knownPlatforms;
-- (void).cxx_destruct;
 - (void)ok:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)selectOrDeselectDevice:(id)arg1;

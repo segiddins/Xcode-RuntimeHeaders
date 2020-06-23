@@ -12,9 +12,9 @@
     NSString *_developmentLanguageString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *developmentLanguageString; // @synthesize developmentLanguageString=_developmentLanguageString;
 @property(readonly, copy) NSString *stringsFileKey; // @synthesize stringsFileKey=_stringsFileKey;
-- (void).cxx_destruct;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;
 - (id)copyWithZone:(struct _NSZone *)arg1;

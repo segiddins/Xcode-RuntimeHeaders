@@ -16,8 +16,8 @@
 }
 
 + (id)codeSigningDictionaryForProcessID:(int)arg1 additionalCSFlags:(unsigned int)arg2 error:(id *)arg3;
-@property(readonly) int processID; // @synthesize processID=_processID;
 - (void).cxx_destruct;
+@property(readonly) int processID; // @synthesize processID=_processID;
 - (id)architecturesWithError:(id *)arg1;
 - (id)validity;
 - (id)codeSigningDictionaryWithAdditionalCSFlags:(unsigned int)arg1 architecture:(id)arg2 error:(id *)arg3;

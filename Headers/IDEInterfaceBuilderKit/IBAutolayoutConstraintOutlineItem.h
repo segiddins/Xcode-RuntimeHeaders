@@ -13,8 +13,8 @@
     IBLayoutConstraint *_constraint;
 }
 
-@property(readonly, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
 - (id)initWithConstraint:(id)arg1;
 
 @end

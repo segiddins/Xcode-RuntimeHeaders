@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)isConfigurationAffectedByEditorAppearance;
 - (void)updateConfigurations;
 
 @end

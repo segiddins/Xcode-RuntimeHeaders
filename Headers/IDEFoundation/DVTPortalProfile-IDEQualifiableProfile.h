@@ -7,7 +7,6 @@
 #import <DVTPortal/DVTPortalProfile.h>
 
 @interface DVTPortalProfile (IDEQualifiableProfile)
-- (BOOL)isXcodeManaged;
 - (BOOL)matchesBundleIdentifier:(id)arg1;
 - (BOOL)isExpired;
 - (id)dateExpired;

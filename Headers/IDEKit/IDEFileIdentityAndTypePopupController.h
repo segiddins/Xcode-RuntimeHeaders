@@ -18,8 +18,8 @@
     NSPopUpButton *_popup;
 }
 
-@property(retain, nonatomic) NSPopUpButton *popup; // @synthesize popup=_popup;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopUpButton *popup; // @synthesize popup=_popup;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)tearDownRefreshTriggers;
 - (void)userDidChangeValue:(id)arg1;

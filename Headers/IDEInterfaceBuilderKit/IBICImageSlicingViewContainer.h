@@ -21,8 +21,8 @@
 }
 
 + (id)titleTextField;
-@property __weak id <IBICImageSlicingViewContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBICImageSlicingViewContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)startSlicingButton:(id)arg1 userDidChooseResizingMode:(long long)arg2;
 - (void)imageSlicingView:(id)arg1 userDidMouseDown:(id)arg2;
 - (void)imageSlicingView:(id)arg1 userDidChangeResizingBehavior:(id)arg2;

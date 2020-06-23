@@ -25,10 +25,10 @@
     DVTTableView *_profilesTable;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTTableView *profilesTable; // @synthesize profilesTable=_profilesTable;
 @property __weak DVTTableView *certificatesTable; // @synthesize certificatesTable=_certificatesTable;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (void)removeProfileFromServer:(id)arg1;
 - (id)selectedXCSProvisioningProfile;
 - (void)removeCertificateFromServer:(id)arg1;

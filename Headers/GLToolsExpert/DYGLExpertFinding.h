@@ -27,6 +27,7 @@
 
 + (void)sortFindings:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rationaleTranslation; // @synthesize rationaleTranslation;
 @property(nonatomic) BOOL verified; // @synthesize verified;
 @property(retain, nonatomic) DYInvestigatorRecommendation *recommendation; // @synthesize recommendation;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned int severity; // @synthesize severity;
 @property(nonatomic) float confidence; // @synthesize confidence;
 @property(readonly, nonatomic) int kind; // @synthesize kind;
-- (void).cxx_destruct;
 - (void)_convertLegacyRecommendation:(id)arg1;
 - (void)_convertLegacyEvidence:(id)arg1;
 - (id)_domainString;

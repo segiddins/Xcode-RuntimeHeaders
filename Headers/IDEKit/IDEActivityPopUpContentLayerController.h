@@ -26,10 +26,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
 @property(retain) id <IDEActivityPopUpContentLayerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (void)popUpContentLayer:(id)arg1 didChangePreferredHeightTo:(double)arg2;
 - (void)doneButtonWasClickedInPopUpContentLayer:(id)arg1;
 - (void)activityViewDataSource:(id)arg1 workspaceRepresentingTypeStringDidChangeTo:(id)arg2;

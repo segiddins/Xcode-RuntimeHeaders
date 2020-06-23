@@ -17,8 +17,8 @@
     IBCocoaTouchTargetRuntime *_runtime;
 }
 
-@property(readonly) IBCocoaTouchTargetRuntime *runtime; // @synthesize runtime=_runtime;
 - (void).cxx_destruct;
+@property(readonly) IBCocoaTouchTargetRuntime *runtime; // @synthesize runtime=_runtime;
 - (id)fontTextField:(id)arg1 displayFontForFamily:(id)arg2 andValue:(id)arg3;
 - (BOOL)fontTextFieldCanShowFontPanel:(id)arg1;
 - (BOOL)fontTextField:(id)arg1 value:(id)arg2 isEqualToValue:(id)arg3;

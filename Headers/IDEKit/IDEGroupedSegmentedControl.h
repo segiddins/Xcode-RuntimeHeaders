@@ -16,8 +16,8 @@
     NSArray *_groups;
 }
 
-@property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)resizeSegments;
 - (struct CGRect)frameForItem:(id)arg1;

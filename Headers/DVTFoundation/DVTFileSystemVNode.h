@@ -14,6 +14,7 @@
     NSPointerArray *_filePaths;
     DVTFilePath *_filePath;
     struct os_unfair_lock_s _derivedInfoDictLock;
+    struct os_unfair_lock_s _derivationLock;
     unsigned long long _inodeNumber;
     long long _fileSize;
     unsigned long long _statFlags;
@@ -25,6 +26,7 @@
 }
 
 + (id)lookupVNodeForDeviceNumber:(int)arg1 inodeNumber:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly) long long posixModificationTime; // @synthesize posixModificationTime=_posixModificationTime;
 @property(readonly) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly) unsigned long long statFlags; // @synthesize statFlags=_statFlags;
@@ -33,8 +35,8 @@
 @property(readonly) unsigned short statMode; // @synthesize statMode=_statMode;
 @property(readonly) unsigned long long inodeNumber; // @synthesize inodeNumber=_inodeNumber;
 @property(readonly) int deviceNumber; // @synthesize deviceNumber=_deviceNumber;
-- (void).cxx_destruct;
 - (id)description;
+- (void)performLockedDerivationBlock:(CDUnknownBlockType)arg1;
 - (void)recordStatInfo:(const struct stat *)arg1;
 - (void)discardCaches;
 - (void)addCachedEntriesFromDictionary:(id)arg1;

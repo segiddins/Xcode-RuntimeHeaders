@@ -14,6 +14,7 @@
     MISSING_TYPE *serviceContextStore;
     MISSING_TYPE *backgroundQueue;
     MISSING_TYPE *deviceChromeDescriptionCache;
+    MISSING_TYPE *deviceSizeInfoCache;
 }
 
 @end

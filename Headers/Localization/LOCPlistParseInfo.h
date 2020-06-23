@@ -23,6 +23,7 @@
     void *_reserve;
 }
 
+- (void).cxx_destruct;
 @property void *reserve; // @synthesize reserve=_reserve;
 @property unsigned short quoteCharacter; // @synthesize quoteCharacter=_quoteCharacter;
 @property(retain) NSMutableDictionary *typeContentsPairDictForStringKey; // @synthesize typeContentsPairDictForStringKey=_typeContentsPairDictForStringKey;
@@ -34,7 +35,6 @@
 @property const unsigned short *end; // @synthesize end=_end;
 @property const unsigned short *curr; // @synthesize curr=_curr;
 @property const unsigned short *begin; // @synthesize begin=_begin;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

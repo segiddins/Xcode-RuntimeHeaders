@@ -16,11 +16,11 @@
     NSShadow *_shadow;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(readonly) NSColor *pathColor; // @synthesize pathColor=_pathColor;
 @property(readonly) NSBezierPath *arrowHeadPath; // @synthesize arrowHeadPath=_arrowHeadPath;
 @property(readonly) NSBezierPath *arrowStemPath; // @synthesize arrowStemPath=_arrowStemPath;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1;
 - (id)initWithArrowStemPath:(id)arg1 headPath:(id)arg2 color:(id)arg3 shadow:(id)arg4;
 

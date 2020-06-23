@@ -21,6 +21,7 @@
     DVTEmptyContentPlaceholder *_emptyContentPlaceholder;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTEmptyContentPlaceholder *emptyContentPlaceholder; // @synthesize emptyContentPlaceholder=_emptyContentPlaceholder;
 @property(retain) XCSUIBotSummaryStackedBarGraphColumn *columnInMouseDownEvent; // @synthesize columnInMouseDownEvent=_columnInMouseDownEvent;
 @property(retain) XCSUIBotSummaryStackedBarGraphColumn *columnInMouseHoverEvent; // @synthesize columnInMouseHoverEvent=_columnInMouseHoverEvent;
@@ -30,7 +31,6 @@
 @property(copy) NSArray *issuesSeriesData; // @synthesize issuesSeriesData=_issuesSeriesData;
 @property(copy, nonatomic) NSArray *graphData; // @synthesize graphData=_graphData;
 @property(copy) CDUnknownBlockType resizeHandler; // @synthesize resizeHandler=_resizeHandler;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (id)accessibilityValue;
 - (id)graphTypeString;

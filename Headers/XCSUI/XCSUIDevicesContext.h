@@ -28,6 +28,7 @@
     XCSUITestingDestination *_oldTestingDestination;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUITestingDestination *oldTestingDestination; // @synthesize oldTestingDestination=_oldTestingDestination;
 @property(nonatomic) BOOL supports32BitMac; // @synthesize supports32BitMac=_supports32BitMac;
 @property(retain, nonatomic) NSSet *supportedPlatformIdentifiers; // @synthesize supportedPlatformIdentifiers=_supportedPlatformIdentifiers;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) XCSToolchain *toolchain; // @synthesize toolchain=_toolchain;
 @property(retain, nonatomic) XCSDeviceSpecification *deviceSpecification; // @synthesize deviceSpecification=_deviceSpecification;
 @property(nonatomic) __weak id <XCSUIDevicesContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)processRunDestination:(id)arg1 platforms:(id)arg2 found32BitMac:(char *)arg3 foundThinning:(char *)arg4;
 - (void)calculateRunDestinationInfo;
 - (BOOL)isDeviceSelected:(id)arg1;

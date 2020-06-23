@@ -14,8 +14,8 @@
     id _foo;
 }
 
-@property(retain) id foo; // @synthesize foo=_foo;
 - (void).cxx_destruct;
+@property(retain) id foo; // @synthesize foo=_foo;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;

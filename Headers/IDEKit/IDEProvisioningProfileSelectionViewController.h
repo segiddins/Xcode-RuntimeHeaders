@@ -36,6 +36,7 @@
     IDEProvisioningProfileDownloaderWindowViewController *_downloaderWindowViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningProfileDownloaderWindowViewController *downloaderWindowViewController; // @synthesize downloaderWindowViewController=_downloaderWindowViewController;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DVTObservingToken *repairBusyObserver; // @synthesize repairBusyObserver=_repairBusyObserver;
@@ -56,7 +57,6 @@
 @property(retain) NSTextField *profileLabel; // @synthesize profileLabel=_profileLabel;
 @property(retain) NSPopUpButton *profilePopUpButton; // @synthesize profilePopUpButton=_profilePopUpButton;
 @property(retain, nonatomic) id <IDESigningEditorProfileDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)clickedImportProfileButton:(id)arg1;

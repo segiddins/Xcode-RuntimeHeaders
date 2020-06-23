@@ -15,8 +15,8 @@
     DVTExtension *_extension;
 }
 
-@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (void)_adjustClassReferencesInParameterData;
 - (BOOL)_adjustParameterData;
 - (id)requiredValueForKey:(id)arg1;

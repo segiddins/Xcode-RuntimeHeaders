@@ -21,10 +21,10 @@
 + (id)namedScopeFromLegacyPredicate:(id)arg1;
 + (id)predicatesFromData:(id)arg1;
 + (id)archivedScopesFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)setPredicateFromUTF8String:(const char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 

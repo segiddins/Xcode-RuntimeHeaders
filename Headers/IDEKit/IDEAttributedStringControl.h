@@ -45,10 +45,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *defaultTypingAttributes; // @synthesize defaultTypingAttributes=_defaultTypingAttributes;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 @property(retain) id <DVTFontTextFieldDataSource> fontTextFieldDataSource;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

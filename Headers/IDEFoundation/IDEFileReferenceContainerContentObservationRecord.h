@@ -15,10 +15,10 @@
     DVTFileDataType *_previousLastKnownFileDataType;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFileDataType *previousLastKnownFileDataType; // @synthesize previousLastKnownFileDataType=_previousLastKnownFileDataType;
 @property(retain) DVTFilePath *previousResolvedFilePath; // @synthesize previousResolvedFilePath=_previousResolvedFilePath;
 @property BOOL observed; // @synthesize observed=_observed;
-- (void).cxx_destruct;
 
 @end
 

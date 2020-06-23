@@ -16,11 +16,11 @@
     NSDictionary *_metaDict;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *metaDict; // @synthesize metaDict=_metaDict;
 @property(nonatomic) unsigned long long token; // @synthesize token=_token;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) int fd; // @synthesize fd=_fd;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

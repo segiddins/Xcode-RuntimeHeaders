@@ -23,14 +23,15 @@ __attribute__((visibility("hidden")))
 
 + (id)dataTextAttributes;
 + (id)titleTextAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showSubColumnTitles; // @synthesize showSubColumnTitles=_showSubColumnTitles;
 @property(nonatomic) BOOL showsData; // @synthesize showsData=_showsData;
 @property(retain, nonatomic) NSString *dataLabel; // @synthesize dataLabel=_dataLabel;
 @property(retain, nonatomic) GPUReportChartData *chartData; // @synthesize chartData=_chartData;
 @property(nonatomic) struct GPUValueRange maxRange; // @synthesize maxRange=_maxRange;
-- (void).cxx_destruct;
 - (void)drawGraphInRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)updateChartAvailableFields:(id)arg1;
 - (void)updateChartBaselineData:(id)arg1;
 - (void)updateChartCurrentData:(id)arg1;
 - (void)updateMinMaxValues;

@@ -13,8 +13,8 @@
     DTTapConfig *_config;
 }
 
-@property(readonly, retain, nonatomic) DTTapConfig *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DTTapConfig *config; // @synthesize config=_config;
 - (void)stop;
 - (id)messageReceived:(id)arg1;
 - (id)initWithConfig:(id)arg1;

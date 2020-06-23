@@ -14,8 +14,8 @@
 }
 
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
-@property(readonly) NSArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(readonly) NSArray *predicates; // @synthesize predicates=_predicates;
 - (BOOL)isWorkspaceSpecific;
 - (id)filtersBoundToWorkspace:(id)arg1;
 - (id)propertyListRepresentation;

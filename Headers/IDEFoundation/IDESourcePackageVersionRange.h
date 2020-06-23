@@ -16,9 +16,9 @@
     NSString *_maximumVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *maximumVersion; // @synthesize maximumVersion=_maximumVersion;
 @property(readonly) NSString *minimumVersion; // @synthesize minimumVersion=_minimumVersion;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMinimumVersion:(id)arg1 maximumVersion:(id)arg2;

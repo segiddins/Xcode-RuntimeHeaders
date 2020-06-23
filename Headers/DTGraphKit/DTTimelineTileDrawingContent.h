@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     shared_ptr_1f7ca383 _containerPtr;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *summaryGenerationGroup; // @synthesize summaryGenerationGroup=_summaryGenerationGroup;
 @property(retain, nonatomic) DTTimelineInspectionDecorationContainer *summary; // @synthesize summary=_summary;
 @property(nonatomic) shared_ptr_1f7ca383 containerPtr; // @synthesize containerPtr=_containerPtr;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(nonatomic) struct CGImage *renderedImage;
 

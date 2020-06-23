@@ -21,9 +21,9 @@
 + (Class)specificationTypeBaseClass;
 + (void)registerSpecificationOrProxy:(id)arg1;
 + (id)buildStepsForType:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) DVTMacroDefinitionTable *buildSettings; // @synthesize buildSettings=_buildSettings;
 @property(copy) NSString *buildStepType; // @synthesize buildStepType=_buildStepType;
-- (void).cxx_destruct;
 - (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
 - (id)pushOverridingBuildSettingsWithMacroExpansionScope:(id)arg1;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;

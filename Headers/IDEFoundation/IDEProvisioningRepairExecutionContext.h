@@ -15,8 +15,8 @@
     IDEProvisioningLedgerEntry *_repairLedgerEntry;
 }
 
-@property(readonly, nonatomic) IDEProvisioningLedgerEntry *repairLedgerEntry; // @synthesize repairLedgerEntry=_repairLedgerEntry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEProvisioningLedgerEntry *repairLedgerEntry; // @synthesize repairLedgerEntry=_repairLedgerEntry;
 @property(readonly, nonatomic) DVTProvisioningContext *provisioningContext;
 @property(readonly, nonatomic) unsigned long long successiveRepairCount;
 @property(readonly, nonatomic) IDEProvisioningPortal *portal;

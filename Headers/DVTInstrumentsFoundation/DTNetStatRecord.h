@@ -24,6 +24,7 @@
     NSArray *_routeAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 @property(retain, nonatomic) NSArray *udpAttributes; // @synthesize udpAttributes=_udpAttributes;
 @property(retain, nonatomic) NSArray *tcpAttributes; // @synthesize tcpAttributes=_tcpAttributes;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic) unsigned long long startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 @property(nonatomic) unsigned int recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 
 @end
 

@@ -13,8 +13,8 @@
     NSString *_initialStringValue;
 }
 
-@property(copy) NSString *initialStringValue; // @synthesize initialStringValue=_initialStringValue;
 - (void).cxx_destruct;
+@property(copy) NSString *initialStringValue; // @synthesize initialStringValue=_initialStringValue;
 @property(copy) NSPredicate *predicate;
 - (BOOL)shouldShowWarning;
 - (id)copyWithZone:(struct _NSZone *)arg1;

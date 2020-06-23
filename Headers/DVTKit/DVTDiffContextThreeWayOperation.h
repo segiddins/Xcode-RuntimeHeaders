@@ -15,10 +15,10 @@
     DVTDiffDataSource *_intermediateDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDiffDataSource *intermediateDataSource; // @synthesize intermediateDataSource=_intermediateDataSource;
 @property(retain, nonatomic) DVTDiffDataSource *ancestorDataSource; // @synthesize ancestorDataSource=_ancestorDataSource;
 @property(nonatomic) BOOL ignoresLineEnds; // @synthesize ignoresLineEnds=_ignoresLineEnds;
-- (void).cxx_destruct;
 - (id)modifiedDescriptorIndexesForDiffDescriptors:(id)arg1;
 - (id)_diffDescriptorsByAddingUnmodified:(id)arg1;
 - (id)_diffContextForComparing:(id)arg1 with:(id)arg2;

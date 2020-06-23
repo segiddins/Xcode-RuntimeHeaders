@@ -9,7 +9,7 @@
 #import <XCSCore/NSURLSessionDelegate-Protocol.h>
 #import <XCSCore/XCSEventStreamDelegate-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSError, NSHTTPCookieStorage, NSString, NSURL, NSURLSession, XCSEventStream;
+@class NSArray, NSData, NSDictionary, NSError, NSHTTPCookieStorage, NSOperationQueue, NSString, NSURL, NSURLSession, XCSEventStream;
 @protocol OS_dispatch_queue, XCSCodeCoverageProtocol, XCSServiceBuildDelegate, XCSServiceConnectionDelegate, XCSServiceErrorDelegate;
 
 @interface XCSService : NSObject <XCSEventStreamDelegate, NSURLSessionDelegate>
@@ -46,7 +46,7 @@
     NSHTTPCookieStorage *_httpCookieStorage;
     double _requestTimeoutInterval;
     NSArray *_protocolClasses;
-    NSObject<OS_dispatch_queue> *_completionQueue;
+    NSOperationQueue *_completionQueue;
 }
 
 + (id)resultsFromResponse:(id)arg1;
@@ -63,7 +63,8 @@
 + (id)clientSSLEndpointWithHost:(id)arg1;
 + (id)defaultClientSSLEndpoint;
 + (id)defaultEndpoint;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSArray *protocolClasses; // @synthesize protocolClasses=_protocolClasses;
 @property(nonatomic) double requestTimeoutInterval; // @synthesize requestTimeoutInterval=_requestTimeoutInterval;
 @property(retain, nonatomic) NSHTTPCookieStorage *httpCookieStorage; // @synthesize httpCookieStorage=_httpCookieStorage;
@@ -91,7 +92,6 @@
 @property(nonatomic) __weak id <XCSServiceErrorDelegate> errorDelegate; // @synthesize errorDelegate=_errorDelegate;
 @property(readonly, nonatomic) NSURLSession *sharedSession; // @synthesize sharedSession=_sharedSession;
 @property(copy, nonatomic) NSString *lastCreatedBotID; // @synthesize lastCreatedBotID=_lastCreatedBotID;
-- (void).cxx_destruct;
 - (id)_customErrorIfServerIsBusyProcessing:(id)arg1 error:(id)arg2;
 - (void)_checkEndpointRedisCacheWithBase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)apiStatusForServiceVersionGreaterOrEqualTo:(unsigned long long)arg1;
@@ -121,7 +121,7 @@
 - (void)removeAllUnitTestDocsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_bulkImportDocuments:(id)arg1 batchCount:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_bulkImportDocuments:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)importTestResults:(id)arg1 completeIntegrationWithID:(id)arg2 testedDevices:(struct NSArray *)arg3 testedDevicesIDs:(id)arg4 hierarchy:(id)arg5 perfMetricNames:(id)arg6 perfMetricKeyPaths:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)importTestResults:(id)arg1 completeIntegrationWithID:(id)arg2 testedDevices:(id)arg3 testedDevicesIDs:(id)arg4 hierarchy:(id)arg5 perfMetricNames:(id)arg6 perfMetricKeyPaths:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)isDatabaseBeingCompactedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)databaseFragmentationIndexWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)databaseCompactWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -377,7 +377,7 @@
 - (void)createIssues:(id)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createIssue:(id)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)readCommitHistoryForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)saveCommitHistory:(struct NSArray *)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)saveCommitHistory:(id)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cancelIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

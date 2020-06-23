@@ -19,12 +19,12 @@
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)productVersionByMerging:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 @property(readonly) IDEProductExtensionCategory *extensionCategory; // @synthesize extensionCategory=_extensionCategory;
 @property(retain) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

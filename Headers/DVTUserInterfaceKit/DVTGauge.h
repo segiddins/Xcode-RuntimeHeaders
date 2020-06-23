@@ -20,6 +20,7 @@
     CDUnknownBlockType _renderer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDUnknownBlockType renderer; // @synthesize renderer=_renderer;
 @property(retain, nonatomic) NSGradient *indicatorGradient; // @synthesize indicatorGradient=_indicatorGradient;
 @property long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
@@ -28,7 +29,6 @@
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) unsigned long long indicatorStyle; // @synthesize indicatorStyle=_indicatorStyle;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

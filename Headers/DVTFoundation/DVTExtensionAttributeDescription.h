@@ -12,9 +12,9 @@
     id _defaultValue;
 }
 
+- (void).cxx_destruct;
 @property(retain) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property long long extensionAttributeType; // @synthesize extensionAttributeType=_extensionAttributeType;
-- (void).cxx_destruct;
 - (id)adjustedValueForString:(id)arg1;
 - (void)encodeIntoPropertyList:(id)arg1;
 - (void)awakeWithPropertyList:(id)arg1;

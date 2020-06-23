@@ -14,9 +14,9 @@
     DBGSceneNode *_sceneNode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isClippingEnabled) BOOL clippingEnabled; // @synthesize clippingEnabled=_clippingEnabled;
 @property(nonatomic) __weak DBGSceneNode *sceneNode; // @synthesize sceneNode=_sceneNode;
-- (void).cxx_destruct;
 - (void)_enableClipping;
 - (void)setFirstMaterial:(id)arg1;
 - (id)initWithSceneNode:(id)arg1;

@@ -28,12 +28,12 @@
 + (id)_readNonReferenceIndexItemBitsAtCursor:(CDStruct_5d0aafc2 *)arg1 delegate:(id)arg2 parentGenerator:(CDUnknownBlockType)arg3 error:(id *)arg4;
 + (id)indexItemFromData:(id)arg1 delegate:(id)arg2 parent:(id)arg3 error:(id *)arg4;
 + (id)dataWithDanglingParentReferenceForIndexItem:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) id <_TtP23DNTDocumentationSupport26AvailabilityIndexQueryable_> availabilityIndex; // @synthesize availabilityIndex=_availabilityIndex;
 @property(retain) NSError *loadingError; // @synthesize loadingError=_loadingError;
 @property(getter=isFinishedLoading) BOOL finishedLoading; // @synthesize finishedLoading=_finishedLoading;
 @property(readonly, nonatomic) id <DNTDisplayTreeIndexDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)_encodeState:(id)arg1 into:(id)arg2 error:(id *)arg3;
 - (BOOL)_encodeIndexItem:(id)arg1 into:(id)arg2 error:(id *)arg3;
 - (id)encodeIndexItem:(id)arg1 state:(id)arg2 error:(id *)arg3;

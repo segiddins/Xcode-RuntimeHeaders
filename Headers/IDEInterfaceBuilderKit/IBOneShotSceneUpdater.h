@@ -20,13 +20,13 @@
     IBSceneUpdateResult *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBSceneUpdateResult *result; // @synthesize result=_result;
 @property(readonly, copy, nonatomic) CDUnknownBlockType requestConfigurationBlock; // @synthesize requestConfigurationBlock=_requestConfigurationBlock;
 @property(readonly, nonatomic) IBFullSceneUpdateRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(readonly, nonatomic) IBGenericDeviceTypeDescription *deviceTypeDescription; // @synthesize deviceTypeDescription=_deviceTypeDescription;
 @property(readonly, nonatomic) NSObject *root; // @synthesize root=_root;
-- (void).cxx_destruct;
 - (void)sceneUpdateManager:(id)arg1 didFinishUpdatingScenesWithRoots:(id)arg2;
 - (void)sceneUpdateManager:(id)arg1 didUpdateScene:(id)arg2 result:(id)arg3 usingLiveViews:(BOOL)arg4;
 - (void)sceneUpdateManager:(id)arg1 didFailToUpdateSceneWithRoot:(id)arg2 diagnosticsHandler:(id)arg3;

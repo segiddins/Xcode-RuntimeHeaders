@@ -16,10 +16,10 @@
     NSColor *_placeholderTextViewBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *placeholderTextViewBackgroundColor; // @synthesize placeholderTextViewBackgroundColor=_placeholderTextViewBackgroundColor;
 @property(retain, nonatomic) NSFont *placeholderFont; // @synthesize placeholderFont=_placeholderFont;
 @property(copy) NSString *centeredPlaceholderString; // @synthesize centeredPlaceholderString=_centeredPlaceholderString;
-- (void).cxx_destruct;
 - (void)didChangeText;
 - (void)drawViewBackgroundInRect:(struct CGRect)arg1;
 - (void)drawViewBackground;

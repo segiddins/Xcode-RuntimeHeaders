@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
     id <GPUTextureScrollViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <GPUTextureScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) GPUTextureLoupeView *loupeView; // @synthesize loupeView=_loupeView;
 @property __weak _TtC11GPUDebugger18GPUImageRenderView *imageRenderView; // @synthesize imageRenderView=_imageRenderView;
-- (void).cxx_destruct;
 - (void)loupeView:(id)arg1 didChangeSelectedPoint:(struct CGPoint)arg2;
 - (void)layout;
 - (void)updateLoupe;

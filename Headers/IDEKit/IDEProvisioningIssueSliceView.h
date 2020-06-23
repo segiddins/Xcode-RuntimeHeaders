@@ -25,6 +25,7 @@
     IDEProvisioningSliceConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <IDEProvisioningIssueSliceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <NSTextAttachmentCell> textAttachmentCell; // @synthesize textAttachmentCell=_textAttachmentCell;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL wantsSubtitleButton; // @synthesize wantsSubtitleButton=_wantsSubtitleButton;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)clickedSubtitleButton:(id)arg1;
 - (void)clickedIssueButton:(id)arg1;
 - (id)attributedStringForTitle:(id)arg1 subtitle:(id)arg2 wantsSubtitleButton:(BOOL)arg3;

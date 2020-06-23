@@ -15,8 +15,8 @@
     CDUnknownBlockType _setupTeardownBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)menuFormRepresentation;
 - (void)_buttonAction:(id)arg1;

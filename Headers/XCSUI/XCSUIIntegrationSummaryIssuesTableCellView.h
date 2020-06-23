@@ -30,6 +30,7 @@
     NSView *_radarContainerView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *radarContainerView; // @synthesize radarContainerView=_radarContainerView;
 @property __weak NSButton *fixItButton; // @synthesize fixItButton=_fixItButton;
 @property __weak NSButton *radarButton; // @synthesize radarButton=_radarButton;
@@ -46,7 +47,6 @@
 @property __weak NSTextField *issueFileField; // @synthesize issueFileField=_issueFileField;
 @property __weak NSTextField *issueReasonField; // @synthesize issueReasonField=_issueReasonField;
 @property __weak NSTextField *issueTypeAndCauseField; // @synthesize issueTypeAndCauseField=_issueTypeAndCauseField;
-- (void).cxx_destruct;
 - (void)configureFixItButtonForCell:(id)arg1 withIssue:(id)arg2;
 - (id)issueTypeIconImageForIssue:(id)arg1 silencedOrResolved:(BOOL)arg2;
 - (void)refresh;

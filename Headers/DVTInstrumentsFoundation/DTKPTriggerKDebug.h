@@ -15,9 +15,9 @@
 }
 
 + (int)kDebugCallstacksEnable:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) DTKPKDebugCodeSet *codeSet; // @synthesize codeSet=_codeSet;
 @property(nonatomic) int filterMode; // @synthesize filterMode=_filterMode;
-- (void).cxx_destruct;
 - (int)stop:(id *)arg1;
 - (int)start:(id *)arg1;
 - (void)enableClass:(unsigned char)arg1 subclass:(unsigned char)arg2;

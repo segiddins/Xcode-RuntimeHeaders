@@ -19,13 +19,13 @@
     unsigned long long _lastMouseDownModifierFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL superviewIsFocusRingClipAncestor; // @synthesize superviewIsFocusRingClipAncestor=_superviewIsFocusRingClipAncestor;
 @property(nonatomic) unsigned long long lastMouseDownModifierFlags; // @synthesize lastMouseDownModifierFlags=_lastMouseDownModifierFlags;
 @property(copy, nonatomic) NSImage *alternateImageForNonMainWindow; // @synthesize alternateImageForNonMainWindow=_alternateImageForNonMainWindow;
 @property(copy, nonatomic) NSImage *imageForNonMainWindow; // @synthesize imageForNonMainWindow=_imageForNonMainWindow;
 @property(copy, nonatomic) NSImage *pressedAlternateImage; // @synthesize pressedAlternateImage=_pressedAlternateImage;
 @property(copy, nonatomic) NSImage *pressedImage; // @synthesize pressedImage=_pressedImage;
-- (void).cxx_destruct;
 - (id)_focusRingClipAncestor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setAcceptsFirstMouse:(BOOL)arg1;

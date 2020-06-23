@@ -24,11 +24,11 @@
 
 + (id)singleBuildFileRefArrayWithIdentifier:(id)arg1 buildFileRef:(id)arg2;
 + (id)buildFileRefArrayWithIdentifier:(id)arg1 buildFileRef:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *bucketName; // @synthesize bucketName=_bucketName;
 @property XCBuildRuleDGSnapshot *buildRule; // @synthesize buildRule=_buildRule;
 @property(readonly) BOOL fileRefsAreFrozen; // @synthesize fileRefsAreFrozen=_fileRefsAreFrozen;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

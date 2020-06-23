@@ -17,9 +17,9 @@
 }
 
 + (id)groupsFromRunDestinations:(id)arg1 scheme:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSArray *runDestinations; // @synthesize runDestinations=_runDestinations;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)initWithName:(id)arg1 runDestinations:(id)arg2;

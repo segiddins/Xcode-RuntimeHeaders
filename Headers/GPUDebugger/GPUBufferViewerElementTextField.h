@@ -16,14 +16,15 @@ __attribute__((visibility("hidden")))
     double _characterWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double characterWidth; // @synthesize characterWidth=_characterWidth;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)updateContents;
 - (void)setValue:(id)arg1 withType:(unsigned long long)arg2;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
+- (id)hitTest:(struct CGPoint)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

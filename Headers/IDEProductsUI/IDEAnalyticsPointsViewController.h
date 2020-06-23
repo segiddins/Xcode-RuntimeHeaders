@@ -32,6 +32,7 @@
 + (id)keyPathsForValuesAffectingBusy;
 + (long long)type;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDELaunchSession *currentLaunchSession; // @synthesize currentLaunchSession=_currentLaunchSession;
 @property(retain) DVTObservingToken *appStoreAnalyticsPointSourceBusyObserver; // @synthesize appStoreAnalyticsPointSourceBusyObserver=_appStoreAnalyticsPointSourceBusyObserver;
 @property(retain) DVTObservingToken *appStoreProductSourceBusyObserver; // @synthesize appStoreProductSourceBusyObserver=_appStoreProductSourceBusyObserver;
@@ -42,7 +43,6 @@
 @property(retain) IDEOpenInProjectSheetController *openInProjectController; // @synthesize openInProjectController=_openInProjectController;
 @property(retain) IDEAnalyticsPointSourceListViewController *sourceListViewController; // @synthesize sourceListViewController=_sourceListViewController;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
-- (void).cxx_destruct;
 - (void)_saveSourceListSplitPosition;
 - (void)_restoreSourceListSplitPosition;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;

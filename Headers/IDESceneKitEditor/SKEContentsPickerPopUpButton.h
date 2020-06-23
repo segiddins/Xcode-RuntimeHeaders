@@ -63,6 +63,7 @@
 + (BOOL)contentsIsValue:(id)arg1;
 + (BOOL)contentsIsNumber:(id)arg1;
 + (BOOL)contentsIsColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customEnumeration; // @synthesize customEnumeration=_customEnumeration;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
@@ -75,7 +76,6 @@
 @property(retain, nonatomic) id contents; // @synthesize contents=_contents;
 @property BOOL acceptsNonFilePathImages; // @synthesize acceptsNonFilePathImages=_acceptsNonFilePathImages;
 @property BOOL acceptsNil; // @synthesize acceptsNil=_acceptsNil;
-- (void).cxx_destruct;
 @property(nonatomic) long long tag;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;

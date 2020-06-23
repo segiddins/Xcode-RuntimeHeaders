@@ -24,13 +24,13 @@
     CDUnknownBlockType _didChangeTargetsBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType didChangeTargetsBlock; // @synthesize didChangeTargetsBlock=_didChangeTargetsBlock;
 @property(copy) CDUnknownBlockType willChangeTargetsBlock; // @synthesize willChangeTargetsBlock=_willChangeTargetsBlock;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) IDEGroup *group; // @synthesize group=_group;
 @property(copy, nonatomic) NSSet *fileTypes; // @synthesize fileTypes=_fileTypes;
 @property(copy, nonatomic) NSString *buildableType; // @synthesize buildableType=_buildableType;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

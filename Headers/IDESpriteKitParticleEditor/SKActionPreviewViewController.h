@@ -19,13 +19,13 @@
     double _playbackSpeed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double playbackSpeed; // @synthesize playbackSpeed=_playbackSpeed;
 @property(retain, nonatomic) GTFActionLibrary *actionLibrary; // @synthesize actionLibrary=_actionLibrary;
 @property(nonatomic) __weak GTFActionEditor *actionEditor; // @synthesize actionEditor=_actionEditor;
 @property(retain, nonatomic) SKActionDocument *actionDocument; // @synthesize actionDocument=_actionDocument;
 @property(retain, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
 @property(nonatomic) __weak id <SKActionPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SKScene *previewScene;
 - (void)clearSelection;
 - (void)setIsInitialLayout;

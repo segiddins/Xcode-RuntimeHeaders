@@ -18,8 +18,8 @@
     NSView<DVTSourceEditorViewProtocol> *_sourceEditorView;
 }
 
-@property(retain) NSView<DVTSourceEditorViewProtocol> *sourceEditorView; // @synthesize sourceEditorView=_sourceEditorView;
 - (void).cxx_destruct;
+@property(retain) NSView<DVTSourceEditorViewProtocol> *sourceEditorView; // @synthesize sourceEditorView=_sourceEditorView;
 @property(readonly) NSURL *sourceDocumentURL;
 - (BOOL)shouldFilterConstraintChoicesBasedUponAngleOfLine;
 - (void)indicateConnectionSuccessForTarget:(id)arg1;

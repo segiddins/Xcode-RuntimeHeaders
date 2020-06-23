@@ -14,9 +14,9 @@
     XCSAssigneeIssueAssociation *_assignee;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) XCSAssigneeIssueAssociation *assignee; // @synthesize assignee=_assignee;
 @property(readonly, nonatomic) XCSRadarIssueAssociation *radar; // @synthesize radar=_radar;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)extractAssociationWithClass:(Class)arg1 fromInfo:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

@@ -17,8 +17,8 @@
 + (id)buildPhaseForPBXBuildPhase:(id)arg1 target:(id)arg2;
 + (void)initialize;
 + (id)buildPhaseModelObjectGraph;
-@property(retain) Xcode3Target *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain) Xcode3Target *target; // @synthesize target=_target;
 - (void)primitiveInvalidate;
 - (id)subclass_createRootNode;
 - (id)description;

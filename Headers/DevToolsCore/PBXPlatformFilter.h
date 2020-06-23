@@ -14,6 +14,9 @@
     NSString *_environment;
 }
 
++ (id)filtersBasedOnTarget:(id)arg1;
++ (id)_filtersIfSupportsMacCatalyst:(BOOL)arg1 supportsiOS:(BOOL)arg2;
++ (id)filtersForReference:(id)arg1 inTarget:(id)arg2;
 + (id)filtersForItemAtPath:(id)arg1;
 + (id)filtersFromFriendlySerializableValue:(id)arg1;
 + (id)friendlySerializableValueFromFilters:(id)arg1;
@@ -23,9 +26,9 @@
 + (id)knownPlatforms;
 + (id)filterFromString:(id)arg1;
 + (id)filterFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *environment; // @synthesize environment=_environment;
 @property(copy) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

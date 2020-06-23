@@ -13,8 +13,8 @@
     NSDictionary *_originalDictionaryRepresentation;
 }
 
-@property(readonly, nonatomic) NSDictionary *originalDictionaryRepresentation; // @synthesize originalDictionaryRepresentation=_originalDictionaryRepresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *originalDictionaryRepresentation; // @synthesize originalDictionaryRepresentation=_originalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;

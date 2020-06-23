@@ -16,11 +16,11 @@
     DBGSnapshotManager *_snapshotManager;
 }
 
+- (void).cxx_destruct;
 @property __weak DBGSnapshotManager *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
 @property(retain) NSMutableArray *rootLevelGroups; // @synthesize rootLevelGroups=_rootLevelGroups;
 @property(readonly) NSMapTable *identifierToNodeMap; // @synthesize identifierToNodeMap=_identifierToNodeMap;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_recursivelyDescribeNode:(id)arg1 withIndentation:(unsigned long long)arg2 includeProperties:(BOOL)arg3;
 - (id)_recursivelyDescribeGroup:(id)arg1 withIndentation:(unsigned long long)arg2 isAdditonalGroup:(BOOL)arg3 includeProperties:(BOOL)arg4;
 - (id)recursiveDescriptionIncludingProperties:(BOOL)arg1;

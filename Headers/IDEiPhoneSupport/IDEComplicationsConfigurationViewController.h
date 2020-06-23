@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingComplicationsFamilyUtilitarianSmall;
 + (id)keyPathsForValuesAffectingComplicationsFamilyModularLarge;
 + (id)keyPathsForValuesAffectingComplicationsFamilyModularSmall;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedUpdateInvocation; // @synthesize delayedUpdateInvocation=_delayedUpdateInvocation;
 @property(retain, nonatomic) NSSet *complications; // @synthesize complications=_complications;
 @property(retain) Xcode3InfoEditorClassNamesConformingToProtocolProvider *conformingProtocolProvider; // @synthesize conformingProtocolProvider=_conformingProtocolProvider;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) IDEiOSTargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
 @property __weak DVTGradientImageButton *assetCatalogGoToButton; // @synthesize assetCatalogGoToButton=_assetCatalogGoToButton;
 @property __weak NSPopUpButton *complicationsAssetCatalogPopUpButton; // @synthesize complicationsAssetCatalogPopUpButton=_complicationsAssetCatalogPopUpButton;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)titleForDisplay;
 - (void)selectAssetCatalogSet:(id)arg1;

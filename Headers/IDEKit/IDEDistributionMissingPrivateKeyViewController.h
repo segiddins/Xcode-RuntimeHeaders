@@ -22,12 +22,12 @@
     NSImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) DVTTableView *certsTable; // @synthesize certsTable=_certsTable;
 @property(retain, nonatomic) NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (void)email:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

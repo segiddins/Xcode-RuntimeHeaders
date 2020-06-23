@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTracePipelineStatisticsDrawcallGraphView *_graph;
 }
 
-@property __weak GPUTracePipelineStatisticsDrawcallGraphView *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+@property __weak GPUTracePipelineStatisticsDrawcallGraphView *graph; // @synthesize graph=_graph;
 
 @end
 

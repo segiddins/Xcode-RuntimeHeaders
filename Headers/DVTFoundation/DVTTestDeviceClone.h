@@ -18,12 +18,13 @@
     NSString *_originalDeviceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *originalDeviceIdentifier; // @synthesize originalDeviceIdentifier=_originalDeviceIdentifier;
 @property(readonly) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(getter=isAvailable) BOOL available; // @synthesize available=_available;
 @property(readonly) id <DVTTestDeviceCloneCreator> creator; // @synthesize creator=_creator;
 @property(readonly) id <DVTTestDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
+- (BOOL)isBooted;
 @property(readonly) DVTTestDeviceCloneDescription *cloneDescription;
 - (id)initWithClone:(id)arg1 ofDeviceWithIdentifier:(id)arg2 creator:(id)arg3;
 

@@ -16,9 +16,9 @@
     NSProgressIndicator *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)takeAdditionalAction;
 @property(readonly, nonatomic) NSString *additionalActionTitle;
 @property(readonly, nonatomic) BOOL canGoNext;

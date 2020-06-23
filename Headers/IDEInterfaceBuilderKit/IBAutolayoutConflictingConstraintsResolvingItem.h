@@ -16,11 +16,11 @@
     NSString *_tooltip;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *tooltip; // @synthesize tooltip=_tooltip;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) BOOL deletable; // @synthesize deletable=_deletable;
 @property(readonly, nonatomic) IBAbstractLayoutConstraintAbstraction *abstraction; // @synthesize abstraction=_abstraction;
-- (void).cxx_destruct;
 - (id)initWithAbstraction:(id)arg1 deletable:(BOOL)arg2 tooltip:(id)arg3;
 
 @end

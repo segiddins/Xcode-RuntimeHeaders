@@ -24,8 +24,8 @@
 + (id)archivableWeakRelationshipsForPListArchiver:(id)arg1;
 + (id)archivableRelationships;
 + (id)archivableAttributes;
-@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
 - (void).cxx_destruct;
+@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
 - (id)description;
 - (BOOL)shouldArchivePlatformFilter;
 - (void)setPlatformFilter:(id)arg1;

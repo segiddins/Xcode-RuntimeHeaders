@@ -27,9 +27,9 @@
 
 + (BOOL)automaticallyNotifiesObserversForName;
 + (void)runSheetForWindow:(id)arg1 workspaceWindow:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) IDEBlueprintMenuFilteringDelegate *blueprintMenuFilteringDelegate; // @synthesize blueprintMenuFilteringDelegate=_blueprintMenuFilteringDelegate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)windowDidResize:(id)arg1;
 - (void)blueprintPopUpAction:(id)arg1;
 - (void)cancelAction:(id)arg1;

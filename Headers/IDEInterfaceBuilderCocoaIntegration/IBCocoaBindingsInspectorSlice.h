@@ -44,6 +44,7 @@
 + (id)cocoaValueTransformers;
 + (id)booleanValuedOptionsPredicate;
 + (id)placeholderOptionsPredicate;
+- (void).cxx_destruct;
 @property __weak id <IBCocoaBindingsInspectorSliceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *acceptableValueTransformerNames; // @synthesize acceptableValueTransformerNames=_acceptableValueTransformerNames;
 @property(nonatomic) BOOL lookingUpAvailableTransformers; // @synthesize lookingUpAvailableTransformers=_lookingUpAvailableTransformers;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSString *selectedControllerKey; // @synthesize selectedControllerKey=_selectedControllerKey;
 @property(retain, nonatomic) IBCocoaBindingsBindingInfo *bindingInfo; // @synthesize bindingInfo=_bindingInfo;
 @property(nonatomic) BOOL bound; // @synthesize bound=_bound;
-- (void).cxx_destruct;
 - (void)menuWillOpen:(id)arg1;
 - (void)dismissAllCompletions;
 - (void)validateBindingKeyPath;

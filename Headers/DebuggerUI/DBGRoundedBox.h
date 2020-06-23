@@ -18,9 +18,9 @@
     double _borderRadius;
 }
 
+- (void).cxx_destruct;
 @property double borderRadius; // @synthesize borderRadius=_borderRadius;
 @property(retain) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 @property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setLineDash:(double *)arg1 count:(long long)arg2 phase:(double)arg3;

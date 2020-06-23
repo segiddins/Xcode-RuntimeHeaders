@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _position;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) struct CGPoint position; // @synthesize position=_position;
 @property(copy, nonatomic) NSAttributedString *attrString; // @synthesize attrString=_attrString;
-- (void).cxx_destruct;
 - (id)initWithAttributedString:(id)arg1 position:(struct CGPoint)arg2 width:(double)arg3;
 
 @end

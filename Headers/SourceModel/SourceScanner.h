@@ -28,11 +28,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) SMLanguageSpecification *langSpec; // @synthesize langSpec=_langSpec;
 @property(readonly) SourceScanner *lexer; // @synthesize lexer=_lexer;
 @property(readonly) long long token; // @synthesize token=_token;
 @property(readonly) long long langId; // @synthesize langId=_langId;
-- (void).cxx_destruct;
 - (struct _NSRange)wordRangeInString:(id)arg1 fromIndex:(unsigned long long)arg2;
 - (struct _NSRange)wordRangeInString:(id)arg1 fromIndex:(unsigned long long)arg2 allowNonWords:(BOOL)arg3;
 - (BOOL)canTokenize;

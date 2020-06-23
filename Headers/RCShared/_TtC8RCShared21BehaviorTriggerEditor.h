@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *editorContextCreator;
     MISSING_TYPE *inspectable;
+    MISSING_TYPE *accessibilityInspectable;
     MISSING_TYPE *controllerResolver;
     MISSING_TYPE *triggerSelectionTint;
     MISSING_TYPE *presentingViewController;

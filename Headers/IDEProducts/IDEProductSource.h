@@ -18,11 +18,11 @@
     NSArray *_products;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *products; // @synthesize products=_products;
 @property __weak IDEProductManager *productManager; // @synthesize productManager=_productManager;
 @property(readonly) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
 @property(getter=isBusy) BOOL busy; // @synthesize busy=_busy;
-- (void).cxx_destruct;
 - (void)prioritizeDeliveryOfResultsForProductIdentifier:(id)arg1;
 - (void)refreshProducts;
 - (void)startLocating;

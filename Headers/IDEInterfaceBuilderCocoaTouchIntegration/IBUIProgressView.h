@@ -8,14 +8,14 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSImage, NSString;
+@class IBColor, NSImage, NSString;
 
 @interface IBUIProgressView : IBUIView <IBDocumentArchiving>
 {
     int _progressViewStyle;
     double _progress;
-    IBUIColor *_progressTintColor;
-    IBUIColor *_trackTintColor;
+    IBColor *_progressTintColor;
+    IBColor *_trackTintColor;
     NSImage *_progressImage;
     NSImage *_trackImage;
 }
@@ -23,13 +23,13 @@
 + (BOOL)ibSupportsCocoaTouchAccessibility;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *trackImage; // @synthesize trackImage=_trackImage;
 @property(retain, nonatomic) NSImage *progressImage; // @synthesize progressImage=_progressImage;
-@property(copy, nonatomic) IBUIColor *trackTintColor; // @synthesize trackTintColor=_trackTintColor;
-@property(copy, nonatomic) IBUIColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;
+@property(copy, nonatomic) IBColor *trackTintColor; // @synthesize trackTintColor=_trackTintColor;
+@property(copy, nonatomic) IBColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) int progressViewStyle; // @synthesize progressViewStyle=_progressViewStyle;
-- (void).cxx_destruct;
 - (void)willChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

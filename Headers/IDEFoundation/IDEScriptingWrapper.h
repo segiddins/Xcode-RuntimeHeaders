@@ -14,8 +14,8 @@
 + (id)wrapSingleton:(id)arg1 inWrapper:(Class)arg2 forContainer:(id)arg3 andAccessor:(id)arg4;
 + (id)wrapItems:(id)arg1 inWrapper:(Class)arg2 forContainer:(id)arg3 andAccessor:(id)arg4;
 + (id)wrapItem:(id)arg1 inWrapper:(Class)arg2 forContainer:(id)arg3 andAccessor:(id)arg4;
-@property(retain) id client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain) id client; // @synthesize client=_client;
 - (id)objectSpecifier;
 - (BOOL)isEqual:(id)arg1;
 - (id)scriptingID;

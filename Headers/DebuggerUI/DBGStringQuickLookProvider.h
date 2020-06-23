@@ -18,10 +18,10 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) NSTextView *textView; // @synthesize textView=_textView;
 @property int loadedState; // @synthesize loadedState=_loadedState;
-- (void).cxx_destruct;
 - (id)dataRepresentation;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;

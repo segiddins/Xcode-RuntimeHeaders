@@ -7,8 +7,10 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class IDENavigableItem, NSIndexSet, NSSet;
+@protocol IDEStructureEditingItem;
 
 @protocol IDEStructureEditingGroupingTarget <NSObject>
+- (id <IDEStructureEditingItem>)actualTargetStructureEditingItem;
 - (IDENavigableItem *)actualNavigableItem;
 - (long long)actualChildIndex;
 - (void)structureEditingGroupSubitemsAtIndexes:(NSIndexSet *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;

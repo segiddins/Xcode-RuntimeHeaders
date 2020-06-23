@@ -13,8 +13,8 @@
     NSDictionary *_resultsByCounterpart;
 }
 
-@property(readonly) NSDictionary *resultsByCounterpart; // @synthesize resultsByCounterpart=_resultsByCounterpart;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *resultsByCounterpart; // @synthesize resultsByCounterpart=_resultsByCounterpart;
 - (id)compositeResultByMergingWithCompositeResult:(id)arg1;
 - (id)description;
 - (id)firstCounterpartWithInsertionError;

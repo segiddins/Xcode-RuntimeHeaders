@@ -24,13 +24,13 @@
 
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL showsCloseButton; // @synthesize showsCloseButton=_showsCloseButton;
 @property BOOL supportsPressAndHold; // @synthesize supportsPressAndHold=_supportsPressAndHold;
 @property(retain) NSString *collapsedRepresentationLabel; // @synthesize collapsedRepresentationLabel=_collapsedRepresentationLabel;
 @property(retain) NSImage *collapsedRepresentationImage; // @synthesize collapsedRepresentationImage=_collapsedRepresentationImage;
 @property(retain) NSView *collapsedRepresentation; // @synthesize collapsedRepresentation=_collapsedRepresentation;
 @property(retain) IBNSTouchBar *popoverTouchBar; // @synthesize popoverTouchBar=_popoverTouchBar;
-- (void).cxx_destruct;
 - (id)childTouchBar;
 - (id)runtimeTouchBarItem;
 - (void)encodeWithCoder:(id)arg1;

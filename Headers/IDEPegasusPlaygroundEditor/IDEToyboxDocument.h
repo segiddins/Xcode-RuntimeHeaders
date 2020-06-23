@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingToybox;
 + (id)keyPathsForValuesAffectingReadOnlyStatus;
-@property(retain, nonatomic) IDEEditorDocument<IDEPlaygroundHostingDocument> *playgroundDocument; // @synthesize playgroundDocument=_playgroundDocument;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEEditorDocument<IDEPlaygroundHostingDocument> *playgroundDocument; // @synthesize playgroundDocument=_playgroundDocument;
 - (void)editorDocumentWillClose;
 @property(readonly) IDEToybox *toybox;
 - (void)setFileURL:(id)arg1;

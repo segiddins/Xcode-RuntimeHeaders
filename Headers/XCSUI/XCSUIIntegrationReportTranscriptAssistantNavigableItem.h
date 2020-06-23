@@ -20,12 +20,12 @@
     NSString *_testIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *testIdentifier; // @synthesize testIdentifier=_testIdentifier;
 @property(readonly) DVTFileDataType *type; // @synthesize type=_type;
 @property(readonly) DVTDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
 @property(readonly) NSURL *originalFileURL; // @synthesize originalFileURL=_originalFileURL;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)geniusResult_identifierForManualCategory;
 - (id)geniusResult_identifierForGeniusCategory;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;

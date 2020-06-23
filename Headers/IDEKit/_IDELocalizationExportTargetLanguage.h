@@ -18,12 +18,12 @@
 }
 
 + (id)keyPathsForValuesAffectingFormattedDisplayName;
+- (void).cxx_destruct;
 @property(getter=isDevelopmentRegion) BOOL developmentRegion; // @synthesize developmentRegion=_developmentRegion;
 @property(copy) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property BOOL canSetIncluded; // @synthesize canSetIncluded=_canSetIncluded;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *formattedDisplayName;
 
 @end

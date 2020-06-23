@@ -6,8 +6,11 @@
 
 #import <XCBCore/_TtC7XCBCore12CompilerSpec.h>
 
+@class MISSING_TYPE;
+
 @interface _TtC7XCBCore18OpenCLCompilerSpec : _TtC7XCBCore12CompilerSpec
 {
+    MISSING_TYPE *openCLOutputs;
 }
 
 @end

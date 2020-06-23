@@ -14,9 +14,9 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *value; // @synthesize value=_value;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 
 @end

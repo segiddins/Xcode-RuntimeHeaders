@@ -15,8 +15,8 @@
 
 + (BOOL)shouldNeverUseAutoincrementingIDs;
 + (id)verifiedDanglingSubviewParentClassWhitelist;
-@property(readonly) IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) IBDocument *document; // @synthesize document=_document;
 - (void)verifyViewsHaveCorrectFrames;
 - (void)_verifyRemoveCustomClassAndRuntimeAttributesForIBAutolayoutGuide;
 - (void)_verifyRootObjectRootsAllObjectsAndPopulateMessages:(id)arg1;

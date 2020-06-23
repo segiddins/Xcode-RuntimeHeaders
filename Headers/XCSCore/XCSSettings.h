@@ -17,10 +17,10 @@
 
 + (id)smtpSettingsWithHost:(id)arg1;
 + (id)sendmailSettings;
+- (void).cxx_destruct;
 @property(nonatomic) double maxPercentDiskUsage; // @synthesize maxPercentDiskUsage=_maxPercentDiskUsage;
 @property(retain, nonatomic) NSString *fromAddress; // @synthesize fromAddress=_fromAddress;
 @property(retain, nonatomic) NSString *fromName; // @synthesize fromName=_fromName;
-- (void).cxx_destruct;
 - (id)saveRepresentation;
 - (id)patchRepresentation;
 - (id)dictionaryRepresentation;

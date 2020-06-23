@@ -33,6 +33,8 @@
     vector_7984f87c _visiblePlanes;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showEmptyPlane; // @synthesize showEmptyPlane=_showEmptyPlane;
 @property(readonly, nonatomic) unsigned long long valueScaler; // @synthesize valueScaler=_valueScaler;
 @property(readonly, nonatomic) unsigned long long xAxis; // @synthesize xAxis=_xAxis;
@@ -40,8 +42,6 @@
 @property(readonly, nonatomic) vector_2c9ce4e9 markers; // @synthesize markers=_markers;
 @property(readonly, nonatomic) NSArray *planes; // @synthesize planes=_planes;
 @property(retain, nonatomic) id <GPUTimelineGraphDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *label;
 - (void)updateValuesInIndices:(vector_eb9481f9)arg1;
 - (void)popMarkerAtIndex:(unsigned long long)arg1;

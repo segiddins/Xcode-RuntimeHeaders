@@ -14,8 +14,8 @@
     CDUnknownBlockType _cancelButtonClickHandlerBlock;
 }
 
-@property(copy) CDUnknownBlockType cancelButtonClickHandlerBlock; // @synthesize cancelButtonClickHandlerBlock=_cancelButtonClickHandlerBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType cancelButtonClickHandlerBlock; // @synthesize cancelButtonClickHandlerBlock=_cancelButtonClickHandlerBlock;
 - (void)cancel:(id)arg1;
 - (void)closeForCancelling;
 - (void)close:(id)arg1;

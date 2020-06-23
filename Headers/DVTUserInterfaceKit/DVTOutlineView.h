@@ -34,6 +34,7 @@
     BOOL _wantsMouseEnteredExitedAndMovedEvents;
     NSString *_emptyContentString;
     NSString *_emptyContentSubtitle;
+    NSString *_emptyContentButtonTitle;
     long long _emptyContentStringStyle;
     NSFont *_emptyContentFont;
     NSEvent *_event;
@@ -41,15 +42,16 @@
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+- (void).cxx_destruct;
 @property BOOL wantsMouseEnteredExitedAndMovedEvents; // @synthesize wantsMouseEnteredExitedAndMovedEvents=_wantsMouseEnteredExitedAndMovedEvents;
 @property long long rowUnderHoveredMouse; // @synthesize rowUnderHoveredMouse=_rowUnderHoveredMouse;
 @property(retain) NSEvent *event; // @synthesize event=_event;
 @property(nonatomic) BOOL hasContent; // @synthesize hasContent=_hasContent;
 @property(copy, nonatomic) NSFont *emptyContentFont; // @synthesize emptyContentFont=_emptyContentFont;
 @property(nonatomic) long long emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
+@property(copy, nonatomic) NSString *emptyContentButtonTitle; // @synthesize emptyContentButtonTitle=_emptyContentButtonTitle;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
-- (void).cxx_destruct;
 - (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
 - (void)setDraggingSourceOperationMask:(unsigned long long)arg1 forLocal:(BOOL)arg2;
 - (void)concludeDragOperation:(id)arg1;

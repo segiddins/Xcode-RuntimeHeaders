@@ -14,8 +14,8 @@
     NSData *_csrContent;
 }
 
-@property(readonly) NSData *csrContent; // @synthesize csrContent=_csrContent;
 - (void).cxx_destruct;
+@property(readonly) NSData *csrContent; // @synthesize csrContent=_csrContent;
 @property(readonly, nonatomic) struct __SecKey *privateKey;
 - (id)initWithCSRContent:(id)arg1 privateKey:(id)arg2;
 

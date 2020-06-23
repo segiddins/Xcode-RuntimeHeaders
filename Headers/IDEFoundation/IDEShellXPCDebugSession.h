@@ -13,9 +13,9 @@
     id <IDEDebugTopNavigableModel> _topNavigableModel;
 }
 
+- (void).cxx_destruct;
 - (void)setTopNavigableModel:(id)arg1;
 - (id)topNavigableModel;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithName:(id)arg1;
 - (id)init;

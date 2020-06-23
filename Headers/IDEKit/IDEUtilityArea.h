@@ -54,6 +54,7 @@
 + (id)notApplicablePlaceholder;
 + (id)emptySelectionPlaceholder;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTChoice *defaultChoice; // @synthesize defaultChoice=_defaultChoice;
 @property(readonly, copy) NSArray *categoryChoices; // @synthesize categoryChoices=_categoryChoices;
 @property(nonatomic) BOOL visibleOrPreparingShow; // @synthesize visibleOrPreparingShow=_visibleOrPreparingShow;
@@ -63,7 +64,6 @@
 @property(readonly) DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
 @property(readonly) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(readonly) DVTChooserView *chooserView; // @synthesize chooserView=_chooserView;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)primitiveInvalidate;

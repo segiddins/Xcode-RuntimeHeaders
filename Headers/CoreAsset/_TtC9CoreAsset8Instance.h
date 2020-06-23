@@ -14,6 +14,7 @@
     MISSING_TYPE *children;
     MISSING_TYPE *lastGenerateResult;
     MISSING_TYPE *generateState;
+    MISSING_TYPE *changedServicesSinceLastGenerate;
     MISSING_TYPE *context;
     MISSING_TYPE *definition;
     MISSING_TYPE *parentAndName;

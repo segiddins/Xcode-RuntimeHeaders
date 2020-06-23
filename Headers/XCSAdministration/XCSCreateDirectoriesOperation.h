@@ -13,8 +13,8 @@
     NSString *_sharedDataPath;
 }
 
-@property(retain, nonatomic) NSString *sharedDataPath; // @synthesize sharedDataPath=_sharedDataPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *sharedDataPath; // @synthesize sharedDataPath=_sharedDataPath;
 - (void)undo;
 - (id)undoStatusDescription;
 - (void)run;

@@ -14,9 +14,9 @@
     NSMutableDictionary *_toolTipTagToBarValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *toolTipTagToBarValue; // @synthesize toolTipTagToBarValue=_toolTipTagToBarValue;
 @property(copy, nonatomic) NSArray *distributionData; // @synthesize distributionData=_distributionData;
-- (void).cxx_destruct;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
 - (void)drawRect:(struct CGRect)arg1;
 

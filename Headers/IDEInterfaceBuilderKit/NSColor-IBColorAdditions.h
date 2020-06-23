@@ -8,14 +8,15 @@
 
 #import <IDEInterfaceBuilderKit/IBBinaryArchivableColor-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBBinaryArchiving-Protocol.h>
-#import <IDEInterfaceBuilderKit/IBColor-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBColorProtocol-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSString;
+@class IBColor, NSString;
 
-@interface NSColor (IBColorAdditions) <IBColor, IBBinaryArchiving, IBBinaryArchivableColor, IBDocumentArchiving>
+@interface NSColor (IBColorAdditions) <IBColorProtocol, IBBinaryArchiving, IBBinaryArchivableColor, IBDocumentArchiving>
 + (id)ib_colorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)ib_newNSCatalogColorWithCoder:(id)arg1 zone:(struct _NSZone *)arg2;
++ (id)ibSimpleColorPairWithAnyOrLightColor:(id)arg1 darkColor:(id)arg2;
 + (id)ibColorWithName:(id)arg1 bundleID:(id)arg2 fallbackColor:(id)arg3 unarchiveAsColorWrapper:(BOOL)arg4;
 + (id)ibColorWithPatternBitmap:(id)arg1 colorSpace:(struct CGColorSpace *)arg2;
 + (id)ibColorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
@@ -37,7 +38,7 @@
 - (BOOL)ib_isPatternColor;
 @property(readonly, nonatomic) BOOL ib_isAssetCatalogNamedColor;
 @property(readonly, nonatomic) NSColor *ib_assetCatalogNamedColorBaseColor;
-@property(readonly, nonatomic) IBUIColor *IBUIColor;
+@property(readonly, nonatomic) IBColor *IBColor;
 @property(readonly, nonatomic) NSColor *NSColor;
 - (id)ib_fallbackColorForMarshalling;
 - (const char *)cStringClassNameForBinaryArchiver:(id)arg1;
@@ -53,6 +54,7 @@
 - (void)archiveRGBComponentsWithDocumentArchiver:(id)arg1;
 - (void)archiveCMYKComponentsWithDocumentArchiver:(id)arg1;
 - (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
+- (id)ibColorSpaceName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

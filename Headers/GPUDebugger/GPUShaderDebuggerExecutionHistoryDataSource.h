@@ -14,8 +14,8 @@
     GPUShaderDebuggerSession *_shaderDebuggerSession;
 }
 
-@property(readonly, nonatomic) __weak GPUShaderDebuggerSession *shaderDebuggerSession; // @synthesize shaderDebuggerSession=_shaderDebuggerSession;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak GPUShaderDebuggerSession *shaderDebuggerSession; // @synthesize shaderDebuggerSession=_shaderDebuggerSession;
 - (id)lineForNode:(id)arg1;
 - (id)linesForPath:(id)arg1;
 - (id)initWithShaderDebuggerSession:(id)arg1;

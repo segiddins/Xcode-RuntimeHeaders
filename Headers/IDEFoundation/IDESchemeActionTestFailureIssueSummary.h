@@ -13,8 +13,8 @@
     NSString *_testCaseName;
 }
 
-@property(copy) NSString *testCaseName; // @synthesize testCaseName=_testCaseName;
 - (void).cxx_destruct;
+@property(copy) NSString *testCaseName; // @synthesize testCaseName=_testCaseName;
 - (id)stringSignature;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

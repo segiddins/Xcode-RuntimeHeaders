@@ -103,6 +103,7 @@
 + (id)containerExtensionForFileDataType:(id)arg1;
 + (id)containerLoadingModelObjectGraph;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(getter=isTransitioningToNewFilePath) BOOL transitioningToNewFilePath; // @synthesize transitioningToNewFilePath=_transitioningToNewFilePath;
 @property(retain) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 @property int readOnlyStatus; // @synthesize readOnlyStatus=_readOnlyStatus;
@@ -113,7 +114,6 @@
 @property(readonly, nonatomic, getter=isValidForSchemeBuildableReferences) BOOL validForSchemeBuildableReferences; // @synthesize validForSchemeBuildableReferences=_validForSchemeBuildableReferences;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) id <IDEContainerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
-- (void).cxx_destruct;
 - (void)customDataStore:(id)arg1 removeItemAtFilePath:(id)arg2 completionQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)customDataStore:(id)arg1 moveItemAtFilePath:(id)arg2 toFilePath:(id)arg3 completionQueue:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)customDataStore:(id)arg1 makeFilePathsWritable:(id)arg2 completionQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

@@ -20,6 +20,7 @@
     IBUISimulatedPopoverPresentationMetricChain *_popoverPresentationMetric;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUISimulatedPopoverPresentationMetricChain *popoverPresentationMetric; // @synthesize popoverPresentationMetric=_popoverPresentationMetric;
 @property(retain, nonatomic) IBUISimulatedModalPresentationMetricChain *modalPresentationMetric; // @synthesize modalPresentationMetric=_modalPresentationMetric;
 @property(retain, nonatomic) IBUISimulatedSplitViewMetricChain *splitViewControllerMetric; // @synthesize splitViewControllerMetric=_splitViewControllerMetric;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) IBUISimulatedWindowSizeMetricChain *windowSizeMetric; // @synthesize windowSizeMetric=_windowSizeMetric;
 @property(retain, nonatomic) IBUISimulatedStatusBarMetricChain *statusBarMetric; // @synthesize statusBarMetric=_statusBarMetric;
 @property(retain, nonatomic) IBUISimulatedDeviceContextMetricChain *deviceContextMetric; // @synthesize deviceContextMetric=_deviceContextMetric;
-- (void).cxx_destruct;
 - (id)rebuildSimplifiedChain;
 - (void)clearViewControllerMetrics;
 

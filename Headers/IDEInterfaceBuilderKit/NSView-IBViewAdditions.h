@@ -243,6 +243,8 @@
 - (void)ibDisableAutolayoutInDocument:(id)arg1;
 - (void)ibEnableAutolayoutInDocument:(id)arg1 context:(id)arg2;
 - (void)_clearXcode5AutolayoutFeatureState;
+- (BOOL)ibShouldInvalidateAutolayoutStatusForChangeToKeyPath:(id)arg1;
+- (BOOL)ibAllowsAutolayoutStatusInvalidationOnChanges;
 - (void)ibUpdateTranslatingAutoresizingMaskIntoConstraintsStatePreservingExplicitState:(BOOL)arg1 document:(id)arg2;
 - (void)setIbInspectedTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (BOOL)ibInspectedTranslatesAutoresizingMaskIntoConstraints;
@@ -259,8 +261,8 @@
 @property(nonatomic) unsigned long long ibDesignAutoresizingMask;
 - (BOOL)ibSupportsTranslatesAutoResizingMaskIntoConstraintsWhenUnaffectedByReferencingConstraintsAndIgnoreAmbiguity;
 - (id)ibTranslatesAutoresizingMaskIntoConstraintsMetadataKeyInDocument:(id)arg1;
-- (void)ibVerifyConstraintsAreWellFormedInDocument:(id)arg1 subarbitrationUnitCache:(struct IBMutableIdentityDictionary *)arg2 andPopulateMessages:(id)arg3;
-- (BOOL)ibVerifyCommonSubarbitrationUnitRootForConstraint:(id)arg1 document:(id)arg2 subarbitrationUnitCache:(struct IBMutableIdentityDictionary *)arg3 errorMessage:(out id *)arg4;
+- (void)ibVerifyConstraintsAreWellFormedInDocument:(id)arg1 subarbitrationUnitCache:(id)arg2 andPopulateMessages:(id)arg3;
+- (BOOL)ibVerifyCommonSubarbitrationUnitRootForConstraint:(id)arg1 document:(id)arg2 subarbitrationUnitCache:(id)arg3 errorMessage:(out id *)arg4;
 - (void)ibVerifyConstraintsAreSortedInDocument:(id)arg1;
 - (void)ibRemoveCandidateConstraints:(id)arg1;
 - (void)ibAddCandidateConstraints:(id)arg1 shouldAddToEffectiveEditedConfiguration:(BOOL)arg2;
@@ -330,7 +332,8 @@
 - (Class)ibViewRendererClass;
 - (unsigned long long)ibOrientationsForSizingToFitFromLibrary;
 - (void)ibCustomizeForInsertionIntoNSView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
+- (id)ibExtractableSidecarPasteboardTypesForDocument:(id)arg1;
 - (void)ibDidPutObjects:(id)arg1 onPasteboard:(id)arg2 fromDocument:(id)arg3 context:(id)arg4;
 - (void)ibWillPutObjects:(id)arg1 withDescendants:(id)arg2 onPasteboard:(id)arg3 fromDocument:(id)arg4 context:(id)arg5;
 - (id)ibPasteboardImageForRenderingDestination:(id)arg1 appearance:(id)arg2;
@@ -438,7 +441,7 @@
 - (id)ibWidgetType;
 - (CDStruct_c519178c)ibInsetToDesignableContentArea;
 - (id)ibLayoutManagerForUnitTesting;
-- (void)ibPopulateResourceReferences:(id)arg1 withValueToVariantSetMap:(id)arg2;
+- (void)ibPopulateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (id)ibEnclosingCanvasView;
 - (struct CGSize)frameSize;
 - (struct CGPoint)frameOrigin;
@@ -496,6 +499,8 @@
 - (void)ibWillMoveSubviewsForEmbedding:(id)arg1 context:(id)arg2;
 - (BOOL)ibShouldPreservePositionConstraintsAffectingSubviewsOnEmbedding;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
+- (BOOL)ibCanParentAcceptUnembeddedChildrenInDocument:(id)arg1;
+- (BOOL)ibHasChildrenForUnembeddingInDocument:(id)arg1;
 - (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
 - (BOOL)ibShouldIncludeKeyPathInIbtoolPrintingOutput:(id)arg1;
 - (void)ibTurnOffChildren:(id)arg1 document:(id)arg2;
@@ -505,7 +510,6 @@
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
-- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (BOOL)ibCanBeBaseObjectOfEditorFrame;
 - (id)ibAttributeSnapshot;

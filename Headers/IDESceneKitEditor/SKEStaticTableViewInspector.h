@@ -23,10 +23,10 @@
 + (id)tableColumnTitles;
 + (struct _NSRange)visibleRowCountRange;
 + (BOOL)wantsEditionBar;
+- (void).cxx_destruct;
 @property(readonly) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
 @property(readonly) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
 @property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)makeProtoptypeStepperTextField;
 - (id)makeProtoptypeTextField;
 @property(copy, nonatomic) NSString *emptyContentString;

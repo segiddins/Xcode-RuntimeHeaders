@@ -11,7 +11,7 @@
 @interface _TtC17CoreDocumentation17TutorialReference : _TtC17CoreDocumentation8Semantic
 {
     MISSING_TYPE *originalMarkup;
-    MISSING_TYPE *tutorial;
+    MISSING_TYPE *topic;
 }
 
 @end

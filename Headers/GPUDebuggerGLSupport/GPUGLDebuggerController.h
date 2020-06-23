@@ -37,8 +37,8 @@
 + (void)initialize;
 + (id)logAspect;
 + (id)assetBundle;
-@property(readonly) DYGLExpert *expert; // @synthesize expert=_expert;
 - (void).cxx_destruct;
+@property(readonly) DYGLExpert *expert; // @synthesize expert=_expert;
 - (void)_onShaderEditContinueResourcesUpdated;
 - (void)onShaderEditContinueEndWithCompleted:(BOOL)arg1;
 - (void)onShaderEditContinueBegin;

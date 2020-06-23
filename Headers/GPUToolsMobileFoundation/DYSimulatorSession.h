@@ -16,10 +16,10 @@
     DTiPhoneSimulatorSession *_dtSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DTiPhoneSimulatorSession *dtSession; // @synthesize dtSession=_dtSession;
 @property(copy, nonatomic) CDUnknownBlockType didEndBlock; // @synthesize didEndBlock=_didEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType didStartBlock; // @synthesize didStartBlock=_didStartBlock;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didEndWithError:(id)arg2;
 - (void)session:(id)arg1 didStart:(BOOL)arg2 withError:(id)arg3;
 - (BOOL)launch:(id *)arg1;

@@ -17,10 +17,10 @@
     DVTObservingToken *_gpuDebugStateObservingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *gpuDebugStateObservingToken; // @synthesize gpuDebugStateObservingToken=_gpuDebugStateObservingToken;
 @property(retain) NSButton *continueOrPauseButton; // @synthesize continueOrPauseButton=_continueOrPauseButton;
 @property __weak IDEWorkspaceDFRController *workspaceDFRController; // @synthesize workspaceDFRController=_workspaceDFRController;
-- (void).cxx_destruct;
 - (BOOL)stopActionShouldPromptToChooseProcessForDebugBarItemFactory:(id)arg1;
 - (void)debugBarItemFactory:(id)arg1 stopPopoverFunctionBarItemWasCreated:(id)arg2;
 - (id)stopControlForDebugBarItemFactory:(id)arg1;

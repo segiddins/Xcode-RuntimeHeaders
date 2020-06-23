@@ -20,10 +20,10 @@
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
 + (struct CGSize)singleItemMaxSize;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL hideLocalStatus; // @synthesize hideLocalStatus=_hideLocalStatus;
 @property(copy, nonatomic) NSString *serverStatus; // @synthesize serverStatus=_serverStatus;
 @property(copy, nonatomic) NSString *localStatus; // @synthesize localStatus=_localStatus;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasDisplayableStatus;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSize;

@@ -21,12 +21,12 @@
     NSLayoutConstraint *_buttonToContainerConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *buttonToContainerConstraint; // @synthesize buttonToContainerConstraint=_buttonToContainerConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *buttonToProgressIndicatorConstraint; // @synthesize buttonToProgressIndicatorConstraint=_buttonToProgressIndicatorConstraint;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain, nonatomic) NSString *progressIndicatorBusyKeyPath; // @synthesize progressIndicatorBusyKeyPath=_progressIndicatorBusyKeyPath;
 @property(retain, nonatomic) NSString *progressIndicatorAccessibilityTitle; // @synthesize progressIndicatorAccessibilityTitle=_progressIndicatorAccessibilityTitle;
-- (void).cxx_destruct;
 - (void)bindProgressIndicatorBusyKeyPath;
 - (void)buttonClicked:(id)arg1;
 - (void)viewDidLoad;

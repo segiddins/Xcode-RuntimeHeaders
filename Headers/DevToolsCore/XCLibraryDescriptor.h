@@ -17,9 +17,9 @@
     NSNumber *_supportsiOS;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *sourceTree; // @synthesize sourceTree=_sourceTree;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly) BOOL supportsiOS;
 @property(readonly) BOOL supportsiOSMac;
 - (id)_pathForLibraryIniOSSupportFolder:(id)arg1;

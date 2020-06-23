@@ -16,10 +16,10 @@
     NSButton *_actionButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *actionButton; // @synthesize actionButton=_actionButton;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)onActionButtonClicked:(id)arg1;
 - (void)setActionButtonEnabled:(BOOL)arg1;
 - (void)showActionButtonWithTitle:(id)arg1 action:(CDUnknownBlockType)arg2;

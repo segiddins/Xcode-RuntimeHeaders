@@ -28,6 +28,7 @@
 + (id)entryWithKey:(id)arg1 withEntryExtension:(id)arg2 infoEditor:(id)arg3;
 + (id)_entryWithKey:(id)arg1 forExtension:(id)arg2 infoEditor:(id)arg3 hasItems:(BOOL)arg4;
 + (id)keyPathsForValuesAffectingInspectorValue;
+- (void).cxx_destruct;
 @property(retain) Xcode3InfoGroupEntry *group; // @synthesize group=_group;
 @property unsigned long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(copy) NSString *deviceVariantName; // @synthesize deviceVariantName=_deviceVariantName;
@@ -37,7 +38,6 @@
 @property(readonly) NSString *entryType; // @synthesize entryType=_entryType;
 @property(readonly) NSString *key; // @synthesize key=_key;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 @property(copy) id inspectorValue;

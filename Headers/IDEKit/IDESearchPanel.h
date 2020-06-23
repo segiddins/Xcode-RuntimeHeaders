@@ -13,8 +13,8 @@
     NSNumber *_explicitLiveResizeDuration;
 }
 
-@property(retain) NSNumber *explicitLiveResizeDuration; // @synthesize explicitLiveResizeDuration=_explicitLiveResizeDuration;
 - (void).cxx_destruct;
+@property(retain) NSNumber *explicitLiveResizeDuration; // @synthesize explicitLiveResizeDuration=_explicitLiveResizeDuration;
 - (void)sendEvent:(id)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (double)animationResizeTime:(struct CGRect)arg1;

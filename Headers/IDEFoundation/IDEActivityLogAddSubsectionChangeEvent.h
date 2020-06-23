@@ -13,8 +13,8 @@
     IDEActivityLogSection *_subsection;
 }
 
-@property(readonly) IDEActivityLogSection *subsection; // @synthesize subsection=_subsection;
 - (void).cxx_destruct;
+@property(readonly) IDEActivityLogSection *subsection; // @synthesize subsection=_subsection;
 - (id)description;
 - (id)addedChild;
 - (void)writeToLogEventStream:(id)arg1;

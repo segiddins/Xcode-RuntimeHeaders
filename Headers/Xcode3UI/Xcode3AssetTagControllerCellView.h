@@ -16,11 +16,11 @@
     NSButton *_removeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) NSButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) NSBox *contentBox; // @synthesize contentBox=_contentBox;
 @property(nonatomic) __weak Xcode3TaggedAssetDetailController *contentController; // @synthesize contentController=_contentController;
-- (void).cxx_destruct;
 - (void)removeItem:(id)arg1;
 - (void)addItem:(id)arg1;
 

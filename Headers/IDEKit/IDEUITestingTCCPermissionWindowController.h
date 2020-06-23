@@ -17,12 +17,12 @@
     NSWindow *_workspaceWindow;
 }
 
+- (void).cxx_destruct;
 @property __weak NSWindow *workspaceWindow; // @synthesize workspaceWindow=_workspaceWindow;
 @property(retain) NSTimer *permissionPollingTimer; // @synthesize permissionPollingTimer=_permissionPollingTimer;
 @property(copy) CDUnknownBlockType permissionReplyBlock; // @synthesize permissionReplyBlock=_permissionReplyBlock;
 @property BOOL status; // @synthesize status=_status;
 @property BOOL isPresenting; // @synthesize isPresenting=_isPresenting;
-- (void).cxx_destruct;
 - (void)promptForPermission:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)_permissionUpdateCheck;

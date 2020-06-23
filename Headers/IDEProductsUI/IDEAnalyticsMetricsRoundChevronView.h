@@ -14,10 +14,10 @@
     NSColor *_color;
 }
 
-+ (void)drawChevronViewInRect:(struct CGRect)arg1 withDirection:(unsigned long long)arg2 andColor:(id)arg3 scaleFactor:(float)arg4;
++ (void)drawChevronViewInRect:(struct CGRect)arg1 withDirection:(unsigned long long)arg2 andColor:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long chevronDirection; // @synthesize chevronDirection=_chevronDirection;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

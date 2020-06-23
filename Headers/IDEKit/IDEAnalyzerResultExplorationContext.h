@@ -14,9 +14,9 @@
     IDEIssue *_step;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEIssue *step; // @synthesize step=_step;
 @property(readonly) IDEActivityLogAnalyzerResultMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (int)explorationType;
 - (id)initWithAnalyzerResultMessage:(id)arg1 stepIssue:(id)arg2;
 

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *cancelButton;
     MISSING_TYPE *completedLabel;
     MISSING_TYPE *badge;
+    MISSING_TYPE *progress;
 }
 
 - (void).cxx_destruct;

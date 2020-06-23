@@ -16,10 +16,10 @@
     NSMutableOrderedSet *_loggerResults;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableOrderedSet *loggerResults; // @synthesize loggerResults=_loggerResults;
 @property __weak id <IDESourceCodePlaygroundSectionAccessoryViewAnnotationInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property __weak IDESourceCodePlaygroundSectionAnnotationProvider *annotationProvider; // @synthesize annotationProvider=_annotationProvider;
-- (void).cxx_destruct;
 - (id)currentStateInTextView:(id)arg1;
 - (void)drawLineHighlightInRect:(struct CGRect)arg1 textView:(id)arg2;
 - (id)initWithViewControllerClass:(Class)arg1;

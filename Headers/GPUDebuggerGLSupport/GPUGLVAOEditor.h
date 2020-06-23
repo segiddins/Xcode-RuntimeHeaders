@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)assetBundle;
-@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (struct TypeOutputFormatTypeAlias)typeOutputFormatTypeAliasForGLFormat:(unsigned int)arg1 numComponents:(unsigned long long)arg2;
 - (void)readGLVertexAttribute:(id)arg1 containerStruct:(struct Struct *)arg2 dataBuffers:(vector_c26b6358 *)arg3;
 - (void)readGLTransformFeedbackVaryings:(id)arg1 containerStruct:(struct Struct *)arg2 dataBuffers:(vector_c26b6358 *)arg3;

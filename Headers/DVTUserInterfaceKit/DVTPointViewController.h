@@ -18,13 +18,13 @@
     struct CGPoint _point;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *pointValueTitleLabel; // @synthesize pointValueTitleLabel=_pointValueTitleLabel;
 @property __weak NSTextField *pointValueLabel; // @synthesize pointValueLabel=_pointValueLabel;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic, getter=shouldAdaptToTheme) BOOL adaptToTheme; // @synthesize adaptToTheme=_adaptToTheme;
 @property(nonatomic) BOOL showsBorder; // @synthesize showsBorder=_showsBorder;
 @property(nonatomic) struct CGPoint point; // @synthesize point=_point;
-- (void).cxx_destruct;
 - (void)_updateForCurrentTheme;
 - (void)_updateBorder;
 - (void)loadView;

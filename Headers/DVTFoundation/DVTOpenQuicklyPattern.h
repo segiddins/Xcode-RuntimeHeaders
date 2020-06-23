@@ -20,9 +20,9 @@
 }
 
 + (id)patternWithInput:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL emphasizesCaseSensitiveMatches; // @synthesize emphasizesCaseSensitiveMatches=_emphasizesCaseSensitiveMatches;
 @property(readonly) NSString *pattern; // @synthesize pattern=_pattern;
-- (void).cxx_destruct;
 - (double)scoreCandidate:(id)arg1 considerExtension:(BOOL)arg2 matchedRanges:(id *)arg3;
 - (double)scoreCandidate:(id)arg1 matchedRanges:(id *)arg2;
 - (double)scoreCandidate:(id)arg1 considerFileExtension:(BOOL)arg2;

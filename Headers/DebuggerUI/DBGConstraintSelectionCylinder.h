@@ -15,10 +15,10 @@
     double _lengthPadding;
 }
 
+- (void).cxx_destruct;
 @property double lengthPadding; // @synthesize lengthPadding=_lengthPadding;
 @property __weak SCNNode *constraintEndNode; // @synthesize constraintEndNode=_constraintEndNode;
 @property __weak SCNNode *constraintStartNode; // @synthesize constraintStartNode=_constraintStartNode;
-- (void).cxx_destruct;
 
 @end
 

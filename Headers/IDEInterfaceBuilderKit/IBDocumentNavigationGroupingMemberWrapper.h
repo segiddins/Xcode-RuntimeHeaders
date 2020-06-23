@@ -18,13 +18,13 @@
     NSString *_backingToManyRelationship;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *backingToManyRelationship; // @synthesize backingToManyRelationship=_backingToManyRelationship;
 @property(nonatomic) __weak id parentMember; // @synthesize parentMember=_parentMember;
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (id)name;
 - (id)image;
 @property(copy, nonatomic) NSArray *childWrappers; // @synthesize childWrappers=_childWrappers;
-- (void).cxx_destruct;
 - (id)acceptDrop:(id)arg1 childIndex:(long long)arg2;
 - (unsigned long long)dragOperationForDropInfo:(id)arg1 proposedIndex:(long long)arg2 acceptingIndex:(long long *)arg3 isAlternativeItem:(BOOL)arg4;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;

@@ -9,8 +9,11 @@
 @class NSString;
 
 @protocol IDEProvisioningBasicTeam <NSObject>
-@property(readonly, nonatomic, getter=isFreeProvisioningTeam) BOOL freeProvisioningTeam;
-@property(readonly, nonatomic) NSString *teamName;
-@property(readonly, nonatomic) NSString *teamID;
+- (BOOL)isFreeProvisioningTeam;
+@property(nonatomic, readonly) NSString *teamName;
+@property(nonatomic, readonly) NSString *teamID;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL freeProvisioningTeam;
 @end
 

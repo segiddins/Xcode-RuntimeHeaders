@@ -20,11 +20,11 @@
 
 + (id)itemWithRepresentedObject:(id)arg1 title:(id)arg2 overlayView:(id)arg3;
 + (id)itemWithRepresentedObject:(id)arg1 title:(id)arg2 image:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSView *overlayView; // @synthesize overlayView=_overlayView;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToGroupedSegmentedControlItem:(id)arg1;

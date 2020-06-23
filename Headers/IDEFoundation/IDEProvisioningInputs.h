@@ -28,6 +28,7 @@
 + (id)_platformForProvisionableSnapshot:(id)arg1 configuration:(id)arg2;
 + (id)inputsFromProvisionableSnapshot:(id)arg1 configuration:(id)arg2 deviceRequirement:(id)arg3 signingCertificates:(id)arg4 provisioningProfiles:(id)arg5 entitlements:(id)arg6 errorProvider:(id)arg7 validateAcrossConfigurations:(BOOL)arg8 error:(id *)arg9;
 + (id)inputsFromProvisionableSnapshot:(id)arg1 configuration:(id)arg2 deviceRequirement:(id)arg3 signingCertificates:(id)arg4 provisioningProfiles:(id)arg5 entitlements:(id)arg6 errorProvider:(id)arg7 error:(id *)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL validateCrossConfigurationIssues; // @synthesize validateCrossConfigurationIssues=_validateCrossConfigurationIssues;
 @property(retain, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) IDEProvisionableSnapshot *provisionableSnapshot; // @synthesize provisionableSnapshot=_provisionableSnapshot;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) IDEProvisionableEntitlements *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *deviceRequirement; // @synthesize deviceRequirement=_deviceRequirement;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *certificateIdentifier;
 @property(readonly, nonatomic) DVTPortalCertificatePurpose *certificatePurpose;
 - (id)certificatePurposeBasedOnAutomaticSelectors;

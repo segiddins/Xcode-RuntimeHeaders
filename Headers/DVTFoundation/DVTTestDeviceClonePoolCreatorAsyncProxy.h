@@ -17,9 +17,9 @@
 }
 
 + (id)sharedCreator;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) id <DVTTestDeviceCloneCreator> creator; // @synthesize creator=_creator;
-- (void).cxx_destruct;
 - (id)destroyClone:(id)arg1;
 - (id)shutdownClone:(id)arg1;
 - (id)cloneDevice:(id)arg1;

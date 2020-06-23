@@ -43,6 +43,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSSegmentedControl *debugExtrasControl; // @synthesize debugExtrasControl=_debugExtrasControl;
 @property(retain) DVTObservingToken *workspaceIdleObservingToken; // @synthesize workspaceIdleObservingToken=_workspaceIdleObservingToken;
 @property(retain) DVTObservingToken *stackFrameObservingToken; // @synthesize stackFrameObservingToken=_stackFrameObservingToken;
@@ -70,7 +71,6 @@
 @property BOOL stopProcessChooserEnabled; // @synthesize stopProcessChooserEnabled=_stopProcessChooserEnabled;
 @property(nonatomic) unsigned long long debugBarFactoryType; // @synthesize debugBarFactoryType=_debugBarFactoryType;
 @property __weak IDEWorkspaceWindowController *workspaceWindowController; // @synthesize workspaceWindowController=_workspaceWindowController;
-- (void).cxx_destruct;
 - (BOOL)stopActionShouldPromptToChooseProcessForDebugBarItemFactory:(id)arg1;
 - (void)debugBarItemFactory:(id)arg1 stopPopoverFunctionBarItemWasCreated:(id)arg2;
 - (id)stopControlForDebugBarItemFactory:(id)arg1;

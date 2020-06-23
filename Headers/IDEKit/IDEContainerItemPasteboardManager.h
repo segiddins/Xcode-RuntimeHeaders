@@ -13,6 +13,8 @@
 + (id)sharedPasteboardManager;
 - (id)fileURLsForDraggingInfo:(id)arg1;
 - (void)containerItems:(id *)arg1 orFileURLs:(id *)arg2 forDraggingInfo:(id)arg3;
+- (BOOL)writeContainerItems:(id)arg1 filePaths:(id)arg2 toPasteboard:(id)arg3;
+- (id)_plistRepsForContainerItems:(id)arg1;
 - (BOOL)writeItems:(id)arg1 toPasteboard:(id)arg2;
 
 @end

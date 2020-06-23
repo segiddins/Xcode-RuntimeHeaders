@@ -18,13 +18,14 @@
 + (id)_displayStringForAddress:(unsigned long long)arg1;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)keyPathsForValuesAffectingHexAddress;
+- (void).cxx_destruct;
 @property unsigned long long address; // @synthesize address=_address;
 @property(readonly) NSString *variableName; // @synthesize variableName=_variableName;
 @property(readonly) NSString *expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 - (id)accessibilityDescription;
 - (id)displayName;
 @property(readonly) NSString *hexAddress;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithExpression:(id)arg1 variableName:(id)arg2;
 
 @end

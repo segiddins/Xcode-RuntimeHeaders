@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface _TtC8RCShared36CheckmarkToggleInspectableEditorCell : _TtC8RCShared30InspectableEditorCellFromClass
 {
     MISSING_TYPE *labelButton;
-    MISSING_TYPE *iconView;
     MISSING_TYPE *checkmarkIcon;
 }
 

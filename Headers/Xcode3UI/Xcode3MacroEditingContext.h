@@ -24,8 +24,8 @@
 + (id)newWithPropertyInfoContext:(id)arg1;
 + (id)newWithPropertyInfoContexts:(id)arg1;
 + (id)multipleValuesPlaceholder;
-@property(copy) NSSet *propertyInfoContexts; // @synthesize propertyInfoContexts;
 - (void).cxx_destruct;
+@property(copy) NSSet *propertyInfoContexts; // @synthesize propertyInfoContexts;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 - (id)propertyDefinitionsForMacroName:(id)arg1;

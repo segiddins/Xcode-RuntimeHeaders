@@ -29,8 +29,8 @@
 
 + (id)defaultViewNibName;
 + (void)initialize;
-@property(retain) IDESchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 - (void).cxx_destruct;
+@property(retain) IDESchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 - (unsigned long long)capsuleListView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3;
 - (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;
 - (BOOL)capsuleListView:(id)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;

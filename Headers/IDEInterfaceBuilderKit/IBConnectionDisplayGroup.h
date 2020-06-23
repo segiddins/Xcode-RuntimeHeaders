@@ -18,11 +18,11 @@
 
 + (id)sortedArrayFromConnectionDisplayGroups:(id)arg1;
 + (id)connectionDisplayGroupForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) double positionPriority; // @synthesize positionPriority=_positionPriority;
 @property(readonly) NSString *deprecatedTitle; // @synthesize deprecatedTitle=_deprecatedTitle;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToConnectionDisplayGroup:(id)arg1;

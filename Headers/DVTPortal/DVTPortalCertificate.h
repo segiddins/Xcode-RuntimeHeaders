@@ -33,6 +33,7 @@
 + (id)errorForNoMatchingCertificate;
 + (id)teamDevelopmentCertificateWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
 + (id)certificatesForSession:(id)arg1 team:(id)arg2 type:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *creatorLastName; // @synthesize creatorLastName=_creatorLastName;
 @property(copy, nonatomic) NSString *creatorFirstName; // @synthesize creatorFirstName=_creatorFirstName;
 @property(copy, nonatomic) NSString *machineID; // @synthesize machineID=_machineID;
@@ -47,7 +48,6 @@
 @property(readonly, copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate;
 @property(readonly, nonatomic) DVTPortalCertificateType *portalCertificateType; // @synthesize portalCertificateType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic, getter=isExpired) BOOL expired;

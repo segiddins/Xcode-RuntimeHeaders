@@ -8,6 +8,7 @@
 
 @class MISSING_TYPE;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor34PlaygroundEditorSidebarContentView : _TtC26IDEPegasusPlaygroundEditor27PlaygroundEditorSidebarView
 {
     MISSING_TYPE *sidebar;

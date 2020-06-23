@@ -14,14 +14,11 @@
     NSColor *_ibFallbackColor;
 }
 
-+ (id)placeholderSystemColorWithName:(id)arg1;
-+ (id)placeholderSystemColorWithName:(id)arg1 color:(id)arg2;
++ (id)placeholderSystemColorWithName:(id)arg1 catalogName:(id)arg2 color:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ibHasDefinedFallbackColor; // @synthesize ibHasDefinedFallbackColor=_ibHasDefinedFallbackColor;
 @property(retain, nonatomic) NSColor *ibFallbackColor; // @synthesize ibFallbackColor=_ibFallbackColor;
-- (void).cxx_destruct;
-- (BOOL)ibIsPlaceholderSystemColor;
-- (id)initWithName:(id)arg1;
-- (id)initWithName:(id)arg1 color:(id)arg2;
+- (id)initWithName:(id)arg1 catalogName:(id)arg2 color:(id)arg3;
 
 @end
 

@@ -16,11 +16,11 @@
     NSString *_dstPropertyName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *destinationPropertyName; // @synthesize destinationPropertyName=_dstPropertyName;
 @property(copy) NSString *sourcePropertyName; // @synthesize sourcePropertyName=_srcPropertyName;
 @property(copy) NSString *destinationEntityClassName; // @synthesize destinationEntityClassName=_dstEntityClassName;
 @property(copy) NSString *sourceEntityClassName; // @synthesize sourceEntityClassName=_srcEntityClassName;
-- (void).cxx_destruct;
 - (void)setValueName:(id)arg1;
 - (id)valueName;
 - (id)originalValueName;

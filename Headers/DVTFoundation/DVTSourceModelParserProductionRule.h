@@ -41,6 +41,7 @@
 + (unsigned long long)indexOfProductionMatchingNode:(id)arg1 inProduction:(id)arg2;
 + (unsigned long long)indexOfProductionMatchingToken:(int)arg1 inProduction:(id)arg2;
 + (int)tokenForSymbol:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL interiorRuleMayHaveTemporaryLexerFlags; // @synthesize interiorRuleMayHaveTemporaryLexerFlags=_interiorRuleMayHaveTemporaryLexerFlags;
 @property(retain, nonatomic) NSArray *nodeInteriorPredictSet; // @synthesize nodeInteriorPredictSet=_nodeInteriorPredictSet;
 @property(retain, nonatomic) NSArray *tokenInteriorPredictSet; // @synthesize tokenInteriorPredictSet=_tokenInteriorPredictSet;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) DVTLanguageSpecification *startProduction; // @synthesize startProduction=_startProduction;
 @property(readonly, nonatomic) int endToken; // @synthesize endToken=_endToken;
 @property(readonly, nonatomic) int startToken; // @synthesize startToken=_startToken;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

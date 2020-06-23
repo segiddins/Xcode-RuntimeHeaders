@@ -14,9 +14,9 @@
     double _pointsPerInch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double pointsPerInch; // @synthesize pointsPerInch=_pointsPerInch;
 @property(readonly, nonatomic) IBiOSDeviceIconGenerationInstance *instance; // @synthesize instance=_instance;
-- (void).cxx_destruct;
 - (id)initWithInstance:(id)arg1 pointsPerInch:(double)arg2;
 
 @end

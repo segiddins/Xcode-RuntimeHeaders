@@ -15,9 +15,9 @@
     CDUnknownBlockType _bodyBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType bodyBlock; // @synthesize bodyBlock=_bodyBlock;
 @property(readonly, nonatomic) NSString *heading; // @synthesize heading=_heading;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
 - (id)initWithHeading:(id)arg1 bodyBlock:(CDUnknownBlockType)arg2;
 - (id)initWithHeading:(id)arg1 body:(id)arg2;

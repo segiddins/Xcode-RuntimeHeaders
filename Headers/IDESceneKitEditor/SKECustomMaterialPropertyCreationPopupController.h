@@ -15,10 +15,10 @@
     NSPopUpButton *_type;
 }
 
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *type; // @synthesize type=_type;
 @property __weak NSTextField *name; // @synthesize name=_name;
 @property __weak id delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)windowDidResignMain:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)viewDidAppear;

@@ -32,9 +32,9 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBMutableIdentityDictionary *draggedImageCatalogContent; // @synthesize draggedImageCatalogContent=_draggedImageCatalogContent;
 @property(retain, nonatomic) NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (double)collectionView:(id)arg1 layout:(id)arg2 heightForItemAtIndexPath:(id)arg3 forWidth:(double)arg4;
 - (void)collectionViewItem:(id)arg1 setHeight:(double)arg2 forCatalogItem:(id)arg3;
 - (id)collectionViewItem:(id)arg1 indexPathForCatalogItem:(id)arg2;

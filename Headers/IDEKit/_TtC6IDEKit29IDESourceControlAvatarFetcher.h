@@ -11,7 +11,8 @@
 @interface _TtC6IDEKit29IDESourceControlAvatarFetcher : _TtCs12_SwiftObject
 {
     MISSING_TYPE *operationQueue;
-    MISSING_TYPE *callbacksByEmail;
+    MISSING_TYPE *lock;
+    MISSING_TYPE *_callbacksByEmail;
 }
 
 @end

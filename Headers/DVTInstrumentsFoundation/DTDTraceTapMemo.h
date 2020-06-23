@@ -15,10 +15,10 @@
     NSArray *_fragments;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fragments; // @synthesize fragments=_fragments;
 @property(nonatomic) long long firstFilePosition; // @synthesize firstFilePosition=_firstFilePosition;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,11 +16,11 @@
     struct CGRect _prefixFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *valueString; // @synthesize valueString=_valueString;
 @property(retain, nonatomic) NSAttributedString *prefixString; // @synthesize prefixString=_prefixString;
 @property(nonatomic) struct CGRect prefixFrame; // @synthesize prefixFrame=_prefixFrame;
 @property(nonatomic) struct CGRect valueFrame; // @synthesize valueFrame=_valueFrame;
-- (void).cxx_destruct;
 - (struct CGRect *)valueFramePtr;
 - (struct CGRect *)prefixFramePtr;
 

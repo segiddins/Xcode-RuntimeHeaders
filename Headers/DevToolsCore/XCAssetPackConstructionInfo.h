@@ -22,6 +22,7 @@
 + (unsigned long long)maximumAssetPackDirectoryNameLength;
 + (id)assetPackNameDirectorySuffix;
 + (id)assetPackNameTagSeparatorString;
+- (void).cxx_destruct;
 @property(readonly) XCDependencyGraphCreationContext *context; // @synthesize context=_context;
 @property(readonly) NSMutableSet *assetNodes; // @synthesize assetNodes=_assetNodes;
 @property(readonly) NSMutableDictionary *infoPlistContents; // @synthesize infoPlistContents=_infoPlistContents;
@@ -29,7 +30,6 @@
 @property(readonly) XCDependencyNode *mainDirectory; // @synthesize mainDirectory=_mainDirectory;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSSet *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (id)initWithTagSet:(id)arg1 inDependencyGraphCreationContext:(id)arg2 withMacroExpansionScope:(id)arg3;
 
 @end

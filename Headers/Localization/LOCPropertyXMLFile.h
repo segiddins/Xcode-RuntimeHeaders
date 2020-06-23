@@ -33,6 +33,7 @@
     struct _xmlDoc *xmlDocument;
 }
 
+- (void).cxx_destruct;
 @property(retain) id plistObject; // @synthesize plistObject;
 @property struct _xmlDoc *xmlDocument; // @synthesize xmlDocument;
 @property(retain) NSArray *transUnitsWithInlineElements; // @synthesize transUnitsWithInlineElements;
@@ -46,7 +47,6 @@
 @property BOOL treatPlistAsXML; // @synthesize treatPlistAsXML;
 @property BOOL validPlist; // @synthesize validPlist;
 @property BOOL wellFormedXML; // @synthesize wellFormedXML;
-- (void).cxx_destruct;
 - (id)segment:(id)arg1 WithOptions:(unsigned long long)arg2 error:(id *)arg3;
 - (id)docMetaInfoDictionaryForStringsWithError:(id *)arg1;
 - (id)orderStringKeysIn:(struct _xmlNode *)arg1;

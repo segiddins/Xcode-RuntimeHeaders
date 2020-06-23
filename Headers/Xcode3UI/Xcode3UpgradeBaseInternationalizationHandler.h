@@ -16,8 +16,8 @@
     IDEUpgradeContext<Xcode3UpgradeContext> *_context;
 }
 
-@property(readonly) IDEUpgradeContext<Xcode3UpgradeContext> *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) IDEUpgradeContext<Xcode3UpgradeContext> *context; // @synthesize context=_context;
 - (void)_presentErrors:(id)arg1;
 - (void)_enableBaseInternationalizationForProject:(id)arg1 workspaceTabController:(id)arg2 task:(id)arg3;
 - (void)upgradeWorkspace:(id)arg1 withTasks:(id)arg2;

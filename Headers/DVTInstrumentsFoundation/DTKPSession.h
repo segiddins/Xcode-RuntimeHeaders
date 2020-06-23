@@ -42,6 +42,7 @@
 + (int)blessPid:(int)arg1;
 + (BOOL)existsInDirectory:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DTKPDatastream> onDeckDatastream; // @synthesize onDeckDatastream=_onDeckDatastream;
 @property(retain, nonatomic) id <DTKPDatastream> currentDatastream; // @synthesize currentDatastream=_currentDatastream;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
@@ -50,7 +51,6 @@
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(nonatomic) unsigned char recordingPriority; // @synthesize recordingPriority=_recordingPriority;
 @property(nonatomic) unsigned char collectionMode; // @synthesize collectionMode=_collectionMode;
-- (void).cxx_destruct;
 - (void)ensureCallbackThreadIsActive;
 - (int)_flushDataFromKernelLocked:(unsigned int)arg1 actualBytesReadOut:(unsigned int *)arg2;
 - (int)flushDataFromKernel:(unsigned int)arg1 actualBytesReadOut:(unsigned int *)arg2;

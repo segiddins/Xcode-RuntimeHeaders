@@ -76,6 +76,7 @@
 + (id)keyPathsForValuesAffectingShouldEnableToolbarItems;
 + (id)workspaceWindowControllers;
 + (unsigned long long)supplimental23378396AssertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property BOOL isSettingUpWindowControllerClone; // @synthesize isSettingUpWindowControllerClone=_isSettingUpWindowControllerClone;
 @property BOOL tabBarWasVisibleWithSingleTab; // @synthesize tabBarWasVisibleWithSingleTab=_tabBarWasVisibleWithSingleTab;
 @property(retain) NSValue *initialWindowFrameValue; // @synthesize initialWindowFrameValue=_initialWindowFrameValue;
@@ -87,7 +88,6 @@
 @property(retain) DVTStackBacktrace *windowDidLoadBacktrace; // @synthesize windowDidLoadBacktrace=_windowDidLoadBacktrace;
 @property BOOL shouldPerformWindowClose; // @synthesize shouldPerformWindowClose=_shouldPerformWindowClose;
 @property(copy, nonatomic) NSString *stateSavingIdentifier; // @synthesize stateSavingIdentifier=_stateSavingIdentifier;
-- (void).cxx_destruct;
 - (void)moveFocusToEditor:(id)arg1;
 - (void)dicardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;

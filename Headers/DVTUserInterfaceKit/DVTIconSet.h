@@ -15,8 +15,8 @@
 
 + (id)generateThumbnailFromURL:(id)arg1 targetSize:(struct CGSize)arg2;
 + (id)generateImageFromURL:(id)arg1 error:(id *)arg2;
-@property(readonly) NSArray *components; // @synthesize components=_components;
 - (void).cxx_destruct;
+@property(readonly) NSArray *components; // @synthesize components=_components;
 - (id)description;
 - (id)generateImageReturningError:(id *)arg1;
 - (id)initWithURL:(id)arg1 error:(id *)arg2;

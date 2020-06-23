@@ -38,11 +38,11 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)localizedSourceListItemEditorName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property struct CGRect currentSelectionFrame; // @synthesize currentSelectionFrame=_currentSelectionFrame;
 @property(retain, nonatomic) DVTSourceExpression *selectedExpression; // @synthesize selectedExpression=_selectedExpression;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
-- (void).cxx_destruct;
 - (void)_invalidateListContentProviders;
 - (void)_invalidateSliceControllers;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;

@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/_TtP13DVTFoundation17DVTTeamCredential_-Protocol.h>
-
 @class MISSING_TYPE, NSString;
 
-@interface _TtC13DVTFoundation30DVTDefaultsBasedTeamCredential : NSObject <_TtP13DVTFoundation17DVTTeamCredential_>
+@interface _TtC13DVTFoundation30DVTDefaultsBasedTeamCredential : NSObject
 {
     MISSING_TYPE *teamID;
     MISSING_TYPE *token;

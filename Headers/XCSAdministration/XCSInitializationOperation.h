@@ -21,6 +21,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL failSilently; // @synthesize failSilently=_failSilently;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property unsigned long long number; // @synthesize number=_number;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
 @property __weak id <XCSInitializationOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) XCSInstallationConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly) id <VersionService> versionService;
 @property(readonly) id <SessionService> sessionService;
 @property(readonly) id <ServerAppService> serverAppService;

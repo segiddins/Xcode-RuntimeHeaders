@@ -50,6 +50,7 @@
 + (id)wrapperKeyPathsToObserve;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(retain) IBOutlineViewControllerItem *rootItem; // @synthesize rootItem=_rootItem;
 @property(copy) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(readonly, copy) NSSet *selectedMembers; // @synthesize selectedMembers=_selectedMembers;
@@ -60,7 +61,6 @@
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) IBOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(retain) DVTEmptyContentPlaceholder *placeholderView; // @synthesize placeholderView=_placeholderView;
-- (void).cxx_destruct;
 - (void)cut:(id)arg1;
 - (void)deleteBackward:(id)arg1;
 - (void)deleteForward:(id)arg1;

@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *mutableFailureSummaries; // @synthesize mutableFailureSummaries=_mutableFailureSummaries;
 @property double duration; // @synthesize duration=_duration;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)sparseSummaryGroupForTestIdentifiers:(id)arg1 blueprintName:(id)arg2;
 - (void)enumerateTestsUsingBlock:(CDUnknownBlockType)arg1 testableSummary:(id)arg2;
 @property(readonly) NSMutableArray *mutableContainedTestSummaries;

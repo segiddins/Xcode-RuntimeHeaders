@@ -39,6 +39,7 @@
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingThreads;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEDebugSession *parentDebugSession; // @synthesize parentDebugSession=_parentDebugSession;
 @property(nonatomic) BOOL threadsAutoRefreshStackFramesDone; // @synthesize threadsAutoRefreshStackFramesDone=_threadsAutoRefreshStackFramesDone;
 @property(readonly, nonatomic) unsigned long long addressByteSize; // @synthesize addressByteSize=_addressByteSize;
@@ -54,7 +55,6 @@
 @property(nonatomic) int PID; // @synthesize PID=_PID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)symbolicatedThreadFromAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 isLiteZone:(BOOL)arg3 isVMregion:(BOOL)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)deregisterThreadAutoRefreshesStackFrames:(id)arg1;

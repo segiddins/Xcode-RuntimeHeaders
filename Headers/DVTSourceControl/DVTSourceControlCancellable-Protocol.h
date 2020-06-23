@@ -6,8 +6,10 @@
 
 #import <DVTSourceControl/NSObject-Protocol.h>
 
+@class NSUUID;
+
 @protocol DVTSourceControlCancellable <NSObject>
-@property(readonly) unsigned long long authenticationOptions;
+@property(nonatomic, readonly) NSUUID *identifier;
 - (void)cancel;
 @end
 

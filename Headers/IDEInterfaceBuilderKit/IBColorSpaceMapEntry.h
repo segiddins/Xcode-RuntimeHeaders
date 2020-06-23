@@ -17,11 +17,11 @@
 }
 
 + (id)containerWithColorSpace:(id)arg1 archivedCS:(long long)arg2 customCS:(long long)arg3 archivingSelector:(SEL)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL archivingSelector; // @synthesize archivingSelector=_archivingSelector;
 @property(readonly, nonatomic) long long customArchivedColorSpace; // @synthesize customArchivedColorSpace=_customArchivedColorSpace;
 @property(readonly, nonatomic) long long archivedColorSpace; // @synthesize archivedColorSpace=_archivedColorSpace;
 @property(readonly, nonatomic) NSColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (id)initWithColorSpace:(id)arg1 archivedColorSpace:(long long)arg2 customArchivedColorSpace:(long long)arg3 archivingSelector:(SEL)arg4;
 
 @end

@@ -21,8 +21,8 @@
 }
 
 + (BOOL)canUserViewBotsOnService:(id)arg1;
-@property(retain) XCSUIBotDefinitionEditorWindowController *definitionEditorWindowController; // @synthesize definitionEditorWindowController=_definitionEditorWindowController;
 - (void).cxx_destruct;
+@property(retain) XCSUIBotDefinitionEditorWindowController *definitionEditorWindowController; // @synthesize definitionEditorWindowController=_definitionEditorWindowController;
 - (id)alertForFailureToHandleXCBotURLRequestOnHost:(id)arg1;
 - (void)showBot:(id)arg1 window:(id)arg2;
 - (void)showIntegrationWithID:(id)arg1 bot:(id)arg2 window:(id)arg3;

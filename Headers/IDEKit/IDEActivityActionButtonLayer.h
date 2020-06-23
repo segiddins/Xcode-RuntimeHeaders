@@ -14,9 +14,9 @@
     NSString *_actionDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *actionDescription; // @synthesize actionDescription=_actionDescription;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)layerShouldShowUnclickedState;

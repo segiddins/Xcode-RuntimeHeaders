@@ -13,8 +13,8 @@
     NSMutableDictionary *_mutableValues;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *mutableValues; // @synthesize mutableValues=_mutableValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *mutableValues; // @synthesize mutableValues=_mutableValues;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *values;

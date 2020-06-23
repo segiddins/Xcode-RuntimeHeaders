@@ -19,11 +19,11 @@
     NSError *_overridingError;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSError *overridingError; // @synthesize overridingError=_overridingError;
 @property unsigned long long state; // @synthesize state=_state;
 @property __weak IDETestTargetRunner *testTargetRunner; // @synthesize testTargetRunner=_testTargetRunner;
 @property(readonly) id <IDETestRunner> worker; // @synthesize worker=_worker;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)logMessage:(id)arg1;
 - (void)executeTestIdentifiers:(id)arg1 skippingTestIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;

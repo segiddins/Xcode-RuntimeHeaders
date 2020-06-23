@@ -15,8 +15,8 @@
     IDESourceControlTreeItem *_treeItem;
 }
 
-@property(retain) IDESourceControlTreeItem *treeItem; // @synthesize treeItem=_treeItem;
 - (void).cxx_destruct;
+@property(retain) IDESourceControlTreeItem *treeItem; // @synthesize treeItem=_treeItem;
 - (void)primitiveInvalidate;
 - (void)_childRepresentedObjects:(CDUnknownBlockType)arg1;
 - (id)childRepresentedObjects;

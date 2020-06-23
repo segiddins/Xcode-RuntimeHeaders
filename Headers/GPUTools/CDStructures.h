@@ -175,7 +175,9 @@ struct __wrap_iter<std::__1::unique_ptr<GPUTools::Playback::FunctionStreamEntry,
 };
 
 struct atomic<unsigned long> {
-    _Atomic unsigned long long __a_;
+    struct __cxx_atomic_impl<unsigned long, std::__1::__cxx_atomic_base_impl<unsigned long>> {
+        _Atomic unsigned long long __a_value;
+    } __a_;
 };
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {

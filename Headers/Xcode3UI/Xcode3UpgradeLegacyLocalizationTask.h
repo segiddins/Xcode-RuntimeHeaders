@@ -14,8 +14,8 @@
 }
 
 + (id)analyzeInContext:(id)arg1;
-@property(readonly, copy) DVTLocale *legacyLocalization; // @synthesize legacyLocalization=_legacyLocalization;
 - (void).cxx_destruct;
+@property(readonly, copy) DVTLocale *legacyLocalization; // @synthesize legacyLocalization=_legacyLocalization;
 - (void)deferHandlingTask;
 - (BOOL)shouldHandleImmediately;
 - (id)handlerForTask;

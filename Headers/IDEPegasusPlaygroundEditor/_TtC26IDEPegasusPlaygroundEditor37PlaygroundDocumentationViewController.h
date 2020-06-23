@@ -10,6 +10,7 @@
 
 @class MISSING_TYPE;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor37PlaygroundDocumentationViewController : DVTViewController <_TtP9DVTMarkup28PlaygroundMarkupViewDelegate_>
 {
     MISSING_TYPE *playgroundEditor;

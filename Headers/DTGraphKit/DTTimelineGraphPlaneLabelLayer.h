@@ -6,7 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class NSAttributedString, NSColor, NSFont, NSMutableAttributedString, NSString;
+@class NSAttributedString, NSColor, NSFont, NSMutableArray, NSMutableAttributedString, NSString;
 
 @interface DTTimelineGraphPlaneLabelLayer : CALayer
 {
@@ -23,6 +23,7 @@
     BOOL _mouseHoveringOverLabel;
     unsigned long long _options;
     CALayer *_glyphLayer;
+    NSMutableArray *_truncatedTexts;
     NSAttributedString *_string;
     NSString *_badgeString;
     NSString *_subtitleString;
@@ -32,6 +33,7 @@
     NSColor *_topSubtitleColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *topSubtitleColor; // @synthesize topSubtitleColor=_topSubtitleColor;
 @property(retain, nonatomic) NSColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(copy, nonatomic) NSString *rightContentString; // @synthesize rightContentString=_rightContentString;
@@ -39,11 +41,12 @@
 @property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
 @property(copy, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
 @property(copy, nonatomic) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)setContentsScale:(double)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
-- (struct __CTLine *)_createLineToDrawBasedOnString:(id)arg1 truncationType:(unsigned int)arg2 allowedWidth:(double)arg3 context:(struct CGContext *)arg4;
+- (void)_addTruncationAreaForFullString:(id)arg1 position:(struct CGPoint)arg2 boundsRect:(struct CGRect)arg3;
+- (id)_createLineToDrawBasedOnString:(id)arg1 truncationType:(unsigned int)arg2 allowedWidth:(double)arg3 context:(struct CGContext *)arg4;
 @property BOOL mouseHoveringOverLabel;
+- (id)tooltipForLabelLayerRelativePosition:(struct CGPoint)arg1;
 - (BOOL)getClickableGlyphFrame:(struct CGRect *)arg1;
 - (struct CGSize)preferredFrameSize;
 - (id)initWithOptions:(unsigned long long)arg1;

@@ -19,6 +19,7 @@
     NSTextField *_issueSubtitleTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *issueSubtitleTextField; // @synthesize issueSubtitleTextField=_issueSubtitleTextField;
 @property __weak NSTextField *issueTitleTextField; // @synthesize issueTitleTextField=_issueTitleTextField;
 @property __weak NSButton *issueButton; // @synthesize issueButton=_issueButton;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *issueURL; // @synthesize issueURL=_issueURL;
 @property(retain, nonatomic) NSString *issueSubtitle; // @synthesize issueSubtitle=_issueSubtitle;
 @property(retain, nonatomic) NSString *issueTitle; // @synthesize issueTitle=_issueTitle;
-- (void).cxx_destruct;
 - (BOOL)hidden;
 - (void)resolveIssueButtonClicked:(id)arg1;
 - (void)setupViewWithError:(id)arg1;

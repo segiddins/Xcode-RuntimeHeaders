@@ -16,6 +16,8 @@
 + (id)memberPropertyValueWithValue:(id)arg1;
 + (id)nilValue;
 - (void).cxx_destruct;
+- (id)ibTransformValueBeforeApplyingFromUndoStack;
+- (id)ibTransformValueBeforePushingOntoUndoStackWithDocument:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPropertyValue:(id)arg1;

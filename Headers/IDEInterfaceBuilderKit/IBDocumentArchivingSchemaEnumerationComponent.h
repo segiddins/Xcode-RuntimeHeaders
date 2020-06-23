@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly) NSString *typeName; // @synthesize typeName=_typeName;
 - (void).cxx_destruct;
+@property(readonly) NSString *typeName; // @synthesize typeName=_typeName;
 - (id)descriptionWithIndentationLevel:(long long)arg1;
 - (void)insertIntoSchema:(id)arg1;
 - (id)stringForValue:(long long)arg1;

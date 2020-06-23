@@ -27,6 +27,7 @@
     NSMutableDictionary *_dntTermList;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *dntTermList; // @synthesize dntTermList=_dntTermList;
 @property(retain) LOCITSRulesFile *packageDescriptionITSrules; // @synthesize packageDescriptionITSrules=_packageDescriptionITSrules;
 @property(retain) LOCITSRulesFile *searchTermsITSrules; // @synthesize searchTermsITSrules=_searchTermsITSrules;
@@ -42,7 +43,6 @@
 @property(retain) NSString *targetLocale; // @synthesize targetLocale=_targetLocale;
 @property(retain) NSString *sourceLocale; // @synthesize sourceLocale=_sourceLocale;
 @property(retain) LOCAGEnvironmentManager *environmentManager; // @synthesize environmentManager=_environmentManager;
-- (void).cxx_destruct;
 - (id)dntTermListForCurrentComponent;
 - (id)dntFilePathForComponentName:(id)arg1;
 - (id)itsRulesObjectForCurrentComponent;

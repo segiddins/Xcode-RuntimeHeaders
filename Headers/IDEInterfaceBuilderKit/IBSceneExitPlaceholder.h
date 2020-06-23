@@ -17,8 +17,8 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
+@property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTargetRuntime:(id)arg1;

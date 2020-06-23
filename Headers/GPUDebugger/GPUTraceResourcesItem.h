@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (id)APIItem;
 - (void)purgeResourceObjects:(id)arg1;
 - (void)populateUnusedResourcesData;

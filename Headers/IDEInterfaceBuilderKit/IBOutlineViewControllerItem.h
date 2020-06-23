@@ -26,6 +26,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSArray *filteredChildren; // @synthesize filteredChildren=_filteredChildren;
 @property(retain) IBOutlineViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
@@ -37,7 +38,6 @@
 @property(retain) id representedDocumentObjectForAutolayoutStatus; // @synthesize representedDocumentObjectForAutolayoutStatus=_representedDocumentObjectForAutolayoutStatus;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, nonatomic) IBOutlineViewControllerItem *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (long long)topLevelObjectInsertionIndexForChildIndex:(long long)arg1;
 - (long long)lastLegalInsertionIndex;
 - (long long)firstLegalInsertionIndex;

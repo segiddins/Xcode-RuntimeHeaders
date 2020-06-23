@@ -6,12 +6,12 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDENavigableItem, IDEWorkspace;
-@protocol IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingRemoveSubitemsTarget;
+@class IDEWorkspace;
+@protocol IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingItem, IDEStructureEditingRemoveSubitemsTarget;
 
 @protocol IDEStructureEditingTarget <NSObject>
-- (id <IDEStructureEditingRemoveSubitemsTarget>)structureEditingRemoveSubitemsTargetForParentNavigableItem:(IDENavigableItem *)arg1;
-- (id <IDEStructureEditingGroupingTarget>)structureEditingGroupingTargetForProposedNavigableItem:(IDENavigableItem *)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(IDEWorkspace *)arg4;
-- (id <IDEStructureEditingDropTarget>)structureEditingTargetForProposedNavigableItem:(IDENavigableItem *)arg1 proposedChildIndex:(long long)arg2;
+- (id <IDEStructureEditingRemoveSubitemsTarget>)structureEditingRemoveSubitemsTargetForParentItem:(id <IDEStructureEditingItem>)arg1;
+- (id <IDEStructureEditingGroupingTarget>)structureEditingGroupingTargetForProposedItem:(id <IDEStructureEditingItem>)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(IDEWorkspace *)arg4;
+- (id <IDEStructureEditingDropTarget>)structureEditingTargetForProposedItem:(id <IDEStructureEditingItem>)arg1 proposedChildIndex:(long long)arg2;
 @end
 

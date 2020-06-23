@@ -85,8 +85,6 @@
 - (id)contentStringForSecondaryEmptyEditorWithDocumentLocation:(id)arg1;
 - (id)contentStringForPrimaryEmptyEditorWithDocumentLocation:(id)arg1;
 @property(nonatomic, readonly) BOOL canBecomeMainViewController;
-- (BOOL)shouldShowEmptyEditorForSecondaryDocumentLocation:(id)arg1 submodeType:(int)arg2;
-- (BOOL)shouldShowEmptyEditorForPrimaryDocumentLocation:(id)arg1 submodeType:(int)arg2;
 @property(nonatomic, copy) id currentSelectedItem;
 - (void)toggleMessage:(id)arg1;
 - (void)secondaryActionClick:(id)arg1;

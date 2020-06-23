@@ -22,13 +22,13 @@
     GPUTraceShaderDataItem *_mainDataItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUTraceShaderDataItem *mainDataItem; // @synthesize mainDataItem=_mainDataItem;
 @property(readonly, nonatomic) id <DYFunctionSource> functionSource; // @synthesize functionSource=_functionSource;
 @property(readonly, nonatomic) NSArray *fileItems; // @synthesize fileItems=_fileItems;
 @property(readonly, nonatomic) id <DYPFunctionInfo> functionInfo; // @synthesize functionInfo=_functionInfo;
 @property(readonly, nonatomic) NSString *infoLog; // @synthesize infoLog=_infoLog;
 @property(readonly, nonatomic) unsigned int shaderType; // @synthesize shaderType=_shaderType;
-- (void).cxx_destruct;
 - (id)shaderTypeLabel;
 - (void)purgeResourceObject;
 - (void)resourceObjectWithCompletionHandler:(CDUnknownBlockType)arg1;

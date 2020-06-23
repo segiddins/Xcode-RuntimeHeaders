@@ -4,9 +4,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSUUID;
+@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSUUID, XCTSpindumpRequestSpecification;
 
 @protocol XCTestManager_DaemonConnectionInterface
+- (id)_IDE_requestSpindumpWithSpecification:(XCTSpindumpRequestSpecification *)arg1;
 - (id)_IDE_requestSpindump;
 - (id)_IDE_requestLogArchiveWithStartDate:(NSDate *)arg1;
 - (id)_IDE_collectNewCrashReportsInDirectories:(NSArray *)arg1 matchingProcessNames:(NSArray *)arg2;

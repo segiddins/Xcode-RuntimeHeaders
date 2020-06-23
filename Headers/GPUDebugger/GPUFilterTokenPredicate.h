@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_filterableObjectPredicateBlocksQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *filterableObjectPredicateBlocksQueue; // @synthesize filterableObjectPredicateBlocksQueue=_filterableObjectPredicateBlocksQueue;
 @property(readonly, nonatomic) NSArray *filterableObjectPredicateBlocks; // @synthesize filterableObjectPredicateBlocks=_filterableObjectPredicateBlocks;
 @property(nonatomic) unsigned long long predicateType; // @synthesize predicateType=_predicateType;
 @property(nonatomic) int globalOperator; // @synthesize globalOperator=_globalOperator;
 @property(retain, nonatomic) NSString *editingString; // @synthesize editingString=_editingString;
 @property(retain, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
-- (void).cxx_destruct;
 - (BOOL)isEqualTo:(id)arg1;
 - (void)_addComparisonBlock:(CDUnknownBlockType)arg1;
 - (BOOL)evaluateWithObject:(id)arg1;

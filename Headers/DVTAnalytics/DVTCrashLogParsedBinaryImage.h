@@ -20,13 +20,13 @@
     NSString *_parserIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
 @property(retain) NSString *path; // @synthesize path=_path;
 @property(retain) NSString *uuidString; // @synthesize uuidString=_uuidString;
 @property(retain) NSString *endAddress; // @synthesize endAddress=_endAddress;
 @property(retain) NSString *startAddress; // @synthesize startAddress=_startAddress;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

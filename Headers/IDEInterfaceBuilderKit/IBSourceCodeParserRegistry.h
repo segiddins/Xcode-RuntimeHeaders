@@ -19,12 +19,12 @@
 }
 
 + (id)sourceCodeParserRegistryForPlatform:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSSet *secondaryParsableFileTypeIdentifiers; // @synthesize secondaryParsableFileTypeIdentifiers=_secondaryParsableFileTypeIdentifiers;
 @property(readonly) NSSet *primaryParsableFileTypeIdentifiers; // @synthesize primaryParsableFileTypeIdentifiers=_primaryParsableFileTypeIdentifiers;
 @property(readonly) NSSet *supportedFileTypeIdentifiers; // @synthesize supportedFileTypeIdentifiers=_supportedFileTypeIdentifiers;
 @property(readonly) NSSet *supportedFileExtensions; // @synthesize supportedFileExtensions=_supportedFileExtensions;
 @property(readonly) IBPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (id)parserForFileExtension:(id)arg1;
 - (id)initWithPlatform:(id)arg1;
 

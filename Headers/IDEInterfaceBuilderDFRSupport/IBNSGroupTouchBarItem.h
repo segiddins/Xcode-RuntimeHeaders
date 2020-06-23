@@ -20,9 +20,9 @@
 + (id)keyPathsForValuesAffectingIbInspectedGroupUserInterfaceLayoutDirection;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property long long groupUserInterfaceLayoutDirection; // @synthesize groupUserInterfaceLayoutDirection=_groupUserInterfaceLayoutDirection;
 @property(retain) IBNSTouchBar *groupTouchBar; // @synthesize groupTouchBar=_groupTouchBar;
-- (void).cxx_destruct;
 - (id)childTouchBar;
 - (id)runtimeTouchBarItem;
 - (void)encodeWithCoder:(id)arg1;

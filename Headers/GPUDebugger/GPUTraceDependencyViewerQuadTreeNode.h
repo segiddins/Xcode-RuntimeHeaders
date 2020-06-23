@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _quad;
 }
 
-@property(nonatomic) struct CGRect quad; // @synthesize quad=_quad;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect quad; // @synthesize quad=_quad;
 - (BOOL)fullyContains:(struct CGRect)arg1;
 - (BOOL)subdivide;
 - (BOOL)hasSubQuads;

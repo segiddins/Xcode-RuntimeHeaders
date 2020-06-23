@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary;
+@class NSMapTable;
 @protocol OS_dispatch_queue;
 
 @interface IDERuntimeProfileInfo : NSObject
 {
-    NSMutableDictionary *_pathsForBundleIDs;
+    NSMapTable *_pathsForBundleIDsByDevice;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (void)trackPath:(id)arg1 forBundleID:(id)arg2;
-@property(readonly) NSDictionary *pathsForBundleIDs;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+- (void)trackPath:(id)arg1 forBundleID:(id)arg2 onDevice:(id)arg3;
+@property(readonly) NSMapTable *pathsForBundleIDsByDevice;
 - (id)init;
 
 @end

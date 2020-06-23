@@ -14,8 +14,8 @@
 }
 
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
-@property(readonly) DVTCrashLog *crashLog; // @synthesize crashLog=_crashLog;
 - (void).cxx_destruct;
+@property(readonly) DVTCrashLog *crashLog; // @synthesize crashLog=_crashLog;
 - (void)printDocument:(id)arg1;
 - (int)readOnlyStatus;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;

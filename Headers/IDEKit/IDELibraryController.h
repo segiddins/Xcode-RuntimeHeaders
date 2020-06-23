@@ -17,9 +17,9 @@
     IDEWorkspaceTabController *_contentDefiningWorkspaceTabController;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEWorkspaceTabController *contentDefiningWorkspaceTabController; // @synthesize contentDefiningWorkspaceTabController=_contentDefiningWorkspaceTabController;
 @property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (BOOL)depositAssets:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

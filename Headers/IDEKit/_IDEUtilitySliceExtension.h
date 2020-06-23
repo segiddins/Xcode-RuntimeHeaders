@@ -13,8 +13,8 @@
     DVTExtension *_extension;
 }
 
-@property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
 - (id)description;
 - (BOOL)wantsBottomPadding;
 - (BOOL)wantsHeaderBottomBorder;

@@ -21,9 +21,9 @@
     CDUnknownBlockType requestAccessHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType requestAccessHandler; // @synthesize requestAccessHandler;
 @property(copy) CDUnknownBlockType skipHandler; // @synthesize skipHandler;
-- (void).cxx_destruct;
 - (void)skip:(id)arg1;
 - (void)requestAccess:(id)arg1;
 - (void)viewDidAppear;

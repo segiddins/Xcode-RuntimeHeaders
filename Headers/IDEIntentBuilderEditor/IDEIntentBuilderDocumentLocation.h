@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
 @property(readonly, copy, nonatomic) NSString *parentItemName; // @synthesize parentItemName=_parentItemName;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -10,7 +10,7 @@
 #import <DevToolsCore/XCConfigurationInspectables-Protocol.h>
 #import <DevToolsCore/XCConfigurationListOwners-Protocol.h>
 
-@class DVTNotificationToken, DVTPerformanceMetric, DVTToolsVersion, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber, NSString, PBXFileReference, PBXProject, PBXTargetBuildContext, XCConfigurationList, XCTargetHeadermapCreationInfo, Xcode3Target;
+@class DVTNotificationToken, DVTPerformanceMetric, DVTToolsVersion, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber, NSString, PBXBuildPhase, PBXFileReference, PBXProject, PBXTargetBuildContext, XCConfigurationList, XCTargetHeadermapCreationInfo, Xcode3Target;
 @protocol DVTInvalidation, IDEProvisioningBasicTeam;
 
 @interface PBXTarget : PBXProjectItem <XCCompatibilityChecking, XCConfigurationInspectables, XCConfigurationListOwners>
@@ -89,11 +89,11 @@
 + (id)targetTypeName;
 + (id)categorizedTargetName;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak Xcode3Target *xcode3Target; // @synthesize xcode3Target=_xcode3Target;
 @property(retain, nonatomic) NSDictionary *cachedProductSettings; // @synthesize cachedProductSettings=_cachedProductSettings;
 @property(copy, nonatomic) NSString *targetTemplateIdentifier; // @synthesize targetTemplateIdentifier=_targetTemplateIdentifier;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)collectMessageTracerStatisticsIntoDictionary:(id)arg1;
 - (void)discardCachedHeadermapCreationInfo;
 - (id)cachedHeadermapCreationInfoForConfigurationNamed:(id)arg1 ignoreProductType:(BOOL)arg2 includeNonPublicNonPrivateHeaders:(BOOL)arg3;
@@ -286,6 +286,8 @@
 - (id)cachedMacroExpansionScopeForWorkspaceArenaSnapshot:(id)arg1 configurationNamed:(id)arg2;
 - (id)cachedMacroExpansionScopeForBuildParameters:(id)arg1;
 - (id)createMacroExpansionScopeWithBuildParameters:(id)arg1;
+- (void)optTargetIntoMacCatalystIfNecessary:(id)arg1 forReference:(id)arg2;
+@property(readonly, nonatomic) BOOL supportsMacCatalyst;
 - (id)platform;
 - (id)platformForConfigurationNamed:(id)arg1;
 - (void)_buildSettingsDidChangeForConfigurationNamed:(id)arg1;
@@ -295,6 +297,7 @@
 - (void)addAdditionalMacrosToDynamicallyComputedTargetMacros:(id)arg1 withAction:(id)arg2 andConfigurationName:(id)arg3;
 - (id)dynamicallyComputedDefaultTargetBuildSettingsWithInfoContext:(id)arg1;
 - (id)dynamicallyComputedDefaultTargetMacrosForScope:(id)arg1;
+- (BOOL)_linksFrameworkWithName:(id)arg1 macroExpansionScope:(id)arg2;
 - (id)standardArchitecturesOverrideForPlatform:(id)arg1 macroExpansionScope:(id)arg2;
 - (id)cDialectsOfSourceFilesForConfigurationNamed:(id)arg1;
 - (BOOL)removeReference:(id)arg1;
@@ -308,13 +311,13 @@
 - (BOOL)allowsShellScriptBuildPhases;
 - (BOOL)allowsBuildPhasesOfClass:(Class)arg1;
 - (BOOL)wantsTopLevelItemForBuildPhases;
-- (id)defaultRezBuildPhase;
-- (id)defaultJavaArchiveBuildPhase;
-- (id)defaultFrameworksBuildPhase;
-- (id)defaultLinkBuildPhase;
-- (id)defaultSourceCodeBuildPhase;
-- (id)defaultResourceBuildPhase;
-- (id)defaultHeaderBuildPhase;
+@property(readonly) PBXBuildPhase *defaultRezBuildPhase;
+@property(readonly) PBXBuildPhase *defaultJavaArchiveBuildPhase;
+@property(readonly) PBXBuildPhase *defaultFrameworksBuildPhase;
+@property(readonly) PBXBuildPhase *defaultLinkBuildPhase;
+@property(readonly) PBXBuildPhase *defaultSourceCodeBuildPhase;
+@property(readonly) PBXBuildPhase *defaultResourceBuildPhase;
+@property(readonly) PBXBuildPhase *defaultHeaderBuildPhase;
 - (id)buildPhasesOfClass:(Class)arg1;
 - (id)buildPhaseOfClass:(Class)arg1;
 - (id)buildPhaseNamed:(id)arg1;
@@ -325,6 +328,7 @@
 - (void)insertBuildPhase:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)acceptsBuildPhase:(id)arg1;
 @property(readonly) NSArray *buildPhases;
+- (id)platformFiltersForReference:(id)arg1;
 - (void)removePackageProductDependency:(id)arg1;
 - (void)addPackageProductDependency:(id)arg1;
 - (void)insertPackageProductDependencies:(id)arg1 atIndex:(unsigned long long)arg2;

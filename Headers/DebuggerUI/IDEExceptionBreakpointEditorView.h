@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingExceptionNameHidden;
-@property(retain) IDEExceptionBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (void).cxx_destruct;
+@property(retain) IDEExceptionBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 @property(readonly) BOOL exceptionNameHidden;
 - (void)loadView;
 - (id)initWithBreakpoint:(id)arg1;

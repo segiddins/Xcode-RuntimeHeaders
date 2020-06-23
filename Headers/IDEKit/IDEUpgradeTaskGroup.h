@@ -19,10 +19,10 @@
     NSArray *_upgradeTasks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *upgradeTasks; // @synthesize upgradeTasks=_upgradeTasks;
 @property(nonatomic) long long selected; // @synthesize selected=_selected;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_updateSelected;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)dealloc;

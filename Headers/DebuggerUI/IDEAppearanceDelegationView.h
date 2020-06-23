@@ -13,8 +13,8 @@
     id <IDEAppearanceDelegationViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IDEAppearanceDelegationViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IDEAppearanceDelegationViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewDidChangeEffectiveAppearance;
 
 @end

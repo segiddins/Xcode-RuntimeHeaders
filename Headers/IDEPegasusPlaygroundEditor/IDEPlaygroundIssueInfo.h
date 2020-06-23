@@ -14,9 +14,9 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *message; // @synthesize message=_message;
 @property(readonly) DVTDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
-- (void).cxx_destruct;
 - (id)initWithDocumentLocation:(id)arg1 message:(id)arg2;
 
 @end

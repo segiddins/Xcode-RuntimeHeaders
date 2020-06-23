@@ -18,11 +18,11 @@
     IBMemberConfiguration *_baseMemberConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBMemberConfiguration *baseMemberConfiguration; // @synthesize baseMemberConfiguration=_baseMemberConfiguration;
 @property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly) NSView *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
 @property(nonatomic) __weak id <IBDeviceTraitPickerPopoverViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showHelp:(id)arg1;
 - (void)toggleMemberConfigurationVariable:(id)arg1;
 - (void)updateStackView;

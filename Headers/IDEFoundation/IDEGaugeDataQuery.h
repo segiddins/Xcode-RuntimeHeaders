@@ -22,13 +22,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useProxiedDevice; // @synthesize useProxiedDevice=_useProxiedDevice;
 @property(nonatomic) BOOL isSuspended; // @synthesize isSuspended=_isSuspended;
 @property(copy, nonatomic) CDUnknownBlockType resultDictHandler; // @synthesize resultDictHandler=_resultDictHandler;
 @property(copy, nonatomic) NSSet *observedAttributes; // @synthesize observedAttributes=_observedAttributes;
 @property(retain) IDEGaugeDataProviderService *service; // @synthesize service=_service;
 @property(retain, nonatomic) IDEGaugeDataQueryCoordinator *queryCoordinator; // @synthesize queryCoordinator=_queryCoordinator;
-- (void).cxx_destruct;
 - (void)handleResultDict:(id)arg1;
 - (void)setObservedAttributes:(id)arg1 requiredAttribute:(id)arg2;
 - (void)primitiveInvalidate;

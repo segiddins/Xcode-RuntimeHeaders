@@ -17,18 +17,18 @@
     NSArray *_sortedContributors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortedContributors; // @synthesize sortedContributors=_sortedContributors;
 @property(retain, nonatomic) XCSCommit *commitHistory; // @synthesize commitHistory=_commitHistory;
 @property(retain, nonatomic) NSArray *commits; // @synthesize commits=_commits;
 @property(nonatomic) __weak XCSContributor *topCommitter; // @synthesize topCommitter=_topCommitter;
 @property(retain, nonatomic) NSArray *committers; // @synthesize committers=_committers;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *committersOrderedByFilesChanged;
-- (BOOL)_validateWithCommits:(struct NSArray *)arg1 validationErrors:(id *)arg2;
+- (BOOL)_validateWithCommits:(id)arg1 validationErrors:(id *)arg2;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (id)initWithCommits:(struct NSArray *)arg1 validationErrors:(id *)arg2;
+- (id)initWithCommits:(id)arg1 validationErrors:(id *)arg2;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 
 @end

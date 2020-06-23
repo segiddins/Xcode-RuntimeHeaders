@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSArray *parents; // @synthesize parents=_parents;
 @property(retain, nonatomic) NSString *previousFilePath; // @synthesize previousFilePath=_previousFilePath;
 @property(retain, nonatomic) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

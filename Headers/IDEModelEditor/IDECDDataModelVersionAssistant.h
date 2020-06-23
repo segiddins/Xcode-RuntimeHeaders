@@ -16,11 +16,11 @@
     BOOL canFinish;
 }
 
+- (void).cxx_destruct;
 @property BOOL canFinish; // @synthesize canFinish;
 @property(copy) NSString *selectedModel; // @synthesize selectedModel;
 @property(copy) NSArray *modelNames; // @synthesize modelNames;
 @property(copy) NSString *versionName; // @synthesize versionName;
-- (void).cxx_destruct;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)alwaysShowFinish;
 - (BOOL)canGoForward;

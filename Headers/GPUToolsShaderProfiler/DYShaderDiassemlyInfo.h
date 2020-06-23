@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int opcodeType; // @synthesize opcodeType=_opcodeType;
 @property(nonatomic) unsigned int opcodeSubType; // @synthesize opcodeSubType=_opcodeSubType;
 @property(nonatomic) unsigned int opcode; // @synthesize opcode=_opcode;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *disasmSource; // @synthesize disasmSource=_disasmSource;
 @property(nonatomic) double cost; // @synthesize cost=_cost;
 @property(nonatomic) int offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -27,8 +27,8 @@
 + (BOOL)isRenderEndWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (id)newShaderProfilerWithDelegate:(id)arg1;
 + (void)loadLLDB;
-@property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)calculateUtilizations:(id)arg1 result:(id)arg2;
 - (void)calculateFrameTime:(id)arg1 result:(id)arg2;
 - (id)profileFrame;

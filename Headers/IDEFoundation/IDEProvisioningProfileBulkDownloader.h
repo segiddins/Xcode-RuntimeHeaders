@@ -22,6 +22,7 @@
 }
 
 + (id)defaultDownloader;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(retain, nonatomic) id <IDEProvisioningProfileDownloaderPortal> portal; // @synthesize portal=_portal;
 @property(retain, nonatomic) DVTProvisioningProfileManager *profileManager; // @synthesize profileManager=_profileManager;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSOperationQueue *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property double progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isBusy) BOOL busy; // @synthesize busy=_busy;
-- (void).cxx_destruct;
 - (void)downloadProfilesForTeam:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)serialBackgroundDownloadProfilesForTeam:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)eligiblePlatformsForTeam:(id)arg1;
@@ -38,7 +38,8 @@
 - (void)installDownloadedPortalProfiles:(id)arg1 errors:(id *)arg2;
 - (id)fetchProvisioningProfiles;
 - (void)waitForAreProfilesLoaded;
-- (id)portalProfilesForTeam:(id)arg1 session:(id)arg2 platform:(id)arg3 error:(id *)arg4;
+- (id)portalProfilesForTeam:(id)arg1 session:(id)arg2 error:(id *)arg3;
+- (id)portalProfilesForTeam:(id)arg1 session:(id)arg2 platform:(id)arg3 sdkVariant:(id)arg4 error:(id *)arg5;
 - (id)manualProfiles:(id)arg1;
 - (id)initWithSessionManager:(id)arg1 profileManager:(id)arg2 portal:(id)arg3;
 

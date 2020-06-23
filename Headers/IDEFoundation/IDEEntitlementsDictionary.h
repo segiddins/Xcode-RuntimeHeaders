@@ -18,8 +18,8 @@
 }
 
 + (id)whiteoutMarker;
-@property(readonly) IDEEntitlementsDictionary *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(readonly) IDEEntitlementsDictionary *parent; // @synthesize parent=_parent;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setDictionary:(id)arg1;

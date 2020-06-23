@@ -22,12 +22,12 @@
     DVTButtonTextField *_multiplierTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTButtonTextField *multiplierTextField; // @synthesize multiplierTextField=_multiplierTextField;
 @property(retain) DVTButtonTextField *constantTextField; // @synthesize constantTextField=_constantTextField;
 @property(retain) DVTButtonTextField *priorityTextField; // @synthesize priorityTextField=_priorityTextField;
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;

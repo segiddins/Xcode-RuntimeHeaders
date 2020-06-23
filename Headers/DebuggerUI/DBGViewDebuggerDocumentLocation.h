@@ -16,8 +16,8 @@
     NSString *_viewObjectAddress;
 }
 
-@property(readonly) NSString *viewObjectAddress; // @synthesize viewObjectAddress=_viewObjectAddress;
 - (void).cxx_destruct;
+@property(readonly) NSString *viewObjectAddress; // @synthesize viewObjectAddress=_viewObjectAddress;
 @property(readonly, nonatomic) id <NSCopying> issueCoalescingGroupIdentifier;
 - (id)description;
 - (unsigned long long)hash;

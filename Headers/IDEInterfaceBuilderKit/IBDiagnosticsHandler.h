@@ -18,9 +18,9 @@
 }
 
 + (void)_protectAgainstReentrantDiagnosticsDuring:(CDUnknownBlockType)arg1 fallbackBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) NSString *fileNamePrefix; // @synthesize fileNamePrefix=_fileNamePrefix;
-- (void).cxx_destruct;
 - (id)pathToDiagnosticsDirectoryAfterWritingDiagnostics:(id *)arg1;
 - (void)_finishConfiguring;
 - (id)pathToZipFileAfterWritingDiagnostics:(id *)arg1;

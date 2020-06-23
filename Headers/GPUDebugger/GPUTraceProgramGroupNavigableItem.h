@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     GPUFilterTokenPredicate *_filterPredicate;
 }
 
-@property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUFilterTokenPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 - (void)invalidateChildItems;
 @property(readonly, nonatomic) NSArray *childRepresentedObjects;
 - (id)_filterChildren;

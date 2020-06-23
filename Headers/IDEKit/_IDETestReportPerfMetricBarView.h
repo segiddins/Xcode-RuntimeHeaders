@@ -21,6 +21,7 @@
     double _graphXOriginRelativeToHostView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mouseInside; // @synthesize mouseInside=_mouseInside;
 @property double graphXOriginRelativeToHostView; // @synthesize graphXOriginRelativeToHostView=_graphXOriginRelativeToHostView;
 @property(retain) NSView *hostView; // @synthesize hostView=_hostView;
@@ -28,7 +29,6 @@
 @property unsigned long long iterationNumber; // @synthesize iterationNumber=_iterationNumber;
 @property double percentChanged; // @synthesize percentChanged=_percentChanged;
 @property double rawValue; // @synthesize rawValue=_rawValue;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

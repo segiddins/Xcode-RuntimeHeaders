@@ -6,6 +6,7 @@
 
 #import <IDEPegasusPlaygroundEditor/_TtC26IDEPegasusPlaygroundEditor27PlaygroundEditorSidebarView.h>
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor37PlaygroundEditorSidebarBackgroundView : _TtC26IDEPegasusPlaygroundEditor27PlaygroundEditorSidebarView
 {
 }

@@ -18,8 +18,8 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
-@property(readonly) id <IDEFlightChecking> signingIdentityFlightCheck; // @synthesize signingIdentityFlightCheck=_signingIdentityFlightCheck;
 - (void).cxx_destruct;
+@property(readonly) id <IDEFlightChecking> signingIdentityFlightCheck; // @synthesize signingIdentityFlightCheck=_signingIdentityFlightCheck;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

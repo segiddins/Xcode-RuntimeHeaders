@@ -13,6 +13,7 @@
     MISSING_TYPE *sourceEditorView;
     MISSING_TYPE *dataSource;
     MISSING_TYPE *$__lazy_storage_$_spellCheckIndicationLayer;
+    MISSING_TYPE *forceAutomaticallyCheckSpellingWhileTyping;
     MISSING_TYPE *lineResultsCache;
     MISSING_TYPE *spellCheckerDocumentTag;
     MISSING_TYPE *$__lazy_storage_$_viewportSpellCheckingContinuation;

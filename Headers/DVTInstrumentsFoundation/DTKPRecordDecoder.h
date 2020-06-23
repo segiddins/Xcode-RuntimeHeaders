@@ -49,13 +49,13 @@
 
 + (unsigned long long)peekAtFirstRecordTimestampInDatastream:(id)arg1;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *tailspinLPET; // @synthesize tailspinLPET=_tailspinLPET;
 @property BOOL decodeKTraceFromSession; // @synthesize decodeKTraceFromSession=_decodeKTraceFromSession;
 @property BOOL decodeKPerfFromSession; // @synthesize decodeKPerfFromSession=_decodeKPerfFromSession;
 @property(retain, nonatomic) NSDictionary *tidToPid; // @synthesize tidToPid=_tidToPid;
 @property(readonly, nonatomic) unsigned long long eventHorizon; // @synthesize eventHorizon=_eventHorizon;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)logKPRecsFromBuffer:(const void *)arg1 bufferSize:(unsigned long long)arg2 finalBuffer:(BOOL)arg3 includingCallstacks:(BOOL)arg4 toFile:(struct __sFILE *)arg5;
 - (void)_logKPRec:(struct kpdecode_record *)arg1 includingCallstacks:(BOOL)arg2 toFile:(struct __sFILE *)arg3;
 - (int)flushRecords:(CDUnknownBlockType)arg1;

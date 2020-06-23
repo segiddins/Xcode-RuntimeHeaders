@@ -15,8 +15,8 @@
     unsigned long long _lastMachContinuousTimeSeen;
 }
 
-@property(nonatomic) unsigned long long lastMachContinuousTimeSeen; // @synthesize lastMachContinuousTimeSeen=_lastMachContinuousTimeSeen;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long lastMachContinuousTimeSeen; // @synthesize lastMachContinuousTimeSeen=_lastMachContinuousTimeSeen;
 - (const void *)getBufferWithLength:(unsigned long long *)arg1;
 - (id)initWithMessage:(id)arg1;
 - (id)initWithData:(id)arg1;

@@ -16,9 +16,7 @@ __attribute__((visibility("hidden")))
     AVAudioEngine *_engine;
     AVAudioMixerNode *_sampleRateConverter;
     AVAudioPlayerNode *_playingNode;
-    struct atomic<bool> _ignoreCompletionCallback;
-    BOOL _didHitStop;
-    struct recursive_mutex _completionMutex;
+    struct atomic<bool> _didHitStop;
     struct atomic<bool> _looping;
     id _resource;
     struct mutex _engineConfigurationMutex;
@@ -28,20 +26,27 @@ __attribute__((visibility("hidden")))
     struct ComponentInstanceRecord *_playingNodeAudioUnit;
     double _startTime;
     double _pauseTime;
-    double _renderSampleTime;
+    struct atomic<double> _renderSampleTime;
+    unsigned long long _currentPlayTimeParamAddress;
+    struct atomic<REAudioPlaybackState> _playbackState;
+    struct atomic<unsigned int> _playedFrames;
+    _Bool _isScheduled;
+    struct atomic<bool> _shouldDispatchCompletion;
     NSObject<OS_dispatch_queue> *_serialWorkQueue;
     CDUnknownBlockType _streamPlaybackDidComplete;
 }
 
-@property(copy) CDUnknownBlockType streamPlaybackDidComplete; // @synthesize streamPlaybackDidComplete=_streamPlaybackDidComplete;
-@property(retain) NSObject<OS_dispatch_queue> *serialWorkQueue; // @synthesize serialWorkQueue=_serialWorkQueue;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType streamPlaybackDidComplete; // @synthesize streamPlaybackDidComplete=_streamPlaybackDidComplete;
+@property(retain) NSObject<OS_dispatch_queue> *serialWorkQueue; // @synthesize serialWorkQueue=_serialWorkQueue;
 - (id)outputBusses;
 - (id)channelCapabilities;
 - (CDUnknownBlockType)internalRenderBlock;
 - (void)deallocateRenderResources;
 - (BOOL)allocateRenderResourcesAndReturnError:(id *)arg1;
+@property double playbackPosition;
+@property(readonly) double assetDuration;
 - (void)resume;
 - (void)pause;
 - (void)stop;
@@ -49,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL isPrepared;
 - (void)prepareToPlayBuffer:(id)arg1 looping:(BOOL)arg2;
 - (void)prepareToPlayFile:(id)arg1 looping:(BOOL)arg2;
+- (void)scheduleCurrentResourceOnPlayer:(id)arg1 startingProgress:(double)arg2;
 - (void)scheduleCurrentResourceOnPlayer:(id)arg1;
 - (void)_playbackCompletionCallback;
 - (id)initWithComponentDescription:(struct AudioComponentDescription)arg1 options:(unsigned int)arg2 error:(id *)arg3;

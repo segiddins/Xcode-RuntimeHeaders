@@ -16,8 +16,8 @@
 }
 
 + (void)initialize;
-@property(readonly) id domainItem; // @synthesize domainItem=_domainItem;
 - (void).cxx_destruct;
+@property(readonly) id domainItem; // @synthesize domainItem=_domainItem;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) NSArray *logRecords;
 - (void)primitiveInvalidate;

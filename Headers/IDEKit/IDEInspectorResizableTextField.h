@@ -14,9 +14,9 @@
     CDStruct_bf6d4a14 _textFieldInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) CDStruct_bf6d4a14 textFieldInset; // @synthesize textFieldInset=_textFieldInset;
-- (void).cxx_destruct;
 - (void)textFieldTextDidChange:(id)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

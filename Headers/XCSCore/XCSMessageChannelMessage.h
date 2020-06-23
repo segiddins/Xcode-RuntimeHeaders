@@ -16,11 +16,11 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property unsigned int type; // @synthesize type=_type;
 @property unsigned char tag; // @synthesize tag=_tag;
 @property unsigned char category; // @synthesize category=_category;
-- (void).cxx_destruct;
 
 @end
 

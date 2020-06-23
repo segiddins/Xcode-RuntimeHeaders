@@ -16,11 +16,11 @@
     NSString *_unitTestKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *unitTestKey; // @synthesize unitTestKey=_unitTestKey;
 @property(readonly, nonatomic) int displayType; // @synthesize displayType=_displayType;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)represents:(id)arg1;
 - (id)fontValue;

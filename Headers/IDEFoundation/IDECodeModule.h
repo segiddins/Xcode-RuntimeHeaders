@@ -24,12 +24,12 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)frameworkNameIncludingExtensionFromPath:(id)arg1;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(nonatomic) int debugSymbolsLoadState; // @synthesize debugSymbolsLoadState=_debugSymbolsLoadState;
 @property(nonatomic) BOOL isInBuiltProductDirectories; // @synthesize isInBuiltProductDirectories=_isInBuiltProductDirectories;
 @property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *path;
 @property(readonly, nonatomic) NSString *displayAddress;
 @property(readonly, nonatomic) NSNumber *timestamp; // @synthesize timestamp=_timestamp;

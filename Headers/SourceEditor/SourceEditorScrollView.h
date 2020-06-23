@@ -24,12 +24,12 @@
     struct NSEdgeInsets _additionalContentInsets;
 }
 
+- (void).cxx_destruct;
 @property BOOL updatingAutoContentInsets; // @synthesize updatingAutoContentInsets=_updatingAutoContentInsets;
 @property struct NSEdgeInsets additionalContentInsets; // @synthesize additionalContentInsets=_additionalContentInsets;
 @property BOOL isLiveScrolling; // @synthesize isLiveScrolling=_isLiveScrolling;
 @property __weak id <SourceEditorScrollViewScrollerMoved> scrollerMovedDelegate; // @synthesize scrollerMovedDelegate=_scrollerMovedDelegate;
 @property __weak id <SourceEditorPrivateScrollViewDelegate> privateScrollViewDelegate; // @synthesize privateScrollViewDelegate=_privateScrollViewDelegate;
-- (void).cxx_destruct;
 - (void)scrollView:(id)arg1 didChangePresentationOrigin:(struct CGPoint)arg2 active:(BOOL)arg3;
 - (BOOL)dvt_autoforwardsScrollWheelEvents;
 - (void)dvt_setAutoforwardsScrollWheelEvents:(BOOL)arg1;

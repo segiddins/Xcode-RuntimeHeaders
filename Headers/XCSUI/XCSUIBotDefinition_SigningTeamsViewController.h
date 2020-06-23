@@ -32,6 +32,7 @@
     NSMenu *_teamCellContextMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMenu *teamCellContextMenu; // @synthesize teamCellContextMenu=_teamCellContextMenu;
 @property(copy, nonatomic) NSArray *teams; // @synthesize teams=_teams;
 @property __weak NSButton *addMissingDevicesToTeamsButton; // @synthesize addMissingDevicesToTeamsButton=_addMissingDevicesToTeamsButton;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) CDUnknownBlockType fetchTeamsCallback; // @synthesize fetchTeamsCallback=_fetchTeamsCallback;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 @property(nonatomic) __weak XCSUIBotDefinition_SigningEditor *signingEditor; // @synthesize signingEditor=_signingEditor;
-- (void).cxx_destruct;
 - (void)showError:(id)arg1;
 - (void)reviewAgreement:(id)arg1;
 - (void)removeTeam:(id)arg1;

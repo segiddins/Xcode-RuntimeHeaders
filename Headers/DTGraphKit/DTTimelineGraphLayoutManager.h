@@ -8,11 +8,12 @@
 
 #import <DTGraphKit/CALayerDelegate-Protocol.h>
 #import <DTGraphKit/CALayoutManager-Protocol.h>
+#import <DTGraphKit/DTTimelineGraphTooltipPresentationDelegate-Protocol.h>
 
 @class CALayer, CATextLayer, DTTimelineGraph, DTTimelineGraphLabelAreaSubtree, DTTimelineGraphPinnedLabelAreaSubtree, DTTimelineSelectionLayerSubtree, DTTimelineZoomSelectionLayerSubtree, NSMutableSet, NSSet, NSString, _DTTimelineScrollView;
 
 __attribute__((visibility("hidden")))
-@interface DTTimelineGraphLayoutManager : NSObject <CALayerDelegate, CALayoutManager>
+@interface DTTimelineGraphLayoutManager : NSObject <CALayerDelegate, DTTimelineGraphTooltipPresentationDelegate, CALayoutManager>
 {
     DTTimelineGraph *_timelineGraph;
     CALayer *_inspectionPointLayer;
@@ -38,16 +39,18 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_delegatedLayers;
     NSSet *__decoratedVisiblePlaneSet;
     struct map<double, DTTimelinePlaneBorderSubtree *, std::__1::less<double>, std::__1::allocator<std::__1::pair<const double, DTTimelinePlaneBorderSubtree *>>> _borderMap;
+    NSString *_presentedLabelTooltip;
+    id _presentedTooltipOwner;
     BOOL _animateChanges;
     BOOL _displayCurrentInspectionTime;
     BOOL _showsScrollers;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsScrollers; // @synthesize showsScrollers=_showsScrollers;
 @property(nonatomic) BOOL displayCurrentInspectionTime; // @synthesize displayCurrentInspectionTime=_displayCurrentInspectionTime;
 @property(nonatomic) BOOL animateChanges; // @synthesize animateChanges=_animateChanges;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGPoint)_localMousePoint;
 - (void)layoutLabelBackground;
 - (void)layoutRangeInfo;
@@ -101,6 +104,9 @@ __attribute__((visibility("hidden")))
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutFixedPlanesAndTheirSubplanes;
 - (void)removeVisiblePlaneFromLayout:(id)arg1;
+- (void)clearTooltipForIfApplicableForPlane:(id)arg1;
+- (void)removeLabelAreaTooltipIfAvailableForOwner:(id)arg1;
+- (void)presentLabelAreaTooltip:(id)arg1 owner:(id)arg2;
 - (void)makePlaneVisible:(id)arg1;
 - (void)rebuildAccessibilitySelection;
 - (void)rebuildAccessibility;

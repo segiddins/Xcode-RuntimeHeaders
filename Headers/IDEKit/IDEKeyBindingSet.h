@@ -24,10 +24,10 @@
 
 + (id)defaultKeyBindingSet;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 @property(copy, nonatomic) NSArray *keyBindings; // @synthesize keyBindings=_keyBindings;
 @property(copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (void)activate;
 - (void)didActivate;
 - (void)willActivate;

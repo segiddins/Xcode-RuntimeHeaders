@@ -19,7 +19,6 @@
     NSString *_revision;
     NSArray *_blameItems;
     id <DVTSourceControlCancellable> _blameRequest;
-    id <IDESourceCodeBlameControllerDelegate> _delegate;
     id <DVTSourceControlCancellable> _logLoadingToken;
     NSObject<OS_dispatch_queue> *_logLoadingQueue;
     BOOL _loading;
@@ -30,24 +29,25 @@
     DVTNotificationToken *_didSaveToken;
     DVTObservingToken *_didEnableToken;
     BOOL _didScanWorkspace;
+    id <IDESourceCodeBlameControllerDelegate> _delegate;
     DVTSourceControlRevision *_selectedRevision;
     NSString *_unavailabilityDescription;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didScanWorkspace; // @synthesize didScanWorkspace=_didScanWorkspace;
 @property(retain) NSString *unavailabilityDescription; // @synthesize unavailabilityDescription=_unavailabilityDescription;
 @property(retain) DVTSourceControlRevision *selectedRevision; // @synthesize selectedRevision=_selectedRevision;
 @property BOOL editorTextViewBoundsChanged; // @synthesize editorTextViewBoundsChanged=_editorTextViewBoundsChanged;
 @property BOOL isBlameAvailableForRevision; // @synthesize isBlameAvailableForRevision=_isBlameAvailableForRevision;
-@property(retain) id <IDESourceCodeBlameControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <IDESourceCodeBlameControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL loading; // @synthesize loading=_loading;
 @property(retain) NSArray *blameItems; // @synthesize blameItems=_blameItems;
 @property(readonly) NSString *revision; // @synthesize revision=_revision;
 @property(readonly) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
 @property(readonly) __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain, nonatomic) IDESourceControlDocumentLocation *sourceDocLocation; // @synthesize sourceDocLocation=_sourceDocLocation;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_retrieveBlameEntries;
 - (id)resolvedFilePath:(id)arg1;
@@ -55,6 +55,7 @@
 @property(readonly) DVTSourceControlWorkingCopy *workingCopy;
 - (void)updateSourceDocLocation:(id)arg1;
 - (id)initWithSourceControlLocation:(id)arg1 workspace:(id)arg2 editorDocument:(id)arg3;
+- (void)refreshDidScanWorkspace;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

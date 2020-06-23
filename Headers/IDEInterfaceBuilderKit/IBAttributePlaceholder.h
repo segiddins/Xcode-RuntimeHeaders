@@ -16,9 +16,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)didCompileDocument:(id)arg1;
 - (void)willCompileDocument:(id)arg1;
 - (id)archiveConnection;

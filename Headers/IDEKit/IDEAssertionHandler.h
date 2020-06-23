@@ -20,6 +20,7 @@
 + (BOOL)_showPanelOnAssertions;
 + (BOOL)_quietAssertions;
 + (void)setupAssertionHandler;
+- (id)_getFileDescriptorCounts;
 - (void)handleUncaughtException:(id)arg1;
 - (id)_kvoAssertionSignatureFromException:(id)arg1;
 - (void)handleWarningInFunction:(id)arg1 fileName:(id)arg2 lineNumber:(long long)arg3 messageFormat:(id)arg4 arguments:(struct __va_list_tag [1])arg5;

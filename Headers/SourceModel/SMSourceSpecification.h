@@ -16,6 +16,8 @@
     NSDictionary *_properties;
 }
 
++ (void)registerMissingSpecification:(id)arg1 forIdentifier:(id)arg2;
++ (id)missingSpecificationForIdentifier:(id)arg1;
 + (id)localizedSpecificationTypeName;
 + (id)specificationRegistry;
 + (id)specificationRegistryName;
@@ -37,9 +39,9 @@
 + (void)registerSpecificationOrProxy:(id)arg1;
 + (void)initialize;
 + (void)searchForAndRegisterAllAvailableSpecifications;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly) NSString *superSpecIdentifier; // @synthesize superSpecIdentifier=_superSpecIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)name;

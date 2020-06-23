@@ -19,10 +19,10 @@
     unsigned long long _currentPosition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long currentPosition; // @synthesize currentPosition=_currentPosition;
 @property(readonly, copy, nonatomic) NSArray *parsedStringListElements; // @synthesize parsedStringListElements=_parsedStringListElements;
 @property(readonly, copy, nonatomic) NSString *stringToParse; // @synthesize stringToParse=_stringToParse;
-- (void).cxx_destruct;
 - (void)getParseResultStrings:(id *)arg1 comments:(id *)arg2;
 - (BOOL)parseAndReturnError:(id *)arg1;
 - (void)_configureInitialState;

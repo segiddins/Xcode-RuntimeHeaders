@@ -10,14 +10,17 @@
 @protocol IDEProvisioningBasicProfile, IDEProvisioningBasicTeam, IDEProvisioningTeamsDataSourceDelegate;
 
 @protocol IDEProvisioningAssetSelectionDataSourceProvider <IDEProvisioningTeamsDataSource>
-@property __weak id <IDEProvisioningTeamsDataSourceDelegate> delegate;
-@property(readonly) NSArray *provisioningSelectionDataSources;
-@property(readonly, getter=isFinishedLoading) BOOL finishedLoading;
 - (void)refreshFromPortal;
 - (void)setProvisioningStyle:(long long)arg1 forConfigurationsNamed:(NSSet *)arg2 secondarySDK:(DVTSDK *)arg3;
 - (void)setProvisioningProfile:(id <IDEProvisioningBasicProfile>)arg1 forConfigurationsNamed:(NSSet *)arg2 sdk:(DVTSDK *)arg3;
 - (void)setSigningCertificateIdentifier:(NSString *)arg1 forConfigurationsNamed:(NSSet *)arg2 sdk:(DVTSDK *)arg3;
 - (void)setTeam:(id <IDEProvisioningBasicTeam>)arg1 forConfigurationsNamed:(NSSet *)arg2;
-- (void)setBundleIdentifier:(NSString *)arg1 forConfigurationsNamed:(NSSet *)arg2;
+- (void)setBundleIdentifier:(NSString *)arg1 forConfigurationsNamed:(NSSet *)arg2 sdk:(DVTSDK *)arg3;
+@property(nonatomic) __weak id <IDEProvisioningTeamsDataSourceDelegate> delegate;
+@property(nonatomic, readonly) NSArray *provisioningSelectionDataSources;
+- (BOOL)isFinishedLoading;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL finishedLoading;
 @end
 

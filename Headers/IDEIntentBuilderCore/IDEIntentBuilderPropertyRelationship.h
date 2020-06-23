@@ -19,8 +19,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic, setter=_setProperty:) __weak IDEIntentBuilderProperty *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setProperty:) __weak IDEIntentBuilderProperty *property; // @synthesize property=_property;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)dictionaryKeyForKeyPath:(id)arg1;

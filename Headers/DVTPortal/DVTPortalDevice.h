@@ -26,11 +26,11 @@
 + (BOOL)addDevice:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
 + (id)_listServiceForTeam:(id)arg1 program:(id)arg2;
 + (id)devicesForSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *portalDeviceClass; // @synthesize portalDeviceClass=_portalDeviceClass;
 @property(readonly, copy, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

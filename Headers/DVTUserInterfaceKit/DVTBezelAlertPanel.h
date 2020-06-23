@@ -20,10 +20,10 @@
 
 + (id)addBezelText:(id)arg1 toImageView:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property double fadeDuration; // @synthesize fadeDuration=_fadeDuration;
 @property double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSView *controlView; // @synthesize controlView=_controlView;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (void)orderOutImmediately;
 - (void)orderOut:(id)arg1;

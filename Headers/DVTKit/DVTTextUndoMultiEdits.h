@@ -16,10 +16,10 @@
     struct _NSRange _replacementRange;
 }
 
+- (void).cxx_destruct;
 @property struct _NSRange replacementRange; // @synthesize replacementRange=_replacementRange;
 @property struct _NSRange affectedRange; // @synthesize affectedRange=_affectedRange;
 @property(readonly) __weak NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 @property(readonly) BOOL isSupportingCoalescing;
 - (void)undoRedo:(id)arg1;
 - (id)firstTextViewForTextStorage:(id)arg1;

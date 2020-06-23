@@ -28,13 +28,13 @@
 }
 
 + (id)filteringLogAspect;
+- (void).cxx_destruct;
 @property BOOL isFiltered; // @synthesize isFiltered=_isFiltered;
 @property(retain) id <DVTFilteredDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property BOOL performingFiltering; // @synthesize performingFiltering=_performingFiltering;
 @property(nonatomic) BOOL showChildrenUnderMatchAlways; // @synthesize showChildrenUnderMatchAlways=_showChildrenUnderMatchAlways;
 @property(retain, nonatomic) IDENavigableItem *rootNavigableItem; // @synthesize rootNavigableItem=_rootNavigableItem;
 @property(copy, nonatomic) NSArray *highlightFragments; // @synthesize highlightFragments=_highlightFragments;
-- (void).cxx_destruct;
 - (void)suspendFiltering;
 - (void)resumeFiltering;
 - (id)_filteredItemProxyForItems:(id)arg1;

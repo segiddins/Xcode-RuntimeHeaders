@@ -17,8 +17,8 @@
     DVTExtension *_delegateExtension;
 }
 
-@property(retain) DVTExtension *delegateExtension; // @synthesize delegateExtension=_delegateExtension;
 - (void).cxx_destruct;
+@property(retain) DVTExtension *delegateExtension; // @synthesize delegateExtension=_delegateExtension;
 - (struct CGRect)confinementRectForMenu:(id)arg1 onScreen:(id)arg2;
 - (void)menu:(id)arg1 willHighlightItem:(id)arg2;
 - (void)menuDidClose:(id)arg1;

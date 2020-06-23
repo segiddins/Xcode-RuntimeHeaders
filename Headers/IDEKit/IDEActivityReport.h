@@ -36,6 +36,7 @@
 + (BOOL)automaticallyNotifiesObserversOfFileIOThrottleFactor;
 + (id)keyPathsForValuesAffectingCompleted;
 + (id)keyPathsForValuesAffectingValid;
+- (void).cxx_destruct;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(copy) CDUnknownBlockType userDidRequestCancellationHandlerBlock; // @synthesize userDidRequestCancellationHandlerBlock=_userDidRequestCancellationHandlerBlock;
 @property(retain) NSObject<DVTInvalidation> *observerOwner; // @synthesize observerOwner=_observerOwner;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSArray *titleSegments; // @synthesize titleSegments=_titleSegments;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly) int options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)finishReport;
 @property(readonly) NSArray *stringSegments;
 @property(readonly) NSString *stringValue;

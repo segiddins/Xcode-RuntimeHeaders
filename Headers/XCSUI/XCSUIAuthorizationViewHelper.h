@@ -19,9 +19,9 @@
     CDUnknownBlockType _authChangedCallback;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAuthorized; // @synthesize isAuthorized=_isAuthorized;
 @property(copy, nonatomic) CDUnknownBlockType authChangedCallback; // @synthesize authChangedCallback=_authChangedCallback;
-- (void).cxx_destruct;
 - (BOOL)authorizationViewShouldDeauthorize:(id)arg1;
 - (void)authorizationViewDidDeauthorize:(id)arg1;
 - (void)authorizationViewDidAuthorize:(id)arg1;

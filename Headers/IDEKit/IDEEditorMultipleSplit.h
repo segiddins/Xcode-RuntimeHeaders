@@ -27,13 +27,11 @@
 + (id)_editorAreaSplitStates:(id)arg1 setEditorMode:(int)arg2 indexPath:(id)arg3;
 + (id)_copyIndexPath:(id)arg1 startingPostion:(long long)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDEEditorMultipleSplitDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long primaryLayout; // @synthesize primaryLayout=_primaryLayout;
-- (void)setParentEditorMultipleSplit:(id)arg1;
-@property(readonly) IDEEditorMultipleSplit *parentEditorMultipleSplit;
-- (void)setEditorArea:(id)arg1;
-@property(readonly) IDEEditorArea *editorArea;
-- (void).cxx_destruct;
+@property(retain) IDEEditorMultipleSplit *parentEditorMultipleSplit; // @synthesize parentEditorMultipleSplit;
+@property(retain) IDEEditorArea *editorArea; // @synthesize editorArea;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly) NSArray *editorAreaSplits;
 @property(readonly) struct CGSize minimumContentViewFrameSize;

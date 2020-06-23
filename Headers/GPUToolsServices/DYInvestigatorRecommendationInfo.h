@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSAttributedString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSAttributedString *text; // @synthesize text=_text;
 - (void)debugPrintFormatted;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

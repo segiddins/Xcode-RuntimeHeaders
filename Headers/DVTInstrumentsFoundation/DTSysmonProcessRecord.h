@@ -14,9 +14,9 @@
     NSArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 
 @end
 

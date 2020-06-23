@@ -23,6 +23,7 @@
 }
 
 + (id)attachmentWithName:(id)arg1 fromAttachments:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSIntegrationAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (BOOL)_validateWithErrors:(id *)arg1;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

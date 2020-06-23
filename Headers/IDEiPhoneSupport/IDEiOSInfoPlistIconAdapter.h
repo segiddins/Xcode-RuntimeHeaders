@@ -21,9 +21,9 @@
 + (id)infoPlistKey;
 + (id)adapterUsingInfoPlistCoordinator:(id)arg1 deviceModifier:(id)arg2 type:(int)arg3 targetDeploymentOS:(id)arg4;
 + (id)_appIconAdapterSubclassesOrderedPreferentially;
+- (void).cxx_destruct;
 @property(readonly) __weak id <IDEInfoPlistCoordination> coordinator; // @synthesize coordinator=_coordinator;
 @property(readonly) NSString *modifier; // @synthesize modifier=_modifier;
-- (void).cxx_destruct;
 - (void)deleteImagesInPlist;
 - (id)imageBaseNamesForRow:(id)arg1;
 - (void)addImageBaseName:(id)arg1 forFilePath:(id)arg2 forRow:(id)arg3;

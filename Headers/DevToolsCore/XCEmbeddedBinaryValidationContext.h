@@ -17,12 +17,12 @@
     XCEmbeddedBinaryCodeSignatureSource *_signatureSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCEmbeddedBinaryCodeSignatureSource *signatureSource; // @synthesize signatureSource=_signatureSource;
 @property(retain) NSDictionary *embeddedBinaryInfoDictionary; // @synthesize embeddedBinaryInfoDictionary=_embeddedBinaryInfoDictionary;
 @property(retain) NSString *embeddedBinaryPath; // @synthesize embeddedBinaryPath=_embeddedBinaryPath;
 @property(retain) NSDictionary *parentInfoDictionary; // @synthesize parentInfoDictionary=_parentInfoDictionary;
 @property(retain) NSString *signingCertSHA1; // @synthesize signingCertSHA1=_signingCertSHA1;
-- (void).cxx_destruct;
 
 @end
 

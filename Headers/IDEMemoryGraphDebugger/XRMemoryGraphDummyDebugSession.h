@@ -13,8 +13,8 @@
     IDEWorkspace *_workspace;
 }
 
-@property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)primitiveInvalidate;
 - (void)requestPause;
 

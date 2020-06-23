@@ -21,6 +21,7 @@
     NSString *_valueType;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *valueType; // @synthesize valueType=_valueType;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
 @property __weak NSTextField *placeholderTextField; // @synthesize placeholderTextField=_placeholderTextField;
@@ -30,7 +31,6 @@
 @property __weak NSTextField *xComponentTextField; // @synthesize xComponentTextField=_xComponentTextField;
 @property __weak NSTextField *yTitleTextField; // @synthesize yTitleTextField=_yTitleTextField;
 @property __weak NSTextField *xTitleTextField; // @synthesize xTitleTextField=_xTitleTextField;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
 - (void)_setPlaceholderString:(id)arg1;

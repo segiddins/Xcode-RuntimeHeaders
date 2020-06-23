@@ -21,12 +21,12 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property struct CGSize contentOffset; // @synthesize contentOffset=_contentOffset;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property double width; // @synthesize width=_width;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 width:(double)arg2 enabled:(BOOL)arg3 contentOffset:(struct CGSize)arg4 image:(id)arg5;

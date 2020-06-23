@@ -20,10 +20,10 @@
 }
 
 + (id)issueWithError:(id)arg1 severity:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *children; // @synthesize children=_children;
 @property(readonly) long long severity; // @synthesize severity=_severity;
 @property(readonly) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

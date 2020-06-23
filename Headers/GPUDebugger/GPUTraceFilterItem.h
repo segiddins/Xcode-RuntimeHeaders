@@ -18,9 +18,9 @@
     NSArray *_filterStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int source; // @synthesize source=_source;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)localizedCaseInsensitiveContainsFilterString:(id)arg1;

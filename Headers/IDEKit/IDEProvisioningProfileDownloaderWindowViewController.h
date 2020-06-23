@@ -19,10 +19,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningProfileDownloaderContainerViewController *profileDownloaderContainerViewController; // @synthesize profileDownloaderContainerViewController=_profileDownloaderContainerViewController;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) IDEProvisioningProfileDownloaderContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) id <IDEProvisioningBasicProfile> profile;
 - (void)windowDidLoad;

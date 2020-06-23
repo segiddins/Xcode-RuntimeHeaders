@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDETestCollection-Protocol.h>
-
 @class MISSING_TYPE, NSSet, _TtC13IDEFoundation15IDETestLocation;
 
-@interface _TtC13IDEFoundation17IDETestCollection : NSObject <IDETestCollection>
+@interface _TtC13IDEFoundation17IDETestCollection : NSObject
 {
     MISSING_TYPE *testContainers;
 }

@@ -15,9 +15,9 @@
 }
 
 + (id)actionProxyForAction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) IDEExecutionAction *proxiedAction; // @synthesize proxiedAction=_proxiedAction;
 @property(readonly) NSString *actionExtensionID; // @synthesize actionExtensionID=_actionExtensionID;
-- (void).cxx_destruct;
 - (void)addActionContent:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setActionTypeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;

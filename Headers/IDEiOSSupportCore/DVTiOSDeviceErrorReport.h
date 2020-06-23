@@ -14,8 +14,8 @@
 }
 
 + (id)errorReportForDevice:(id)arg1 startTime:(id)arg2 endTime:(id)arg3 keyphrases:(id)arg4 outError:(id *)arg5;
-@property(readonly, nonatomic) NSArray *reportEntries; // @synthesize reportEntries=_reportEntries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *reportEntries; // @synthesize reportEntries=_reportEntries;
 - (id)initWithReportEntries:(id)arg1;
 
 @end

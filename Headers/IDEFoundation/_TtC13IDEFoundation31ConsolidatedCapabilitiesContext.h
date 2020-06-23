@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDESigningEditorCapabilityItemEditingConsolidatedContextSource-Protocol.h>
 #import <IDEFoundation/IDESigningEditorCapabilityItemLibraryConsolidatedContextSource-Protocol.h>
+#import <IDEFoundation/IDESigningEditorCapabilityItemProvisioningConsolidatedContextSource-Protocol.h>
 
 @class MISSING_TYPE, NSDictionary;
-@protocol IDESigningEditorCapabilityItemEditingConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate;
+@protocol IDESigningEditorCapabilityItemEditingConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate, IDESigningEditorCapabilityItemProvisioningConsolidatedContextSourceDelegate;
 
-@interface _TtC13IDEFoundation31ConsolidatedCapabilitiesContext : NSObject <IDESigningEditorCapabilityItemLibraryConsolidatedContextSource, IDESigningEditorCapabilityItemEditingConsolidatedContextSource>
+@interface _TtC13IDEFoundation31ConsolidatedCapabilitiesContext : NSObject <IDESigningEditorCapabilityItemLibraryConsolidatedContextSource, IDESigningEditorCapabilityItemProvisioningConsolidatedContextSource>
 {
     MISSING_TYPE *source;
     MISSING_TYPE *editingDelegate;
     MISSING_TYPE *libraryDelegate;
+    MISSING_TYPE *provisioningDelegate;
     MISSING_TYPE *isCachedConfigurationToContextInvalidated;
     MISSING_TYPE *cachedConfigurationToContext;
     MISSING_TYPE *isCachedConfigurationToEnabledItemsInvalidated;
@@ -31,6 +32,7 @@
 @property(nonatomic, readonly) NSDictionary *configurationToIdentifierToDisabledItem;
 @property(nonatomic, readonly) NSDictionary *configurationToEnabledItems;
 @property(nonatomic, readonly) NSDictionary *configurationToContext;
+@property(nonatomic) __weak id <IDESigningEditorCapabilityItemProvisioningConsolidatedContextSourceDelegate> provisioningDelegate; // @synthesize provisioningDelegate;
 @property(nonatomic) __weak id <IDESigningEditorCapabilityItemLibraryConsolidatedContextSourceDelegate> libraryDelegate; // @synthesize libraryDelegate;
 @property(nonatomic) __weak id <IDESigningEditorCapabilityItemEditingConsolidatedContextSourceDelegate> editingDelegate; // @synthesize editingDelegate;
 

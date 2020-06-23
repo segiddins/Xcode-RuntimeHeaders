@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _numberOfInvalidSettingsTries;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long numberOfInvalidSettingsTries; // @synthesize numberOfInvalidSettingsTries=_numberOfInvalidSettingsTries;
 @property(retain) id <IDEIndexable> indexable; // @synthesize indexable=_indexable;
 @property BOOL isFileKnownByDatabase; // @synthesize isFileKnownByDatabase=_isFileKnownByDatabase;
 @property BOOL hasInferredCompilerArguments; // @synthesize hasInferredCompilerArguments=_hasInferredCompilerArguments;
-- (void).cxx_destruct;
 - (void)reset;
 
 @end

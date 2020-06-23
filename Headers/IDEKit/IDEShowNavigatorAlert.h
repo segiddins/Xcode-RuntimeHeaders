@@ -15,9 +15,9 @@
 }
 
 + (id)navigators;
+- (void).cxx_destruct;
 @property(nonatomic) int action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *navigator; // @synthesize navigator=_navigator;
-- (void).cxx_destruct;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPropertyList:(id)arg1;

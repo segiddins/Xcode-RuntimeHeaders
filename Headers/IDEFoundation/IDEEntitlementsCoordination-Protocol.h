@@ -13,6 +13,7 @@
 @protocol IDEEntitlementsCoordination <NSObject, DVTInvalidation>
 - (void)addEntitlementsFileForAnyConfigurationNecessary;
 - (void)addEntitlementsFileForConfiguration;
+- (BOOL)entitlementsContainsEntitlementKey:(NSString *)arg1;
 - (BOOL)entitlementsContainsEntitlementKeyForItem:(id <IDEProjectItem>)arg1;
 - (void)setEntitlementValue:(id)arg1 forKey:(NSString *)arg2;
 - (NSArray *)allEntitlementKeys;

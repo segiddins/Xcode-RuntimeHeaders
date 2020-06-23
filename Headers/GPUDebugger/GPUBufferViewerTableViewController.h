@@ -26,6 +26,7 @@
     NSIndexSet *_visibleColumnIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *visibleColumnIndexes; // @synthesize visibleColumnIndexes=_visibleColumnIndexes;
 @property(retain, nonatomic) id <NSObject> scrollObserver; // @synthesize scrollObserver=_scrollObserver;
 @property(retain, nonatomic) id <NSObject> resizeObserver; // @synthesize resizeObserver=_resizeObserver;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSView *tableViewMarkersLabelContainer; // @synthesize tableViewMarkersLabelContainer=_tableViewMarkersLabelContainer;
 @property(retain, nonatomic) NSIndexSet *highlightedRows; // @synthesize highlightedRows=_highlightedRows;
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForDisplayingAllData;
 - (void)updateMarkersLabelWithContentView:(id)arg1 origin:(struct CGPoint)arg2 disableAnimation:(BOOL)arg3;
 - (void)updateVisibleLargeBufferViewerElementsData;

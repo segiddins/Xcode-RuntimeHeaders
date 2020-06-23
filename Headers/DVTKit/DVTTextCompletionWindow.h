@@ -13,8 +13,8 @@
     id <DVTTextCompletionListDataSource> _dataSource;
 }
 
-@property(retain) id <DVTTextCompletionListDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(retain) id <DVTTextCompletionListDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)accessibilityParent;
 - (id)accessibilityTitle;
 - (BOOL)isAccessibilityElement;

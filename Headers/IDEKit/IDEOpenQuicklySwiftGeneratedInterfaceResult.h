@@ -17,10 +17,9 @@
 
 + (id)resultBasedOnResult:(id)arg1 childResults:(id)arg2 withGeneratedInterfaceURL:(id)arg3;
 + (id)generatedInterfaceURLForURL:(id)arg1 inWorkspace:(id)arg2;
-+ (Class)swiftLanguageService;
+- (void).cxx_destruct;
 @property(readonly) NSURL *generatedInterfaceURL; // @synthesize generatedInterfaceURL=_generatedInterfaceURL;
 @property(readonly) IDEOpenQuicklyResult *originalResult; // @synthesize originalResult=_originalResult;
-- (void).cxx_destruct;
 - (id)childResults;
 - (id)displayPathURL;
 - (BOOL)isFromPoject;

@@ -18,10 +18,10 @@
 }
 
 + (id)productVersionIdentifierForArchive:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) IDEProductIdentifier *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

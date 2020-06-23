@@ -116,6 +116,7 @@
 + (id)_auxiliaryFileWritingLock;
 + (void)initialize;
 + (id)sharedDependencyGraphEventProcessingBlockQueue;
+- (void).cxx_destruct;
 @property(copy) DVTSearchPath *commandLineToolSearchPath; // @synthesize commandLineToolSearchPath=_commandLineToolSearchPath;
 @property(copy) NSArray *commandLineToolSpecificationRegistries; // @synthesize commandLineToolSpecificationRegistries=_commandLineToolSpecificationRegistries;
 @property(retain) NSError *codesignDependencyAnalysisError; // @synthesize codesignDependencyAnalysisError=_codesignDependencyAnalysisError;
@@ -137,7 +138,6 @@
 @property(copy) NSDictionary *previouslyCopiedFilePaths; // @synthesize previouslyCopiedFilePaths=_previouslyCopiedFilePathsMap;
 @property(readonly, retain, nonatomic) PBXBuildOperationContext *buildOperationContext; // @synthesize buildOperationContext=_buildOperationContext;
 @property(readonly, copy, nonatomic) IDEBuildParameters *dependencyGraphParameters; // @synthesize dependencyGraphParameters=_dependencyGraphParameters;
-- (void).cxx_destruct;
 - (id)compilerSpecificationWithIdentifier:(id)arg1;
 - (id)commandLineToolSpecificationWithIdentifier:(id)arg1;
 @property(readonly, copy) NSString *description;

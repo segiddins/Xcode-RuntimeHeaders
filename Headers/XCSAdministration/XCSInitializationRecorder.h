@@ -17,11 +17,11 @@
     NSString *_xcodeVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *xcodeVersion; // @synthesize xcodeVersion=_xcodeVersion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *operationsLock; // @synthesize operationsLock=_operationsLock;
 @property(readonly, copy, nonatomic) NSArray *operations; // @synthesize operations=_operations;
 @property(retain, nonatomic) NSString *recorderFilePath; // @synthesize recorderFilePath=_recorderFilePath;
-- (void).cxx_destruct;
 - (BOOL)writeToFile;
 - (void)recordOperation:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;

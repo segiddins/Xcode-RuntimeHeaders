@@ -26,6 +26,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedInvocation; // @synthesize delayedInvocation=_delayedInvocation;
 @property(retain, nonatomic) NSMutableSet *controllersToInvalidate; // @synthesize controllersToInvalidate=_controllersToInvalidate;
 @property(retain, nonatomic) DVTObservingToken *provisioningSelectionDataSourcesObserver; // @synthesize provisioningSelectionDataSourcesObserver=_provisioningSelectionDataSourcesObserver;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *provisioningSettingsSigningEditorViewControllers; // @synthesize provisioningSettingsSigningEditorViewControllers=_provisioningSettingsSigningEditorViewControllers;
 @property(copy, nonatomic) _TtC13IDEFoundation26SigningEditorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) id <IDEProvisioningSettingsSigningEditorViewControllersManagerSource> source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)startObservations;
 - (void)refresh;

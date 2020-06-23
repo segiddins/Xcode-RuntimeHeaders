@@ -14,9 +14,9 @@
     NSData *_cdHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSData *cdHash; // @synthesize cdHash=_cdHash;
 @property(readonly) unsigned int digestAlgorithm; // @synthesize digestAlgorithm=_digestAlgorithm;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

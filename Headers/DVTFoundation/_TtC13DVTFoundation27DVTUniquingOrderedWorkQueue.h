@@ -13,6 +13,7 @@
     MISSING_TYPE *_workQueue;
 }
 
++ (id)workQueueWithLabel:(id)arg1 concurrentQueueWidth:(long long)arg2 qos:(long long)arg3 workBlock:(CDUnknownBlockType)arg4;
 + (id)workQueueWithLabel:(id)arg1 qos:(long long)arg2 workBlock:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
 - (id)init;

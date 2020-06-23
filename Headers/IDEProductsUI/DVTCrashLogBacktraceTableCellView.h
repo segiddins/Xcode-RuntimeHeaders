@@ -20,6 +20,7 @@
     DVTCrashLogViewController *_crashLogViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak DVTCrashLogViewController *crashLogViewController; // @synthesize crashLogViewController=_crashLogViewController;
 @property(retain) DVTCrashLogStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
 @property BOOL showJumpButton; // @synthesize showJumpButton=_showJumpButton;
@@ -28,7 +29,6 @@
 @property(retain) NSTextField *moduleNameField; // @synthesize moduleNameField=_moduleNameField;
 @property(retain) NSTextField *frameNumberField; // @synthesize frameNumberField=_frameNumberField;
 @property(retain) NSImageView *frameIconImageView; // @synthesize frameIconImageView=_frameIconImageView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)clickedJumpButton:(id)arg1;
 

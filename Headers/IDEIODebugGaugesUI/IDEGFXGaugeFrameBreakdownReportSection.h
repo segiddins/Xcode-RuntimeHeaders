@@ -31,8 +31,8 @@
     BOOL _interactionEnabled;
 }
 
-@property(nonatomic, getter=isInteractionEnabled) BOOL interactionEnabled; // @synthesize interactionEnabled=_interactionEnabled;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isInteractionEnabled) BOOL interactionEnabled; // @synthesize interactionEnabled=_interactionEnabled;
 - (id)_createSwatchLabelForTitle:(id)arg1 color:(id)arg2;
 - (void)_createAndAddLabels;
 - (BOOL)inputHandlerForGraph:(id)arg1 requestsLongPressDragBeginAtTime:(unsigned long long)arg2 onPlanes:(id)arg3;

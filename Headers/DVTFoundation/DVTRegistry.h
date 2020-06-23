@@ -16,8 +16,8 @@
     NSString *_debugName;
 }
 
-@property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+@property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
 - (id)description;
 - (id)allRegisteredObjects;
 - (id)objectForIdentifier:(id)arg1;

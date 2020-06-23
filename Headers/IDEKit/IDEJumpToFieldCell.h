@@ -18,10 +18,10 @@
     BOOL _showLink;
 }
 
+- (void).cxx_destruct;
 @property BOOL showLink; // @synthesize showLink=_showLink;
 @property BOOL showLinkButton; // @synthesize showLinkButton=_showLinkButton;
 @property(retain) id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)eventIsInSubCellArea:(id)arg1 ofView:(id)arg2;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;

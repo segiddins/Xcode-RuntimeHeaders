@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <DYResource> _solidTexture;
 }
 
+- (void).cxx_destruct;
 - (void)setSolidTexture:(id)arg1;
 @property(readonly) id <DYResource> solidTexture;
 - (void)setOutlineTexture:(id)arg1;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain) id <DYResource> depthResourceObject; // @synthesize depthResourceObject=_depthResourceObject;
 @property(readonly) NSMutableDictionary *colorResourceObjects; // @synthesize colorResourceObjects=_colorResourceObjects;
 @property(readonly) id <DYFramebuffer> frameBufferObject; // @synthesize frameBufferObject=_frameBufferObject;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *elementIDs;
 @property(readonly, nonatomic) unsigned int numElements;
 - (id)attachments;

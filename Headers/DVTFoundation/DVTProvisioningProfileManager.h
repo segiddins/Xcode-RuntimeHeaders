@@ -26,10 +26,10 @@
 + (id)defaultManager;
 + (id)logAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) DVTProvisioningProfileReaper *provisioningProfileReaper; // @synthesize provisioningProfileReaper=_provisioningProfileReaper;
 @property(nonatomic) BOOL areProfilesLoaded; // @synthesize areProfilesLoaded=_areProfilesLoaded;
 @property(retain, nonatomic) DVTProvisioningProfileSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)provisioningProfileSource:(id)arg1 didRemoveProfiles:(id)arg2;
 - (void)provisioningProfileSource:(id)arg1 didAddProfiles:(id)arg2;
 - (void)_addProfiles:(id)arg1 invalidateCaches:(BOOL)arg2 callback:(CDUnknownBlockType)arg3;

@@ -21,10 +21,10 @@
 + (id)colorWithBundleID:(id)arg1 name:(id)arg2 genericColor:(id)arg3;
 + (id)colorWithName:(id)arg1 genericColor:(id)arg2;
 + (void)swizzleInNamedColorSupport;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL unarchivesAsColorWrapper; // @synthesize unarchivesAsColorWrapper=_unarchivesAsColorWrapper;
 @property(readonly, nonatomic, getter=isPlaceholder) BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) NSColor *genericColor; // @synthesize genericColor=_genericColor;
-- (void).cxx_destruct;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (BOOL)dvt_isMissingResource;
 - (id)ib_fallbackColorForMarshalling;

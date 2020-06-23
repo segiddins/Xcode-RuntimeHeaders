@@ -17,8 +17,8 @@
 + (_Bool)runsPerThinningVariant;
 + (_Bool)supportsDryRun;
 + (BOOL)wantsPayloadDir;
-@property(copy) NSString *name; // @synthesize name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name;
 - (_Bool)runWithError:(id *)arg1;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;

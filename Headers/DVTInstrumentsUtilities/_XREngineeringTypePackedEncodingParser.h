@@ -14,8 +14,8 @@
 }
 
 + (id)_elementNameToClassMap;
-@property(retain, nonatomic) XREngineeringTypeBitpackedEncodingConvention *convention; // @synthesize convention=_convention;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XREngineeringTypeBitpackedEncodingConvention *convention; // @synthesize convention=_convention;
 - (void)_handleCompletion;
 - (void)_handleStart;
 

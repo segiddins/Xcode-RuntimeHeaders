@@ -19,9 +19,9 @@
 
 + (id)_queueForLaunchingLiveViewsTools;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *activeDebuggingSessions; // @synthesize activeDebuggingSessions=_activeDebuggingSessions;
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)refreshLiveViews;
 - (BOOL)canRefreshLiveViews;
 - (void)_debugLiveViews:(id)arg1 invokedFromTabController:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;

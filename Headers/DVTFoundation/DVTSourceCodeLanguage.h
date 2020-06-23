@@ -38,7 +38,12 @@
 + (id)sourceCodeLanguageWithIdentifier:(id)arg1;
 + (id)sourceCodeLanguages;
 + (id)_sourceCodeLanguageForExtension:(id)arg1;
++ (id)objectiveCPlusPlusSourceCodeLanguage;
++ (id)cPlusPlusSourceCodeLanguage;
++ (id)objectiveCSourceCodeLanguage;
++ (id)cSourceCodeLanguage;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) BOOL usesImageLiteral; // @synthesize usesImageLiteral=_usesImageLiteral;
 @property(readonly) BOOL usesFileLiteral; // @synthesize usesFileLiteral=_usesFileLiteral;
 @property(readonly) BOOL usesColorLiteral; // @synthesize usesColorLiteral=_usesColorLiteral;
@@ -47,7 +52,6 @@
 @property(readonly, copy) NSString *documentationAbbreviation; // @synthesize documentationAbbreviation=_documentationAbbreviation;
 @property(readonly, copy) NSString *languageName; // @synthesize languageName=_languageName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)blockCommentCircumfixes;
 - (id)lineCommentPrefixes;
 - (BOOL)conformsToLanguage:(id)arg1;

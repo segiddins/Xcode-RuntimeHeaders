@@ -4,15 +4,18 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DebuggerUI/DBGRenderableInstance.h>
+#import <objc/NSObject.h>
 
+#import <DebuggerUI/DBGCanvasRenderable-Protocol.h>
 #import <DebuggerUI/DBGDecorationContent-Protocol.h>
 
-@class DBGHeaderDecorationNode, DBGViewObject, NSColor, NSImage, NSString;
+@class DBGHeaderDecorationNode, DBGNode, DBGViewObject, NSColor, NSImage, NSString;
 
-@interface DBGViewControllerInstance : DBGRenderableInstance <DBGDecorationContent>
+@interface DBGViewControllerInstance : NSObject <DBGCanvasRenderable, DBGDecorationContent>
 {
+    BOOL _selected;
     DBGViewObject *_controllerObject;
+    NSString *_identifier;
     NSString *_title;
     NSImage *_icon;
     NSColor *_headerForegroundColor;
@@ -20,14 +23,16 @@
     DBGHeaderDecorationNode *_headerDecorationNode;
 }
 
+- (void).cxx_destruct;
 @property __weak DBGHeaderDecorationNode *headerDecorationNode; // @synthesize headerDecorationNode=_headerDecorationNode;
 @property(readonly) NSColor *headerBackgroundColor; // @synthesize headerBackgroundColor=_headerBackgroundColor;
 @property(readonly) NSColor *headerForegroundColor; // @synthesize headerForegroundColor=_headerForegroundColor;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(copy) NSString *title; // @synthesize title=_title;
+@property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property __weak DBGViewObject *controllerObject; // @synthesize controllerObject=_controllerObject;
-- (void).cxx_destruct;
-- (void)setSelected:(BOOL)arg1;
+@property(readonly) DBGNode *node;
 - (id)initWithControllerObject:(id)arg1;
 
 // Remaining properties

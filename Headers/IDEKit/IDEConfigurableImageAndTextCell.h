@@ -25,6 +25,7 @@
 + (double)rowHeightForFont:(id)arg1 sourceList:(BOOL)arg2;
 + (double)rowHeightForFontHeight:(double)arg1 sourceList:(BOOL)arg2;
 + (double)fontHeightForFont:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL useBasicDropShadow; // @synthesize useBasicDropShadow=_useBasicDropShadow;
 @property BOOL useWizardTheme; // @synthesize useWizardTheme=_useWizardTheme;
 @property BOOL useSourceListStyle; // @synthesize useSourceListStyle=_useSourceListStyle;
@@ -32,7 +33,6 @@
 @property double leftMargin; // @synthesize leftMargin=_leftMargin;
 @property double verticalOffsetForImage; // @synthesize verticalOffsetForImage=_verticalOffsetForImage;
 @property double verticalOffsetForText; // @synthesize verticalOffsetForText=_verticalOffsetForText;
-- (void).cxx_destruct;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (struct CGSize)cellSize;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;

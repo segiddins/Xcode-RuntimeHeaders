@@ -27,6 +27,7 @@
 
 + (id)issuesSectionWithTitle:(id)arg1 allIssues:(id)arg2 scaledIssues:(id)arg3;
 + (id)sectionWithTitle:(id)arg1 issues:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSilencedIssues; // @synthesize isSilencedIssues=_isSilencedIssues;
 @property(nonatomic) BOOL showTests; // @synthesize showTests=_showTests;
 @property(nonatomic) BOOL showAnalysis; // @synthesize showAnalysis=_showAnalysis;
@@ -40,7 +41,6 @@
 @property(readonly, copy) NSArray *scaledIssues; // @synthesize scaledIssues=_scaledIssues;
 @property(readonly, copy) NSArray *allIssues; // @synthesize allIssues=_allIssues;
 @property(readonly, copy) NSString *issuesTitle; // @synthesize issuesTitle=_issuesTitle;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *displayedIssues;
 
 @end

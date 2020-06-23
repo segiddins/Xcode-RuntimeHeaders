@@ -17,9 +17,9 @@
 }
 
 + (id)allFields;
+- (void).cxx_destruct;
 @property(retain) NSNumber *mostRecentNormalizedExecutionTime; // @synthesize mostRecentNormalizedExecutionTime=_mostRecentNormalizedExecutionTime;
 @property(readonly) XCTTestIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 dictionaryRepresentation:(id)arg2;

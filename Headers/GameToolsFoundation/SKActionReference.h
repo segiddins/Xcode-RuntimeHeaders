@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *referenceName; // @synthesize referenceName=_referenceName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *referenceName; // @synthesize referenceName=_referenceName;
 - (id)getSKAction;
 @property(readonly, nonatomic) NSString *referenceFilename;
 - (id)actionInfoString;

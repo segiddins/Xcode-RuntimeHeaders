@@ -15,9 +15,9 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSButton *useXcodeBuiltInRadioButton; // @synthesize useXcodeBuiltInRadioButton=_useXcodeBuiltInRadioButton;
 @property __weak NSButton *useTerminalRadioButton; // @synthesize useTerminalRadioButton=_useTerminalRadioButton;
-- (void).cxx_destruct;
 - (void)setConsoleMode:(long long)arg1;
 - (void)changeConsoleSelection:(id)arg1;
 - (void)updateRadioButtonState;

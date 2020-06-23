@@ -24,10 +24,10 @@
 
 + (void)initialize;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningPortal *portal; // @synthesize portal=_portal;
 @property(retain, nonatomic) IDEProvisioningSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) DVTDeveloperAccountManager *accountManager; // @synthesize accountManager=_accountManager;
-- (void).cxx_destruct;
 - (id)_teamIDToPairMapForTesting;
 - (id)_pairForTeam:(id)arg1 error:(id *)arg2;
 - (id)pairForTeam:(id)arg1 error:(id *)arg2;

@@ -19,12 +19,12 @@
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
 + (id)keyPathsForValuesAffectingCanGoPrevious;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) DVTStackView_AppKitAutolayout *optionsStackView; // @synthesize optionsStackView=_optionsStackView;
 @property(retain, nonatomic) NSArray *optionsViewControllers; // @synthesize optionsViewControllers=_optionsViewControllers;
 @property(nonatomic) BOOL canGoNext; // @synthesize canGoNext;
-- (void).cxx_destruct;
 - (id)helpID;
 - (void)willGoNext;
 - (id)title;

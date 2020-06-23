@@ -13,8 +13,8 @@
     NSMenuItem *_menuItem;
 }
 
-@property __weak NSMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 - (void).cxx_destruct;
+@property __weak NSMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 - (struct CGRect)visibleRect;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (BOOL)canDraw;

@@ -18,9 +18,9 @@
 }
 
 + (id)_elementNameToClassMap;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <XRSchemaAnnotationPropertyReportingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)startElementWithName:(id)arg1 attributes:(id)arg2 line:(long long)arg3 col:(long long)arg4;
 - (void)textParserCompletedParsing:(id)arg1 elementName:(id)arg2;
 

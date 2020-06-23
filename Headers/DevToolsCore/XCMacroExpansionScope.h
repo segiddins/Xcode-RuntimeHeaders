@@ -19,8 +19,8 @@
 + (id)stringForDefinitionLevel:(long long)arg1;
 + (BOOL)isUserDefinedDefinitionLevel:(unsigned long long)arg1;
 + (long long)numberOfDefinitionLevels;
-@property(readonly) XCDependencyGraphCreationContext *dependencyGraphCreationContext; // @synthesize dependencyGraphCreationContext=_dependencyGraphCreationContext;
 - (void).cxx_destruct;
+@property(readonly) XCDependencyGraphCreationContext *dependencyGraphCreationContext; // @synthesize dependencyGraphCreationContext=_dependencyGraphCreationContext;
 - (void)appendAdditionalContentToStringBuilder:(struct DVTStringBuilder *)arg1 indent:(unsigned long long)arg2;
 @property(readonly) XCSDKPackage *sdk;
 @property(readonly) __weak PBXTargetBuildContext *buildContext;

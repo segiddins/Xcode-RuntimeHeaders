@@ -19,10 +19,10 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) BOOL isSuperviewOfNodeTrackViews; // @synthesize isSuperviewOfNodeTrackViews=_isSuperviewOfNodeTrackViews;
 @property(readonly, nonatomic) NSMutableArray *nodeTrackViews; // @synthesize nodeTrackViews=_nodeTrackViews;
-- (void).cxx_destruct;
 - (void)redrawAllTrackViewsWithDirtyRect:(struct CGRect)arg1;
 - (void)redrawAllTrackViews;
 - (void)adjustHeight;

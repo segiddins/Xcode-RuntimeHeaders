@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)targetThumbnailWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isIcon; // @synthesize isIcon=_isIcon;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1;

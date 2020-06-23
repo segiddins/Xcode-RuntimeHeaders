@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *filterDefinitionIdentifier; // @synthesize filterDefinitionIdentifier=_filterDefinitionIdentifier;
 @property(retain, nonatomic) id <DVTFilterControlBarTarget> filterTarget; // @synthesize filterTarget=_filterTarget;
 @property(readonly) NSTextField<DVTFilterControlField> *filterControlField; // @synthesize filterControlField=_filterControlField;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)toggleButtons;
 - (void)configureLeftFilterButtonWithMenu:(id)arg1;

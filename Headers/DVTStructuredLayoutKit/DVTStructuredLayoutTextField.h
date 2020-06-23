@@ -21,11 +21,11 @@
 
 + (Class)cellClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *fixedFrameHeight; // @synthesize fixedFrameHeight=_fixedFrameHeight;
 @property(copy, nonatomic) NSNumber *maximumAlignmentWidth; // @synthesize maximumAlignmentWidth=_maximumAlignmentWidth;
 @property(copy, nonatomic) NSNumber *fixedAlignmentWidth; // @synthesize fixedAlignmentWidth=_fixedAlignmentWidth;
 @property(readonly) DVTStructuredLayoutViewState *dvt_layoutState; // @synthesize dvt_layoutState=_dvt_layoutState;
-- (void).cxx_destruct;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (id)shortCircuitedFrameSizeGivenMaximumFrameWidth:(double)arg1;
 - (double)frameWidthForAlignmentWidth:(double)arg1;

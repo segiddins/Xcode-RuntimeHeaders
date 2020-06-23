@@ -15,10 +15,10 @@
     CDUnknownBlockType _leftClickHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType leftClickHandler; // @synthesize leftClickHandler=_leftClickHandler;
 @property(copy) CDUnknownBlockType rightOrCtrlLeftDragHandler; // @synthesize rightOrCtrlLeftDragHandler=_rightOrCtrlLeftDragHandler;
 @property(copy) CDUnknownBlockType rightOrCtrlLeftClickHandler; // @synthesize rightOrCtrlLeftClickHandler=_rightOrCtrlLeftClickHandler;
-- (void).cxx_destruct;
 - (void)drawRow:(long long)arg1 clipRect:(struct CGRect)arg2;
 - (struct CGRect)frameOfOutlineCellAtRow:(long long)arg1;
 - (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;

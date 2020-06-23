@@ -14,11 +14,11 @@
     DYInvestigatorCase *_investigatorCase;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DYInvestigatorCase *investigatorCase; // @synthesize investigatorCase=_investigatorCase;
 @property(retain, nonatomic) DYInvestigatorCaseConfigData *investigatorCaseConfigData; // @synthesize investigatorCaseConfigData=_investigatorCaseConfigData;
-- (void).cxx_destruct;
-- (id)cpuGPUActiveTimeTimes:(BOOL)arg1;
-- (id)utilizationPercentages;
+- (id)cpuGPUActiveTimeTimes:(BOOL)arg1 getAvailableFields:(id *)arg2;
+- (id)utilizationPercentagesAndGetAvailableFields:(id *)arg1;
 - (id)archive;
 - (id)initWithInvestigatorCaseConfigData:(id)arg1 controller:(id)arg2;
 

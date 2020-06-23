@@ -34,6 +34,7 @@
 
 + (id)repairInfoWithProvisioningInputs:(id)arg1 instigatingErrors:(id)arg2;
 + (id)repairInfoWithRepairableName:(id)arg1 team:(id)arg2 provisioningStyle:(long long)arg3 certificatePurpose:(id)arg4 deviceRequirement:(id)arg5 bundleID:(id)arg6 profileType:(id)arg7 appIDFeatures:(id)arg8 platform:(id)arg9 profile:(id)arg10 signingCertificate:(id)arg11 signingCertificateError:(id)arg12 entitlements:(id)arg13 instigatingErrors:(id)arg14;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *signingCertificateError; // @synthesize signingCertificateError=_signingCertificateError;
 @property(readonly, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) DVTPortalCertificatePurpose *certificatePurpose; // @synthesize certificatePurpose=_certificatePurpose;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(readonly, nonatomic) NSString *repairableName; // @synthesize repairableName=_repairableName;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) BOOL wantsRepairStatusSuppressed;

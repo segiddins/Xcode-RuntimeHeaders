@@ -13,6 +13,7 @@
 + (BOOL)canMakeSourceCodeConnectionsFromObject:(id)arg1 toObject:(id)arg2 document:(id)arg3;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
 + (id)prototypeConnectionsForObject:(id)arg1;
+- (id)suggestedDisplayNameForConnectedObject;
 - (id)endPointForEstimatingUnlabeledConnection;
 - (id)displayDescriptionInDocument:(id)arg1;
 - (id)displayGroupFromReferenceEndPoint:(id)arg1;

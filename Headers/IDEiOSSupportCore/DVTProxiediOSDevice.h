@@ -30,12 +30,13 @@
 + (id)keyPathsForValuesAffectingModelName;
 + (id)keyPathsForValuesAffectingName;
 + (id)keyPathsForValuesAffectingIdentifier;
+- (void).cxx_destruct;
 @property(retain) DVTProxiedDeviceSymbolsCoordinator *symbolsCoordinator; // @synthesize symbolsCoordinator=_symbolsCoordinator;
 @property(readonly) id <DTDKRemoteDeviceToken> token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)unavailabilityError;
 - (id)developerPrepError;
+- (BOOL)isAvailableWithError:(id *)arg1;
 - (BOOL)isAvailable;
 - (_Bool)deviceIsBusy;
 - (_Bool)isPasscodeLocked;

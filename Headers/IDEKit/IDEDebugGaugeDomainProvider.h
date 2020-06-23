@@ -23,8 +23,8 @@
 + (id)URLForScheme:(id)arg1 launchSession:(id)arg2;
 + (id)URLForScheme:(id)arg1 launchSession:(id)arg2 otherQueryString:(id)arg3;
 + (void)initialize;
-@property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (unsigned long long)navigableItem_indexOfRepresentedObjectForIdentifier:(id)arg1 inRelationshipKeyPath:(id)arg2;
 - (id)navigableItem_identifierForRepresentedObjectAtIndex:(unsigned long long)arg1 inRelationshipKeyPath:(id)arg2;

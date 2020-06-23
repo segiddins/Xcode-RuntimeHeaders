@@ -24,9 +24,9 @@
 + (struct AuthorizationOpaqueRef *)sharedAuthorization;
 + (void)takeOwnershipOfSharedAuthorization:(struct AuthorizationOpaqueRef *)arg1;
 + (BOOL)isAppleInternal;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType channelRestrictBlock; // @synthesize channelRestrictBlock=_channelRestrictBlock;
 @property(readonly, nonatomic) DTXConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)_blessSimulatorHub:(int)arg1;
 - (void)_notifyOfTFPCommunicationsPort:(unsigned int)arg1;
 - (void)restrictChannelsWithBlock:(CDUnknownBlockType)arg1;

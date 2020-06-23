@@ -18,13 +18,13 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) id changedObject; // @synthesize changedObject=_changedObject;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(copy) NSString *itemName; // @synthesize itemName=_itemName;
 @property(copy) NSArray *itemsToUnlock; // @synthesize itemsToUnlock=_itemsToUnlock;
-- (void).cxx_destruct;
 
 @end
 

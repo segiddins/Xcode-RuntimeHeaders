@@ -20,11 +20,11 @@
 }
 
 + (id)logListWithHasMoreLogs:(BOOL)arg1 lastCrashPointTime:(id)arg2 lastCrashReporterKey:(id)arg3 logData:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSString *moreLogs; // @synthesize moreLogs=_moreLogs;
 @property(readonly) NSArray *logData; // @synthesize logData=_logData;
 @property(readonly) NSString *lastCrashReporterKey; // @synthesize lastCrashReporterKey=_lastCrashReporterKey;
 @property(readonly) NSString *lastCrashPointTime; // @synthesize lastCrashPointTime=_lastCrashPointTime;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 @property(readonly) BOOL hasMoreLogs; // @synthesize hasMoreLogs=_hasMoreLogs;
 

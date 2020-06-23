@@ -16,8 +16,8 @@
 
 + (void)_formatAndTypeForInternalFormat:(unsigned int)arg1 formatOut:(int *)arg2 typeOut:(int *)arg3;
 + (void)_replaceCompressedInternalFormatWithUncompressed:(const struct Function *)arg1;
-@property(readonly, nonatomic) NSSet *shrinkSet; // @synthesize shrinkSet=_shrinkSet;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *shrinkSet; // @synthesize shrinkSet=_shrinkSet;
 - (void)_insertSmallTextureUpload:(unsigned long long)arg1 fenum:(unsigned int)arg2 target:(unsigned int)arg3 zOffset:(int)arg4 depth:(int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 archiveModifier:(id)arg8;
 - (void)_replaceCompressedTextureWithContext:(unsigned long long)arg1 fenum:(unsigned int)arg2 target:(unsigned int)arg3 zOffset:(int)arg4 depth:(int)arg5 internalFormat:(unsigned int)arg6 archiveModifier:(id)arg7;
 - (unsigned int)_internalFormatOfBoundTextureLevel0:(unsigned long long)arg1 target:(unsigned int)arg2 archiveModifier:(id)arg3;

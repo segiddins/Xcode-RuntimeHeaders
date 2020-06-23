@@ -17,12 +17,12 @@
     unsigned long long _status;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly) NSURL *currentDocumentURL; // @synthesize currentDocumentURL=_currentDocumentURL;
 @property(readonly) NSString *revisionName; // @synthesize revisionName=_revisionName;
 @property(readonly) IDESourceControlBranch *branch; // @synthesize branch=_branch;
 @property(readonly) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;

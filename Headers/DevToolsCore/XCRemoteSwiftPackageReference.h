@@ -18,9 +18,9 @@
 + (id)keyPathsForValuesAffectingDisplayVersionRules;
 + (id)keyPathsForValuesAffectingDisplayLocation;
 + (id)keyPathsForValuesAffectingDisplayName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) IDESourcePackageRequirement *requirement; // @synthesize requirement=_requirement;
 @property(copy, nonatomic) NSString *repositoryURL; // @synthesize repositoryURL=_repositoryURL;
-- (void).cxx_destruct;
 - (void)awakeFromPListUnarchiver:(id)arg1;
 - (id)gidCommentForArchive;
 - (void)_setRequirement:(id)arg1;

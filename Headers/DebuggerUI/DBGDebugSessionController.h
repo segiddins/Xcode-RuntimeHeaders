@@ -37,13 +37,13 @@
 + (id)descendantItemForRepresentedObject:(id)arg1 inRootNavigableItem:(id)arg2;
 + (id)_descendantItemForRepresentedObject:(id)arg1 inRootNavigableItem:(id)arg2;
 + (id)parentThreadInUIForStackFrame:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) IDEEditorOpenSpecifier *memoryGraphDebuggerOpenSpecifierToOpenWhenPaused; // @synthesize memoryGraphDebuggerOpenSpecifierToOpenWhenPaused=_memoryGraphDebuggerOpenSpecifierToOpenWhenPaused;
 @property(retain) IDEEditorOpenSpecifier *viewDebuggerOpenSpecifierToOpenWhenPaused; // @synthesize viewDebuggerOpenSpecifierToOpenWhenPaused=_viewDebuggerOpenSpecifierToOpenWhenPaused;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly) BOOL isNavigatingToMemoryGraphDebuggerDocument; // @synthesize isNavigatingToMemoryGraphDebuggerDocument=_isNavigatingToMemoryGraphDebuggerDocument;
 @property(readonly) BOOL isNavigatingToViewDebuggerDocument; // @synthesize isNavigatingToViewDebuggerDocument=_isNavigatingToViewDebuggerDocument;
 @property(retain) DBGDataTipController *dataTipController; // @synthesize dataTipController=_dataTipController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_isBridgedSwiftType:(id)arg1;
 - (id)_quickLookProviderExtensionForTypeNames:(id)arg1;

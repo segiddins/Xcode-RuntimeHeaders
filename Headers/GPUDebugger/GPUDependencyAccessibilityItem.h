@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     DependencyViewerVertex *_node;
 }
 
-@property(readonly) DependencyViewerVertex *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(readonly) DependencyViewerVertex *node; // @synthesize node=_node;
 - (BOOL)isAccessibilitySelected;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityParent;

@@ -12,7 +12,6 @@
 {
     MISSING_TYPE *path;
     MISSING_TYPE *loggers;
-    MISSING_TYPE *defaultConfig;
 }
 
 @end

@@ -12,9 +12,9 @@
     id _nodeAdapter;
 }
 
+- (void).cxx_destruct;
 @property(retain) id dvtRepresentedObjectValue; // @synthesize dvtRepresentedObjectValue=_dvtRepresentedObjectValue;
 @property(retain) id nodeAdapter; // @synthesize nodeAdapter=_nodeAdapter;
-- (void).cxx_destruct;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)attachPopUpWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)selectItemAccordingtoRepresentedObjectValue;

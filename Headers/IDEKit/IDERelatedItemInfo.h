@@ -16,11 +16,11 @@
     _TtC16DVTExplorableKit23DVTExplorableIdentifier *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TtC16DVTExplorableKit23DVTExplorableIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 image:(id)arg2 groupIdentifier:(id)arg3 identifier:(id)arg4;
 
 @end

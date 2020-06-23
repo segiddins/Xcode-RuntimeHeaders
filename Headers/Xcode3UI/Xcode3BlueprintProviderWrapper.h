@@ -17,8 +17,8 @@
 }
 
 + (id)keyPathsForValuesAffectingBlueprintWrappers;
-@property(readonly) id <IDEBlueprintProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(readonly) id <IDEBlueprintProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly) NSArray *blueprintWrappers;

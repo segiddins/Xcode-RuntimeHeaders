@@ -18,9 +18,9 @@
     DVTFilterTokenFieldController *_tokenFieldController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTFilterTokenFieldController *tokenFieldController; // @synthesize tokenFieldController=_tokenFieldController;
 @property(retain, nonatomic) id <DVTFilterTokenFieldControllerDelegate> tokenDelegate; // @synthesize tokenDelegate=_tokenDelegate;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)filterTokenFieldController:(id)arg1 tokensForTokensFromPasteboard:(id)arg2;
 - (int)filterTokenFieldControllerDefaultGlobalOperatorType:(id)arg1;

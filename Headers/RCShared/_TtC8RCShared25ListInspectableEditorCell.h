@@ -13,8 +13,11 @@ __attribute__((visibility("hidden")))
 {
     MISSING_TYPE *rxStorage;
     MISSING_TYPE *titleLabel;
+    MISSING_TYPE *infoButton;
     MISSING_TYPE *button;
     MISSING_TYPE *stackView;
+    MISSING_TYPE *collapsedBottomConstraint;
+    MISSING_TYPE *expandedBottomConstraint;
     MISSING_TYPE *listValue;
 }
 

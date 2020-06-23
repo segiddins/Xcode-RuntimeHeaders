@@ -46,6 +46,7 @@
 + (id)keyPathsForValuesAffectingSelectedAnalyticsPointSourceCollection;
 + (id)keyPathsForValuesAffectingAnalyticsPointsFilterPredicate;
 + (id)keyPathsForValuesAffectingSearchStrings;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *analyticsPointsObserver; // @synthesize analyticsPointsObserver=_analyticsPointsObserver;
 @property(retain) DVTObservingToken *selectedAnalyticsPointSourceCollectionObservingToken; // @synthesize selectedAnalyticsPointSourceCollectionObservingToken=_selectedAnalyticsPointSourceCollectionObservingToken;
 @property(retain) DVTObservingToken *selectedProductObservingToken; // @synthesize selectedProductObservingToken=_selectedProductObservingToken;
@@ -71,7 +72,6 @@
 @property(retain) IDEAnalyticsPointSourceCollectionSelector *sourceCollectionSelector; // @synthesize sourceCollectionSelector=_sourceCollectionSelector;
 @property(retain) DVTAnalyticsPointAbstractClass *selectedAnalyticsPoint; // @synthesize selectedAnalyticsPoint=_selectedAnalyticsPoint;
 @property(readonly) __weak IDEAnalyticsPointsViewController *analyticsPointsViewController; // @synthesize analyticsPointsViewController=_analyticsPointsViewController;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;

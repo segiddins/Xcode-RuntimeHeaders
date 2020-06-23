@@ -16,10 +16,9 @@
 }
 
 + (id)keyPathsForValuesAffectingAdditionalActionTitle;
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property long long additionalAction; // @synthesize additionalAction=_additionalAction;
-@property(retain) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_showStatusLog;
 - (void)_exportNotarizedApp;
 - (void)_setUpNotarizationObserver;
@@ -33,6 +32,7 @@
 - (void)takeAdditionalAction;
 - (id)additionalActionTitle;
 - (void)viewDidInstall;
+@property(retain) NSString *title; // @synthesize title=_title;
 - (id)nibName;
 - (void)primitiveInvalidate;
 - (id)nextButtonTitle;

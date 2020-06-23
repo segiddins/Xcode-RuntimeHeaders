@@ -15,9 +15,9 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDEFlightChecking> entitlementsFlightCheck; // @synthesize entitlementsFlightCheck=_entitlementsFlightCheck;
 @property(retain, nonatomic) id <IDEFlightChecking> linkedFrameworksFlightCheck; // @synthesize linkedFrameworksFlightCheck=_linkedFrameworksFlightCheck;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

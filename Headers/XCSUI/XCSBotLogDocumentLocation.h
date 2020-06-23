@@ -14,9 +14,9 @@
     IDEWorkspace *_workspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) id activityLog; // @synthesize activityLog=_activityLog;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

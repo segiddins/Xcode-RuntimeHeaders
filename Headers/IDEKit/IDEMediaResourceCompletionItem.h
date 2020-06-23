@@ -23,6 +23,7 @@
     double fuzzyMatchingScore;
 }
 
+- (void).cxx_destruct;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore;
 @property double priority; // @synthesize priority;
 @property(copy) CDUnknownBlockType iconProvidingMainThreadBlock; // @synthesize iconProvidingMainThreadBlock;
@@ -31,7 +32,6 @@
 @property(copy) NSString *displayType; // @synthesize displayType;
 @property(copy) NSString *displayText; // @synthesize displayText;
 @property(copy) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 @property(readonly) BOOL notRecommended;
 @property(readonly) unsigned long long priorityComparatorKind;
 @property(readonly) long long priorityBucket;

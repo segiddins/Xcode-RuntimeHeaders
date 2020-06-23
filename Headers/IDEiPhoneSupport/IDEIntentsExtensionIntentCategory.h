@@ -14,8 +14,8 @@
 }
 
 + (id)supportedCategoriesForType:(id)arg1;
-@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

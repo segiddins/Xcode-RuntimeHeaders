@@ -16,10 +16,10 @@
 }
 
 + (id)recordWithProperty:(id)arg1 configuration:(id)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) IBMemberPropertyValue *value; // @synthesize value=_value;
 @property(readonly) IBMemberConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPropertyConfigurationValueRecord:(id)arg1;

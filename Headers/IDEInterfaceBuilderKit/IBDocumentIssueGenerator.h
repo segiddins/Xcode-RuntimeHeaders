@@ -27,10 +27,10 @@
 
 + (BOOL)isFineGrainedIssueInvalidationEnabled;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 @property(nonatomic, getter=isShuttingDown) BOOL shuttingDown; // @synthesize shuttingDown=_shuttingDown;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 @property(readonly) NSArray *allIssues;
 @property(readonly) NSArray *globalIssues;
 @property(readonly) NSDictionary *issuesByMember;

@@ -19,11 +19,11 @@
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSArray *deviceTypeSeries; // @synthesize deviceTypeSeries=_deviceTypeSeries;
 @property(readonly) NSArray *osVersionSeries; // @synthesize osVersionSeries=_osVersionSeries;
 @property(readonly) NSArray *timeSeries; // @synthesize timeSeries=_timeSeries;
 @property(readonly) NSDate *lastRefresh; // @synthesize lastRefresh=_lastRefresh;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

@@ -43,6 +43,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEProvisioningCompoundProfileStore *compoundProfileStore; // @synthesize compoundProfileStore=_compoundProfileStore;
 @property(retain, nonatomic) NSDictionary *teamToError; // @synthesize teamToError=_teamToError;
 @property(retain, nonatomic) NSSet *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
@@ -68,7 +69,6 @@
 @property(nonatomic, getter=isInstallingProfile) BOOL installingProfile; // @synthesize installingProfile=_installingProfile;
 @property(retain, nonatomic) NSArray *teams; // @synthesize teams=_teams;
 @property(retain, nonatomic) NSArray *accountNamesFailed; // @synthesize accountNamesFailed=_accountNamesFailed;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSError *noResultsError;
 - (id)noProfilesError;

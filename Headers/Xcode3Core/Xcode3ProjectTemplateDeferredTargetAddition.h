@@ -16,11 +16,11 @@
     NSArray *_buildAttributes;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *buildAttributes; // @synthesize buildAttributes=_buildAttributes;
 @property(copy) NSString *extension; // @synthesize extension=_extension;
 @property(copy) NSArray *targetIdentifiers; // @synthesize targetIdentifiers=_targetIdentifiers;
 @property(retain) PBXReference *reference; // @synthesize reference=_reference;
-- (void).cxx_destruct;
 - (id)initWithReference:(id)arg1 targetIdentifiers:(id)arg2 extension:(id)arg3 buildAttributes:(id)arg4;
 
 @end

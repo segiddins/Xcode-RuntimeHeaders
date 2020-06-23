@@ -14,8 +14,8 @@
 }
 
 + (id)designDocumentsInDirectory:(id)arg1;
-@property(readonly) NSDictionary *JSON; // @synthesize JSON=_JSON;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *JSON; // @synthesize JSON=_JSON;
 - (id)designDocumentWithRevision:(id)arg1;
 @property(readonly) NSString *anyViewName;
 @property(readonly) NSString *JSONString;

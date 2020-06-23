@@ -15,10 +15,10 @@
     DVTBorderedView *_borderedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak DVTEmptyContentPlaceholder *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_refresh;
 - (void)loadView;
 

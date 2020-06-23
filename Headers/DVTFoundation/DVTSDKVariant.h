@@ -23,6 +23,7 @@
     NSString *_llvmTargetTripleEnvironment;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int buildVersionPlatformID; // @synthesize buildVersionPlatformID=_buildVersionPlatformID;
 @property(readonly) NSString *llvmTargetTripleEnvironment; // @synthesize llvmTargetTripleEnvironment=_llvmTargetTripleEnvironment;
 @property(readonly) NSString *llvmTargetTripleSys; // @synthesize llvmTargetTripleSys=_llvmTargetTripleSys;
@@ -34,7 +35,6 @@
 @property(readonly) NSArray *archs; // @synthesize archs=_archs;
 @property(readonly) NSDictionary *buildSettings; // @synthesize buildSettings=_buildSettings;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithName:(id)arg1 fromSDKVariantDictionary:(id)arg2 supportedTargetDictionary:(id)arg3 error:(id *)arg4;
 

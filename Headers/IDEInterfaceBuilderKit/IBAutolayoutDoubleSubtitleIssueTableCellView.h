@@ -13,8 +13,8 @@
     NSTextField *_secondarySubtitleTextField;
 }
 
-@property(retain, nonatomic) NSTextField *secondarySubtitleTextField; // @synthesize secondarySubtitleTextField=_secondarySubtitleTextField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTextField *secondarySubtitleTextField; // @synthesize secondarySubtitleTextField=_secondarySubtitleTextField;
 - (void)populateSecondaryTextFields:(id)arg1;
 
 @end

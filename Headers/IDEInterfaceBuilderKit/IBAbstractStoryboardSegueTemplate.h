@@ -24,12 +24,12 @@
 + (BOOL)requiresDestinationControllerIdentifier;
 + (id)codingKeyForPropertyName:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
 @property(copy) NSString *trigger; // @synthesize trigger=_trigger;
 @property(copy) NSString *destinationControllerIdentifier; // @synthesize destinationControllerIdentifier=_destinationControllerIdentifier;
 @property(copy) NSString *segueClassName; // @synthesize segueClassName=_segueClassName;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

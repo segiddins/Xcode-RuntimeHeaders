@@ -23,13 +23,13 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *details; // @synthesize details=_details;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) __weak IDEProvisioningLedgerEntry *parent; // @synthesize parent=_parent;
 @property(nonatomic) __weak IDEProvisioningLedger *ledger; // @synthesize ledger=_ledger;
-- (void).cxx_destruct;
 - (void)provisioningLedgerEntry:(id)arg1 didRecordDetails:(id)arg2;
 - (void)provisioningLedgerEntryDidClose:(id)arg1 withError:(id)arg2;
 - (void)provisioningLedgerEntry:(id)arg1 didCloseSubentry:(id)arg2 withError:(id)arg3;

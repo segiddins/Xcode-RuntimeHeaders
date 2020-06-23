@@ -30,11 +30,11 @@
 + (id)defaultStateQualifierToCountCategoryMap;
 + (id)calculateWordCountForSourceString:(id)arg1 targetAttributes:(id)arg2 error:(id *)arg3;
 + (id)calculateWordCountForSourceString:(id)arg1 targetAttributes:(id)arg2 whitespaceSet:(id)arg3 punctuationSet:(id)arg4 hyphenSet:(id)arg5 whitespaceCharacterSet:(id)arg6 punctuationCharacterSet:(id)arg7 hyphenCharacterSet:(id)arg8 options:(unsigned long long)arg9 error:(id *)arg10;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *stateQualifierToCountCategoryDict; // @synthesize stateQualifierToCountCategoryDict;
 @property(retain) NSString *namespacePrefix; // @synthesize namespacePrefix;
 @property(retain) NSDictionary *countLookupDict; // @synthesize countLookupDict;
 @property(retain) NSDictionary *stageDict; // @synthesize stageDict;
-- (void).cxx_destruct;
 - (BOOL)validStageDictionary:(id)arg1 originalPath:(id)arg2 error:(id *)arg3;
 - (id)createCountLookupDict:(id)arg1;
 - (id)parseStageElement:(id)arg1 namespacePrefixforGMXV:(id)arg2 originalPath:(id)arg3 error:(id *)arg4;

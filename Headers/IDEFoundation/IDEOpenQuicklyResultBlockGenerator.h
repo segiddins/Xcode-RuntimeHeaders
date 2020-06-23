@@ -18,8 +18,8 @@
     NSArray *_prototypes;
 }
 
-@property(readonly) NSArray *prototypes; // @synthesize prototypes=_prototypes;
 - (void).cxx_destruct;
+@property(readonly) NSArray *prototypes; // @synthesize prototypes=_prototypes;
 - (void)updateUserInput:(id)arg1 generation:(long long)arg2;
 - (void)continueProcessing;
 - (id)regenerateResults;

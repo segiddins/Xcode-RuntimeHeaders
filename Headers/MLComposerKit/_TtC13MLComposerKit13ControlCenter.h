@@ -17,6 +17,7 @@
     MISSING_TYPE *evaluationDataAnalyzer;
     MISSING_TYPE *dataSourceAnalyzer;
     MISSING_TYPE *evaluator;
+    MISSING_TYPE *modelAnalyzer;
     MISSING_TYPE *inferencer;
     MISSING_TYPE *dataProvider;
 }

@@ -44,6 +44,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSView *consoleFontPickerView; // @synthesize consoleFontPickerView=_consoleFontPickerView;
 @property __weak NSPopUpButton *cursorPopUp; // @synthesize cursorPopUp=_cursorPopUp;
 @property __weak NSBox *cursorSeparatorBox; // @synthesize cursorSeparatorBox=_cursorSeparatorBox;
@@ -55,7 +56,6 @@
 @property(retain) DVTBorderedView *themeListContainer; // @synthesize themeListContainer=_themeListContainer;
 @property(readonly) NSArrayController *categoriesArrayController; // @synthesize categoriesArrayController=_categoriesArrayController;
 @property(retain) NSArray *fontAndColorItems; // @synthesize fontAndColorItems=_fontAndColorItems;
-- (void).cxx_destruct;
 - (void)changeFont:(id)arg1;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)chooseFont:(id)arg1;

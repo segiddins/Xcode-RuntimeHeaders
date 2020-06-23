@@ -15,8 +15,8 @@
     NSSound *_playingSound;
 }
 
-@property(retain) NSPopUpButton *soundPopUpButton; // @synthesize soundPopUpButton=_soundPopUpButton;
 - (void).cxx_destruct;
+@property(retain) NSPopUpButton *soundPopUpButton; // @synthesize soundPopUpButton=_soundPopUpButton;
 - (void)awakeFromNib;
 - (void)populatePopUpButton;
 - (void)addPathToRecentSounds:(id)arg1;

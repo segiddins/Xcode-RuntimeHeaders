@@ -27,8 +27,8 @@
 
 + (id)keyPathsForValuesAffectingLogRecords;
 + (void)initialize;
-@property(retain) IDELogStore *logStore; // @synthesize logStore=_logStore;
 - (void).cxx_destruct;
+@property(retain) IDELogStore *logStore; // @synthesize logStore=_logStore;
 - (id)sectionRecorderForTool:(id)arg1;
 - (void)indexerCrashed;
 - (void)_handleCrash:(id)arg1;

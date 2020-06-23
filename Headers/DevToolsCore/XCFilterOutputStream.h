@@ -14,9 +14,9 @@
     id <XCOutputStreams> _nextOutputStream;
 }
 
+- (void).cxx_destruct;
 @property BOOL closesNextOutputStreamWhenClosed; // @synthesize closesNextOutputStreamWhenClosed=_closesNextOutputStreamWhenClosed;
 @property(retain) id <XCOutputStreams> nextOutputStream; // @synthesize nextOutputStream=_nextOutputStream;
-- (void).cxx_destruct;
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;

@@ -16,10 +16,10 @@
 }
 
 + (id)customAttributeType:(long long)arg1 name:(id)arg2 defaultValue:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) long long uniformType; // @synthesize uniformType=_uniformType;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1 name:(id)arg2 defaultValue:(id)arg3;
 
 @end

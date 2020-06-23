@@ -23,9 +23,9 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) IDEEditor<IDEPlaygroundHostingEditor> *playgroundEditor; // @synthesize playgroundEditor=_playgroundEditor;
-- (void).cxx_destruct;
 - (void)didDeleteOrReplaceParagraphForAnnotation:(id)arg1;
 - (void)providerWillUninstall;
 @property(retain) IDESourceCodePlaygroundSection *playgroundSection;

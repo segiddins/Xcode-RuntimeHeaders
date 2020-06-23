@@ -19,12 +19,12 @@
     NSArray *_unsupportedReasons;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setUnsupportedReasons:) NSArray *unsupportedReasons; // @synthesize unsupportedReasons=_unsupportedReasons;
 @property(copy, nonatomic, setter=_setPromptDialogs:) NSArray *promptDialogs; // @synthesize promptDialogs=_promptDialogs;
 @property(copy, nonatomic) NSString *resolutionResultClassName; // @synthesize resolutionResultClassName=_resolutionResultClassName;
 @property(copy, nonatomic, setter=_setConfirmationReasons:) NSArray *confirmationReasons; // @synthesize confirmationReasons=_confirmationReasons;
 @property(nonatomic) BOOL supportsResolution; // @synthesize supportsResolution=_supportsResolution;
-- (void).cxx_destruct;
 - (void)_updateDefaultUnsupportedReasons;
 - (void)_addPromptDialog:(id)arg1;
 @property(readonly, nonatomic) BOOL _typeSupportsNeedsValueResolution;

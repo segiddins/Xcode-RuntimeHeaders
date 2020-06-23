@@ -53,6 +53,7 @@
 + (id)keyPathsForValuesAffectingAllRelationshipsIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllAttributesIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllPropertiesIncludingInheritance;
+- (void).cxx_destruct;
 @property(copy) NSArray *fetchIndexes; // @synthesize fetchIndexes=_fetchIndexes;
 @property(retain) CDMInheritanceRelationship *oldInheritanceRelationship; // @synthesize oldInheritanceRelationship=_oldInheritanceRelationship;
 @property(retain) CDMInheritanceRelationship *inheritanceRelationship; // @synthesize inheritanceRelationship=_inheritanceRelationship;
@@ -68,7 +69,6 @@
 @property(copy, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *representedClassName; // @synthesize representedClassName=_representedClassName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)convertFetchIndexesToEntityCompoundIndexes;
 - (id)encodeXMLElement;

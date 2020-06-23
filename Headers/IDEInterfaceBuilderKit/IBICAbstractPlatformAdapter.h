@@ -29,9 +29,9 @@
 + (id)platformAdapterClasses;
 + (id)extensions;
 + (id)extensionPoint;
+- (void).cxx_destruct;
 @property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (BOOL)shouldIncludePDFImageSet:(id)arg1 inCARFileWithOptions:(id)arg2;
 - (BOOL)shouldIncludeJPEGImageSet:(id)arg1 inCARFileWithOptions:(id)arg2;
 - (BOOL)shouldIncludeImageSetRep:(id)arg1 requiringFeatureIntroducedInVersion:(id)arg2 inCARFileWithOptions:(id)arg3;

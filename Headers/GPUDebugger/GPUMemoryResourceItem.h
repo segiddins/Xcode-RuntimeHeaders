@@ -18,10 +18,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_commandEncoderInfo;
     NSDictionary *_commandBufferInfo;
     long long _itemType;
+    NSString *_uniqueLabel;
     BOOL _isResourceLabelDuplicate;
     id <DYPMemoryResource> _resource;
     GPUMemoryResourceItem *_parentItem;
     NSImage *_thumbnailImage;
+    unsigned long long _allocationGroupID;
     NSArray *_commandEncoders;
     NSArray *_commandBuffers;
     NSMutableArray *_mutableChildItems;
@@ -29,16 +31,17 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)csvHeaderRecord;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *filterItems; // @synthesize filterItems=_filterItems;
 @property(retain, nonatomic) NSMutableArray *mutableChildItems; // @synthesize mutableChildItems=_mutableChildItems;
 @property(retain, nonatomic) NSArray *commandBuffers; // @synthesize commandBuffers=_commandBuffers;
 @property(retain, nonatomic) NSArray *commandEncoders; // @synthesize commandEncoders=_commandEncoders;
+@property(nonatomic) unsigned long long allocationGroupID; // @synthesize allocationGroupID=_allocationGroupID;
 @property(nonatomic) BOOL isResourceLabelDuplicate; // @synthesize isResourceLabelDuplicate=_isResourceLabelDuplicate;
 @property(retain, nonatomic) NSImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(readonly, nonatomic) long long itemType; // @synthesize itemType=_itemType;
 @property(readonly, nonatomic) __weak GPUMemoryResourceItem *parentItem; // @synthesize parentItem=_parentItem;
 @property(retain, nonatomic) id <DYPMemoryResource> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)csvRecord;
 - (id)createFilterItems;
 @property(readonly, nonatomic) NSArray *filterableChildObjects;

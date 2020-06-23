@@ -15,10 +15,10 @@
     NSTextField *_messageText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *messageText; // @synthesize messageText=_messageText;
 @property(retain, nonatomic) NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSSet *issues; // @synthesize issues=_issues;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)initWithIssues:(id)arg1;
 

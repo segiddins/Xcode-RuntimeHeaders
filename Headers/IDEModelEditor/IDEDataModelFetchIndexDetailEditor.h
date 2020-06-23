@@ -29,6 +29,7 @@
 
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingSelection;
+- (void).cxx_destruct;
 @property(copy) NSIndexSet *selectedElementIndexes; // @synthesize selectedElementIndexes=_selectedElementIndexes;
 @property(retain) NSTableColumn *elementsOrderColumn; // @synthesize elementsOrderColumn=_elementsOrderColumn;
 @property(retain) NSTableColumn *elementsExpressionColumn; // @synthesize elementsExpressionColumn=_elementsExpressionColumn;
@@ -38,7 +39,6 @@
 @property(retain) NSArrayController *elementsArrayController; // @synthesize elementsArrayController=_elementsArrayController;
 @property(retain) IDEDataModelFetchIndexEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 @property(retain) CDMFetchIndex *selectedFetchIndex; // @synthesize selectedFetchIndex=_selectedFetchIndex;
-- (void).cxx_destruct;
 - (double)contentOriginXOffsetForCapsuleView:(id)arg1;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
 - (BOOL)shouldDrawBorderBelowHeaderForCapsuleView:(id)arg1;

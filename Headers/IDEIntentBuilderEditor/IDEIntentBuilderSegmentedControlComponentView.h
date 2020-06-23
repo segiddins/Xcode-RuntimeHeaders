@@ -13,8 +13,8 @@
     NSSegmentedControl *_segmentedControl;
 }
 
-@property __weak NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+@property __weak NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void)unbind;
 - (BOOL)bindTo:(id)arg1;
 

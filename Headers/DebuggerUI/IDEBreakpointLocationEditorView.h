@@ -19,11 +19,11 @@
 }
 
 + (id)keyPathsForValuesAffectingSelectedConditionIndex;
+- (void).cxx_destruct;
 @property __weak NSTextField *conditionTextField; // @synthesize conditionTextField=_conditionTextField;
 @property __weak NSMatrix *conditionMatrix; // @synthesize conditionMatrix=_conditionMatrix;
 @property __weak NSTextField *parentBreakpointConditionLabel; // @synthesize parentBreakpointConditionLabel=_parentBreakpointConditionLabel;
 @property(readonly) IDEBreakpointLocation *breakpoint; // @synthesize breakpoint=_breakpoint;
-- (void).cxx_destruct;
 - (void)condtionMatrixButtonPressed:(id)arg1;
 @property long long selectedConditionIndex;
 @property(readonly) NSView *initialFirstResponder;

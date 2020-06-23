@@ -19,9 +19,9 @@
 }
 
 + (unsigned long long)defaultDrawOrdering;
+- (void).cxx_destruct;
 @property unsigned long long drawOrdering; // @synthesize drawOrdering=_drawOrdering;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
-- (void).cxx_destruct;
 - (void)drawUnderTextInRect:(struct CGRect)arg1;
 - (void)drawUnderCurrentLineHighlightInRect:(struct CGRect)arg1;
 - (void)drawOverTextInRect:(struct CGRect)arg1;

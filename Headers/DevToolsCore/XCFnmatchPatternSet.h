@@ -17,9 +17,9 @@
 
 + (id)fnmatchPatternSetWithPatterns:(id)arg1;
 + (id)fnmatchPatternSetWithPatterns:(id)arg1 options:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly) NSArray *patterns; // @synthesize patterns=_patterns;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)matchesString:(id)arg1;
 - (id)init;

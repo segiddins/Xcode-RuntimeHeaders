@@ -15,8 +15,8 @@
     DVTNotificationToken *_inspectedComponentWillChangeToken;
 }
 
-@property(readonly, nonatomic) GKComponent *inspectedComponent; // @synthesize inspectedComponent=_inspectedComponent;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GKComponent *inspectedComponent; // @synthesize inspectedComponent=_inspectedComponent;
 - (void)didUpdateInspectedComponent;
 - (void)reloadPropertiesOfCustomComponent;
 - (void)didSetInspectedObjects:(id)arg1;

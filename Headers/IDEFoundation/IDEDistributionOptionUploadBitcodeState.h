@@ -16,11 +16,11 @@
     NSSet *_platformsWantingAsk;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *platformsWantingAsk; // @synthesize platformsWantingAsk=_platformsWantingAsk;
 @property BOOL bitcodeBalanced; // @synthesize bitcodeBalanced=_bitcodeBalanced;
 @property unsigned long long bitcodeLevel; // @synthesize bitcodeLevel=_bitcodeLevel;
 @property BOOL uploadBitcode; // @synthesize uploadBitcode=_uploadBitcode;
-- (void).cxx_destruct;
 
 @end
 

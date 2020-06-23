@@ -15,10 +15,10 @@
     NSString *_appPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *appPath; // @synthesize appPath=_appPath;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (id)_initWith:(id)arg1 displayName:(id)arg2 appPath:(id)arg3;
 
 @end

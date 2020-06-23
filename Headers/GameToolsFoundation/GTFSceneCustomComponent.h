@@ -19,12 +19,12 @@
 + (BOOL)supportsSecureCoding;
 + (id)customClassForClassNamed:(id)arg1 inModuleNamed:(id)arg2;
 + (id)customClassForClassNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *propertyNames; // @synthesize propertyNames=_propertyNames;
 @property(readonly, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
-- (void)addAndResolveProperties:(struct NSMutableDictionary *)arg1;
+- (void)addAndResolveProperties:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)removePropertyNamed:(id)arg1;

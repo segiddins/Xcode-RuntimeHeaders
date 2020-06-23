@@ -13,8 +13,8 @@
     IDETest *_test;
 }
 
-@property(readonly) IDETest *test; // @synthesize test=_test;
 - (void).cxx_destruct;
+@property(readonly) IDETest *test; // @synthesize test=_test;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 test:(id)arg3;

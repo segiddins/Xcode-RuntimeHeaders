@@ -29,12 +29,12 @@
 + (id)sharedDevicesWindowController;
 + (id)logAspect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *loadedTabIndexes; // @synthesize loadedTabIndexes=_loadedTabIndexes;
 @property(retain) DVTDevicesWindowToolbarViewController *toolbarVC; // @synthesize toolbarVC=_toolbarVC;
 @property(retain) DVTOnboardingTutorialController *tutorialController; // @synthesize tutorialController=_tutorialController;
 @property(retain) NSWindow *tutorialWindow; // @synthesize tutorialWindow=_tutorialWindow;
 @property(copy) CDUnknownBlockType devicesWindowCompletionHandler; // @synthesize devicesWindowCompletionHandler=_devicesWindowCompletionHandler;
-- (void).cxx_destruct;
 - (void)changeMode:(long long)arg1;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;

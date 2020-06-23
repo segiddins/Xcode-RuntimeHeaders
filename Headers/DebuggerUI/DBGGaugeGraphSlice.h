@@ -20,12 +20,12 @@
     NSLayoutConstraint *_threadIDFieldTopConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *threadIDFieldTopConstraint; // @synthesize threadIDFieldTopConstraint=_threadIDFieldTopConstraint;
 @property __weak NSTextField *threadQoSField; // @synthesize threadQoSField=_threadQoSField;
 @property __weak NSTextField *threadIDField; // @synthesize threadIDField=_threadIDField;
 @property __weak DVTBorderedView *graphView; // @synthesize graphView=_graphView;
 @property __weak DVTBorderedView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (id)colorForChartNamed:(id)arg1;
 - (void)removeThreadQoSField;
 - (void)_removeThreadQoSField;

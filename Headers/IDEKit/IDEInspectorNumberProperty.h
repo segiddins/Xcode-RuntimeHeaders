@@ -40,11 +40,11 @@
     NSButton *_checkbox;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *checkbox; // @synthesize checkbox=_checkbox;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(retain, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)refresh;
 - (void)refreshTextField;

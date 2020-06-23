@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     GPUBufferViewerDefaults *_defaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUBufferViewerDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) GPUBufferViewerDataSourceViewController *dataSourceViewController; // @synthesize dataSourceViewController=_dataSourceViewController;
 @property(retain, nonatomic) Class dataSourceViewControllerClass; // @synthesize dataSourceViewControllerClass=_dataSourceViewControllerClass;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *offsetView; // @synthesize offsetView=_offsetView;
 @property(nonatomic) __weak NSPopUpButton *columnView; // @synthesize columnView=_columnView;
 @property(nonatomic) __weak NSPopUpButton *layoutView; // @synthesize layoutView=_layoutView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForDisplayingAllData;
 - (void)changeStyle:(id)arg1;
 - (void)updateStyleView;

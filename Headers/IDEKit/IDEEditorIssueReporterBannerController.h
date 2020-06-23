@@ -14,9 +14,9 @@
     IDEEditorBannerController *_bannerController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEEditorBannerController *bannerController; // @synthesize bannerController=_bannerController;
 @property(retain, nonatomic) DVTScopeBarController *scopeBarController; // @synthesize scopeBarController=_scopeBarController;
-- (void).cxx_destruct;
 - (id)initWithIcon:(id)arg1 messageText:(id)arg2 actionBlock:(CDUnknownBlockType)arg3;
 
 @end

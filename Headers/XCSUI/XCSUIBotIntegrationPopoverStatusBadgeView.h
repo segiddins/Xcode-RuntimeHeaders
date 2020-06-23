@@ -16,9 +16,9 @@
     XCSUIStatusBadge *_badge;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIStatusBadge *badge; // @synthesize badge=_badge;
 @property(retain) NSColor *badgeStrokeColor; // @synthesize badgeStrokeColor=_badgeStrokeColor;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (void)awakeFromNib;
 

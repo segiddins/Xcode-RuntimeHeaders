@@ -25,6 +25,7 @@
     NSProgressIndicator *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain, nonatomic) DVTTableView *certsTable; // @synthesize certsTable=_certsTable;
 @property(retain, nonatomic) NSScrollView *certsScrollView; // @synthesize certsScrollView=_certsScrollView;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) IDEManageCertificatesContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) DVTTableViewFloatingRowView *headerRowView; // @synthesize headerRowView=_headerRowView;
 @property(retain, nonatomic) IDEManageCertificatesItemSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTableView *tableView;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)_toolTipForItem:(id)arg1;

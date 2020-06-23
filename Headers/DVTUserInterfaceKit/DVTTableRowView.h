@@ -18,11 +18,11 @@
     CDStruct_2b6e6e30 _rowGridLineInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL alwaysDrawSeparatorLine; // @synthesize alwaysDrawSeparatorLine=_alwaysDrawSeparatorLine;
 @property(retain) NSColor *rowGridLineColor; // @synthesize rowGridLineColor=_rowGridLineColor;
 @property(nonatomic) CDStruct_2b6e6e30 rowGridLineInset; // @synthesize rowGridLineInset=_rowGridLineInset;
 @property(nonatomic) __weak id <DVTTableRowViewMouseInsideDelegate> mouseInsideDelegate; // @synthesize mouseInsideDelegate=_mouseInsideDelegate;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

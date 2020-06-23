@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <DYPStateMirror> _rootStateMirror;
 }
 
-@property(readonly, nonatomic) id <DYPStateMirror> rootStateMirror; // @synthesize rootStateMirror=_rootStateMirror;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DYPStateMirror> rootStateMirror; // @synthesize rootStateMirror=_rootStateMirror;
 - (void)primitiveInvalidate;
 - (id)resourceDictionaryForDeviceID:(unsigned long long)arg1;
 - (void)outlineVisitor:(id)arg1 addPipelineStateToCurrentDisplayable:(unsigned long long)arg2;

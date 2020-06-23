@@ -23,12 +23,12 @@
 }
 
 + (id)noLabelDefinition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *labelDefinitions; // @synthesize labelDefinitions=_labelDefinitions;
 @property(nonatomic) BOOL showsLabelNames; // @synthesize showsLabelNames=_showsLabelNames;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)viewDidMoveToSuperview;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)mouseDown:(id)arg1;

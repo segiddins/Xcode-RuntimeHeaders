@@ -16,8 +16,8 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
-@property __weak NSPopUpButton *toolchainPopup; // @synthesize toolchainPopup=_toolchainPopup;
 - (void).cxx_destruct;
+@property __weak NSPopUpButton *toolchainPopup; // @synthesize toolchainPopup=_toolchainPopup;
 - (void)toolchainSelected:(id)arg1;
 - (void)updateToolchainsPopup;
 - (void)loadView;

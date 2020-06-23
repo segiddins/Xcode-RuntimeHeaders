@@ -29,13 +29,13 @@
 + (id)keyPathsForValuesAffectingRecorded;
 + (BOOL)_queueNameBelongsToConcurrentQueues:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL toBeInvalidated; // @synthesize toBeInvalidated=_toBeInvalidated;
 @property(retain, nonatomic) IDEThread *recordedThread; // @synthesize recordedThread=_recordedThread;
 @property(copy, nonatomic) NSArray *pendingBlocksThreads; // @synthesize pendingBlocksThreads=_pendingBlocksThreads;
 @property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) IDEDebugProcess *parentProcess; // @synthesize parentProcess=_parentProcess;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) unsigned long long numberOfPendingBlocks;

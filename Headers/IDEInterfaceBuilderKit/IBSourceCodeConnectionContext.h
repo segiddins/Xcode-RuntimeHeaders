@@ -49,6 +49,7 @@
 + (Class)swiftActionSourceCodeContextClass;
 + (BOOL)shouldBePrioritizedWhenInsertingBelowFirstMethod;
 + (id)targetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 document:(id)arg3 preferredTarget:(id *)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) double positionPriority; // @synthesize positionPriority=_positionPriority;
 @property(retain) NSError *insertionError; // @synthesize insertionError=_insertionError;
 @property(nonatomic) BOOL wasInserted; // @synthesize wasInserted=_wasInserted;
@@ -69,7 +70,6 @@
 @property(copy, nonatomic) NSURL *sourceCodeDocumentURL; // @synthesize sourceCodeDocumentURL=_sourceCodeDocumentURL;
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(nonatomic) long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)representativeCounterpart;
 - (id)counterpartsForIgnoringErrors;
 - (id)insertSourceCodeFromCompositeResult:(id)arg1 error:(id *)arg2;

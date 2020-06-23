@@ -25,6 +25,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly) LOCITSRulesFile *rulesFile; // @synthesize rulesFile=_rulesFile;
 @property(readonly) NSArray *glossaries; // @synthesize glossaries=_glossaries;
@@ -36,7 +37,6 @@
 @property(readonly, copy) NSArray *referenceFiles; // @synthesize referenceFiles=_referenceFiles;
 @property(readonly, copy) NSArray *fileDescriptions; // @synthesize fileDescriptions=_fileDescriptions;
 @property __weak LOCHandler *handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (BOOL)_checkInitializationOfLOCProperty:(id)arg1 fromFile:(id)arg2 parsingError:(id)arg3 finalError:(id *)arg4;
 - (BOOL)_createRulesFileWithError:(id *)arg1;
 - (BOOL)_isXliffable:(id)arg1;

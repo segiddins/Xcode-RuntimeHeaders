@@ -55,6 +55,7 @@
 + (id)keyPathsForValuesAffectingBusyReason;
 + (id)keyPathsForValuesAffectingBusy;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTDelayedInvocation *updateProductsDelayedInvocation; // @synthesize updateProductsDelayedInvocation=_updateProductsDelayedInvocation;
 @property(retain) DVTNotificationToken *splitViewResizeObserver; // @synthesize splitViewResizeObserver=_splitViewResizeObserver;
 @property(retain) DVTObservingToken *archiveProductSourceHasCompletedInitialLoading; // @synthesize archiveProductSourceHasCompletedInitialLoading=_archiveProductSourceHasCompletedInitialLoading;
@@ -89,7 +90,6 @@
 @property __weak DVTSplitViewDividerLine *splitViewDividerLine; // @synthesize splitViewDividerLine=_splitViewDividerLine;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
-- (void).cxx_destruct;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)productManager:(id)arg1 receivedErrors:(id)arg2 fromSource:(id)arg3;

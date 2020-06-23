@@ -13,8 +13,8 @@
     id <DYResource> _loadedResource;
 }
 
-@property(retain) id <DYResource> loadedResource; // @synthesize loadedResource=_loadedResource;
 - (void).cxx_destruct;
+@property(retain) id <DYResource> loadedResource; // @synthesize loadedResource=_loadedResource;
 - (void)resourceObjectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)label;
 - (BOOL)navigableItem_isLeaf;

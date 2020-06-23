@@ -21,9 +21,9 @@
     long long _count;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(copy) NSString *statusTypeDisplayName; // @synthesize statusTypeDisplayName=_statusTypeDisplayName;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 @property BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;

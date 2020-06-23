@@ -25,6 +25,7 @@
 }
 
 + (id)keyPathsForValuesAffectingPasswordsMatch;
+- (void).cxx_destruct;
 @property(retain) NSView *buttonsView; // @synthesize buttonsView=_buttonsView;
 @property(retain) NSView *verifyView; // @synthesize verifyView=_verifyView;
 @property(nonatomic) BOOL showButtons; // @synthesize showButtons=_showButtons;
@@ -35,7 +36,6 @@
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(retain) DVTStackView_ML *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) BOOL verify; // @synthesize verify=_verify;
-- (void).cxx_destruct;
 - (void)cancelPassphraseAction:(id)arg1;
 - (void)setPassphraseAction:(id)arg1;
 - (void)windowDidLoad;

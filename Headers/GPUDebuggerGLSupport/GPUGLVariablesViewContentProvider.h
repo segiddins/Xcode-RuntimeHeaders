@@ -37,10 +37,10 @@ __attribute__((visibility("hidden")))
     int _objectType;
 }
 
-@property(nonatomic) int objectType; // @synthesize objectType=_objectType;
-@property(nonatomic) unsigned int objectID; // @synthesize objectID=_objectID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int objectType; // @synthesize objectType=_objectType;
+@property(nonatomic) unsigned int objectID; // @synthesize objectID=_objectID;
 - (id)imageToUseInDefaultQuickLookForNode:(id)arg1;
 - (id)imageForNode:(id)arg1;
 - (void)provideScopeChoices:(id)arg1;

@@ -14,9 +14,10 @@
     BOOL _shouldListenForRemoteToolPIDsFromInferior;
 }
 
++ (BOOL)isAutoAttachEnabled;
 + (id)sharedInstance;
-@property(nonatomic) BOOL shouldListenForRemoteToolPIDsFromInferior; // @synthesize shouldListenForRemoteToolPIDsFromInferior=_shouldListenForRemoteToolPIDsFromInferior;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldListenForRemoteToolPIDsFromInferior; // @synthesize shouldListenForRemoteToolPIDsFromInferior=_shouldListenForRemoteToolPIDsFromInferior;
 - (void)_waitForHostXcodeToFinishAttachingToRemoteToolWithPID:(int)arg1;
 - (void)_postRemoteToolPID:(int)arg1 targetRuntimeIdentifier:(id)arg2 toXcodeWithPID:(int)arg3 runtimeDestinationHint:(id)arg4;
 - (void)postRemoteToolPIDToHost:(int)arg1 targetRuntimeIdentifier:(id)arg2 runtimeDestinationHint:(id)arg3;

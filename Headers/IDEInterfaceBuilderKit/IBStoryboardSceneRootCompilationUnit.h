@@ -15,8 +15,8 @@
 }
 
 + (id)rootUnitWithLeader:(id)arg1 topLevelObjects:(id)arg2 fromStoryboard:(id)arg3 requiresIndependentInstantiation:(BOOL)arg4;
-@property(readonly) BOOL requiresIndependentInstantiation; // @synthesize requiresIndependentInstantiation=_requiresIndependentInstantiation;
 - (void).cxx_destruct;
+@property(readonly) BOOL requiresIndependentInstantiation; // @synthesize requiresIndependentInstantiation=_requiresIndependentInstantiation;
 - (id)compilationResultWithCompiledPackage:(id)arg1;
 - (id)localOIDToStoryboardOIDMap;
 - (id)localObjectForSegueTemplate:(id)arg1;

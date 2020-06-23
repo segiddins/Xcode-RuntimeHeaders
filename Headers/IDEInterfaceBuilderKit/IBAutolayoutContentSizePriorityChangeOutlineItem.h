@@ -13,8 +13,8 @@
     IBAutolayoutContentSizePriorityChange *_change;
 }
 
-@property(readonly, nonatomic) IBAutolayoutContentSizePriorityChange *change; // @synthesize change=_change;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBAutolayoutContentSizePriorityChange *change; // @synthesize change=_change;
 - (id)initWithChange:(id)arg1;
 
 @end

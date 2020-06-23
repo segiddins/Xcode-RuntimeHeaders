@@ -24,11 +24,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(retain) id modelRoot; // @synthesize modelRoot=_modelRoot;
-- (void).cxx_destruct;
 @property(copy) NSString *treeControllerChildrenKeyPath; // @synthesize treeControllerChildrenKeyPath=_treeControllerChildrenKeyPath;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)representativeIcon;

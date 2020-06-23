@@ -16,11 +16,11 @@
     NSTextField *_darkTextField;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *darkTextField; // @synthesize darkTextField=_darkTextField;
 @property __weak NSTextField *lightTextField; // @synthesize lightTextField=_lightTextField;
 @property __weak NSButton *darkButton; // @synthesize darkButton=_darkButton;
 @property __weak NSButton *lightButton; // @synthesize lightButton=_lightButton;
-- (void).cxx_destruct;
 - (void)_setTextFieldColors:(id)arg1;
 - (id)_fallbackDeviceIconForAppearance:(unsigned long long)arg1;
 - (id)_deviceIconForAppearance:(unsigned long long)arg1;

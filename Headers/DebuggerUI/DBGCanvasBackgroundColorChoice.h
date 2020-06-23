@@ -18,10 +18,10 @@
 + (id)standardColorChoiceWithIdentifier:(id)arg1;
 + (id)standardColorChoices;
 + (id)choiceWithIdentifier:(id)arg1 name:(id)arg2 color:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSColor *color; // @synthesize color=_color;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

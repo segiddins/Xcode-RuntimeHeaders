@@ -24,6 +24,7 @@
     struct CGSize _speakerSizeInInches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize speakerSizeInInches; // @synthesize speakerSizeInInches=_speakerSizeInInches;
 @property(readonly, nonatomic) double cameraSizeInInches; // @synthesize cameraSizeInInches=_cameraSizeInInches;
 @property(readonly, nonatomic) double homeButtonSizeInInches; // @synthesize homeButtonSizeInInches=_homeButtonSizeInInches;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(readonly, nonatomic) double dpi; // @synthesize dpi=_dpi;
 @property(readonly, nonatomic) struct CGSize screenSizeInPixels; // @synthesize screenSizeInPixels=_screenSizeInPixels;
-- (void).cxx_destruct;
 - (id)generationInstanceWithRotation:(BOOL)arg1 darkAppearance:(BOOL)arg2 customizationBlock:(CDUnknownBlockType)arg3;
 - (BOOL)isShowingSpeaker;
 - (id)description;

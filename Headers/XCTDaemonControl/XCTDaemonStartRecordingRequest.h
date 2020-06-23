@@ -21,11 +21,11 @@
 }
 
 + (id)minimumProtocolVersion;
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) XCTDaemonRecordingConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)sendStartRecordingMessageToDaemonProxy:(id)arg1;
 - (void)handleConnectionFailure:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;

@@ -42,9 +42,9 @@
 
 + (id)archivedDataWithRootObject:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL prettyPrintOutput; // @synthesize prettyPrintOutput=_prettyPrintOutput;
 @property(retain, nonatomic) id <IBXMLCoderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned long long)arg2 forKey:(id)arg3;
 - (void)encodeRect:(struct CGRect)arg1 forKey:(id)arg2;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;

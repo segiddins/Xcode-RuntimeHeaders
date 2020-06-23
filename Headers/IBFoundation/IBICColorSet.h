@@ -26,7 +26,7 @@
 - (void)updateIdentifierOfIncomingChildToBeUnique:(id)arg1;
 - (CDStruct_550fdc95)taggingSupport;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (BOOL)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)manifestArchivist:(id)arg1 populateManifestEntry:(id)arg2 forChild:(id)arg3;
 - (BOOL)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;

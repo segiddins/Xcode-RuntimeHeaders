@@ -13,8 +13,8 @@
     XCSBot *_bot;
 }
 
-@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 - (void)queryDataSourceWithItemsCount:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

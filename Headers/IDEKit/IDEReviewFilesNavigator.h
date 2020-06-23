@@ -55,6 +55,7 @@
 + (id)keyPathsForValuesAffectingSelectedNavigator;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCheckedFilePaths;
+- (void).cxx_destruct;
 @property unsigned long long supportedStatusBadges; // @synthesize supportedStatusBadges=_supportedStatusBadges;
 @property unsigned long long supportedNavigators; // @synthesize supportedNavigators=_supportedNavigators;
 @property(nonatomic) BOOL showHierarchy; // @synthesize showHierarchy=_showHierarchy;
@@ -72,7 +73,6 @@
 @property(retain) id <IDEReviewFilesDataSource> flatDataSource; // @synthesize flatDataSource=_flatDataSource;
 @property(retain) id <IDEReviewFilesDataSource> fileSystemDataSource; // @synthesize fileSystemDataSource=_fileSystemDataSource;
 @property(retain) id <IDEReviewFilesDataSource> workspaceDataSource; // @synthesize workspaceDataSource=_workspaceDataSource;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)reloadCheckboxesForFilePaths:(id)arg1;
 - (void)_reloadCheckboxes;

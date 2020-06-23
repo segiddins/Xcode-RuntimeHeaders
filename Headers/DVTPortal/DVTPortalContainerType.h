@@ -37,6 +37,7 @@
 + (id)portalFeatureIdentifierToContainerType;
 + (id)portalContainerTypesRequiredPrefixes;
 + (id)portalContainerTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canBeUsedByFreeUsers; // @synthesize canBeUsedByFreeUsers=_canBeUsedByFreeUsers;
 @property(readonly, nonatomic) BOOL canBeUsedByUniversityTeams; // @synthesize canBeUsedByUniversityTeams=_canBeUsedByUniversityTeams;
 @property(readonly, nonatomic) BOOL canBeUsedByUniversityMembers; // @synthesize canBeUsedByUniversityMembers=_canBeUsedByUniversityMembers;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) NSString *requiredPrefix; // @synthesize requiredPrefix=_requiredPrefix;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)containersFromProfile:(id)arg1;
 - (unsigned long long)hash;

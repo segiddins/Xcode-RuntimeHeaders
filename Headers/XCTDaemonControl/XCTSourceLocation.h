@@ -14,9 +14,9 @@
     unsigned long long _lineNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithFilePath:(id)arg1 lineNumber:(unsigned long long)arg2;

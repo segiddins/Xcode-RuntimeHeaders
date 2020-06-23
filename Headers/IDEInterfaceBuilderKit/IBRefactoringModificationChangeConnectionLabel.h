@@ -17,9 +17,9 @@
 }
 
 + (id)plistTypeName;
+- (void).cxx_destruct;
 @property(readonly) NSString *replacementLabel; // @synthesize replacementLabel=_replacementLabel;
 @property(readonly) IBMemberID *connectionID; // @synthesize connectionID=_connectionID;
-- (void).cxx_destruct;
 - (id)modificationDescription;
 - (id)categoryName;
 - (id)modificationByChangingReplacementName:(id)arg1;

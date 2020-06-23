@@ -15,10 +15,10 @@
     IDEWorkspaceTabController *_workspaceTabController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(readonly) NSDocument *document; // @synthesize document=_document;
 @property(readonly) IDEEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) IDEWorkspace *workspace;
 - (id)initWithEditor:(id)arg1 document:(id)arg2 fileDataType:(id)arg3 workspaceTabController:(id)arg4;

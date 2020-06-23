@@ -14,9 +14,9 @@
     IBRefactoringModification *_modification;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBRefactoringModification *modification; // @synthesize modification=_modification;
 @property(retain) NSString *originalValueName; // @synthesize originalValueName=_originalValueName;
-- (void).cxx_destruct;
 - (id)keyName;
 - (id)categoryName;
 - (id)initWithFileChangeSet:(id)arg1 modification:(id)arg2;

@@ -15,10 +15,10 @@
     NSSegmentedControl *_fileHistoryControl;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSegmentedControl *fileHistoryControl; // @synthesize fileHistoryControl=_fileHistoryControl;
 @property(retain) DFRNavigationMode *modeForFileHistoryNavigation; // @synthesize modeForFileHistoryNavigation=_modeForFileHistoryNavigation;
 @property(retain) DVTObservingToken *editorAreaDocumentObserver; // @synthesize editorAreaDocumentObserver=_editorAreaDocumentObserver;
-- (void).cxx_destruct;
 
 @end
 

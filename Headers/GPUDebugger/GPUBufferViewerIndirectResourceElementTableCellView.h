@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <GPUBufferViewerResourceValue> _value;
 }
 
-@property(readonly, nonatomic) id <GPUBufferViewerResourceValue> value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GPUBufferViewerResourceValue> value; // @synthesize value=_value;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setValue:(id)arg1 forComponent:(unsigned long long)arg2 row:(unsigned long long)arg3;
 - (id)initWithTableColumn:(id)arg1;

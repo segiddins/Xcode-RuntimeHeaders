@@ -21,12 +21,12 @@
     DTXProxyChannel *_proxyChannel;
 }
 
+- (void).cxx_destruct;
 @property(retain) DTXProxyChannel *proxyChannel; // @synthesize proxyChannel=_proxyChannel;
 @property(retain) id <XCTDaemonDTXConnectionProviding> daemonDTXConnectionProvider; // @synthesize daemonDTXConnectionProvider=_daemonDTXConnectionProvider;
 @property(readonly) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)_queue_initiateSessionWithConnection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_queue_isValid;
 - (id)protocolVersion;

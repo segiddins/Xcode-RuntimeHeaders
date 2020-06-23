@@ -23,6 +23,7 @@
 }
 
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) NSSlider *slider; // @synthesize slider=_slider;
 @property(retain) IBNSSliderAccessory *maximumValueAccessory; // @synthesize maximumValueAccessory=_maximumValueAccessory;
 @property(retain) IBNSSliderAccessory *minimumValueAccessory; // @synthesize minimumValueAccessory=_minimumValueAccessory;
@@ -30,7 +31,6 @@
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)runtimeTouchBarItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

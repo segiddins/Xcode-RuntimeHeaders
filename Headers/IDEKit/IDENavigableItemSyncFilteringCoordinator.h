@@ -13,8 +13,8 @@
     DVTDelayedInvocation *_scheduledFilteringRestart;
 }
 
-@property(readonly) DVTDelayedInvocation *scheduledFilteringRestart; // @synthesize scheduledFilteringRestart=_scheduledFilteringRestart;
 - (void).cxx_destruct;
+@property(readonly) DVTDelayedInvocation *scheduledFilteringRestart; // @synthesize scheduledFilteringRestart=_scheduledFilteringRestart;
 - (void)_invalidateArrangedChildrenOfItems:(id)arg1;
 - (void)_handleObjectGraphDidChange:(id)arg1;
 - (void)_handleItemsPropertiesDidChange:(id)arg1;

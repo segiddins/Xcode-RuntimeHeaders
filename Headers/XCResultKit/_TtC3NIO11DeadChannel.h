@@ -15,7 +15,7 @@
     MISSING_TYPE *parent;
     MISSING_TYPE *isWritable;
     MISSING_TYPE *isActive;
-    MISSING_TYPE *_unsafe;
+    MISSING_TYPE *_channelCore;
 }
 
 @end

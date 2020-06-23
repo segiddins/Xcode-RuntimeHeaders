@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSSavePanel *_savePanel;
 }
 
-@property __weak NSSavePanel *savePanel; // @synthesize savePanel=_savePanel;
 - (void).cxx_destruct;
+@property __weak NSSavePanel *savePanel; // @synthesize savePanel=_savePanel;
 - (unsigned long long)fileFormat;
 - (void)changeFormat:(id)arg1;
 - (void)viewDidLoad;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)associatedPlaneFromLayer:(id)arg1;
-@property(nonatomic) __weak DTTimelinePlane *associatedPlane; // @synthesize associatedPlane=_associatedPlane;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DTTimelinePlane *associatedPlane; // @synthesize associatedPlane=_associatedPlane;
 - (void)layoutSublayers;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;

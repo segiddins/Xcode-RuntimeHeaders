@@ -35,6 +35,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL diffMergeDirectionLocked; // @synthesize diffMergeDirectionLocked=_diffMergeDirectionLocked;
 @property BOOL binaryConflict; // @synthesize binaryConflict=_binaryConflict;
 @property BOOL resolved; // @synthesize resolved=_resolved;
@@ -51,7 +52,6 @@
 @property long long diffDescriptorType; // @synthesize diffDescriptorType=_diffDescriptorType;
 @property struct _NSRange modifiedTokenRange; // @synthesize modifiedTokenRange=_modifiedTokenRange;
 @property struct _NSRange originalTokenRange; // @synthesize originalTokenRange=_originalTokenRange;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) BOOL isInsertionOrDeletion;
 - (void)diffDescriptor:(id)arg1 willRemoveChildDiffDescriptor:(id)arg2;

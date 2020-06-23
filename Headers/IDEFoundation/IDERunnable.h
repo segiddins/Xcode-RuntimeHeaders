@@ -24,12 +24,12 @@
 
 + (id)_productTypeForBuildableProduct:(id)arg1 scheme:(id)arg2;
 + (id)runnableForBuildProduct:(id)arg1 inScheme:(id)arg2;
+- (void).cxx_destruct;
 @property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(nonatomic) BOOL isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(readonly, copy) DVTFilePath *remotePath; // @synthesize remotePath=_remotePath;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) IDEScheme *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (BOOL)_checkForSwiftInBuildable;
 @property(readonly) BOOL usesSwift;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

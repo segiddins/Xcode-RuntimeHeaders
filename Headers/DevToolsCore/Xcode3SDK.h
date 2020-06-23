@@ -25,9 +25,9 @@
 + (id)sdkForNameOrPath:(id)arg1;
 + (id)sdkForSDKPackage:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) XCSDKPackage *sdkPackage; // @synthesize sdkPackage=_sdkPackage;
 @property(retain) Xcode3Platform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (long long)caseInsensitiveCompare:(id)arg1;

@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *integrationTimeout; // @synthesize integrationTimeout=_integrationTimeout;
 @property(copy, nonatomic) NSString *fromAddress; // @synthesize fromAddress=_fromAddress;
 @property(copy, nonatomic) NSString *fromName; // @synthesize fromName=_fromName;
 @property(copy, nonatomic) NSString *replyToAddress; // @synthesize replyToAddress=_replyToAddress;
 @property(copy, nonatomic) NSString *replyToName; // @synthesize replyToName=_replyToName;
 @property(copy, nonatomic) NSString *smtpHost; // @synthesize smtpHost=_smtpHost;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

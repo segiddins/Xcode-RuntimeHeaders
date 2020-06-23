@@ -25,6 +25,7 @@
 
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEvaluatingExpressions; // @synthesize isEvaluatingExpressions=_isEvaluatingExpressions;
 @property(retain, nonatomic) NSMutableDictionary *scheduledExpressions; // @synthesize scheduledExpressions=_scheduledExpressions;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSArray *debugOverrides; // @synthesize debugOverrides=_debugOverrides;
 @property(nonatomic) BOOL showsAlignmentRectanglesOfAllViews; // @synthesize showsAlignmentRectanglesOfAllViews=_showsAlignmentRectanglesOfAllViews;
 @property(nonatomic) BOOL showsFramesOfAllViews; // @synthesize showsFramesOfAllViews=_showsFramesOfAllViews;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_evaluateExpression:(id)arg1 retriesLeft:(long long)arg2;
 - (void)_evaluateExpression:(id)arg1;

@@ -6,6 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface _TtCC26IDEPegasusPlaygroundEditor27PlaygroundEditorSidebarView12SidebarLayer : CALayer
 {
 }

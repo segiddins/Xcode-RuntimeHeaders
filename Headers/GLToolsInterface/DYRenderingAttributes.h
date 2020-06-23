@@ -34,6 +34,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL combineColorChannelHistograms; // @synthesize combineColorChannelHistograms=_combineColorChannelHistograms;
 @property(nonatomic) MISSING_TYPE *histogramMaxValues; // @synthesize histogramMaxValues=_histogramMaxValues;
 @property(nonatomic) MISSING_TYPE *histogramMinValues; // @synthesize histogramMinValues=_histogramMinValues;
@@ -53,7 +54,6 @@
 @property(nonatomic) union DYTextureChannelMappings defaultChannelMappings; // @synthesize defaultChannelMappings=_defaultChannelMappings;
 @property(nonatomic) union DYTextureChannelMappings channelMappings; // @synthesize channelMappings=_channelMappings;
 @property(nonatomic) MISSING_TYPE *enabledStates; // @synthesize enabledStates=_enabledStates;
-- (void).cxx_destruct;
 - (id)description;
 - (void)getChannelMap:(unsigned char [4])arg1;
 - (void)updateWithMinValues:(double [4])arg1 maxValues:(double [4])arg2 minLimits:(double [4])arg3 maxLimits:(double [4])arg4 factors:(double [4])arg5;

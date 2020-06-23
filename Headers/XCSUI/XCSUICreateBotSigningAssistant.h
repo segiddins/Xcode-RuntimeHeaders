@@ -18,9 +18,9 @@
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 @property(retain) XCSUIBotDefinition_SigningEditor *signingEditor; // @synthesize signingEditor=_signingEditor;
-- (void).cxx_destruct;
 - (void)cancelSession;
 - (void)goNextOrFinish:(id)arg1;
 - (void)loadView;

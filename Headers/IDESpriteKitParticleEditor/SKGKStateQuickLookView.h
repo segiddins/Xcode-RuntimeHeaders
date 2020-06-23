@@ -20,6 +20,7 @@
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCurrent) BOOL current; // @synthesize current=_current;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) NSView *parent; // @synthesize parent=_parent;
@@ -27,7 +28,6 @@
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) struct CGPoint position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (void)_drawName:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) NSAttributedString *attributedName; // @synthesize attributedName=_attributedName;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSArray *_markerViews;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *markerViews; // @synthesize markerViews=_markerViews;
 @property(nonatomic) __weak id <GPUBufferViewerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)updateMarkersLabelWithContentView:(id)arg1 origin:(struct CGPoint)arg2;
 - (void)notifyMarkersLabelContainerViewSet:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

@@ -20,6 +20,7 @@
 - (id)accessibilityDescriptionForDataNode:(id)arg1;
 - (id)titleSecondPartForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionAtSectionLevelForDataNode:(id)arg1;
+- (BOOL)textExpandedByDefaultForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionForDataNode:(id)arg1;
 - (BOOL)isUnitTestAdapter;
 

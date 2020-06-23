@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_text;
 }
 
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -9,6 +9,7 @@
 @class IBDelegatedCanvasOverlay, NSView;
 
 @protocol IBDelegatedCanvasOverlayDelegate <NSObject>
+- (BOOL)delegatedCanvasOverlay:(IBDelegatedCanvasOverlay *)arg1 shouldDrawForPriority:(long long)arg2;
 - (NSView *)delegatedCanvasOverlay:(IBDelegatedCanvasOverlay *)arg1 hitTest:(struct CGPoint)arg2 inCoordinatesSpaceOfView:(NSView *)arg3;
 @end
 

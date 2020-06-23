@@ -29,6 +29,7 @@
 
 + (void)_portalCertificatesWithSession:(id)arg1 context:(id)arg2 outPortalCertificates:(id *)arg3 outPortalErrors:(id *)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreUpdates; // @synthesize ignoreUpdates=_ignoreUpdates;
 @property(retain, nonatomic) id <DVTPortalCertificateProtocol> newlyCreatedCertificate; // @synthesize newlyCreatedCertificate=_newlyCreatedCertificate;
 @property(readonly, nonatomic) IDEManageCertificatesItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL refreshing; // @synthesize refreshing=_refreshing;
 @property(nonatomic) BOOL finishedInitialScan; // @synthesize finishedInitialScan=_finishedInitialScan;
 @property(retain, nonatomic) NSError *currentError; // @synthesize currentError=_currentError;
-- (void).cxx_destruct;
 - (void)_updateItemsOnMainThreadWithSerialNumbers:(id)arg1 portalCertificates:(id)arg2 localCertificates:(id)arg3 error:(id)arg4 quickLocalOnlyUpdate:(BOOL)arg5;
 - (void)_reloadDataWithNewCertificateOrNil:(id)arg1;
 - (void)requestCertificateType:(id)arg1 callback:(CDUnknownBlockType)arg2;

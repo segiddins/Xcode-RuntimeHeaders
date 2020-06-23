@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

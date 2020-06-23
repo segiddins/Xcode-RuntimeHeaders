@@ -6,13 +6,13 @@
 
 #import <XCTDaemonControl/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSObject;
+@class NSArray, NSDate, NSObject, XCTSpindumpRequestSpecification;
 @protocol OS_dispatch_queue, XCTDaemonControlSessionDelegate, XCTDebugLogDelegate;
 
 @protocol XCTDaemonControlSession <NSObject>
 @property(readonly) BOOL isConnected;
 - (void)invalidate;
-- (void)requestSpindumpWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)requestSpindumpWithSpecification:(XCTSpindumpRequestSpecification *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)collectLogArchiveFromStartDate:(NSDate *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)collectNewCrashReportsInDirectories:(NSArray *)arg1 matchingProcessNames:(NSArray *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
 - (void)authorizeProcessWithIdentifier:(int)arg1 completion:(void (^)(BOOL, NSError *))arg2;

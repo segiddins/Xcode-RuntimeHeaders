@@ -22,6 +22,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastCollectingCheckpointDate; // @synthesize lastCollectingCheckpointDate=_lastCollectingCheckpointDate;
 @property(retain, nonatomic) NSDate *startCollectingDate; // @synthesize startCollectingDate=_startCollectingDate;
 @property(retain, nonatomic) NSFileManager *fm; // @synthesize fm=_fm;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *extensionName; // @synthesize extensionName=_extensionName;
 @property(copy, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(retain, nonatomic) DVTFilePath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)_saveEnvironmentVariables;
 - (void)markCheckpointNamed:(id)arg1;
 - (BOOL)writeDictionary:(id)arg1 fileName:(id)arg2 subPath:(id)arg3 format:(unsigned long long)arg4;

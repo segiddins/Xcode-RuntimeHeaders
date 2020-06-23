@@ -9,6 +9,6 @@
 #import <IDEFoundation/IDEXCTestRunEncoder-Protocol.h>
 
 @interface _TtC13IDEFoundation20IDEXCTestRunCoder_V2 (IDEFoundation1) <IDEXCTestRunEncoder>
-- (id)dictionaryRepresentationWithTestRunSpecificationGroups:(id)arg1 codeCoverageBuildableInfos:(id)arg2 testRootPathPlaceholder:(id)arg3 derivedDataPathPlaceholder:(id)arg4;
+- (id)dictionaryRepresentationWithTestPlanInfo:(id)arg1 testRunSpecificationGroups:(id)arg2 codeCoverageBuildableInfos:(id)arg3 testRootPathPlaceholder:(id)arg4 derivedDataPathPlaceholder:(id)arg5;
 @end
 

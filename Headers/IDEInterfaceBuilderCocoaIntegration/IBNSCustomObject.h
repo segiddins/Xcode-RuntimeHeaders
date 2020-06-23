@@ -24,8 +24,8 @@
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)ibClassNamesThatRequireCustomObjectSemantics;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(copy) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+@property(copy) NSString *className; // @synthesize className=_className;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibRuntimeClassName;
 - (id)ibExternalCustomClassModule;

@@ -14,7 +14,7 @@
     MISSING_TYPE *name;
     MISSING_TYPE *content;
     MISSING_TYPE *media;
-    MISSING_TYPE *tutorialReferences;
+    MISSING_TYPE *topicReferences;
 }
 
 @end

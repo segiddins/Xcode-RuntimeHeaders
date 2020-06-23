@@ -16,8 +16,8 @@
     NSMatrix *_createGroupsForFoldersMatrix;
 }
 
-@property BOOL canFinish; // @synthesize canFinish=_canFinish;
 - (void).cxx_destruct;
+@property BOOL canFinish; // @synthesize canFinish=_canFinish;
 - (void)reallyFinishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)viewDidInstall;

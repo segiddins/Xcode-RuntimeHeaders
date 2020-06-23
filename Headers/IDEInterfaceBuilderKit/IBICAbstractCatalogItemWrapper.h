@@ -16,9 +16,9 @@
     IBICAssetTagInfoProvider *_infoProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBICAssetTagInfoProvider *infoProvider; // @synthesize infoProvider=_infoProvider;
 @property(retain, nonatomic) IBICAbstractCatalogItem *catalogItem; // @synthesize catalogItem=_catalogItem;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

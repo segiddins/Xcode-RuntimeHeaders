@@ -14,9 +14,9 @@
     NSString *_nameContext;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *nameContext; // @synthesize nameContext=_nameContext;
 @property(retain) id associatedObject; // @synthesize associatedObject=_associatedObject;
-- (void).cxx_destruct;
 
 @end
 

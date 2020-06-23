@@ -29,6 +29,7 @@
     NSDictionary *_changedTranslations;
 }
 
+- (void).cxx_destruct;
 @property BOOL nestedBundle; // @synthesize nestedBundle=_nestedBundle;
 @property BOOL cleanPopulated; // @synthesize cleanPopulated=_cleanPopulated;
 @property BOOL myBundleDirectoryWasCreatedDuringPass1; // @synthesize myBundleDirectoryWasCreatedDuringPass1=_myBundleDirectoryWasCreatedDuringPass1;
@@ -46,7 +47,6 @@
 @property(retain) NSString *newlocFilePath; // @synthesize newlocFilePath=_newlocFilePath;
 @property(retain) NSString *oldbaseFilePath; // @synthesize oldbaseFilePath=_oldbaseFilePath;
 @property(retain) NSString *newbaseFilePath; // @synthesize newbaseFilePath=_newbaseFilePath;
-- (void).cxx_destruct;
 - (BOOL)threadSafe;
 - (BOOL)isCarbonResourceFile;
 - (void)importStringsIntoHTMLFile;

@@ -18,11 +18,11 @@
     NSString *_parentPathForDisplay;
 }
 
+- (void).cxx_destruct;
 - (id)fileReference;
 - (id)taggedItem;
 - (long long)tagType;
 - (id)tag;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)description;

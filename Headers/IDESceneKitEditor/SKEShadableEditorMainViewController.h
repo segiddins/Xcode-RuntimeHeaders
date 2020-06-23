@@ -27,8 +27,8 @@
     SKESceneSubEditor *_sceneSubEditor;
 }
 
-@property(nonatomic) __weak SKESceneSubEditor *sceneSubEditor; // @synthesize sceneSubEditor=_sceneSubEditor;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKESceneSubEditor *sceneSubEditor; // @synthesize sceneSubEditor=_sceneSubEditor;
 - (void)delete:(id)arg1;
 - (void)sourceChanged;
 - (void)shadableCompilationDidFinish:(id)arg1;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _displayRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usePadding; // @synthesize usePadding=_usePadding;
 @property(nonatomic) BOOL showTooltip; // @synthesize showTooltip=_showTooltip;
 @property(nonatomic) BOOL truncate; // @synthesize truncate=_truncate;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect displayRect; // @synthesize displayRect=_displayRect;
 @property(retain, nonatomic) GPUTraceAPIItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) GPUTraceAPIItem *alias; // @synthesize alias=_alias;
-- (void).cxx_destruct;
 - (void)_update;
 - (void)_flushAnimation:(id)arg1;
 - (id)initWithView:(id)arg1 preferredEdge:(unsigned long long)arg2;

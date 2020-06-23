@@ -20,12 +20,12 @@
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(readonly, copy) DVTFileDataType *documentType; // @synthesize documentType=_documentType;
 @property(readonly, copy) DVTDocumentLocation *contentDocumentLocation; // @synthesize contentDocumentLocation=_contentDocumentLocation;
 @property(readonly, copy) NSImage *image; // @synthesize image=_image;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

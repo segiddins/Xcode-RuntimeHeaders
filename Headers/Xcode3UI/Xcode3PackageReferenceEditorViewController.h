@@ -42,6 +42,7 @@
 + (id)keyPathsForValuesAffectingMaximumVersion;
 + (id)keyPathsForValuesAffectingShouldEnableMaximumVersionTextField;
 + (id)keyPathsForValuesAffectingCurrentVersionRequirementSubkindRequiresSingleVersion;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Xcode3PackageReferenceEditorSemVerUtililty *semVerUtility; // @synthesize semVerUtility=_semVerUtility;
 @property(retain) NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -61,7 +62,6 @@
 @property(copy) NSString *repositoryURL; // @synthesize repositoryURL=_repositoryURL;
 @property(copy) NSString *doneButtonTitle; // @synthesize doneButtonTitle=_doneButtonTitle;
 @property BOOL editingIsEnabled; // @synthesize editingIsEnabled=_editingIsEnabled;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)doneButtonClicked:(id)arg1;

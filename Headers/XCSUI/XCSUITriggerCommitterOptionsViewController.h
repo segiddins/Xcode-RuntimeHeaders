@@ -18,13 +18,13 @@
     NSView *_domainNamesView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *domainNamesView; // @synthesize domainNamesView=_domainNamesView;
 @property __weak NSTokenField *allowedDomainNamesTokenField; // @synthesize allowedDomainNamesTokenField=_allowedDomainNamesTokenField;
 @property(retain) NSArray *repositoryOptions; // @synthesize repositoryOptions=_repositoryOptions;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 @property(retain, nonatomic) NSArray *allowedDomainNames; // @synthesize allowedDomainNames=_allowedDomainNames;
 @property(retain) DVTSourceControlWorkspaceBlueprint *blueprint; // @synthesize blueprint=_blueprint;
-- (void).cxx_destruct;
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;
 - (BOOL)validateDomainName:(id)arg1;
 - (id)validateDomainNames:(id)arg1;

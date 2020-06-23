@@ -38,6 +38,7 @@
 + (id)resourceWithName:(id)arg1 contentType:(id)arg2 icon:(id)arg3 content:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6 metadata:(id)arg7;
 + (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6;
 + (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6 metadata:(id)arg7;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMutableSet *iconRequests; // @synthesize iconRequests=_iconRequests;
 @property(readonly, copy, nonatomic) NSMutableSet *contentRequests; // @synthesize contentRequests=_contentRequests;
 @property(nonatomic, getter=isIconValid) BOOL iconValid; // @synthesize iconValid=_iconValid;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) DVTFilePath *sourceFilePath; // @synthesize sourceFilePath=_sourceFilePath;
 @property(readonly, nonatomic) DVTFileDataType *contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 - (BOOL)alwaysShowsIconAsLibraryDetailViewPreview;
 - (id)detailViewHeading;
 - (BOOL)detailViewShowsAlternates;

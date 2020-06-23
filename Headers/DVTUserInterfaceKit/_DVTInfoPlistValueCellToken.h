@@ -16,11 +16,11 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isEditable) BOOL editable; // @synthesize editable=_editable;
 @property struct _NSRange range; // @synthesize range=_range;
 @property(copy) NSString *displayString; // @synthesize displayString=_displayString;
 @property(copy) NSString *representedString; // @synthesize representedString=_representedString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRepresentedString:(id)arg1 displayString:(id)arg2 range:(struct _NSRange)arg3 editable:(BOOL)arg4;
 

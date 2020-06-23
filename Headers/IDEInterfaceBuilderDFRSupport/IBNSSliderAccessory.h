@@ -22,12 +22,12 @@
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) IBNSSliderAccessoryBehavior *behavior; // @synthesize behavior=_behavior;
-- (void).cxx_destruct;
 - (id)runtimeSliderAccessory;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

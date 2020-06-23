@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *bufferedTextPerLogSection; // @synthesize bufferedTextPerLogSection=_bufferedTextPerLogSection;
 @property(retain) NSMutableArray *activeSections; // @synthesize activeSections=_activeSections;
-- (void).cxx_destruct;
 - (void)noteDescendantLogSectionDidClose:(id)arg1 inSupersection:(id)arg2;
 - (BOOL)_findNewEffectiveSectionFromSubsectionsOfSection:(id)arg1;
 - (BOOL)_findNewEffectiveSectionFromSubsectionsOfSection:(id)arg1 startingAtIndex:(unsigned long long)arg2;

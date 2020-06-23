@@ -17,8 +17,8 @@
 }
 
 + (id)new;
-@property(retain, nonatomic) PBXBuildOperationContext *pbxBuildOperationContext; // @synthesize pbxBuildOperationContext=_pbxBuildOperationContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PBXBuildOperationContext *pbxBuildOperationContext; // @synthesize pbxBuildOperationContext=_pbxBuildOperationContext;
 - (id)builderPreflightFinishedForOperation:(id)arg1;
 - (void)builderWasAdded:(id)arg1;
 - (id)init;

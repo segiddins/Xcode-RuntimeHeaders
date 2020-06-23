@@ -21,12 +21,12 @@
 }
 
 + (id)expressionEditor:(id)arg1 subStringToSelect:(id)arg2 showInAllStackFrames:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(copy) CDUnknownBlockType doneButtonHandler; // @synthesize doneButtonHandler=_doneButtonHandler;
 @property BOOL showInAllStackFrames; // @synthesize showInAllStackFrames=_showInAllStackFrames;
 @property(copy) NSString *subStringToSelect; // @synthesize subStringToSelect=_subStringToSelect;
 @property(copy) NSString *expressionString; // @synthesize expressionString=_expressionString;
-- (void).cxx_destruct;
 - (void)popoverDidShow:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)_selectSubString;

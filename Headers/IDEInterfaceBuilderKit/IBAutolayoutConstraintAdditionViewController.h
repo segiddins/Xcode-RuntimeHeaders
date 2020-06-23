@@ -106,6 +106,7 @@
     NSImageView *_aspectRatioImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL prefersMarginRelativeNearestNeighbors; // @synthesize prefersMarginRelativeNearestNeighbors=_prefersMarginRelativeNearestNeighbors;
 @property __weak NSImageView *aspectRatioImageView; // @synthesize aspectRatioImageView=_aspectRatioImageView;
 @property __weak NSImageView *equalHeightsImageView; // @synthesize equalHeightsImageView=_equalHeightsImageView;
@@ -190,7 +191,6 @@
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) id <IBCollection> items; // @synthesize items=_items;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)addConstraints:(id)arg1;
 - (void)userDidChangePrefersMarginRelativeConstraints:(id)arg1;
 - (void)_updateNearestNeighborTypeConfigurationAfterUserChangedPrefersMarginRelativeConstraintsForAttribute:(unsigned long long)arg1;

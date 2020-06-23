@@ -23,11 +23,11 @@
     NSMutableDictionary *_presentedConstraintNodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *presentedConstraintNodes; // @synthesize presentedConstraintNodes=_presentedConstraintNodes;
 @property(readonly) DBGLayoutConstraintSet *constraintSet; // @synthesize constraintSet=_constraintSet;
 @property __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property __weak id <DBGSceneViewControllerDataSourceProtocol> sceneViewDataSource; // @synthesize sceneViewDataSource=_sceneViewDataSource;
-- (void).cxx_destruct;
 - (BOOL)isSelectableConstraint:(id)arg1;
 - (BOOL)isSelectedConstraint:(id)arg1;
 - (BOOL)isConflictingConstraint:(id)arg1;

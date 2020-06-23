@@ -26,8 +26,8 @@
 + (id)supportedCustomResolutionStrategies;
 + (id)supportedResolutionStrategies;
 + (id)_pbxGroupWithPath:(id)arg1 resolutionStrategies:(id)arg2;
-@property(readonly) PBXGroup *group; // @synthesize group=_group;
 - (void).cxx_destruct;
+@property(readonly) PBXGroup *group; // @synthesize group=_group;
 - (void)_setContainerItemEdited;
 @property(readonly, copy) NSString *description;
 - (void)setWrapsLines:(BOOL)arg1;

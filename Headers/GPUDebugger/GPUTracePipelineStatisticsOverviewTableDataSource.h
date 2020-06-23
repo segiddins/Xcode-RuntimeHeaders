@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _drawcallOrEncoderIndex;
 }
 
-@property(nonatomic) unsigned long long drawcallOrEncoderIndex; // @synthesize drawcallOrEncoderIndex=_drawcallOrEncoderIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long drawcallOrEncoderIndex; // @synthesize drawcallOrEncoderIndex=_drawcallOrEncoderIndex;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;

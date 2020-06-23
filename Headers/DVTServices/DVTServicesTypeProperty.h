@@ -18,13 +18,13 @@
     NSString *_deserializeType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deserializeType; // @synthesize deserializeType=_deserializeType;
 @property(nonatomic, getter=isOptional) BOOL optional; // @synthesize optional=_optional;
 @property(nonatomic, getter=isMultiple) BOOL multiple; // @synthesize multiple=_multiple;
 @property(readonly, nonatomic) DVTServicesType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly, nonatomic) NSString *serviceKey; // @synthesize serviceKey=_serviceKey;
-- (void).cxx_destruct;
 - (id)deserialize:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)description;
 - (id)initWithPropertyName:(id)arg1 serviceKey:(id)arg2 type:(id)arg3 multiple:(BOOL)arg4 optional:(BOOL)arg5;

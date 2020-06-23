@@ -17,11 +17,11 @@
 }
 
 + (id)elementName;
+- (void).cxx_destruct;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) IBXMLDecoderClassesElement *classesElement; // @synthesize classesElement=_classesElement;
 @property(readonly) IBXMLDecoderDataElement *dataElement; // @synthesize dataElement=_dataElement;
-- (void).cxx_destruct;
 - (Class)elementClassForElementName:(const char *)arg1;
 - (void)enumerateElements:(CDUnknownBlockType)arg1;
 - (BOOL)acceptClassesElement:(id)arg1 error:(id *)arg2;

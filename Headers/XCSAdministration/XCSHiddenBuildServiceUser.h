@@ -14,9 +14,9 @@
     id <_TtP17XCSAdministration14SessionService_> _sessionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14SessionService_> sessionService; // @synthesize sessionService=_sessionService;
 @property(retain, nonatomic) id <_TtP17XCSAdministration14ProcessService_> processService; // @synthesize processService=_processService;
-- (void).cxx_destruct;
 - (BOOL)deleteHomeDirectoryWithError:(id *)arg1;
 - (BOOL)deleteWithError:(id *)arg1;
 - (id)initWithUsername:(id)arg1 primaryGroupName:(id)arg2 homeDirectoryPath:(id)arg3 directoryService:(id)arg4 processService:(id)arg5 sessionService:(id)arg6;

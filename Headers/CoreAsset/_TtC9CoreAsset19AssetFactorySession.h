@@ -16,12 +16,9 @@
     MISSING_TYPE *key;
     MISSING_TYPE *availableServices;
     MISSING_TYPE *rulers;
-    MISSING_TYPE *isValid;
     MISSING_TYPE *context;
     MISSING_TYPE *evaluator;
     MISSING_TYPE *interactiveEvaluator;
-    MISSING_TYPE *lastGeometryGenerateKey;
-    MISSING_TYPE *lastMaterialGenerateKey;
     MISSING_TYPE *cancelBlock;
 }
 

@@ -7,7 +7,6 @@
 #import <MLComposerKit/_TtC13MLComposerKit19ArtifactsController.h>
 
 @interface _TtC13MLComposerKit19ArtifactsController (MLComposerKit8)
-- (void)dataSourceDeleted:(id)arg1;
-- (void)dataSourceCreated:(id)arg1;
+- (void)dataSourceChanged:(id)arg1;
 @end
 

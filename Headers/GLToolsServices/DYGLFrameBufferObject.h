@@ -17,10 +17,10 @@
     NSArray *_drawBuffers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int readBuffer; // @synthesize readBuffer=_readBuffer;
 @property(readonly, nonatomic) NSArray *drawBuffers; // @synthesize drawBuffers=_drawBuffers;
 @property(readonly, nonatomic) NSDictionary *attachmentsDict; // @synthesize attachmentsDict=_attachmentsDict;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;

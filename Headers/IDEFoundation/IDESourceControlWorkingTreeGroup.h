@@ -17,9 +17,9 @@
 + (BOOL)automaticallyNotifiesObserversOfConflictStateForUpdateOrMerge;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlServerStatus;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlLocalStatus;
+- (void).cxx_destruct;
 @property BOOL edited; // @synthesize edited=_edited;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (unsigned long long)aggregateSourceControlServerStatus;
 - (unsigned long long)aggregateSourceControlLocalStatus;
 - (void)setConflictStateForUpdateOrMerge:(unsigned long long)arg1;

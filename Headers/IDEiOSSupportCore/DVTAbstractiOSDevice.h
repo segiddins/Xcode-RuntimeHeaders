@@ -79,7 +79,7 @@
 - (id)systemBasePath;
 - (id)softwareVersion;
 - (BOOL)installForRsyncDeveloperModeWithSession:(id)arg1 error:(id *)arg2;
-- (BOOL)_performInstallForRsyncDeveloperModeWithBundleId:(id)arg1 filePath:(id)arg2 launchSession:(id)arg3 parameters:(id)arg4 outInstalledAppPath:(id *)arg5 outAlternateRemoteAppPath:(id *)arg6 outError:(id *)arg7;
+- (BOOL)_performInstallForRsyncDeveloperModeWithBundleId:(id)arg1 filePath:(id)arg2 launchSession:(id)arg3 parameters:(id)arg4 localBuiltProductsPath:(id)arg5 deviceBuiltProductsPath:(id)arg6 deviceBuiltProductsDir:(id)arg7 outInstalledAppPath:(id *)arg8 outAlternateRemoteAppPath:(id *)arg9 outError:(id *)arg10;
 - (BOOL)_installTestArtifactsForRsyncDeveloperModelForApplication:(id)arg1 launchSession:(id)arg2 parameters:(id)arg3 outError:(id *)arg4;
 - (BOOL)_copyLocalTestConfigurationAtPath:(id)arg1 toDeviceDirectory:(id)arg2 error:(id *)arg3;
 - (void)_updateTestingEnvironmentVariables:(id)arg1 forApplication:(id)arg2 deviceConfigPath:(id)arg3 testConfiguration:(id)arg4;

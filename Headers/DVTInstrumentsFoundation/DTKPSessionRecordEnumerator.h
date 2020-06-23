@@ -22,6 +22,7 @@
     const unsigned int *_triggerIDsToIndicesArray;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL trustTriggerID; // @synthesize trustTriggerID=_trustTriggerID;
 @property(nonatomic) BOOL finalEnumerator; // @synthesize finalEnumerator=_finalEnumerator;
 @property(nonatomic) unsigned int kdebugTriggerIndex; // @synthesize kdebugTriggerIndex=_kdebugTriggerIndex;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) DTKPRecordDecoder *recordDecoder; // @synthesize recordDecoder=_recordDecoder;
 @property(nonatomic) void *session; // @synthesize session=_session;
 @property(retain, nonatomic) id <DTKPDatastream> datastream; // @synthesize datastream=_datastream;
-- (void).cxx_destruct;
 - (unsigned long long)enumerateRecordsWithBlock:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithHeartbeatTime:(unsigned long long)arg1;

@@ -52,6 +52,7 @@
 
 + (void)initialize;
 + (Class)headerViewClass;
+- (void).cxx_destruct;
 @property(retain) IDEViewController<IDECapsuleViewController> *capsuleViewController; // @synthesize capsuleViewController=_capsuleViewController;
 @property(retain, nonatomic) id <IDECapsuleViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDECapsuleListView *listView; // @synthesize listView=_listView;
@@ -60,7 +61,6 @@
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) IDECapsuleFooterView *footerView; // @synthesize footerView=_footerView;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;

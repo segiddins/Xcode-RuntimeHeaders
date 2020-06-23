@@ -23,6 +23,7 @@
     NSDateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
 @property(retain, nonatomic) DVTObservingToken *selectionObserver; // @synthesize selectionObserver=_selectionObserver;
@@ -30,7 +31,6 @@
 @property __weak DVTTableView *certificatesTable; // @synthesize certificatesTable=_certificatesTable;
 @property __weak DVTBorderedView *tableBorder; // @synthesize tableBorder=_tableBorder;
 @property(readonly, nonatomic) IDEProvisioningChooseAndRevokeCertificateUserAction *userAction; // @synthesize userAction=_userAction;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)doubleClickedTable:(id)arg1;

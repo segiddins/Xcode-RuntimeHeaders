@@ -36,6 +36,7 @@
 + (id)systemIntentsModel;
 + (void)_registerModelClass:(Class)arg1 forFileDataType:(id)arg2;
 + (id)_modelClassRegistry;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isSystemModel, setter=_setSystemModel:) BOOL _systemModel; // @synthesize _systemModel=__systemModel;
 @property(nonatomic, setter=_setDocument:) __weak IDEIntentBuilderDocument *document; // @synthesize document=_document;
 @property(nonatomic) BOOL manualCodegen; // @synthesize manualCodegen=_manualCodegen;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) __weak id <IDEIntentBuilderModelDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *locationDescription;
 - (id)generateIssues;

@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)dealloc;
 - (void)setChoice:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)proceed:(id)arg1;

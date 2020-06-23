@@ -17,14 +17,15 @@
 }
 
 + (id)propertiesAffectingPersistenceState;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property int conveyanceType; // @synthesize conveyanceType=_conveyanceType;
-- (void).cxx_destruct;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setMessageFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(BOOL)arg2;
 - (void)performActionUsingContext:(id)arg1 andBreakpoint:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_logActionCommonInit;
 - (id)init;
 

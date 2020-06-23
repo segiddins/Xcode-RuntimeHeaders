@@ -14,8 +14,8 @@
     IDEInspectorResizableMatrix *_matrixView;
 }
 
-@property(retain, nonatomic) IDEInspectorResizableMatrix *matrixView; // @synthesize matrixView=_matrixView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEInspectorResizableMatrix *matrixView; // @synthesize matrixView=_matrixView;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (void)configureEnumeratedOptions;

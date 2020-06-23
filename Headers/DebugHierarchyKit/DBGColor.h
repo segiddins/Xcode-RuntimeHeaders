@@ -21,10 +21,10 @@
 
 + (id)withCGColor:(struct CGColor *)arg1 colorName:(id)arg2 catalogName:(id)arg3;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *catalogName; // @synthesize catalogName=_catalogName;
 @property(readonly) NSString *colorName; // @synthesize colorName=_colorName;
 @property(readonly) struct CGColor *CGColor; // @synthesize CGColor=_CGColor;
-- (void).cxx_destruct;
 @property(readonly) NSColor *color; // @synthesize color=_color;
 - (id)objectValue;
 - (id)initWithCGColor:(struct CGColor *)arg1 colorName:(id)arg2 catalogName:(id)arg3;

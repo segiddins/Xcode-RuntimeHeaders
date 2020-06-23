@@ -15,8 +15,8 @@
     NSMapTable *_nodesPendingLayerUpdates;
 }
 
-@property(retain) NSMapTable *nodesPendingLayerUpdates; // @synthesize nodesPendingLayerUpdates=_nodesPendingLayerUpdates;
 - (void).cxx_destruct;
+@property(retain) NSMapTable *nodesPendingLayerUpdates; // @synthesize nodesPendingLayerUpdates=_nodesPendingLayerUpdates;
 - (id)_recursivelyFindLayerNodeWithListId:(long long)arg1 inGroup:(id)arg2;
 - (id)_findLayerNodeWithListId:(long long)arg1 inSnapshot:(id)arg2;
 - (void)_updateLayerReferenceForNode:(id)arg1;

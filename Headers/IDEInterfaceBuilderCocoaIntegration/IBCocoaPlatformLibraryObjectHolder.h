@@ -13,8 +13,8 @@
     NSView *_draggedView;
 }
 
-@property(retain) NSView *draggedView; // @synthesize draggedView=_draggedView;
 - (void).cxx_destruct;
+@property(retain) NSView *draggedView; // @synthesize draggedView=_draggedView;
 
 @end
 

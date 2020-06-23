@@ -20,12 +20,12 @@
     struct CGRect _loopControlRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect loopControlRect; // @synthesize loopControlRect=_loopControlRect;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) int trackNumber; // @synthesize trackNumber=_trackNumber;
 @property(nonatomic) __weak id <GTFActionTimelineGroupInfoDelegate> timelineGroupInfoDelegate; // @synthesize timelineGroupInfoDelegate=_timelineGroupInfoDelegate;
 @property(nonatomic) __weak id <GTFActionTimelineInfoDelegate> timelineInfoDelegate; // @synthesize timelineInfoDelegate=_timelineInfoDelegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;
 - (void)drawAtPoint:(struct CGPoint)arg1 withDirtyRect:(struct CGRect)arg2;

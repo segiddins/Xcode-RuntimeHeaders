@@ -17,10 +17,10 @@
     IBUIStoryboardSegueTemplate *_commitTemplate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIStoryboardSegueTemplate *commitTemplate; // @synthesize commitTemplate=_commitTemplate;
 @property(retain, nonatomic) IBUIStoryboardPreviewingSegueTemplate *previewTemplate; // @synthesize previewTemplate=_previewTemplate;
 @property(retain, nonatomic) IBUIView *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

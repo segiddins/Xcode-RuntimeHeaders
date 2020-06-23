@@ -33,6 +33,7 @@
 }
 
 + (id)snapshotWithConfigurationName:(id)arg1 provisioningStyle:(long long)arg2 team:(id)arg3 profileSupport:(long long)arg4 platform:(id)arg5 sdk:(id)arg6 sdkVariant:(id)arg7 bundleIdentifier:(id)arg8 profileSpecifier:(id)arg9 certificateIdentifier:(id)arg10 entitlementsFilePath:(id)arg11 baseEntitlements:(id)arg12 entitlementsExpansion:(id)arg13 entitlementsDestination:(unsigned long long)arg14 allowSigningWithoutTeamSelection:(BOOL)arg15 signingRequiresTeam:(BOOL)arg16 appIDFeatures:(id)arg17 provisioningPurpose:(id)arg18 supportsIOSMac:(BOOL)arg19;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsIOSMac; // @synthesize supportsIOSMac=_supportsIOSMac;
 @property(readonly, nonatomic) DVTPortalProfilePurpose *provisioningPurpose; // @synthesize provisioningPurpose=_provisioningPurpose;
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(readonly, nonatomic) long long provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

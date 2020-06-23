@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GPUTraceMainEditor *_parentViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) GPUTraceMainEditor *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property BOOL disabled; // @synthesize disabled;
-- (void).cxx_destruct;
 - (BOOL)tabView:(id)arg1 shouldSelectTabViewItem:(id)arg2;
 @property(readonly, nonatomic) __weak GPUSharedTabUIState *sharedUIStateObj;
 

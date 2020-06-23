@@ -23,8 +23,8 @@
     NSTokenField *_tokenField;
 }
 
-@property(retain, nonatomic) NSTokenField *tokenField; // @synthesize tokenField=_tokenField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTokenField *tokenField; // @synthesize tokenField=_tokenField;
 - (void)applyTagToAllItems:(id)arg1;
 - (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;

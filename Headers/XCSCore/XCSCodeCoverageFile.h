@@ -15,10 +15,10 @@
     NSString *_documentLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasBeenResolved; // @synthesize hasBeenResolved=_hasBeenResolved;
 @property(copy, nonatomic) NSString *documentLocation; // @synthesize documentLocation=_documentLocation;
 @property(retain, nonatomic) NSArray *methods; // @synthesize methods=_methods;
-- (void).cxx_destruct;
 - (id)_deviceTinyIDs;
 - (void)_bindHierarchyWithIntegration:(id)arg1 parentObject:(id)arg2;
 - (BOOL)_validateWithMethods:(id)arg1 documentLocation:(id)arg2 validationErrors:(id *)arg3;

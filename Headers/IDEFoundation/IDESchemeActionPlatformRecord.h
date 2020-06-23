@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *userDescription; // @synthesize userDescription=_userDescription;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithUserDescription:(id)arg1 identifier:(id)arg2;

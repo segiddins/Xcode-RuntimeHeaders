@@ -21,7 +21,7 @@
     BOOL _autosIndexQueryFailed;
     unsigned long long _generation;
     NSMutableDictionary *_variablesAskedForByNameToDataValue;
-    NSMutableSet *_varialbesBeingAskedForByName;
+    NSMutableSet *_variablesBeingAskedForByName;
     NSOrderedSet *_autosSymbols;
     DVTObservingToken *_debugSessionObserverToken;
     DVTObservingToken *_coalecesedStateObserverToken;
@@ -44,10 +44,10 @@
 
 + (id)_createOptionsDictionaryFromOptionsElement:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL recordedStackFrameSelected; // @synthesize recordedStackFrameSelected=_recordedStackFrameSelected;
 @property BOOL loadingNewVariablesInBackground; // @synthesize loadingNewVariablesInBackground=_loadingNewVariablesInBackground;
 @property(retain, nonatomic) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)provideHelpMenuItem:(id)arg1;
 - (void)providePrimaryMenuItems:(id)arg1;
@@ -100,6 +100,7 @@
 - (void)_handleAutosIndexQueryFailed;
 - (void)_asynchronouslyQueryIndexForSymbolsStartingOnMainThread:(id)arg1 currentGeneration:(unsigned long long)arg2;
 - (BOOL)_updateAutoValues;
+- (void)_addExceptionValueNode:(id)arg1;
 - (void)_addReturnValueNodeIfNecessary:(id)arg1;
 - (void)_updateFilteredList;
 - (id)_wrapOrFetchDataValueWithName:(id)arg1 symbolKind:(id)arg2 asNodeType:(unsigned long long)arg3;
@@ -133,6 +134,7 @@
 @property(readonly) BOOL showsLocals;
 @property(readonly) BOOL showsAutos;
 @property(readonly) IDEStackFrame *currentStackFrame;
+- (id)currentThread;
 - (void)_handleCurrentStackFrameFramePointerChanged;
 
 // Remaining properties

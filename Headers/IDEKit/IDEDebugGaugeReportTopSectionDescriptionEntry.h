@@ -14,9 +14,9 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
 
 @end

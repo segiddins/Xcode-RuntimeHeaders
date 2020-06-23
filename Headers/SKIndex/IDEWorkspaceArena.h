@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
-@property(readonly) DVTFilePath *indexDatabasePath; // @synthesize indexDatabasePath=_indexDatabasePath;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) DVTFilePath *indexDatabasePath; // @synthesize indexDatabasePath=_indexDatabasePath;
 - (void)primitiveInvalidate;
 @property(readonly) DVTFilePath *indexFolderPath;
 - (id)initWithFolderPath:(id)arg1 indexDatabasePath:(id)arg2 sourceKitcallbacks:(shared_ptr_c987a6b6)arg3 indexerToken:(unsigned long long)arg4;

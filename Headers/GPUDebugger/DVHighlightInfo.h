@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSNumber *_port;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *port; // @synthesize port=_port;
 @property(nonatomic) __weak DependencyViewerVertex *vertex; // @synthesize vertex=_vertex;
-- (void).cxx_destruct;
 
 @end
 

@@ -30,6 +30,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedWidth;
 + (id)columnWithGridView:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(retain, nonatomic) NSNumber *measuredAutomaticWidth; // @synthesize measuredAutomaticWidth=_measuredAutomaticWidth;
 @property(retain, nonatomic) NSNumber *measuredWidth; // @synthesize measuredWidth=_measuredWidth;
@@ -40,7 +41,6 @@
 @property(nonatomic) long long xPlacement; // @synthesize xPlacement=_xPlacement;
 @property(readonly, nonatomic) long long numberOfCells; // @synthesize numberOfCells=_numberOfCells;
 @property(nonatomic) __weak IBNSGridViewTemplate *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)ibDefaultLabel;
 @property(readonly, nonatomic) NSString *ibShortLabel;

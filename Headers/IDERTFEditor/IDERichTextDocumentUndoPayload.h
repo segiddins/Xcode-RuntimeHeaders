@@ -15,10 +15,10 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property struct _NSRange range; // @synthesize range=_range;
 @property(copy) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(copy) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithString:(id)arg1 replacementString:(id)arg2 range:(struct _NSRange)arg3;
 

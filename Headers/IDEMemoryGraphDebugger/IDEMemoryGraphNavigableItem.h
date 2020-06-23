@@ -15,8 +15,8 @@
     BOOL _hideStatusIcon;
 }
 
-@property(nonatomic) BOOL hideStatusIcon; // @synthesize hideStatusIcon=_hideStatusIcon;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hideStatusIcon; // @synthesize hideStatusIcon=_hideStatusIcon;
 - (id)childRepresentedObjects;
 - (BOOL)isLeaf;
 - (id)contentDocumentLocation;

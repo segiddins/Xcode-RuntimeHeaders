@@ -14,9 +14,9 @@
     NSNumber *_percentageCompleted;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *percentageCompleted; // @synthesize percentageCompleted=_percentageCompleted;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)_validateWithTitle:(id)arg1 percentageCompleted:(id)arg2 validationErrors:(id *)arg3;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)saveRepresentation;

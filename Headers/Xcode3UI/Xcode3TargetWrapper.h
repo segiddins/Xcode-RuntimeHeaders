@@ -18,13 +18,13 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property BOOL selected; // @synthesize selected=_selected;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) Xcode3Project *project; // @synthesize project=_project;
 @property(readonly) PBXTarget *pbxTarget; // @synthesize pbxTarget=_pbxTarget;
 @property(readonly) Xcode3Target *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)initWithPBXTarget:(id)arg1 project:(id)arg2;
 
 @end

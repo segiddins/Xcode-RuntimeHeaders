@@ -4,20 +4,23 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
 @class MISSING_TYPE;
 
-@interface _TtC8RCShared24PeerAdvertiserController : _TtCs12_SwiftObject
+@interface _TtC8RCShared24PeerAdvertiserController : NSObject
 {
     MISSING_TYPE *document;
+    MISSING_TYPE *presentingVC;
     MISSING_TYPE *advertiser;
     MISSING_TYPE *session;
     MISSING_TYPE *didStart;
     MISSING_TYPE *wantsToStart;
-    MISSING_TYPE *scope;
     MISSING_TYPE *onConnectingServerPeerEventSource;
 }
+
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

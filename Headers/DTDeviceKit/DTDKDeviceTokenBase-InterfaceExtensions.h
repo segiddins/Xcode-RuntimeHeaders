@@ -97,7 +97,7 @@
 @property(readonly, nonatomic) _Bool isSupportedOS;
 @property(readonly, nonatomic) NSString *localizedDeviceModel;
 @property(readonly) DVTPlatform *platform;
-@property(readonly, copy, nonatomic) NSString *presumedRemoteAddress;
+@property(copy, nonatomic) NSString *presumedRemoteAddress;
 @property(readonly) DTDKRemoteDeviceConnection *primaryConnection;
 @property(readonly) DTDKRemoteDeviceConnection *primaryWiredConnection;
 @property(readonly) DTDKRemoteDeviceConnection *primaryWirelessConnection;

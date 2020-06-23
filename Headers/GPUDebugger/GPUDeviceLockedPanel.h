@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id _representedObject;
 }
 
-@property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 - (void)cancel:(id)arg1;
 
 @end

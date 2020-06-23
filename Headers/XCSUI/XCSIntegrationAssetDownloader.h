@@ -23,10 +23,10 @@
 }
 
 + (id)assetDownloader;
+- (void).cxx_destruct;
 @property(copy) NSString *internalRawBuildLog; // @synthesize internalRawBuildLog=_internalRawBuildLog;
 @property(copy) NSString *internalBuildServiceDebugLog; // @synthesize internalBuildServiceDebugLog=_internalBuildServiceDebugLog;
 @property(retain) IDESchemeActionsInvocationRecord *schemeActionsInvocationRecord; // @synthesize schemeActionsInvocationRecord=_schemeActionsInvocationRecord;
-- (void).cxx_destruct;
 - (void)triggerLogsForIntegration:(id)arg1 callbackBlock:(CDUnknownBlockType)arg2;
 - (void)_fireTriggerCallbackBlockForIntegration:(id)arg1;
 - (void)sourceControlLogForIntegration:(id)arg1 callbackBlock:(CDUnknownBlockType)arg2;

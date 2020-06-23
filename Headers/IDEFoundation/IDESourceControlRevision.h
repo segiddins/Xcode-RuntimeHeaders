@@ -27,6 +27,7 @@
 + (id)inMemoryRevision;
 + (id)localRevision;
 + (id)keyPathsForValuesAffectingLongRevisionString;
+- (void).cxx_destruct;
 @property(retain) NSString *subtext; // @synthesize subtext=_subtext;
 @property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly) NSString *currentFilePath; // @synthesize currentFilePath=_currentFilePath;
@@ -39,7 +40,6 @@
 @property(readonly) NSString *author; // @synthesize author=_author;
 @property(readonly) NSString *displayRevision; // @synthesize displayRevision=_displayRevision;
 @property(readonly) NSString *revision; // @synthesize revision=_revision;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly) NSString *shortRevisionString;

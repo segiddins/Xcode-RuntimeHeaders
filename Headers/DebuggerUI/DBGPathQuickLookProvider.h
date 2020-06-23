@@ -17,10 +17,10 @@
     DVTPathView *_pathDrawingView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTPathView *pathDrawingView; // @synthesize pathDrawingView=_pathDrawingView;
 - (void)setLoadedState:(int)arg1;
 - (int)loadedState;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 - (void)_updateFromCGPathProvider;
 - (id)initWithDataValue:(id)arg1 options:(id)arg2;

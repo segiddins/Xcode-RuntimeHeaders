@@ -59,6 +59,7 @@
 + (id)keyPathsForValuesAffectingSelectedMergeDescriptor;
 + (id)keyPathsForValuesAffectingIsThreeWayDiff;
 + (id)logAspect;
+- (void).cxx_destruct;
 @property(retain) NSIndexSet *hiddenDiffDescriptorIndexes; // @synthesize hiddenDiffDescriptorIndexes=_hiddenDiffDescriptorIndexes;
 @property __weak id <DVTDiffSessionObserver> observer; // @synthesize observer=_observer;
 @property BOOL diffDescriptorsShouldAppearAsInactive; // @synthesize diffDescriptorsShouldAppearAsInactive=_diffDescriptorsShouldAppearAsInactive;
@@ -83,7 +84,6 @@
 @property(retain) NSIndexSet *commonDescriptorIndexes; // @synthesize commonDescriptorIndexes=_commonDescriptorIndexes;
 @property(retain) NSArray *diffDescriptors; // @synthesize diffDescriptors=_diffDescriptors;
 @property(retain) DVTDiffContext *diffContext; // @synthesize diffContext=_diffContext;
-- (void).cxx_destruct;
 - (void)_incrementTimestamp;
 - (void)refresh;
 - (void)primitiveInvalidate;

@@ -15,7 +15,6 @@
 @property(readonly) BOOL ibShouldEncodeImage;
 - (id)ibSuperviewOfView:(id)arg1 inDocument:(id)arg2;
 - (void)ibWillArbitrateChild:(id)arg1 inArbitrationUnit:(id)arg2;
-- (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
 - (BOOL)ibIdentifierPropertyCanConflictsWithObject:(id)arg1;
 - (BOOL)ibCanSupportIdentifierProperty;
 - (id)ibContainerWidgetTypeForChildView:(id)arg1;

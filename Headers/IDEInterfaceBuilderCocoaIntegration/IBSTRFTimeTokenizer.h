@@ -24,6 +24,7 @@
     NSArray *_zoneOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *zoneOptions; // @synthesize zoneOptions=_zoneOptions;
 @property(retain) NSArray *daysOptions; // @synthesize daysOptions=_daysOptions;
 @property(retain) NSArray *stampOptions; // @synthesize stampOptions=_stampOptions;
@@ -36,7 +37,6 @@
 @property(retain) NSArray *weekdayOptions; // @synthesize weekdayOptions=_weekdayOptions;
 @property(retain) NSArray *percentOptions; // @synthesize percentOptions=_percentOptions;
 @property(retain) NSArray *dayYearOptions; // @synthesize dayYearOptions=_dayYearOptions;
-- (void).cxx_destruct;
 - (long long)fieldTypeForString:(id)arg1;
 - (id)strftimeTokens;
 - (void)_regenerateTokenOptions;

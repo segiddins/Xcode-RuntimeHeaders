@@ -12,6 +12,7 @@
 
 @class MISSING_TYPE, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface _TtC26IDEPegasusPlaygroundEditor16PlaygroundEditor : _$s15IDESourceEditor010SourceCodeB0CN <IDEPlaygroundHostingEditor, IDESourceCodePlaygroundSectionAccessoryViewAnnotationInteractionDelegate, IDEToyHostingViewControllerDelegate>
 {
     MISSING_TYPE *playgroundDocument;
@@ -27,6 +28,8 @@
     MISSING_TYPE *lastSourceEdit;
     MISSING_TYPE *documentationViewControllers;
     MISSING_TYPE *lineIdentifierToInlineResult;
+    MISSING_TYPE *minimumInlineResultsDimensions;
+    MISSING_TYPE *defaultInlineResultDimensions;
     MISSING_TYPE *toyboxEditorToSelectedToyObserverTokens;
     MISSING_TYPE *countedToysSelectedInRegisteredToyboxes;
     MISSING_TYPE *toysSelectedInRegisteredToyboxes;
@@ -50,7 +53,7 @@
 - (void)selectMultipleResultInlineRepresentation:(id)arg1;
 - (void)selectSingleResultInlineRepresentation:(id)arg1;
 - (void)toggleQuickLookInline:(id)arg1;
-- (void)toyHostingViewControllerDidDragResize:(id)arg1;
+- (void)toyHostingViewControllerDidResize:(id)arg1;
 - (void)accessoryViewAnnotation:(id)arg1 didToggleInlineResultVisibility:(BOOL)arg2;
 - (void)didRemoveAnnotations:(id)arg1;
 - (void)didInsertAnnotations:(id)arg1;

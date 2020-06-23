@@ -6,7 +6,7 @@
 
 #import <GPUDebuggerMTLSupport/DYPPluginFactoryCommonDelegate-Protocol.h>
 
-@class NSBundle, NSImage, NSString;
+@class NSBundle, NSImage, NSMutableArray, NSString;
 @protocol DYPVariablesViewGPUStateValue;
 
 @protocol DYPVariablesViewContentProviderDelegate <DYPPluginFactoryCommonDelegate>
@@ -15,7 +15,7 @@
 - (NSImage *)defaultImageWithIssueType:(int)arg1 ofSize:(unsigned long long)arg2;
 - (NSImage *)cachedImageWithName:(NSString *)arg1 fromBundle:(NSBundle *)arg2;
 - (BOOL)isRuntimeOSAppleInternal;
-- (void)addVariableNodeFromDataValue:(id <DYPVariablesViewGPUStateValue>)arg1 type:(unsigned long long)arg2 recipientArray:(struct NSMutableArray *)arg3;
+- (void)addVariableNodeFromDataValue:(id <DYPVariablesViewGPUStateValue>)arg1 type:(unsigned long long)arg2 recipientArray:(NSMutableArray *)arg3;
 - (void)bubbleUpChangeStatusHighlighting:(id <DYPVariablesViewGPUStateValue>)arg1;
 - (void)setEmptyVarView;
 - (id <DYPVariablesViewGPUStateValue>)newStateValue;

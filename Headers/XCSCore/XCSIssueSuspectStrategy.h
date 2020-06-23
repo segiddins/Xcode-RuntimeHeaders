@@ -16,10 +16,10 @@
 }
 
 + (id)issueSuspectStrategy:(unsigned long long)arg1 confidence:(unsigned long long)arg2 reliability:(id)arg3 validationErrors:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *reliability; // @synthesize reliability=_reliability;
 @property(readonly, nonatomic) unsigned long long confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 - (BOOL)_validateStrategy:(unsigned long long)arg1 confidence:(unsigned long long)arg2 reliability:(id)arg3 validationErrors:(id *)arg4;
 - (id)dictionaryRepresentation;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;

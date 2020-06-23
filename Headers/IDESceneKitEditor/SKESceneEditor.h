@@ -35,8 +35,8 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCanTakeFreeCameraParameters;
 + (id)keyPathsForValuesAffectingIsFreeBrowsing;
-@property(retain, nonatomic) SCNNode *currentPointOfView; // @synthesize currentPointOfView=_currentPointOfView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCNNode *currentPointOfView; // @synthesize currentPointOfView=_currentPointOfView;
 - (void)importFiles:(id)arg1 asReference:(BOOL)arg2 intoContainer:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)importFileURL:(id)arg1 asReference:(BOOL)arg2 intoContainer:(id)arg3 options:(id)arg4;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

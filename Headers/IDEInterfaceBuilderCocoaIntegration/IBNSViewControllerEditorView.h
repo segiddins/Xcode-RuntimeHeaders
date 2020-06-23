@@ -17,9 +17,9 @@
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) IBNSViewController *editedViewController; // @synthesize editedViewController=_editedViewController;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (BOOL)isOpaque;
 - (void)viewDidChangeForViewController:(id)arg1;

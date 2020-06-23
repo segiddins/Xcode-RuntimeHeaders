@@ -30,11 +30,11 @@
 + (id)facilityWithName:(id)arg1;
 + (id)defaultFacility;
 + (void)setDefaultFacilityName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *outputFiles; // @synthesize outputFiles=_outputFiles;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL outputsToStandardError; // @synthesize outputsToStandardError=_outputsToStandardError;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)critical:(id)arg1;
 - (void)critical:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
 - (void)error:(id)arg1;

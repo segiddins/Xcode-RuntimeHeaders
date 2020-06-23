@@ -34,6 +34,7 @@
 
 + (id)getLocalizedString:(id)arg1 table:(id)arg2;
 + (id)getLocalizedString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *enabledHeuristicNameSet; // @synthesize enabledHeuristicNameSet=_enabledHeuristicNameSet;
 @property(nonatomic) __weak id <DYPResourceMemoryDataSource> resourceMemoryDataSource; // @synthesize resourceMemoryDataSource=_resourceMemoryDataSource;
 @property(nonatomic) __weak id <DYPDependencyGraph> dependencyGraph; // @synthesize dependencyGraph=_dependencyGraph;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) CDUnknownBlockType loadURLBlock; // @synthesize loadURLBlock=_loadURLBlock;
 @property(copy, nonatomic) CDUnknownBlockType graphicsEngineInfoProvider; // @synthesize graphicsEngineInfoProvider=_graphicsEngineInfoProvider;
 @property(retain, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
-- (void).cxx_destruct;
 - (id)runPostShaderProfilerHeuristics:(id)arg1;
 - (id)_newHeuristicPoolWithGraphicsEngineID:(unsigned long long)arg1;
 - (id)newFrameStatisticsFinding;

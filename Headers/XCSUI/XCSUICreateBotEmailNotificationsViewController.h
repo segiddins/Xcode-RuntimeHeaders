@@ -45,6 +45,7 @@
     NSView *_optionsView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *optionsView; // @synthesize optionsView=_optionsView;
 @property __weak NSView *conditionsContainerView; // @synthesize conditionsContainerView=_conditionsContainerView;
 @property __weak NSView *includeInReportsView; // @synthesize includeInReportsView=_includeInReportsView;
@@ -69,7 +70,6 @@
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 @property(readonly) XCSUICreateBotTriggerConditionsViewController *conditionsViewController; // @synthesize conditionsViewController=_conditionsViewController;
 @property(readonly) XCSUIScheduleViewController *scheduleViewController; // @synthesize scheduleViewController=_scheduleViewController;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)scheduleHasChanged;
 - (void)listenForServerChanges;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     GPUTraceOutlineItem *_linkedResource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUTraceOutlineItem *linkedResource; // @synthesize linkedResource=_linkedResource;
 @property(nonatomic) int resourceLink; // @synthesize resourceLink=_resourceLink;
 @property(retain, nonatomic) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
-- (void).cxx_destruct;
 
 @end
 

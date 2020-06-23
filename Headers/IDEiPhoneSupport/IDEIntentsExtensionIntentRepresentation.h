@@ -18,10 +18,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long restrictions; // @synthesize restrictions=_restrictions;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;
 @property(nonatomic) __weak IDEIntentsExtensionModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)validateValue:(inout id *)arg1 forKey:(id)arg2 error:(out id *)arg3;
 @property(readonly) unsigned long long hash;

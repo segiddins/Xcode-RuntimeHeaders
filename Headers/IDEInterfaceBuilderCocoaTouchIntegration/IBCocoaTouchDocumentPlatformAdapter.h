@@ -6,16 +6,17 @@
 
 #import <IDEInterfaceBuilderKit/IBDocumentPlatformAdapter.h>
 
-@class IBPreXcode8ColorCorrector, IBUIColor;
+@class IBColor, IBPreXcode8ColorCorrector;
 
 @interface IBCocoaTouchDocumentPlatformAdapter : IBDocumentPlatformAdapter
 {
     IBPreXcode8ColorCorrector *_colorCorrector;
-    IBUIColor *_storyboardGlobalTintColor;
+    IBColor *_storyboardGlobalTintColor;
 }
 
-@property(copy, nonatomic) IBUIColor *storyboardGlobalTintColor; // @synthesize storyboardGlobalTintColor=_storyboardGlobalTintColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *storyboardGlobalTintColor; // @synthesize storyboardGlobalTintColor=_storyboardGlobalTintColor;
+- (void)populateDocumentResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (id)documentFallbackColorForSystemColor:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1 fallbackColor:(id)arg2;
@@ -27,7 +28,8 @@
 - (id)allCustomFontFilenames;
 - (struct CGSize)canvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
 - (void)documentDidDisableMemberConfigurations;
-- (void)updateDocumentWithDeviceConfiguration:(id)arg1;
+- (void)refreshDocumentAppearance;
+- (id)effectiveAppearanceForEditorCanvasFrameController:(id)arg1;
 - (id)effectiveAppearanceForConfiguration:(id)arg1;
 - (id)implicitIntegratorBundleDependencyIdentifier;
 - (void)populateEmptyXIBDocumentWithInitialPlaceholders;

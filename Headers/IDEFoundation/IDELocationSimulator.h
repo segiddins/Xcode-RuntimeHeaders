@@ -27,12 +27,12 @@
 
 + (void)initialize;
 + (id)locationSimulatorLogAspect;
+- (void).cxx_destruct;
 @property(retain) IDELocation *currentSimulatedLocation; // @synthesize currentSimulatedLocation=_currentSimulatedLocation;
 @property(retain) IDESimulateLocationService *service; // @synthesize service=_service;
 @property(retain, nonatomic) IDELocationScenario *scenario; // @synthesize scenario=_scenario;
 @property(readonly) int state; // @synthesize state=_state;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
-- (void).cxx_destruct;
 - (void)_playbackTimerFired:(id)arg1;
 - (void)_startOrResumePlayback;
 - (void)_pausePlayback;

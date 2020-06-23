@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class DVTFilterTokenField, MISSING_TYPE, NSCollectionView, NSGridView, NSPopUpButton, NSScrollView, NSVisualEffectView;
+@class DVTFilterTokenField, MISSING_TYPE, NSButton, NSCollectionView, NSGridView, NSPopUpButton, NSScrollView, NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC19DVTUserInterfaceKit28DVTIconPreviewViewController : NSViewController
@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *backgroundVisualEffectView;
     MISSING_TYPE *collectionView;
     MISSING_TYPE *previewSizeChooserGrid;
+    MISSING_TYPE *exportButton;
     MISSING_TYPE *backgroundMaterialChooser;
     MISSING_TYPE *contentScrollView;
     MISSING_TYPE *settingsPanel;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)export:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)updatePreviewSizes:(id)arg1;
 - (void)updateBackgroundMaterial:(id)arg1;
@@ -49,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, retain) NSVisualEffectView *settingsPanel; // @synthesize settingsPanel;
 @property(nonatomic, retain) NSScrollView *contentScrollView; // @synthesize contentScrollView;
 @property(nonatomic, retain) NSPopUpButton *backgroundMaterialChooser; // @synthesize backgroundMaterialChooser;
+@property(nonatomic, retain) NSButton *exportButton; // @synthesize exportButton;
 @property(nonatomic, retain) NSGridView *previewSizeChooserGrid; // @synthesize previewSizeChooserGrid;
 @property(nonatomic, retain) NSCollectionView *collectionView; // @synthesize collectionView;
 @property(nonatomic, retain) NSVisualEffectView *backgroundVisualEffectView; // @synthesize backgroundVisualEffectView;

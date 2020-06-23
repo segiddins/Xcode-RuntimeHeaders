@@ -6,7 +6,7 @@
 
 #import <DTDeviceKit/DVTDeviceToken-Protocol.h>
 
-@class DTDKRemoteDeviceConnection, DTDKRemoteDeviceConsoleController, DTXConnection, DVTFilePath, DVTFuture, DVTPlatform, DVTProvisioningProfile, NSArray, NSDictionary, NSError, NSNumber, NSSet, NSString;
+@class DTDKRemoteDeviceConnection, DTDKRemoteDeviceConsoleController, DTXConnection, DVTDeviceOperation, DVTFilePath, DVTFuture, DVTPlatform, DVTProvisioningProfile, NSArray, NSDictionary, NSError, NSNumber, NSSet, NSString;
 @protocol DTDKRemoteDeviceToken, DVTCancellable;
 
 @protocol DTDKRemoteDeviceToken <DVTDeviceToken>
@@ -80,7 +80,7 @@
 - (NSDictionary *)checkDeviceCapabilities:(id)arg1 withOptions:(NSDictionary *)arg2 andError:(id *)arg3;
 - (_Bool)stopSimulatingLocationWithError:(id *)arg1;
 - (_Bool)simulateLatitude:(NSNumber *)arg1 andLongitude:(NSNumber *)arg2 withError:(id *)arg3;
-- (DVTFuture *)copyAndProcessSharedCache;
+- (DVTFuture *)copyAndProcessSharedCacheWithOperation:(DVTDeviceOperation *)arg1;
 - (NSError *)developerDiskImageMountError;
 - (BOOL)mountDeveloperDiskImageWithError:(id *)arg1;
 - (DVTFilePath *)idealExistingSymbolsDirectory:(id *)arg1;

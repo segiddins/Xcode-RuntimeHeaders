@@ -14,8 +14,8 @@
     BOOL _allowProvisioningRepairs;
 }
 
-@property BOOL allowProvisioningRepairs; // @synthesize allowProvisioningRepairs=_allowProvisioningRepairs;
 - (void).cxx_destruct;
+@property BOOL allowProvisioningRepairs; // @synthesize allowProvisioningRepairs=_allowProvisioningRepairs;
 - (void)automaticallyAuthorizeUserActionsNamed:(id)arg1;
 - (BOOL)shouldAutomaticallyAuthorizeUserActionNamed:(id)arg1;
 - (id)init;

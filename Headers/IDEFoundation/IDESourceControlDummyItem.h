@@ -13,8 +13,8 @@
     NSString *_name;
 }
 
-@property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(retain) NSString *name; // @synthesize name=_name;
 
 @end
 

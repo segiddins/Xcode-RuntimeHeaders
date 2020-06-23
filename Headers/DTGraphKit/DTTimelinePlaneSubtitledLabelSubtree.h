@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_subtitle;
 }
 
-@property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 - (void)adjustToGraph:(id)arg1;
 - (id)init;
 - (id)initWithRootLayer:(id)arg1 owner:(BOOL)arg2;

@@ -16,11 +16,11 @@
     NSImage *_baseIcon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMissing; // @synthesize isMissing=_isMissing;
 @property(nonatomic) BOOL isDirty; // @synthesize isDirty=_isDirty;
 @property(retain, nonatomic) NSImage *baseIcon; // @synthesize baseIcon=_baseIcon;
 @property(retain, nonatomic) NSImage *badgeIcon; // @synthesize badgeIcon=_badgeIcon;
-- (void).cxx_destruct;
 - (BOOL)draw;
 - (void)setbadgeIcon:(id)arg1;
 

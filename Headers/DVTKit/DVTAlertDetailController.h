@@ -6,23 +6,24 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSError, NSTextField, NSTextView;
+@class NSError, NSTextView;
 
 @interface DVTAlertDetailController : NSWindowController
 {
     NSError *_presentingError;
     NSTextView *_descriptionView;
-    NSTextField *_footerText;
+    NSTextView *_footerText;
 }
 
 + (id)alertDetailControllerForError:(id)arg1;
-@property(nonatomic) __weak NSTextField *footerText; // @synthesize footerText=_footerText;
+- (void).cxx_destruct;
+@property(nonatomic) __weak NSTextView *footerText; // @synthesize footerText=_footerText;
 @property(nonatomic) __weak NSTextView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(readonly, copy, nonatomic) NSError *presentingError; // @synthesize presentingError=_presentingError;
-- (void).cxx_destruct;
 - (void)windowDidLoad;
 - (id)_constructPrettyDescription:(id)arg1;
 - (id)_radarUrlForError:(id)arg1;
+- (id)_systemDescriptionString;
 - (id)initWithWindowNibName:(id)arg1 presentingError:(id)arg2;
 
 @end

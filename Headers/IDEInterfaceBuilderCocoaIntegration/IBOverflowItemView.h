@@ -17,11 +17,11 @@
 }
 
 + (id)overflowItemWithWidth:(double)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *placeholderKey; // @synthesize placeholderKey=_placeholderKey;
 @property(copy) NSString *key; // @synthesize key=_key;
 @property(retain) NSTextField *inputTextField; // @synthesize inputTextField=_inputTextField;
 @property(retain) NSTextField *labelTextField; // @synthesize labelTextField=_labelTextField;
-- (void).cxx_destruct;
 
 @end
 

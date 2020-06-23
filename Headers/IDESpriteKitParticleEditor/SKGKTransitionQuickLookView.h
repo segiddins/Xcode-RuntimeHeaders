@@ -21,12 +21,12 @@
     NSView *_parent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *parent; // @synthesize parent=_parent;
 @property(nonatomic, getter=isCurrent) BOOL current; // @synthesize current=_current;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) SKGKStateQuickLookView *toState; // @synthesize toState=_toState;
 @property(readonly, nonatomic) SKGKStateQuickLookView *fromState; // @synthesize fromState=_fromState;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_generatePaths;
 - (double)_angleForHookEdge:(unsigned long long)arg1;

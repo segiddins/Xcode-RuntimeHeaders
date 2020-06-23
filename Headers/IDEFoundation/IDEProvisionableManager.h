@@ -42,6 +42,7 @@
 + (id)keyPathsForValuesAffectingFinishedLoading;
 + (id)statusEvaluatorQueue;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTDelayedInvocation *delayedStatusEvaluation; // @synthesize delayedStatusEvaluation=_delayedStatusEvaluation;
 @property(retain) IDEProvisioningManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) DVTPerformanceMetric *loadingMetric; // @synthesize loadingMetric=_loadingMetric;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) IDEProvisionableStatusEvaluator *statusEvaluator; // @synthesize statusEvaluator=_statusEvaluator;
 @property(retain) id <IDEProvisionable> provisionable; // @synthesize provisionable=_provisionable;
 @property __weak id <IDEProvisioningTeamsDataSourceDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 @property(readonly) BOOL requiresImmediateUserActionResolution;
 - (void)_performRepairsForConfigurations:(id)arg1 retryExistingRepairs:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_processEvaluationResults:(id)arg1;
@@ -70,7 +70,7 @@
 - (void)setProvisioningProfile:(id)arg1 forConfigurationsNamed:(id)arg2 sdk:(id)arg3;
 - (void)setTeam:(id)arg1 forConfigurationsNamed:(id)arg2;
 @property(readonly) NSOrderedSet *teams;
-- (void)setBundleIdentifier:(id)arg1 forConfigurationsNamed:(id)arg2;
+- (void)setBundleIdentifier:(id)arg1 forConfigurationsNamed:(id)arg2 sdk:(id)arg3;
 @property(readonly, getter=isFinishedLoading) BOOL finishedLoading;
 - (void)refreshFromPortal;
 - (id)iOSMacBuildParametersWithConfigurationName:(id)arg1;

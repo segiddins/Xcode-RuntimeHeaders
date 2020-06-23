@@ -20,13 +20,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL suppressExpansionFrameTooltip; // @synthesize suppressExpansionFrameTooltip=_suppressExpansionFrameTooltip;
 @property int emphasizeMarkerStyle; // @synthesize emphasizeMarkerStyle=_emphasizeMarkerStyle;
 @property BOOL drawsEmphasizeMarker; // @synthesize drawsEmphasizeMarker=_drawsEmphasizeMarker;
 @property(copy) NSArray *statusCategoryNames; // @synthesize statusCategoryNames=_statusCategoryNames;
 @property BOOL showsStatusItems; // @synthesize showsStatusItems=_showsStatusItems;
 @property int arrowStyle; // @synthesize arrowStyle=_arrowStyle;
-- (void).cxx_destruct;
 - (void)updateBoundTitle;
 - (void)drawBorderAndBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;

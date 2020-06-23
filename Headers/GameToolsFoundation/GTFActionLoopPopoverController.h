@@ -26,6 +26,7 @@
     NSButton *_removeButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property __weak NSButton *addButton; // @synthesize addButton=_addButton;
 @property __weak NSButton *minusButton; // @synthesize minusButton=_minusButton;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) GTFActionTimelineModel *timelineModel; // @synthesize timelineModel=_timelineModel;
 @property(retain, nonatomic) GTFActionModelGroupLoop *loop; // @synthesize loop=_loop;
 @property(nonatomic) __weak id <GTFActionLoopPopoverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

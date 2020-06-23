@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
 + (void)initialize;
-@property BOOL hidden; // @synthesize hidden=_hidden;
 - (void).cxx_destruct;
+@property BOOL hidden; // @synthesize hidden=_hidden;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSize;
 @property(readonly) BOOL hasDisplayableStatus;

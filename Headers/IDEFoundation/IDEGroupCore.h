@@ -18,11 +18,10 @@
     NSArray *_subitems;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *subitems; // @synthesize subitems=_subitems;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void)setParentContainer:(id)arg1;
-@property(readonly) id <IDEContainerCore> parentContainer;
-- (void).cxx_destruct;
+@property(retain) id <IDEContainerCore> parentContainer; // @synthesize parentContainer=_parentContainer;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

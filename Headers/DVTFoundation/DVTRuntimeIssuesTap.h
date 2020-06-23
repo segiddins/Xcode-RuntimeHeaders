@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class DVTDispatchLock, NSMutableDictionary;
 
 @interface DVTRuntimeIssuesTap : NSObject
 {
-    NSMutableDictionary *_deviceCallerPidToTapMap;
     BOOL _useThirdPartyPredicate;
+    NSMutableDictionary *_tokenToTapMap;
+    DVTDispatchLock *_tokenToTapMapLock;
 }
 
 + (void)cancelTapForToken:(id)arg1;

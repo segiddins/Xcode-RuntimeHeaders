@@ -15,8 +15,8 @@
     CDUnknownBlockType _didClickBackButtonHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType didClickBackButtonHandler; // @synthesize didClickBackButtonHandler=_didClickBackButtonHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType didClickBackButtonHandler; // @synthesize didClickBackButtonHandler=_didClickBackButtonHandler;
 - (void)_didFinishMoveOperationWithContext:(id)arg1;
 - (void)_willFinishMoveOperationWithContext:(id)arg1;
 - (id)_startMoveOperationInDirecton:(long long)arg1 title:(id)arg2 backButtonTitle:(id)arg3;

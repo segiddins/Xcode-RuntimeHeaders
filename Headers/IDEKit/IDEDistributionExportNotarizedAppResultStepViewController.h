@@ -14,9 +14,9 @@
     DVTReplacementView *_replacementView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property BOOL canGoNext; // @synthesize canGoNext=_canGoNext;
-- (void).cxx_destruct;
 - (void)additionalNotarizationFailureActions;
 - (void)additionalNotarizationSuccessActions;
 - (id)developerIDAppName;
@@ -24,6 +24,8 @@
 - (BOOL)canCancel;
 - (id)title;
 - (void)viewDidInstall;
+- (id)providedOutputContextPropertyNames;
+- (id)requiredInputContextPropertyNames;
 
 @end
 

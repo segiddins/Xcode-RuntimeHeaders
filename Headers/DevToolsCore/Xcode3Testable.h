@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingName;
 + (id)keyPathsForValuesAffectingTestableProvider;
-@property(retain) Xcode3Target *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain) Xcode3Target *target; // @synthesize target=_target;
 - (void)blueprintsDidChange:(id)arg1;
 - (id)primaryBuildable;
 - (BOOL)isUITest;

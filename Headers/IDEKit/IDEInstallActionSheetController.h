@@ -22,11 +22,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSBox *box; // @synthesize box=_box;
 @property(retain) NSTextField *installNameTextField; // @synthesize installNameTextField=_installNameTextField;
 @property(retain) IDEInstallSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
-- (void).cxx_destruct;
 - (void)setCustomInstallName:(id)arg1;
 - (id)customInstallName;
 @property(retain) IDEWorkspace *workspace;

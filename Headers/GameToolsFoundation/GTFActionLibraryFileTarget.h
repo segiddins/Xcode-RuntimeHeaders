@@ -18,9 +18,9 @@
 }
 
 + (id)fileTargetWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) GTFActionLibraryTargetThumbnail *gtf_thumbnailImage; // @synthesize gtf_thumbnailImage=_gtf_thumbnailImage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *gtf_name;
 @property(readonly, nonatomic) id <NSCopying> gtf_uid;
 - (id)initWithName:(id)arg1;

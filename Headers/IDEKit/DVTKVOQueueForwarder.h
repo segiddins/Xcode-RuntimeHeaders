@@ -14,8 +14,8 @@
     id _value;
 }
 
-@property(readonly) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly) id value; // @synthesize value=_value;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2 queue:(id)arg3;
 
 @end

@@ -14,8 +14,8 @@
 }
 
 + (id)specifierWithApplicationPath:(id)arg1;
-- (id)appPath;
 - (void).cxx_destruct;
+- (id)appPath;
 - (id)description;
 
 @end

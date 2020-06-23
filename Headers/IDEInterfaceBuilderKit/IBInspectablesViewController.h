@@ -13,8 +13,8 @@
     NSMutableSet *_observationTokens;
 }
 
-@property(retain, nonatomic) NSMutableSet *observationTokens; // @synthesize observationTokens=_observationTokens;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *observationTokens; // @synthesize observationTokens=_observationTokens;
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)didSetInspectedObjects:(id)arg1;

@@ -41,8 +41,8 @@
     BOOL _needsToRefreshContexts;
     BOOL _didRestoreState;
     BOOL _userWantsEditorVisible;
+    BOOL _restoringStateSelfInitiated;
     BOOL _showDebuggerArea;
-    BOOL _isRespondingToLastActiveEditorContextInvalidated;
     id <DVTCancellable> _setEditorModeAfterDelayToken;
     id <DVTCancellable> _invokeCompletionBlockAfterDelayToken;
     DVTObservingToken *_lastActiveEditorContextIsValidToken;
@@ -55,7 +55,6 @@
     NSDictionary *_unrestoredStateDictionary;
     NSNumber *_setShowDebuggerAreaReentrancyCheck;
     BOOL _isRestoringState;
-    int _versionEditorSubmode;
     IDEEditorAreaSplit *_primaryEditorAreaSplit;
     NSArray *_editorAreaSplits;
     IDEEditorMultipleSplit *_editorMultipleSplit;
@@ -67,6 +66,9 @@
 
 + (id)_copyEditorAreaSplitToParentEditorMultipleSplit:(id)arg1 client:(unsigned long long)arg2;
 + (int)defaultEditorMode;
++ (void)_performConfigurationTransaction:(CDUnknownBlockType)arg1;
++ (BOOL)_isRunningConfigurationTransaction;
++ (id)_configurationTransactionScope;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingShowEditor;
@@ -76,11 +78,11 @@
 + (BOOL)automaticallyNotifiesObserversOfLastActiveEditorContext;
 + (id)keyPathsForValuesAffectingLastActiveEditorAreaSplit;
 + (BOOL)_newEditorsHaveEmptyContent;
+- (void).cxx_destruct;
 @property BOOL isRestoringState; // @synthesize isRestoringState=_isRestoringState;
 @property long long maximizedState; // @synthesize maximizedState=_maximizedState;
 @property(retain) IDEEditorContext *navigationTargetedEditorContext; // @synthesize navigationTargetedEditorContext=_navigationTargetedEditorContext;
 @property(retain, nonatomic) IDEEditorAreaSplit *selectedEditorAreaSplit; // @synthesize selectedEditorAreaSplit=_selectedEditorAreaSplit;
-@property(nonatomic) int versionEditorSubmode; // @synthesize versionEditorSubmode=_versionEditorSubmode;
 @property(retain) IDEEditorDocument *primaryEditorDocument; // @synthesize primaryEditorDocument=_primaryEditorDocument;
 @property(retain) IDEEditorMultipleSplit *editorMultipleSplit; // @synthesize editorMultipleSplit=_editorMultipleSplit;
 @property(retain) NSArray *editorAreaSplits; // @synthesize editorAreaSplits=_editorAreaSplits;
@@ -90,7 +92,6 @@
 @property(retain, nonatomic) IDEEditorContext *lastActiveEditorContext; // @synthesize lastActiveEditorContext=_lastActiveEditorContext;
 @property(readonly) DVTReplacementView *debuggerAreaReplacementView; // @synthesize debuggerAreaReplacementView=_debuggerAreaReplacementView;
 @property(nonatomic) BOOL userWantsEditorVisible; // @synthesize userWantsEditorVisible=_userWantsEditorVisible;
-- (void).cxx_destruct;
 - (void)editorMultipleSplit:(id)arg1 didRemoveSplitItem:(id)arg2 fromIndex:(unsigned long long)arg3;
 - (void)editorMultipleSplit:(id)arg1 willRemoveSplitItem:(id)arg2 fromIndex:(unsigned long long)arg3;
 - (id)editorArea;
@@ -187,6 +188,7 @@
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)_refreshEditorContextsAndPreserveCurrentEditorHistoryStack:(BOOL)arg1;
+- (void)__staticAnalyzer_InstanceVariablePartialInvalidator;
 - (void)primitiveInvalidate;
 - (void)_updateDebugAreaAfterDocumentOpened;
 - (void)_updateDebugBarAfterDocumentOpened;

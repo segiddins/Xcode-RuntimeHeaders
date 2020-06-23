@@ -33,8 +33,8 @@
     BOOL _disclosed;
 }
 
-@property(readonly, nonatomic, getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;
 - (id)accessibilityParent;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityValue;

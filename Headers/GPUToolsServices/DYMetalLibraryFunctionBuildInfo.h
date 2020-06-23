@@ -14,9 +14,9 @@
     NSSet *_dependentFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *dependentFilePaths; // @synthesize dependentFilePaths=_dependentFilePaths;
 @property(readonly, nonatomic) NSArray *recipes; // @synthesize recipes=_recipes;
-- (void).cxx_destruct;
 - (id)initWithRecipes:(id)arg1 dependentFilePaths:(id)arg2;
 
 @end

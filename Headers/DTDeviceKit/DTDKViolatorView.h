@@ -20,9 +20,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *bindingInfo; // @synthesize bindingInfo;
 @property(retain) NSTextFieldCell *textCell; // @synthesize textCell;
-- (void).cxx_destruct;
 @property(nonatomic) SEL utilityButtonAction;
 @property(retain, nonatomic) id utilityButtonTarget;
 @property BOOL utilityButtonVisible;

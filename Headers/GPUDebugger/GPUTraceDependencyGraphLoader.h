@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     DependencyGraphVisualRepresentation *_gvVisualRepresentation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DependencyGraphVisualRepresentation *gvVisualRepresentation; // @synthesize gvVisualRepresentation=_gvVisualRepresentation;
 @property(retain, nonatomic) NSArray *encoderItems; // @synthesize encoderItems=_encoderItems;
 @property(retain, nonatomic) DVTFuture *layoutFuture; // @synthesize layoutFuture=_layoutFuture;
-- (void).cxx_destruct;
 - (id)loadThumbnails:(id)arg1 replayController:(id)arg2;
 - (void)_renderThumbnails:(id)arg1;
 - (void)_harvestThumbnails:(id)arg1 replayController:(id)arg2 promise:(id)arg3;

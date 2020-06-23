@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(readonly) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

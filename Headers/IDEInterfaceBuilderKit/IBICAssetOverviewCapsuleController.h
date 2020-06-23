@@ -25,12 +25,12 @@
     NSArray *_cachedDecodedDragImages;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *cachedDecodedDragImages; // @synthesize cachedDecodedDragImages=_cachedDecodedDragImages;
 @property(readonly, nonatomic) IBICAbstractCatalogItem *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) IBICAssetCapsule *assetCapsule; // @synthesize assetCapsule=_assetCapsule;
 @property(nonatomic) __weak id <IBICAssetOverviewCapsuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)assetRepViewDidClickStatusImage:(id)arg1;
 - (void)assetCapsuleDidFinishBandSelecting:(id)arg1;
 - (void)assetCapsule:(id)arg1 didUpdateBandSelectionRect:(struct CGRect)arg2 withEvent:(id)arg3 andInitialSelection:(id)arg4;

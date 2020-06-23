@@ -17,10 +17,10 @@
 }
 
 + (BOOL)isZombie:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *pointeeTypeName; // @synthesize pointeeTypeName=_pointeeTypeName;
 @property(readonly) NSString *displayTypeName; // @synthesize displayTypeName=_displayTypeName;
 @property(readonly) NSString *typeName; // @synthesize typeName=_typeName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *typeNameWithoutQualifiers;
 @property(readonly) BOOL isBOOLOrBoolean;

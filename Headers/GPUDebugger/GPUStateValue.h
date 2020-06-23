@@ -36,6 +36,7 @@
     NSString *_itemSummary;
 }
 
+- (void).cxx_destruct;
 @property BOOL sortAlwaysEnd; // @synthesize sortAlwaysEnd=_sortAlwaysEnd;
 @property BOOL childValuesCountValid; // @synthesize childValuesCountValid=_childValuesCountValid;
 @property(copy) NSString *itemSummary; // @synthesize itemSummary=_itemSummary;
@@ -52,9 +53,7 @@
 @property(copy) NSString *logicalValue; // @synthesize logicalValue=_logicalValue;
 @property BOOL valueHasChanged; // @synthesize valueHasChanged=_valueHasChanged;
 @property(copy) NSString *value; // @synthesize value=_value;
-@property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly) IDEStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
-- (void).cxx_destruct;
 - (id)formattedSummary;
 - (long long)compareName:(id)arg1;
 - (id)_contentDescription;
@@ -70,6 +69,7 @@
 - (void)addChildValues:(id)arg1;
 - (void)addChildValue:(id)arg1;
 @property(copy) NSArray *childValues;
+@property(copy) NSString *name;
 - (void)setStateValue:(id)arg1 withName:(id)arg2 withType:(id)arg3 withItemDescription:(id)arg4;
 
 // Remaining properties

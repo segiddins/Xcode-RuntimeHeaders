@@ -15,10 +15,10 @@
     NSString *_defaultValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) NSString *userPrompt; // @synthesize userPrompt=_userPrompt;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

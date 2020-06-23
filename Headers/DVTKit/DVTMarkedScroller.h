@@ -25,8 +25,8 @@
 }
 
 + (BOOL)isCompatibleWithOverlayScrollers;
-@property __weak id <DVTMarkedScrollerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <DVTMarkedScrollerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_animateMouseOverLayer:(id)arg1 widthDelta:(double)arg2 heightDelta:(double)arg3;
 - (void)_animateAlphaOfAllMarkLayers:(double)arg1;
 - (void)_animateInAndAddMouseOverLayer:(id)arg1;

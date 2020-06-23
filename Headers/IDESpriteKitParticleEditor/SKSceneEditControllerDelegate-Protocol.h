@@ -6,12 +6,13 @@
 
 #import <IDESpriteKitParticleEditor/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, SKSceneEditController;
+@class NSArray, NSDictionary, NSObject, SKSceneEditController;
+@protocol SKSceneNavigating;
 
 @protocol SKSceneEditControllerDelegate <NSObject>
 - (void)sceneEditController:(SKSceneEditController *)arg1 performAction:(SEL)arg2 withSender:(id)arg3;
 - (BOOL)sceneEditController:(SKSceneEditController *)arg1 canPerformAction:(SEL)arg2 withSender:(id)arg3;
-- (void)sceneEditController:(SKSceneEditController *)arg1 beginEditingItem:(struct NSObject *)arg2;
+- (void)sceneEditController:(SKSceneEditController *)arg1 beginEditingItem:(NSObject<SKSceneNavigating> *)arg2;
 
 @optional
 - (void)sceneEditController:(SKSceneEditController *)arg1 didPerformDragOperation:(NSDictionary *)arg2 atLocation:(struct CGPoint)arg3;

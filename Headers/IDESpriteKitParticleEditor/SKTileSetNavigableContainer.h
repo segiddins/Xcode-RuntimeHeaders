@@ -21,9 +21,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_contentDocumentLocation;
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSMutableArray *tileSets; // @synthesize tileSets=_tileSets;
-- (void).cxx_destruct;
 @property(nonatomic) __weak SKEditorDocument *document;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;
 @property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;

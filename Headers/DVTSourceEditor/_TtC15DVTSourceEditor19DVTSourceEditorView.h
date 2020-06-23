@@ -10,27 +10,11 @@
 
 @interface _TtC15DVTSourceEditor19DVTSourceEditorView : _$s12SourceEditor0aB4ViewCN
 {
-    MISSING_TYPE *textPreferences;
     MISSING_TYPE *featureControllers;
     MISSING_TYPE *defaultFeatureControllerClasses;
-    MISSING_TYPE *themeChangeNotificationToken;
-    MISSING_TYPE *lineNumberPreferenceObservingToken;
-    MISSING_TYPE *activeLineHighlightPreferenceObservingToken;
-    MISSING_TYPE *activeLineHighlightOverrideProvider;
-    MISSING_TYPE *symbolHighlightPreferenceObservingToken;
-    MISSING_TYPE *symbolHighlightDelayPreferenceObservingToken;
-    MISSING_TYPE *autoInsertClosingBracePreferenceObservingToken;
-    MISSING_TYPE *autoInsertOpenBracketPreferenceObservingToken;
-    MISSING_TYPE *encloseSelectionInDelimitersPreferenceObservingToken;
-    MISSING_TYPE *typeOverCompletionsPreferenceObservingToken;
-    MISSING_TYPE *formattingOptionsChangedNotificationToken;
-    MISSING_TYPE *shouldWrapLines;
-    MISSING_TYPE *wrappedLinesIndentWidthPreferenceObservingToken;
-    MISSING_TYPE *overscrollRegionPreferenceObservingToken;
 }
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 
 @end

@@ -9,6 +9,8 @@
 @class IDETouchBarSimulatorHostWindowController;
 
 @protocol IDETouchBarSimulatorHostWindowControllerDelegate <NSObject>
+- (void)touchBarSimulatorHostWindowControllerWindow:(IDETouchBarSimulatorHostWindowController *)arg1 didChangeConfiguration:(long long)arg2;
+- (long long)configurationForTouchBarSimulatorHostWindowController:(IDETouchBarSimulatorHostWindowController *)arg1;
 - (void)touchBarSimulatorHostWindowControllerWindowWillClose:(IDETouchBarSimulatorHostWindowController *)arg1;
 - (BOOL)touchBarSimulatorHostWindowControllerWindowShouldClose:(IDETouchBarSimulatorHostWindowController *)arg1;
 @end

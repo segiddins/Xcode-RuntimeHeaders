@@ -32,13 +32,13 @@
     DVTBorderedView *_buttonsBorderedView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTBorderedView *buttonsBorderedView; // @synthesize buttonsBorderedView=_buttonsBorderedView;
 @property __weak DVTBorderedView *sourceListBorderedView; // @synthesize sourceListBorderedView=_sourceListBorderedView;
 @property __weak DVTBorderedView *contentSplitViewPane; // @synthesize contentSplitViewPane=_contentSplitViewPane;
 @property __weak DVTBorderedView *sourceListSplitViewPane; // @synthesize sourceListSplitViewPane=_sourceListSplitViewPane;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property __weak IDEIntentBuilderComponentStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)stackPopoverViewControllerDidClose:(id)arg1;
 - (void)tokenTextFieldComponentView:(id)arg1 tokenClicked:(id)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 atCharacterIndex:(unsigned long long)arg5;
 - (void)componentStackViewBoundsDidChange:(id)arg1;

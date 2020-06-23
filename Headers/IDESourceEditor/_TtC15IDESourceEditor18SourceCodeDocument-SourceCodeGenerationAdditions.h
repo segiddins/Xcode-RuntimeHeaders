@@ -29,11 +29,13 @@
 - (id)_teardownMethodNameForSourceModelCodeGeneratorWithOptions:(id)arg1;
 - (BOOL)_hasObjCMethodImplementationForName:(id)arg1 forClassNamed:(id)arg2;
 - (id)_objCMethodImplementationItemForName:(id)arg1 inClassItem:(id)arg2;
+- (id)_sourceModelAlternateNamesForGeneralName:(id)arg1;
 - (id)_insertObjCSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 withInsertAfterHint:(id)arg3 andInsertBeforeHint:(id)arg4 ignoreHintItemsConformingToSpecifications:(id)arg5 onlyConsiderItemsConformingToSpecifications:(id)arg6 insertAdditionalNewline:(BOOL)arg7 insertAtEndWhenInsertingWithoutHint:(BOOL)arg8 insertAfterObjCBlockWhenInsertingAtBeginning:(BOOL)arg9;
 - (id)_insertObjCSourceCode:(id)arg1 inContainingSourceModelItem:(id)arg2 withInsertAfterHint:(id)arg3 andInsertBeforeHint:(id)arg4 ignoreHintItemsConformingToSpecifications:(id)arg5 onlyConsiderItemsConformingToSpecifications:(id)arg6 insertAdditionalNewline:(BOOL)arg7 fallbackInsertionBlock:(CDUnknownBlockType)arg8;
 - (long long)_insertionHintMatchPriorityForObjCSourceModelItem:(id)arg1 givenInsertionHintItemName:(id)arg2 andLanguageSpecification:(id)arg3 ignoreItemsConformingToSpecifications:(id)arg4 onlyConsiderItemsConformingToSpecifications:(id)arg5;
 - (id)_insertObjCSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 error:(id *)arg4;
 - (id)_insertObjCSourceCode:(id)arg1 inContainingSourceModelItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 firstPossibleItemToInsertBefore:(id)arg4 error:(id *)arg5;
+- (unsigned long long)_insertionLineForInsertingIntoContainerItem:(id)arg1 firstPossibleItemToInsertBefore:(id)arg2 suggestedLineNumber:(long long)arg3 itemToInsertBefore:(id *)arg4 itemToInsertAfter:(id *)arg5;
 - (id)_insertionHintForObjCSourceModelItem:(id)arg1;
 - (id)_firstObjCSourceModelItemToInsertBeforeInInstanceVariableBlock:(id)arg1;
 - (id)_firstTopLevelObjCInterfaceSourceModelItemToInsertBeforeInClassItem:(id)arg1;

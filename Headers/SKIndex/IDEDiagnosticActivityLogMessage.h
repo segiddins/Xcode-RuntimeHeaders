@@ -19,13 +19,13 @@
     NSArray *_diagnosticFixItItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *diagnosticFixItItems; // @synthesize diagnosticFixItItems=_diagnosticFixItItems;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSArray *secondaryLocations; // @synthesize secondaryLocations=_secondaryLocations;
 @property(readonly, nonatomic) DVTTextDocumentLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long diagnosticSeverity; // @synthesize diagnosticSeverity=_diagnosticSeverity;
-- (void).cxx_destruct;
 - (void)addSubmessage:(id)arg1;
 @property(readonly, copy) NSArray *submessages;
 - (id)initWithSeverity:(long long)arg1 title:(id)arg2 location:(id)arg3 secondaryLocations:(id)arg4 category:(id)arg5 fixItItems:(id)arg6;

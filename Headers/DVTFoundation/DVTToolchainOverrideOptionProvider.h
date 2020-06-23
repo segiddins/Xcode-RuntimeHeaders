@@ -18,8 +18,8 @@
 + (id)keyPathsForValuesAffectingOptionsIncludingDoNotOverride;
 + (id)keyPathsForValuesAffectingOptionsExcludingDoNotOverride;
 + (id)defaultProvider;
-@property(readonly) DVTToolchainRegistry *registry; // @synthesize registry=_registry;
 - (void).cxx_destruct;
+@property(readonly) DVTToolchainRegistry *registry; // @synthesize registry=_registry;
 @property(readonly) BOOL shouldOfferOptions;
 @property(readonly) NSArray *optionsIncludingDoNotOverride;
 @property(readonly) NSArray *optionsExcludingDoNotOverride;

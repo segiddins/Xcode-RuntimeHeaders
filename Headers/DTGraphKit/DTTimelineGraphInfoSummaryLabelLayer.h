@@ -14,9 +14,9 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)setContentsScale:(double)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (struct CGSize)preferredFrameSize;

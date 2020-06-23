@@ -44,7 +44,6 @@
     GPUCaptureMessage *_captureMessage;
     NSDate *_captureStart;
     BOOL _isRemoteDebuggingEnabled;
-    BOOL _isOSXSession;
     unsigned int _deviceInterposeVersionGL;
     unsigned int _deviceInterposeVersionMetal;
     unsigned int _updatedResourcesChangeCount;
@@ -61,11 +60,11 @@
 + (void)initialize;
 + (id)logAspect;
 + (id)keyPathsForValuesAffectingTraceSession;
+- (void).cxx_destruct;
 @property unsigned int updatedResourcesChangeCount; // @synthesize updatedResourcesChangeCount=_updatedResourcesChangeCount;
 @property(readonly, nonatomic) NSString *deploymentTargetVersion; // @synthesize deploymentTargetVersion=_deploymentTargetVersion;
 @property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly) NSString *inferiorAppName; // @synthesize inferiorAppName=_inferiorAppName;
-@property BOOL isOSXSession; // @synthesize isOSXSession=_isOSXSession;
 @property BOOL isRemoteDebuggingEnabled; // @synthesize isRemoteDebuggingEnabled=_isRemoteDebuggingEnabled;
 @property(retain, nonatomic) DYProgressDigest *progressDigest; // @synthesize progressDigest=_progressDigest;
 @property(readonly) NSString *captureUnavailabilityReason; // @synthesize captureUnavailabilityReason=_captureUnavailabilityReason;
@@ -82,7 +81,6 @@
 @property(retain) GPUTraceSession *currentTraceSession; // @synthesize currentTraceSession=_currentTraceSession;
 @property BOOL archiveFinalized; // @synthesize archiveFinalized=_archiveFinalized;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
-- (void).cxx_destruct;
 @property(readonly) NSString *associatedProcessUUID;
 @property(readonly, nonatomic) BOOL isDeploymentTargetOlderThanDeviceVersion;
 - (id)infoDictForProgram:(unsigned long long)arg1 container:(unsigned long long)arg2;

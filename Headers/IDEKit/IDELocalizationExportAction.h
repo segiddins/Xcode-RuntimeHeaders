@@ -16,10 +16,10 @@
     DVTFilePath *_destinationFilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTFilePath *destinationFilePath; // @synthesize destinationFilePath=_destinationFilePath;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) IDEContainer<IDELocalizedContainer> *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (id)createController;
 
 @end

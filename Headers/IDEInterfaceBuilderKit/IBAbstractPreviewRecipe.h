@@ -14,8 +14,8 @@
 }
 
 + (id)recipeWithPropertyList:(id)arg1;
-@property(retain) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
 - (void).cxx_destruct;
+@property(retain) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
 @property(readonly) IBIdiom *idiom;
 @property(readonly) IBMemberConfiguration *memberConfiguration;
 @property(readonly) IBTargetRuntime *targetRuntime;

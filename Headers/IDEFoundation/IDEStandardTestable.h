@@ -22,14 +22,15 @@
     NSMutableDictionary *_testsByID;
 }
 
++ (id)_supportedPlatformsForBlueprint:(id)arg1 buildParameters:(id)arg2;
 + (id)_blueprintNameForTestingSpecifier:(id)arg1;
 + (id)_blueprintProviderRelativePathForTestingSpecifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSMutableDictionary *testsByID; // @synthesize testsByID=_testsByID;
 @property(readonly, copy) NSMutableDictionary *testIDsByURL; // @synthesize testIDsByURL=_testIDsByURL;
 @property(retain) id <IDETestableDataSourceToken> testableDataSourceToken; // @synthesize testableDataSourceToken=_testableDataSourceToken;
 @property BOOL isSearchingForTests; // @synthesize isSearchingForTests=_isSearchingForTests;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *arrangedSubtests; // @dynamic arrangedSubtests;
 - (void)removeSubtest:(id)arg1;
 - (void)_recursiveUnregisteringOfSubtest:(id)arg1;
@@ -54,7 +55,6 @@
 - (id)parentBuildableInWorkspace:(id)arg1;
 - (id)testHostBuildableInWorkspace:(id)arg1 buildParameters:(id)arg2;
 - (id)testRunSpecificationWithTestingSpecifier:(id)arg1 forScheme:(id)arg2 buildParameters:(id)arg3 buildables:(id)arg4 error:(id *)arg5;
-@property(readonly) NSSet *supportedPlatformsForParallelization;
 - (long long)testHostStyle;
 @property(readonly) BOOL isUITest;
 @property(readonly) id <IDEBuildable> primaryBuildable;

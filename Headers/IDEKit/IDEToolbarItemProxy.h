@@ -22,6 +22,7 @@
 }
 
 + (id)proxyForToolbarItemElement:(id)arg1 errorMessage:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) Class providerClass; // @synthesize providerClass=_providerClass;
 @property(retain) DVTExtension *commandDefinitionExtension; // @synthesize commandDefinitionExtension=_commandDefinitionExtension;
 @property(retain) NSImage *toolbarItemImage; // @synthesize toolbarItemImage=_toolbarItemImage;
@@ -31,7 +32,6 @@
 @property(copy) NSString *toolbarItemLabel; // @synthesize toolbarItemLabel=_toolbarItemLabel;
 @property BOOL providesItems; // @synthesize providesItems=_providesItems;
 @property(copy) NSString *toolbarItemIdentifier; // @synthesize toolbarItemIdentifier=_toolbarItemIdentifier;
-- (void).cxx_destruct;
 - (id)toolbarItemForToolbarInWindow:(id)arg1;
 - (id)initWithItemIdentifier:(id)arg1;
 

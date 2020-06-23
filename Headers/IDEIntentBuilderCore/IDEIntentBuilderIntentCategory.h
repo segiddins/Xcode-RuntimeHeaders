@@ -28,6 +28,7 @@
 + (id)supportedCategories;
 + (id)defaultCategory;
 + (id)_separatorCategory;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setParentCategory:) __weak IDEIntentBuilderIntentCategory *parentCategory; // @synthesize parentCategory=_parentCategory;
 @property(nonatomic, getter=isRestrictedWhileLocked, setter=_setRestrictedWhileLocked:) BOOL restrictedWhileLocked; // @synthesize restrictedWhileLocked=_restrictedWhileLocked;
 @property(nonatomic, getter=isUserConfirmationRequired, setter=_setUserConfirmationRequired:) BOOL userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic, setter=_setTitle:) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic, setter=_setName:) NSString *name; // @synthesize name=_name;
 @property(nonatomic, setter=_setDisplay:) long long _display; // @synthesize _display;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

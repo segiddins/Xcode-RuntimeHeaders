@@ -12,6 +12,7 @@
 
 + (id)displayName;
 - (id)occurenceCollectionsForSymbol:(id)arg1;
+- (id)emptyResultSetPlaceholderResultKind;
 
 @end
 

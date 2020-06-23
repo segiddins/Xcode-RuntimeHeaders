@@ -14,9 +14,9 @@
     DVTBorderedView *_borderedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)viewDidLoad;
 

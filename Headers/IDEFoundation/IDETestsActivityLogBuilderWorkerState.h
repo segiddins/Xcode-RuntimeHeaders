@@ -14,9 +14,9 @@
     DVTObservingToken *_runnablePIDObservationToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTObservingToken *runnablePIDObservationToken; // @synthesize runnablePIDObservationToken=_runnablePIDObservationToken;
 @property(readonly) NSMutableArray *recorderStack; // @synthesize recorderStack=_recorderStack;
-- (void).cxx_destruct;
 - (void)popRecorderWithAbnormalFinishMessageForReason:(id)arg1 error:(id)arg2;
 - (void)popRecorder;
 - (void)finishSubSectionRecordersWithReason:(id)arg1 error:(id)arg2;

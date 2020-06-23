@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSString *defaultErrorDescription; // @synthesize defaultErrorDescription=_defaultErrorDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *defaultErrorDescription; // @synthesize defaultErrorDescription=_defaultErrorDescription;
 - (void)attachToPID:(int)arg1 platform:(id)arg2 invokedInTabController:(id)arg3 runtimeDestinationHint:(id)arg4 activityViewTitle:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_attachToPID:(int)arg1 withDeviceProcessInformation:(id)arg2 runDestination:(id)arg3 invokedInTabController:(id)arg4 activityViewTitle:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_didFinishAttachingToPID:(int)arg1 sessionIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

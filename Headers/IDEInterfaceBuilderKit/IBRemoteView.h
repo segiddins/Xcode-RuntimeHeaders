@@ -31,6 +31,7 @@
 
 + (id)keyPathsForValuesAffectingIbInspectedShouldShowDesignablesStatus;
 + (id)keyPathsForValuesAffectingIbHasDesignableCustomClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isWaitingForRequestedImageInDrawRect) BOOL waitingForRequestedImageInDrawRect; // @synthesize waitingForRequestedImageInDrawRect=_waitingForRequestedImageInDrawRect;
 @property(retain, nonatomic) IBPlatformToolRequester *cachedImageRequester; // @synthesize cachedImageRequester=_cachedImageRequester;
 @property(copy, nonatomic) NSString *cachedImageRequestID; // @synthesize cachedImageRequestID=_cachedImageRequestID;
@@ -45,7 +46,6 @@
 @property(nonatomic) long long pendingImageRequestBehavior; // @synthesize pendingImageRequestBehavior=_pendingImageRequestBehavior;
 @property(readonly, getter=isInitialized) BOOL initialized; // @synthesize initialized=_initialized;
 @property(copy, nonatomic) NSNumber *explicitScaleFactor; // @synthesize explicitScaleFactor=_explicitScaleFactor;
-- (void).cxx_destruct;
 - (void)invalidateDesignablesStatusInDocument:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawPlaceholder:(struct CGRect)arg1;

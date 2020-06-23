@@ -45,6 +45,7 @@
 + (id)supportedTypes;
 + (id)separatorType;
 + (id)defaultType;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUnsupportedReasons:) NSArray *unsupportedReasons; // @synthesize unsupportedReasons=_unsupportedReasons;
 @property(retain, nonatomic, setter=_setPromptDialogTokens:) NSArray *promptDialogTokens; // @synthesize promptDialogTokens=_promptDialogTokens;
 @property(retain, nonatomic, setter=_setRelationshipPredicates:) NSArray *relationshipPredicates; // @synthesize relationshipPredicates=_relationshipPredicates;
@@ -61,7 +62,6 @@
 @property(nonatomic, setter=_setHidden:) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic, setter=_setDefault:) BOOL isDefault; // @synthesize isDefault=_isDefault;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

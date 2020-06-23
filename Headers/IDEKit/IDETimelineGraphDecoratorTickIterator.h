@@ -15,8 +15,8 @@
 }
 
 + (id)iteratorWithTicks:(id)arg1;
-@property(readonly, nonatomic) unsigned long long currentDataIndex; // @synthesize currentDataIndex=_currentDataIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long currentDataIndex; // @synthesize currentDataIndex=_currentDataIndex;
 - (void)advanceToTime:(unsigned long long)arg1;
 - (void)resetToTime:(unsigned long long)arg1;
 - (unsigned long long)_findIndexOfTime:(unsigned long long)arg1 startingAtIndex:(unsigned long long)arg2;

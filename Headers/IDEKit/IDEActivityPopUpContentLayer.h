@@ -24,13 +24,13 @@
     double _spaceNeededForMultiActionIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL makeSpaceForIndeterminateProgressIndicator; // @synthesize makeSpaceForIndeterminateProgressIndicator=_makeSpaceForIndeterminateProgressIndicator;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
 @property(retain, nonatomic) IDEActivityPopUpReportLayer *layerToHide; // @synthesize layerToHide=_layerToHide;
 @property(copy) NSString *issuesContainerTypeString; // @synthesize issuesContainerTypeString=_issuesContainerTypeString;
 @property(copy) NSArray *issueCategories; // @synthesize issueCategories=_issueCategories;
 @property BOOL issuesAreVisible; // @synthesize issuesAreVisible=_issuesAreVisible;
-- (void).cxx_destruct;
 - (void)updateTheme;
 - (void)layoutSublayers;
 @property(readonly) NSMutableArray *orderedVisibleReportLayers; // @synthesize orderedVisibleReportLayers=_orderedVisibleReportLayers;

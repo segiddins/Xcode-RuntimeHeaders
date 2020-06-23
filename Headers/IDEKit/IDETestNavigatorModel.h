@@ -25,11 +25,11 @@
 }
 
 + (id)keyPathsForValuesAffectingModelItems;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *testableReferencesObservingToken; // @synthesize testableReferencesObservingToken=_testableReferencesObservingToken;
 @property(nonatomic) BOOL loadingComplete; // @synthesize loadingComplete=_loadingComplete;
 @property(nonatomic) BOOL filteringByScheme; // @synthesize filteringByScheme=_filteringByScheme;
 @property(copy) NSArray *orderedTestables; // @synthesize orderedTestables=_orderedTestables;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)allTestablesChanged;
 - (void)testablesChanged:(id)arg1;

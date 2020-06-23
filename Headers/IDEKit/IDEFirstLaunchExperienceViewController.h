@@ -26,8 +26,8 @@
 + (void)setTitle:(id)arg1 forRightAnchoredButton:(id)arg2;
 + (id)sharedFirstLaunchExperienceViewController;
 + (BOOL)needToQuitAfterFLE;
-@property(getter=isWaitingOnFirstLaunchExperience) BOOL waitingOnFirstLaunchExperience; // @synthesize waitingOnFirstLaunchExperience=_waitingOnFirstLaunchExperience;
 - (void).cxx_destruct;
+@property(getter=isWaitingOnFirstLaunchExperience) BOOL waitingOnFirstLaunchExperience; // @synthesize waitingOnFirstLaunchExperience=_waitingOnFirstLaunchExperience;
 - (void)_restartXcode;
 - (BOOL)_isXcodeSystemResourcesAlreadyLoaded;
 - (BOOL)_isMobileDeviceAlreadyLoaded;

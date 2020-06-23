@@ -10,6 +10,7 @@
 @protocol DNTDisplayTreeIndexItem;
 
 @protocol DNTDisplayTreeIndexItem <NSCopying>
+@property(nonatomic, readonly) NSString *coreDocumentationKind;
 @property(nonatomic, readonly) long long languageEntityKind;
 @property(nonatomic, readonly) unsigned int availabilityItemID;
 @property(nonatomic, readonly) unsigned int platformAvailabilityMask;

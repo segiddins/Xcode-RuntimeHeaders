@@ -19,12 +19,12 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) IDEProfileQualifierResult *result; // @synthesize result=_result;
 @property(copy, nonatomic) NSString *debugDescription; // @synthesize debugDescription=_debugDescription;
 @property(nonatomic) BOOL onlyDisplayOnError; // @synthesize onlyDisplayOnError=_onlyDisplayOnError;
 @property(readonly, nonatomic) NSString *userFacingName; // @synthesize userFacingName=_userFacingName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)qualify;
 - (id)initWithUserFacingName:(id)arg1 block:(CDUnknownBlockType)arg2;

@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) IDEAnalyzeSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
-- (void).cxx_destruct;
 @property(retain) IDEWorkspace *workspace;
 - (void)updateBoundContent;
 - (void)updateBoundIDEWorkspaceBinding;

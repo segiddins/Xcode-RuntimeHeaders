@@ -6,14 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <IDESourceControlUI/DVTFilterExpressionPresentationDelegate-Protocol.h>
-#import <IDESourceControlUI/DVTFilteredDataSource-Protocol.h>
-#import <IDESourceControlUI/DVTFilteredDataViewingContext-Protocol.h>
 #import <IDESourceControlUI/NSTokenFieldDelegate-Protocol.h>
 
 @class MISSING_TYPE, NSString, OS_dispatch_queue;
 
-@interface _TtC18IDESourceControlUI26TrainyardTokenFieldHandler : NSObject <NSTokenFieldDelegate, DVTFilteredDataSource, DVTFilterExpressionPresentationDelegate, DVTFilteredDataViewingContext>
+@interface _TtC18IDESourceControlUI26TrainyardTokenFieldHandler : NSObject <NSTokenFieldDelegate>
 {
     MISSING_TYPE *filteringQueue;
     MISSING_TYPE *tokens;

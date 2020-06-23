@@ -13,8 +13,8 @@
     NSData *_shadowMemoryData;
 }
 
-@property(copy, nonatomic) NSData *shadowMemoryData; // @synthesize shadowMemoryData=_shadowMemoryData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *shadowMemoryData; // @synthesize shadowMemoryData=_shadowMemoryData;
 - (void)primitiveInvalidate;
 - (void)gatherAdditionalInformationForAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2;
 

@@ -16,8 +16,8 @@
     NSArray *_configuredForArchs;
 }
 
-@property(copy) NSArray *configuredForArchs; // @synthesize configuredForArchs=_configuredForArchs;
 - (void).cxx_destruct;
+@property(copy) NSArray *configuredForArchs; // @synthesize configuredForArchs=_configuredForArchs;
 - (BOOL)supportsEmittingDependencyInfo;
 - (id)version;
 - (void)setRawVersionString:(id)arg1;

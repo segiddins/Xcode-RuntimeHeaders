@@ -21,8 +21,8 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (void)initialize;
-@property(retain) NSArray *threadWrappers; // @synthesize threadWrappers=_threadWrappers;
 - (void).cxx_destruct;
+@property(retain) NSArray *threadWrappers; // @synthesize threadWrappers=_threadWrappers;
 - (void)primitiveInvalidate;
 - (void)_invalidatePreviousThreadWrappers;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

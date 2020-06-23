@@ -24,8 +24,8 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)_attributesForNameString;
 + (id)_attributesForCountString;
-@property BOOL hasSearchResults; // @synthesize hasSearchResults=_hasSearchResults;
 - (void).cxx_destruct;
+@property BOOL hasSearchResults; // @synthesize hasSearchResults=_hasSearchResults;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)setStateToken:(id)arg1;

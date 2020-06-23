@@ -15,10 +15,10 @@
     NSString *_principalItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *principalItemIdentifier; // @synthesize principalItemIdentifier=_principalItemIdentifier;
 @property(retain, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(retain, nonatomic) NSDictionary *identifierToItemMap; // @synthesize identifierToItemMap=_identifierToItemMap;
-- (void).cxx_destruct;
 - (id)initWithTouchBarItems:(id)arg1 identifiers:(id)arg2;
 
 @end

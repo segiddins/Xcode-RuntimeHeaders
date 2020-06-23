@@ -27,10 +27,10 @@
 + (void)_cacheAlerts;
 + (void)_registerAlert:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property double executionPriority; // @synthesize executionPriority=_executionPriority;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (int)alertPropertyListVersion;
 - (id)initWithPropertyList:(id)arg1;
 - (id)propertyList;

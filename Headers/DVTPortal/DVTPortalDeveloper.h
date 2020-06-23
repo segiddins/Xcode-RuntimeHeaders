@@ -15,9 +15,9 @@
 }
 
 + (id)developerForAccount:(id)arg1 outError:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *personID; // @synthesize personID=_personID;
 @property(copy, nonatomic) NSString *memberID; // @synthesize memberID=_memberID;
-- (void).cxx_destruct;
 
 @end
 

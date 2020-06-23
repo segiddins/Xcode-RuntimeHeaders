@@ -35,6 +35,7 @@
 + (void)initialize;
 + (id)reservedPropertyNames;
 + (id)statePropertyWithType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRemoved:) BOOL isRemoved; // @synthesize isRemoved=_isRemoved;
 @property(nonatomic, setter=_setObjectGroupItem:) __weak IDEIntentBuilderObjectGroupItem *objectGroupItem; // @synthesize objectGroupItem=_objectGroupItem;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
@@ -49,7 +50,6 @@
 @property(nonatomic, getter=isPrivateProperty) BOOL privateProperty; // @synthesize privateProperty=_privateProperty;
 @property(nonatomic) BOOL supportsMultipleValues; // @synthesize supportsMultipleValues=_supportsMultipleValues;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locationDescription;
 - (id)generateIssues;
 - (void)updateWithDictionary:(id)arg1;
@@ -71,6 +71,7 @@
 @property(copy, nonatomic) id <IDEIntentBuilderPropertyType> type; // @synthesize type=_type;
 - (id)availableTokensIncludingCustomTypeProperties:(BOOL)arg1;
 - (void)setType:(id)arg1 bumpTag:(BOOL)arg2;
+- (id)initWithName:(id)arg1 supportsMultipleValues:(BOOL)arg2;
 - (id)codegen_availabilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_forwardDeclarationsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_implementationForSourceLanguage:(unsigned long long)arg1 readonly:(BOOL)arg2 dynamic:(BOOL)arg3;

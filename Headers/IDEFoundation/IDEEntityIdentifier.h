@@ -24,12 +24,12 @@
 + (id)entityIdentifierFromEntityName:(id)arg1 entityType:(long long)arg2 containerName:(id)arg3 isShared:(BOOL)arg4;
 + (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(long long)arg3 containerName:(id)arg4;
 + (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(long long)arg3 containerName:(id)arg4 isShared:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *entityGUID; // @synthesize entityGUID=_entityGUID;
 @property(readonly) long long entityType; // @synthesize entityType=_entityType;
 @property(readonly, copy) NSString *containerName; // @synthesize containerName=_containerName;
 @property(readonly, copy) NSString *entityName; // @synthesize entityName=_entityName;
 @property(readonly) long long sharedState; // @synthesize sharedState=_sharedState;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isSimilarToEntityIdentifier:(id)arg1;

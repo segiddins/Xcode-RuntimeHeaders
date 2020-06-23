@@ -23,10 +23,10 @@
 + (id)keyPathsForValuesAffectingFlatNavigableItem;
 + (id)keyPathsForValuesAffectingFileSystemNavigableItem;
 + (id)keyPathsForValuesAffectingWorkspaceNavigableItem;
+- (void).cxx_destruct;
 @property(copy) NSArray *statusCategoryNames; // @synthesize statusCategoryNames=_statusCategoryNames;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(copy) NSString *selectedRevisionIdentifier; // @synthesize selectedRevisionIdentifier=_selectedRevisionIdentifier;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)teardown;
 - (id)reviewFilesNavigator:(id)arg1 importantFilePathsForNavigableItem:(id)arg2 excludingDisabledItems:(id)arg3;

@@ -27,6 +27,7 @@
 
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
 + (id)keyPathsForValuesAffectingAssistantContext;
+- (void).cxx_destruct;
 @property __weak NSPopUpButton *cleaningPopUp; // @synthesize cleaningPopUp=_cleaningPopUp;
 @property __weak NSView *scheduleViewContainer; // @synthesize scheduleViewContainer=_scheduleViewContainer;
 @property(retain, nonatomic) NSView *manualLayer; // @synthesize manualLayer=_manualLayer;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSView *mainView; // @synthesize mainView=_mainView;
 @property(readonly) XCSUIScheduleViewController *scheduleViewController; // @synthesize scheduleViewController=_scheduleViewController;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
-- (void).cxx_destruct;
 - (void)scheduleHasChanged;
 - (void)setTimeOfDayToIntegrate:(id)arg1;
 - (id)timeOfDayToIntegrate;

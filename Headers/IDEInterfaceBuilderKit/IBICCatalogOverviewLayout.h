@@ -16,9 +16,9 @@
     struct NSEdgeInsets _margins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double rowSpacing; // @synthesize rowSpacing=_rowSpacing;
 @property(nonatomic) struct NSEdgeInsets margins; // @synthesize margins=_margins;
-- (void).cxx_destruct;
 - (void)invalidateLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

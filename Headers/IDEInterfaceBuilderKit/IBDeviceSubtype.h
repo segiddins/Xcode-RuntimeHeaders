@@ -36,6 +36,7 @@
     NSOrderedSet *_adaptations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *adaptations; // @synthesize adaptations=_adaptations;
 @property(readonly, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(readonly, nonatomic) IBDeviceOrientation *defaultOrientation; // @synthesize defaultOrientation=_defaultOrientation;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)displayNameForAdaptation:(id)arg1 includeOrientation:(BOOL)arg2 includeAppearance:(BOOL)arg3;
 - (id)defaultDeviceConfiguration;
 - (id)adaptationForLayoutIdentifier:(id)arg1 orientation:(id)arg2;

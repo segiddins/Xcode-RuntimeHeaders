@@ -21,12 +21,12 @@
 
 + (id)keyPathsForValuesAffectingIncluded;
 + (BOOL)filePathHasImageExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *files; // @synthesize files=_files;
 @property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) __weak IDELocalizationTestActivity *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) long long screenshotCountSelected; // @synthesize screenshotCountSelected=_screenshotCountSelected;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
-- (void).cxx_destruct;
 - (id)referenceFilesForLocale:(id)arg1;
 @property(readonly, nonatomic, getter=isIncludedEnabled) BOOL includedEnabled;
 @property(readonly, nonatomic) long long screenshotCount;

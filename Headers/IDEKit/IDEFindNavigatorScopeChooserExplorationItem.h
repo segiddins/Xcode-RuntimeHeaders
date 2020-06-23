@@ -15,10 +15,10 @@
     IDEFindNavigatorGroupScopeOutlineItem *_outlineItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDEFindNavigatorGroupScopeOutlineItem *outlineItem; // @synthesize outlineItem=_outlineItem;
 @property(readonly) IDEFindNavigatorScopeChooserExplorationItem *parent; // @synthesize parent=_parent;
 @property(readonly) NSObject *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)initWithSource:(id)arg1 parent:(id)arg2;
 - (id)initWithSource:(id)arg1 parent:(id)arg2 outlineItem:(id)arg3;
 

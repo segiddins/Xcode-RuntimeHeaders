@@ -27,6 +27,7 @@
 + (id)showTabWithTitle:(id)arg1;
 + (void)showPrefPane;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain) DVTTabChooserView *tabChooserView; // @synthesize tabChooserView=_tabChooserView;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -35,7 +36,6 @@
 @property(retain) NSButton *checkAndInstallNowButton; // @synthesize checkAndInstallNowButton=_checkAndInstallNowButton;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSArray *simulatorsDownloadables; // @synthesize simulatorsDownloadables=_simulatorsDownloadables;
-- (void).cxx_destruct;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)checkAndInstallUpdates:(id)arg1;

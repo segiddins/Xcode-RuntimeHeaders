@@ -15,8 +15,8 @@
     struct CGSize _menuOffset;
 }
 
-@property struct CGSize menuOffset; // @synthesize menuOffset=_menuOffset;
 - (void).cxx_destruct;
+@property struct CGSize menuOffset; // @synthesize menuOffset=_menuOffset;
 - (id)accessibilityRole;
 - (BOOL)accessibilityPerformPress;
 - (void)mouseDown:(id)arg1;

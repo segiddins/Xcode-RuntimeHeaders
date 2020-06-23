@@ -50,6 +50,7 @@
 + (id)certificateTypeWithPortalIdentifier:(id)arg1;
 + (id)certificateTypesForPortalProgram:(id)arg1;
 + (id)allCertificateTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isLegacyType; // @synthesize isLegacyType=_isLegacyType;
 @property(readonly, nonatomic) BOOL canBeRevokedByEnterpriseTeams; // @synthesize canBeRevokedByEnterpriseTeams=_canBeRevokedByEnterpriseTeams;
 @property(readonly, nonatomic) BOOL canBeRevoked; // @synthesize canBeRevoked=_canBeRevoked;
@@ -77,7 +78,6 @@
 @property(readonly, nonatomic) NSSet *certificateOIDs; // @synthesize certificateOIDs=_certificateOIDs;
 @property(readonly, nonatomic) NSSet *portalPrograms; // @synthesize portalPrograms=_portalPrograms;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)keyNameForTeam:(id)arg1;
 - (id)_listCSRServiceForTeam:(id)arg1;
 - (id)_revokeServiceForCertificate:(id)arg1;

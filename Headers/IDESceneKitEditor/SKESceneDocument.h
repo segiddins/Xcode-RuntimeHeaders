@@ -62,11 +62,11 @@
 + (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
 + (BOOL)autosavesInPlace;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSUndoManager *shaderModifierEditorUndoManager; // @synthesize shaderModifierEditorUndoManager=_shaderModifierEditorUndoManager;
 @property(retain) SKEActionEditor *inspectedActionEditor; // @synthesize inspectedActionEditor=_inspectedActionEditor;
 @property(retain) SKESceneEditor *inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
 @property BOOL alreadyProposedToUpgrade; // @synthesize alreadyProposedToUpgrade=_alreadyProposedToUpgrade;
-- (void).cxx_destruct;
 - (void)resetWithSourceDocument;
 - (void)synchronizeWithSourceDocument;
 - (void)intializeDocumentAttributesFromScene:(id)arg1;

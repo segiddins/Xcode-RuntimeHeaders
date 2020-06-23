@@ -13,8 +13,8 @@
     IDESchemeActionIssueSummary *_issueSummary;
 }
 
-@property(readonly) IDESchemeActionIssueSummary *issueSummary; // @synthesize issueSummary=_issueSummary;
 - (void).cxx_destruct;
+@property(readonly) IDESchemeActionIssueSummary *issueSummary; // @synthesize issueSummary=_issueSummary;
 - (id)sdefSupport_endingColumnNumber;
 - (id)sdefSupport_startingColumnNumber;
 - (id)sdefSupport_endingLineNumber;

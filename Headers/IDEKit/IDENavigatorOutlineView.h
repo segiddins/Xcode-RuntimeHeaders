@@ -57,6 +57,7 @@
 + (long long)systemRowSizeStyle;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) long long filterProgress; // @synthesize filterProgress=_filterProgress;
 @property(retain) DVTTimeSlicedMainThreadWorkQueue *expandingItemsWorkQueue; // @synthesize expandingItemsWorkQueue=_expandingItemsWorkQueue;
 @property long long systemRowSizeStyle; // @synthesize systemRowSizeStyle=_systemRowSizeStyle;
@@ -65,7 +66,6 @@
 @property(nonatomic) SEL keyAction; // @synthesize keyAction=_keyAction;
 @property(readonly, getter=isFilteringActive) BOOL filteringActive; // @synthesize filteringActive=_filteringActive;
 @property(retain, nonatomic) IDENavigableItemFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (void)processPendingChanges;
 - (void)scrollSelectionToVisible;
 - (BOOL)scrollRectToVisible:(struct CGRect)arg1;

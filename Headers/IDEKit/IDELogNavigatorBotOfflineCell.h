@@ -18,13 +18,13 @@
     NSImage *_offlineNormalDeselected;
 }
 
+- (void).cxx_destruct;
 @property BOOL inMainWindow; // @synthesize inMainWindow=_inMainWindow;
 @property(retain) NSImage *offlineNormalDeselected; // @synthesize offlineNormalDeselected=_offlineNormalDeselected;
 @property(retain) NSImage *offlineSelectedHighlighted; // @synthesize offlineSelectedHighlighted=_offlineSelectedHighlighted;
 @property(retain) NSImage *offlineSelected; // @synthesize offlineSelected=_offlineSelected;
 @property(retain) NSImage *offlineHighlighted; // @synthesize offlineHighlighted=_offlineHighlighted;
 @property(retain) NSImage *offlineNormal; // @synthesize offlineNormal=_offlineNormal;
-- (void).cxx_destruct;
 - (void)addTrackingAreasForView:(id)arg1 inFrame:(struct CGRect)arg2 withUserInfo:(id)arg3 mouseLocation:(struct CGPoint)arg4;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

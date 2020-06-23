@@ -4,11 +4,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEFoundation/_TtC13IDEFoundation29_IDELegacySchemeFileReference.h>
+#import <objc/NSObject.h>
+
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
 @class DVTFilePath, IDEScheme, MISSING_TYPE;
 
-@interface _TtC13IDEFoundation22IDESchemeFileReference : _TtC13IDEFoundation29_IDELegacySchemeFileReference
+@interface _TtC13IDEFoundation22IDESchemeFileReference : NSObject <DVTXMLUnarchiving>
 {
     MISSING_TYPE *persistedReference;
     MISSING_TYPE *scheme;
@@ -24,6 +26,7 @@
 - (void)dealloc;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)init;
+- (id)initWithResolvedFilePath:(id)arg1;
 
 @end
 

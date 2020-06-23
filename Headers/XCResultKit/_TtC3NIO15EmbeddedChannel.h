@@ -11,9 +11,10 @@
 @interface _TtC3NIO15EmbeddedChannel : _TtCs12_SwiftObject
 {
     MISSING_TYPE *$__lazy_storage_$_channelcore;
+    MISSING_TYPE *isWritable;
     MISSING_TYPE *_pipeline;
     MISSING_TYPE *allocator;
-    MISSING_TYPE *eventLoop;
+    MISSING_TYPE *embeddedEventLoop;
     MISSING_TYPE *localAddress;
     MISSING_TYPE *remoteAddress;
     MISSING_TYPE *parent;

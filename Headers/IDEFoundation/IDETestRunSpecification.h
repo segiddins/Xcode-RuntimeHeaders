@@ -16,11 +16,13 @@
     BOOL _useDestinationArtifacts;
     BOOL _useInternalIOSLaunchStyleRsync;
     BOOL _parallelizationEnabled;
+    BOOL _testTimeoutsEnabled;
     BOOL _isUITestBundle;
     BOOL _useUITargetAppProvidedByTests;
     BOOL _UITestingTargetAppMainThreadCheckerEnabled;
     BOOL _gatherLocalizableStringsData;
     BOOL _treatMissingBaselinesAsFailures;
+    NSNumber *_isiOSMacTestBundle;
     id <IDETestingSpecifier> _testingSpecifier;
     NSSet *_testIdentifiersToRun;
     NSSet *_testIdentifiersToSkip;
@@ -46,7 +48,11 @@
     NSNumber *_parallelTestingWorkerCountOverride;
     NSNumber *_parallelTestingMaximumWorkerCount;
     long long _testExecutionOrdering;
-    NSNumber *_isiOSMacTestBundle;
+    NSSet *_testBundleSupportedPlatforms;
+    NSSet *_testBundleArchitectures;
+    NSString *_testBundleDeploymentTarget;
+    NSNumber *_defaultTestExecutionTimeAllowance;
+    NSNumber *_maximumTestExecutionTimeAllowance;
     NSString *_UITestingTargetAppBundleId;
     DVTFilePath *_UITestingTargetAppPath;
     NSArray *_UITestingTargetAppCommandLineArguments;
@@ -59,9 +65,9 @@
     NSString *_clangProfileDataDirectoryPathString;
 }
 
-+ (id)specificationWithSpecifier:(id)arg1 testBundleFilePath:(id)arg2 testHostRunnable:(id)arg3 bundleIdForTestHost:(id)arg4 testHostStyle:(long long)arg5 filePathsForDependentProducts:(id)arg6 testDependencySearchDirectories:(id)arg7 bundleIDsForCrashReportEmphasis:(id)arg8 productModuleName:(id)arg9 toolchainsSettingValue:(id)arg10 testingEnvironmentVariables:(id)arg11 schemeCommand:(id)arg12 isUITestBundle:(BOOL)arg13 useUITargetAppProvidedByTests:(BOOL)arg14 UITestingTargetAppPath:(id)arg15 UITestingTargetAppEnvironmentVariables:(id)arg16 buildableProductForUIRecordingManager:(id)arg17 buildableProductForDebugger:(id)arg18 treatMissingBaselinesAsFailures:(BOOL)arg19 blueprintProviderRelativePath:(id)arg20 blueprintName:(id)arg21 parallelizationEnabled:(BOOL)arg22 testExecutionOrdering:(long long)arg23;
++ (id)specificationWithSpecifier:(id)arg1 testBundleFilePath:(id)arg2 testHostRunnable:(id)arg3 bundleIdForTestHost:(id)arg4 testHostStyle:(long long)arg5 filePathsForDependentProducts:(id)arg6 testDependencySearchDirectories:(id)arg7 bundleIDsForCrashReportEmphasis:(id)arg8 productModuleName:(id)arg9 toolchainsSettingValue:(id)arg10 testingEnvironmentVariables:(id)arg11 schemeCommand:(id)arg12 isUITestBundle:(BOOL)arg13 useUITargetAppProvidedByTests:(BOOL)arg14 UITestingTargetAppPath:(id)arg15 UITestingTargetAppEnvironmentVariables:(id)arg16 buildableProductForUIRecordingManager:(id)arg17 buildableProductForDebugger:(id)arg18 treatMissingBaselinesAsFailures:(BOOL)arg19 blueprintProviderRelativePath:(id)arg20 blueprintName:(id)arg21 parallelizationEnabled:(BOOL)arg22 testExecutionOrdering:(long long)arg23 testTimeoutsEnabled:(BOOL)arg24;
 + (id)languageAgnosticIdentifersFor:(id)arg1;
-+ (CDUnknownBlockType)launchParametersBlockForShouldDebugXPCServices:(BOOL)arg1 shouldDebugAppExtensions:(BOOL)arg2 workspace:(id)arg3 doingPGO:(BOOL)arg4 schemeIdentifier:(id)arg5 workingDirectory:(id)arg6 selectedLauncherIdentifier:(id)arg7 selectedDebuggerIdentifier:(id)arg8 buildConfiguration:(id)arg9 buildParameters:(id)arg10 debugProcessAsUID:(unsigned int)arg11 suppressSimulatorApplication:(BOOL)arg12 shouldGenerateRuntimeProfile:(BOOL)arg13 runtimeProfileInfo:(id)arg14 buildProductDirectories:(id)arg15;
++ (CDUnknownBlockType)launchParametersBlockForShouldDebugXPCServices:(BOOL)arg1 shouldDebugAppExtensions:(BOOL)arg2 workspace:(id)arg3 doingPGO:(BOOL)arg4 schemeIdentifier:(id)arg5 workingDirectory:(id)arg6 selectedLauncherIdentifier:(id)arg7 selectedDebuggerIdentifier:(id)arg8 buildConfiguration:(id)arg9 buildParameters:(id)arg10 debugProcessAsUID:(unsigned int)arg11 customLLDBInitFile:(id)arg12 suppressSimulatorApplication:(BOOL)arg13 shouldGenerateRuntimeProfile:(BOOL)arg14 runtimeProfileInfo:(id)arg15 buildProductDirectories:(id)arg16;
 + (id)buildableProductForTestingSpecifier:(id)arg1;
 + (id)pathForBuildableProduct:(id)arg1 buildParameters:(id)arg2 runDestination:(id)arg3;
 + (id)testHostRunnableForUsesXCTRunner:(BOOL)arg1 runDestination:(id)arg2 buildableProduct:(id)arg3 buildParameters:(id)arg4 testingSpecifier:(id)arg5 outError:(id *)arg6;
@@ -75,8 +81,8 @@
 + (id)_dependentProductsForBuildables:(id)arg1;
 + (id)baselinePlistFilePathForTestingSpecifier:(id)arg1 bundleBaselineFilePath:(id)arg2 baselineOverridesFilePath:(id)arg3 runDestination:(id)arg4 withError:(id *)arg5;
 + (id)environmentVariablesForBuildParameters:(id)arg1 buildableProduct:(id)arg2;
-+ (id)testingEnvironmentVariablesForBuildParameters:(id)arg1 testHostStyle:(long long)arg2 testBuildableProduct:(id)arg3 buildDirectoryPaths:(id)arg4;
-+ (id)_bundleInjectLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2 device:(id)arg3;
++ (id)testingEnvironmentVariablesForBuildParameters:(id)arg1 testHostStyle:(long long)arg2 testBuildableProduct:(id)arg3 testHostPath:(id)arg4 buildDirectoryPaths:(id)arg5 workspace:(id)arg6;
++ (id)_bundleInjectLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2 device:(id)arg3 testHostPath:(id)arg4;
 + (BOOL)usesInternalTestBuildStyleForBuildable:(id)arg1 buildParameters:(id)arg2;
 + (id)removePathPlaceholdersIn:(id)arg1 forTestRootPath:(id)arg2 derivedDataPath:(id)arg3;
 + (id)insertPathPlaceholdersIn:(id)arg1 forTestRootPath:(id)arg2 derivedDataPath:(id)arg3;
@@ -86,6 +92,7 @@
 + (BOOL)applyTestIdentifiersToRun:(id)arg1 toSpecifications:(id)arg2 error:(id *)arg3;
 + (id)testRunSpecificationsForTestingSpecifiers:(id)arg1 scheme:(id)arg2 buildables:(id)arg3 withBuildParameters:(id)arg4 additionalEnvironmentVariables:(id)arg5 additionalCommandLineArguments:(id)arg6 includeClangProfileParameters:(BOOL)arg7 shouldDebugAppExtensions:(BOOL)arg8 mainThreadCheckerDylibPath:(id)arg9 error:(id *)arg10;
 + (id)outputDirectoriesForBuildables:(id)arg1 buildParameters:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *clangProfileDataDirectoryPathString; // @synthesize clangProfileDataDirectoryPathString=_clangProfileDataDirectoryPathString;
 @property(retain) id <IDEBuildableProduct> buildableProductForDebugger; // @synthesize buildableProductForDebugger=_buildableProductForDebugger;
 @property(retain) id <IDEBuildableProduct> buildableProductForUIRecordingManager; // @synthesize buildableProductForUIRecordingManager=_buildableProductForUIRecordingManager;
@@ -101,7 +108,12 @@
 @property(copy) NSString *UITestingTargetAppBundleId; // @synthesize UITestingTargetAppBundleId=_UITestingTargetAppBundleId;
 @property BOOL useUITargetAppProvidedByTests; // @synthesize useUITargetAppProvidedByTests=_useUITargetAppProvidedByTests;
 @property BOOL isUITestBundle; // @synthesize isUITestBundle=_isUITestBundle;
-@property(copy) NSNumber *isiOSMacTestBundle; // @synthesize isiOSMacTestBundle=_isiOSMacTestBundle;
+@property(copy) NSNumber *maximumTestExecutionTimeAllowance; // @synthesize maximumTestExecutionTimeAllowance=_maximumTestExecutionTimeAllowance;
+@property(copy) NSNumber *defaultTestExecutionTimeAllowance; // @synthesize defaultTestExecutionTimeAllowance=_defaultTestExecutionTimeAllowance;
+@property BOOL testTimeoutsEnabled; // @synthesize testTimeoutsEnabled=_testTimeoutsEnabled;
+@property(copy) NSString *testBundleDeploymentTarget; // @synthesize testBundleDeploymentTarget=_testBundleDeploymentTarget;
+@property(copy) NSSet *testBundleArchitectures; // @synthesize testBundleArchitectures=_testBundleArchitectures;
+@property(copy) NSSet *testBundleSupportedPlatforms; // @synthesize testBundleSupportedPlatforms=_testBundleSupportedPlatforms;
 @property long long testExecutionOrdering; // @synthesize testExecutionOrdering=_testExecutionOrdering;
 @property(copy) NSNumber *parallelTestingMaximumWorkerCount; // @synthesize parallelTestingMaximumWorkerCount=_parallelTestingMaximumWorkerCount;
 @property(copy) NSNumber *parallelTestingWorkerCountOverride; // @synthesize parallelTestingWorkerCountOverride=_parallelTestingWorkerCountOverride;
@@ -130,7 +142,7 @@
 @property(copy, nonatomic) NSSet *testIdentifiersToSkip; // @synthesize testIdentifiersToSkip=_testIdentifiersToSkip;
 @property(copy, nonatomic) NSSet *testIdentifiersToRun; // @synthesize testIdentifiersToRun=_testIdentifiersToRun;
 @property(retain) id <IDETestingSpecifier> testingSpecifier; // @synthesize testingSpecifier=_testingSpecifier;
-- (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *isiOSMacTestBundle; // @synthesize isiOSMacTestBundle=_isiOSMacTestBundle;
 @property(readonly) NSString *ide_schemeActionIssueSummaryProducingTargetName;
 @property(readonly) NSString *bundleName;
 - (id)lldbToolchain;
@@ -140,10 +152,14 @@
 - (id)preparedTestEnvironmentVariablesForRunDestination:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSDictionary *dictionaryRepresentation;
+@property(readonly, copy) NSString *pathForInstallationTracking;
+@property(readonly, copy) NSString *bundleIdentifierForInstallationTracking;
 - (void)applyLanguageAndRegionToArguments;
-- (BOOL)_supportsParallelizationForRunDestination:(id)arg1;
-- (BOOL)_isiOSMacTestBundleForRunDestination:(id)arg1;
 - (BOOL)validateRunDestination:(id)arg1 error:(id *)arg2;
+- (BOOL)_isValidRunDestination:(id)arg1 error:(id *)arg2;
+- (BOOL)_isValidBundleAtFilePath:(id)arg1 forRunDestination:(id)arg2 error:(id *)arg3;
+- (BOOL)_validateBuiltProductsForRunDestination:(id)arg1 error:(id *)arg2;
+- (BOOL)_validateBuildablesForRunDestination:(id)arg1 error:(id *)arg2;
 
 @end
 

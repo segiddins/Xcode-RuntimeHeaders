@@ -39,6 +39,7 @@
     struct CGPoint _baseMiddlePoint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) DVTMeterThreshold *highRangeThreshold; // @synthesize highRangeThreshold=_highRangeThreshold;
 @property(retain, nonatomic) DVTMeterThreshold *midRangeThreshold; // @synthesize midRangeThreshold=_midRangeThreshold;
@@ -63,7 +64,6 @@
 @property(nonatomic) double needleWidth; // @synthesize needleWidth=_needleWidth;
 @property(readonly, nonatomic) struct CGPoint baseMiddlePoint; // @synthesize baseMiddlePoint=_baseMiddlePoint;
 @property(nonatomic) double verticalOffset; // @synthesize verticalOffset=_verticalOffset;
-- (void).cxx_destruct;
 - (void)drawGraphInRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawUnderlayInRect:(struct CGRect)arg1;

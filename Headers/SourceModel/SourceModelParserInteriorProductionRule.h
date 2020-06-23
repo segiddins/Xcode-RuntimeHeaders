@@ -18,12 +18,12 @@
     unsigned long long _temporaryLexerFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long temporaryLexerFlags; // @synthesize temporaryLexerFlags=_temporaryLexerFlags;
 @property(retain, nonatomic) SourceModelParserInteriorProductionRule *nextCandidate; // @synthesize nextCandidate=_nextCandidate;
 @property(readonly, nonatomic) BOOL repeatable; // @synthesize repeatable=_repeatable;
 @property(readonly, nonatomic) BOOL optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) SourceModelParserProductionRule *prodRule; // @synthesize prodRule=_prodRule;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProductionRule:(id)arg1 optional:(BOOL)arg2 repeatable:(BOOL)arg3;
 

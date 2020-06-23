@@ -17,10 +17,10 @@
     IDEDebugSession *_debugSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly, nonatomic) DTMemoryGraphItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) unsigned long long issueType; // @synthesize issueType=_issueType;
-- (void).cxx_destruct;
 @property(readonly) NSString *message;
 @property(readonly, nonatomic) DVTDocumentLocation *documentLocation;
 - (id)initWithDebugSession:(id)arg1 memoryGraphItem:(id)arg2 issueType:(unsigned long long)arg3;

@@ -15,8 +15,8 @@
     XCVersionGroup *_versionGroup;
 }
 
-@property(readonly) XCVersionGroup *versionGroup; // @synthesize versionGroup=_versionGroup;
 - (void).cxx_destruct;
+@property(readonly) XCVersionGroup *versionGroup; // @synthesize versionGroup=_versionGroup;
 - (id)computedSubitemsWithOldSubitems:(id)arg1;
 - (BOOL)structureEditName:(id)arg1 inContext:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)canStructureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2;

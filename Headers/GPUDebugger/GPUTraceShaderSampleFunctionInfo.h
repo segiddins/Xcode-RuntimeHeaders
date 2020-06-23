@@ -16,11 +16,11 @@
     NSString *_filePath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int lineIndex; // @synthesize lineIndex=_lineIndex;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) NSString *function; // @synthesize function=_function;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (unsigned long long)hashWithoutLine;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

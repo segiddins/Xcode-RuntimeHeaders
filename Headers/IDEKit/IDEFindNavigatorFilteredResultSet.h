@@ -21,10 +21,10 @@
 }
 
 + (void)insertResult:(id)arg1 intoGroupedChildMap:(id)arg2 populatingInsertionIndexesMap:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) long long fileCount; // @synthesize fileCount=_fileCount;
 @property(readonly) long long matchCount; // @synthesize matchCount=_matchCount;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasVisibleContent;
 @property(readonly) BOOL hasAnyContent;
 - (id)visibleChildrenOfResult:(id)arg1;

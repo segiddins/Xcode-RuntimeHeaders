@@ -6,11 +6,12 @@
 
 #import <Foundation/NSFormatter.h>
 
-@class NSString;
+@class NSObject, NSString;
+@protocol XCEConfigurableFormatterAdapterP;
 
 @interface XCEConfigurableFormatter : NSFormatter
 {
-    struct NSObject *_adapter;
+    NSObject<XCEConfigurableFormatterAdapterP> *_adapter;
     NSString *_oldStringValue;
     struct {
         unsigned int _adapterRespondsTo_stringForObjectValue:1;
@@ -24,8 +25,8 @@
 - (id)stringForObjectValue:(id)arg1;
 - (id)oldStringValue;
 - (void)setOldStringValue:(id)arg1;
-- (struct NSObject *)adapter;
-- (void)setAdapter:(struct NSObject *)arg1;
+- (id)adapter;
+- (void)setAdapter:(id)arg1;
 
 @end
 

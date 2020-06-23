@@ -18,8 +18,8 @@
     NSTextField *_textField;
 }
 
-@property __weak NSTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property __weak NSTextField *textField; // @synthesize textField=_textField;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
 - (void)_configureForNilFont;

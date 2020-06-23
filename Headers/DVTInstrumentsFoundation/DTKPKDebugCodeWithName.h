@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CDUnion_1678db3a kdebugCode; // @synthesize kdebugCode=_kdebugCode;
-- (void).cxx_destruct;
 - (id)initWithValue:(unsigned int)arg1 name:(id)arg2;
 
 @end

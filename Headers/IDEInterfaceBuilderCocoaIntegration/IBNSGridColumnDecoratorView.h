@@ -13,8 +13,8 @@
     IBNSGridColumnTemplate *_column;
 }
 
-@property __weak IBNSGridColumnTemplate *column; // @synthesize column=_column;
 - (void).cxx_destruct;
+@property __weak IBNSGridColumnTemplate *column; // @synthesize column=_column;
 - (void)invalidate;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (void)ibRegisterViewTrackerChangeFromSize:(struct CGSize)arg1 document:(id)arg2;

@@ -17,8 +17,8 @@
     IBMarshallableObjectPackage *_objectPackage;
 }
 
-@property(readonly, nonatomic) IBMarshallableObjectPackage *objectPackage; // @synthesize objectPackage=_objectPackage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBMarshallableObjectPackage *objectPackage; // @synthesize objectPackage=_objectPackage;
 - (BOOL)isTrackingSceneForObject:(id)arg1;
 - (void)clearPendingUpdates;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;

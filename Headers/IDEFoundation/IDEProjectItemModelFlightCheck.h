@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL failed; // @synthesize failed=_failed;
 @property(retain, nonatomic) NSError *resolutionError; // @synthesize resolutionError=_resolutionError;
 @property(nonatomic) int status; // @synthesize status=_status;
@@ -38,7 +39,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType resolutionBlock; // @synthesize resolutionBlock=_resolutionBlock;
 @property(readonly, nonatomic, getter=isLongRunning) BOOL longRunning; // @synthesize longRunning=_longRunning;
 @property(readonly, nonatomic) BOOL requiresAccountAndTeamSelection; // @synthesize requiresAccountAndTeamSelection=_requiresAccountAndTeamSelection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAutomaticallyResolvable) BOOL automaticallyResolvable;
 - (void)revert;
 - (void)unresolve;

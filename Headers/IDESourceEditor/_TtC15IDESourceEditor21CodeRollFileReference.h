@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <IDESourceEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-
 @class DVTDocumentLocation, DVTFileDataType, MISSING_TYPE, NSImage, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC15IDESourceEditor21CodeRollFileReference : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface _TtC15IDESourceEditor21CodeRollFileReference : NSObject
 {
     MISSING_TYPE *codeRollURL;
     MISSING_TYPE *url;

@@ -18,10 +18,10 @@
     DBGViewSurface *_affectedView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DBGViewSurface *affectedView; // @synthesize affectedView=_affectedView;
 @property(readonly) DBGViewDebuggerDocument *document; // @synthesize document=_document;
 @property(readonly) unsigned long long issueType; // @synthesize issueType=_issueType;
-- (void).cxx_destruct;
 - (id)messageIncludingReferenceToView:(BOOL)arg1;
 @property(readonly) DBGViewDebuggerDocumentLocation *documentLocation;
 - (id)initWithDocument:(id)arg1 affectedView:(id)arg2 issueType:(unsigned long long)arg3;

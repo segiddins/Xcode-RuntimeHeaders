@@ -24,9 +24,9 @@
 
 + (id)_elementNameToKVCMap;
 + (id)_elementNameToClassMap;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *elementAttributes; // @synthesize elementAttributes=_elementAttributes;
 @property(readonly, nonatomic) NSString *elementName; // @synthesize elementName=_elementName;
-- (void).cxx_destruct;
 - (void)simulateEmptyElement:(id)arg1;
 - (id)supportedElementNames;
 - (id)valueForElementName:(id)arg1;

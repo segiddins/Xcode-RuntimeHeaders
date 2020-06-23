@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/IDETestingOutputStream-Protocol.h>
-
 @class MISSING_TYPE;
 
-@interface _TtC13IDEFoundation27IDETestingBlockOutputStream : NSObject <IDETestingOutputStream>
+@interface _TtC13IDEFoundation27IDETestingBlockOutputStream : NSObject
 {
     MISSING_TYPE *writeHandler;
     MISSING_TYPE *finishHandler;

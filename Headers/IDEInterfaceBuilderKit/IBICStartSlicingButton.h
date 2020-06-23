@@ -21,8 +21,8 @@
     id <IBICStartSlicingButtonDelegate> _delegate;
 }
 
-@property __weak id <IBICStartSlicingButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBICStartSlicingButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reset;
 - (void)userChoseResizingMode:(id)arg1;
 - (void)userPressedStartSlicing:(id)arg1;

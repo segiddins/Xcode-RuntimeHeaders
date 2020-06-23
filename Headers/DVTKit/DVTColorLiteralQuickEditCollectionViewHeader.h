@@ -14,8 +14,8 @@
 }
 
 + (id)nibName;
-@property(retain) NSTextField *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain) NSTextField *label; // @synthesize label=_label;
 
 @end
 

@@ -10,9 +10,10 @@
 
 @interface _TtC5UVKit19CanvasSettingsStore : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *objectWillChange;
-    MISSING_TYPE *didChange;
-    MISSING_TYPE *showViewBoundaries;
+    MISSING_TYPE *stateSavedPropertiesDidChange;
+    MISSING_TYPE *_showViewBoundaries;
+    MISSING_TYPE *_zoom;
+    MISSING_TYPE *_showDeviceBezels;
 }
 
 @end

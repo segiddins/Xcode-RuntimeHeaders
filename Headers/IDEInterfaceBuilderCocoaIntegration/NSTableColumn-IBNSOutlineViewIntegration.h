@@ -62,7 +62,6 @@
 - (BOOL)ibExternalIsInViewBasedMode;
 - (void)setIbExternalPrototypeCellViews:(id)arg1;
 - (id)ibExternalPrototypeCellViews;
-- (id)ibDefaultFontKeyPath;
 - (BOOL)ibIsContainedPrototypeCellView:(id)arg1;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)ibRemoveChildren:(id)arg1;

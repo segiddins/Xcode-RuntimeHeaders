@@ -17,10 +17,10 @@
 
 + (id)keyPathsForValuesAffectingCanFinish;
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property BOOL hasNonMakefiles; // @synthesize hasNonMakefiles=_hasNonMakefiles;
 @property(retain) NSButton *useMakefileSwitchButton; // @synthesize useMakefileSwitchButton=_useMakefileSwitchButton;
 @property BOOL viewHasInstalled; // @synthesize viewHasInstalled=_viewHasInstalled;
-- (void).cxx_destruct;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)nextAssistantIdentifier;
 - (BOOL)canFinish;

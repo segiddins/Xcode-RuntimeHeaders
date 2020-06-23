@@ -21,9 +21,9 @@
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(retain) IDEViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain) QLPreviewView *qlView; // @synthesize qlView=_qlView;
-- (void).cxx_destruct;
 - (BOOL)editorDocumentIsCurrentRevision;
 - (BOOL)editorIsHostedInComparisonEditor;
 - (void)commitStateToDictionary:(id)arg1;

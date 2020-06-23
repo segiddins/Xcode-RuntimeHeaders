@@ -13,8 +13,8 @@
     DVTProvisioningProfile *_profile;
 }
 
-@property(readonly) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 - (BOOL)supportsBatchAuthorization;
 - (id)userActionName;
 - (id)userActionMessage;

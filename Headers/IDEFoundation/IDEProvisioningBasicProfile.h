@@ -21,9 +21,9 @@
 + (id)basicMissingProfileWithSpecifier:(id)arg1;
 + (id)basicProfileWithDVTProvisioningProfile:(id)arg1 profileSpecifier:(id)arg2;
 + (id)basicProfileWithDVTProvisioningProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
 @property(readonly) IDEProfileSpecifier *specifier; // @synthesize specifier=_specifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

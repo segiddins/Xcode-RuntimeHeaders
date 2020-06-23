@@ -18,10 +18,10 @@
     id <DBGKitDebuggingAddition> _kitDebuggingAddition;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <DBGKitDebuggingAddition> kitDebuggingAddition; // @synthesize kitDebuggingAddition=_kitDebuggingAddition;
 @property __weak NSStackView *categoriesStackView; // @synthesize categoriesStackView=_categoriesStackView;
 @property __weak NSView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
-- (void).cxx_destruct;
 - (void)appearanceDelegationViewDidUpdateEffectiveAppearance:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)_didChangeAppearance;

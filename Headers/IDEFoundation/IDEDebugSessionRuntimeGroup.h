@@ -19,11 +19,11 @@
     NSMutableDictionary *_typeIdentifierToSubgroupTypeIdenfiers;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSMutableDictionary *typeIdentifierToSubgroupTypeIdenfiers; // @synthesize typeIdentifierToSubgroupTypeIdenfiers=_typeIdentifierToSubgroupTypeIdenfiers;
 @property(copy) NSArray *subgroupTypeIdentifiers; // @synthesize subgroupTypeIdentifiers;
 @property(copy) id issueTypeIdentifier; // @synthesize issueTypeIdentifier=_issueTypeIdentifier;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDebugProcess:(id)arg1;
 - (id)init;

@@ -17,9 +17,9 @@
     GPUTraceShaderItem *_shaderItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUTraceShaderItem *shaderItem; // @synthesize shaderItem=_shaderItem;
 @property(readonly, nonatomic) id <DYPShaderDebuggerExecutionHistoryNode> historyNode; // @synthesize historyNode=_historyNode;
-- (void).cxx_destruct;
 - (id)filterItems;
 - (void)addFilterItem:(id)arg1;
 - (id)filterableChildObjects;

@@ -17,6 +17,7 @@
     DVTNotificationToken *_documentDidChangeNotificationToken;
     DVTNotificationToken *_documentForNavBarStructureDidChangeNotificationToken;
     DVTObservingToken *_documentFileURLObservingToken;
+    DVTObservingToken *_auxiliaryEditorContextObservingToken;
     BOOL _discardsFindResultsWhenContentChanges;
     id <IDEEditorDelegate> _delegate;
     IDEEditorDocument *_document;
@@ -30,6 +31,7 @@
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (BOOL)canProvideCurrentSelectedItems;
+- (void).cxx_destruct;
 @property(retain) IDEEditorContext *editorContext; // @synthesize editorContext=_editorContext;
 @property(retain, nonatomic) IDEAuxiliaryEditorProvider *auxiliaryEditorProvider; // @synthesize auxiliaryEditorProvider=_auxiliaryEditorProvider;
 @property(retain, nonatomic) IDEAuxiliaryEditor *auxiliaryEditor; // @synthesize auxiliaryEditor=_auxiliaryEditor;
@@ -39,7 +41,6 @@
 @property(retain, nonatomic) IDEEditorDocument *documentForNavBarStructure; // @synthesize documentForNavBarStructure=_documentForNavBarStructure;
 @property(retain) IDEEditorDocument *document; // @synthesize document=_document;
 @property(retain) id <IDEEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) IDEAuxiliaryEditorContext *auxiliaryEditorContext;
 @property(readonly) NSSet *applicableLibraryExtensionIDs;
 - (void)shouldNavigateAway:(CDUnknownBlockType)arg1;
@@ -72,7 +73,6 @@
 - (id)_getUndoManager:(BOOL)arg1;
 - (id)undoManager;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (int)editorMode;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 - (id)_initWithNibName:(id)arg1 bundle:(id)arg2;

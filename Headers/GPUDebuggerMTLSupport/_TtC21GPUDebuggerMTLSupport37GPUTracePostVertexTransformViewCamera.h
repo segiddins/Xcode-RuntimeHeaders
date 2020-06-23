@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *speed;
     MISSING_TYPE *maxSpeed;
     MISSING_TYPE *sensitivity;
+    MISSING_TYPE *horizonAngle;
+    MISSING_TYPE *vertAngle;
     MISSING_TYPE *view;
     MISSING_TYPE *target;
     MISSING_TYPE *position;
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)rotateWithEvent:(id)arg1;
 - (void)magnifyWithEvent:(id)arg1;
 - (void)otherMouseDragged:(id)arg1;
+- (void)otherMouseDown:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)copyWithZone:(void *)arg1;

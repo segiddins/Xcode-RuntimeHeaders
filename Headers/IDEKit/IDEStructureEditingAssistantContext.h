@@ -25,6 +25,7 @@
 }
 
 + (id)swiftPackageFileDataType;
+- (void).cxx_destruct;
 @property unsigned long long dragOperation; // @synthesize dragOperation=_dragOperation;
 @property(copy) NSArray *templates; // @synthesize templates=_templates;
 @property BOOL useMakefileProject; // @synthesize useMakefileProject=_useMakefileProject;
@@ -36,7 +37,6 @@
 @property(readonly) BOOL onlyPackages; // @synthesize onlyPackages=_onlyPackages;
 @property BOOL skipAssistant; // @synthesize skipAssistant=_skipAssistant;
 @property(copy) NSString *assistantIdentifier; // @synthesize assistantIdentifier=_assistantIdentifier;
-- (void).cxx_destruct;
 - (void)takeInputFromDraggingInfo:(id)arg1;
 - (void)_addItemsFromDraggingInfo:(id)arg1;
 - (void)_configureForOnlyDraggingProjects;

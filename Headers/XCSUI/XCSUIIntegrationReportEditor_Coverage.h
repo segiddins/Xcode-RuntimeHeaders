@@ -19,10 +19,10 @@
     DVTReplacementView *_replacementView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 @property(retain, nonatomic) NSString *reportType; // @synthesize reportType=_reportType;
-- (void).cxx_destruct;
 - (void)coverageReportData:(CDUnknownBlockType)arg1;
 - (id)reportDocument;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;

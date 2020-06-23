@@ -13,8 +13,8 @@
     NSDate *_createdAt;
 }
 
-@property(retain, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 
 // Remaining properties

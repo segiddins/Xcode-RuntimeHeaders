@@ -15,8 +15,8 @@
 }
 
 + (double)heightWithPoint;
-@property(retain, nonatomic) NSView *drawPointToView; // @synthesize drawPointToView=_drawPointToView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *drawPointToView; // @synthesize drawPointToView=_drawPointToView;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

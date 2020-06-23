@@ -27,8 +27,8 @@
     DVTFilePathField *_filePathField;
 }
 
-@property(retain, nonatomic) DVTFilePathField *filePathField; // @synthesize filePathField=_filePathField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTFilePathField *filePathField; // @synthesize filePathField=_filePathField;
 - (id)DVTFilePathFieldCell:(id)arg1 resolvedPathForPath:(id)arg2;
 - (void)DVTFilePathFieldCell:(id)arg1 chooserSelectedPath:(id)arg2;
 - (void)userDidChangeValue:(id)arg1;

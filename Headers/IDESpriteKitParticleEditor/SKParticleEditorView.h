@@ -16,8 +16,8 @@
     SKEmitterNode *_emitter;
 }
 
-@property(retain, nonatomic) SKEmitterNode *emitter; // @synthesize emitter=_emitter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKEmitterNode *emitter; // @synthesize emitter=_emitter;
 - (void)inputView:(id)arg1 touchEnded:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;
 - (void)inputView:(id)arg1 touchMoved:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;
 - (void)inputView:(id)arg1 touchBegan:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;

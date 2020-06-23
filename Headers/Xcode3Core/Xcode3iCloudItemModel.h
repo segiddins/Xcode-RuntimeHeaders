@@ -23,11 +23,11 @@
 + (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingUbiquityContainerIDs;
 + (id)keyPathsForValuesAffectingUnexpandedContainerIDs;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *defaultContainerID; // @synthesize defaultContainerID=_defaultContainerID;
 @property(retain) IDEAppIDItemIdentifiersItemModelSet *cloudContainers; // @synthesize cloudContainers=_cloudContainers;
 @property(copy, nonatomic) NSArray *serviceIDs; // @synthesize serviceIDs=_serviceIDs;
 @property(copy, nonatomic) NSString *keyValueStoreID; // @synthesize keyValueStoreID=_keyValueStoreID;
-- (void).cxx_destruct;
 - (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;

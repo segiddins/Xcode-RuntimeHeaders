@@ -20,10 +20,10 @@
 + (id)_registerTypeIdentifierWithStringRepresentation:(id)arg1 basedOn:(id)arg2;
 + (id)_rootType;
 + (void)_registerBasicTypeIdentifiers;
+- (void).cxx_destruct;
 @property(retain) IDETypeIdentifier *parentType; // @synthesize parentType=_parentType;
 @property(retain) NSArray *subTypes; // @synthesize subTypes=_subTypes;
 @property(copy) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
-- (void).cxx_destruct;
 - (id)typeIdentifierLineage;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfType:(id)arg1;

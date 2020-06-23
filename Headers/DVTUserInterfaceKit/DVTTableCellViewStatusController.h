@@ -15,10 +15,10 @@
     DVTTableCellView *_tableCellView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTTableCellView *tableCellView; // @synthesize tableCellView=_tableCellView;
 @property(getter=isInstalled) BOOL installed; // @synthesize installed=_installed;
 @property(nonatomic) BOOL hasDisplayableStatus; // @synthesize hasDisplayableStatus=_hasDisplayableStatus;
-- (void).cxx_destruct;
 - (id)view;
 
 @end

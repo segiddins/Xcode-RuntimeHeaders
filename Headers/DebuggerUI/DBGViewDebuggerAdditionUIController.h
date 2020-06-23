@@ -32,6 +32,7 @@
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *viewDebuggerApplicationObservingToken; // @synthesize viewDebuggerApplicationObservingToken=_viewDebuggerApplicationObservingToken;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL userHasRequestedViewDebugging; // @synthesize userHasRequestedViewDebugging=_userHasRequestedViewDebugging;
 @property(readonly) DBGViewDebuggerAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 @property(readonly) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;

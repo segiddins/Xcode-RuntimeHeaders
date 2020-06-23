@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long expressionOperator; // @synthesize expressionOperator=_expressionOperator;
 @property(retain) NSMutableArray *subExpressions; // @synthesize subExpressions=_subExpressions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

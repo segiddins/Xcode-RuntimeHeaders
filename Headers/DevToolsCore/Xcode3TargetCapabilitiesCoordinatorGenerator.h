@@ -15,8 +15,8 @@
     Xcode3Target *_target;
 }
 
-@property(retain, nonatomic) Xcode3Target *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Xcode3Target *target; // @synthesize target=_target;
 - (id)generateLinkedFrameworksCoordinatorForConfiguration:(id)arg1;
 - (id)generateBuildSettingsCoordinatorForConfiguration:(id)arg1;
 - (id)generateAppIDFeatureCoordinatorForConfiguration:(id)arg1;

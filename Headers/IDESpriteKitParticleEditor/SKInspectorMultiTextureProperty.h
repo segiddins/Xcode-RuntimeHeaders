@@ -14,8 +14,8 @@
     DVTTableView *_tableView;
 }
 
-@property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 - (void)updateRowSelection;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)tableViewSelectionIsChanging:(id)arg1;

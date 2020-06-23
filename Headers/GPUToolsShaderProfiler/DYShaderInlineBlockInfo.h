@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int lineIndex; // @synthesize lineIndex=_lineIndex;
 @property(retain, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
 @property(retain, nonatomic) NSString *directory; // @synthesize directory=_directory;
 @property(retain, nonatomic) NSString *file; // @synthesize file=_file;
 @property(retain, nonatomic) NSString *function; // @synthesize function=_function;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

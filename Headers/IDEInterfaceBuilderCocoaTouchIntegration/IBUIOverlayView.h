@@ -13,8 +13,8 @@
     id <IBUIOverlayViewDelegate> _delegate;
 }
 
-@property __weak id <IBUIOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBUIOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 

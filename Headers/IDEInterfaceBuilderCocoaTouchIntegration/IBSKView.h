@@ -22,6 +22,7 @@
 }
 
 + (void)registerMarshallingRecordHandlers;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneName; // @synthesize sceneName=_sceneName;
 @property(nonatomic) BOOL shouldCullNonVisibleNodes; // @synthesize shouldCullNonVisibleNodes=_shouldCullNonVisibleNodes;
 @property(retain, nonatomic) NSNumber *preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL ignoresSiblingOrder; // @synthesize ignoresSiblingOrder=_ignoresSiblingOrder;
 @property(nonatomic, getter=isAsynchronous) BOOL asynchronous; // @synthesize asynchronous=_asynchronous;
 @property(nonatomic) BOOL allowsTransparency; // @synthesize allowsTransparency=_allowsTransparency;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;

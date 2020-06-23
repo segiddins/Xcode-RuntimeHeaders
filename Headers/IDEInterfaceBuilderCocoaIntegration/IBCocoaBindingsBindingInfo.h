@@ -17,8 +17,8 @@
     NSString *_category;
 }
 
-@property(readonly) NSString *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(readonly) NSString *category; // @synthesize category=_category;
 - (BOOL)isKeyOptional;
 - (BOOL)isKeyless;
 - (BOOL)isBound;

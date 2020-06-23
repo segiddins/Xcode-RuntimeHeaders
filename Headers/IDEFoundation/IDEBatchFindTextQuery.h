@@ -15,6 +15,7 @@
 + (BOOL)supportsPatterns;
 + (BOOL)supportsAnchorning;
 + (BOOL)supportsCaseMatching;
+- (id)emptyResultSetPlaceholderResultKind;
 
 @end
 

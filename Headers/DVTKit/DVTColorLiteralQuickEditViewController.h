@@ -27,6 +27,7 @@
 }
 
 + (struct CGSize)defaultContentSize;
+- (void).cxx_destruct;
 @property(retain) NSView *footerView; // @synthesize footerView=_footerView;
 @property(retain) DVTColorLiteralQuickEditCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) NSArray *colorPalette; // @synthesize colorPalette=_colorPalette;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) id <DVTColorLiteralQuickEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPopover *presentingPopover; // @synthesize presentingPopover;
-- (void).cxx_destruct;
 - (void)colorCollectionView:(id)arg1 didSelectionMoreColorOptionsOnIndexPath:(id)arg2;
 - (void)colorCollectionView:(id)arg1 didKeyboardSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;

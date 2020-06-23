@@ -22,6 +22,7 @@
     NSString *_sceneName;
 }
 
+- (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 @property(copy, nonatomic) NSString *sceneName; // @synthesize sceneName=_sceneName;
 @property(nonatomic) BOOL shouldCullNonVisibleNodes; // @synthesize shouldCullNonVisibleNodes=_shouldCullNonVisibleNodes;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL ignoresSiblingOrder; // @synthesize ignoresSiblingOrder=_ignoresSiblingOrder;
 @property(nonatomic, getter=isAsynchronous) BOOL asynchronous; // @synthesize asynchronous=_asynchronous;
 @property(nonatomic) BOOL allowsTransparency; // @synthesize allowsTransparency=_allowsTransparency;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;

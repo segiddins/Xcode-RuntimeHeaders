@@ -13,8 +13,8 @@
     NSTextView *_textView;
 }
 
-@property(retain) NSTextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(retain) NSTextView *textView; // @synthesize textView=_textView;
 
 @end
 

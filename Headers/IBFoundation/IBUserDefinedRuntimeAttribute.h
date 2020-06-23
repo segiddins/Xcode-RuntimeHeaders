@@ -24,11 +24,11 @@
 + (BOOL)supportsSecureCoding;
 + (id)customAttributeWithKeyPath:(id)arg1 value:(id)arg2 isLocalized:(BOOL)arg3 andTypeIdentifier:(id)arg4;
 + (id)customAttributeWithKeyPath:(id)arg1 sizeValue:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic, getter=isLocalized) BOOL localized; // @synthesize localized=_localized;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

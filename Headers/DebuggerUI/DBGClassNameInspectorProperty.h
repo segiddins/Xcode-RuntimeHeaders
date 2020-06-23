@@ -18,11 +18,11 @@
     id <IDEIndexSymbol> _symbol;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
 @property __weak NSButton *linkButton; // @synthesize linkButton=_linkButton;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak NSLayoutConstraint *trailingLabelToJumpButtonConstraint; // @synthesize trailingLabelToJumpButtonConstraint=_trailingLabelToJumpButtonConstraint;
-- (void).cxx_destruct;
 - (void)linkButtonAction:(id)arg1;
 - (id)_tabControllerForWindow;
 - (void)_setLinkButtonHidden:(BOOL)arg1;

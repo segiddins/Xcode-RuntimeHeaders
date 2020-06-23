@@ -32,14 +32,18 @@
 + (void)populateTemplateMenu:(id)arg1 withPlistDict:(id)arg2;
 + (id)templateMenuWithIdentifier:(id)arg1 targetRuntime:(id)arg2;
 + (id)fallbacksForAnchor:(id)arg1;
++ (id)keyPathsForValuesAffectingIdentifierName;
 + (id)systemMenuIdentifiersToNamesMap;
 + (id)keyPathsForValuesAffectingIbInspectedSystemMenuChildDeletions;
 + (id)keyPathsForValuesAffectingIbInspectedCanBeInitialMenu;
++ (id)keyPathsForValuesAffectingIbInspectedIdentifier;
 + (void)preV3UpgradeSystemFlagAndDeletionsForSystemItem:(id)arg1 systemIdentifiers:(id)arg2 context:(id)arg3;
 + (BOOL)wasItemUpgradedToV3:(id)arg1 withContext:(id)arg2;
 + (void)registerMarshallingRecordHandlers;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
++ (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *allSystemMenuChildDeletions; // @synthesize allSystemMenuChildDeletions=_allSystemMenuChildDeletions;
 @property(copy, nonatomic) IBUIMenuElementIdentifier *anchorForUnarchiving; // @synthesize anchorForUnarchiving=_anchorForUnarchiving;
 @property(nonatomic) BOOL isSystemItem; // @synthesize isSystemItem=_isSystemItem;
@@ -49,7 +53,6 @@
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)populateMenuAndChildrenFromTemplate:(id)arg1 shouldUpdateMenuProperties:(BOOL)arg2 updateOnlyForSystemItems:(BOOL)arg3;
 - (id)insertionEntryForChild:(id)arg1;
 - (id)insertionsCache;
@@ -149,7 +152,7 @@
 - (BOOL)needsSeparatorAfterPreviousItem:(id)arg1;
 - (void)populateEditedMenuItemChildren:(id)arg1 withPreviousItem:(id)arg2;
 - (id)ibEditedMenuRepresentation;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (void)ibRemoveChildren:(id)arg1;

@@ -39,12 +39,12 @@
 + (BOOL)automaticallyNotifiesObserversOfActiveRunContext;
 + (void)initialize;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(readonly) NSCountedSet *schemeNameCounts; // @synthesize schemeNameCounts=_schemeNameCounts;
 @property(retain, nonatomic) IDERunDestination *activeRunDestination; // @synthesize activeRunDestination=_activeRunDestination;
 @property(retain, nonatomic) IDEScheme *activeRunContext; // @synthesize activeRunContext=_activeRunContext;
 @property(readonly) NSArray *runContexts; // @synthesize runContexts=_runContexts;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)setActiveRunContext:(id)arg1 andRunDestination:(id)arg2;
 - (void)blueprintsDidBulkChange:(id)arg1;
 - (void)blueprintsWillBulkChange:(id)arg1;

@@ -28,6 +28,7 @@
 }
 
 + (Class)inspectableClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) DVTBorderedView *topBorderedView; // @synthesize topBorderedView=_topBorderedView;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSTextField *selectorNameField; // @synthesize selectorNameField=_selectorNameField;
 @property(retain, nonatomic) IBKeyEquivalentEntryField *keyEquivalentField; // @synthesize keyEquivalentField=_keyEquivalentField;
 @property(retain, nonatomic) NSTextField *keyEquivalentLabelField; // @synthesize keyEquivalentLabelField=_keyEquivalentLabelField;
-- (void).cxx_destruct;
 - (void)removeRow:(id)arg1;
 - (BOOL)canRemoveRow;
 - (void)addRow:(id)arg1;

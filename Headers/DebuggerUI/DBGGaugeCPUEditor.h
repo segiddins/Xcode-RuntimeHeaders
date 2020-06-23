@@ -36,6 +36,7 @@
     NSButton *_profileButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *profileButton; // @synthesize profileButton=_profileButton;
 @property __weak IDEPlotGraph *utilizationGraph; // @synthesize utilizationGraph=_utilizationGraph;
 @property __weak NSTextField *utilizationAverage; // @synthesize utilizationAverage=_utilizationAverage;
@@ -49,7 +50,6 @@
 @property __weak NSTextField *topSectionSpeedNumberLabel; // @synthesize topSectionSpeedNumberLabel=_topSectionSpeedNumberLabel;
 @property __weak DVTMeterView *topSectionSpeedometer; // @synthesize topSectionSpeedometer=_topSectionSpeedometer;
 @property __weak NSView *topSectionSpeedometerView; // @synthesize topSectionSpeedometerView=_topSectionSpeedometerView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setPathStyleForGraph:(id)arg1 entry:(id)arg2 path:(id)arg3;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;

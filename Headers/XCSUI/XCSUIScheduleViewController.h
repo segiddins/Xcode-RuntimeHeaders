@@ -26,6 +26,7 @@
     NSLayoutConstraint *_periodPopUpWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *periodPopUpWidthConstraint; // @synthesize periodPopUpWidthConstraint=_periodPopUpWidthConstraint;
 @property(retain) NSLayoutConstraint *atLabelLeadingToDaysOfWeekTrailingConstraint; // @synthesize atLabelLeadingToDaysOfWeekTrailingConstraint=_atLabelLeadingToDaysOfWeekTrailingConstraint;
 @property(retain, nonatomic) NSTextField *atLabel; // @synthesize atLabel=_atLabel;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSPopUpButton *minutePopUp; // @synthesize minutePopUp=_minutePopUp;
 @property(retain, nonatomic) NSPopUpButton *periodTypePopUp; // @synthesize periodTypePopUp=_periodTypePopUp;
 @property __weak id <XCSUIScheduleViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)minutePopupAction:(id)arg1;
 - (void)timePickerAction:(id)arg1;
 - (void)daysOfWeekAction:(id)arg1;

@@ -25,6 +25,7 @@
     BOOL _isHidden;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) int functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(nonatomic) BOOL isExpanded; // @synthesize isExpanded=_isExpanded;
@@ -33,7 +34,6 @@
 @property(nonatomic) int displayableCallCount; // @synthesize displayableCallCount=_displayableCallCount;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(readonly, nonatomic) unsigned int groupType; // @synthesize groupType=_groupType;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GPUAbstractDebuggerController> abstractController;
 @property(nonatomic) __weak id <GPUAbstractTraceDisplayableItem> abstractDisplayableItem;
 @property(readonly, nonatomic) BOOL automaticallyExpand;

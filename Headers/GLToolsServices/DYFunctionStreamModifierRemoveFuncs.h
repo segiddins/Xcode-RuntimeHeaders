@@ -14,9 +14,9 @@
 }
 
 + (BOOL)isAppleInternalContextFunction:(struct Function *)arg1 contextSet:(unordered_set_ef4c6246 *)arg2;
-@property(readonly, nonatomic) unsigned int removedFunctionCount; // @synthesize removedFunctionCount=_removedFunctionCount;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int removedFunctionCount; // @synthesize removedFunctionCount=_removedFunctionCount;
 @property(readonly, nonatomic) const vector_7984f87c *removedContexts;
 - (void)onBeginFileInArchiveModifier:(id)arg1;
 - (id)initWithDeltaFilesTextureAndBufferLoadFilter;

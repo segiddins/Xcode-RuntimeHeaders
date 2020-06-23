@@ -13,8 +13,8 @@
     NSString *_actionIdentifier;
 }
 
-@property(readonly) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 - (int)explorationType;
 - (id)initWithAction:(id)arg1;
 

@@ -19,9 +19,9 @@
     DVTBorderedView *_borderedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic, getter=isContentHidden) BOOL contentHidden; // @synthesize contentHidden=_contentHidden;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isHiddenValueNegated) BOOL _hiddenValueNegated;
 @property(readonly, copy, nonatomic) NSString *_hiddenKeyPath;
 @property(readonly, nonatomic) IDEIntentBuilderEditorIntentParameterCombinationsInfoViewController *_parameterCombinationsInfoViewController; // @synthesize _parameterCombinationsInfoViewController;

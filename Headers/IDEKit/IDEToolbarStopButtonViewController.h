@@ -18,8 +18,8 @@
     BOOL _lastEnabled;
 }
 
-@property(retain) NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 - (void).cxx_destruct;
+@property(retain) NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 - (void)_stopLaunchSession:(id)arg1;
 - (void)_handleExecutionTrackersChanged:(id)arg1 forExecutionEnvironment:(id)arg2;
 - (void)_handleWorkspaceFinishedLoadingStateChange:(id)arg1 workspace:(id)arg2;

@@ -11,7 +11,6 @@
 @interface DVTPlatform (IDEProvisioningPlatformAndSDKAdditions)
 + (id)allDeploymentTargetSettingNames;
 - (id)entitlementsFilePath;
-- (BOOL)supportsParallelTestingForTestHostStyle:(long long)arg1 isUITestBundle:(BOOL)arg2 isiOSMac:(BOOL)arg3;
 @property(readonly) IDEExtendedPlatformInfo *ide_extendedInfo;
 @end
 

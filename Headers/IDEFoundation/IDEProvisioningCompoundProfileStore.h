@@ -16,11 +16,11 @@
     NSMutableDictionary *_teamToIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *teamToIdentifiers; // @synthesize teamToIdentifiers=_teamToIdentifiers;
 @property(retain, nonatomic) NSMutableDictionary *mutableCompoundProfiles; // @synthesize mutableCompoundProfiles=_mutableCompoundProfiles;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(copy, nonatomic) NSDictionary *compoundProfiles; // @synthesize compoundProfiles=_compoundProfiles;
-- (void).cxx_destruct;
 - (id)profilesForTeam:(id)arg1;
 - (void)updateWithProvisioningProfiles:(id)arg1;
 - (void)removeProvisioningProfiles:(id)arg1;

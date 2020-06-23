@@ -15,10 +15,10 @@
     NSString *_inheritedParentClassName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *inheritedParentClassName; // @synthesize inheritedParentClassName=_inheritedParentClassName;
 @property(readonly, nonatomic) DVTDocumentLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)indexTestSymbolInfoWithRenamedPathURL:(id)arg1;

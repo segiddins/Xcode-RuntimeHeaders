@@ -21,6 +21,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedEnabled;
 + (id)keyPathsForValuesAffectingIbHasSingleCell;
 + (id)keyPathsForValuesAffectingIbInspectedControlSize;
++ (BOOL)ibIsCellBasedControl;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;

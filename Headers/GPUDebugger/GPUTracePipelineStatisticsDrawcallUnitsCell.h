@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTracePipelineStatisticsDrawcallUnitsView *_units;
 }
 
-@property __weak GPUTracePipelineStatisticsDrawcallUnitsView *units; // @synthesize units=_units;
 - (void).cxx_destruct;
+@property __weak GPUTracePipelineStatisticsDrawcallUnitsView *units; // @synthesize units=_units;
 
 @end
 

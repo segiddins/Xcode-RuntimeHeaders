@@ -13,8 +13,8 @@
     NSTextField *_nameTextField;
 }
 
-@property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 - (void).cxx_destruct;
+@property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 - (void)setName:(id)arg1;
 - (id)name;
 

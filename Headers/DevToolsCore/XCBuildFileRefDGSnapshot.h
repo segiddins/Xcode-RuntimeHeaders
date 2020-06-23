@@ -29,8 +29,8 @@
     NSString *_fileTextEncodingName;
 }
 
-@property(readonly) NSString *fileTextEncodingName; // @synthesize fileTextEncodingName=_fileTextEncodingName;
 - (void).cxx_destruct;
+@property(readonly) NSString *fileTextEncodingName; // @synthesize fileTextEncodingName=_fileTextEncodingName;
 - (id)platformFilters;
 - (id)description;
 - (BOOL)linkUsingSearchPath;

@@ -21,13 +21,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)coverageReportForPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy) NSArray *devices; // @synthesize devices=_devices;
 @property(copy) NSString *reportIdentifier; // @synthesize reportIdentifier=_reportIdentifier;
 @property(retain, nonatomic) NSString *fullDescription; // @synthesize fullDescription=_fullDescription;
 @property(readonly) NSArray *creationErrors; // @synthesize creationErrors=_creationErrors;
 @property(retain, nonatomic) NSArray *codeCoverageTargets; // @synthesize codeCoverageTargets=_codeCoverageTargets;
 @property(copy) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *functionCoverage;
 - (id)functions;
 - (id)copyWithSourceFilePathsMapped:(CDUnknownBlockType)arg1;

@@ -15,6 +15,8 @@
 
 - (void).cxx_destruct;
 - (void)doCommandBySelector:(SEL)arg1;
+- (void)dvt_expandRowAndPossiblySiblings:(id)arg1;
+- (id)delegate;
 - (void)keyDown:(id)arg1;
 - (id)makeViewWithIdentifier:(id)arg1 owner:(id)arg2;
 

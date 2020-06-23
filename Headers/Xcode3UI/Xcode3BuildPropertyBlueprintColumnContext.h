@@ -17,9 +17,9 @@
     NSMutableDictionary *_macroEditingContextPerConfiguration;
 }
 
+- (void).cxx_destruct;
 @property long long blueprintDefinitionLevel; // @synthesize blueprintDefinitionLevel=_blueprintDefinitionLevel;
 @property(retain, nonatomic) id blueprint; // @synthesize blueprint=_blueprint;
-- (void).cxx_destruct;
 - (void)configureForImplicitlyAddedProjectColumn;
 - (void)configureForColumnInLevelsMode:(BOOL)arg1;
 - (void)configureForResolvedColumn;

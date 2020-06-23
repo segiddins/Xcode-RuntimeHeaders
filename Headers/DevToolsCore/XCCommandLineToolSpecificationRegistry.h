@@ -14,8 +14,8 @@
 }
 
 + (id)defaultRegistry;
-@property(readonly) DVTMutableOrderedDictionary *namesToRegisteredObjects; // @synthesize namesToRegisteredObjects=_namesToRegisteredObjects;
 - (void).cxx_destruct;
+@property(readonly) DVTMutableOrderedDictionary *namesToRegisteredObjects; // @synthesize namesToRegisteredObjects=_namesToRegisteredObjects;
 - (void)didRegisterObject:(id)arg1 replacingObject:(id)arg2;
 - (BOOL)registerToolSpecification:(id)arg1;
 - (id)specificationForName:(id)arg1;

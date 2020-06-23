@@ -18,10 +18,10 @@
 
 + (id)keyPathsForValuesAffectingIsRecording;
 + (id)highLevelStatusForLogStoreObservable:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *recorderLogObservingToken; // @synthesize recorderLogObservingToken=_recorderLogObservingToken;
 @property(retain) NSString *highLevelStatus; // @synthesize highLevelStatus=_highLevelStatus;
 @property(readonly) id <IDELogStoreObservable> observable; // @synthesize observable=_observable;
-- (void).cxx_destruct;
 @property(readonly) BOOL isRecording;
 - (id)description;
 - (void)tearDown;

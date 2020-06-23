@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     int _minWarningLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int minWarningLevel; // @synthesize minWarningLevel=_minWarningLevel;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler;
-- (void).cxx_destruct;
 - (void)notifyCompletion;
 - (void)addFinding:(id)arg1;
 - (void)removeFindingsHandler:(id)arg1;

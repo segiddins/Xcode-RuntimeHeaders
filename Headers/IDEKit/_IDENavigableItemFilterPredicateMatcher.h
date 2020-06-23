@@ -14,9 +14,9 @@
     NSPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL evaluatesRepresentedObject; // @synthesize evaluatesRepresentedObject=_evaluatesRepresentedObject;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

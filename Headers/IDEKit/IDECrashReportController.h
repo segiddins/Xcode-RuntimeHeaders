@@ -17,10 +17,10 @@
 }
 
 + (id)sharedCrashReportController;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) IDELaunchSession *currentLaunchSession; // @synthesize currentLaunchSession=_currentLaunchSession;
 @property(retain) IDEOpenInProjectWindowController *windowController; // @synthesize windowController=_windowController;
-- (void).cxx_destruct;
 - (void)openCrashReport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_openCrashLog:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 projectURL:(id)arg3;
 - (id)_findFrameToSelectFromCrashLog:(id)arg1 workspace:(id)arg2;

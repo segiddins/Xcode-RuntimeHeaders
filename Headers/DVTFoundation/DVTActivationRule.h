@@ -20,11 +20,11 @@
 
 + (long long)integerValueForVersionString:(id)arg1;
 + (id)keyPathsForValuesAffectingPredicate;
+- (void).cxx_destruct;
 @property(copy) NSPredicate *query; // @synthesize query=_query;
 @property(copy) NSString *versionString; // @synthesize versionString=_versionString;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 @property(readonly) NSPredicate *predicate;
 - (id)_predicateWithIdentifier:(id)arg1 versionString:(id)arg2 query:(id)arg3;
 - (void)encodeIntoPropertyList:(id)arg1;

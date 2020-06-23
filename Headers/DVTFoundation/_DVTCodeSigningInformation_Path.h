@@ -16,8 +16,8 @@
 }
 
 + (id)codeSigningDictionaryForFilePath:(id)arg1 architecture:(id)arg2 additionalCSFlags:(unsigned int)arg3 error:(id *)arg4;
-@property(readonly) DVTFilePath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly) DVTFilePath *path; // @synthesize path=_path;
 - (id)architecturesWithError:(id *)arg1;
 - (id)validity;
 - (id)codeSigningDictionaryWithAdditionalCSFlags:(unsigned int)arg1 architecture:(id)arg2 error:(id *)arg3;

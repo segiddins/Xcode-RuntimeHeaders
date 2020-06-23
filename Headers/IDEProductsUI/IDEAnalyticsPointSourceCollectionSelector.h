@@ -30,6 +30,7 @@
 }
 
 + (id)keyPathsForValuesAffectingSelectedAnalyticsPointSourceCollection;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestoringSelectedNavigableItem) BOOL restoringSelectedNavigableItem; // @synthesize restoringSelectedNavigableItem=_restoringSelectedNavigableItem;
 @property(retain, nonatomic) DVTUserDefaultsLeastRecentlyUsedCache *selectedAnalyticsPointSourceCache; // @synthesize selectedAnalyticsPointSourceCache=_selectedAnalyticsPointSourceCache;
 @property(retain) DVTObservingToken *errorObserver; // @synthesize errorObserver=_errorObserver;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL busy; // @synthesize busy=_busy;
 @property(retain) NSError *currentError; // @synthesize currentError=_currentError;
 @property(retain, nonatomic) IDEProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
 - (void)saveAnalyticsPointSourceCollectionSelectionState;
 - (void)restoreAnalyticsPointSourceCollectionSelectionState;
 - (id)_navigableItemForAnalyticsPointSourceStringValue:(id)arg1 navigable:(id)arg2;

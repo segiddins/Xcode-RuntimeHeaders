@@ -13,8 +13,8 @@
     NSString *_buildServiceUsername;
 }
 
-@property(retain, nonatomic) NSString *buildServiceUsername; // @synthesize buildServiceUsername=_buildServiceUsername;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *buildServiceUsername; // @synthesize buildServiceUsername=_buildServiceUsername;
 - (void)undo;
 - (id)undoStatusDescription;
 - (void)run;

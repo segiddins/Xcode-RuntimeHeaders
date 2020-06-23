@@ -20,13 +20,13 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) BOOL flipped; // @synthesize flipped=_flipped;
 @property(readonly, nonatomic) int numSamples; // @synthesize numSamples=_numSamples;
 @property(readonly, nonatomic) int height; // @synthesize height=_height;
 @property(readonly, nonatomic) int width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned int format; // @synthesize format=_format;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cachingCost;
 @property(readonly, copy) NSString *description;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;

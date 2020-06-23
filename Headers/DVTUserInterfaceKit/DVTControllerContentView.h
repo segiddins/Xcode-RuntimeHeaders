@@ -14,6 +14,7 @@
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)setNextResponder:(id)arg1;
 - (void)invalidate;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

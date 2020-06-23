@@ -27,6 +27,7 @@
     NSButton *_editButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) NSTextField *constantValueLabel; // @synthesize constantValueLabel=_constantValueLabel;
 @property(retain, nonatomic) NSTextField *relatedViewNameLabel; // @synthesize relatedViewNameLabel=_relatedViewNameLabel;
@@ -38,7 +39,6 @@
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) long long borderAttributes; // @synthesize borderAttributes=_borderAttributes;
-- (void).cxx_destruct;
 - (void)userDidSelectEditButton:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

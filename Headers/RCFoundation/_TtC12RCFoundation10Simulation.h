@@ -15,8 +15,10 @@
     MISSING_TYPE *renderer;
     MISSING_TYPE *startingScene;
     MISSING_TYPE *currentlySimulatedScene;
+    MISSING_TYPE *arMode;
+    MISSING_TYPE *arSettingAnchor;
     MISSING_TYPE *onPreviewAddedEventSource;
-    MISSING_TYPE *previews;
+    MISSING_TYPE *preview;
     MISSING_TYPE *_state;
     MISSING_TYPE *rigidBodiesWorkingSet;
     MISSING_TYPE *simulation;

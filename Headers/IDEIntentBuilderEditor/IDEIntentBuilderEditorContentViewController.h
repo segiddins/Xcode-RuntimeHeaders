@@ -33,6 +33,7 @@
     IDECapsuleListView *_capsuleListView;
 }
 
+- (void).cxx_destruct;
 @property __weak IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
 @property __weak NSScrollView *capsuleListScrollView; // @synthesize capsuleListScrollView=_capsuleListScrollView;
 @property(retain, nonatomic, setter=_setIntentResponseCodesCapsuleViewController:) IDEIntentBuilderEditorIntentResponseCodesCapsuleViewController *_intentResponseCodesCapsuleViewController; // @synthesize _intentResponseCodesCapsuleViewController;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic, setter=_setPropertiesCapsuleViewController:) IDEIntentBuilderEditorPropertiesCapsuleViewController *_propertiesCapsuleViewController; // @synthesize _propertiesCapsuleViewController;
 @property(retain, nonatomic, setter=_setParametersCapsuleViewController:) IDEIntentBuilderEditorIntentParametersCapsuleViewController *_parametersCapsuleViewController; // @synthesize _parametersCapsuleViewController;
 @property(retain, nonatomic, setter=_setIntentCapsuleViewController:) IDEIntentBuilderEditorIntentCapsuleViewController *_intentCapsuleViewController; // @synthesize _intentCapsuleViewController;
-- (void).cxx_destruct;
 - (BOOL)_needsToReloadData;
 - (id)_capsuleViewControllersForGroup:(id)arg1;
 - (id)_capsuleViewControllers;

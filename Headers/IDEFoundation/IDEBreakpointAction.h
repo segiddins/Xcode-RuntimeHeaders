@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
+#import <IDEFoundation/NSCopying-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface IDEBreakpointAction : NSObject <DVTXMLUnarchiving>
+@interface IDEBreakpointAction : NSObject <DVTXMLUnarchiving, NSCopying>
 {
     NSArray *_expressions;
     BOOL _displayable;
@@ -23,10 +24,10 @@
 + (id)_replace:(id)arg1 with:(id)arg2 inString:(id)arg3;
 + (id)_expandMacrosInString:(id)arg1 usingBreakpoint:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *filterableText; // @synthesize filterableText=_filterableText;
 @property(getter=isDisplayable) BOOL displayable; // @synthesize displayable=_displayable;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)_expandExpressionsInString:(id)arg1;
 - (void)extractAndSetExpressionsFromString:(id)arg1;
@@ -36,6 +37,7 @@
 - (BOOL)haveExpressionsBeenEvaluated;
 - (void)resetExpressionResults;
 - (void)performActionUsingContext:(id)arg1 andBreakpoint:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_breakpointActionCommonInit;
 - (id)init;
 

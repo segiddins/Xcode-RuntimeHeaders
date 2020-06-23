@@ -24,9 +24,9 @@
 + (id)sharedUnversionedRevision;
 + (id)truncateIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *_displayName; // @synthesize _displayName=__displayName;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -13,8 +13,8 @@
     NSMapTable *_observersByModelObjectGraph;
 }
 
-@property(readonly) NSMapTable *_observersByModelObjectGraph; // @synthesize _observersByModelObjectGraph;
 - (void).cxx_destruct;
+@property(readonly) NSMapTable *_observersByModelObjectGraph; // @synthesize _observersByModelObjectGraph;
 - (void)configureObservingForModelObjectGraph:(id)arg1;
 - (void)processModelObjectGraphNotification:(id)arg1;
 - (id)init;

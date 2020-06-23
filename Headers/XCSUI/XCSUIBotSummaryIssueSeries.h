@@ -13,8 +13,8 @@
     NSArray *_columns;
 }
 
-@property(copy) NSArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
+@property(copy) NSArray *columns; // @synthesize columns=_columns;
 - (id)description;
 
 @end

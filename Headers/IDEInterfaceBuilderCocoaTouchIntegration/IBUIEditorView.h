@@ -9,16 +9,16 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArbitrationResponder-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBSceneUpdateContentViewDelegate-Protocol.h>
 
-@class DVTObservingToken, IBCocoaTouchTargetRuntime, IBSceneUpdateContentView, IBUIColor, IBUIEditorMetrics, IBUINavigationBar, IBUITabBar, IBUIToolbar, NSString, NSView;
+@class DVTObservingToken, IBCocoaTouchTargetRuntime, IBColor, IBSceneUpdateContentView, IBUIEditorMetrics, IBUINavigationBar, IBUITabBar, IBUIToolbar, NSString, NSView;
 
 @interface IBUIEditorView : DVTLayoutView_ML <IBDocumentArbitrationResponder, IBSceneUpdateContentViewDelegate>
 {
     BOOL _needsSynchronize;
-    IBUIColor *_effectiveBackgroundColor;
+    IBColor *_effectiveBackgroundColor;
     DVTObservingToken *_editorMetricsObservingToken;
     IBUINavigationBar *_navigationBar;
     IBUIToolbar *_toolbar;
-    IBUIColor *_backgroundColor;
+    IBColor *_backgroundColor;
     IBSceneUpdateContentView *_owningSceneUpdateContentView;
     IBCocoaTouchTargetRuntime *_targetRuntime;
     NSView *_editedView;
@@ -29,6 +29,7 @@
     IBUIEditorMetrics *_editorMetrics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIEditorMetrics *editorMetrics; // @synthesize editorMetrics=_editorMetrics;
 @property(readonly, nonatomic) NSView *bottomBarView; // @synthesize bottomBarView=_bottomBarView;
 @property(readonly, nonatomic) NSView *topBarView; // @synthesize topBarView=_topBarView;
@@ -37,11 +38,10 @@
 @property(retain, nonatomic) NSView *editedView; // @synthesize editedView=_editedView;
 @property(readonly) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) __weak IBSceneUpdateContentView *owningSceneUpdateContentView; // @synthesize owningSceneUpdateContentView=_owningSceneUpdateContentView;
-- (void).cxx_destruct;
 - (id)maskImageForContentView:(id)arg1;
 - (id)normalizedMaskPathForContentView:(id)arg1;
 - (id)maskIdentifierForContentView:(id)arg1;
-- (BOOL)isLandscapeForContentView:(id)arg1;
+- (double)maskRotationInRadiansForContentView:(id)arg1;
 - (id)editedDocumentObject;
 - (id)backgroundColorForSceneUpdateContentView:(id)arg1;
 - (id)targetRuntimeForSceneUpdateContentView:(id)arg1;
@@ -69,7 +69,7 @@
 - (id)contentView;
 - (void)setTargetRuntime:(id)arg1;
 - (void)_invalidateEffectiveBackgroundColor;
-@property(copy, nonatomic) IBUIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(copy, nonatomic) IBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 

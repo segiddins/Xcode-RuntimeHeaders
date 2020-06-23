@@ -16,11 +16,11 @@
     NSNumber *_lineNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, copy) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly) unsigned long long messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithText:(id)arg1 messageType:(unsigned long long)arg2 filePath:(id)arg3 lineNumber:(id)arg4;
 
 @end

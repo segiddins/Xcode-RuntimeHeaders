@@ -10,7 +10,7 @@
 
 @interface _TtC9SwiftLog224ReloadableConfigResolver : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *readWriteLockQueue;
+    MISSING_TYPE *syncQueue;
     MISSING_TYPE *reloadQueue;
     MISSING_TYPE *factory;
     MISSING_TYPE *delegate;

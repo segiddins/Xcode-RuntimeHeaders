@@ -13,8 +13,8 @@
     CDUnknownBlockType _sessionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void)addPid:(int)arg1;
 - (void)setPids:(id)arg1;
 - (id)pids;

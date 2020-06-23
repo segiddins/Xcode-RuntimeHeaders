@@ -17,8 +17,8 @@
 
 + (id)additionalAvailableTemplatesOfTemplateKind:(id)arg1;
 + (void)addUnit:(id)arg1 fromUnits:(id)arg2 toDependencies:(id)arg3;
-@property(readonly, copy) NSArray *units; // @synthesize units=_units;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *units; // @synthesize units=_units;
 - (id)defaultCompletionName;
 - (id)templateOptions;
 - (long long)sortOrder;

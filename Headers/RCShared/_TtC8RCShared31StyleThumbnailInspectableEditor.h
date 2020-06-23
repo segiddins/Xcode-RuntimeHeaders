@@ -13,6 +13,7 @@
     MISSING_TYPE *editorContextCreator;
     MISSING_TYPE *inspectable;
     MISSING_TYPE *controllerResolver;
+    MISSING_TYPE *eventGuard;
 }
 
 @end

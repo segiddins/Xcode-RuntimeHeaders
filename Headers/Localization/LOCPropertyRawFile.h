@@ -11,22 +11,23 @@
 @interface LOCPropertyRawFile : LOCProperty
 {
     BOOL _createdFromData;
-    NSString *_locale;
     NSData *_fileContentsData;
     NSString *_base64String;
 }
 
+- (void).cxx_destruct;
 @property BOOL createdFromData; // @synthesize createdFromData=_createdFromData;
 @property(retain) NSString *base64String; // @synthesize base64String=_base64String;
 @property(retain) NSData *fileContentsData; // @synthesize fileContentsData=_fileContentsData;
-@property(retain) NSString *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (BOOL)writeTo:(id)arg1 withTranslation:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;
 - (id)createInternalGlossaryWithError:(id *)arg1;
 - (void)dealloc;
 - (id)initWithBase64String:(id)arg1 locale:(id)arg2 pathExtension:(id)arg3 error:(id *)arg4;
 - (id)initWithContentsOfFile:(id)arg1 locale:(id)arg2 error:(id *)arg3;
+
+// Remaining properties
+@property(retain) NSString *locale;
 
 @end
 

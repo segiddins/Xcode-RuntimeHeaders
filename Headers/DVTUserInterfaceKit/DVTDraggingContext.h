@@ -33,6 +33,7 @@
     struct CGPoint _draggedImageLocation;
 }
 
+- (void).cxx_destruct;
 @property long long springLoadingHighlight; // @synthesize springLoadingHighlight=_springLoadingHighlight;
 @property(readonly) id draggingSource; // @synthesize draggingSource=_draggingSource;
 @property long long draggingSequenceNumber; // @synthesize draggingSequenceNumber=_draggingSequenceNumber;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long draggingModifierFlags; // @synthesize draggingModifierFlags=_draggingModifierFlags;
 @property(retain, nonatomic) NSValue *draggingSnapSuggestedOrigin; // @synthesize draggingSnapSuggestedOrigin=_draggingSnapSuggestedOrigin;
 @property(nonatomic) BOOL draggedImageStateNeedsUpdate; // @synthesize draggedImageStateNeedsUpdate=_draggedImageStateNeedsUpdate;
-- (void).cxx_destruct;
 - (void)enumerateDraggingItemsWithOptions:(unsigned long long)arg1 forView:(id)arg2 classes:(id)arg3 searchOptions:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (void)invalidatePooledObjects;
 - (void)invalidateObjectAtEndOfDragLoop:(id)arg1;

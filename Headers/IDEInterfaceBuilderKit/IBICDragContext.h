@@ -20,10 +20,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 @property(readonly) IBMutableIdentityDictionary *perItemUserInfo; // @synthesize perItemUserInfo=_perItemUserInfo;
 @property(readonly) NSDictionary *itemsToTargetParents; // @synthesize itemsToTargetParents=_itemsToTargetParents;
-- (void).cxx_destruct;
 - (void)applyScheduledTreeChanges;
 - (void)applyScheduledAdditions;
 - (void)applyScheduledRemovals;

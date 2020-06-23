@@ -17,12 +17,12 @@
     IDEWorkspaceDocument *_createdDocument;
 }
 
+- (void).cxx_destruct;
 @property BOOL preventDestinationChoice; // @synthesize preventDestinationChoice=_preventDestinationChoice;
 @property BOOL skipFileChooser; // @synthesize skipFileChooser=_skipFileChooser;
 @property(readonly) BOOL alwaysShowProjectNavigator; // @synthesize alwaysShowProjectNavigator=_alwaysShowProjectNavigator;
 @property(retain) IDEWorkspaceDocument *createdDocument; // @synthesize createdDocument=_createdDocument;
 @property(retain, nonatomic) IDETemplateInstantiationContext *instantiationContext; // @synthesize instantiationContext=_instantiationContext;
-- (void).cxx_destruct;
 - (void)_asyncFinishTemplateInstantiationAfterCreatingWorkspaceDocumentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)asyncFinishTemplateInstantiationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setWorkspaceTabController:(id)arg1;

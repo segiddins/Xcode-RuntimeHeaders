@@ -15,8 +15,8 @@
 
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-@property(retain) NSSet *testDevices; // @synthesize testDevices=_testDevices;
 - (void).cxx_destruct;
+@property(retain) NSSet *testDevices; // @synthesize testDevices=_testDevices;
 - (id)_wrappedErrors;
 - (BOOL)populateProvisioningEvaluationtWithError:(id *)arg1;
 - (id)_devicesFromPortalForSessionProvider:(id)arg1 teamID:(id)arg2 portalPlatform:(id)arg3 error:(id *)arg4;

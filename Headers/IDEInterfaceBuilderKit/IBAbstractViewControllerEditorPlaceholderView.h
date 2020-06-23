@@ -19,6 +19,7 @@
     struct CGRect _placeholderAlignmentRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingDropHighlight) BOOL showingDropHighlight; // @synthesize showingDropHighlight=_showingDropHighlight;
 @property(copy, nonatomic) NSString *explanatoryText; // @synthesize explanatoryText=_explanatoryText;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned long long shadowEdgeMask; // @synthesize shadowEdgeMask=_shadowEdgeMask;
 @property double backgroundOpacity; // @synthesize backgroundOpacity=_backgroundOpacity;
 @property(nonatomic) struct CGRect placeholderAlignmentRect; // @synthesize placeholderAlignmentRect=_placeholderAlignmentRect;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -20,11 +20,11 @@
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSView *applicationRegionContainer; // @synthesize applicationRegionContainer=_applicationRegionContainer;
 @property __weak NSView *applicationLanguageContainer; // @synthesize applicationLanguageContainer=_applicationLanguageContainer;
 @property(readonly) _TtC6IDEKit42IDELocalizationApplicationRegionController *applicationRegionController; // @synthesize applicationRegionController=_applicationRegionController;
 @property(readonly) _TtC6IDEKit44IDELocalizationApplicationLanguageController *applicationLanguageController; // @synthesize applicationLanguageController=_applicationLanguageController;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)regionPopUpHasChanged:(id)arg1;
 - (void)languagePopUpHasChanged:(id)arg1;

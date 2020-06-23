@@ -17,11 +17,11 @@
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly) NSSet *testIdentifiersToSkip; // @synthesize testIdentifiersToSkip=_testIdentifiersToSkip;
 @property(readonly) NSSet *testIdentifiersToRun; // @synthesize testIdentifiersToRun=_testIdentifiersToRun;
-- (void).cxx_destruct;
 - (id)initWithTestIdentifiersToRun:(id)arg1 testIdentifiersToSkip:(id)arg2 callbackQueue:(id)arg3 callback:(CDUnknownBlockType)arg4;
 
 @end

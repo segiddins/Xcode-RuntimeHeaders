@@ -13,8 +13,8 @@
     NSString *_attributeName;
 }
 
-@property(readonly) NSString *attributeName; // @synthesize attributeName=_attributeName;
 - (void).cxx_destruct;
+@property(readonly) NSString *attributeName; // @synthesize attributeName=_attributeName;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 attributeName:(id)arg2;
 - (void)_dvt_common_init;

@@ -16,8 +16,8 @@
     IDEPathComponentCell *_componentCell;
 }
 
-@property(readonly) IDEPathComponentCell *componentCell; // @synthesize componentCell=_componentCell;
 - (void).cxx_destruct;
+@property(readonly) IDEPathComponentCell *componentCell; // @synthesize componentCell=_componentCell;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;

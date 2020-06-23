@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface _TtC17IDESceneKitEditor21SKEShaderSourceEditor : NSObject <DVTInvalidation>
 {
     MISSING_TYPE *sourceEditorView;
-    MISSING_TYPE *isValid;
     MISSING_TYPE *isHidden;
     MISSING_TYPE *annotationsChangeNotificationToken;
     MISSING_TYPE *shaderSource;
@@ -31,8 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)askForHelp;
 @property(nonatomic, retain) _TtC17IDESceneKitEditor15SKEShaderSource *shaderSource; // @synthesize shaderSource;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden;
-@property(nonatomic) BOOL valid; // @synthesize valid=isValid;
-- (BOOL)isValid;
 
 @end
 

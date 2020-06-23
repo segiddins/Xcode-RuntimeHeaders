@@ -42,9 +42,9 @@
 + (id)analysisToolWithIdentifier:(id)arg1 platformIdentifier:(id)arg2;
 + (id)analysisToolsForPlatformIdentifier:(id)arg1;
 + (void)addUniqueTools:(id)arg1 toArray:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 @property(retain) IDELaunchParametersSnapshot *launchParameters; // @synthesize launchParameters=_launchParameters;
-- (void).cxx_destruct;
 - (void)setAttachRunnablePID:(int)arg1 applicationName:(id)arg2;
 - (id)operationWithWorkingDirectory:(id)arg1 workspaceFilePath:(id)arg2 projectFilePath:(id)arg3 packagesPaths:(id)arg4 outError:(id *)arg5;
 - (id)packagesPathsToLoadDuringProfileAnalysisForBuildSchemeAction:(id)arg1 schemeCommand:(id)arg2;

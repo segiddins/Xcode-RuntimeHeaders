@@ -13,8 +13,8 @@
     NSImage *_image;
 }
 
-@property(readonly) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(readonly) NSImage *image; // @synthesize image=_image;
 - (id)initWithImage:(id)arg1;
 
 @end

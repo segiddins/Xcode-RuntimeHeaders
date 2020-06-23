@@ -8,23 +8,26 @@
 
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class NSAttributedString, NSButton, NSFileManager, NSString;
+@class NSAttributedString, NSButton, NSFileManager, NSString, _IDETestReportActivities_TableCellView;
 
 @interface _IDETestReportActivities_AttachmentView : NSView <NSMenuDelegate>
 {
     NSFileManager *_fm;
     NSAttributedString *_attachmentAttString;
-    NSButton *_attachmentButton;
     NSButton *_indicatorButton;
     BOOL _showIndicator;
     unsigned long long _attachmentsCount;
+    NSButton *_attachmentButton;
+    _IDETestReportActivities_TableCellView *_tableViewCell;
     long long _backgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) BOOL showIndicator; // @synthesize showIndicator=_showIndicator;
+@property __weak _IDETestReportActivities_TableCellView *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
+@property(retain, nonatomic) NSButton *attachmentButton; // @synthesize attachmentButton=_attachmentButton;
 @property(nonatomic) unsigned long long attachmentsCount; // @synthesize attachmentsCount=_attachmentsCount;
-- (void).cxx_destruct;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (void)quickLookFirstActivityInAttachment:(id)arg1;

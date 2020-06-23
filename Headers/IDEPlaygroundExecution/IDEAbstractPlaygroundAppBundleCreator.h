@@ -23,6 +23,7 @@
 }
 
 + (id)supportedPlatforms;
+- (void).cxx_destruct;
 @property(readonly) DVTSDK *sdk; // @synthesize sdk=_sdk;
 @property(readonly, copy) NSArray *auxiliarySourceFrameworkLocations; // @synthesize auxiliarySourceFrameworkLocations=_auxiliarySourceFrameworkLocations;
 @property(readonly, copy) NSArray *frameworkSearchPaths; // @synthesize frameworkSearchPaths=_frameworkSearchPaths;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSString *uniquingString; // @synthesize uniquingString=_uniquingString;
 @property(readonly, copy) NSUUID *playgroundUUID; // @synthesize playgroundUUID=_playgroundUUID;
 @property(readonly, copy) NSString *playgroundName; // @synthesize playgroundName=_playgroundName;
-- (void).cxx_destruct;
 - (id)constructPlaygroundAppBundleInDirectoryAtPath:(id)arg1 error:(id *)arg2;
 - (id)playgroundAppBundleForAppAtPath:(id)arg1 withExecutableSubpath:(id)arg2 bundleIdentifier:(id)arg3;
 - (BOOL)signPlaygroundAppAtPath:(id)arg1 error:(id *)arg2;

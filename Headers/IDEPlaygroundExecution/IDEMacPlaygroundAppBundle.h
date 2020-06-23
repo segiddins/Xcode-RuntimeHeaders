@@ -19,11 +19,11 @@
     DVTFilePath *_resourcesDirectoryPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTFilePath *resourcesDirectoryPath; // @synthesize resourcesDirectoryPath=_resourcesDirectoryPath;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy) NSString *executableSubpath; // @synthesize executableSubpath=_executableSubpath;
 @property(readonly) DVTFilePath *appBundlePath; // @synthesize appBundlePath=_appBundlePath;
-- (void).cxx_destruct;
 - (BOOL)cleanUpAppBundle:(id *)arg1;
 - (id)containerIdentifier;
 @property(readonly) DVTFilePath *containerPath;

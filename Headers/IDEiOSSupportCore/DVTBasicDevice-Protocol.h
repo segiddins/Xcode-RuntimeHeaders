@@ -23,6 +23,7 @@
 @property(readonly, copy, nonatomic) NSString *modelCode;
 @property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
+- (BOOL)isAvailableWithError:(id *)arg1;
 
 @optional
 - (void)cancelPrimaryInstrumentsServer;

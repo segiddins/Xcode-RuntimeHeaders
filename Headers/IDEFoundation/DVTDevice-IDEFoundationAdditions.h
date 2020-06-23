@@ -30,8 +30,7 @@
 - (id)displayNameWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;
 - (BOOL)canBeRunDestination;
 @property(readonly, getter=isLogArchiveCollectionEnabled) BOOL logArchiveCollectionEnabled;
-- (BOOL)testRunSpecificationWorkerRequiresUniqueClone:(id)arg1;
-@property(readonly) BOOL supportsCloning;
+@property(readonly) long long maxConcurrentTestingProcesses;
 @property(readonly) NSString *mockObjectsFrameworkDir;
 @property(readonly) NSSet *processNamesToObserveForCrashReportsDuringTesting;
 @property(readonly) NSArray *crashReportsDirectoryPaths;

@@ -25,6 +25,7 @@
 + (id)keyPathsForValuesAffectingPairedSimulatorCheckboxTitle;
 + (id)keyPathsForValuesAffectingConfiguredSimulatorRequiresPair;
 + (id)keyPathsForValuesAffectingShouldShowPairedSimulatorCheckbox;
+- (void).cxx_destruct;
 @property __weak NSTextField *runtimesField; // @synthesize runtimesField=_runtimesField;
 @property __weak NSPopUpButton *runtimesPopUpButton; // @synthesize runtimesPopUpButton=_runtimesPopUpButton;
 @property __weak NSPopUpButton *deviceTypesPopUpButton; // @synthesize deviceTypesPopUpButton=_deviceTypesPopUpButton;
@@ -33,7 +34,6 @@
 @property(retain) SimRuntime *selectedRuntime; // @synthesize selectedRuntime=_selectedRuntime;
 @property(retain) SimDeviceType *selectedDeviceType; // @synthesize selectedDeviceType=_selectedDeviceType;
 @property(retain) NSString *simulatorName; // @synthesize simulatorName=_simulatorName;
-- (void).cxx_destruct;
 - (void)_handleSelectedRuntime:(id)arg1;
 - (void)_loadRuntimesForDeviceType:(id)arg1;
 - (id)_firstDeviceTypeWithASupportedRuntime:(id)arg1;

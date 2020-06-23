@@ -25,6 +25,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyForResourceWithID:(unsigned long long)arg1 type:(unsigned int)arg2 containerID:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
 @property(readonly, nonatomic) int internalID; // @synthesize internalID=_internalID;
 @property(readonly, nonatomic) CDStruct_b00b4bef resolution; // @synthesize resolution=_resolution;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) unsigned long long containerID; // @synthesize containerID=_containerID;
 @property(readonly, nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
-- (void).cxx_destruct;
 - (id)keyWithSharegroupID:(unsigned long long)arg1;
 - (id)streamDictAtFunctionIndex:(unsigned long long)arg1;
 - (void)processFunction:(const struct Function *)arg1;

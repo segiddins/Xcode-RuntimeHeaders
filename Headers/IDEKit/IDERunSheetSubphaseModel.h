@@ -16,8 +16,8 @@
 }
 
 + (id)keyPathsForValuesAffectingRunPhase;
-@property(readonly) IDERunSheetPhaseModel *phaseModel; // @synthesize phaseModel=_phaseModel;
 - (void).cxx_destruct;
+@property(readonly) IDERunSheetPhaseModel *phaseModel; // @synthesize phaseModel=_phaseModel;
 @property(readonly) NSString *schemeCommandTitle;
 @property(readonly) int schemePhaseModelCommand;
 @property(readonly) BOOL navigableItem_hasWork;

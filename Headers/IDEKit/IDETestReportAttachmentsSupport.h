@@ -20,10 +20,10 @@
     IDETestReportViewController *_reportViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IDETestReportViewController *reportViewController; // @synthesize reportViewController=_reportViewController;
 @property(nonatomic) __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(nonatomic) __weak NSOutlineView *testsOutlineView; // @synthesize testsOutlineView=_testsOutlineView;
-- (void).cxx_destruct;
 - (BOOL)previewPanel:(id)arg1 handleEvent:(id)arg2;
 - (struct CGRect)previewPanel:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;
 - (id)previewPanel:(id)arg1 previewItemAtIndex:(long long)arg2;

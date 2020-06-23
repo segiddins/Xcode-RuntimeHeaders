@@ -29,12 +29,12 @@
 + (id)analyticsPlatformIdentifierForPlatformSDKIdentifier:(id)arg1;
 + (id)platformSDKIdentifierForAnalyticsPlatformIdentifier:(id)arg1;
 + (id)appIdentifierWithAdamId:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 rootVersion:(id)arg5 rootBuildNumber:(id)arg6 isBeta:(BOOL)arg7 platformSDKIdentifierOrNil:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly) BOOL isBeta; // @synthesize isBeta=_isBeta;
 @property(readonly) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly) NSString *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)JSONRepresentation;
 @property(readonly) NSDictionary *parameters;

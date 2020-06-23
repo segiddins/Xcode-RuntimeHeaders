@@ -20,10 +20,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSTextField *licenseSubtitle; // @synthesize licenseSubtitle=_licenseSubtitle;
 @property(retain) NSView *foregroundContentView; // @synthesize foregroundContentView=_foregroundContentView;
 @property int agreementStatus; // @synthesize agreementStatus=_agreementStatus;
-- (void).cxx_destruct;
 - (BOOL)_agreeToLicense;
 - (void)agreeToLicense:(id)arg1;
 - (void)disagreeWithLicense:(id)arg1;

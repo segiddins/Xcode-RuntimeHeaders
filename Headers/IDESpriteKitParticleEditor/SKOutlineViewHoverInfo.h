@@ -14,10 +14,10 @@
 }
 
 + (id)hoverInfoForItem:(id)arg1 atRow:(long long)arg2 inColumn:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long column; // @synthesize column=_column;
 @property(readonly, nonatomic) long long row; // @synthesize row=_row;
 @property(readonly, nonatomic) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 atRow:(long long)arg2 inColumn:(long long)arg3;
 
 @end

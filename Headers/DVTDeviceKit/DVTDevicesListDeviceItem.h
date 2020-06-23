@@ -18,8 +18,8 @@
 + (id)keyPathsForValuesAffectingEditable;
 + (id)keyPathsForValuesAffectingName;
 + (id)deviceItemWithDevice:(id)arg1;
-@property(retain) DVTDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain) DVTDevice *device; // @synthesize device=_device;
 @property(readonly, getter=isGroupItem) BOOL groupItem;
 @property(readonly, getter=isLeaf) BOOL leaf;
 @property(readonly, getter=isEditable) BOOL editable;

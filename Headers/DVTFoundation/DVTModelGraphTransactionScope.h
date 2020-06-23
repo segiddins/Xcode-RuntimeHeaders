@@ -19,8 +19,8 @@
 
 + (id)transactionScopeForOwner:(id)arg1;
 + (id)_globalTransactionScope;
-@property(nonatomic) BOOL performingTransaction; // @synthesize performingTransaction=_performingTransaction;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL performingTransaction; // @synthesize performingTransaction=_performingTransaction;
 - (void)dispatchAfterScopeCloseForKey:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_dispatchPendedBlocks;
 - (void)configureTimeslicedMainThreadWorkQueueToScopeTransactions:(id)arg1;

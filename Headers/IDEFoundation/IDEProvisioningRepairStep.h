@@ -13,8 +13,8 @@
     NSString *_identifier;
 }
 
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (BOOL)executeWithContext:(id)arg1 error:(id *)arg2;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSPredicate *_filterPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(nonatomic) unsigned long long exclusions; // @synthesize exclusions=_exclusions;
 @property(nonatomic) unsigned long long signpostConfig; // @synthesize signpostConfig=_signpostConfig;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)holdAgent:(id)arg1 loader:(id)arg2;
 
 @end

@@ -27,13 +27,13 @@
     IDESceneKitGaugeDebuggingAddition *_debuggingAddition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDESceneKitGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 @property(nonatomic) __weak NSView *shaderCacheListGroup; // @synthesize shaderCacheListGroup=_shaderCacheListGroup;
 @property(nonatomic) __weak NSPopUpButton *shaderCacheList; // @synthesize shaderCacheList=_shaderCacheList;
 @property(nonatomic) __weak NSButton *collectButton; // @synthesize collectButton=_collectButton;
 @property(nonatomic) __weak NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(nonatomic) __weak NSView *shaderCompilationView; // @synthesize shaderCompilationView=_shaderCompilationView;
-- (void).cxx_destruct;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (id)frameIntervalColors;
 - (id)frameIntervalTitles;

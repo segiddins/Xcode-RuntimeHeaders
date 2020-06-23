@@ -28,6 +28,7 @@
 
 + (void)initialize;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(retain, nonatomic) NSMutableArray *queryResultListeners; // @synthesize queryResultListeners=_queryResultListeners;
 @property(retain, nonatomic) NSMutableArray *collectedQueryResults; // @synthesize collectedQueryResults=_collectedQueryResults;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property BOOL dataQueryReportMode; // @synthesize dataQueryReportMode=_dataQueryReportMode;
-- (void).cxx_destruct;
 - (void)discardDataQueries;
 - (void)resumeDataQueries;
 - (void)suspendDataQueries;

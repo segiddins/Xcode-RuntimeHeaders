@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _owningDeviceID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(readonly, nonatomic) unsigned long long owningDeviceID; // @synthesize owningDeviceID=_owningDeviceID;
-- (void).cxx_destruct;
 - (id)rewriteArgument:(const struct Argument *)arg1;
 - (id)rewriteReceiver:(unsigned long long)arg1;
 - (id)rewriteURL:(const char *)arg1;

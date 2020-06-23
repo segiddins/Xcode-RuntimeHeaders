@@ -31,11 +31,11 @@
 + (id)keyPathsForValuesAffectingMostRecentVersion;
 + (id)productByMergingProducts:(id)arg1 coordinator:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak IDEProductCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain) AnalyticsMetricsConsolidatedSource *metricsSource; // @synthesize metricsSource=_metricsSource;
 @property(retain) NSArray *productVersions; // @synthesize productVersions=_productVersions;
 @property(readonly) IDEProductIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

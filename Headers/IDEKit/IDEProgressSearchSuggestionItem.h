@@ -23,6 +23,7 @@
 
 + (id)headerWithTitle:(id)arg1;
 + (id)separatorItem;
+- (void).cxx_destruct;
 @property BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property BOOL isSeparatorItem; // @synthesize isSeparatorItem=_isSeparatorItem;
 @property BOOL isHeader; // @synthesize isHeader=_isHeader;
@@ -32,7 +33,6 @@
 @property(copy) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy) NSString *titleFormat; // @synthesize titleFormat=_titleFormat;
 @property(copy) NSAttributedString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
 - (id)initWithTitleFormat:(id)arg1;
 

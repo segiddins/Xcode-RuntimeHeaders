@@ -66,10 +66,10 @@
 + (id)standardFunctionStreamFilenamePrefixes;
 + (BOOL)accessInstanceVariablesDirectly;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-@property(nonatomic) BOOL deleteOnClose; // @synthesize deleteOnClose=_deleteOnClose;
-@property(readonly, nonatomic) struct __CFUUID *uuid; // @synthesize uuid=_uuid;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL deleteOnClose; // @synthesize deleteOnClose=_deleteOnClose;
+@property(readonly, nonatomic) struct __CFUUID *uuid; // @synthesize uuid=_uuid;
 - (BOOL)acceptCaptureVisitor:(id)arg1;
 - (BOOL)adjunctFileExistsForFilename:(id)arg1 error:(id *)arg2;
 - (id)copyAdjunctDataForFilename:(id)arg1 error:(id *)arg2;

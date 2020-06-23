@@ -24,8 +24,8 @@
 + (void)unregisterWorkspaceDocumentClassProvider:(id)arg1;
 + (id)retainedClassProviderForWorkspaceDocument:(id)arg1;
 + (id)retainedClassProviderForReferenceKey:(id)arg1 initNewProviderBlock:(CDUnknownBlockType)arg2;
-@property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
+@property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void)releaseClassProvider;
 - (id)retainClassProvider;
 - (void)workspaceDidInvalidate;

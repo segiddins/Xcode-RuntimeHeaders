@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) struct DYShaderProfilerTiming timing; // @synthesize timing=_timing;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

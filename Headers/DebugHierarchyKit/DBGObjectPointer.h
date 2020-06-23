@@ -18,8 +18,8 @@
 
 + (id)withAddress:(id)arg1;
 + (id)valueWithEncodedValue:(id)arg1 format:(id)arg2 error:(id *)arg3;
-@property(retain) NSString *objectPointer; // @synthesize objectPointer=_objectPointer;
 - (void).cxx_destruct;
+@property(retain) NSString *objectPointer; // @synthesize objectPointer=_objectPointer;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)objectValue;

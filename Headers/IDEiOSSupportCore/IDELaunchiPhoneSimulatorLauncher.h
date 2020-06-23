@@ -27,11 +27,11 @@
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+- (void).cxx_destruct;
 @property(retain) DTXChannel *launchServiceChannel; // @synthesize launchServiceChannel=_launchServiceChannel;
 @property(retain) IDEPseudoTerminal *pty; // @synthesize pty=_pty;
 @property(retain) DVTiPhoneSimulator *device; // @synthesize device=_device;
 @property(getter=isLaunchingToDebug) BOOL launchingToDebug; // @synthesize launchingToDebug=_launchingToDebug;
-- (void).cxx_destruct;
 - (BOOL)_willUseExistingProcess;
 - (void)pidDiedCallback:(id)arg1;
 - (void)_cancelProcessControlChannel;

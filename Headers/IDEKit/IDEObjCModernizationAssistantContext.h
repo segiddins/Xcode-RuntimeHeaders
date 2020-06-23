@@ -19,9 +19,9 @@
 
 + (Class)migrationContextClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSArray *targets; // @synthesize targets=_targets;
 @property unsigned long long currentConversionStage; // @synthesize currentConversionStage=_currentConversionStage;
-- (void).cxx_destruct;
 - (id)convertedFilePathForOriginalFilePath:(id)arg1;
 - (unsigned long long)numberOfConvertedFilePaths;
 - (id)_convertedFilePathForOriginalFilePathMapTable;

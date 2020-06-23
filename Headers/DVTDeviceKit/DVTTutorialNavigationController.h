@@ -19,13 +19,13 @@
     NSButton *_currentPageNavigationButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *currentPageNavigationButton; // @synthesize currentPageNavigationButton=_currentPageNavigationButton;
 @property __weak DVTTutorialController *tutorialController; // @synthesize tutorialController=_tutorialController;
 @property __weak NSView *navigationContainerView; // @synthesize navigationContainerView=_navigationContainerView;
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *previousButton; // @synthesize previousButton=_previousButton;
 @property __weak NSButton *nextButton; // @synthesize nextButton=_nextButton;
-- (void).cxx_destruct;
 - (void)setNextButtonEnabled:(BOOL)arg1;
 - (void)setPageControllerIsOnFirstPage:(BOOL)arg1;
 - (void)setPageControllerIsOnLastPage:(BOOL)arg1;

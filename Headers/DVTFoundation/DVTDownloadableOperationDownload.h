@@ -15,8 +15,8 @@
     struct AuthorizationOpaqueRef *_authRef;
 }
 
-@property(readonly) DVTDownloadable *downloadable; // @synthesize downloadable=_downloadable;
 - (void).cxx_destruct;
+@property(readonly) DVTDownloadable *downloadable; // @synthesize downloadable=_downloadable;
 - (void)cancel;
 - (void)downloadableOperationMain;
 - (void)setError:(id)arg1;

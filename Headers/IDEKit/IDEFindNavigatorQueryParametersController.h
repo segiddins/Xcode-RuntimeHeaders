@@ -46,11 +46,12 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEViewController<IDEFindNavigatorQueryParametersPresentedController> *presentedController; // @synthesize presentedController=_presentedController;
 @property(nonatomic) long long progress; // @synthesize progress=_progress;
 @property __weak id <IDEFindNavigatorQueryParametersControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)pathControl:(id)arg1 userChoseValue:(id)arg2 forSegment:(id)arg3;
+- (BOOL)pathControl:(id)arg1 shouldHighlightSelectionForValue:(id)arg2 ofSegment:(id)arg3;
 - (id)pathControl:(id)arg1 titleForValue:(id)arg2 ofSegment:(id)arg3;
 - (id)pathControl:(id)arg1 candidatesForSegment:(id)arg2;
 - (id)pathControl:(id)arg1 valueForSegment:(id)arg2;
@@ -97,6 +98,7 @@
 - (id)view;
 - (void)pathControlShouldRefresh:(id)arg1;
 - (void)refreshUserInterface:(id)arg1;
+- (id)attributedStringForTitle:(id)arg1 control:(id)arg2 accented:(BOOL)arg3;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)primitiveInvalidate;

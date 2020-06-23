@@ -22,6 +22,7 @@
     IDENavigableItemCoordinator *_navigableItemCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain) IDEGroup *destinationGroup; // @synthesize destinationGroup=_destinationGroup;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSPopUpButton *destinationWorkspacePopUp; // @synthesize destinationWorkspacePopUp=_destinationWorkspacePopUp;
 @property(retain, nonatomic) NSPopUpButton *destinationGroupPopUp; // @synthesize destinationGroupPopUp=_destinationGroupPopUp;
 @property(retain) id <IDECompletionDestinationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)workspaceNavigableItem;
 - (void)deactivate;
 - (void)activate;

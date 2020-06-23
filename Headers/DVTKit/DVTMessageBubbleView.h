@@ -38,9 +38,9 @@
 + (struct CGRect)adjustedIconRect:(struct CGRect)arg1 withFont:(id)arg2 padding:(double)arg3;
 + (double)_defaultMessageFontSize;
 + (id)defaultAnimationForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double collapsedHeight; // @synthesize collapsedHeight=_collapsedHeight;
 @property int position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;

@@ -14,8 +14,8 @@
     XCPropertyInfoContext *_propertyInfoContext;
 }
 
-@property(readonly) XCConfigurationList *configurations; // @synthesize configurations=_configurationList;
 - (void).cxx_destruct;
+@property(readonly) XCConfigurationList *configurations; // @synthesize configurations=_configurationList;
 @property(readonly) NSArray *buildConfigurationNames;
 - (id)nameForBuildSetting:(id)arg1;
 - (id)resolvedValueForBuildSetting:(id)arg1;

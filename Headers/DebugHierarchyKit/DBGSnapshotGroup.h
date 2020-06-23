@@ -20,13 +20,13 @@
 
 + (id)weakObjectsGroupWithIdentifier:(id)arg1;
 + (id)strongObjectsGroupWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSPointerArray *objects; // @synthesize objects=_objects;
 @property __weak DBGSnapshotNode *parentNode; // @synthesize parentNode=_parentNode;
 @property __weak DBGSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property long long fetchStatus; // @synthesize fetchStatus=_fetchStatus;
 @property(retain) NSString *defaultDisplayName; // @synthesize defaultDisplayName=_defaultDisplayName;
 @property(readonly) NSString *groupingIdentifier; // @synthesize groupingIdentifier=_groupingIdentifier;
-- (void).cxx_destruct;
 - (id)rootLevelGroup;
 - (id)debugDescription;
 - (id)displayName;

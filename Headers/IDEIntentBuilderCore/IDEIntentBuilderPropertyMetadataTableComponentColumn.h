@@ -17,12 +17,12 @@
     double _width;
 }
 
+- (void).cxx_destruct;
 @property double width; // @synthesize width=_width;
 @property long long resizing; // @synthesize resizing=_resizing;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)decodeObject:(id)arg1;

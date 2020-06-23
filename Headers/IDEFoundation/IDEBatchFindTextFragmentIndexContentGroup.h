@@ -14,9 +14,9 @@
     NSArray *_orderedFilePaths;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *orderedFilePaths; // @synthesize orderedFilePaths=_orderedFilePaths;
 @property(readonly) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (id)initWithGroupName:(id)arg1 orderedFilePaths:(id)arg2;
 
 @end

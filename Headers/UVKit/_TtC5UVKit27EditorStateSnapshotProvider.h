@@ -12,7 +12,6 @@
 {
     MISSING_TYPE *editorStateSnapshot;
     MISSING_TYPE *objectWillChange;
-    MISSING_TYPE *didChange;
 }
 
 @end

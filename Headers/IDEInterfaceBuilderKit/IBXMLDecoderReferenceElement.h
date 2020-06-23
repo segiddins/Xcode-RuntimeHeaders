@@ -15,8 +15,8 @@
 }
 
 + (id)elementName;
-@property IBXMLDecoderAbstractObjectElement *resolvedAbstractObjectElement; // @synthesize resolvedAbstractObjectElement=_resolvedAbstractObjectElement;
 - (void).cxx_destruct;
+@property IBXMLDecoderAbstractObjectElement *resolvedAbstractObjectElement; // @synthesize resolvedAbstractObjectElement=_resolvedAbstractObjectElement;
 - (id)referencedIdentifier;
 - (BOOL)requestInsertionIntoParent:(id)arg1 error:(id *)arg2;
 - (id)initWithAttributes:(const char **)arg1 stringTable:(id)arg2 error:(id *)arg3;

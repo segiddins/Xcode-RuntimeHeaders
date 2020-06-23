@@ -15,10 +15,10 @@
     NSArray *_valueObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *valueObjects; // @synthesize valueObjects=_valueObjects;
 @property(readonly, copy) NSArray *keysToReplace; // @synthesize keysToReplace=_keysToReplace;
 @property(readonly, copy) NSString *arrayName; // @synthesize arrayName=_arrayName;
-- (void).cxx_destruct;
 - (id)performReplacementWithGenerator:(id)arg1 forTemplateString:(id)arg2;
 @property(readonly, copy) NSArray *stableValueObjects;
 - (id)initWithArrayName:(id)arg1 keysToReplace:(id)arg2 valueObjects:(id)arg3;

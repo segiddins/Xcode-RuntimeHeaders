@@ -21,6 +21,7 @@
 
 + (BOOL)wantsOverlayEffect;
 + (BOOL)wantsTransparentBackground;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL preventGoNextOrFinish; // @synthesize preventGoNextOrFinish=_preventGoNextOrFinish;
 @property(nonatomic) BOOL widthResizable; // @synthesize widthResizable=_widthResizable;
 @property(nonatomic) BOOL expandsAssistantView; // @synthesize expandsAssistantView=_expandsAssistantView;
@@ -28,7 +29,6 @@
 @property(retain) NSString *previousAssistantIdentifier; // @synthesize previousAssistantIdentifier=_previousAssistantIdentifier;
 @property(retain) NSString *nextAssistantIdentifier; // @synthesize nextAssistantIdentifier=_nextAssistantIdentifier;
 @property(retain) IDEAssistantContext *assistantContext; // @synthesize assistantContext=_assistantContext;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)helpAction;
 - (void)willGoNextOrFinish;

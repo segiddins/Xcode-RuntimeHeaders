@@ -24,9 +24,9 @@
 + (void)initialize;
 + (id)filePickerPanel;
 + (id)filePickerPanelShowsAddOtherAsPullDown:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *allowedFileTypesForAddOther; // @synthesize allowedFileTypesForAddOther=_allowedFileTypesForAddOther;
 @property(copy) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
-- (void).cxx_destruct;
 - (id)accessibilityIdentifier;
 - (void)hideProgressIndicator;
 - (void)showProgressIndicator;

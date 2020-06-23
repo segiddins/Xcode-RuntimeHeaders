@@ -23,6 +23,7 @@
     NSSet *_supportedPlatforms;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
 @property(copy) NSArray *targetMembership; // @synthesize targetMembership=_targetMembership;
 @property(copy) NSArray *existingLanguages; // @synthesize existingLanguages=_existingLanguages;
@@ -32,7 +33,7 @@
 @property(copy) NSString *buildPath; // @synthesize buildPath=_buildPath;
 @property(copy) NSString *originalAttributeValue; // @synthesize originalAttributeValue=_originalAttributeValue;
 @property(copy) NSString *filepath; // @synthesize filepath=_filepath;
-- (void).cxx_destruct;
+- (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPath:(id)arg1 error:(id *)arg2;
 - (id)initWithPath:(id)arg1 originalAttributeValue:(id)arg2 buildPath:(id)arg3 uniqueId:(id)arg4 existingLanguages:(id)arg5 targetMembership:(id)arg6 error:(id *)arg7;

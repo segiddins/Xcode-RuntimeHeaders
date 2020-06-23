@@ -19,8 +19,8 @@
 
 + (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 symbol:(id)arg2 query:(id)arg3;
 + (double)scoreAdjustmentForSymbolKind:(id)arg1;
-@property(readonly) id <IDEOpenQuicklyIndexSymbol> symbol; // @synthesize symbol=_symbol;
 - (void).cxx_destruct;
+@property(readonly) id <IDEOpenQuicklyIndexSymbol> symbol; // @synthesize symbol=_symbol;
 - (id)alternateTitleGivenParentResult:(id)arg1;
 - (id)valueStandingInForForAlternateIdentity;
 - (unsigned long long)hashForAlternateIdentity;

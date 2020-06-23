@@ -16,10 +16,10 @@
     DVTStackView_ML *_itemStack;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DVTStackView_ML *itemStack; // @synthesize itemStack=_itemStack;
 @property(readonly, nonatomic) NSObject<IBUIMenuChild> *representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) BOOL isTopLevelMainMenu; // @synthesize isTopLevelMainMenu=_isTopLevelMainMenu;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;
 - (id)descendantViewRepresentingObject:(id)arg1;

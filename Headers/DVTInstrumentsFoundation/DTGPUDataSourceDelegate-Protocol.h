@@ -9,6 +9,6 @@
 @class DTGPUDataSource;
 
 @protocol DTGPUDataSourceDelegate <NSObject>
-- (void)readyToSendData:(const unsigned long long *)arg1 sampleCount:(unsigned long long)arg2 dataSource:(DTGPUDataSource *)arg3;
+- (void)readyToSendData:(const unsigned long long *)arg1 sampleCount:(unsigned long long)arg2 length:(unsigned long long)arg3 dataSource:(DTGPUDataSource *)arg4 sampleType:(unsigned long long)arg5;
 @end
 

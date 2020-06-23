@@ -45,6 +45,7 @@
     struct CGSize _itemImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *groupDividerRects; // @synthesize groupDividerRects=_groupDividerRects;
 @property(retain, nonatomic) IBDockObjectAndGroupPair *rolledOverObjectAndGroupPair; // @synthesize rolledOverObjectAndGroupPair=_rolledOverObjectAndGroupPair;
 @property(copy, nonatomic) NSDictionary *targetIdentifiedRepresentedObjects; // @synthesize targetIdentifiedRepresentedObjects=_targetIdentifiedRepresentedObjects;
@@ -57,7 +58,6 @@
 @property(nonatomic) __weak id <IBStructureAreaDockViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property struct CGSize itemImageSize; // @synthesize itemImageSize=_itemImageSize;
 @property(retain) IBStructureAreaDockLabelContainer *labelPopUpContainer; // @synthesize labelPopUpContainer=_labelPopUpContainer;
-- (void).cxx_destruct;
 - (id)accessibilityTitle;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)dividerShadow;

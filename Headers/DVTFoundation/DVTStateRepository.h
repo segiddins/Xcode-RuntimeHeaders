@@ -22,8 +22,8 @@
 + (id)_primitiveReadStateFromData:(id)arg1;
 + (id)_primitiveStateDataForState:(id)arg1 identifier:(id)arg2 error:(id *)arg3;
 + (void)initialize;
-@property(retain) id <DVTStateRepositoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <DVTStateRepositoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)readStateFromURL:(id)arg1 error:(id *)arg2;
 - (BOOL)writeStateToURL:(id)arg1 error:(id *)arg2;
 - (id)readStateFromData:(id)arg1 error:(id *)arg2;

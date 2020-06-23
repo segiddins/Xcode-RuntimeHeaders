@@ -19,13 +19,13 @@
 }
 
 + (id)temporaryUser;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isGroup) BOOL group; // @synthesize group=_group;
 @property(nonatomic, getter=isAdministrator) BOOL administrator; // @synthesize administrator=_administrator;
 @property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 

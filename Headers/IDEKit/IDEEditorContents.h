@@ -14,9 +14,9 @@
     long long _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(readonly) NSArray *historyStacks; // @synthesize historyStacks=_historyStacks;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) IDEEditorHistoryStack *selectedHistoryStack;
 - (id)initWithHistoryStacks:(id)arg1 selectedIndex:(long long)arg2;

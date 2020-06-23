@@ -15,8 +15,8 @@
 
 + (id)presetFormattersToDescriptions;
 + (id)formatDescriptions;
-@property(retain) NSTableView *presetsTableView; // @synthesize presetsTableView=_presetsTableView;
 - (void).cxx_destruct;
+@property(retain) NSTableView *presetsTableView; // @synthesize presetsTableView=_presetsTableView;
 - (double)baseline;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;

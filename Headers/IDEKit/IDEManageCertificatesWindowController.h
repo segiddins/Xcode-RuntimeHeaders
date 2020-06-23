@@ -23,6 +23,7 @@
 
 + (id)keyPathsForValuesAffectingBusy;
 + (void)beginSheetWithContext:(id)arg1 modalForWindow:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *warningIconView; // @synthesize warningIconView=_warningIconView;
 @property(retain, nonatomic) NSPopUpButton *addCertificatePopUp; // @synthesize addCertificatePopUp=_addCertificatePopUp;
 @property(retain, nonatomic) DVTBorderedView *containerView; // @synthesize containerView=_containerView;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isRequestingCertificate) BOOL requestingCertificate; // @synthesize requestingCertificate=_requestingCertificate;
 @property(retain, nonatomic) IDEManageCertificatesViewController *certsViewController; // @synthesize certsViewController=_certsViewController;
 @property(retain, nonatomic) IDEManageCertificatesContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)createCertificate:(id)arg1;
 - (void)_populateAddCertificatePopUp;

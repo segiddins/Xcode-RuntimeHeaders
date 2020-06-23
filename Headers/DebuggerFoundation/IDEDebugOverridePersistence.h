@@ -19,8 +19,8 @@
 + (void)applyStoredStateToOverrides:(id)arg1 forPlatform:(id)arg2;
 + (id)_createGlobalScopeStore;
 + (id)globalStore;
-@property(retain) id <DVTCustomDataStoring> storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(retain) id <DVTCustomDataStoring> storage; // @synthesize storage=_storage;
 - (void)writeOverridesState:(id)arg1;
 - (void)storeStateOfOverrides:(id)arg1 forPlatform:(id)arg2;
 - (void)applyStoredStateToOverrides:(id)arg1 forPlatform:(id)arg2;

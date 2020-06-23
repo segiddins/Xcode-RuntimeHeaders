@@ -24,6 +24,7 @@
     NSOrderedSet *_teams;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *teams; // @synthesize teams=_teams;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSPopUpButton *teamsPopup; // @synthesize teamsPopup=_teamsPopup;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSView *accountView; // @synthesize accountView=_accountView;
 @property(retain, nonatomic) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
 @property(retain, nonatomic) id <IDETemplateTeamPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_rebuildTeamsMenu;
 - (void)_configureViewsForState:(long long)arg1;
 - (void)_updateState;

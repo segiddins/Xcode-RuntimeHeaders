@@ -21,12 +21,12 @@
     struct _AMDevice *_deviceRef;
 }
 
+- (void).cxx_destruct;
 @property struct _AMDevice *deviceRef; // @synthesize deviceRef=_deviceRef;
 @property(readonly) XCTMobileSyncFramework *mobileSyncFramework; // @synthesize mobileSyncFramework=_mobileSyncFramework;
 @property(readonly) id <XCTMobileDeviceFramework> mobileDeviceFramework; // @synthesize mobileDeviceFramework=_mobileDeviceFramework;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (void)synchronizeDiagnosticReportsDirectoryWithCompletion:(CDUnknownBlockType)arg1;
 - (id)errorWithMobileDeviceFrameworkError:(id)arg1;
 - (void)invalidate;

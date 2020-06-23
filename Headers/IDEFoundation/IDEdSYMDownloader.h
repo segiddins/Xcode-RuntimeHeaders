@@ -18,13 +18,13 @@
     NSArray *_downloadTasks;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *downloadTasks; // @synthesize downloadTasks=_downloadTasks;
 @property(nonatomic) unsigned long long maximumConcurrentTasks; // @synthesize maximumConcurrentTasks=_maximumConcurrentTasks;
 @property(copy, nonatomic) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
 @property(copy, nonatomic) CDUnknownBlockType fileDownloadedCallback; // @synthesize fileDownloadedCallback=_fileDownloadedCallback;
 @property(readonly) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(readonly) IDEArchive *archive; // @synthesize archive=_archive;
-- (void).cxx_destruct;
 - (void)initiateDownloadWithAccount:(id)arg1;
 - (id)initWithArchive:(id)arg1;
 

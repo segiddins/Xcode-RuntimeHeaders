@@ -6,25 +6,36 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class NSButton, NSProgressIndicator, NSTextField;
+@class NSButton, NSProgressIndicator, NSTextField, NSTrackingArea;
 
 @interface IDETestTableCellView : NSTableCellView
 {
     BOOL _enabled;
     BOOL _missing;
+    BOOL _jumpButtonVisibleOnHover;
     NSTextField *_subtitleTextField;
     NSProgressIndicator *_progressIndicator;
     NSButton *_optionsButton;
+    NSButton *_jumpToTestInCodeButton;
+    NSTrackingArea *_trackingArea;
 }
 
-@property(retain) NSButton *optionsButton; // @synthesize optionsButton=_optionsButton;
-@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-@property(retain) NSTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isJumpButtonVisibleOnHover) BOOL jumpButtonVisibleOnHover; // @synthesize jumpButtonVisibleOnHover=_jumpButtonVisibleOnHover;
+@property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
+@property(retain, nonatomic) NSButton *jumpToTestInCodeButton; // @synthesize jumpToTestInCodeButton=_jumpToTestInCodeButton;
+@property(retain, nonatomic) NSButton *optionsButton; // @synthesize optionsButton=_optionsButton;
+@property(retain, nonatomic) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property(retain, nonatomic) NSTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
+- (void)mouseExited:(id)arg1;
+- (void)mouseEntered:(id)arg1;
+- (void)updateTrackingAreas;
 - (void)updateTextColors;
-@property(getter=isMissing) BOOL missing;
-@property(getter=isEnabled) BOOL enabled;
+@property(nonatomic, getter=isMissing) BOOL missing; // @synthesize missing=_missing;
+@property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void)setBackgroundStyle:(long long)arg1;
+- (void)prepareForReuse;
+- (void)awakeFromNib;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)initSubclassIvars;

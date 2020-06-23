@@ -17,11 +17,11 @@
     IBAutolayoutStatus *_autolayoutStatus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBAutolayoutStatus *autolayoutStatus; // @synthesize autolayoutStatus=_autolayoutStatus;
 @property(retain, nonatomic) id <IBAutolayoutConcreteConstraintProvider> concreteConstraintProvider; // @synthesize concreteConstraintProvider=_concreteConstraintProvider;
 @property(retain, nonatomic) id <IBLayoutConstraintDrawingDestination> drawingDestination; // @synthesize drawingDestination=_drawingDestination;
 @property(retain, nonatomic) id <IBLayoutConstraintStatusProvider> constraintStatusProvider; // @synthesize constraintStatusProvider=_constraintStatusProvider;
-- (void).cxx_destruct;
 - (struct CGRect)rectForGuideLine:(CDStruct_f6143a38)arg1;
 - (CDStruct_f6143a38)guideLineForConstraintAttribute:(unsigned long long)arg1 ofItem:(id)arg2 forDrawable:(id)arg3;
 - (id)determineConstraintDrawableGuideLinesForDrawables:(id)arg1 givenMovedDrawableIndexes:(id)arg2;

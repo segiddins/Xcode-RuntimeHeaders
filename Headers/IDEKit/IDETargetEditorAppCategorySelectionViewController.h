@@ -20,6 +20,7 @@
     NSString *_lastSelectedAppCategory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastSelectedAppCategory; // @synthesize lastSelectedAppCategory=_lastSelectedAppCategory;
 @property(retain, nonatomic) NSObject<IDEInfoPlistCoordination> *lastCoordinator; // @synthesize lastCoordinator=_lastCoordinator;
 @property(retain, nonatomic) NSDictionaryController *appCategoriesController; // @synthesize appCategoriesController=_appCategoriesController;
@@ -27,7 +28,6 @@
 @property(retain) id <DVTInvalidation> infoPlistCoordinatorDidChangeObserver; // @synthesize infoPlistCoordinatorDidChangeObserver=_infoPlistCoordinatorDidChangeObserver;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedInvocation; // @synthesize delayedInvocation=_delayedInvocation;
 @property(retain, nonatomic) NSObject<IDEInfoPlistCoordination> *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setSelectedAppCategory:(id)arg1;
 - (id)selectedAppCategory;

@@ -17,10 +17,10 @@
     unsigned long long _trackingMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long trackingMode; // @synthesize trackingMode=_trackingMode;
 @property(readonly) NSArray *items; // @synthesize items=_items;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToGroupedSegmentedControlGroup:(id)arg1;

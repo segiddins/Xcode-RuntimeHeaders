@@ -21,8 +21,8 @@
 + (id)menuLabelForConnection:(id)arg1;
 + (double)displayOrderPriority;
 + (BOOL)isObjectValidDestination:(id)arg1;
-@property(copy, nonatomic) NSString *unwindAction; // @synthesize unwindAction=_unwindAction;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *unwindAction; // @synthesize unwindAction=_unwindAction;
 - (id)missingComponents;
 - (id)attributesInspectorSliceIdentifier;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

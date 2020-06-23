@@ -19,6 +19,7 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IDEEnergyAnnotatedBarGraphDelegate> modelDelegate; // @synthesize modelDelegate=_modelDelegate;
 - (id)translateValue:(id)arg1 keypath:(id)arg2;
 - (id)_paddingString;
 - (id)labelAttributes;
@@ -26,7 +27,7 @@
 - (BOOL)canDrawBeyondContentRect;
 - (void)addHorizontalLinesToBezierPath:(id)arg1 inStacks:(id)arg2 withHeight:(double)arg3;
 - (void)drawStacks:(id)arg1 rect:(struct CGRect)arg2;
-- (id)modelDelegate;
+- (void)dealloc;
 
 @end
 

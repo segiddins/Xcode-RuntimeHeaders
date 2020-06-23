@@ -14,8 +14,8 @@
 }
 
 + (BOOL)isCompatibleWithOverlayScrollers;
-@property(nonatomic) __weak IBCanvasScrollView *canvasScrollView; // @synthesize canvasScrollView=_canvasScrollView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IBCanvasScrollView *canvasScrollView; // @synthesize canvasScrollView=_canvasScrollView;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHiddenIgnoringCanUpdateScrollers:(BOOL)arg1;
 

@@ -19,8 +19,8 @@
 + (Class)_containerClass;
 + (BOOL)shouldTrackFileSystemChanges;
 + (BOOL)autosavesInPlace;
-@property(retain, nonatomic) IDEContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEContainer *container; // @synthesize container=_container;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)updateChangeCount:(unsigned long long)arg1;
 - (void)runPageLayout:(id)arg1;

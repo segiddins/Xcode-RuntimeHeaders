@@ -16,10 +16,10 @@
 }
 
 + (void)beginSheetWithArchive:(id)arg1 modalForWindow:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *containerView; // @synthesize containerView=_containerView;
 @property(retain) IDEArchiveStatusLogViewController *logViewController; // @synthesize logViewController=_logViewController;
 @property(readonly) IDEArchive *archive; // @synthesize archive=_archive;
-- (void).cxx_destruct;
 - (void)help:(id)arg1;
 - (void)exportApp:(id)arg1;
 - (void)done:(id)arg1;

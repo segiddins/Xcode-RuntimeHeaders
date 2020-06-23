@@ -4,14 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTUserInterfaceKit/DVTFlatSegmentedControlCell.h>
+#import <AppKit/NSSegmentedCell.h>
 
-@interface IBAccessorizedScrollViewSegmentedCell : DVTFlatSegmentedControlCell
+@interface IBAccessorizedScrollViewSegmentedCell : NSSegmentedCell
 {
 }
 
-- (void)drawSegment:(long long)arg1 inFrame:(struct CGRect)arg2 withView:(id)arg3;
-- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)boundsOfSegment:(unsigned long long)arg1;
 - (double)_menuDelayTimeForSegment:(long long)arg1;
 

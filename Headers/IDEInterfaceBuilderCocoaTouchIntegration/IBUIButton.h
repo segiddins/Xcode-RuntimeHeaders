@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIFontedObject-Protocol.h>
 
-@class IBUIButtonStateAttributes, IBUIColor, IBUIFontDescription, IBUIImageSymbolConfiguration, NSAttributedString, NSImage, NSString;
+@class IBColor, IBUIButtonStateAttributes, IBUIFontDescription, IBUIImageSymbolConfiguration, NSAttributedString, NSImage, NSString;
 
 @interface IBUIButton : IBUIControl <IBDocumentArchiving, IBUIFontedObject>
 {
@@ -26,6 +26,7 @@
     BOOL _hasAttributedTitle;
     BOOL _adjustsImageSizeForAccessibilityContentSizeCategory;
     BOOL _springLoaded;
+    BOOL _pointerInteractionEnabled;
     int _lineBreakMode;
     IBUIFontDescription *_fontDescription;
     long long _buttonType;
@@ -120,6 +121,8 @@
 + (id)keyPathsForValuesAffectingIbInspectedNormalTitle;
 + (id)keyPathsForValuesAffectingIbInspectedFontDescription;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL pointerInteractionEnabled; // @synthesize pointerInteractionEnabled=_pointerInteractionEnabled;
 @property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
 @property(nonatomic) struct CGSize titleShadowOffset; // @synthesize titleShadowOffset=_titleShadowOffset;
 @property(nonatomic) int lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
@@ -131,7 +134,6 @@
 @property(nonatomic) BOOL showsTouchWhenHighlighted; // @synthesize showsTouchWhenHighlighted=_showsTouchWhenHighlighted;
 @property(nonatomic) BOOL reversesTitleShadowWhenHighlighted; // @synthesize reversesTitleShadowWhenHighlighted=_reversesTitleShadowWhenHighlighted;
 @property(copy, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
-- (void).cxx_destruct;
 - (void)unarchiveFont:(id)arg1;
 - (void)archiveFont:(id)arg1;
 - (void)decodeFont:(id)arg1;
@@ -159,17 +161,17 @@
 @property(retain) IBUIImageSymbolConfiguration *highlightedPreferredSymbolConfiguration;
 @property(retain) IBUIImageSymbolConfiguration *normalPreferredSymbolConfiguration;
 - (void)clearTitleShadowColors;
-@property(copy) IBUIColor *disabledTitleShadowColor;
-@property(copy) IBUIColor *focusedTitleShadowColor;
-@property(copy) IBUIColor *selectedTitleShadowColor;
-@property(copy) IBUIColor *highlightedTitleShadowColor;
-@property(copy) IBUIColor *normalTitleShadowColor;
+@property(copy) IBColor *disabledTitleShadowColor;
+@property(copy) IBColor *focusedTitleShadowColor;
+@property(copy) IBColor *selectedTitleShadowColor;
+@property(copy) IBColor *highlightedTitleShadowColor;
+@property(copy) IBColor *normalTitleShadowColor;
 - (void)clearTitleColors;
-@property(copy) IBUIColor *disabledTitleColor;
-@property(copy) IBUIColor *focusedTitleColor;
-@property(copy) IBUIColor *selectedTitleColor;
-@property(copy) IBUIColor *highlightedTitleColor;
-@property(copy) IBUIColor *normalTitleColor;
+@property(copy) IBColor *disabledTitleColor;
+@property(copy) IBColor *focusedTitleColor;
+@property(copy) IBColor *selectedTitleColor;
+@property(copy) IBColor *highlightedTitleColor;
+@property(copy) IBColor *normalTitleColor;
 - (void)clearBackgroundImages;
 @property(retain) NSImage *disabledBackgroundImage;
 @property(retain) NSImage *focusedBackgroundImage;
@@ -378,6 +380,7 @@
 - (double)ibHIRecommededMinimumWidth;
 - (BOOL)ibShouldBeProcessedForLocalizationWarnings;
 - (BOOL)ibUsesWidgetTypeForTypeNameForDefaultLabel;
+- (BOOL)ibIsPointerInteractionAvailable;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (id)ibInitialConnectionLabelSearchTerm;
 - (Class)ibEditorClass;

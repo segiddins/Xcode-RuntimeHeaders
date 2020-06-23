@@ -18,8 +18,8 @@
 + (void)setGrouperClass:(Class)arg1 forGrouperType:(id)arg2;
 + (id)grouperType;
 + (void)initialize;
-@property(copy) NSString *toolSpecIdentifier; // @synthesize toolSpecIdentifier=_toolSpecIdentifier;
 - (void).cxx_destruct;
+@property(copy) NSString *toolSpecIdentifier; // @synthesize toolSpecIdentifier=_toolSpecIdentifier;
 - (CDUnknownBlockType)addSettingsToMacroDefinitionTableBlock;
 - (id)additionalFilesToGroupInBucketForFileReference:(id)arg1 fromUngroupedBuildFiles:(id)arg2 unprocessedBuildFiles:(id)arg3;
 - (id)bucketNameForFileReference:(id)arg1;

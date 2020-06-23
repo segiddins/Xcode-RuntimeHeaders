@@ -7,24 +7,27 @@
 #import <objc/NSObject.h>
 
 @class IDEDistributionItem, IDEDistributionMethod, IDEEntitlementsDictionary;
+@protocol IDEProvisioningBasicTeam;
 
 @interface IDEEntitlementsProcessor : NSObject
 {
     IDEDistributionMethod *_distributionMethod;
     IDEDistributionItem *_distributionItem;
     IDEEntitlementsDictionary *_itemEntitlements;
+    id <IDEProvisioningBasicTeam> _team;
 }
 
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(readonly, nonatomic) IDEEntitlementsDictionary *itemEntitlements; // @synthesize itemEntitlements=_itemEntitlements;
 @property(readonly, nonatomic) IDEDistributionItem *distributionItem; // @synthesize distributionItem=_distributionItem;
 @property(readonly, nonatomic) IDEDistributionMethod *distributionMethod; // @synthesize distributionMethod=_distributionMethod;
-- (void).cxx_destruct;
 - (BOOL)runWithError:(id *)arg1;
 - (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) BOOL needsInteraction;
-- (id)initWithDistributionMethod:(id)arg1 distributionItem:(id)arg2 itemEntitlements:(id)arg3;
+- (id)initWithDistributionMethod:(id)arg1 distributionItem:(id)arg2 itemEntitlements:(id)arg3 team:(id)arg4;
 - (id)init;
 
 @end

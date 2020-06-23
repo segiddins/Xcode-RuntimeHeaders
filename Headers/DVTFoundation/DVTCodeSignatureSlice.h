@@ -17,11 +17,11 @@
 }
 
 + (id)sliceWithArchitecture:(id)arg1 cdHashes:(id)arg2 digest:(id)arg3 cms:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSData *cms; // @synthesize cms=_cms;
 @property(readonly) DVTCodeSignatureHash *cmsDigest; // @synthesize cmsDigest=_cmsDigest;
 @property(readonly) NSSet *codeSignatureHashes; // @synthesize codeSignatureHashes=_codeSignatureHashes;
 @property(readonly) NSString *architecture; // @synthesize architecture=_architecture;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

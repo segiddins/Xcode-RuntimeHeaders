@@ -21,11 +21,11 @@
 + (id)nibName;
 + (id)viewController;
 + (id)viewControllerWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(retain) DTDKTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) DVTBorderedView *summaryView; // @synthesize summaryView=_summaryView;
 @property(retain) DTDKViolatorView *violatorView; // @synthesize violatorView=_violatorView;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)primitiveInvalidate;
 - (void)layoutViews;

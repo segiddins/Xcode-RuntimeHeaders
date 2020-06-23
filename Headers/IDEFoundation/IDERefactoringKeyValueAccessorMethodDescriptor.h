@@ -15,10 +15,10 @@
     unsigned long long _indexOfKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long indexOfKey; // @synthesize indexOfKey=_indexOfKey;
 @property(readonly) int keyStyle; // @synthesize keyStyle=_keyStyle;
 @property(readonly) NSString *methodName; // @synthesize methodName=_methodName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMethodName:(const char *)arg1 keyStyle:(int)arg2 indexOfKey:(unsigned long long)arg3;
 

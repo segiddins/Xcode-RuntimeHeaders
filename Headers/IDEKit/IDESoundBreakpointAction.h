@@ -27,6 +27,7 @@
 - (void)sound:(id)arg1 didFinishPlaying:(BOOL)arg2;
 - (void)performActionUsingContext:(id)arg1 andBreakpoint:(id)arg2;
 @property(copy) NSString *soundName; // @synthesize soundName=_soundName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_soundActionCommonInit;
 - (void)dealloc;
 - (id)init;

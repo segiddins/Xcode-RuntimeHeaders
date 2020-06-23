@@ -29,6 +29,7 @@
     long long _backgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) BOOL shouldIgnoreKey; // @synthesize shouldIgnoreKey=_shouldIgnoreKey;
 @property unsigned long long allowableModifiers; // @synthesize allowableModifiers=_allowableModifiers;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) IBKeyEquivalent *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (id)attributes;

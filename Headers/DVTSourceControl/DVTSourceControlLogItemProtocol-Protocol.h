@@ -9,12 +9,15 @@
 @class DVTSourceControlAuthor, DVTSourceControlRevision, NSDate, NSString;
 
 @protocol DVTSourceControlLogItemProtocol <NSObject>
-@property(readonly, nonatomic) unsigned long long revisionType;
-@property(readonly, getter=isUnversionedLogItem) BOOL unversionedLogItem;
-@property(readonly, nonatomic) BOOL isMerge;
-@property(readonly, nonatomic) NSString *message;
-@property(readonly, nonatomic) NSDate *date;
-@property(readonly, nonatomic) DVTSourceControlRevision *revision;
-@property(readonly, nonatomic) DVTSourceControlAuthor *author;
+@property(nonatomic, readonly) unsigned long long revisionType;
+- (BOOL)isUnversionedLogItem;
+@property(nonatomic, readonly) BOOL isMerge;
+@property(nonatomic, readonly) NSString *message;
+@property(nonatomic, readonly) NSDate *date;
+@property(nonatomic, readonly) DVTSourceControlRevision *revision;
+@property(nonatomic, readonly) DVTSourceControlAuthor *author;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL unversionedLogItem;
 @end
 

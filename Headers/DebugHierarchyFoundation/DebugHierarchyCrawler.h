@@ -16,10 +16,10 @@
 }
 
 + (id)crawlerWithRequestContext:(id)arg1 knownObjectsMap:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DebugHierarchyRequestExecutionContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(retain, nonatomic) NSMapTable *knownObjectsMap; // @synthesize knownObjectsMap=_knownObjectsMap;
 @property(retain) DebugHierarchyRequestActionExecutor *actionExecutor; // @synthesize actionExecutor=_actionExecutor;
-- (void).cxx_destruct;
 - (id)_entryPointClasses;
 - (void)crawlDebugHierarchyObject:(id)arg1 inGroupWithID:(id)arg2 asDirectChild:(BOOL)arg3 belowParent:(id)arg4 withParentDefinedVisibility:(long long)arg5;
 - (void)enumerateDebugHierarchyObjects:(id)arg1 inGroupWithID:(id)arg2 options:(id)arg3 asDirectChildren:(BOOL)arg4 belowParent:(id)arg5;

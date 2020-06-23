@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_units;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *units; // @synthesize units=_units;
 @property(retain) NSNumber *maximum; // @synthesize maximum=_maximum;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

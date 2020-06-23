@@ -13,8 +13,8 @@
     NSColor *_bezelColor;
 }
 
-@property(retain) NSColor *bezelColor; // @synthesize bezelColor=_bezelColor;
 - (void).cxx_destruct;
+@property(retain) NSColor *bezelColor; // @synthesize bezelColor=_bezelColor;
 - (void)drawBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end

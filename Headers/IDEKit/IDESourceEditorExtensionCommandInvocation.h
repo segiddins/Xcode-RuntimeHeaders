@@ -15,10 +15,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) IDESourceEditorExtensionCommandParameters *parameters; // @synthesize parameters=_parameters;
 @property(copy) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
-- (void).cxx_destruct;
 
 @end
 

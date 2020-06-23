@@ -14,9 +14,9 @@
     NSMutableDictionary *_localeDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *localeDictionary; // @synthesize localeDictionary=_localeDictionary;
 @property(retain) NSString *isoLocaleCode; // @synthesize isoLocaleCode=_isoLocaleCode;
-- (void).cxx_destruct;
 - (unsigned int)macOSEncoding;
 - (BOOL)hasLprojVariants;
 - (id)displayName;

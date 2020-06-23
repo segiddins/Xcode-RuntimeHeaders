@@ -16,9 +16,9 @@
     DVTFilePath *_outputFilePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) DVTFilePath *outputFilePath; // @synthesize outputFilePath=_outputFilePath;
 @property(readonly, copy) DVTFilePath *contentsFilePath; // @synthesize contentsFilePath=_contentsFilePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

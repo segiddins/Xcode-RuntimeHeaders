@@ -20,8 +20,8 @@
 }
 
 + (id)activeController;
-@property(readonly, nonatomic) NSArray *pasteboardTypes; // @synthesize pasteboardTypes=_pasteboardTypes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *pasteboardTypes; // @synthesize pasteboardTypes=_pasteboardTypes;
 - (BOOL)canRemoveAsset:(id)arg1;
 - (BOOL)canEditAsset:(id)arg1;
 - (BOOL)removeAssets:(id)arg1 error:(id *)arg2;

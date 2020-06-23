@@ -15,8 +15,8 @@
     NSURLCredential *_credential;
 }
 
-@property(readonly, nonatomic) NSURLCredential *credential; // @synthesize credential=_credential;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLCredential *credential; // @synthesize credential=_credential;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithCredential:(id)arg1;
 

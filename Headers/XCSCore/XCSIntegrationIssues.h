@@ -20,6 +20,7 @@
 }
 
 + (id)integrationIssuesWithErrors:(id)arg1 warnings:(id)arg2 analyzerWarnings:(id)arg3 testFailures:(id)arg4 triggerErrors:(id)arg5 buildServiceErrors:(id)arg6 buildServiceWarnings:(id)arg7 validationErrors:(id *)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *buildServiceWarnings; // @synthesize buildServiceWarnings=_buildServiceWarnings;
 @property(readonly, nonatomic) NSArray *buildServiceErrors; // @synthesize buildServiceErrors=_buildServiceErrors;
 @property(readonly, nonatomic) NSArray *triggerErrors; // @synthesize triggerErrors=_triggerErrors;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) XCSIntegrationIssueDiff *analyzerWarnings; // @synthesize analyzerWarnings=_analyzerWarnings;
 @property(readonly, nonatomic) XCSIntegrationIssueDiff *warnings; // @synthesize warnings=_warnings;
 @property(readonly, nonatomic) XCSIntegrationIssueDiff *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (id)issuesForContributorNames:(id)arg1;
 - (BOOL)_validateErrors:(id)arg1 warnings:(id)arg2 analyzerWarnings:(id)arg3 testFailures:(id)arg4 triggerErrors:(id)arg5 buildServiceErrors:(id)arg6 buildServiceWarnings:(id)arg7 validationErrors:(id *)arg8;
 - (id)saveRepresentation;

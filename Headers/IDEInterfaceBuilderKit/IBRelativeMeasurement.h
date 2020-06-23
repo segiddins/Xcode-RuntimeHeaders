@@ -16,10 +16,10 @@
 }
 
 + (id)emptyRelativeMeasurement;
+- (void).cxx_destruct;
 @property(readonly) struct CGRect destinationFrame; // @synthesize destinationFrame=_destinationFrame;
 @property(readonly) struct CGRect sourceFrame; // @synthesize sourceFrame=_sourceFrame;
 @property(readonly) NSArray *measurementLines; // @synthesize measurementLines=_measurementLines;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDesinationFrame:(struct CGRect)arg1 andSourceFrame:(struct CGRect)arg2 andMeasurementLines:(id)arg3;
 

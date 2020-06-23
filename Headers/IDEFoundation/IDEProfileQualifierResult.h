@@ -18,11 +18,11 @@
 
 + (id)failingResultWithTitle:(id)arg1 subtitle:(id)arg2 error:(id)arg3;
 + (id)successfulResultWithTitle:(id)arg1 subtitle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) BOOL success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)initWithSuccess:(BOOL)arg1 title:(id)arg2 subtitle:(id)arg3 error:(id)arg4;
 
 @end

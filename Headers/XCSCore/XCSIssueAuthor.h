@@ -16,10 +16,10 @@
 }
 
 + (id)issueAuthorWithIssueSuspectStrategy:(id)arg1 blueprintRepositoryID:(id)arg2 commitHash:(id)arg3 validationErrors:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *XCSCommitHash; // @synthesize XCSCommitHash=_XCSCommitHash;
 @property(readonly, nonatomic) NSString *XCSBlueprintRepositoryID; // @synthesize XCSBlueprintRepositoryID=_XCSBlueprintRepositoryID;
 @property(readonly, nonatomic) XCSIssueSuspectStrategy *strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 - (BOOL)_validateIssueSuspectStrategy:(id)arg1 blueprintRepositoryID:(id)arg2 commitHash:(id)arg3 validationErrors:(id *)arg4;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;

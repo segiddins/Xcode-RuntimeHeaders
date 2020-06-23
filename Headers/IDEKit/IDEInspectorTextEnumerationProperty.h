@@ -28,9 +28,9 @@
     NSTextField *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSPopUpButton *popupButton; // @synthesize popupButton=_popupButton;
-- (void).cxx_destruct;
 - (void)rebuildMenuContent;
 - (void)enumerateDynamicOptionGroupContent:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)refresh;

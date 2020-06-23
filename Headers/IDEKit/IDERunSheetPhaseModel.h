@@ -22,9 +22,9 @@
 + (id)keyPathsForValuesAffectingNavigableItem_subtitle;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingRunPhase;
+- (void).cxx_destruct;
 @property(retain) NSArray *subphases; // @synthesize subphases=_subphases;
 @property(retain) IDERunSheetController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly) NSString *schemeCommandTitle;

@@ -16,8 +16,8 @@
 + (id)validatorWithContext:(id)arg1;
 + (BOOL)wantsToValidateWithContext:(id)arg1;
 + (id)prefixedError:(id)arg1 isWarning:(BOOL)arg2;
-@property(readonly) XCEmbeddedBinaryValidationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly) XCEmbeddedBinaryValidationContext *context; // @synthesize context=_context;
 - (BOOL)validateExtensionActivationRuleFromInfoDictionary:(id)arg1 error:(id *)arg2;
 - (BOOL)validateBundleIdentifierPrefixWithError:(id *)arg1;
 - (BOOL)bundleIdentifierFromInfoDictionary:(id)arg1 hasPrefix:(id)arg2 error:(id *)arg3;

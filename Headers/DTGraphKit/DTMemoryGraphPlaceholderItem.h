@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     DTMemoryGraphItem *_parent;
 }
 
-- (id)parentItem;
 - (void).cxx_destruct;
+- (id)parentItem;
 - (id)name;
 - (long long)itemKind;
 - (id)initWithTruncatedItem:(id)arg1 graphIndex:(id)arg2;

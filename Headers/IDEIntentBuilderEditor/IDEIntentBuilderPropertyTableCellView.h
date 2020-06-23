@@ -13,8 +13,8 @@
     NSView *_contentView;
 }
 
-@property(retain) NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(retain) NSView *contentView; // @synthesize contentView=_contentView;
 
 @end
 

@@ -17,12 +17,12 @@
     NSString *_deviceTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceTitle; // @synthesize deviceTitle=_deviceTitle;
 @property(copy, nonatomic) NSString *methodTitle; // @synthesize methodTitle=_methodTitle;
 @property(copy, nonatomic) NSString *fileTitle; // @synthesize fileTitle=_fileTitle;
 @property(copy, nonatomic) NSString *targetTitle; // @synthesize targetTitle=_targetTitle;
 @property(copy, nonatomic) NSString *integrationID; // @synthesize integrationID=_integrationID;
-- (void).cxx_destruct;
 - (BOOL)_validateWithIntegrationID:(id)arg1 targetTitle:(id)arg2 fileTitle:(id)arg3 methodTitle:(id)arg4 deviceTitle:(id)arg5 validationErrors:(id *)arg6;
 - (id)description;
 @property(readonly, copy, nonatomic) NSArray *keyPathComponents;

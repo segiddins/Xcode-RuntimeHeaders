@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *idealSizeSubscription;
     MISSING_TYPE *frameSubscription;
     MISSING_TYPE *ownsScrolling;
-    MISSING_TYPE *preferredSizeObserver;
 }
 
 - (void).cxx_destruct;

@@ -15,9 +15,9 @@
 }
 
 + (void)extractPatternText:(id *)arg1 andExplicitLineNumber:(id *)arg2 fromString:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *explicitLineNumber; // @synthesize explicitLineNumber=_explicitLineNumber;
 @property(readonly) IDEOpenQuicklyQueryPattern *pattern; // @synthesize pattern=_pattern;
-- (void).cxx_destruct;
 - (id)initWithPattern:(id)arg1 explicitLineNumber:(id)arg2;
 - (id)initWithText:(id)arg1;
 

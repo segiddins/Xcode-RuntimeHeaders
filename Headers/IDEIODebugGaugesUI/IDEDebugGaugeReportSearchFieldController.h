@@ -14,9 +14,9 @@
     NSLayoutConstraint *_filterFieldHeight;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *filterFieldHeight; // @synthesize filterFieldHeight=_filterFieldHeight;
 @property(retain) DVTSearchField *searchField; // @synthesize searchField=_searchField;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)init;
 

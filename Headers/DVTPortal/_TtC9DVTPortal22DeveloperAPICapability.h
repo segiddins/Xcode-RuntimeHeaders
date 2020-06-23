@@ -6,18 +6,16 @@
 
 #import <DVTPortal/_TtC9DVTPortal20DeveloperAPIResource.h>
 
-@class DVTPortalProgram, MISSING_TYPE;
+@class MISSING_TYPE;
 
 __attribute__((visibility("hidden")))
 @interface _TtC9DVTPortal22DeveloperAPICapability : _TtC9DVTPortal20DeveloperAPIResource
 {
     MISSING_TYPE *rawCapabilityAttributes;
-    MISSING_TYPE *program;
 }
 
 - (void).cxx_destruct;
-- (id)profileFeatureAndReturnError:(id *)arg1;
-@property(nonatomic, readonly) DVTPortalProgram *program; // @synthesize program;
+- (id)profileFeature;
 
 @end
 

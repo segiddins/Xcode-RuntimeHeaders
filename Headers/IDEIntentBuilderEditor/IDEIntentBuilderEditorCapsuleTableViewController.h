@@ -17,11 +17,11 @@
     IDEIntentBuilderEditorImageButton *_deleteButton;
 }
 
+- (void).cxx_destruct;
 @property __weak IDEIntentBuilderEditorImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property __weak IDEIntentBuilderEditorImageButton *addButton; // @synthesize addButton=_addButton;
 @property __weak NSArrayController *contentArrayController; // @synthesize contentArrayController=_contentArrayController;
 @property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;

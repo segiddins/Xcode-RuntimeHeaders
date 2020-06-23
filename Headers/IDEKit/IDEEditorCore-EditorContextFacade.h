@@ -8,7 +8,7 @@
 
 @interface IDEEditorCore (EditorContextFacade)
 + (id)navigationLogAspect;
-+ (id)_titleForNavigationUserInterfaceItem:(id)arg1 forEventBehavior:(int)arg2 fromPrimaryEditorContext:(BOOL)arg3 isWindowFullscreen:(BOOL)arg4;
++ (id)_titleForNavigationUserInterfaceItem:(id)arg1 forEventBehavior:(unsigned long long)arg2 fromPrimaryEditorContext:(BOOL)arg3 isWindowFullscreen:(BOOL)arg4;
 - (id)editorModeViewController;
 - (void)setEditorModeViewController:(id)arg1;
 - (void)setEditorAreaSplit:(id)arg1;

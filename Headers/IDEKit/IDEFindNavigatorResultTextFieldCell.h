@@ -15,8 +15,8 @@
     NSAttributedString *_expansionText;
 }
 
-@property(copy) NSAttributedString *expansionText; // @synthesize expansionText=_expansionText;
 - (void).cxx_destruct;
+@property(copy) NSAttributedString *expansionText; // @synthesize expansionText=_expansionText;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)cellForExpansionDrawing;

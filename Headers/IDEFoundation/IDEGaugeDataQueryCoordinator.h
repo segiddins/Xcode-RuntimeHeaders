@@ -19,13 +19,13 @@
 }
 
 + (id)sharedQueryCoordinatorWithPID:(id)arg1 onDevice:(id)arg2 useProxiedDevice:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCountedSet *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) NSMutableOrderedSet *services; // @synthesize services=_services;
 @property(retain, nonatomic) NSMutableOrderedSet *queries; // @synthesize queries=_queries;
 @property(readonly) BOOL useProxiedDevice; // @synthesize useProxiedDevice=_useProxiedDevice;
 @property(retain, nonatomic) NSNumber *pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)handleResultDict:(id)arg1;
 - (void)query:(id)arg1 didAddObservedAttributes:(id)arg2 andRemoveObservedAttributes:(id)arg3;
 - (void)removeQuery:(id)arg1;

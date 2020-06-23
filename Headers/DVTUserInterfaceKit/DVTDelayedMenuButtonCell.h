@@ -31,6 +31,7 @@
     struct CGPoint _menuIndicatorInset;
 }
 
+- (void).cxx_destruct;
 @property BOOL useNSButtonImageDrawing; // @synthesize useNSButtonImageDrawing=_useNSButtonImageDrawing;
 @property struct CGPoint menuIndicatorInset; // @synthesize menuIndicatorInset=_menuIndicatorInset;
 @property(copy, nonatomic) NSImage *arrowImage; // @synthesize arrowImage=_arrowImage;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSImage *disabledImage; // @synthesize disabledImage=_disabledImage;
 @property(copy, nonatomic) NSImage *activeImage; // @synthesize activeImage=_activeImage;
 @property(nonatomic) __weak id <DVTDelayedMenuButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_imageWithSpaceForDropdownArrow:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)_updateImage;

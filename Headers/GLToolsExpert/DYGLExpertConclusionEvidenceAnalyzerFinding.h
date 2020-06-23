@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) DYAnalyzerFinding *afind; // @synthesize afind=_afind;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DYAnalyzerFinding *afind; // @synthesize afind=_afind;
 - (void)debugPrintFormatted;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

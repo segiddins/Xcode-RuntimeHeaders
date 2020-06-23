@@ -69,6 +69,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long expertStopTime; // @synthesize expertStopTime=_expertStopTime;
 @property(nonatomic) unsigned long long expertStartTime; // @synthesize expertStartTime=_expertStartTime;
 @property(retain, nonatomic) DYGLExpertFinding *punchThroughFinding; // @synthesize punchThroughFinding=_punchThroughFinding;
@@ -122,7 +123,6 @@
 @property(nonatomic) BOOL modifiedCaptureAnalysis; // @synthesize modifiedCaptureAnalysis=_modifiedCaptureAnalysis;
 @property(copy, nonatomic) NSString *investigationPhaseDescription; // @synthesize investigationPhaseDescription=_investigationPhaseDescription;
 @property(nonatomic) unsigned int totalCompletedExperiments; // @synthesize totalCompletedExperiments=_totalCompletedExperiments;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double projectedFrameRate;
 @property(readonly, nonatomic) double originalFrameRate;
 - (unsigned int)numExpertIssues;

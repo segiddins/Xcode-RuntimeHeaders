@@ -16,6 +16,7 @@
 + (void)recordAppAboutToShutdown;
 + (void)scheduleAppReportWithStartTime:(double)arg1;
 + (void)recordAppUsedGPUDebugger;
++ (void)_reportComparisonPreferences;
 + (void)_reportNavigationPreferences;
 + (void)_reportLVStatus;
 + (id)_sipStatus;

@@ -19,8 +19,8 @@
 }
 
 + (id)defaultLogSectionDomainType;
-@property(retain, nonatomic) IDEConsoleItem *nextConsoleItem; // @synthesize nextConsoleItem=_nextConsoleItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEConsoleItem *nextConsoleItem; // @synthesize nextConsoleItem=_nextConsoleItem;
 - (void)dvt_writeToSerializer:(id)arg1;
 - (id)dvt_initFromDeserializer:(id)arg1;
 - (void)setOwningLaunchSession:(id)arg1;

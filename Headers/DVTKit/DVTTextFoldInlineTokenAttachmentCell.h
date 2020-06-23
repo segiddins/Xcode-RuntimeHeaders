@@ -16,9 +16,9 @@
     DVTTextFold *_fold;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTTextFold *fold; // @synthesize fold=_fold;
 @property(retain) NSView *controlView; // @synthesize controlView=_controlView;
-- (void).cxx_destruct;
 - (struct CGRect *)rectArrayForCharacterRange:(struct _NSRange)arg1 inRect:(struct CGRect)arg2 rectCount:(unsigned long long *)arg3;
 - (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 atCharacterIndex:(unsigned long long)arg4 untilMouseUp:(BOOL)arg5;

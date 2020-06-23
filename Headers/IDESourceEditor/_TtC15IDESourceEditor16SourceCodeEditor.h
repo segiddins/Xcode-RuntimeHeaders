@@ -10,6 +10,7 @@
 #import <IDESourceEditor/DVTColorLiteralQuickEditViewControllerDelegate-Protocol.h>
 #import <IDESourceEditor/DVTFileLiteralQuickEditViewControllerDelegate-Protocol.h>
 #import <IDESourceEditor/DVTImageLiteralQuickEditViewControllerDelegate-Protocol.h>
+#import <IDESourceEditor/DVTInvalidation-Protocol.h>
 #import <IDESourceEditor/DVTPathCellDelegate-Protocol.h>
 #import <IDESourceEditor/IDEAnalyzerResultsHostingEditor-Protocol.h>
 #import <IDESourceEditor/IDEBreakpointObserver-Protocol.h>
@@ -23,12 +24,14 @@
 #import <IDESourceEditor/IDETestsInFileObserver-Protocol.h>
 #import <IDESourceEditor/NSMenuDelegate-Protocol.h>
 #import <IDESourceEditor/NSUserInterfaceValidations-Protocol.h>
+#import <IDESourceEditor/_TtP15IDESourceEditor26IDEWorkspaceEmbeddedEditor_-Protocol.h>
+#import <IDESourceEditor/_TtP15IDESourceEditor28IDESourceEditorViewContainer_-Protocol.h>
 #import <IDESourceEditor/_TtP9DVTMarkup28PlaygroundMarkupViewDelegate_-Protocol.h>
 
-@class DVTSDK, DVTSourceExpression, IDEAnalyzerResultsExplorer, IDENoteAnnotationExplorer, MISSING_TYPE, NSColor, NSString, NSView, _TtC15IDESourceEditor19IDESourceEditorView;
+@class DVTSDK, DVTSourceExpression, IDEAnalyzerResultsExplorer, IDENoteAnnotationExplorer, MISSING_TYPE, NSColor, NSScrollView, NSString, NSView, _TtC15IDESourceEditor19IDESourceEditorView;
 @protocol IDETestCollection;
 
-@interface _TtC15IDESourceEditor16SourceCodeEditor : IDEEditor <DVTPathCellDelegate, NSUserInterfaceValidations, NSMenuDelegate, DVTAnnotationManagerDelegate, IDETestsInFileObserver, IDESourceExpressionSource, IDEQuickHelpDataContextService, IDEBreakpointObserver, IDEJumpToLineDestination, IDETestingSelection, IDEAnalyzerResultsHostingEditor, IDESingleFileCommandSupportingEditor, DVTColorLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, _TtP9DVTMarkup28PlaygroundMarkupViewDelegate_, IDELibraryContentDestination, IDEEditorInternalErrorBannerControllerDelegate>
+@interface _TtC15IDESourceEditor16SourceCodeEditor : IDEEditor <DVTPathCellDelegate, NSUserInterfaceValidations, NSMenuDelegate, _TtP15IDESourceEditor26IDEWorkspaceEmbeddedEditor_, DVTInvalidation, DVTAnnotationManagerDelegate, IDETestsInFileObserver, IDESourceExpressionSource, IDEQuickHelpDataContextService, IDEBreakpointObserver, IDEJumpToLineDestination, IDETestingSelection, IDEAnalyzerResultsHostingEditor, _TtP15IDESourceEditor28IDESourceEditorViewContainer_, IDESingleFileCommandSupportingEditor, DVTColorLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, _TtP9DVTMarkup28PlaygroundMarkupViewDelegate_, IDELibraryContentDestination, IDEEditorInternalErrorBannerControllerDelegate>
 {
     MISSING_TYPE *sourceEditorView;
     MISSING_TYPE *containerView;
@@ -76,13 +79,10 @@
     MISSING_TYPE *noteAnnotationExplorer;
     MISSING_TYPE *noteAnnotationExplorerObserver;
     MISSING_TYPE *singleFileProcessingToolbarController;
-    MISSING_TYPE *workspaceObservingToken;
-    MISSING_TYPE *workspaceFinishedLoadingToken;
-    MISSING_TYPE *logRecordsToken;
-    MISSING_TYPE *currentBuildOperationObservingToken;
     MISSING_TYPE *quickHelpExpression;
     MISSING_TYPE *capturedContinueToHereDocumentLocation;
     MISSING_TYPE *capturedContinueToLineDocumentLocation;
+    MISSING_TYPE *$__lazy_storage_$_layoutExtensionLoader;
     MISSING_TYPE *sourceEditorExtensionCancellationScopeBarController;
     MISSING_TYPE *sourceEditorExtensionErrorScopeBarController;
     MISSING_TYPE *sourceKitServiceStatusObserver;
@@ -125,6 +125,7 @@
 - (struct CGRect)expressionFrameForExpression:(id)arg1;
 @property(nonatomic, readonly) DVTSourceExpression *mouseOverExpression;
 @property(nonatomic, readonly) struct CGRect currentSelectionFrame;
+@property(nonatomic, readonly) NSView *quickHelpTargetView;
 @property(nonatomic, retain) DVTSourceExpression *quickHelpExpression; // @synthesize quickHelpExpression;
 @property(nonatomic, readonly) DVTSourceExpression *contextMenuExpression;
 @property(nonatomic, readonly) NSString *selectedText;
@@ -134,6 +135,7 @@
 - (void)allTestablesChanged;
 - (void)testsChanged:(id)arg1;
 - (void)testsInFileUpdated:(id)arg1;
+- (void)enableDisableBreakpointAtCurrentLine:(id)arg1;
 - (void)toggleBreakpointAtCurrentLine:(id)arg1;
 - (void)breakpointEnablementChanged:(id)arg1;
 - (void)breakpointsActivationStateChanged;
@@ -222,6 +224,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3 sourceEditorScrollViewClass:(Class)arg4;
+@property(nonatomic, readonly) NSScrollView *mainScrollView;
 @property(nonatomic, retain) _TtC15IDESourceEditor19IDESourceEditorView *sourceEditorView; // @synthesize sourceEditorView;
 
 @end

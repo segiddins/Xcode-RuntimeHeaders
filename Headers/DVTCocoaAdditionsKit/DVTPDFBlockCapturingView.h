@@ -11,8 +11,8 @@
     CDUnknownBlockType _drawingBlock;
 }
 
-@property(copy) CDUnknownBlockType drawingBlock; // @synthesize drawingBlock=_drawingBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType drawingBlock; // @synthesize drawingBlock=_drawingBlock;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

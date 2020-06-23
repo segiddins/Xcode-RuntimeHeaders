@@ -22,8 +22,8 @@
 + (double)displayOrderPriority;
 + (BOOL)isObjectValidDestination:(id)arg1;
 + (BOOL)isObjectValidSource:(id)arg1;
-@property(retain, nonatomic) NSString *childControllerCreationSelectorName; // @synthesize childControllerCreationSelectorName=_childControllerCreationSelectorName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *childControllerCreationSelectorName; // @synthesize childControllerCreationSelectorName=_childControllerCreationSelectorName;
 - (id)displayGroupForDragFromObject:(id)arg1 toObject:(id)arg2;
 - (id)missingComponents;
 - (void)populateSegueTemplates:(id)arg1 andOutletsForCompiledDocument:(id)arg2;

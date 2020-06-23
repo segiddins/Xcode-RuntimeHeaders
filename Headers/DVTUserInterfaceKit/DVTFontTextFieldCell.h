@@ -32,13 +32,13 @@
 + (id)keyPathsForValuesAffectingPointSize;
 + (id)defaultImage;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <DVTFontTextFieldCellDelegate> fontCellDelegate; // @synthesize fontCellDelegate=_fontCellDelegate;
 @property(readonly) NSArray *placeholderFonts; // @synthesize placeholderFonts=_placeholderFonts;
 @property(retain, nonatomic) id <DVTFontTextFieldDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property BOOL previewFont; // @synthesize previewFont=_previewFont;
 @property(retain, nonatomic) id fontRepresentation; // @synthesize fontRepresentation=_fontRepresentation;
 @property(retain, nonatomic) NSFont *fontValue; // @synthesize fontValue=_fontValue;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (void)unbind:(id)arg1;
 - (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;

@@ -26,11 +26,11 @@
 
 + (void)initialize;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEActivityReport *lastCompletedUserVisiblePersistentSchemeBasedReport; // @synthesize lastCompletedUserVisiblePersistentSchemeBasedReport=_lastCompletedUserVisiblePersistentSchemeBasedReport;
 @property(copy, nonatomic) NSArray *orderedActivityReports; // @synthesize orderedActivityReports=_orderedActivityReports;
 @property(copy, nonatomic) NSSet *activityReports; // @synthesize activityReports=_activityReports;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-- (void).cxx_destruct;
 - (void)postDistributedNotificationForReport:(id)arg1;
 - (void)_postNotificationForRemovedReport:(id)arg1;
 - (void)reportDidComplete:(id)arg1;

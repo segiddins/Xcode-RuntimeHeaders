@@ -39,6 +39,8 @@
 }
 
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) NSView *secondaryView; // @synthesize secondaryView=_secondaryView;
 @property(nonatomic) double minimumYAxisViewSpacing; // @synthesize minimumYAxisViewSpacing=_minimumYAxisViewSpacing;
@@ -52,8 +54,6 @@
 @property(retain, nonatomic) SKView *skView; // @synthesize skView=_skView;
 @property(nonatomic) BOOL showHandlesForSelection; // @synthesize showHandlesForSelection=_showHandlesForSelection;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)isOpaque;
 - (void)_drawSceneRulers;
 - (void)_drawSceneGrid;
@@ -69,19 +69,19 @@
 - (void)_drawSelectionRect;
 - (void)_drawOverlayForNode:(id)arg1;
 - (void)_drawNodeOverlayImages;
-- (void)_drawAnchorPointHandleForItem:(struct NSObject *)arg1 atIndex:(unsigned long long)arg2;
-- (void)_drawRotationHandleForItem:(struct NSObject *)arg1 atIndex:(unsigned long long)arg2;
+- (void)_drawAnchorPointHandleForItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)_drawRotationHandleForItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_drawNavigableMeshes;
-- (void)_drawHandleAt:(struct CGPoint)arg1 forItem:(struct NSObject *)arg2;
-- (void)_drawScaleHandlesForItem:(struct NSObject *)arg1 atIndex:(unsigned long long)arg2;
-- (void)_drawBoundsBoxForItem:(struct NSObject *)arg1 atIndex:(unsigned long long)arg2;
+- (void)_drawHandleAt:(struct CGPoint)arg1 forItem:(id)arg2;
+- (void)_drawScaleHandlesForItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)_drawBoundsBoxForItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_drawMultiSelectionBounds;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (void)detachSecondaryView;
 - (void)attachSecondaryView:(id)arg1;
-- (const struct SKManipulationHandleSet *)handleSetForItem:(struct NSObject *)arg1;
+- (const struct SKManipulationHandleSet *)handleSetForItem:(id)arg1;
 - (struct SKSceneOverlayHandleInfo)handleAtPoint:(struct CGPoint)arg1;
 - (void)_generateManipulationHandles;
 - (void)_generateObjectManipulationHandles;

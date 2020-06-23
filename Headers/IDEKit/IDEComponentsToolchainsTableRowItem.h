@@ -14,8 +14,8 @@
     DVTToolchainOverrideOption *_option;
 }
 
-@property(readonly) DVTToolchainOverrideOption *option; // @synthesize option=_option;
 - (void).cxx_destruct;
+@property(readonly) DVTToolchainOverrideOption *option; // @synthesize option=_option;
 - (id)contextImage;
 @property(readonly) NSString *displaySize;
 @property(readonly) NSString *origin;

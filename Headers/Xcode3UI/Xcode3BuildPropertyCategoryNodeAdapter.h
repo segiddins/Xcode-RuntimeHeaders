@@ -16,9 +16,9 @@
     XCPropertyDomainSpecification *_propertyDomain;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCPropertyDomainSpecification *propertyDomain; // @synthesize propertyDomain=_propertyDomain;
 @property(readonly) Xcode3BuildSettingsEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (BOOL)shouldSortChildrenOfNode:(id)arg1;
 - (id)dataNodePersistentObjectComponent:(id)arg1;
 - (long long)compareDataNode:(id)arg1 withDataNode:(id)arg2;

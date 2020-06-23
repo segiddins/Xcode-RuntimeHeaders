@@ -16,10 +16,10 @@
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *textFieldHeight; // @synthesize textFieldHeight=_textFieldHeight;
 @property NSButton *button; // @synthesize button=_button;
 @property NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 
 @end

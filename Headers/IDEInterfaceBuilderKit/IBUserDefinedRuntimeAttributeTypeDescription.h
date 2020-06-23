@@ -17,11 +17,11 @@
 }
 
 + (id)customAttributeTypeWithIdentifier:(id)arg1 name:(id)arg2 defaultValue:(id)arg3 isLocalized:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic, getter=isLocalized) BOOL localized; // @synthesize localized=_localized;
 @property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 defaultValue:(id)arg3 isLocalized:(BOOL)arg4;
 
 @end

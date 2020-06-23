@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTraceDependencySubEditor *_delegate;
 }
 
-@property __weak GPUTraceDependencySubEditor *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak GPUTraceDependencySubEditor *delegate; // @synthesize delegate=_delegate;
 - (void)_didEndMagnifying;
 - (void)_didMagnify;
 - (void)_willBeginMagnifying;

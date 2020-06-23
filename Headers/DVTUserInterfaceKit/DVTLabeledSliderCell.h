@@ -17,12 +17,12 @@
     NSString *_maxValueLabelOverride;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *maxValueLabelOverride; // @synthesize maxValueLabelOverride=_maxValueLabelOverride;
 @property(copy, nonatomic) NSString *minValueLabelOverride; // @synthesize minValueLabelOverride=_minValueLabelOverride;
 @property(retain, nonatomic) NSColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) NSFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(retain, nonatomic) NSNumberFormatter *labelFormatter; // @synthesize labelFormatter=_labelFormatter;
-- (void).cxx_destruct;
 - (void)drawLabels;
 @property(readonly) struct CGSize lastTickLabelSize;
 @property(readonly) struct CGSize firstTickLabelSize;

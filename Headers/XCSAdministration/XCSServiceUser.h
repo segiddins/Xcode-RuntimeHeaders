@@ -19,13 +19,13 @@
     id <DirectoryService> _directoryService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DirectoryService> directoryService; // @synthesize directoryService=_directoryService;
 @property(readonly) NSString *primaryGroupName; // @synthesize primaryGroupName=_primaryGroupName;
 @property(readonly) NSString *homeDirectoryPath; // @synthesize homeDirectoryPath=_homeDirectoryPath;
 @property(readonly) NSData *generatedPassword; // @synthesize generatedPassword=_generatedPassword;
 @property(readonly) NSData *providedPassword; // @synthesize providedPassword=_providedPassword;
 @property(readonly) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (BOOL)deleteWithError:(id *)arg1;
 - (id)generatePasswordWithError:(id *)arg1;
 - (void)removeFromHiddenUsersList;

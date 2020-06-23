@@ -16,10 +16,10 @@
 }
 
 + (id)runTaskAtPathReturningOutput:(id)arg1 useBuiltTools:(BOOL)arg2 arguments:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalCARPath; // @synthesize originalCARPath=_originalCARPath;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSMutableDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
-- (void).cxx_destruct;
 - (BOOL)serializeInfoPlistWithError:(id *)arg1;
 - (BOOL)createOnDiskRepresentationWithError:(id *)arg1;
 - (BOOL)removeOnDiskRepresentationWithError:(id *)arg1;

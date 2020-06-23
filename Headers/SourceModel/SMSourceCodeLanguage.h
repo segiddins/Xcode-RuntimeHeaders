@@ -51,6 +51,7 @@
 + (id)_sourceCodeLanguageForMetadata:(id)arg1;
 + (id)registerSourceCodeLanguageFromMetadataPlist:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *standardTypes; // @synthesize standardTypes=_standardTypes;
 @property(readonly, copy) NSArray *blockDocumentationCircumfixes; // @synthesize blockDocumentationCircumfixes=_blockDocumentationCircumfixes;
 @property(readonly, copy) NSArray *lineDocumentationPrefixes; // @synthesize lineDocumentationPrefixes=_lineDocumentationPrefixes;
@@ -70,7 +71,6 @@
 @property(readonly, copy) NSString *documentationAbbreviation; // @synthesize documentationAbbreviation=_documentationAbbreviation;
 @property(readonly, copy) NSString *languageName; // @synthesize languageName=_languageName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)conformsToLanguage:(id)arg1;
 @property(readonly, copy) NSArray *conformedToLanguages;
 @property(readonly) SMLanguageSpecification *languageSpecification;

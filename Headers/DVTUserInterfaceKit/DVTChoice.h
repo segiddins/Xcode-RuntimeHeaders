@@ -20,6 +20,7 @@
     NSString *_buttonAccessibilityIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *buttonAccessibilityIdentifier; // @synthesize buttonAccessibilityIdentifier=_buttonAccessibilityIdentifier;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
@@ -28,7 +29,6 @@
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly, copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 toolTip:(id)arg3 image:(id)arg4 alternateImage:(id)arg5;
 - (id)initWithTitle:(id)arg1 toolTip:(id)arg2 image:(id)arg3 representedObject:(id)arg4;

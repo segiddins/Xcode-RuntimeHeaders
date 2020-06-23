@@ -34,6 +34,7 @@
 
 + (id)overridesWithConfiguration:(id)arg1 profileSupport:(id)arg2 provisioningStyle:(id)arg3 provisioningPurpose:(id)arg4 team:(id)arg5 platform:(id)arg6 sdk:(id)arg7 sdkVariant:(id)arg8 profileSpecifier:(id)arg9 certificateIdentifier:(id)arg10 bundleIdentifier:(id)arg11 entitlementsFile:(id)arg12 entitlements:(id)arg13 baseEntitlements:(id)arg14 entitlementsExpansion:(id)arg15 entitlementsDestination:(id)arg16 allowSigningWithoutTeamSelection:(id)arg17 signingRequiresTeam:(id)arg18 appIDFeatures:(id)arg19;
 + (id)overridesWithConfiguration:(id)arg1 profileSupport:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *signingRequiresTeam; // @synthesize signingRequiresTeam=_signingRequiresTeam;
 @property(readonly, nonatomic) NSNumber *allowSigningWithoutTeamSelection; // @synthesize allowSigningWithoutTeamSelection=_allowSigningWithoutTeamSelection;
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) NSNumber *provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(readonly, nonatomic) NSNumber *profileSupport; // @synthesize profileSupport=_profileSupport;
 @property(readonly, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *generations; // @synthesize generations=_generations;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(readonly) NSString *marketingVersion; // @synthesize marketingVersion=_marketingVersion;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

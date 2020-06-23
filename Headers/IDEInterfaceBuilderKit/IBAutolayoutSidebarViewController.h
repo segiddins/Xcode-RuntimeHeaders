@@ -42,6 +42,7 @@
 }
 
 + (void)testStatusForItem:(id)arg1 document:(id)arg2 during:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain) NSTextField *helpTextLabel; // @synthesize helpTextLabel=_helpTextLabel;
 @property(retain) NSPopover *helpTextPopover; // @synthesize helpTextPopover=_helpTextPopover;
 @property(retain, nonatomic) IBAutolayoutStatus *status; // @synthesize status=_status;
@@ -51,7 +52,6 @@
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(retain, nonatomic) NSObject *topLevelObject; // @synthesize topLevelObject=_topLevelObject;
 @property(nonatomic) __weak IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
-- (void).cxx_destruct;
 @property(readonly) NSString *stateSavingIdentifier;
 - (void)willResignAsSelectionProviderForDocumentEditor:(id)arg1;
 - (void)didBecomeSelectionProviderForDocumentEditor:(id)arg1;

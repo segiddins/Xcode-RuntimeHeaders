@@ -39,11 +39,11 @@
 + (id)resolvedBuildableForLegacyIdentifier:(id)arg1 inContainer:(id)arg2;
 + (id)keyPathsForValuesAffectingBlueprintName;
 + (id)keyPathsForValuesAffectingBuildableName;
+- (void).cxx_destruct;
 @property(readonly) BOOL willBeArchived; // @synthesize willBeArchived=_willBeArchived;
 @property(copy) NSString *cachedBuildableName; // @synthesize cachedBuildableName=_cachedBuildableName;
 @property(retain, nonatomic) IDEContainer<IDEBlueprintProvider> *referencedContainer; // @synthesize referencedContainer=_referencedContainer;
 @property(retain, nonatomic) IDEScheme *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setReferencedContainerFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;

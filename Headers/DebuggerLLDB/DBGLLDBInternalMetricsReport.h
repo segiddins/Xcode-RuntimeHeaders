@@ -13,8 +13,8 @@
     NSDictionary *_statisticsInJSON;
 }
 
-@property(retain) NSDictionary *statisticsInJSON; // @synthesize statisticsInJSON=_statisticsInJSON;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *statisticsInJSON; // @synthesize statisticsInJSON=_statisticsInJSON;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
 

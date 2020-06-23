@@ -19,11 +19,11 @@
     id <IBAutolayoutIssueTableCellViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IBAutolayoutIssueTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id memberInDocument; // @synthesize memberInDocument=_memberInDocument;
 @property(copy, nonatomic) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 @property(readonly, nonatomic) NSSet *secondaryTextFields; // @synthesize secondaryTextFields=_secondaryTextFields;
 - (void)populateSecondaryTextFields:(id)arg1;

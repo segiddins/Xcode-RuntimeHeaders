@@ -18,10 +18,10 @@
     id <DBGHierarchyNavigationProxiedObject> _proxiedObject;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <DBGHierarchyNavigationProxiedObject> proxiedObject; // @synthesize proxiedObject=_proxiedObject;
 @property(retain) DVTObservingToken *proxiedObjectInvalidationObservingToken; // @synthesize proxiedObjectInvalidationObservingToken=_proxiedObjectInvalidationObservingToken;
 @property __weak DBGHierarchyNavigationCoordinator *hierarchyNavigationCoordinator; // @synthesize hierarchyNavigationCoordinator=_hierarchyNavigationCoordinator;
-- (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;

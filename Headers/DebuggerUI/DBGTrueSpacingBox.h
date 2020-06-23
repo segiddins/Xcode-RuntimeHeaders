@@ -17,9 +17,9 @@
     DBGHostNode *_host;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property __weak DBGHostNode *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (int)_currentContentMode;
 - (double)_borderNodeOpacity;
 - (double)_boxNodeOpacity;

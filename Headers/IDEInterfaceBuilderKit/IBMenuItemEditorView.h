@@ -17,11 +17,11 @@
 }
 
 + (void)layoutItemViewsCollectively:(id)arg1 minimumFixedDimensionMagnitude:(double)arg2;
+- (void).cxx_destruct;
 @property BOOL drawsKeyEquivalentRect; // @synthesize drawsKeyEquivalentRect=_drawsKeyEquivalentRect;
 @property(getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(getter=isMainMenuOrDescendantOfMainMenu) BOOL mainMenuOrDescendantOfMainMenu; // @synthesize mainMenuOrDescendantOfMainMenu=_mainMenuOrDescendantOfMainMenu;
 @property(readonly) IBEditedMenuItem *menuItem; // @synthesize menuItem=_menuItem;
-- (void).cxx_destruct;
 - (struct CGRect)editingTitleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)stateImageRectForBounds:(struct CGRect)arg1;

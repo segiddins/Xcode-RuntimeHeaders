@@ -17,9 +17,9 @@
 }
 
 + (Class)ibViewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSplitView *splitView; // @synthesize splitView=_splitView;
 @property BOOL vertical; // @synthesize vertical=_vertical;
-- (void).cxx_destruct;
 - (BOOL)ibCanBeValidTriggerSegueSource;
 @property(readonly) BOOL viewIsVertical;
 - (void)encodeWithCoder:(id)arg1;

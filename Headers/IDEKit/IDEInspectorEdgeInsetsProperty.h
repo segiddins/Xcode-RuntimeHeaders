@@ -32,6 +32,7 @@
     NSButton *_hasValueCheckBox;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *hasValueCheckBox; // @synthesize hasValueCheckBox=_hasValueCheckBox;
 @property(retain, nonatomic) NSTextField *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(retain, nonatomic) NSTextField *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSStepper *topStepper; // @synthesize topStepper=_topStepper;
 @property(retain, nonatomic) NSTextField *leftTextField; // @synthesize leftTextField=_leftTextField;
 @property(retain, nonatomic) NSTextField *topTextField; // @synthesize topTextField=_topTextField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)refresh;
 - (void)toggleNilValue:(id)arg1;

@@ -41,6 +41,7 @@
     DVTFilePathField *_derivedDataPathLabel;
     NSTextField *_sheetSharedTitleLabel;
     NSTextField *_sheetTitleLabel;
+    BOOL _showSharedSchemesAutomatically;
     int _sharedBuildSystemType;
     int _buildSystemType;
 }
@@ -50,6 +51,8 @@
 + (id)keyPathsForValuesAffectingDerivedDataLocationChoice;
 + (void)runSheetForWindow:(id)arg1;
 + (void)beginSheetForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
+@property BOOL showSharedSchemesAutomatically; // @synthesize showSharedSchemesAutomatically=_showSharedSchemesAutomatically;
 @property BOOL previewsEnabled; // @synthesize previewsEnabled=_previewsEnabled;
 @property int buildSystemType; // @synthesize buildSystemType=_buildSystemType;
 @property int sharedBuildSystemType; // @synthesize sharedBuildSystemType=_sharedBuildSystemType;
@@ -63,7 +66,6 @@
 @property(copy) NSString *derivedDataCustomLocation; // @synthesize derivedDataCustomLocation=_derivedDataCustomLocation;
 @property int derivedDataLocationStyle; // @synthesize derivedDataLocationStyle=_derivedDataLocationStyle;
 @property(retain) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (id)currentDerivedDataFolderPath;
 - (void)buildFolderLocationSheetDidEndWithBuildLocationStyle:(int)arg1 sharedBuildFolderName:(id)arg2 customBuildLocationType:(int)arg3 customBuildProductsPath:(id)arg4 customBuildIntermediatesPath:(id)arg5;
 - (void)showBuildFolderLocationSheet:(id)arg1;

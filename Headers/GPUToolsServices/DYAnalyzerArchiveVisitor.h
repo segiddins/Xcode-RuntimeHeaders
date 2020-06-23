@@ -16,8 +16,8 @@
     int _captureBlockMode;
 }
 
-@property(readonly, retain, nonatomic) DYAnalyzerEngine *engine; // @synthesize engine=_engine;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DYAnalyzerEngine *engine; // @synthesize engine=_engine;
 - (void)setUnsorted:(BOOL)arg1;
 - (void)abort;
 - (void)visitFunctionStreamFile:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTracePerformanceSubEditorGotoButton *_gotoButton;
 }
 
-@property(nonatomic) __weak GPUTracePerformanceSubEditorGotoButton *gotoButton; // @synthesize gotoButton=_gotoButton;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUTracePerformanceSubEditorGotoButton *gotoButton; // @synthesize gotoButton=_gotoButton;
 
 @end
 

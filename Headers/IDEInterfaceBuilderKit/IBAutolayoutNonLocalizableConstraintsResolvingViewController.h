@@ -35,6 +35,7 @@
     long long _resolutionOptionNumber;
 }
 
+- (void).cxx_destruct;
 @property BOOL viewCloseToCenter; // @synthesize viewCloseToCenter=_viewCloseToCenter;
 @property long long resolutionOptionNumber; // @synthesize resolutionOptionNumber=_resolutionOptionNumber;
 @property __weak NSTextField *imagePositionFixDescription; // @synthesize imagePositionFixDescription=_imagePositionFixDescription;
@@ -57,7 +58,6 @@
 @property long long localizationWarningType; // @synthesize localizationWarningType=_localizationWarningType;
 @property long long constraintStatus; // @synthesize constraintStatus=_constraintStatus;
 @property(readonly, nonatomic) NSArray *proposedChanges; // @synthesize proposedChanges=_proposedChanges;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithView:(id)arg1 document:(id)arg2 warningType:(long long)arg3;
 - (id)initWithView:(id)arg1 document:(id)arg2;

@@ -19,11 +19,11 @@
     unsigned long long _vertexId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long vertexId; // @synthesize vertexId=_vertexId;
 @property(readonly, nonatomic) NSArray *vertexIds; // @synthesize vertexIds=_vertexIds;
 @property(readonly, nonatomic) unsigned long long amplificationId; // @synthesize amplificationId=_amplificationId;
 @property(readonly, nonatomic) unsigned long long instanceId; // @synthesize instanceId=_instanceId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithInstanceId:(unsigned long long)arg1 amplificationId:(unsigned long long)arg2 vertexIds:(id)arg3 selectedVertexId:(unsigned long long)arg4;
 

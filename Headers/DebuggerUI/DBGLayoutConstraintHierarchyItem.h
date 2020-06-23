@@ -8,15 +8,16 @@
 
 #import <DebuggerUI/DBGLayoutConstraintInspectable-Protocol.h>
 
-@class DBGLayoutConstraint, DBGViewSurface, NSString;
+@class DBGLayoutConstraint, NSString;
+@protocol DBGLayoutConstraintItem;
 
 @interface DBGLayoutConstraintHierarchyItem : DBGViewObjectHierarchyItem <DBGLayoutConstraintInspectable>
 {
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_additionalFilterMatchingText;
-@property(readonly) DBGViewSurface *secondItem;
-@property(readonly) DBGViewSurface *firstItem;
+@property(readonly) id <DBGLayoutConstraintItem> secondItem;
+@property(readonly) id <DBGLayoutConstraintItem> firstItem;
 @property(readonly, copy) NSString *constraintIdentifier;
 - (id)navigableItem_additionalFilterMatchingText;
 - (id)navigableItem_image;

@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingTopNavigableModel;
 + (id)keyPathsForValuesAffectingProcess;
 + (id)_mainQueueName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DBGMemoryDataProcessWrapper *memoryDataGroup; // @synthesize memoryDataGroup=_memoryDataGroup;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic) __weak id <IDEDebuggingAdditionUIController> memoryDebuggingUIController; // @synthesize memoryDebuggingUIController=_memoryDebuggingUIController;
@@ -46,7 +47,6 @@
 @property(nonatomic) BOOL showsCompressedStackFrames; // @synthesize showsCompressedStackFrames=_showsCompressedStackFrames;
 @property(nonatomic) int navigatorContentMode; // @synthesize navigatorContentMode=_navigatorContentMode;
 @property BOOL usedInDebugNavigator; // @synthesize usedInDebugNavigator=_usedInDebugNavigator;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)invalidateChildItems;
 - (void)recursivelyInvalidateChildItems;

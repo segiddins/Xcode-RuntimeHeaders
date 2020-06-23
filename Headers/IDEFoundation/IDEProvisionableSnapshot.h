@@ -18,11 +18,11 @@
 
 + (id)snapshotFromProvisionable:(id)arg1 buildParameters:(id)arg2 overrides:(id)arg3;
 + (id)snapshotFromProvisionable:(id)arg1 overrides:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisionableOverrides *overrides; // @synthesize overrides=_overrides;
 @property(readonly, copy, nonatomic) NSDictionary *configurationSnapshots; // @synthesize configurationSnapshots=_configurationSnapshots;
 @property(readonly, nonatomic) NSOrderedSet *configurations; // @synthesize configurations=_configurations;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)supportsIOSMacForConfigurationNamed:(id)arg1;
 - (BOOL)signingRequiresTeamForConfigurationNamed:(id)arg1;
 - (BOOL)allowSigningWithoutTeamSelectionForConfigurationNamed:(id)arg1;

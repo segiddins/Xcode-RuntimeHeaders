@@ -14,7 +14,7 @@
     NSString *integrationID;
     NSString *revisionID;
     NSDate *date;
-    struct NSArray *testedDevices;
+    NSArray *testedDevices;
     XCSCodeCoverageIntegration *coverage;
     NSArray *_testedDevicesIDs;
     NSMutableArray *_testResults;
@@ -23,7 +23,8 @@
     NSMutableArray *_perfMetricKeyPaths;
 }
 
-+ (id)integrationResultWithID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(struct NSArray *)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
++ (id)integrationResultWithID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(id)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *perfMetricKeyPaths; // @synthesize perfMetricKeyPaths=_perfMetricKeyPaths;
 @property(retain, nonatomic) NSMutableSet *perfMetricNames; // @synthesize perfMetricNames=_perfMetricNames;
 @property(retain, nonatomic) NSMutableDictionary *testHierarchy; // @synthesize testHierarchy=_testHierarchy;
@@ -35,19 +36,19 @@
 @property(copy, nonatomic) NSString *revisionID; // @synthesize revisionID;
 @property(copy, nonatomic) NSString *integrationID; // @synthesize integrationID;
 @property(nonatomic) __weak XCSService *service; // @synthesize service;
-- (void).cxx_destruct;
-- (BOOL)_validateWithUUID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(struct NSArray *)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
+- (BOOL)_validateWithUUID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(id)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
 - (id)saveRepresentationHumanReadable:(BOOL)arg1;
 - (id)saveRepresentation;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (long long)testedDeviceCount;
 - (BOOL)isTestedDeviceValid:(id)arg1;
-- (id)initWithID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(struct NSArray *)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
+- (id)initWithID:(id)arg1 revisionID:(id)arg2 date:(id)arg3 testedDevices:(id)arg4 coverage:(id)arg5 service:(id)arg6 validationErrors:(id *)arg7;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
-- (void)importTestResultsCompleteIntegrationWithID:(id)arg1 testedDevices:(struct NSArray *)arg2 testHierarchy:(id)arg3 perfMetricNames:(id)arg4 perfMetricKeyPaths:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)importTestResultsCompleteIntegrationWithID:(id)arg1 testedDevices:(id)arg2 testHierarchy:(id)arg3 perfMetricNames:(id)arg4 perfMetricKeyPaths:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)finalizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addTestResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)testResultWithDevice:(id)arg1 keyPath:(id)arg2 date:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 duration:(double)arg6 passed:(BOOL)arg7 failed:(BOOL)arg8 skipped:(BOOL)arg9 testPlanRun:(id)arg10 failureSummaries:(id)arg11 testableBlueprintPath:(id)arg12 testableBlueprintName:(id)arg13 validationErrors:(id *)arg14;
 - (id)testResultWithDevice:(id)arg1 keyPath:(id)arg2 date:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 duration:(double)arg6 passed:(BOOL)arg7 testPlanRun:(id)arg8 failureSummaries:(id)arg9 testableBlueprintPath:(id)arg10 testableBlueprintName:(id)arg11 validationErrors:(id *)arg12;
 
 @end

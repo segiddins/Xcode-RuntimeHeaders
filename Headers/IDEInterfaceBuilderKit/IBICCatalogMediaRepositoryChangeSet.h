@@ -14,8 +14,8 @@
     NSMutableSet *_removedResources;
 }
 
-@property(readonly) NSSet *addedOrUpdatedResources; // @synthesize addedOrUpdatedResources=_addedOrUpdatedResources;
 - (void).cxx_destruct;
+@property(readonly) NSSet *addedOrUpdatedResources; // @synthesize addedOrUpdatedResources=_addedOrUpdatedResources;
 - (BOOL)hasAnyChanges;
 - (void)noteRemovedResource:(id)arg1;
 - (void)noteAddedOrUpdatedResource:(id)arg1;

@@ -15,10 +15,10 @@
     DVTDeviceType *_deviceType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *derivedDeviceTypes; // @synthesize derivedDeviceTypes=_derivedDeviceTypes;
 @property(readonly) DVTDeviceType *deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly) __weak _DVTDeviceTypeTreeNode *parentNode; // @synthesize parentNode=_parentNode;
-- (void).cxx_destruct;
 - (void)setDerivedDeviceTypes:(id)arg1;
 - (id)initWithParentNode:(id)arg1 deviceType:(id)arg2;
 

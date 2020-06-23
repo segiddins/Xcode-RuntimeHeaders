@@ -15,10 +15,10 @@
     NSString *_displayString;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly) Class predicateClass; // @synthesize predicateClass=_predicateClass;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

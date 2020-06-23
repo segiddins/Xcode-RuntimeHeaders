@@ -76,6 +76,7 @@
 + (id)defaultViewNibName;
 + (id)viewDebuggerEditorsForTabController:(id)arg1;
 + (id)openViewDebuggerDocumentLocation:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL reachedStage2; // @synthesize reachedStage2=_reachedStage2;
 @property long long selectedZoom; // @synthesize selectedZoom=_selectedZoom;
 @property __weak NSProgressIndicator *percentLoadedIndicator; // @synthesize percentLoadedIndicator=_percentLoadedIndicator;
@@ -109,7 +110,6 @@
 @property(retain) DVTObservingToken *toolbarHiddenObservationToken; // @synthesize toolbarHiddenObservationToken=_toolbarHiddenObservationToken;
 @property(getter=isToolBarVisible) BOOL toolBarVisible; // @synthesize toolBarVisible=_toolBarVisible;
 @property(retain) NSSet *selectedConstraintSet; // @synthesize selectedConstraintSet=_selectedConstraintSet;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)primitiveInvalidate;
@@ -166,9 +166,6 @@
 - (id)_findToggleControllerMenuItemInMenu:(id)arg1;
 - (long long)_backgroundColorMenuItemInsertionIndexForMenu:(id)arg1;
 - (void)_setupBackgroundColorSubmenuInMenu:(id)arg1;
-- (id)_newLayerDebuggingMenuItem;
-- (long long)_layerDebuggingMenuItemInsertionIndexForMenu:(id)arg1;
-- (void)_setupLayerDebuggingOptionInMenu:(id)arg1;
 @property(retain) NSArray *objectsToReveal; // @synthesize objectsToReveal=_objectsToReveal;
 @property(retain) DBGViewWindow *selectedWindow;
 @property(retain, nonatomic) NSArray *currentSelectedItems;

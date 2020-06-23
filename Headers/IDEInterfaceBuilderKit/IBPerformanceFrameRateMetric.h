@@ -11,8 +11,10 @@
     long long _state;
     double _beginMediaTime;
     double _framesPerSecond;
+    double _duration;
 }
 
+- (double)duration;
 - (double)framesPerSecond;
 - (void)endMeasuringWithFrameCount:(long long)arg1;
 - (void)startMeasuring;

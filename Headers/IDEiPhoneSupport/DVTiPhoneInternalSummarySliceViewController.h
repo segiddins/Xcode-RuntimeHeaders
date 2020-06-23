@@ -18,8 +18,8 @@
     DVTTableView *_table;
 }
 
-@property(retain) DVTTableView *table; // @synthesize table=_table;
 - (void).cxx_destruct;
+@property(retain) DVTTableView *table; // @synthesize table=_table;
 - (void)sshDeviceAsRoot:(id)arg1;
 - (void)sshDeviceAsMobile:(id)arg1;
 - (void)connectUsingSSHAsUser:(id)arg1;

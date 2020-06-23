@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requestWithIdentifier:(id)arg1 path:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *assetPath; // @synthesize assetPath=_assetPath;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) DTXMessage *message;

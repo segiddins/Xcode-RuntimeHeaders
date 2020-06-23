@@ -14,9 +14,9 @@
     NSString *_url;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *url; // @synthesize url=_url;
 @property struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithRange:(struct _NSRange)arg1 url:(id)arg2;

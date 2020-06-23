@@ -14,9 +14,9 @@
     long long _numberOfReferences;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long numberOfReferences; // @synthesize numberOfReferences=_numberOfReferences;
 @property(readonly) IBICCatalogSynchronizer *catalogSynchronizer; // @synthesize catalogSynchronizer=_catalogSynchronizer;
-- (void).cxx_destruct;
 - (void)removeReference;
 - (id)addReference;
 - (id)initWithImageCatalogSynchronizer:(id)arg1;

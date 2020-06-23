@@ -15,9 +15,9 @@
 }
 
 + (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 filePath:(id)arg2 representsDynamicContent:(BOOL)arg3 query:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) BOOL representsDynamicContent; // @synthesize representsDynamicContent=_representsDynamicContent;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (id)alternateTitleGivenParentResult:(id)arg1;
 - (id)valueStandingInForForAlternateIdentity;
 - (unsigned long long)hashForAlternateIdentity;

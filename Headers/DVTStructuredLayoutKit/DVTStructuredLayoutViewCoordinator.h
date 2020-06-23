@@ -18,6 +18,7 @@
 + (void)layoutViewFromViewWillDrawIfNeeded:(id)arg1 continuingViewWillDrawRecurisionWith:(CDUnknownBlockType)arg2;
 + (void)layoutViewImmediately:(id)arg1;
 + (id)oneShotCoordinator;
++ (BOOL)shouldRecurseSubviewsForLayoutView:(id)arg1;
 + (void)sendPositionSubviewsAndSizeSelfToView:(id)arg1;
 + (void)sendConfigureSubviewsToView:(id)arg1;
 + (BOOL)isLayingoutWindow:(id)arg1;

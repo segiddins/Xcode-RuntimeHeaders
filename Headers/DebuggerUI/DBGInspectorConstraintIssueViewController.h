@@ -15,10 +15,10 @@
     NSImageView *_issueIconImageView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSImageView *issueIconImageView; // @synthesize issueIconImageView=_issueIconImageView;
 @property __weak NSTextField *issueTextField; // @synthesize issueTextField=_issueTextField;
 @property(readonly) DBGViewDebuggerIssue *issue; // @synthesize issue=_issue;
-- (void).cxx_destruct;
 - (void)updateTextAndImageFields;
 - (void)loadView;
 - (id)initWithIssue:(id)arg1;

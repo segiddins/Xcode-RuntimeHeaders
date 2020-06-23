@@ -18,8 +18,8 @@
     NSPopUpButton *_pullDown;
 }
 
-@property(retain, nonatomic) NSPopUpButton *pullDown; // @synthesize pullDown=_pullDown;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopUpButton *pullDown; // @synthesize pullDown=_pullDown;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (id)staticMenuItems;

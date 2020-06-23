@@ -18,9 +18,9 @@
     DVTLineGraphLayerStyle *_lineGraphLayerStyle;
 }
 
+- (void).cxx_destruct;
 @property BOOL avoidDrawingPointsAtSameX; // @synthesize avoidDrawingPointsAtSameX=_avoidDrawingPointsAtSameX;
 @property(readonly) DVTLineGraphLayerStyle *lineGraphLayerStyle; // @synthesize lineGraphLayerStyle=_lineGraphLayerStyle;
-- (void).cxx_destruct;
 - (void)_updateSelectionDetailsUsingSelectedPoint:(struct CGPoint)arg1;
 - (void)clearSelection;
 - (BOOL)selectNext;

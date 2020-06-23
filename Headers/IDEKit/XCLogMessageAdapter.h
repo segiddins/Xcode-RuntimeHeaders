@@ -20,6 +20,7 @@
 - (id)subitemsForDataNode:(id)arg1;
 - (id)textColorForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionAtMessageLevelForDataNode:(id)arg1;
+- (BOOL)textExpandedByDefaultForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionForDataNode:(id)arg1;
 - (BOOL)expandableTitleForDataNode:(id)arg1;
 - (id)titleForDataNode:(id)arg1;

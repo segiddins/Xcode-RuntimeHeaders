@@ -18,13 +18,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSFileManager *fm; // @synthesize fm=_fm;
 @property(retain) NSMutableArray *downgradedBundleIDs; // @synthesize downgradedBundleIDs=_downgradedBundleIDs;
 @property(retain) NSArray *packagesToInstall; // @synthesize packagesToInstall=_packagesToInstall;
-- (void).cxx_destruct;
 - (long long)_compareVersionComponents:(id)arg1 toComponents:(id)arg2;
-- (id)_getComparableComponents:(id)arg1;
-- (BOOL)_isPackageVersion:(id)arg1 greaterThanVersion:(id)arg2;
 - (BOOL)_shouldUpgradePackage:(id)arg1;
 - (id)_interestingFileURLsForID:(id)arg1;
 - (BOOL)_allInterestingFilesExistForID:(id)arg1;
@@ -34,7 +32,7 @@
 - (void)installPackagesWithAuthRef:(const struct AuthorizationOpaqueRef *)arg1;
 - (id)_packageURLsToInstall;
 - (id)_allPackagesInPackagesFolder;
-- (BOOL)_needToInstallMobileDevicePackage:(id)arg1;
+- (BOOL)_needToInstallPackage:(id)arg1;
 - (BOOL)isOnDiskVersion:(id)arg1 olderThanPackageVersion:(id)arg2;
 - (void)_createCacheFile:(id)arg1;
 - (id)_coreSimulatorCacheFileURL;

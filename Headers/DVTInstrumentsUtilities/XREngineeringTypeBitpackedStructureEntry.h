@@ -14,9 +14,9 @@
     struct _NSRange _bitRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange bitRange; // @synthesize bitRange=_bitRange;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

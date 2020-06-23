@@ -13,6 +13,7 @@
     MISSING_TYPE *originalMarkup;
     MISSING_TYPE *title;
     MISSING_TYPE *layout;
+    MISSING_TYPE *mediaPosition;
     MISSING_TYPE *eyebrow;
     MISSING_TYPE *content;
     MISSING_TYPE *media;

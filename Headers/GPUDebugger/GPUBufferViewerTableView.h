@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GPUBufferViewerMarkerTableColumnView *_markerColumnView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GPUBufferViewerMarkerTableColumnView *markerColumnView; // @synthesize markerColumnView=_markerColumnView;
 @property(retain, nonatomic) GPUBufferViewerMarkerTableColumn *markerColumn; // @synthesize markerColumn=_markerColumn;
-- (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)didAddSubview:(id)arg1;
 - (void)removeTableColumn:(id)arg1;

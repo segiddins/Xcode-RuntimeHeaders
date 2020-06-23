@@ -20,13 +20,13 @@
     NSNumber *_rollingUniqueDeviceCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *rollingUniqueDeviceCount; // @synthesize rollingUniqueDeviceCount=_rollingUniqueDeviceCount;
 @property(readonly) NSNumber *rollingOccurenceCount; // @synthesize rollingOccurenceCount=_rollingOccurenceCount;
 @property(readonly) NSNumber *sourceFileLineNumber; // @synthesize sourceFileLineNumber=_sourceFileLineNumber;
 @property(readonly) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
 @property(readonly) NSString *crashPointName; // @synthesize crashPointName=_crashPointName;
 @property(readonly) NSString *crashPointId; // @synthesize crashPointId=_crashPointId;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 @property(readonly, copy) NSString *description;
 

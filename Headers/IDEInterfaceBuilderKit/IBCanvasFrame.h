@@ -19,6 +19,7 @@
     struct CGPoint _anchor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint anchor; // @synthesize anchor=_anchor;
 @property(nonatomic) double chromeScaleFactor; // @synthesize chromeScaleFactor=_chromeScaleFactor;
 @property BOOL frameIsSelected; // @synthesize frameIsSelected=_frameIsSelected;
@@ -26,7 +27,6 @@
 @property(readonly) NSSet *childFrames; // @synthesize childFrames=_childFrames;
 @property BOOL autopositionOnNextLayout; // @synthesize autopositionOnNextLayout=_autopositionOnNextLayout;
 @property(retain) IBCanvasView *canvasView; // @synthesize canvasView=_canvasView;
-- (void).cxx_destruct;
 - (BOOL)isVerticallyResizableForCanvasAlignment;
 - (BOOL)isHorizontallyResizableForCanvasAlignment;
 - (CDStruct_c519178c)canvasAlignmentInset;

@@ -21,8 +21,8 @@
 }
 
 + (void)initialize;
-@property(copy, nonatomic) NSDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
 - (id)ib_verboseDescription;
 @property(readonly, copy) NSString *description;
 - (void)setIdleTimeToAtLeast:(double)arg1;

@@ -20,12 +20,12 @@
     NSButton *_useContainingModuleCheckbox;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *useContainingModuleCheckbox; // @synthesize useContainingModuleCheckbox=_useContainingModuleCheckbox;
 @property(retain) IBButtonComboBox *moduleComboBox; // @synthesize moduleComboBox=_moduleComboBox;
 @property(retain) IBButtonComboBox *classComboBox; // @synthesize classComboBox=_classComboBox;
 @property(retain) NSTextField *moduleLabel; // @synthesize moduleLabel=_moduleLabel;
 @property(retain) NSTextField *classLabel; // @synthesize classLabel=_classLabel;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

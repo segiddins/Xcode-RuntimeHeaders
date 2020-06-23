@@ -20,9 +20,9 @@
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)productIdentifierOrMalformedProductIdentifierForArchive:(id)arg1;
 + (id)productIdentifierWithBundleIdentifier:(id)arg1 productCategory:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) IDEProductCategory *productCategory; // @synthesize productCategory=_productCategory;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 - (id)userDefaultsKey;
 - (id)_stringRepresentation;

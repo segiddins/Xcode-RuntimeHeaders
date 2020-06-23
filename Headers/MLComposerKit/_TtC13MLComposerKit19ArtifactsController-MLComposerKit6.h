@@ -7,7 +7,7 @@
 #import <MLComposerKit/_TtC13MLComposerKit19ArtifactsController.h>
 
 @interface _TtC13MLComposerKit19ArtifactsController (MLComposerKit6)
-- (void)inferenceFinishedWithNotification:(id)arg1;
-- (void)inferenceStartedWithNotification:(id)arg1;
+- (void)modelAnalysisFinishedWithNotification:(id)arg1;
+- (void)modelAnalysisStartedWithNotification:(id)arg1;
 @end
 

@@ -12,8 +12,8 @@
     int _action;
 }
 
-@property(nonatomic) int action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(nonatomic) int action; // @synthesize action=_action;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)performAction:(int)arg1 onWindow:(id)arg2 afterDelay:(double)arg3;
 - (id)initWithPropertyList:(id)arg1;

@@ -18,12 +18,12 @@
 }
 
 + (id)documentDependencyVersionWithExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disable; // @synthesize disable=_disable;
 @property(nonatomic) BOOL hide; // @synthesize hide=_hide;
 @property(retain, nonatomic) NSString *marketingVersion; // @synthesize marketingVersion=_marketingVersion;
 @property(nonatomic) long long number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithExtension:(id)arg1;
 

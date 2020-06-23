@@ -23,8 +23,8 @@
 + (BOOL)isValidForLaunchScreen;
 + (BOOL)isObjectValidSource:(id)arg1;
 + (BOOL)isAbstractType;
-@property(copy, nonatomic) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 @property(copy, nonatomic) NSString *ibInspectedSegueClassName;

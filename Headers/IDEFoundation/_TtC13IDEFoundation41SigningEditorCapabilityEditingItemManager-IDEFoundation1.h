@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager.h>
 
-#import <IDEFoundation/IDESigningEditorCapabilityItemEditingConsolidatedContextSourceDelegate-Protocol.h>
-
-@interface _TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager (IDEFoundation1) <IDESigningEditorCapabilityItemEditingConsolidatedContextSourceDelegate>
+@interface _TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager (IDEFoundation1)
 - (void)didUpdate:(id)arg1 configurationToEnabledItems:(id)arg2;
 @end
 

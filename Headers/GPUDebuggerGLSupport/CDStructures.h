@@ -397,10 +397,6 @@ struct GPUGLBindPoint {
 
 struct IFunctionDecoder;
 
-struct NSArray {
-    Class _field1;
-};
-
 struct ObjectStateEnum {
     int _field1;
     id _field2;

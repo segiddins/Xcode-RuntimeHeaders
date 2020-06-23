@@ -19,8 +19,8 @@
 + (id)generateIconWithContext:(id)arg1;
 + (id)syntheticFileNameForRep:(id)arg1;
 + (id)resourceWithVectorGlyphSetRep:(id)arg1;
-@property(retain, nonatomic) IBICVectorGlyphSetRep *vectorGlyphSetRep; // @synthesize vectorGlyphSetRep=_vectorGlyphSetRep;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBICVectorGlyphSetRep *vectorGlyphSetRep; // @synthesize vectorGlyphSetRep=_vectorGlyphSetRep;
 - (id)detailViewAlternateWithTitle:(id)arg1;
 - (BOOL)needsContentForDetailViewAlternate;
 - (long long)compareForVariantMatching:(id)arg1;

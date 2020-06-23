@@ -21,12 +21,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDELaunchSessionEventSourceEvents> delegate; // @synthesize delegate=_delegate;
 @property(retain) DVTObservingToken *launchSessionPIDObserverToken; // @synthesize launchSessionPIDObserverToken=_launchSessionPIDObserverToken;
 @property(retain) DVTObservingToken *launchSessionAlertErrorObserverToken; // @synthesize launchSessionAlertErrorObserverToken=_launchSessionAlertErrorObserverToken;
 @property(retain) DVTObservingToken *launchSessionHasCrashedObserverToken; // @synthesize launchSessionHasCrashedObserverToken=_launchSessionHasCrashedObserverToken;
 @property(retain) DVTObservingToken *launchSessionStartObserverToken; // @synthesize launchSessionStartObserverToken=_launchSessionStartObserverToken;
-- (void).cxx_destruct;
 - (void)_observeRunnablePIDForLaunchSession:(id)arg1;
 - (void)_observeCrashForLaunchSession:(id)arg1;
 - (void)_observeStartForLaunchSession:(id)arg1;

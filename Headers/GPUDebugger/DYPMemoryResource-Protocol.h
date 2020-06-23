@@ -23,6 +23,7 @@
 @property(nonatomic, readonly) unsigned long long purgeableState;
 @property(nonatomic, readonly) unsigned long long cpuCacheMode;
 @property(nonatomic, readonly) unsigned long long storageMode;
+@property(nonatomic, readonly) unsigned long long allocationID;
 @property(nonatomic, readonly) unsigned long long allocatedSize;
 @property(nonatomic, readonly) unsigned long long nanoSecondsSinceBound;
 @property(nonatomic, readonly) _Bool isCreated;

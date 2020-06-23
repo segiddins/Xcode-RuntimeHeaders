@@ -61,11 +61,11 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)consoleStateSavingString;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *consoleFilterString; // @synthesize consoleFilterString=_consoleFilterString;
 @property __weak DVTScrollView *consoleScrollView; // @synthesize consoleScrollView=_consoleScrollView;
 @property(readonly) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBar;
 @property(nonatomic) int filterMode; // @synthesize filterMode=_filterMode;
-- (void).cxx_destruct;
 - (id)undoManagerForTextView:(id)arg1;
 - (void)completingTextView:(id)arg1 willPassContextToStrategies:(id)arg2 atWordStartLocation:(unsigned long long)arg3;
 - (void)setupTextViewContextMenuWithMenu:(id)arg1;

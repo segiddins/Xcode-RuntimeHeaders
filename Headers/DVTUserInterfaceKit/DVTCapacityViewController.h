@@ -25,6 +25,7 @@
 
 + (id)unusedColor;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSView *rightLabelContainer; // @synthesize rightLabelContainer=_rightLabelContainer;
 @property __weak NSView *leftLabelContainer; // @synthesize leftLabelContainer=_leftLabelContainer;
 @property(nonatomic) BOOL shouldUseSingleLineSwatchLabel; // @synthesize shouldUseSingleLineSwatchLabel=_shouldUseSingleLineSwatchLabel;
@@ -34,7 +35,6 @@
 @property(nonatomic) double maxCapacity; // @synthesize maxCapacity=_maxCapacity;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak DVTCapacityView *capacityView; // @synthesize capacityView=_capacityView;
-- (void).cxx_destruct;
 - (void)setUnusedCapacitySegmentLabel:(id)arg1;
 - (id)createSwatchLabelForSegment:(id)arg1;
 - (void)_recreateAndAddLabelsForSegments;

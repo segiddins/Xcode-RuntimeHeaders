@@ -15,10 +15,10 @@
     LOCAGProjectManager *_projectManager;
 }
 
+- (void).cxx_destruct;
 @property(retain) LOCAGProjectManager *projectManager; // @synthesize projectManager=_projectManager;
 @property(retain) LOCAGEnvironmentManager *environmentManager; // @synthesize environmentManager=_environmentManager;
 @property(retain) NSString *environmentFolderPath; // @synthesize environmentFolderPath=_environmentFolderPath;
-- (void).cxx_destruct;
 - (void)consolidateIBToolErrors:(id)arg1;
 - (id)elapsedTimeStringFrom:(id)arg1 to:(id)arg2;
 - (void)finalize;

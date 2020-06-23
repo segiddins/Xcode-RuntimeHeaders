@@ -31,9 +31,9 @@
     NSArray *_currentSelectedItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(retain, nonatomic) SKTileSetNavigableContainer *tileSetContainer; // @synthesize tileSetContainer=_tileSetContainer;
-- (void).cxx_destruct;
 - (void)selectionObserversTriggered;
 - (void)skViewFrameDidChange:(id)arg1;
 - (void)updateRuleDetailView;

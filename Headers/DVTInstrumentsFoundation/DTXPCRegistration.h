@@ -18,12 +18,12 @@
     NSObject<OS_xpc_object> *_xpcObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcObject; // @synthesize xpcObject=_xpcObject;
 @property(retain, nonatomic) id pkHandle; // @synthesize pkHandle=_pkHandle;
 @property(retain, nonatomic) id client; // @synthesize client=_client;
 @property(copy, nonatomic) CDUnknownBlockType oneshotHandler; // @synthesize oneshotHandler=_oneshotHandler;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
 
 @end
 

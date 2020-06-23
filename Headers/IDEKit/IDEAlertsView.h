@@ -17,9 +17,9 @@
     BOOL _isTiling;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *alertViewControllers; // @synthesize alertViewControllers=_alertViewControllers;
 @property(retain, nonatomic) IDEAlertEvent *alertEvent; // @synthesize alertEvent=_alertEvent;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (BOOL)isFlipped;

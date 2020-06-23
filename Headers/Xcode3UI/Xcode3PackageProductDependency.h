@@ -20,10 +20,10 @@
 + (id)keyPathsForValuesAffectingRepresentedObject;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(readonly) XCSwiftPackageProductDependency *packageProductDependency; // @synthesize packageProductDependency=_packageProductDependency;
 @property(readonly) Xcode3BuildFileGroup *parentGroup; // @synthesize parentGroup=_parentGroup;
 @property(readonly) Xcode3BuildPhase *buildPhase; // @synthesize buildPhase=_buildPhase;
-- (void).cxx_destruct;
 @property(readonly) id representedObject;
 - (id)initWithPackageProductDependency:(id)arg1;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

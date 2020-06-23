@@ -14,9 +14,9 @@
     NSColor *_textAndBorderColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *textAndBorderColor; // @synthesize textAndBorderColor=_textAndBorderColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

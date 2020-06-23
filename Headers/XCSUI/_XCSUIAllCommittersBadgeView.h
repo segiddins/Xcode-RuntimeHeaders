@@ -14,9 +14,9 @@
     XCSUIIntegrationCommitterBadgeView *_committerBadgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSUIIntegrationCommitterBadgeView *committerBadgeView; // @synthesize committerBadgeView=_committerBadgeView;
 @property(retain) XCSUIIntegrationCommitsViewController *commitsViewController; // @synthesize commitsViewController=_commitsViewController;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

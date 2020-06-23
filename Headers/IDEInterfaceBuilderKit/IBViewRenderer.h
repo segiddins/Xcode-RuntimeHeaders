@@ -16,9 +16,9 @@
 }
 
 + (id)rendererWithView:(id)arg1 renderingDestination:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IBRenderingDestination> destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)renderIntoCoreGraphicsContext:(id)arg1 scale:(double)arg2 appearance:(id)arg3;
 - (void)renderIntoCoreGraphicsContext:(id)arg1 scale:(double)arg2;
 - (id)renderViewImageWithAppearance:(id)arg1;

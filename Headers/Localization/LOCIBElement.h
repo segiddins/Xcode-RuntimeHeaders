@@ -21,6 +21,7 @@
     NSString *_note;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *note; // @synthesize note=_note;
 @property(copy, nonatomic) NSString *restype; // @synthesize restype=_restype;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *accessor; // @synthesize accessor=_accessor;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)sanitizeString:(id)arg1;
 - (id)stringsFileElement;
 - (id)description;

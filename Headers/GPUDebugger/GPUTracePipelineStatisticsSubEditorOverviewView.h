@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSColor *_background;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *background; // @synthesize background=_background;
 @property(retain) NSArray *currentColors; // @synthesize currentColors=_currentColors;
 @property(retain) NSArray *colors; // @synthesize colors=_colors;
 @property(retain) NSArray *currentRatios; // @synthesize currentRatios=_currentRatios;
 @property(retain) NSArray *ratios; // @synthesize ratios=_ratios;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

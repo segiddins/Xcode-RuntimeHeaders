@@ -22,11 +22,11 @@
 + (id)classIdentifier;
 + (double)displayOrderPriority;
 + (id)keyPathsForValuesAffectingIbInspectedPopoverAnchorObject;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIBarButtonItem *anchorBarButtonItem; // @synthesize anchorBarButtonItem=_anchorBarButtonItem;
 @property(retain, nonatomic) IBUIView *anchorView; // @synthesize anchorView=_anchorView;
 @property(copy, nonatomic) NSOrderedSet *passthroughViews; // @synthesize passthroughViews=_passthroughViews;
 @property(nonatomic) unsigned long long permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
-- (void).cxx_destruct;
 - (BOOL)isFlowTerminatingSegue;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (id)ibInspectedAnchorObjectCandidateFilterPredicate;

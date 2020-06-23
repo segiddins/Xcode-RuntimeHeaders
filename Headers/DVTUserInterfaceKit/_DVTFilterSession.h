@@ -18,11 +18,11 @@
     DVTCompoundFilterExpression *_filterExpression;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTCompoundFilterExpression *filterExpression; // @synthesize filterExpression=_filterExpression;
 @property(readonly) DVTFilterExpressionController *filterExpressionController; // @synthesize filterExpressionController=_filterExpressionController;
 @property long long filterProgress; // @synthesize filterProgress=_filterProgress;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 - (void)setMatches:(id)arg1;
 - (id)initWithFilterExpressionController:(id)arg1 filterExpression:(id)arg2;
 

@@ -18,8 +18,8 @@
     NSString *_className;
 }
 
-@property(copy, nonatomic) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *className; // @synthesize className=_className;
 - (id)marshalledRepresentationForRendering;
 - (id)marshalledClassName;
 - (id)marshalledUserDefinedRuntimeAttributeKeyValuePairs;

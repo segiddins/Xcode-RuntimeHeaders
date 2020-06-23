@@ -19,12 +19,12 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isClientData; // @synthesize isClientData=_isClientData;
 @property(readonly, nonatomic) unsigned int usage; // @synthesize usage=_usage;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cachingCost;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;

@@ -14,6 +14,8 @@
 
 + (void)customizeEstablishedViewOutletsForObject:(id)arg1 inDocument:(id)arg2;
 + (void)customizeObjectForLibraryInstantiation:(id)arg1;
++ (BOOL)supportsScrollTypesMask;
++ (BOOL)supportsPointerInteraction;
 + (Class)idiomClass;
 + (BOOL)ide_initializeWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)applicableTraits;

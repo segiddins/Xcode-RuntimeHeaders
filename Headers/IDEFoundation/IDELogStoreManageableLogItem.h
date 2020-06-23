@@ -16,10 +16,10 @@
 }
 
 + (id)itemWithTitle:(id)arg1 key:(id)arg2 isPrimary:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly) BOOL isPrimary; // @synthesize isPrimary=_isPrimary;
 @property(readonly, copy) NSString *key; // @synthesize key=_key;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 key:(id)arg2 isPrimary:(BOOL)arg3;
 

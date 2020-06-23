@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDECapsuleListViewDataSource-Protocol.h>
 
-@class DVTChoice, DVTNotificationToken, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDiagnosticsTabAdvisoryContentController, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchTestSchemeAction, IDEScheme, IDESchemeCommand, IDEWorkspace, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSScrollView, NSStackView, NSString, NSTabView, NSTextField, NSView;
+@class DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDiagnosticsTabAdvisoryContentController, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchTestSchemeAction, IDEScheme, IDESchemeCommand, IDEWorkspace, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSScrollView, NSStackView, NSString, NSTabView, NSTextField, NSView;
 @protocol IDEPrimitiveSchemeCommand;
 
 @interface IDELaunchTestRunPhaseSheetController : IDEViewController <IDECapsuleListViewDataSource>
@@ -25,6 +25,7 @@
     NSMenuItem *_runnableAskOnLaunchItem;
     NSMenuItem *_runnableAutomaticItem;
     NSMenuItem *_runnableOtherItem;
+    DVTFilePathFieldCell *_lldbCustomInitFileCell;
     IDECapsuleListView *_capsuleListView;
     NSScrollView *_argumentsCapsuleListScrollView;
     NSPopUpButton *_macroExpansionRunnableBuildablesPopUp;
@@ -54,6 +55,7 @@
     BOOL _runnablePopUpHasCustomRunnable;
     DVTNotificationToken *_buildablesToken;
     BOOL _hasCustomLaunchUI;
+    BOOL _hasDaemonDebuggingLaunchUI;
     NSTabView *_tabView;
     NSString *_selectedTabUserDefaultKey;
     IDEScheme *_runContext;
@@ -69,6 +71,9 @@
 + (id)keyPathsForValuesAffectingAllowEnablingAddressSanitizer;
 + (id)_keyPathsForValuesAffectingSanitizers:(id)arg1;
 + (id)keyPathsForValuesAffectingDebuggerHasBeenSelected;
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL hasDaemonDebuggingLaunchUI; // @synthesize hasDaemonDebuggingLaunchUI=_hasDaemonDebuggingLaunchUI;
 @property(nonatomic) BOOL hasCustomLaunchUI; // @synthesize hasCustomLaunchUI=_hasCustomLaunchUI;
 @property(readonly, nonatomic) NSArray *extensionsForAllOptions; // @synthesize extensionsForAllOptions=_extensionsForAllOptions;
 @property(retain) IDELaunchTestSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
@@ -78,7 +83,6 @@
 @property(retain) DVTTabChooserView *tabChooser; // @synthesize tabChooser=_tabChooser;
 @property(retain) NSTabView *tabView; // @synthesize tabView=_tabView;
 @property(readonly) DVTChoice *infoTabChoice; // @synthesize infoTabChoice=_infoChoice;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
@@ -104,6 +108,7 @@
 - (void)_updateMacroExpansionRunnablePopUpSelection;
 - (void)_updateMacroExpansionRunnablePopUp;
 - (void)_clearHighlightsInCapsuleView;
+- (id)DVTFilePathFieldCell:(id)arg1 resolvedPathForPath:(id)arg2;
 - (void)_runnableDidUpdate;
 - (void)_updateRunnablePopUp;
 - (void)_addMenuItemForBuildableProduct:(id)arg1 menu:(id)arg2;
@@ -118,6 +123,9 @@
 - (void)updateBoundContent;
 - (id)dvt_extraBindings;
 @property(readonly) IDEWorkspace *workspace;
+- (void)revertStateWithDictionary:(id)arg1;
+- (void)commitStateToDictionary:(id)arg1;
+@property(readonly) BOOL shouldRestoreSelectedTab;
 - (void)loadView;
 @property(readonly, nonatomic) unsigned long long tabChoices;
 

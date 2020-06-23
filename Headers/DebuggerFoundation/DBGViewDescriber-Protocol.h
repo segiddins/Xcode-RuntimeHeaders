@@ -6,7 +6,7 @@
 
 #import <DebuggerFoundation/DVTInvalidation-Protocol.h>
 
-@class CALayer, DBGLayoutConstraintSet, DBGViewChildMemberList, DBGViewObject, DBGViewSurface, IDEDebugSession, IDELaunchSession, NSArray, NSData, NSImage, NSString, NSURL;
+@class CALayer, DBGViewChildMemberList, DBGViewObject, DBGViewSurface, IDEDebugSession, IDELaunchSession, NSArray, NSData, NSImage, NSString, NSURL;
 
 @protocol DBGViewDescriber <DVTInvalidation>
 + (BOOL)shouldInstantiateInLaunchSession:(IDELaunchSession *)arg1;
@@ -25,8 +25,6 @@
 - (void)getDataValueForExpression:(NSString *)arg1 handler:(void (^)(DBGDataValue *))arg2;
 - (CALayer *)unarchiveLayerForView:(DBGViewSurface *)arg1 fromData:(NSData *)arg2;
 - (CALayer *)layerForView:(DBGViewSurface *)arg1;
-- (DBGLayoutConstraintSet *)constraintsReferencingViewObject:(DBGViewObject *)arg1;
-- (DBGLayoutConstraintSet *)constraintsAffectingViewObject:(DBGViewObject *)arg1;
 - (NSArray *)classHierarchyForClass:(NSString *)arg1;
 - (NSArray *)effectViewClassNames;
 - (NSString *)targetPlatformFamilyIdentifier;

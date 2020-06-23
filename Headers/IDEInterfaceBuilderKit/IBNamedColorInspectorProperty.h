@@ -6,22 +6,28 @@
 
 #import <IDEKit/IDEInspectorColorProperty.h>
 
+@class IBInspectorViewController, IDEInspectorKeyPath;
+
 @interface IBNamedColorInspectorProperty : IDEInspectorColorProperty
 {
+    IDEInspectorKeyPath *_colorAppearanceKeyPath;
     BOOL _hideRevealInEditorButton;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideRevealInEditorButton; // @synthesize hideRevealInEditorButton=_hideRevealInEditorButton;
 - (id)colorFromValue:(id)arg1;
 - (void)applyValue:(id)arg1 withKeyPath:(id)arg2;
-- (id)firstColorResourceFromResourceManager:(id)arg1 withRuntimeName:(id)arg2;
 - (id)colorPicker:(id)arg1 effectiveRecentColors:(id)arg2;
 - (void)revealLocationInEditor:(id)arg1;
 - (id)documentLocationForValue;
-- (id)ibResourceManager;
+- (id)systemColorList;
+- (void)populateColorPopUpButton:(id)arg1;
 - (void)refresh;
+- (void)setupRefreshTriggersAndConfigure;
+- (id)defaultColorAppearanceKeyPath;
 - (id)inspectedDocument;
-- (id)inspectorController;
+@property(readonly, nonatomic) IBInspectorViewController *inspectorController;
 - (id)resourceManager;
 
 @end

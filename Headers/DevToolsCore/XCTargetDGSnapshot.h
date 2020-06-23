@@ -67,6 +67,7 @@
 
 + (id)targetTypeName;
 + (void)validateFallbackConditionalBuildSettingsWithMacroExpansionScope:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) DVTFuture *provisioningCommandInputs; // @synthesize provisioningCommandInputs=_provisioningCommandInputs;
 @property(readonly) NSString *performanceTestsBaselinesPath; // @synthesize performanceTestsBaselinesPath=_performanceTestsBaselinesPath;
 @property(readonly) PBXTarget *unitTestHostAppTarget; // @synthesize unitTestHostAppTarget=_unitTestHostAppTarget;
@@ -74,7 +75,6 @@
 @property(readonly) DVTSearchPath *commandLineToolSearchPath; // @synthesize commandLineToolSearchPath=_commandLineToolSearchPath;
 @property(readonly) NSArray *commandLineToolSpecificationRegistries; // @synthesize commandLineToolSpecificationRegistries=_commandLineToolSpecificationRegistries;
 @property(readonly) NSArray *toolchains; // @synthesize toolchains=_toolchains;
-- (void).cxx_destruct;
 - (id)description;
 - (id)validityCheckingBlocks;
 - (void)addValidityCheckingBlock:(CDUnknownBlockType)arg1;

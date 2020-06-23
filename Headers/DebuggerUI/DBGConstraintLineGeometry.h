@@ -20,10 +20,10 @@
 }
 
 + (id)constraintLineGeometryWithStart:(id)arg1 end:(id)arg2 view:(id)arg3 readsFromDepthBuffer:(BOOL)arg4 writesToDepthBuffer:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(retain) NSColor *lineColorSelected; // @synthesize lineColorSelected=_lineColorSelected;
 @property(retain) NSColor *lineColorHighlighted; // @synthesize lineColorHighlighted=_lineColorHighlighted;
 @property(retain) NSColor *lineColorNormal; // @synthesize lineColorNormal=_lineColorNormal;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property int style; // @synthesize style=_style;
 @property int appearence; // @synthesize appearence=_appearence;

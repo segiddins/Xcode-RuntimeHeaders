@@ -28,11 +28,11 @@
 + (id)keyPathsForValuesAffectingIndeterminateReportInProgress;
 + (id)createActivityReportLayer;
 + (struct CGSize)defaultSizeForPopUpStyle;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL makeSpaceForIndeterminateProgressIndicator; // @synthesize makeSpaceForIndeterminateProgressIndicator=_makeSpaceForIndeterminateProgressIndicator;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
 @property(nonatomic) BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;
 @property(retain, nonatomic) IDEActivityReport *activityReport; // @synthesize activityReport=_activityReport;
-- (void).cxx_destruct;
 - (double)spaceNeededForCancelButtonLayer;
 - (BOOL)shouldShowCancelButtonLayer;
 @property(readonly) BOOL indeterminateReportInProgress;

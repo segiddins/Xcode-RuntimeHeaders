@@ -21,8 +21,8 @@
     id <GTFActionNodeOverviewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <GTFActionNodeOverviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GTFActionNodeOverviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)userToggledDisclosureState:(id)arg1;
 - (void)duplicateNodeTrack:(id)arg1;
 - (void)findAndDeleteNodeTrack:(id)arg1;

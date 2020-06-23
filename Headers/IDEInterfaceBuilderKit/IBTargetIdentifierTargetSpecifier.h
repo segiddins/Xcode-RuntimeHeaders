@@ -17,11 +17,11 @@
 }
 
 + (id)specifierForTargetIdentifier:(id)arg1 withFrameGenerator:(CDUnknownBlockType)arg2 label:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) CDUnknownBlockType frameGenerator; // @synthesize frameGenerator=_frameGenerator;
 @property(retain) IBTargetIdentifier *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 
 @end
 

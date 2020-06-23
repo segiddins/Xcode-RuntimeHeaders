@@ -29,6 +29,7 @@
 }
 
 + (id)keyPathsForValuesAffectingAllowTeamProfiles;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDEQualifiableProfileQualification *baseQualification; // @synthesize baseQualification=_baseQualification;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSArray *qualifiers; // @synthesize qualifiers=_qualifiers;
 @property(copy, nonatomic) NSSet *failed; // @synthesize failed=_failed;
 @property(copy, nonatomic) NSSet *passed; // @synthesize passed=_passed;
-- (void).cxx_destruct;
 - (id)_profileTypeQualifier;
 - (id)_xcodeManagedQualifier;
 - (id)_devicesQualifier;

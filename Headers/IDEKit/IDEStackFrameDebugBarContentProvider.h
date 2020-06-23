@@ -29,11 +29,11 @@
 + (id)keyPathsForValuesAffectingNavigableDebugItems;
 + (BOOL)automaticallyNotifiesObserversOfSelectedItem;
 + (Class)debugSessionControllerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDENavigableItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(retain, nonatomic) IDENavigableItem *rootNavigableItem; // @synthesize rootNavigableItem=_rootNavigableItem;
 @property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
-- (void).cxx_destruct;
 - (double)xOffsetForSharedLibrariesPopUpAnchoredOnDebugBar:(id)arg1;
 - (struct CGRect)additionalGrabRectOfDebugBar:(id)arg1 inTermsOfView:(id)arg2;
 - (void)willBeDetachedFromDebugBar:(id)arg1;

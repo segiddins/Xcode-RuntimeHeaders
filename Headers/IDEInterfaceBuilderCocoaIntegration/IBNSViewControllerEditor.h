@@ -14,8 +14,8 @@
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(retain) NSSet *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain) NSSet *observers; // @synthesize observers=_observers;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;
 - (void)willClose;
 - (void)didOpen;

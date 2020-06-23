@@ -18,12 +18,12 @@
     DVTObservingToken *_launchSessionsStateObserverToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *launchSessionsStateObserverToken; // @synthesize launchSessionsStateObserverToken=_launchSessionsStateObserverToken;
 @property(retain) DVTObservingToken *launchSessionsObserverToken; // @synthesize launchSessionsObserverToken=_launchSessionsObserverToken;
 @property __weak id <IDEFunctionBarSimulatorWorkspaceExecutionReporterDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long activeExecutionsCount; // @synthesize activeExecutionsCount=_activeExecutionsCount;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)_updateWithLaunchSession:(id)arg1;
 - (BOOL)_isRunDestinationCompatibleWithFunctionBar:(id)arg1;
 - (BOOL)_isLaunchSessionInteresting:(id)arg1;

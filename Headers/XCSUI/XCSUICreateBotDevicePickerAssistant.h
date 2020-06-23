@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor *devicePickerEditor; // @synthesize devicePickerEditor=_devicePickerEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
-- (void).cxx_destruct;
 - (id)nextAssistantIdentifier;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _destructor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType destructor; // @synthesize destructor=_destructor;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(nonatomic) const void *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 
 @end
 

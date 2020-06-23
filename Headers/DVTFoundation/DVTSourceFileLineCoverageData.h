@@ -16,11 +16,11 @@
     NSArray *_subRanges;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, nonatomic) NSArray *subRanges; // @synthesize subRanges=_subRanges;
 @property(readonly, nonatomic, getter=isExecutable) BOOL executable; // @synthesize executable=_executable;
 @property(readonly, nonatomic) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithLineNumber:(unsigned int)arg1 executionCount:(unsigned long long)arg2 executable:(BOOL)arg3 subRanges:(id)arg4;

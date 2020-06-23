@@ -22,9 +22,9 @@
 }
 
 + (void)invokeWithTokenizedCandidateUTF8Bytes:(const char *)arg1 length:(long long)arg2 isFileName:(BOOL)arg3 block:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly) BOOL containsPathSeparator; // @synthesize containsPathSeparator=_containsPathSeparator;
 @property(readonly) NSString *patternText; // @synthesize patternText=_patternText;
-- (void).cxx_destruct;
 - (BOOL)rejectsEverything;
 - (BOOL)matchesASubsetOfMatchesFromPattern:(id)arg1;
 - (BOOL)matchesEverythingMatchedBy:(id)arg1;

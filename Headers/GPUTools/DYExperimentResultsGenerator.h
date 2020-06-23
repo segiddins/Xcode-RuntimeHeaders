@@ -22,12 +22,12 @@
     BOOL _isDone;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDone; // @synthesize isDone=_isDone;
 @property(nonatomic) __weak DYFunctionPlayer *functionPlayer; // @synthesize functionPlayer=_functionPlayer;
 @property(readonly, nonatomic) DYExperimentOverrideEnable *experiment; // @synthesize experiment=_experiment;
 @property(readonly, nonatomic) unsigned int prevFileFunctionIndex; // @synthesize prevFileFunctionIndex=_prevFileFunctionIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)terminateExperiment;
 - (BOOL)shouldTerminateExperiment;
 - (void)onPlatformFunctionEnd;

@@ -15,6 +15,7 @@
 {
     unsigned long long _itemIndexUnderMouse;
     NSPopover *_thumbnailPopover;
+    BOOL _disppearing;
     BOOL _showMarkers;
     GPUTimelineGraph *_graph;
     id <GPUTimelineGraphDelegate> _delegate;
@@ -24,6 +25,7 @@
     NSLayoutConstraint *_rulerHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *rulerHeight; // @synthesize rulerHeight=_rulerHeight;
 @property(nonatomic) __weak NSPanel *tooltipPanel; // @synthesize tooltipPanel=_tooltipPanel;
 @property(nonatomic) __weak GPUTimelineGraphOverlayView *overlayView; // @synthesize overlayView=_overlayView;
@@ -31,7 +33,6 @@
 @property(nonatomic) BOOL showMarkers; // @synthesize showMarkers=_showMarkers;
 @property(nonatomic) __weak id <GPUTimelineGraphDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak GPUTimelineGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (void)inputHandlerForGraph:(id)arg1 didChangeMouseInteractionInProgress:(BOOL)arg2;
 - (void)moveSelectionToPrevItem;
 - (void)moveSelectionToNextItem;
@@ -62,6 +63,8 @@
 - (void)inputHandlerForGraph:(id)arg1 requestsNanosecondOffset:(long long)arg2;
 - (void)_clearSelection;
 - (void)_selectIndex:(unsigned long long)arg1;
+- (void)viewWillAppear;
+- (void)viewWillDisappear;
 - (void)setupColors;
 - (void)dealloc;
 - (void)viewDidLoad;

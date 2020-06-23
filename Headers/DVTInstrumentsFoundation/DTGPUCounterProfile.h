@@ -19,18 +19,18 @@
     NSString *_derivedCounterScriptPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *derivedCounterScriptPath; // @synthesize derivedCounterScriptPath=_derivedCounterScriptPath;
 @property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(nonatomic) unsigned long long defaultSampleInterval; // @synthesize defaultSampleInterval=_defaultSampleInterval;
 @property(readonly, nonatomic) NSArray *counters; // @synthesize counters=_counters;
 @property(retain, nonatomic) NSString *profileName; // @synthesize profileName=_profileName;
 @property(readonly, nonatomic) unsigned long long profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (unsigned long long)sampleSize;
 - (id)counterProfileForHost;
 - (void)sampleCounters:(unsigned long long)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)stop;
-- (BOOL)start:(unsigned long long)arg1;
+- (BOOL)start:(unsigned long long)arg1 vendorFeatures:(id)arg2;
 - (BOOL)prepare;
 - (void)addCounter:(id)arg1;
 - (id)initWithProfile:(unsigned long long)arg1 device:(id)arg2;

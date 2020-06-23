@@ -16,11 +16,11 @@
     double _difference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double difference; // @synthesize difference=_difference;
 @property(nonatomic) double baselineTotalFrameTime; // @synthesize baselineTotalFrameTime=_baselineTotalFrameTime;
 @property(nonatomic) double currentTotalFrameTime; // @synthesize currentTotalFrameTime=_currentTotalFrameTime;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *differenceColor;
 
 @end

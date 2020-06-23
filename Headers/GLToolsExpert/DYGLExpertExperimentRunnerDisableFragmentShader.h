@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long frameTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long frameTime; // @synthesize frameTime;
 @property(retain, nonatomic) NSArray *contextIds; // @synthesize contextIds;
 @property(retain, nonatomic) NSNumber *sharegroupId; // @synthesize sharegroupId;
 @property(retain, nonatomic) NSNumber *programId; // @synthesize programId;
-- (void).cxx_destruct;
 - (void)processFinishedExperiments;
 - (id)executeAndWait;
 - (id)numberOfExperiments;

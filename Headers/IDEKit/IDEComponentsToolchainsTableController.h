@@ -23,13 +23,13 @@
 }
 
 + (BOOL)shouldShow;
+- (void).cxx_destruct;
 @property(retain) DVTBorderedView *tableBorderedView; // @synthesize tableBorderedView=_tableBorderedView;
 @property(retain) NSScrollView *tableScrollView; // @synthesize tableScrollView=_tableScrollView;
 @property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) NSArray *items; // @synthesize items=_items;
 @property(retain) DVTToolchainOverrideOptionProvider *optionProvider; // @synthesize optionProvider=_optionProvider;
 @property(retain) DVTToolchainRegistry *toolchainRegistry; // @synthesize toolchainRegistry=_toolchainRegistry;
-- (void).cxx_destruct;
 - (void)showValidationError:(id)arg1;
 - (void)showContext:(id)arg1;
 - (void)_verifyCodeSignature:(id)arg1;

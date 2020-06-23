@@ -14,13 +14,19 @@
 {
     unsigned long long _numberOfTapsRequired;
     unsigned long long _numberOfTouchesRequired;
+    unsigned long long _buttonMaskRequired;
 }
 
++ (id)keyPathsForValuesAffectingIbInspectedButtonMaskRequired;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property unsigned long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
-@property unsigned long long numberOfTapsRequired; // @synthesize numberOfTapsRequired=_numberOfTapsRequired;
+@property(nonatomic) unsigned long long buttonMaskRequired; // @synthesize buttonMaskRequired=_buttonMaskRequired;
+@property(nonatomic) unsigned long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
+@property(nonatomic) unsigned long long numberOfTapsRequired; // @synthesize numberOfTapsRequired=_numberOfTapsRequired;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)showEventButtonMask;
+- (void)setIbInspectedButtonMaskRequired:(unsigned long long)arg1;
+- (unsigned long long)ibInspectedButtonMaskRequired;
 - (BOOL)showAllowedPressTypes;
 - (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

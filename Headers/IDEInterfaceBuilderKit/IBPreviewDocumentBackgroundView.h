@@ -21,10 +21,10 @@
     NSString *_placeholderText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsFirstResponder; // @synthesize showsFirstResponder=_showsFirstResponder;
 @property(retain, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
 @property __weak id <IBPreviewDocumentBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)trackBandSelection:(id)arg1;
 - (BOOL)resignFirstResponder;

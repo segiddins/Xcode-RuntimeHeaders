@@ -17,10 +17,10 @@
     DVTDocumentLocation *_documentLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
 @property(readonly) NSURL *sourceFileURL; // @synthesize sourceFileURL=_sourceFileURL;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 @property(readonly, nonatomic) NSImage *navigableItem_image;

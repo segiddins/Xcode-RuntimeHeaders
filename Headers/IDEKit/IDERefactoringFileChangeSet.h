@@ -19,11 +19,11 @@
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) NSString *newName; // @synthesize newName=_newName;
 @property(readonly) NSArray *changes; // @synthesize changes=_changes;
 @property(readonly) DVTFilePath *tempFilePath; // @synthesize tempFilePath=_tempFilePath;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (BOOL)commitChangesWithError:(id *)arg1;
 - (id)resultTempFilePath;
 - (id)resultNewFileName;

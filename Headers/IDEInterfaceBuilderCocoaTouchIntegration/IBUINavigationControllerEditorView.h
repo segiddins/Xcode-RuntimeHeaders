@@ -13,8 +13,8 @@
     IBUINavigationController *_editedNavigationController;
 }
 
-@property(retain, nonatomic) IBUINavigationController *editedNavigationController; // @synthesize editedNavigationController=_editedNavigationController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBUINavigationController *editedNavigationController; // @synthesize editedNavigationController=_editedNavigationController;
 - (void)setToolbarEditorFrame:(struct CGRect)arg1;
 - (void)setNavigationBarEditorFrame:(struct CGRect)arg1;
 

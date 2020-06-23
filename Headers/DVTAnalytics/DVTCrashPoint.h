@@ -31,6 +31,7 @@
 }
 
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DVTCrashPointRecord *crashPointRecord; // @synthesize crashPointRecord=_crashPointRecord;
 @property unsigned long long locallySymbolicatedSourceFileLine; // @synthesize locallySymbolicatedSourceFileLine=_locallySymbolicatedSourceFileLine;
 @property(retain) NSString *locallySymbolicatedSourceFileName; // @synthesize locallySymbolicatedSourceFileName=_locallySymbolicatedSourceFileName;
@@ -48,7 +49,6 @@
 - (void)setAnalyticsLogProvider:(id)arg1;
 - (id)analyticsLogProvider;
 @property(retain) DVTAnalyticsPointUserData *userData; // @synthesize userData=_userData;
-- (void).cxx_destruct;
 - (id)snapshotWithError:(id *)arg1;
 - (id)_infoJSON;
 - (BOOL)analyticsPointBlameLineMatchesFrame:(id)arg1;

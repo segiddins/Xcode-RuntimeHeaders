@@ -14,9 +14,9 @@
     IBLayoutConstraint *_ibConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) IBLayoutConstraint *ibConstraint; // @synthesize ibConstraint=_ibConstraint;
-- (void).cxx_destruct;
 - (id)initWithConstraint:(id)arg1;
 
 @end

@@ -17,11 +17,11 @@
     NSColor *_overlayColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *overlayColor; // @synthesize overlayColor=_overlayColor;
 @property(nonatomic) BOOL displayOutlineWhenZoomed; // @synthesize displayOutlineWhenZoomed=_displayOutlineWhenZoomed;
 @property(nonatomic) BOOL displayOverlay; // @synthesize displayOverlay=_displayOverlay;
 @property(readonly, nonatomic) id <DYResource> overlayResource; // @synthesize overlayResource=_overlayResource;
-- (void).cxx_destruct;
 - (id)initWithResource:(id)arg1;
 
 @end

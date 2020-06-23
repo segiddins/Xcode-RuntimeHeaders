@@ -19,13 +19,13 @@
 }
 
 + (id)_parameterRegularExpression;
+- (void).cxx_destruct;
 @property struct _xmlDoc *xmlDocument; // @synthesize xmlDocument=_xmlDocument;
 @property(retain) NSDictionary *valuesExpansionDict; // @synthesize valuesExpansionDict=_valuesExpansionDict;
 @property(retain) NSDictionary *responseParameterToEnumDict; // @synthesize responseParameterToEnumDict=_responseParameterToEnumDict;
 @property(retain) NSDictionary *intentParameterToEnumDict; // @synthesize intentParameterToEnumDict=_intentParameterToEnumDict;
 @property(retain) NSDictionary *responseParameterCombinationTemplates; // @synthesize responseParameterCombinationTemplates=_responseParameterCombinationTemplates;
 @property(retain) NSDictionary *intentParameterCombinationTemplates; // @synthesize intentParameterCombinationTemplates=_intentParameterCombinationTemplates;
-- (void).cxx_destruct;
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;
 - (id)createInternalGlossaryWithError:(id *)arg1;
 - (id)allPossibleValueCombinationsForParameters:(id)arg1;

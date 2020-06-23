@@ -37,6 +37,7 @@
     NSView *_draggedView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *draggedView; // @synthesize draggedView=_draggedView;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) long long instantiationMode; // @synthesize instantiationMode=_instantiationMode;
@@ -57,7 +58,6 @@
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(copy) NSString *representedObjectClassName; // @synthesize representedObjectClassName=_representedObjectClassName;
 @property(copy) NSString *nibName; // @synthesize nibName=_nibName;
-- (void).cxx_destruct;
 - (BOOL)isOpaque;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)_appearanceIsLight;

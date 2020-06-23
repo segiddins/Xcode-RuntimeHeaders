@@ -47,6 +47,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedImage;
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect titleSceneRect; // @synthesize titleSceneRect=_titleSceneRect;
 @property(readonly, nonatomic) IBUINamedEditableStringArea *titleEditableArea; // @synthesize titleEditableArea=_titleEditableArea;
 @property(nonatomic) struct CGRect sceneRect; // @synthesize sceneRect=_sceneRect;
@@ -59,7 +60,6 @@
 @property(nonatomic) CDStruct_c519178c largeContentSizeImageInsets; // @synthesize largeContentSizeImageInsets=_largeContentSizeImageInsets;
 @property(nonatomic) CDStruct_c519178c imageInsets; // @synthesize imageInsets=_imageInsets;
 @property long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;

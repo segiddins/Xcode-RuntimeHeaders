@@ -10,6 +10,8 @@
 
 @protocol DBGSBThread <NSObject>
 - (BOOL)isEqual:(id <DBGSBThread>)arg1;
+- (id <DBGSBThread>)GetCurrentExceptionBacktrace;
+- (id <DBGSBValue>)GetCurrentException;
 - (id <DBGSBError>)StepOverUntil:(id <DBGSBFrame>)arg1 fileSpec:(id <DBGSBFileSpec>)arg2 line:(unsigned int)arg3;
 - (id <DBGSBValue>)GetStopReturnValue;
 - (id <DBGSBFrame>)SetSelectedFrame:(unsigned int)arg1;

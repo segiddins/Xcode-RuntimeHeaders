@@ -17,12 +17,12 @@
     unsigned long long _currentFilteringCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentFilteringCount; // @synthesize currentFilteringCount=_currentFilteringCount;
 @property(nonatomic) unsigned long long filteringCount; // @synthesize filteringCount=_filteringCount;
 @property(nonatomic) BOOL isFiltering; // @synthesize isFiltering=_isFiltering;
 @property(nonatomic) __weak id <GPUFilteringCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *filteringQueue; // @synthesize filteringQueue=_filteringQueue;
-- (void).cxx_destruct;
 - (BOOL)filterSync:(id)arg1;
 - (id)filterAsync:(id)arg1;
 - (BOOL)_filterWithPredicate:(id)arg1;

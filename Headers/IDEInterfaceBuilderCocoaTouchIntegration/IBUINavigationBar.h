@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, IBUITextAttributes, NSArray, NSDictionary, NSImage, NSMutableArray, NSString, NSValue;
+@class IBColor, IBUITextAttributes, NSArray, NSDictionary, NSImage, NSMutableArray, NSString, NSValue;
 
 @interface IBUINavigationBar : IBUIView <IBDocumentArchiving>
 {
@@ -27,7 +27,7 @@
     NSImage *_shadowImage;
     NSImage *_backIndicatorImage;
     NSImage *_backIndicatorTransitionMaskImage;
-    IBUIColor *_barTintColor;
+    IBColor *_barTintColor;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -49,8 +49,9 @@
 + (id)keyPathsForValuesAffectingIbInspectedTitleTextAttributes;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forcesPrompt; // @synthesize forcesPrompt=_forcesPrompt;
-@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(copy, nonatomic) IBColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(retain, nonatomic) NSImage *backIndicatorTransitionMaskImage; // @synthesize backIndicatorTransitionMaskImage=_backIndicatorTransitionMaskImage;
 @property(retain, nonatomic) NSImage *backIndicatorImage; // @synthesize backIndicatorImage=_backIndicatorImage;
 @property(retain, nonatomic) NSImage *shadowImage; // @synthesize shadowImage=_shadowImage;
@@ -59,7 +60,6 @@
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
 @property(copy, nonatomic) IBUITextAttributes *ibShadowedLargeTitleTextAttributes; // @synthesize ibShadowedLargeTitleTextAttributes=_largeTitleTextAttributes;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)allBarButtonItems;
 - (id)currentNavigationItem;
@@ -72,6 +72,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
+- (void)ibPopulateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (BOOL)ibWantsPlaceholderContainingViewControllerWhenMarshallingWithContext:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)setIbInspectedLargeTitleTextShadowVerticalOffset:(double)arg1;

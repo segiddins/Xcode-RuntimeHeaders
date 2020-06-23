@@ -23,11 +23,11 @@
 }
 
 + (id)inlineStop;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id finalDestinationTicket; // @synthesize finalDestinationTicket=_finalDestinationTicket;
 @property(retain, nonatomic) id <XRMobileAgentStop> finalDestination; // @synthesize finalDestination=_finalDestination;
 @property(readonly, nonatomic) BOOL updated; // @synthesize updated=_updated;
 @property(readonly, nonatomic) id <XRMobileAgentStop> currentStop; // @synthesize currentStop=_currentStop;
-- (void).cxx_destruct;
 - (int)_nextMovementType;
 - (void)setNextStop:(id)arg1 mode:(id)arg2;
 - (void)setNextStop:(id)arg1 mode:(id)arg2 ticket:(id)arg3;

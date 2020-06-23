@@ -11,8 +11,8 @@
     id _delegate;
 }
 
-@property(retain, nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (id)labelWithFormat:(id)arg1;
 - (id)tokenizeString:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

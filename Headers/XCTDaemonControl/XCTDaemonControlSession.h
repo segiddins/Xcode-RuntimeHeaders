@@ -29,6 +29,7 @@
 + (void)requestSessionForSimulatorDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)requestSessionForLocalComputerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)requestSessionWithDTXConnectionProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property __weak id <XCTDaemonControlSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> diagnosticReportsSynchronizer; // @synthesize diagnosticReportsSynchronizer=_diagnosticReportsSynchronizer;
 @property(readonly, copy) XCTProtocolVersion *daemonProtocolVersion; // @synthesize daemonProtocolVersion=_daemonProtocolVersion;
@@ -37,11 +38,10 @@
 @property BOOL isConnected; // @synthesize isConnected=_isConnected;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 - (id)_XCT_reportSelfDiagnosisIssue:(id)arg1 description:(id)arg2;
 - (id)_XCT_logDebugMessage:(id)arg1;
 - (id)_XCT_handleCrashReportData:(id)arg1 fromFileWithName:(id)arg2;
-- (void)requestSpindumpWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestSpindumpWithSpecification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)collectLogArchiveFromStartDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_synchronizeRemoteHostDiagnosticsAndRemapFilePath:(id)arg1 synchronizer:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)collectNewCrashReportsInDirectories:(id)arg1 matchingProcessNames:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -18,9 +18,9 @@
 
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+- (void).cxx_destruct;
 @property(retain) IDEMemoryData *memoryData; // @synthesize memoryData=_memoryData;
 @property(copy) NSString *customDisplayName; // @synthesize customDisplayName=_customDisplayName;
-- (void).cxx_destruct;
 - (id)_memoryDataForURLParts:(id)arg1 inLaunchSession:(id)arg2;
 - (id)_memoryDataForURLParts:(id)arg1 inWorkspace:(id)arg2;
 - (id)_memoryDataForURL:(id)arg1;

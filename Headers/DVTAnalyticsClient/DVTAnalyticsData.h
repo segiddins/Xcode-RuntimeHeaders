@@ -14,8 +14,8 @@
     NSString *_isBeta;
 }
 
-@property(retain, nonatomic) NSString *isBeta; // @synthesize isBeta=_isBeta;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *isBeta; // @synthesize isBeta=_isBeta;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
 
 @end

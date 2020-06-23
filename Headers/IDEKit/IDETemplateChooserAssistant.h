@@ -38,6 +38,7 @@
 + (id)defaultViewNibName;
 + (BOOL)showsCrossPlatformSection;
 + (id)supportedTemplateKind;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *filteredTemplates; // @synthesize filteredTemplates=_filteredTemplates;
 @property(retain, nonatomic) NSArray *filteredCategories; // @synthesize filteredCategories=_filteredCategories;
 @property(retain, nonatomic) IDETemplateSection *selectedSection; // @synthesize selectedSection=_selectedSection;
@@ -50,7 +51,6 @@
 @property __weak DVTScopeBarButton *initialSectionButton; // @synthesize initialSectionButton=_initialSectionButton;
 @property(nonatomic) __weak NSStackView *sectionStackView; // @synthesize sectionStackView=_sectionStackView;
 @property(nonatomic) __weak IDETemplateChooserCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)primitiveSetFilterString:(id)arg1;
 - (void)updateFilteredTemplatesWithAnimation:(BOOL)arg1 desiredSelectedTemplate:(id)arg2;
 - (void)_updateContextTemplateFromCollectionViewSelection;

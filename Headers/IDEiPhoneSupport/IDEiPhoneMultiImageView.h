@@ -19,9 +19,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property double imageRowHeight; // @synthesize imageRowHeight=_imageRowHeight;
 @property(retain) id <IDEiPhoneMultiImageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)mouseUp:(id)arg1;
 - (void)reloadImages;

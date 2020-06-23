@@ -16,10 +16,10 @@
     NSArray *_magicWords;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *magicWords; // @synthesize magicWords=_magicWords;
 @property(readonly) DVTFileDataType *detectedType; // @synthesize detectedType=_detectedType;
 @property(readonly) DVTFileDataType *matchedType; // @synthesize matchedType=_matchedType;
-- (void).cxx_destruct;
 - (id)initWithExtension:(id)arg1;
 
 @end

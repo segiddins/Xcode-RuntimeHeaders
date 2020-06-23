@@ -9,7 +9,7 @@
 #import <IDEFoundation/IDEProvisioningAssetSelectionDataSource-Protocol.h>
 
 @class IDEProfileQualification, IDEProvisionableManager, IDEProvisionableStatusEvaluatorResult, IDEProvisioningUserAction, NSArray, NSError, NSOrderedSet, NSSet, NSString, _TtC13IDEFoundation42IDEProvisionableManagerIOSMacConfiguration;
-@protocol IDEProvisioningBasicProfile, IDEProvisioningBasicSigningIdentity, IDEProvisioningBasicTeam, IDEProvisioningSigningCertificateSelectionDataSource><IDEProvisioningProfileSelectionDataSource><IDEProvisioningBundleIdentifierDataSource;
+@protocol IDEProvisioningBasicProfile, IDEProvisioningBasicSigningIdentity, IDEProvisioningBasicTeam, IDEProvisioningSigningCertificateSelectionDataSource><IDEProvisioningProfileSelectionDataSource><IDEProvisioningiOSMacBundleIdentifierDataSource;
 
 @interface IDEProvisionableManagerConfiguration : NSObject <IDEProvisioningAssetSelectionDataSource>
 {
@@ -35,6 +35,7 @@
 + (id)keyPathsForValuesAffectingErrors;
 + (id)keyPathsForValuesAffectingProvisioningStyle;
 + (id)configurationWithManager:(id)arg1 configurationName:(id)arg2 evaluatorResult:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *repairBusyReason; // @synthesize repairBusyReason=_repairBusyReason;
 @property(readonly, nonatomic) _TtC13IDEFoundation42IDEProvisionableManagerIOSMacConfiguration *iOSMacConfiguration; // @synthesize iOSMacConfiguration=_iOSMacConfiguration;
 @property(retain, nonatomic) NSError *repairError; // @synthesize repairError=_repairError;
@@ -46,8 +47,7 @@
 @property(readonly, nonatomic) NSOrderedSet *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
 @property(readonly, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(readonly, nonatomic) IDEProvisionableManager *provisionableManager; // @synthesize provisionableManager=_provisionableManager;
-- (void).cxx_destruct;
-@property(readonly) id <IDEProvisioningSigningCertificateSelectionDataSource><IDEProvisioningProfileSelectionDataSource><IDEProvisioningBundleIdentifierDataSource> iOSMacDataSource;
+@property(readonly) id <IDEProvisioningSigningCertificateSelectionDataSource><IDEProvisioningProfileSelectionDataSource><IDEProvisioningiOSMacBundleIdentifierDataSource> iOSMacDataSource;
 - (void)repairable:(id)arg1 completedWithError:(id)arg2;
 - (id)_wrappedRepairError:(id)arg1;
 - (void)repairable:(id)arg1 requiresUserAction:(id)arg2;
@@ -70,6 +70,8 @@
 @property(readonly, getter=isProfileChangeable) BOOL profileChangeable;
 @property(readonly) long long profileSupport;
 @property(retain, nonatomic) NSString *bundleIdentifier;
+@property(readonly, nonatomic) NSString *bundleIdentifierPlaceholder;
+@property(readonly, nonatomic) BOOL wantsBundleIdentifierEditingLabel;
 @property(readonly) BOOL wantsBundleIdentifierEditing;
 @property(readonly) BOOL isBundleIdentifierReadOnly;
 - (id)buildParameters;

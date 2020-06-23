@@ -11,28 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)inputHandlerForGraph:(id)arg1 didChangeMouseInteractionInProgress:(BOOL)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsRangeIndicatorState:(unsigned long long)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsEndLongPressDragAtTime:(unsigned long long)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsLongPressDragToTime:(unsigned long long)arg2;
-- (BOOL)inputHandlerForGraph:(id)arg1 requestsLongPressDragBeginAtTime:(unsigned long long)arg2 onPlanes:(id)arg3;
 - (void)inputHandlerRequestsToClearInspectionInfoForGraph:(id)arg1;
 - (void)inputHandlerForGraph:(id)arg1 requestsDisplayInspectionInfoForNanosecond:(unsigned long long)arg2 point:(struct CGPoint)arg3;
-- (void)inputHandlerForGraph:(id)arg1 unhandledClickAtTime:(unsigned long long)arg2 clickCount:(long long)arg3 onPlanes:(id)arg4 modifierFlags:(unsigned long long)arg5;
-- (void)inputHandlerForGraph:(id)arg1 unhandledClickAtTime:(unsigned long long)arg2 clickCount:(long long)arg3 onPlanes:(id)arg4;
-- (void)inputHandlerForGraph:(id)arg1 iconClickedOnPlane:(id)arg2 relativeRect:(struct CGRect)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (void)inputHandlerForGraph:(id)arg1 glyphClickedAt:(unsigned long long)arg2 onPlane:(id)arg3 relativeRect:(struct CGRect)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (void)inputHandlerForGraph:(id)arg1 requestsHeight:(double)arg2 forPlane:(id)arg3;
-- (void)inputHandlerForGraph:(id)arg1 requestsCollapsingGroupPlane:(id)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsExpandingGroupPlane:(id)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsNanosecondsPerPoint:(unsigned long long)arg2;
-- (void)inputHandlerRequestsToClearCurrentInspectionTimeForGraph:(id)arg1;
-- (void)inputHandlerForGraph:(id)arg1 requestsCurrentInspectionTime:(unsigned long long)arg2;
-- (void)inputHandlerDidFinishSelectionForGraph:(id)arg1;
-- (void)inputHandlerRequestsToClearSelectedTimeRangeForGraph:(id)arg1;
-- (void)inputHandlerForGraph:(id)arg1 requestsSelectedTimeRange:(struct XRTimeRange)arg2 withEventNanosecondOffset:(long long)arg3;
-- (void)inputHandlerForGraph:(id)arg1 requestYOffset:(double)arg2;
-- (void)inputHandlerForGraph:(id)arg1 requestsNanosecondOffset:(long long)arg2;
 
 @end
 

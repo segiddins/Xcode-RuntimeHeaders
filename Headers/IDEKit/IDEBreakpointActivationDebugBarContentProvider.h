@@ -15,8 +15,8 @@
     BOOL _prefersDebugBarToAlwaysBeShown;
 }
 
-@property BOOL prefersDebugBarToAlwaysBeShown; // @synthesize prefersDebugBarToAlwaysBeShown=_prefersDebugBarToAlwaysBeShown;
 - (void).cxx_destruct;
+@property BOOL prefersDebugBarToAlwaysBeShown; // @synthesize prefersDebugBarToAlwaysBeShown=_prefersDebugBarToAlwaysBeShown;
 - (void)currentDebugSessionStateDidChange;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;

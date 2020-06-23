@@ -13,8 +13,8 @@
     NSArray *_dataSet;
 }
 
-@property(copy, nonatomic) NSArray *dataSet; // @synthesize dataSet=_dataSet;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *dataSet; // @synthesize dataSet=_dataSet;
 - (BOOL)isFlipped;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

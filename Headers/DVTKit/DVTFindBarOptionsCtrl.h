@@ -29,6 +29,7 @@
 }
 
 + (id)safeCharacterSet;
+- (void).cxx_destruct;
 @property __weak NSView *wrapView; // @synthesize wrapView=_wrapView;
 @property __weak NSView *matchCaseView; // @synthesize matchCaseView=_matchCaseView;
 @property __weak NSView *hitsMustContainView; // @synthesize hitsMustContainView=_hitsMustContainView;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL findWraps; // @synthesize findWraps=_findWraps;
 @property(nonatomic) BOOL findIgnoresCase; // @synthesize findIgnoresCase=_findIgnoresCase;
 @property(nonatomic) unsigned long long findType; // @synthesize findType=_findType;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;

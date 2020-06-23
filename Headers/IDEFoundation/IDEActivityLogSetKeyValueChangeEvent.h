@@ -14,9 +14,9 @@
     NSValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSValue *value; // @synthesize value=_value;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 key:(id)arg2 value:(id)arg3;

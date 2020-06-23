@@ -19,11 +19,11 @@
 + (id)qualifiedDisplayNameForComponents:(id)arg1;
 + (id)regionDisplayNameForInviolableLocaleIdentifier:(id)arg1 custom:(BOOL)arg2;
 + (id)countryNameForLocaleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL showUseSchemeSettings; // @synthesize showUseSchemeSettings=_showUseSchemeSettings;
 @property(readonly) IDEScheme *scheme; // @synthesize scheme=_scheme;
 @property __weak NSMenu *popUpMenu; // @synthesize popUpMenu=_popUpMenu;
 @property(retain) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)enable:(BOOL)arg1;
 - (BOOL)menuEnableState;

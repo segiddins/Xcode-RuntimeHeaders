@@ -21,13 +21,13 @@
 }
 
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *invocationFinishedObserver; // @synthesize invocationFinishedObserver=_invocationFinishedObserver;
 @property(nonatomic) double totalDuration; // @synthesize totalDuration=_totalDuration;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(copy, nonatomic) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
 @property(copy, nonatomic) NSArray *performanceMetricsForDisplay; // @synthesize performanceMetricsForDisplay=_performanceMetricsForDisplay;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-- (void).cxx_destruct;
 - (void)selectDocumentLocations:(id)arg1;
 @property(readonly, nonatomic) IDESchemeActionsInvocationRecord *ide_testReport_rootObject_schemeActionsInvocationRecord;
 @property(readonly, nonatomic) BOOL ide_testReport_rootObject_attachmentsHaveBeenPruned;

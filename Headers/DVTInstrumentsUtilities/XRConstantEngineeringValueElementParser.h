@@ -15,8 +15,8 @@
 }
 
 + (id)_elementNameToClassMap;
-@property(readonly, nonatomic) XRConstantEngineeringValue *parsedValue; // @synthesize parsedValue=_parsedValue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) XRConstantEngineeringValue *parsedValue; // @synthesize parsedValue=_parsedValue;
 - (void)_handleCompletion;
 - (void)setValue:(id)arg1 forElementName:(id)arg2;
 

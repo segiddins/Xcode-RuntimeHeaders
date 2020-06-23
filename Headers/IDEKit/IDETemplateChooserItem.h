@@ -18,11 +18,11 @@
 
 + (id)keyPathsForValuesAffectingIcon;
 + (id)keyPathsForValuesAffectingName;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property(nonatomic) __weak IDETemplateChooserSelectionDrawingView *nameSelectionDrawingView; // @synthesize nameSelectionDrawingView=_nameSelectionDrawingView;
 @property(nonatomic) __weak NSImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(nonatomic) __weak IDETemplateChooserSelectionDrawingView *iconSelectionDrawingView; // @synthesize iconSelectionDrawingView=_iconSelectionDrawingView;
-- (void).cxx_destruct;
 - (void)setSelected:(BOOL)arg1;
 - (void)updateColors;
 - (id)accessibilityLabel;

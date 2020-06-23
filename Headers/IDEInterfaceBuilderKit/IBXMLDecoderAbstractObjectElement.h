@@ -20,8 +20,8 @@
     NSString *_className;
 }
 
-@property(readonly) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+@property(readonly) NSString *className; // @synthesize className=_className;
 @property(readonly) NSString *identifier;
 - (id)resolvedAbstractObjectElement;
 - (void)enumerateElements:(CDUnknownBlockType)arg1;

@@ -6,11 +6,9 @@
 
 #import <AppKit/NSSearchField.h>
 
-#import <SourceEditor/_TtP12SourceEditor34SourceEditorTextFindPanelFieldType_-Protocol.h>
-
 @class MISSING_TYPE, NSFont, _TtC12SourceEditor25SourceEditorTextFindPanel;
 
-@interface _TtC12SourceEditor25SourceEditorTextFindField : NSSearchField <_TtP12SourceEditor34SourceEditorTextFindPanelFieldType_>
+@interface _TtC12SourceEditor25SourceEditorTextFindField : NSSearchField
 {
     MISSING_TYPE *panel;
     MISSING_TYPE *insets;

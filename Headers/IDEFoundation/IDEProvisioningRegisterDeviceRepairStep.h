@@ -16,9 +16,9 @@
 }
 
 + (id)createRegisterDeviceRepairStepWithDevice:(id)arg1 team:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) DVTPortalTeam *team; // @synthesize team=_team;
 @property(readonly) id <DVTPortalDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;
 - (id)activityDescription;

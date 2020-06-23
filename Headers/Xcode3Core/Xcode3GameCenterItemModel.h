@@ -12,7 +12,7 @@
 @interface Xcode3GameCenterItemModel : IDEProjectItemModel
 {
     NSNumber *_requiresGameCenterDeviceCompatibilityInfoPlistEntry;
-    NSNumber *_requiresLocalGameCenterEntitlement;
+    NSNumber *_deprecatedRequiresLocalGameCenterEntitlement;
     id <IDEFlightChecking> _portalFlightCheck;
     id <IDEFlightChecking> _linkedFrameworksFlightCheck;
     id <IDEFlightChecking> _infoPlistFlightCheck;
@@ -28,7 +28,7 @@
 - (id)infoPlistFlightCheck;
 - (id)linkedFrameworksFlightCheck;
 - (BOOL)onlyRequiresLinkedFramework;
-- (BOOL)requiresLocalGameCenterEntitlement;
+- (BOOL)deprecatedRequiresLocalGameCenterEntitlement;
 - (BOOL)requiresGameCenterDeviceCompatibilityInfoPlistEntry;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 

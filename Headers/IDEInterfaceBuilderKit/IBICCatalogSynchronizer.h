@@ -38,11 +38,11 @@
 + (id)synchronizerForCatalogAtPath:(id)arg1;
 + (id)synchronizerTakingOwnershipForCatalog:(id)arg1 atPath:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isCurrentlySynchronizing; // @synthesize isCurrentlySynchronizing=_isCurrentlySynchronizing;
 @property(nonatomic) BOOL hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property __weak id <IBICCatalogSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasWrittenAllChanges;
 - (void)preventSynchronizationDuring:(CDUnknownBlockType)arg1;
 - (BOOL)isSynchronizationEnabled;

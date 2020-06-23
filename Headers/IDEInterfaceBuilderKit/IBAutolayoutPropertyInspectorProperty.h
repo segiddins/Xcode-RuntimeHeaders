@@ -16,11 +16,11 @@
     NSStepper *_stepper;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSStepper *stepper; // @synthesize stepper=_stepper;
 @property(readonly, nonatomic) IDEInspectorKeyPath *propertyKeyPath; // @synthesize propertyKeyPath=_propertyKeyPath;
 @property(readonly, nonatomic) IBAutolayoutPropertyEditingController *editingController; // @synthesize editingController=_editingController;
 @property(retain) DVTButtonTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (double)baseline;

@@ -21,11 +21,11 @@
 + (id)_consecutiveThreadLineSeparatorColor;
 + (id)_crashingThreadHighlightColor;
 + (double)lastChildRowHeightAdjustment;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isLastChildRowInParent; // @synthesize isLastChildRowInParent=_isLastChildRowInParent;
 @property(nonatomic) BOOL drawDashedSeparator; // @synthesize drawDashedSeparator=_drawDashedSeparator;
 @property(nonatomic) BOOL drawBottomSeparator; // @synthesize drawBottomSeparator=_drawBottomSeparator;
 @property(nonatomic) BOOL drawCrashingThreadHighlight; // @synthesize drawCrashingThreadHighlight=_drawCrashingThreadHighlight;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

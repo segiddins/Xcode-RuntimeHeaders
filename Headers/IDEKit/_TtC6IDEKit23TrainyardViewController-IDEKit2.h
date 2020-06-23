@@ -6,9 +6,7 @@
 
 #import <IDEKit/_TtC6IDEKit23TrainyardViewController.h>
 
-#import <IDEKit/DVTTableViewDelegate-Protocol.h>
-
-@interface _TtC6IDEKit23TrainyardViewController (IDEKit2) <DVTTableViewDelegate>
+@interface _TtC6IDEKit23TrainyardViewController (IDEKit2)
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 @end
 

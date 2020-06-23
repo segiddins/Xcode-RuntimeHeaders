@@ -6,7 +6,7 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-@class DVTPopUpButtonCell, DVTReplacementView, MISSING_TYPE, NSButton, NSPopUpButton, NSTextField, NSView;
+@class DVTPopUpButtonCell, DVTReplacementView, MISSING_TYPE, NSButton, NSPopUpButton, NSScrollView, NSTextField, NSView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC13IDEProductsUI36AnalyticsMetricsDetailViewController : DVTViewController
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *percentilePopUp;
     MISSING_TYPE *lastUpdatedField;
     MISSING_TYPE *replacementView;
-    MISSING_TYPE *helpButton;
+    MISSING_TYPE *scrollView;
     MISSING_TYPE *deviceButtonCell;
     MISSING_TYPE *percentileButtonCell;
     MISSING_TYPE *updatingPopups;
@@ -39,12 +39,11 @@ __attribute__((visibility("hidden")))
 - (void)primitiveInvalidate;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)helpButtonClicked:(id)arg1;
 - (void)viewError:(id)arg1;
 @property(nonatomic, retain) NSButton *errorButton; // @synthesize errorButton;
 @property(nonatomic, retain) DVTPopUpButtonCell *percentileButtonCell; // @synthesize percentileButtonCell;
 @property(nonatomic, retain) DVTPopUpButtonCell *deviceButtonCell; // @synthesize deviceButtonCell;
-@property(nonatomic, retain) NSButton *helpButton; // @synthesize helpButton;
+@property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView;
 @property(nonatomic, retain) DVTReplacementView *replacementView; // @synthesize replacementView;
 @property(nonatomic, retain) NSTextField *lastUpdatedField; // @synthesize lastUpdatedField;
 @property(nonatomic, retain) NSPopUpButton *percentilePopUp; // @synthesize percentilePopUp;

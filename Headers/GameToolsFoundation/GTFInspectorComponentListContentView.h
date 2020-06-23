@@ -16,10 +16,10 @@
     id <GTFInspectorComponentListContentViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <GTFInspectorComponentListContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSView *menuView; // @synthesize menuView=_menuView;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderKit/DVTResourceComboBoxDataSource-Protocol.h>
 
-@class DVTResourceComboBox, IBNamedResourceRecord, IBResourceValueTransformer, IDEInspectorKeyPath, NSArray, NSButton, NSMutableDictionary, NSString, NSView;
+@class DVTResourceComboBox, IBNamedResourceRecord, IBResourceValueTransformer, IDEInspectorKeyPath, NSArray, NSButton, NSMutableDictionary, NSString, NSTextField;
 
 @interface IBInspectorNamedResourceProperty : IDEInspectorProperty <DVTResourceComboBoxDataSource>
 {
@@ -16,20 +16,21 @@
     IDEInspectorKeyPath *_valueKeyPath;
     IDEInspectorKeyPath *_listContentKeyPath;
     IDEInspectorKeyPath *_systemListContentKeyPath;
+    IDEInspectorKeyPath *_systemPrivateListContentKeyPath;
     NSMutableDictionary *_groupNameToResourceList;
     NSArray *_filteredResourceList;
     IBNamedResourceRecord *_currentNamedResource;
     BOOL _hideRevealInEditorButton;
     DVTResourceComboBox *_comboBox;
     NSButton *_revealResourceButton;
-    NSView *_systemTagView;
+    NSTextField *_systemTagView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideRevealInEditorButton; // @synthesize hideRevealInEditorButton=_hideRevealInEditorButton;
-@property(retain) NSView *systemTagView; // @synthesize systemTagView=_systemTagView;
+@property(retain) NSTextField *systemTagView; // @synthesize systemTagView=_systemTagView;
 @property(retain) NSButton *revealResourceButton; // @synthesize revealResourceButton=_revealResourceButton;
 @property(retain) DVTResourceComboBox *comboBox; // @synthesize comboBox=_comboBox;
-- (void).cxx_destruct;
 - (void)revealLocationInEditor:(id)arg1;
 - (id)documentLocationForValue;
 - (id)ibResourceManager;
@@ -39,14 +40,15 @@
 - (void)configureActionSelectorForControl:(id)arg1;
 - (void)userDidChangeValue:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
-- (id)fallbackResourceListContentKeyPathForType:(id)arg1 isSystemResource:(BOOL)arg2;
+- (id)fallbackSystemPrivateResourceListContentKeyPathForType:(id)arg1;
+- (id)fallbackSystemResourceListContentKeyPathForType:(id)arg1;
+- (id)fallbackUserResourceListContentKeyPathForType:(id)arg1;
 - (void)refresh;
 - (void)setComboBoxStringValue:(id)arg1 namespaceID:(id)arg2;
 - (void)refreshIconRepresentationNamedResource:(id)arg1;
 - (void)refreshIconRepresentationWithValue:(id)arg1 namespaceID:(id)arg2;
 - (void)invalidateResourceList;
 - (id)fullResourceListForGroupName:(id)arg1;
-- (id)namespaceIDForNamedResource:(id)arg1;
 - (id)namespaceIDForGroupName:(id)arg1;
 - (id)listContentKeyPathForGroupName:(id)arg1;
 - (id)orderedGroups;

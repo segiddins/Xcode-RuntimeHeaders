@@ -46,6 +46,7 @@
 + (id)appleGlotIBExportPlistPath;
 + (id)appleGlotIBBundlePath;
 + (id)attributeTextFromExportSection:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long previousLimit; // @synthesize previousLimit;
 @property BOOL coreDumpSizelimitHasChanged; // @synthesize coreDumpSizelimitHasChanged;
 @property BOOL suppressIbtoolError; // @synthesize suppressIbtoolError;
@@ -66,7 +67,6 @@
 @property(retain) NSArray *toolOptions; // @synthesize toolOptions;
 @property(retain) NSString *toolPath; // @synthesize toolPath;
 @property(retain) NSString *ibFilePath; // @synthesize ibFilePath;
-- (void).cxx_destruct;
 - (void)restoreCoreDumpLimit;
 - (void)disableCoreDump;
 - (void)searchForCacheFileAndValidateItForIbfile:(id)arg1 cacheDirectory:(id)arg2 validatedPlist:(id *)arg3 validatedStrings:(id *)arg4;

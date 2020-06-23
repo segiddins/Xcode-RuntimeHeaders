@@ -4,12 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DebuggerUI/DBGSimpleNode.h>
+#import <DebuggerUI/DBGNode.h>
 
-@class DBGBorderNode, DBGInteractiveSceneView;
+@class DBGBorderNode, DBGInteractiveSceneView, DBGSimpleNode;
 @protocol DBGDecorationContent;
 
-@interface DBGHeaderDecorationNode : DBGSimpleNode
+@interface DBGHeaderDecorationNode : DBGNode
 {
     BOOL _wireframeModeEnabled;
     BOOL _borderHidden;
@@ -23,6 +23,7 @@
     struct CGSize _geometrySize;
 }
 
+- (void).cxx_destruct;
 @property(retain) DBGBorderNode *borderNode; // @synthesize borderNode=_borderNode;
 @property(retain) DBGSimpleNode *decorationContentsNode; // @synthesize decorationContentsNode=_decorationContentsNode;
 @property(nonatomic) int nodeContentMode; // @synthesize nodeContentMode=_nodeContentMode;
@@ -33,7 +34,6 @@
 @property __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property struct CGSize geometrySize; // @synthesize geometrySize=_geometrySize;
 @property __weak id <DBGDecorationContent> content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)_updateShaderModifiers;
 - (void)updateDecorationAfterAppearanceChange;
 - (void)updateDecorationVisibility;

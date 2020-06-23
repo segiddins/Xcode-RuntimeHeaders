@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsMultipleObjectInspection;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKTileDefinition *editingDefinition; // @synthesize editingDefinition=_editingDefinition;
 @property(nonatomic) __weak SKNode *editingNode; // @synthesize editingNode=_editingNode;
 @property(retain, nonatomic) NSMenu *typeMenu; // @synthesize typeMenu=_typeMenu;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *currentPasteboardDragMarker; // @synthesize currentPasteboardDragMarker=_currentPasteboardDragMarker;
 @property(copy, nonatomic) NSArray *userDefinedRuntimeUserData; // @synthesize userDefinedRuntimeUserData=_userDefinedRuntimeUserData;
 @property(retain, nonatomic) NSIndexSet *rowIndexesToSelectAfterRefresh; // @synthesize rowIndexesToSelectAfterRefresh=_rowIndexesToSelectAfterRefresh;
-- (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 removeRowsWithIndexes:(id)arg2;
 - (BOOL)tableView:(id)arg1 canRemoveRowsWithIndexes:(id)arg2;

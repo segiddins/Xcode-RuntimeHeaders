@@ -23,11 +23,11 @@
 + (id)filterForFilterText:(id)arg1 andRepresentedObjectPredicates:(id)arg2 options:(unsigned long long)arg3;
 + (id)filterForFilterText:(id)arg1 andRepresentedObjectPredicate:(id)arg2;
 + (id)filterForFilterText:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _IDENavigableItemFilterMatcher *externalPredicateMatcher; // @synthesize externalPredicateMatcher=_externalPredicateMatcher;
 @property(retain, nonatomic) _IDENavigableItemFilterMatcher *textMatcher; // @synthesize textMatcher=_textMatcher;
 @property(copy) NSArray *textFragments; // @synthesize textFragments=_textFragments;
 @property(nonatomic) BOOL shouldShowAllChildrenUnderMatch; // @synthesize shouldShowAllChildrenUnderMatch=_shouldShowAllChildrenUnderMatch;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

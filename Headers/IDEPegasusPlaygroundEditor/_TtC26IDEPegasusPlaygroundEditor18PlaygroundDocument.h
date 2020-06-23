@@ -11,13 +11,14 @@
 #import <IDEPegasusPlaygroundEditor/IDEPlaygroundHostingDocument-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/IDEToyboxDelegate-Protocol.h>
 
-@class IDEPlaygroundPageSharedContext, IDEPlaygroundSharedContext, IDEToybox, MISSING_TYPE, NSArray, NSMutableArray, NSString;
+@class IDEPlaygroundPageSharedContext, IDEPlaygroundSharedContext, IDEToybox, MISSING_TYPE, NSArray, NSDictionary, NSMutableArray, NSString, NSURL;
 
 @interface _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument : _$s15IDESourceEditor18SourceCodeDocumentCN <IDEPlaygroundHostingDocument, IDEPlaygroundExecutionSessionDelegate, IDEToyboxDelegate, IDEPlaygroundExecutionDeviceViewContentReceiver>
 {
     MISSING_TYPE *notificationTokens;
     MISSING_TYPE *observationTokens;
     MISSING_TYPE *documentObservers;
+    MISSING_TYPE *diagnosticsLog;
     MISSING_TYPE *isLegacyDocument;
     MISSING_TYPE *currentUUID;
     MISSING_TYPE *originalContentURLDuringSave;
@@ -77,6 +78,7 @@
 - (void)playgroundExecutionSessionDidCompleteExpression:(id)arg1;
 - (void)playgroundExecutionSessionWillBeginExpression:(id)arg1;
 - (void)playgroundExecutionSession:(id)arg1 didMoveToState:(unsigned long long)arg2;
+@property(nonatomic, readonly) NSDictionary *buildSettings;
 - (void)playgroundExecutionSessionDidBeginExecution:(id)arg1;
 - (void)playgroundExecutionSessionWillBeginExecution:(id)arg1;
 - (id)fileWrapperOfType:(id)arg1 error:(id *)arg2;
@@ -88,6 +90,7 @@
 @property(nonatomic, readonly) IDEPlaygroundPageSharedContext *playgroundPageContext;
 @property(nonatomic, readonly) IDEPlaygroundSharedContext *playgroundContext;
 @property(nonatomic, retain) IDEPlaygroundSharedContext *_playgroundContext; // @synthesize _playgroundContext;
+@property(nonatomic, copy) NSURL *fileURL;
 @property(nonatomic, retain) IDEToybox *toybox; // @synthesize toybox;
 @property(nonatomic, retain) NSMutableArray *consoleItems; // @synthesize consoleItems;
 @property(nonatomic, copy) NSArray *executionIssues;

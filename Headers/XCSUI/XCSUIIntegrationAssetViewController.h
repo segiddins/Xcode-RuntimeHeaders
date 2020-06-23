@@ -21,6 +21,7 @@
     NSURLSessionDownloadTask *_currentDownload;
 }
 
+- (void).cxx_destruct;
 @property __weak NSURLSessionDownloadTask *currentDownload; // @synthesize currentDownload=_currentDownload;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSView *downloadProgressView; // @synthesize downloadProgressView=_downloadProgressView;
@@ -28,7 +29,6 @@
 @property(retain) NSView *archiveActionView; // @synthesize archiveActionView=_archiveActionView;
 @property(retain) NSView *actionView; // @synthesize actionView=_actionView;
 @property(retain) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long assetType;
 @property(retain, nonatomic) XCSIntegrationAsset *asset;
 @property(retain) NSImage *icon;

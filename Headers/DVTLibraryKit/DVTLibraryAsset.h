@@ -23,6 +23,7 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSArray *additionalSearchStrings; // @synthesize additionalSearchStrings=_additionalSearchStrings;
 @property(copy) NSAttributedString *fullDescription; // @synthesize fullDescription=_fullDescription;
@@ -34,7 +35,6 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSImage *image; // @synthesize image=_image;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSArray *searchStrings;
 - (id)initWithIdentifier:(id)arg1;

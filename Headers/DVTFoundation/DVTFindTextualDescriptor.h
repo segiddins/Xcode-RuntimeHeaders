@@ -17,10 +17,10 @@
     BOOL _caseSensitive;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long matchStyle; // @synthesize matchStyle=_matchStyle;
 - (BOOL)caseSensitive;
 @property(readonly) NSString *findString; // @synthesize findString=_findString;
-- (void).cxx_destruct;
 - (id)firstMatchingResultInString:(id)arg1 backwards:(BOOL)arg2 inRange:(struct _NSRange)arg3 withWordFindingBlock:(CDUnknownBlockType)arg4 passingTest:(CDUnknownBlockType)arg5 docLocationCreationBlock:(CDUnknownBlockType)arg6;
 - (struct _NSRange)_wordBoundaryAtIndex:(unsigned long long)arg1 forString:(id)arg2;
 @property(readonly, copy) NSString *description;

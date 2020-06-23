@@ -27,6 +27,7 @@
 + (void)setLogLevelDebug;
 + (void)setLogLevel:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int completedBatchCount; // @synthesize completedBatchCount=_completedBatchCount;
 @property(nonatomic) unsigned int completedDocumentCount; // @synthesize completedDocumentCount=_completedDocumentCount;
 @property(nonatomic) _Atomic unsigned int addDocumentForSplitCount; // @synthesize addDocumentForSplitCount=_addDocumentForSplitCount;
@@ -35,7 +36,6 @@
 @property(nonatomic) struct _SIIndexCallbacks *syncCallbacks; // @synthesize syncCallbacks=_syncCallbacks;
 @property(nonatomic) struct __SI *si; // @synthesize si=_si;
 @property(copy, nonatomic) NSString *dirPath; // @synthesize dirPath=_dirPath;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)close;
 - (BOOL)commit;

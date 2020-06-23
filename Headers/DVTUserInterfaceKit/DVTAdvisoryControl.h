@@ -25,12 +25,12 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *topLeftImage; // @synthesize topLeftImage=_topLeftImage;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly) NSWindow *window; // @synthesize window=_advisoryWindow;
-- (void).cxx_destruct;
 - (void)close:(id)arg1;
 - (void)showAtTopLeftPoint:(struct CGPoint)arg1 alignWithTopLeftImage:(BOOL)arg2;
 - (void)dealloc;

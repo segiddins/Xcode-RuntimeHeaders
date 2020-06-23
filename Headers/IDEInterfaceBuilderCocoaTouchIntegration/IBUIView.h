@@ -15,7 +15,7 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewAutolayoutGuideDelegate-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewControllerAutolayoutGuideDelegate-Protocol.h>
 
-@class IBCocoaTouchTargetRuntime, IBDirectionalEdgeInsetsWrapper, IBEdgeInsetsWrapper, IBUIAccessibilityConfiguration, IBUIColor, IBUIEditorMetrics, IBUISimulatedBarMetrics, IBUISimulatedMetricsContainer, IBUISimulatedOrientationMetrics, IBUISimulatedSizeMetrics, IBUISimulatedStatusBarMetrics, IBUIStoryboardPreviewingSegueTemplateStorage, IBUIViewAutolayoutGuide, IBUIViewController, NSArray, NSColor, NSDictionary, NSNumber, NSString, NSValue;
+@class IBCocoaTouchTargetRuntime, IBColor, IBDirectionalEdgeInsetsWrapper, IBEdgeInsetsWrapper, IBUIAccessibilityConfiguration, IBUIEditorMetrics, IBUISimulatedBarMetrics, IBUISimulatedMetricsContainer, IBUISimulatedOrientationMetrics, IBUISimulatedSizeMetrics, IBUISimulatedStatusBarMetrics, IBUIStoryboardPreviewingSegueTemplateStorage, IBUIViewAutolayoutGuide, IBUIViewController, NSArray, NSColor, NSDictionary, NSNumber, NSString, NSValue;
 
 @interface IBUIView : IBRemoteView <IBUIInstantiatedView, IBUISimulatedMetricsIntegratedObject, IBIDEUIViewControllerAutolayoutGuideDelegate, IBDocumentArchiving, IBUIViewControllerAutolayoutGuideDelegate, IBUIViewAutolayoutGuideDelegate, IBUISimulatedMetricsObject, IBSceneUpdateRequestConfiguring>
 {
@@ -57,9 +57,9 @@
     long long _simulatedUserInterfaceStyle;
     IBCocoaTouchTargetRuntime *_targetRuntime;
     NSString *_restorationIdentifier;
-    IBUIColor *_explicitTintColor;
+    IBColor *_explicitTintColor;
     IBUISimulatedMetricsContainer *_inheritedSimulatedMetrics;
-    IBUIColor *_backgroundColor;
+    IBColor *_backgroundColor;
     double _alpha;
     long long _semanticContentAttribute;
     IBEdgeInsetsWrapper *_explicitLayoutMargins;
@@ -106,6 +106,7 @@
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (long long)ibInstantiationSizeBehavior;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ibViewControllerLayoutGuides; // @synthesize ibViewControllerLayoutGuides=_ibViewControllerLayoutGuides;
 @property(retain, nonatomic) IBUIStoryboardPreviewingSegueTemplateStorage *previewingSegueTemplateStorage; // @synthesize previewingSegueTemplateStorage=_previewingSegueTemplateStorage;
 @property(nonatomic) __weak IBUIViewController *viewController; // @synthesize viewController=_viewController;
@@ -128,9 +129,9 @@
 @property(nonatomic) BOOL clearsContextBeforeDrawing; // @synthesize clearsContextBeforeDrawing=_clearsContextBeforeDrawing;
 @property(nonatomic) BOOL autoresizesSubviewsForDevice; // @synthesize autoresizesSubviewsForDevice=_autoresizesSubviewsForDevice;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
-@property(retain, nonatomic) IBUIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(retain, nonatomic) IBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) IBUISimulatedMetricsContainer *inheritedSimulatedMetrics; // @synthesize inheritedSimulatedMetrics=_inheritedSimulatedMetrics;
-@property(copy, nonatomic) IBUIColor *explicitTintColor; // @synthesize explicitTintColor=_explicitTintColor;
+@property(copy, nonatomic) IBColor *explicitTintColor; // @synthesize explicitTintColor=_explicitTintColor;
 @property(copy) NSString *restorationIdentifier; // @synthesize restorationIdentifier=_restorationIdentifier;
 @property(readonly, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) long long simulatedUserInterfaceStyle; // @synthesize simulatedUserInterfaceStyle=_simulatedUserInterfaceStyle;
@@ -139,7 +140,6 @@
 @property(copy, nonatomic) IBUISimulatedStatusBarMetrics *simulatedStatusBarMetrics; // @synthesize simulatedStatusBarMetrics=_simulatedStatusBarMetrics;
 @property(copy, nonatomic) IBUISimulatedBarMetrics *simulatedTopBarMetrics; // @synthesize simulatedTopBarMetrics=_simulatedTopBarMetrics;
 @property(copy, nonatomic) IBUISimulatedBarMetrics *simulatedBottomBarMetrics; // @synthesize simulatedBottomBarMetrics=_simulatedBottomBarMetrics;
-- (void).cxx_destruct;
 - (void)_addEditorMetricsRequestToProcessingRequestGroup:(id)arg1;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
@@ -232,8 +232,8 @@
 @property long long tag;
 - (void)setHidden:(BOOL)arg1;
 - (id)backgroundColorAsRenderedByDevice;
-@property(readonly) IBUIColor *effectiveTintColor;
-@property(readonly) IBUIColor *inheritedTintColor;
+@property(readonly) IBColor *effectiveTintColor;
+@property(readonly) IBColor *inheritedTintColor;
 - (void)inheritedTintColorDidChange;
 - (void)inheritedTintColorWillChange;
 - (void)enumerateIBUIViewSubviews:(CDUnknownBlockType)arg1;
@@ -394,12 +394,13 @@
 - (id)ibCompiledKeyPathForDesignTimeConfigurableKeyPath:(id)arg1;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
+- (void)setNilValueForKey:(id)arg1;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
 - (BOOL)ibShouldConsiderHitTestingForChild:(id)arg1;
 - (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (void)ibEnumerateLayoutGuidesForDrawingWithBlock:(CDUnknownBlockType)arg1;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibVerifyAndPrepareContentViewConstraintItemMappings:(id)arg1 fromOldView:(id)arg2 document:(id)arg3;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (BOOL)ibCanBeReferencedByConstraintWithContainingView:(id)arg1;

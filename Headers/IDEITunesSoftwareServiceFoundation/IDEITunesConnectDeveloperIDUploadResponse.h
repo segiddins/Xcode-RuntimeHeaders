@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSString *uploadIdentifier; // @synthesize uploadIdentifier=_uploadIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *uploadIdentifier; // @synthesize uploadIdentifier=_uploadIdentifier;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

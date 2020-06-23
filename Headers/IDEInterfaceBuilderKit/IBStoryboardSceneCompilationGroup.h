@@ -20,10 +20,10 @@
     NSArray *_childCompilationUnits;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *childCompilationUnits; // @synthesize childCompilationUnits=_childCompilationUnits;
 @property(readonly) IBStoryboardSceneRootCompilationUnit *rootCompilationUnit; // @synthesize rootCompilationUnit=_rootCompilationUnit;
 @property(readonly) NSObject<IBPrimarySceneObject> *storyboardViewController; // @synthesize storyboardViewController=_storyboardViewController;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)generateCompilationUnitsReturningErrors:(id *)arg1;
 - (id)makeRootViewControllerUnit;

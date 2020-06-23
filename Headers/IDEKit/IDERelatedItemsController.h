@@ -18,10 +18,10 @@
     id <IDERelatedItemsControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IDERelatedItemsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(readonly, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)navigateToRecentItem:(id)arg1;
 - (id)makeRelatedItemsPopUpButtonWithTheme:(id)arg1;

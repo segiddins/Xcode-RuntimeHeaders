@@ -12,8 +12,8 @@
 
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (id)matchingPrcoessorFromProcessors:(id)arg1;
-- (id)makeNewPrcoessorWithDistributionMethod:(id)arg1 item:(id)arg2 itemEntitlements:(id)arg3;
+- (id)matchingProcessorFromProcessors:(id)arg1;
+- (id)makeNewProcessorWithDistributionMethod:(id)arg1 item:(id)arg2 itemEntitlements:(id)arg3 team:(id)arg4;
 
 @end
 

@@ -23,6 +23,7 @@
     DVTObservingToken *_playgroundContextExecutionModeObservingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTObservingToken *playgroundContextExecutionModeObservingToken; // @synthesize playgroundContextExecutionModeObservingToken=_playgroundContextExecutionModeObservingToken;
 @property(retain) DVTObservingToken *pageContextObservingToken; // @synthesize pageContextObservingToken=_pageContextObservingToken;
 @property(retain) DVTObservingToken *sdkObservingToken; // @synthesize sdkObservingToken=_sdkObservingToken;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) IDEPlaygroundPreparationParameters *preparationParameters; // @synthesize preparationParameters=_preparationParameters;
 @property(copy) CDUnknownBlockType recalculateParametersBlock; // @synthesize recalculateParametersBlock=_recalculateParametersBlock;
 @property(retain, nonatomic) id <IDEPlaygroundAppBundle> playgroundAppBundle; // @synthesize playgroundAppBundle=_playgroundAppBundle;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_recalculateParametersIfNeeded;
 - (void)invalidateParameters;

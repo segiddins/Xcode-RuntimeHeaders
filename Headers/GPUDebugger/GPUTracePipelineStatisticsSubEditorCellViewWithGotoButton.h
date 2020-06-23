@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     GPUTracePipelineStatisticsSubEditorGotoButton *_gotoButton;
 }
 
-@property(nonatomic) __weak GPUTracePipelineStatisticsSubEditorGotoButton *gotoButton; // @synthesize gotoButton=_gotoButton;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GPUTracePipelineStatisticsSubEditorGotoButton *gotoButton; // @synthesize gotoButton=_gotoButton;
 
 @end
 

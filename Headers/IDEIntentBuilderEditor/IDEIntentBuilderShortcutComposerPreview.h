@@ -19,6 +19,7 @@
     DVTStackView_ML *_moreOptionsStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTStackView_ML *moreOptionsStackView; // @synthesize moreOptionsStackView=_moreOptionsStackView;
 @property(retain) NSTextField *moreOptionsLabel; // @synthesize moreOptionsLabel=_moreOptionsLabel;
 @property(retain) NSTextField *appNameLabel; // @synthesize appNameLabel=_appNameLabel;
@@ -26,7 +27,6 @@
 @property(retain) CALayer *appIconLayer; // @synthesize appIconLayer=_appIconLayer;
 @property(retain, nonatomic) NSArray *optionalParameters; // @synthesize optionalParameters=_optionalParameters;
 @property(readonly) IDEIntentBuilderTokenTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (struct CGRect)_moreOptionsStackViewFrameThatFitsWidth:(double)arg1;
 - (struct CGRect)_moreOptionsLabelFrameThatFitsWidth:(double)arg1;
 - (struct CGRect)_separatorLayerFrameThatFitsWidth:(double)arg1;

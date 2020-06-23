@@ -4,11 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSMenu;
+@class NSMenu, NSObject;
+@protocol SKSceneNavigating;
 
 @protocol SKSceneOutlineViewControllerDelegate
 - (struct CGPoint)getViewCenterInScene;
-- (NSMenu *)getMenuForRightClick:(struct NSObject *)arg1;
+- (NSMenu *)getMenuForRightClick:(NSObject<SKSceneNavigating> *)arg1;
 - (void)editTileMap:(id)arg1;
 - (void)editNagivationGraph:(id)arg1;
 - (void)toggleLockForSelection:(id)arg1;

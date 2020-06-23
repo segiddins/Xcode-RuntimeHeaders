@@ -23,6 +23,7 @@
     CDUnknownBlockType _updateReplacementViewBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateReplacementViewBlock; // @synthesize updateReplacementViewBlock=_updateReplacementViewBlock;
 @property(retain, nonatomic) id <IDEProvisioningProfileDownloaderDetailContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) DVTObservingToken *compoundProfileIsLocalProfileOutdatedObserver; // @synthesize compoundProfileIsLocalProfileOutdatedObserver=_compoundProfileIsLocalProfileOutdatedObserver;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) IDEProvisioningCompoundProfile *compoundProfile; // @synthesize compoundProfile=_compoundProfile;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) IDEProvisioningProfileDownloader *downloader; // @synthesize downloader=_downloader;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)didSelectProfile:(id)arg1;

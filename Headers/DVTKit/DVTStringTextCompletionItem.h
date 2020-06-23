@@ -21,6 +21,7 @@
     unsigned long long _priorityComparatorKind;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long priorityComparatorKind; // @synthesize priorityComparatorKind=_priorityComparatorKind;
 @property long long priorityBucket; // @synthesize priorityBucket=_priorityBucket;
 @property(copy) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
@@ -28,7 +29,6 @@
 @property(copy) NSString *name; // @synthesize name=_name;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 @property(readonly) BOOL notRecommended;
 @property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly) NSImage *icon;

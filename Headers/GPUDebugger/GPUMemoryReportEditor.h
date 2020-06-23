@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 @property(retain) GPUMemoryResourceItem *currentSelectedItem; // @synthesize currentSelectedItem=_currentSelectedItem;
-- (void).cxx_destruct;
 - (void)navigateToOutlineItem:(id)arg1 userInfo:(id)arg2;
 - (id)currentSelectedDocumentLocations;
 - (id)currentSelectedItems;

@@ -28,8 +28,8 @@
 }
 
 + (void)initialize;
-@property(readonly) DVTViewController<DVTMainViewControllerDrawingStrategyDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) DVTViewController<DVTMainViewControllerDrawingStrategyDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)mainViewControllerChanged;
 - (void)appActivationChanged;

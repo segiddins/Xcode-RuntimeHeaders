@@ -8,7 +8,7 @@
 
 @protocol IDEBreakpointActionRowDelegate
 @property(retain) DVTTextDocumentLocation *breakpointLocation;
-- (void)removeRowRequestedByRow:(IDEBreakpointActionRowView *)arg1;
-- (void)addRowRequestedByRow:(IDEBreakpointActionRowView *)arg1;
+- (void)removeRowRequestedByRowView:(IDEBreakpointActionRowView *)arg1;
+- (void)addRowRequestedByRowView:(IDEBreakpointActionRowView *)arg1;
 @end
 

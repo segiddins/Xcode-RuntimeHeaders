@@ -25,8 +25,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) BOOL editorModeSwitcherHasMenu; // @synthesize editorModeSwitcherHasMenu=_editorModeSwitcherHasMenu;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL editorModeSwitcherHasMenu; // @synthesize editorModeSwitcherHasMenu=_editorModeSwitcherHasMenu;
 - (id)_imageForMenuItemTag:(unsigned long long)arg1;
 - (unsigned long long)_menuItemTagForEditorAreaSplit:(id)arg1;
 - (void)_setTarget:(id)arg1 forMenuItems:(id)arg2;

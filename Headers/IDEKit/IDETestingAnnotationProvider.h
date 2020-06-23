@@ -20,10 +20,10 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) _TtC6IDEKit30IDETestingAnnotationActionMenu *currentActionMenu; // @synthesize currentActionMenu=_currentActionMenu;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)testingAnnotationActionMenuDidClose:(id)arg1;
 - (void)testingAnnotationActionMenu:(id)arg1 didSelectTestCollection:(id)arg2 testPlanConfigurations:(id)arg3;
 - (void)annotation:(id)arg1 willDrawInTextSidebarView:(id)arg2 withAnnotationsInSameLine:(id)arg3;

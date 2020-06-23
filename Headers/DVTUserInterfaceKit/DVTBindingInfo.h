@@ -16,9 +16,9 @@
     NSString *_modelKeyPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *bindingOptions; // @synthesize bindingOptions=_bindingOptions;
 @property(readonly, copy) NSString *observedKeyPath; // @synthesize observedKeyPath=_observedKeyPath;
-- (void).cxx_destruct;
 - (id)_modelKeyPath;
 - (id)_infoDictionary;
 - (id)initWithObservedObject:(id)arg1 observedKeyPath:(id)arg2 bindingOptions:(id)arg3;

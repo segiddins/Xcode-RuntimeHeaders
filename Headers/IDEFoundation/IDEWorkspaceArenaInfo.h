@@ -17,8 +17,8 @@
 
 + (id)workspaceArenaInfoFromFileAtPath:(id)arg1 error:(id *)arg2;
 + (id)workspaceArenaInfoWithWorkspacePath:(id)arg1;
-@property(readonly) NSDate *lastAccessedDate; // @synthesize lastAccessedDate=_lastAccessedDate;
 - (void).cxx_destruct;
+@property(readonly) NSDate *lastAccessedDate; // @synthesize lastAccessedDate=_lastAccessedDate;
 - (BOOL)writeToFileAtPath:(id)arg1 withRelativeWorkspacePath:(BOOL)arg2 error:(id *)arg3;
 @property(readonly) DVTFilePath *workspacePath;
 

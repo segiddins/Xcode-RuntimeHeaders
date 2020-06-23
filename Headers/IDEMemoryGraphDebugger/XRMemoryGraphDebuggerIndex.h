@@ -14,8 +14,8 @@
 }
 
 + (id)indexWithGraph:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) XRMemoryGraphDebugger *graphDebugger; // @synthesize graphDebugger=_graphDebugger;
 - (void).cxx_destruct;
+@property(retain, nonatomic) XRMemoryGraphDebugger *graphDebugger; // @synthesize graphDebugger=_graphDebugger;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

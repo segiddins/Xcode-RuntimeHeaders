@@ -19,10 +19,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) id <IDETestOperationEventSourceEvents> delegate; // @synthesize delegate=_delegate;
 @property(retain) DVTObservingToken *runOperationErrorObservationToken; // @synthesize runOperationErrorObservationToken=_runOperationErrorObservationToken;
 @property(retain) DVTObservingToken *runOperationCancellationObservationToken; // @synthesize runOperationCancellationObservationToken=_runOperationCancellationObservationToken;
-- (void).cxx_destruct;
 - (void)_observeErrorForTestOperation:(id)arg1;
 - (void)_observeCancellationForTestOperation:(id)arg1;
 - (void)primitiveInvalidate;

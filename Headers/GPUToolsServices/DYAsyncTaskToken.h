@@ -19,8 +19,8 @@
     float _progress;
 }
 
-@property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 - (void)setProgress:(float)arg1;
 - (BOOL)isCancelled;
 - (void)end;

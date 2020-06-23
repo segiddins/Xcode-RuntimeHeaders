@@ -35,8 +35,8 @@
 + (id)swatchWithColor:(id)arg1 size:(struct CGSize)arg2;
 + (id)swatchWithColor:(id)arg1 size:(struct CGSize)arg2 radius:(double)arg3;
 + (id)alternatePreviewForColor:(id)arg1;
-@property(retain, nonatomic) NSSet *mediaRepositories; // @synthesize mediaRepositories=_mediaRepositories;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *mediaRepositories; // @synthesize mediaRepositories=_mediaRepositories;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 defaultDraggedImageState:(id *)arg3 identifierMapTable:(id *)arg4;
 - (void)faultIconForAsset:(id)arg1;

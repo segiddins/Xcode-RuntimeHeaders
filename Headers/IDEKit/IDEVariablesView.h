@@ -62,6 +62,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfSelectedScopeTag;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak NSTableColumn *rawValueColumn; // @synthesize rawValueColumn=_rawValueColumn;
 @property __weak NSTableColumn *compoundColumn; // @synthesize compoundColumn=_compoundColumn;
 @property __weak NSProgressIndicator *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
@@ -81,7 +82,6 @@
 @property(retain) IDEVariablesViewStateManager *stateManager; // @synthesize stateManager=_stateManager;
 @property(retain, nonatomic) id <IDEVariablesViewContentProvider> contentProvider; // @synthesize contentProvider=_contentProvider;
 @property(retain) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
-- (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)outlineViewSelectionDidChange:(id)arg1;

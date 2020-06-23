@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     IDERunContextManager *_runContextManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IDERunContextManager *runContextManager; // @synthesize runContextManager=_runContextManager;
 @property(readonly) IDEIndex *index; // @synthesize index=_index;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(retain) IDEWorkspace *hostWorkspace; // @synthesize hostWorkspace=_hostWorkspace;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithName:(id)arg1 index:(id)arg2;
 - (BOOL)isKindOfClass:(Class)arg1;

@@ -27,6 +27,7 @@
     NSString *_customPriorityType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSString *customPriorityType; // @synthesize customPriorityType=_customPriorityType;
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
@@ -35,7 +36,6 @@
 @property(nonatomic) IBNSViewLongListInspectorLayoutView *layoutContainerView; // @synthesize layoutContainerView=_layoutContainerView;
 @property(nonatomic) IBNSViewPriorityPopoverViewController *popoverViewController; // @synthesize popoverViewController=_popoverViewController;
 @property(nonatomic) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)mouseExitedTableViewCell:(id)arg1;

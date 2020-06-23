@@ -17,10 +17,10 @@
     unsigned long long _functionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long functionID; // @synthesize functionID=_functionID;
 @property(readonly, nonatomic) BOOL isOnlineCompiled; // @synthesize isOnlineCompiled=_isOnlineCompiled;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *sourceURL;
 - (id)initWithFilePath:(id)arg1 onlineCompiled:(BOOL)arg2 functionID:(unsigned long long)arg3;
 

@@ -7,27 +7,32 @@
 #import <IDEKit/IDEAbstractFindNavigatorOutlineView.h>
 
 #import <IDEKit/DVTEmptyContentPlaceholderContainer-Protocol.h>
+#import <IDEKit/_TtP19DVTUserInterfaceKit34DVTEmptyContentPlaceholderDelegate_-Protocol.h>
 
 @class NSFont, NSString;
 
-@interface IDEFindNavigatorOutlineView : IDEAbstractFindNavigatorOutlineView <DVTEmptyContentPlaceholderContainer>
+@interface IDEFindNavigatorOutlineView : IDEAbstractFindNavigatorOutlineView <_TtP19DVTUserInterfaceKit34DVTEmptyContentPlaceholderDelegate_, DVTEmptyContentPlaceholderContainer>
 {
     BOOL _hasRunEmptyContentPlaceholderLayout;
     BOOL _hasContent;
     BOOL _processingMouseEvent;
     NSString *_emptyContentString;
     NSString *_emptyContentSubtitle;
+    NSString *_emptyContentButtonTitle;
     long long _emptyContentStringStyle;
     NSFont *_emptyContentFont;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL processingMouseEvent; // @synthesize processingMouseEvent=_processingMouseEvent;
 @property(nonatomic) BOOL hasContent; // @synthesize hasContent=_hasContent;
 @property(copy, nonatomic) NSFont *emptyContentFont; // @synthesize emptyContentFont=_emptyContentFont;
 @property(nonatomic) long long emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
+@property(copy, nonatomic) NSString *emptyContentButtonTitle; // @synthesize emptyContentButtonTitle=_emptyContentButtonTitle;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
-- (void).cxx_destruct;
+- (void)emptyContentPlaceholderButtonWasClicked:(id)arg1;
+- (id)delegate;
 - (void)unhideRowsAtIndexes:(id)arg1 withAnimation:(unsigned long long)arg2;
 - (void)hideRowsAtIndexes:(id)arg1 withAnimation:(unsigned long long)arg2;
 - (void)moveItemAtIndex:(long long)arg1 inParent:(id)arg2 toIndex:(long long)arg3 inParent:(id)arg4;
@@ -45,7 +50,11 @@
 - (void)layout;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(nonatomic) BOOL followsFontAndColorTheme;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,10 +19,10 @@
     CALayer *_backgroundLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property __weak id <IDEIntentBuilderPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *availableTokens; // @synthesize availableTokens=_availableTokens;
-- (void).cxx_destruct;
 - (void)tokenTextFieldDidChangeText:(id)arg1;
 - (id)availableTokensForTextField:(id)arg1;
 - (struct CGRect)_backgroundLayerFrameThatFitsWidth:(double)arg1;

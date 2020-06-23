@@ -14,9 +14,9 @@
     struct _NSRange _contextTextMatchingRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct _NSRange contextTextMatchingRange; // @synthesize contextTextMatchingRange=_contextTextMatchingRange;
 @property(readonly) NSString *contextText; // @synthesize contextText=_contextText;
-- (void).cxx_destruct;
 - (BOOL)textRepresentationForPasteboardIsFileName;
 - (id)textRepresentationForPasteboard;
 - (BOOL)allowsSummarization;

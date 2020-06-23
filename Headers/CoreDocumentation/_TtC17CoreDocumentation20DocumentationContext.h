@@ -13,12 +13,12 @@
     MISSING_TYPE *locale;
     MISSING_TYPE *dataProvider;
     MISSING_TYPE *topicGraph;
-    MISSING_TYPE *symbolGraph;
     MISSING_TYPE *documentlocationMap;
     MISSING_TYPE *documentationCache;
     MISSING_TYPE *assetManagers;
     MISSING_TYPE *problems;
     MISSING_TYPE *externalReferenceResolvers;
+    MISSING_TYPE *symbolIndex;
     MISSING_TYPE *checks;
 }
 

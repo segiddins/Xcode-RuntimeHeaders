@@ -13,8 +13,8 @@
     NSRegularExpression *_regularExpression;
 }
 
-@property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (void).cxx_destruct;
+@property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (id)firstMatchingResultInString:(id)arg1 backwards:(BOOL)arg2 inRange:(struct _NSRange)arg3 withWordFindingBlock:(CDUnknownBlockType)arg4 passingTest:(CDUnknownBlockType)arg5 docLocationCreationBlock:(CDUnknownBlockType)arg6;
 - (BOOL)caseSensitive;
 - (id)displayString;

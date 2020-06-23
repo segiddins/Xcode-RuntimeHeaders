@@ -18,12 +18,12 @@
 }
 
 + (id)fileWithLocalizationFrameworkDetail:(id)arg1 original:(id)arg2 projectDirectory:(id)arg3 localizedContentsDirectory:(id)arg4 sourceLocale:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly) BOOL foundInProject; // @synthesize foundInProject=_foundInProject;
 @property(readonly, copy) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly, copy) DVTComparisonDocumentLocation *location; // @synthesize location=_location;
 @property(readonly, copy) NSString *targetLanguage; // @synthesize targetLanguage=_targetLanguage;
 @property(readonly, copy) NSString *original; // @synthesize original=_original;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (id)initWithOriginal:(id)arg1 targetLanguage:(id)arg2 oldLocation:(id)arg3 newLocation:(id)arg4 issues:(id)arg5 foundInProject:(BOOL)arg6;

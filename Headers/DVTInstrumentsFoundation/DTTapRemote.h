@@ -18,8 +18,8 @@
     DTTapMessageHandler *_messageHandler;
 }
 
-@property(readonly, retain, nonatomic) DTTapMessageHandler *messageHandler; // @synthesize messageHandler=_messageHandler;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) DTTapMessageHandler *messageHandler; // @synthesize messageHandler=_messageHandler;
 - (id)_fetchDataForReason:(unsigned long long)arg1;
 - (void)_unpause;
 - (void)_pause;

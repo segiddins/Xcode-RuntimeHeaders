@@ -60,13 +60,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showOnlyInterestingContent; // @synthesize showOnlyInterestingContent=_showOnlyInterestingContent;
 @property(nonatomic) unsigned long long traceOutlineMode; // @synthesize traceOutlineMode=_traceOutlineMode;
 @property(nonatomic) BOOL showOnlyIssues; // @synthesize showOnlyIssues=_showOnlyIssues;
 @property(nonatomic) long long stackFrameFilter; // @synthesize stackFrameFilter=_stackFrameFilter;
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly) IDEDebugNavigator *debugNavigator; // @synthesize debugNavigator=_debugNavigator;
-- (void).cxx_destruct;
 - (void)_runShaderProfiler:(id)arg1;
 - (id)_memoryGaugeLocationWithLaunchSession:(id)arg1;
 - (id)_countersGaugeLocationWithLaunchSession:(id)arg1;
@@ -106,7 +106,7 @@ __attribute__((visibility("hidden")))
 - (void)_setProgramMetricsAsTime:(id)arg1;
 - (void)_setTextModeCompact:(id)arg1;
 - (void)_setTextModeVerbose:(id)arg1;
-- (void)_refreshNavigator;
+- (void)_invalidateStatusCells;
 - (BOOL)shouldExpandItemAsResultOfOptionClick:(id)arg1 clickedItem:(id)arg2;
 - (BOOL)validateUserInterfaceAction:(SEL)arg1 forRepresentedObject:(id)arg2;
 - (BOOL)validateUserInterfaceAction:(SEL)arg1;

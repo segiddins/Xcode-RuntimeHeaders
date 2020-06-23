@@ -6,26 +6,26 @@
 
 #import <DVTSourceControl/DVTSourceControlRevisionLocation.h>
 
-@class NSString, _TtC16DVTSourceControl28DVTSourceControlRemoteBranch;
+@class DVTSourceControlRemoteBranch, NSString;
 
 @interface DVTSourceControlBranch : DVTSourceControlRevisionLocation
 {
     unsigned long long _pushCount;
     unsigned long long _pullCount;
-    _TtC16DVTSourceControl28DVTSourceControlRemoteBranch *_trackingBranch;
+    DVTSourceControlRemoteBranch *_trackingBranch;
+    NSString *_identifier;
     NSString *_remoteName;
     unsigned long long _options;
-    NSString *_identifier;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 @property unsigned long long options; // @synthesize options=_options;
 @property(retain) NSString *remoteName; // @synthesize remoteName=_remoteName;
-@property(retain) _TtC16DVTSourceControl28DVTSourceControlRemoteBranch *trackingBranch; // @synthesize trackingBranch=_trackingBranch;
+@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain) DVTSourceControlRemoteBranch *trackingBranch; // @synthesize trackingBranch=_trackingBranch;
 @property unsigned long long pullCount; // @synthesize pullCount=_pullCount;
 @property unsigned long long pushCount; // @synthesize pushCount=_pushCount;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, getter=isRemoteBranch) BOOL remoteBranch;
 @property(readonly, getter=isNewBranch) BOOL newBranch;

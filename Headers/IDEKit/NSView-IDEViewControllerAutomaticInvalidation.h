@@ -6,11 +6,9 @@
 
 #import <AppKit/NSView.h>
 
-#import <IDEKit/_TtP6IDEKit26IDENavigationOverlayTarget_-Protocol.h>
-
 @class NSString;
 
-@interface NSView (IDEViewControllerAutomaticInvalidation) <_TtP6IDEKit26IDENavigationOverlayTarget_>
+@interface NSView (IDEViewControllerAutomaticInvalidation)
 - (id)ide_viewsToSearchForAutomaticControllerInvalidation;
 - (struct CGRect)IDE_IB_convertRectToScreen:(struct CGRect)arg1;
 - (BOOL)ide_openQuicklyIsDark;

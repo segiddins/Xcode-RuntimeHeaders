@@ -16,11 +16,11 @@
     NSPopUpButton *_sourceListPopUpButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *sourceListPopUpButton; // @synthesize sourceListPopUpButton=_sourceListPopUpButton;
 @property(retain) DVTBorderedView *sourceListPopUpBorderedView; // @synthesize sourceListPopUpBorderedView=_sourceListPopUpBorderedView;
 @property(retain) DVTBorderedView *sourceListToggleBorderedView; // @synthesize sourceListToggleBorderedView=_sourceListToggleBorderedView;
 @property(retain) DVTTabChooserView *tabChooser; // @synthesize tabChooser=_tabChooser;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutTopDown;
 

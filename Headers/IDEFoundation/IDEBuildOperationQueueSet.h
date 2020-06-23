@@ -27,8 +27,8 @@
 + (unsigned long long)maxNumberOfConcurrentCompileTasks;
 + (void)setMaxNumberOfConcurrentCompileTasks:(unsigned long long)arg1;
 + (void)initialize;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)dealloc;
 - (void)addLinkTaskOperation:(id)arg1 forCommand:(id)arg2;
 - (void)addCopyTaskOperation:(id)arg1 forCommand:(id)arg2;

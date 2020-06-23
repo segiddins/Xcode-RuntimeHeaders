@@ -31,6 +31,7 @@
     IBICDetailPlaceholderView *_placeholderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBICDetailPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(readonly) BOOL drawsWithKeyAppearance; // @synthesize drawsWithKeyAppearance=_drawsWithKeyAppearance;
 @property(retain, nonatomic) IBICDetailScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -38,7 +39,6 @@
 @property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 @property(readonly) IBICCatalogDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
 @property(readonly) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
-- (void).cxx_destruct;
 - (BOOL)isSubEditorExistanceInSyncForItem:(id)arg1;
 - (void)drawsWithKeyAppearanceDidChange;
 - (BOOL)view:(id)arg1 performDragOperation:(id)arg2;

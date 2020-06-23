@@ -13,19 +13,21 @@
 {
     NSMutableOrderedSet *drawHandlers;
     NSMutableOrderedSet *willDrawHandlers;
+    long long _inDrawRect;
+    long long _inViewWillDraw;
     id <IBDelegatedCanvasOverlayDelegate> _delegate;
 }
 
-@property __weak id <IBDelegatedCanvasOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <IBDelegatedCanvasOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillDraw;
 @property(readonly) long long numberOfInstalledHandlers;
-- (void)installDrawHandler:(id)arg1 withSelector:(SEL)arg2 priority:(double)arg3 whilePerformingBlock:(CDUnknownBlockType)arg4;
-- (id)installDrawHandler:(id)arg1 willDrawSelector:(SEL)arg2 drawSelector:(SEL)arg3 priority:(double)arg4;
-- (id)installWillDrawHandler:(id)arg1 selector:(SEL)arg2 priority:(double)arg3;
-- (id)installDrawHandler:(id)arg1 selector:(SEL)arg2 priority:(double)arg3;
+- (void)installDrawHandler:(id)arg1 withSelector:(SEL)arg2 priority:(long long)arg3 whilePerformingBlock:(CDUnknownBlockType)arg4;
+- (id)installDrawHandler:(id)arg1 willDrawSelector:(SEL)arg2 drawSelector:(SEL)arg3 priority:(long long)arg4;
+- (id)installWillDrawHandler:(id)arg1 selector:(SEL)arg2 priority:(long long)arg3;
+- (id)installDrawHandler:(id)arg1 selector:(SEL)arg2 priority:(long long)arg3;
 - (id)installWillDrawHandlerWithPriority:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (id)installDrawHandlerWithPriority:(double)arg1 block:(CDUnknownBlockType)arg2;
 

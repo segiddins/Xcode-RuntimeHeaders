@@ -26,9 +26,9 @@
     NSTextField *_titleField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;

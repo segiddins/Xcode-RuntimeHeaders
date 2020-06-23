@@ -25,6 +25,7 @@
 
 + (void)initialize;
 + (Class)editorDocumentClass;
+- (void).cxx_destruct;
 @property(retain) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain) DVTPerformanceMetric *nonIdlePerformanceMetric; // @synthesize nonIdlePerformanceMetric=_nonIdlePerformanceMetric;
 @property(copy) NSSet *geniusResults; // @synthesize geniusResults=_geniusResults;
@@ -33,7 +34,6 @@
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(nonatomic) BOOL idle; // @synthesize idle=_idle;
 @property(retain) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) IDEWorkspace *workspace;
 - (void)_updateGeniusResults;

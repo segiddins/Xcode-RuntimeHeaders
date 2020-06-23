@@ -19,10 +19,10 @@
 
 + (id)installPackagesWithOutput:(id)arg1;
 + (BOOL)needToInstallPackages;
+- (void).cxx_destruct;
 @property long long recordedProgress; // @synthesize recordedProgress=_recordedProgress;
 @property(retain) NSError *installError; // @synthesize installError=_installError;
 @property(retain) NSFileHandle *outputFileHandle; // @synthesize outputFileHandle=_outputFileHandle;
-- (void).cxx_destruct;
 - (void)installationFailed:(id)arg1;
 - (void)installationSucceeded;
 - (void)installationProgressChanged:(long long)arg1;

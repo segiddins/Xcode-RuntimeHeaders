@@ -14,9 +14,9 @@
     NSColor *_inactiveBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *inactiveBackgroundColor; // @synthesize inactiveBackgroundColor=_inactiveBackgroundColor;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (BOOL)_isInactive;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateLayer;

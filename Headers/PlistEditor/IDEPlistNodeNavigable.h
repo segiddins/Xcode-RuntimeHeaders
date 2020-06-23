@@ -16,9 +16,9 @@
     DVTPlistNode *_node;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTPlistNode *node; // @synthesize node=_node;
 @property(retain) IDEPlistDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;

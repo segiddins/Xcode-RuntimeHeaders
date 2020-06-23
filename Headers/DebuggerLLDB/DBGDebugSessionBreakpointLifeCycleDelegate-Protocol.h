@@ -14,6 +14,7 @@
 - (void)breakpointEnablementChanged:(IDEBreakpoint *)arg1;
 - (void)breakpointIgnoreCountChanged:(IDEBreakpoint *)arg1;
 - (void)breakpointConditionChanged:(IDEBreakpoint *)arg1;
+- (void)breakpointNameChanged:(IDEBreakpoint *)arg1;
 - (void)deleteWatchpoint:(IDEWatchpoint *)arg1;
 - (void)activationStateChanged:(BOOL)arg1 forBreakpoints:(NSArray *)arg2;
 - (void)deleteBreakpoint:(IDEBreakpoint *)arg1;

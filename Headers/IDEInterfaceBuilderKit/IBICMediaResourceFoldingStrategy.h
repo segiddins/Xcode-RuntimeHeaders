@@ -13,8 +13,8 @@
     IBICPlatform *_platform;
 }
 
-@property(readonly, nonatomic) IBICPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBICPlatform *platform; // @synthesize platform=_platform;
 - (void)mapDefaultVariantsForSlotClass:(Class)arg1;
 - (void)addVariablesForSlotClass:(Class)arg1;
 - (void)setupVariablesAndDefaultVariantsFromSchema;

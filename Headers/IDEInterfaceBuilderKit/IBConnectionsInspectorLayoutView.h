@@ -16,11 +16,11 @@
     DVTColoredSpinner *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain) DVTColoredSpinner *spinner; // @synthesize spinner=_spinner;
 @property(retain) DVTBorderedView *statusAreaView; // @synthesize statusAreaView=_statusAreaView;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) BOOL showingProgressArea; // @synthesize showingProgressArea=_showingProgressArea;
-- (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)awakeFromNib;

@@ -15,8 +15,8 @@
     NSString *_platformIdentifier;
 }
 
-@property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 - (BOOL)processContentAtPath:(id)arg1 outputPath:(id)arg2 error:(id *)arg3;
 - (id)errorForInputFile:(id)arg1 codeType:(id)arg2 code:(long long)arg3 standardError:(id)arg4 standardOutput:(id)arg5;
 - (id)taskForProcessingContentAtPath:(id)arg1 withOutputPath:(id)arg2 error:(id *)arg3;

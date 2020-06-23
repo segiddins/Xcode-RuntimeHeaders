@@ -65,12 +65,12 @@
 + (id)containerFileDataType;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pbxProjectEdited; // @synthesize pbxProjectEdited=_pbxProjectEdited;
 @property BOOL hasRunUpgradeCheck; // @synthesize hasRunUpgradeCheck=_hasRunUpgradeCheck;
 @property(retain) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 @property(retain) PBXProject *pbxProject; // @synthesize pbxProject=_project;
 @property(retain) IDEDirectoryBasedCustomDataStore *customDataStore; // @synthesize customDataStore=_customDataStore;
-- (void).cxx_destruct;
 @property int buildSystemType;
 - (int)buildSystemTypeFromString:(id)arg1;
 - (id)absolutePathByEvaluatingBuildSettingExpressionString:(id)arg1 withBuildParameters:(id)arg2;

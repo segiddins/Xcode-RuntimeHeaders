@@ -11,13 +11,14 @@
 
 @protocol IDETestRunSessionEvents <NSObject>
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didFinishTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResult:(IDETestResult *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didSkipTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResultMessage:(IDETestResultMessage *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didFailTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResultMessage:(IDETestResultMessage *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didFinishActivity:(XCActivityRecord *)arg4;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 willStartActivity:(XCActivityRecord *)arg4;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testDidOutput:(NSString *)arg3;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didStartTestWithIdentifier:(IDETestIdentifier *)arg3 withRawOutput:(NSString *)arg4;
-- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(NSString *)arg8;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuiteDidFinishWithRunCount:(unsigned long long)arg3 skipCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8 rawOutput:(NSString *)arg9;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuite:(NSString *)arg3 willFinishAt:(NSString *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuite:(NSString *)arg3 didStartAt:(NSString *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(NSError *)arg4;

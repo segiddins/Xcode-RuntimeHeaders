@@ -14,8 +14,8 @@
     SKResourceManager *_resourceManager;
 }
 
-@property(retain, nonatomic) SKResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
 - (id)localizedInfoDictionary;
 - (id)localizations;
 - (id)developmentLocalization;

@@ -37,6 +37,7 @@
 + (id)_barDateFormatter;
 + (id)keyPathsForValuesAffectingShouldShowDeviceData;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalOSAnalyticsPointCount; // @synthesize totalOSAnalyticsPointCount=_totalOSAnalyticsPointCount;
 @property(nonatomic) unsigned long long totalDeviceAnalyticsPointCount; // @synthesize totalDeviceAnalyticsPointCount=_totalDeviceAnalyticsPointCount;
 @property(copy, nonatomic) NSArray *distributionData; // @synthesize distributionData=_distributionData;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSArray *deviceDataSet; // @synthesize deviceDataSet=_deviceDataSet;
 @property(copy, nonatomic) NSArray *osDataSet; // @synthesize osDataSet=_osDataSet;
 @property(retain, nonatomic) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
-- (void).cxx_destruct;
 - (id)timeSeriesColors;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;

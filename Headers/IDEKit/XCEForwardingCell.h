@@ -13,8 +13,8 @@
     IDEConfigurableDataNode *_dataNode;
 }
 
-@property(retain, nonatomic) IDEConfigurableDataNode *dataNode; // @synthesize dataNode=_dataNode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDEConfigurableDataNode *dataNode; // @synthesize dataNode=_dataNode;
 - (void)clear;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;

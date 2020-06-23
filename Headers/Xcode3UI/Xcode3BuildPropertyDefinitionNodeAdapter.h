@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) Xcode3BuildPropertyColumnContext *currentColumnContext; // @synthesize currentColumnContext=_currentColumnContext;
 @property(readonly) Xcode3BuildPropertyRowContext *currentRowContext; // @synthesize currentRowContext=_currentRowContext;
 @property(retain) NSCell *cell; // @synthesize cell=_cell;
 @property(readonly) Xcode3BuildSettingsEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (void)addConditionOrExpandConfigurationsForDataNode:(id)arg1;
 - (void)addConditionForDataNode:(id)arg1;
 - (void)addConditionForCurrentRowContextAndPreselect:(BOOL)arg1;

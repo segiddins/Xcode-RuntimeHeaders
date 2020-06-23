@@ -14,8 +14,8 @@
 }
 
 + (id)_elementNameToClassMap;
-@property(nonatomic) __weak id <XRSchemaAnnotationTextValuesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <XRSchemaAnnotationTextValuesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)textParserCompletedParsing:(id)arg1 elementName:(id)arg2;
 
 @end

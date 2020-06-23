@@ -7,17 +7,19 @@
 #import <objc/NSObject.h>
 
 @class NSMapTable;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_log;
 
 @interface IDEPlaygroundDeviceCoordinator : NSObject
 {
     NSMapTable *_deviceIdentifierToInterestedOwnersTable;
     NSMapTable *_deviceIdentifierToOwnerTable;
     NSObject<OS_dispatch_queue> *_deviceQueue;
+    NSObject<OS_os_log> *_diagnosticsLog;
 }
 
 + (id)sharedCoordinator;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_os_log> *diagnosticsLog; // @synthesize diagnosticsLog=_diagnosticsLog;
 - (void)relinquishOwnership:(id)arg1 ofDeviceWithIdentifier:(id)arg2;
 - (void)requestOwnership:(id)arg1 ofDeviceWithIdentifier:(id)arg2;
 - (id)currentOwnerOfDeviceWithIdentifier:(id)arg1;

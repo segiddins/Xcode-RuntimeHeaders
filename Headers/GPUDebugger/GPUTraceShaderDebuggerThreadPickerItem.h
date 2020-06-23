@@ -16,10 +16,10 @@
     GPUTraceDisplayableItem *_associatedDisplaybleItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GPUTraceDisplayableItem *associatedDisplaybleItem; // @synthesize associatedDisplaybleItem=_associatedDisplaybleItem;
 @property(readonly, nonatomic) id <DYPShaderDebuggerThread> selectedThread; // @synthesize selectedThread=_selectedThread;
 @property(readonly, nonatomic) id <DYPShaderDebuggerROI> regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
-- (void).cxx_destruct;
 - (id)filterItems;
 - (id)label;
 - (id)initWithController:(id)arg1 parent:(id)arg2 regionOfInterest:(id)arg3 selectedThread:(id)arg4 associatedDisplaybleItem:(id)arg5;

@@ -10,6 +10,7 @@
 + (BOOL)isTargetBootstrapInjectionSupportedOnVersion:(id)arg1 buildVersion:(id)arg2 internal:(BOOL)arg3 overrideValue:(id)arg4;
 - (void)showTodayViewForExtensions:(id)arg1 pid:(int)arg2;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
+- (long long)maxConcurrentTestingProcesses;
 - (id)connectionServicesFrameworkPath;
 - (id)additionalTestRunnerEnvironmentVariablesForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;

@@ -53,7 +53,7 @@
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (struct CGSize)effectiveSimulatedContentSize;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
-- (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
+- (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibDidBecomeControllerForCompilationGroup;
 - (void)ibAddStoryboardSegueTemplate:(id)arg1;
 - (void)ibWillResignSourceControllerForSegue:(id)arg1;

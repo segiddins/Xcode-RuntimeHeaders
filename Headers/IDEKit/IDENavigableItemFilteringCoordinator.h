@@ -18,9 +18,9 @@
     IDENavigableItemFilter *_filter;
 }
 
+- (void).cxx_destruct;
 @property BOOL performingFiltering; // @synthesize performingFiltering=_performingFiltering;
 @property(retain, nonatomic) IDENavigableItemFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (BOOL)_shouldDecendFilteringIntoChildrenOf:(id)arg1;
 - (BOOL)_filterMatchesItem:(id)arg1;
 - (id)_arrangeItems:(id)arg1 ofItem:(id)arg2;

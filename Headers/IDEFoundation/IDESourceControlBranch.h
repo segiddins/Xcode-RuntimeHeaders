@@ -15,10 +15,10 @@
     NSString *_repositoryURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *repositoryURLString; // @synthesize repositoryURLString=_repositoryURLString;
 @property(readonly) BOOL isMainBranch; // @synthesize isMainBranch=_isMainBranch;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)ideModelObjectTypeIdentifier;

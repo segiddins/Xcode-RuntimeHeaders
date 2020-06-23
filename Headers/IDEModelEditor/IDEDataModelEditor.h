@@ -45,12 +45,12 @@
 + (id)keyPathsForValuesAffectingEnableViewTypeSwitcher;
 + (id)keyPathsForValuesAffectingSelectedTopLevelObjects;
 + (id)keyPathsForValuesAffectingModelRoot;
+- (void).cxx_destruct;
 @property unsigned long long selectedHierarchyViewTypeIndex; // @synthesize selectedHierarchyViewTypeIndex=_selectedHierarchyViewTypeIndex;
 @property unsigned long long selectedViewTypeIndex; // @synthesize selectedViewTypeIndex=_selectedViewTypeIndex;
 @property unsigned long long selectedTabViewIndex; // @synthesize selectedTabViewIndex=_selectedTabViewIndex;
 @property(retain) IDEDMDocumentLocation *selectedSearchLocation; // @synthesize selectedSearchLocation=_selectedSearchLocation;
 @property(retain) NSMapTable *findHighlightsByModelObject; // @synthesize findHighlightsByModelObject=_findHighlightsByModelObject;
-- (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (id)_addButtonIndexes;

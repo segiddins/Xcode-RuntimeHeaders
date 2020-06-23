@@ -18,11 +18,11 @@
     NSArray *_targetsFromWorkspace;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *targetsFromWorkspace; // @synthesize targetsFromWorkspace=_targetsFromWorkspace;
 @property(retain) NSArray *processesFromDevice; // @synthesize processesFromDevice=_processesFromDevice;
 @property(retain) NSArray *recentlyAttachedNames; // @synthesize recentlyAttachedNames=_recentlyAttachedNames;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (id)tokenField:(id)arg1 setUpTokenAttachmentCell:(id)arg2 forRepresentedObject:(id)arg3;
 - (id)tokenField:(id)arg1 completionsForSubstring:(id)arg2 indexOfToken:(long long)arg3 indexOfSelectedItem:(long long *)arg4;
 - (void)_startCollectingCompletionsFromBuildables;

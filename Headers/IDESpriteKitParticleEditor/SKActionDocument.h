@@ -24,9 +24,9 @@
 }
 
 + (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id topLevelNavigablePreviewSceneObject; // @synthesize topLevelNavigablePreviewSceneObject=_topLevelNavigablePreviewSceneObject;
 @property(retain, nonatomic) GTFActionLibrary *actionLibrary; // @synthesize actionLibrary=_actionLibrary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *availableSceneNames;
 @property(readonly, nonatomic) NSMutableArray *dynamicObjectLibraryAssets;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;

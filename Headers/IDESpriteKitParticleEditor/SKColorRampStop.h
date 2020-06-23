@@ -17,9 +17,9 @@
 }
 
 + (id)stopWithColor:(id)arg1 location:(double)arg2;
+- (void).cxx_destruct;
 @property(copy) NSColor *color; // @synthesize color=_color;
 @property double location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (id)init;

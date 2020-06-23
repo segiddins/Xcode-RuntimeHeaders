@@ -18,13 +18,13 @@
     NSTextField *_loadingLabel;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double progressIndicatorValue; // @synthesize progressIndicatorValue=_progressIndicatorValue;
 @property(nonatomic) double maxProgressIndicatorValue; // @synthesize maxProgressIndicatorValue=_maxProgressIndicatorValue;
 @property(nonatomic) double minProgressIndicatorValue; // @synthesize minProgressIndicatorValue=_minProgressIndicatorValue;
-- (void).cxx_destruct;
 - (void)_displayProgressIndicator;
 - (void)_hideProgressIndicator;
 - (void)_setProgressIndicatorToDeterminate;

@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *patch; // @synthesize patch=_patch;
 @property(readonly, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

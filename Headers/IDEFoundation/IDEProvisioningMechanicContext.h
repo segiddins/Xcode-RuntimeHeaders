@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL runningInIDE; // @synthesize runningInIDE=_runningInIDE;
 @property(retain, nonatomic) id <IDEProvisioningTeamAccountPairProvider> teamAccountPairProvider; // @synthesize teamAccountPairProvider=_teamAccountPairProvider;
 @property(retain, nonatomic) id <IDEProvisioningMechanicContextProvider> provisioningManager; // @synthesize provisioningManager=_provisioningManager;
 @property(retain, nonatomic) IDEProvisioningMechanic *mechanic; // @synthesize mechanic=_mechanic;
-- (void).cxx_destruct;
 - (id)makeRepairForRepairable:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;

@@ -29,6 +29,7 @@
 
 + (void)setAppliesAutoResizingRulesWhileResizing:(BOOL)arg1;
 + (BOOL)appliesAutoResizingRulesWhileResizing;
+- (void).cxx_destruct;
 @property(copy) NSValue *pinnedKnob; // @synthesize pinnedKnob=_pinnedKnob;
 @property(copy) NSNumber *forceBoundsIndicatorValue; // @synthesize forceBoundsIndicatorValue=_forceBoundsIndicatorValue;
 @property BOOL showsTrackingKnob; // @synthesize showsTrackingKnob=_showsTrackingKnob;
@@ -41,7 +42,6 @@
 @property(copy) NSArray *layoutManagers; // @synthesize layoutManagers=_layoutManagers;
 @property(copy) CDUnknownBlockType didTrackHandler; // @synthesize didTrackHandler=_didTrackHandler;
 @property(copy) CDUnknownBlockType willTrackHandler; // @synthesize willTrackHandler=_willTrackHandler;
-- (void).cxx_destruct;
 - (void)trackWithEvent:(id)arg1;
 - (struct CGRect)designFrameForTrackedView;
 - (void)clearGuides;

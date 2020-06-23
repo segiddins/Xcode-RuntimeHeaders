@@ -14,9 +14,9 @@
     NSResponder *_targetResponder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *actionWhitelist; // @synthesize actionWhitelist=_actionWhitelist;
 @property(retain, nonatomic) NSResponder *targetResponder; // @synthesize targetResponder=_targetResponder;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;

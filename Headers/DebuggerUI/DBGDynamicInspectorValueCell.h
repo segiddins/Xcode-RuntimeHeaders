@@ -15,10 +15,10 @@
     NSLayoutConstraint *_spacingConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *spacingConstraint; // @synthesize spacingConstraint=_spacingConstraint;
 @property __weak NSTextField *valueField; // @synthesize valueField=_valueField;
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
-- (void).cxx_destruct;
 - (void)_setupWithTitle:(id)arg1 toolTip:(id)arg2 value:(id)arg3;
 
 @end

@@ -26,6 +26,7 @@
 }
 
 + (BOOL)isOpened:(id)arg1;
+- (void).cxx_destruct;
 @property __weak SCNView *scnView; // @synthesize scnView=_scnView;
 @property __weak NSButton *outline; // @synthesize outline=_outline;
 @property __weak NSButton *lightProbes; // @synthesize lightProbes=_lightProbes;
@@ -39,7 +40,6 @@
 @property __weak NSButton *defaultLight; // @synthesize defaultLight=_defaultLight;
 @property __weak NSButton *wireframe; // @synthesize wireframe=_wireframe;
 @property __weak NSButton *bbox; // @synthesize bbox=_bbox;
-- (void).cxx_destruct;
 - (void)optionDidChange:(id)arg1;
 - (void)viewDidAppear;
 - (void)viewWillAppear;

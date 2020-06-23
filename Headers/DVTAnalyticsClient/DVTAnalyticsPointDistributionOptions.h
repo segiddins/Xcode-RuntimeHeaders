@@ -18,8 +18,8 @@
 + (id)distributionWithDefaultDateRange;
 + (id)distributionStartDate:(id)arg1 endDate:(id)arg2 osVersions:(id)arg3 deviceFamilies:(id)arg4;
 + (id)_distributionWithStartDateDistro:(id)arg1 endDateDistro:(id)arg2 osVersions:(id)arg3 deviceFamilies:(id)arg4;
-@property(readonly) NSArray *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly) NSArray *options; // @synthesize options=_options;
 
 @end
 

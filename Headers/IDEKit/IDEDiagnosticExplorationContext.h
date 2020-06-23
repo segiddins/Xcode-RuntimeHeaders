@@ -14,9 +14,9 @@
     BOOL _fixIt;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldFixIt; // @synthesize shouldFixIt=_fixIt;
 @property(readonly) IDEDiagnosticActivityLogMessage *diagnosticMessage; // @synthesize diagnosticMessage=_diagnosticMessage;
-- (void).cxx_destruct;
 - (int)explorationType;
 - (id)initWithDiagnosticMessage:(id)arg1 shouldFixIt:(BOOL)arg2;
 

@@ -13,8 +13,8 @@
     NSButton *_documentationButton;
 }
 
-@property(retain) NSButton *documentationButton; // @synthesize documentationButton=_documentationButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *documentationButton; // @synthesize documentationButton=_documentationButton;
 
 @end
 

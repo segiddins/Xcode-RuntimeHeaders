@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBUIColor, NSImage, NSString;
+@class IBColor, NSImage, NSString;
 
 @interface IBUISlider : IBUIControl <IBDocumentArchiving>
 {
@@ -18,9 +18,9 @@
     double _maxValue;
     NSImage *_minimumValueImage;
     NSImage *_maximumValueImage;
-    IBUIColor *_minimumTrackTintColor;
-    IBUIColor *_maximumTrackTintColor;
-    IBUIColor *_thumbTintColor;
+    IBColor *_minimumTrackTintColor;
+    IBColor *_maximumTrackTintColor;
+    IBColor *_thumbTintColor;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -29,16 +29,16 @@
 + (id)keyPathsForValuesAffectingIbInspectedMinValue;
 + (id)keyPathsForValuesAffectingIbInspectedValue;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) IBUIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
-@property(copy, nonatomic) IBUIColor *maximumTrackTintColor; // @synthesize maximumTrackTintColor=_maximumTrackTintColor;
-@property(copy, nonatomic) IBUIColor *minimumTrackTintColor; // @synthesize minimumTrackTintColor=_minimumTrackTintColor;
+- (void).cxx_destruct;
+@property(copy, nonatomic) IBColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
+@property(copy, nonatomic) IBColor *maximumTrackTintColor; // @synthesize maximumTrackTintColor=_maximumTrackTintColor;
+@property(copy, nonatomic) IBColor *minimumTrackTintColor; // @synthesize minimumTrackTintColor=_minimumTrackTintColor;
 @property(retain, nonatomic) NSImage *maximumValueImage; // @synthesize maximumValueImage=_maximumValueImage;
 @property(retain, nonatomic) NSImage *minimumValueImage; // @synthesize minimumValueImage=_minimumValueImage;
 @property(nonatomic) BOOL continuous; // @synthesize continuous=_continuous;
 @property(nonatomic) double maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) double minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 - (void)willChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

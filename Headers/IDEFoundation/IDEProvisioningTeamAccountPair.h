@@ -16,10 +16,10 @@
     NSArray *_otherSessionProviders;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *otherSessionProviders; // @synthesize otherSessionProviders=_otherSessionProviders;
 @property(readonly, nonatomic) id <DVTServicesSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(readonly, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTeam:(id)arg1 sessionProvider:(id)arg2;
 

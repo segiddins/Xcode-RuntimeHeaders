@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_refactoringDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *refactoringDescription; // @synthesize refactoringDescription=_refactoringDescription;
 @property struct compiler_uid_s *identifier; // @synthesize identifier=_identifier;
 @property(readonly) int kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)initWithKind:(int)arg1;
 
 @end

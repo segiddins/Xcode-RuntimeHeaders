@@ -27,9 +27,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) IBLiveViewsManager *liveViewsManager; // @synthesize liveViewsManager=_liveViewsManager;
-- (void).cxx_destruct;
 - (void)processRequests;
 - (void)_connectToToolProxyWithSupersessionIdentifier:(id)arg1 during:(CDUnknownBlockType)arg2;
 - (void)processResults;

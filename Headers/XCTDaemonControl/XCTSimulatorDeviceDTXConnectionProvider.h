@@ -22,13 +22,13 @@
     XCTSimulatorDeviceOnBootRunner *_onBootRunner;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCTSimulatorDeviceOnBootRunner *onBootRunner; // @synthesize onBootRunner=_onBootRunner;
 @property BOOL isValid; // @synthesize isValid=_isValid;
 @property(readonly) SimDevice *device; // @synthesize device=_device;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void).cxx_destruct;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> remoteHostDiagnosticReportsSynchronizer;
 - (id)gatherDetailedSimulatorDiagnostics;
 - (id)transportForDomainSocketAtPath:(id)arg1 error:(id *)arg2;

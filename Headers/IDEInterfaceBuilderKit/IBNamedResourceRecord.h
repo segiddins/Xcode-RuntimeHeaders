@@ -13,29 +13,31 @@
     BOOL _isGroup;
     BOOL _isPlaceholder;
     NSString *_name;
+    NSString *_namespaceID;
     IDEMediaType *_type;
     IDEMediaResourceMetadata *_metadata;
     NSImage *_image;
     NSColor *_color;
 }
 
-+ (id)namedResourceWithName:(id)arg1 mediaType:(id)arg2 metadata:(id)arg3;
++ (id)namedResourceWithName:(id)arg1 namespaceID:(id)arg2 mediaType:(id)arg3 metadata:(id)arg4;
 + (id)namedResourceWithPlaceholderName:(id)arg1;
 + (id)namedResourceWithGroupName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(nonatomic) BOOL isGroup; // @synthesize isGroup=_isGroup;
 @property(readonly, nonatomic) IDEMediaResourceMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) IDEMediaType *type; // @synthesize type=_type;
+@property(readonly, nonatomic) NSString *namespaceID; // @synthesize namespaceID=_namespaceID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)matchesSearchFilterString:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNamedResourceRecord:(id)arg1;
-- (id)initWithName:(id)arg1 type:(id)arg2 metadata:(id)arg3;
+- (id)initWithName:(id)arg1 namespaceID:(id)arg2 type:(id)arg3 metadata:(id)arg4;
 
 @end
 

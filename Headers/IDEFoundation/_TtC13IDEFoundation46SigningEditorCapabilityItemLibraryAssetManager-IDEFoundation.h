@@ -6,9 +6,7 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager.h>
 
-#import <IDEFoundation/IDESigningEditorCapabilityItemLibraryAssetManagerSourceDelegate-Protocol.h>
-
-@interface _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager (IDEFoundation) <IDESigningEditorCapabilityItemLibraryAssetManagerSourceDelegate>
+@interface _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager (IDEFoundation)
 - (void)didRefresh:(id)arg1 context:(id)arg2;
 - (void)willBeginRefresh:(id)arg1 context:(id)arg2;
 @end

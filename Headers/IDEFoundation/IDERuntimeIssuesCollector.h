@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDispatchLock, DVTObservingToken, IDEDebugSession, IDELaunchSessionRuntimeGroup, NSArray, NSMutableArray, NSString;
+@class DVTDispatchLock, DVTFuture, DVTObservingToken, IDEDebugSession, IDELaunchSessionRuntimeGroup, NSArray, NSMutableArray, NSString;
 
 @interface IDERuntimeIssuesCollector : NSObject
 {
     IDEDebugSession *_debugSession;
     DVTObservingToken *_debugSessionToken;
     NSMutableArray *_issues;
+    DVTFuture *_tokenFuture;
     NSString *_token;
     BOOL _useThirdPartyPredicate;
     BOOL _stillReceivingIssues;
@@ -21,8 +22,8 @@
 }
 
 + (void)initialize;
-@property(readonly) IDELaunchSessionRuntimeGroup *groupingObject; // @synthesize groupingObject=_groupingObject;
 - (void).cxx_destruct;
+@property(readonly) IDELaunchSessionRuntimeGroup *groupingObject; // @synthesize groupingObject=_groupingObject;
 - (BOOL)shouldDisplayRuntimeIssueWithSubsystem:(id)arg1 category:(id)arg2 imagePath:(id)arg3 environmentVariables:(id)arg4;
 - (void)addSubcategory:(id)arg1 forTopCategory:(id)arg2;
 - (void)cancel;

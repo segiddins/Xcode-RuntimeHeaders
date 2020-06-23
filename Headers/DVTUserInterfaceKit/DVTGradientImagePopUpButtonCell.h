@@ -17,10 +17,10 @@
     NSImage *_blueOnImage;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long highlightSides; // @synthesize highlightSides=_highlightSides;
 @property unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
-- (void).cxx_destruct;
 - (BOOL)_shouldUseColorPunchOutStyleForGradientStyle;
 - (void)_updateImageIfNecessary;
 - (struct NSEdgeInsets)_popupBezelInsets;

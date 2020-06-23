@@ -45,6 +45,7 @@
 + (void)initialize;
 + (BOOL)accessInstanceVariablesDirectly;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DYProgressDigest *progressDigest; // @synthesize progressDigest=_progressDigest;
 @property(nonatomic) BOOL complete; // @synthesize complete=_complete;
 @property(nonatomic) int storeSymbolicatorSignature; // @synthesize storeSymbolicatorSignature=_storeSymbolicatorSignature;
@@ -57,7 +58,6 @@
 @property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) BOOL automaticallyDeleteArchiveOnFailure; // @synthesize automaticallyDeleteArchiveOnFailure=_automaticallyDeleteArchiveOnFailure;
 @property(readonly, retain, nonatomic) DYCaptureArchive *archive; // @synthesize archive=_archive;
-- (void).cxx_destruct;
 - (void)_resetNOGPUWorkloadDetectedStatusWithForceRestoreMessage:(BOOL)arg1;
 - (void)_replaceArchive:(id)arg1;
 - (void)_postProcessArchive;

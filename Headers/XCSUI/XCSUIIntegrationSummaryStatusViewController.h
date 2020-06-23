@@ -29,6 +29,7 @@
     DVTReplacementView *_topBarReplacementView;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTReplacementView *topBarReplacementView; // @synthesize topBarReplacementView=_topBarReplacementView;
 @property __weak NSTextField *integrationDetailsToolchainText; // @synthesize integrationDetailsToolchainText=_integrationDetailsToolchainText;
 @property __weak NSTextField *integrationDetailsConfigurationText; // @synthesize integrationDetailsConfigurationText=_integrationDetailsConfigurationText;
@@ -42,7 +43,6 @@
 @property __weak XCSUIStatusBadgesView *badgesView; // @synthesize badgesView=_badgesView;
 @property(retain, nonatomic) XCSIntegrationIssues *integrationIssues; // @synthesize integrationIssues=_integrationIssues;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *statusString;
 @property(readonly, nonatomic) unsigned long long warningCount;
 @property(readonly, nonatomic) unsigned long long errorCount;

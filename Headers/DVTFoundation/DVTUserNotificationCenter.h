@@ -21,9 +21,9 @@
 }
 
 + (id)defaultUserNotificationCenter;
+- (void).cxx_destruct;
 @property __weak NSObject<UNUserNotificationCenterDelegate> *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(copy) NSArray *scheduledNotificationRequests; // @synthesize scheduledNotificationRequests=_scheduledNotificationRequests;
-- (void).cxx_destruct;
 - (BOOL)userNotificationCenter:(id)arg1 shouldPresentNotification:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didRemoveDeliveredNotifications:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didActivateNotification:(id)arg2;

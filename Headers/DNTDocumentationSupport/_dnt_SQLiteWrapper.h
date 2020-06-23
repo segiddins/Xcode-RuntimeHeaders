@@ -28,13 +28,14 @@
 + (int)lastInsertRowID:(struct _dnt_sqlite_database_handle *)arg1;
 + (BOOL)prepareStatement:(id)arg1 forDatabase:(struct _dnt_sqlite_database_handle *)arg2 handle:(struct _dnt_sqlite_statement_handle **)arg3 error:(id *)arg4;
 + (BOOL)executeSQL:(id)arg1 onDatabase:(struct _dnt_sqlite_database_handle *)arg2 error:(id *)arg3;
++ (BOOL)setExtendedResultCodes:(struct _dnt_sqlite_database_handle *)arg1 value:(BOOL)arg2 error:(id *)arg3;
 + (BOOL)closeDatabase:(struct _dnt_sqlite_database_handle *)arg1 error:(id *)arg2;
 + (BOOL)openDatabaseAtFileURL:(id)arg1 readOnly:(BOOL)arg2 outDatabase:(struct _dnt_sqlite_database_handle **)arg3 error:(id *)arg4;
-+ (id)errorForMessage:(char *)arg1;
++ (id)errorForMessage:(char *)arg1 returnCode:(int)arg2;
 + (id)errorForCode:(int)arg1;
-+ (id)errorForLastOperationOnDatabase:(struct _dnt_sqlite_database_handle *)arg1;
++ (id)errorForLastOperationOnDatabase:(struct _dnt_sqlite_database_handle *)arg1 returnCode:(int)arg2;
 + (id)descriptionForErrorCode:(int)arg1;
-+ (id)errorMessageForLastOperationOnDatabase:(struct _dnt_sqlite_database_handle *)arg1;
++ (id)errorMessageForLastOperationOnDatabase:(struct _dnt_sqlite_database_handle *)arg1 returnCode:(int)arg2;
 + (BOOL)isSuccessCode:(int)arg1;
 
 @end

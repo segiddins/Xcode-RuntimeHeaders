@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSString, NSURL, XCSourceControlHostAccount, XCSourceControlHostFile, XCSourceControlHostParticipant, XCSourceControlHostPullRequest, XCSourceControlHostPullRequestSearchFilter, XCSourceControlHostPullRequestWorkflowAction, XCSourceControlHostRepository, XCSourceControlHostSSHKey, XCSourceControlPullRequestEvent, _TtC15XCSourceControl25XCSourceControlHostBranch, _TtC15XCSourceControl31XCSourceControlRevisionLocation;
+@class NSArray, NSDictionary, NSSet, NSString, NSURL, XCSourceControlHostAccount, XCSourceControlHostCommit, XCSourceControlHostFile, XCSourceControlHostMilestone, XCSourceControlHostParticipant, XCSourceControlHostPullRequest, XCSourceControlHostPullRequestSearchFilter, XCSourceControlHostPullRequestWorkflowAction, XCSourceControlHostRepository, XCSourceControlHostSSHKey, XCSourceControlHostStatusAnnotation, XCSourceControlPullRequestEvent, _TtC15XCSourceControl25XCSourceControlHostBranch, _TtC15XCSourceControl31XCSourceControlRevisionLocation;
 
 @protocol _TtP15XCSourceControl30XCSourceControlXPCBaseProtocol_
 - (void)resetRepositoryWithAccount:(XCSourceControlHostAccount *)arg1 repository:(XCSourceControlHostRepository *)arg2 defaultBranch:(_TtC15XCSourceControl25XCSourceControlHostBranch *)arg3 branches:(NSArray *)arg4 reply:(void (^)(NSError *))arg5;
@@ -13,6 +13,12 @@
 - (void)listChanges:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)renderMarkdown:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 text:(NSString *)arg3 reply:(void (^)(NSString *, NSError *))arg4;
 - (void)exportFile:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 file:(XCSourceControlHostFile *)arg3 revisionLocation:(_TtC15XCSourceControl31XCSourceControlRevisionLocation *)arg4 reply:(void (^)(_TtC15XCSourceControl26XCSourceControlFileContent *, NSError *))arg5;
+- (void)setMilestone:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 milestone:(XCSourceControlHostMilestone *)arg4 reply:(void (^)(XCSourceControlHostPullRequest *, NSError *))arg5;
+- (void)setLabels:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 labels:(NSSet *)arg4 reply:(void (^)(XCSourceControlHostPullRequest *, NSError *))arg5;
+- (void)milestones:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
+- (void)labels:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
+- (void)createStatusAnnotation:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 commit:(XCSourceControlHostCommit *)arg4 statusAnnotation:(XCSourceControlHostStatusAnnotation *)arg5 reply:(void (^)(XCSourceControlHostStatusAnnotation *, NSError *))arg6;
+- (void)statusAnnotation:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 commit:(XCSourceControlHostCommit *)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
 - (void)listCommits:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 file:(XCSourceControlHostFile *)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
 - (void)listCommits:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)username:(NSString *)arg1 url:(NSURL *)arg2 reply:(void (^)(NSString *))arg3;
@@ -20,6 +26,7 @@
 - (void)removeParticipants:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 participants:(NSDictionary *)arg4 reply:(void (^)(XCSourceControlHostPullRequest *, NSError *))arg5;
 - (void)addParticipants:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 pullRequest:(XCSourceControlHostPullRequest *)arg3 participants:(NSDictionary *)arg4 reply:(void (^)(XCSourceControlHostPullRequest *, NSError *))arg5;
 - (void)capabilities:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 reply:(void (^)(unsigned long long))arg3;
+- (void)repositoryForURL:(NSString *)arg1 url:(NSURL *)arg2 account:(XCSourceControlHostAccount *)arg3 reply:(void (^)(XCSourceControlHostRepository *, NSError *))arg4;
 - (void)fetchEvents:(NSString *)arg1 pullRequest:(XCSourceControlHostPullRequest *)arg2 account:(XCSourceControlHostAccount *)arg3 repository:(XCSourceControlHostRepository *)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
 - (void)loginHelpURL:(NSString *)arg1 url:(NSURL *)arg2 username:(NSString *)arg3 reply:(void (^)(NSURL *))arg4;
 - (void)webURLComponents:(NSString *)arg1 reply:(void (^)(NSString *, NSString *, NSString *))arg2;
@@ -49,6 +56,7 @@
 - (void)reply:(NSString *)arg1 commentEvent:(XCSourceControlPullRequestEvent *)arg2 withComment:(XCSourceControlPullRequestEvent *)arg3 pullRequest:(XCSourceControlHostPullRequest *)arg4 account:(XCSourceControlHostAccount *)arg5 repository:(XCSourceControlHostRepository *)arg6 reply:(void (^)(XCSourceControlPullRequestEvent *, NSError *))arg7;
 - (void)shouldAllowAvatarFrom:(NSURL *)arg1 withAccount:(NSURL *)arg2 reply:(void (^)(BOOL))arg3;
 - (void)findUsers:(NSString *)arg1 matching:(NSString *)arg2 account:(XCSourceControlHostAccount *)arg3 repository:(XCSourceControlHostRepository *)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
+- (void)repositoryBranches:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 reply:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)listCommentsWithPullRequest:(XCSourceControlHostPullRequest *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)listSSHKeys:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)uploadSSHKey:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 publicSSHKey:(NSString *)arg3 reply:(void (^)(NSError *))arg4;

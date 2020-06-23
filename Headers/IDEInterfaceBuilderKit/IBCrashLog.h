@@ -21,13 +21,13 @@
 
 + (id)dataBlockDefinitions;
 + (id)crashLogWithContentsOfFile:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *parentProcessPID; // @synthesize parentProcessPID=_parentProcessPID;
 @property(readonly) NSString *parentProcessName; // @synthesize parentProcessName=_parentProcessName;
 @property(readonly) NSString *processPID; // @synthesize processPID=_processPID;
 @property(readonly) NSString *processName; // @synthesize processName=_processName;
 @property(readonly) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)_postProcessCommonAttributes;
 - (void)_parseLogFromContents:(id)arg1;
 @property(readonly) NSString *exceptionCodes;

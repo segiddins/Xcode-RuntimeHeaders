@@ -58,8 +58,8 @@
 + (id)formatValueString:(id)arg1 withDefaultColor:(id)arg2;
 + (id)colorForFormatString:(id)arg1;
 + (id)doubleNumberFormatter;
-@property(readonly, nonatomic) DVTTheme *dvtTheme; // @synthesize dvtTheme=_dvtTheme;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTTheme *dvtTheme; // @synthesize dvtTheme=_dvtTheme;
 - (id)init;
 - (id)initWithDVTTheme:(id)arg1;
 

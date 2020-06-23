@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *relativePath; // @synthesize relativePath=_relativePath;
 @property(readonly) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)plistRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

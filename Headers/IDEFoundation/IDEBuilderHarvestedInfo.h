@@ -15,8 +15,8 @@
     BOOL _isImmutable;
 }
 
-@property(readonly) BOOL isImmutable; // @synthesize isImmutable=_isImmutable;
 - (void).cxx_destruct;
+@property(readonly) BOOL isImmutable; // @synthesize isImmutable=_isImmutable;
 @property(copy) NSString *threadSanitizerMessage;
 @property(copy) DVTMacroExpansionScope *macroExpansionScope;
 - (void)makeImmutable;

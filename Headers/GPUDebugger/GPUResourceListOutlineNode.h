@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_children;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)addChild:(id)arg1;
 - (id)init;
 

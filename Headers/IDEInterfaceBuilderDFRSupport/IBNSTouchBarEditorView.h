@@ -17,8 +17,8 @@
     IBNSTouchBarView *_touchBarView;
 }
 
-@property(readonly) IBNSTouchBarView *touchBarView; // @synthesize touchBarView=_touchBarView;
 - (void).cxx_destruct;
+@property(readonly) IBNSTouchBarView *touchBarView; // @synthesize touchBarView=_touchBarView;
 - (void)updateHardwarePreviewForTouchBar:(id)arg1 withClonedTouchBar:(id)arg2 documentEditor:(id)arg3;
 - (void)viewDidChangeForViewController:(id)arg1;
 - (void)updateItemsAndLayoutWindow;

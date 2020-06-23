@@ -28,10 +28,10 @@
 }
 
 + (BOOL)asyncLoadingSupported;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak GPUTraceStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) GPUTraceDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)documentLocationsForItems:(id)arg1;
 - (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
 - (BOOL)validateMenuItem:(id)arg1;

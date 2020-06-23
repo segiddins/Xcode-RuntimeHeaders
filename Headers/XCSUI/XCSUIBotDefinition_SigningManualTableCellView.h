@@ -15,10 +15,10 @@
     NSProgressIndicator *_progressIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAddedToServer) BOOL addedToServer; // @synthesize addedToServer=_addedToServer;
 @property(nonatomic) __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(nonatomic) __weak NSButton *addToServerButton; // @synthesize addToServerButton=_addToServerButton;
-- (void).cxx_destruct;
 - (void)hideProgress;
 - (void)showProgress;
 - (id)provisioningProfileIcon;

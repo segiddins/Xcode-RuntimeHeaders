@@ -20,12 +20,12 @@
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (id)instantiateWithCoder:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) IBCocoaTouchOSVersion *minimumSupportedOSVersion; // @synthesize minimumSupportedOSVersion=_minimumSupportedOSVersion;
 @property(readonly, copy, nonatomic) NSSet *legacyIdentifiersForMigration; // @synthesize legacyIdentifiersForMigration=_legacyIdentifiersForMigration;
 @property(readonly, copy, nonatomic) NSString *archiveIdentifier; // @synthesize archiveIdentifier=_archiveIdentifier;
 - (id)idiom;
 - (id)displayName;
-- (void).cxx_destruct;
 - (id)normalizedOrientationToSizeMap;
 - (BOOL)isEqualToSimulatedSizeMetrics:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;

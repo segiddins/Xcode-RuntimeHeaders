@@ -44,6 +44,7 @@
 + (id)keyPathsForValuesAffectingSupportsCloudKit;
 + (id)keyPathsForValuesAffectingSupportsAutomaticCodeGeneration;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *lastSavedToolsVersion; // @synthesize lastSavedToolsVersion=_lastSavedToolsVersion;
 @property(retain) id <CDMModelOwner> owner; // @synthesize owner=_owner;
 @property(copy) NSArray *rootsOfEntityTree; // @synthesize rootsOfEntityTree=_rootsOfEntityTree;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSArray *fetchRequests; // @synthesize fetchRequests=_fetchRequests;
 @property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)encodeXMLElement;
 - (void)awakeAfterXMLDecoding;

@@ -20,6 +20,7 @@
     NSButton *_testCheckbox;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *testCheckbox; // @synthesize testCheckbox=_testCheckbox;
 @property __weak NSButton *analysisCheckbox; // @synthesize analysisCheckbox=_analysisCheckbox;
 @property __weak NSButton *warningCheckbox; // @synthesize warningCheckbox=_warningCheckbox;
@@ -28,7 +29,6 @@
 @property __weak NSButton *issuesAreResolvedCheckbox; // @synthesize issuesAreResolvedCheckbox=_issuesAreResolvedCheckbox;
 @property __weak NSButton *successCheckbox; // @synthesize successCheckbox=_successCheckbox;
 @property(retain, nonatomic) XCSTrigger *trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (long long)_setCheckboxState:(BOOL)arg1;
 - (BOOL)_getCheckboxState:(long long)arg1;
 - (void)allowAllIssuesResolvedCondition:(BOOL)arg1;

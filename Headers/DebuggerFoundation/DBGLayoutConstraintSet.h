@@ -22,9 +22,9 @@
 + (Class)ib_mutableClass;
 + (id)ib_emptyCollection;
 + (id)ib_collectionWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly) __weak DBGViewWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)containsConstraint:(id)arg1;

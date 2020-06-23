@@ -14,9 +14,9 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2;
 
 @end

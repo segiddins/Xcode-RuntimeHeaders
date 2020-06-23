@@ -14,8 +14,8 @@
     NSArray *_history;
 }
 
-@property(readonly) NSArray *history; // @synthesize history=_history;
 - (void).cxx_destruct;
+@property(readonly) NSArray *history; // @synthesize history=_history;
 - (void)addQueryHistoryItem:(id)arg1;
 - (void)clearHistory;
 - (void)scheduleSavingHistory;

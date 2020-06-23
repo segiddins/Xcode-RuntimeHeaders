@@ -49,6 +49,7 @@
 + (id)preferenceSetsManager;
 + (id)_defaultKeyBindingsDictionary;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSURL *dataURL; // @synthesize dataURL=_dataURL;
 @property BOOL contentNeedsSaving; // @synthesize contentNeedsSaving=_contentNeedsSaving;
 @property(readonly, getter=isBuiltIn) BOOL builtIn; // @synthesize builtIn=_builtIn;
@@ -56,7 +57,6 @@
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(readonly, copy) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)activate;
 - (void)_resolveConflictWithMenuKeyBindingSet:(id)arg1 textKeyBindingSet:(id)arg2;
 - (id)conflictedKeyBindingsWithKeyBinding:(id)arg1 keyboardShortcut:(id)arg2;

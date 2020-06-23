@@ -20,6 +20,7 @@
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *checkboxWidth; // @synthesize checkboxWidth=_checkboxWidth;
 @property(retain, nonatomic) NSLayoutConstraint *checkboxLeading; // @synthesize checkboxLeading=_checkboxLeading;
 @property(nonatomic) BOOL checkboxEnabled; // @synthesize checkboxEnabled=_checkboxEnabled;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSString *checkboxDescription; // @synthesize checkboxDescription=_checkboxDescription;
 @property(retain, nonatomic) NSString *checkboxTitle; // @synthesize checkboxTitle=_checkboxTitle;
 @property(readonly, nonatomic) IDEDistributionOption *checkboxOption; // @synthesize checkboxOption=_checkboxOption;
-- (void).cxx_destruct;
 - (BOOL)isInAdditionalOptionsGroup;
 - (BOOL)needsInteraction;
 - (void)viewDidLoad;

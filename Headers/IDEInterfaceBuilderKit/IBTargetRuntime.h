@@ -21,8 +21,8 @@
 }
 
 + (id)targetRuntimeWithIdentifier:(id)arg1;
-@property(readonly, nonatomic) IBOSVersion *osVersion; // @synthesize osVersion=_osVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBOSVersion *osVersion; // @synthesize osVersion=_osVersion;
 - (BOOL)populateEnvironment:(id)arg1 forExecutionContext:(id)arg2 error:(id *)arg3;
 - (id)sceneUpdateRequesterWithDeviceTypeDescription:(id)arg1 incrementalUpdateSessionIdentifier:(id)arg2;
 - (id)imageRequesterWithDeviceTypeDescription:(id)arg1;

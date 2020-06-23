@@ -19,12 +19,12 @@
     DBGRectInspectorPropertyView *_propertyView;
 }
 
+- (void).cxx_destruct;
 @property __weak DBGRectInspectorPropertyView *propertyView; // @synthesize propertyView=_propertyView;
 @property __weak NSTextField *heightLabel; // @synthesize heightLabel=_heightLabel;
 @property __weak NSTextField *widthLabel; // @synthesize widthLabel=_widthLabel;
 @property __weak NSTextField *yLabel; // @synthesize yLabel=_yLabel;
 @property __weak NSTextField *xLabel; // @synthesize xLabel=_xLabel;
-- (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
 - (void)refresh;

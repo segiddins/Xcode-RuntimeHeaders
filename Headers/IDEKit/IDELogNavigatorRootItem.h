@@ -29,6 +29,7 @@
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)logRootItemForWorkspace:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain, nonatomic) IDELogNavigatorItem *workspaceItem; // @synthesize workspaceItem=_workspaceItem;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL filterBotsToWorkspace; // @synthesize filterBotsToWorkspace=_filterBotsToWorkspace;
 @property(copy, nonatomic) NSArray *logGroups; // @synthesize logGroups=_logGroups;
 @property(retain, nonatomic) IDELogManager *localGroup; // @synthesize localGroup=_localGroup;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 - (void)unregisterDataSourceObservers;
 - (void)registerDataSourceObservers;

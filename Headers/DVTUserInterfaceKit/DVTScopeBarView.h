@@ -21,8 +21,8 @@
 + (id)_createButtonOfType:(unsigned long long)arg1 gradientStyle:(int)arg2;
 + (id)createToggleButtonWithImage:(id)arg1 alternateImage:(id)arg2;
 + (id)createButton;
-@property(nonatomic) BOOL usesAutoLayout; // @synthesize usesAutoLayout=_usesAutoLayout;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL usesAutoLayout; // @synthesize usesAutoLayout=_usesAutoLayout;
 - (void)verticallyCenterView:(id)arg1;
 - (void)_addCenteredViewConstraints;
 - (void)_invalidateCenteredViewConstraints;

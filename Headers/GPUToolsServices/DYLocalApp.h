@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingExists;
-@property(readonly, nonatomic) BOOL exists; // @synthesize exists=_exists;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL exists; // @synthesize exists=_exists;
 - (BOOL)isArchitectureAvailable:(unsigned long long)arg1;
 - (void)setPath:(id)arg1;
 - (void)setUrl:(id)arg1;

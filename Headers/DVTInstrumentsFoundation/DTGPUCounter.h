@@ -20,6 +20,7 @@
     NSString *_functionName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int multiplier; // @synthesize multiplier=_multiplier;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned int groupIndex; // @synthesize groupIndex=_groupIndex;
 @property(nonatomic) unsigned long long maxValue; // @synthesize maxValue=_maxValue;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)infoArray;
 - (id)initWithName:(id)arg1 maxValue:(unsigned long long)arg2;
 

@@ -16,9 +16,9 @@
     PBXReference *_navigableReference;
 }
 
+- (void).cxx_destruct;
 @property __weak PBXReference *navigableReference; // @synthesize navigableReference=_navigableReference;
 @property(copy) NSString *projectRelativePath; // @synthesize projectRelativePath=_projectRelativePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly, nonatomic) NSString *navigableItem_name;

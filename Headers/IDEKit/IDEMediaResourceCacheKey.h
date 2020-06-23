@@ -19,12 +19,12 @@
     NSSet *_applicableFoldingStrategies;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *applicableFoldingStrategies; // @synthesize applicableFoldingStrategies=_applicableFoldingStrategies;
 @property(readonly) NSString *explicitNameForFolding; // @synthesize explicitNameForFolding=_explicitNameForFolding;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) Class resourceClass; // @synthesize resourceClass=_resourceClass;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToMediaResourceCacheKey:(id)arg1;
 - (unsigned long long)hash;

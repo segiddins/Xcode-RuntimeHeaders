@@ -17,9 +17,9 @@
     id <DVTAnalyticsLogProtocol> _unsymbolicatedAnalyticsLog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <DVTAnalyticsLogProtocol> unsymbolicatedAnalyticsLog; // @synthesize unsymbolicatedAnalyticsLog=_unsymbolicatedAnalyticsLog;
 @property(retain, nonatomic) DVTAnalyticsPointAbstractClass *analyticsPoint; // @synthesize analyticsPoint=_analyticsPoint;
-- (void).cxx_destruct;
 - (void)updateAnalyticsPoint:(id)arg1 withSymbolicatedAnalyticsLog:(id)arg2;
 - (id)initWithAnalyticsPoint:(id)arg1 unsymbolicatedAnalyticsLog:(id)arg2;
 

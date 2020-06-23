@@ -23,12 +23,12 @@
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)userDataWithName:(id)arg1 analyticsPointDefaultName:(id)arg2;
 + (id)userDataWithName:(id)arg1 comments:(id)arg2 resolved:(BOOL)arg3 analyticsPointDefaultName:(id)arg4;
+- (void).cxx_destruct;
 @property(copy) NSString *locallySymbolicatedAnalyticsPointDefaultName; // @synthesize locallySymbolicatedAnalyticsPointDefaultName=_locallySymbolicatedAnalyticsPointDefaultName;
 @property(copy) NSString *analyticsPointDefaultName; // @synthesize analyticsPointDefaultName=_analyticsPointDefaultName;
 @property BOOL resolved; // @synthesize resolved=_resolved;
 @property(copy) NSString *comments; // @synthesize comments=_comments;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)validateName:(id *)arg1 error:(id *)arg2;

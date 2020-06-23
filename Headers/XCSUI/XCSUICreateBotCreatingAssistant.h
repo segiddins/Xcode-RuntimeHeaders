@@ -24,13 +24,13 @@
 + (id)keyPathsForValuesAffectingCanFinish;
 + (id)keyPathsForValuesAffectingStatusSubtext;
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL updatingBot; // @synthesize updatingBot=_updatingBot;
 @property DVTColoredSpinner *coloredSpinner; // @synthesize coloredSpinner=_coloredSpinner;
 @property(retain, nonatomic) NSTimer *dismissAssistantTimer; // @synthesize dismissAssistantTimer=_dismissAssistantTimer;
 @property(retain, nonatomic) NSTimer *minimumProgressIndicatorDurationTimer; // @synthesize minimumProgressIndicatorDurationTimer=_minimumProgressIndicatorDurationTimer;
 @property(nonatomic) BOOL credentialsHaveBeenUploaded; // @synthesize credentialsHaveBeenUploaded=_credentialsHaveBeenUploaded;
 @property(nonatomic) BOOL canCancel; // @synthesize canCancel=_canCancel;
-- (void).cxx_destruct;
 - (void)willGoNextOrFinish;
 - (void)_dismissAssistant;
 @property(readonly, nonatomic) BOOL completedAndWaitedMinimumDuration;

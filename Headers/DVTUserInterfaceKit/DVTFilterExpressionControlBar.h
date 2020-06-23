@@ -14,13 +14,14 @@
     DVTFilterExpressionFieldController *_filterExpressionFieldController;
 }
 
-@property(retain) DVTFilterExpressionFieldController *filterExpressionFieldController; // @synthesize filterExpressionFieldController=_filterExpressionFieldController;
 - (void).cxx_destruct;
+@property(retain) DVTFilterExpressionFieldController *filterExpressionFieldController; // @synthesize filterExpressionFieldController=_filterExpressionFieldController;
 - (id)toggleButtons;
 - (void)setUpFilterControls;
 - (void)configureWithClient:(id)arg1;
 - (void)_setFilterExpressionFieldClient:(id)arg1;
 - (id)_filterControlFieldWithFrame:(struct CGRect)arg1;
+- (void)primitiveInvalidate;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

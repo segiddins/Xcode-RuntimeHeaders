@@ -6,9 +6,7 @@
 
 #import <IDESourceControlUI/_TtC18IDESourceControlUI31RepositoryBrowserViewController.h>
 
-#import <IDESourceControlUI/NSOutlineViewDataSource-Protocol.h>
-
-@interface _TtC18IDESourceControlUI31RepositoryBrowserViewController (IDESourceControlUI) <NSOutlineViewDataSource>
+@interface _TtC18IDESourceControlUI31RepositoryBrowserViewController (IDESourceControlUI)
 - (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;

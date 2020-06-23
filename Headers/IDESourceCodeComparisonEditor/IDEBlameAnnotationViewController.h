@@ -11,36 +11,27 @@
 #import <IDESourceCodeComparisonEditor/IDESourceControlLogDetailDelegate-Protocol.h>
 #import <IDESourceCodeComparisonEditor/NSPopoverDelegate-Protocol.h>
 
-@class DVTSourceControlBlameItem, DVTSourceControlWorkingCopy, IDEBlameAnnotationBorderedView, IDESourceCodeBlameController, NSButton, NSColor, NSDateFormatter, NSString, NSView, NSWindow, _TtC29IDESourceCodeComparisonEditor15BlameActionMenu;
+@class DVTSourceControlBlameItem, DVTSourceControlWorkingCopy, IDEBlameAnnotationBorderedView, IDESourceCodeBlameController, NSButton, NSString, NSView, NSWindow, _TtC29IDESourceCodeComparisonEditor15BlameActionMenu;
 
 @interface IDEBlameAnnotationViewController : NSViewController <IDESourceControlBlameActionMenuDelegate, IDEBlameAnnotationViewDelegate, NSPopoverDelegate, IDESourceControlLogDetailDelegate>
 {
-    NSDateFormatter *_dateFormatter;
     BOOL _highlighted;
     unsigned long long _mouseOver;
+    _TtC29IDESourceCodeComparisonEditor15BlameActionMenu *_actionMenu;
     IDEBlameAnnotationBorderedView *_borderedView;
     NSView *_primaryView;
-    long long _fontSize;
-    _TtC29IDESourceCodeComparisonEditor15BlameActionMenu *_actionMenu;
-    IDESourceCodeBlameController *_blameController;
     NSButton *_actionButton;
-    NSColor *_titleColor;
-    NSColor *_subtitleColor;
-    NSColor *_subtitleLinkColor;
+    IDESourceCodeBlameController *_blameController;
     DVTSourceControlWorkingCopy *_workingCopy;
 }
 
 + (id)defaultViewNibName;
-@property(retain, nonatomic) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
-@property(retain, nonatomic) NSColor *subtitleLinkColor; // @synthesize subtitleLinkColor=_subtitleLinkColor;
-@property(retain, nonatomic) NSColor *subtitleColor; // @synthesize subtitleColor=_subtitleColor;
-@property(retain, nonatomic) NSColor *titleColor; // @synthesize titleColor=_titleColor;
-@property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
-@property(retain, nonatomic) IDESourceCodeBlameController *blameController; // @synthesize blameController=_blameController;
-@property(nonatomic) long long fontSize; // @synthesize fontSize=_fontSize;
-@property(retain, nonatomic) IDEBlameAnnotationBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property(retain, nonatomic) NSView *primaryView; // @synthesize primaryView=_primaryView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
+@property(retain, nonatomic) IDESourceCodeBlameController *blameController; // @synthesize blameController=_blameController;
+@property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
+@property(retain, nonatomic) NSView *primaryView; // @synthesize primaryView=_primaryView;
+@property(retain, nonatomic) IDEBlameAnnotationBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void)openCodeReviewForLogItem:(id)arg1;
 - (void)openAuthorsViewForLogItem:(id)arg1;
 @property(readonly) NSWindow *viewWindow;
@@ -51,12 +42,13 @@
 - (void)popoverDidShow;
 - (void)showInfoPanel;
 - (id)blameAnnotationView;
-- (void)refreshDisplay:(BOOL)arg1;
+- (void)updateViewContent;
 - (BOOL)_uncommitted;
 - (void)setRepresentedObject:(id)arg1;
 - (id)nibName;
 - (void)dealloc;
 @property(readonly, nonatomic) DVTSourceControlBlameItem *blameItem;
+- (id)appearanceManager;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

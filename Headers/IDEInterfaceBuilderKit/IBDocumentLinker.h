@@ -13,8 +13,8 @@
     IBPlatform *_platform;
 }
 
-@property(readonly) IBPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+@property(readonly) IBPlatform *platform; // @synthesize platform=_platform;
 - (void)removeStringsFilePlistIfExistsInCopiedStoryboardAtPath:(id)arg1;
 - (BOOL)copyStringsFilesForCompiledStoryboardAtPath:(id)arg1 toUnlocalizedOutputDirectory:(id)arg2 error:(id *)arg3;
 - (BOOL)copyCompiledPackagesForInputPath:(id)arg1 toLocalizedOutputDirectory:(id)arg2 error:(id *)arg3;

@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSURL *logFileURL; // @synthesize logFileURL=_logFileURL;
 @property(readonly) NSString *statusMessage; // @synthesize statusMessage=_statusMessage;
 @property(readonly) NSNumber *statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

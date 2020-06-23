@@ -27,11 +27,11 @@
 + (id)configurationFromPasteboradPlist:(id)arg1 model:(id)arg2;
 + (id)keyPathsForValuesAffectingName;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, getter=isDefaultConfiguration) BOOL defaultConfiguration; // @synthesize defaultConfiguration=_defaultConfiguration;
 @property(retain) CDMModel *model; // @synthesize model=_model;
 @property(copy) NSArray *entities; // @synthesize entities=_entities;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (void)generateCloudKitErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;

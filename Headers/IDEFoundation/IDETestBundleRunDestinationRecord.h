@@ -15,10 +15,10 @@
     IDETestBundleDeviceRecord *_localComputer;
 }
 
+- (void).cxx_destruct;
 @property(retain) IDETestBundleDeviceRecord *localComputer; // @synthesize localComputer=_localComputer;
 @property(retain) IDETestBundleDeviceRecord *targetDevice; // @synthesize targetDevice=_targetDevice;
 @property(retain) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

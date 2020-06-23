@@ -14,8 +14,8 @@
     NSString *_message;
 }
 
-@property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
