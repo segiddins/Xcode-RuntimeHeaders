@@ -47,7 +47,7 @@ folders.each do |path|
       case extension
       when '.framework'
         File.join(framework, name)
-      when '.ideplugin', '.appex', '.dvtplugin'
+      when '.ideplugin', '.appex', '.dvtplugin', '.xpc'
         File.join(framework, 'Contents', 'MacOS', name)
       else
         framework
